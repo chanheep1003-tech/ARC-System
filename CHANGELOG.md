@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 1.2.0-dev — 2026-09-18
+- Added ARC MCP Tool Layer.
+- Registered GitHub official MCP, draw.io official MCP, ChemCP, and Timeline Generator MCP.
+- GitHub MCP is read-only by default during question-generation runs; write tools are reserved for explicit system maintenance.
+- Google Drive remains on the existing connector and third-party Drive MCP is disabled.
+- Added MCP security policy, server registry, orchestration, host setup examples, and fallback matrix.
+- MCP tools are on-demand only and never override Scope Lock, MASTER, QA, or difficulty rules.
+
 ## 1.1.2-dev — 2026-09-18
 - Added Reference-First visual protocol: inspect real textbook/school exam/worksheet/workbook visuals before rendering.
 - Visuals now extract layout grammar, density, labeling, and print conventions without copying source artwork.
