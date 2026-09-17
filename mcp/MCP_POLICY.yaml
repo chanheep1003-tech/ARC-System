@@ -1,0 +1,51 @@
+version: 1.0.0
+status: dev
+purpose: ARC external tool governance
+
+authority_order:
+  - user_scope_and_exclusions
+  - subject_master_and_scope_ledger
+  - common_generation_engine
+  - quality_rules
+  - arc_skills
+  - mcp_tools
+  - external_reference_material
+
+security:
+  secrets_in_repository: forbidden
+  personal_access_tokens_in_repository: forbidden
+  api_keys_in_repository: forbidden
+  minimum_permissions: required
+  github_generation_runtime_mode: read_only
+  write_actions:
+    default: explicit_maintenance_only
+    require_user_intent: true
+  third_party_mcp:
+    pin_version_when_possible: true
+    review_before_enable: true
+
+runtime:
+  load_mode: on_demand
+  preload_all_servers: false
+  mcp_never_expands_scope: true
+  mcp_output_requires_arc_qa: true
+  mcp_visual_output_requires_visual_qa: true
+  fallback_required: true
+
+drive_policy:
+  mode: connector_only
+  third_party_drive_mcp: disabled
+  reason: copyrighted school/textbook/workbook materials and existing connector are sufficient
+
+failure_policy:
+  github_mcp_unavailable: use_native_github_connector_or_repo_files
+  drawio_mcp_unavailable: use_arc_visual_drawio_skill_and_svg_fallback
+  chemcp_unavailable: use_deterministic_chem_structure_fallback_or_omit_asset
+  timeline_mcp_unavailable: use_arc_visual_timeline_skill_svg_fallback
+  no_silent_degradation: true
+
+non_goals:
+  - autonomous_scope_expansion
+  - autonomous_repo_mutation_during_question_generation
+  - personal_weakness_tracking
+  - wrong_answer_based_regeneration
