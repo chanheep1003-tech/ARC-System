@@ -1,0 +1,49 @@
+version: 1.0.0
+status: dev
+servers:
+  github-official:
+    upstream: github/github-mcp-server
+    trust: official
+    role: repository_context_and_maintenance
+    preferred_transport: remote_http_or_local_stdio
+    preferred_runtime_mode: read_only
+    remote_endpoint: https://api.githubcopilot.com/mcp/
+    fallback: native_github_connector
+    enable_for_generation: true
+    enable_write_tools_during_generation: false
+
+  drawio-official:
+    upstream: jgraph/drawio-mcp
+    trust: official
+    role: editable_diagram_rendering
+    package: '@drawio/mcp'
+    preferred_transport: stdio
+    hosted_endpoint: https://mcp.draw.io/mcp
+    fallback: arc-visual-drawio-base
+    enable_for_generation: conditional
+
+  chemcp:
+    upstream: scottmreed/ChemCP
+    trust: reviewed_third_party
+    role: chemistry_2d_structure_rendering
+    package: chemcp
+    preferred_transport: stdio
+    fallback: arc-visual-chem
+    enable_for_generation: chemistry_only
+
+  timeline-generator:
+    upstream: kbichave/timeline-generator-mcp
+    trust: reviewed_third_party
+    role: timeline_rendering
+    package: timeline-generator-mcp
+    preferred_transport: stdio
+    fallback: arc-visual-timeline
+    enable_for_generation: timeline_only
+
+  google-drive:
+    upstream: none
+    trust: native_connector
+    role: source_material_store
+    mode: connector_only
+    mcp_enabled: false
+    reason: use existing Drive connector; do not expose copyrighted source archive to third-party MCP
