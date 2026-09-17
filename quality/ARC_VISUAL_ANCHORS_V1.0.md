@@ -6,14 +6,15 @@ ROLE: 시각자료 품질 비교 기준 레지스트리
 
 ## PURPOSE
 사용자 제공 학교 기출·학습지·문제집에서 좋은 시각자료의 편집 구조만 추출해 Anchor로 사용한다.
-원본 이미지/도표 자체를 복제하지 않는다.
+원본 이미지/도표 자체를 복제하지 않는다. 원본 시각물의 고유 표현을 복제하지 않고 일반적인 편집 문법만 추출한다.
 
 ## PRIORITY
 V0 실제 동북고 시험지 시각자료
 V1 현재 학교 학습지/보충자료
-V2 사용자 제공 시중 문제집/고난도 N제
-V3 공식 평가자료
-V4 기존 ARC PREMIUM_BANK_A 시각자료
+V2 현재 시험범위 교과서
+V3 사용자 제공 시중 문제집/고난도 N제
+V4 공식 평가자료
+V5 기존 ARC PREMIUM_BANK_A 시각자료
 
 ## SCIENCE TARGET
 - SCI-GRAPH 5
@@ -47,6 +48,10 @@ SOURCE_ITEM
 TEMPLATE_ID
 VISUAL_LEVEL
 STRUCTURE_NOTES
+VISUAL_GRAMMAR_NOTES
+DENSITY_NOTES
+LABEL_NOTES
+PRINT_NOTES
 AI_AVOID_NOTES
 COPY_ALLOWED=false
 STATUS=READY/PENDING

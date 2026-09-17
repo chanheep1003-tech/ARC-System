@@ -1,8 +1,8 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.0.0
-  status: release
+  version: 1.1.2-dev
+  status: dev
   initialized: 2026-09-18
   repository_visibility: private
   release_branch: main
@@ -74,6 +74,14 @@ active:
     similarity_guard: quality/ARC_SIMILARITY_GUARD_V1.0.md
     bank_policy: quality/BANK_POLICY_V1.0.md
 
+
+  skills:
+    registry: skills/SKILL_REGISTRY.yaml
+    orchestration: engine/common/ARC_SKILL_ORCHESTRATION_V1.0.md
+    load_mode: on_demand
+    learner_adaptive_retry: disabled
+    personal_weakness_tracking: disabled
+
   layout:
     pdf_master: templates/ARC_PDF_LAYOUT_MASTER_V2.0.md
     core_patch: templates/core/ARC_TEMPLATE_SYSTEM_v0.3_CORE_PATCH.md
@@ -85,3 +93,13 @@ excluded_from_release:
 
 canonicalization:
   rule: "동일 이름의 Drive 중복 ACTIVE 파일은 manifest에 지정된 canonical 파일만 사용"
+
+visual_stack:
+  reference_first: quality/ARC_VISUAL_REFERENCE_FIRST_V1.0.md
+  router: skills/arc-visual-renderer/SKILL.md
+  stack_guide: quality/ARC_VISUAL_SKILL_STACK_V1.0.md
+  verified_visual_skills:
+    - skills/arc-visual-drawio-base/SKILL.md
+    - skills/arc-visual-concept-diagrams/SKILL.md
+    - skills/arc-visual-chem/SKILL.md
+    - skills/arc-visual-timeline/SKILL.md

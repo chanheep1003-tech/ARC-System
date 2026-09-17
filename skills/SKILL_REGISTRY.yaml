@@ -1,0 +1,59 @@
+version: 1.0.0
+status: dev
+policy:
+  load_mode: on_demand
+  preload_all: false
+  learner_adaptive_retry: disabled
+  personal_weakness_tracking: disabled
+skills:
+  arc-source-ingest:
+    path: skills/arc-source-ingest/SKILL.md
+    phase: source
+  arc-research-grounding:
+    path: skills/arc-research-grounding/SKILL.md
+    phase: research
+  arc-item-generator:
+    path: skills/arc-item-generator/SKILL.md
+    phase: generation
+  arc-distractor-engine:
+    path: skills/arc-distractor-engine/SKILL.md
+    phase: generation
+  arc-visual-renderer:
+    path: skills/arc-visual-renderer/SKILL.md
+    phase: asset
+  arc-visual-drawio-base:
+    path: skills/arc-visual-drawio-base/SKILL.md
+    phase: asset
+  arc-visual-concept-diagrams:
+    path: skills/arc-visual-concept-diagrams/SKILL.md
+    phase: asset
+  arc-visual-chem:
+    path: skills/arc-visual-chem/SKILL.md
+    phase: asset
+  arc-visual-timeline:
+    path: skills/arc-visual-timeline/SKILL.md
+    phase: asset
+  arc-fact-audit:
+    path: skills/arc-fact-audit/SKILL.md
+    phase: verification
+  arc-item-naturalness-audit:
+    path: skills/arc-item-naturalness-audit/SKILL.md
+    phase: editorial
+  arc-item-qa:
+    path: skills/arc-item-qa/SKILL.md
+    phase: quality
+  arc-set-editor:
+    path: skills/arc-set-editor/SKILL.md
+    phase: set
+  arc-bank-curator:
+    path: skills/arc-bank-curator/SKILL.md
+    phase: bank
+  arc-eval-regression:
+    path: skills/arc-eval-regression/SKILL.md
+    phase: regression
+  arc-skill-stack:
+    path: skills/arc-skill-stack/SKILL.md
+    phase: orchestration
+  arc-skill-governance:
+    path: skills/arc-skill-governance/SKILL.md
+    phase: governance
