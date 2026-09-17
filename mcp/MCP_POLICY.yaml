@@ -1,4 +1,4 @@
-version: 1.0.0
+version: 1.0.1
 status: dev
 purpose: ARC external tool governance
 
@@ -25,8 +25,12 @@ security:
     review_before_enable: true
 
 runtime:
-  load_mode: on_demand
-  preload_all_servers: false
+  server_registration: persistent
+  connection_lifecycle: persistent_when_host_supports
+  invocation_mode: on_demand
+  preload_all_tool_context: false
+  startup_healthcheck: true
+  auto_reconnect: true
   mcp_never_expands_scope: true
   mcp_output_requires_arc_qa: true
   mcp_visual_output_requires_visual_qa: true
