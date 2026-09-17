@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 1.2.1-dev — 2026-09-18
+- MCP server registration changed to persistent-by-default.
+- Connections remain available when the host supports persistence; actual tool invocation stays on-demand.
+- Added startup health checks and automatic reconnect policy.
+- Avoids preloading every MCP tool into working context, preserving token efficiency.
+
 ## 1.2.0-dev — 2026-09-18
 - Added ARC MCP Tool Layer.
 - Registered GitHub official MCP, draw.io official MCP, ChemCP, and Timeline Generator MCP.
