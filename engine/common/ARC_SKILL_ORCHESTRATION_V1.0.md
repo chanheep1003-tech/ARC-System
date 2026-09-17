@@ -1,7 +1,7 @@
 # ARC SKILL ORCHESTRATION V1.0
 
 Status: DEV
-Purpose: connect ARC's stable generation engines to the on-demand skill layer without bloating every prompt.
+Purpose: connect ARC's stable generation engines to the on-demand skill and MCP layers without bloating every prompt.
 
 ## 1. Authority order
 1. User's current explicit scope/exclusion
@@ -9,33 +9,45 @@ Purpose: connect ARC's stable generation engines to the on-demand skill layer wi
 3. Common Generation Engine / product engine
 4. Quality rules and school difficulty bench
 5. ARC Skills selected for the current stage
-6. External reference material
+6. MCP tools selected for the current stage
+7. External reference material
 
-Skills never override scope.
+Skills and MCP tools never override scope.
 
 ## 2. Load policy
-Read `skills/SKILL_REGISTRY.yaml`, then load only skills required by the task. Do not preload all skill bodies.
+Read `skills/SKILL_REGISTRY.yaml`, then load only skills required by the task. If a specialized external tool is needed, read `mcp/SERVER_REGISTRY.yaml` and `mcp/MCP_POLICY.yaml`; do not preload all MCP servers.
 
 ## 3. N° / FINAL generation route
 - Always: `arc-item-generator`, `arc-distractor-engine`, `arc-fact-audit`, `arc-item-naturalness-audit`, `arc-item-qa`, `arc-set-editor`
-- Conditional: `arc-source-ingest` when raw/unparsed files enter; `arc-research-grounding` when external information is needed; `arc-visual-renderer` when the item needs a functional asset. Visual routing first applies `ARC_VISUAL_REFERENCE_FIRST_V1.0`, then chooses among `arc-visual-drawio-base`, `arc-visual-concept-diagrams`, `arc-visual-chem`, and `arc-visual-timeline`; `arc-bank-curator` only for PASS candidates.
+- Conditional source: `arc-source-ingest` when raw/unparsed files enter; `arc-research-grounding` when external information is needed.
+- Conditional visuals: `arc-visual-renderer` first applies `ARC_VISUAL_REFERENCE_FIRST_V1.0`, then selects the ARC visual skill. If a specialized MCP is available, route to draw.io / ChemCP / Timeline MCP according to `mcp/MCP_ORCHESTRATION_V1.0.md`; otherwise use the ARC visual skill fallback.
+- Repository context: GitHub official MCP may be used read-only; native GitHub connector remains a fallback.
+- Bank: `arc-bank-curator` only for PASS candidates.
 - Engine/Master changes: add `arc-eval-regression`.
 
 ## 4. Product behavior
 ### ARC N°
-Prioritize high-quality individual items plus set diversity. Student PDF does not expose internal IDs, difficulty labels, skill traces, or QA notes.
+Prioritize high-quality individual items plus set diversity. Student PDF does not expose internal IDs, difficulty labels, skill traces, MCP traces, or QA notes.
 
 ### ARC FINAL
 Prioritize actual-test flow, mixed difficulty, authentic density, timing plausibility, and final answer-key independence.
 
 ### ARC CORE
-This skill layer may assist source ingest, grounding, fact audit, visuals and QA, but no learner-adaptive retry feature is enabled.
+Skill/MCP layers may assist source ingest, grounding, fact audit, visuals and QA, but no learner-adaptive retry feature is enabled.
 
-## 5. Non-goals
+## 5. MCP discipline
+- MCP is a Tool Layer, not an authority layer.
+- Question-generation runtime uses minimum privileges; GitHub is read-only by default.
+- Google Drive continues through the existing connector; third-party Drive MCP is disabled.
+- MCP failure triggers documented fallback and must not silently expand scope or invent missing source content.
+- MCP-produced visuals still require ARC Visual QA.
+
+## 6. Non-goals
 - personal weakness modeling
 - wrong-answer-based regeneration
 - teacher-style prediction from different-teacher historical exams
-- scope expansion driven by bank or web sources
+- scope expansion driven by bank, MCP, or web sources
+- autonomous repository mutation during ordinary question generation
 
-## 6. Release rule
-Skill changes live on `dev` until structural validation and representative regression checks pass. Promote to `main` only with zero new hard-fail classes.
+## 7. Release rule
+Skill/MCP changes live on `dev` until structural validation and representative regression checks pass. Promote to `main` only with zero new hard-fail classes.
