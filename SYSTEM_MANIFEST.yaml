@@ -1,0 +1,87 @@
+# ARC System Manifest
+system:
+  name: ARC-System
+  version: 1.0.0
+  status: release
+  initialized: 2026-09-18
+  repository_visibility: private
+  release_branch: main
+  development_branch: dev
+
+source_of_truth:
+  engine_and_rules: github
+  textbooks_worksheets_past_exams: google_drive
+  verified_item_bank: google_drive
+  generated_pdfs: google_drive
+
+runtime:
+  active_products:
+    - ARC_CORE
+    - ARC_N
+    - ARC_FINAL
+  default_school: 동북고등학교
+  curriculum: 2022 개정 교육과정
+  teacher_style_prediction: disabled
+  historical_exam_usage: difficulty_calibration_only
+  school_difficulty_levels:
+    - SCHOOL_LOW
+    - SCHOOL_STANDARD
+    - SCHOOL_UPPER
+    - SCHOOL_EXTREME
+
+active:
+  common_generation_engine:
+    path: engine/common/COMMON_GENERATION_ENGINE_V4.0_ARC.md
+    version: 4.0
+    drive_id: 1NqI96-EyoTylsLoPGpcXvBiOGrStSOSk
+
+  core_content_engine:
+    path: engine/core/ARC_CORE_CONTENT_ENGINE_V1.0.md
+    version: 1.0
+    drive_id: 1zjot-Aa9Eu3m00ze88kISpZQibrZ1T65
+
+  subjects:
+    science:
+      path: subjects/SCIENCE_MASTER_V4.0.md
+      drive_id: 1GU5tPHHBrIcGVYA1znOp6MQw7TEciZLi
+    social:
+      path: subjects/SOCIAL_MASTER_V4.0.md
+      drive_id: 112V98atwVL7nIkEw3aPzZYgLpHDjVp8q
+    korean:
+      path: subjects/KOREAN_MASTER_V4.0.md
+      drive_id: 1cgnQh_cNLbZYnCSxx8p1KtdZAjaVwb23
+    history:
+      path: subjects/HISTORY_MASTER_V4.0.md
+      drive_id: 1RDjtvz1FBr9ght3RzMg4YjU_ty1nlpvU
+    ai:
+      path: subjects/AI_MASTER_V4.0.md
+      drive_id: 13wb_7mSGYu7vxDOjgJ3zW9Cel7BeHYfP
+
+  quality:
+    scope_ledger: quality/ARC_SCOPE_LEDGER_V1.0.md
+    qa_bench: quality/ARC_QA_BENCH_V1.0.md
+    error_database: quality/ARC_ERROR_DATABASE_V1.0.md
+    difficulty_engine: quality/ARC_DIFFICULTY_ENGINE_V1.0.md
+    difficulty_anchors: quality/ARC_DIFFICULTY_ANCHORS_V1.0.md
+    school_difficulty_bench:
+      path: quality/ARC_SCHOOL_DIFFICULTY_BENCH_V1.0.md
+      drive_id: 1t0l6juVLzJxx9UMN5YwG1eRu4enAXpmX
+    item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.0.md
+    visual_authenticity: quality/ARC_VISUAL_AUTHENTICITY_RUBRIC_V1.0.md
+    visual_template: quality/ARC_VISUAL_TEMPLATE_SYSTEM_V1.0.md
+    visual_anchors: quality/ARC_VISUAL_ANCHORS_V1.0.md
+    set_editorial: quality/ARC_SET_EDITORIAL_ENGINE_V1.0.md
+    similarity_guard: quality/ARC_SIMILARITY_GUARD_V1.0.md
+    bank_policy: quality/BANK_POLICY_V1.0.md
+
+  layout:
+    pdf_master: templates/ARC_PDF_LAYOUT_MASTER_V2.0.md
+    core_patch: templates/core/ARC_TEMPLATE_SYSTEM_v0.3_CORE_PATCH.md
+
+excluded_from_release:
+  school_dna_seed:
+    reason: "출제 교사가 작년과 올해 다르므로 스타일 예측에 사용하지 않음"
+    policy: "historical exams are used only for difficulty calibration"
+
+canonicalization:
+  rule: "동일 이름의 Drive 중복 ACTIVE 파일은 manifest에 지정된 canonical 파일만 사용"

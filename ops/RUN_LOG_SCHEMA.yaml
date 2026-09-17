@@ -1,0 +1,22 @@
+# RUN_LOG schema
+fields:
+  run_id: unique string
+  timestamp: ISO-8601 Asia/Seoul
+  product: ARC_CORE | ARC_N | ARC_FINAL | QA
+  subject: KOR | SCI | SOC | HIS | AI
+  target_range: string
+  item_count: integer | null
+  manifest_version: string
+  git_branch: string
+  git_commit: string | null
+  engine_version: string
+  subject_master_version: string
+  bank_pass: integer | null
+  discarded: integer | null
+  avg_item_quality: number | null
+  avg_commercial_grade: number | null
+  set_editorial_score: number | null
+  difficulty_distribution: object | null
+  hard_fail_count: integer
+  output_refs: array
+  notes: string
