@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.2.0-dev
+  version: 1.2.1-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -86,7 +86,9 @@ active:
     registry: mcp/SERVER_REGISTRY.yaml
     orchestration: mcp/MCP_ORCHESTRATION_V1.0.md
     fallback_matrix: mcp/FALLBACK_MATRIX.md
-    load_mode: on_demand
+    server_registration: persistent
+    connection_lifecycle: persistent_when_host_supports
+    invocation_mode: on_demand
     github_generation_mode: read_only
     google_drive_mode: connector_only
 
