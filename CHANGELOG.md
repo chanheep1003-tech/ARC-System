@@ -1,3 +1,16 @@
+## 1.7.2-dev — 2026-09-19
+- Activated COMMON_GENERATION_ENGINE_V4.3 with SOURCE-BOUND TEXT EXCEPTION for user-pasted/uploaded and connected user-accessible school/textbook/supplement sources.
+- Activated KOREAN_MASTER_V4.1. Korean ARC output now defaults to self-contained source presentation when the original text is actually available from an allowed source.
+- Added SOURCE_TEXT_BLOCK with source provenance, inclusion mode, fidelity state, exact text body, and linked item IDs.
+- Protected modern literary works may be included as VERBATIM_FULL or VERBATIM_RANGE when the text comes from a user-provided/uploaded or connected user-accessible source; web search/snippets/unverified external pages cannot authorize full protected-text reproduction.
+- Added source-text fidelity checks for poem line/stanza order, prose paragraph order, completeness, source access, and question linkage.
+- Activated Generator / Content Bundle / Typesetter contracts V1.2 and PDF layout master V2.2 for lossless source-text handoff and two-column pagination.
+- Activated KOR_GOLD_ANCHORS_V1.1 and QA BENCH V1.5 with KOR-B04 source-text fidelity bench.
+- ARC N° Korean source blocks may continue across columns/pages while remaining COLUMN_ONLY; Typesetter may not omit or rewrite source text to force fit.
+- Korean ARC N° answer-key handoff was aligned with the current mandatory blank separator + compact final answer section.
+- New GitHub rules are authoritative; Drive mirrors for new Common/Korean master remain pending_sync until explicitly mirrored.
+- Executable frozen-fixture regression was not claimed in this connector maintenance pass.
+
 ## 1.7.1-dev — 2026-09-18
 - Activated COMMON_GENERATION_ENGINE_V4.2 with natural five-choice answer-position planning: soft distribution bands, streak/periodicity flags, and mandatory re-verification after option shuffling.
 - Added CLAIM_FIDELITY safeguards for thinker/theory items: explicit position vs supported implication vs opponent critique vs straw-man risk.
