@@ -43,7 +43,16 @@ Prioritize high-quality individual items plus set diversity. Student PDF does no
 Prioritize actual-test flow, mixed difficulty, authentic density, timing plausibility, and final answer-key independence.
 
 ### ARC CORE
+Required JIT stack:
+- manifest-selected ARC CORE content engine
+- ARC CORE depth engine
+- ARC CORE editorial-naturalness policy
+- ARC CORE QA bench
+- active subject MASTER for scope/source/factual constraints
+- current-range source materials
+
 Skill/MCP layers may assist source ingest, grounding, fact audit, visuals and QA, but no learner-adaptive retry feature is enabled.
+Do not load N° distractor/answer-position/set-editor skills for a pure CORE task.
 For document editorial structure, source extraction, typography/PDF QA, and skill-design gaps, vetted external GitHub skills may be used as REFERENCE_ONLY or ADAPT inputs under the external-skill intake policy.
 
 ## 5. MCP discipline
