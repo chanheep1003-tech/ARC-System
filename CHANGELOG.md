@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 1.6.2-dev — 2026-09-18
+- Hardened ARC self-scoring against score/difficulty inflation after review of Claude KOR batch ARC-CLAUDE-20260918-KOR-01.
+- Added ITEM QUALITY V1.2 with EXPLICIT_CUE_RESTATEMENT ceiling, distractor-distance audit, blind rescoring for BANK_A/D4/D5, and zero-rejection/premium-rate audits.
+- Added DIFFICULTY ENGINE V1.1 with minimum D4/D5 gates and explicit-cue discount; long passages or the presence of a <보기> no longer count as difficulty by themselves.
+- Added KOR high-difficulty gate requiring at least two genuinely competitive distractors and multi-step reasoning for D4/BANK_A.
+- Added QA BENCH V1.3 adversarial D4 sentinels and set-level inflation checks.
+- Added DRIVE WRITE ADAPTER V1.1 exact-file-ID parent verification. Root-level files may no longer be reported as STORAGE_PLACEMENT=VERIFIED for a subject folder.
+- Repaired the reviewed Claude KOR PDF placement by moving its exact PDF FILE_ID into the canonical KOR 완성N제 folder.
+- Existing Claude KOR batch remains a v1.5.0 DRAFT_REVIEW artifact; new rules apply to subsequent batches.
+
 ## 1.6.1-dev — 2026-09-18
 - Added KOR PROTECTED_TEXT_MODE: protected modern literary works remain valid generation sources, but ARC outputs avoid full/long continuous reproduction and use school-source references when full text is required.
 - Added STUDENT_SOURCE_REQUIRED / SOURCE_REFERENCE handoff behavior for protected works and prohibited invention of unseen wording or lineation.
