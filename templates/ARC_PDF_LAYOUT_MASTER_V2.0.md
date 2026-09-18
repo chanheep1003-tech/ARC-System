@@ -38,6 +38,18 @@ ARC 브랜드 규격에 맞는 실제 A4 PDF를 제작한다.
 MASTER BRAND:
 ARC
 
+BRAND LOCKUP SOURCE:
+`templates/brand/ARC_BRAND_LOCKUP_SPEC_V1.0.md`
+
+Approved product lockups:
+- ARC CORE
+- ARC N°
+- ARC FINAL
+
+The ARC wordmark + burgundy arc symbol are one fixed master mark.
+Do not alter ARC geometry, size, arc position, or arc color by product.
+CORE / N° / FINAL are compact secondary editorial labels under one identical master module.
+
 공통 디자인:
 - Academic B형
 - A4 세로
@@ -49,7 +61,12 @@ ARC
 - Korean: Pretendard 우선
 - fallback: Noto Sans KR 계열
 - 과목명: 한글 표기
-- N°: ARC의 고유 번호 표기
+- N°: ARC N° product label; specific volume number is separate metadata
+- ARC wordmark: Deep Navy #1F2A44
+- master arc symbol: Burgundy #7A2E35, identical in all three products
+- CORE secondary label/divider: print-safe warm gray #8A877F
+- N° secondary label/divider: Deep Navy #1F2A44
+- FINAL secondary label/divider: Burgundy #7A2E35
 - 장식보다 가독성 우선
 - 흑백 출력에서도 정보 위계 유지
 
@@ -242,14 +259,22 @@ ARC 표지는 전 제품군에서 Academic B형을 유지한다.
 기본 구조:
 
 상단:
-`ARC N°01`
-또는
-`ARC FINAL`
-또는
-`ARC CORE`
+승인된 ARC master/sub-brand lockup을 사용한다.
+- ARC CORE
+- ARC N°
+- ARC FINAL
 
-그 아래:
-얇은 Deep Navy 가로선
+락업 규칙:
+- ARC master mark 크기/위치/기하 완전 동일
+- 버건디 arc symbol 동일
+- divider 길이/두께/위치 동일
+- secondary label baseline/간격 동일
+- CORE/N°/FINAL 전체 모듈 외곽 비율 동일
+- N°는 짧은 폭 보정을 위해 최대 +10% optical glyph scaling 허용하되 label-zone 높이와 baseline은 동일
+- N°01 같은 volume number는 로고에 합치지 않고 별도 metadata로 표시
+
+락업 아래:
+추가 장식선은 만들지 않는다. 로고 내부 divider가 브랜드 구조선 역할을 한다.
 
 중앙:
 한글 과목명
@@ -270,8 +295,9 @@ ARC 표지는 전 제품군에서 Academic B형을 유지한다.
 - 과목명이 가장 중요한 정보
 - 시리즈명은 작고 명확하게
 - 불필요한 영문 장문 금지
-- 로고 심볼을 강제로 만들지 않음
-- `ARC`, `N°`, 선, 여백이 브랜드 역할을 수행
+- 별도 아이콘 추가 금지
+- ARC wordmark + burgundy arc symbol + fixed divider + secondary label이 브랜드 역할을 수행
+- 표지에서 full lockup을 사용하고, 러닝헤드/좁은 공간에서는 text-only compact form 허용
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 6. ARC N° — TWO COLUMN ENGINE
@@ -289,7 +315,7 @@ ARC 표지는 전 제품군에서 Academic B형을 유지한다.
 - 문항 번호: `01`, `02`, `03` 형식
 
 러닝헤드:
-좌 `ARC N°xx`
+좌 `ARC N°xx` (text-only compact form; full arc-symbol lockup 강제 금지)
 우 `과목명 · 단원/범위`
 
 본문에는 문제만 포함한다.
@@ -345,7 +371,7 @@ hanging indent를 유지한다.
 - 총 문항수
 
 브랜드:
-- 작은 `ARC FINAL · N°xx`
+- 작은 `ARC FINAL · N°xx` text-only compact form
 - 브랜드보다 시험지 정보가 우선
 
 금지:
@@ -878,3 +904,24 @@ WARN이면 의심 페이지를 HUMAN_REVIEW_PACKET에 포함한다.
 connector-only 환경에서 실행 불가하면 TOOLING_UNAVAILABLE을 기록하고 기존 전 페이지 렌더 검수를 수행하되, preflight를 실행했다고 주장하지 않는다.
 
 END EXECUTABLE PDF PREFLIGHT
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+23. ARC LOGO LOCKUP ACCEPTANCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+표지/제품군 로고는 `templates/brand/ARC_BRAND_LOCKUP_SPEC_V1.0.md`를 따른다.
+
+검수:
+- ARC master wordmark geometry identical across CORE/N°/FINAL
+- burgundy arc symbol identical
+- divider length/position/stroke identical
+- secondary label baseline/gap identical
+- CORE/N°/FINAL outer lockup dimensions identical
+- N° degree sign is superscript
+- product volume number separated from logo
+- no additional icon, gradient, shadow, bevel, or 3D
+- grayscale legibility maintained
+
+하나라도 어기면 BRAND_LOCKUP_FAIL.
+
+END ARC LOGO LOCKUP ACCEPTANCE
