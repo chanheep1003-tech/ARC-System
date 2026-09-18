@@ -8,7 +8,7 @@
 
 ## 1.4.0-dev — 2026-09-18
 - Added executable tooling layer instead of policy-only checks.
-- Added promptfoo regression runner for the 30 frozen fixtures with custom candidate adapter and decision/score/hard-fail assertions.
+- Added promptfoo regression runner for the 30 frozen fixtures with side-by-side baseline/candidate adapters and decision/score/hard-fail assertions.
 - Added sentence-transformers + local Qdrant similarity engine with FULL/STEM/DISTRACTOR embeddings and structural metadata.
 - Similarity thresholds now require labeled BANK calibration; raw cosine does not become a hard gate before calibration.
 - Added PyMuPDF PDF preflight for page-boundary, margin, overlap, glyph, image/drawing, empty-page and render screening.
