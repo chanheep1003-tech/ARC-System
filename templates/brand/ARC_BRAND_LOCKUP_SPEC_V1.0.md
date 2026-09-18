@@ -1,4 +1,4 @@
-# ARC BRAND LOCKUP SPEC V1.0
+# ARC BRAND LOCKUP SPEC V1.1
 
 STATUS: ACTIVE-DEV
 DATE: 2026-09-18
@@ -22,4 +22,22 @@ Rules:
 - Do not resize ARC per product, move the arc symbol, change arc color, vary divider length, add gradients/shadows/3D effects, or add another icon.
 - Minimum-size print test is required before final release.
 
-END ARC BRAND LOCKUP SPEC V1.0
+Canonical cover lockup assets:
+- ARC CORE: Drive file `ARC_CORE_LOCKUP_MASTER.png` / ID `1J2ojEjyXKCJlRs21SW6gAekaCZvEJ4vE`
+- ARC N°: Drive file `ARC_N_LOCKUP_MASTER.png` / ID `12389-txbX5JzYuyj1cjbw7MUO7--f9JE`
+- ARC FINAL: Drive file `ARC_FINAL_LOCKUP_MASTER.png` / ID `1q9WyXajXA6V13yOYhnPqBBdLkEUwcbcB`
+
+These files are the canonical full-cover lockups.
+For cover use:
+- use the asset as-is
+- preserve aspect ratio
+- do not crop into the mark
+- do not recreate ARC as live text
+- do not redraw the arc symbol
+- do not remove the two endpoint dots
+- do not regenerate the logo with an image model
+- do not alter divider or secondary label
+
+Running heads may still use text-only compact forms because they are not full logo lockups.
+
+END ARC BRAND LOCKUP SPEC V1.1
