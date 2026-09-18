@@ -99,13 +99,24 @@ A. ARC_N
 역할:
 문제 풀이용 N제 / 문제집
 
-학생 PDF:
+학생 PDF 물리 페이지 순서:
 1. 표지
-2. 문제지
-3. 마지막 정답표 1개 섹션
+2. 완전한 빈 페이지 1장 (표지 뒷면 / duplex print spacer)
+3. 문제지
+4. 마지막 문제 바로 다음 새 페이지의 정답표
+
+표지 다음 빈 페이지:
+- A4 1페이지를 실제 PDF page object로 유지
+- 완전 백지
+- 로고 / 러닝헤드 / footer / 페이지 번호 / 안내문 / 워터마크 / 테두리 금지
+- 문제는 물리적으로 PDF 3페이지부터 시작
+- 인쇄용 표지 뒷면 확보 목적이며 삭제·압축·skip 금지
 
 정답표:
-- 문제 풀이가 끝난 뒤 PDF 마지막에 배치
+- 마지막 문제 블록이 끝난 뒤 반드시 page break
+- 남은 여백이 충분해도 같은 문제 페이지에 정답표를 붙이지 않음
+- 마지막 문제 페이지의 '바로 다음 물리 페이지'에서 시작
+- 정답표 앞에 추가 빈 페이지를 삽입하지 않음
 - 번호 + 정답만 표시
 - 해설/근거/오답분석 없음
 - 20~40문항은 가능하면 1페이지 compact grid
@@ -120,7 +131,8 @@ A. ARC_N
 - 오답 분석
 
 핵심:
-문제 페이지에는 문제만 보여 주고, PDF 마지막에 최소형 정답표를 제공한다.
+표지 뒤에는 인쇄용 완전 백지 1장을 둔다.
+문제 페이지에는 문제만 보여 주고, 마지막 문제의 바로 다음 새 페이지에 최소형 정답표를 제공한다.
 
 
 B. ARC_FINAL
@@ -648,6 +660,11 @@ STEP 3 — LAYOUT PLAN
 블록별 높이 예측
 공통자료 그룹화
 PRODUCT_MODE별 레이아웃 결정 (ARC_N=`COLUMN_ONLY`; ARC_FINAL/CORE=활성 규칙 내 유연 배치)
+ARC_N이면 물리 페이지 시퀀스를 먼저 잠근다:
+- p1 COVER
+- p2 BLANK_COVER_VERSO
+- p3+ PROBLEM_PAGES
+- LAST_PROBLEM_PAGE + 1 = ANSWER_KEY_START
 페이지 분할 계획
 
 STEP 4 — VISUAL PRODUCTION
@@ -694,6 +711,11 @@ STEP 12 — FINAL ACCEPTANCE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 LAYOUT
+- ARC_N p2 blank cover-verso page = exactly 1
+- ARC_N p2 contains zero visible text/drawing/image/header/footer
+- ARC_N first problem begins on physical p3
+- ARC_N answer key begins exactly on the physical page after the last problem page
+- ARC_N answer key is never appended into leftover problem-page space
 - clipping = 0
 - overlap = 0
 - 열 넘침 = 0
@@ -987,3 +1009,40 @@ Allowed Typesetter changes are presentation-only:
 pagination, columns, line breaks, typography, spacing, cover, supplied-visual rendering, keep-together behavior, print/grayscale optimization.
 
 END LOCKED CONTENT BUNDLE GATE
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+25. ARC N° PRINT SIGNATURE / ANSWER PAGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ARC_N has a fixed physical print sequence.
+
+PHYSICAL_PAGE_1 = COVER
+PHYSICAL_PAGE_2 = BLANK_COVER_VERSO
+PHYSICAL_PAGE_3...N = PROBLEM_PAGES
+PHYSICAL_PAGE_N+1 = ANSWER_KEY_START
+
+BLANK_COVER_VERSO:
+- exactly one page
+- pure blank white page
+- no page number
+- no header/footer
+- no logo/brand mark
+- no invisible instructional text intended to print
+- no decorative rule
+- do not remove during PDF optimization
+
+ANSWER_KEY_START:
+- force page-break-before
+- must be the immediate next page after the last problem page
+- no additional spacer between problems and answer
+- item number + answer only
+- no explanations
+- no difficulty/type/hint/editor metadata
+
+PDF QC must explicitly record:
+COVER_VERSO_BLANK=PASS/FAIL
+FIRST_PROBLEM_PHYSICAL_PAGE=3
+ANSWER_KEY_NEW_PAGE=PASS/FAIL
+ANSWER_KEY_IMMEDIATE_AFTER_PROBLEMS=PASS/FAIL
+
+END ARC N° PRINT SIGNATURE / ANSWER PAGE
