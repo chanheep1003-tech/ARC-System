@@ -19,6 +19,9 @@ skill 수가 늘어도 시스템이 프롬프트 묶음처럼 비대해지지 �
 - 동일 기능이 70% 이상 겹치면 새 skill보다 기존 skill 확장을 우선한다.
 - 새로운 skill은 `SKILL_REGISTRY.yaml`에 등록한다.
 - main 승격 전 최소 구조검사 + 회귀평가를 거친다.
+- 외부 GitHub skill/agent pattern을 사용할 때는 `skills/ARC_EXTERNAL_SKILL_INTAKE_POLICY_V1.0.md`를 따른다.
+- 외부 skill은 자동 설치/자동 vendor하지 않는다. 먼저 license·권한·중복·충돌을 확인한다.
+- proprietary/source-available skill은 구조 참고만 가능하며 ARC 내부로 문구/코드를 복제하지 않는다.
 
 ## 토큰 예산
 문항 생성 런타임에서는 모든 skill을 preload하지 않는다. `arc-skill-stack`이 작업별 최소 조합만 선택한다.
