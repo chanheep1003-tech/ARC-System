@@ -2,7 +2,7 @@
 name: arc-item-qa
 description: 'ARC 문항을 기준참조형 rubric으로 검수해 PASS/REVISE/DISCARD를 결정한다. 정답 유일성, 범위, 추론, 오답, 자연스러움, 학교 적합성, 시각자료를 통합 평가한다.'
 metadata:
-  version: 1.2.0
+  version: 1.3.0
   arc-role: item-quality-gate
 ---
 # ARC Item QA
@@ -17,6 +17,7 @@ metadata:
 - 필요 시 quality/ARC_VISUAL_AUTHENTICITY_RUBRIC_V1.0.md
 - 자동화 실행 시 ops/ARC_AUTOMATION_RUNTIME_V1.0.md
 - 해당 과목 `quality/gold/*_GOLD_ANCHORS_V1.0.md`
+- quality/ARC_SOURCE_LEDGER_V1.0.md
 
 ## 평가 순서
 ### 1. Hard Fail Gate
@@ -53,7 +54,12 @@ D3 이상은 실제로 자료·조건·다단계 추론 부담이 있는지 확�
 과목 20문항 세트에서 최소 4문항을 독립 재검수한다.
 점수 차이 6점 이상 또는 PASS/REVISE 반전 시 과목 전체를 재채점한다.
 
-### 7. Decision
+### 7. Source Verification Gate
+SOURCE_REQUIRED=true인 문항은 PASS B에서 ANSWER_BASIS SOURCE_ID를 실제로 재열람한다.
+모두 VERIFIED여야 BANK_PASS 후보가 된다.
+UNVERIFIED면 STUDY_DRAFT/REVISE, SOURCE_MISSING 또는 SOURCE_CONFLICT 정답근거가 있으면 DISCARD/BLOCKED 처리한다.
+
+### 8. Decision
 - PASS: 세트 편집/BANK 후보
 - REVISE: 국소 수정 후 처음부터 재검증
 - DISCARD: 문항 골격 불량 또는 hard fail
