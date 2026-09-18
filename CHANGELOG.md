@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 1.6.1-dev — 2026-09-18
+- Added KOR PROTECTED_TEXT_MODE: protected modern literary works remain valid generation sources, but ARC outputs avoid full/long continuous reproduction and use school-source references when full text is required.
+- Added STUDENT_SOURCE_REQUIRED / SOURCE_REFERENCE handoff behavior for protected works and prohibited invention of unseen wording or lineation.
+- ARC N° problem pages are now strictly COLUMN_ONLY two-column layout.
+- Removed ARC N° FULL_WIDTH and temporary one-column fallback for large passages, tables, graphs, maps, timelines, experiment diagrams, and composite visuals.
+- Oversized ARC N° assets must be redesigned/split safely at content handoff or returned to Generator; Typesetter may not change layout mode to force fit.
+- ARC FINAL and ARC CORE retain flexible layout only where their own active product rules permit it.
+
 ## 1.6.0-dev — 2026-09-18
 - Split ARC production into dedicated Generator and Typesetter roles to reduce repeated context usage.
 - Added ARC_GENERATOR_CONTRACT_V1.0, ARC_CONTENT_BUNDLE_CONTRACT_V1.0, and ARC_TYPESETTER_CONTRACT_V1.0.
