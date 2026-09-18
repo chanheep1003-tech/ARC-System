@@ -157,4 +157,4 @@ TYPESET_FEEDBACK
 Typesetter does not modify templates/rules.
 SYSTEM_MAINTAINER decides system changes.
 
-END ARC TYPESETTER CONTRACT V1.0
+END ARC TYPESETTER CONTRACT V1.1
