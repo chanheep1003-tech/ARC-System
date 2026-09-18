@@ -69,7 +69,12 @@ V1.2는 자동 점수 인플레이션과 '형식상 PASS'를 차단하고, froze
 - PREMIUM 비율이 높지만 자료/추론 근거가 없음
 - D3 이상인데 1단계 직접개념 문항이 반복
 
-## 6. FROZEN REGRESSION FIXTURES
+## 6. EXECUTABLE REGRESSION RUNNER
+Runner: `tooling/promptfoo/promptfooconfig.yaml`
+30개 fixture의 실제 결과 artifact 없이 REGRESSION_PASS를 주장하지 않는다.
+candidate adapter는 `ARC_CANDIDATE_CMD` 또는 `ARC_CANDIDATE_RESULTS_DIR`를 사용한다.
+
+## 7. FROZEN REGRESSION FIXTURES
 활성 회귀셋:
 - `quality/regression/ARC_REGRESSION_POLICY_V1.0.md`
 - `quality/regression/REGRESSION_FIXTURES_V1.0.yaml`
@@ -82,7 +87,7 @@ COMMON ENGINE/MASTER/QA/난이도/Source/BANK 판정 규칙 변경 시 `arc-eval
 - 기대 점수 범위/상한을 3점 이상 벗어나면 drift를 기록하고 정책 기준에 따라 WARN/FAIL
 - fixture 기대값을 변경하여 테스트를 통과시키는 행위 금지
 
-## 7. GENERATIVE FIXED BENCH SET
+## 8. GENERATIVE FIXED BENCH SET
 KOR-B01 탄궁가 20: 직접확인 편중, 표현효과, HALF_TRUE
 KOR-B02 팔원 15: 관찰 사실 vs 화자 추론
 KOR-B03 칸트-헤겔 15: 공통점/차이, 범위 밖 철학사 금지
@@ -99,7 +104,7 @@ AI-B01 DFS/BFS 15
 AI-B02 전처리·시각화 15
 AI-B03 범위 종합 20: 자료해석 >=6
 
-## 8. AUTOMATION BENCH
+## 9. AUTOMATION BENCH
 자동화는 품질과 별도로 실행 내구성을 검사한다.
 - RUN folder created
 - SUBJECT checkpoint written after each subject
@@ -110,7 +115,7 @@ AI-B03 범위 종합 20: 자료해석 >=6
 - partial completion can resume next run
 - no self-optimization before item production completes
 
-## 9. RELEASE GATE
+## 10. RELEASE GATE
 COMMON ENGINE/QA 변경:
 - 관련 5과목 최소 1 BENCH
 - HARD FAIL 0
@@ -119,5 +124,6 @@ COMMON ENGINE/QA 변경:
 - AUTOMATION BENCH 통과
 - REGRESSION_FIXTURES 30개 전수 실행
 - REGRESSION_FAIL_COUNT = 0
+- REGRESSION_EXECUTED = true
 
 END ARC QA BENCH V1.2
