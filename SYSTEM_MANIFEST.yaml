@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.4.3-dev
+  version: 1.4.4-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -132,6 +132,7 @@ active:
     google_drive_mode: connector_only
 
   layout:
+    brand_lockup: templates/brand/ARC_BRAND_LOCKUP_SPEC_V1.0.md
     pdf_master: templates/ARC_PDF_LAYOUT_MASTER_V2.0.md
     core_patch: templates/core/ARC_TEMPLATE_SYSTEM_v0.3_CORE_PATCH.md
 
