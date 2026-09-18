@@ -102,9 +102,16 @@ A. ARC_N
 학생 PDF:
 1. 표지
 2. 문제지
+3. 마지막 정답표 1개 섹션
+
+정답표:
+- 문제 풀이가 끝난 뒤 PDF 마지막에 배치
+- 번호 + 정답만 표시
+- 해설/근거/오답분석 없음
+- 20~40문항은 가능하면 1페이지 compact grid
+- 정답표가 2페이지 이상으로 늘어나지 않도록 간결하게 조판
 
 포함 금지:
-- 정답표
 - 상세 해설
 - 난도 배지
 - 유형 태그
@@ -113,7 +120,7 @@ A. ARC_N
 - 오답 분석
 
 핵심:
-문제만 보여 준다.
+문제 페이지에는 문제만 보여 주고, PDF 마지막에 최소형 정답표를 제공한다.
 
 
 B. ARC_FINAL
@@ -175,9 +182,10 @@ A. QUESTION_MANUSCRIPT
 - 문항 묶음 정보
 
 B. ANSWER_KEY
-- PDF 본문 표시용이 아니라 검증용
+- 콘텐츠 검증용 + ARC_N 마지막 정답표 조판용
 - 객관식 문항-정답
 - 서답형이 있으면 짧은 정답
+- 상세 해설은 포함하지 않는다
 
 C. LAYOUT_ASSET_MANIFEST
 각 자료마다:
@@ -254,50 +262,57 @@ C. VISUAL_ASSET / VISUAL_SPEC(optional)
 5. ARC COVER SYSTEM
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-ARC 표지는 전 제품군에서 Academic B형을 유지한다.
+ARC 표지는 전 제품군에서 Academic B형 / Swiss-editorial grid를 유지한다.
 
-기본 구조:
+### 승인 로고 자산 — 필수
+표지에서는 로고를 텍스트/도형으로 재구성하지 않는다.
+반드시 Drive의 승인된 raster master를 그대로 사용한다.
 
-상단:
-승인된 ARC master/sub-brand lockup을 사용한다.
-- ARC CORE
-- ARC N°
-- ARC FINAL
+- ARC CORE: `/Google Drive/N제 시스템/00_브랜드/로고·디자인요소/ARC_CORE_LOCKUP_MASTER.png`
+- ARC N°: `/Google Drive/N제 시스템/00_브랜드/로고·디자인요소/ARC_N_LOCKUP_MASTER.png`
+- ARC FINAL: `/Google Drive/N제 시스템/00_브랜드/로고·디자인요소/ARC_FINAL_LOCKUP_MASTER.png`
 
-락업 규칙:
-- ARC master mark 크기/위치/기하 완전 동일
-- 버건디 arc symbol 동일
-- divider 길이/두께/위치 동일
-- secondary label baseline/간격 동일
-- CORE/N°/FINAL 전체 모듈 외곽 비율 동일
-- N°는 짧은 폭 보정을 위해 최대 +10% optical glyph scaling 허용하되 label-zone 높이와 baseline은 동일
-- N°01 같은 volume number는 로고에 합치지 않고 별도 metadata로 표시
+금지:
+- ARC 글자를 live text로 다시 타이핑해 로고처럼 사용
+- arc 곡선/끝점/간격을 새로 그림
+- endpoint dots 생략
+- arc 위치/높이/색상 변경
+- divider/secondary label을 따로 재구성
+- 이미지 생성 모델로 로고 재생성
 
-락업 아래:
-추가 장식선은 만들지 않는다. 로고 내부 divider가 브랜드 구조선 역할을 한다.
+### ARC N° 표지 기본 그리드
+A4 portrait.
+가운데 정렬형의 '떠 있는' 구성을 사용하지 않는다.
 
-중앙:
-한글 과목명
-예: `통합과학2`
+LEFT GRID:
+- 좌측 기준선: 18 mm
+- 우측 안전여백: 18 mm
+- 승인 ARC N° lockup: 좌상단, top 약 20~24 mm, 표시 폭 약 44~50 mm, 비율 고정
+- lockup의 내부 여백/기하를 crop·stretch로 바꾸지 않는다.
 
-하단 정보:
-학교명(optional)
-시험 시기 / 범위
-예:
-`동북고등학교`
-`2학기 중간고사 대비`
+TOP-RIGHT META:
+- 우상단에 작은 `N° 01` / 연도 metadata
+- 로고보다 훨씬 작게
+- 과도한 letter-spacing 금지
 
-하단:
-연도
-예: `2026`
+TITLE BLOCK:
+- 좌측 정렬
+- 페이지 상단에서 약 90~115 mm 구간
+- 한글 과목명 24~28 pt SemiBold/Bold
+- 과목명 아래 시험명/범위를 9~10.5 pt로 1~2줄
+- 제목을 페이지 한가운데에 단독으로 띄우지 않는다.
+
+BOTTOM META:
+- 좌하단에 학교명 / 시험 시기 / 범위 출처를 8.5~10 pt
+- 불필요한 '학교 보충자료 연계' 같은 제작 설명은 사용자가 원할 때만 표시
+- 연도는 우하단 또는 TOP-RIGHT META 중 한 곳에만 표시하여 중복하지 않는다.
 
 규칙:
-- 과목명이 가장 중요한 정보
-- 시리즈명은 작고 명확하게
-- 불필요한 영문 장문 금지
-- 별도 아이콘 추가 금지
-- ARC wordmark + burgundy arc symbol + fixed divider + secondary label이 브랜드 역할을 수행
-- 표지에서 full lockup을 사용하고, 러닝헤드/좁은 공간에서는 text-only compact form 허용
+- 승인 lockup 자체가 유일한 브랜드 장식이다.
+- 추가 장식 아이콘/그라데이션/그림자 금지.
+- 표지의 큰 빈 공간은 의도된 grid rhythm 안에서만 허용하며, 현재처럼 상단 로고·중앙 제목·하단 정보가 서로 멀리 흩어지는 구성은 금지한다.
+- 표지에서 full approved lockup을 사용하고, 러닝헤드/좁은 공간에서만 text-only compact form을 허용한다.
+- N° volume number는 로고 이미지 안에 합성하지 않는다.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 6. ARC N° — TWO COLUMN ENGINE
@@ -325,7 +340,7 @@ ARC 표지는 전 제품군에서 Academic B형을 유지한다.
 좌 `ARC N°xx` (text-only compact form; full arc-symbol lockup 강제 금지)
 우 `과목명 · 단원/범위`
 
-본문에는 문제만 포함한다.
+문제 페이지 본문에는 문제만 포함한다. 정답표는 모든 문제 페이지가 끝난 뒤 별도 마지막 섹션으로만 배치한다.
 
 문항 요소:
 - 문항 번호
@@ -341,7 +356,7 @@ ARC 표지는 전 제품군에서 Academic B형을 유지한다.
 - KEY
 - TRAP
 - 해설
-- 정답
+- 문제 페이지의 정답 노출
 
 선지:
 hanging indent를 유지한다.
@@ -727,8 +742,8 @@ PRINT
 
 ARC_N PASS:
 - 문제 외 학습 태그 0
-- 정답 페이지 0
-- 해설 페이지 0
+- 마지막 compact 정답표 존재 = 1
+- 상세 해설 페이지 0
 - 기본 2단 유지
 - 문제 페이지 FULL_WIDTH / 임시 1단 전환 0
 - 문제/선지 분할 오류 0
@@ -783,7 +798,7 @@ manifest와 실제 렌더 수가 다르면 FAIL.
 - glyph 깨짐
 - ARC 규격 위반
 - 제품 모드 혼합
-- N°에 정답/해설 삽입
+- N° 문제 페이지에 정답 노출 또는 상세 해설 삽입
 - FINAL에 힌트/학습 태그 삽입
 - CORE를 장문 교과서처럼 임의 확장
 - 렌더 검증 미실시
@@ -826,6 +841,8 @@ ARC_CORE:
 - VISUAL_ASSET 폴더
 - EDITOR_QC_REPORT
 - ARC_FINAL 정답표 별도 PDF
+
+ARC_N 기본 산출물에는 학생 PDF 마지막의 compact ANSWER_KEY를 포함한다.
 
 학생 PDF에는
 내부 QC 로그 / BANK ID / SOURCE_TAG / 제작 메모를 넣지 않는다.
@@ -916,6 +933,9 @@ END EXECUTABLE PDF PREFLIGHT
 표지/제품군 로고는 `templates/brand/ARC_BRAND_LOCKUP_SPEC_V1.0.md`를 따른다.
 
 검수:
+- 표지 full lockup은 승인 Drive master asset을 사용했는가
+- live-text/vector improvisation으로 logo를 재작성하지 않았는가
+- endpoint dots가 두 개 모두 존재하는가
 - ARC master wordmark geometry identical across CORE/N°/FINAL
 - burgundy arc symbol identical
 - divider length/position/stroke identical
@@ -927,6 +947,9 @@ END EXECUTABLE PDF PREFLIGHT
 - grayscale legibility maintained
 
 하나라도 어기면 BRAND_LOCKUP_FAIL.
+
+ARC N° 표지의 logo source는 기본적으로 `ARC_N_LOCKUP_MASTER.png`여야 한다.
+asset 접근 불가 시 임의 재생성하지 말고 BRAND_ASSET_MISSING으로 반환한다.
 
 END ARC LOGO LOCKUP ACCEPTANCE
 
