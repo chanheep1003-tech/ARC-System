@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 1.4.6-dev — 2026-09-18
+- Added `ops/ARC_CLAUDE_HANDOFF_V1.0.md` so Claude can generate ARC batches from the same GitHub/Drive source-of-truth without maintaining a separate ARC fork.
+- Added required generator attribution and BATCH_ID metadata for GPT/Claude batch coordination.
+- Added duplicate-batch avoidance across generators.
+- Default multi-model mode is throughput-first: one primary generator per batch, no universal cross-model regrading, selective independent review only for high-risk items.
+- Claude starts production first for the current cycle; GPT resumes later by skipping fresh Claude batches.
+
 ## 1.4.5-dev — 2026-09-18
 - Diagnosed the 18:57 QA failure: root native-Doc creation and read succeeded, but background Drive metadata move was blocked by a safety check.
 - Scheduled QA no longer performs Drive parent mutations.
