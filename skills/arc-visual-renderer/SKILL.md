@@ -2,7 +2,7 @@
 name: arc-visual-renderer
 description: 'ARC 시각자료 라우터. 자료형을 판별해 draw.io base / concept diagrams / chem / timeline 중 적합한 visual skill로 보내고, 결과물을 authenticity rubric으로 검수한다.'
 metadata:
-  version: 1.1.0
+  version: 1.2.0
   arc-role: visual-router
 ---
 # ARC Visual Renderer
@@ -15,6 +15,16 @@ metadata:
 
 ## 기본 원칙
 시각자료는 장식이 아니라 **정답 추론에 기능적으로 필요한 정보 구조**다. 예쁘게 보이기보다 사실적 정확성, 판독성, 인쇄 안정성을 우선한다.
+
+## 실행 정책
+필수 참조:
+- quality/visual/ARC_VISUAL_RENDERER_POLICY_V1.0.md
+- quality/visual/ARC_VISUAL_PASS_AB_V1.0.md
+- quality/ARC_VISUAL_TEMPLATE_SYSTEM_V1.1.md
+- quality/ARC_VISUAL_AUTHENTICITY_RUBRIC_V1.1.md
+
+정답에 영향을 주는 visual은 LLM 자유그림이 아니라 VISUAL_SPEC에서 deterministic renderer로 생성한다.
+지원되는 경우 `tooling/visual/arc_visual_render.py`를 우선 사용하고, 미지원 유형만 draw.io/ChemCP/timeline으로 라우팅한다.
 
 ## 하위 스택
 - `arc-visual-drawio-base`: editable `.drawio` + SVG/PDF/PNG export
@@ -49,7 +59,14 @@ metadata:
 - 문항에 없는 정보를 그림이 몰래 제공하지 않게 한다.
 
 ## 검수
-모든 결과물은 `ARC_VISUAL_AUTHENTICITY_RUBRIC`의 accuracy → functionality → print → naturalness 순으로 본다.
+ESSENTIAL visual은 다음을 모두 통과해야 한다.
+1. renderer PASS A
+2. 별도 `tooling/visual/visual_verify.py` 또는 동등한 독립 verifier의 PASS B
+3. QUESTION_VISUAL_CROSSCHECK
+4. ARC_VISUAL_AUTHENTICITY_RUBRIC_V1.1
+5. PDF 단계에서 ARC_PDF_PREFLIGHT_V1.0
+
+SCI-PARTICLE 산화환원은 REDOX_LEDGER의 전자수·이온수와 actual particle count를 교차검증한다.
 
 ## Hard Fail
 - 축/단위 오류
