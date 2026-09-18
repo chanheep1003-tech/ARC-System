@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.6.4-dev
+  version: 1.7.0-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -36,15 +36,19 @@ runtime:
   claude_post_production_review: USER_PLUS_CHATGPT
   generation_strategy: MCP_FIRST_MULTI_MODEL
   multi_model_governance: ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md
-  generator_contract: ops/ARC_GENERATOR_CONTRACT_V1.0.md
-  content_bundle_contract: ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.0.md
-  typesetter_contract: ops/ARC_TYPESETTER_CONTRACT_V1.0.md
+  generator_contract: ops/ARC_GENERATOR_CONTRACT_V1.1.md
+  content_bundle_contract: ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.1.md
+  typesetter_contract: ops/ARC_TYPESETTER_CONTRACT_V1.1.md
   production_role_split: GENERATOR_TO_TYPESETTER
   content_lock_required_before_typeset: true
   generator_pdf_typesetting: disabled
   arc_n_layout_mode: COLUMN_ONLY
   arc_n_answer_key_default: INLINE_FINAL_COMPACT
   arc_n_cover_verso_blank: required
+  arc_n_problem_answer_separator_blank: required
+  arc_n_answer_page_offset_from_last_problem: 2
+  arc_n_answer_key_completeness_gate: required
+  arc_brand_asset_hash_gate: required
   arc_n_problem_start_physical_page: 3
   arc_n_answer_key_page_break_before: required
   arc_n_answer_key_position: IMMEDIATE_AFTER_LAST_PROBLEM
@@ -91,9 +95,9 @@ runtime:
 
 active:
   common_generation_engine:
-    path: engine/common/COMMON_GENERATION_ENGINE_V4.0_ARC.md
-    version: 4.0
-    drive_id: 1NqI96-EyoTylsLoPGpcXvBiOGrStSOSk
+    path: engine/common/COMMON_GENERATION_ENGINE_V4.1_ARC.md
+    version: 4.1
+    drive_id: 1n9-Jrn0qnXlTLP5W70UOjdPJuVKWB82U-Ax2tDvlVHI
 
   core_content_engine:
     path: engine/core/ARC_CORE_CONTENT_ENGINE_V1.0.md
@@ -174,7 +178,8 @@ active:
 
   layout:
     brand_lockup: templates/brand/ARC_BRAND_LOCKUP_SPEC_V1.0.md
-    pdf_master: templates/ARC_PDF_LAYOUT_MASTER_V2.0.md
+    brand_asset_registry: templates/brand/ARC_BRAND_ASSET_REGISTRY_V1.0.md
+    pdf_master: templates/ARC_PDF_LAYOUT_MASTER_V2.1.md
     core_patch: templates/core/ARC_TEMPLATE_SYSTEM_v0.3_CORE_PATCH.md
 
 excluded_from_release:
