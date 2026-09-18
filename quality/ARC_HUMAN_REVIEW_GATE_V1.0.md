@@ -13,6 +13,8 @@ GENERATION
 → FACT/ANSWER QA
 → ITEM/SET QA
 → VISUAL RENDER
+→ VISUAL PASS A/B
+→ PDF PREFLIGHT
 → PDF FULL RENDER QC
 → HUMAN_REVIEW_PACKET
 → HUMAN_REVIEW_GATE
@@ -28,8 +30,9 @@ HUMAN_REVIEW_GATE 이전 PDF는 DRAFT_REVIEW 상태다.
 - UNIQUE_ANSWER / independent recheck
 - ANSWER_KEY item-number match
 - C_X_MARK_FILTER where applicable
-- visual/data consistency check
-- clipping/overlap/glyph/page-break QC
+- X_MARK_DETECT_REPORT when executable tooling is available
+- VISUAL_PASS_A/B + QUESTION_VISUAL_CROSSCHECK for ESSENTIAL visuals
+- PDF_PREFLIGHT_STATUS + clipping/overlap/glyph/page-break QC
 - student PDF answer/QC metadata leak check
 
 AI가 FAIL인 항목을 사람에게 '승인해 달라'고 넘기지 않는다.
@@ -156,6 +159,7 @@ FAST_HUMAN_REVIEW도 사용자 승인 자체를 생략하지 않는다.
 - 복수정답/정답 없음
 - 범위 밖 필수지식
 - C X표시 침범 확인
+- X-mark detector의 AUTO_EXCLUDE 영역 사용
 - 필수 시각자료 누락
 - 데이터/그래프 수치 불일치
 - 역사 사실 오류
@@ -163,5 +167,7 @@ FAST_HUMAN_REVIEW도 사용자 승인 자체를 생략하지 않는다.
 - 학생 PDF 정답 노출
 - placeholder
 - clipping/overlap that affects solving
+- ESSENTIAL visual PASS B 미실행/FAIL
+- PDF_PREFLIGHT FAIL
 
 END ARC HUMAN REVIEW GATE V1.0
