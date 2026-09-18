@@ -925,3 +925,38 @@ END EXECUTABLE PDF PREFLIGHT
 하나라도 어기면 BRAND_LOCKUP_FAIL.
 
 END ARC LOGO LOCKUP ACCEPTANCE
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+24. LOCKED CONTENT BUNDLE GATE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Typesetting starts only from a bundle compliant with:
+`ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.0.md`
+and
+`ops/ARC_TYPESETTER_CONTRACT_V1.0.md`.
+
+Required:
+CONTENT_QA_STATUS=PASS
+CONTENT_LOCK=true
+HANDOFF_STATUS=READY_FOR_TYPESET
+TYPESET_STATUS=PENDING
+
+The Typesetter must not reload subject textbooks/worksheets/GOLD/source originals by default.
+The locked CONTENT_BUNDLE is the content authority.
+
+After CONTENT_LOCK=true:
+- correct answer changes forbidden
+- stem semantic changes forbidden
+- distractor semantic changes forbidden
+- new content insertion forbidden
+- missing conditions/data may not be guessed
+
+Suspected content defect:
+CONTENT_ERROR_FLAG=<item/section>
+TYPESET_STATUS=RETURN_CONTENT
+return to Generator.
+
+Allowed Typesetter changes are presentation-only:
+pagination, columns, line breaks, typography, spacing, cover, supplied-visual rendering, keep-together behavior, print/grayscale optimization.
+
+END LOCKED CONTENT BUNDLE GATE
