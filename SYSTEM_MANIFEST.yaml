@@ -69,6 +69,7 @@ runtime:
   social_philosophy_attribution_gate: required_when_applicable
   d4_d5_minimum_gate: required
   core_editorial_naturalness_gate: required
+  core_qa_bench_gate: required
   core_trap_evidence_gate: required
   core_student_metadata_exposure: forbidden
   core_n_generation_links_internal_only: true
@@ -149,6 +150,7 @@ active:
       drive_id: 1t0l6juVLzJxx9UMN5YwG1eRu4enAXpmX
     item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.3.md
     core_editorial_naturalness: quality/ARC_CORE_EDITORIAL_NATURALNESS_V1.0.md
+    core_qa_bench: quality/ARC_CORE_QA_BENCH_V1.0.md
     visual_authenticity: quality/ARC_VISUAL_AUTHENTICITY_RUBRIC_V1.1.md
     visual_template: quality/ARC_VISUAL_TEMPLATE_SYSTEM_V1.1.md
     visual_anchors: quality/ARC_VISUAL_ANCHORS_V1.1.md
