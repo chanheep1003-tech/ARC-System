@@ -860,3 +860,21 @@ CHANGELOG — FROM N제 PDF 조판 MASTER V1.3
 - 단일 N제 모드 → ARC_N / ARC_FINAL / ARC_CORE 3모드
 - 기존 표지 → ARC Academic B형
 - CORE용 압축 개념 페이지네이션 추가
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+22. EXECUTABLE PDF PREFLIGHT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FINAL/HUMAN_REVIEW 전 `quality/pdf/ARC_PDF_PREFLIGHT_V1.0.md`를 적용한다.
+실행 가능한 host에서는 `tooling/pdf_qc/pdf_preflight.py`로 좌표 기반 1차 검사를 수행한다.
+
+필수 결과:
+PDF_PREFLIGHT_STATUS = PASS/WARN/FAIL
+PDF_PREFLIGHT_REPORT
+RENDER_VERIFIER = pdftoppm | pymupdf | unavailable
+
+FAIL이면 HUMAN_REVIEW로 넘기지 않는다.
+WARN이면 의심 페이지를 HUMAN_REVIEW_PACKET에 포함한다.
+connector-only 환경에서 실행 불가하면 TOOLING_UNAVAILABLE을 기록하고 기존 전 페이지 렌더 검수를 수행하되, preflight를 실행했다고 주장하지 않는다.
+
+END EXECUTABLE PDF PREFLIGHT
