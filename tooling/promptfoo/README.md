@@ -3,10 +3,17 @@
 This directory makes the 30 frozen regression fixtures executable with promptfoo.
 
 ## 1. Candidate adapter
-Provide one of:
+Promptfoo runs two providers over the same frozen fixture set.
 
-- `ARC_CANDIDATE_CMD`: executable command reading JSON on stdin and returning JSON on stdout.
-- `ARC_CANDIDATE_RESULTS_DIR`: directory containing `<FIXTURE_ID>.json` results for offline comparison.
+Baseline:
+- `ARC_BASELINE_CMD` or
+- `ARC_BASELINE_RESULTS_DIR`
+
+Candidate:
+- `ARC_CANDIDATE_CMD` or
+- `ARC_CANDIDATE_RESULTS_DIR`
+
+Each command reads JSON on stdin and returns JSON on stdout. Result directories contain `<FIXTURE_ID>.json` files.
 
 Candidate result schema:
 
@@ -30,3 +37,6 @@ npx promptfoo@latest eval -c promptfooconfig.yaml -o ../results/promptfoo-regres
 The runner loads `REGRESSION_FIXTURES_V1.0.yaml`, resolves the referenced GOLD anchor text, and applies frozen expected-decision/score/hard-fail assertions.
 
 Do not edit fixture expectations to make a candidate pass.
+
+
+The promptfoo matrix therefore shows baseline and candidate side by side under identical frozen expectations.
