@@ -153,3 +153,9 @@ HARD FAIL:
 
 ## 11. ARC HANDOFF
 공통 엔진 V4.0의 HANDOFF_META와 SECTION A~D를 따른다. C파트 요청이면 QC_STATUS에 C_X_MARK_FILTER를 반드시 유지한다. FINAL 요청도 PRODUCT_MODE=ARC_FINAL로 처리하며 별도 FINAL 프롬프트를 중복 사용하지 않는다.
+
+
+## 12. GOLD STANDARD ANCHORS
+필수 로드: `quality/gold/SOC_GOLD_ANCHORS_V1.0.md`
+현재 A/B/C 범위와 C_X_MARK_FILTER 적용 후에만 앵커를 비교한다.
+GOOD/BAD 앵커는 평균→개인 일반화, 자료 기능성, 공간적 분업 등 판단 구조를 보정하며 범위를 확장하지 않는다.
