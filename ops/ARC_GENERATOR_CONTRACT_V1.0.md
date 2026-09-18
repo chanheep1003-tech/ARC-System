@@ -47,7 +47,20 @@ Essential visual specs must be complete enough that Typesetter does not infer su
 Do not spend context/tokens on full PDF master, brand rendering, pagination, or PDF preflight during content generation.
 If user asked for PDF too, finish READY_FOR_TYPESET and hand off to a dedicated Typesetter session/project.
 
-## 6. GOVERNANCE
+## 6. PROTECTED TEXT
+Copyright-protected source text does not automatically block ARC generation.
+
+When active subject policy enables PROTECTED_TEXT_MODE:
+- analyze the authorized school/source material
+- generate original questions, options, comparisons, and views
+- use only the minimum necessary quotation in ARC output
+- do not reproduce a protected work in full or as a long continuous substitute
+- when the full source is required for solving, set STUDENT_SOURCE_REQUIRED=true and reference the school textbook/worksheet/source instead of copying it
+- never invent unseen wording, lineation, or details
+
+Copyright handling must reduce reproduction, not cancel valid generation.
+
+## 7. GOVERNANCE
 GitHub READ_ONLY.
 Drive APPEND_ONLY.
 No system-rule mutation.
