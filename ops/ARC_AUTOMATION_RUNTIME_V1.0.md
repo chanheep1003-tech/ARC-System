@@ -4,6 +4,14 @@ DATE: 2026-09-18
 STATUS: ACTIVE-DEV
 ROLE: scheduled ARC generation runtime resilience
 
+## 0. DRIVE PERSISTENCE PREFLIGHT
+Before loading KOR sources or generating any RAW items, read `ops/ARC_DRIVE_WRITE_ADAPTER_V1.0.md` and perform its one-time write preflight.
+For the current OAuth/delegated connector, default to CREATE_THEN_MOVE:
+create native Doc at root/default → read parent_ids → move to target with addParents/removeParents → verify target parent → write/verify content.
+
+If DRIVE_PREFLIGHT_STATUS != PASS, stop before expensive generation and log DRIVE_PERSISTENCE_PREFLIGHT.
+Do not retry direct parent creation for every artifact after a capability error.
+
 ## 1. ROOT CAUSE TARGET
 Background automation must not attempt one monolithic 100-item transaction.
 A run is checkpointed by subject and must leave recoverable Drive artifacts after each stage.
@@ -34,7 +42,7 @@ Failure in one subject must not erase completed subjects.
 ## 4. PERSIST-FIRST
 For each subject:
 A. generate 20-item RAW
-B. immediately persist RAW as a native Google Doc
+B. immediately persist RAW as a native Google Doc using the active Drive write adapter
 C. then run QA
 D. persist subject QA summary
 E. persist `SOURCE_LEDGER_<RUN_ID>_<SUBJECT>` as native Google Doc when source-sensitive claims exist; if none, record SOURCE_REQUIRED_RECORDS=0
@@ -47,7 +55,8 @@ Do not wait until all 100 items are complete before the first write.
 Background automation uses native Google Docs for RAW, QA report, BANK batch, RUN log, and failure log.
 Markdown may be used in interactive/manual runs but is not required for scheduled automation.
 
-Reason: native Docs creation/write is the most reliable available Drive write path in scheduled runs.
+Reason: native Docs creation/write is reliable only when connection-aware persistence is used.
+On OAuth/delegated Drive, direct `parent_folder_id` creation is not a valid assumption; use CREATE_THEN_MOVE.
 
 ## 6. RESUME CONTRACT
 Run folder contains STATUS markers in the QA report:
