@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 1.3.3-dev — 2026-09-18
+- Added frozen regression fixture system.
+- Registered 30 fixed cases: 5 subjects × GOOD 3 + BAD 3, referenced from the subject GOLD anchor packs.
+- Each fixture now has a fixed expected decision, score range/ceiling, and hard-fail expectation.
+- Added ARC_REGRESSION_POLICY_V1.0 and upgraded arc-eval-regression to run all fixtures for engine/MASTER/QA/source/bank-rule changes.
+- Added QA BENCH V1.2; main promotion now requires REGRESSION_FAIL_COUNT=0.
+- Regression fixtures are versioned and cannot be silently rewritten to make a candidate rule pass.
+
 ## 1.3.2-dev — 2026-09-18
 - Added ARC SOURCE_LEDGER V1.0 and machine-readable schema.
 - Source-sensitive claims now carry SOURCE_ID, source role, location, and one of VERIFIED / UNVERIFIED / SOURCE_MISSING.
