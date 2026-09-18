@@ -12,7 +12,7 @@ A run is checkpointed by subject and must leave recoverable Drive artifacts afte
 Do not preload all five subject masters and all source files.
 Per subject:
 1. read SYSTEM_MANIFEST
-2. read only that subject MASTER + required quality files + subject GOLD anchor pack
+2. read only that subject MASTER + required quality files + subject GOLD anchor pack + ARC_SOURCE_LEDGER_V1.0
 3. read only current-scope Drive sources needed for that subject
 4. generate
 5. checkpoint
@@ -35,8 +35,9 @@ A. generate 20-item RAW
 B. immediately persist RAW as a native Google Doc
 C. then run QA
 D. persist subject QA summary
-E. persist BANK_PASS candidates as a native Google Doc in subject bank
-F. continue to next subject
+E. persist `SOURCE_LEDGER_<RUN_ID>_<SUBJECT>` as native Google Doc when source-sensitive claims exist; if none, record SOURCE_REQUIRED_RECORDS=0
+F. persist BANK_PASS candidates as a native Google Doc in subject bank only after source gate passes
+G. continue to next subject
 
 Do not wait until all 100 items are complete before the first write.
 
@@ -71,6 +72,8 @@ Do not assign target-looking scores before inspecting the actual item.
 Score components require evidence.
 Direct recall and weak distractor score ceilings apply automatically.
 Each item records nearest GOOD/BAD anchor internally; BAD-match defects apply before BANK decision.
+SOURCE_REQUIRED claims follow ARC_SOURCE_LEDGER_V1.0; ANSWER_BASIS sources must be reopened and VERIFIED before BANK write.
+SOURCE ledger Drive folder: `1CmiPOP_Ma9FIuoyLOTEhjFpX7-tYwYwZ`.
 
 ## 9. OPTIMIZATION
 No engine/prompt optimization until subject production and persistence completes.
