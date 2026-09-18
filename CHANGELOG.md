@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 1.3.2-dev — 2026-09-18
+- Added ARC SOURCE_LEDGER V1.0 and machine-readable schema.
+- Source-sensitive claims now carry SOURCE_ID, source role, location, and one of VERIFIED / UNVERIFIED / SOURCE_MISSING.
+- PASS B must re-open the original source for ANSWER_BASIS claims; search snippets, filenames, and previous AI summaries cannot establish VERIFIED.
+- Added Drive checkpoint folder `92_자동화실행/04_SOURCE_LEDGER`.
+- BANK_PASS is blocked when required answer-basis sources are unverified, missing, conflicting, or not reopenable.
+- Basic low-risk curriculum definitions do not require source records, avoiding unnecessary ledger overhead.
+
 ## 1.3.1-dev — 2026-09-18
 - Added mandatory HUMAN_REVIEW_GATE before FINAL release of ARC N°/FINAL/CORE PDFs.
 - Human review is intentionally lightweight: scope, Social C X-mark exclusion where applicable, rendered visuals, and answer/final-PDF sanity only.
