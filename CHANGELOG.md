@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 1.6.3-dev — 2026-09-18
+- ARC N° now includes a compact answer-key section at the end of the same student PDF by default; detailed explanations remain disabled.
+- Problem pages still prohibit answer exposure.
+- Reworked ARC N° cover into a left-aligned Swiss-editorial grid to avoid the previous floating centered composition.
+- Locked cover full logos to exact canonical Drive assets for CORE / N° / FINAL.
+- Logo retyping/redrawing/regeneration is forbidden; missing logo assets now return BRAND_ASSET_MISSING instead of synthesizing a substitute.
+- Canonical ARC N° logo preserves the approved burgundy arc, both endpoint dots, wordmark geometry, divider, and N° label.
+- Uploaded canonical full-cover lockup assets into `N제 시스템/00_브랜드/로고·디자인요소`.
+
 ## 1.6.2-dev — 2026-09-18
 - Hardened ARC self-scoring against score/difficulty inflation after review of Claude KOR batch ARC-CLAUDE-20260918-KOR-01.
 - Added ITEM QUALITY V1.2 with EXPLICIT_CUE_RESTATEMENT ceiling, distractor-distance audit, blind rescoring for BANK_A/D4/D5, and zero-rejection/premium-rate audits.
