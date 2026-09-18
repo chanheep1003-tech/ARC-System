@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 1.6.4-dev — 2026-09-18
+- ARC N° physical PDF order is now fixed for duplex printing: cover → one completely blank cover-verso page → problem pages → answer key.
+- The cover-verso blank page is a real A4 PDF page with no logo, header, footer, page number, note, watermark, or decoration; the first problem begins on physical page 3.
+- ARC N° answer key now has a mandatory page break before it and starts on the immediate physical page after the last problem page, even when space remains on the final problem page.
+- No extra blank spacer is inserted between the problem section and answer key.
+- Added explicit PDF QC fields for blank-verso presence, first-problem physical page, and answer-key page placement.
+
 ## 1.6.3-dev — 2026-09-18
 - ARC N° now includes a compact answer-key section at the end of the same student PDF by default; detailed explanations remain disabled.
 - Problem pages still prohibit answer exposure.
