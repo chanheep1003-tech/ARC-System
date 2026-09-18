@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.6.3-dev
+  version: 1.6.4-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -44,6 +44,10 @@ runtime:
   generator_pdf_typesetting: disabled
   arc_n_layout_mode: COLUMN_ONLY
   arc_n_answer_key_default: INLINE_FINAL_COMPACT
+  arc_n_cover_verso_blank: required
+  arc_n_problem_start_physical_page: 3
+  arc_n_answer_key_page_break_before: required
+  arc_n_answer_key_position: IMMEDIATE_AFTER_LAST_PROBLEM
   arc_n_detailed_explanation_default: disabled
   cover_logo_mode: CANONICAL_ASSET_ONLY
   cover_logo_redraw: forbidden
