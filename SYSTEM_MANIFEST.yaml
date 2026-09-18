@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.4.1-dev
+  version: 1.4.2-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -24,6 +24,7 @@ runtime:
   teacher_style_prediction: disabled
   historical_exam_usage: difficulty_calibration_only
   automation_runtime: ops/ARC_AUTOMATION_RUNTIME_V1.0.md
+  drive_write_adapter: ops/ARC_DRIVE_WRITE_ADAPTER_V1.0.md
   runtime_priority_policy: ops/ARC_RUNTIME_PRIORITY_POLICY_V1.0.md
   post_exam_calibration: ops/ARC_POST_EXAM_CALIBRATION_V1.0.md
   subject_priority:
@@ -152,6 +153,7 @@ tooling:
   visual_verifier: tooling/visual/visual_verify.py
   smoke_workflow: .github/workflows/arc-tooling-smoke.yml
   truthfulness_rule: "do not claim executable tooling ran when host cannot execute it"
+  drive_write_mode_default: CREATE_THEN_MOVE
 
 visual_stack:
   reference_first: quality/ARC_VISUAL_REFERENCE_FIRST_V1.0.md
