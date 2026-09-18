@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 1.4.7-dev — 2026-09-18
+- Added a mandatory Claude/Cowork ARC system-absorption gate before first item generation in a fresh session.
+- Claude must read the canonical manifest, common engine, requested subject MASTER/GOLD, QA/source rules, PDF master, brand lockup, and relevant Drive structure before claiming readiness.
+- Added explicit user override allowing an independent Claude KOR batch even when a GPT KOR batch exists.
+- Added canonical KOR/SOC manuscript, QA, and finished-N° Drive destinations for Claude E2E production.
+- Claude-produced PDFs default to DRAFT_REVIEW and are intended for user + ChatGPT post-production review before any ARC rule/template change.
+
 ## 1.4.6-dev — 2026-09-18
 - Added `ops/ARC_CLAUDE_HANDOFF_V1.0.md` so Claude can generate ARC batches from the same GitHub/Drive source-of-truth without maintaining a separate ARC fork.
 - Added required generator attribution and BATCH_ID metadata for GPT/Claude batch coordination.
