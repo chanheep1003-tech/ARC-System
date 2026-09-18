@@ -19,12 +19,14 @@ Per subject:
 Then release that subject context and continue.
 
 ## 3. SUBJECT CHECKPOINT ORDER
-Default priority:
-1. SOC
-2. SCI
-3. KOR
+Default priority follows `ops/ARC_RUNTIME_PRIORITY_POLICY_V1.0.md`:
+1. KOR
+2. SOC
+3. SCI
 4. HIS
 5. AI
+
+Normal 100-item runs still target 20 items per subject. Priority controls processing order, retries, extra review, research, and context budget rather than reducing required item counts.
 
 Each subject is an independent transaction.
 Failure in one subject must not erase completed subjects.
@@ -64,7 +66,10 @@ On any failure:
 - error/tool stage if known
 - created file IDs
 - resume target
+- mark subject FAILED_PENDING_RESUME
 Do not report SUCCESS when required artifacts are absent.
+
+A subject failure is isolated. After logging, continue to the next subject. After one pass across all subjects, resume failed subjects in KOR → SOC → SCI → HIS → AI order. Default automatic retry budget is one retry per failed subject/stage; do not loop indefinitely.
 
 ## 8. QUALITY CONTRACT
 Use ARC_ITEM_QUALITY_RUBRIC_V1.1, ARC_QA_BENCH_V1.1, and the subject GOLD_ANCHORS_V1.0 pack.
@@ -75,7 +80,23 @@ Each item records nearest GOOD/BAD anchor internally; BAD-match defects apply be
 SOURCE_REQUIRED claims follow ARC_SOURCE_LEDGER_V1.0; ANSWER_BASIS sources must be reopened and VERIFIED before BANK write.
 SOURCE ledger Drive folder: `1CmiPOP_Ma9FIuoyLOTEhjFpX7-tYwYwZ`.
 
-## 9. OPTIMIZATION
+## 9. RUNTIME BUDGET
+Follow `ops/ARC_RUNTIME_PRIORITY_POLICY_V1.0.md`.
+
+Stage priority:
+P0 Scope/Accuracy/Unique Answer
+P1 Actual Item Production
+P2 Required QA
+P3 Required Visuals
+P4 Bank/Set Editorial
+P5 Research/Optimization
+
+If runtime is constrained, defer P5 first, then nonessential P4, then nonessential P3. P0–P2 must never be skipped. Required visuals are not optional.
+
+Recommended extra-resource shares:
+KOR 30 / SOC 25 / SCI 20 / HIS 15 / AI 10.
+
+## 10. OPTIMIZATION
 No engine/prompt optimization until subject production and persistence completes.
 Repeated defect >=3 may create a patch candidate; do not mutate GitHub during ordinary scheduled generation.
 
