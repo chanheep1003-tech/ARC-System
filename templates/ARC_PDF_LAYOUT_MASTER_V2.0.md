@@ -184,7 +184,7 @@ C. LAYOUT_ASSET_MANIFEST
 - VISUAL_ID
 - 문항 번호
 - ASSET_CLASS
-- COLUMN / FULL_WIDTH
+- LAYOUT_HINT (`COLUMN_ONLY` for ARC_N; flexible hints only for ARC_FINAL/ARC_CORE)
 - VISUAL_ESSENTIAL
 - KEEP_TOGETHER
 - 공유 문항 범위
@@ -302,6 +302,13 @@ ARC 표지는 전 제품군에서 Academic B형을 유지한다.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 6. ARC N° — TWO COLUMN ENGINE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+강제 규칙:
+- 문제 페이지는 항상 2단
+- FULL_WIDTH 문제/자료 블록 금지
+- 임시 1단 문제 페이지 금지
+- 큰 자료 때문에 레이아웃 모드를 바꾸지 않음
+- 열 폭에서 판독 불가능하면 RETURN_CONTENT로 자산 재설계 요청
 
 기본:
 - A4 세로
@@ -426,31 +433,24 @@ CORE_LENGTH_FLAG를 발생시키고
 불필요한 박스를 만들어 채우지 않는다.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-9. WIDE MATERIAL / FULL WIDTH
+9. LARGE MATERIAL POLICY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-다음 자료는 필요하면 2단을 해제한다.
+ARC_N:
+문제 페이지는 2단 COLUMN_ONLY로 고정한다.
+대형 자료를 위해 FULL_WIDTH 또는 임시 1단 페이지로 전환하지 않는다.
 
-- 큰 그래프
-- 긴 표
-- 실험 장치
-- 지도
-- 연표
-- 복합 입자모형
-- 긴 지문
-- 다중 패널 자료
-- 문제 여러 개가 공유하는 공통 자료
+큰 그래프 / 긴 표 / 실험 장치 / 지도 / 연표 / 복합 입자모형 / 긴 지문 / 다중 패널 자료 / 공통 자료가 한 열에서 가독성을 잃는 경우:
+1. 잠긴 원고의 의미와 정답근거를 유지하면서 열 폭에 맞는 자산 재설계를 우선한다.
+2. 허용되는 경우 자료를 논리적 패널로 분할하되 각 패널의 레이블·단위·범례·연결관계를 보존한다.
+3. 긴 지문은 2단 흐름 안에서 다음 열/다음 페이지로 이어 배치할 수 있다.
+4. 시각자료의 수치·축·단위·범례가 작아져 판독성이 떨어지면 억지 축소하지 않는다.
+5. 그래도 한 열에 안전하게 배치할 수 없으면 TYPESET_STATUS=RETURN_CONTENT로 Generator에 자산 재설계를 요청한다.
 
-기본:
-FULL_WIDTH 자료
-→ 관련 문항
-→ 가능하면 다시 2단 복귀
+ARC_FINAL / ARC_CORE:
+각 제품의 활성 규칙이 허용하는 경우에만 FULL_WIDTH 또는 1단 전환을 사용할 수 있다.
 
-한 자료가 열 폭에서 가독성을 잃으면
-2단 안에 억지로 넣지 않는다.
-
-자료가 페이지 너비를 사용해도
-축 / 범례 / 단위 / 제목 / 주석을 잘라내지 않는다.
+어떤 모드에서도 축 / 범례 / 단위 / 제목 / 주석을 잘라내지 않는다.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 10. TRUE VISUAL PRODUCTION
@@ -539,14 +539,16 @@ ARC_CORE
 블록 전체를 다음 열/페이지로 이동한다.
 
 긴 문항:
-1개 열을 초과하면
-FULL_WIDTH 또는 1단 배치로 전환한다.
+ARC_N에서는 FULL_WIDTH/1단으로 전환하지 않는다.
+블록 전체를 다음 열/페이지로 이동하고, 필요하면 2단 흐름 안에서 자연스럽게 이어 배치한다.
+한 열 규격으로 안전한 조판이 불가능한 자산은 RETURN_CONTENT 처리한다.
 
 긴 공통 지문:
-- 지문 우선 FULL_WIDTH
-- 연계 문항 2단
+- ARC_N은 2단 흐름 안에서 연속 배치
 - 필요 시 `자료 계속` 사용
+- 연계 문항과 KEEP_TOGETHER 관계 유지
 - 문단 순서 변경 금지
+- ARC_N FULL_WIDTH 금지
 
 글자 크기를 무리하게 줄여 해결하지 않는다.
 
@@ -630,7 +632,7 @@ STEP 2 — DESIGN LOAD
 STEP 3 — LAYOUT PLAN
 블록별 높이 예측
 공통자료 그룹화
-2단 / FULL_WIDTH / 1단 결정
+PRODUCT_MODE별 레이아웃 결정 (ARC_N=`COLUMN_ONLY`; ARC_FINAL/CORE=활성 규칙 내 유연 배치)
 페이지 분할 계획
 
 STEP 4 — VISUAL PRODUCTION
@@ -728,7 +730,7 @@ ARC_N PASS:
 - 정답 페이지 0
 - 해설 페이지 0
 - 기본 2단 유지
-- 필요한 대형 자료만 FULL_WIDTH
+- 문제 페이지 FULL_WIDTH / 임시 1단 전환 0
 - 문제/선지 분할 오류 0
 
 ARC_FINAL PASS:
@@ -793,7 +795,9 @@ manifest와 실제 렌더 수가 다르면 FAIL.
 
 FAIL 발생 시:
 1차: 페이지 재배치
-2차: COLUMN ↔ FULL_WIDTH / 1단 전환
+2차:
+- ARC_N: 다음 열/페이지 재배치 + 허용 범위 내 간격/자산 크기 조정
+- ARC_FINAL/CORE: 활성 제품 규칙이 허용할 때만 COLUMN ↔ FULL_WIDTH / 1단 전환
 3차: 간격 미세조정
 
 금지:
@@ -845,7 +849,7 @@ FINAL release metadata:
 3. 정답 검증(문제형)
 4. VISUAL_SPEC 렌더
 5. 공통자료 그룹화
-6. COLUMN / FULL_WIDTH / 1단 자동 선택
+6. PRODUCT_MODE 레이아웃 적용: ARC_N=COLUMN_ONLY, ARC_FINAL/CORE=허용 규칙 내 자동 선택
 7. PDF 생성
 8. 전 페이지 렌더 검수
 9. 자동 수정
@@ -871,7 +875,7 @@ CHANGELOG — FROM N제 PDF 조판 MASTER V1.3
 - LAYOUT_ASSET_MANIFEST
 - TRUE_VISUAL 강제
 - KEEP_TOGETHER
-- 2단 + FULL_WIDTH 자동 전환
+- ARC_N 2단 고정; FULL_WIDTH/1단 fallback 폐기 (ARC_FINAL/CORE 유연성은 제품 규칙에 따라 유지)
 - 7pt 이하 축소 금지
 - 화학식/수식 glyph 검수
 - 전 페이지 렌더 검증
