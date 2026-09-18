@@ -1,0 +1,14 @@
+version: ARC-SIM-THRESHOLDS-V1.0
+status: CALIBRATION_REQUIRED
+embedding_model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+minimum_labeled_pairs:
+  high_or_duplicate: 10
+  duplicate: 5
+thresholds:
+  full_high: null
+  full_critical: null
+  stem_high: null
+  distractor_high: null
+notes:
+  - Do not convert raw cosine scores to HIGH/CRITICAL until status is CALIBRATED.
+  - Recalibrate when the embedding model or BANK distribution changes.
