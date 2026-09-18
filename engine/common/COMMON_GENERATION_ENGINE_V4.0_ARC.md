@@ -450,3 +450,31 @@ POLICY:
 
 상업 문제집처럼 보이되 실제 문제집 문장을 복제하지 않는다.
 문항 자연스러움이 낮으면 정답이 맞더라도 수정한다.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ARC V1.6 ROLE-SPLIT HANDOFF PATCH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Generation ends at a locked CONTENT_BUNDLE.
+The generation engine must not perform PDF typesetting.
+
+Before handoff:
+- CONTENT_QA_STATUS=PASS
+- CONTENT_LOCK=true
+- HANDOFF_STATUS=READY_FOR_TYPESET
+- TYPESET_STATUS=PENDING
+- BATCH_ID / GENERATOR / ARC_RULESET_VERSION recorded
+- QUESTION_MANUSCRIPT complete
+- ANSWER_KEY complete when applicable
+- LAYOUT_ASSET_MANIFEST complete
+- required VISUAL_ASSET/VISUAL_SPEC complete
+- no unresolved placeholder
+
+Use:
+`ops/ARC_GENERATOR_CONTRACT_V1.0.md`
+`ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.0.md`
+
+If the user also asks for a PDF, complete the bundle and hand it to a separate dedicated Typesetter session/project.
+Do not carry full subject source context into the layout phase.
+
+END ARC V1.6 ROLE-SPLIT HANDOFF PATCH
