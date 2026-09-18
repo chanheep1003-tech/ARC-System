@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.3.2-dev
+  version: 1.3.3-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -61,7 +61,7 @@ active:
 
   quality:
     scope_ledger: quality/ARC_SCOPE_LEDGER_V1.0.md
-    qa_bench: quality/ARC_QA_BENCH_V1.1.md
+    qa_bench: quality/ARC_QA_BENCH_V1.2.md
     error_database: quality/ARC_ERROR_DATABASE_V1.0.md
     difficulty_engine: quality/ARC_DIFFICULTY_ENGINE_V1.0.md
     difficulty_anchors: quality/ARC_DIFFICULTY_ANCHORS_V1.0.md
@@ -78,6 +78,9 @@ active:
     human_review_gate: quality/ARC_HUMAN_REVIEW_GATE_V1.0.md
     source_ledger: quality/ARC_SOURCE_LEDGER_V1.0.md
     source_ledger_schema: quality/source/ARC_SOURCE_LEDGER_SCHEMA_V1.0.yaml
+    regression_policy: quality/regression/ARC_REGRESSION_POLICY_V1.0.md
+    regression_fixtures: quality/regression/REGRESSION_FIXTURES_V1.0.yaml
+    regression_fixture_count: 30
     gold_anchor_policy: quality/gold/ARC_GOLD_ANCHOR_POLICY_V1.0.md
     gold_anchor_packs:
       korean: quality/gold/KOR_GOLD_ANCHORS_V1.0.md
