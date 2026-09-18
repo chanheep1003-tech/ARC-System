@@ -144,17 +144,27 @@ PASS B: 선지 순서를 가린 독립 재풀이.
 불일치 시 출력 금지.
 
 ## 9. OUTPUT
-SECTION A QUESTION_MANUSCRIPT: 학생용 원고만.
+SECTION A QUESTION_MANUSCRIPT:
+- 학생용 원고만.
+- SOURCE_TEXT_BLOCK 사용 시 작품 원문 블록을 연결 문항군 앞에 실제 학생용 지문으로 포함.
+- 작품명/작가 표시는 학생용에 필요한 수준으로 유지.
+- 내부 SOURCE_FILE_ID/Drive ID/QC 메타는 노출하지 않음.
+
 SECTION B ANSWER_KEY: 번호+정답만.
 SECTION C LAYOUT_ASSET_MANIFEST: 문항번호/ASSET_CLASS/ASSET_TYPE/VISUAL_ID/STATUS/KEEP_TOGETHER.
 SECTION D QC_STATUS:
-SCOPE / DRIVE_FIRST / UNIQUE_ANSWER / INDEPENDENT_RECHECK / SOURCE_TEXT_FIDELITY / SOURCE_ACCESS / NUMBERING / PDF_HANDOFF.
+SCOPE / DRIVE_FIRST / UNIQUE_ANSWER / INDEPENDENT_RECHECK / SOURCE_TEXT_FIDELITY / SOURCE_TEXT_COMPLETENESS / SOURCE_ACCESS / NUMBERING / PDF_HANDOFF.
+
+CONTENT_BUNDLE 내부에는 별도 SOURCE_TEXT_BLOCKS provenance payload를 유지한다.
 
 ## 10. HARD FAIL
 범위 밖 필수지식 / 복수정답 / 조건 부족 / 원문 왜곡 / 접근권한 미확인 외부 보호저작물 전문 복제 / source 없이 기억으로 원문 복원 / 원문 행·연·문단 임의 변경 / 가짜 시각자료 / placeholder / 상세해설 출력 / 학생용 원고에 편집자 메타데이터 혼입.
 
 ## 11. ARC HANDOFF
-공통 엔진 V4.3의 HANDOFF_META와 SECTION A~D를 그대로 따른다. ANSWER_KEY는 편집/검증용이며 학생 PDF에 직접 삽입하지 않는다. FINAL 요청도 별도 FINAL 프롬프트를 쓰지 않고 PRODUCT_MODE=ARC_FINAL로 처리한다.
+공통 엔진 V4.3의 HANDOFF_META와 SECTION A~D를 그대로 따른다.
+ARC_N ANSWER_KEY는 편집/검증용 잠금 데이터이면서 Typesetter가 문제 종료 후 필수 빈 페이지를 거쳐 최종 compact answer section으로 삽입한다.
+ARC_FINAL은 해당 제품 정책에 따라 학생 문제지와 정답 산출물을 분리한다.
+FINAL 요청도 별도 FINAL 프롬프트를 쓰지 않고 PRODUCT_MODE=ARC_FINAL로 처리한다.
 
 ## 12. GOLD STANDARD ANCHORS
 필수 로드: `quality/gold/KOR_GOLD_ANCHORS_V1.0.md`
