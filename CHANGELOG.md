@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 1.4.2-dev — 2026-09-18
+- Diagnosed RUN10 failure as a Drive persistence adapter incompatibility, not an item-QA failure.
+- OAuth/delegated native Google Doc creation rejects direct `parent_folder_id` placement on the connected Drive.
+- Added ARC_DRIVE_WRITE_ADAPTER_V1.0: create at provider root/default, persist FILE_ID, move with addParents/removeParents, then verify destination.
+- Folder-placement failure after durable creation no longer destroys or aborts completed subject work; it becomes MOVE_PENDING with one repair retry.
+- Moved RUN10 failure log into the canonical failure folder.
+- Verified the new create-then-move path end-to-end with a native Google Doc smoke test in the RUN_LOG folder.
+- Scheduled QA should use CREATE_THEN_MOVE by default when connection mode is unknown.
+
 ## 1.4.1-dev — 2026-09-18
 - Added lightweight SCHOOL_REFERENCE_PROFILE; historical exams remain difficulty/broad-format references only and teacher-style prediction stays disabled.
 - Added dormant POST_EXAM_CALIBRATION skeleton for use only after the real exam is available.
