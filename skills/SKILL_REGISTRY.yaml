@@ -57,3 +57,6 @@ skills:
   arc-skill-governance:
     path: skills/arc-skill-governance/SKILL.md
     phase: governance
+  arc-external-skill-intake:
+    path: skills/ARC_EXTERNAL_SKILL_INTAKE_POLICY_V1.0.md
+    phase: governance
