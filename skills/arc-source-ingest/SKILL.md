@@ -2,7 +2,7 @@
 name: arc-source-ingest
 description: 'ARC의 교과서·학습지·기출·외부자료를 구조와 위치를 보존해 추출하고 SOURCE_PACKET/SOURCE_LEDGER 입력으로 정규화한다.'
 metadata:
-  version: 1.1.0
+  version: 1.2.0
   arc-role: source-ingest
 ---
 # ARC Source Ingest
@@ -42,6 +42,15 @@ Drive 자료는 가능한 경우 FILE_ID + page/section을 남긴다.
 
 통합사회 C파트 손글씨 X 표시는 X 범위로 강제한다.
 OCR 텍스트만으로 X 여부를 확정하지 않는다.
+
+C파트 PDF 입력 시 가능한 경우 `tooling/pdf_qc/xmark_detect.py`를 먼저 실행한다.
+우선순위:
+1. PDF annotation/ink 추출
+2. vector diagonal-crossing 추출
+3. OpenCV raster fallback
+AUTO_EXCLUDE는 즉시 X 범위로 반영한다.
+HUMAN_CHECK는 포함으로 간주하지 않고 사람이 확인할 때까지 경계 영역을 보수적으로 제외/보류한다.
+도구를 실행하지 못한 환경에서는 TOOLING_UNAVAILABLE을 기록하고 기존 시각 확인 절차를 유지한다.
 
 ## Hard Fail
 - 역추적 가능한 위치를 보존하지 못함
