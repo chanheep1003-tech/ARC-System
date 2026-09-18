@@ -312,6 +312,9 @@ PDF_MASTER = ARC_PDF_조판_MASTER_V2.1
 SECTION A — QUESTION_MANUSCRIPT
 학생용 문제 원고만.
 내부 메타데이터/정답/해설 금지.
+과목 MASTER가 SOURCE_TEXT_BLOCK을 허용하면, 학생에게 실제로 제시될 SOURCE_TEXT_BLOCK을 연결 문항군 앞에 포함한다.
+동일 SOURCE_TEXT_BLOCK은 문항마다 반복하지 않고 1회 제시 후 LINKED_ITEM_IDS 문항군이 공유한다.
+구조화된 provenance 메타는 CONTENT_BUNDLE의 SOURCE_TEXT_BLOCKS payload에도 유지하되 학생용 원고에는 내부 FILE_ID/QC 메타를 노출하지 않는다.
 
 SECTION B — ANSWER_KEY
 편집·검증 및 최종 정답지 조판용 잠금 데이터.
