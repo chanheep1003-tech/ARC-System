@@ -11,8 +11,41 @@ Use the same source-of-truth as ChatGPT:
 - verified item bank: Google Drive
 Do not create a Claude-specific copy of MASTER/QA rules.
 
-## 1. STARTUP LOAD ORDER
-At the start of every generation session:
+## 1. STARTUP / ABSORPTION GATE
+Before generating any item in a fresh Claude/Cowork session, perform SYSTEM ABSORPTION first.
+Do not generate questions during this phase.
+
+Read in this order:
+1. `SYSTEM_MANIFEST.yaml`
+2. this handoff
+3. `engine/common/COMMON_GENERATION_ENGINE_V4.0_ARC.md`
+4. the requested subject MASTER
+5. the corresponding GOLD anchor pack
+6. `quality/ARC_QA_BENCH_V1.2.md`
+7. `quality/ARC_ITEM_QUALITY_RUBRIC_V1.1.md`
+8. `quality/ARC_SOURCE_LEDGER_V1.0.md`
+9. active visual policies when visuals may be used
+10. `templates/ARC_PDF_LAYOUT_MASTER_V2.0.md`
+11. `templates/brand/ARC_BRAND_LOCKUP_SPEC_V1.0.md`
+12. current-scope Drive materials and relevant folder structure
+
+After reading, produce a short readiness digest containing:
+- source-of-truth hierarchy
+- scope lock and exclusion hierarchy
+- generation → QA → layout/PDF separation
+- hard-fail conditions
+- source verification rules
+- visual rules
+- batch metadata contract
+- output/storage contract
+- subject-specific hard constraints
+
+Set `CLAUDE_ARC_ABSORPTION_STATUS=PASS` only if every required rule/source actually opened is understood.
+Never claim a file was read if it was not opened.
+After PASS, WAIT for the user's explicit subject/item-count command before generation.
+
+## 1A. JIT LOAD ORDER DURING GENERATION
+At the start of every generation task:
 1. read `SYSTEM_MANIFEST.yaml`
 2. read the active subject MASTER only
 3. read the corresponding GOLD anchor pack
@@ -53,11 +86,15 @@ A batch is considered occupied when it has:
 If occupied, advance to the next unfinished batch.
 
 ## 4. CURRENT PRODUCTION ORDER
-Default subject priority:
+Default subject priority remains:
 KOR → SOC → SCI → HIS → AI
 
-Today: Claude may start production first.
-When GPT resumes later, GPT must inspect Claude batch metadata and continue from the next unfinished batch rather than recreating Claude work.
+CURRENT USER OVERRIDE — 2026-09-18:
+- Claude is explicitly assigned an independent KOR batch and an independent SOC batch today.
+- The existing GPT KOR batch does NOT block Claude KOR for this assignment.
+- Treat Claude KOR as an alternate independent production set, not an accidental duplicate.
+- Do not generate anything until the user explicitly says to make KOR or SOC.
+- After Claude output exists, GPT/ChatGPT review will inspect the saved artifacts and propose system/template fixes; Claude should not modify ARC rules during production.
 
 ## 5. PRODUCTION MODE
 Prioritize throughput over redundant cross-model review.
@@ -112,9 +149,41 @@ Do not substitute generative art for graphs, particle models, experiment diagram
 Follow the active ARC visual policies.
 
 ## 10. OUTPUT / STORAGE
-Prefer the existing ARC Drive destinations and metadata contracts.
-Do not silently create a parallel Claude folder tree.
-If the connected environment cannot place a file directly, preserve a durable staged artifact and record its intended target rather than discarding work.
+Use the existing subject folders; do not create a parallel Claude folder tree.
+
+KOR:
+- manuscript target: Drive folder `01_국어/출제원고` ID `1oPnRTZPczmXWlcDgg3aIMwuw2NWECBYQ`
+- review/QA target: `01_국어/검수·수정본` ID `1d1nDUT7nAo-KIZZ78wb_yhXWBAqD1Z5L`
+- finished N° PDF target: `01_국어/완성N제` ID `15P1JUMyrWoRO-VaJzg4F5cH9NIOXLoBZ`
+
+SOC:
+- manuscript target: `03_통합사회/출제원고` ID `1w25IxhXPuF7t4vKNLHwDF8n4U6o-E8Eo`
+- review/QA target: `03_통합사회/검수·수정본` ID `1RtlCgV2whtzyMJjxbZpThqoO4JKfkMaY`
+- finished N° PDF target: `03_통합사회/완성N제` ID `1ZloquIO4K5vF1V35g85IC93Mj_epHL-0`
+
+Required batch outputs:
+1. SOURCE/LOAD manifest or short audit note
+2. QUESTION_MANUSCRIPT + ANSWER_KEY + LAYOUT_ASSET_MANIFEST + QC_STATUS
+3. QA report
+4. student-facing ARC N° PDF
+5. optional editor answer key/answer sheet kept separate from student PDF
+
+Naming:
+- `ARC_N_<SUBJECT>_CLAUDE_<YYYYMMDD>_<BATCH_ID>_MANUSCRIPT`
+- `ARC_N_<SUBJECT>_CLAUDE_<YYYYMMDD>_<BATCH_ID>_QA`
+- `ARC_N_<SUBJECT>_CLAUDE_<YYYYMMDD>_<BATCH_ID>_DRAFT.pdf`
+
+Every saved artifact must record:
+GENERATOR=CLAUDE
+BATCH_ID
+SUBJECT
+SCOPE
+ITEM_COUNT
+QA_STATUS
+CREATED_AT
+
+If the connected environment cannot place a file directly, preserve a durable staged artifact and record its intended target instead of discarding work.
+A PDF is `DRAFT_REVIEW` until user/ChatGPT review; never mark FINAL_RELEASED automatically.
 
 ## 11. GITHUB SAFETY
 During ordinary item generation:
@@ -122,9 +191,17 @@ During ordinary item generation:
 - do not edit MASTER, QA, manifest, or policy files
 - system changes require a separate maintenance task
 
-## 12. CURRENT START COMMAND
-Use this command when beginning work:
+## 12. CURRENT START COMMAND — ABSORB ONLY
+Use this command when beginning today's Cowork session:
 
-`Read the latest ARC-System dev SYSTEM_MANIFEST and this CLAUDE_HANDOFF. Inspect existing fresh batches first. Start from the highest-priority unfinished subject in KOR→SOC→SCI→HIS→AI order. Generate one ARC batch under the active subject MASTER and current Drive scope, record GENERATOR=CLAUDE and a unique BATCH_ID, apply the normal ARC QA, and do not duplicate an existing GPT/Claude batch. Use selective extra review only for high-risk items.`
+`Enter ARC SYSTEM ABSORPTION mode. Read the latest dev SYSTEM_MANIFEST, ARC_CLAUDE_HANDOFF, common generation engine, KOR/SOC active MASTERs, KOR/SOC GOLD anchors, QA/item-quality/source rules, PDF layout master, brand lockup spec, and the current-scope Drive structure/materials needed to understand the system. Do not generate questions yet. Produce a compact ARC readiness digest and set CLAUDE_ARC_ABSORPTION_STATUS=PASS only after the required mechanism is understood. Then wait for my KOR or SOC generation command.`
+
+When the user later requests KOR or SOC:
+- generate exactly the requested batch
+- the current user override permits an independent Claude KOR even if GPT KOR exists
+- run ARC QA
+- typeset ARC N° PDF
+- save manuscript + QA + PDF to the subject folders above
+- stop after the requested subject unless the user explicitly asks to continue.
 
 END ARC CLAUDE HANDOFF V1.0
