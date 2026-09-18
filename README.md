@@ -48,3 +48,19 @@ ARC CORE / N° / FINAL 제작을 위한 엔진·규칙 저장소.
 - Google Drive: 기존 connector 유지, third-party Drive MCP 비활성화
 - 모든 MCP는 on-demand 호출, 실패 시 fallback 필수
 - MCP가 범위·정답·난도·출제 원칙을 결정하지 않음
+
+
+## Executable tooling layer
+Policy-only checks now have concrete runners under `tooling/`:
+- promptfoo frozen regression runner
+- sentence-transformers + local Qdrant similarity
+- PyMuPDF PDF preflight
+- PDF annotation/vector/OpenCV X-mark detector
+- deterministic visual renderer + independent visual verifier
+
+Install:
+```bash
+python -m pip install -r tooling/requirements.txt
+```
+
+See `tooling/README.md`.
