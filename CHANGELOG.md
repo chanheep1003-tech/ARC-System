@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 1.4.3-dev — 2026-09-18
+- Added mandatory one-time Drive write preflight before any expensive subject generation.
+- Verified OAuth/delegated persistence end-to-end: root native Doc creation → parent read → addParents/removeParents move → content write → destination verification.
+- Canonicalized Drive persistence on `ops/ARC_DRIVE_WRITE_ADAPTER_V1.0.md`; the duplicate persistence-policy file is now a deprecated alias.
+- Scheduled runtime now defaults to CREATE_THEN_MOVE after a connection-capability mismatch and does not repeatedly retry unsupported direct parent creation.
+- QA generation stops before consuming item-generation budget when persistence preflight fails.
+
 ## 1.4.2-dev — 2026-09-18
 - Diagnosed RUN10 failure as a Drive persistence adapter incompatibility, not an item-QA failure.
 - OAuth/delegated native Google Doc creation rejects direct `parent_folder_id` placement on the connected Drive.
