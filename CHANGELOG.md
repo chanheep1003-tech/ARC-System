@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 1.3.4-dev — 2026-09-18
+- Added ARC_RUNTIME_PRIORITY_POLICY_V1.0.
+- Default subject execution order is now KOR → SOC → SCI → HIS → AI.
+- Normal 100-item QA still targets 20 items per subject; priority controls order, retries, extra review, research, and context allocation.
+- Added recommended extra-resource weights 30/25/20/15/10.
+- Added stage priorities P0–P5 and explicit degradation order: defer P5, then nonessential P4, then nonessential P3; P0–P2 are never skipped.
+- Subject failures are isolated, checkpointed, and resumed after the first pass instead of terminating the entire run.
+- Default retry budget is one automatic retry per failed subject/stage.
+
 ## 1.3.3-dev — 2026-09-18
 - Added frozen regression fixture system.
 - Registered 30 fixed cases: 5 subjects × GOOD 3 + BAD 3, referenced from the subject GOLD anchor packs.
