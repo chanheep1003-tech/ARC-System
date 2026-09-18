@@ -21,7 +21,7 @@ CORE의 학생용 결과물은 'AI가 항목을 자동 정리한 카드 모음'�
 - 동일 템플릿 반복보다 내용에 맞는 자연스러운 편집 흐름 우선
 
 필수 편집 규칙:
-quality/ARC_CORE_EDITORIAL_NATURALNESS_V1.0.md
+quality/ARC_CORE_EDITORIAL_NATURALNESS_V1.1.md
 quality/ARC_CORE_QA_BENCH_V1.1.md
 engine/core/ARC_CORE_DEPTH_ENGINE_V1.0.md
 
@@ -213,7 +213,7 @@ HIGH_DIFFICULTY는 다음을 의미한다:
 내용에 맞게 본문과 필요한 보조 요소로 자연스럽게 흡수한다.
 
 ## 7. EDITORIAL NATURALNESS — HARD REQUIREMENT
-quality/ARC_CORE_EDITORIAL_NATURALNESS_V1.0.md를 반드시 적용한다.
+quality/ARC_CORE_EDITORIAL_NATURALNESS_V1.1.md를 반드시 적용한다.
 
 핵심:
 - 모든 개념을 같은 구조로 찍어내지 않는다.
