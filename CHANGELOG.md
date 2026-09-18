@@ -1,3 +1,12 @@
+## 1.7.3-dev — External skill intake addendum — 2026-09-19
+- Added ARC_EXTERNAL_SKILL_INTAKE_POLICY_V1.0 for governed use of public GitHub skills when ARC has a capability gap.
+- External skills are on-demand and remain below ARC scope/master/engine/QA authority.
+- Default intake is REFERENCE_ONLY or ADAPT; automatic vendoring is disabled.
+- License, executable-code, credential, network, write-capability, overlap, and instruction-conflict checks are required before adoption.
+- Proprietary/source-available skills may be used only as design references unless a compatible license explicitly permits reuse.
+- Registered the intake policy in SKILL_REGISTRY, skill governance, orchestration, and SYSTEM_MANIFEST.
+- Initial design references: OpenAI official skills/skill-creator patterns for JIT loading and skill validation; Anthropic skills repository only where licensing permits, with proprietary document skills treated as reference-only.
+
 ## 1.7.3-dev — 2026-09-19
 - Activated ARC_CORE_CONTENT_ENGINE_V1.1.
 - CORE student output no longer exposes CONCEPT_ID, N° linkage, priority, BANK, QA, or internal source metadata.
