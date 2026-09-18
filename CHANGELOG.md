@@ -1,3 +1,16 @@
+## 1.7.3-dev — 2026-09-19
+- Activated ARC_CORE_CONTENT_ENGINE_V1.1.
+- CORE student output no longer exposes CONCEPT_ID, N° linkage, priority, BANK, QA, or internal source metadata.
+- Replaced student-facing N° LINK with internal-only N_GENERATION_LINKS for future N° blueprint coverage and concept combination.
+- Added evidence-gated TRAP blocks; unsupported or invented traps are removed instead of being shown to students.
+- Added ARC_CORE_EDITORIAL_NATURALNESS_V1.0 to suppress repetitive card layouts, fixed block counts, repeated phrasing, redundant summaries, decorative boxes, and unsupported exam-prediction language.
+- Added ARC_CORE_QA_BENCH_V1.0 with set-level AI-pattern sentinels, redundancy audit, TRAP evidence audit, student-view audit, and Korean-specific source/interpretation checks.
+- Activated ARC_TEMPLATE_SYSTEM_v0.4_CORE_PATCH. CORE now uses paragraph-led reference-book flow with optional MUST / CONFUSING / TRAP / EXAM CONNECTION blocks instead of a fixed nine-block template.
+- Korean CORE now follows KOREAN_MASTER_V4.1 SOURCE-BOUND ORIGINAL TEXT MODE: user-provided/uploaded or connected user-accessible school/textbook/supplement source text may be embedded as verified SOURCE_TEXT_BLOCK, preserving poem line/stanza and prose paragraph order.
+- Korean CORE prioritizes whole-work flow and school-supplement interpretation structure over fragmented theme/emotion/expression cards.
+- GitHub dev remains source of truth; the new CORE engine Drive mirror is pending_sync.
+- Executable regression was not claimed in this connector-only maintenance pass.
+
 ## 1.7.2-dev — 2026-09-19
 - Activated COMMON_GENERATION_ENGINE_V4.3 with SOURCE-BOUND TEXT EXCEPTION for user-pasted/uploaded and connected user-accessible school/textbook/supplement sources.
 - Activated KOREAN_MASTER_V4.1. Korean ARC output now defaults to self-contained source presentation when the original text is actually available from an allowed source.
