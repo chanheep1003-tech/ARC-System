@@ -56,6 +56,10 @@ D QC_STATUS
 ## 9. HARD FAIL
 연대오류 / 인물·단체 오류 / 사료왜곡 / 지도오류 / 범위 밖 역사 필수지식 / 복수정답 / placeholder / 저작권 장문복제 / 해설 출력.
 
-
 ## 10. ARC HANDOFF
 공통 엔진 V4.0의 HANDOFF_META와 SECTION A~D를 따른다. FINAL은 PRODUCT_MODE=ARC_FINAL로 처리하고 별도 FINAL 프롬프트를 사용하지 않는다.
+
+## 11. GOLD STANDARD ANCHORS
+필수 로드: `quality/gold/HIS_GOLD_ANCHORS_V1.0.md`
+사료/연표/단체 관계 문항은 GOOD 앵커의 '자료→식별→관계 판단' 구조를 기준으로 한다.
+단일 사실 회상형은 BAD 앵커와 비교해 PREMIUM을 금지한다.
