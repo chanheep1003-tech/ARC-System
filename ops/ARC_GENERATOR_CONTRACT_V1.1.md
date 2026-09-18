@@ -39,7 +39,7 @@ SCOPE_LOCK
 → CONTENT_LOCK
 
 ## 4. CONTENT BUNDLE
-Must satisfy ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.0.md.
+Must satisfy ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.1.md.
 No unresolved placeholders.
 Essential visual specs must be complete enough that Typesetter does not infer subject matter.
 
@@ -78,4 +78,4 @@ Drive APPEND_ONLY.
 No system-rule mutation.
 System defects go to SYSTEM_FEEDBACK.
 
-END ARC GENERATOR CONTRACT V1.0
+END ARC GENERATOR CONTRACT V1.1
