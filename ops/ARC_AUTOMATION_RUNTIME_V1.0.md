@@ -18,7 +18,7 @@ Per subject:
 5. checkpoint
 Then release that subject context and continue.
 
-## 3. SUBJECT CHECKPOINT ORDER
+## 4. SUBJECT CHECKPOINT ORDER
 Default priority follows `ops/ARC_RUNTIME_PRIORITY_POLICY_V1.0.md`:
 1. KOR
 2. SOC
@@ -59,7 +59,7 @@ Run folder contains STATUS markers in the QA report:
 
 If a run stops early, the next scheduled run may resume unfinished subjects after verifying existing checkpoint docs.
 
-## 7. FAILURE CONTRACT
+## 8. FAILURE CONTRACT
 On any failure:
 - write failure stage
 - last completed subject
@@ -84,7 +84,7 @@ Executable tooling:
 - local/CI host: run quantitative similarity, deterministic visual verifier, PDF preflight, and X-mark detector where applicable.
 - connector-only scheduled host: do not fake execution. Record TOOLING_UNAVAILABLE and apply policy fallback. Essential accuracy gates remain mandatory.
 
-## 9. RUNTIME BUDGET
+## 10. RUNTIME BUDGET
 Follow `ops/ARC_RUNTIME_PRIORITY_POLICY_V1.0.md`.
 
 Stage priority:
@@ -100,7 +100,7 @@ If runtime is constrained, defer P5 first, then nonessential P4, then nonessenti
 Recommended extra-resource shares:
 KOR 30 / SOC 25 / SCI 20 / HIS 15 / AI 10.
 
-## 10. OPTIMIZATION
+## 11. OPTIMIZATION
 No engine/prompt optimization until subject production and persistence completes.
 Repeated defect >=3 may create a patch candidate; do not mutate GitHub during ordinary scheduled generation.
 
