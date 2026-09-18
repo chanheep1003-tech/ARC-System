@@ -62,6 +62,8 @@ Do not use general knowledge to fill missing conditions or visual data.
 ## 4. TYPESETTING WORK
 Allowed:
 - pagination
+- insert the mandatory blank cover-verso page for ARC N°
+- force a new page before the locked ANSWER_KEY
 - append the locked ANSWER_KEY as the final compact ARC N° answer section
 - product-permitted column decisions
 - line/paragraph breaks
@@ -82,10 +84,25 @@ ARC FINAL / ARC CORE may retain flexible full-width or one-column layout only wh
 
 ## 5. PRODUCT RULES
 ARC N°:
-student PDF contains cover + problem pages + one compact answer-key section at the end.
+student PDF physical order is fixed:
+1. cover
+2. one completely blank print-verso page
+3. problem pages
+4. answer-key page immediately after the last problem page
+
+The blank page after the cover:
+- contains no logo, header, footer, page number, crop mark, note, or watermark
+- exists only to keep duplex printing alignment clean
+- must remain a real PDF page, not an omitted/spacer artifact
+
 Problem pages contain no answers.
-Answer-key section contains item number + answer only.
-No detailed explanation/difficulty/type/hint/editor metadata.
+
+Answer-key section:
+- starts on a NEW physical page even when free space remains under the final problem
+- appears immediately after the problem section; do not insert another blank page
+- contains item number + answer only
+- no detailed explanation/difficulty/type/hint/editor metadata
+- 20–40 items should normally fit on one compact answer page
 
 ARC FINAL:
 test-like student PDF; answer key only as separate allowed artifact.
