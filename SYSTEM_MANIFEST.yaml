@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.6.0-dev
+  version: 1.6.1-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -42,6 +42,10 @@ runtime:
   production_role_split: GENERATOR_TO_TYPESETTER
   content_lock_required_before_typeset: true
   generator_pdf_typesetting: disabled
+  arc_n_layout_mode: COLUMN_ONLY
+  arc_n_full_width: disabled
+  arc_n_one_column_fallback: disabled
+  protected_text_mode: enabled_for_subject_policy
   typesetter_subject_source_reload_default: disabled
   system_maintainer: CHATGPT_INTERACTIVE
   typesetter_models:
