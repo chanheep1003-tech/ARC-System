@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.6.1-dev
+  version: 1.6.2-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -24,7 +24,7 @@ runtime:
   teacher_style_prediction: disabled
   historical_exam_usage: difficulty_calibration_only
   automation_runtime: ops/ARC_AUTOMATION_RUNTIME_V1.0.md
-  drive_write_adapter: ops/ARC_DRIVE_WRITE_ADAPTER_V1.0.md
+  drive_write_adapter: ops/ARC_DRIVE_WRITE_ADAPTER_V1.1.md
   drive_write_preflight_required: true
   scheduled_drive_write_mode: ROOT_STAGING
   drive_write_default_mode: ROOT_STAGING
@@ -46,6 +46,9 @@ runtime:
   arc_n_full_width: disabled
   arc_n_one_column_fallback: disabled
   protected_text_mode: enabled_for_subject_policy
+  score_inflation_audit: required
+  d4_d5_minimum_gate: required
+  exact_drive_parent_verification: required
   typesetter_subject_source_reload_default: disabled
   system_maintainer: CHATGPT_INTERACTIVE
   typesetter_models:
@@ -108,15 +111,15 @@ active:
 
   quality:
     scope_ledger: quality/ARC_SCOPE_LEDGER_V1.0.md
-    qa_bench: quality/ARC_QA_BENCH_V1.2.md
+    qa_bench: quality/ARC_QA_BENCH_V1.3.md
     error_database: quality/ARC_ERROR_DATABASE_V1.0.md
-    difficulty_engine: quality/ARC_DIFFICULTY_ENGINE_V1.0.md
+    difficulty_engine: quality/ARC_DIFFICULTY_ENGINE_V1.1.md
     difficulty_anchors: quality/ARC_DIFFICULTY_ANCHORS_V1.0.md
     school_reference_profile: quality/ARC_SCHOOL_REFERENCE_PROFILE_V1.0.md
     school_difficulty_bench:
       path: quality/ARC_SCHOOL_DIFFICULTY_BENCH_V1.0.md
       drive_id: 1t0l6juVLzJxx9UMN5YwG1eRu4enAXpmX
-    item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.1.md
+    item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.2.md
     visual_authenticity: quality/ARC_VISUAL_AUTHENTICITY_RUBRIC_V1.1.md
     visual_template: quality/ARC_VISUAL_TEMPLATE_SYSTEM_V1.1.md
     visual_anchors: quality/ARC_VISUAL_ANCHORS_V1.1.md
