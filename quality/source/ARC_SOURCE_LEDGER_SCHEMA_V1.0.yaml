@@ -1,0 +1,33 @@
+version: ARC-SOURCE-V1.0
+record:
+  source_id: "SUBJ-TYPE-NNN"
+  subject: "KOR|SCI|SOC|HIS|AI"
+  source_type: "DRIVE|WEB|OFFICIAL|PAPER|GENERATED_DATA"
+  title: ""
+  role: "SCOPE|ANSWER_BASIS|DISTRACTOR_CHECK|FACT_CHECK|VISUAL_DATA|CONTEXT"
+  status: "VERIFIED|UNVERIFIED|SOURCE_MISSING"
+  location:
+    file_id: null
+    page: null
+    section_or_heading: null
+    url: null
+    paragraph_or_anchor: null
+    published_date: null
+  accessed_at: ""
+  claim_summary: ""
+  item_ids: []
+  source_conflict: false
+  generated_data:
+    generation_rule: null
+    units: null
+    constraints: null
+    derivation_check: null
+  notes: ""
+
+item_link:
+  item_id: ""
+  source_required: false
+  source_ids: []
+  answer_basis_source_ids: []
+  pass_b_source_reopen: "PASS|FAIL|N/A"
+  source_status_summary: "VERIFIED|UNVERIFIED|SOURCE_MISSING|N/A"
