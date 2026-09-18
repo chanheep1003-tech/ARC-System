@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## 1.4.0-dev — 2026-09-18
+- Added executable tooling layer instead of policy-only checks.
+- Added promptfoo regression runner for the 30 frozen fixtures with custom candidate adapter and decision/score/hard-fail assertions.
+- Added sentence-transformers + local Qdrant similarity engine with FULL/STEM/DISTRACTOR embeddings and structural metadata.
+- Similarity thresholds now require labeled BANK calibration; raw cosine does not become a hard gate before calibration.
+- Added PyMuPDF PDF preflight for page-boundary, margin, overlap, glyph, image/drawing, empty-page and render screening.
+- Added Social C-part X-mark detector: PDF annotations → vector diagonal crossings → OpenCV raster fallback.
+- Added deterministic visual renderer for graphs, particle models and major social diagrams plus an independent visual PASS B verifier.
+- Added mandatory Visual PASS A/B + QUESTION_VISUAL_CROSSCHECK for essential visuals, including REDOX_LEDGER ↔ particle-count cross-check.
+- Expanded social visual specification to MAP/STAT/DATA/FLOW/CASEBOX/COMPARE/INSTITUTION with explicit required fields and hard checks.
+- Upgraded active visual template/authenticity/anchors and similarity guard to V1.1.
+- Added runtime truthfulness rule: connector-only environments must report TOOLING_UNAVAILABLE rather than pretending local tools executed.
+
 ## 1.3.4-dev — 2026-09-18
 - Added ARC_RUNTIME_PRIORITY_POLICY_V1.0.
 - Default subject execution order is now KOR → SOC → SCI → HIS → AI.
