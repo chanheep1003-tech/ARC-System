@@ -138,6 +138,8 @@ Additional independent review is reserved for:
 ## 5-A. ARC CORE PRODUCTION
 When PRODUCT_MODE=ARC_CORE:
 - use ARC CORE CONTENT ENGINE selected by SYSTEM_MANIFEST
+- use the subject MASTER primarily for scope, source hierarchy, factual/interpretive safety, exclusions, and subject-specific concept constraints
+- N°/FINAL-specific OUTPUT, ANSWER_KEY, item quota, distractor, and item-handoff clauses inside a subject MASTER do not override the active CORE product contract
 - run concept mapping before drafting pages
 - assign internal DEPTH_PRIORITY using the active CORE DEPTH ENGINE
 - keep CONCEPT_ID / N_GENERATION_LINKS / DEPTH_PRIORITY / QA metadata hidden from student-facing manuscript
