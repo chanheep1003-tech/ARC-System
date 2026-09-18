@@ -121,3 +121,8 @@ VISUAL_RENDER: PENDING_PDF (SPEC_ONLY일 때)
 공통 엔진 V4.0의 HANDOFF_META + SECTION A~D를 그대로 따른다.
 ANSWER_KEY는 검증용이며 ARC_N 학생 PDF에는 넣지 않는다.
 FINAL 요청은 PRODUCT_MODE=ARC_FINAL로 처리하고 별도 FINAL 프롬프트를 사용하지 않는다.
+
+## 12. GOLD STANDARD ANCHORS
+필수 로드: `quality/gold/SCI_GOLD_ANCHORS_V1.0.md`
+GOOD/BAD 앵커와 비교한 뒤 문항의 자료 기능, 추론 단계, 오답 강도를 판정한다.
+직접개념형이 BAD 앵커와 가까우면 PREMIUM 금지 및 V1.1 점수 상한을 적용한다.
