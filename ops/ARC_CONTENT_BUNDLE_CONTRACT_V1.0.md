@@ -78,6 +78,14 @@ LEGEND
 ESSENTIAL=true
 RENDER_NOTES
 KEEP_TOGETHER
+LAYOUT_HINT
+
+ARC N° rule:
+LAYOUT_HINT=COLUMN_ONLY.
+Do not hand off ARC N° assets that require FULL_WIDTH or a one-column page.
+If a visual/table/passage cannot remain legible inside one ARC N° column, redesign/split the asset at the content stage without changing answer-bearing meaning, or return CONTENT_RETURN_REQUIRED.
+
+ARC FINAL / ARC CORE may use flexible layout hints when their active product rules permit it.
 
 If these are insufficient to reproduce the intended visual exactly enough for the answer:
 return CONTENT_RETURN_REQUIRED.
