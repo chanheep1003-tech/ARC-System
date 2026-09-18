@@ -632,11 +632,19 @@ white space
 STEP 9 — AUTO FIX
 실패 항목 수정 후 재출력
 
-STEP 10 — FINAL ACCEPTANCE
-최종 QC 통과 후에만 완료 처리
+STEP 10 — HUMAN REVIEW PACKET
+`quality/ARC_HUMAN_REVIEW_GATE_V1.0.md`에 따라 짧은 검토 패킷을 만든다.
+AI QA가 PASS한 뒤에만 사람에게 넘긴다.
 
-렌더 검증 없이
-“완료”라고 하지 않는다.
+STEP 11 — HUMAN REVIEW GATE
+사용자가 범위 / C파트 X표시(해당 시) / 시각자료 렌더 / 정답·최종본 sanity를 확인한다.
+승인 전 상태는 `DRAFT_REVIEW`이며 `RELEASE_READY=false`다.
+
+STEP 12 — FINAL ACCEPTANCE
+사용자 승인 + 최종 QC 통과 후에만 `FINAL_RELEASED`로 완료 처리한다.
+
+렌더 검증과 HUMAN_REVIEW_GATE 없이
+“최종본”이라고 하지 않는다.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 15. RENDER QC CHECKLIST
@@ -751,6 +759,7 @@ manifest와 실제 렌더 수가 다르면 FAIL.
 - FINAL에 힌트/학습 태그 삽입
 - CORE를 장문 교과서처럼 임의 확장
 - 렌더 검증 미실시
+- HUMAN_REVIEW_GATE 미승인 상태에서 FINAL_RELEASED 처리
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 19. AUTO-REVISION GATE
@@ -791,6 +800,13 @@ ARC_CORE:
 학생 PDF에는
 내부 QC 로그 / BANK ID / SOURCE_TAG / 제작 메모를 넣지 않는다.
 
+FINAL release metadata:
+- HUMAN_REVIEW_STATUS = PENDING / PASS / CHANGE_REQUIRED
+- RELEASE_READY = false / true
+- REVIEW_ID
+
+사용자 승인 전 산출물은 파일이 존재해도 `DRAFT_REVIEW`로 취급한다.
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 21. PRODUCTION HANDOFF CONTRACT
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -807,7 +823,9 @@ ARC_CORE:
 7. PDF 생성
 8. 전 페이지 렌더 검수
 9. 자동 수정
-10. 최종 파일 출력
+10. HUMAN_REVIEW_PACKET 출력
+11. 사용자 승인 또는 수정 요청 수신
+12. 승인 시 최종 파일을 FINAL_RELEASED 상태로 확정
 
 입력에 unresolved placeholder가 하나라도 있으면
 CONTENT_RETURN_REQUIRED.
