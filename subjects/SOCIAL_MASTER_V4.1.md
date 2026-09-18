@@ -184,7 +184,7 @@ HARD FAIL:
 
 
 ## 11. ARC HANDOFF
-공통 엔진 V4.0의 HANDOFF_META와 SECTION A~D를 따른다. C파트 요청이면 QC_STATUS에 C_X_MARK_FILTER를 반드시 유지한다. FINAL 요청도 PRODUCT_MODE=ARC_FINAL로 처리하며 별도 FINAL 프롬프트를 중복 사용하지 않는다.
+공통 엔진 V4.2의 HANDOFF_META와 SECTION A~D를 따른다. C파트 요청이면 QC_STATUS에 C_X_MARK_FILTER를 반드시 유지한다. FINAL 요청도 PRODUCT_MODE=ARC_FINAL로 처리하며 별도 FINAL 프롬프트를 중복 사용하지 않는다.
 
 
 ## 12. GOLD STANDARD ANCHORS
