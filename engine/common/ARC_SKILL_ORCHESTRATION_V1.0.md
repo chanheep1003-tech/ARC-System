@@ -22,12 +22,15 @@ When a claim is source-sensitive, `quality/ARC_SOURCE_LEDGER_V1.0.md` is also ma
 
 ## 3. N° / FINAL generation route
 - Always: `arc-item-generator`, `arc-distractor-engine`, `arc-fact-audit`, `arc-item-naturalness-audit`, `arc-item-qa`, `arc-set-editor`
-- QA authority: `ARC_ITEM_QUALITY_RUBRIC_V1.1` + `ARC_QA_BENCH_V1.2` + subject GOLD anchor pack
+- QA authority: `ARC_ITEM_QUALITY_RUBRIC_V1.1` + `ARC_QA_BENCH_V1.2` + subject GOLD anchor pack + active executable-tool policies
 - Conditional source: `arc-source-ingest` when raw/unparsed files enter; `arc-research-grounding` when external information is needed.
-- Conditional visuals: `arc-visual-renderer` first applies `ARC_VISUAL_REFERENCE_FIRST_V1.0`, then selects the ARC visual skill. If a specialized MCP is available, route to draw.io / ChemCP / Timeline MCP according to `mcp/MCP_ORCHESTRATION_V1.0.md`; otherwise use the ARC visual skill fallback.
+- Conditional visuals: `arc-visual-renderer` applies Reference-First → VISUAL_SPEC → deterministic renderer when supported → Visual PASS A/B → authenticity rubric. Unsupported deterministic types route to specialized visual skills. If a specialized MCP is available, route to draw.io / ChemCP / Timeline MCP according to `mcp/MCP_ORCHESTRATION_V1.0.md`; otherwise use the ARC visual skill fallback.
 - Repository context: GitHub official MCP may be used read-only; native GitHub connector remains a fallback.
 - Gold calibration: compare every candidate to nearest GOOD/BAD anchor before final QA score.
 - Source verification: SOURCE_REQUIRED claims receive SOURCE_ID and PASS B re-opens the original source before BANK_PASS.
+- Similarity: local/CI host가 지원하면 sentence-transformers + local Qdrant quantitative layer를 실행한다. CALIBRATION_REQUIRED면 raw score는 advisory.
+- PDF release: PyMuPDF preflight를 실행 가능한 host에서 수행하고 결과를 Human Review에 전달한다.
+- Social C: X-mark detector를 실행 가능한 host에서 먼저 사용하고 ambiguous region은 HUMAN_CHECK로 보류한다.
 - Bank: `arc-bank-curator` only for PASS candidates.
 - Engine/Master/QA/source/bank-rule changes: add `arc-eval-regression` and run all 30 frozen fixtures before promotion.
 
@@ -55,10 +58,14 @@ Skill/MCP layers may assist source ingest, grounding, fact audit, visuals and QA
 - scope expansion driven by bank, MCP, or web sources
 - autonomous repository mutation during ordinary question generation
 
-## 7. Runtime priority
+## 7. Executable tooling truthfulness
+실행기가 없는 connector-only runtime에서는 TOOLING_UNAVAILABLE을 기록한다.
+promptfoo / local Qdrant / PyMuPDF preflight / OpenCV X-detection / deterministic visual verifier를 실제 실행하지 않고 PASS했다고 주장하지 않는다.
+
+## 8. Runtime priority
 Default subject order is KOR → SOC → SCI → HIS → AI.
 Normal 100-item runs keep 20 items per subject; priority changes processing order and extra resource allocation, not required item count.
 P0–P2 are non-skippable. Under resource pressure defer P5, then nonessential P4, then nonessential P3.
 
-## 8. Release rule
+## 9. Release rule
 Skill/MCP/QA changes live on `dev` until structural validation and representative regression checks pass. Promote to `main` only with zero new hard-fail classes.
