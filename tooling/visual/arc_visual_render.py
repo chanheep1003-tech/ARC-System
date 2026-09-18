@@ -6,7 +6,10 @@ import json
 from pathlib import Path
 
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 import yaml
+
+mpl.rcParams["svg.fonttype"] = "none"
 
 def load_spec(path):
     p = Path(path)
@@ -33,8 +36,14 @@ def render_graph(spec, out):
             raise ValueError("x/y length mismatch")
         ax.plot(x, y, marker="o", label=s.get("label") or None)
         series_manifest.append({"label": s.get("label"), "x": x, "y": y})
-    ax.set_xlabel(spec["axes"]["x_label"])
-    ax.set_ylabel(spec["axes"]["y_label"])
+    x_label = str(spec["axes"]["x_label"])
+    y_label = str(spec["axes"]["y_label"])
+    if spec["axes"].get("x_unit"):
+        x_label += f" ({spec['axes']['x_unit']})"
+    if spec["axes"].get("y_unit"):
+        y_label += f" ({spec['axes']['y_unit']})"
+    ax.set_xlabel(x_label)
+    ax.set_ylabel(y_label)
     if spec["axes"].get("title"):
         ax.set_title(spec["axes"]["title"])
     if any(s.get("label") for s in data["series"]):
@@ -46,8 +55,8 @@ def render_graph(spec, out):
     return {
         "semantic": {
             "series": series_manifest,
-            "x_label": spec["axes"]["x_label"],
-            "y_label": spec["axes"]["y_label"],
+            "x_label": x_label,
+            "y_label": y_label,
             "x_unit": spec["axes"].get("x_unit"),
             "y_unit": spec["axes"].get("y_unit"),
         }
