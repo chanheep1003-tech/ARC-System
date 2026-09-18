@@ -16,7 +16,7 @@ Skills and MCP tools never override scope.
 
 ## 2. Load policy
 Read `skills/SKILL_REGISTRY.yaml`, then load only skills required by the task. If a specialized external tool is needed, read `mcp/SERVER_REGISTRY.yaml` and `mcp/MCP_POLICY.yaml`; do not preload all MCP servers.
-Scheduled generation additionally follows `ops/ARC_AUTOMATION_RUNTIME_V1.0.md`: per-subject JIT loading, checkpointing, native-Docs persistence, and resume-on-failure.
+Scheduled generation additionally follows `ops/ARC_AUTOMATION_RUNTIME_V1.0.md` and `ops/ARC_RUNTIME_PRIORITY_POLICY_V1.0.md`: per-subject JIT loading, checkpointing, native-Docs persistence, subject priority, resource budgeting, and resume-on-failure.
 For N°/FINAL generation and item QA, the subject-specific `quality/gold/*_GOLD_ANCHORS_V1.0.md` is a required JIT input.
 When a claim is source-sensitive, `quality/ARC_SOURCE_LEDGER_V1.0.md` is also mandatory.
 
@@ -55,5 +55,10 @@ Skill/MCP layers may assist source ingest, grounding, fact audit, visuals and QA
 - scope expansion driven by bank, MCP, or web sources
 - autonomous repository mutation during ordinary question generation
 
-## 7. Release rule
+## 7. Runtime priority
+Default subject order is KOR → SOC → SCI → HIS → AI.
+Normal 100-item runs keep 20 items per subject; priority changes processing order and extra resource allocation, not required item count.
+P0–P2 are non-skippable. Under resource pressure defer P5, then nonessential P4, then nonessential P3.
+
+## 8. Release rule
 Skill/MCP/QA changes live on `dev` until structural validation and representative regression checks pass. Promote to `main` only with zero new hard-fail classes.
