@@ -2,7 +2,7 @@
 name: arc-item-qa
 description: 'ARC 문항을 기준참조형 rubric으로 검수해 PASS/REVISE/DISCARD를 결정한다. 정답 유일성, 범위, 추론, 오답, 자연스러움, 학교 적합성, 시각자료를 통합 평가한다.'
 metadata:
-  version: 1.1.0
+  version: 1.2.0
   arc-role: item-quality-gate
 ---
 # ARC Item QA
@@ -16,12 +16,19 @@ metadata:
 - quality/ARC_ITEM_QUALITY_RUBRIC_V1.1.md
 - 필요 시 quality/ARC_VISUAL_AUTHENTICITY_RUBRIC_V1.0.md
 - 자동화 실행 시 ops/ARC_AUTOMATION_RUNTIME_V1.0.md
+- 해당 과목 `quality/gold/*_GOLD_ANCHORS_V1.0.md`
 
 ## 평가 순서
 ### 1. Hard Fail Gate
 범위 밖, 정답 다중/부재, 키 불일치, 필수 자료 누락, 제외범위 침입, 사실오류, 저작권 과복제 등을 먼저 확인한다.
 
-### 2. Evidence-Based Criterion Review
+### 2. Anchor Comparison
+초안을 가장 가까운 GOOD/BAD 앵커와 비교한다.
+- GOOD보다 어떤 평가 요소가 부족한지 기록
+- BAD와 같은 결함이 있으면 해당 상한/판정을 상속
+- 문장 표현이 비슷하다는 이유가 아니라 추론 구조·자료 기능·오답 현실성으로 비교
+
+### 3. Evidence-Based Criterion Review
 각 항목마다 점수와 한 줄 근거를 남긴다.
 - Validity
 - Clarity
@@ -34,19 +41,19 @@ metadata:
 
 '검토 완료', '적절함', 'independently checked'만 기록하는 것은 금지한다.
 
-### 3. Anti-Inflation Ceilings
+### 4. Anti-Inflation Ceilings
 V1.1의 DIRECT_RECALL, WEAK_DISTRACTOR, GENERIC_CONTEXT, UNGROUNDED_STYLE 상한을 적용한다.
 상한이 적용되면 총점이 상한을 넘을 수 없다.
 
-### 4. Difficulty Cross-Check
+### 5. Difficulty Cross-Check
 D3 이상은 실제로 자료·조건·다단계 추론 부담이 있는지 확인한다.
 1단계 직접개념 문항을 D3+로 표기하면 REVISE한다.
 
-### 5. Sentinel Recheck
+### 6. Sentinel Recheck
 과목 20문항 세트에서 최소 4문항을 독립 재검수한다.
 점수 차이 6점 이상 또는 PASS/REVISE 반전 시 과목 전체를 재채점한다.
 
-### 6. Decision
+### 7. Decision
 - PASS: 세트 편집/BANK 후보
 - REVISE: 국소 수정 후 처음부터 재검증
 - DISCARD: 문항 골격 불량 또는 hard fail
