@@ -134,3 +134,25 @@ For hourly automation, reliability beats one-run breadth.
 - persist every 5 RAW items to limit loss on interruption
 
 This prevents a 100-item monolithic hourly transaction from repeatedly timing out or losing all progress.
+
+
+## 13. MULTI-MODEL BATCH COORDINATION
+ARC may use ChatGPT and Claude as independent generators sharing the same source-of-truth.
+
+Required batch metadata:
+- GENERATOR = GPT | CLAUDE
+- BATCH_ID
+- SUBJECT
+- SCOPE
+- CREATED_AT
+- QA_STATUS
+
+Before generation, inspect fresh batch metadata and skip materially equivalent completed work from either generator.
+Do not duplicate a Claude batch when GPT resumes, and do not duplicate a GPT batch when Claude is active.
+
+Default policy is throughput-first:
+- one batch has one primary generator
+- universal cross-model regrading is disabled
+- extra independent review is selective for D3+, ambiguous-answer, source-sensitive, and essential-visual high-risk items
+
+Claude-specific startup instructions are in `ops/ARC_CLAUDE_HANDOFF_V1.0.md`.
