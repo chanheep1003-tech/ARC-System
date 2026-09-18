@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 1.6.0-dev — 2026-09-18
+- Split ARC production into dedicated Generator and Typesetter roles to reduce repeated context usage.
+- Added ARC_GENERATOR_CONTRACT_V1.0, ARC_CONTENT_BUNDLE_CONTRACT_V1.0, and ARC_TYPESETTER_CONTRACT_V1.0.
+- Generators now stop at CONTENT_QA_STATUS=PASS + CONTENT_LOCK=true + HANDOFF_STATUS=READY_FOR_TYPESET.
+- Dedicated Typesetter sessions load only the locked bundle, PDF master, brand spec, and necessary layout/visual rules.
+- Typesetters do not reload subject textbooks, worksheets, GOLD anchors, or generation QA by default.
+- Locked content cannot be silently edited during layout; suspected content defects return via CONTENT_ERROR_FLAG.
+- GPT and Claude may each serve as Generator or Typesetter, but one role is used per project/session.
+- System maintenance remains exclusive to ChatGPT interactive SYSTEM_MAINTAINER.
+
 ## 1.5.0-dev — 2026-09-18
 - Established permanent multi-model governance: GPT and Claude are recurring ARC generators; ChatGPT interactive maintenance is the single system/code/rule maintainer.
 - Added `ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md` with single-writer GitHub rules and append-only Drive production.
