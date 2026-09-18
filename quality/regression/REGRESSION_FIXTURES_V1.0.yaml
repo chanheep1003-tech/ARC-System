@@ -1,0 +1,56 @@
+version: ARC-REGRESSION-FIXTURES-V1.0
+policy: quality/regression/ARC_REGRESSION_POLICY_V1.0.md
+frozen: true
+fixture_count: 30
+source_mode: gold_anchor_reference
+
+packs:
+  KOR:
+    source: quality/gold/KOR_GOLD_ANCHORS_V1.0.md
+    cases:
+      - {fixture_id: KOR-RG-001, anchor_id: KOR-G-001, class: GOOD, expected_decision: BANK_A, expected_item_min: 92, expected_item_max: 95, expected_hard_fail: false, forbidden_decisions: [REVISE, DISCARD]}
+      - {fixture_id: KOR-RG-002, anchor_id: KOR-G-002, class: GOOD, expected_decision: BANK_A, expected_item_min: 93, expected_item_max: 96, expected_hard_fail: false, forbidden_decisions: [REVISE, DISCARD]}
+      - {fixture_id: KOR-RG-003, anchor_id: KOR-G-003, class: GOOD, expected_decision: BANK_A, expected_item_min: 92, expected_item_max: 94, expected_hard_fail: false, forbidden_decisions: [REVISE, DISCARD]}
+      - {fixture_id: KOR-RB-001, anchor_id: KOR-B-001, class: BAD, expected_decision: REVISE, expected_max_item: 83, expected_hard_fail: false, forbidden_decisions: [BANK_A, PREMIUM_BANK_A]}
+      - {fixture_id: KOR-RB-002, anchor_id: KOR-B-002, class: BAD, expected_decision: REVISE, expected_max_item: 82, expected_hard_fail: false, forbidden_decisions: [BANK_A, PREMIUM_BANK_A]}
+      - {fixture_id: KOR-RB-003, anchor_id: KOR-B-003, class: BAD, expected_decision: DISCARD, expected_hard_fail: true, forbidden_decisions: [PASS, BANK_A, BANK_B, PREMIUM_BANK_A]}
+
+  SCI:
+    source: quality/gold/SCI_GOLD_ANCHORS_V1.0.md
+    cases:
+      - {fixture_id: SCI-RG-001, anchor_id: SCI-G-001, class: GOOD, expected_decision: BANK_A, expected_item_min: 93, expected_item_max: 96, expected_hard_fail: false, forbidden_decisions: [REVISE, DISCARD]}
+      - {fixture_id: SCI-RG-002, anchor_id: SCI-G-002, class: GOOD, expected_decision: BANK_A, expected_item_min: 92, expected_item_max: 95, expected_hard_fail: false, forbidden_decisions: [REVISE, DISCARD]}
+      - {fixture_id: SCI-RG-003, anchor_id: SCI-G-003, class: GOOD, expected_decision: BANK_A, expected_item_min: 92, expected_item_max: 95, expected_hard_fail: false, forbidden_decisions: [REVISE, DISCARD]}
+      - {fixture_id: SCI-RB-001, anchor_id: SCI-B-001, class: BAD, expected_decision: REVISE, expected_max_item: 83, expected_hard_fail: false, forbidden_decisions: [BANK_A, PREMIUM_BANK_A]}
+      - {fixture_id: SCI-RB-002, anchor_id: SCI-B-002, class: BAD, expected_decision: REVISE, expected_max_item: 82, expected_hard_fail: false, forbidden_decisions: [BANK_A, PREMIUM_BANK_A]}
+      - {fixture_id: SCI-RB-003, anchor_id: SCI-B-003, class: BAD, expected_decision: DISCARD, expected_hard_fail: true, forbidden_decisions: [PASS, BANK_A, BANK_B, PREMIUM_BANK_A]}
+
+  SOC:
+    source: quality/gold/SOC_GOLD_ANCHORS_V1.0.md
+    cases:
+      - {fixture_id: SOC-RG-001, anchor_id: SOC-G-001, class: GOOD, expected_decision: BANK_A, expected_item_min: 92, expected_item_max: 95, expected_hard_fail: false, forbidden_decisions: [REVISE, DISCARD]}
+      - {fixture_id: SOC-RG-002, anchor_id: SOC-G-002, class: GOOD, expected_decision: BANK_A, expected_item_min: 92, expected_item_max: 94, expected_hard_fail: false, forbidden_decisions: [REVISE, DISCARD]}
+      - {fixture_id: SOC-RG-003, anchor_id: SOC-G-003, class: GOOD, expected_decision: BANK_A, expected_item_min: 91, expected_item_max: 94, expected_hard_fail: false, forbidden_decisions: [REVISE, DISCARD]}
+      - {fixture_id: SOC-RB-001, anchor_id: SOC-B-001, class: BAD, expected_decision: DISCARD, expected_hard_fail: true, forbidden_decisions: [PASS, BANK_A, BANK_B, PREMIUM_BANK_A]}
+      - {fixture_id: SOC-RB-002, anchor_id: SOC-B-002, class: BAD, expected_decision: REVISE, expected_max_item: 82, expected_hard_fail: false, forbidden_decisions: [BANK_A, PREMIUM_BANK_A]}
+      - {fixture_id: SOC-RB-003, anchor_id: SOC-B-003, class: BAD, expected_decision: DISCARD, expected_hard_fail: true, forbidden_decisions: [PASS, BANK_A, BANK_B, PREMIUM_BANK_A]}
+
+  HIS:
+    source: quality/gold/HIS_GOLD_ANCHORS_V1.0.md
+    cases:
+      - {fixture_id: HIS-RG-001, anchor_id: HIS-G-001, class: GOOD, expected_decision: BANK_A, expected_item_min: 92, expected_item_max: 95, expected_hard_fail: false, forbidden_decisions: [REVISE, DISCARD]}
+      - {fixture_id: HIS-RG-002, anchor_id: HIS-G-002, class: GOOD, expected_decision: BANK_A, expected_item_min: 92, expected_item_max: 95, expected_hard_fail: false, forbidden_decisions: [REVISE, DISCARD]}
+      - {fixture_id: HIS-RG-003, anchor_id: HIS-G-003, class: GOOD, expected_decision: BANK_A, expected_item_min: 91, expected_item_max: 94, expected_hard_fail: false, forbidden_decisions: [REVISE, DISCARD]}
+      - {fixture_id: HIS-RB-001, anchor_id: HIS-B-001, class: BAD, expected_decision: REVISE, expected_max_item: 83, expected_hard_fail: false, forbidden_decisions: [BANK_A, PREMIUM_BANK_A]}
+      - {fixture_id: HIS-RB-002, anchor_id: HIS-B-002, class: BAD, expected_decision: DISCARD, expected_hard_fail: true, forbidden_decisions: [PASS, BANK_A, BANK_B, PREMIUM_BANK_A]}
+      - {fixture_id: HIS-RB-003, anchor_id: HIS-B-003, class: BAD, expected_decision: DISCARD, expected_hard_fail: true, forbidden_decisions: [PASS, BANK_A, BANK_B, PREMIUM_BANK_A]}
+
+  AI:
+    source: quality/gold/AI_GOLD_ANCHORS_V1.0.md
+    cases:
+      - {fixture_id: AI-RG-001, anchor_id: AI-G-001, class: GOOD, expected_decision: BANK_A, expected_item_min: 93, expected_item_max: 96, expected_hard_fail: false, forbidden_decisions: [REVISE, DISCARD]}
+      - {fixture_id: AI-RG-002, anchor_id: AI-G-002, class: GOOD, expected_decision: BANK_A, expected_item_min: 92, expected_item_max: 95, expected_hard_fail: false, forbidden_decisions: [REVISE, DISCARD]}
+      - {fixture_id: AI-RG-003, anchor_id: AI-G-003, class: GOOD, expected_decision: BANK_A, expected_item_min: 92, expected_item_max: 94, expected_hard_fail: false, forbidden_decisions: [REVISE, DISCARD]}
+      - {fixture_id: AI-RB-001, anchor_id: AI-B-001, class: BAD, expected_decision: REVISE, expected_max_item: 83, expected_hard_fail: false, forbidden_decisions: [BANK_A, PREMIUM_BANK_A]}
+      - {fixture_id: AI-RB-002, anchor_id: AI-B-002, class: BAD, expected_decision: DISCARD, expected_hard_fail: true, forbidden_decisions: [PASS, BANK_A, BANK_B, PREMIUM_BANK_A]}
+      - {fixture_id: AI-RB-003, anchor_id: AI-B-003, class: BAD, expected_decision: DISCARD, expected_hard_fail: true, forbidden_decisions: [PASS, BANK_A, BANK_B, PREMIUM_BANK_A]}
