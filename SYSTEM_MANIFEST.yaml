@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.3.1-dev
+  version: 1.3.2-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -24,6 +24,7 @@ runtime:
   teacher_style_prediction: disabled
   historical_exam_usage: difficulty_calibration_only
   automation_runtime: ops/ARC_AUTOMATION_RUNTIME_V1.0.md
+  source_ledger_drive_folder_id: 1CmiPOP_Ma9FIuoyLOTEhjFpX7-tYwYwZ
   school_difficulty_levels:
     - SCHOOL_LOW
     - SCHOOL_STANDARD
@@ -75,6 +76,8 @@ active:
     similarity_guard: quality/ARC_SIMILARITY_GUARD_V1.0.md
     bank_policy: quality/BANK_POLICY_V1.1.md
     human_review_gate: quality/ARC_HUMAN_REVIEW_GATE_V1.0.md
+    source_ledger: quality/ARC_SOURCE_LEDGER_V1.0.md
+    source_ledger_schema: quality/source/ARC_SOURCE_LEDGER_SCHEMA_V1.0.yaml
     gold_anchor_policy: quality/gold/ARC_GOLD_ANCHOR_POLICY_V1.0.md
     gold_anchor_packs:
       korean: quality/gold/KOR_GOLD_ANCHORS_V1.0.md
