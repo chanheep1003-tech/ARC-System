@@ -4,7 +4,9 @@ STATUS: ACTIVE-DEV
 ROLE: Claude generation handoff without duplicating ARC
 
 ## 0. OPERATING PRINCIPLE
-Claude is a first-class ARC generator, not a separate ARC fork.
+Claude is a permanent first-class ARC generator, not a temporary test engine and not a separate ARC fork.
+Claude and GPT both produce ARC batches on a recurring basis.
+System/code/rule optimization belongs exclusively to the SYSTEM_MAINTAINER defined by `ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md`.
 Use the same source-of-truth as ChatGPT:
 - engine/rules: GitHub `chanheep1003-tech/ARC-System` latest `dev`
 - textbooks/worksheets/past exams: Google Drive `N제 시스템`
@@ -12,7 +14,8 @@ Use the same source-of-truth as ChatGPT:
 Do not create a Claude-specific copy of MASTER/QA rules.
 
 ## 1. STARTUP / ABSORPTION GATE
-Before generating any item in a fresh Claude/Cowork session, perform SYSTEM ABSORPTION first.
+Before generating any item in a fresh Claude/Cowork environment, perform SYSTEM ABSORPTION first.
+For later sessions, if the last absorbed ARC_RULESET_VERSION equals the current SYSTEM_MANIFEST version and the relevant MASTER/QA files did not change, use FAST_REFRESH instead of re-reading the entire system.
 Do not generate questions during this phase.
 
 Read in this order:
@@ -42,7 +45,14 @@ After reading, produce a short readiness digest containing:
 
 Set `CLAUDE_ARC_ABSORPTION_STATUS=PASS` only if every required rule/source actually opened is understood.
 Never claim a file was read if it was not opened.
-After PASS, WAIT for the user's explicit subject/item-count command before generation.
+After PASS, record LAST_ABSORBED_RULESET_VERSION.
+Then wait for the user's subject/item-count command or an explicitly configured recurring production task.
+
+FAST_REFRESH:
+1. read current SYSTEM_MANIFEST
+2. compare ARC_RULESET_VERSION
+3. if unchanged, read only the requested subject MASTER/GOLD + current Drive scope + any changed files
+4. if changed, re-run full absorption for affected rules before producing
 
 ## 1A. JIT LOAD ORDER DURING GENERATION
 At the start of every generation task:
@@ -85,16 +95,14 @@ A batch is considered occupied when it has:
 
 If occupied, advance to the next unfinished batch.
 
-## 4. CURRENT PRODUCTION ORDER
+## 4. RECURRING PRODUCTION
 Default subject priority remains:
 KOR → SOC → SCI → HIS → AI
 
-CURRENT USER OVERRIDE — 2026-09-18:
-- Claude is explicitly assigned an independent KOR batch and an independent SOC batch today.
-- The existing GPT KOR batch does NOT block Claude KOR for this assignment.
-- Treat Claude KOR as an alternate independent production set, not an accidental duplicate.
-- Do not generate anything until the user explicitly says to make KOR or SOC.
-- After Claude output exists, GPT/ChatGPT review will inspect the saved artifacts and propose system/template fixes; Claude should not modify ARC rules during production.
+Claude may regularly create independent ARC batches even when GPT also generates the same subject, provided each batch has a unique BATCH_ID and the user intended an alternate/new set.
+Do not overwrite or revise GPT batches in place.
+Do not edit ARC rules during production.
+When a batch reveals a systemic defect, write SYSTEM_FEEDBACK and leave the actual system patch to the maintainer.
 
 ## 5. PRODUCTION MODE
 Prioritize throughput over redundant cross-model review.
@@ -185,13 +193,16 @@ CREATED_AT
 If the connected environment cannot place a file directly, preserve a durable staged artifact and record its intended target instead of discarding work.
 A PDF is `DRAFT_REVIEW` until user/ChatGPT review; never mark FINAL_RELEASED automatically.
 
-## 11. GITHUB SAFETY
+## 11. GOVERNANCE / GITHUB SAFETY
+Read `ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md`.
 During ordinary item generation:
 - GitHub rules/MASTER are read-only
 - do not edit MASTER, QA, manifest, or policy files
-- system changes require a separate maintenance task
+- system changes require maintainer review
+- never patch a rule because your own batch failed it
+- system feedback must be evidence-based and stored separately from student-facing output
 
-## 12. CURRENT START COMMAND — ABSORB ONLY
+## 12. START COMMAND — FIRST SESSION / MAJOR RULESET CHANGE
 Use this command when beginning today's Cowork session:
 
 `Enter ARC SYSTEM ABSORPTION mode. Read the latest dev SYSTEM_MANIFEST, ARC_CLAUDE_HANDOFF, common generation engine, KOR/SOC active MASTERs, KOR/SOC GOLD anchors, QA/item-quality/source rules, PDF layout master, brand lockup spec, and the current-scope Drive structure/materials needed to understand the system. Do not generate questions yet. Produce a compact ARC readiness digest and set CLAUDE_ARC_ABSORPTION_STATUS=PASS only after the required mechanism is understood. Then wait for my KOR or SOC generation command.`
@@ -205,3 +216,21 @@ When the user later requests KOR or SOC:
 - stop after the requested subject unless the user explicitly asks to continue.
 
 END ARC CLAUDE HANDOFF V1.0
+
+
+## 13. SYSTEM FEEDBACK OUTPUT
+When a recurring defect is observed, create a short SYSTEM_FEEDBACK record instead of modifying GitHub.
+
+Required:
+BATCH_ID
+GENERATOR=CLAUDE
+ARC_RULESET_VERSION
+DEFECT_CLASS
+OBSERVED_BEHAVIOR
+REPRODUCTION_EVIDENCE
+PROPOSED_DIRECTION
+SEVERITY
+
+The maintainer will compare Claude and GPT evidence before changing ARC.
+
+END RECURRING GENERATOR PATCH
