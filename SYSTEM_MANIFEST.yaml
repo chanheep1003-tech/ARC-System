@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.4.6-dev
+  version: 1.4.7-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -31,6 +31,9 @@ runtime:
   runtime_priority_policy: ops/ARC_RUNTIME_PRIORITY_POLICY_V1.0.md
   post_exam_calibration: ops/ARC_POST_EXAM_CALIBRATION_V1.0.md
   claude_handoff: ops/ARC_CLAUDE_HANDOFF_V1.0.md
+  claude_absorption_gate_required: true
+  claude_pdf_status_default: DRAFT_REVIEW
+  claude_post_production_review: USER_PLUS_CHATGPT
   generation_strategy: MCP_FIRST_MULTI_MODEL
   generator_attribution_required: true
   duplicate_batch_avoidance: true
