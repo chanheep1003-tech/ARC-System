@@ -156,3 +156,18 @@ Default policy is throughput-first:
 - extra independent review is selective for D3+, ambiguous-answer, source-sensitive, and essential-visual high-risk items
 
 Claude-specific startup instructions are in `ops/ARC_CLAUDE_HANDOFF_V1.0.md`.
+
+
+## 14. GENERATOR / MAINTAINER SEPARATION
+All scheduled GPT production follows `ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md`.
+
+GPT scheduled production is GENERATOR work only:
+- GitHub READ_ONLY
+- Drive APPEND_ONLY
+- new unique BATCH_ID for every batch
+- pin ARC_RULESET_VERSION at batch start
+- never modify engine/MASTER/QA/template/tooling during generation
+- write SYSTEM_FEEDBACK when a systemic defect is suspected
+
+Interactive ChatGPT maintenance is the exclusive SYSTEM_MAINTAINER role.
+System optimization must not occur inside a production automation.
