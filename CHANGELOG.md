@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 1.4.5-dev — 2026-09-18
+- Diagnosed the 18:57 QA failure: root native-Doc creation and read succeeded, but background Drive metadata move was blocked by a safety check.
+- Scheduled QA no longer performs Drive parent mutations.
+- Added ROOT_STAGING as the scheduled persistence mode: create/write/read at provider root, record intended target folder, and defer folder organization to interactive maintenance.
+- The first real RAW shell now doubles as the persistence preflight, eliminating disposable probe overhead.
+- RAW generation is checkpointed every 5 items.
+- Hourly QA now targets at least one fully QA-complete 20-item subject per run and continues to the next subject only if runtime remains, avoiding fragile 100-item monolithic transactions.
+- ROOT_STAGED artifacts count as compute persistence success but are not reported as full storage placement success.
+
 ## 1.4.4-dev — 2026-09-18
 - Locked the approved ARC master logo/sub-brand system into the template layer.
 - ARC wordmark and burgundy arc symbol are now identical across CORE / N° / FINAL.
