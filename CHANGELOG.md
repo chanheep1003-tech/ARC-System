@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 1.3.1-dev — 2026-09-18
+- Added mandatory HUMAN_REVIEW_GATE before FINAL release of ARC N°/FINAL/CORE PDFs.
+- Human review is intentionally lightweight: scope, Social C X-mark exclusion where applicable, rendered visuals, and answer/final-PDF sanity only.
+- AI remains responsible for full answer verification, fact checks, data checks, and render QC before human review.
+- Added DRAFT_REVIEW → HUMAN_REVIEW → FINAL_RELEASED state contract.
+- Added FAST_HUMAN_REVIEW for exam-period use with high-risk items capped at five.
+
 ## 1.3.0-dev — 2026-09-18
 - Added fixed GOLD STANDARD anchor system for all five active subjects.
 - Each subject now has 3 GOOD + 3 BAD ARC-original example items with expected scores, decisions, and explicit reasons.
