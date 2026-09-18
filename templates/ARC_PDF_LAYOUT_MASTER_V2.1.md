@@ -913,7 +913,7 @@ CONTENT_RETURN_REQUIRED.
 
 조판 AI가 임의로 메우지 않는다.
 
-END ARC PDF TYPESETTING MASTER V2.0
+END ARC PDF TYPESETTING MASTER V2.1
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -992,9 +992,9 @@ END ARC LOGO LOCKUP ACCEPTANCE
 24. LOCKED CONTENT BUNDLE GATE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Typesetting starts only from a bundle compliant with:
-`ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.0.md`
+`ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.1.md`
 and
-`ops/ARC_TYPESETTER_CONTRACT_V1.0.md`.
+`ops/ARC_TYPESETTER_CONTRACT_V1.1.md`.
 
 Required:
 CONTENT_QA_STATUS=PASS
