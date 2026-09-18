@@ -22,14 +22,14 @@ When a claim is source-sensitive, `quality/ARC_SOURCE_LEDGER_V1.0.md` is also ma
 
 ## 3. N° / FINAL generation route
 - Always: `arc-item-generator`, `arc-distractor-engine`, `arc-fact-audit`, `arc-item-naturalness-audit`, `arc-item-qa`, `arc-set-editor`
-- QA authority: `ARC_ITEM_QUALITY_RUBRIC_V1.1` + `ARC_QA_BENCH_V1.1` + subject GOLD anchor pack
+- QA authority: `ARC_ITEM_QUALITY_RUBRIC_V1.1` + `ARC_QA_BENCH_V1.2` + subject GOLD anchor pack
 - Conditional source: `arc-source-ingest` when raw/unparsed files enter; `arc-research-grounding` when external information is needed.
 - Conditional visuals: `arc-visual-renderer` first applies `ARC_VISUAL_REFERENCE_FIRST_V1.0`, then selects the ARC visual skill. If a specialized MCP is available, route to draw.io / ChemCP / Timeline MCP according to `mcp/MCP_ORCHESTRATION_V1.0.md`; otherwise use the ARC visual skill fallback.
 - Repository context: GitHub official MCP may be used read-only; native GitHub connector remains a fallback.
 - Gold calibration: compare every candidate to nearest GOOD/BAD anchor before final QA score.
 - Source verification: SOURCE_REQUIRED claims receive SOURCE_ID and PASS B re-opens the original source before BANK_PASS.
 - Bank: `arc-bank-curator` only for PASS candidates.
-- Engine/Master changes: add `arc-eval-regression`.
+- Engine/Master/QA/source/bank-rule changes: add `arc-eval-regression` and run all 30 frozen fixtures before promotion.
 
 ## 4. Product behavior
 ### ARC N°
