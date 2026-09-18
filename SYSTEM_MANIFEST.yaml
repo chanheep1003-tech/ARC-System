@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.3.3-dev
+  version: 1.3.4-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -24,6 +24,19 @@ runtime:
   teacher_style_prediction: disabled
   historical_exam_usage: difficulty_calibration_only
   automation_runtime: ops/ARC_AUTOMATION_RUNTIME_V1.0.md
+  runtime_priority_policy: ops/ARC_RUNTIME_PRIORITY_POLICY_V1.0.md
+  subject_priority:
+    - KOR
+    - SOC
+    - SCI
+    - HIS
+    - AI
+  extra_resource_weights:
+    KOR: 30
+    SOC: 25
+    SCI: 20
+    HIS: 15
+    AI: 10
   source_ledger_drive_folder_id: 1CmiPOP_Ma9FIuoyLOTEhjFpX7-tYwYwZ
   school_difficulty_levels:
     - SCHOOL_LOW
