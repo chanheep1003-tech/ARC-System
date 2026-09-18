@@ -30,8 +30,8 @@ def verify(spec,manifest,asset):
 
     if template=="SCI-PARTICLE":
         expected={}
-        for p in spec.get("panels",[]):
-            pid=str(p.get("id"))
+        for pi,p in enumerate(spec.get("panels",[])):
+            pid=str(p.get("id", pi))
             expected[pid]={str(s["id"]):int(s["count"]) for s in p.get("species",[])}
         actual={}
         for c in root.findall(".//svg:circle",NS):
@@ -66,7 +66,11 @@ def verify(spec,manifest,asset):
         if sem.get("series")!=expected_series:
             errors.append("GRAPH_DATA_MISMATCH")
         text=svg_text(root)
-        for label in [spec["axes"]["x_label"],spec["axes"]["y_label"]]:
+        x_label=str(spec["axes"]["x_label"])
+        y_label=str(spec["axes"]["y_label"])
+        if spec["axes"].get("x_unit"): x_label += f" ({spec['axes']['x_unit']})"
+        if spec["axes"].get("y_unit"): y_label += f" ({spec['axes']['y_unit']})"
+        for label in [x_label,y_label]:
             if str(label) not in text:
                 errors.append(f"GRAPH_LABEL_MISSING:{label}")
         checks.append({"graph_series":len(expected_series)})
