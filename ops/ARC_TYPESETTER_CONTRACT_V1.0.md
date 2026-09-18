@@ -24,6 +24,16 @@ For every typesetting task read only:
 
 Do NOT load subject MASTER/GOLD/textbook/worksheet/source bank by default.
 
+## 1-A. BRAND ASSET GATE
+For cover full lockups, use the canonical Drive assets exactly:
+- ARC_CORE_LOCKUP_MASTER.png
+- ARC_N_LOCKUP_MASTER.png
+- ARC_FINAL_LOCKUP_MASTER.png
+under `N제 시스템/00_브랜드/로고·디자인요소`.
+
+Do not redraw/retype/reconstruct the logo.
+If the correct asset cannot be accessed, stop with BRAND_ASSET_MISSING rather than synthesizing a substitute.
+
 ## 2. ACCEPTANCE CHECK
 Before layout:
 - HANDOFF_STATUS=READY_FOR_TYPESET
@@ -52,6 +62,7 @@ Do not use general knowledge to fill missing conditions or visual data.
 ## 4. TYPESETTING WORK
 Allowed:
 - pagination
+- append the locked ANSWER_KEY as the final compact ARC N° answer section
 - product-permitted column decisions
 - line/paragraph breaks
 - typography
@@ -71,7 +82,10 @@ ARC FINAL / ARC CORE may retain flexible full-width or one-column layout only wh
 
 ## 5. PRODUCT RULES
 ARC N°:
-student problem-only PDF, no answer/explanation/difficulty/type/hint/editor metadata.
+student PDF contains cover + problem pages + one compact answer-key section at the end.
+Problem pages contain no answers.
+Answer-key section contains item number + answer only.
+No detailed explanation/difficulty/type/hint/editor metadata.
 
 ARC FINAL:
 test-like student PDF; answer key only as separate allowed artifact.
