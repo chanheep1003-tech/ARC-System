@@ -1,3 +1,19 @@
+## 1.7.4-dev — 2026-09-19
+- Activated ARC_CORE_CONTENT_ENGINE_V1.2 with adaptive concept depth.
+- Added ARC_CORE_DEPTH_ENGINE_V1.0 with internal STANDARD / ADVANCED / HIGH_DIFFICULTY priorities. Depth labels remain hidden from student-facing CORE.
+- HIGH_DIFFICULTY now expands condition, boundary, premise, trap-logic, and multi-step reasoning only when supported by scope/evidence; it does not authorize out-of-scope enrichment.
+- User-designated high-depth priorities: Social Kant–Beccaria punishment/death-penalty debate; Science OR redox and EM electromagnetic induction; Korean supplement-centered interpretation. History uses evidence-based difficulty-signal detection instead of a fixed hard unit.
+- Science OR/EM depth remains bounded by SCIENCE_MASTER's ADVANCED LEAK BLOCK; high depth emphasizes data/condition reasoning rather than upper-grade formulas.
+- Korean CORE source emphasis now prioritizes school supplements/worksheets and uses textbook content primarily for original text, foundations, and gap filling rather than repetitive re-summary.
+- History CORE detects clusters with overlapping periods, similar organizations/policies, formation-split-unification, ideological relations, source-speaker inference, map/region coupling, and multi-period actors before increasing depth.
+- Activated ARC_CORE_QA_BENCH_V1.1 with DEPTH_ASSIGNMENT, DEPTH_EVIDENCE, DEPTH_SCOPE_SAFETY, DEPTH_BUDGET, and HIGH_DIFFICULTY_COMPLETENESS gates.
+- Activated ARC_CORE_EDITORIAL_NATURALNESS_V1.1 and ARC_TEMPLATE_SYSTEM_v0.5_CORE_PATCH so adaptive depth changes information density rather than adding repetitive "advanced/killer" badges or fixed deep-dive cards.
+- Activated ARC_GENERATOR_CONTRACT_V1.3 with separate ARC_CORE and ARC_N/FINAL production routes.
+- Activated ARC_CLAUDE_HANDOFF_V1.1. Claude now resolves active versions from SYSTEM_MANIFEST and loads a CORE-specific stack for PRODUCT_MODE=ARC_CORE instead of hardcoded legacy N° files.
+- ARC_CORE subject MASTER use is scope/source/factual authority; N°-specific output, answer-key, distractor, and item-handoff clauses do not override the active CORE product contract.
+- GitHub dev remains source of truth; new CORE/Depth mirrors are pending_sync.
+- Executable frozen-fixture regression was not claimed in this connector-only maintenance pass.
+
 ## 1.7.3-dev — External skill intake addendum — 2026-09-19
 - Added ARC_EXTERNAL_SKILL_INTAKE_POLICY_V1.0 for governed use of public GitHub skills when ARC has a capability gap.
 - External skills are on-demand and remain below ARC scope/master/engine/QA authority.
