@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 1.2.2-dev — 2026-09-18
+- Diagnosed RUN09 scheduled QA failure: run folder created, then execution stopped before first subject artifact write.
+- Added checkpointed automation runtime policy with per-subject JIT loading and persist-first behavior.
+- Scheduled runs now prefer native Google Docs for RAW/QA/BANK/log artifacts.
+- Added ITEM QUALITY V1.1 anti-inflation ceilings and evidence-required scoring.
+- Added QA BENCH V1.1 sentinel recheck and score-distribution audit.
+- Direct recall, weak distractors, generic contexts, and ungrounded style can no longer receive inflated PREMIUM scores.
+- Automation failures must preserve partial progress and resume targets instead of reporting success.
+
 ## 1.2.1-dev — 2026-09-18
 - MCP server registration changed to persistent-by-default.
 - Connections remain available when the host supports persistence; actual tool invocation stays on-demand.
