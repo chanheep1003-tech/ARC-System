@@ -8,18 +8,28 @@ ARC uses multiple independent generators but one system maintainer.
 
 GENERATOR_GPT
 - generate ARC items/sets
-- run the active ARC QA required for its batch
-- create visuals/PDFs when requested
-- save new artifacts to Drive
+- run active content QA
+- prepare complete visual assets/specs
+- emit locked CONTENT_BUNDLE
+- stop at HANDOFF_STATUS=READY_FOR_TYPESET
 - GitHub is READ-ONLY during production
 
 GENERATOR_CLAUDE
-- same production authority as GENERATOR_GPT
+- same content-production authority as GENERATOR_GPT
 - generate independent ARC items/sets
-- run the active ARC QA required for its batch
-- create visuals/PDFs when requested
-- save new artifacts to Drive
+- run active content QA
+- prepare complete visual assets/specs
+- emit locked CONTENT_BUNDLE
+- stop at HANDOFF_STATUS=READY_FOR_TYPESET
 - GitHub is READ-ONLY during production
+
+TYPESETTER_GPT / TYPESETTER_CLAUDE
+- load a locked CONTENT_BUNDLE
+- load PDF/brand/required visual-layout rules only
+- typeset and render the requested ARC product
+- perform truthful PDF/render QC
+- never alter locked content semantics
+- return CONTENT_ERROR_FLAG instead of silently repairing content
 
 SYSTEM_MAINTAINER
 - owner: ChatGPT interactive maintenance session
@@ -93,7 +103,27 @@ Before generation:
 
 A batch never replaces another generator's batch.
 
-## 5. PRODUCT OWNERSHIP
+## 5. ROLE SEPARATION
+
+Canonical production pipeline:
+GENERATOR
+→ CONTENT_QA
+→ CONTENT_LOCKED
+→ READY_FOR_TYPESET
+→ TYPESETTER
+→ PDF_QC
+→ DRAFT_REVIEW
+→ HUMAN_REVIEW
+→ FINAL_RELEASED
+
+Generator and Typesetter SHOULD run as separate chats/projects/sessions to prevent long subject-generation context from carrying into layout work.
+
+The Generator does not need the full PDF master.
+The Typesetter does not need subject textbooks, worksheets, GOLD anchors, or generation QA by default.
+
+The transfer object is governed by `ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.0.md`.
+
+## 6. PRODUCT OWNERSHIP
 
 A single batch has exactly one primary generator.
 Do not mix authorship inside one batch unless explicitly requested.
@@ -105,7 +135,7 @@ Default:
 
 Selective independent review is allowed for high-risk items only.
 
-## 6. SYSTEM FEEDBACK CHANNEL
+## 7. SYSTEM FEEDBACK CHANNEL
 
 Generators may detect system defects but may not fix GitHub directly.
 
@@ -121,7 +151,7 @@ SYSTEM_FEEDBACK
 
 SYSTEM_MAINTAINER decides whether the observation warrants a rule/code/template change.
 
-## 7. CHANGE CONTROL
+## 8. CHANGE CONTROL
 
 System changes follow:
 production evidence
@@ -138,7 +168,7 @@ If rules change while a batch is in progress:
 - do not silently switch rules mid-batch
 - new batches use the newer ruleset
 
-## 8. DRIVE WRITE POLICY
+## 9. DRIVE WRITE POLICY
 
 Generators:
 - create new artifacts only
@@ -153,7 +183,7 @@ Maintainer:
 - may reconcile folder placement
 - may update system indices
 
-## 9. BANK POLICY
+## 10. BANK POLICY
 
 Generator output is never automatically equivalent to canonical release.
 
@@ -167,15 +197,18 @@ FINAL_RELEASED
 GPT and Claude may produce BANK_CANDIDATE.
 Promotion/release follows active BANK/HUMAN_REVIEW rules.
 
-## 10. PDF POLICY
+## 11. PDF POLICY
 
-GPT and Claude may both typeset ARC products.
-Generator PDFs default to DRAFT_REVIEW.
-They may not edit the PDF master or brand specification during production.
+GPT and Claude may both act as dedicated Typesetters in separate projects/sessions.
+Generators do not typeset PDFs.
 
-Recurring layout defects are sent through SYSTEM_FEEDBACK for maintainer correction.
+Typesetter PDFs default to DRAFT_REVIEW.
+Typesetters may not edit the PDF master or brand specification during production.
+Typesetters may not change CONTENT_LOCKED semantics.
 
-## 11. CONFLICT RESOLUTION
+Recurring layout defects are sent through TYPESET_FEEDBACK / SYSTEM_FEEDBACK for maintainer correction.
+
+## 12. CONFLICT RESOLUTION
 
 Priority when instructions conflict:
 1. explicit current user instruction
@@ -187,10 +220,10 @@ Priority when instructions conflict:
 
 A generator must stop or flag rather than invent a new rule.
 
-## 12. RESPONSIBILITY SUMMARY
+## 13. RESPONSIBILITY SUMMARY
 
 GPT + Claude:
-PRODUCE
+PRODUCE CONTENT as Generators OR produce PDFs as dedicated Typesetters, with one role per session/project
 
 ChatGPT system maintainer:
 OBSERVE → DIAGNOSE → OPTIMIZE → MODIFY CODE/RULES → VALIDATE
