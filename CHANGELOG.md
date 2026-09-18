@@ -1,3 +1,12 @@
+## 1.7.0-dev — 2026-09-18
+- ARC N° physical order locked to COVER → BLANK_COVER_VERSO → PROBLEM_PAGES → BLANK_BEFORE_ANSWER → ANSWER_KEY.
+- Added mandatory ANSWER_KEY_COMPLETE / ANSWER_COUNT_MATCH release gates.
+- Added immutable ARC logo registry with Drive IDs, pixel dimensions and SHA-256 hashes.
+- Activated COMMON_GENERATION_ENGINE_V4.1 and ARC_PDF_LAYOUT_MASTER_V2.1.
+- Activated Generator / Content Bundle / Typesetter contracts V1.1.
+- Drive mirror/start docs updated; older active references retained only as superseded history.
+- GitHub remains engine/rules source of truth; Google Drive remains school/source/bank/PDF storage.
+
 # CHANGELOG
 
 ## 1.6.4-dev — 2026-09-18
