@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.7.1-dev
+  version: 1.7.2-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -36,9 +36,9 @@ runtime:
   claude_post_production_review: USER_PLUS_CHATGPT
   generation_strategy: MCP_FIRST_MULTI_MODEL
   multi_model_governance: ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md
-  generator_contract: ops/ARC_GENERATOR_CONTRACT_V1.1.md
-  content_bundle_contract: ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.1.md
-  typesetter_contract: ops/ARC_TYPESETTER_CONTRACT_V1.1.md
+  generator_contract: ops/ARC_GENERATOR_CONTRACT_V1.2.md
+  content_bundle_contract: ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.2.md
+  typesetter_contract: ops/ARC_TYPESETTER_CONTRACT_V1.2.md
   production_role_split: GENERATOR_TO_TYPESETTER
   content_lock_required_before_typeset: true
   generator_pdf_typesetting: disabled
@@ -57,7 +57,11 @@ runtime:
   cover_logo_redraw: forbidden
   arc_n_full_width: disabled
   arc_n_one_column_fallback: disabled
-  protected_text_mode: enabled_for_subject_policy
+  protected_text_mode: source_bound_subject_policy
+  korean_source_text_mode: SOURCE_BOUND_EMBED
+  korean_self_contained_source_default: true
+  korean_student_source_required_default: false
+  source_text_web_full_reproduction: forbidden
   score_inflation_audit: required
   answer_position_editorial_audit: required
   option_shuffle_reverification: required
@@ -99,8 +103,8 @@ runtime:
 
 active:
   common_generation_engine:
-    path: engine/common/COMMON_GENERATION_ENGINE_V4.2_ARC.md
-    version: 4.2
+    path: engine/common/COMMON_GENERATION_ENGINE_V4.3_ARC.md
+    version: 4.3
     drive_id: null
     drive_mirror_status: pending_sync
 
@@ -118,8 +122,9 @@ active:
       drive_id: null
       drive_mirror_status: pending_sync
     korean:
-      path: subjects/KOREAN_MASTER_V4.0.md
-      drive_id: 1cgnQh_cNLbZYnCSxx8p1KtdZAjaVwb23
+      path: subjects/KOREAN_MASTER_V4.1.md
+      drive_id: null
+      drive_mirror_status: pending_sync
     history:
       path: subjects/HISTORY_MASTER_V4.0.md
       drive_id: 1RDjtvz1FBr9ght3RzMg4YjU_ty1nlpvU
@@ -129,7 +134,7 @@ active:
 
   quality:
     scope_ledger: quality/ARC_SCOPE_LEDGER_V1.0.md
-    qa_bench: quality/ARC_QA_BENCH_V1.4.md
+    qa_bench: quality/ARC_QA_BENCH_V1.5.md
     error_database: quality/ARC_ERROR_DATABASE_V1.0.md
     difficulty_engine: quality/ARC_DIFFICULTY_ENGINE_V1.1.md
     difficulty_anchors: quality/ARC_DIFFICULTY_ANCHORS_V1.0.md
@@ -158,7 +163,7 @@ active:
     regression_fixture_count: 30
     gold_anchor_policy: quality/gold/ARC_GOLD_ANCHOR_POLICY_V1.0.md
     gold_anchor_packs:
-      korean: quality/gold/KOR_GOLD_ANCHORS_V1.0.md
+      korean: quality/gold/KOR_GOLD_ANCHORS_V1.1.md
       science: quality/gold/SCI_GOLD_ANCHORS_V1.0.md
       social: quality/gold/SOC_GOLD_ANCHORS_V1.0.md
       history: quality/gold/HIS_GOLD_ANCHORS_V1.0.md
@@ -185,7 +190,7 @@ active:
   layout:
     brand_lockup: templates/brand/ARC_BRAND_LOCKUP_SPEC_V1.0.md
     brand_asset_registry: templates/brand/ARC_BRAND_ASSET_REGISTRY_V1.0.md
-    pdf_master: templates/ARC_PDF_LAYOUT_MASTER_V2.1.md
+    pdf_master: templates/ARC_PDF_LAYOUT_MASTER_V2.2.md
     core_patch: templates/core/ARC_TEMPLATE_SYSTEM_v0.3_CORE_PATCH.md
 
 excluded_from_release:
