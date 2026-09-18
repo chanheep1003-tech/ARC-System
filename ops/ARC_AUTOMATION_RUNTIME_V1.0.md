@@ -12,7 +12,7 @@ A run is checkpointed by subject and must leave recoverable Drive artifacts afte
 Do not preload all five subject masters and all source files.
 Per subject:
 1. read SYSTEM_MANIFEST
-2. read only that subject MASTER + required quality files
+2. read only that subject MASTER + required quality files + subject GOLD anchor pack
 3. read only current-scope Drive sources needed for that subject
 4. generate
 5. checkpoint
@@ -66,10 +66,11 @@ On any failure:
 Do not report SUCCESS when required artifacts are absent.
 
 ## 8. QUALITY CONTRACT
-Use ARC_ITEM_QUALITY_RUBRIC_V1.1 and ARC_QA_BENCH_V1.1.
+Use ARC_ITEM_QUALITY_RUBRIC_V1.1, ARC_QA_BENCH_V1.1, and the subject GOLD_ANCHORS_V1.0 pack.
 Do not assign target-looking scores before inspecting the actual item.
 Score components require evidence.
 Direct recall and weak distractor score ceilings apply automatically.
+Each item records nearest GOOD/BAD anchor internally; BAD-match defects apply before BANK decision.
 
 ## 9. OPTIMIZATION
 No engine/prompt optimization until subject production and persistence completes.
