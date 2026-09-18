@@ -6,7 +6,7 @@ prompts:
       Evaluate this ARC regression fixture with the current candidate QA rules.
       Return JSON only with:
       {
-        "decision": "BANK_A|BANK_B|PASS|REVISE|DISCARD",
+        "decision": "PREMIUM_BANK_A|BANK_A|BANK_B|PASS|REVISE|DISCARD",
         "item_score": number|null,
         "hard_fail": true|false,
         "reasons": ["..."]
@@ -20,8 +20,10 @@ prompts:
       {{fixture_text}}
 
 providers:
-  - id: file://provider.py
-    label: ARC candidate adapter
+  - id: file://provider.py:baseline_api
+    label: ARC baseline
+  - id: file://provider.py:candidate_api
+    label: ARC candidate
 
 defaultTest:
   assert:
