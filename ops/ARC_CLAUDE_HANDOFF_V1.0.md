@@ -4,7 +4,7 @@ STATUS: ACTIVE-DEV
 ROLE: Claude generation handoff without duplicating ARC
 
 ## 0. OPERATING PRINCIPLE
-Claude is a permanent first-class ARC generator, not a temporary test engine and not a separate ARC fork.
+Claude is a permanent first-class ARC content generator, not a temporary test engine and not a separate ARC fork.
 Claude and GPT both produce ARC batches on a recurring basis.
 System/code/rule optimization belongs exclusively to the SYSTEM_MAINTAINER defined by `ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md`.
 Use the same source-of-truth as ChatGPT:
@@ -27,15 +27,15 @@ Read in this order:
 6. `quality/ARC_QA_BENCH_V1.2.md`
 7. `quality/ARC_ITEM_QUALITY_RUBRIC_V1.1.md`
 8. `quality/ARC_SOURCE_LEDGER_V1.0.md`
-9. active visual policies when visuals may be used
-10. `templates/ARC_PDF_LAYOUT_MASTER_V2.0.md`
-11. `templates/brand/ARC_BRAND_LOCKUP_SPEC_V1.0.md`
+9. active visual/content policies when visuals may be used
+10. `ops/ARC_GENERATOR_CONTRACT_V1.0.md`
+11. `ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.0.md`
 12. current-scope Drive materials and relevant folder structure
 
 After reading, produce a short readiness digest containing:
 - source-of-truth hierarchy
 - scope lock and exclusion hierarchy
-- generation → QA → layout/PDF separation
+- generation → QA → CONTENT_LOCK → READY_FOR_TYPESET separation
 - hard-fail conditions
 - source verification rules
 - visual rules
@@ -169,17 +169,17 @@ SOC:
 - review/QA target: `03_통합사회/검수·수정본` ID `1RtlCgV2whtzyMJjxbZpThqoO4JKfkMaY`
 - finished N° PDF target: `03_통합사회/완성N제` ID `1ZloquIO4K5vF1V35g85IC93Mj_epHL-0`
 
-Required batch outputs:
+Required generator outputs:
 1. SOURCE/LOAD manifest or short audit note
 2. QUESTION_MANUSCRIPT + ANSWER_KEY + LAYOUT_ASSET_MANIFEST + QC_STATUS
 3. QA report
-4. student-facing ARC N° PDF
-5. optional editor answer key/answer sheet kept separate from student PDF
+4. complete VISUAL_ASSET/VISUAL_SPEC handoff where needed
+5. locked CONTENT_BUNDLE with CONTENT_QA_STATUS=PASS, CONTENT_LOCK=true, HANDOFF_STATUS=READY_FOR_TYPESET
 
 Naming:
 - `ARC_N_<SUBJECT>_CLAUDE_<YYYYMMDD>_<BATCH_ID>_MANUSCRIPT`
 - `ARC_N_<SUBJECT>_CLAUDE_<YYYYMMDD>_<BATCH_ID>_QA`
-- `ARC_N_<SUBJECT>_CLAUDE_<YYYYMMDD>_<BATCH_ID>_DRAFT.pdf`
+- `ARC_CONTENT_<SUBJECT>_<BATCH_ID>_READY`
 
 Every saved artifact must record:
 GENERATOR=CLAUDE
@@ -191,7 +191,7 @@ QA_STATUS
 CREATED_AT
 
 If the connected environment cannot place a file directly, preserve a durable staged artifact and record its intended target instead of discarding work.
-A PDF is `DRAFT_REVIEW` until user/ChatGPT review; never mark FINAL_RELEASED automatically.
+Do not typeset the student PDF in the Generator project. A dedicated Typesetter project consumes READY_FOR_TYPESET bundles.
 
 ## 11. GOVERNANCE / GITHUB SAFETY
 Read `ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md`.
@@ -210,9 +210,9 @@ Use this command when beginning today's Cowork session:
 When the user later requests KOR or SOC:
 - generate exactly the requested batch
 - the current user override permits an independent Claude KOR even if GPT KOR exists
-- run ARC QA
-- typeset ARC N° PDF
-- save manuscript + QA + PDF to the subject folders above
+- run ARC content QA
+- create and lock the CONTENT_BUNDLE
+- save manuscript + QA + READY_FOR_TYPESET content bundle
 - stop after the requested subject unless the user explicitly asks to continue.
 
 END ARC CLAUDE HANDOFF V1.0
