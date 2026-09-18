@@ -101,3 +101,15 @@ V1.0은 GOLD 30개로 시작한다.
 fixture 수를 무작정 늘리지 않는다. 새로운 실패 클래스를 대표하는 케이스만 추가한다.
 
 END ARC REGRESSION POLICY V1.0
+
+## 8. EXECUTABLE RUNNER
+기본 실행기는 `tooling/promptfoo/promptfooconfig.yaml`이다.
+Promptfoo가 30 frozen fixture를 불러오고 custom assertion으로 decision/score/hard-fail 기대값을 검증한다.
+실행 증거:
+- command
+- candidate version
+- output artifact path
+- fixture pass/warn/fail counts
+- REGRESSION_FAIL_COUNT
+를 기록한다.
+실제 실행 artifact가 없으면 RELEASE GATE에서 regression PASS라고 표기할 수 없다.
