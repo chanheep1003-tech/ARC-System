@@ -90,6 +90,11 @@ SCOPE / DRIVE_FIRST / UNIQUE_ANSWER / INDEPENDENT_RECHECK / COPYRIGHT / NUMBERIN
 ## 10. HARD FAIL
 범위 밖 필수지식 / 복수정답 / 조건 부족 / 원문 왜곡 / 작품 전문 복제 / 가짜 시각자료 / placeholder / 상세해설 출력 / 학생용 원고에 편집자 메타데이터 혼입.
 
-
 ## 11. ARC HANDOFF
 공통 엔진 V4.0의 HANDOFF_META와 SECTION A~D를 그대로 따른다. ANSWER_KEY는 편집/검증용이며 학생 PDF에 직접 삽입하지 않는다. FINAL 요청도 별도 FINAL 프롬프트를 쓰지 않고 PRODUCT_MODE=ARC_FINAL로 처리한다.
+
+## 12. GOLD STANDARD ANCHORS
+필수 로드: `quality/gold/KOR_GOLD_ANCHORS_V1.0.md`
+생성 전 GOOD 3문항, BAD 3문항을 실제 비교 기준으로 읽는다.
+각 생성 문항 내부 메타데이터에 `NEAREST_GOOD_ANCHOR / NEAREST_BAD_ANCHOR / ANCHOR_MATCH_NOTE`를 기록한다.
+앵커는 범위를 확장하지 않으며 현재 SCOPE/학교자료가 항상 우선한다.
