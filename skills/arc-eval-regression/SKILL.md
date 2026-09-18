@@ -2,7 +2,7 @@
 name: arc-eval-regression
 description: 'ARC 엔진·MASTER·QA 규칙 변경 전후의 품질 회귀를 고정 fixture로 검출한다. 30개 frozen fixture와 기대 판정을 사용해 버전 비교할 때 사용한다.'
 metadata:
-  version: 1.1.0
+  version: 1.2.0
   arc-role: regression-evaluation
 ---
 # ARC Eval Regression
@@ -39,6 +39,14 @@ fixture는 anchor ID를 참조하되 expected decision/score/hard-fail을 별도
 
 단순 README/오탈자 변경은 생략 가능.
 
+## 실행기
+기본 runner:
+- `tooling/promptfoo/promptfooconfig.yaml`
+- promptfoo
+- 30 frozen fixtures
+candidate adapter는 `ARC_CANDIDATE_CMD` 또는 사전 생성된 result directory를 사용한다.
+실제로 promptfoo를 돌리지 않은 경우 REGRESSION_EXECUTED=false로 기록하며 통과했다고 주장하지 않는다.
+
 ## 절차
 1. 변경 전 baseline version과 변경 목적을 기록한다.
 2. REGRESSION_FIXTURES_V1.0 30개를 로드한다.
@@ -46,7 +54,8 @@ fixture는 anchor ID를 참조하되 expected decision/score/hard-fail을 별도
 4. expected decision, score range/ceiling, hard-fail 여부를 비교한다.
 5. 결과를 PASS / WARN / FAIL로 분류한다.
 6. FAIL 하나라도 있으면 main promotion 금지.
-7. RUN_LOG/CHANGELOG에 요약을 남긴다.
+7. promptfoo JSON/HTML 결과를 저장한다.
+8. RUN_LOG/CHANGELOG에 요약을 남긴다.
 
 ## 판정
 ### GOOD
