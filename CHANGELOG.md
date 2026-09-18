@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 1.4.1-dev — 2026-09-18
+- Added lightweight SCHOOL_REFERENCE_PROFILE; historical exams remain difficulty/broad-format references only and teacher-style prediction stays disabled.
+- Added dormant POST_EXAM_CALIBRATION skeleton for use only after the real exam is available.
+- Added GitHub Actions smoke checks for Python syntax, YAML parsing, and exact 30-fixture loading.
+- Completed manifest wiring for the executable tooling layer.
+
 ## 1.4.0-dev — 2026-09-18
 - Added executable tooling layer instead of policy-only checks.
 - Added promptfoo regression runner for the 30 frozen fixtures with custom candidate adapter and decision/score/hard-fail assertions.
