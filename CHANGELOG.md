@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 1.3.0-dev — 2026-09-18
+- Added fixed GOLD STANDARD anchor system for all five active subjects.
+- Each subject now has 3 GOOD + 3 BAD ARC-original example items with expected scores, decisions, and explicit reasons.
+- Subject MASTER files now require their GOLD anchor pack during generation and QA.
+- Item generator/QA/runtime record nearest GOOD/BAD anchor and apply BAD score ceilings before BANK decisions.
+- Anchors calibrate structure, reasoning, distractor realism, and evidence use without expanding scope or copying copyrighted source items.
+
 ## 1.2.2-dev — 2026-09-18
 - Diagnosed RUN09 scheduled QA failure: run folder created, then execution stopped before first subject artifact write.
 - Added checkpointed automation runtime policy with per-subject JIT loading and persist-first behavior.
