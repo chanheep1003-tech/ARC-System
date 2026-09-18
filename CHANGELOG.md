@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 1.4.4-dev — 2026-09-18
+- Locked the approved ARC master logo/sub-brand system into the template layer.
+- ARC wordmark and burgundy arc symbol are now identical across CORE / N° / FINAL.
+- Divider geometry, label baseline, spacing, and overall lockup proportions are fixed across all three product variants.
+- Product differentiation is restricted to secondary label/divider color: CORE warm gray, N° deep navy, FINAL burgundy.
+- N° may receive limited optical glyph compensation while retaining the same label zone.
+- Cover volume numbers are separate metadata and no longer distort the ARC N° lockup.
+- PDF and CORE template rules now reference ARC_BRAND_LOCKUP_SPEC_V1.0.
+
 ## 1.4.3-dev — 2026-09-18
 - Added mandatory one-time Drive write preflight before any expensive subject generation.
 - Verified OAuth/delegated persistence end-to-end: root native Doc creation → parent read → addParents/removeParents move → content write → destination verification.
