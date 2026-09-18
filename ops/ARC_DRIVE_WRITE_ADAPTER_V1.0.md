@@ -27,7 +27,31 @@ Do NOT pass parent_folder_id to native `create_file`.
 
 This create-then-move flow is the default when connection mode is unknown.
 
-## 2. PERSIST-FIRST SEMANTICS
+## 2. WRITE PREFLIGHT
+Before KOR generation starts, run exactly one small native-Doc write probe.
+
+Canonical preflight:
+1. create a tiny native Google Doc with NO parent_folder_id
+2. read its current parent_ids
+3. move it to RUN_LOG with addParents/removeParents
+4. write a short probe body
+5. re-read metadata and verify target parent + non-empty content
+
+If this passes:
+- DRIVE_PREFLIGHT_STATUS=PASS
+- DRIVE_WRITE_MODE=CREATE_THEN_MOVE
+- do not re-probe capability for each artifact
+
+If this fails:
+- stop BEFORE expensive item generation
+- failure_stage=DRIVE_PERSISTENCE_PREFLIGHT
+- persist the probe/failure FILE_ID if possible
+- do not generate unsavable RAW content
+
+Current verified OAuth/delegated pattern on 2026-09-18:
+root create → parent read → move → body write → target-parent verify = PASS.
+
+## 3. PERSIST-FIRST SEMANTICS
 A successfully created native file is durable persistence even before the move.
 Therefore a folder-placement failure must NOT discard completed generation work.
 
@@ -43,11 +67,11 @@ If native file creation itself fails:
 - PERSISTED=false
 - subject may become FAILED_PENDING_RESUME
 
-## 3. TARGET VERIFICATION
+## 4. TARGET VERIFICATION
 Never infer successful placement from the move call alone.
 Verify the file ID appears in the destination folder or its returned parent_ids include the target.
 
-## 4. FILE TYPES
+## 5. FILE TYPES
 Scheduled ARC artifacts should remain native Google Docs unless a product requires another format:
 - RAW
 - QA report
@@ -55,16 +79,18 @@ Scheduled ARC artifacts should remain native Google Docs unless a product requir
 - BANK_PASS candidate report
 - RUN/FAILURE log
 
-## 5. RUN FOLDER
+## 6. RUN FOLDER
 Run folders may be created directly under the appropriate root when folder creation supports a parent.
 Native Docs inside that folder still use MODE B when required.
 
-## 6. FAILURE LOG
+## 7. FAILURE LOG
 Failure logs must use the same adapter.
 If placement fails, a root-level durable failure log is acceptable temporarily, but it must be marked MOVE_PENDING and retried.
 
-## 7. SUCCESS METADATA
+## 8. SUCCESS METADATA
 Report:
+- DRIVE_CONNECTION_MODE = SERVICE_ACCOUNT | OAUTH_DELEGATED | UNKNOWN
+- DRIVE_PREFLIGHT_STATUS = PASS | FAIL
 - DRIVE_WRITE_MODE = DIRECT_PARENT | CREATE_THEN_MOVE
 - STORAGE_PLACEMENT = VERIFIED | MOVE_PENDING
 - ORPHANED_FILE_IDS = []
