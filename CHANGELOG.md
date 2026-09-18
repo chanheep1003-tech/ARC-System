@@ -1,3 +1,13 @@
+## 1.7.1-dev — 2026-09-18
+- Activated COMMON_GENERATION_ENGINE_V4.2 with natural five-choice answer-position planning: soft distribution bands, streak/periodicity flags, and mandatory re-verification after option shuffling.
+- Added CLAIM_FIDELITY safeguards for thinker/theory items: explicit position vs supported implication vs opponent critique vs straw-man risk.
+- Activated SOCIAL_MASTER_V4.1 with PHILOSOPHY_ATTRIBUTION, CRITIQUE_TARGET_FIDELITY, and ABSOLUTE_WORDING_AUDIT gates.
+- Activated ARC_ITEM_QUALITY_RUBRIC_V1.3, ARC_SET_EDITORIAL_ENGINE_V1.1, and ARC_QA_BENCH_V1.4.
+- Added SOC-B04 Kant/Beccaria punishment-theory bench target for attribution, critique fidelity, absolute wording, and answer-position distribution.
+- Corrected manifest answer-key placement wording to AFTER_REQUIRED_SEPARATOR_BLANK, consistent with the required blank page before the answer section.
+- Drive mirrors for the newly activated Common/Social masters are marked pending_sync; GitHub dev remains the rules source of truth.
+- Executable 30-fixture regression was not claimed in this connector-only maintenance pass; release promotion still requires the existing regression gate.
+
 ## 1.7.0-dev — 2026-09-18
 - ARC N° physical order locked to COVER → BLANK_COVER_VERSO → PROBLEM_PAGES → BLANK_BEFORE_ANSWER → ANSWER_KEY.
 - Added mandatory ANSWER_KEY_COMPLETE / ANSWER_COUNT_MATCH release gates.
