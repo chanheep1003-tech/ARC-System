@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.4.7-dev
+  version: 1.5.0-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -35,6 +35,12 @@ runtime:
   claude_pdf_status_default: DRAFT_REVIEW
   claude_post_production_review: USER_PLUS_CHATGPT
   generation_strategy: MCP_FIRST_MULTI_MODEL
+  multi_model_governance: ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md
+  system_maintainer: CHATGPT_INTERACTIVE
+  generator_github_mode: READ_ONLY
+  generator_drive_mode: APPEND_ONLY
+  generator_system_mutation: forbidden
+  ruleset_version_pin_per_batch: true
   generator_attribution_required: true
   duplicate_batch_avoidance: true
   universal_cross_model_review: false
