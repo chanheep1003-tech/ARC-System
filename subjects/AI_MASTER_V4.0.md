@@ -63,6 +63,10 @@ D QC_STATUS
 ## 9. HARD FAIL
 방문순서 미지정 DFS/BFS / 실행결과 오류 / 상관=인과 / 범위 밖 고급 AI 수학 / 복수정답 / placeholder / 가짜 시각자료 / 해설 출력.
 
-
 ## 10. ARC HANDOFF
 공통 엔진 V4.0의 HANDOFF_META와 SECTION A~D를 따른다. FINAL은 PRODUCT_MODE=ARC_FINAL로 처리하고 별도 FINAL 프롬프트를 사용하지 않는다.
+
+## 11. GOLD STANDARD ANCHORS
+필수 로드: `quality/gold/AI_GOLD_ANCHORS_V1.0.md`
+DFS/BFS는 조건 명시와 실제 추적 부담을 GOOD 앵커로 보정하고, 방문순서 조건 누락은 BAD hard fail로 처리한다.
+데이터 문항은 상관/인과와 단계 구분 앵커를 우선 비교한다.
