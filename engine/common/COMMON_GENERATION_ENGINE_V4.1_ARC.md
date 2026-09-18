@@ -484,8 +484,8 @@ Before handoff:
 - no unresolved placeholder
 
 Use:
-`ops/ARC_GENERATOR_CONTRACT_V1.0.md`
-`ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.0.md`
+`ops/ARC_GENERATOR_CONTRACT_V1.1.md`
+`ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.1.md`
 
 If the user also asks for a PDF, complete the bundle and hand it to a separate dedicated Typesetter session/project.
 Do not carry full subject source context into the layout phase.
