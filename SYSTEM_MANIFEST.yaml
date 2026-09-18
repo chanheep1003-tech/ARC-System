@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.7.0-dev
+  version: 1.7.1-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -51,7 +51,7 @@ runtime:
   arc_brand_asset_hash_gate: required
   arc_n_problem_start_physical_page: 3
   arc_n_answer_key_page_break_before: required
-  arc_n_answer_key_position: IMMEDIATE_AFTER_LAST_PROBLEM
+  arc_n_answer_key_position: AFTER_REQUIRED_SEPARATOR_BLANK
   arc_n_detailed_explanation_default: disabled
   cover_logo_mode: CANONICAL_ASSET_ONLY
   cover_logo_redraw: forbidden
@@ -59,6 +59,10 @@ runtime:
   arc_n_one_column_fallback: disabled
   protected_text_mode: enabled_for_subject_policy
   score_inflation_audit: required
+  answer_position_editorial_audit: required
+  option_shuffle_reverification: required
+  claim_fidelity_audit: required_when_applicable
+  social_philosophy_attribution_gate: required_when_applicable
   d4_d5_minimum_gate: required
   exact_drive_parent_verification: required
   typesetter_subject_source_reload_default: disabled
@@ -95,9 +99,10 @@ runtime:
 
 active:
   common_generation_engine:
-    path: engine/common/COMMON_GENERATION_ENGINE_V4.1_ARC.md
-    version: 4.1
-    drive_id: 1n9-Jrn0qnXlTLP5W70UOjdPJuVKWB82U-Ax2tDvlVHI
+    path: engine/common/COMMON_GENERATION_ENGINE_V4.2_ARC.md
+    version: 4.2
+    drive_id: null
+    drive_mirror_status: pending_sync
 
   core_content_engine:
     path: engine/core/ARC_CORE_CONTENT_ENGINE_V1.0.md
@@ -109,8 +114,9 @@ active:
       path: subjects/SCIENCE_MASTER_V4.0.md
       drive_id: 1GU5tPHHBrIcGVYA1znOp6MQw7TEciZLi
     social:
-      path: subjects/SOCIAL_MASTER_V4.0.md
-      drive_id: 112V98atwVL7nIkEw3aPzZYgLpHDjVp8q
+      path: subjects/SOCIAL_MASTER_V4.1.md
+      drive_id: null
+      drive_mirror_status: pending_sync
     korean:
       path: subjects/KOREAN_MASTER_V4.0.md
       drive_id: 1cgnQh_cNLbZYnCSxx8p1KtdZAjaVwb23
@@ -123,7 +129,7 @@ active:
 
   quality:
     scope_ledger: quality/ARC_SCOPE_LEDGER_V1.0.md
-    qa_bench: quality/ARC_QA_BENCH_V1.3.md
+    qa_bench: quality/ARC_QA_BENCH_V1.4.md
     error_database: quality/ARC_ERROR_DATABASE_V1.0.md
     difficulty_engine: quality/ARC_DIFFICULTY_ENGINE_V1.1.md
     difficulty_anchors: quality/ARC_DIFFICULTY_ANCHORS_V1.0.md
@@ -131,11 +137,11 @@ active:
     school_difficulty_bench:
       path: quality/ARC_SCHOOL_DIFFICULTY_BENCH_V1.0.md
       drive_id: 1t0l6juVLzJxx9UMN5YwG1eRu4enAXpmX
-    item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.2.md
+    item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.3.md
     visual_authenticity: quality/ARC_VISUAL_AUTHENTICITY_RUBRIC_V1.1.md
     visual_template: quality/ARC_VISUAL_TEMPLATE_SYSTEM_V1.1.md
     visual_anchors: quality/ARC_VISUAL_ANCHORS_V1.1.md
-    set_editorial: quality/ARC_SET_EDITORIAL_ENGINE_V1.0.md
+    set_editorial: quality/ARC_SET_EDITORIAL_ENGINE_V1.1.md
     similarity_guard: quality/ARC_SIMILARITY_GUARD_V1.1.md
     similarity_implementation: quality/similarity/ARC_SIMILARITY_IMPLEMENTATION_V1.0.md
     similarity_thresholds: quality/similarity/SIMILARITY_THRESHOLDS_V1.0.yaml
