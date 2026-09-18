@@ -6,6 +6,7 @@
 - Scheduled runs now prefer native Google Docs for RAW/QA/BANK/log artifacts.
 - Added ITEM QUALITY V1.1 anti-inflation ceilings and evidence-required scoring.
 - Added QA BENCH V1.1 sentinel recheck and score-distribution audit.
+- Added BANK POLICY V1.1: pre-V1.1 BANK remains stored but is inactive until V1.1 revalidation.
 - Direct recall, weak distractors, generic contexts, and ungrounded style can no longer receive inflated PREMIUM scores.
 - Automation failures must preserve partial progress and resume targets instead of reporting success.
 
