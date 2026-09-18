@@ -16,7 +16,7 @@ Skills and MCP tools never override scope.
 
 ## 2. Load policy
 Read `skills/SKILL_REGISTRY.yaml`, then load only skills required by the task. If a specialized external tool is needed, read `mcp/SERVER_REGISTRY.yaml` and `mcp/MCP_POLICY.yaml`; do not preload all MCP servers.
-Scheduled generation additionally follows `ops/ARC_AUTOMATION_RUNTIME_V1.0.md` and `ops/ARC_RUNTIME_PRIORITY_POLICY_V1.0.md`: per-subject JIT loading, checkpointing, native-Docs persistence, subject priority, resource budgeting, and resume-on-failure.
+Scheduled generation additionally follows `ops/ARC_AUTOMATION_RUNTIME_V1.0.md`, `ops/ARC_DRIVE_WRITE_ADAPTER_V1.0.md`, and `ops/ARC_RUNTIME_PRIORITY_POLICY_V1.0.md`: write preflight, connection-aware native-Docs persistence, per-subject JIT loading, checkpointing, subject priority, resource budgeting, and resume-on-failure.
 For N°/FINAL generation and item QA, the subject-specific `quality/gold/*_GOLD_ANCHORS_V1.0.md` is a required JIT input.
 When a claim is source-sensitive, `quality/ARC_SOURCE_LEDGER_V1.0.md` is also mandatory.
 
