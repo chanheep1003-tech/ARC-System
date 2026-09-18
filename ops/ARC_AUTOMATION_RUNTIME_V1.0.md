@@ -5,12 +5,18 @@ STATUS: ACTIVE-DEV
 ROLE: scheduled ARC generation runtime resilience
 
 ## 0. DRIVE PERSISTENCE PREFLIGHT
+Scheduled/background runs use `ROOT_STAGING`, not CREATE_THEN_MOVE.
+Do not call Drive metadata move/update_file in scheduled QA because background safety checks may block parent mutations.
+
+For the first subject, create the actual RAW shell at root/default, write its staging header, re-read it, and use that as the persistence preflight.
+If create/write/read succeeds, set DRIVE_PREFLIGHT_STATUS=PASS and continue.
+
 Before loading KOR sources or generating any RAW items, read `ops/ARC_DRIVE_WRITE_ADAPTER_V1.0.md` and perform its one-time write preflight.
-For the current OAuth/delegated connector, default to CREATE_THEN_MOVE:
-create native Doc at root/default → read parent_ids → move to target with addParents/removeParents → verify target parent → write/verify content.
+Default scheduled path:
+root create → staging-header write → non-empty readback → chunked content append.
 
 If DRIVE_PREFLIGHT_STATUS != PASS, stop before expensive generation and log DRIVE_PERSISTENCE_PREFLIGHT.
-Do not retry direct parent creation for every artifact after a capability error.
+Folder placement is deferred; it is not part of scheduled preflight.
 
 ## 1. ROOT CAUSE TARGET
 Background automation must not attempt one monolithic 100-item transaction.
@@ -41,13 +47,14 @@ Failure in one subject must not erase completed subjects.
 
 ## 4. PERSIST-FIRST
 For each subject:
-A. generate 20-item RAW
-B. immediately persist RAW as a native Google Doc using the active Drive write adapter
-C. then run QA
-D. persist subject QA summary
-E. persist `SOURCE_LEDGER_<RUN_ID>_<SUBJECT>` as native Google Doc when source-sensitive claims exist; if none, record SOURCE_REQUIRED_RECORDS=0
-F. persist BANK_PASS candidates as a native Google Doc in subject bank only after source gate passes
-G. continue to next subject
+A. create a ROOT_STAGED RAW Google Doc and verify its staging header
+B. generate RAW in chunks of 5 items and append each chunk immediately
+C. after each 5-item chunk, verify readable/non-empty state
+D. after 20 RAW items are durable, run QA
+E. persist subject QA summary as ROOT_STAGED
+F. persist SOURCE_LEDGER as ROOT_STAGED when source-sensitive claims exist; if none, record SOURCE_REQUIRED_RECORDS=0
+G. persist BANK_PASS candidate report as ROOT_STAGED after source gate passes
+H. continue to next subject
 
 Do not wait until all 100 items are complete before the first write.
 
@@ -56,7 +63,7 @@ Background automation uses native Google Docs for RAW, QA report, BANK batch, RU
 Markdown may be used in interactive/manual runs but is not required for scheduled automation.
 
 Reason: native Docs creation/write is reliable only when connection-aware persistence is used.
-On OAuth/delegated Drive, direct `parent_folder_id` creation is not a valid assumption; use CREATE_THEN_MOVE.
+On scheduled OAuth/delegated Drive, direct parent creation and metadata moves are both unsafe assumptions; use ROOT_STAGING.
 
 ## 6. RESUME CONTRACT
 Run folder contains STATUS markers in the QA report:
@@ -114,3 +121,16 @@ No engine/prompt optimization until subject production and persistence completes
 Repeated defect >=3 may create a patch candidate; do not mutate GitHub during ordinary scheduled generation.
 
 END ARC AUTOMATION RUNTIME V1.0
+
+
+## 12. HOURLY PRODUCTION MODE
+For hourly automation, reliability beats one-run breadth.
+
+- minimum success target per run: one complete 20-item subject batch through required QA
+- if runtime remains, continue to the next subject
+- do not regenerate a subject that already has a fresh STUDY_READY/COMPUTE_SUCCESS_ROOT_STAGED batch from the current cycle
+- subject order remains KOR → SOC → SCI → HIS → AI
+- after all five have fresh batches, begin a new cycle
+- persist every 5 RAW items to limit loss on interruption
+
+This prevents a 100-item monolithic hourly transaction from repeatedly timing out or losing all progress.
