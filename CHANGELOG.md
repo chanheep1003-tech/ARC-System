@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 1.5.0-dev — 2026-09-18
+- Established permanent multi-model governance: GPT and Claude are recurring ARC generators; ChatGPT interactive maintenance is the single system/code/rule maintainer.
+- Added `ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md` with single-writer GitHub rules and append-only Drive production.
+- Generator batches now pin ARC_RULESET_VERSION and use unique BATCH_ID metadata.
+- GPT/Claude may both produce independent sets without overwriting each other.
+- Generators may report SYSTEM_FEEDBACK but cannot patch MASTER/QA/templates/tooling during production.
+- Claude absorption is persistent by ruleset version: full absorption on first use or relevant rule change, FAST_REFRESH otherwise.
+- Scheduled GPT production is explicitly separated from interactive system maintenance.
+
 ## 1.4.7-dev — 2026-09-18
 - Added a mandatory Claude/Cowork ARC system-absorption gate before first item generation in a fresh session.
 - Claude must read the canonical manifest, common engine, requested subject MASTER/GOLD, QA/source rules, PDF master, brand lockup, and relevant Drive structure before claiming readiness.
