@@ -180,7 +180,10 @@ active:
   skills:
     registry: skills/SKILL_REGISTRY.yaml
     orchestration: engine/common/ARC_SKILL_ORCHESTRATION_V1.0.md
+    external_skill_intake: skills/ARC_EXTERNAL_SKILL_INTAKE_POLICY_V1.0.md
     load_mode: on_demand
+    external_skill_search: allowed_when_capability_gap
+    external_skill_auto_vendor: false
     learner_adaptive_retry: disabled
     personal_weakness_tracking: disabled
 
