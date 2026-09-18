@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.4.0-dev
+  version: 1.4.1-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -25,6 +25,7 @@ runtime:
   historical_exam_usage: difficulty_calibration_only
   automation_runtime: ops/ARC_AUTOMATION_RUNTIME_V1.0.md
   runtime_priority_policy: ops/ARC_RUNTIME_PRIORITY_POLICY_V1.0.md
+  post_exam_calibration: ops/ARC_POST_EXAM_CALIBRATION_V1.0.md
   subject_priority:
     - KOR
     - SOC
@@ -78,6 +79,7 @@ active:
     error_database: quality/ARC_ERROR_DATABASE_V1.0.md
     difficulty_engine: quality/ARC_DIFFICULTY_ENGINE_V1.0.md
     difficulty_anchors: quality/ARC_DIFFICULTY_ANCHORS_V1.0.md
+    school_reference_profile: quality/ARC_SCHOOL_REFERENCE_PROFILE_V1.0.md
     school_difficulty_bench:
       path: quality/ARC_SCHOOL_DIFFICULTY_BENCH_V1.0.md
       drive_id: 1t0l6juVLzJxx9UMN5YwG1eRu4enAXpmX
@@ -132,8 +134,9 @@ active:
 
 excluded_from_release:
   school_dna_seed:
-    reason: "출제 교사가 작년과 올해 다르므로 스타일 예측에 사용하지 않음"
-    policy: "historical exams are used only for difficulty calibration"
+    reason: "legacy concept; replaced by lightweight SCHOOL_REFERENCE_PROFILE"
+    policy: "teacher-style prediction remains disabled"
+    replacement: quality/ARC_SCHOOL_REFERENCE_PROFILE_V1.0.md
 
 canonicalization:
   rule: "동일 이름의 Drive 중복 ACTIVE 파일은 manifest에 지정된 canonical 파일만 사용"
@@ -147,6 +150,7 @@ tooling:
   xmark_detector: tooling/pdf_qc/xmark_detect.py
   visual_renderer: tooling/visual/arc_visual_render.py
   visual_verifier: tooling/visual/visual_verify.py
+  smoke_workflow: .github/workflows/arc-tooling-smoke.yml
   truthfulness_rule: "do not claim executable tooling ran when host cannot execute it"
 
 visual_stack:
