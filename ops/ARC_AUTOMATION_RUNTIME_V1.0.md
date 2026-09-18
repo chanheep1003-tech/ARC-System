@@ -72,13 +72,17 @@ Do not report SUCCESS when required artifacts are absent.
 A subject failure is isolated. After logging, continue to the next subject. After one pass across all subjects, resume failed subjects in KOR → SOC → SCI → HIS → AI order. Default automatic retry budget is one retry per failed subject/stage; do not loop indefinitely.
 
 ## 8. QUALITY CONTRACT
-Use ARC_ITEM_QUALITY_RUBRIC_V1.1, ARC_QA_BENCH_V1.1, and the subject GOLD_ANCHORS_V1.0 pack.
+Use ARC_ITEM_QUALITY_RUBRIC_V1.1, ARC_QA_BENCH_V1.2, and the subject GOLD_ANCHORS_V1.0 pack.
 Do not assign target-looking scores before inspecting the actual item.
 Score components require evidence.
 Direct recall and weak distractor score ceilings apply automatically.
 Each item records nearest GOOD/BAD anchor internally; BAD-match defects apply before BANK decision.
 SOURCE_REQUIRED claims follow ARC_SOURCE_LEDGER_V1.0; ANSWER_BASIS sources must be reopened and VERIFIED before BANK write.
 SOURCE ledger Drive folder: `1CmiPOP_Ma9FIuoyLOTEhjFpX7-tYwYwZ`.
+
+Executable tooling:
+- local/CI host: run quantitative similarity, deterministic visual verifier, PDF preflight, and X-mark detector where applicable.
+- connector-only scheduled host: do not fake execution. Record TOOLING_UNAVAILABLE and apply policy fallback. Essential accuracy gates remain mandatory.
 
 ## 9. RUNTIME BUDGET
 Follow `ops/ARC_RUNTIME_PRIORITY_POLICY_V1.0.md`.
