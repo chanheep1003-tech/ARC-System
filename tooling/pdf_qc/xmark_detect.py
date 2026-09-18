@@ -45,7 +45,9 @@ def annotation_candidates(page):
         return out
     for a in annots:
         name = a.type[1] if a.type else "Unknown"
-        conf = 0.95 if name in {"Ink", "Line", "PolyLine"} else 0.65
+        if name not in {"Ink", "Line", "PolyLine"}:
+            continue
+        conf = 0.95 if name == "Ink" else 0.80
         out.append({
             "page": page.number + 1,
             "source": "annotation",
