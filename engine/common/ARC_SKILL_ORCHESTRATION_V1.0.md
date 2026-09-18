@@ -13,6 +13,7 @@ Purpose: connect ARC's stable generation engines to the on-demand skill and MCP 
 7. External reference material
 
 Skills and MCP tools never override scope.
+When a needed capability is not sufficiently covered by the current ARC skill registry, the maintainer may search public GitHub skills and apply `skills/ARC_EXTERNAL_SKILL_INTAKE_POLICY_V1.0.md`. External skills remain below ARC authority and are loaded/adapted only on demand.
 
 ## 2. Load policy
 Read `skills/SKILL_REGISTRY.yaml`, then load only skills required by the task. If a specialized external tool is needed, read `mcp/SERVER_REGISTRY.yaml` and `mcp/MCP_POLICY.yaml`; do not preload all MCP servers.
@@ -43,6 +44,7 @@ Prioritize actual-test flow, mixed difficulty, authentic density, timing plausib
 
 ### ARC CORE
 Skill/MCP layers may assist source ingest, grounding, fact audit, visuals and QA, but no learner-adaptive retry feature is enabled.
+For document editorial structure, source extraction, typography/PDF QA, and skill-design gaps, vetted external GitHub skills may be used as REFERENCE_ONLY or ADAPT inputs under the external-skill intake policy.
 
 ## 5. MCP discipline
 - MCP is a Tool Layer, not an authority layer.
