@@ -52,7 +52,7 @@ Do not use general knowledge to fill missing conditions or visual data.
 ## 4. TYPESETTING WORK
 Allowed:
 - pagination
-- columns/full-width decisions
+- product-permitted column decisions
 - line/paragraph breaks
 - typography
 - spacing
@@ -62,6 +62,12 @@ Allowed:
 - keep-together behavior
 - grayscale/print legibility optimization
 - PDF QC
+
+ARC N° is COLUMN_ONLY on problem pages.
+Do not switch ARC N° to FULL_WIDTH or a temporary one-column layout for large material.
+If locked material cannot fit legibly in one column, return CONTENT_ERROR_FLAG / TYPESET_STATUS=RETURN_CONTENT for asset redesign.
+
+ARC FINAL / ARC CORE may retain flexible full-width or one-column layout only when their active product rules permit it.
 
 ## 5. PRODUCT RULES
 ARC N°:
