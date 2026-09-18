@@ -34,7 +34,10 @@ TYPESET_STATUS=PENDING
 
 ## 3. REQUIRED PAYLOAD
 A. QUESTION_MANUSCRIPT or CORE_MANUSCRIPT
-B. ANSWER_KEY when applicable
+B. ANSWER_KEY
+- required for ARC_N and ARC_FINAL
+- ARC_N Typesetter uses it for the final compact answer section
+- no detailed explanations by default
 C. LAYOUT_ASSET_MANIFEST
 D. VISUAL_ASSET references and/or complete VISUAL_SPEC
 E. QC_STATUS
