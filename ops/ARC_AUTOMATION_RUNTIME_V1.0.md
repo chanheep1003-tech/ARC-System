@@ -11,7 +11,7 @@ Do not call Drive metadata move/update_file in scheduled QA because background s
 For the first subject, create the actual RAW shell at root/default, write its staging header, re-read it, and use that as the persistence preflight.
 If create/write/read succeeds, set DRIVE_PREFLIGHT_STATUS=PASS and continue.
 
-Before loading KOR sources or generating any RAW items, read `ops/ARC_DRIVE_WRITE_ADAPTER_V1.0.md` and perform its one-time write preflight.
+Before loading KOR sources or generating any RAW items, read `ops/ARC_DRIVE_WRITE_ADAPTER_V1.1.md` and perform its one-time write preflight.
 Default scheduled path:
 root create → staging-header write → non-empty readback → chunked content append.
 
@@ -88,10 +88,12 @@ Do not report SUCCESS when required artifacts are absent.
 A subject failure is isolated. After logging, continue to the next subject. After one pass across all subjects, resume failed subjects in KOR → SOC → SCI → HIS → AI order. Default automatic retry budget is one retry per failed subject/stage; do not loop indefinitely.
 
 ## 8. QUALITY CONTRACT
-Use ARC_ITEM_QUALITY_RUBRIC_V1.1, ARC_QA_BENCH_V1.2, and the subject GOLD_ANCHORS_V1.0 pack.
+Use ARC_ITEM_QUALITY_RUBRIC_V1.2, ARC_QA_BENCH_V1.3, and the subject GOLD_ANCHORS_V1.0 pack.
 Do not assign target-looking scores before inspecting the actual item.
 Score components require evidence.
-Direct recall and weak distractor score ceilings apply automatically.
+Direct recall, explicit-cue/restatement, weak-distractor, and distractor-distance ceilings apply automatically.
+All D4/D5 and BANK_A candidates use blind score recheck.
+For 20+ item sets, ZERO-REJECTION / BANK_A-rate / D4+D5-rate audits are mandatory when triggered.
 Each item records nearest GOOD/BAD anchor internally; BAD-match defects apply before BANK decision.
 SOURCE_REQUIRED claims follow ARC_SOURCE_LEDGER_V1.0; ANSWER_BASIS sources must be reopened and VERIFIED before BANK write.
 SOURCE ledger Drive folder: `1CmiPOP_Ma9FIuoyLOTEhjFpX7-tYwYwZ`.
@@ -171,3 +173,13 @@ GPT scheduled production is GENERATOR work only:
 
 Interactive ChatGPT maintenance is the exclusive SYSTEM_MAINTAINER role.
 System optimization must not occur inside a production automation.
+
+
+## 15. STORAGE EXACT-ID CHECK
+For every artifact that claims STORAGE_PLACEMENT=VERIFIED:
+- verify exact FILE_ID
+- verify target parent or exact FILE_ID in target folder
+- verify non-empty content/size
+
+A root-level PDF or Doc is not VERIFIED merely because upload succeeded.
+If actual metadata and QA/placement-note status disagree, set STORAGE_METADATA_MISMATCH and repair before release.
