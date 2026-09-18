@@ -16,9 +16,11 @@ Skills and MCP tools never override scope.
 
 ## 2. Load policy
 Read `skills/SKILL_REGISTRY.yaml`, then load only skills required by the task. If a specialized external tool is needed, read `mcp/SERVER_REGISTRY.yaml` and `mcp/MCP_POLICY.yaml`; do not preload all MCP servers.
+Scheduled generation additionally follows `ops/ARC_AUTOMATION_RUNTIME_V1.0.md`: per-subject JIT loading, checkpointing, native-Docs persistence, and resume-on-failure.
 
 ## 3. N° / FINAL generation route
 - Always: `arc-item-generator`, `arc-distractor-engine`, `arc-fact-audit`, `arc-item-naturalness-audit`, `arc-item-qa`, `arc-set-editor`
+- QA authority: `ARC_ITEM_QUALITY_RUBRIC_V1.1` + `ARC_QA_BENCH_V1.1`
 - Conditional source: `arc-source-ingest` when raw/unparsed files enter; `arc-research-grounding` when external information is needed.
 - Conditional visuals: `arc-visual-renderer` first applies `ARC_VISUAL_REFERENCE_FIRST_V1.0`, then selects the ARC visual skill. If a specialized MCP is available, route to draw.io / ChemCP / Timeline MCP according to `mcp/MCP_ORCHESTRATION_V1.0.md`; otherwise use the ARC visual skill fallback.
 - Repository context: GitHub official MCP may be used read-only; native GitHub connector remains a fallback.
@@ -50,4 +52,4 @@ Skill/MCP layers may assist source ingest, grounding, fact audit, visuals and QA
 - autonomous repository mutation during ordinary question generation
 
 ## 7. Release rule
-Skill/MCP changes live on `dev` until structural validation and representative regression checks pass. Promote to `main` only with zero new hard-fail classes.
+Skill/MCP/QA changes live on `dev` until structural validation and representative regression checks pass. Promote to `main` only with zero new hard-fail classes.
