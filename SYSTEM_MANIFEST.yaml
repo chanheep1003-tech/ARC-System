@@ -73,7 +73,7 @@ active:
     visual_anchors: quality/ARC_VISUAL_ANCHORS_V1.0.md
     set_editorial: quality/ARC_SET_EDITORIAL_ENGINE_V1.0.md
     similarity_guard: quality/ARC_SIMILARITY_GUARD_V1.0.md
-    bank_policy: quality/BANK_POLICY_V1.0.md
+    bank_policy: quality/BANK_POLICY_V1.1.md
 
   skills:
     registry: skills/SKILL_REGISTRY.yaml
