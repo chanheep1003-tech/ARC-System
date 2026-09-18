@@ -2,7 +2,7 @@
 name: arc-item-generator
 description: 'ARC N°/FINAL용 고품질 객관식 문항을 범위·난도·학교 벤치에 맞춰 생성한다. COMMON_GENERATION_ENGINE과 과목 MASTER를 보조하며 문항 자체의 추론 구조와 시험 적합성에 집중한다.'
 metadata:
-  version: 1.0.0
+  version: 1.1.0
   arc-role: generation
 ---
 # ARC Item Generator
@@ -16,6 +16,14 @@ metadata:
 3. `ARC_SCOPE_LEDGER`
 4. 필요 시 SOURCE_PACKET / RESEARCH_PACKET
 5. `ARC_SCHOOL_DIFFICULTY_BENCH`
+6. 해당 과목 `quality/gold/*_GOLD_ANCHORS_V1.0.md`
+
+## GOLD ANCHOR CALIBRATION
+- 생성 전에 해당 과목 GOOD 3 + BAD 3을 읽는다.
+- 초안마다 `NEAREST_GOOD_ANCHOR`, `NEAREST_BAD_ANCHOR`, `ANCHOR_MATCH_NOTE`를 내부 설계 카드에 기록한다.
+- GOOD의 문장 표면을 모방하지 않고, 자료 기능·추론 단계·오답 강도·정보 밀도를 비교한다.
+- BAD와 구조적으로 가까우면 해당 BAD의 score ceiling 또는 DISCARD 사유를 생성 단계부터 적용한다.
+- 앵커는 현재 범위/학습지/교과서보다 우선하지 않는다.
 
 ## 생성 규칙
 - 출제 의도보다 학생이 실제로 수행할 사고과정을 먼저 설계한다.
@@ -36,6 +44,9 @@ metadata:
 - distractor axes
 - visual requirement
 - copyright transformation note
+- nearest good anchor
+- nearest bad anchor
+- anchor match note
 
 ## 생성 후 즉시 넘길 skill
 객관식이면 `arc-distractor-engine` → 필요 시 `arc-visual-renderer` → `arc-fact-audit` → `arc-item-naturalness-audit` → `arc-item-qa`.
