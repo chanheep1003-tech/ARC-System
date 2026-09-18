@@ -130,4 +130,4 @@ Typesetter should NOT reload textbooks, worksheets, GOLD anchors, generation-eng
 The locked bundle is the content authority.
 Only reopen source material when the bundle explicitly flags a content verification blocker; normally return to Generator instead.
 
-END ARC CONTENT BUNDLE CONTRACT V1.0
+END ARC CONTENT BUNDLE CONTRACT V1.1
