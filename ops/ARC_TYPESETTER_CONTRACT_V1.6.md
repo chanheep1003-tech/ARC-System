@@ -22,6 +22,7 @@ For every typesetting task read only:
 4. locked CONTENT_BUNDLE or canonical ARC_HANDOFF_*.md
    - when both exist, verify identity/BATCH_ID and use the locked handoff file as the portable working input
 5. manifest-selected active PDF master (resolve the path at runtime; never hardcode an older PDF master version)
+6. manifest-selected product HTML master when the selected rendering path uses HTML/CSS; never substitute another product's HTML shell
 6. templates/brand/ARC_BRAND_LOCKUP_SPEC_V1.0.md
 7. templates/brand/ARC_BRAND_ASSET_REGISTRY_V1.0.md
 7. required product-specific visual/PDF rules
