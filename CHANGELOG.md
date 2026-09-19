@@ -1,3 +1,13 @@
+## 1.7.6-dev — 2026-09-19
+- Tightened final release approval after review of a real Claude production log.
+- Generic positive reactions such as "좋아", "좋다니까", or "성공적이야" no longer count as evidence that a printed copy was physically reviewed.
+- Added ARC_HUMAN_REVIEW_GATE_V1.2 with explicit physical-review evidence requirements.
+- Added ARC_PRODUCTION_ORCHESTRATOR_V1.1 with release-approval disambiguation and canonical STORAGE_PLACEMENT=VERIFIED normalization.
+- Added ARC_PUBLISHER_CONTRACT_V1.1 so Publisher cannot promote FINAL_RELEASED from ambiguous praise.
+- Added ARC_CLAUDE_HANDOFF_V1.3 with the same physical-review language guard.
+- Legacy STORAGE_PLACEMENT=PASS remains readable as an alias, while new output should use VERIFIED.
+- No executable frozen-fixture regression was claimed in this connector-only maintenance pass.
+
 ## 1.7.5-dev — 2026-09-19
 - Added ARC_PRODUCTION_ORCHESTRATOR_V1.0 with AUTO_CONTINUE_UNTIL_HARD_FAIL. Generator → Typesetter → Publisher transitions no longer require user confirmation after normal PASS states.
 - Added ARC_PUBLISHER_CONTRACT_V1.0. Publisher is restricted to artifact integrity, locked-answer-table comparison, storage, exact parent verification, and release-state transitions; it may not independently re-grade answers or rewrite content.
