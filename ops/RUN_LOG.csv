@@ -1,2 +1,3 @@
 ﻿run_id,timestamp,product,subject,target_range,item_count,manifest_version,git_branch,git_commit,engine_version,subject_master_version,bank_pass,discarded,avg_item_quality,avg_commercial_grade,set_editorial_score,hard_fail_count,notes
 BOOTSTRAP-20260918-001,2026-09-18T00:00:00+09:00,QA,,ARC system bootstrap,,1.0.0,main,,4.0,4.0,,,,,,0,"SYSTEM_MANIFEST, main/dev policy, RUN_LOG initialized. Freeze mode intentionally not enabled."
+LAYOUT-OPT-20260919-001,2026-09-19T23:30:00+09:00,QA,,ARC CORE layout engine optimization,,1.8.2-dev,dev,,4.4,,,,,,,,"User-found CORE layout defects patched on dev; CI and representative re-typeset regression pending."
