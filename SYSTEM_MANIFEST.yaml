@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.0-dev
+  version: 1.8.1-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -48,7 +48,7 @@ runtime:
   multi_model_governance: ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md
   generator_contract: ops/ARC_GENERATOR_CONTRACT_V1.7.md
   content_bundle_contract: ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.5.md
-  typesetter_contract: ops/ARC_TYPESETTER_CONTRACT_V1.4.md
+  typesetter_contract: ops/ARC_TYPESETTER_CONTRACT_V1.5.md
   production_role_split: GENERATOR_TO_TYPESETTER_TO_PUBLISHER
   content_lock_required_before_typeset: true
   handoff_markdown_required: true
@@ -101,6 +101,11 @@ runtime:
   core_redundancy_budget_gate: required
   core_synthesis_transform_gate: required
   core_editorial_naturalness_gate: required
+  core_print_legibility_gate: required
+  core_font_weight_audit: required
+  core_page_occupancy_audit: required
+  core_sparse_page_reflow: required
+  raw_markup_leak_gate: required
   core_qa_bench_gate: required
   core_depth_assignment_gate: required
   core_depth_evidence_gate: required
@@ -225,7 +230,7 @@ active:
     similarity_guard: quality/ARC_SIMILARITY_GUARD_V1.1.md
     similarity_implementation: quality/similarity/ARC_SIMILARITY_IMPLEMENTATION_V1.0.md
     similarity_thresholds: quality/similarity/SIMILARITY_THRESHOLDS_V1.0.yaml
-    pdf_preflight: quality/pdf/ARC_PDF_PREFLIGHT_V1.0.md
+    pdf_preflight: quality/pdf/ARC_PDF_PREFLIGHT_V1.1.md
     visual_renderer_policy: quality/visual/ARC_VISUAL_RENDERER_POLICY_V1.0.md
     visual_pass_ab: quality/visual/ARC_VISUAL_PASS_AB_V1.0.md
     social_visual_spec: quality/visual/SOC_VISUAL_SPEC_V1.0.md
@@ -268,8 +273,8 @@ active:
   layout:
     brand_lockup: templates/brand/ARC_BRAND_LOCKUP_SPEC_V1.0.md
     brand_asset_registry: templates/brand/ARC_BRAND_ASSET_REGISTRY_V1.0.md
-    pdf_master: templates/ARC_PDF_LAYOUT_MASTER_V2.2.md
-    core_patch: templates/core/ARC_TEMPLATE_SYSTEM_v0.6_CORE_PATCH.md
+    pdf_master: templates/ARC_PDF_LAYOUT_MASTER_V2.3.md
+    core_patch: templates/core/ARC_TEMPLATE_SYSTEM_v0.7_CORE_PATCH.md
     arc_n_typeset_reference: templates/gold/ARC_N_TYPESET_REFERENCE_V1.0.md
 
 excluded_from_release:
