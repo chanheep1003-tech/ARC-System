@@ -14,4 +14,7 @@ ARC skills are original project-specific adaptations. External projects were use
 - blader `humanizer` and related humanize-writing skills: named-pattern editorial audit concepts, adapted only to exam-item naturalness.
 - Firecrawl `web-agent` deep-research: multi-angle search and source triangulation concepts.
 
+- `jelaludo/claude-skill-typography`: typography-token, weight/line-height/spacing audit concepts for print/readability QA. REFERENCE_ONLY; no upstream code/text copied; license not established during intake.
+- `thedanielmay/visual-review-skill`: render-first visual QA, fixed-height overflow detection, clipping/density review concepts. REFERENCE_ONLY; no upstream code/text copied; license not established during intake.
+
 Before vendoring any upstream script or code in the future, verify the upstream license and record the exact version/commit separately.
