@@ -1,3 +1,13 @@
+## 1.7.8-dev — 2026-09-19
+- Added mandatory portable Markdown handoff after every Generator completion.
+- Generator V1.6 now requires HANDOFF_MD_STATUS=READY before READY_FOR_TYPESET is considered complete.
+- Canonical filename: ARC_HANDOFF_<PRODUCT>_<SUBJECT>_<BATCH_ID>_READY.md.
+- Content Bundle V1.5 defines one self-contained UTF-8 Markdown serialization containing front matter, student manuscript, product-specific answer key, visual/layout asset manifest, source-text payloads, QC state, and CORE architecture summary when applicable.
+- Typesetter V1.4 can ingest the Markdown handoff directly without asking the user to paste the manuscript again.
+- INTERNAL / DO NOT PRINT sections remain available to Typesetter but are excluded from student-facing output.
+- The Markdown artifact and locked CONTENT_BUNDLE must be semantically identical; mismatch blocks handoff readiness.
+- This maintenance pass used connector/static checks only; executable frozen-fixture regression was not claimed.
+
 ## 1.7.7-dev — 2026-09-19
 - Reworked ARC CORE from concept-card-first generation to chapter/cluster-first editorial architecture.
 - Added ARC_CORE_EDITORIAL_ARCHITECTURE_V2.0 with CENTRAL_QUESTION, CHAPTER_THESIS, DOMINANT_ORGANIZATION, BACKBONE_NODES, information hierarchy, anti-listing, redundancy budget, and one-synthesis principles.
