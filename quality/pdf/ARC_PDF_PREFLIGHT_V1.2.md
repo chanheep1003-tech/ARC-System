@@ -40,8 +40,10 @@ V1.2는 실제 사용자 발견 조판 결함을 직접 차단한다: CORE 2단 
 
 ## COLUMN DETECTION PRINCIPLE
 표의 셀 여러 개를 '2단 본문'으로 오인하지 않도록:
-- 긴 paragraph-like block만 사용
-- 좌/우 lane 각각 충분한 문자량과 복수 block이 있어야 함
+- PDF의 visual text line을 lane 후보로 사용
+- 충분한 길이/폭의 body line만 후보로 남김
+- 각 lane의 반복되는 left-edge anchor를 찾아 표 내부의 여러 셀 시작점을 제거
+- 좌/우 lane 각각 충분한 line 수와 문자량이 있어야 함
 - 두 lane의 vertical coverage가 실제로 겹치는 경우에만 CORE_TWO_COLUMN_FLOW로 판정
 
 ## OCCUPANCY
