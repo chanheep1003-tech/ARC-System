@@ -93,6 +93,8 @@ runtime:
   core_depth_budget_gate: required
   core_trap_evidence_gate: required
   core_student_metadata_exposure: forbidden
+  core_social_x_mark_mode: NON_BLOCKING_USER_FILTER
+  core_social_bentham_default: excluded
   core_n_generation_links_internal_only: true
   exact_drive_parent_verification: required
   typesetter_subject_source_reload_default: disabled
