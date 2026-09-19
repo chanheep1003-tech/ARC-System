@@ -1,3 +1,17 @@
+## 1.8.2-dev — 2026-09-19
+- Reworked ARC CORE typesetting after direct review of the user-provided Social and History CORE PDFs. The History artifact exposed ARC N°-style two-column leakage; the Social artifact exposed heading/carry-over and semantic page-flow defects.
+- Activated PDF Layout Master V2.4: ARC CORE main reading flow is now hard-locked to ONE_COLUMN with product-specific namespace requirements; ARC N°/FINAL two-column body rules may not leak into CORE.
+- Added semantic pagination: Part/Chapter/Section openings, callouts, tables, figures, and synthesis blocks now have explicit keep/split semantics; headings require following body, table rows cannot split, figures cannot be clipped, and 1–3 line carry-over is a reflow priority.
+- Activated CORE Template Patch v0.8 with a four-level Part → Chapter → Section → Functional Label hierarchy and print-first typography tokens.
+- Activated Typesetter Contract V1.6 and added JIT `arc-typeset-qa` skill for product isolation, source overflow audit, semantic pagination, typography, and render-first visual QA.
+- Activated PDF Preflight V1.2 policy and implementation. Preflight now accepts explicit PRODUCT_MODE and adds CORE two-column detection, vertical-interval occupancy, sparse/near-empty checks, body typography metrics, heading-orphan candidates, raw-markup and production-metadata leak detection.
+- Added executable `tooling/pdf_qc/test_preflight_smoke.py` and wired it into GitHub Actions with PyMuPDF.
+- Repaired stale system validation: `tooling/validate_system.py` now resolves the manifest-selected PDF master/CORE patch/preflight/typesetter instead of hardcoding V2.2/v0.6.
+- Recorded four user-found layout incidents in ARC_ERROR_DATABASE and attached prevention/regression IDs.
+- External design references used in REFERENCE_ONLY mode: `jelaludo/claude-skill-typography` for typography-token/audit concepts and `thedanielmay/visual-review-skill` for render-first/overflow/density QA concepts. No upstream code/text was copied; licenses were not established during intake.
+- Corrected stale ARC N° answer-key sequence wording in the PDF master: required blank separator is LAST_PROBLEM+1 and answer key starts LAST_PROBLEM+2.
+- Main promotion remains blocked until CI/static validation and representative Social/History CORE re-typeset review are complete.
+
 ## 1.8.1-dev — 2026-09-19
 - Optimized ARC PDF typesetting for print readability and page-flow quality after review of the Social CORE V0.2 draft.
 - Upgraded PDF Layout Master to V2.3 with adaptive page reflow, page-occupancy auditing, orphan/widow control, raw HTML/Markdown sanitization, and student metadata leak checks.
