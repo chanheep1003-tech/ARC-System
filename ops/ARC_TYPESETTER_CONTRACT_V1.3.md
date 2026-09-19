@@ -16,7 +16,7 @@ They receive a locked ARC CONTENT_BUNDLE and produce:
 For every typesetting task read only:
 1. SYSTEM_MANIFEST.yaml
 2. this contract
-3. ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.2.md
+3. manifest-selected active CONTENT_BUNDLE contract
 4. locked CONTENT_BUNDLE
 5. manifest-selected active PDF master (currently templates/ARC_PDF_LAYOUT_MASTER_V2.2.md)
 6. templates/brand/ARC_BRAND_LOCKUP_SPEC_V1.0.md
