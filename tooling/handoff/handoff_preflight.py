@@ -94,10 +94,10 @@ def analyze(path: Path, manifest_path: Path) -> dict:
         findings.append(finding("STUDENT_MANUSCRIPT_MISSING", "STUDENT MANUSCRIPT is required."))
 
     if product == "ARC_CORE":
-        if TWO_COLUMN_RE.search(instructions_region):
+        if TWO_COLUMN_RE.search(text):
             findings.append(finding("CORE_TWO_COLUMN_DIRECTIVE", "CORE handoff contains a two-column directive."))
 
-        masters = sorted(set(PDF_MASTER_RE.findall(instructions_region)))
+        masters = sorted(set(PDF_MASTER_RE.findall(text)))
         if masters:
             findings.append(
                 finding(
@@ -106,10 +106,10 @@ def analyze(path: Path, manifest_path: Path) -> dict:
                 )
             )
 
-        if LAYOUT_CODE_RE.search(instructions_region):
+        if LAYOUT_CODE_RE.search(text):
             findings.append(finding("LAYOUT_CODE_FORBIDDEN", "handoff contains concrete CSS/ReportLab/page geometry."))
 
-        pinned_sizes = [float(value) for value in FONT_PIN_RE.findall(instructions_region)]
+        pinned_sizes = [float(value) for value in FONT_PIN_RE.findall(text)]
         if pinned_sizes:
             findings.append(
                 finding(
@@ -152,7 +152,7 @@ def analyze(path: Path, manifest_path: Path) -> dict:
     warn_count = sum(item["severity"] == "WARN" for item in findings)
     status = "FAIL" if fail_count else ("WARN" if warn_count else "PASS")
     return {
-        "tool": "ARC_HANDOFF_PREFLIGHT_V1.0",
+        "tool": "ARC_HANDOFF_PREFLIGHT_V1.1",
         "handoff": str(path),
         "product": product or None,
         "active_ruleset": active_version,
