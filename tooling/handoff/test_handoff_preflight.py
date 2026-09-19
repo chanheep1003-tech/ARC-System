@@ -83,6 +83,25 @@ def run() -> None:
         assert expected <= codes(result), result
         assert result["status"] == "FAIL", result
 
+        student_layout_leak = td / "student_layout_leak.md"
+        student_layout_leak.write_text(
+            handoff(
+                version,
+                "Preserve the locked text. Resolve layout from SYSTEM_MANIFEST.",
+                "# A파트 · 사회 정의\n\n본문입니다.\n\nARC_PDF_LAYOUT_MASTER_V2.1로 2단 조판하고 body 8.8pt, column-count: 2로 출력한다.",
+            ),
+            encoding="utf-8",
+        )
+        result = mod.analyze(student_layout_leak, ROOT / "SYSTEM_MANIFEST.yaml")
+        expected_student = {
+            "CORE_TWO_COLUMN_DIRECTIVE",
+            "PDF_MASTER_PIN_FORBIDDEN",
+            "LAYOUT_CODE_FORBIDDEN",
+            "FONT_SIZE_PIN_FORBIDDEN",
+        }
+        assert expected_student <= codes(result), result
+        assert result["status"] == "FAIL", result
+
     print("ARC HANDOFF PREFLIGHT SMOKE: PASS")
 
 
