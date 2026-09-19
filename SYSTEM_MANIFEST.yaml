@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.7.8-dev
+  version: 1.7.9-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -36,7 +36,7 @@ runtime:
   drive_write_preflight_required: true
   scheduled_drive_write_mode: ROOT_STAGING
   drive_write_default_mode: ROOT_STAGING
-  runtime_priority_policy: ops/ARC_RUNTIME_PRIORITY_POLICY_V1.0.md
+  runtime_priority_policy: ops/ARC_RUNTIME_PRIORITY_POLICY_V1.1.md
   post_exam_calibration: ops/ARC_POST_EXAM_CALIBRATION_V1.0.md
   claude_handoff: ops/ARC_CLAUDE_HANDOFF_V1.3.md
   claude_absorption_gate_required: true
@@ -84,6 +84,11 @@ runtime:
   claim_fidelity_audit: required_when_applicable
   social_philosophy_attribution_gate: required_when_applicable
   d4_d5_minimum_gate: required
+  korean_item_engine_required: true
+  korean_passage_utilization_gate: required
+  korean_duplicate_axis_gate: required
+  korean_distractor_competitiveness_gate: required
+  korean_answer_length_audit: required
   core_editorial_architecture_gate: required
   core_macro_coherence_gate: required
   core_anti_listing_gate: required
@@ -117,14 +122,14 @@ runtime:
   subject_priority:
     - KOR
     - SOC
-    - SCI
     - HIS
+    - SCI
     - AI
   extra_resource_weights:
     KOR: 30
     SOC: 25
-    SCI: 20
-    HIS: 15
+    HIS: 20
+    SCI: 15
     AI: 10
   source_ledger_drive_folder_id: 1CmiPOP_Ma9FIuoyLOTEhjFpX7-tYwYwZ
   school_difficulty_levels:
@@ -137,6 +142,12 @@ active:
   common_generation_engine:
     path: engine/common/COMMON_GENERATION_ENGINE_V4.3_ARC.md
     version: 4.3
+    drive_id: null
+    drive_mirror_status: pending_sync
+
+  korean_item_engine:
+    path: engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.0.md
+    version: 1.0
     drive_id: null
     drive_mirror_status: pending_sync
 
@@ -186,6 +197,7 @@ active:
       path: quality/ARC_SCHOOL_DIFFICULTY_BENCH_V1.0.md
       drive_id: 1t0l6juVLzJxx9UMN5YwG1eRu4enAXpmX
     item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.3.md
+    korean_item_qa: quality/ARC_KOREAN_ITEM_QA_V1.0.md
     core_editorial_naturalness: quality/ARC_CORE_EDITORIAL_NATURALNESS_V1.2.md
     core_qa_bench: quality/ARC_CORE_QA_BENCH_V1.2.md
     visual_authenticity: quality/ARC_VISUAL_AUTHENTICITY_RUBRIC_V1.1.md
