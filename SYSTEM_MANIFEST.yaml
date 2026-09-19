@@ -281,6 +281,9 @@ active:
     brand_asset_registry: templates/brand/ARC_BRAND_ASSET_REGISTRY_V1.0.md
     pdf_master: templates/ARC_PDF_LAYOUT_MASTER_V2.4.md
     core_patch: templates/core/ARC_TEMPLATE_SYSTEM_v0.8_CORE_PATCH.md
+    core_html_master: templates/core/ARC_CORE_master_v0.3.html
+    arc_n_html_master: templates/n/ARC_N_master_v0.2.html
+    arc_final_html_master: templates/final/ARC_FINAL_master_v0.2.html
     arc_n_typeset_reference: templates/gold/ARC_N_TYPESET_REFERENCE_V1.0.md
 
 excluded_from_release:
