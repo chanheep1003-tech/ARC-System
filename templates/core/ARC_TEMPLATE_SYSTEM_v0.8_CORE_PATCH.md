@@ -36,6 +36,12 @@ ARC CORE의 학생용 본문은 1단 reading flow가 기본이자 강제 규칙�
 
 CORE에서 2단이 렌더되면 디자인 선택으로 인정하지 않고 PRODUCT_MODE_LAYOUT_MIX 오류로 처리한다.
 
+HTML/CSS rendering path:
+- 반드시 SYSTEM_MANIFEST의 `active.layout.core_html_master`를 사용한다.
+- 현재 안전 기준은 `templates/core/ARC_CORE_master_v0.3.html`.
+- legacy v0.2의 fixed-height + `overflow:hidden` page shell은 런타임 사용 금지.
+- source audit의 `ARC_CORE_SOURCE_PREFLIGHT`가 HOLD면 PDF export 금지.
+
 ## STUDENT-FACING CORE
 기본:
 1. TITLE
