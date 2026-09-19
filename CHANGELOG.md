@@ -1,3 +1,14 @@
+## 1.7.11-dev — 2026-09-19
+- Added question task-form diversity as a required set-level quality dimension across ARC_N / ARC_FINAL.
+- Upgraded COMMON_GENERATION_ENGINE to V4.4 with QUESTION_TASK_FORM and STEM_POLARITY planning before generation.
+- Added task-form taxonomy including SINGLE_BEST_STATEMENT, EXCEPT_INCORRECT, MULTI_JUDGMENT, PAIR_MATCH, SEQUENCE_ORDER, CASE_APPLICATION, EVIDENCE_SUPPORT, ERROR_CORRECTION, DATA_INFERENCE, CONDITION_CHANGE, SOURCE_IDENTIFICATION, and COMPARISON_MATRIX.
+- For 20+ item sets, default diagnostics now limit SINGLE_BEST_STATEMENT to 40%, SINGLE_BEST+EXCEPT to 60%, negative stems to 25%, require at least five task forms, and require at least 35% transformed task forms unless a subject MASTER justifies an override.
+- Upgraded SET_EDITORIAL_ENGINE to V1.2 with QUESTION_TASK_DIVERSITY and flags for SINGLE_BEST_OVERUSE, NEGATIVE_OVERUSE, TASK_FORM_LOW_DIVERSITY, TASK_FORM_STREAK, and SURFACE_VARIATION_ONLY.
+- Upgraded Korean Item Engine to V1.1 and Korean Item QA to V1.1. A 10-item Korean passage group now targets at least four task forms, at least two case/application items, limits simple single-best and negative-selection overuse, and blocks three consecutive identical task forms.
+- Explicitly prevents superficial diversity where only the stem wording or polarity changes while the actual student task stays the same.
+- SYSTEM_MANIFEST activated COMMON V4.4, KOR Item Engine V1.1, KOR Item QA V1.1, SET Editorial V1.2, and required task-form diversity gates.
+- Static connector verification only; executable frozen-fixture regression was not run or claimed.
+
 ## 1.7.10-dev — 2026-09-19
 - Upgraded Korean question generation with a dedicated passage-first item engine: engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.0.md.
 - Added required KOR passage mapping before generation, reasoning-depth classes, passage-utilization classes, duplicate-axis blocking, distractor-competitiveness gates, answer-length leakage audit, stem-diversity audit, and answer-pattern checks.
