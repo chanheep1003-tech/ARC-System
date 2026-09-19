@@ -232,8 +232,8 @@ DETECTED_STAGE: USER_FEEDBACK
 HUMAN_FOUND: true
 DESCRIPTION: 학생용 CORE 본문이 얇고 작게 느껴져 장시간 학습/인쇄 가독성이 낮음.
 EXPECTED: Korean body는 Pretendard Regular(400) 중심의 print-first token을 일관 적용.
-ACTUAL: 렌더 산출물에서 본문 대비/weight/크기 체감이 약함.
-ROOT_CAUSE: 권장 범위는 있었지만 document-level typography token과 executable font/body audit가 부족했음.
+ACTUAL: 사용자 제공 Social/HISTORY CORE 두 PDF 모두 pdffonts와 독립 PDF inspect에서 NotoSansKR-Thin 임베딩이 확인됨.
+ROOT_CAUSE: Thin 계열이 실제 학생용 본문에 임베딩되었고, 기존 권장 weight 규칙이 executable release gate로 강제되지 않았음.
 FIX_APPLIED: body 9.9pt target, 1.54~1.58 line-height, dark neutral color, weight >=400 및 preflight font metrics 추가.
 PREVENTION_RULE: FONT_TOKEN_COMPLIANCE=PASS; PRINT_LEGIBILITY=PASS
 REGRESSION_BENCH_ID: PDF-SMOKE-TYPOGRAPHY
