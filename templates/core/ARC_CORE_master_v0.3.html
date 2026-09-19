@@ -13,13 +13,14 @@
 [data-product="arc-core"] .chapter-title{font-size:15.5pt;line-height:1.28;font-weight:700;letter-spacing:-.03em;margin:7mm 0 3mm}
 [data-product="arc-core"] .section-title{font-size:12.4pt;line-height:1.35;font-weight:600;letter-spacing:-.02em;margin:5mm 0 2mm}
 [data-product="arc-core"] .functional-label{font-size:9.3pt;line-height:1.35;font-weight:600;letter-spacing:.01em;margin:3mm 0 1.5mm}
+[data-product="arc-core"] .page[data-boundary="part"],[data-product="arc-core"] .page[data-boundary="major-topic"]{break-before:page;page-break-before:always}
 [data-product="arc-core"] .keep-with-next{break-after:avoid-page;page-break-after:avoid}
 [data-product="arc-core"] .atomic{break-inside:avoid;page-break-inside:avoid}
 [data-product="arc-core"] tr{break-inside:avoid;page-break-inside:avoid}
 </style></head><body>
 <section class="page cover"><div class="kicker">ARC CORE</div><div class="rule"></div><div class="accent"></div><div class="main"><div class="subject-cover">통합과학2</div><div class="meta"><strong>2학기 중간고사</strong><br>핵심 개념 정리</div></div><div class="year">2026</div><div class="series">CONCEPT CORE</div></section>
 
-<section class="page body" data-layout="core-one-column"><header class="head"><span class="brand">ARC CORE</span><span class="subject">통합과학2 · 진화와 생물다양성</span></header><main class="content"><div class="chapter-no">CORE 03</div><div class="title">진화의 원리</div>
+<section class="page body" data-layout="core-one-column" data-boundary="major-topic"><header class="head"><span class="brand">ARC CORE</span><span class="subject">통합과학2 · 진화와 생물다양성</span></header><main class="content"><div class="chapter-no">CORE 03</div><div class="title">진화의 원리</div>
 
 <section class="concept"><div class="concept-head"><span class="concept-no">01</span><span class="concept-title">변이</span></div><p>같은 종의 개체라도 형질에는 차이가 있다. 이 차이 중 일부는 유전될 수 있으며, 자연 선택이 일어나기 위한 출발점이 된다. 변이는 생물이 필요해서 만들어지는 것이 아니라 집단 안에 먼저 존재한다.</p><div class="tags"><div class="tag"><div class="label">MUST</div><p><b>자연 선택의 출발점 = 집단 내 유전 가능한 변이</b></p></div><div class="tag conf"><div class="label">CONFUSING</div><p>× 환경이 필요한 변이를 만든다<br>○ 변이는 먼저 존재하고 환경이 선택에 영향을 준다</p></div></div></section>
 
@@ -51,6 +52,9 @@
       const columns=parseInt(style.columnCount || '1',10);
       if(overflow>2) issues.push({page:index+1,type:'SOURCE_OVERFLOW',pixels:overflow});
       if(Number.isFinite(columns) && columns>1) issues.push({page:index+1,type:'CORE_TWO_COLUMN_FLOW',columns:columns});
+    });
+    document.querySelectorAll('[data-product="arc-core"] [data-boundary]').forEach(function(node){
+      if(!node.classList.contains('page')) issues.push({type:'MAJOR_BOUNDARY_NOT_PAGE_CONTAINER',boundary:node.dataset.boundary||'unknown'});
     });
     window.ARC_CORE_SOURCE_PREFLIGHT={status:issues.length?'HOLD':'PASS',issues:issues};
     document.documentElement.dataset.arcSourcePreflight=issues.length?'hold':'pass';

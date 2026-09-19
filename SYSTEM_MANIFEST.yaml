@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.2-dev
+  version: 1.8.3-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -55,6 +55,8 @@ runtime:
   handoff_markdown_format: ARC_HANDOFF_<PRODUCT>_<SUBJECT>_<BATCH_ID>_READY.md
   handoff_markdown_encoding: UTF-8
   handoff_markdown_direct_typesetter_input: true
+  stale_handoff_gate: required
+  handoff_layout_directives: forbidden
   generator_pdf_typesetting: disabled
   publisher_content_regrading: forbidden
   publisher_answer_integrity_mode: LOCKED_KEY_COMPARISON_ONLY
@@ -108,6 +110,9 @@ runtime:
   core_layout_mode: ONE_COLUMN
   core_two_column_flow: forbidden
   core_semantic_pagination_gate: required
+  core_major_boundary_page_break: required
+  core_major_boundary_blank_page: forbidden
+  core_major_boundary_sparse_exception: registered_only
   core_heading_hierarchy_gate: required
   core_html_overflow_gate: required_when_source_available
   typeset_qa_skill_required: true
@@ -303,6 +308,8 @@ tooling:
   similarity_calibration: tooling/similarity/calibrate_similarity.py
   pdf_preflight: tooling/pdf_qc/pdf_preflight.py
   pdf_preflight_smoke_test: tooling/pdf_qc/test_preflight_smoke.py
+  handoff_preflight: tooling/handoff/handoff_preflight.py
+  handoff_preflight_smoke_test: tooling/handoff/test_handoff_preflight.py
   xmark_detector: tooling/pdf_qc/xmark_detect.py
   visual_renderer: tooling/visual/arc_visual_render.py
   visual_verifier: tooling/visual/visual_verify.py

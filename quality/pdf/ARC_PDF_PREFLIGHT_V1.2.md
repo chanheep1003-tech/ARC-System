@@ -35,6 +35,7 @@ V1.2는 실제 사용자 발견 조판 결함을 직접 차단한다: CORE 2단 
 - body text가 Thin/ExtraLight/Light 계열에 유의미하게 의존 = FAIL
 - body average size가 print floor 아래로 내려감 = FAIL
 - page bottom의 isolated large/heading-like text = FAIL/WARN
+- A/B/C major part title가 본문 페이지 상단에서 시작하지 않음 = FAIL
 - raw <br>/<b>/<span> 등 markup token 노출 = FAIL
 - CONTENT_LOCK/BATCH_ID/SOURCE_ID/Drive 상태 같은 production metadata 노출 = FAIL
 
@@ -49,6 +50,9 @@ V1.2는 실제 사용자 발견 조판 결함을 직접 차단한다: CORE 2단 
 ## OCCUPANCY
 단순 bounding box 높이가 아니라 body content의 vertical interval union을 사용한다.
 footer/page number가 페이지 하단에 있다는 이유만으로 sparse page를 정상으로 오판하지 않는다.
+단, 다음 페이지가 상단에서 명시적 A/B/C 대경계를 시작하고 직전 페이지 점유율이
+25~45%이면 CORE_REGISTERED_BOUNDARY_REMAINDER로 등록한다. 25% 미만 near-empty는
+대경계가 뒤따라도 FAIL이며 같은 파트 내부에서 재조판한다.
 
 ## TYPOGRAPHY
 CORE 기본:

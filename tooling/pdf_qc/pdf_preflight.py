@@ -29,6 +29,7 @@ METADATA_RE = re.compile(
 )
 LIGHT_FONT_RE = re.compile(r"(?:thin|extralight|ultralight|light|wght[-_ ]?(?:100|200|300))", re.I)
 BOLD_FONT_RE = re.compile(r"(?:bold|semibold|demibold|medium)", re.I)
+MAJOR_PART_RE = re.compile(r"(?:[ABC]\s*파트|파트\s*[ABC]|\bPART\s*[ABC]\b)", re.I)
 
 
 def rect_outside(inner: fitz.Rect, outer: fitz.Rect, tol: float = 0.5) -> bool:
@@ -277,6 +278,33 @@ def heading_orphan_flags(blocks: list[dict], page_rect: fitz.Rect, body_avg: flo
     return flags
 
 
+def major_boundary_signal(blocks: list[dict], page_rect: fitz.Rect) -> dict:
+    """Find an explicit A/B/C part title and verify that it opens the body page."""
+    candidates = []
+    for block in blocks:
+        text = re.sub(r"\s+", " ", block["text"]).strip()
+        if not MAJOR_PART_RE.search(text):
+            continue
+        max_size = max((span["size"] for span in block["spans"]), default=0.0)
+        if max_size < 14.0:
+            continue
+        candidates.append(
+            {
+                "text": text[:160],
+                "bbox": block["bbox"],
+                "max_size": round(max_size, 2),
+                "at_page_start": block["bbox"][1] <= page_rect.height * 0.28,
+            }
+        )
+    if not candidates:
+        return {"detected": False, "at_page_start": False, "candidates": []}
+    return {
+        "detected": True,
+        "at_page_start": all(item["at_page_start"] for item in candidates),
+        "candidates": candidates,
+    }
+
+
 def page_report(
     page: fitz.Page,
     product: str,
@@ -372,6 +400,7 @@ def page_report(
     bottom = min(page_rect.height - margin_pt, page_rect.height * 0.93)
     occ = occupancy_ratio(blocks, page_rect.height, top, bottom)
     cols = column_signal(lines, page_rect)
+    major_boundary = major_boundary_signal(blocks, page_rect)
 
     if product == "ARC_CORE" and page.number > 0:
         if occ < 0.25:
@@ -396,6 +425,14 @@ def page_report(
             )
 
         flags.extend(heading_orphan_flags(blocks, page_rect, typo["body_font_avg_pt"]))
+        if major_boundary["detected"] and not major_boundary["at_page_start"]:
+            flags.append(
+                {
+                    "severity": "FAIL",
+                    "type": "CORE_MAJOR_BOUNDARY_NOT_PAGE_START",
+                    "details": major_boundary["candidates"],
+                }
+            )
 
     return {
         "page": page.number + 1,
@@ -405,6 +442,7 @@ def page_report(
         "occupancy_ratio": round(occ, 4),
         "typography": typo,
         "column_signal": cols,
+        "major_boundary_signal": major_boundary,
         "flags": flags,
     }
 
@@ -439,6 +477,20 @@ def analyze_pdf(
 ) -> dict:
     doc = fitz.open(pdf_path)
     pages = [page_report(p, product, margin_pt, overlap_threshold) for p in doc]
+    if product == "ARC_CORE":
+        for index, page in enumerate(pages[:-1]):
+            next_boundary = pages[index + 1]["major_boundary_signal"]
+            if not (next_boundary["detected"] and next_boundary["at_page_start"]):
+                continue
+            for flag in page["flags"]:
+                if flag["type"] == "CORE_SPARSE_PAGE_REFLOW":
+                    flag.update(
+                        {
+                            "severity": "INFO",
+                            "type": "CORE_REGISTERED_BOUNDARY_REMAINDER",
+                            "reason": "next page opens an explicit major boundary",
+                        }
+                    )
     fail_count = sum(1 for p in pages for f in p["flags"] if f["severity"] == "FAIL")
     warn_count = sum(1 for p in pages for f in p["flags"] if f["severity"] == "WARN")
     status = "FAIL" if fail_count else ("WARN" if warn_count else "PASS")

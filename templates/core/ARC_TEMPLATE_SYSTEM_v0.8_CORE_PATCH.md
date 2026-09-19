@@ -209,7 +209,12 @@ LEVEL 4 FUNCTIONAL LABEL:
 - 25% 미만 near-empty page는 명시적 의도가 없으면 FAIL
 - ARC_CORE 표지 뒤 blank verso 삽입 금지
 - 다음 페이지에 1~3줄만 남는 orphan/widow는 reflow 우선
-- 파트 전환에서도 불필요한 강제 page-break를 만들지 않음
+- PART/MAJOR_TOPIC 전환은 반드시 다음 물리 페이지에서 시작
+- 사회 A/B/C 파트는 각각 새 페이지 시작
+- 경계가 이미 본문 페이지 맨 위이면 추가 break를 만들지 않음
+- 경계 전후의 완전 공백 페이지 생성 금지
+- 등록된 대경계 때문에 직전 페이지 점유율이 25~45%가 된 경우
+  CORE_REGISTERED_BOUNDARY_REMAINDER로 허용하되, 25% 미만은 같은 파트 안에서 재조판
 - 국어 긴 SOURCE_TEXT_BLOCK은 PDF MASTER 규칙에 따라 이어서 조판 가능
 
 

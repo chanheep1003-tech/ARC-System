@@ -104,9 +104,14 @@ def main() -> int:
         "core_layout_mode": "ONE_COLUMN",
         "core_two_column_flow": "forbidden",
         "core_semantic_pagination_gate": "required",
+        "core_major_boundary_page_break": "required",
+        "core_major_boundary_blank_page": "forbidden",
+        "core_major_boundary_sparse_exception": "registered_only",
         "core_heading_hierarchy_gate": "required",
         "core_html_overflow_gate": "required_when_source_available",
         "typeset_qa_skill_required": True,
+        "stale_handoff_gate": "required",
+        "handoff_layout_directives": "forbidden",
     }
     for key, expected in required_runtime.items():
         if runtime.get(key) != expected:
@@ -132,6 +137,7 @@ def main() -> int:
             "ARC CORE PRODUCT ISOLATION — HARD LOCK",
             "CORE_TWO_COLUMN_FLOW",
             "SEMANTIC PAGINATION — ARC_CORE REQUIRED",
+            "MAJOR BOUNDARY PAGE START — HARD LOCK",
             "TYPOGRAPHY TOKENS — ARC_CORE DEFAULT",
             "LAST_PROBLEM_PAGE + 2 = ANSWER_KEY_START",
         ],
@@ -143,6 +149,7 @@ def main() -> int:
             "PRODUCT ISOLATION — HARD LOCK",
             "INFORMATION HIERARCHY — FOUR LEVELS",
             "CORE_TWO_COLUMN_FLOW = 0",
+            "CORE_REGISTERED_BOUNDARY_REMAINDER",
             "fixed-height page + overflow:hidden",
         ],
     )
@@ -154,6 +161,7 @@ def main() -> int:
             'column-count:1!important',
             '"Pretendard"',
             'ARC_CORE_SOURCE_PREFLIGHT',
+            'data-boundary="major-topic"',
             'overflow:visible',
         ],
     )
@@ -169,7 +177,7 @@ def main() -> int:
     require_markers(
         errors,
         typesetter_contract,
-        ["arc-typeset-qa", "ONE_COLUMN", "scrollHeight/clientHeight"],
+        ["arc-typeset-qa", "ONE_COLUMN", "scrollHeight/clientHeight", "STALE_HANDOFF_GATE"],
     )
     require_markers(
         errors,
@@ -190,10 +198,15 @@ def main() -> int:
         if not skill_path or not (ROOT / skill_path).is_file():
             errors.append("arc-typeset-qa path is missing")
         else:
-            require_markers(errors, skill_path, ["Product isolation", "Semantic pagination", "Render review"])
+            require_markers(errors, skill_path, ["Product isolation", "Semantic pagination", "Render review", "Major boundary hard rule"])
 
     # Executable preflight and smoke-test targets must exist.
-    for key in ("pdf_preflight", "pdf_preflight_smoke_test"):
+    for key in (
+        "pdf_preflight",
+        "pdf_preflight_smoke_test",
+        "handoff_preflight",
+        "handoff_preflight_smoke_test",
+    ):
         rel = tooling.get(key)
         if not isinstance(rel, str) or not (ROOT / rel).is_file():
             errors.append(f"tooling.{key} target missing: {rel!r}")

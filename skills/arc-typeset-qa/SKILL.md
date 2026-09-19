@@ -2,7 +2,7 @@
 name: arc-typeset-qa
 description: ARC CORE/N°/FINAL 조판에서 제품 레이아웃 격리, 의미 단위 페이지네이션, 인쇄 타이포그래피, 렌더 기반 PDF QA를 JIT로 수행한다.
 metadata:
-  version: 1.0.0
+  version: 1.1.0
   arc-role: typesetting-quality
 ---
 
@@ -62,6 +62,15 @@ Rules:
 - 긴 section 전체에 break-inside:avoid를 걸어 sparse page를 만들지 않는다.
 - 1~3줄 carry-over는 reflow 우선.
 
+Major boundary hard rule:
+- ARC_CORE level-1 manuscript heading = PART/MAJOR_TOPIC
+- each boundary starts a new physical page
+- Social Studies A/B/C parts never share a page opening
+- never add a duplicate break when already at the page top
+- never create a blank page around a boundary
+- a 25–45% previous-page remainder is permitted only when registered as
+  CORE_REGISTERED_BOUNDARY_REMAINDER; <25% remains a reflow failure
+
 
 ## 3-A. ReportLab CORE guard
 If the producer is ReportLab:
@@ -74,6 +83,7 @@ If the producer is ReportLab:
 - short semantic groups may use KeepTogether; long chapters may not
 - tables split only by rows and repeat header rows where applicable
 - run final `--product ARC_CORE` PDF preflight
+- use exactly one ReportLab `PageBreak()` per PART/MAJOR_TOPIC boundary, except the first body boundary
 
 ## 4. Source overflow audit
 Editable HTML source가 있으면 PDF export 전:

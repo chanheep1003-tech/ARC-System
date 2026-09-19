@@ -29,6 +29,12 @@ For every typesetting task read only:
 
 Do NOT load subject MASTER/GOLD/textbook/worksheet/source bank by default.
 
+Before acceptance, run the manifest-selected handoff preflight. Handoff-local
+layout commands are non-authoritative and must not be executed. A stale ruleset,
+hardcoded PDF master, CORE two-column directive, sub-floor body size, concrete
+CSS/PageTemplate instruction, or student-facing internal ID returns
+TYPESET_STATUS=RETURN_CONTENT with STALE_HANDOFF_GATE=FAIL.
+
 ## 1-A. BRAND ASSET GATE
 For cover full lockups, use the canonical Drive assets exactly:
 - ARC_CORE_LOCKUP_MASTER.png
@@ -150,6 +156,13 @@ ARC_CORE specific:
 - body/table/caption typography must not use Thin/ExtraLight/Light
 - Korean body weight >= Regular(400)
 - raw HTML/Markdown tags must never be student-visible
+- every PART/MAJOR_TOPIC boundary starts on a fresh physical page
+- Social Studies A/B/C parts are always separate page openings
+- the break is placed before the boundary, never after its title
+- if the boundary is already at the top of a body page, do not add another break
+- never create a blank page before or after a major boundary
+- a 25–45% previous-page remainder caused solely by a registered major boundary is
+  allowed and labeled CORE_REGISTERED_BOUNDARY_REMAINDER; <25% still requires reflow
 
 Reflow must prefer page redistribution over font shrinking.
 Do not solve whitespace by adding decorative cards.
@@ -190,6 +203,14 @@ concept-layout product; content may be formatted but not expanded.
 Main reading flow = ONE_COLUMN only.
 Internal comparison/table micro-grids are allowed, but may not create a second independent reading lane.
 Typography defaults: Pretendard Regular(400) 9.9pt target, 1.54–1.58 line-height; fallback Noto Sans KR Regular(400).
+Level-1 STUDENT MANUSCRIPT headings are PART/MAJOR_TOPIC page boundaries.
+
+Implementation invariants:
+- HTML/CSS: the boundary owns `break-before: page` / `page-break-before: always`
+  and must be a page-opening container, not a nested mid-page heading.
+- ReportLab: insert exactly one `PageBreak()` before each boundary except the first
+  body boundary or one already preceded by a page break.
+- Do not use `CondPageBreak`; this is a semantic boundary, not a space heuristic.
 
 ## 6. OUTPUT METADATA
 BATCH_ID

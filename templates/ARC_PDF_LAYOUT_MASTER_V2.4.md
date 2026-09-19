@@ -630,6 +630,7 @@ SEMANTIC PAGINATION — ARC_CORE REQUIRED:
 
 BLOCK TYPES:
 - PART_OPENING = 파트 제목 + 중심 질문/도입
+- MAJOR_TOPIC_OPENING = 독립된 대주제 제목 + 중심 질문/도입
 - CHAPTER_OPENING = 장 제목 + 첫 설명 문단
 - SECTION_OPENING = 절/소제목 + 최소 본문
 - PROSE_PARAGRAPH
@@ -648,6 +649,17 @@ KEEP RULE:
 - TABLE_BLOCK은 행 중간 분할 금지. 다음 페이지로 이어질 때 머리글을 반복한다.
 - FIGURE_BLOCK은 그림 자체를 페이지 경계에서 절단하지 않는다.
 - synthesis는 제목/라벨만 이전 페이지에 남기지 않는다.
+
+MAJOR BOUNDARY PAGE START — HARD LOCK:
+- PART_OPENING과 MAJOR_TOPIC_OPENING은 항상 새 물리 페이지에서 시작한다.
+- 통합사회처럼 A/B/C로 나뉘면 A, B, C 각 파트는 서로 다른 페이지에서 시작한다.
+- STUDENT MANUSCRIPT의 level-1 Markdown heading(`#`)을 대경계로 해석한다.
+- level-2 이하 heading은 이 규칙만으로 강제 페이지 전환하지 않는다.
+- 첫 본문 경계 또는 이미 페이지 맨 위인 경계에는 중복 break를 추가하지 않는다.
+- break 앞뒤에 완전 공백 페이지를 만들지 않는다.
+- HTML은 page-opening container에 `break-before:page`를 적용한다.
+- ReportLab은 첫 본문 경계를 제외하고 정확히 한 번 `PageBreak()`를 삽입한다.
+- `CondPageBreak`나 남은 높이 계산으로 이 대경계를 취소하지 않는다.
 
 SELECTIVE BREAK POLICY:
 - break-inside:avoid를 긴 chapter/section 전체에 일괄 적용하지 않는다.
@@ -716,10 +728,13 @@ ARC_CORE 기본 목표:
 - 45% 미만이면 SPARSE_PAGE_FLAG를 발생시키고 앞/뒤 블록을 재배치한다.
 - 25% 미만의 near-empty page는 의도된 chapter opener/registered blank page가 아닌 한 HARD FAIL이다.
 - ARC_CORE에는 표지 뒤 강제 blank verso가 없다.
-- 장/파트 전환만을 이유로 빈 페이지를 삽입하지 않는다.
+- PART/MAJOR_TOPIC은 새 페이지에서 시작하되 빈 페이지 자체는 삽입하지 않는다.
+- 대경계로 인해 직전 페이지가 25~45% 점유가 된 경우에만
+  CORE_REGISTERED_BOUNDARY_REMAINDER로 등록할 수 있다.
+- 직전 페이지가 25% 미만이면 대경계를 당기지 말고 같은 파트 내부를 재조판한다.
 
 REFLOW 우선순위:
-1. 불필요한 강제 page-break 제거
+1. PART/MAJOR_TOPIC 이외의 불필요한 강제 page-break 제거
 2. 앞 페이지의 안전한 문단/표/도식을 당겨오기
 3. 다음 블록을 현재 페이지로 당겨오기
 4. 긴 문단은 문단 경계에서 자연스럽게 분할

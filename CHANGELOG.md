@@ -1,3 +1,11 @@
+## 1.8.3-dev — 2026-09-20
+- Added an executable stale-handoff gate. ARC CORE handoffs now fail before layout when they pin an old ruleset/PDF master, request two-column flow, prescribe body font size or concrete CSS/ReportLab geometry, expose internal IDs, or leave Social A/B/C part headings below level 1.
+- Removed layout authority from Generator handoffs. The active SYSTEM_MANIFEST, PDF master, product patch, and Typesetter contract are resolved at render time.
+- Level-1 headings inside ARC CORE STUDENT MANUSCRIPT now represent PART/MAJOR_TOPIC boundaries and start a fresh physical page. Social A/B/C parts are always separate page openings.
+- Added duplicate-break and blank-page prevention. A registered boundary may explain a 25–45% previous-page remainder; pages below 25% still require within-part reflow.
+- Added rendered-PDF detection for an explicit A/B/C part title that appears mid-page (`CORE_MAJOR_BOUNDARY_NOT_PAGE_START`).
+- Added handoff and PDF behavioral smoke tests and wired both into CI. Local smoke tests and the active-system validator pass; representative Social/History re-typesetting remains required before main promotion.
+
 ## 1.8.2-dev — 2026-09-19
 - Reworked ARC CORE typesetting after direct review of the user-provided Social and History CORE PDFs. The History artifact exposed ARC N°-style two-column leakage; the Social artifact exposed heading/carry-over and semantic page-flow defects.
 - Baseline PDF inspection independently confirmed both reviewed CORE PDFs embed `NotoSansKR-Thin`; this converts the readability complaint into a verified font-weight regression, not a subjective-only styling issue.

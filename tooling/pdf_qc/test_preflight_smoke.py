@@ -125,6 +125,21 @@ def run() -> None:
         result = mod.analyze_pdf(path, "ARC_CORE")
         assert "HEADING_ORPHAN_CANDIDATE" in flag_types(result), result
 
+        doc = new_doc()
+        p = doc.new_page(width=mod.A4_W, height=mod.A4_H)
+        p.insert_text((65, 520), "PART A - Social Justice", fontsize=18.0, fontname="helv")
+        p.insert_textbox(
+            fitz.Rect(65, 555, mod.A4_W - 65, 720),
+            paragraph() * 2,
+            fontsize=10.0,
+            lineheight=1.2,
+        )
+        path = td / "late-part.pdf"
+        doc.save(path)
+        doc.close()
+        result = mod.analyze_pdf(path, "ARC_CORE")
+        assert "CORE_MAJOR_BOUNDARY_NOT_PAGE_START" in flag_types(result), result
+
     print("ARC PDF PREFLIGHT SMOKE: PASS")
 
 

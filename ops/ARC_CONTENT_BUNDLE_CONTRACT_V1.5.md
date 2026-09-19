@@ -126,6 +126,23 @@ the ANSWER KEY section for ARC_N/ARC_FINAL.
 
 Typesetter must ignore INTERNAL / DO NOT PRINT sections for student PDF output while using them as production metadata.
 
+Layout authority is not portable content. A handoff must not pin or prescribe:
+- PDF master/template version
+- one/two-column mode
+- body font family, size, weight, or line-height
+- CSS selectors/properties
+- ReportLab Frame/PageTemplate geometry
+- page margins or fixed page coordinates
+
+The current SYSTEM_MANIFEST and active Typesetter rules are the only layout authority.
+An older handoff may preserve locked student content, but its stale layout commands
+must fail the handoff preflight rather than override the active layout stack.
+
+For ARC_CORE, level-1 Markdown headings inside STUDENT MANUSCRIPT are semantic
+PART/MAJOR_TOPIC boundaries. A/B/C parts and genuine top-level topic changes must
+be represented this way. Typesetter must start every boundary on a new physical
+page without inserting an empty page.
+
 The Markdown serialization must be semantically identical to the locked CONTENT_BUNDLE.
 If they differ:
 HANDOFF_MD_STATUS=FAIL

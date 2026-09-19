@@ -33,6 +33,8 @@ jobs:
           python -m py_compile tooling/pdf_qc/pdf_preflight.py
           python -m py_compile tooling/pdf_qc/test_preflight_smoke.py
           python -m py_compile tooling/pdf_qc/xmark_detect.py
+          python -m py_compile tooling/handoff/handoff_preflight.py
+          python -m py_compile tooling/handoff/test_handoff_preflight.py
           python -m py_compile tooling/visual/arc_visual_render.py
           python -m py_compile tooling/visual/visual_verify.py
           python -m py_compile tooling/validate_system.py
@@ -68,6 +70,9 @@ jobs:
 
       - name: Run PDF preflight behavioral smoke
         run: python tooling/pdf_qc/test_preflight_smoke.py
+
+      - name: Run handoff preflight behavioral smoke
+        run: python tooling/handoff/test_handoff_preflight.py
 
       - name: Validate active system graph and checksums
         run: python tooling/validate_system.py

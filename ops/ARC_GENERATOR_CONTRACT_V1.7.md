@@ -155,7 +155,10 @@ TYPESET_STATUS: PENDING
 ---
 
 # TYPESETTER INSTRUCTIONS — INTERNAL / DO NOT PRINT
-Short immutable handoff rules and any required layout constraints.
+Content-preservation rules only. The Generator must not pin a PDF master,
+column count, font size, CSS selector, ReportLab Frame/PageTemplate, margin,
+or page geometry. The Typesetter resolves every layout rule from the current
+SYSTEM_MANIFEST at render time.
 
 # CORE ARCHITECTURE SUMMARY — INTERNAL / DO NOT PRINT
 Required for ARC_CORE only:
@@ -169,6 +172,16 @@ MACRO_COHERENCE
 # STUDENT MANUSCRIPT
 The complete locked student-facing manuscript.
 This section is the primary printable content.
+
+For ARC_CORE, Markdown heading levels are structural and mandatory:
+- `#` = PART or MAJOR_TOPIC boundary; every such heading starts a new physical page
+- `##` = CHAPTER
+- `###` = SECTION
+- `####` = FUNCTIONAL_LABEL only when a heading is semantically appropriate
+
+Social Studies A/B/C parts must each use a level-1 heading such as
+`# A파트 · 사회 정의`. A real top-level topic change must also use level 1.
+Do not use level 1 merely for visual emphasis.
 
 # ANSWER KEY — INTERNAL / DO NOT PRINT ON PROBLEM PAGES
 Required for ARC_N / ARC_FINAL.
@@ -190,6 +203,9 @@ Rules:
 - The MD file and locked CONTENT_BUNDLE must be semantically identical.
 - Internal sections must be explicitly marked DO NOT PRINT.
 - STUDENT MANUSCRIPT must contain no internal metadata.
+- STUDENT MANUSCRIPT must not contain bracketed CONCEPT_ID/SOURCE_ID labels.
+- Handoff Markdown must not contain product-layout commands; any stale layout
+  instruction makes HANDOFF_MD_STATUS=FAIL until regenerated under the active ruleset.
 - The file must be saved/generated before reporting READY_FOR_TYPESET.
 
 HANDOFF_MD_STATUS values:
