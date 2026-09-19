@@ -1,3 +1,16 @@
+## 1.7.7-dev — 2026-09-19
+- Reworked ARC CORE from concept-card-first generation to chapter/cluster-first editorial architecture.
+- Added ARC_CORE_EDITORIAL_ARCHITECTURE_V2.0 with CENTRAL_QUESTION, CHAPTER_THESIS, DOMINANT_ORGANIZATION, BACKBONE_NODES, information hierarchy, anti-listing, redundancy budget, and one-synthesis principles.
+- Upgraded ARC_CORE_CONTENT_ENGINE to V1.3 so macro architecture is built before concept writing.
+- Upgraded ARC_CORE_DEPTH_ENGINE to V1.1 with cluster-first depth assignment to prevent advanced concepts from fragmenting into repeated mini-cards.
+- Upgraded ARC_CORE_EDITORIAL_NATURALNESS to V1.2 with macro AI-pattern detection in addition to sentence-level style checks.
+- Upgraded ARC_CORE_QA_BENCH to V1.2 with MACRO_COHERENCE, CHAPTER_BACKBONE_PRESENT, ANTI_LISTING, REDUNDANCY_BUDGET, and SYNTHESIS_TRANSFORMS gates.
+- Upgraded ARC_TEMPLATE_SYSTEM CORE patch to v0.6: prose-first layout, fewer repeated cards, one primary synthesis per chapter, and no duplicate recap visuals.
+- Upgraded ARC_GENERATOR_CONTRACT to V1.5 so ARC CORE route builds chapter architecture before concept maps and uses the manifest-selected Content Bundle contract.
+- Upgraded ARC_CONTENT_BUNDLE_CONTRACT to V1.4: answer-key gates are now product-specific, while CORE carries architecture summary metadata for Typesetter without exposing it to students.
+- Review basis: first Social and History ARC CORE PDFs showed strong factual density but excessive repeated summaries, warning blocks, tables, and recap cards. The new architecture targets that failure mode directly.
+- Connector-based static consistency checks only; executable frozen-fixture regression was not claimed.
+
 ## 1.7.6-dev — 2026-09-19
 - Tightened final release approval after review of a real Claude production log.
 - Generic positive reactions such as "좋아", "좋다니까", or "성공적이야" no longer count as evidence that a printed copy was physically reviewed.
