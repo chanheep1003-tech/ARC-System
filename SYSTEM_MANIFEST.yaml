@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.7.4-dev
+  version: 1.7.5-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -24,24 +24,36 @@ runtime:
   teacher_style_prediction: disabled
   historical_exam_usage: difficulty_calibration_only
   automation_runtime: ops/ARC_AUTOMATION_RUNTIME_V1.0.md
-  drive_write_adapter: ops/ARC_DRIVE_WRITE_ADAPTER_V1.1.md
+  production_orchestrator: ops/ARC_PRODUCTION_ORCHESTRATOR_V1.0.md
+  publisher_contract: ops/ARC_PUBLISHER_CONTRACT_V1.0.md
+  storage_targets: ops/ARC_STORAGE_TARGETS_V1.0.yaml
+  auto_continue_until_hard_fail: true
+  interactive_confirmation_policy: HARD_FAIL_OR_USER_JUDGMENT_ONLY
+  drive_write_adapter: ops/ARC_DRIVE_WRITE_ADAPTER_V1.2.md
+  binary_upload_transport: FILE_REFERENCE_FIRST
+  inline_base64_binary_upload: disabled
+  registered_storage_target_first: true
   drive_write_preflight_required: true
   scheduled_drive_write_mode: ROOT_STAGING
   drive_write_default_mode: ROOT_STAGING
   runtime_priority_policy: ops/ARC_RUNTIME_PRIORITY_POLICY_V1.0.md
   post_exam_calibration: ops/ARC_POST_EXAM_CALIBRATION_V1.0.md
-  claude_handoff: ops/ARC_CLAUDE_HANDOFF_V1.1.md
+  claude_handoff: ops/ARC_CLAUDE_HANDOFF_V1.2.md
   claude_absorption_gate_required: true
   claude_pdf_status_default: DRAFT_REVIEW
   claude_post_production_review: USER_PLUS_CHATGPT
   generation_strategy: MCP_FIRST_MULTI_MODEL
   multi_model_governance: ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md
-  generator_contract: ops/ARC_GENERATOR_CONTRACT_V1.3.md
-  content_bundle_contract: ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.2.md
-  typesetter_contract: ops/ARC_TYPESETTER_CONTRACT_V1.2.md
-  production_role_split: GENERATOR_TO_TYPESETTER
+  generator_contract: ops/ARC_GENERATOR_CONTRACT_V1.4.md
+  content_bundle_contract: ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.3.md
+  typesetter_contract: ops/ARC_TYPESETTER_CONTRACT_V1.3.md
+  production_role_split: GENERATOR_TO_TYPESETTER_TO_PUBLISHER
   content_lock_required_before_typeset: true
   generator_pdf_typesetting: disabled
+  publisher_content_regrading: forbidden
+  publisher_answer_integrity_mode: LOCKED_KEY_COMPARISON_ONLY
+  intermediate_sample_default: SKIP_WHEN_REFERENCE_AVAILABLE
+  physical_human_review_gate: FINAL_RELEASE_ONLY
   arc_n_layout_mode: COLUMN_ONLY
   arc_n_answer_key_default: INLINE_FINAL_COMPACT
   arc_n_cover_verso_blank: required
@@ -173,7 +185,7 @@ active:
     visual_pass_ab: quality/visual/ARC_VISUAL_PASS_AB_V1.0.md
     social_visual_spec: quality/visual/SOC_VISUAL_SPEC_V1.0.md
     bank_policy: quality/BANK_POLICY_V1.1.md
-    human_review_gate: quality/ARC_HUMAN_REVIEW_GATE_V1.0.md
+    human_review_gate: quality/ARC_HUMAN_REVIEW_GATE_V1.1.md
     source_ledger: quality/ARC_SOURCE_LEDGER_V1.0.md
     source_ledger_schema: quality/source/ARC_SOURCE_LEDGER_SCHEMA_V1.0.yaml
     regression_policy: quality/regression/ARC_REGRESSION_POLICY_V1.0.md
@@ -213,6 +225,7 @@ active:
     brand_asset_registry: templates/brand/ARC_BRAND_ASSET_REGISTRY_V1.0.md
     pdf_master: templates/ARC_PDF_LAYOUT_MASTER_V2.2.md
     core_patch: templates/core/ARC_TEMPLATE_SYSTEM_v0.5_CORE_PATCH.md
+    arc_n_typeset_reference: templates/gold/ARC_N_TYPESET_REFERENCE_V1.0.md
 
 excluded_from_release:
   school_dna_seed:
