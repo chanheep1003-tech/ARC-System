@@ -1,5 +1,7 @@
 ## 1.8.2-dev — 2026-09-19
 - Reworked ARC CORE typesetting after direct review of the user-provided Social and History CORE PDFs. The History artifact exposed ARC N°-style two-column leakage; the Social artifact exposed heading/carry-over and semantic page-flow defects.
+- Baseline PDF inspection independently confirmed both reviewed CORE PDFs embed `NotoSansKR-Thin`; this converts the readability complaint into a verified font-weight regression, not a subjective-only styling issue.
+- The new line-lane detector was calibrated against the same rendered PDFs: it flags History CORE pages 2–11 as two-column body flow while leaving the Social CORE pages unflagged, reducing table false positives.
 - Activated PDF Layout Master V2.4: ARC CORE main reading flow is now hard-locked to ONE_COLUMN with product-specific namespace requirements; ARC N°/FINAL two-column body rules may not leak into CORE.
 - Added semantic pagination: Part/Chapter/Section openings, callouts, tables, figures, and synthesis blocks now have explicit keep/split semantics; headings require following body, table rows cannot split, figures cannot be clipped, and 1–3 line carry-over is a reflow priority.
 - Activated CORE Template Patch v0.8 with a four-level Part → Chapter → Section → Functional Label hierarchy and print-first typography tokens.
