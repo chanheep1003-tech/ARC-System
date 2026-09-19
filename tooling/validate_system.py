@@ -53,6 +53,17 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def require_markers(errors: list[str], rel: str, markers: list[str]) -> None:
+    path = ROOT / rel
+    if not path.is_file():
+        errors.append(f"required file missing: {rel}")
+        return
+    text = path.read_text(encoding="utf-8")
+    for marker in markers:
+        if marker not in text:
+            errors.append(f"required policy marker missing in {rel}: {marker}")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--skip-checksums", action="store_true")
@@ -63,8 +74,11 @@ def main() -> int:
     if not re.fullmatch(r"1\.8(?:\.\d+)?-dev", str(manifest["system"]["version"])):
         errors.append("system.version must be on the 1.8 dev line")
 
-    active_paths = set(walk_paths(manifest.get("active", {})))
+    active = manifest.get("active", {})
     runtime = manifest.get("runtime", {})
+    tooling = manifest.get("tooling", {})
+    active_paths = set(walk_paths(active))
+
     for key in (
         "automation_runtime", "production_orchestrator", "publisher_contract",
         "storage_targets", "drive_write_adapter", "runtime_priority_policy",
@@ -86,40 +100,96 @@ def main() -> int:
         "arc_n_answer_key_completeness_gate": "required",
         "arc_brand_asset_hash_gate": "required",
         "core_student_metadata_exposure": "forbidden",
+        "core_layout_mode": "ONE_COLUMN",
+        "core_two_column_flow": "forbidden",
+        "core_semantic_pagination_gate": "required",
+        "core_heading_hierarchy_gate": "required",
+        "core_html_overflow_gate": "required_when_source_available",
+        "typeset_qa_skill_required": True,
     }
     for key, expected in required_runtime.items():
         if runtime.get(key) != expected:
             errors.append(f"runtime.{key} must equal {expected!r}")
 
-    must_contain = {
-        "engine/common/COMMON_GENERATION_ENGINE_V4.4_ARC.md": [
-            "SCOPE_LOCK", "UNIQUE_ANSWER", "PASS A", "PASS B", "ANSWER_KEY_COMPLETE"
+    common_path = active["common_generation_engine"]["path"]
+    pdf_master = active["layout"]["pdf_master"]
+    core_patch = active["layout"]["core_patch"]
+    pdf_preflight_policy = active["quality"]["pdf_preflight"]
+    pipeline_contract = runtime["pipeline_integrity_contract"]
+    typesetter_contract = runtime["typesetter_contract"]
+
+    require_markers(
+        errors,
+        common_path,
+        ["SCOPE_LOCK", "UNIQUE_ANSWER", "PASS A", "PASS B", "ANSWER_KEY_COMPLETE"],
+    )
+    require_markers(
+        errors,
+        pdf_master,
+        [
+            "ARC CORE PRODUCT ISOLATION — HARD LOCK",
+            "CORE_TWO_COLUMN_FLOW",
+            "SEMANTIC PAGINATION — ARC_CORE REQUIRED",
+            "TYPOGRAPHY TOKENS — ARC_CORE DEFAULT",
+            "LAST_PROBLEM_PAGE + 2 = ANSWER_KEY_START",
         ],
-        "templates/ARC_PDF_LAYOUT_MASTER_V2.2.md": [
-            "COVER → BLANK_COVER_VERSO → PROBLEM_PAGES → BLANK_BEFORE_ANSWER → ANSWER_KEY",
-            "BRAND_HASH_MATCH",
+    )
+    require_markers(
+        errors,
+        core_patch,
+        [
+            "PRODUCT ISOLATION — HARD LOCK",
+            "INFORMATION HIERARCHY — FOUR LEVELS",
+            "CORE_TWO_COLUMN_FLOW = 0",
+            "fixed-height page + overflow:hidden",
         ],
-        "templates/core/ARC_TEMPLATE_SYSTEM_v0.6_CORE_PATCH.md": [
-            "RETIRED FROM v0.3", "고정된 9블록", "학생용 내부 metadata 노출"
-        ],
-        "ops/ARC_PIPELINE_INTEGRITY_CONTRACT_V1.0.md": [
-            "SCHOOL_SOURCE_PRIORITY", "VISUAL_AUTHENTICITY", "ANSWER_INTEGRITY"
-        ],
-    }
-    for rel, needles in must_contain.items():
-        text = (ROOT / rel).read_text(encoding="utf-8")
-        for needle in needles:
-            if needle not in text:
-                errors.append(f"required policy marker missing in {rel}: {needle}")
+    )
+    require_markers(
+        errors,
+        pdf_preflight_policy,
+        ["ARC PDF PREFLIGHT V1.2", "CORE_TWO_COLUMN_FLOW", "vertical interval union"],
+    )
+    require_markers(
+        errors,
+        typesetter_contract,
+        ["arc-typeset-qa", "ONE_COLUMN", "scrollHeight/clientHeight"],
+    )
+    require_markers(
+        errors,
+        pipeline_contract,
+        ["SCHOOL_SOURCE_PRIORITY", "VISUAL_AUTHENTICITY", "ANSWER_INTEGRITY"],
+    )
+
+    # Typesetting skill must be registered and present.
+    registry_path = active["skills"]["registry"]
+    registry = yaml.safe_load((ROOT / registry_path).read_text(encoding="utf-8"))
+    typeset_skill = registry.get("skills", {}).get("arc-typeset-qa")
+    if not typeset_skill:
+        errors.append("arc-typeset-qa must be registered")
+    else:
+        skill_path = typeset_skill.get("path")
+        if typeset_skill.get("phase") != "typesetting":
+            errors.append("arc-typeset-qa phase must be typesetting")
+        if not skill_path or not (ROOT / skill_path).is_file():
+            errors.append("arc-typeset-qa path is missing")
+        else:
+            require_markers(errors, skill_path, ["Product isolation", "Semantic pagination", "Render review"])
+
+    # Executable preflight and smoke-test targets must exist.
+    for key in ("pdf_preflight", "pdf_preflight_smoke_test"):
+        rel = tooling.get(key)
+        if not isinstance(rel, str) or not (ROOT / rel).is_file():
+            errors.append(f"tooling.{key} target missing: {rel!r}")
 
     science = (ROOT / "subjects/SCIENCE_MASTER_V4.0.md").read_text(encoding="utf-8")
     if "ARC_N 학생 PDF에는 넣지 않는다" in science:
         errors.append("Science MASTER still forbids the mandatory ARC_N answer section")
 
-    layout = (ROOT / "templates/ARC_PDF_LAYOUT_MASTER_V2.2.md").read_text(encoding="utf-8")
+    # Active CORE layout must not reintroduce legacy fixed-card requirements.
+    layout_text = (ROOT / pdf_master).read_text(encoding="utf-8")
     forbidden_layout = ["각 개념마다:\n- CONCEPT_ID", "- MUST 누락 여부"]
     for marker in forbidden_layout:
-        if marker in layout:
+        if marker in layout_text:
             errors.append(f"legacy CORE card requirement remains in active PDF master: {marker}")
 
     fixtures = yaml.safe_load((ROOT / "quality/regression/REGRESSION_FIXTURES_V1.0.yaml").read_text(encoding="utf-8"))
@@ -148,7 +218,11 @@ def main() -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print(f"ARC SYSTEM VALIDATION: PASS ({len(active_paths)} active paths, 30 fixtures)")
+
+    print(
+        f"ARC SYSTEM VALIDATION: PASS "
+        f"({len(active_paths)} active paths, 30 fixtures, PDF={pdf_master}, CORE={core_patch})"
+    )
     return 0
 
 
