@@ -243,12 +243,15 @@ def heading_orphan_flags(blocks: list[dict], page_rect: fitz.Rect, body_avg: flo
     if not blocks:
         return flags
     size_base = body_avg or 9.9
-    threshold_y = page_rect.height * 0.78
+    threshold_y = page_rect.height * 0.70
     footer_cut = page_rect.height * 0.94
     for block in blocks:
         text = re.sub(r"\s+", " ", block["text"]).strip()
         x0, y0, x1, y1 = block["bbox"]
         if y0 < threshold_y or y0 > footer_cut or len(text) > 110:
+            continue
+        # Exclude graph axes / page-number-like numeric labels.
+        if not re.search(r"[A-Za-z가-힣]{2,}", text):
             continue
         max_size = max((span["size"] for span in block["spans"]), default=0)
         boldish = any(BOLD_FONT_RE.search(span["font"]) for span in block["spans"])
