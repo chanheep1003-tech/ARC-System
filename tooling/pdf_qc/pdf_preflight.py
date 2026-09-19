@@ -93,6 +93,33 @@ def text_blocks(page: fitz.Page) -> list[dict]:
     return out
 
 
+def text_lines(page: fitz.Page) -> list[dict]:
+    """Return visual text lines for lane-flow detection."""
+    out: list[dict] = []
+    data = page.get_text("dict")
+    for block in data.get("blocks", []):
+        if block.get("type") != 0:
+            continue
+        for line in block.get("lines", []):
+            spans = line.get("spans", [])
+            text = "".join(str(span.get("text", "")) for span in spans).strip()
+            if not text:
+                continue
+            sizes = [
+                float(span.get("size", 0.0))
+                for span in spans
+                if str(span.get("text", "")).strip()
+            ]
+            out.append(
+                {
+                    "bbox": list(line.get("bbox", (0, 0, 0, 0))),
+                    "text": text,
+                    "avg_size": (sum(sizes) / len(sizes)) if sizes else 0.0,
+                }
+            )
+    return out
+
+
 def body_typography(blocks: list[dict], page_height: float) -> dict:
     total_chars = 0
     weighted_size = 0.0
@@ -137,29 +164,48 @@ def occupancy_ratio(blocks: list[dict], page_height: float, top: float, bottom: 
     return min(1.0, interval_union_length(intervals) / usable)
 
 
-def column_signal(blocks: list[dict], page_rect: fitz.Rect) -> dict:
-    """Conservative two-lane body detector, designed to ignore ordinary table cells."""
-    mid = page_rect.width / 2.0
-    lane_limit = page_rect.width * 0.49
-    gutter = page_rect.width * 0.035
-    body_top = page_rect.height * 0.08
-    body_bottom = page_rect.height * 0.92
+def column_signal(lines: list[dict], page_rect: fitz.Rect) -> dict:
+    """Detect two independent reading lanes while resisting ordinary table false positives."""
+    from collections import Counter
 
-    left: list[dict] = []
-    right: list[dict] = []
-    for block in blocks:
-        text = re.sub(r"\s+", " ", block["text"]).strip()
-        x0, y0, x1, y1 = block["bbox"]
+    mid = page_rect.width / 2.0
+    body_top = page_rect.height * 0.07
+    body_bottom = page_rect.height * 0.94
+    max_line_width = page_rect.width * 0.47
+
+    candidates: list[dict] = []
+    for line in lines:
+        text = re.sub(r"\s+", " ", line["text"]).strip()
+        x0, y0, x1, y1 = line["bbox"]
         width = x1 - x0
-        if len(text) < 90 or width <= 0 or width > lane_limit:
+        if y0 < body_top or y1 > body_bottom:
             continue
-        if y1 < body_top or y0 > body_bottom:
+        if len(text) < 18 or width < 90 or width > max_line_width:
             continue
-        item = {"bbox": block["bbox"], "chars": len(text)}
-        if x1 <= mid + gutter:
-            left.append(item)
-        elif x0 >= mid - gutter:
-            right.append(item)
+        candidates.append(
+            {
+                "bbox": line["bbox"],
+                "chars": len(text),
+                "avg_size": line.get("avg_size", 0.0),
+            }
+        )
+
+    left = [x for x in candidates if x["bbox"][2] <= mid + 25]
+    right = [x for x in candidates if x["bbox"][0] >= mid - 25]
+
+    def dominant_anchor(items: list[dict]) -> tuple[float | None, int]:
+        if not items:
+            return None, 0
+        bins = Counter(round(x["bbox"][0] / 5.0) * 5.0 for x in items)
+        anchor, count = bins.most_common(1)[0]
+        return float(anchor), int(count)
+
+    left_anchor, _ = dominant_anchor(left)
+    right_anchor, _ = dominant_anchor(right)
+    if left_anchor is not None:
+        left = [x for x in left if abs(x["bbox"][0] - left_anchor) <= 18]
+    if right_anchor is not None:
+        right = [x for x in right if abs(x["bbox"][0] - right_anchor) <= 18]
 
     left_chars = sum(x["chars"] for x in left)
     right_chars = sum(x["chars"] for x in right)
@@ -174,16 +220,18 @@ def column_signal(blocks: list[dict], page_rect: fitz.Rect) -> dict:
     overlap_ratio_y = overlap_y / usable
 
     detected = (
-        len(left) >= 2
-        and len(right) >= 2
+        len(left) >= 8
+        and len(right) >= 8
         and left_chars >= 220
         and right_chars >= 220
-        and overlap_ratio_y >= 0.18
+        and overlap_ratio_y >= 0.12
     )
     return {
         "detected": detected,
-        "left_blocks": len(left),
-        "right_blocks": len(right),
+        "left_lines": len(left),
+        "right_lines": len(right),
+        "left_anchor": left_anchor,
+        "right_anchor": right_anchor,
         "left_chars": left_chars,
         "right_chars": right_chars,
         "vertical_overlap_ratio": round(overlap_ratio_y, 4),
@@ -244,6 +292,7 @@ def page_report(
     words = page.get_text("words")
     text = page.get_text("text")
     blocks = text_blocks(page)
+    lines = text_lines(page)
 
     if abs(page_rect.width - A4_W) > PAGE_TOLERANCE_PT or abs(page_rect.height - A4_H) > PAGE_TOLERANCE_PT:
         flags.append(
@@ -319,7 +368,7 @@ def page_report(
     top = max(margin_pt, page_rect.height * 0.07)
     bottom = min(page_rect.height - margin_pt, page_rect.height * 0.93)
     occ = occupancy_ratio(blocks, page_rect.height, top, bottom)
-    cols = column_signal(blocks, page_rect)
+    cols = column_signal(lines, page_rect)
 
     if product == "ARC_CORE" and page.number > 0:
         if occ < 0.25:
