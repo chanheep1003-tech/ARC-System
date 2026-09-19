@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko" data-product="arc-core"><head><meta charset="utf-8"><title>ARC CORE Master v0.3</title>
+<style>
+:root{--navy:#1F2A44;--warm:#E9E7E1;--burg:#7A2E35;--ink:#17191d;--muted:#656b73;--rule:#d7d9dc;--soft:#f6f5f2}
+*{box-sizing:border-box}@page{size:A4;margin:0}html,body{margin:0;font-family:"Pretendard","Noto Sans KR","Noto Sans CJK KR","Noto Sans",sans-serif;color:var(--ink)}
+.page{width:210mm;height:297mm;position:relative;page-break-after:always;overflow:visible;background:#fff}.page:last-child{page-break-after:auto}
+.cover{padding:24mm 20mm 18mm}.kicker{font-family:Inter,Arial,sans-serif;font-size:10.5pt;font-weight:700;letter-spacing:.1em;color:var(--navy)}.rule{height:.7pt;background:var(--navy);margin-top:7mm}.accent{position:absolute;left:20mm;top:82mm;width:12mm;height:1.3mm;background:var(--burg)}.main{margin-top:53mm}.subject-cover{font-size:30pt;font-weight:700;letter-spacing:-.045em}.meta{margin-top:12mm;font-size:10pt;line-height:1.9;color:#3e434a}.meta strong{font-weight:600;color:var(--ink)}.year{position:absolute;left:20mm;bottom:24mm;font-family:Inter,Arial,sans-serif;font-size:10pt;color:var(--muted);letter-spacing:.08em}.series{position:absolute;right:20mm;bottom:24mm;font-size:8.5pt;color:var(--navy);font-weight:700;letter-spacing:.04em}
+.body{padding:12.5mm 17mm 14mm}.body .content{column-count:1!important;column-width:auto!important;display:block!important;grid-template-columns:none!important}.head{height:10mm;display:flex;justify-content:space-between;border-bottom:.45pt solid var(--rule);font-size:6.9pt;color:var(--muted)}.head .brand{font-family:Inter,Arial,sans-serif;font-weight:700;color:var(--navy);letter-spacing:.07em}.head .subject{font-size:6.9pt;font-weight:400;letter-spacing:-.01em;white-space:nowrap}.content{padding-top:6.5mm}.chapter-no{font-family:Inter,Arial,sans-serif;font-size:7.6pt;color:var(--burg);font-weight:700;letter-spacing:.08em}.title{font-size:18pt;line-height:1.25;font-weight:700;letter-spacing:-.04em;margin-top:2mm;margin-bottom:5mm}
+.concept{padding:5.2mm 0 5.4mm;border-top:.5pt solid var(--rule)}.concept:first-of-type{border-top:1.1pt solid var(--navy)}.concept-head{display:flex;align-items:baseline;gap:3mm;margin-bottom:2.8mm}.concept-no{font-family:Inter,Arial,sans-serif;font-size:8pt;font-weight:700;color:var(--burg);width:7mm;flex:0 0 7mm}.concept-title{font-size:12.2pt;font-weight:700;color:var(--navy);letter-spacing:-.025em;white-space:nowrap;flex:0 0 auto}.concept p{font-size:9.9pt;line-height:1.56;letter-spacing:-.01em;margin:0;color:#24282f;text-align:left;font-weight:400}.tags{display:grid;grid-template-columns:1fr 1fr;gap:3.5mm;margin-top:3.2mm}.tags.single{grid-template-columns:1fr}.tag{padding:3mm 3.5mm;background:#f5f6f8;border-left:2.2mm solid var(--navy);min-height:18mm}.tag.conf{background:#faf4f4;border-left-color:var(--burg)}.tag .label{font-size:6.7pt;font-weight:700;letter-spacing:.04em;margin-bottom:1.3mm;color:var(--navy)}.tag.conf .label{color:var(--burg)}.tag p{font-size:9pt;line-height:1.5;margin:0;color:#24282f;font-weight:400}.mini-flow{display:flex;align-items:center;gap:2.5mm;margin-top:3mm;font-size:9pt;color:#30343a}.mini-flow b{font-weight:700;color:var(--navy)}.arrow{color:#8b9096}.compare-inline{margin-top:2.7mm;font-size:9pt;line-height:1.55;background:#f7f5ef;padding:2.8mm 3.5mm}.compare-inline b{color:var(--burg)}
+.footer{position:absolute;left:17mm;right:17mm;bottom:8mm;border-top:.45pt solid var(--rule);text-align:center;font-family:Inter,Arial,sans-serif;font-size:7pt;color:#70757c;padding-top:2mm}.footer:before{content:"";display:inline-block;width:2.2mm;height:.7mm;background:var(--burg);margin-right:2mm;vertical-align:2px}
+.note{font-size:8.8pt;color:var(--muted);margin-top:2mm}
+[data-product="arc-core"] .part-title{font-size:20pt;line-height:1.22;font-weight:700;letter-spacing:-.035em;margin:0 0 5mm}
+[data-product="arc-core"] .chapter-title{font-size:15.5pt;line-height:1.28;font-weight:700;letter-spacing:-.03em;margin:7mm 0 3mm}
+[data-product="arc-core"] .section-title{font-size:12.4pt;line-height:1.35;font-weight:600;letter-spacing:-.02em;margin:5mm 0 2mm}
+[data-product="arc-core"] .functional-label{font-size:9.3pt;line-height:1.35;font-weight:600;letter-spacing:.01em;margin:3mm 0 1.5mm}
+[data-product="arc-core"] .keep-with-next{break-after:avoid-page;page-break-after:avoid}
+[data-product="arc-core"] .atomic{break-inside:avoid;page-break-inside:avoid}
+[data-product="arc-core"] tr{break-inside:avoid;page-break-inside:avoid}
+</style></head><body>
+<section class="page cover"><div class="kicker">ARC CORE</div><div class="rule"></div><div class="accent"></div><div class="main"><div class="subject-cover">통합과학2</div><div class="meta"><strong>2학기 중간고사</strong><br>핵심 개념 정리</div></div><div class="year">2026</div><div class="series">CONCEPT CORE</div></section>
+
+<section class="page body" data-layout="core-one-column"><header class="head"><span class="brand">ARC CORE</span><span class="subject">통합과학2 · 진화와 생물다양성</span></header><main class="content"><div class="chapter-no">CORE 03</div><div class="title">진화의 원리</div>
+
+<section class="concept"><div class="concept-head"><span class="concept-no">01</span><span class="concept-title">변이</span></div><p>같은 종의 개체라도 형질에는 차이가 있다. 이 차이 중 일부는 유전될 수 있으며, 자연 선택이 일어나기 위한 출발점이 된다. 변이는 생물이 필요해서 만들어지는 것이 아니라 집단 안에 먼저 존재한다.</p><div class="tags"><div class="tag"><div class="label">MUST</div><p><b>자연 선택의 출발점 = 집단 내 유전 가능한 변이</b></p></div><div class="tag conf"><div class="label">CONFUSING</div><p>× 환경이 필요한 변이를 만든다<br>○ 변이는 먼저 존재하고 환경이 선택에 영향을 준다</p></div></div></section>
+
+<section class="concept"><div class="concept-head"><span class="concept-no">02</span><span class="concept-title">자연 선택</span></div><p>특정 환경에서 어떤 형질을 가진 개체가 상대적으로 더 잘 생존하고 더 많은 자손을 남기면, 세대가 지나면서 그 형질의 비율이 집단에서 증가할 수 있다.</p><div class="mini-flow"><b>변이</b><span class="arrow">→</span><b>생존·번식 차이</b><span class="arrow">→</span><b>집단의 형질 빈도 변화</b></div><div class="tags single"><div class="tag"><div class="label">MUST</div><p>변화의 단위는 <b>개체 한 마리</b>가 아니라 <b>세대를 거친 집단</b>이다.</p></div></div></section>
+
+<section class="concept"><div class="concept-head"><span class="concept-no">03</span><span class="concept-title">적응</span></div><p>생물이 살아가는 환경에서 생존과 번식에 유리한 형질이 여러 세대에 걸쳐 집단에 널리 나타나는 현상이다. 같은 형질도 환경이 달라지면 유리하지 않을 수 있으므로 적응은 환경과의 관계 속에서 판단해야 한다.</p><div class="tags"><div class="tag"><div class="label">MUST</div><p>‘유리한 형질’은 절대적이지 않고 <b>환경에 따라 달라진다.</b></p></div><div class="tag conf"><div class="label">CONFUSING</div><p>× 개체가 살면서 적응 형질을 획득한다<br>○ 세대를 거치며 유리한 형질의 비율이 높아진다</p></div></div></section>
+
+</main><div class="footer">01</div></section>
+
+<section class="page body" data-layout="core-one-column"><header class="head"><span class="brand">ARC CORE</span><span class="subject">통합과학2 · 진화와 생물다양성</span></header><main class="content"><div class="chapter-no">CORE 03 · CONTINUED</div><div class="title">진화와 생물다양성</div>
+
+<section class="concept"><div class="concept-head"><span class="concept-no">04</span><span class="concept-title">진화</span></div><p>진화는 여러 세대에 걸쳐 집단의 유전적 특성이 변하는 현상이다. 자연 선택은 진화를 일으키는 중요한 원리 중 하나이며, 진화를 ‘개체가 더 우수해지는 과정’으로 이해하면 안 된다.</p><div class="tags"><div class="tag"><div class="label">MUST</div><p>진화는 <b>집단 수준의 변화</b>이며 일정한 ‘완성 방향’이 정해져 있지 않다.</p></div><div class="tag conf"><div class="label">CONFUSING</div><p>× 진화 = 항상 더 복잡하고 우수해짐<br>○ 환경과 세대 변화 속에서 집단의 특성이 달라짐</p></div></div></section>
+
+<section class="concept"><div class="concept-head"><span class="concept-no">05</span><span class="concept-title">종 분화</span></div><p>한 집단이 지리적·생태적 요인 등으로 나뉘어 서로 다른 환경에서 오랫동안 변화하면 집단 사이의 차이가 커질 수 있다. 결국 서로 교배하여 생식 가능한 자손을 남기기 어려워지면 서로 다른 종으로 구분될 수 있다.</p><div class="tags single"><div class="tag"><div class="label">MUST</div><p><b>집단 분리 → 서로 다른 선택 압력 → 차이 누적 → 생식적 격리</b>의 흐름을 이해한다.</p></div></div></section>
+
+<section class="concept"><div class="concept-head"><span class="concept-no">06</span><span class="concept-title">생물다양성</span></div><p>생물다양성은 유전적 다양성, 종 다양성, 생태계 다양성을 포함한다. 다양성이 높을수록 환경 변화에 대한 대응 가능성이 커질 수 있으며, 한 종류의 다양성만으로 전체 생물다양성을 판단해서는 안 된다.</p><div class="compare-inline"><b>유전적 다양성</b> 같은 종 안의 차이 · <b>종 다양성</b> 종의 수와 분포 · <b>생태계 다양성</b> 서식 환경과 생태계의 차이</div><div class="tags single"><div class="tag"><div class="label">MUST</div><p>생물다양성은 <b>유전적 다양성 + 종 다양성 + 생태계 다양성</b>을 함께 본다.</p></div></div></section>
+
+<div class="note">※ CONFUSING 박스는 실제로 혼동 가능성이 큰 개념에만 사용한다. 모든 개념에 강제로 넣지 않는다.</div>
+</main><div class="footer">02</div></section>
+
+<script>
+(function(){
+  function audit(){
+    const issues=[];
+    document.querySelectorAll('[data-product="arc-core"] .page').forEach(function(page,index){
+      if(page.classList.contains('cover')) return;
+      const overflow=Math.max(0,page.scrollHeight-page.clientHeight);
+      const style=getComputedStyle(page.querySelector('.content') || page);
+      const columns=parseInt(style.columnCount || '1',10);
+      if(overflow>2) issues.push({page:index+1,type:'SOURCE_OVERFLOW',pixels:overflow});
+      if(Number.isFinite(columns) && columns>1) issues.push({page:index+1,type:'CORE_TWO_COLUMN_FLOW',columns:columns});
+    });
+    window.ARC_CORE_SOURCE_PREFLIGHT={status:issues.length?'HOLD':'PASS',issues:issues};
+    document.documentElement.dataset.arcSourcePreflight=issues.length?'hold':'pass';
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',audit);
+  else audit();
+})();
+</script>
+</body></html>
