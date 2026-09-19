@@ -8,6 +8,7 @@ on:
       - 'tooling/**'
       - 'quality/**'
       - 'SYSTEM_MANIFEST.yaml'
+      - 'CHECKSUMS.sha256'
       - '.github/workflows/arc-tooling-smoke.yml'
 
 jobs:
@@ -21,7 +22,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install light smoke dependencies
-        run: python -m pip install PyYAML
+        run: python -m pip install PyYAML PyMuPDF
 
       - name: Compile Python tooling
         run: |
@@ -31,6 +32,7 @@ jobs:
           python -m py_compile tooling/similarity/arc_similarity.py
           python -m py_compile tooling/similarity/calibrate_similarity.py
           python -m py_compile tooling/pdf_qc/pdf_preflight.py
+          python -m py_compile tooling/pdf_qc/test_preflight_smoke.py
           python -m py_compile tooling/pdf_qc/xmark_detect.py
           python -m py_compile tooling/visual/arc_visual_render.py
           python -m py_compile tooling/visual/visual_verify.py
@@ -64,6 +66,9 @@ jobs:
           assert len({t['vars']['fixture_id'] for t in tests}) == 30
           print('fixtures', len(tests))
           PY
+
+      - name: Run PDF preflight behavioral smoke
+        run: python tooling/pdf_qc/test_preflight_smoke.py
 
       - name: Validate active system graph and checksums
         run: python tooling/validate_system.py
