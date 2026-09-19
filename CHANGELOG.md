@@ -10,6 +10,7 @@
 - Recorded four user-found layout incidents in ARC_ERROR_DATABASE and attached prevention/regression IDs.
 - External design references used in REFERENCE_ONLY mode: `jelaludo/claude-skill-typography` for typography-token/audit concepts and `thedanielmay/visual-review-skill` for render-first/overflow/density QA concepts. No upstream code/text was copied; licenses were not established during intake.
 - Corrected stale ARC N° answer-key sequence wording in the PDF master: required blank separator is LAST_PROBLEM+1 and answer key starts LAST_PROBLEM+2.
+- The legacy full-tree CHECKSUMS.sha256 snapshot was found stale and line-ending-sensitive. Default CI now treats structural manifest validation + executable smoke as the gate; full-tree checksum audit is opt-in via `--strict-checksums` until that registry is deliberately regenerated.
 - Main promotion remains blocked until CI/static validation and representative Social/History CORE re-typeset review are complete.
 
 ## 1.8.1-dev — 2026-09-19
