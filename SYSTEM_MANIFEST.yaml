@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.7.10-dev
+  version: 1.7.11-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -81,6 +81,9 @@ runtime:
   source_text_web_full_reproduction: forbidden
   score_inflation_audit: required
   answer_position_editorial_audit: required
+  question_task_diversity_gate: required
+  single_best_statement_overuse_audit: required
+  negative_stem_overuse_audit: required
   option_shuffle_reverification: required
   claim_fidelity_audit: required_when_applicable
   social_philosophy_attribution_gate: required_when_applicable
@@ -90,6 +93,7 @@ runtime:
   korean_duplicate_axis_gate: required
   korean_distractor_competitiveness_gate: required
   korean_answer_length_audit: required
+  korean_task_form_diversity_gate: required
   core_editorial_architecture_gate: required
   core_macro_coherence_gate: required
   core_anti_listing_gate: required
@@ -141,14 +145,14 @@ runtime:
 
 active:
   common_generation_engine:
-    path: engine/common/COMMON_GENERATION_ENGINE_V4.3_ARC.md
-    version: 4.3
+    path: engine/common/COMMON_GENERATION_ENGINE_V4.4_ARC.md
+    version: 4.4
     drive_id: null
     drive_mirror_status: pending_sync
 
   korean_item_engine:
-    path: engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.0.md
-    version: 1.0
+    path: engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.1.md
+    version: 1.1
     drive_id: null
     drive_mirror_status: pending_sync
 
@@ -198,13 +202,13 @@ active:
       path: quality/ARC_SCHOOL_DIFFICULTY_BENCH_V1.0.md
       drive_id: 1t0l6juVLzJxx9UMN5YwG1eRu4enAXpmX
     item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.3.md
-    korean_item_qa: quality/ARC_KOREAN_ITEM_QA_V1.0.md
+    korean_item_qa: quality/ARC_KOREAN_ITEM_QA_V1.1.md
     core_editorial_naturalness: quality/ARC_CORE_EDITORIAL_NATURALNESS_V1.2.md
     core_qa_bench: quality/ARC_CORE_QA_BENCH_V1.2.md
     visual_authenticity: quality/ARC_VISUAL_AUTHENTICITY_RUBRIC_V1.1.md
     visual_template: quality/ARC_VISUAL_TEMPLATE_SYSTEM_V1.1.md
     visual_anchors: quality/ARC_VISUAL_ANCHORS_V1.1.md
-    set_editorial: quality/ARC_SET_EDITORIAL_ENGINE_V1.1.md
+    set_editorial: quality/ARC_SET_EDITORIAL_ENGINE_V1.2.md
     similarity_guard: quality/ARC_SIMILARITY_GUARD_V1.1.md
     similarity_implementation: quality/similarity/ARC_SIMILARITY_IMPLEMENTATION_V1.0.md
     similarity_thresholds: quality/similarity/SIMILARITY_THRESHOLDS_V1.0.yaml
