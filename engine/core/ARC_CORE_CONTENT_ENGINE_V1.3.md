@@ -259,6 +259,22 @@ quality/ARC_CORE_EDITORIAL_NATURALNESS_V1.2.md를 반드시 적용한다.
 - 근거 없는 '시험에 잘 나온다/선생님이 낸다' 표현 금지.
 - 학생용에 내부 metadata가 보이면 HARD FAIL.
 
+## 8-A. CURRENT SOCIAL CORE SCOPE OVERRIDE
+This override applies only to PRODUCT_MODE=ARC_CORE.
+
+For the current user workflow:
+- C-part handwritten X detection is NON_BLOCKING for CORE manuscript production.
+- If the X-mark boundary cannot be reliably verified, do not stop CORE generation.
+- Preserve the chapter flow and allow the user to ignore excluded material during study.
+- Record internally: SOCIAL_CORE_X_MARK_STATUS=UNVERIFIED_NONBLOCKING.
+- Do not claim that X-mark filtering passed when it was not verified.
+
+This does NOT relax ARC_N / ARC_FINAL scope rules. Their active SOCIAL_MASTER USER_X_EXCLUSION remains binding.
+
+Current Social CORE exclusion:
+- Jeremy Bentham / 벤담 is not included in the student-facing CORE unless the user explicitly restores it.
+- Kant/Beccaria comparison remains within the active school scope and claim-fidelity rules.
+
 ## 9. SUBJECT BEHAVIOR
 
 ### SCIENCE
