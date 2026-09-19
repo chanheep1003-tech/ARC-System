@@ -1,3 +1,15 @@
+## 1.7.10-dev — 2026-09-19
+- Upgraded Korean question generation with a dedicated passage-first item engine: engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.0.md.
+- Added required KOR passage mapping before generation, reasoning-depth classes, passage-utilization classes, duplicate-axis blocking, distractor-competitiveness gates, answer-length leakage audit, stem-diversity audit, and answer-pattern checks.
+- Added quality/ARC_KOREAN_ITEM_QA_V1.0.md. Generic ITEM_QA PASS can no longer override failed Korean passage-utilization, duplicate-axis, distractor, or answer-length gates.
+- Generator Contract V1.7 now loads manifest-declared subject-specific item engines and QA for ARC_N / ARC_FINAL.
+- Korean release now requires KOR_PASSAGE_MAP, KOR_PASSAGE_UTILIZATION, KOR_REASONING_DIVERSITY, KOR_DUPLICATE_AXIS, KOR_DISTRACTOR_COMPETITIVENESS, KOR_ANSWER_LENGTH_AUDIT, KOR_STEM_DIVERSITY, and KOR_ANSWER_PATTERN to PASS before handoff.
+- Current failure sentinels explicitly target direct-definition overuse, repeated judgment axes inside one passage group, weak/extreme distractors, correct-option length leakage, and mechanical 1-2-3-4-5 answer cycles.
+- Reordered subject priority to KOR → SOC → HIS → SCI → AI.
+- Extra-resource weights are now KOR 30 / SOC 25 / HIS 20 / SCI 15 / AI 10.
+- Activated ARC_RUNTIME_PRIORITY_POLICY_V1.1 and subject-specific item-engine mode in SYSTEM_MANIFEST.
+- Static connector verification completed. Executable frozen-fixture regression was not run or claimed.
+
 ## 1.7.8-dev — 2026-09-19
 - Added mandatory portable Markdown handoff after every Generator completion.
 - Generator V1.6 now requires HANDOFF_MD_STATUS=READY before READY_FOR_TYPESET is considered complete.
