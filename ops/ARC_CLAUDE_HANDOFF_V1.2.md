@@ -261,9 +261,8 @@ When the user later requests KOR or SOC:
 - run ARC content QA
 - create and lock the CONTENT_BUNDLE
 - save manuscript + QA + READY_FOR_TYPESET content bundle
-- stop after the requested subject unless the user explicitly asks to continue.
-
-END ARC CLAUDE HANDOFF V1.1
+- if RUN_MODE=CONTENT_ONLY, stop after the requested subject at READY_FOR_TYPESET.
+- if RUN_MODE=END_TO_END, continue automatically through Typesetter → Publisher → storage without asking for another continue command.
 
 
 ## 13. SYSTEM FEEDBACK OUTPUT
@@ -306,4 +305,4 @@ FINAL_RELEASED=false
 
 Only explicit physical HUMAN REVIEW PASS permits FINAL_RELEASED=true.
 
-END RECURRING GENERATOR PATCH
+END ARC CLAUDE HANDOFF V1.2
