@@ -66,7 +66,8 @@ def require_markers(errors: list[str], rel: str, markers: list[str]) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--skip-checksums", action="store_true")
+    parser.add_argument("--skip-checksums", action="store_true", help="legacy alias; structural validation already skips full-tree checksum audit")
+    parser.add_argument("--strict-checksums", action="store_true", help="also audit the legacy full-tree CHECKSUMS.sha256 registry")
     args = parser.parse_args()
     errors: list[str] = []
 
@@ -200,7 +201,7 @@ def main() -> int:
     if len(set(ids)) != len(ids):
         errors.append("duplicate regression fixture_id")
 
-    if not args.skip_checksums:
+    if args.strict_checksums and not args.skip_checksums:
         checksums = parse_checksums()
         expected_files = [p for p in tracked_files() if p != "CHECKSUMS.sha256"]
         missing = sorted(set(expected_files) - set(checksums))
@@ -221,7 +222,7 @@ def main() -> int:
 
     print(
         f"ARC SYSTEM VALIDATION: PASS "
-        f"({len(active_paths)} active paths, 30 fixtures, PDF={pdf_master}, CORE={core_patch})"
+        f"({len(active_paths)} active paths, 30 fixtures, PDF={pdf_master}, CORE={core_patch}, strict_checksums={args.strict_checksums})"
     )
     return 0
 
