@@ -62,6 +62,19 @@ Rules:
 - 긴 section 전체에 break-inside:avoid를 걸어 sparse page를 만들지 않는다.
 - 1~3줄 carry-over는 reflow 우선.
 
+
+## 3-A. ReportLab CORE guard
+If the producer is ReportLab:
+- CORE body PageTemplate = one main Frame only
+- never reuse N°/FINAL two-column Frame definitions
+- use Platypus Flowables for long body prose
+- body font name must resolve to Pretendard Regular or Noto Sans KR Regular; Thin/Light is HOLD
+- body target = 9.9pt, leading about 15.2–15.6pt
+- headings use keepWithNext and enough following body
+- short semantic groups may use KeepTogether; long chapters may not
+- tables split only by rows and repeat header rows where applicable
+- run final `--product ARC_CORE` PDF preflight
+
 ## 4. Source overflow audit
 Editable HTML source가 있으면 PDF export 전:
 - page/content element scrollHeight - clientHeight 측정
