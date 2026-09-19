@@ -48,6 +48,9 @@ skills:
   arc-bank-curator:
     path: skills/arc-bank-curator/SKILL.md
     phase: bank
+  arc-typeset-qa:
+    path: skills/arc-typeset-qa/SKILL.md
+    phase: typesetting
   arc-eval-regression:
     path: skills/arc-eval-regression/SKILL.md
     phase: regression
