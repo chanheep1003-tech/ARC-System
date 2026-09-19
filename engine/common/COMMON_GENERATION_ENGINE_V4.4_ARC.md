@@ -2,7 +2,7 @@
 # VERSION_DATE: 2026-09-19
 # PATCH: QUESTION TASK-FORM DIVERSITY
 # MODE: CONTENT GENERATION ONLY
-# PIPELINE: SUBJECT MASTER → CONTENT BUNDLE → ARC PDF 조판 MASTER V2.1
+# PIPELINE: SUBJECT MASTER → CONTENT BUNDLE → manifest-selected active PDF master
 # DEFAULT: NO EXPLANATION / ZERO-INTERVENTION / TOKEN-EFFICIENT
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -340,7 +340,7 @@ SET_NO = ...
 SCHOOL = 동북고등학교 (해당 시)
 EXAM_PERIOD = ... (해당 시)
 EXAM_TIME = ... (FINAL에서 확인 가능할 때)
-PDF_MASTER = ARC_PDF_조판_MASTER_V2.1
+PDF_MASTER = manifest-selected active.layout.pdf_master
 
 그 뒤 정확히 4개 SECTION:
 

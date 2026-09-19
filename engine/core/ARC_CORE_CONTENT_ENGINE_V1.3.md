@@ -2,7 +2,7 @@
 DATE: 2026-09-19
 STATUS: ACTIVE-DEV
 ROLE: 상세 내신 개념서 콘텐츠 생성
-BASE_RULESET: ARC 1.7.7-dev
+BASE_RULESET: manifest-selected ARC 1.8 line
 
 ## 0. PURPOSE
 ARC CORE는 단순 요약노트가 아니라 시험범위를 반복 학습할 수 있는 상세 내신 개념서다.
@@ -378,7 +378,7 @@ TRAP은 탐색 순서, 데이터 처리 순서, 용어 혼동처럼 실제 오�
 - 박스보다 본문이 시각적으로 우세해야 함
 - 빈 공간을 장식으로 채우지 않음
 - CORE는 단일 컬럼 본문을 기본으로 하되 비교/도식은 필요 시 내부 2단/전폭 사용 가능
-- 국어 SOURCE_TEXT_BLOCK은 PDF MASTER V2.2의 fidelity 규칙 적용
+- 국어 SOURCE_TEXT_BLOCK은 manifest-selected active PDF master의 fidelity 규칙 적용
 
 ## 10. ERROR FEEDBACK LOOP
 같은 CONCEPT_ID에서 반복 오류가 나면 원인을 분류한다.

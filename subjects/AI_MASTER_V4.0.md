@@ -1,5 +1,5 @@
 # 00_ACTIVE_인공지능기초_동북고_MASTER_V4.0
-# BASE: ARC COMMON GENERATION ENGINE V4.0
+# BASE: manifest-selected common generation engine
 # MODE: CONTENT GENERATION ONLY
 
 ## 0. DRIVE FIRST
@@ -64,7 +64,7 @@ D QC_STATUS
 방문순서 미지정 DFS/BFS / 실행결과 오류 / 상관=인과 / 범위 밖 고급 AI 수학 / 복수정답 / placeholder / 가짜 시각자료 / 해설 출력.
 
 ## 10. ARC HANDOFF
-공통 엔진 V4.0의 HANDOFF_META와 SECTION A~D를 따른다. FINAL은 PRODUCT_MODE=ARC_FINAL로 처리하고 별도 FINAL 프롬프트를 사용하지 않는다.
+manifest-selected 공통 엔진의 HANDOFF_META와 SECTION A~D를 따른다. FINAL은 PRODUCT_MODE=ARC_FINAL로 처리하고 별도 FINAL 프롬프트를 사용하지 않는다.
 
 ## 11. GOLD STANDARD ANCHORS
 필수 로드: `quality/gold/AI_GOLD_ANCHORS_V1.0.md`

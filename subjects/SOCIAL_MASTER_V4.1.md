@@ -1,5 +1,5 @@
 # 00_ACTIVE_통합사회2_동북고_MASTER_V4.1
-# BASE: ARC COMMON GENERATION ENGINE V4.2
+# BASE: manifest-selected common generation engine
 # MODE: CONTENT GENERATION ONLY
 # PRODUCT_MODE: ARC_N / ARC_FINAL inherited
 # 해설 출력 금지 / PDF 조판 금지
@@ -184,7 +184,7 @@ HARD FAIL:
 
 
 ## 11. ARC HANDOFF
-공통 엔진 V4.2의 HANDOFF_META와 SECTION A~D를 따른다. C파트 요청이면 QC_STATUS에 C_X_MARK_FILTER를 반드시 유지한다. FINAL 요청도 PRODUCT_MODE=ARC_FINAL로 처리하며 별도 FINAL 프롬프트를 중복 사용하지 않는다.
+manifest-selected 공통 엔진의 HANDOFF_META와 SECTION A~D를 따른다. C파트 요청이면 QC_STATUS에 C_X_MARK_FILTER를 반드시 유지한다. FINAL 요청도 PRODUCT_MODE=ARC_FINAL로 처리하며 별도 FINAL 프롬프트를 중복 사용하지 않는다.
 
 
 ## 12. GOLD STANDARD ANCHORS

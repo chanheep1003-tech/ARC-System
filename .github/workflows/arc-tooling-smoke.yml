@@ -34,6 +34,7 @@ jobs:
           python -m py_compile tooling/pdf_qc/xmark_detect.py
           python -m py_compile tooling/visual/arc_visual_render.py
           python -m py_compile tooling/visual/visual_verify.py
+          python -m py_compile tooling/validate_system.py
 
       - name: Validate YAML
         run: |
@@ -45,6 +46,7 @@ jobs:
               'quality/regression/REGRESSION_FIXTURES_V1.0.yaml',
               'quality/similarity/SIMILARITY_THRESHOLDS_V1.0.yaml',
               'tooling/promptfoo/promptfooconfig.yaml',
+              'quality/governance/DEPRECATION_REGISTRY_V1.0.yaml',
           ]
           for f in files:
               yaml.safe_load(Path(f).read_text(encoding='utf-8'))
@@ -62,3 +64,6 @@ jobs:
           assert len({t['vars']['fixture_id'] for t in tests}) == 30
           print('fixtures', len(tests))
           PY
+
+      - name: Validate active system graph and checksums
+        run: python tooling/validate_system.py

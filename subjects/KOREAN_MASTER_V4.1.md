@@ -1,5 +1,5 @@
 # 00_ACTIVE_공통국어2_동북고_MASTER_V4.1
-# BASE: ARC COMMON GENERATION ENGINE V4.3
+# BASE: manifest-selected common generation engine
 # MODE: CONTENT GENERATION ONLY
 
 ## 0. DRIVE FIRST
@@ -161,13 +161,13 @@ CONTENT_BUNDLE 내부에는 별도 SOURCE_TEXT_BLOCKS provenance payload를 유�
 범위 밖 필수지식 / 복수정답 / 조건 부족 / 원문 왜곡 / 접근권한 미확인 외부 보호저작물 전문 복제 / source 없이 기억으로 원문 복원 / 원문 행·연·문단 임의 변경 / 가짜 시각자료 / placeholder / 상세해설 출력 / 학생용 원고에 편집자 메타데이터 혼입.
 
 ## 11. ARC HANDOFF
-공통 엔진 V4.3의 HANDOFF_META와 SECTION A~D를 그대로 따른다.
+manifest-selected 공통 엔진의 HANDOFF_META와 SECTION A~D를 그대로 따른다.
 ARC_N ANSWER_KEY는 편집/검증용 잠금 데이터이면서 Typesetter가 문제 종료 후 필수 빈 페이지를 거쳐 최종 compact answer section으로 삽입한다.
 ARC_FINAL은 해당 제품 정책에 따라 학생 문제지와 정답 산출물을 분리한다.
 FINAL 요청도 별도 FINAL 프롬프트를 쓰지 않고 PRODUCT_MODE=ARC_FINAL로 처리한다.
 
 ## 12. GOLD STANDARD ANCHORS
-필수 로드: `quality/gold/KOR_GOLD_ANCHORS_V1.0.md`
+필수 로드: manifest-selected Korean GOLD anchor pack.
 생성 전 GOOD 3문항, BAD 3문항을 실제 비교 기준으로 읽는다.
 각 생성 문항 내부 메타데이터에 `NEAREST_GOOD_ANCHOR / NEAREST_BAD_ANCHOR / ANCHOR_MATCH_NOTE`를 기록한다.
 앵커는 범위를 확장하지 않으며 현재 SCOPE/학교자료가 항상 우선한다.

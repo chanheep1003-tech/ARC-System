@@ -262,23 +262,24 @@ SOURCE_TEXT_LINKAGE = PASS/NOT_APPLICABLE
 
 ARC_CORE 필수 입력:
 
-A. CORE_MANUSCRIPT
-각 개념마다:
-- CONCEPT_ID
-- CONCEPT_TITLE
-- EXPLANATION
-- MUST
-- CONFUSING(optional)
-- COMPARE(optional)
-- FLOW(optional)
-- VISUAL(optional)
+A. LOCKED CORE_MANUSCRIPT
+- chapter/cluster-first prose-led student manuscript
+- chapter order and information hierarchy
+- optional functional blocks only where present in the locked manuscript
 
-B. CORE_PRIORITY
-- REQUIRED
-- SUPPORTING
-- OPTIONAL
+B. CORE_ARCHITECTURE_SUMMARY — INTERNAL / DO NOT PRINT
+- CENTRAL_QUESTION
+- CHAPTER_THESIS
+- DOMINANT_ORGANIZATION
+- BACKBONE_NODES
+- END_SYNTHESIS_MODE
 
-C. VISUAL_ASSET / VISUAL_SPEC(optional)
+C. CORE_INTEGRITY_INDEX — INTERNAL / DO NOT PRINT
+- internal CONCEPT_ID coverage and source/depth linkage
+- student-facing metadata exposure = 0
+- no requirement that every concept contain MUST/CONFUSING/TRAP/EXAM CONNECTION
+
+D. VISUAL_ASSET / VISUAL_SPEC(optional)
 
 
 선택 입력:
@@ -671,10 +672,11 @@ ARC_N / FINAL:
 - 필수 자료 수
 
 ARC_CORE:
-- CONCEPT_ID 연속성
-- REQUIRED 개념 누락 여부
-- MUST 누락 여부
-- CONFUSING optional 여부
+- 잠긴 chapter/cluster 순서 및 backbone coverage
+- CORE_INTEGRITY_INDEX의 내부 concept coverage
+- 학생용 내부 metadata 노출 0
+- optional block은 원고에 있는 경우에만 보존되며, 부재 자체는 FAIL이 아님
+- 고정 9블록/카드 반복 재침투 없음
 - 시각자료 참조 일치
 
 조판 AI는
@@ -945,7 +947,7 @@ CONTENT_RETURN_REQUIRED.
 
 조판 AI가 임의로 메우지 않는다.
 
-END ARC PDF TYPESETTING MASTER V2.1
+END ARC PDF TYPESETTING MASTER V2.2
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

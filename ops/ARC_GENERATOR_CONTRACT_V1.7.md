@@ -20,6 +20,7 @@ Chat-only prose is not considered a complete production handoff.
 ## 2. LOAD — PRODUCT-AWARE JIT
 Always:
 SYSTEM_MANIFEST
+active pipeline integrity contract
 active subject MASTER
 current Drive scope/materials
 manifest-selected active CONTENT_BUNDLE contract
@@ -49,6 +50,7 @@ Do not load PDF layout/brand rules unless needed to prepare asset constraints; t
 ### ARC_N / ARC_FINAL
 SCOPE_LOCK
 → source load
+→ SCHOOL_SOURCE_PRIORITY gate
 → subject-specific item engine load when required
 → set blueprint
 → generation
@@ -58,9 +60,12 @@ SCOPE_LOCK
 → item QA
 → subject-specific QA when required
 → visual-spec completeness
+→ difficulty calibration + similarity + visual authenticity gates
+→ answer integrity gate
 → set editorial
 → CONTENT_BUNDLE
 → CONTENT_LOCK
+→ input/handoff checksum lock
 → HANDOFF_MD
 
 ### ARC_CORE

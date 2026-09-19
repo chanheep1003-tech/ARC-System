@@ -1,5 +1,5 @@
 # 00_ACTIVE_통합과학2_동북고_MASTER_V4.0
-# BASE: ARC COMMON GENERATION ENGINE V4.0
+# BASE: manifest-selected common generation engine
 # PRODUCT_MODE: ARC_N / ARC_FINAL inherited
 # MODE: CONTENT GENERATION ONLY
 
@@ -118,8 +118,8 @@ DATA_TABLE_COUNT: x
 VISUAL_RENDER: PENDING_PDF (SPEC_ONLY일 때)
 
 ## 11. ARC HANDOFF
-공통 엔진 V4.0의 HANDOFF_META + SECTION A~D를 그대로 따른다.
-ANSWER_KEY는 검증용이며 ARC_N 학생 PDF에는 넣지 않는다.
+manifest-selected 공통 엔진의 HANDOFF_META + SECTION A~D를 그대로 따른다.
+ANSWER_KEY는 Generator/Publisher 검증용 잠금 데이터이며, ARC_N에서는 활성 PDF master에 따라 문제지 뒤의 필수 완전 공백 페이지 다음 compact answer section으로 정확히 삽입한다. 문제 페이지에는 노출하지 않는다.
 FINAL 요청은 PRODUCT_MODE=ARC_FINAL로 처리하고 별도 FINAL 프롬프트를 사용하지 않는다.
 
 ## 12. GOLD STANDARD ANCHORS

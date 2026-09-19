@@ -26,6 +26,8 @@ CONTENT_LOCK=true
 CONTENT_QA_STATUS=PASS
 TYPESET_STATUS=PASS
 PDF_QC_STATUS=PASS
+HANDOFF_CHECKSUM_LOCK=PASS
+PDF_ARTIFACT_CHECKSUM recorded
 student PDF present
 TYPESET_QC_REPORT present
 
@@ -41,6 +43,7 @@ Publisher must not independently determine:
 
 Publisher may only verify:
 PDF answer table == locked ANSWER_KEY, item by item.
+Publisher must also verify the immutable ARC_N physical order and that both required blank pages are truly empty before storage promotion.
 
 If they differ:
 RETURN_TARGET=TYPESETTER

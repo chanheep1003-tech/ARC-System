@@ -1,5 +1,5 @@
 # 00_ACTIVE_한국사2_동북고_MASTER_V4.0
-# BASE: ARC COMMON GENERATION ENGINE V4.0
+# BASE: manifest-selected common generation engine
 # MODE: CONTENT GENERATION ONLY
 
 ## 0. DRIVE FIRST
@@ -57,7 +57,7 @@ D QC_STATUS
 연대오류 / 인물·단체 오류 / 사료왜곡 / 지도오류 / 범위 밖 역사 필수지식 / 복수정답 / placeholder / 저작권 장문복제 / 해설 출력.
 
 ## 10. ARC HANDOFF
-공통 엔진 V4.0의 HANDOFF_META와 SECTION A~D를 따른다. FINAL은 PRODUCT_MODE=ARC_FINAL로 처리하고 별도 FINAL 프롬프트를 사용하지 않는다.
+manifest-selected 공통 엔진의 HANDOFF_META와 SECTION A~D를 따른다. FINAL은 PRODUCT_MODE=ARC_FINAL로 처리하고 별도 FINAL 프롬프트를 사용하지 않는다.
 
 ## 11. GOLD STANDARD ANCHORS
 필수 로드: `quality/gold/HIS_GOLD_ANCHORS_V1.0.md`

@@ -1,3 +1,15 @@
+## 1.8.0-dev — 2026-09-19
+- Added `ARC_PIPELINE_INTEGRITY_CONTRACT_V1.0` as the cross-cutting authority for Generator → Typesetter → Publisher, manifest-only version resolution, source/scope locks, answer integrity, checksums, and release-state transitions.
+- Locked item generation to school-material priority, range containment, one unique answer, independent PASS A/B after every option shuffle, evidence-based difficulty calibration, similarity checks, functional/authentic visuals, and exact rendered-answer agreement.
+- Locked CORE to chapter/cluster-first editorial architecture. Legacy v0.3 fixed nine-block cards, student-facing IDs/N° links, and mandatory optional blocks are explicitly forbidden.
+- Removed legacy CORE card requirements from the active PDF master. CORE Typesetter acceptance now uses the locked manuscript, architecture summary, internal integrity index, and actual asset references.
+- Resolved active-version drift: active subject MASTERs and Common V4.4 now defer to manifest-selected engines/templates instead of hardcoded older Common/PDF versions.
+- Corrected Science MASTER answer handling so ARC_N includes the mandatory compact answer section after the required completely blank separator page.
+- Preserved immutable ARC_N order: COVER → completely blank cover verso → problem pages → completely blank separator → answer key; preserved canonical ARC master logo hash lock and prohibited logo regeneration.
+- Added the deprecation registry and `tooling/validate_system.py` to verify manifest targets, 1.8 runtime invariants, CORE anti-regression markers, mandatory answer behavior, frozen 30-fixture integrity, and full tracked-file checksum coverage.
+- Extended CI smoke to compile the validator, validate the deprecation registry, and run system/checksum validation.
+- Drive mirror debt remains explicit: `pending_sync` entries are not treated as current mirrors and do not override GitHub `dev`.
+
 ## 1.7.11-dev — 2026-09-19
 - Added question task-form diversity as a required set-level quality dimension across ARC_N / ARC_FINAL.
 - Upgraded COMMON_GENERATION_ENGINE to V4.4 with QUESTION_TASK_FORM and STEM_POLARITY planning before generation.

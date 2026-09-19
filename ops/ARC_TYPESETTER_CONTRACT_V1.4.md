@@ -13,6 +13,7 @@ They receive a locked ARC CONTENT_BUNDLE, preferably serialized as the canonical
 - typesetting feedback
 
 ## 1. STARTUP LOAD
+0. `SYSTEM_MANIFEST.yaml` and its active pipeline integrity contract
 For every typesetting task read only:
 1. SYSTEM_MANIFEST.yaml
 2. this contract
@@ -49,6 +50,8 @@ Before layout:
 - answer key present when applicable
 - ANSWER_KEY_COMPLETE=PASS
 - ANSWER_COUNT_MATCH=PASS
+- INPUT_CHECKSUM_LOCK=PASS
+- HANDOFF_CHECKSUM_LOCK=PASS
 - visual manifests complete
 - no unresolved placeholder
 
@@ -73,6 +76,7 @@ TYPESET_STATUS=RETURN_CONTENT
 HANDOFF_PARSE_STATUS=FAIL.
 
 ## 3. CONTENT IMMUTABILITY
+For ARC_CORE, `CONCEPT_ID`, depth, source, and N-generation fields are internal integrity metadata. They must never become student-facing labels, and optional student blocks must not be synthesized merely to satisfy a legacy card pattern.
 Never repair content silently.
 If a content issue is suspected:
 - preserve original

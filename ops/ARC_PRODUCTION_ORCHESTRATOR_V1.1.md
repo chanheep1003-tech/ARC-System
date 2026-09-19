@@ -6,6 +6,7 @@ ROLE: end-to-end ARC production continuity controller
 
 ## 0. PRINCIPLE
 ARC keeps Generator, Typesetter, and Publisher as separate roles, but normal PASS transitions do not require user confirmation.
+All roles resolve versions only from `SYSTEM_MANIFEST.yaml` and obey the active pipeline integrity contract.
 
 AUTO_CONTINUE_UNTIL_HARD_FAIL = true
 

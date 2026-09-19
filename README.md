@@ -12,14 +12,15 @@ ARC CORE / N° / FINAL 제작을 위한 엔진·규칙 저장소.
 
 ## Start order
 1. `SYSTEM_MANIFEST.yaml`
-2. 해당 과목 `subjects/*_MASTER_V4.0.md`
-3. `skills/SKILL_REGISTRY.yaml`에서 필요한 skill만 선택
-4. 필요한 엔진/quality 규칙
-5. Drive에서 현재 시험범위 자료
-6. 필요 시 `mcp/SERVER_REGISTRY.yaml`에 따라 전문 도구 호출
-7. 생성 → 사실감사 → 자연스러움 감사 → QA → 세트편집
-8. PASS 문항만 문제은행 후보
-9. `ops/RUN_LOG.jsonl` 기록
+2. manifest-selected pipeline integrity contract
+3. manifest-selected 해당 과목 MASTER
+4. `skills/SKILL_REGISTRY.yaml`에서 필요한 skill만 선택
+5. 필요한 엔진/quality 규칙
+6. Drive에서 현재 시험범위 자료
+7. 필요 시 `mcp/SERVER_REGISTRY.yaml`에 따라 전문 도구 호출
+8. 생성 → 사실감사 → 자연스러움 감사 → QA → 세트편집
+9. PASS 문항만 문제은행 후보
+10. `ops/RUN_LOG.jsonl` 기록
 
 ## Important
 과거 다른 교사 기출은 현재 출제 스타일 예측에 사용하지 않는다.
