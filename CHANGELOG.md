@@ -1,3 +1,15 @@
+## 1.7.5-dev — 2026-09-19
+- Added ARC_PRODUCTION_ORCHESTRATOR_V1.0 with AUTO_CONTINUE_UNTIL_HARD_FAIL. Generator → Typesetter → Publisher transitions no longer require user confirmation after normal PASS states.
+- Added ARC_PUBLISHER_CONTRACT_V1.0. Publisher is restricted to artifact integrity, locked-answer-table comparison, storage, exact parent verification, and release-state transitions; it may not independently re-grade answers or rewrite content.
+- Added ARC_STORAGE_TARGETS_V1.0 as a central destination registry so registered KOR/SOC output folder IDs are resolved without asking again.
+- Activated ARC_GENERATOR_CONTRACT_V1.4, ARC_CONTENT_BUNDLE_CONTRACT_V1.3, and ARC_TYPESETTER_CONTRACT_V1.3 with automatic end-to-end handoff while preserving role separation.
+- Activated ARC_DRIVE_WRITE_ADAPTER_V1.2 with FILE_REFERENCE_FIRST binary upload. Inline base64 PDF upload is disabled by default; hosts with only expensive inline base64 use MANUAL_UPLOAD_REQUIRED without a redundant 1/2 choice.
+- Activated ARC_HUMAN_REVIEW_GATE_V1.1. Physical HUMAN REVIEW is now explicitly a FINAL_RELEASE-only gate and does not block full typesetting, PDF QC, upload, or exact parent verification.
+- Added ARC_N_TYPESET_REFERENCE_V1.0 using the digitally accepted Kant–Beccaria N° PDF as a reusable layout reference; repeated intermediate sample approval is skipped when the PDF master/brand system is materially unchanged.
+- Activated ARC_CLAUDE_HANDOFF_V1.2 so end-to-end Claude/Cowork runs follow the same continuity, storage-target, binary-transport, and Publisher authority rules.
+- Fixed Typesetter startup to resolve the active PDF master from SYSTEM_MANIFEST instead of hardcoding V2.1.
+- No executable frozen-fixture regression was claimed in this connector-only maintenance pass.
+
 ## 1.7.4-dev — 2026-09-19
 - Activated ARC_CORE_CONTENT_ENGINE_V1.2 with adaptive concept depth.
 - Added ARC_CORE_DEPTH_ENGINE_V1.0 with internal STANDARD / ADVANCED / HIGH_DIFFICULTY priorities. Depth labels remain hidden from student-facing CORE.
