@@ -25,6 +25,8 @@ Read in this order:
 4. the requested subject ACTIVE MASTER
 5. current-scope Drive materials and relevant folder structure
 
+If RUN_MODE=END_TO_END, also resolve the manifest-selected production orchestrator. Load Typesetter / Publisher / Drive adapter / storage-target rules JIT when the workflow reaches those stages; do not preload them during content generation.
+
 Then branch by PRODUCT_MODE.
 
 ARC_N / ARC_FINAL:
