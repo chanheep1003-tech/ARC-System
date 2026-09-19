@@ -35,6 +35,30 @@ When a claim is source-sensitive, `quality/ARC_SOURCE_LEDGER_V1.0.md` is also ma
 - Bank: `arc-bank-curator` only for PASS candidates.
 - Engine/Master/QA/source/bank-rule changes: add `arc-eval-regression` and run all 30 frozen fixtures before promotion.
 
+
+
+## 3-A. Typesetting / PDF QA route
+Typesetting is a separate JIT route. Do not preload layout skills during pure item generation.
+
+Always for Typesetter/PDF-QC stages:
+- load `arc-typeset-qa`
+- load the manifest-selected active PDF master and product patch
+- resolve PRODUCT_MODE before selecting body layout
+- run product-isolation checks before export
+- when editable HTML is available, run source overflow audit before PDF export
+- run executable PDF preflight/render QA when the host supports it; otherwise record TOOLING_UNAVAILABLE
+
+ARC CORE:
+- main reading flow is ONE_COLUMN and this is a hard invariant
+- semantic pagination, heading-orphan, typography-token, page-occupancy and hierarchy checks are mandatory
+- ARC N°/FINAL two-column body rules may not leak into CORE
+
+ARC N°:
+- problem pages remain COLUMN_ONLY two-column
+- the Typeset QA skill checks that CORE-only one-column rules did not leak back into N°
+
+External typography/visual-review skills may be consulted only under `ARC_EXTERNAL_SKILL_INTAKE_POLICY_V1.0`; ARC uses independently adapted patterns and does not inherit external authority.
+
 ## 4. Product behavior
 ### ARC N°
 Prioritize high-quality individual items plus set diversity. Student PDF does not expose internal IDs, difficulty labels, skill traces, MCP traces, or QA notes.
