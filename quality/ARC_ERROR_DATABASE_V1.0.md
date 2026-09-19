@@ -38,6 +38,11 @@ DETECT → CLASSIFY → FIX → REGRESSION TEST → PREVENTION RULE → CLOSE
 - ERR-HANDOFF-001 필수 handoff 필드 누락
 - ERR-PDF-001 문항/선지 분리
 - ERR-PDF-002 clipping/overlap/glyph 오류
+- ERR-PDF-003 PRODUCT_MODE 레이아웃 혼합
+- ERR-PDF-004 ARC CORE 2단 본문 flow 오염
+- ERR-PDF-005 의미 단위가 깨지는 페이지 분할 / heading orphan
+- ERR-PDF-006 본문 폰트·weight·크기·대비로 인한 인쇄 가독성 저하
+- ERR-PDF-007 PART/장/절/보조 블록 시각 계층 불명확
 
 ### KOREAN
 - ERR-KOR-001 관찰 사실과 화자 추론 혼동
@@ -137,7 +142,11 @@ RECURRENCE_COUNT:
 |RISK-AI-01|AI|DFS/BFS 탐색 순서 오류|방문규칙·탐색구조 독립검증|
 |RISK-AI-02|AI|상관↔인과 혼동|AI verification gate|
 |RISK-PDF-01|공통|정답이 ARC N° 학생 PDF에 노출|ANSWER_KEY 편집자용 분리|
-|RISK-PDF-02|공통|TRUE_VISUAL을 표로 대체|ARC PDF V2.0 TRUE_VISUAL gate|
+|RISK-PDF-02|공통|TRUE_VISUAL을 표로 대체|ARC PDF TRUE_VISUAL gate|
+|RISK-PDF-03|CORE|N° 2단 규칙이 CORE에 침투|PRODUCT_MODE namespace + CORE ONE_COLUMN hard lock|
+|RISK-PDF-04|CORE|제목/문단/표/도식 의미 단위 절단|SEMANTIC_PAGINATION + source overflow + render preflight|
+|RISK-PDF-05|CORE|가벼운 폰트/작은 글씨로 인쇄 가독성 저하|typography tokens + font audit|
+|RISK-PDF-06|CORE|PART/장/절 계층 평탄화|four-level hierarchy gate|
 
 ## 7. ERROR → SYSTEM FEEDBACK
 오류 종료 시 다음 파일을 검토한다.
@@ -156,9 +165,107 @@ RECURRENCE_COUNT:
 
 |ERROR_ID|SUBJECT|ERROR_CODE|SEVERITY|STATUS|REGRESSION|
 |---|---|---|---|---|---|
-|—|—|—|—|EMPTY|—|
+|ERR-20260919-HIS-PDF-001|HISTORY CORE|ERR-PDF-004|S1|REGRESSION_PENDING|PENDING|
+|ERR-20260919-SOC-PDF-001|SOCIAL CORE|ERR-PDF-005|S2|REGRESSION_PENDING|PENDING|
+|ERR-20260919-CORE-PDF-001|CORE COMMON|ERR-PDF-006|S2|REGRESSION_PENDING|PENDING|
+|ERR-20260919-CORE-PDF-002|CORE COMMON|ERR-PDF-007|S2|REGRESSION_PENDING|PENDING|
 
 첫 실제 오류부터 순차적으로 기록한다.
+
+
+### ERR-20260919-HIS-PDF-001
+```yaml
+ERROR_ID: ERR-20260919-HIS-PDF-001
+DATE: 2026-09-19
+SUBJECT: HISTORY CORE
+SET_ID: ARC_CORE_한국사2_일제식민통치와민족운동_V1.0_REVIEW
+ERROR_CODE: ERR-PDF-004
+SEVERITY: S1
+DETECTED_STAGE: USER_FEEDBACK
+HUMAN_FOUND: true
+DESCRIPTION: ARC CORE 한국사 본문이 ARC N°형 좌우 2단 reading flow로 렌더됨.
+EXPECTED: CORE main reading flow는 1단이어야 함.
+ACTUAL: 장/절 제목과 본문이 두 개의 독립 열로 흘러가며 긴 제목까지 좁은 열에서 분절됨.
+ROOT_CAUSE: CORE는 1단이 권장 수준이었고 N° 2단은 hard rule이어서 PRODUCT_MODE/CSS 격리 실패 시 N° layout이 우세할 수 있었음.
+FIX_APPLIED: PDF MASTER V2.4 + CORE PATCH v0.8 + TYPESETTER V1.6에 ONE_COLUMN hard lock/namespace/preflight gate 추가.
+PREVENTION_RULE: CORE_TWO_COLUMN_FLOW=0
+REGRESSION_BENCH_ID: PDF-SMOKE-CORE-COLUMN
+REGRESSION_STATUS: PENDING
+MASTER_CHANGE: templates/ARC_PDF_LAYOUT_MASTER_V2.4.md
+COMMON_ENGINE_CHANGE: false
+STATUS: REGRESSION_PENDING
+RECURRENCE_COUNT: 1
+```
+
+### ERR-20260919-SOC-PDF-001
+```yaml
+ERROR_ID: ERR-20260919-SOC-PDF-001
+DATE: 2026-09-19
+SUBJECT: SOCIAL CORE
+SET_ID: ARC_CORE_통합사회2_시험범위전체_V0.4_DRAFT
+ERROR_CODE: ERR-PDF-005
+SEVERITY: S2
+DETECTED_STAGE: USER_FEEDBACK
+HUMAN_FOUND: true
+DESCRIPTION: 제목/도식/본문 또는 짧은 carry-over가 의미 단위와 맞지 않게 페이지 경계에서 분리됨.
+EXPECTED: heading+첫 본문, 표 머리글+첫 행, 그림+직접 설명이 의미 단위로 유지되어야 함.
+ACTUAL: 일부 절 시작이 페이지 하단에 고립되고 다음 페이지로 본문이 넘어가거나 짧은 잔여 문단이 새 페이지에 남음.
+ROOT_CAUSE: 실제 렌더 높이 중심 분할은 존재했으나 semantic block taxonomy와 source-level overflow/reflow gate가 약했음.
+FIX_APPLIED: semantic pagination, widows/orphans, heading orphan, table-row/figure keep rules 및 overflow audit 추가.
+PREVENTION_RULE: SEMANTIC_PAGINATION=PASS; HEADING_ORPHAN=0
+REGRESSION_BENCH_ID: PDF-SMOKE-SEMANTIC-PAGE
+REGRESSION_STATUS: PENDING
+MASTER_CHANGE: templates/ARC_PDF_LAYOUT_MASTER_V2.4.md
+COMMON_ENGINE_CHANGE: false
+STATUS: REGRESSION_PENDING
+RECURRENCE_COUNT: 1
+```
+
+### ERR-20260919-CORE-PDF-001
+```yaml
+ERROR_ID: ERR-20260919-CORE-PDF-001
+DATE: 2026-09-19
+SUBJECT: CORE COMMON
+ERROR_CODE: ERR-PDF-006
+SEVERITY: S2
+DETECTED_STAGE: USER_FEEDBACK
+HUMAN_FOUND: true
+DESCRIPTION: 학생용 CORE 본문이 얇고 작게 느껴져 장시간 학습/인쇄 가독성이 낮음.
+EXPECTED: Korean body는 Pretendard Regular(400) 중심의 print-first token을 일관 적용.
+ACTUAL: 렌더 산출물에서 본문 대비/weight/크기 체감이 약함.
+ROOT_CAUSE: 권장 범위는 있었지만 document-level typography token과 executable font/body audit가 부족했음.
+FIX_APPLIED: body 9.9pt target, 1.54~1.58 line-height, dark neutral color, weight >=400 및 preflight font metrics 추가.
+PREVENTION_RULE: FONT_TOKEN_COMPLIANCE=PASS; PRINT_LEGIBILITY=PASS
+REGRESSION_BENCH_ID: PDF-SMOKE-TYPOGRAPHY
+REGRESSION_STATUS: PENDING
+MASTER_CHANGE: templates/core/ARC_TEMPLATE_SYSTEM_v0.8_CORE_PATCH.md
+COMMON_ENGINE_CHANGE: false
+STATUS: REGRESSION_PENDING
+RECURRENCE_COUNT: 1
+```
+
+### ERR-20260919-CORE-PDF-002
+```yaml
+ERROR_ID: ERR-20260919-CORE-PDF-002
+DATE: 2026-09-19
+SUBJECT: CORE COMMON
+ERROR_CODE: ERR-PDF-007
+SEVERITY: S2
+DETECTED_STAGE: USER_FEEDBACK
+HUMAN_FOUND: true
+DESCRIPTION: PART/장/절/보조 블록의 시각적 위계가 충분히 분리되지 않아 빠른 스캔이 어려움.
+EXPECTED: PART > CHAPTER > SECTION > FUNCTIONAL LABEL의 4단계 hierarchy가 size/weight/spacing으로 식별되어야 함.
+ACTUAL: 일부 CORE 지면에서 제목 단계가 비슷한 톤과 크기로 이어져 단원 경계가 약함.
+ROOT_CAUSE: 편집 자연스러움 규칙은 있었지만 hierarchy token과 QC field가 명시적 hard/required gate가 아니었음.
+FIX_APPLIED: CORE PATCH v0.8에 four-level hierarchy와 QC gate 추가.
+PREVENTION_RULE: PART_CHAPTER_SECTION_HIERARCHY=PASS
+REGRESSION_BENCH_ID: PDF-VISUAL-HIERARCHY
+REGRESSION_STATUS: PENDING
+MASTER_CHANGE: templates/core/ARC_TEMPLATE_SYSTEM_v0.8_CORE_PATCH.md
+COMMON_ENGINE_CHANGE: false
+STATUS: REGRESSION_PENDING
+RECURRENCE_COUNT: 1
+```
 
 ## 9. MONTHLY REVIEW
 시험기간 중 또는 10세트 생성마다:
