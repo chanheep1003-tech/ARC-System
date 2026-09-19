@@ -8,7 +8,6 @@ on:
       - 'tooling/**'
       - 'quality/**'
       - 'SYSTEM_MANIFEST.yaml'
-      - 'CHECKSUMS.sha256'
       - '.github/workflows/arc-tooling-smoke.yml'
 
 jobs:
