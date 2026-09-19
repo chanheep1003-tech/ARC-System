@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.7.6-dev
+  version: 1.7.7-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -44,8 +44,8 @@ runtime:
   claude_post_production_review: USER_PLUS_CHATGPT
   generation_strategy: MCP_FIRST_MULTI_MODEL
   multi_model_governance: ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md
-  generator_contract: ops/ARC_GENERATOR_CONTRACT_V1.4.md
-  content_bundle_contract: ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.3.md
+  generator_contract: ops/ARC_GENERATOR_CONTRACT_V1.5.md
+  content_bundle_contract: ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.4.md
   typesetter_contract: ops/ARC_TYPESETTER_CONTRACT_V1.3.md
   production_role_split: GENERATOR_TO_TYPESETTER_TO_PUBLISHER
   content_lock_required_before_typeset: true
@@ -80,6 +80,11 @@ runtime:
   claim_fidelity_audit: required_when_applicable
   social_philosophy_attribution_gate: required_when_applicable
   d4_d5_minimum_gate: required
+  core_editorial_architecture_gate: required
+  core_macro_coherence_gate: required
+  core_anti_listing_gate: required
+  core_redundancy_budget_gate: required
+  core_synthesis_transform_gate: required
   core_editorial_naturalness_gate: required
   core_qa_bench_gate: required
   core_depth_assignment_gate: required
@@ -130,14 +135,18 @@ active:
     drive_mirror_status: pending_sync
 
   core_content_engine:
-    path: engine/core/ARC_CORE_CONTENT_ENGINE_V1.2.md
-    version: 1.2
+    path: engine/core/ARC_CORE_CONTENT_ENGINE_V1.3.md
+    version: 1.3
+
+  core_editorial_architecture:
+    path: engine/core/ARC_CORE_EDITORIAL_ARCHITECTURE_V2.0.md
+    version: 2.0
     drive_id: null
     drive_mirror_status: pending_sync
 
   core_depth_engine:
-    path: engine/core/ARC_CORE_DEPTH_ENGINE_V1.0.md
-    version: 1.0
+    path: engine/core/ARC_CORE_DEPTH_ENGINE_V1.1.md
+    version: 1.1
     drive_id: null
     drive_mirror_status: pending_sync
 
@@ -171,8 +180,8 @@ active:
       path: quality/ARC_SCHOOL_DIFFICULTY_BENCH_V1.0.md
       drive_id: 1t0l6juVLzJxx9UMN5YwG1eRu4enAXpmX
     item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.3.md
-    core_editorial_naturalness: quality/ARC_CORE_EDITORIAL_NATURALNESS_V1.1.md
-    core_qa_bench: quality/ARC_CORE_QA_BENCH_V1.1.md
+    core_editorial_naturalness: quality/ARC_CORE_EDITORIAL_NATURALNESS_V1.2.md
+    core_qa_bench: quality/ARC_CORE_QA_BENCH_V1.2.md
     visual_authenticity: quality/ARC_VISUAL_AUTHENTICITY_RUBRIC_V1.1.md
     visual_template: quality/ARC_VISUAL_TEMPLATE_SYSTEM_V1.1.md
     visual_anchors: quality/ARC_VISUAL_ANCHORS_V1.1.md
@@ -224,7 +233,7 @@ active:
     brand_lockup: templates/brand/ARC_BRAND_LOCKUP_SPEC_V1.0.md
     brand_asset_registry: templates/brand/ARC_BRAND_ASSET_REGISTRY_V1.0.md
     pdf_master: templates/ARC_PDF_LAYOUT_MASTER_V2.2.md
-    core_patch: templates/core/ARC_TEMPLATE_SYSTEM_v0.5_CORE_PATCH.md
+    core_patch: templates/core/ARC_TEMPLATE_SYSTEM_v0.6_CORE_PATCH.md
     arc_n_typeset_reference: templates/gold/ARC_N_TYPESET_REFERENCE_V1.0.md
 
 excluded_from_release:
