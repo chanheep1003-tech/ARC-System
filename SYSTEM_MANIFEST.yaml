@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.7.5-dev
+  version: 1.7.6-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -24,8 +24,8 @@ runtime:
   teacher_style_prediction: disabled
   historical_exam_usage: difficulty_calibration_only
   automation_runtime: ops/ARC_AUTOMATION_RUNTIME_V1.0.md
-  production_orchestrator: ops/ARC_PRODUCTION_ORCHESTRATOR_V1.0.md
-  publisher_contract: ops/ARC_PUBLISHER_CONTRACT_V1.0.md
+  production_orchestrator: ops/ARC_PRODUCTION_ORCHESTRATOR_V1.1.md
+  publisher_contract: ops/ARC_PUBLISHER_CONTRACT_V1.1.md
   storage_targets: ops/ARC_STORAGE_TARGETS_V1.0.yaml
   auto_continue_until_hard_fail: true
   interactive_confirmation_policy: HARD_FAIL_OR_USER_JUDGMENT_ONLY
@@ -38,7 +38,7 @@ runtime:
   drive_write_default_mode: ROOT_STAGING
   runtime_priority_policy: ops/ARC_RUNTIME_PRIORITY_POLICY_V1.0.md
   post_exam_calibration: ops/ARC_POST_EXAM_CALIBRATION_V1.0.md
-  claude_handoff: ops/ARC_CLAUDE_HANDOFF_V1.2.md
+  claude_handoff: ops/ARC_CLAUDE_HANDOFF_V1.3.md
   claude_absorption_gate_required: true
   claude_pdf_status_default: DRAFT_REVIEW
   claude_post_production_review: USER_PLUS_CHATGPT
@@ -185,7 +185,7 @@ active:
     visual_pass_ab: quality/visual/ARC_VISUAL_PASS_AB_V1.0.md
     social_visual_spec: quality/visual/SOC_VISUAL_SPEC_V1.0.md
     bank_policy: quality/BANK_POLICY_V1.1.md
-    human_review_gate: quality/ARC_HUMAN_REVIEW_GATE_V1.1.md
+    human_review_gate: quality/ARC_HUMAN_REVIEW_GATE_V1.2.md
     source_ledger: quality/ARC_SOURCE_LEDGER_V1.0.md
     source_ledger_schema: quality/source/ARC_SOURCE_LEDGER_SCHEMA_V1.0.yaml
     regression_policy: quality/regression/ARC_REGRESSION_POLICY_V1.0.md
