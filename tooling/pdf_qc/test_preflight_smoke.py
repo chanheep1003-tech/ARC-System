@@ -32,11 +32,12 @@ def paragraph() -> str:
 
 def add_one_column_page(doc: fitz.Document) -> None:
     p = doc.new_page(width=mod.A4_W, height=mod.A4_H)
-    y = 70
-    for i in range(8):
-        r = fitz.Rect(58, y, mod.A4_W - 58, y + 62)
-        p.insert_textbox(r, paragraph() + paragraph(), fontsize=10.0, lineheight=1.25)
-        y += 80
+    y = 64
+    for i in range(9):
+        r = fitz.Rect(58, y, mod.A4_W - 58, y + 70)
+        remaining = p.insert_textbox(r, paragraph(), fontsize=10.0, lineheight=1.20)
+        assert remaining >= 0, remaining
+        y += 78
 
 
 def add_two_column_page(doc: fitz.Document) -> None:
@@ -45,9 +46,10 @@ def add_two_column_page(doc: fitz.Document) -> None:
     right = fitz.Rect(mod.A4_W / 2 + 16, 70, mod.A4_W - 45, 300)
     left2 = fitz.Rect(45, 330, mod.A4_W / 2 - 16, 610)
     right2 = fitz.Rect(mod.A4_W / 2 + 16, 330, mod.A4_W - 45, 610)
-    body = (paragraph() * 4)
+    body = paragraph() * 2
     for r in (left, right, left2, right2):
-        p.insert_textbox(r, body, fontsize=10.0, lineheight=1.20)
+        remaining = p.insert_textbox(r, body, fontsize=10.0, lineheight=1.20)
+        assert remaining >= 0, remaining
 
 
 def flag_types(result: dict) -> set[str]:
