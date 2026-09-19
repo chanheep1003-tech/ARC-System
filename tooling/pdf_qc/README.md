@@ -4,11 +4,18 @@
 
 ```bash
 python tooling/pdf_qc/pdf_preflight.py output.pdf \
+  --product ARC_CORE \
   --report tooling/results/preflight.json \
   --render-dir tooling/results/rendered
 ```
 
-PyMuPDF performs coordinate-level screening. If `pdftoppm` is installed, it is preferred for raster verification; otherwise PyMuPDF renders pages.
+PyMuPDF performs coordinate-level screening plus product-aware checks. ARC CORE adds one-column flow detection, sparse-page/occupancy analysis, typography metrics, heading-orphan screening, raw-markup and production-metadata leak checks. If `pdftoppm` is installed, it is preferred for raster verification; otherwise PyMuPDF renders pages.
+
+Behavioral smoke test:
+
+```bash
+python tooling/pdf_qc/test_preflight_smoke.py
+```
 
 ## Social C-part X detection
 
