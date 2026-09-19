@@ -1,3 +1,15 @@
+## 1.8.1-dev — 2026-09-19
+- Optimized ARC PDF typesetting for print readability and page-flow quality after review of the Social CORE V0.2 draft.
+- Upgraded PDF Layout Master to V2.3 with adaptive page reflow, page-occupancy auditing, orphan/widow control, raw HTML/Markdown sanitization, and student metadata leak checks.
+- ARC CORE no longer permits a forced blank cover-verso page; near-empty unregistered pages below 25% effective content are release-blocking, while pages below 45% require reflow unless explicitly justified.
+- Korean body typography now requires Pretendard/Noto Sans KR Regular(400) or heavier. Thin/ExtraLight/Light are forbidden for body, table text, captions, and running heads.
+- Added print-first ARC CORE typography targets: body 9.6–10.2 pt, table/support 8.8–9.3 pt, body line-height roughly 1.45–1.60, and darker neutral body text.
+- Upgraded CORE Template Patch to v0.7 with print-legibility, sparse-page, orphan/widow, and raw-markup gates.
+- Upgraded PDF Preflight to V1.1 with sparse-page, font-weight, raw-markup, and production-metadata checks.
+- Upgraded Typesetter Contract to V1.5. Reflow must redistribute content before shrinking fonts and may not fill whitespace with decorative cards.
+- Activated FONT_WEIGHT_AUDIT, PRINT_LEGIBILITY, PAGE_OCCUPANCY_AUDIT, sparse-page reflow, and raw-markup leak gates in SYSTEM_MANIFEST.
+- Static connector verification only; executable PDF preflight/regression was not run in this maintenance pass.
+
 ## 1.8.0-dev — 2026-09-19
 - Added `ARC_PIPELINE_INTEGRITY_CONTRACT_V1.0` as the cross-cutting authority for Generator → Typesetter → Publisher, manifest-only version resolution, source/scope locks, answer integrity, checksums, and release-state transitions.
 - Locked item generation to school-material priority, range containment, one unique answer, independent PASS A/B after every option shuffle, evidence-based difficulty calibration, similarity checks, functional/authentic visuals, and exact rendered-answer agreement.
