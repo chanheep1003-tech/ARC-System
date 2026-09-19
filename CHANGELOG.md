@@ -9,6 +9,7 @@
 - Upgraded ARC_GENERATOR_CONTRACT to V1.5 so ARC CORE route builds chapter architecture before concept maps and uses the manifest-selected Content Bundle contract.
 - Upgraded ARC_CONTENT_BUNDLE_CONTRACT to V1.4: answer-key gates are now product-specific, while CORE carries architecture summary metadata for Typesetter without exposing it to students.
 - Review basis: first Social and History ARC CORE PDFs showed strong factual density but excessive repeated summaries, warning blocks, tables, and recap cards. The new architecture targets that failure mode directly.
+- Current Social CORE workflow override: handwritten C-part X-mark detection is non-blocking for CORE only, while ARC_N/FINAL keep strict X exclusion; Bentham is excluded from student-facing Social CORE unless explicitly restored.
 - Connector-based static consistency checks only; executable frozen-fixture regression was not claimed.
 
 ## 1.7.6-dev — 2026-09-19
