@@ -18,7 +18,7 @@ Always:
 SYSTEM_MANIFEST
 active subject MASTER
 current Drive scope/materials
-ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.2.md
+manifest-selected active CONTENT_BUNDLE contract
 
 ARC_N / ARC_FINAL:
 - manifest-selected common generation engine
