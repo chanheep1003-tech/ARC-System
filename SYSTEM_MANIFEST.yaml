@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.7.9-dev
+  version: 1.7.10-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -43,8 +43,9 @@ runtime:
   claude_pdf_status_default: DRAFT_REVIEW
   claude_post_production_review: USER_PLUS_CHATGPT
   generation_strategy: MCP_FIRST_MULTI_MODEL
+  subject_specific_item_engine_mode: MANIFEST_REQUIRED
   multi_model_governance: ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md
-  generator_contract: ops/ARC_GENERATOR_CONTRACT_V1.6.md
+  generator_contract: ops/ARC_GENERATOR_CONTRACT_V1.7.md
   content_bundle_contract: ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.5.md
   typesetter_contract: ops/ARC_TYPESETTER_CONTRACT_V1.4.md
   production_role_split: GENERATOR_TO_TYPESETTER_TO_PUBLISHER
