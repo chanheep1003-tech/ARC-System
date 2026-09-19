@@ -115,6 +115,7 @@ def main() -> int:
     common_path = active["common_generation_engine"]["path"]
     pdf_master = active["layout"]["pdf_master"]
     core_patch = active["layout"]["core_patch"]
+    core_html_master = active["layout"]["core_html_master"]
     pdf_preflight_policy = active["quality"]["pdf_preflight"]
     pipeline_contract = runtime["pipeline_integrity_contract"]
     typesetter_contract = runtime["typesetter_contract"]
@@ -145,6 +146,21 @@ def main() -> int:
             "fixed-height page + overflow:hidden",
         ],
     )
+    require_markers(
+        errors,
+        core_html_master,
+        [
+            'data-product="arc-core"',
+            'column-count:1!important',
+            '"Pretendard"',
+            'ARC_CORE_SOURCE_PREFLIGHT',
+            'overflow:visible',
+        ],
+    )
+    core_html_text = (ROOT / core_html_master).read_text(encoding="utf-8")
+    if '.page{width:210mm;height:297mm;position:relative;page-break-after:always;overflow:hidden' in core_html_text:
+        errors.append("active CORE HTML master must not hide page overflow")
+
     require_markers(
         errors,
         pdf_preflight_policy,
