@@ -4,7 +4,7 @@ active_resolution: SYSTEM_MANIFEST.yaml
 rules:
   - id: CORE-CARD-V03
     deprecated: templates/core/ARC_TEMPLATE_SYSTEM_v0.3_CORE_PATCH.md
-    replacement: templates/core/ARC_TEMPLATE_SYSTEM_v0.6_CORE_PATCH.md
+    replacement: templates/core/ARC_TEMPLATE_SYSTEM_v0.8_CORE_PATCH.md
     forbidden_runtime_behavior:
       - student_facing_concept_id
       - student_facing_n_link
@@ -31,3 +31,18 @@ rules:
       - ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.0
       - ops/ARC_TYPESETTER_CONTRACT_V1.0
     resolution: use manifest-selected contracts only
+
+  - id: CORE-HTML-V02
+    deprecated: templates/core/ARC_CORE_master_v0.2.html
+    replacement: templates/core/ARC_CORE_master_v0.3.html
+    forbidden_runtime_behavior:
+      - core_page_overflow_hidden
+      - core_body_below_print_floor
+      - missing_product_namespace
+      - missing_source_overflow_audit
+  - id: PDF-LAYOUT-V23
+    deprecated: templates/ARC_PDF_LAYOUT_MASTER_V2.3.md
+    replacement: templates/ARC_PDF_LAYOUT_MASTER_V2.4.md
+    forbidden_runtime_behavior:
+      - core_two_column_layout_leak
+      - nonsemantic_height_only_pagination
