@@ -94,6 +94,37 @@ def run() -> None:
         result = mod.analyze_pdf(path, "ARC_CORE")
         assert "CORE_NEAR_EMPTY_PAGE" in flag_types(result), result
 
+        doc = new_doc()
+        p = doc.new_page(width=mod.A4_W, height=mod.A4_H)
+        remaining = p.insert_textbox(
+            fitz.Rect(55, 70, mod.A4_W - 55, 720),
+            paragraph() * 10,
+            fontsize=8.5,
+            lineheight=1.25,
+        )
+        assert remaining >= 0, remaining
+        path = td / "smallfont.pdf"
+        doc.save(path)
+        doc.close()
+        result = mod.analyze_pdf(path, "ARC_CORE")
+        assert "CORE_BODY_FONT_TOO_SMALL" in flag_types(result), result
+
+        doc = new_doc()
+        p = doc.new_page(width=mod.A4_W, height=mod.A4_H)
+        remaining = p.insert_textbox(
+            fitz.Rect(55, 70, mod.A4_W - 55, 560),
+            paragraph() * 7,
+            fontsize=10.0,
+            lineheight=1.22,
+        )
+        assert remaining >= 0, remaining
+        p.insert_text((60, 650), "Section heading should move", fontsize=13.0, fontname="helv")
+        path = td / "orphan.pdf"
+        doc.save(path)
+        doc.close()
+        result = mod.analyze_pdf(path, "ARC_CORE")
+        assert "HEADING_ORPHAN_CANDIDATE" in flag_types(result), result
+
     print("ARC PDF PREFLIGHT SMOKE: PASS")
 
 
