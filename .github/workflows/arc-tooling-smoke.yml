@@ -76,4 +76,3 @@ jobs:
 
       - name: Validate active system graph and checksums
         run: python tooling/validate_system.py --strict-checksums
-
