@@ -1,3 +1,15 @@
+## 1.8.4-dev — 2026-09-20
+- USER reassigned the PRIMARY SYSTEM MAINTAINER role from the ChatGPT interactive session to a dedicated Claude maintainer session. USER remains SYSTEM OWNER; GPT and other models become optional Generator/Reviewer/Auxiliary agents. ARC stays one unified system with no model-specific fork.
+- Added MULTI-MODEL GOVERNANCE V1.1, CLAUDE HANDOFF V1.4, AUTOMATION RUNTIME V1.1 carrying the reassignment; the single-writer rule is now explicitly role-scoped, not model-scoped.
+- Fixed configuration drift: AUTOMATION RUNTIME still declared subject priority KOR→SOC→SCI→HIS→AI and referenced RUNTIME_PRIORITY_POLICY V1.0. Both now match the manifest and V1.1 (KOR→SOC→HIS→SCI→AI).
+- Added STORAGE TARGETS V1.1 with a per-subject product tree. Every active subject (KOR/SCI/SOC/HIS/AI) now has ARC_CORE, ARC_N and ARC_FINAL output folders in Drive, registered by folder ID, so product placement is decided by PRODUCT rather than by filename. HIS/SCI manuscript and review folders are registered for the first time, and the missing AI output folders were created.
+- Registered forbidden product targets: 91_검증문항은행 (verified item bank) and My Drive root. Existing ARC CORE 통합사회2 output was relocated out of the item bank, and the released 통합사회 N°01 and 공통국어2 N°01 PDFs were moved into their product folders. 완성N제 is demoted to LEGACY_READ_ONLY for pre-ARC sets.
+- Registered 98_정리대기 as the ROOT_STAGING cleanup folder.
+- Drive mirror hygiene: six stale files carrying an `00_ACTIVE` label were renamed to 99_SUPERSEDED_/99_DEPRECATED_ so no runtime can mistake them for current rules. The v0.3 CORE PATCH mirror was the highest-risk one because it reintroduces the forbidden nine-block concept card.
+- Drive ROOT_STAGING residue from the 통합사회 N°01 run was moved out of My Drive root into 98_정리대기 and labeled DUPLICATE / ORPHAN_STAGED.
+- CI now runs `validate_system.py --strict-checksums`, so checksum drift fails the build instead of passing silently. Append-only RUN_LOG artifacts are excluded from the strict audit as ephemeral outputs.
+- Regenerated CHECKSUMS.sha256; three entries (handoff preflight tooling and RUN_LOG) had drifted since 1.8.3-dev.
+
 ## 1.8.3-dev — 2026-09-20
 - Added an executable stale-handoff gate. ARC CORE handoffs now fail before layout when they pin an old ruleset/PDF master, request two-column flow, prescribe body font size or concrete CSS/ReportLab geometry, expose internal IDs, or leave Social A/B/C part headings below level 1.
 - Removed layout authority from Generator handoffs. The active SYSTEM_MANIFEST, PDF master, product patch, and Typesetter contract are resolved at render time.

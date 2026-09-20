@@ -75,4 +75,5 @@ jobs:
         run: python tooling/handoff/test_handoff_preflight.py
 
       - name: Validate active system graph and checksums
-        run: python tooling/validate_system.py
+        run: python tooling/validate_system.py --strict-checksums
+

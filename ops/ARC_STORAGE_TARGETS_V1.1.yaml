@@ -1,0 +1,170 @@
+version: 1.1
+status: ACTIVE-DEV
+updated: 2026-09-20
+supersedes: ops/ARC_STORAGE_TARGETS_V1.0.yaml
+
+# Central output target registry.
+# Do not ask the user for IDs already present here.
+# Every folder ID below was verified against Google Drive on 2026-09-20.
+#
+# STRUCTURE
+#   <subject>/출제원고        -> manuscript (Generator working artifacts)
+#   <subject>/검수·수정본      -> review (QA / repair artifacts)
+#   <subject>/ARC_CORE        -> released ARC CORE products
+#   <subject>/ARC_N           -> released ARC N° products
+#   <subject>/ARC_FINAL       -> released ARC FINAL products
+#   <subject>/완성N제          -> legacy pre-ARC sets, read-only reference
+#
+# Product placement is decided by PRODUCT, not by filename.
+# A finished ARC artifact never lands in 완성N제, 91_검증문항은행, or My Drive root.
+
+subjects:
+  KOR:
+    subject_root:
+      folder_id: "1VuiFHY9H4XMZk1lQ_yXPvoFS5POCeKNU"
+      path: "01_국어"
+    manuscript:
+      folder_id: "1oPnRTZPczmXWlcDgg3aIMwuw2NWECBYQ"
+      path: "01_국어/출제원고"
+    review:
+      folder_id: "1d1nDUT7nAo-KIZZ78wb_yhXWBAqD1Z5L"
+      path: "01_국어/검수·수정본"
+    products:
+      ARC_CORE:
+        folder_id: "1WphTYoVbM-qDd6t6W-1M8fNISaqRD_YH"
+        path: "01_국어/ARC_CORE"
+      ARC_N:
+        folder_id: "1KMtIKDcc2jHe1ntIiWAALST6586OY4YC"
+        path: "01_국어/ARC_N"
+      ARC_FINAL:
+        folder_id: "1OK-C0NePNiZzhjcooX2Adt9azk6xDc84"
+        path: "01_국어/ARC_FINAL"
+    legacy_finished_n:
+      folder_id: "15P1JUMyrWoRO-VaJzg4F5cH9NIOXLoBZ"
+      path: "01_국어/완성N제"
+      status: LEGACY_READ_ONLY
+
+  SCI:
+    subject_root:
+      folder_id: "1DJOsjk1UATjqYmX01Ke90mayLC_YbrJq"
+      path: "02_통합과학"
+    manuscript:
+      folder_id: "1MTvnOtIjWgPI8q5TAs7qBh1a7gU4KIkz"
+      path: "02_통합과학/출제원고"
+    review:
+      folder_id: "1BBXvF_acuRgFTRYc50rXbfIXuBGh7jVp"
+      path: "02_통합과학/검수·수정본"
+    products:
+      ARC_CORE:
+        folder_id: "1afot5lMJmdijPvGkJam1EuMKw4CmqpCi"
+        path: "02_통합과학/ARC_CORE"
+      ARC_N:
+        folder_id: "1y3iDlg-RZqlQvvWIzFb9qOwT94vza-rx"
+        path: "02_통합과학/ARC_N"
+      ARC_FINAL:
+        folder_id: "1QcoP5h48dfWcpOzct5UGjhr5B3qD4tTs"
+        path: "02_통합과학/ARC_FINAL"
+    legacy_finished_n:
+      folder_id: "1QG2QdX1IAAW6o7t8nS7XkKhFEF11teZE"
+      path: "02_통합과학/완성N제"
+      status: LEGACY_READ_ONLY
+
+  SOC:
+    subject_root:
+      folder_id: "1jWX6E1IzAjAjai3SeXBAQYl8ygpTwPl7"
+      path: "03_통합사회"
+    manuscript:
+      folder_id: "1w25IxhXPuF7t4vKNLHwDF8n4U6o-E8Eo"
+      path: "03_통합사회/출제원고"
+    review:
+      folder_id: "1RtlCgV2whtzyMJjxbZpThqoO4JKfkMaY"
+      path: "03_통합사회/검수·수정본"
+    products:
+      ARC_CORE:
+        folder_id: "1QzS3RA1GPGIf_uDGAvaDnXePCA0O_tAE"
+        path: "03_통합사회/ARC_CORE"
+      ARC_N:
+        folder_id: "1Sa8-TM-dJNgdamcrzktdleEFlm-kcAT_"
+        path: "03_통합사회/ARC_N"
+      ARC_FINAL:
+        folder_id: "1fRPwqgN9vwrloN7NZgsZH6gZhBe7m5x7"
+        path: "03_통합사회/ARC_FINAL"
+    legacy_finished_n:
+      folder_id: "1ZloquIO4K5vF1V35g85IC93Mj_epHL-0"
+      path: "03_통합사회/완성N제"
+      status: LEGACY_READ_ONLY
+
+  HIS:
+    subject_root:
+      folder_id: "1kZ3X41l7OFUm3RubeR7tnrRw1LDtr01u"
+      path: "05_한국사"
+    manuscript:
+      folder_id: "1cY2nHH2t61XtIIqImjvtj2uOFxvlsiod"
+      path: "05_한국사/출제원고"
+    review:
+      folder_id: "18DCOyuoiUqFzKLWX4kiXGXtsN6UWx1it"
+      path: "05_한국사/검수·수정본"
+    products:
+      ARC_CORE:
+        folder_id: "15iYCMYEVpDcMwXEGs6sxVw6TCpDAlTDt"
+        path: "05_한국사/ARC_CORE"
+      ARC_N:
+        folder_id: "1YLab7UtYZ5mfw4sll8FhEhzh_4bMHUhu"
+        path: "05_한국사/ARC_N"
+      ARC_FINAL:
+        folder_id: "1AVnOVgWomr_WdAynV__QH9huDevhEquH"
+        path: "05_한국사/ARC_FINAL"
+    legacy_finished_n:
+      folder_id: "142qMcqy4oDb-zYTbs-t08OggqrDyxIko"
+      path: "05_한국사/완성N제"
+      status: LEGACY_READ_ONLY
+
+  AI:
+    subject_root:
+      folder_id: "1juh20k6rvKJ2wh5yF2pE4-tlPs5SWxNd"
+      path: "06_인공지능기초"
+    manuscript:
+      folder_id: "1RMXMFhxZ0SOVFweHPgrEFq5Va3L1ssnn"
+      path: "06_인공지능기초/출제원고"
+    review:
+      folder_id: "1-_UFchWtGx8cEOfDSeBAYcKavKHYG6-Y"
+      path: "06_인공지능기초/검수·수정본"
+    products:
+      ARC_CORE:
+        folder_id: "1y_65O5XIN5jT9l1zG1fM_dpTOlwRIbzT"
+        path: "06_인공지능기초/ARC_CORE"
+      ARC_N:
+        folder_id: "13uwqHKIKOJciL-O5YSPyT6lJd5owv_U5"
+        path: "06_인공지능기초/ARC_N"
+      ARC_FINAL:
+        folder_id: "1Q5RXJxSf_rW-xj-YY_ssLiVq6Wei4OIx"
+        path: "06_인공지능기초/ARC_FINAL"
+    legacy_finished_n:
+      folder_id: "1eVLlnclgwH5FyawUnKUrPVbEqzXsHPDb"
+      path: "06_인공지능기초/완성N제"
+      status: EMPTY
+
+forbidden_product_targets:
+  - folder_id: "1ngHu97tgkjYk4Wz7CaU0tLOA3Vg8MzTK"
+    path: "91_검증문항은행"
+    reason: "verified item bank, not a product output location"
+  - path: "MY_DRIVE_ROOT"
+    reason: "ROOT_STAGING is transit only; a finished artifact left there is ORPHAN_STAGED"
+
+staging:
+  root_staging:
+    note: "scheduled/background runs stage at My Drive root, then Publisher must relocate into the product folder and verify exact parent"
+    orphan_policy: "an artifact left at root after a completed run is ORPHAN_STAGED and must be relocated or archived"
+  cleanup_folder:
+    folder_id: "1YDL9Nv3yUgfaprL4Aqxa2KvrbujLCg1A"
+    path: "98_정리대기"
+  last_cleanup: 2026-09-20
+
+resolution:
+  order:
+    - ARC_STORAGE_TARGETS
+    - SYSTEM_MANIFEST
+    - CONTENT_BUNDLE
+    - HANDOFF_METADATA
+  product_key: "subjects.<SUBJECT>.products.<PRODUCT>"
+  ask_user_only_if_unresolved: true

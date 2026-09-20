@@ -232,7 +232,8 @@ def main() -> int:
 
     if args.strict_checksums and not args.skip_checksums:
         checksums = parse_checksums()
-        expected_files = [p for p in tracked_files() if p != "CHECKSUMS.sha256"]
+        ephemeral = {"CHECKSUMS.sha256", "ops/RUN_LOG.csv", "ops/RUN_LOG.jsonl"}
+        expected_files = [p for p in tracked_files() if p not in ephemeral]
         missing = sorted(set(expected_files) - set(checksums))
         extra = sorted(set(checksums) - set(expected_files))
         if missing:

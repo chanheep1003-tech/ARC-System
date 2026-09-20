@@ -40,6 +40,29 @@ rules:
       - core_body_below_print_floor
       - missing_product_namespace
       - missing_source_overflow_audit
+  - id: GOVERNANCE-CHATGPT-MAINTAINER
+    deprecated:
+      - ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md
+      - ops/ARC_CLAUDE_HANDOFF_V1.3.md
+      - ops/ARC_AUTOMATION_RUNTIME_V1.0.md
+    replacement:
+      - ops/ARC_MULTI_MODEL_GOVERNANCE_V1.1.md
+      - ops/ARC_CLAUDE_HANDOFF_V1.4.md
+      - ops/ARC_AUTOMATION_RUNTIME_V1.1.md
+    reason: "USER reassigned PRIMARY SYSTEM MAINTAINER to Claude on 2026-09-20"
+    forbidden_runtime_behavior:
+      - chatgpt_exclusive_system_maintainer
+      - stale_subject_priority_kor_soc_sci_his_ai
+      - runtime_priority_policy_v1_0_reference
+
+  - id: STORAGE-TARGETS-V10-PARTIAL
+    deprecated: ops/ARC_STORAGE_TARGETS_V1.0.yaml
+    replacement: ops/ARC_STORAGE_TARGETS_V1.1.yaml
+    reason: "V1.0 registered only KOR and SOC and had no ARC_CORE product target"
+    forbidden_runtime_behavior:
+      - ask_user_for_his_sci_ai_folder_when_registry_has_it
+      - unregistered_core_output_placement
+
   - id: PDF-LAYOUT-V23
     deprecated: templates/ARC_PDF_LAYOUT_MASTER_V2.3.md
     replacement: templates/ARC_PDF_LAYOUT_MASTER_V2.4.md
