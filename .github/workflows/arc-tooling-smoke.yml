@@ -7,6 +7,10 @@ on:
     paths:
       - 'tooling/**'
       - 'quality/**'
+      - 'engine/common/**'
+      - 'ops/ARC_GENERATOR_CONTRACT_*'
+      - 'ops/ARC_CONTENT_BUNDLE_CONTRACT_*'
+      - 'subjects/KOREAN_MASTER_*'
       - 'SYSTEM_MANIFEST.yaml'
       - '.github/workflows/arc-tooling-smoke.yml'
 
@@ -35,6 +39,8 @@ jobs:
           python -m py_compile tooling/pdf_qc/xmark_detect.py
           python -m py_compile tooling/handoff/handoff_preflight.py
           python -m py_compile tooling/handoff/test_handoff_preflight.py
+          python -m py_compile tooling/content_qa/content_qa_gate.py
+          python -m py_compile tooling/content_qa/test_content_qa_gate.py
           python -m py_compile tooling/visual/arc_visual_render.py
           python -m py_compile tooling/visual/visual_verify.py
           python -m py_compile tooling/validate_system.py
@@ -50,6 +56,7 @@ jobs:
               'quality/similarity/SIMILARITY_THRESHOLDS_V1.0.yaml',
               'tooling/promptfoo/promptfooconfig.yaml',
               'quality/governance/DEPRECATION_REGISTRY_V1.0.yaml',
+              'quality/semantic/ARC_QA_EVIDENCE_SCHEMA_V1.0.yaml',
           ]
           for f in files:
               yaml.safe_load(Path(f).read_text(encoding='utf-8'))
@@ -73,6 +80,9 @@ jobs:
 
       - name: Run handoff preflight behavioral smoke
         run: python tooling/handoff/test_handoff_preflight.py
+
+      - name: Run Universal Independent Solve QA gate smoke
+        run: python tooling/content_qa/test_content_qa_gate.py
 
       - name: Validate active system graph and checksums
         run: python tooling/validate_system.py --strict-checksums

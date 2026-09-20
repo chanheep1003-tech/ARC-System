@@ -12,6 +12,7 @@ python -m pip install -r tooling/requirements.txt
 - `similarity/`: sentence-transformers + local Qdrant similarity engine
 - `pdf_qc/`: PyMuPDF PDF preflight + Social C-part X-mark detector
 - `visual/`: deterministic visual renderer + independent PASS B verifier
+- `content_qa/`: Universal Independent Solve evidence, option semantics, scope/evidence and actual-difficulty gate
 
 ## Trust model
 Tool output is evidence, not authority over scope.

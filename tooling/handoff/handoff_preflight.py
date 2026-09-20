@@ -35,6 +35,7 @@ STANDARD_SECTION_HEADINGS = (
     "ANSWER KEY",
     "VISUAL / LAYOUT ASSET MANIFEST",
     "SOURCE TEXT BLOCKS",
+    "QA EVIDENCE",
     "QC STATUS",
 )
 
@@ -92,6 +93,27 @@ def analyze(path: Path, manifest_path: Path) -> dict:
     student = section(text, "STUDENT MANUSCRIPT")
     if not student_marker or not student.strip():
         findings.append(finding("STUDENT_MANUSCRIPT_MISSING", "STUDENT MANUSCRIPT is required."))
+
+    if product in {"ARC_N", "ARC_FINAL"}:
+        required_meta = {
+            "CONTENT_LOCK": True,
+            "CONTENT_QA_STATUS": "PASS",
+            "HANDOFF_STATUS": "READY_FOR_TYPESET",
+            "QA_EVIDENCE_SCHEMA_VERSION": "ARC-QA-EVIDENCE-V1.0",
+            "QA_EVIDENCE_STATUS": "PASS",
+            "UNIVERSAL_INDEPENDENT_SOLVE_GATE": "PASS",
+            "CONTENT_QA_RUNNER": "PASS",
+        }
+        for key, expected in required_meta.items():
+            actual = metadata.get(key)
+            if str(actual).upper() != str(expected).upper():
+                findings.append(
+                    finding("CONTENT_QA_META_INVALID", f"{key} must equal {expected!r}")
+                )
+        if not str(metadata.get("QA_EVIDENCE_FILENAME", "")).strip():
+            findings.append(finding("QA_EVIDENCE_FILENAME_MISSING", "QA_EVIDENCE_FILENAME is required."))
+        if not re.search(r"^#\s+QA EVIDENCE(?:\s+.*)?$", text, re.M | re.I):
+            findings.append(finding("QA_EVIDENCE_SECTION_MISSING", "QA EVIDENCE section is required."))
 
     if product == "ARC_CORE":
         if TWO_COLUMN_RE.search(text):
@@ -152,7 +174,7 @@ def analyze(path: Path, manifest_path: Path) -> dict:
     warn_count = sum(item["severity"] == "WARN" for item in findings)
     status = "FAIL" if fail_count else ("WARN" if warn_count else "PASS")
     return {
-        "tool": "ARC_HANDOFF_PREFLIGHT_V1.1",
+        "tool": "ARC_HANDOFF_PREFLIGHT_V1.2",
         "handoff": str(path),
         "product": product or None,
         "active_ruleset": active_version,

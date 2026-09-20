@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.4-dev
+  version: 1.8.5-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -46,8 +46,8 @@ runtime:
   generation_strategy: MCP_FIRST_MULTI_MODEL
   subject_specific_item_engine_mode: MANIFEST_REQUIRED
   multi_model_governance: ops/ARC_MULTI_MODEL_GOVERNANCE_V1.1.md
-  generator_contract: ops/ARC_GENERATOR_CONTRACT_V1.7.md
-  content_bundle_contract: ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.5.md
+  generator_contract: ops/ARC_GENERATOR_CONTRACT_V1.8.md
+  content_bundle_contract: ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.6.md
   typesetter_contract: ops/ARC_TYPESETTER_CONTRACT_V1.6.md
   production_role_split: GENERATOR_TO_TYPESETTER_TO_PUBLISHER
   content_lock_required_before_typeset: true
@@ -78,10 +78,23 @@ runtime:
   arc_n_full_width: disabled
   arc_n_one_column_fallback: disabled
   protected_text_mode: source_bound_subject_policy
-  korean_source_text_mode: SOURCE_BOUND_EMBED
+  korean_source_text_mode: EXACT_RAW_SCHOOL_SOURCE_ONLY
   korean_self_contained_source_default: true
   korean_student_source_required_default: false
   source_text_web_full_reproduction: forbidden
+  universal_independent_solve_gate: required
+  blind_pass_b_context_gate: required
+  all_option_judgment_gate: required
+  option_semantic_duplication_gate: required
+  answer_evidence_trace_gate: required
+  scope_evidence_trace_gate: required
+  actual_difficulty_reclassification_gate: required
+  qa_evidence_schema_gate: required
+  content_qa_runner_gate: required_when_executable
+  korean_original_source_lock: required_when_source_text_used
+  korean_source_text_fidelity: EXACT_ONLY
+  korean_source_text_checksum: required
+  korean_generated_output_as_source: forbidden
   score_inflation_audit: required
   answer_position_editorial_audit: required
   question_task_diversity_gate: required
@@ -176,8 +189,8 @@ runtime:
 
 active:
   common_generation_engine:
-    path: engine/common/COMMON_GENERATION_ENGINE_V4.4_ARC.md
-    version: 4.4
+    path: engine/common/COMMON_GENERATION_ENGINE_V4.5_ARC.md
+    version: 4.5
     drive_id: null
     drive_mirror_status: pending_sync
 
@@ -214,7 +227,7 @@ active:
       drive_id: null
       drive_mirror_status: pending_sync
     korean:
-      path: subjects/KOREAN_MASTER_V4.1.md
+      path: subjects/KOREAN_MASTER_V4.2.md
       drive_id: null
       drive_mirror_status: pending_sync
     history:
@@ -227,16 +240,18 @@ active:
   quality:
     deprecation_registry: quality/governance/DEPRECATION_REGISTRY_V1.0.yaml
     scope_ledger: quality/ARC_SCOPE_LEDGER_V1.0.md
-    qa_bench: quality/ARC_QA_BENCH_V1.5.md
+    qa_bench: quality/ARC_QA_BENCH_V1.6.md
     error_database: quality/ARC_ERROR_DATABASE_V1.0.md
-    difficulty_engine: quality/ARC_DIFFICULTY_ENGINE_V1.1.md
+    difficulty_engine: quality/ARC_DIFFICULTY_ENGINE_V1.2.md
     difficulty_anchors: quality/ARC_DIFFICULTY_ANCHORS_V1.0.md
     school_reference_profile: quality/ARC_SCHOOL_REFERENCE_PROFILE_V1.0.md
     school_difficulty_bench:
       path: quality/ARC_SCHOOL_DIFFICULTY_BENCH_V1.0.md
       drive_id: 1t0l6juVLzJxx9UMN5YwG1eRu4enAXpmX
-    item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.3.md
-    korean_item_qa: quality/ARC_KOREAN_ITEM_QA_V1.1.md
+    item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.4.md
+    korean_item_qa: quality/ARC_KOREAN_ITEM_QA_V1.2.md
+    universal_independent_solve: quality/ARC_UNIVERSAL_INDEPENDENT_SOLVE_GATE_V1.0.md
+    qa_evidence_schema: quality/semantic/ARC_QA_EVIDENCE_SCHEMA_V1.0.yaml
     core_editorial_naturalness: quality/ARC_CORE_EDITORIAL_NATURALNESS_V1.2.md
     core_qa_bench: quality/ARC_CORE_QA_BENCH_V1.2.md
     visual_authenticity: quality/ARC_VISUAL_AUTHENTICITY_RUBRIC_V1.1.md
@@ -315,6 +330,8 @@ tooling:
   pdf_preflight_smoke_test: tooling/pdf_qc/test_preflight_smoke.py
   handoff_preflight: tooling/handoff/handoff_preflight.py
   handoff_preflight_smoke_test: tooling/handoff/test_handoff_preflight.py
+  content_qa_gate: tooling/content_qa/content_qa_gate.py
+  content_qa_gate_smoke_test: tooling/content_qa/test_content_qa_gate.py
   xmark_detector: tooling/pdf_qc/xmark_detect.py
   visual_renderer: tooling/visual/arc_visual_render.py
   visual_verifier: tooling/visual/visual_verify.py

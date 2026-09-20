@@ -102,6 +102,57 @@ def run() -> None:
         assert expected_student <= codes(result), result
         assert result["status"] == "FAIL", result
 
+        qa_good = td / "qa_good.md"
+        qa_good.write_text(
+            f"""---
+ARC_RULESET_VERSION: {version}
+PRODUCT_MODE: ARC_N
+CONTENT_LOCK: true
+CONTENT_QA_STATUS: PASS
+HANDOFF_STATUS: READY_FOR_TYPESET
+QA_EVIDENCE_SCHEMA_VERSION: ARC-QA-EVIDENCE-V1.0
+QA_EVIDENCE_FILENAME: ARC_QA_EVIDENCE_SOC_001.yaml
+QA_EVIDENCE_STATUS: PASS
+UNIVERSAL_INDEPENDENT_SOLVE_GATE: PASS
+CONTENT_QA_RUNNER: PASS
+---
+
+# STUDENT MANUSCRIPT
+1. 문항입니다.
+
+# QA EVIDENCE — INTERNAL / DO NOT PRINT
+Machine-readable payload: ARC_QA_EVIDENCE_SOC_001.yaml
+
+# QC STATUS — INTERNAL / DO NOT PRINT
+PASS
+""",
+            encoding="utf-8",
+        )
+        result = mod.analyze(qa_good, ROOT / "SYSTEM_MANIFEST.yaml")
+        assert result["status"] == "PASS", result
+
+        qa_missing = td / "qa_missing.md"
+        qa_missing.write_text(
+            f"""---
+ARC_RULESET_VERSION: {version}
+PRODUCT_MODE: ARC_N
+CONTENT_LOCK: true
+CONTENT_QA_STATUS: PASS
+HANDOFF_STATUS: READY_FOR_TYPESET
+---
+
+# STUDENT MANUSCRIPT
+1. 문항입니다.
+
+# QC STATUS — INTERNAL / DO NOT PRINT
+PASS
+""",
+            encoding="utf-8",
+        )
+        result = mod.analyze(qa_missing, ROOT / "SYSTEM_MANIFEST.yaml")
+        assert {"CONTENT_QA_META_INVALID", "QA_EVIDENCE_FILENAME_MISSING", "QA_EVIDENCE_SECTION_MISSING"} <= codes(result), result
+        assert result["status"] == "FAIL", result
+
     print("ARC HANDOFF PREFLIGHT SMOKE: PASS")
 
 

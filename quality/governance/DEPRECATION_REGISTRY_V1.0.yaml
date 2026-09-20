@@ -24,7 +24,33 @@ rules:
       - engine/common/COMMON_GENERATION_ENGINE_V4.1_ARC.md
       - engine/common/COMMON_GENERATION_ENGINE_V4.2_ARC.md
       - engine/common/COMMON_GENERATION_ENGINE_V4.3_ARC.md
-    replacement: engine/common/COMMON_GENERATION_ENGINE_V4.4_ARC.md
+      - engine/common/COMMON_GENERATION_ENGINE_V4.4_ARC.md
+    replacement: engine/common/COMMON_GENERATION_ENGINE_V4.5_ARC.md
+    reason: "V4.5 makes blind independent re-solving, all-option evidence, scope trace and actual difficulty reconciliation mandatory"
+  - id: PRE-UNIVERSAL-INDEPENDENT-SOLVE
+    deprecated:
+      - ops/ARC_GENERATOR_CONTRACT_V1.7.md
+      - ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.5.md
+      - quality/ARC_QA_BENCH_V1.5.md
+      - quality/ARC_DIFFICULTY_ENGINE_V1.1.md
+      - quality/ARC_ITEM_QUALITY_RUBRIC_V1.3.md
+      - quality/ARC_KOREAN_ITEM_QA_V1.1.md
+      - subjects/KOREAN_MASTER_V4.1.md
+    replacement:
+      - ops/ARC_GENERATOR_CONTRACT_V1.8.md
+      - ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.6.md
+      - quality/ARC_QA_BENCH_V1.6.md
+      - quality/ARC_DIFFICULTY_ENGINE_V1.2.md
+      - quality/ARC_ITEM_QUALITY_RUBRIC_V1.4.md
+      - quality/ARC_KOREAN_ITEM_QA_V1.2.md
+      - subjects/KOREAN_MASTER_V4.2.md
+    forbidden_runtime_behavior:
+      - answer_only_pass_b
+      - pass_b_with_answer_key_or_author_intent
+      - content_lock_without_all_option_evidence
+      - target_difficulty_without_actual_difficulty_reconciliation
+      - korean_whitespace_normalized_student_source
+      - generated_arc_output_used_as_korean_original_source
   - id: OLD-ROLE-CONTRACTS
     deprecated_prefixes:
       - ops/ARC_GENERATOR_CONTRACT_V1.0

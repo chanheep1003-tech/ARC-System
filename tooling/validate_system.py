@@ -112,6 +112,19 @@ def main() -> int:
         "typeset_qa_skill_required": True,
         "stale_handoff_gate": "required",
         "handoff_layout_directives": "forbidden",
+        "universal_independent_solve_gate": "required",
+        "blind_pass_b_context_gate": "required",
+        "all_option_judgment_gate": "required",
+        "option_semantic_duplication_gate": "required",
+        "answer_evidence_trace_gate": "required",
+        "scope_evidence_trace_gate": "required",
+        "actual_difficulty_reclassification_gate": "required",
+        "qa_evidence_schema_gate": "required",
+        "content_qa_runner_gate": "required_when_executable",
+        "korean_original_source_lock": "required_when_source_text_used",
+        "korean_source_text_fidelity": "EXACT_ONLY",
+        "korean_source_text_checksum": "required",
+        "korean_generated_output_as_source": "forbidden",
     }
     for key, expected in required_runtime.items():
         if runtime.get(key) != expected:
@@ -128,7 +141,32 @@ def main() -> int:
     require_markers(
         errors,
         common_path,
-        ["SCOPE_LOCK", "UNIQUE_ANSWER", "PASS A", "PASS B", "ANSWER_KEY_COMPLETE"],
+        [
+            "SCOPE_LOCK", "UNIQUE_ANSWER", "PASS A", "PASS B", "ANSWER_KEY_COMPLETE",
+            "OPTION_SEMANTIC_DUPLICATION_REVIEW", "ANSWER_EVIDENCE_TRACE",
+            "SCOPE_EVIDENCE_TRACE", "ACTUAL_DIFFICULTY", "PASSAGE_TRUNCATION",
+        ],
+    )
+    require_markers(
+        errors,
+        active["quality"]["universal_independent_solve"],
+        [
+            "PASS B BLIND INDEPENDENT SOLVE",
+            "ALL-OPTION VERDICT AUDIT",
+            "OPTION SEMANTIC DUPLICATION REVIEW",
+            "ACTUAL DIFFICULTY RECLASSIFICATION",
+            "KOREAN EXACT SOURCE LOCK",
+        ],
+    )
+    require_markers(
+        errors,
+        active["subjects"]["korean"]["path"],
+        [
+            "KOR EXACT SOURCE-BOUND ORIGINAL TEXT MODE",
+            "TEXT_FIDELITY = EXACT",
+            "WHITESPACE_NORMALIZED는 학생용 원문에 사용 금지",
+            "SOURCE_TEXT_SHA256",
+        ],
     )
     require_markers(
         errors,
@@ -206,10 +244,25 @@ def main() -> int:
         "pdf_preflight_smoke_test",
         "handoff_preflight",
         "handoff_preflight_smoke_test",
+        "content_qa_gate",
+        "content_qa_gate_smoke_test",
     ):
         rel = tooling.get(key)
         if not isinstance(rel, str) or not (ROOT / rel).is_file():
             errors.append(f"tooling.{key} target missing: {rel!r}")
+
+    require_markers(
+        errors,
+        tooling["content_qa_gate"],
+        [
+            "ANSWER_AB_MISMATCH",
+            "OPTION_SEMANTIC_DUPLICATION",
+            "SCOPE_TRACE_INVALID",
+            "D4_SHORT",
+            "KOR_SOURCE_ORIGIN_FORBIDDEN",
+            "KOR_SOURCE_NOT_EXACT",
+        ],
+    )
 
     science = (ROOT / "subjects/SCIENCE_MASTER_V4.0.md").read_text(encoding="utf-8")
     if "ARC_N 학생 PDF에는 넣지 않는다" in science:

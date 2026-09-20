@@ -1,3 +1,14 @@
+## 1.8.5-dev — 2026-09-21
+- Activated Common Generation Engine V4.5 and the Universal Independent Solve & Difficulty Gate V1.0 for KOR/SOC/HIS/SCI/AI ARC_N and ARC_FINAL production.
+- PASS B is now blind to ANSWER_KEY, PASS A, AUTHOR_INTENT and TARGET_DIFFICULTY. Every MCQ5 option must carry a verdict, semantic axis/key, evidence refs and competitiveness rating; exactly one TRUE option must match PASS A/B.
+- Added required factual-accuracy, option-semantic-duplication, answer-evidence, scope-evidence, all-option, unique-answer and difficulty-match gates before CONTENT_LOCK.
+- Difficulty is now measured again during PASS B. TARGET_DIFFICULTY must equal ACTUAL_DIFFICULTY after revision/reclassification; D4/D5 have executable reasoning, evidence, distractor and immediate-elimination minimums.
+- Preserved the existing eight set gates: STRUCTURE, ANSWER_COUNT_MATCH, MANUSCRIPT_CONTAMINATION, TOO_EASY, MID_GAP, STRUCTURE_BIAS, D4_SHORT and PASSAGE_TRUNCATION.
+- Added a machine-readable QA evidence schema and `tooling/content_qa/content_qa_gate.py` with behavioral smoke coverage for answer mismatch, semantic-key duplication, D4 inflation and Korean source-lock violations.
+- Upgraded Generator Contract V1.8, Content Bundle Contract V1.6, QA Bench V1.6, Difficulty Engine V1.2 and Item Quality Rubric V1.4. ARC_N/FINAL handoff preflight now rejects missing QA evidence metadata/section.
+- Activated Korean Master V4.2 and Korean Item QA V1.2. Student source text is EXACT-only and must come from user-provided or connected raw school textbook/supplement sources with file/location/checksum provenance. WHITESPACE_NORMALIZED and ARC/BANK/web/Deep Research/external problem-book source authority are forbidden.
+- Wired the new runner and schema into CI and active-system validation. Local content-QA, handoff, PDF and system smoke checks pass. The model-backed 30-fixture Promptfoo candidate regression still requires a configured candidate adapter and is not claimed by this patch.
+
 ## 1.8.4-dev — 2026-09-20
 - USER reassigned the PRIMARY SYSTEM MAINTAINER role from the ChatGPT interactive session to a dedicated Claude maintainer session. USER remains SYSTEM OWNER; GPT and other models become optional Generator/Reviewer/Auxiliary agents. ARC stays one unified system with no model-specific fork.
 - Added MULTI-MODEL GOVERNANCE V1.1, CLAUDE HANDOFF V1.4, AUTOMATION RUNTIME V1.1 carrying the reassignment; the single-writer rule is now explicitly role-scoped, not model-scoped.
