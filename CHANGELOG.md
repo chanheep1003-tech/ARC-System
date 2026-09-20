@@ -1,3 +1,10 @@
+## 1.8.6-dev — 2026-09-21
+- Added the canonical layout-blind CONTENT_BUNDLE → Markdown serializer. It pins the active ruleset, strips internal metadata, rejects layout authority, emits canonical filenames, and locks STUDENT MANUSCRIPT with SHA-256.
+- Upgraded handoff preflight to V1.3. All products now require lifecycle metadata and verify the declared filename and manuscript checksum; stale PDF master, CSS/ReportLab geometry, font-size, column, and student-ID contamination are checked across the complete handoff.
+- Added a fixed executable KOR CORE canary covering serializer → handoff gate → deterministic one-column PDF → PDF preflight, with 4-page output and explicit A/B/C major-boundary page starts.
+- Added serializer fault injection for stale PDF master, two-column, 8.8pt body, and internal student ID. All four must be blocked for CANARY_PASS.
+- Wired the serializer and KOR canary into GitHub Actions and retained the generated handoff/PDF/render/report as seven-day CI evidence. The canary uses synthetic English content and validates pipeline behavior only; it does not claim Korean source fidelity or model-authored content quality.
+
 ## 1.8.5-dev — 2026-09-21
 - Activated Common Generation Engine V4.5 and the Universal Independent Solve & Difficulty Gate V1.0 for KOR/SOC/HIS/SCI/AI ARC_N and ARC_FINAL production.
 - PASS B is now blind to ANSWER_KEY, PASS A, AUTHOR_INTENT and TARGET_DIFFICULTY. Every MCQ5 option must carry a verdict, semantic axis/key, evidence refs and competitiveness rating; exactly one TRUE option must match PASS A/B.

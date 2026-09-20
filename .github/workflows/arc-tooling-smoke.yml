@@ -39,6 +39,10 @@ jobs:
           python -m py_compile tooling/pdf_qc/xmark_detect.py
           python -m py_compile tooling/handoff/handoff_preflight.py
           python -m py_compile tooling/handoff/test_handoff_preflight.py
+          python -m py_compile tooling/handoff/handoff_serializer.py
+          python -m py_compile tooling/handoff/test_handoff_serializer.py
+          python -m py_compile tooling/canary/nightly_canary.py
+          python -m py_compile tooling/canary/test_nightly_canary.py
           python -m py_compile tooling/content_qa/content_qa_gate.py
           python -m py_compile tooling/content_qa/test_content_qa_gate.py
           python -m py_compile tooling/visual/arc_visual_render.py
@@ -57,6 +61,7 @@ jobs:
               'tooling/promptfoo/promptfooconfig.yaml',
               'quality/governance/DEPRECATION_REGISTRY_V1.0.yaml',
               'quality/semantic/ARC_QA_EVIDENCE_SCHEMA_V1.0.yaml',
+              'quality/canary/KOR_CORE_CANARY_V1.yaml',
           ]
           for f in files:
               yaml.safe_load(Path(f).read_text(encoding='utf-8'))
@@ -80,6 +85,19 @@ jobs:
 
       - name: Run handoff preflight behavioral smoke
         run: python tooling/handoff/test_handoff_preflight.py
+
+      - name: Run handoff serializer behavioral smoke
+        run: python tooling/handoff/test_handoff_serializer.py
+
+      - name: Run fixed KOR CORE E2E canary
+        run: python tooling/canary/nightly_canary.py --output-dir /tmp/arc-kor-canary --report /tmp/arc-kor-canary/canary-report.json
+
+      - name: Upload KOR CORE canary evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: kor-core-canary-${{ github.run_id }}
+          path: /tmp/arc-kor-canary
+          retention-days: 7
 
       - name: Run Universal Independent Solve QA gate smoke
         run: python tooling/content_qa/test_content_qa_gate.py

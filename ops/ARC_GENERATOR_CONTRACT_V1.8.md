@@ -314,4 +314,11 @@ If Typesetter/Publisher detects a true content defect and returns an item:
 
 Publisher disagreement by itself is not a content defect. Publisher is not allowed to independently re-grade correct answers.
 
+## 10. EXECUTABLE SERIALIZATION
+When `tooling.handoff_serializer` is available in SYSTEM_MANIFEST, Generator must
+use that serializer rather than composing the portable handoff ad hoc. The
+serializer is layout-blind, removes internal metadata from STUDENT MANUSCRIPT,
+pins the active ruleset, and emits `STUDENT_MANUSCRIPT_SHA256`. Typesetter must
+reject a filename or manuscript checksum mismatch before rendering.
+
 END ARC GENERATOR CONTRACT V1.8

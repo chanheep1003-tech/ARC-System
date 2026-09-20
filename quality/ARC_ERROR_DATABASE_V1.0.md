@@ -313,6 +313,28 @@ STATUS: REGRESSION_PENDING
 RECURRENCE_COUNT: 1
 ```
 
+### ERR-20260921-E2E-001
+```yaml
+ERROR_ID: ERR-20260921-E2E-001
+DATE: 2026-09-21
+SUBJECT: KOR CORE CANARY
+ERROR_CODE: ERR-PIPELINE-001
+SEVERITY: S1
+DETECTED_STAGE: NIGHTLY_SIMULATION
+HUMAN_FOUND: false
+DESCRIPTION: Production contracts described CONTENT_BUNDLE to handoff and PDF gates, but no executable canonical serializer or fixed full pipeline canary existed.
+EXPECTED: A fixed bundle must run through serializer, handoff preflight, Typesetter, PDF and preflight with reproducible evidence.
+ACTUAL: Individual handoff/PDF tools passed, but the boundary remained specification-only and ad hoc serialization could bypass filename/checksum locks.
+ROOT_CAUSE: Executable ownership was implemented per-stage without a single deterministic cross-stage canary.
+FIX_APPLIED: Added layout-blind serializer, filename/manuscript checksum verification, fixed KOR CORE 4-page canary, four fault injections, and CI artifact retention.
+PREVENTION_RULE: HANDOFF_SERIALIZER=PASS; KOR_CORE_CANARY=CANARY_PASS
+REGRESSION_BENCH_ID: KOR-CORE-CANARY-V1
+REGRESSION_STATUS: PASS
+STATUS: FIXED_CANARY_SCOPE
+LIMITATION: Synthetic pipeline fixture only; production model generation, Korean exact source fidelity, and ARC_N remain separately gated.
+RECURRENCE_COUNT: 0
+```
+
 ## 9. MONTHLY REVIEW
 시험기간 중 또는 10세트 생성마다:
 - OPEN/RECURRED 오류 확인

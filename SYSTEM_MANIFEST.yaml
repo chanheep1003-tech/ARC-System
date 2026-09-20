@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.5-dev
+  version: 1.8.6-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -56,6 +56,8 @@ runtime:
   handoff_markdown_encoding: UTF-8
   handoff_markdown_direct_typesetter_input: true
   stale_handoff_gate: required
+  handoff_serializer_gate: required
+  nightly_canary_gate: required
   handoff_layout_directives: forbidden
   generator_pdf_typesetting: disabled
   publisher_content_regrading: forbidden
@@ -330,6 +332,11 @@ tooling:
   pdf_preflight_smoke_test: tooling/pdf_qc/test_preflight_smoke.py
   handoff_preflight: tooling/handoff/handoff_preflight.py
   handoff_preflight_smoke_test: tooling/handoff/test_handoff_preflight.py
+  handoff_serializer: tooling/handoff/handoff_serializer.py
+  handoff_serializer_smoke_test: tooling/handoff/test_handoff_serializer.py
+  nightly_canary: tooling/canary/nightly_canary.py
+  nightly_canary_smoke_test: tooling/canary/test_nightly_canary.py
+  kor_core_canary_fixture: quality/canary/KOR_CORE_CANARY_V1.yaml
   content_qa_gate: tooling/content_qa/content_qa_gate.py
   content_qa_gate_smoke_test: tooling/content_qa/test_content_qa_gate.py
   xmark_detector: tooling/pdf_qc/xmark_detect.py

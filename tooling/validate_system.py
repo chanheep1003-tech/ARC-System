@@ -111,6 +111,8 @@ def main() -> int:
         "core_html_overflow_gate": "required_when_source_available",
         "typeset_qa_skill_required": True,
         "stale_handoff_gate": "required",
+        "handoff_serializer_gate": "required",
+        "nightly_canary_gate": "required",
         "handoff_layout_directives": "forbidden",
         "universal_independent_solve_gate": "required",
         "blind_pass_b_context_gate": "required",
@@ -246,6 +248,11 @@ def main() -> int:
         "handoff_preflight_smoke_test",
         "content_qa_gate",
         "content_qa_gate_smoke_test",
+        "handoff_serializer",
+        "handoff_serializer_smoke_test",
+        "nightly_canary",
+        "nightly_canary_smoke_test",
+        "kor_core_canary_fixture",
     ):
         rel = tooling.get(key)
         if not isinstance(rel, str) or not (ROOT / rel).is_file():
@@ -262,6 +269,16 @@ def main() -> int:
             "KOR_SOURCE_ORIGIN_FORBIDDEN",
             "KOR_SOURCE_NOT_EXACT",
         ],
+    )
+    require_markers(
+        errors,
+        tooling["handoff_serializer"],
+        ["layout-blind", "STUDENT_MANUSCRIPT_SHA256", "internal metadata ID"],
+    )
+    require_markers(
+        errors,
+        tooling["nightly_canary"],
+        ["bundle -> handoff -> PDF -> preflight", "CANARY_PASS", "fault_injection"],
     )
 
     science = (ROOT / "subjects/SCIENCE_MASTER_V4.0.md").read_text(encoding="utf-8")

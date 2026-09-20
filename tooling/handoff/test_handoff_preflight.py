@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import importlib.util
+import hashlib
 import tempfile
 from pathlib import Path
 
@@ -22,13 +23,23 @@ def codes(result: dict) -> set[str]:
     return {item["code"] for item in result["findings"]}
 
 
-def handoff(version: str, instructions: str, manuscript: str) -> str:
+def handoff(version: str, instructions: str, manuscript: str, filename: str) -> str:
+    checksum = hashlib.sha256((manuscript.strip() + "\n").encode("utf-8")).hexdigest()
     return f"""---
 ARC_RULESET_VERSION: {version}
+BATCH_ID: TEST-001
 PRODUCT_MODE: ARC_CORE
+SUBJECT: SOC
+SCOPE: smoke fixture
+ITEM_COUNT: 0
+CREATED_AT: 2026-09-21T04:00:00+09:00
 CONTENT_LOCK: true
 CONTENT_QA_STATUS: PASS
 HANDOFF_STATUS: READY_FOR_TYPESET
+HANDOFF_MD_STATUS: READY
+TYPESET_STATUS: PENDING
+HANDOFF_MD_FILENAME: {filename}
+STUDENT_MANUSCRIPT_SHA256: {checksum}
 ---
 
 # TYPESETTER INSTRUCTIONS — INTERNAL / DO NOT PRINT
@@ -48,12 +59,13 @@ def run() -> None:
     with tempfile.TemporaryDirectory() as td:
         td = Path(td)
 
-        good = td / "good.md"
+        good = td / "ARC_HANDOFF_CORE_SOC_TEST-001_READY.md"
         good.write_text(
             handoff(
                 version,
                 "Preserve the locked text. Resolve layout from SYSTEM_MANIFEST.",
                 "# A파트 · 사회 정의\n\n본문입니다.\n\n# B파트 · 세계화\n\n본문입니다.",
+                good.name,
             ),
             encoding="utf-8",
         )
@@ -61,12 +73,13 @@ def run() -> None:
         assert result["status"] == "PASS", result
         assert result["major_boundaries"] == ["A파트 · 사회 정의", "B파트 · 세계화"]
 
-        stale = td / "stale.md"
+        stale = td / "ARC_HANDOFF_CORE_SOC_TEST-STALE_READY.md"
         stale.write_text(
             handoff(
                 "1.8.0-dev",
                 "판형: A4 2단 조판. ARC_PDF_LAYOUT_MASTER_V2.1, 본문 8.8pt, column-count: 2.",
                 "## A파트 · 사회 정의\n\n[ARC-SOC-C-001] 본문입니다.",
+                stale.name,
             ),
             encoding="utf-8",
         )
@@ -83,12 +96,13 @@ def run() -> None:
         assert expected <= codes(result), result
         assert result["status"] == "FAIL", result
 
-        student_layout_leak = td / "student_layout_leak.md"
+        student_layout_leak = td / "ARC_HANDOFF_CORE_SOC_TEST-LEAK_READY.md"
         student_layout_leak.write_text(
             handoff(
                 version,
                 "Preserve the locked text. Resolve layout from SYSTEM_MANIFEST.",
                 "# A파트 · 사회 정의\n\n본문입니다.\n\nARC_PDF_LAYOUT_MASTER_V2.1로 2단 조판하고 body 8.8pt, column-count: 2로 출력한다.",
+                student_layout_leak.name,
             ),
             encoding="utf-8",
         )
@@ -102,14 +116,25 @@ def run() -> None:
         assert expected_student <= codes(result), result
         assert result["status"] == "FAIL", result
 
-        qa_good = td / "qa_good.md"
+        qa_good = td / "ARC_HANDOFF_N_SOC_TEST-N-001_READY.md"
+        qa_manuscript = "1. 문항입니다."
+        qa_checksum = hashlib.sha256((qa_manuscript + "\n").encode("utf-8")).hexdigest()
         qa_good.write_text(
             f"""---
 ARC_RULESET_VERSION: {version}
+BATCH_ID: TEST-N-001
 PRODUCT_MODE: ARC_N
+SUBJECT: SOC
+SCOPE: smoke fixture
+ITEM_COUNT: 1
+CREATED_AT: 2026-09-21T04:00:00+09:00
 CONTENT_LOCK: true
 CONTENT_QA_STATUS: PASS
 HANDOFF_STATUS: READY_FOR_TYPESET
+HANDOFF_MD_STATUS: READY
+TYPESET_STATUS: PENDING
+HANDOFF_MD_FILENAME: {qa_good.name}
+STUDENT_MANUSCRIPT_SHA256: {qa_checksum}
 QA_EVIDENCE_SCHEMA_VERSION: ARC-QA-EVIDENCE-V1.0
 QA_EVIDENCE_FILENAME: ARC_QA_EVIDENCE_SOC_001.yaml
 QA_EVIDENCE_STATUS: PASS
@@ -118,7 +143,7 @@ CONTENT_QA_RUNNER: PASS
 ---
 
 # STUDENT MANUSCRIPT
-1. 문항입니다.
+{qa_manuscript}
 
 # QA EVIDENCE — INTERNAL / DO NOT PRINT
 Machine-readable payload: ARC_QA_EVIDENCE_SOC_001.yaml
@@ -131,18 +156,28 @@ PASS
         result = mod.analyze(qa_good, ROOT / "SYSTEM_MANIFEST.yaml")
         assert result["status"] == "PASS", result
 
-        qa_missing = td / "qa_missing.md"
+        qa_missing = td / "ARC_HANDOFF_N_SOC_TEST-N-002_READY.md"
+        missing_checksum = hashlib.sha256((qa_manuscript + "\n").encode("utf-8")).hexdigest()
         qa_missing.write_text(
             f"""---
 ARC_RULESET_VERSION: {version}
+BATCH_ID: TEST-N-002
 PRODUCT_MODE: ARC_N
+SUBJECT: SOC
+SCOPE: smoke fixture
+ITEM_COUNT: 1
+CREATED_AT: 2026-09-21T04:00:00+09:00
 CONTENT_LOCK: true
 CONTENT_QA_STATUS: PASS
 HANDOFF_STATUS: READY_FOR_TYPESET
+HANDOFF_MD_STATUS: READY
+TYPESET_STATUS: PENDING
+HANDOFF_MD_FILENAME: {qa_missing.name}
+STUDENT_MANUSCRIPT_SHA256: {missing_checksum}
 ---
 
 # STUDENT MANUSCRIPT
-1. 문항입니다.
+{qa_manuscript}
 
 # QC STATUS — INTERNAL / DO NOT PRINT
 PASS
@@ -152,6 +187,19 @@ PASS
         result = mod.analyze(qa_missing, ROOT / "SYSTEM_MANIFEST.yaml")
         assert {"CONTENT_QA_META_INVALID", "QA_EVIDENCE_FILENAME_MISSING", "QA_EVIDENCE_SECTION_MISSING"} <= codes(result), result
         assert result["status"] == "FAIL", result
+
+        tampered = td / "ARC_HANDOFF_CORE_SOC_TEST-TAMPER_READY.md"
+        tampered.write_text(
+            handoff(
+                version,
+                "Preserve locked content.",
+                "# A파트 · 사회 정의\n\n원본 본문입니다.",
+                tampered.name,
+            ).replace("원본 본문입니다.", "변조된 본문입니다."),
+            encoding="utf-8",
+        )
+        result = mod.analyze(tampered, ROOT / "SYSTEM_MANIFEST.yaml")
+        assert "STUDENT_MANUSCRIPT_CHECKSUM_MISMATCH" in codes(result), result
 
     print("ARC HANDOFF PREFLIGHT SMOKE: PASS")
 

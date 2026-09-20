@@ -7,6 +7,7 @@ stale generator-era layout instructions from overriding the active manifest.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -94,17 +95,70 @@ def analyze(path: Path, manifest_path: Path) -> dict:
     if not student_marker or not student.strip():
         findings.append(finding("STUDENT_MANUSCRIPT_MISSING", "STUDENT MANUSCRIPT is required."))
 
+    required_meta = {
+        "CONTENT_LOCK": True,
+        "CONTENT_QA_STATUS": "PASS",
+        "HANDOFF_STATUS": "READY_FOR_TYPESET",
+        "HANDOFF_MD_STATUS": "READY",
+        "TYPESET_STATUS": "PENDING",
+    }
+    for key, expected in required_meta.items():
+        actual = metadata.get(key)
+        if str(actual).upper() != str(expected).upper():
+            findings.append(finding("HANDOFF_META_INVALID", f"{key} must equal {expected!r}"))
+    for key in ("BATCH_ID", "SUBJECT", "SCOPE", "ITEM_COUNT", "CREATED_AT", "HANDOFF_MD_FILENAME", "STUDENT_MANUSCRIPT_SHA256"):
+        if metadata.get(key) is None or not str(metadata.get(key)).strip():
+            findings.append(finding("HANDOFF_META_MISSING", f"{key} is required"))
+
+    declared_filename = str(metadata.get("HANDOFF_MD_FILENAME", ""))
+    if declared_filename and declared_filename != path.name:
+        findings.append(
+            finding("HANDOFF_FILENAME_MISMATCH", f"declared filename {declared_filename!r} does not match {path.name!r}")
+        )
+    if student.strip() and metadata.get("STUDENT_MANUSCRIPT_SHA256"):
+        student_canonical = student.strip() + "\n"
+        actual_checksum = hashlib.sha256(student_canonical.encode("utf-8")).hexdigest()
+        if str(metadata["STUDENT_MANUSCRIPT_SHA256"]).lower() != actual_checksum:
+            findings.append(finding("STUDENT_MANUSCRIPT_CHECKSUM_MISMATCH", "student manuscript checksum does not match locked content"))
+
+    masters = sorted(set(PDF_MASTER_RE.findall(text)))
+    if masters:
+        findings.append(
+            finding(
+                "PDF_MASTER_PIN_FORBIDDEN",
+                f"handoff pins {', '.join(masters)}; active master is {active_master} and must be resolved at runtime",
+            )
+        )
+    if LAYOUT_CODE_RE.search(text):
+        findings.append(finding("LAYOUT_CODE_FORBIDDEN", "handoff contains concrete CSS/ReportLab/page geometry."))
+    pinned_sizes = [float(value) for value in FONT_PIN_RE.findall(text)]
+    if pinned_sizes:
+        findings.append(
+            finding(
+                "FONT_SIZE_PIN_FORBIDDEN",
+                f"handoff pins body/font size(s): {pinned_sizes}; typography belongs to the active Typesetter",
+            )
+        )
+    if product != "ARC_CORE" and TWO_COLUMN_RE.search(text):
+        findings.append(finding("LAYOUT_COLUMN_DIRECTIVE", "handoff contains a concrete column directive."))
+
+    leaks = INTERNAL_ID_RE.findall(student)
+    if leaks:
+        findings.append(
+            finding(
+                "STUDENT_INTERNAL_ID_LEAK",
+                f"student manuscript exposes internal IDs: {sorted(set(leaks))[:5]}",
+            )
+        )
+
     if product in {"ARC_N", "ARC_FINAL"}:
-        required_meta = {
-            "CONTENT_LOCK": True,
-            "CONTENT_QA_STATUS": "PASS",
-            "HANDOFF_STATUS": "READY_FOR_TYPESET",
+        qa_required_meta = {
             "QA_EVIDENCE_SCHEMA_VERSION": "ARC-QA-EVIDENCE-V1.0",
             "QA_EVIDENCE_STATUS": "PASS",
             "UNIVERSAL_INDEPENDENT_SOLVE_GATE": "PASS",
             "CONTENT_QA_RUNNER": "PASS",
         }
-        for key, expected in required_meta.items():
+        for key, expected in qa_required_meta.items():
             actual = metadata.get(key)
             if str(actual).upper() != str(expected).upper():
                 findings.append(
@@ -118,36 +172,6 @@ def analyze(path: Path, manifest_path: Path) -> dict:
     if product == "ARC_CORE":
         if TWO_COLUMN_RE.search(text):
             findings.append(finding("CORE_TWO_COLUMN_DIRECTIVE", "CORE handoff contains a two-column directive."))
-
-        masters = sorted(set(PDF_MASTER_RE.findall(text)))
-        if masters:
-            findings.append(
-                finding(
-                    "PDF_MASTER_PIN_FORBIDDEN",
-                    f"handoff pins {', '.join(masters)}; active master is {active_master} and must be resolved at runtime",
-                )
-            )
-
-        if LAYOUT_CODE_RE.search(text):
-            findings.append(finding("LAYOUT_CODE_FORBIDDEN", "handoff contains concrete CSS/ReportLab/page geometry."))
-
-        pinned_sizes = [float(value) for value in FONT_PIN_RE.findall(text)]
-        if pinned_sizes:
-            findings.append(
-                finding(
-                    "FONT_SIZE_PIN_FORBIDDEN",
-                    f"handoff pins body/font size(s): {pinned_sizes}; typography belongs to the active Typesetter",
-                )
-            )
-
-        leaks = INTERNAL_ID_RE.findall(student)
-        if leaks:
-            findings.append(
-                finding(
-                    "STUDENT_INTERNAL_ID_LEAK",
-                    f"student manuscript exposes internal IDs: {sorted(set(leaks))[:5]}",
-                )
-            )
 
         h1_titles = H1_RE.findall(student)
         part_lines = [line.strip() for line in student.splitlines() if PART_RE.search(line)]
@@ -174,7 +198,7 @@ def analyze(path: Path, manifest_path: Path) -> dict:
     warn_count = sum(item["severity"] == "WARN" for item in findings)
     status = "FAIL" if fail_count else ("WARN" if warn_count else "PASS")
     return {
-        "tool": "ARC_HANDOFF_PREFLIGHT_V1.2",
+        "tool": "ARC_HANDOFF_PREFLIGHT_V1.3",
         "handoff": str(path),
         "product": product or None,
         "active_ruleset": active_version,

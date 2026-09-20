@@ -296,4 +296,12 @@ TYPESETTING
 
 Physical HUMAN REVIEW is required only for the FINAL_RELEASED transition.
 
+## 10. CANONICAL SERIALIZER BOUNDARY
+If SYSTEM_MANIFEST registers an executable handoff serializer, it is the only
+authorized CONTENT_BUNDLE-to-Markdown path. It must reject PDF master, column,
+font, CSS, PageTemplate, geometry, and margin authority anywhere in the bundle.
+The emitted handoff records its canonical filename and the SHA-256 of normalized
+STUDENT MANUSCRIPT. Handoff preflight verifies both immediately before Typesetter
+acceptance; mismatch is a hard fail, never an auto-correction.
+
 END ARC CONTENT BUNDLE CONTRACT V1.6
