@@ -89,6 +89,15 @@ Examples:
 - blank page removed → Typesetter rebuilds page structure
 - storage parent mismatch → Publisher/Drive adapter repairs placement and rechecks exact FILE_ID
 
+PDF preflight repair loop:
+1. classify the rendered finding through the manifest-selected auto-fix controller
+2. AUTO_FIX may change only allowlisted Typesetter profile values
+3. re-render and rerun the same preflight
+4. stop after two attempts or an identical finding fingerprint
+5. answer/item-count/source-fidelity/broken-glyph defects return to the owning content stage
+
+Auto-fix must never edit locked student wording, answer keys, question count, or source text.
+
 ## 5. USER-JUDGMENT STOPS
 Ask the user only for genuine preference decisions, such as:
 - competing visual identities with no approved ARC precedent

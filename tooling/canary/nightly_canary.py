@@ -34,6 +34,7 @@ def load_module(name: str, path: Path):
 serializer = load_module("arc_handoff_serializer", ROOT / "tooling/handoff/handoff_serializer.py")
 handoff_gate = load_module("arc_handoff_preflight", ROOT / "tooling/handoff/handoff_preflight.py")
 pdf_gate = load_module("arc_pdf_preflight", ROOT / "tooling/pdf_qc/pdf_preflight.py")
+autofix = load_module("arc_pdf_autofix", ROOT / "tooling/pdf_qc/autofix_controller.py")
 
 
 def parse_sections(manuscript: str) -> list[tuple[str, str]]:
@@ -52,7 +53,9 @@ def dense_body(text: str) -> str:
     return "\n\n".join([normalized] * 4)
 
 
-def typeset_core(manuscript: str, output: Path) -> dict[str, Any]:
+def typeset_core(manuscript: str, output: Path, profile: dict[str, Any] | None = None) -> dict[str, Any]:
+    profile = profile or {}
+    body_size = float(profile.get("body_size", 9.9))
     sections = parse_sections(manuscript)
     doc = fitz.open()
     cover = doc.new_page(width=A4_W, height=A4_H)
@@ -70,7 +73,7 @@ def typeset_core(manuscript: str, output: Path) -> dict[str, Any]:
         remaining = page.insert_textbox(
             fitz.Rect(58, 125, A4_W - 58, 768),
             dense_body(body),
-            fontsize=9.9,
+            fontsize=body_size,
             fontname="helv",
             lineheight=1.54,
             color=(0.10, 0.12, 0.15),
@@ -117,7 +120,13 @@ def run(fixture_path: Path, output_dir: Path) -> dict[str, Any]:
 
     manuscript = handoff_gate.section(handoff_text, "STUDENT MANUSCRIPT").strip()
     pdf_path = output_dir / "KOR_CORE_CANARY_V1.pdf"
-    typeset_result = typeset_core(manuscript, pdf_path)
+    injected_path = output_dir / "_fault_small_font.pdf"
+    injected_profile = {"body_size": 8.5, "columns": 1}
+    typeset_core(manuscript, injected_path, injected_profile)
+    injected_result = pdf_gate.analyze_pdf(injected_path, "ARC_CORE")
+    autofix_plan = autofix.build_plan(injected_result, "ARC_CORE")
+    fixed_profile = autofix.apply_profile_fixes(injected_profile, autofix_plan)
+    typeset_result = typeset_core(manuscript, pdf_path, fixed_profile)
     render_dir = output_dir / "render"
     pdf_result = pdf_gate.analyze_pdf(pdf_path, "ARC_CORE", render_dir=render_dir, dpi=144)
     fault_results = run_faults(fixture, manifest)
@@ -136,6 +145,8 @@ def run(fixture_path: Path, output_dir: Path) -> dict[str, Any]:
         failures.append("STUDENT_METADATA_LEAK")
     if missed_faults:
         failures.append("FAULT_INJECTION")
+    if injected_result["status"] != "FAIL" or autofix_plan["decision"] != "AUTO_FIX" or fixed_profile.get("body_size") != 9.9:
+        failures.append("AUTO_FIX_EXERCISE")
 
     return {
         "fixture_id": fixture["fixture_id"],
@@ -152,6 +163,7 @@ def run(fixture_path: Path, output_dir: Path) -> dict[str, Any]:
         "typeset": typeset_result,
         "pdf_qc": {"page_count": pdf_result["page_count"], "fail_count": pdf_result["fail_count"], "warn_count": pdf_result["warn_count"], "pages": pdf_result["pages"]},
         "fault_injection": fault_results,
+        "auto_fix": {"initial_status": injected_result["status"], "plan": autofix_plan, "fixed_profile": fixed_profile, "retest_status": pdf_result["status"]},
         "forbidden_pdf_text": forbidden_text,
     }
 

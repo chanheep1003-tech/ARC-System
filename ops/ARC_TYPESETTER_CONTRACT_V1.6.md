@@ -297,4 +297,14 @@ Before ARC_N PDF_QC_STATUS=PASS, executable preflight must verify:
 An expected blank page is not an EMPTY_PAGE warning. Any nonblank content on a
 required blank page, missing answer key, or count mismatch is a hard fail.
 
+## 15. PREFLIGHT AUTO-FIX BOUNDARY
+Typesetter may automatically repair only manifest-allowlisted layout profile
+values such as CORE column count, body size/weight, semantic reflow, heading
+keep rules, A4 size, safe margins, and required ARC_N blank pages.
+
+The repaired artifact must be re-rendered and pass the same PDF preflight.
+The loop is capped at two attempts and stops on an unchanged finding
+fingerprint. Answer, item-count, source-fidelity, broken-glyph, raw-markup,
+student-metadata, and unknown defects are never silently rewritten.
+
 END ARC TYPESETTER CONTRACT V1.6

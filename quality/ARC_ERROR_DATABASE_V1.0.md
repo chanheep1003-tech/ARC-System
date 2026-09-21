@@ -357,6 +357,28 @@ LIMITATION: Synthetic content; exact school-source and semantic item-quality val
 RECURRENCE_COUNT: 0
 ```
 
+### ERR-20260921-PDF-AUTOFIX-001
+```yaml
+ERROR_ID: ERR-20260921-PDF-AUTOFIX-001
+DATE: 2026-09-21
+SUBJECT: PDF QC COMMON
+ERROR_CODE: ERR-PIPELINE-002
+SEVERITY: S1
+DETECTED_STAGE: EVENING_INTEGRATION
+HUMAN_FOUND: false
+DESCRIPTION: PDF preflight detected defects but had no executable, bounded policy for safe automatic repair and retry.
+EXPECTED: Eligible layout defects are mapped to Typesetter-owned profile changes, rerendered, and rechecked without touching locked content.
+ACTUAL: A FAIL required ad hoc repair logic outside the executable pipeline.
+ROOT_CAUSE: Preflight reporting and Typesetter repair ownership were specified but not connected by an allowlisted controller.
+FIX_APPLIED: Added auto-fix classifier/profile mutator, two-attempt and no-progress guards, product isolation, CI smoke, and KOR CORE fail-to-pass exercise.
+PREVENTION_RULE: PDF_AUTOFIX_CONTROLLER=PASS; LOCKED_CONTENT_MUTATION=0; MAX_ATTEMPTS=2
+REGRESSION_BENCH_ID: KOR-CORE-CANARY-V1-AUTOFIX
+REGRESSION_STATUS: PASS
+STATUS: FIXED_CANARY_SCOPE
+LIMITATION: Production renderer adapters beyond the fixed KOR canary remain to be connected.
+RECURRENCE_COUNT: 0
+```
+
 ## 9. MONTHLY REVIEW
 시험기간 중 또는 10세트 생성마다:
 - OPEN/RECURRED 오류 확인

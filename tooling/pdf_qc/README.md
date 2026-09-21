@@ -11,6 +11,11 @@ python tooling/pdf_qc/pdf_preflight.py output.pdf \
 
 PyMuPDF performs coordinate-level screening plus product-aware checks. ARC CORE adds one-column flow detection, sparse-page/occupancy analysis, typography metrics, heading-orphan screening, raw-markup and production-metadata leak checks. If `pdftoppm` is installed, it is preferred for raster verification; otherwise PyMuPDF renders pages.
 
+`autofix_controller.py` converts eligible preflight findings into a bounded,
+allowlisted Typesetter-profile repair plan. It never mutates locked content and
+returns content/count/source defects upstream. A repeated finding fingerprint
+or more than two attempts becomes HOLD.
+
 Behavioral smoke test:
 
 ```bash

@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.8-dev
+  version: 1.8.9-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -93,6 +93,9 @@ runtime:
   actual_difficulty_reclassification_gate: required
   qa_evidence_schema_gate: required
   content_qa_runner_gate: required_when_executable
+  pdf_autofix_gate: required
+  pdf_autofix_max_attempts: 2
+  pdf_autofix_content_mutation: forbidden
   korean_original_source_lock: required_when_source_text_used
   korean_source_text_fidelity: EXACT_ONLY
   korean_source_text_checksum: required
@@ -332,6 +335,8 @@ tooling:
   similarity_calibration: tooling/similarity/calibrate_similarity.py
   pdf_preflight: tooling/pdf_qc/pdf_preflight.py
   pdf_preflight_smoke_test: tooling/pdf_qc/test_preflight_smoke.py
+  pdf_autofix_controller: tooling/pdf_qc/autofix_controller.py
+  pdf_autofix_smoke_test: tooling/pdf_qc/test_autofix_controller.py
   handoff_preflight: tooling/handoff/handoff_preflight.py
   handoff_preflight_smoke_test: tooling/handoff/test_handoff_preflight.py
   handoff_serializer: tooling/handoff/handoff_serializer.py

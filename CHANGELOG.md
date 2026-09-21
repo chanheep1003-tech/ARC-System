@@ -1,3 +1,10 @@
+## 1.8.9-dev — 2026-09-21
+- Added a bounded PDF preflight auto-fix controller. Only allowlisted Typesetter profile values may change; locked wording, answers, item counts and source text cannot be auto-mutated.
+- Added loop guards: maximum two attempts, identical-fingerprint no-progress detection, unknown-defect HOLD and cross-product rule-leak HOLD.
+- Connected the KOR CORE canary to an actual fail → classify → profile repair → re-render → PASS cycle by injecting an 8.5pt body defect and restoring the active 9.9pt token.
+- Added explicit isolation coverage so a non-active `ARC_KOR_ANNOTATION` two-column writing-print request cannot enter the ARC CORE/N°/FINAL production serializer.
+- Re-ran KOR CORE and KOR N° canaries after the Social A worksheet source-lock update; both remain CANARY_PASS.
+
 ## 1.8.8-dev — 2026-09-21
 - Registered the two current 2026 통합사회2-A school worksheets in the canonical Drive A-part folder and locked their Drive IDs, filenames, byte sizes, page counts and SHA-256 values.
 - Added a machine-readable Social A school-source registry and activated it through the system manifest.

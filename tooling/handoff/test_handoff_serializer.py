@@ -57,6 +57,15 @@ def run() -> None:
     else:
         raise AssertionError("student metadata leak was not rejected")
 
+    annotation = base_bundle()
+    annotation["product_mode"] = "ARC_KOR_ANNOTATION"
+    try:
+        mod.serialize_bundle(annotation, manifest)
+    except mod.SerializationError as exc:
+        assert "unsupported product_mode" in str(exc)
+    else:
+        raise AssertionError("non-active annotation product leaked into ARC production serializer")
+
     print("ARC HANDOFF SERIALIZER SMOKE: PASS")
 
 

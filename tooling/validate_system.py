@@ -123,6 +123,9 @@ def main() -> int:
         "actual_difficulty_reclassification_gate": "required",
         "qa_evidence_schema_gate": "required",
         "content_qa_runner_gate": "required_when_executable",
+        "pdf_autofix_gate": "required",
+        "pdf_autofix_max_attempts": 2,
+        "pdf_autofix_content_mutation": "forbidden",
         "korean_original_source_lock": "required_when_source_text_used",
         "korean_source_text_fidelity": "EXACT_ONLY",
         "korean_source_text_checksum": "required",
@@ -229,7 +232,7 @@ def main() -> int:
     require_markers(
         errors,
         pdf_preflight_policy,
-        ["ARC PDF PREFLIGHT V1.2", "CORE_TWO_COLUMN_FLOW", "vertical interval union"],
+        ["ARC PDF PREFLIGHT V1.2", "CORE_TWO_COLUMN_FLOW", "vertical interval union", "BOUNDED AUTO-FIX CONNECTION"],
     )
     require_markers(
         errors,
@@ -261,6 +264,8 @@ def main() -> int:
     for key in (
         "pdf_preflight",
         "pdf_preflight_smoke_test",
+        "pdf_autofix_controller",
+        "pdf_autofix_smoke_test",
         "handoff_preflight",
         "handoff_preflight_smoke_test",
         "content_qa_gate",
@@ -289,6 +294,11 @@ def main() -> int:
             "KOR_SOURCE_ORIGIN_FORBIDDEN",
             "KOR_SOURCE_NOT_EXACT",
         ],
+    )
+    require_markers(
+        errors,
+        tooling["pdf_autofix_controller"],
+        ["AUTO_FIX_NO_PROGRESS", "LOCKED_CONTENT_OR_COUNT_DEFECT", "PRODUCT_RULE_LEAK", "RESTORE_CORE_BODY_9_9PT"],
     )
     require_markers(
         errors,

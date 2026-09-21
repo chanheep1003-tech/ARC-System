@@ -71,6 +71,17 @@ PASS: hard issue 없음
 WARN: reflow 또는 육안 확인 필요
 FAIL: reading/solving/brand/product-mode integrity에 영향을 주는 hard issue
 
+## BOUNDED AUTO-FIX CONNECTION
+`tooling/pdf_qc/autofix_controller.py`가 FAIL/WARN 코드를 분류한다.
+
+- AUTO_FIX: Typesetter 소유의 allowlisted layout profile만 변경 후 재렌더·동일 preflight 재실행
+- CONTENT_RETURN: 정답, 문항 수, 원문, glyph, raw markup, 학생 metadata 등 locked-content 계층으로 반환
+- HOLD: 미등록 오류, 제품 규칙 누출, 2회 초과 또는 동일 fingerprint 반복
+
+AUTO_FIX는 CORE 1단, 9.9pt/Regular, 의미 단위 reflow, heading keep,
+A4/safe margin, ARC_N 필수 공백 페이지 같은 조판 상태만 복구한다.
+학생 원문·문항·선지·정답은 절대 변경하지 않는다.
+
 ## LIMIT
 PDF bbox 분석은 원본 DOM semantic class를 직접 알 수 없다.
 heading/column detection은 conservative heuristic이며 WARN은 human visual review로 확인한다.
