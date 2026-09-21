@@ -1,3 +1,10 @@
+## 1.8.10-dev — 2026-09-22
+- Added a manifest-owned Typesetter gateway as the single executable admission point for HTML and ReportLab routes.
+- The gateway runs handoff preflight, rejects inactive products, resolves the active PDF/HTML masters and PDF QC tools at runtime, and does not expose caller layout/template overrides.
+- Added explicit ARC_CORE / ARC_N / ARC_FINAL profile isolation and route-consistency checks. HTML and ReportLab must share ruleset, product invariants, preflight and bounded auto-fix policy.
+- Routed both fixed KOR CORE and KOR N° canaries through the gateway before PDF generation; independent canary-side Manifest profile selection is removed.
+- Extended CI and static validation to compile and test the gateway and to trigger on Typesetter contract/template changes.
+
 ## 1.8.9-dev — 2026-09-21
 - Added a bounded PDF preflight auto-fix controller. Only allowlisted Typesetter profile values may change; locked wording, answers, item counts and source text cannot be auto-mutated.
 - Added loop guards: maximum two attempts, identical-fingerprint no-progress detection, unknown-defect HOLD and cross-product rule-leak HOLD.

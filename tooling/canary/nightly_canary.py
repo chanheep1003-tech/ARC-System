@@ -35,6 +35,7 @@ serializer = load_module("arc_handoff_serializer", ROOT / "tooling/handoff/hando
 handoff_gate = load_module("arc_handoff_preflight", ROOT / "tooling/handoff/handoff_preflight.py")
 pdf_gate = load_module("arc_pdf_preflight", ROOT / "tooling/pdf_qc/pdf_preflight.py")
 autofix = load_module("arc_pdf_autofix", ROOT / "tooling/pdf_qc/autofix_controller.py")
+typesetter_gateway = load_module("arc_typesetter_gateway", ROOT / "tooling/typeset/typesetter_gateway.py")
 
 
 def parse_sections(manuscript: str) -> list[tuple[str, str]]:
@@ -117,11 +118,13 @@ def run(fixture_path: Path, output_dir: Path) -> dict[str, Any]:
     handoff_path = output_dir / filename
     handoff_path.write_text(handoff_text, encoding="utf-8")
     handoff_result = handoff_gate.analyze(handoff_path, manifest_path)
+    render_plan = typesetter_gateway.resolve_job(handoff_path, manifest_path, renderer="reportlab")
 
     manuscript = handoff_gate.section(handoff_text, "STUDENT MANUSCRIPT").strip()
     pdf_path = output_dir / "KOR_CORE_CANARY_V1.pdf"
     injected_path = output_dir / "_fault_small_font.pdf"
-    injected_profile = {"body_size": 8.5, "columns": 1}
+    injected_profile = dict(render_plan["profile"])
+    injected_profile["body_size"] = 8.5
     typeset_core(manuscript, injected_path, injected_profile)
     injected_result = pdf_gate.analyze_pdf(injected_path, "ARC_CORE")
     autofix_plan = autofix.build_plan(injected_result, "ARC_CORE")
@@ -161,6 +164,7 @@ def run(fixture_path: Path, output_dir: Path) -> dict[str, Any]:
         },
         "artifacts": {"handoff": str(handoff_path), "pdf": str(pdf_path), "render_dir": str(render_dir)},
         "typeset": typeset_result,
+        "render_plan": render_plan,
         "pdf_qc": {"page_count": pdf_result["page_count"], "fail_count": pdf_result["fail_count"], "warn_count": pdf_result["warn_count"], "pages": pdf_result["pages"]},
         "fault_injection": fault_results,
         "auto_fix": {"initial_status": injected_result["status"], "plan": autofix_plan, "fixed_profile": fixed_profile, "retest_status": pdf_result["status"]},

@@ -379,6 +379,28 @@ LIMITATION: Production renderer adapters beyond the fixed KOR canary remain to b
 RECURRENCE_COUNT: 0
 ```
 
+### ERR-20260922-TYPESET-AUTH-001
+```yaml
+ERROR_ID: ERR-20260922-TYPESET-AUTH-001
+DATE: 2026-09-22
+SUBJECT: TYPESETTER COMMON
+ERROR_CODE: ERR-PIPELINE-003
+SEVERITY: S1
+DETECTED_STAGE: NIGHTLY_SIMULATION
+HUMAN_FOUND: false
+DESCRIPTION: Executable KOR canaries selected product layout profiles inside each canary, so renderer paths could drift despite a shared written contract.
+EXPECTED: Every HTML/ReportLab render resolves active assets and product invariants through one manifest-owned Typesetter admission point.
+ACTUAL: Handoff and PDF gates were shared, but each canary directly chose columns, body size and blank-page behavior.
+ROOT_CAUSE: Contract-level Typesetter authority was not represented by a shared executable gateway.
+FIX_APPLIED: Added Typesetter gateway, route-invariant comparison, active-path resolution, inactive-product rejection, three-product isolation smoke, and routed CORE/N canaries through it.
+PREVENTION_RULE: TYPESETTER_SINGLE_AUTHORITY=PASS; RENDERER_ROUTE_CONSISTENCY=PASS; PRODUCT_ISOLATION=PASS
+REGRESSION_BENCH_ID: TYPESETTER-GATEWAY-SMOKE-V1
+REGRESSION_STATUS: PASS_LOCAL
+STATUS: FIXED_DEV
+LIMITATION: Production model-authored source inputs and non-KOR subject render adapters remain separately gated.
+RECURRENCE_COUNT: 0
+```
+
 ## 9. MONTHLY REVIEW
 시험기간 중 또는 10세트 생성마다:
 - OPEN/RECURRED 오류 확인

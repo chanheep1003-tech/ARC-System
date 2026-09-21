@@ -15,6 +15,7 @@ REQUEST
 → GENERATOR
 → CONTENT_QA
 → CONTENT_LOCK
+→ TYPESETTER_GATEWAY
 → TYPESETTER
 → PDF_QC
 → PUBLISHER
@@ -35,6 +36,12 @@ CONTENT_ONLY:
 
 TYPESET_ONLY:
 - consume an already locked CONTENT_BUNDLE
+- serialize/verify the canonical handoff, then admit it through `tooling/typeset/typesetter_gateway.py`
+
+Every END_TO_END and TYPESET_ONLY route must receive its active master paths,
+product profile, PDF preflight and bounded auto-fix controller from the
+TYPESETTER_GATEWAY. HTML and ReportLab are renderer adapters beneath that same
+authority; neither may resolve product rules independently.
 
 PUBLISH_ONLY:
 - consume an already typeset PDF + TYPESET_QC_REPORT

@@ -29,6 +29,24 @@ For every typesetting task read only:
 
 Do NOT load subject MASTER/GOLD/textbook/worksheet/source bank by default.
 
+### 1-B. SINGLE EXECUTABLE AUTHORITY
+Every HTML or ReportLab render must first pass
+`tooling/typeset/typesetter_gateway.py`. The gateway is the only executable
+owner of active template selection and product layout profiles. A renderer may
+consume its admitted plan; it may not independently select a PDF master, HTML
+master, column count, body-size token, blank-page sequence, answer-key mode,
+preflight tool, or auto-fix controller.
+
+The gateway resolves all paths from the current `SYSTEM_MANIFEST.yaml`, runs
+handoff preflight, rejects inactive products, and emits the same semantic
+product invariants for HTML and ReportLab. Only `renderer_source` may differ by
+route. A caller-supplied template/version/layout override is not part of the
+interface and must be rejected before rendering.
+
+`ARC_CORE`, `ARC_N`, and `ARC_FINAL` profiles are isolated. In particular,
+ARC_N blank-page/inline-answer rules may never enter FINAL, and CORE one-column
+rules may never be relaxed by either renderer.
+
 Before acceptance, run the manifest-selected handoff preflight. Handoff-local
 layout commands are non-authoritative and must not be executed. A stale ruleset,
 hardcoded PDF master, CORE two-column directive, sub-floor body size, concrete

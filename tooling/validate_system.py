@@ -126,6 +126,10 @@ def main() -> int:
         "pdf_autofix_gate": "required",
         "pdf_autofix_max_attempts": 2,
         "pdf_autofix_content_mutation": "forbidden",
+        "typesetter_single_authority": "required",
+        "typesetter_manifest_resolution": "required",
+        "typesetter_product_isolation": "required",
+        "typesetter_renderer_route_consistency": "required",
         "korean_original_source_lock": "required_when_source_text_used",
         "korean_source_text_fidelity": "EXACT_ONLY",
         "korean_source_text_checksum": "required",
@@ -266,6 +270,8 @@ def main() -> int:
         "pdf_preflight_smoke_test",
         "pdf_autofix_controller",
         "pdf_autofix_smoke_test",
+        "typesetter_gateway",
+        "typesetter_gateway_smoke_test",
         "handoff_preflight",
         "handoff_preflight_smoke_test",
         "content_qa_gate",
@@ -299,6 +305,16 @@ def main() -> int:
         errors,
         tooling["pdf_autofix_controller"],
         ["AUTO_FIX_NO_PROGRESS", "LOCKED_CONTENT_OR_COUNT_DEFECT", "PRODUCT_RULE_LEAK", "RESTORE_CORE_BODY_9_9PT"],
+    )
+    require_markers(
+        errors,
+        tooling["typesetter_gateway"],
+        [
+            "TYPESETTER_GATEWAY",
+            "typesetter_single_authority",
+            "typesetter_product_isolation",
+            "route_invariants",
+        ],
     )
     require_markers(
         errors,

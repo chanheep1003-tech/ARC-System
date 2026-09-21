@@ -19,6 +19,8 @@ def run() -> None:
         result = mod.run(ROOT / "quality/canary/KOR_CORE_CANARY_V1.yaml", Path(td))
         assert result["status"] == "CANARY_PASS", result
         assert result["typeset"]["page_count"] == 4, result
+        assert result["render_plan"]["authority"] == "TYPESETTER_GATEWAY", result
+        assert result["render_plan"]["profile"]["columns"] == 1, result
         assert all(item["status"] == "BLOCKED" for item in result["fault_injection"]), result
     print("ARC KOR CORE NIGHTLY CANARY: PASS")
 

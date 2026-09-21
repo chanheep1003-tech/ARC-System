@@ -15,4 +15,6 @@ with tempfile.TemporaryDirectory() as td:
     result = mod.run(ROOT / "quality/canary/KOR_N_CANARY_V1.yaml", Path(td))
     assert result["status"] == "CANARY_PASS", result
     assert result["typeset"] == {"status": "PASS", "page_count": 6, "question_count": 10, "answer_count": 10}
+    assert result["render_plan"]["authority"] == "TYPESETTER_GATEWAY", result
+    assert result["render_plan"]["profile"]["columns"] == 2, result
 print("ARC KOR N CANARY: PASS")

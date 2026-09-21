@@ -10,6 +10,8 @@ on:
       - 'engine/common/**'
       - 'ops/ARC_GENERATOR_CONTRACT_*'
       - 'ops/ARC_CONTENT_BUNDLE_CONTRACT_*'
+      - 'ops/ARC_TYPESETTER_CONTRACT_*'
+      - 'templates/**'
       - 'subjects/KOREAN_MASTER_*'
       - 'SYSTEM_MANIFEST.yaml'
       - '.github/workflows/arc-tooling-smoke.yml'
@@ -38,6 +40,8 @@ jobs:
           python -m py_compile tooling/pdf_qc/test_preflight_smoke.py
           python -m py_compile tooling/pdf_qc/autofix_controller.py
           python -m py_compile tooling/pdf_qc/test_autofix_controller.py
+          python -m py_compile tooling/typeset/typesetter_gateway.py
+          python -m py_compile tooling/typeset/test_typesetter_gateway.py
           python -m py_compile tooling/pdf_qc/xmark_detect.py
           python -m py_compile tooling/handoff/handoff_preflight.py
           python -m py_compile tooling/handoff/test_handoff_preflight.py
@@ -90,6 +94,9 @@ jobs:
 
       - name: Run PDF auto-fix controller smoke
         run: python tooling/pdf_qc/test_autofix_controller.py
+
+      - name: Run manifest-owned Typesetter gateway smoke
+        run: python tooling/typeset/test_typesetter_gateway.py
 
       - name: Run handoff preflight behavioral smoke
         run: python tooling/handoff/test_handoff_preflight.py

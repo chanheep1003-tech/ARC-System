@@ -30,6 +30,7 @@ serializer = load_module("arc_handoff_serializer", ROOT / "tooling/handoff/hando
 handoff_gate = load_module("arc_handoff_preflight", ROOT / "tooling/handoff/handoff_preflight.py")
 content_gate = load_module("arc_content_qa_gate", ROOT / "tooling/content_qa/content_qa_gate.py")
 pdf_gate = load_module("arc_pdf_preflight", ROOT / "tooling/pdf_qc/pdf_preflight.py")
+typesetter_gateway = load_module("arc_typesetter_gateway", ROOT / "tooling/typeset/typesetter_gateway.py")
 
 
 def make_qa_evidence(answers: dict[int, int]) -> dict[str, Any]:
@@ -78,7 +79,9 @@ def parse_questions(manuscript: str) -> list[tuple[int, str]]:
     return questions
 
 
-def typeset_n(manuscript: str, answers: dict[int, int], output: Path) -> dict[str, Any]:
+def typeset_n(manuscript: str, answers: dict[int, int], output: Path, profile: dict[str, Any]) -> dict[str, Any]:
+    if profile.get("columns") != 2 or not profile.get("cover_verso_blank") or not profile.get("answer_separator_blank"):
+        raise ValueError("ARC_N product profile isolation failed")
     questions = parse_questions(manuscript)
     if len(questions) != 10:
         raise ValueError(f"expected 10 questions, found {len(questions)}")
@@ -139,10 +142,11 @@ def run(fixture_path: Path, output_dir: Path) -> dict[str, Any]:
     handoff_path = output_dir / filename
     handoff_path.write_text(handoff_text, encoding="utf-8")
     handoff_result = handoff_gate.analyze(handoff_path, manifest_path)
+    render_plan = typesetter_gateway.resolve_job(handoff_path, manifest_path, renderer="reportlab")
 
     manuscript = handoff_gate.section(handoff_text, "STUDENT MANUSCRIPT").strip()
     pdf_path = output_dir / "KOR_N_CANARY_V1.pdf"
-    typeset_result = typeset_n(manuscript, answers, pdf_path)
+    typeset_result = typeset_n(manuscript, answers, pdf_path, render_plan["profile"])
     pdf_result = pdf_gate.analyze_pdf(pdf_path, "ARC_N", render_dir=output_dir / "render", dpi=144, expected_item_count=10)
 
     fault_results = []
@@ -170,6 +174,7 @@ def run(fixture_path: Path, output_dir: Path) -> dict[str, Any]:
         "status": "CANARY_FAIL" if failures else "CANARY_PASS", "failures": failures,
         "stages": {"content_qa": qa_result["status"], "serializer": "PASS", "handoff_preflight": handoff_result["status"], "typesetter": typeset_result["status"], "pdf_preflight": pdf_result["status"]},
         "typeset": typeset_result, "pdf_qc": {"status": pdf_result["status"], "page_count": pdf_result["page_count"], "fail_count": pdf_result["fail_count"], "warn_count": pdf_result["warn_count"]},
+        "render_plan": render_plan,
         "fault_injection": fault_results,
         "artifacts": {"qa_evidence": str(qa_path), "handoff": str(handoff_path), "pdf": str(pdf_path), "render_dir": str(output_dir / "render")},
     }
