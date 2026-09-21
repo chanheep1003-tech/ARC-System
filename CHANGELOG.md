@@ -1,3 +1,9 @@
+## 1.8.8-dev — 2026-09-21
+- Registered the two current 2026 통합사회2-A school worksheets in the canonical Drive A-part folder and locked their Drive IDs, filenames, byte sizes, page counts and SHA-256 values.
+- Added a machine-readable Social A school-source registry and activated it through the system manifest.
+- Split the former broad Social A scope into justice concepts, Aristotle, punishment theory and substantive distribution criteria so coverage and evidence can be audited independently.
+- Social A generation now treats blank worksheet response cells as unfilled student activity space, forbids invented completion, and blocks BANK_PASS when the canonical source cannot be reopened or its integrity fields change.
+
 ## 1.8.7-dev — 2026-09-21
 - Added a fixed 10-item KOR ARC_N canary that executes structural content QA, canonical serialization, handoff preflight, two-column typesetting, PDF rendering and PDF preflight.
 - Added executable ARC_N page-order checks: cover verso must be completely blank, the page immediately before ANSWER KEY must be completely blank, and question/answer counts must equal the expected item count.

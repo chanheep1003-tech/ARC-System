@@ -121,7 +121,10 @@ COVERAGE:
 
 |CONCEPT_ID|PRIORITY|SOURCE_SCOPE|핵심 평가축|STATUS|
 |---|---:|---|---|---|
-|SOC-A-VIEW|R|A: 천재 p36~43 + A학습지|관점·정의·사례 적용|UNMEASURED|
+|SOC-A-JUSTICE-CONCEPT|R|A: 천재 p36~43 + A학습지 1호|불평등·평등·형평성·정의 구분, 정의의 필요성|UNMEASURED|
+|SOC-A-ARISTOTLE|R|A: 학습지 1호|일반적·분배적·교정적·교환적 정의 구분과 사례 적용|UNMEASURED|
+|SOC-A-PUNISHMENT|R|A: 학습지 1호|칸트 응보주의와 베카리아 공리주의의 명시 주장·정당한 함의|UNMEASURED|
+|SOC-A-DISTRIBUTION|R|A: 학습지 2호|능력·업적·필요 기준의 특성·장점·한계와 사례 적용|UNMEASURED|
 |SOC-A-THOUGHT_MAP|R|『생각의 지도』 p156~233|동서양 사고, 속성/관계·맥락, 평균→개인 오류|UNMEASURED|
 |SOC-C-RIGHTS|R|C: 천재 p8~23 + C학습지 비X 영역|인권·기본권·헌법 적용|UNMEASURED|
 |SOC-C-REMEDY|R|동일|권리구제 기관·절차·효과|UNMEASURED|
@@ -133,6 +136,8 @@ COVERAGE:
 |SOC-X-C_USER_MARK|X|C 학습지 손글씨 X 영역|정답근거/오답필수지식/<보기>/서답 채점요소 모두 금지|BLOCKED|
 
 추가 규칙:
+- A학습지 원문 식별자는 `quality/source/SOC_A_SCHOOL_WORKSHEETS_2026_V1.0.yaml`에서 Drive ID와 SHA-256으로 잠근다.
+- A학습지의 빈 기입란은 제외 범위가 아니며, 근거 없는 내용을 보충하는 생성 슬롯도 아니다.
 - `USER_X_EXCLUSION`이 모든 하위 범위보다 우선한다.
 - 종합세트 인구 비중 기본 상한 20%.
 - B 단독 세트는 B학습지 직접 근거 자료/문항 비중 최소 60%.

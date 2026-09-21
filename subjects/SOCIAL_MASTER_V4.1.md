@@ -22,12 +22,24 @@ ROOT: `/Google Drive/N제 시스템/03_통합사회`
 9) 최신 프롬프트/색인
 
 학교 학습지 경로:
-- A: `/Google Drive/N제 시스템/03_통합사회/학교자료/학교학습지/A파트/`
+- A: `/Google Drive/N제 시스템/03_통합사회/학교자료/학교학습지/A파트/` (folder ID `18RevOW6U-2CMI9pSzsz-2CpTiel88K_b`)
+  - 1호 `정의의 의미와 필요성` (Drive ID `1HGx0YROa8nCUzCyEcaN-K794yRILFNbr`)
+  - 2호 `정의의 실질적 기준` (Drive ID `1KBxvZ5tNw31vi5MCOq1G8vqQPH_-NYTG`)
 - B: `/Google Drive/N제 시스템/03_통합사회/학교자료/학교학습지/B파트/통합사회2_B파트_학습지_세계화·인구.pdf`
 - C: `/Google Drive/N제 시스템/03_통합사회/학교자료/학교학습지/C파트/통합사회2_C파트_학습지.pdf`
 
+### 1-1. A파트 학교 원문 잠금
+`quality/source/SOC_A_SCHOOL_WORKSHEETS_2026_V1.0.yaml`을 A파트의 canonical source registry로 사용한다.
+
+- 1호 직접 범위: 불평등·평등·형평성·정의, 아리스토텔레스의 일반적/분배적/교정적/교환적 정의, 정의가 요청되는 이유, 롤스, 칸트와 베카리아의 형벌론.
+- 2호 직접 범위: 능력·업적·필요 기준의 특성·장점·한계와 학교 학습지에 제시된 적용 사례.
+- 페이지 수·파일 크기·SHA-256·Drive ID가 registry와 모두 일치해야 `WORKSHEET_READ=PASS`로 판정한다.
+- PDF의 빈 기입란은 학생 활동 공간이며 제외 표시가 아니다. 빈칸을 임의의 교사 정답이나 추가 사실로 채우지 않는다.
+- 학습지의 문장을 외부 철학 지식으로 확대하지 않는다. 칸트·베카리아 문항은 1호에 명시된 진술 또는 범위 내 정당한 함의만 사용한다.
+- 원본을 열지 못했거나 체크섬이 달라지면 `SOURCE_CHANGED_OR_UNREADABLE`로 중단하고 BANK_PASS를 금지한다.
+
 ## 2. SCOPE LOCK — 2026-09-16 최신 학교자료 반영
-A = 천재 p36~43 + 『생각의 지도』 p156~233 + A학습지
+A = 천재 p36~43 + 『생각의 지도』 p156~233 + A학습지 1호·2호
 B = 천재 p98~107 + p124~133 + B학습지
 C = 천재 p8~23 + C학습지
 OUT_OF_SCOPE_AFTER_20260915 = p44~49, p24~26

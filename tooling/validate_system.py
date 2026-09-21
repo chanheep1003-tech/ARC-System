@@ -127,10 +127,27 @@ def main() -> int:
         "korean_source_text_fidelity": "EXACT_ONLY",
         "korean_source_text_checksum": "required",
         "korean_generated_output_as_source": "forbidden",
+        "social_school_source_integrity_gate": "required",
     }
     for key, expected in required_runtime.items():
         if runtime.get(key) != expected:
             errors.append(f"runtime.{key} must equal {expected!r}")
+
+    social_source_path = active["quality"].get("social_a_school_source_lock")
+    if not social_source_path or not (ROOT / social_source_path).is_file():
+        errors.append("active Social A school source lock is missing")
+    else:
+        social_sources = yaml.safe_load((ROOT / social_source_path).read_text(encoding="utf-8"))
+        sources = social_sources.get("sources", [])
+        if len(sources) != 2:
+            errors.append("Social A school source lock must contain exactly two canonical worksheets")
+        for source in sources:
+            if not re.fullmatch(r"[0-9a-f]{64}", str(source.get("sha256", ""))):
+                errors.append(f"invalid Social A source SHA-256: {source.get('source_id')}")
+            if not source.get("drive_id") or int(source.get("page_count", 0)) < 1:
+                errors.append(f"incomplete Social A source identity: {source.get('source_id')}")
+            if source.get("visual_review") != "PASS":
+                errors.append(f"Social A source lacks visual review PASS: {source.get('source_id')}")
 
     common_path = active["common_generation_engine"]["path"]
     pdf_master = active["layout"]["pdf_master"]
