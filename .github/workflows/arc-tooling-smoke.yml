@@ -43,6 +43,8 @@ jobs:
           python -m py_compile tooling/handoff/test_handoff_serializer.py
           python -m py_compile tooling/canary/nightly_canary.py
           python -m py_compile tooling/canary/test_nightly_canary.py
+          python -m py_compile tooling/canary/kor_n_canary.py
+          python -m py_compile tooling/canary/test_kor_n_canary.py
           python -m py_compile tooling/content_qa/content_qa_gate.py
           python -m py_compile tooling/content_qa/test_content_qa_gate.py
           python -m py_compile tooling/visual/arc_visual_render.py
@@ -62,6 +64,7 @@ jobs:
               'quality/governance/DEPRECATION_REGISTRY_V1.0.yaml',
               'quality/semantic/ARC_QA_EVIDENCE_SCHEMA_V1.0.yaml',
               'quality/canary/KOR_CORE_CANARY_V1.yaml',
+              'quality/canary/KOR_N_CANARY_V1.yaml',
           ]
           for f in files:
               yaml.safe_load(Path(f).read_text(encoding='utf-8'))
@@ -92,11 +95,17 @@ jobs:
       - name: Run fixed KOR CORE E2E canary
         run: python tooling/canary/nightly_canary.py --output-dir /tmp/arc-kor-canary --report /tmp/arc-kor-canary/canary-report.json
 
-      - name: Upload KOR CORE canary evidence
+      - name: Run fixed KOR N E2E canary
+        run: python tooling/canary/kor_n_canary.py --output-dir /tmp/arc-kor-n-canary --report /tmp/arc-kor-n-canary/canary-report.json
+
+      - name: Upload KOR canary evidence
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: kor-core-canary-${{ github.run_id }}
-          path: /tmp/arc-kor-canary
+          name: kor-canaries-${{ github.run_id }}
+          path: |
+            /tmp/arc-kor-canary
+            /tmp/arc-kor-n-canary
           retention-days: 7
 
       - name: Run Universal Independent Solve QA gate smoke

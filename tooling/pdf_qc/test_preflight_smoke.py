@@ -140,6 +140,16 @@ def run() -> None:
         result = mod.analyze_pdf(path, "ARC_CORE")
         assert "CORE_MAJOR_BOUNDARY_NOT_PAGE_START" in flag_types(result), result
 
+        # ARC_N page-order rules must not leak into ARC_FINAL.
+        doc = fitz.open()
+        p = doc.new_page(width=mod.A4_W, height=mod.A4_H)
+        p.insert_text((70, 90), "ARC FINAL summary", fontsize=12.0)
+        path = td / "final-isolation.pdf"
+        doc.save(path)
+        doc.close()
+        result = mod.analyze_pdf(path, "ARC_FINAL")
+        assert not any(flag.startswith("ARC_N_") for flag in flag_types(result)), result
+
     print("ARC PDF PREFLIGHT SMOKE: PASS")
 
 

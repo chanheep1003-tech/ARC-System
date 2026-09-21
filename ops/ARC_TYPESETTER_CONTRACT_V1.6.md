@@ -286,4 +286,15 @@ Do not ask merely because:
 - parent metadata needs rechecking
 - the next role is Publisher
 
+## 14. ARC_N EXECUTABLE PAGE-ORDER ACCEPTANCE
+Before ARC_N PDF_QC_STATUS=PASS, executable preflight must verify:
+- physical page 2 is completely blank
+- the page immediately after the last problem page is completely blank
+- ANSWER KEY starts exactly two physical pages after the last problem page
+- rendered question count equals locked ITEM_COUNT
+- rendered answer count equals locked ITEM_COUNT
+
+An expected blank page is not an EMPTY_PAGE warning. Any nonblank content on a
+required blank page, missing answer key, or count mismatch is a hard fail.
+
 END ARC TYPESETTER CONTRACT V1.6

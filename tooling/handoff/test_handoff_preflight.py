@@ -145,6 +145,9 @@ CONTENT_QA_RUNNER: PASS
 # STUDENT MANUSCRIPT
 {qa_manuscript}
 
+# ANSWER KEY — INTERNAL / DO NOT PRINT ON PROBLEM PAGES
+1: 3
+
 # QA EVIDENCE — INTERNAL / DO NOT PRINT
 Machine-readable payload: ARC_QA_EVIDENCE_SOC_001.yaml
 
@@ -179,6 +182,9 @@ STUDENT_MANUSCRIPT_SHA256: {missing_checksum}
 # STUDENT MANUSCRIPT
 {qa_manuscript}
 
+# ANSWER KEY — INTERNAL / DO NOT PRINT ON PROBLEM PAGES
+1: 3
+
 # QC STATUS — INTERNAL / DO NOT PRINT
 PASS
 """,
@@ -187,6 +193,11 @@ PASS
         result = mod.analyze(qa_missing, ROOT / "SYSTEM_MANIFEST.yaml")
         assert {"CONTENT_QA_META_INVALID", "QA_EVIDENCE_FILENAME_MISSING", "QA_EVIDENCE_SECTION_MISSING"} <= codes(result), result
         assert result["status"] == "FAIL", result
+
+        qa_bad_key = td / "ARC_HANDOFF_N_SOC_TEST-N-003_READY.md"
+        qa_bad_key.write_text(qa_good.read_text(encoding="utf-8").replace(qa_good.name, qa_bad_key.name).replace("ITEM_COUNT: 1", "ITEM_COUNT: 2"), encoding="utf-8")
+        result = mod.analyze(qa_bad_key, ROOT / "SYSTEM_MANIFEST.yaml")
+        assert "ANSWER_KEY_COUNT_MISMATCH" in codes(result), result
 
         tampered = td / "ARC_HANDOFF_CORE_SOC_TEST-TAMPER_READY.md"
         tampered.write_text(

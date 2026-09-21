@@ -335,6 +335,28 @@ LIMITATION: Synthetic pipeline fixture only; production model generation, Korean
 RECURRENCE_COUNT: 0
 ```
 
+### ERR-20260921-KOR-N-001
+```yaml
+ERROR_ID: ERR-20260921-KOR-N-001
+DATE: 2026-09-21
+SUBJECT: KOR ARC_N CANARY
+ERROR_CODE: ERR-PDF-008
+SEVERITY: S1
+DETECTED_STAGE: NIGHTLY_SIMULATION
+HUMAN_FOUND: false
+DESCRIPTION: The fixed canary covered CORE only; ARC_N answer count and mandatory blank-page sequence had no executable cross-stage canary.
+EXPECTED: A 10-item ARC_N fixture must pass QA, handoff, two-column typesetting, exact page order, answer-count and PDF preflight checks.
+ACTUAL: Rules existed in the manifest, but the PDF runner did not prove cover-verso blank, separator blank or 10-to-10 question/answer integrity.
+ROOT_CAUSE: Product-specific PDF sequence checks were not connected to the executable canary path.
+FIX_APPLIED: Added KOR_N_CANARY_V1, handoff answer-key count validation and PDF page-order/item-count gates.
+PREVENTION_RULE: KOR_N_CANARY=CANARY_PASS; ARC_N_QUESTION_COUNT=10; ARC_N_ANSWER_COUNT=10
+REGRESSION_BENCH_ID: KOR-N-CANARY-V1
+REGRESSION_STATUS: PASS
+STATUS: FIXED_CANARY_SCOPE
+LIMITATION: Synthetic content; exact school-source and semantic item-quality validation remain pending.
+RECURRENCE_COUNT: 0
+```
+
 ## 9. MONTHLY REVIEW
 시험기간 중 또는 10세트 생성마다:
 - OPEN/RECURRED 오류 확인

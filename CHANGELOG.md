@@ -1,3 +1,11 @@
+## 1.8.7-dev — 2026-09-21
+- Added a fixed 10-item KOR ARC_N canary that executes structural content QA, canonical serialization, handoff preflight, two-column typesetting, PDF rendering and PDF preflight.
+- Added executable ARC_N page-order checks: cover verso must be completely blank, the page immediately before ANSWER KEY must be completely blank, and question/answer counts must equal the expected item count.
+- Handoff preflight now parses the internal answer-key mapping and rejects missing, malformed or count-mismatched keys before Typesetter acceptance.
+- The generated six-page canary follows COVER → BLANK → two problem pages → BLANK → ANSWER KEY, with 10 questions and 10 answers. Rendered preflight completed with zero failures and zero warnings.
+- Added answer-key missing/short, stale PDF master and layout-directive fault injection. All four faults must be blocked for CANARY_PASS.
+- This is a synthetic pipeline fixture; it does not claim school-supplement source fidelity or production question quality.
+
 ## 1.8.6-dev — 2026-09-21
 - Added the canonical layout-blind CONTENT_BUNDLE → Markdown serializer. It pins the active ruleset, strips internal metadata, rejects layout authority, emits canonical filenames, and locks STUDENT MANUSCRIPT with SHA-256.
 - Upgraded handoff preflight to V1.3. All products now require lifecycle metadata and verify the declared filename and manuscript checksum; stale PDF master, CSS/ReportLab geometry, font-size, column, and student-ID contamination are checked across the complete handoff.

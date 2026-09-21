@@ -253,6 +253,9 @@ def main() -> int:
         "nightly_canary",
         "nightly_canary_smoke_test",
         "kor_core_canary_fixture",
+        "kor_n_canary",
+        "kor_n_canary_smoke_test",
+        "kor_n_canary_fixture",
     ):
         rel = tooling.get(key)
         if not isinstance(rel, str) or not (ROOT / rel).is_file():
@@ -279,6 +282,11 @@ def main() -> int:
         errors,
         tooling["nightly_canary"],
         ["bundle -> handoff -> PDF -> preflight", "CANARY_PASS", "fault_injection"],
+    )
+    require_markers(
+        errors,
+        tooling["kor_n_canary"],
+        ["10 MCQ items", "expected_item_count=10", "ANSWER_KEY_MISSING", "ANSWER_COUNT_SHORT"],
     )
 
     science = (ROOT / "subjects/SCIENCE_MASTER_V4.0.md").read_text(encoding="utf-8")

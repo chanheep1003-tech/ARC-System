@@ -474,8 +474,10 @@ def analyze_pdf(
     overlap_threshold: float = 0.30,
     render_dir: str | Path | None = None,
     dpi: int = 300,
+    expected_item_count: int | None = None,
 ) -> dict:
     doc = fitz.open(pdf_path)
+    page_texts = [page.get_text("text") for page in doc]
     pages = [page_report(p, product, margin_pt, overlap_threshold) for p in doc]
     if product == "ARC_CORE":
         for index, page in enumerate(pages[:-1]):
@@ -491,6 +493,44 @@ def analyze_pdf(
                             "reason": "next page opens an explicit major boundary",
                         }
                     )
+    if product == "ARC_N":
+        def is_blank(index: int) -> bool:
+            if index < 0 or index >= len(doc):
+                return False
+            page = doc[index]
+            return not page_texts[index].strip() and not page.get_images(full=True) and not page.get_drawings()
+
+        expected_blank_indices: set[int] = set()
+        if len(doc) < 2 or not is_blank(1):
+            pages[0]["flags"].append({"severity": "FAIL", "type": "ARC_N_COVER_VERSO_NOT_BLANK"})
+        else:
+            expected_blank_indices.add(1)
+
+        answer_indices = [i for i, text in enumerate(page_texts) if re.search(r"\bANSWER\s+KEY\b", text, re.I)]
+        if not answer_indices:
+            pages[-1]["flags"].append({"severity": "FAIL", "type": "ARC_N_ANSWER_KEY_MISSING"})
+        else:
+            answer_start = answer_indices[0]
+            separator = answer_start - 1
+            if separator < 2 or not is_blank(separator):
+                pages[answer_start]["flags"].append({"severity": "FAIL", "type": "ARC_N_SEPARATOR_NOT_BLANK"})
+            else:
+                expected_blank_indices.add(separator)
+
+        question_ids = re.findall(r"\bQUESTION\s+(\d+)\b", "\n".join(page_texts), re.I)
+        answer_ids = re.findall(r"(?m)^\s*(\d+)\.\s*[1-5]\s*$", "\n".join(page_texts))
+        if expected_item_count is not None:
+            if len(set(question_ids)) != expected_item_count:
+                pages[-1]["flags"].append({"severity": "FAIL", "type": "ARC_N_QUESTION_COUNT_MISMATCH", "actual": len(set(question_ids)), "expected": expected_item_count})
+            if len(set(answer_ids)) != expected_item_count:
+                pages[-1]["flags"].append({"severity": "FAIL", "type": "ARC_N_ANSWER_COUNT_MISMATCH", "actual": len(set(answer_ids)), "expected": expected_item_count})
+
+        for index in expected_blank_indices:
+            pages[index]["flags"] = [flag for flag in pages[index]["flags"] if flag["type"] != "EMPTY_PAGE"]
+
+        fail_count = sum(1 for p in pages for f in p["flags"] if f["severity"] == "FAIL")
+        warn_count = sum(1 for p in pages for f in p["flags"] if f["severity"] == "WARN")
+        status = "FAIL" if fail_count else ("WARN" if warn_count else "PASS")
     fail_count = sum(1 for p in pages for f in p["flags"] if f["severity"] == "FAIL")
     warn_count = sum(1 for p in pages for f in p["flags"] if f["severity"] == "WARN")
     status = "FAIL" if fail_count else ("WARN" if warn_count else "PASS")
@@ -524,6 +564,7 @@ def main() -> None:
     ap.add_argument("--report", default=None)
     ap.add_argument("--render-dir", default=None)
     ap.add_argument("--dpi", type=int, default=300)
+    ap.add_argument("--expected-item-count", type=int)
     args = ap.parse_args()
 
     result = analyze_pdf(
@@ -533,6 +574,7 @@ def main() -> None:
         overlap_threshold=args.overlap_threshold,
         render_dir=args.render_dir,
         dpi=args.dpi,
+        expected_item_count=args.expected_item_count,
     )
     output = json.dumps(result, ensure_ascii=False, indent=2)
     if args.report:

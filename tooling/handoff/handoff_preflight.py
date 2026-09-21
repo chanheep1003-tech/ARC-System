@@ -42,7 +42,7 @@ STANDARD_SECTION_HEADINGS = (
 
 
 def section(text: str, heading: str) -> str:
-    start = re.search(rf"^#\s+{re.escape(heading)}\s*$", text, re.M | re.I)
+    start = re.search(rf"^#\s+{re.escape(heading)}(?:[ \t]+[^\r\n]*)?$", text, re.M | re.I)
     if not start:
         return ""
     tail = text[start.end() :]
@@ -168,6 +168,23 @@ def analyze(path: Path, manifest_path: Path) -> dict:
             findings.append(finding("QA_EVIDENCE_FILENAME_MISSING", "QA_EVIDENCE_FILENAME is required."))
         if not re.search(r"^#\s+QA EVIDENCE(?:\s+.*)?$", text, re.M | re.I):
             findings.append(finding("QA_EVIDENCE_SECTION_MISSING", "QA EVIDENCE section is required."))
+        answer_key_text = section(text, "ANSWER KEY")
+        try:
+            answer_key = yaml.safe_load(answer_key_text) if answer_key_text.strip() else None
+        except yaml.YAMLError:
+            answer_key = None
+        try:
+            item_count = int(metadata.get("ITEM_COUNT", -1))
+        except (TypeError, ValueError):
+            item_count = -1
+        if item_count < 1:
+            findings.append(finding("ITEM_COUNT_INVALID", "ARC_N/ARC_FINAL ITEM_COUNT must be a positive integer."))
+        if not isinstance(answer_key, dict):
+            findings.append(finding("ANSWER_KEY_SECTION_INVALID", "ANSWER KEY must be a YAML mapping."))
+        elif len(answer_key) != item_count:
+            findings.append(
+                finding("ANSWER_KEY_COUNT_MISMATCH", f"answer key count {len(answer_key)} != ITEM_COUNT {item_count}")
+            )
 
     if product == "ARC_CORE":
         if TWO_COLUMN_RE.search(text):
