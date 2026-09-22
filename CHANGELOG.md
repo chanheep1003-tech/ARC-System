@@ -1,3 +1,15 @@
+## 1.8.14-dev — 2026-09-23
+- Added a Drive-grounded Social A/B/C source inventory with canonical file IDs, filenames, page counts and SHA-256 values. A is source-locked; B visual extraction and C exact handwritten X-mark exclusion indexing remain HOLD, so no full-scope source-fidelity PASS is claimed.
+- Added fixed synthetic Social CORE and N° canaries covering A justice/distribution, B globalization/population and C human-rights/constitutional judgment. CORE is four pages with each part on a fresh one-column page; N° is six pages with 10 questions, 10 answers and the required blank-page sequence.
+- The first Social CORE render exposed a long Part C heading entering the right safety margin. The canary renderer now wraps major headings in a bounded text box and fails closed if the heading cannot fit; the same fixture was rerun with zero PDF failures and warnings.
+- Generalized the fixed KOR canary runners so subject labels, filenames, QA evidence and outputs cannot be silently hard-coded to Korean when a Social fixture is selected. Re-ran KOR CORE/N° and Social CORE/N° after the change.
+- Wired Social fixtures and the source inventory into CI and strict system validation. Synthetic structural PASS does not imply real school-source fidelity, Korean text fidelity, or user-approved problem-set release.
+
+## 1.8.13-dev — 2026-09-22
+- Added mandatory problem-prompt deduplication and final-user-approval governance. Generation must load prior approved/Drive history, build an exclusion registry, run exact and semantic duplicate checks, replace duplicates and recheck before presenting a candidate set.
+- A final problem set remains `FINAL_USER_APPROVAL=PENDING` and `DRIVE_SAVE=BLOCKED` until the user explicitly approves it. Missing history access must be reported as `DUP_HISTORY_ACCESS=UNAVAILABLE`; it cannot be represented as a duplicate-check PASS.
+- Registered the policy in the active Manifest so approval-before-save overrides zero-touch auto-save for problem-generation products.
+
 ## 1.8.12-dev — 2026-09-22
 - Closed a QA-proof replay gap: ARC_N/ARC_FINAL Typesetter admission now requires a SHA-256 of the final STUDENT MANUSCRIPT in its sibling QA evidence file and matches the hash against the locked handoff. Proofs from a different manuscript with identical answer keys, or without a binding digest, fail closed.
 - Re-ran fixed synthetic KOR CORE and N° pipelines and same-answer manuscript-swap fault injection. Actual school supplement text remains unverified; this change does not claim production Korean source fidelity.

@@ -34,7 +34,7 @@ typesetter_gateway = load_module("arc_typesetter_gateway", ROOT / "tooling/types
 canary_fonts = load_module("arc_canary_fonts", ROOT / "tooling/canary/canary_fonts.py")
 
 
-def make_qa_evidence(answers: dict[int, int]) -> dict[str, Any]:
+def make_qa_evidence(answers: dict[int, int], subject: str = "KOR") -> dict[str, Any]:
     item_gates = {name: "PASS" for name in content_gate.ITEM_GATES}
     items = []
     for number, answer in answers.items():
@@ -50,14 +50,14 @@ def make_qa_evidence(answers: dict[int, int]) -> dict[str, Any]:
             })
         second_best = next(str(option) for option in range(1, 6) if option != answer)
         items.append({
-            "item_id": f"KOR-CANARY-{number:03d}",
+            "item_id": f"{subject}-CANARY-{number:03d}",
             "target_difficulty": "D3",
             "pass_a": {"answer": str(answer), "answer_evidence": [f"FIXTURE:Q{number}"]},
             "pass_b": {
                 "answer": str(answer), "blind": True,
                 "excluded_inputs": ["ANSWER_KEY", "PASS_A", "AUTHOR_INTENT", "TARGET_DIFFICULTY"],
                 "confidence": "HIGH", "answer_evidence": [f"FIXTURE:Q{number}"],
-                "scope_trace": {"status": "IN_SCOPE", "source_refs": ["SYNTHETIC:UNIT1"]},
+                "scope_trace": {"status": "IN_SCOPE", "source_refs": [f"SYNTHETIC:{subject}"]},
                 "option_judgments": option_judgments, "second_best_option": second_best,
                 "second_best_risk": "MEDIUM", "reasoning_steps": 1, "evidence_count": 1,
                 "immediate_elimination_count": 2, "transfer_required": False, "actual_difficulty": "D3",
@@ -65,7 +65,7 @@ def make_qa_evidence(answers: dict[int, int]) -> dict[str, Any]:
             "gates": item_gates,
         })
     return {
-        "schema_version": "ARC-QA-EVIDENCE-V1.0", "subject": "KOR", "item_count": len(items),
+        "schema_version": "ARC-QA-EVIDENCE-V1.0", "subject": subject, "item_count": len(items),
         "item_format": "MCQ5", "uses_source_text": False, "items": items,
         "set_gates": {name: "PASS" for name in content_gate.SET_GATES}, "content_lock": True,
     }
@@ -80,7 +80,7 @@ def parse_questions(manuscript: str) -> list[tuple[int, str]]:
     return questions
 
 
-def typeset_n(manuscript: str, answers: dict[int, int], output: Path, profile: dict[str, Any]) -> dict[str, Any]:
+def typeset_n(manuscript: str, answers: dict[int, int], output: Path, profile: dict[str, Any], subject: str = "KOR") -> dict[str, Any]:
     if profile.get("columns") != 2 or not profile.get("cover_verso_blank") or not profile.get("answer_separator_blank"):
         raise ValueError("ARC_N product profile isolation failed")
     questions = parse_questions(manuscript)
@@ -91,14 +91,14 @@ def typeset_n(manuscript: str, answers: dict[int, int], output: Path, profile: d
     canary_fonts.embed(cover)
     cover.draw_rect(fitz.Rect(50, 72, A4_W - 50, A4_H - 72), color=(0.08, 0.16, 0.30), width=1.2)
     cover.insert_text((72, 150), "ARC N", fontsize=28, fontname=canary_fonts.BOLD_NAME, color=(0.08, 0.16, 0.30))
-    cover.insert_text((72, 194), "KOR CANARY / 10 ITEMS", fontsize=16, fontname=canary_fonts.BOLD_NAME)
+    cover.insert_text((72, 194), f"{subject} CANARY / 10 ITEMS", fontsize=16, fontname=canary_fonts.BOLD_NAME)
     cover.insert_text((72, 760), "Synthetic pipeline fixture - not a study release", fontsize=9.9, fontname=canary_fonts.REGULAR_NAME)
     doc.new_page(width=A4_W, height=A4_H)
 
     for page_index in range(2):
         page = doc.new_page(width=A4_W, height=A4_H)
         canary_fonts.embed(page)
-        page.insert_text((44, 36), "ARC N / KOR CANARY", fontsize=9.5, fontname=canary_fonts.REGULAR_NAME)
+        page.insert_text((44, 36), f"ARC N / {subject} CANARY", fontsize=9.5, fontname=canary_fonts.REGULAR_NAME)
         page.draw_line((44, 48), (A4_W - 44, 48), color=(0.45, 0.55, 0.68), width=0.8)
         for local_index, (number, text) in enumerate(questions[page_index * 5:(page_index + 1) * 5]):
             column = local_index % 2
@@ -134,12 +134,13 @@ def typeset_n(manuscript: str, answers: dict[int, int], output: Path, profile: d
 def run(fixture_path: Path, output_dir: Path) -> dict[str, Any]:
     fixture = yaml.safe_load(fixture_path.read_text(encoding="utf-8"))
     bundle = fixture["content_bundle"]
+    subject = str(bundle["subject"]).upper()
     answers = {int(k): int(v) for k, v in bundle["answer_key"].items()}
     manifest_path = ROOT / "SYSTEM_MANIFEST.yaml"
     manifest = yaml.safe_load(manifest_path.read_text(encoding="utf-8"))
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    qa_payload = make_qa_evidence(answers)
+    qa_payload = make_qa_evidence(answers, subject)
     qa_payload["student_manuscript_sha256"] = serializer.sha256_text(str(bundle["student_manuscript"]).strip() + "\n")
     qa_result = content_gate.analyze(qa_payload)
     qa_path = output_dir / bundle["qa_evidence_filename"]
@@ -152,8 +153,8 @@ def run(fixture_path: Path, output_dir: Path) -> dict[str, Any]:
     render_plan = typesetter_gateway.resolve_job(handoff_path, manifest_path, renderer="reportlab")
 
     manuscript = handoff_gate.section(handoff_text, "STUDENT MANUSCRIPT").strip()
-    pdf_path = output_dir / "KOR_N_CANARY_V1.pdf"
-    typeset_result = typeset_n(manuscript, answers, pdf_path, render_plan["profile"])
+    pdf_path = output_dir / f"{subject}_N_CANARY_V1.pdf"
+    typeset_result = typeset_n(manuscript, answers, pdf_path, render_plan["profile"], subject)
     pdf_result = pdf_gate.analyze_pdf(pdf_path, "ARC_N", render_dir=output_dir / "render", dpi=144, expected_item_count=10)
 
     fault_results = []
@@ -182,6 +183,7 @@ def run(fixture_path: Path, output_dir: Path) -> dict[str, Any]:
         "stages": {"content_qa": qa_result["status"], "serializer": "PASS", "handoff_preflight": handoff_result["status"], "typesetter": typeset_result["status"], "pdf_preflight": pdf_result["status"]},
         "typeset": typeset_result, "pdf_qc": {"status": pdf_result["status"], "page_count": pdf_result["page_count"], "fail_count": pdf_result["fail_count"], "warn_count": pdf_result["warn_count"]},
         "render_plan": render_plan,
+        "governance": {"FINAL_USER_APPROVAL": "NOT_APPLICABLE_CANARY", "DRIVE_SAVE": "BLOCKED"},
         "fault_injection": fault_results,
         "artifacts": {"qa_evidence": str(qa_path), "handoff": str(handoff_path), "pdf": str(pdf_path), "render_dir": str(output_dir / "render")},
     }

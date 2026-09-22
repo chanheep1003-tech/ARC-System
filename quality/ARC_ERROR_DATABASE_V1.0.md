@@ -485,6 +485,27 @@ STATUS: FIXED_DEV
 RECURRENCE_COUNT: 0
 ```
 
+### ERR-20260923-SOC-HEADING-001
+```yaml
+ERROR_ID: ERR-20260923-SOC-HEADING-001
+DATE: 2026-09-23
+SUBJECT: SOC CORE SYNTHETIC CANARY
+ERROR_CODE: PDF_HEADING_RIGHT_MARGIN_OVERFLOW
+SEVERITY: S1
+DETECTED_STAGE: PDF_PREFLIGHT
+HUMAN_FOUND: false
+DESCRIPTION: The long Social Part C heading extended into the right safety margin in the first four-page CORE render.
+EXPECTED: Every major heading stays inside the safe frame, wraps without clipping, and remains attached to following content at the start of a new page.
+ACTUAL: A single-line insertion method did not wrap the heading; geometry preflight returned TEXT_IN_MARGIN.
+ROOT_CAUSE: The fixed canary renderer used a point insertion API for major headings and assumed all titles fit on one line.
+FIX_APPLIED: Replaced point insertion with a bounded heading text box, moved body start below the two-line heading area, and fail closed when the text box reports overflow.
+PREVENTION_RULE: MAJOR_HEADING_BOUNDED_WRAP_AND_OVERFLOW_CHECK
+REGRESSION_BENCH_ID: SOC-CORE-CANARY-V1-LONG-HEADING
+REGRESSION_STATUS: PASS_LOCAL_AFTER_SAME_FIXTURE_RETEST
+STATUS: FIXED_DEV
+RECURRENCE_COUNT: 0
+```
+
 ## 9. MONTHLY REVIEW
 시험기간 중 또는 10세트 생성마다:
 - OPEN/RECURRED 오류 확인

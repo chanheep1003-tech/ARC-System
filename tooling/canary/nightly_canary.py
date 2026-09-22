@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Executable ARC KOR CORE canary: bundle -> handoff -> PDF -> preflight.
+"""Executable ARC CORE canary: bundle -> handoff -> PDF -> preflight.
 
 The fixture is synthetic and validates pipeline behavior, not Korean source
 fidelity or model-authored content quality.
@@ -55,7 +55,7 @@ def dense_body(text: str) -> str:
     return "\n\n".join([normalized] * 3)
 
 
-def typeset_core(manuscript: str, output: Path, profile: dict[str, Any] | None = None) -> dict[str, Any]:
+def typeset_core(manuscript: str, output: Path, profile: dict[str, Any] | None = None, subject: str = "KOR") -> dict[str, Any]:
     profile = profile or {}
     body_size = float(profile.get("body_size", 9.9))
     sections = parse_sections(manuscript)
@@ -64,18 +64,27 @@ def typeset_core(manuscript: str, output: Path, profile: dict[str, Any] | None =
     canary_fonts.embed(cover)
     cover.draw_rect(fitz.Rect(50, 72, A4_W - 50, A4_H - 72), color=(0.12, 0.19, 0.32), width=1.2)
     cover.insert_text((72, 150), "ARC CORE", fontsize=26, fontname=canary_fonts.BOLD_NAME, color=(0.08, 0.16, 0.30))
-    cover.insert_text((72, 192), "KOR CANARY / UNIT 1", fontsize=16, fontname=canary_fonts.BOLD_NAME)
+    cover.insert_text((72, 192), f"{subject} CANARY", fontsize=16, fontname=canary_fonts.BOLD_NAME)
     cover.insert_text((72, 232), "Pipeline validation edition", fontsize=11, fontname=canary_fonts.REGULAR_NAME)
     cover.insert_text((72, 760), "Synthetic content fixture - not a study release", fontsize=9.9, fontname=canary_fonts.REGULAR_NAME)
 
     for page_number, (title, body) in enumerate(sections, start=2):
         page = doc.new_page(width=A4_W, height=A4_H)
         canary_fonts.embed(page)
-        page.insert_text((58, 38), "ARC CORE / KOR CANARY", fontsize=9.9, fontname=canary_fonts.REGULAR_NAME, color=(0.20, 0.25, 0.32))
+        page.insert_text((58, 38), f"ARC CORE / {subject} CANARY", fontsize=9.9, fontname=canary_fonts.REGULAR_NAME, color=(0.20, 0.25, 0.32))
         page.draw_line((58, 50), (A4_W - 58, 50), color=(0.45, 0.55, 0.68), width=0.8)
-        page.insert_text((58, 92), title, fontsize=18, fontname=canary_fonts.BOLD_NAME, color=(0.08, 0.16, 0.30))
+        heading_remaining = page.insert_textbox(
+            fitz.Rect(58, 72, A4_W - 58, 124),
+            title,
+            fontsize=18,
+            fontname=canary_fonts.BOLD_NAME,
+            lineheight=1.12,
+            color=(0.08, 0.16, 0.30),
+        )
+        if heading_remaining < 0:
+            raise RuntimeError(f"heading overflow on {title}: {heading_remaining}")
         remaining = page.insert_textbox(
-            fitz.Rect(58, 125, A4_W - 58, 768),
+            fitz.Rect(58, 132, A4_W - 58, 768),
             dense_body(body),
             fontsize=body_size,
             fontname=canary_fonts.REGULAR_NAME,
@@ -115,6 +124,7 @@ def run_faults(fixture: dict[str, Any], manifest: dict[str, Any]) -> list[dict[s
 
 def run(fixture_path: Path, output_dir: Path) -> dict[str, Any]:
     fixture = yaml.safe_load(fixture_path.read_text(encoding="utf-8"))
+    subject = str(fixture["content_bundle"]["subject"]).upper()
     manifest_path = ROOT / "SYSTEM_MANIFEST.yaml"
     manifest = yaml.safe_load(manifest_path.read_text(encoding="utf-8"))
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -126,21 +136,21 @@ def run(fixture_path: Path, output_dir: Path) -> dict[str, Any]:
     render_plan = typesetter_gateway.resolve_job(handoff_path, manifest_path, renderer="reportlab")
 
     manuscript = handoff_gate.section(handoff_text, "STUDENT MANUSCRIPT").strip()
-    pdf_path = output_dir / "KOR_CORE_CANARY_V1.pdf"
+    pdf_path = output_dir / f"{subject}_CORE_CANARY_V1.pdf"
     injected_path = output_dir / "_fault_small_font.pdf"
     injected_profile = dict(render_plan["profile"])
     injected_profile["body_size"] = 8.5
-    typeset_core(manuscript, injected_path, injected_profile)
+    typeset_core(manuscript, injected_path, injected_profile, subject)
     injected_result = pdf_gate.analyze_pdf(injected_path, "ARC_CORE")
     autofix_plan = autofix.build_plan(injected_result, "ARC_CORE")
     fixed_profile = autofix.apply_profile_fixes(injected_profile, autofix_plan)
-    typeset_result = typeset_core(manuscript, pdf_path, fixed_profile)
+    typeset_result = typeset_core(manuscript, pdf_path, fixed_profile, subject)
     render_dir = output_dir / "render"
     pdf_result = pdf_gate.analyze_pdf(pdf_path, "ARC_CORE", render_dir=render_dir, dpi=144)
     fault_results = run_faults(fixture, manifest)
 
     pdf_text = "\n".join(page.get_text("text") for page in fitz.open(pdf_path))
-    forbidden_text = [token for token in ("CONTENT_LOCK", "BATCH_ID", "ARC-KOR-C-") if token in pdf_text]
+    forbidden_text = [token for token in ("CONTENT_LOCK", "BATCH_ID", "[ARC-") if token in pdf_text]
     missed_faults = [item["id"] for item in fault_results if item["status"] != "BLOCKED"]
     failures = []
     if handoff_result["status"] != "PASS":

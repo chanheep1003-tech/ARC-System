@@ -72,7 +72,10 @@ jobs:
               'quality/semantic/ARC_QA_EVIDENCE_SCHEMA_V1.0.yaml',
               'quality/canary/KOR_CORE_CANARY_V1.yaml',
               'quality/canary/KOR_N_CANARY_V1.yaml',
+              'quality/canary/SOC_CORE_CANARY_V1.yaml',
+              'quality/canary/SOC_N_CANARY_V1.yaml',
               'quality/source/KOR_SCHOOL_SOURCE_INVENTORY_2026_V1.0.yaml',
+              'quality/source/SOC_SCHOOL_SOURCE_INVENTORY_2026_V1.0.yaml',
           ]
           for f in files:
               yaml.safe_load(Path(f).read_text(encoding='utf-8'))
@@ -112,6 +115,12 @@ jobs:
       - name: Run fixed KOR N E2E canary
         run: python tooling/canary/kor_n_canary.py --output-dir /tmp/arc-kor-n-canary --report /tmp/arc-kor-n-canary/canary-report.json
 
+      - name: Run representative SOC CORE E2E canary
+        run: python tooling/canary/nightly_canary.py --fixture quality/canary/SOC_CORE_CANARY_V1.yaml --output-dir /tmp/arc-soc-canary --report /tmp/arc-soc-canary/canary-report.json
+
+      - name: Run representative SOC N E2E canary
+        run: python tooling/canary/kor_n_canary.py --fixture quality/canary/SOC_N_CANARY_V1.yaml --output-dir /tmp/arc-soc-n-canary --report /tmp/arc-soc-n-canary/canary-report.json
+
       - name: Upload KOR canary evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -120,6 +129,8 @@ jobs:
           path: |
             /tmp/arc-kor-canary
             /tmp/arc-kor-n-canary
+            /tmp/arc-soc-canary
+            /tmp/arc-soc-n-canary
           retention-days: 7
 
       - name: Run Universal Independent Solve QA gate smoke

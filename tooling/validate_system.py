@@ -136,6 +136,13 @@ def main() -> int:
         "korean_source_text_checksum": "required",
         "korean_generated_output_as_source": "forbidden",
         "social_school_source_integrity_gate": "required",
+        "prior_approved_item_history_required": True,
+        "problem_generation_exclusion_registry_required": True,
+        "problem_semantic_duplicate_gate": "required",
+        "problem_exact_duplicate_target": 0,
+        "problem_semantic_duplicate_target": 0,
+        "problem_final_user_approval_before_drive_save": "required",
+        "problem_drive_save_before_user_approval": "forbidden",
     }
     for key, expected in required_runtime.items():
         if runtime.get(key) != expected:
@@ -300,6 +307,8 @@ def main() -> int:
         "kor_n_canary",
         "kor_n_canary_smoke_test",
         "kor_n_canary_fixture",
+        "soc_core_canary_fixture",
+        "soc_n_canary_fixture",
     ):
         rel = tooling.get(key)
         if not isinstance(rel, str) or not (ROOT / rel).is_file():
@@ -347,6 +356,11 @@ def main() -> int:
         errors,
         tooling["kor_n_canary"],
         ["10 MCQ items", "expected_item_count=10", "ANSWER_KEY_MISSING", "ANSWER_COUNT_SHORT"],
+    )
+    require_markers(
+        errors,
+        active["quality"]["problem_prompt_dedup_policy"],
+        ["DUP_HISTORY_ACCESS=UNAVAILABLE", "FINAL_USER_APPROVAL=PENDING", "DRIVE_SAVE=BLOCKED"],
     )
 
     science = (ROOT / "subjects/SCIENCE_MASTER_V4.0.md").read_text(encoding="utf-8")
