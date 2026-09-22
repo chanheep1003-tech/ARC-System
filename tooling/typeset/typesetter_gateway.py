@@ -8,8 +8,10 @@ templates, columns, typography, page geometry, preflight, or auto-fix policy.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import importlib.util
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -106,6 +108,15 @@ def verify_qa_evidence(handoff_path: Path, metadata: dict[str, Any], text: str) 
         raise TypesetterAdmissionError("QA_ITEM_COUNT_INVALID") from exc
     if proof.get("item_count") != expected_count:
         raise TypesetterAdmissionError("QA_ITEM_COUNT_MISMATCH")
+    locked_digest = str(metadata.get("STUDENT_MANUSCRIPT_SHA256", ""))
+    proof_digest = str(proof.get("student_manuscript_sha256", ""))
+    if not re.fullmatch(r"[0-9a-f]{64}", proof_digest):
+        raise TypesetterAdmissionError("QA_MANUSCRIPT_BINDING_MISSING")
+    if proof_digest != locked_digest:
+        raise TypesetterAdmissionError("QA_MANUSCRIPT_BINDING_MISMATCH")
+    manuscript = handoff_gate.section(text, "STUDENT MANUSCRIPT").strip() + "\n"
+    if hashlib.sha256(manuscript.encode("utf-8")).hexdigest() != proof_digest:
+        raise TypesetterAdmissionError("QA_MANUSCRIPT_CONTENT_MISMATCH")
     answer_text = handoff_gate.section(text, "ANSWER KEY")
     try:
         answer_key = yaml.safe_load(answer_text)
@@ -124,7 +135,7 @@ def verify_qa_evidence(handoff_path: Path, metadata: dict[str, Any], text: str) 
             raise TypesetterAdmissionError("QA_ANSWER_NUMBER_MISSING") from exc
         if evidence_answer != locked_answer:
             raise TypesetterAdmissionError(f"QA_ANSWER_MISMATCH at question {index}")
-    return {"status": "PASS", "filename": filename, "item_count": expected_count}
+    return {"status": "PASS", "filename": filename, "item_count": expected_count, "student_manuscript_sha256": proof_digest}
 
 
 def load_manifest(path: Path) -> dict[str, Any]:
@@ -151,6 +162,7 @@ def _required_runtime(manifest: dict[str, Any]) -> None:
         "typesetter_manifest_resolution": "required",
         "typesetter_product_isolation": "required",
         "typesetter_renderer_route_consistency": "required",
+        "qa_evidence_manuscript_binding": "required",
         "pdf_autofix_gate": "required",
         "pdf_autofix_content_mutation": "forbidden",
     }

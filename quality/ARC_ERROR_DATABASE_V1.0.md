@@ -464,6 +464,27 @@ STATUS: FIXED_DEV
 RECURRENCE_COUNT: 0
 ```
 
+### ERR-20260922-QA-REPLAY-001
+```yaml
+ERROR_ID: ERR-20260922-QA-REPLAY-001
+DATE: 2026-09-22
+SUBJECT: ARC_N/ARC_FINAL QA EVIDENCE
+ERROR_CODE: QA_PROOF_WRONG_MANUSCRIPT
+SEVERITY: S1
+DETECTED_STAGE: TYPESETTER_ADMISSION
+HUMAN_FOUND: false
+DESCRIPTION: A valid QA evidence file for a different manuscript with the same subject, item count, and ordered answers could be reused after handoff reserialization.
+EXPECTED: The actual locked STUDENT MANUSCRIPT must be the one covered by the QA proof.
+ACTUAL: The earlier gateway checked proof contents and answer key but did not bind proof to the manuscript bytes.
+ROOT_CAUSE: QA evidence schema did not require a final manuscript digest at Typesetter admission.
+FIX_APPLIED: Require SHA-256 of the final normalized manuscript in the proof, compare to locked handoff, and block swapped or unbound evidence.
+PREVENTION_RULE: QA_EVIDENCE_MANUSCRIPT_BINDING_REQUIRED
+REGRESSION_BENCH_ID: TYPESETTER-GATEWAY-SMOKE-V1-QA-MANUSCRIPT-BINDING
+REGRESSION_STATUS: PASS_LOCAL_SYNTHETIC
+STATUS: FIXED_DEV
+RECURRENCE_COUNT: 0
+```
+
 ## 9. MONTHLY REVIEW
 시험기간 중 또는 10세트 생성마다:
 - OPEN/RECURRED 오류 확인

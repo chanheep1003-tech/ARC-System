@@ -47,7 +47,10 @@ For ARC_N and ARC_FINAL, a front-matter `QA_EVIDENCE_STATUS=PASS` is never
 sufficient on its own. The gateway must open the sibling QA evidence file by
 local basename, rerun executable content QA, and compare product, subject,
 question count, and every ordered PASS A answer to the locked handoff answer
-key. Missing/malformed/changed QA evidence or answer disagreement returns
+key. It must also require `student_manuscript_sha256` inside the QA proof and
+match it to the final locked STUDENT MANUSCRIPT; a proof from another batch
+with the same answer sequence cannot be reused. Missing/malformed/changed QA
+evidence or answer disagreement returns
 content before either renderer receives the manuscript.
 
 `ARC_CORE`, `ARC_N`, and `ARC_FINAL` profiles are isolated. In particular,

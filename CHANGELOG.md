@@ -1,3 +1,7 @@
+## 1.8.12-dev — 2026-09-22
+- Closed a QA-proof replay gap: ARC_N/ARC_FINAL Typesetter admission now requires a SHA-256 of the final STUDENT MANUSCRIPT in its sibling QA evidence file and matches the hash against the locked handoff. Proofs from a different manuscript with identical answer keys, or without a binding digest, fail closed.
+- Re-ran fixed synthetic KOR CORE and N° pipelines and same-answer manuscript-swap fault injection. Actual school supplement text remains unverified; this change does not claim production Korean source fidelity.
+
 ## 1.8.11-dev — 2026-09-22
 - Found and inspected the actual 3-page image-only school Korean supplement and 232-page teacher textbook; registered verified Drive IDs, SHA-256 values, and source readiness without declaring exact OCR/text fidelity. Supplement remains HOLD for visual line-by-line transcription; textbook usage remains unit 1 only.
 - Typesetter admission now opens the sibling QA proof for ARC_N/ARC_FINAL, reruns executable content QA, and compares its subject, item count, and each answer with the locked handoff answer key. A missing or mutated proof, and a numerically complete but wrong answer key, are blocked before rendering.

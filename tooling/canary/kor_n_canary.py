@@ -140,6 +140,7 @@ def run(fixture_path: Path, output_dir: Path) -> dict[str, Any]:
     output_dir.mkdir(parents=True, exist_ok=True)
 
     qa_payload = make_qa_evidence(answers)
+    qa_payload["student_manuscript_sha256"] = serializer.sha256_text(str(bundle["student_manuscript"]).strip() + "\n")
     qa_result = content_gate.analyze(qa_payload)
     qa_path = output_dir / bundle["qa_evidence_filename"]
     qa_path.write_text(yaml.safe_dump(qa_payload, allow_unicode=True, sort_keys=False), encoding="utf-8")

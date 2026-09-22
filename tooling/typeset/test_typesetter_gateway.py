@@ -43,6 +43,7 @@ def make_handoff(product: str, destination: Path) -> Path:
     path.write_text(text, encoding="utf-8")
     if product in {"ARC_N", "ARC_FINAL"}:
         proof = kor_n_canary.make_qa_evidence({int(k): int(v) for k, v in bundle["answer_key"].items()})
+        proof["student_manuscript_sha256"] = serializer.sha256_text(str(bundle["student_manuscript"]).strip() + "\n")
         (destination / bundle["qa_evidence_filename"]).write_text(
             yaml.safe_dump(proof, allow_unicode=True, sort_keys=False), encoding="utf-8"
         )
@@ -95,13 +96,44 @@ def run() -> None:
         original = n_handoff.read_text(encoding="utf-8")
         assert "\n1: 3\n" in original
         n_handoff.write_text(original.replace("\n1: 3\n", "\n1: 2\n", 1), encoding="utf-8")
-        assert gateway.handoff_gate.analyze(n_handoff, ROOT / "SYSTEM_MANIFEST.yaml")["status"] == "PASS"
+        preflight_result = gateway.handoff_gate.analyze(n_handoff, ROOT / "SYSTEM_MANIFEST.yaml")
+        assert preflight_result["status"] == "PASS", preflight_result
         try:
             gateway.resolve_job(n_handoff)
         except gateway.TypesetterAdmissionError as exc:
             assert "QA_ANSWER_MISMATCH at question 1" in str(exc)
         else:
             raise AssertionError("locked answer key diverged from QA proof but was accepted")
+
+        # A structurally valid, reserialized manuscript cannot borrow another
+        # batch's QA evidence just because the ten answers are identical.
+        n_handoff = make_handoff("ARC_N", temp)
+        proof_path = temp / gateway.handoff_gate.parse_handoff(n_handoff)[0]["QA_EVIDENCE_FILENAME"]
+        original_bundle = yaml.safe_load((ROOT / "quality/canary/KOR_N_CANARY_V1.yaml").read_text(encoding="utf-8"))["content_bundle"]
+        changed_bundle = copy.deepcopy(original_bundle)
+        changed_bundle["batch_id"] = "ARC-KOR-N-GATEWAY"
+        changed_bundle["student_manuscript"] += "\n\nSecond manuscript with the same answer sequence."
+        manifest = yaml.safe_load((ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8"))
+        _, swapped_handoff = serializer.serialize_bundle(changed_bundle, manifest)
+        n_handoff.write_text(swapped_handoff, encoding="utf-8")
+        preflight_result = gateway.handoff_gate.analyze(n_handoff, ROOT / "SYSTEM_MANIFEST.yaml")
+        assert preflight_result["status"] == "PASS", preflight_result
+        try:
+            gateway.resolve_job(n_handoff)
+        except gateway.TypesetterAdmissionError as exc:
+            assert "QA_MANUSCRIPT_BINDING_MISMATCH" in str(exc)
+        else:
+            raise AssertionError("QA proof from another manuscript was accepted")
+        n_handoff = make_handoff("ARC_N", temp)
+        proof = yaml.safe_load(proof_path.read_text(encoding="utf-8"))
+        proof.pop("student_manuscript_sha256")
+        proof_path.write_text(yaml.safe_dump(proof, allow_unicode=True), encoding="utf-8")
+        try:
+            gateway.resolve_job(n_handoff)
+        except gateway.TypesetterAdmissionError as exc:
+            assert "QA_MANUSCRIPT_BINDING_MISSING" in str(exc)
+        else:
+            raise AssertionError("unbound QA proof was accepted")
 
         bad_manifest = yaml.safe_load((ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8"))
         bad_manifest["runtime"]["typesetter_single_authority"] = "disabled"

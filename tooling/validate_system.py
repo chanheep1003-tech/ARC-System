@@ -122,6 +122,7 @@ def main() -> int:
         "scope_evidence_trace_gate": "required",
         "actual_difficulty_reclassification_gate": "required",
         "qa_evidence_schema_gate": "required",
+        "qa_evidence_manuscript_binding": "required",
         "content_qa_runner_gate": "required_when_executable",
         "pdf_autofix_gate": "required",
         "pdf_autofix_max_attempts": 2,
@@ -328,6 +329,7 @@ def main() -> int:
             "TYPESETTER_GATEWAY",
             "typesetter_single_authority",
             "typesetter_product_isolation",
+            "QA_MANUSCRIPT_BINDING_MISMATCH",
             "route_invariants",
         ],
     )
