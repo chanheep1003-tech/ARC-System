@@ -1,3 +1,9 @@
+## 1.8.11-dev — 2026-09-22
+- Found and inspected the actual 3-page image-only school Korean supplement and 232-page teacher textbook; registered verified Drive IDs, SHA-256 values, and source readiness without declaring exact OCR/text fidelity. Supplement remains HOLD for visual line-by-line transcription; textbook usage remains unit 1 only.
+- Typesetter admission now opens the sibling QA proof for ARC_N/ARC_FINAL, reruns executable content QA, and compares its subject, item count, and each answer with the locked handoff answer key. A missing or mutated proof, and a numerically complete but wrong answer key, are blocked before rendering.
+- Re-ran the fixed KOR CORE/N° PDF canaries with QA readback; a synthetic canary PASS does not imply source-faithful Korean production readiness.
+- Render-first review found distorted Latin glyph spacing in the synthetic PDF despite zero preflight findings. Both fixed canaries now embed regular/bold DejaVu fonts and verify embedded Unicode font streams; re-rendered CORE/N° retain their page-order and PDF-QC results. Korean glyph/font production verification remains HOLD.
+
 ## 1.8.10-dev — 2026-09-22
 - Added a manifest-owned Typesetter gateway as the single executable admission point for HTML and ReportLab routes.
 - The gateway runs handoff preflight, rejects inactive products, resolves the active PDF/HTML masters and PDF QC tools at runtime, and does not expose caller layout/template overrides.

@@ -47,6 +47,7 @@ jobs:
           python -m py_compile tooling/handoff/test_handoff_preflight.py
           python -m py_compile tooling/handoff/handoff_serializer.py
           python -m py_compile tooling/handoff/test_handoff_serializer.py
+          python -m py_compile tooling/canary/canary_fonts.py
           python -m py_compile tooling/canary/nightly_canary.py
           python -m py_compile tooling/canary/test_nightly_canary.py
           python -m py_compile tooling/canary/kor_n_canary.py
@@ -71,6 +72,7 @@ jobs:
               'quality/semantic/ARC_QA_EVIDENCE_SCHEMA_V1.0.yaml',
               'quality/canary/KOR_CORE_CANARY_V1.yaml',
               'quality/canary/KOR_N_CANARY_V1.yaml',
+              'quality/source/KOR_SCHOOL_SOURCE_INVENTORY_2026_V1.0.yaml',
           ]
           for f in files:
               yaml.safe_load(Path(f).read_text(encoding='utf-8'))

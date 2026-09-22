@@ -36,6 +36,7 @@ handoff_gate = load_module("arc_handoff_preflight", ROOT / "tooling/handoff/hand
 pdf_gate = load_module("arc_pdf_preflight", ROOT / "tooling/pdf_qc/pdf_preflight.py")
 autofix = load_module("arc_pdf_autofix", ROOT / "tooling/pdf_qc/autofix_controller.py")
 typesetter_gateway = load_module("arc_typesetter_gateway", ROOT / "tooling/typeset/typesetter_gateway.py")
+canary_fonts = load_module("arc_canary_fonts", ROOT / "tooling/canary/canary_fonts.py")
 
 
 def parse_sections(manuscript: str) -> list[tuple[str, str]]:
@@ -51,7 +52,7 @@ def parse_sections(manuscript: str) -> list[tuple[str, str]]:
 
 def dense_body(text: str) -> str:
     normalized = re.sub(r"\s+", " ", text).strip()
-    return "\n\n".join([normalized] * 4)
+    return "\n\n".join([normalized] * 3)
 
 
 def typeset_core(manuscript: str, output: Path, profile: dict[str, Any] | None = None) -> dict[str, Any]:
@@ -60,33 +61,37 @@ def typeset_core(manuscript: str, output: Path, profile: dict[str, Any] | None =
     sections = parse_sections(manuscript)
     doc = fitz.open()
     cover = doc.new_page(width=A4_W, height=A4_H)
+    canary_fonts.embed(cover)
     cover.draw_rect(fitz.Rect(50, 72, A4_W - 50, A4_H - 72), color=(0.12, 0.19, 0.32), width=1.2)
-    cover.insert_text((72, 150), "ARC CORE", fontsize=26, fontname="hebo", color=(0.08, 0.16, 0.30))
-    cover.insert_text((72, 192), "KOR CANARY / UNIT 1", fontsize=16, fontname="hebo")
-    cover.insert_text((72, 232), "Pipeline validation edition", fontsize=11, fontname="helv")
-    cover.insert_text((72, 760), "Synthetic content fixture - not a study release", fontsize=9.9, fontname="helv")
+    cover.insert_text((72, 150), "ARC CORE", fontsize=26, fontname=canary_fonts.BOLD_NAME, color=(0.08, 0.16, 0.30))
+    cover.insert_text((72, 192), "KOR CANARY / UNIT 1", fontsize=16, fontname=canary_fonts.BOLD_NAME)
+    cover.insert_text((72, 232), "Pipeline validation edition", fontsize=11, fontname=canary_fonts.REGULAR_NAME)
+    cover.insert_text((72, 760), "Synthetic content fixture - not a study release", fontsize=9.9, fontname=canary_fonts.REGULAR_NAME)
 
     for page_number, (title, body) in enumerate(sections, start=2):
         page = doc.new_page(width=A4_W, height=A4_H)
-        page.insert_text((58, 38), "ARC CORE / KOR CANARY", fontsize=9.9, fontname="helv", color=(0.20, 0.25, 0.32))
+        canary_fonts.embed(page)
+        page.insert_text((58, 38), "ARC CORE / KOR CANARY", fontsize=9.9, fontname=canary_fonts.REGULAR_NAME, color=(0.20, 0.25, 0.32))
         page.draw_line((58, 50), (A4_W - 58, 50), color=(0.45, 0.55, 0.68), width=0.8)
-        page.insert_text((58, 92), title, fontsize=18, fontname="hebo", color=(0.08, 0.16, 0.30))
+        page.insert_text((58, 92), title, fontsize=18, fontname=canary_fonts.BOLD_NAME, color=(0.08, 0.16, 0.30))
         remaining = page.insert_textbox(
             fitz.Rect(58, 125, A4_W - 58, 768),
             dense_body(body),
             fontsize=body_size,
-            fontname="helv",
+            fontname=canary_fonts.REGULAR_NAME,
             lineheight=1.54,
             color=(0.10, 0.12, 0.15),
             align=fitz.TEXT_ALIGN_LEFT,
         )
         if remaining < 0:
             raise RuntimeError(f"typeset overflow on {title}: {remaining}")
-        page.insert_text((A4_W - 76, 812), str(page_number), fontsize=9.9, fontname="helv")
+        page.insert_text((A4_W - 76, 812), str(page_number), fontsize=9.9, fontname=canary_fonts.REGULAR_NAME)
 
     output.parent.mkdir(parents=True, exist_ok=True)
     doc.save(output, garbage=4, deflate=True)
     doc.close()
+    with fitz.open(output) as saved:
+        canary_fonts.assert_embedded_fonts(saved)
     return {"status": "PASS", "page_count": 1 + len(sections), "major_boundaries": [s[0] for s in sections]}
 
 

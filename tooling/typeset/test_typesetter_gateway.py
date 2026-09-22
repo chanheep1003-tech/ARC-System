@@ -23,6 +23,7 @@ def load_module(name: str, path: Path):
 
 gateway = load_module("arc_typesetter_gateway", ROOT / "tooling/typeset/typesetter_gateway.py")
 serializer = load_module("arc_gateway_serializer", ROOT / "tooling/handoff/handoff_serializer.py")
+kor_n_canary = load_module("arc_gateway_kor_n_canary", ROOT / "tooling/canary/kor_n_canary.py")
 
 
 def make_handoff(product: str, destination: Path) -> Path:
@@ -40,6 +41,11 @@ def make_handoff(product: str, destination: Path) -> Path:
     filename, text = serializer.serialize_bundle(bundle, manifest)
     path = destination / filename
     path.write_text(text, encoding="utf-8")
+    if product in {"ARC_N", "ARC_FINAL"}:
+        proof = kor_n_canary.make_qa_evidence({int(k): int(v) for k, v in bundle["answer_key"].items()})
+        (destination / bundle["qa_evidence_filename"]).write_text(
+            yaml.safe_dump(proof, allow_unicode=True, sort_keys=False), encoding="utf-8"
+        )
     return path
 
 
@@ -63,6 +69,39 @@ def run() -> None:
         assert plans["ARC_N"]["profile"]["answer_separator_blank"] is True
         assert plans["ARC_FINAL"]["profile"]["answer_key_mode"] == "SEPARATE_ARTIFACT_ONLY"
         assert plans["ARC_FINAL"]["profile"]["cover_verso_blank"] is False
+
+        n_handoff = make_handoff("ARC_N", temp)
+        n_metadata, _ = gateway.handoff_gate.parse_handoff(n_handoff)
+        qa_path = temp / n_metadata["QA_EVIDENCE_FILENAME"]
+        qa_proof = yaml.safe_load(qa_path.read_text(encoding="utf-8"))
+        qa_proof["items"][0]["pass_a"]["answer"] = "5"
+        qa_proof["items"][0]["pass_b"]["answer"] = "5"
+        qa_path.write_text(yaml.safe_dump(qa_proof, allow_unicode=True), encoding="utf-8")
+        try:
+            gateway.resolve_job(n_handoff)
+        except gateway.TypesetterAdmissionError as exc:
+            assert "QA_EVIDENCE_FAILED" in str(exc) or "QA_ANSWER_MISMATCH" in str(exc)
+        else:
+            raise AssertionError("QA proof with mutated answer was accepted")
+        qa_path.unlink()
+        try:
+            gateway.resolve_job(n_handoff)
+        except gateway.TypesetterAdmissionError as exc:
+            assert "QA_EVIDENCE_MISSING" in str(exc)
+        else:
+            raise AssertionError("missing QA proof was accepted")
+
+        n_handoff = make_handoff("ARC_N", temp)
+        original = n_handoff.read_text(encoding="utf-8")
+        assert "\n1: 3\n" in original
+        n_handoff.write_text(original.replace("\n1: 3\n", "\n1: 2\n", 1), encoding="utf-8")
+        assert gateway.handoff_gate.analyze(n_handoff, ROOT / "SYSTEM_MANIFEST.yaml")["status"] == "PASS"
+        try:
+            gateway.resolve_job(n_handoff)
+        except gateway.TypesetterAdmissionError as exc:
+            assert "QA_ANSWER_MISMATCH at question 1" in str(exc)
+        else:
+            raise AssertionError("locked answer key diverged from QA proof but was accepted")
 
         bad_manifest = yaml.safe_load((ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8"))
         bad_manifest["runtime"]["typesetter_single_authority"] = "disabled"

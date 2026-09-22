@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.10-dev
+  version: 1.8.11-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -280,6 +280,7 @@ active:
     source_ledger: quality/ARC_SOURCE_LEDGER_V1.0.md
     source_ledger_schema: quality/source/ARC_SOURCE_LEDGER_SCHEMA_V1.0.yaml
     social_a_school_source_lock: quality/source/SOC_A_SCHOOL_WORKSHEETS_2026_V1.0.yaml
+    korean_school_source_inventory: quality/source/KOR_SCHOOL_SOURCE_INVENTORY_2026_V1.0.yaml
     regression_policy: quality/regression/ARC_REGRESSION_POLICY_V1.0.md
     regression_fixtures: quality/regression/REGRESSION_FIXTURES_V1.0.yaml
     regression_fixture_count: 30

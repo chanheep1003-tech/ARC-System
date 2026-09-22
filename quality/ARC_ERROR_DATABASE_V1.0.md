@@ -401,6 +401,69 @@ LIMITATION: Production model-authored source inputs and non-KOR subject render a
 RECURRENCE_COUNT: 0
 ```
 
+### ERR-20260922-QA-PROOF-001
+```yaml
+ERROR_ID: ERR-20260922-QA-PROOF-001
+DATE: 2026-09-22
+SUBJECT: ARC_N/ARC_FINAL TYPESETTER ADMISSION
+ERROR_CODE: ERR-QA-EVIDENCE-BYPASS
+SEVERITY: S1
+DETECTED_STAGE: TYPESETTER_GATEWAY_AUDIT
+HUMAN_FOUND: false
+DESCRIPTION: A handoff could declare QA_EVIDENCE_STATUS=PASS and name a QA file that did not exist or disagreed with the answer key.
+EXPECTED: Open and rerun the sibling QA proof, then compare subject, count, and each locked answer before PDF production.
+ACTUAL: Handoff preflight checked metadata fields and answer count but did not open the named proof or compare answer values.
+ROOT_CAUSE: Admission treated producer-controlled QA status as authoritative without independent evidence readback.
+FIX_APPLIED: Typesetter gateway opens and validates QA proof and blocks missing evidence, changed answers, and handoff/evidence mismatch.
+PREVENTION_RULE: QA_EVIDENCE_READBACK=PASS; ANSWER_EVIDENCE_MATCH=PASS
+REGRESSION_BENCH_ID: TYPESETTER-GATEWAY-SMOKE-V1-QA-PROOF
+REGRESSION_STATUS: PASS_LOCAL
+STATUS: FIXED_DEV
+RECURRENCE_COUNT: 0
+```
+
+### ERR-20260922-KOR-SCAN-001
+```yaml
+ERROR_ID: ERR-20260922-KOR-SCAN-001
+DATE: 2026-09-22
+SUBJECT: KOR SCHOOL SUPPLEMENT
+ERROR_CODE: ERR-EXACT-SOURCE-NOT-READY
+SEVERITY: S1
+DETECTED_STAGE: SCHOOL_SOURCE_INTAKE
+HUMAN_FOUND: false
+DESCRIPTION: The canonical 3-page school Korean supplement PDF is image-only; no extractable text layer exists, while the local OCR install lacks Korean language data.
+EXPECTED: An exactly verified transcription of all tested passages before user-facing CORE/N source-dependent claims and PDF rendering.
+ACTUAL: Raw scan is accessible and visually identifiable, but a line-by-line checked exact text payload does not yet exist.
+ROOT_CAUSE: School source was an image-only scan, while the synthetic KOR canary intentionally contained no school passage text.
+FIX_APPLIED: Registered Drive ID, raw PDF SHA-256, page count and HOLD status in source inventory; refused to promote synthetic or derived text to raw source authority.
+PREVENTION_RULE: KOR_EXACT_SOURCE_LOCK=HOLD_UNTIL_VERIFIED
+REGRESSION_BENCH_ID: KOR-SCHOOL-SOURCE-INVENTORY-2026-V1
+REGRESSION_STATUS: HOLD_SOURCE_TRANSCRIPTION
+STATUS: OPEN
+RECURRENCE_COUNT: 0
+```
+
+### ERR-20260922-SYNTHETIC-FONT-001
+```yaml
+ERROR_ID: ERR-20260922-SYNTHETIC-FONT-001
+DATE: 2026-09-22
+SUBJECT: KOR CORE/N SYNTHETIC CANARY
+ERROR_CODE: PDF_VISUAL_GLYPH_SPACING
+SEVERITY: S1
+DETECTED_STAGE: RENDER_FIRST_VISUAL_QA
+HUMAN_FOUND: false
+DESCRIPTION: A rendered synthetic PDF showed distorted Latin glyph spacing while the automated PDF preflight reported zero failures and warnings.
+EXPECTED: Legible glyph spacing and an embedded Unicode font in nonblank student pages.
+ACTUAL: Base14 Helvetica/Helvetica-Bold substitutions caused visibly malformed spacing in the local rendered canary.
+ROOT_CAUSE: Synthetic canary PDFs had not embedded their own regular/bold fonts; geometry-only preflight could not detect the visual substitution.
+FIX_APPLIED: Embed DejaVu Sans regular/bold in both fixed canaries and verify the PDF font streams are embedded before PASS; re-rendered CORE/N canaries locally.
+PREVENTION_RULE: SYNTHETIC_CANARY_EMBEDDED_FONT_AND_VISUAL_REVIEW
+REGRESSION_BENCH_ID: KOR-CORE-AND-N-CANARY-EMBEDDED-FONT-V1
+REGRESSION_STATUS: PASS_LOCAL_SYNTHETIC_LATIN_ONLY
+STATUS: FIXED_DEV
+RECURRENCE_COUNT: 0
+```
+
 ## 9. MONTHLY REVIEW
 시험기간 중 또는 10세트 생성마다:
 - OPEN/RECURRED 오류 확인

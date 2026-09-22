@@ -70,10 +70,61 @@ handoff_gate = load_module(
     "arc_typesetter_handoff_preflight",
     ROOT / "tooling/handoff/handoff_preflight.py",
 )
+content_gate = load_module(
+    "arc_typesetter_content_qa",
+    ROOT / "tooling/content_qa/content_qa_gate.py",
+)
 
 
 class TypesetterAdmissionError(RuntimeError):
     """A job may not enter a renderer."""
+
+
+def verify_qa_evidence(handoff_path: Path, metadata: dict[str, Any], text: str) -> dict[str, Any]:
+    """Check the referenced QA proof rather than trusting self-declared PASS fields."""
+    filename = str(metadata.get("QA_EVIDENCE_FILENAME", ""))
+    if not filename or Path(filename).name != filename or filename in {".", ".."}:
+        raise TypesetterAdmissionError("QA_EVIDENCE_FILENAME must be a local basename")
+    qa_path = handoff_path.parent / filename
+    if not qa_path.is_file() or qa_path.is_symlink():
+        raise TypesetterAdmissionError("QA_EVIDENCE_MISSING: " + filename)
+    try:
+        proof = yaml.safe_load(qa_path.read_text(encoding="utf-8"))
+    except (OSError, yaml.YAMLError) as exc:
+        raise TypesetterAdmissionError("QA_EVIDENCE_UNREADABLE: " + filename) from exc
+    if not isinstance(proof, dict):
+        raise TypesetterAdmissionError("QA_EVIDENCE_INVALID: expected mapping")
+    qa_result = content_gate.analyze(proof)
+    if qa_result["status"] != "PASS":
+        codes = sorted({finding["code"] for finding in qa_result["findings"]})
+        raise TypesetterAdmissionError("QA_EVIDENCE_FAILED: " + ", ".join(codes))
+    if str(proof.get("subject", "")).upper() != str(metadata.get("SUBJECT", "")).upper():
+        raise TypesetterAdmissionError("QA_SUBJECT_MISMATCH")
+    try:
+        expected_count = int(metadata["ITEM_COUNT"])
+    except (TypeError, ValueError, KeyError) as exc:
+        raise TypesetterAdmissionError("QA_ITEM_COUNT_INVALID") from exc
+    if proof.get("item_count") != expected_count:
+        raise TypesetterAdmissionError("QA_ITEM_COUNT_MISMATCH")
+    answer_text = handoff_gate.section(text, "ANSWER KEY")
+    try:
+        answer_key = yaml.safe_load(answer_text)
+    except yaml.YAMLError as exc:
+        raise TypesetterAdmissionError("QA_ANSWER_KEY_UNREADABLE") from exc
+    if not isinstance(answer_key, dict) or len(answer_key) != expected_count:
+        raise TypesetterAdmissionError("QA_ANSWER_COUNT_MISMATCH")
+    for index, item in enumerate(proof["items"], start=1):
+        try:
+            evidence_answer = str(item["pass_a"]["answer"])
+        except (KeyError, TypeError) as exc:
+            raise TypesetterAdmissionError(f"QA_ANSWER_PROOF_INVALID at question {index}") from exc
+        try:
+            locked_answer = str(answer_key[index])
+        except KeyError as exc:
+            raise TypesetterAdmissionError("QA_ANSWER_NUMBER_MISSING") from exc
+        if evidence_answer != locked_answer:
+            raise TypesetterAdmissionError(f"QA_ANSWER_MISMATCH at question {index}")
+    return {"status": "PASS", "filename": filename, "item_count": expected_count}
 
 
 def load_manifest(path: Path) -> dict[str, Any]:
@@ -131,13 +182,14 @@ def resolve_job(
         codes = sorted({item["code"] for item in preflight["findings"] if item["severity"] == "FAIL"})
         raise TypesetterAdmissionError("handoff preflight failed: " + ", ".join(codes))
 
-    metadata, _text = handoff_gate.parse_handoff(handoff_path)
+    metadata, text = handoff_gate.parse_handoff(handoff_path)
     product = str(metadata.get("PRODUCT_MODE", "")).upper()
     if product not in PRODUCTS:
         raise TypesetterAdmissionError(f"unsupported product: {product or '<missing>'}")
     active_products = {str(value).upper() for value in manifest.get("runtime", {}).get("active_products", [])}
     if product not in active_products:
         raise TypesetterAdmissionError(f"product is not active: {product}")
+    qa_proof = verify_qa_evidence(handoff_path, metadata, text) if product in {"ARC_N", "ARC_FINAL"} else None
 
     layout = manifest.get("active", {}).get("layout", {})
     tooling = manifest.get("tooling", {})
@@ -166,6 +218,7 @@ def resolve_job(
         "pdf_autofix": require_manifest_path(root, str(autofix_tool.relative_to(root)), "PDF auto-fix controller"),
         "max_autofix_attempts": int(manifest["runtime"]["pdf_autofix_max_attempts"]),
         "locked_content_mutation": False,
+        "qa_evidence": qa_proof,
         "profile": dict(PRODUCT_PROFILES[product]),
         "handoff_preflight": {
             "status": preflight["status"],

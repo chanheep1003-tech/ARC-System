@@ -1,0 +1,34 @@
+# Source identity and readiness inventory, not an approved transcription.
+inventory_id: KOR-MIDTERM-2026-SOURCES-V1
+authority: GOOGLE_DRIVE_RAW_SCHOOL_SOURCE
+priority:
+  - SUPPLEMENT_FIRST
+  - TEXTBOOK_UNIT_1_ONLY
+supplement:
+  drive_id: 1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+  filename: 동북고_1학년_국어_중간고사_보충자료_스캔본.pdf
+  sha256: c35c6ad3d67d286c05e25e5f702ddb4433b973b12033e7ac63ae676a8c042bb3
+  page_count: 3
+  text_layer: absent
+  scan_image_per_page: true
+  verified_scope_signals:
+    - 탄궁가
+    - 팔원 - 서행시초3
+    - 기억할 만한 지나침
+    - 칸트-헤겔 자율성 비교 지문
+  exact_transcription_status: HOLD_VISUAL_CROSSCHECK_REQUIRED
+  caution: Image-only school scan; derived ARC PDFs and OCR output cannot replace this source.
+textbook:
+  drive_id: 1xaHlT-z8dAlPaylLP8bkqp_fNtufiVdZ
+  filename: 미래엔_공통국어2_교사용교과서.pdf
+  sha256: 7f8f8b05fd50d4087d3f5e628a8f79c1fb38e42ac075e0759a69ddb978675be5
+  page_count: 232
+  first_unit_title_sampled_at_pdf_page_10: 01 옛 노래 감상하기
+  text_layer: present
+  allowed_scope: UNIT_1_ONLY
+  full_unit_boundary_status: PENDING_PRINTED_PAGE_CROSSCHECK
+  caution: The textbook is secondary to school supplement; never import other units.
+release_gate:
+  supplement_original_text: HOLD
+  korean_pdf_font_verified: HOLD
+  reason: Exact school-source transcription and Korean font render QA are not yet complete.

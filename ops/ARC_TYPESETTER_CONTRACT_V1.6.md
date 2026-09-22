@@ -43,6 +43,13 @@ product invariants for HTML and ReportLab. Only `renderer_source` may differ by
 route. A caller-supplied template/version/layout override is not part of the
 interface and must be rejected before rendering.
 
+For ARC_N and ARC_FINAL, a front-matter `QA_EVIDENCE_STATUS=PASS` is never
+sufficient on its own. The gateway must open the sibling QA evidence file by
+local basename, rerun executable content QA, and compare product, subject,
+question count, and every ordered PASS A answer to the locked handoff answer
+key. Missing/malformed/changed QA evidence or answer disagreement returns
+content before either renderer receives the manuscript.
+
 `ARC_CORE`, `ARC_N`, and `ARC_FINAL` profiles are isolated. In particular,
 ARC_N blank-page/inline-answer rules may never enter FINAL, and CORE one-column
 rules may never be relaxed by either renderer.

@@ -31,6 +31,7 @@ handoff_gate = load_module("arc_handoff_preflight", ROOT / "tooling/handoff/hand
 content_gate = load_module("arc_content_qa_gate", ROOT / "tooling/content_qa/content_qa_gate.py")
 pdf_gate = load_module("arc_pdf_preflight", ROOT / "tooling/pdf_qc/pdf_preflight.py")
 typesetter_gateway = load_module("arc_typesetter_gateway", ROOT / "tooling/typeset/typesetter_gateway.py")
+canary_fonts = load_module("arc_canary_fonts", ROOT / "tooling/canary/canary_fonts.py")
 
 
 def make_qa_evidence(answers: dict[int, int]) -> dict[str, Any]:
@@ -87,15 +88,17 @@ def typeset_n(manuscript: str, answers: dict[int, int], output: Path, profile: d
         raise ValueError(f"expected 10 questions, found {len(questions)}")
     doc = fitz.open()
     cover = doc.new_page(width=A4_W, height=A4_H)
+    canary_fonts.embed(cover)
     cover.draw_rect(fitz.Rect(50, 72, A4_W - 50, A4_H - 72), color=(0.08, 0.16, 0.30), width=1.2)
-    cover.insert_text((72, 150), "ARC N", fontsize=28, fontname="hebo", color=(0.08, 0.16, 0.30))
-    cover.insert_text((72, 194), "KOR CANARY / 10 ITEMS", fontsize=16, fontname="hebo")
-    cover.insert_text((72, 760), "Synthetic pipeline fixture - not a study release", fontsize=9.9, fontname="helv")
+    cover.insert_text((72, 150), "ARC N", fontsize=28, fontname=canary_fonts.BOLD_NAME, color=(0.08, 0.16, 0.30))
+    cover.insert_text((72, 194), "KOR CANARY / 10 ITEMS", fontsize=16, fontname=canary_fonts.BOLD_NAME)
+    cover.insert_text((72, 760), "Synthetic pipeline fixture - not a study release", fontsize=9.9, fontname=canary_fonts.REGULAR_NAME)
     doc.new_page(width=A4_W, height=A4_H)
 
     for page_index in range(2):
         page = doc.new_page(width=A4_W, height=A4_H)
-        page.insert_text((44, 36), "ARC N / KOR CANARY", fontsize=9.5, fontname="helv")
+        canary_fonts.embed(page)
+        page.insert_text((44, 36), "ARC N / KOR CANARY", fontsize=9.5, fontname=canary_fonts.REGULAR_NAME)
         page.draw_line((44, 48), (A4_W - 44, 48), color=(0.45, 0.55, 0.68), width=0.8)
         for local_index, (number, text) in enumerate(questions[page_index * 5:(page_index + 1) * 5]):
             column = local_index % 2
@@ -103,25 +106,28 @@ def typeset_n(manuscript: str, answers: dict[int, int], output: Path, profile: d
             x0 = 44 + column * 258
             y0 = 68 + row * 226
             width = 236
-            page.insert_text((x0, y0), f"QUESTION {number}", fontsize=11.2, fontname="hebo", color=(0.08, 0.16, 0.30))
+            page.insert_text((x0, y0), f"QUESTION {number}", fontsize=11.2, fontname=canary_fonts.BOLD_NAME, color=(0.08, 0.16, 0.30))
             display_text = re.sub(r"[ \t]+(?=[1-5]\))", "\n", text)
-            remaining = page.insert_textbox(fitz.Rect(x0, y0 + 18, x0 + width, y0 + 198), display_text, fontsize=9.4, fontname="helv", lineheight=1.28)
+            remaining = page.insert_textbox(fitz.Rect(x0, y0 + 18, x0 + width, y0 + 198), display_text, fontsize=9.4, fontname=canary_fonts.REGULAR_NAME, lineheight=1.28)
             if remaining < 0:
                 raise RuntimeError(f"question {number} overflow: {remaining}")
-        page.insert_text((A4_W - 68, 812), str(page.number + 1), fontsize=9.5, fontname="helv")
+        page.insert_text((A4_W - 68, 812), str(page.number + 1), fontsize=9.5, fontname=canary_fonts.REGULAR_NAME)
 
     doc.new_page(width=A4_W, height=A4_H)
     key = doc.new_page(width=A4_W, height=A4_H)
-    key.insert_text((58, 72), "ANSWER KEY", fontsize=20, fontname="hebo", color=(0.08, 0.16, 0.30))
+    canary_fonts.embed(key)
+    key.insert_text((58, 72), "ANSWER KEY", fontsize=20, fontname=canary_fonts.BOLD_NAME, color=(0.08, 0.16, 0.30))
     key.draw_line((58, 86), (A4_W - 58, 86), color=(0.45, 0.55, 0.68), width=0.8)
     for index, (number, answer) in enumerate(sorted(answers.items())):
         x = 80 if index < 5 else 310
         y = 135 + (index % 5) * 54
-        key.insert_text((x, y), f"{number}. {answer}", fontsize=12, fontname="helv")
-    key.insert_text((A4_W - 68, 812), str(key.number + 1), fontsize=9.5, fontname="helv")
+        key.insert_text((x, y), f"{number}. {answer}", fontsize=12, fontname=canary_fonts.REGULAR_NAME)
+    key.insert_text((A4_W - 68, 812), str(key.number + 1), fontsize=9.5, fontname=canary_fonts.REGULAR_NAME)
     output.parent.mkdir(parents=True, exist_ok=True)
     doc.save(output, garbage=4, deflate=True)
     doc.close()
+    with fitz.open(output) as saved:
+        canary_fonts.assert_embedded_fonts(saved)
     return {"status": "PASS", "page_count": 6, "question_count": len(questions), "answer_count": len(answers)}
 
 

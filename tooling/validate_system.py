@@ -156,6 +156,21 @@ def main() -> int:
             if source.get("visual_review") != "PASS":
                 errors.append(f"Social A source lacks visual review PASS: {source.get('source_id')}")
 
+    korean_inventory_path = active["quality"].get("korean_school_source_inventory")
+    if not korean_inventory_path or not (ROOT / korean_inventory_path).is_file():
+        errors.append("KOR school source inventory is missing")
+    else:
+        inventory = yaml.safe_load((ROOT / korean_inventory_path).read_text(encoding="utf-8"))
+        supplement = inventory.get("supplement", {})
+        textbook = inventory.get("textbook", {})
+        for label, entry in (("supplement", supplement), ("textbook", textbook)):
+            if not entry.get("drive_id") or not re.fullmatch(r"[0-9a-f]{64}", str(entry.get("sha256", ""))):
+                errors.append(f"KOR {label} Drive identity/hash missing")
+        if supplement.get("text_layer") != "absent" or supplement.get("exact_transcription_status") != "HOLD_VISUAL_CROSSCHECK_REQUIRED":
+            errors.append("KOR supplement cannot be promoted to EXACT without visual crosscheck")
+        if textbook.get("allowed_scope") != "UNIT_1_ONLY":
+            errors.append("KOR textbook scope must remain UNIT_1_ONLY")
+
     common_path = active["common_generation_engine"]["path"]
     pdf_master = active["layout"]["pdf_master"]
     core_patch = active["layout"]["core_patch"]
