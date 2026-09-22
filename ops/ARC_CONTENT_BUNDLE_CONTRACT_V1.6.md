@@ -213,6 +213,15 @@ ARC_N / ARC_FINAL cannot set CONTENT_LOCK=true until:
 
 Runner PASS proves structural QA completeness, not factual truth. Human/independent semantic review remains authoritative.
 
+For ARC_N / ARC_FINAL, the sibling QA_EVIDENCE payload must bind to the
+final STUDENT MANUSCRIPT. After the last content edit, compute
+`student_manuscript_sha256` on the exact UTF-8 bytes emitted by the canonical
+serializer (`student_manuscript.strip() + "\n"`). The QA payload must carry
+that 64-character lowercase digest; Typesetter compares it with
+`STUDENT_MANUSCRIPT_SHA256` in the locked handoff. Any subsequent manuscript
+revision invalidates the QA proof and requires regeneration/review. This
+binding is not a substitute for independent semantic QA.
+
 ## 5. VISUAL HANDOFF
 For every essential visual:
 VISUAL_ID

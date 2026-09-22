@@ -136,6 +136,10 @@ For ARC_N / ARC_FINAL:
 - TARGET_DIFFICULTY=ACTUAL_DIFFICULTY after reclassification
 - the eight set gates are all PASS: STRUCTURE / ANSWER_COUNT_MATCH / MANUSCRIPT_CONTAMINATION / TOO_EASY / MID_GAP / STRUCTURE_BIAS / D4_SHORT / PASSAGE_TRUNCATION
 - QA_EVIDENCE follows the manifest-selected schema
+- ARC_N / ARC_FINAL QA_EVIDENCE must include `student_manuscript_sha256` of
+  the final serialized STUDENT MANUSCRIPT UTF-8 bytes
+  (`student_manuscript.strip() + "\n"`). Recompute the evidence after any
+  wording edit; a proof for a previous manuscript cannot be carried forward.
 - CONTENT_QA_RUNNER=PASS when executable runtime is available; otherwise TOOLING_UNAVAILABLE is recorded and semantic review remains mandatory
 - ANSWER_KEY_COMPLETE=PASS
 - ANSWER_COUNT_MATCH=PASS
