@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.12-dev
+  version: 1.8.13-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -177,6 +177,14 @@ runtime:
   ruleset_version_pin_per_batch: true
   generator_attribution_required: true
   duplicate_batch_avoidance: true
+  problem_prompt_dedup_policy: quality/governance/ARC_PROMPT_DEDUP_APPROVAL_POLICY_V1.0.md
+  prior_approved_item_history_required: true
+  problem_generation_exclusion_registry_required: true
+  problem_semantic_duplicate_gate: required
+  problem_exact_duplicate_target: 0
+  problem_semantic_duplicate_target: 0
+  problem_final_user_approval_before_drive_save: required
+  problem_drive_save_before_user_approval: forbidden
   universal_cross_model_review: false
   selective_cross_model_review_only: true
   subject_priority:
