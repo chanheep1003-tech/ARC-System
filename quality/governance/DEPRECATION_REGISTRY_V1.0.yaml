@@ -118,3 +118,22 @@ rules:
     forbidden_runtime_behavior:
       - use_v10_when_manifest_selects_v11
       - treat_secondary_point_map_as_raw_school_source
+
+  - id: N-FINAL-DONGBOOK-HARDENING-V1
+    deprecated:
+      - engine/common/COMMON_GENERATION_ENGINE_V4.5_ARC.md
+      - quality/ARC_DIFFICULTY_ENGINE_V1.2.md
+      - quality/ARC_ITEM_QUALITY_RUBRIC_V1.4.md
+    replacement:
+      - engine/common/COMMON_GENERATION_ENGINE_V4.6_ARC.md
+      - quality/ARC_DIFFICULTY_ENGINE_V1.3.md
+      - quality/ARC_ITEM_QUALITY_RUBRIC_V1.5.md
+      - quality/ARC_FINAL_QUALITY_GATE_V1.0.md
+    reason: "2026-09-24 user feedback: N/FINAL were too easy for Dongbuk HS, attractive distractors were insufficient, and correct answers were often identifiable as the longest/most detailed option."
+    forbidden_runtime_behavior:
+      - d3_plus_without_two_strong_distractors
+      - d3_plus_with_only_two_first_pass_candidates
+      - correct_option_length_detail_as_answer_cue
+      - arc_n_below_dongbook_difficulty_floor_without_anchor_evidence
+      - arc_final_release_without_difficulty_profile
+      - arc_final_release_without_item_quality_profile
