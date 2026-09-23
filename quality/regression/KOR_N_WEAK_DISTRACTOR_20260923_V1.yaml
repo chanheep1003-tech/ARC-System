@@ -1,0 +1,47 @@
+version: KOR-N-WEAK-DISTRACTOR-20260923-V1
+status: ACTIVE-DEV
+source_set:
+  title: ARC_N02_공통국어2_보충자료4편_V1.0.pdf
+  drive_id: 1tWEZNM1MCsAvDRqscGGMcT5HgD0GfnF9
+  observed_by: USER_FEEDBACK_PLUS_MANUAL_TEXT_AUDIT
+  note: "User reported answers were too obvious and distractors were not attractive; this fixture targets option-set realism, not factual-answer correctness."
+
+failure_class:
+  error_code: ERR-KOR-005
+  label: WEAK_DISTRACTOR_OBVIOUS_ANSWER
+  severity: S1
+
+sentinels:
+  - item: 8
+    pattern: CORRECT_DEVICE_EFFECT_WITH_UNRELATED_DISTRACTORS
+    reason: "Correct sensory-effect explanation stands apart from distractors on unrelated effect axes."
+  - item: 12
+    pattern: ONE_NATURAL_METAPHOR_EFFECT_FOUR_REMOTE_ALTERNATIVES
+    reason: "Only one option plausibly connects the bureaucratic document metaphor to the space."
+  - item: 15
+    pattern: GENERIC_COMMONALITY_WITH_UNRELATED_ALTERNATIVES
+    reason: "Correct common point is broad and natural while alternatives describe absent actions/themes."
+  - item: 19
+    pattern: DIRECT_OPENING_SENTENCE_RESTATEMENT
+    reason: "Correct commonality is essentially stated in the passage opening; distractors are direct reversals/swaps."
+  - item: 20
+    pattern: VIEW_RESTATES_DEFINITION
+    reason: "The view paraphrases the defined Hegelian error and the key maps directly to the label."
+
+required_retest:
+  - KOR_ATTRACTIVE_DISTRACTOR_GATE
+  - KOR_OBVIOUS_ANSWER_GATE
+  - KOR_SECOND_BEST_GATE
+  - FIRST_PASS_CANDIDATE_COUNT
+  - STRONG_DISTRACTOR_COUNT
+  - NEAR_MISS_DISTRACTOR_COUNT
+  - IMMEDIATE_ELIMINATION_COUNT
+  - DISTRACTOR_CLASS_DISTRIBUTION
+
+pass_condition:
+  d3_plus_obvious_answer_items: 0
+  d3_plus_min_first_pass_candidates: 3
+  d3_plus_min_strong_distractors: 2
+  d4_d5_max_immediate_elimination: 1
+  set_obvious_answer_rate_max: 0.10
+  source_grounded_near_miss_required: true
