@@ -49,6 +49,7 @@ DETECT → CLASSIFY → FIX → REGRESSION TEST → PREVENTION RULE → CLOSE
 - ERR-KOR-002 화자/작품 지식 과잉추론
 - ERR-KOR-003 표현효과 과잉해석
 - ERR-KOR-004 현대문학 장문 복제
+- ERR-KOR-005 매력도 낮은 오답 / 정답 즉시 노출
 
 ### SCIENCE
 - ERR-SCI-REDOX-001 전자수 보존 오류
@@ -137,6 +138,7 @@ RECURRENCE_COUNT:
 |RISK-SOC-02|사회|SOURCE_FACT/GENERATION_IDEA 혼동|내부 Blueprint 분리|
 |RISK-KOR-01|국어|관찰과 화자 추론 혼동|OBSERVED_FACT / SPEAKER_INFERENCE 분리|
 |RISK-KOR-02|국어|현대문학 장문 복제|최소 인용 + 학교원문 범위|
+|RISK-KOR-03|국어|정답이 즉시 보이고 오답이 경쟁하지 못함|ATTRACTIVE_DISTRACTOR + OBVIOUS_ANSWER + SECOND_BEST gate|
 |RISK-HIS-01|한국사|사료 시기/주체 오류|FACT CHECK MATRIX|
 |RISK-HIS-02|한국사|민족주의/사회주의 계열 혼동|IDEOLOGICAL_LINE_SWAP 검수|
 |RISK-AI-01|AI|DFS/BFS 탐색 순서 오류|방문규칙·탐색구조 독립검증|
@@ -547,6 +549,33 @@ REGRESSION_STATUS: PASS_LOCAL
 STATUS: FIXED_DEV
 RECURRENCE_COUNT: 0
 ```
+
+
+### ERR-20260923-KOR-N-002
+```yaml
+ERROR_ID: ERR-20260923-KOR-N-002
+DATE: 2026-09-23
+SUBJECT: KOR ARC_N
+SET_ID: ARC_N02_공통국어2_보충자료4편_V1.0
+ITEM_ID: SET_LEVEL
+ERROR_CODE: ERR-KOR-005
+SEVERITY: S1
+DETECTED_STAGE: USER_FEEDBACK
+HUMAN_FOUND: true
+DESCRIPTION: 사용자가 실제 풀이 후 정답이 지나치게 명확하고 매력적인 오답이 부족하여 실제 시험 대비와 괴리가 크다고 보고함. accessible PDF text를 spot-audit한 결과 일부 문항에서 정답만 지문 핵심과 자연스럽게 연결되고 다수 오답은 관련 없는 행동·효과·직접 반대 진술로 즉시 제거 가능한 패턴이 확인됨.
+EXPECTED: D3 이상 문항은 최소 2개의 source-grounded near-miss distractor가 실제 후보로 남고, 정답은 근거 비교 전 문체/관련성만으로 드러나지 않아야 함.
+ACTUAL: 일부 문항에서 FIRST_PASS 후보가 사실상 1개이고, 표현효과/공통점/개념정의 문항의 오답이 정답과 같은 판단축에서 경쟁하지 못함.
+ROOT_CAUSE: 기존 STRONG_DISTRACTOR_COUNT 규칙이 선언적이어서 TRUE_KERNEL·WHY_TEMPTING·DECISIVE_REFUTATION을 증명하지 않아도 strong으로 자체 판정할 수 있었고, key-hidden top-3/second-best/obviousness gate가 없었음.
+FIX_APPLIED: ARC_KOREAN_ITEM_ENGINE_V1.2 및 ARC_KOREAN_ITEM_QA_V1.3에 attractive distractor proof, adversarial defense, first-pass candidate, second-best, immediate-elimination, obvious-answer gates 추가. 이전 세트를 regression fixture로 등록.
+PREVENTION_RULE: KOR_ATTRACTIVE_DISTRACTOR_GATE=PASS; KOR_OBVIOUS_ANSWER_GATE=PASS; KOR_SECOND_BEST_GATE=PASS
+REGRESSION_BENCH_ID: KOR-N-WEAK-DISTRACTOR-20260923-V1
+REGRESSION_STATUS: PENDING
+MASTER_CHANGE: engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.2.md
+COMMON_ENGINE_CHANGE: false
+STATUS: REGRESSION_PENDING
+RECURRENCE_COUNT: 1
+```
+
 
 ## 9. MONTHLY REVIEW
 시험기간 중 또는 10세트 생성마다:
