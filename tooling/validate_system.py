@@ -144,6 +144,13 @@ def main() -> int:
         "problem_semantic_duplicate_target": 0,
         "problem_final_user_approval_before_drive_save": "required",
         "problem_drive_save_before_user_approval": "forbidden",
+        "universal_distractor_competitiveness_gate": "required",
+        "universal_answer_length_bias_gate": "required",
+        "arc_n_dongbook_difficulty_floor": "required",
+        "arc_final_quality_gate": "required",
+        "arc_final_difficulty_profile": "required",
+        "arc_final_item_quality_profile": "required",
+        "arc_final_release_gate": "required",
     }
     for key, expected in required_runtime.items():
         if runtime.get(key) != expected:
@@ -401,6 +408,38 @@ def main() -> int:
         errors,
         active["quality"]["problem_prompt_dedup_policy"],
         ["DUP_HISTORY_ACCESS=UNAVAILABLE", "FINAL_USER_APPROVAL=PENDING", "DRIVE_SAVE=BLOCKED"],
+    )
+
+    require_markers(
+        errors,
+        active["quality"]["final_quality_gate"],
+        [
+            "DIFFICULTY_PROFILE",
+            "ITEM_QUALITY_PROFILE",
+            "LONGEST_OPTION_IS_KEY_RATE",
+            "DISTRACTOR_COMPETITIVENESS=PASS",
+            "FINAL_RELEASE=BLOCKED",
+        ],
+    )
+    require_markers(
+        errors,
+        active["quality"]["item_quality"],
+        [
+            "EFFECTIVE FIVE-CHOICE RULE",
+            "CORRECT OPTION LENGTH BIAS",
+            "WEAK_DISTRACTOR_HARD_FAIL",
+            "OBVIOUS_KEY_HARD_FAIL",
+        ],
+    )
+    require_markers(
+        errors,
+        active["quality"]["difficulty_engine"],
+        [
+            "DONGBOOK PRODUCT FLOOR",
+            "D4+D5 >= 35%",
+            "D4+D5 target >= 30%",
+            "DIFFICULTY_INFLATION_FAIL",
+        ],
     )
 
     science = (ROOT / "subjects/SCIENCE_MASTER_V4.0.md").read_text(encoding="utf-8")
