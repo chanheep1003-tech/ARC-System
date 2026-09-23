@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.16-dev
+  version: 1.8.17-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -301,7 +301,8 @@ active:
     problem_prompt_dedup_policy: quality/governance/ARC_PROMPT_DEDUP_APPROVAL_POLICY_V1.0.md
     regression_policy: quality/regression/ARC_REGRESSION_POLICY_V1.0.md
     regression_fixtures: quality/regression/REGRESSION_FIXTURES_V1.0.yaml
-    regression_fixture_count: 31
+    regression_fixture_count: 30
+    user_found_regression_count: 1
     gold_anchor_policy: quality/gold/ARC_GOLD_ANCHOR_POLICY_V1.0.md
     gold_anchor_packs:
       korean: quality/gold/KOR_GOLD_ANCHORS_V1.1.md
