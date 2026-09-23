@@ -512,3 +512,14 @@
 - School historical exams restricted to difficulty calibration.
 - Teacher-style prediction disabled.
 - Freeze mode intentionally not added.
+
+
+## 2026-09-24 — N° / FINAL Dongbuk difficulty & distractor hardening
+- Activated COMMON_GENERATION_ENGINE_V4.6, ARC_DIFFICULTY_ENGINE_V1.3, ARC_ITEM_QUALITY_RUBRIC_V1.5.
+- Added ARC_FINAL_QUALITY_GATE_V1.0 as a mandatory FINAL release gate.
+- Added universal attractive-distractor requirements: D3+ requires at least two strong distractors and at least three first-pass plausible candidates; D4/D5 require effective choice count >= 4.
+- Added answer-length/detail bias audit. A uniquely longest correct option with >=1.25 longest/median ratio is a hard-revise condition when extra length is not structurally necessary.
+- Added set-level longest-option-is-key audit (>30% revise, >40% fail).
+- Raised Dongbuk default ARC_N difficulty floor to D4+D5 >=35% and D1+D2 <=25%, subject to verified school-anchor calibration.
+- Added ARC_FINAL difficulty profile floor with D4+D5 target >=30%, no unjustified BELOW_SCHOOL items, and late-section discrimination requirements.
+- CORE remains maintenance-only; quality development priority is N° and FINAL.
