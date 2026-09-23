@@ -6,6 +6,12 @@ governance:
   DUPLICATE_GATE: NOT_CLAIMED_CANARY
   FINAL_USER_APPROVAL: NOT_APPLICABLE_CANARY
   DRIVE_SAVE: BLOCKED
+  SCOPE_EXCLUSION_INDEX: quality/source/SOC_C_XMARK_EXCLUSION_INDEX_2026_V1.0.yaml
+  C_X_MARK_FILTER: PASS_SYNTHETIC_EXCLUDED_REGIONS_NOT_USED
+  excluded_regions_not_used:
+    - power-separation confirmation figure
+    - Singer civil-disobedience block
+    - Thoreau civil-disobedience block
 content_bundle:
   batch_id: SOC-N-CANARY-001
   generator: GPT
@@ -70,5 +76,6 @@ content_bundle:
   qc_status:
     STATUS: PASS
     SOURCE_MODE: SYNTHETIC_SCOPE_REPRESENTATIVE_ONLY
+    C_X_MARK_FILTER: PASS_SYNTHETIC_EXCLUDED_REGIONS_NOT_USED
     FINAL_USER_APPROVAL: NOT_APPLICABLE_CANARY
     DRIVE_SAVE: BLOCKED

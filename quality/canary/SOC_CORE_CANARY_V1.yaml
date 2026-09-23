@@ -38,11 +38,13 @@ content_bundle:
 
     Rights may conflict in concrete situations. A defensible response states both claims, tests necessity and proportionality where relevant, and explains why one arrangement protects the core of each right better than an alternative. Merely naming a right is not the same as applying it.
 
-    The C worksheet contains handwritten exclusion marks. This canary therefore uses only broad registered scope signals and makes no claim that every paragraph is examinable. Production content remains blocked until the visual X-mark exclusion index is verified.
+    The C worksheet's verified visual exclusion index removes the power-separation confirmation figure and the Singer and Thoreau civil-disobedience blocks from production evidence. This synthetic canary does not reproduce or rely on those regions. Production source-fidelity remains blocked until the remaining school-source extraction and final scope review are complete.
   visual_asset_manifest: []
   qc_status:
     CORE_QA_STATUS: PASS
     SOURCE_MODE: SYNTHETIC_SCOPE_REPRESENTATIVE_ONLY
+    C_X_MARK_FILTER: PASS_SYNTHETIC_EXCLUDED_REGIONS_NOT_USED
+    SCOPE_EXCLUSION_INDEX: quality/source/SOC_C_XMARK_EXCLUSION_INDEX_2026_V1.0.yaml
 fault_injection:
   - id: STALE_PDF_MASTER
     field: pdf_master

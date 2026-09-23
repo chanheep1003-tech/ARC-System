@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.14-dev
+  version: 1.8.15-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -157,7 +157,7 @@ runtime:
   answer_integrity_gate: required
   input_checksum_lock: required
   handoff_checksum_lock: required
-  core_social_x_mark_mode: NON_BLOCKING_USER_FILTER
+  core_social_x_mark_mode: BLOCKING_SCOPE_EXCLUSION
   core_social_bentham_default: excluded
   core_n_generation_links_internal_only: true
   exact_drive_parent_verification: required
@@ -290,7 +290,9 @@ active:
     source_ledger_schema: quality/source/ARC_SOURCE_LEDGER_SCHEMA_V1.0.yaml
     social_a_school_source_lock: quality/source/SOC_A_SCHOOL_WORKSHEETS_2026_V1.0.yaml
     korean_school_source_inventory: quality/source/KOR_SCHOOL_SOURCE_INVENTORY_2026_V1.0.yaml
+    korean_supplement_page_map: quality/source/KOR_SUPPLEMENT_PAGE_MAP_2026_V1.0.yaml
     social_school_source_inventory: quality/source/SOC_SCHOOL_SOURCE_INVENTORY_2026_V1.0.yaml
+    social_c_xmark_exclusion_index: quality/source/SOC_C_XMARK_EXCLUSION_INDEX_2026_V1.0.yaml
     problem_prompt_dedup_policy: quality/governance/ARC_PROMPT_DEDUP_APPROVAL_POLICY_V1.0.md
     regression_policy: quality/regression/ARC_REGRESSION_POLICY_V1.0.md
     regression_fixtures: quality/regression/REGRESSION_FIXTURES_V1.0.yaml
@@ -370,6 +372,7 @@ tooling:
   content_qa_gate: tooling/content_qa/content_qa_gate.py
   content_qa_gate_smoke_test: tooling/content_qa/test_content_qa_gate.py
   xmark_detector: tooling/pdf_qc/xmark_detect.py
+  xmark_detector_smoke_test: tooling/pdf_qc/test_xmark_detect.py
   visual_renderer: tooling/visual/arc_visual_render.py
   visual_verifier: tooling/visual/visual_verify.py
   smoke_workflow: .github/workflows/arc-tooling-smoke.yml

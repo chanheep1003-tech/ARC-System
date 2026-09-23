@@ -506,6 +506,48 @@ STATUS: FIXED_DEV
 RECURRENCE_COUNT: 0
 ```
 
+### ERR-20260923-XMARK-RUNTIME-001
+```yaml
+ERROR_ID: ERR-20260923-XMARK-RUNTIME-001
+DATE: 2026-09-23
+SUBJECT: SOC C SCHOOL WORKSHEET
+ERROR_CODE: XMARK_DETECTOR_RUNTIME_AND_SHAPE_FAILURE
+SEVERITY: S1
+DETECTED_STAGE: SOURCE_SCOPE_FILTER
+HUMAN_FOUND: false
+DESCRIPTION: The X-mark detector could not complete its first real-source run because OpenCV was absent, then failed on a valid HoughLinesP result whose array shape differed from the hard-coded indexing assumption.
+EXPECTED: The detector opens the canonical worksheet, emits conservative automatic/human-review candidates, and never changes scope without visual confirmation.
+ACTUAL: The first run raised ModuleNotFoundError for cv2; after dependency installation the second run raised IndexError while iterating Hough line output.
+ROOT_CAUSE: CI did not install the detector's declared runtime dependency, and the implementation assumed one OpenCV return shape.
+FIX_APPLIED: Added OpenCV to CI, normalized Hough output to an N-by-4 array, added a raster-X-versus-blank smoke test, and reran the canonical Social C worksheet successfully.
+PREVENTION_RULE: XMARK_DETECTOR_DEPENDENCY_AND_SHAPE_SMOKE_REQUIRED
+REGRESSION_BENCH_ID: XMARK-DETECTOR-SMOKE-V1
+REGRESSION_STATUS: PASS_LOCAL
+STATUS: FIXED_DEV
+RECURRENCE_COUNT: 0
+```
+
+### ERR-20260923-SOC-XMARK-POLICY-001
+```yaml
+ERROR_ID: ERR-20260923-SOC-XMARK-POLICY-001
+DATE: 2026-09-23
+SUBJECT: SOC C SCHOOL WORKSHEET
+ERROR_CODE: XMARK_SCOPE_FILTER_NON_BLOCKING
+SEVERITY: S1
+DETECTED_STAGE: MANIFEST_GOVERNANCE_REVIEW
+HUMAN_FOUND: false
+DESCRIPTION: The active manifest described Social C handwritten X marks as a non-blocking user filter, allowing excluded content to remain eligible for production evidence.
+EXPECTED: Visually verified X-marked regions are hard exclusions for CORE, question stems, distractor knowledge, answer evidence and visual assets.
+ACTUAL: The runtime token was NON_BLOCKING_USER_FILTER even though the school worksheet uses X marks to remove material from the tested scope.
+ROOT_CAUSE: Source-ingest uncertainty was represented as permissive runtime behavior instead of a fail-closed review state.
+FIX_APPLIED: Changed the active mode to BLOCKING_SCOPE_EXCLUSION, registered the verified exclusion index, and made synthetic Social CORE/N fixtures attest that excluded regions are unused.
+PREVENTION_RULE: SOCIAL_C_XMARK_INDEX_AND_BLOCKING_SCOPE_GATE_REQUIRED
+REGRESSION_BENCH_ID: SYSTEM-VALIDATOR-SOC-C-XMARK-V1
+REGRESSION_STATUS: PASS_LOCAL
+STATUS: FIXED_DEV
+RECURRENCE_COUNT: 0
+```
+
 ## 9. MONTHLY REVIEW
 시험기간 중 또는 10세트 생성마다:
 - OPEN/RECURRED 오류 확인

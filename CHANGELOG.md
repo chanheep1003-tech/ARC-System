@@ -1,3 +1,10 @@
+## 1.8.15-dev — 2026-09-23
+- Re-opened the canonical three-page Korean supplement from Drive, verified its SHA-256, and added a page-level visual map for `탄궁가`, `팔원 - 서행시초3`, `기억할 만한 지나침`, and the Kant/Hegel article. Headings and page boundaries are verified; exact body transcription remains HOLD and no OCR guess is promoted to source truth.
+- Re-opened and rendered all ten pages of the Social C worksheet. Visual review fixed three large handwritten-X exclusions: the power-separation confirmation figure and the Singer and Thoreau civil-disobedience blocks. The Rawls block remains included; incidental correction marks are not expanded into section exclusions.
+- Corrected the active Social C policy from a non-blocking user filter to a blocking scope-exclusion gate. CORE/N canaries now explicitly avoid the three excluded regions and point to the canonical exclusion index.
+- Executing the X-mark detector on the real worksheet exposed a missing OpenCV runtime dependency and a Hough-line array-shape failure. CI now installs OpenCV, the detector normalizes line output before iteration, and a raster-X-versus-blank smoke test prevents recurrence.
+- Re-ran KOR and Social CORE/N synthetic canaries through QA, handoff, Typesetter, PDF and preflight. All four structural fixtures pass locally, but Korean exact-source production, Social B extraction, model-backed generation and user-approved release remain unclaimed.
+
 ## 1.8.14-dev — 2026-09-23
 - Added a Drive-grounded Social A/B/C source inventory with canonical file IDs, filenames, page counts and SHA-256 values. A is source-locked; B visual extraction and C exact handwritten X-mark exclusion indexing remain HOLD, so no full-scope source-fidelity PASS is claimed.
 - Added fixed synthetic Social CORE and N° canaries covering A justice/distribution, B globalization/population and C human-rights/constitutional judgment. CORE is four pages with each part on a fresh one-column page; N° is six pages with 10 questions, 10 answers and the required blank-page sequence.

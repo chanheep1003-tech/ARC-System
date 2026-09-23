@@ -107,7 +107,9 @@ def raster_candidates(page, dpi=150):
         return []
 
     segs = []
-    for l in lines[:,0,:]:
+    # OpenCV builds return either (N, 1, 4) or (N, 4). Normalize both so
+    # raster scanning cannot fail before the scope gate runs.
+    for l in np.asarray(lines).reshape(-1, 4):
         x1,y1,x2,y2 = map(float, l)
         angle = math.degrees(math.atan2(y2-y1, x2-x1)) % 180
         if diagonal(angle):

@@ -29,9 +29,9 @@ parts:
         filename: 통합사회2_C파트_학습지.pdf
         sha256: 34ca281ad9ee5051ec2ce5587a46be34d415ced7f9b032ad5022081cfa17e9d2
         page_count: 10
-    x_mark_filter: REQUIRED_VISUAL
-    readiness: HOLD_EXACT_X_MARK_EXCLUSION_INDEX
+    x_mark_filter: quality/source/SOC_C_XMARK_EXCLUSION_INDEX_2026_V1.0.yaml
+    readiness: SOURCE_LOCKED_WITH_VISUAL_X_EXCLUSION_INDEX
 release_gate:
   full_scope_core_source_fidelity: HOLD
   full_scope_n_source_fidelity: HOLD
-  reason: B visual extraction and C handwritten X-exclusion indexing are not fully verified.
+  reason: B visual extraction remains incomplete; C large-X exclusions are indexed but still require the normal final user review gate.

@@ -136,6 +136,7 @@ def main() -> int:
         "korean_source_text_checksum": "required",
         "korean_generated_output_as_source": "forbidden",
         "social_school_source_integrity_gate": "required",
+        "core_social_x_mark_mode": "BLOCKING_SCOPE_EXCLUSION",
         "prior_approved_item_history_required": True,
         "problem_generation_exclusion_registry_required": True,
         "problem_semantic_duplicate_gate": "required",
@@ -178,6 +179,43 @@ def main() -> int:
             errors.append("KOR supplement cannot be promoted to EXACT without visual crosscheck")
         if textbook.get("allowed_scope") != "UNIT_1_ONLY":
             errors.append("KOR textbook scope must remain UNIT_1_ONLY")
+
+    korean_map_path = active["quality"].get("korean_supplement_page_map")
+    if not korean_map_path or not (ROOT / korean_map_path).is_file():
+        errors.append("KOR supplement visual page map is missing")
+    else:
+        page_map = yaml.safe_load((ROOT / korean_map_path).read_text(encoding="utf-8"))
+        if page_map.get("review", {}).get("heading_and_boundary_status") != "VERIFIED_VISUAL":
+            errors.append("KOR supplement headings and boundaries must be visually verified")
+        if page_map.get("review", {}).get("exact_body_transcription_status") != "HOLD_VISUAL_LINE_BY_LINE_TRANSCRIPTION":
+            errors.append("KOR page map must not claim exact body transcription")
+        if len(page_map.get("pages", [])) != 3:
+            errors.append("KOR supplement page map must cover exactly three source pages")
+
+    social_x_path = active["quality"].get("social_c_xmark_exclusion_index")
+    if not social_x_path or not (ROOT / social_x_path).is_file():
+        errors.append("Social C X-mark exclusion index is missing")
+    else:
+        x_index = yaml.safe_load((ROOT / social_x_path).read_text(encoding="utf-8"))
+        exclusions = x_index.get("exclusions", [])
+        if len(exclusions) != 3 or any(x.get("status") != "EXCLUDE" for x in exclusions):
+            errors.append("Social C X-mark index must contain the three visually confirmed exclusions")
+        gate = x_index.get("gate", {})
+        for key in ("excluded_as_answer_basis", "excluded_as_required_distractor_knowledge", "excluded_as_visual_source", "excluded_as_core_required_content"):
+            if gate.get(key) is not True:
+                errors.append(f"Social C X-mark gate must enforce {key}")
+        if gate.get("ambiguous_marks_default") != "HOLD":
+            errors.append("ambiguous Social C marks must default to HOLD")
+
+        for fixture_key in ("soc_core_canary_fixture", "soc_n_canary_fixture"):
+            fixture_path = tooling.get(fixture_key)
+            if not fixture_path or not (ROOT / fixture_path).is_file():
+                errors.append(f"Social fixture missing for X-mark isolation: {fixture_key}")
+                continue
+            fixture = yaml.safe_load((ROOT / fixture_path).read_text(encoding="utf-8"))
+            fixture_text = yaml.safe_dump(fixture, allow_unicode=True)
+            if social_x_path not in fixture_text or "PASS_SYNTHETIC_EXCLUDED_REGIONS_NOT_USED" not in fixture_text:
+                errors.append(f"{fixture_key} must bind the Social C exclusion index and attest excluded regions are unused")
 
     common_path = active["common_generation_engine"]["path"]
     pdf_master = active["layout"]["pdf_master"]
@@ -309,6 +347,8 @@ def main() -> int:
         "kor_n_canary_fixture",
         "soc_core_canary_fixture",
         "soc_n_canary_fixture",
+        "xmark_detector",
+        "xmark_detector_smoke_test",
     ):
         rel = tooling.get(key)
         if not isinstance(rel, str) or not (ROOT / rel).is_file():
