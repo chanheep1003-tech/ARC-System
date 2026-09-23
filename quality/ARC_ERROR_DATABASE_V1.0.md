@@ -584,3 +584,29 @@ RECURRENCE_COUNT: 1
 - MASTER 승격 후보 확인
 - 불필요하게 중복된 예방규칙 제거
 - QA BENCH에 새 회귀케이스 추가 여부 결정
+
+
+## ERR-2026-09-24-NFINAL-QUALITY-01
+- CATEGORY: ITEM_QUALITY / DIFFICULTY_CALIBRATION
+- PRODUCTS: ARC_N, ARC_FINAL
+- SUBJECTS: KOR, SOC, HIS, SCI
+- USER_OBSERVED:
+  - overall item difficulty too low for Dongbuk High School exam preparation
+  - attractive distractors frequently absent
+  - correct answer often identifiable as the longest or most detailed option
+  - nominal 5-choice items sometimes function as effective 2~3-choice items
+- ROOT_CAUSE:
+  - existing rules scored weak distractors but did not universally enforce first-pass candidate competition
+  - answer-length audit was stronger in Korean-specific QA than in the cross-subject common stack
+  - FINAL had layout assets but no dedicated mandatory difficulty/item-quality release gate
+- FIX:
+  - COMMON_GENERATION_ENGINE_V4.6
+  - ARC_DIFFICULTY_ENGINE_V1.3
+  - ARC_ITEM_QUALITY_RUBRIC_V1.5
+  - ARC_FINAL_QUALITY_GATE_V1.0
+- REGRESSION_REQUIREMENT:
+  - inject longest-correct-option cue
+  - inject three immediate-elimination distractors
+  - inject fake-D4 one-step item
+  - verify gate blocks all defects before FINAL release
+- STATUS: FIXED_POLICY / CANARY_PENDING
