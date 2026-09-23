@@ -1,7 +1,7 @@
 version: ARC-REGRESSION-FIXTURES-V1.0
 policy: quality/regression/ARC_REGRESSION_POLICY_V1.0.md
 frozen: true
-fixture_count: 30
+fixture_count: 31
 source_mode: gold_anchor_reference
 
 packs:
@@ -14,6 +14,7 @@ packs:
       - {fixture_id: KOR-RB-001, anchor_id: KOR-B-001, class: BAD, expected_decision: REVISE, expected_max_item: 83, expected_hard_fail: false, forbidden_decisions: [BANK_A, PREMIUM_BANK_A]}
       - {fixture_id: KOR-RB-002, anchor_id: KOR-B-002, class: BAD, expected_decision: REVISE, expected_max_item: 82, expected_hard_fail: false, forbidden_decisions: [BANK_A, PREMIUM_BANK_A]}
       - {fixture_id: KOR-RB-003, anchor_id: KOR-B-003, class: BAD, expected_decision: DISCARD, expected_hard_fail: true, forbidden_decisions: [PASS, BANK_A, BANK_B, PREMIUM_BANK_A]}
+      - {fixture_id: KOR-UX-001, source: quality/regression/KOR_N_WEAK_DISTRACTOR_20260923_V1.yaml, class: USER_FOUND_BAD_SET, expected_decision: REVISE, expected_hard_fail: true, required_gates: [KOR_ATTRACTIVE_DISTRACTOR_GATE, KOR_OBVIOUS_ANSWER_GATE, KOR_SECOND_BEST_GATE], forbidden_decisions: [CONTENT_LOCK, BANK_A, PREMIUM_BANK_A]}
 
   SCI:
     source: quality/gold/SCI_GOLD_ANCHORS_V1.0.md
