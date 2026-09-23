@@ -1,3 +1,8 @@
+## 1.8.17-dev — 2026-09-23
+- Kept the original GOLD-based regression suite frozen at exactly 30 cases and isolated the new user-found Korean weak-distractor sentinel as a separate regression class. This fixes CI compatibility with the V1.0 fixed-regression runner while preserving the new realism failure case.
+- Manifest now reports 30 frozen GOLD fixtures + 1 separately registered user-found Korean regression sentinel; the new sentinel must not silently re-baseline the original fixture suite.
+- The Korean distractor-quality patch remains REGRESSION_PENDING until a fresh model-generated set passes the new semantic gates.
+
 ## 1.8.16-dev — 2026-09-23
 - Saved the user's two Korean supplement point-analysis notes into Google Drive under `N제 시스템/01_국어/문제집·참고자료/출제포인트·분석자료` and registered a manifest-selected secondary point map for the four supplement passages. The notes do not replace the RAW SCHOOL SOURCE; the point-map intake classifies each candidate point before it can support an answer.
 - Audited the previously produced `ARC_N02_공통국어2_보충자료4편_V1.0.pdf` after user solve feedback that answers were too obvious and distractors were not competitive. Several option sets were confirmed as realism sentinels where the correct choice stood apart by relevance while alternatives were remote/direct reversals.
