@@ -119,6 +119,9 @@ runtime:
   korean_passage_utilization_gate: required
   korean_duplicate_axis_gate: required
   korean_distractor_competitiveness_gate: required
+  korean_attractive_distractor_gate: required
+  korean_obvious_answer_gate: required
+  korean_second_best_gate: required
   korean_answer_length_audit: required
   korean_task_form_diversity_gate: required
   core_editorial_architecture_gate: required
@@ -214,8 +217,8 @@ active:
     drive_mirror_status: pending_sync
 
   korean_item_engine:
-    path: engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.1.md
-    version: 1.1
+    path: engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.2.md
+    version: 1.2
     drive_id: null
     drive_mirror_status: pending_sync
 
@@ -268,7 +271,8 @@ active:
       path: quality/ARC_SCHOOL_DIFFICULTY_BENCH_V1.0.md
       drive_id: 1t0l6juVLzJxx9UMN5YwG1eRu4enAXpmX
     item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.4.md
-    korean_item_qa: quality/ARC_KOREAN_ITEM_QA_V1.2.md
+    korean_item_qa: quality/ARC_KOREAN_ITEM_QA_V1.3.md
+    korean_supplement_point_map: quality/source/KOR_SUPPLEMENT_POINT_MAP_2026_V1.0.md
     universal_independent_solve: quality/ARC_UNIVERSAL_INDEPENDENT_SOLVE_GATE_V1.0.md
     qa_evidence_schema: quality/semantic/ARC_QA_EVIDENCE_SCHEMA_V1.0.yaml
     core_editorial_naturalness: quality/ARC_CORE_EDITORIAL_NATURALNESS_V1.2.md
@@ -296,7 +300,7 @@ active:
     problem_prompt_dedup_policy: quality/governance/ARC_PROMPT_DEDUP_APPROVAL_POLICY_V1.0.md
     regression_policy: quality/regression/ARC_REGRESSION_POLICY_V1.0.md
     regression_fixtures: quality/regression/REGRESSION_FIXTURES_V1.0.yaml
-    regression_fixture_count: 30
+    regression_fixture_count: 31
     gold_anchor_policy: quality/gold/ARC_GOLD_ANCHOR_POLICY_V1.0.md
     gold_anchor_packs:
       korean: quality/gold/KOR_GOLD_ANCHORS_V1.1.md
