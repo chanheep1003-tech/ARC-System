@@ -1,3 +1,9 @@
+## 1.8.19-dev — 2026-09-23
+- Added the user's third detailed Korean four-passage analysis note to Drive and activated KOR Supplement Point Map V1.1.
+- V1.1 expands per-passage priority axes and near-miss distractor seeds for 「탄궁가」, 「팔원－서행시초 3」, 「기억할 만한 지나침」, and the Kant/Hegel reading, with special emphasis on fact-vs-inference, past-vs-present, direct-intervention overstatement, device-function reduction, and concept/condition swaps.
+- Added a cross-passage matrix for the two modern poems and Kant/Hegel, plus explicit SCHOOL_SOURCE_VERIFY_REQUIRED labels for external-note details that cannot become answer-bearing evidence until confirmed in the actual school material.
+- RAW SCHOOL SOURCE remains authoritative; the three analysis notes remain SECONDARY_REFERENCE only.
+
 ## 1.8.18-dev — 2026-09-23
 - Marked the user-found Korean weak-distractor regression explicitly as `PENDING_MODEL_CANARY`; rule/QA activation is not treated as proof that production item quality is fixed.
 - Recovered CI wiring after separating the new user-found sentinel from the original frozen 30-case GOLD suite and synchronized strict checksums in the same commit so the current dev head can be tested as one coherent state.

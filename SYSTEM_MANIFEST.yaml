@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.18-dev
+  version: 1.8.19-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -272,7 +272,7 @@ active:
       drive_id: 1t0l6juVLzJxx9UMN5YwG1eRu4enAXpmX
     item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.4.md
     korean_item_qa: quality/ARC_KOREAN_ITEM_QA_V1.3.md
-    korean_supplement_point_map: quality/source/KOR_SUPPLEMENT_POINT_MAP_2026_V1.0.md
+    korean_supplement_point_map: quality/source/KOR_SUPPLEMENT_POINT_MAP_2026_V1.1.md
     korean_weak_distractor_regression: quality/regression/KOR_N_WEAK_DISTRACTOR_20260923_V1.yaml
     korean_weak_distractor_regression_status: PENDING_MODEL_CANARY
     universal_independent_solve: quality/ARC_UNIVERSAL_INDEPENDENT_SOLVE_GATE_V1.0.md
