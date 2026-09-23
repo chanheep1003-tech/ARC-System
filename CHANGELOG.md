@@ -1,3 +1,7 @@
+## 1.8.18-dev — 2026-09-23
+- Marked the user-found Korean weak-distractor regression explicitly as `PENDING_MODEL_CANARY`; rule/QA activation is not treated as proof that production item quality is fixed.
+- Recovered CI wiring after separating the new user-found sentinel from the original frozen 30-case GOLD suite and synchronized strict checksums in the same commit so the current dev head can be tested as one coherent state.
+
 ## 1.8.17-dev — 2026-09-23
 - Kept the original GOLD-based regression suite frozen at exactly 30 cases and isolated the new user-found Korean weak-distractor sentinel as a separate regression class. This fixes CI compatibility with the V1.0 fixed-regression runner while preserving the new realism failure case.
 - Manifest now reports 30 frozen GOLD fixtures + 1 separately registered user-found Korean regression sentinel; the new sentinel must not silently re-baseline the original fixture suite.
