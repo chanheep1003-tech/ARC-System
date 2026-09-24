@@ -132,19 +132,6 @@ jobs:
       - name: Run representative SOC N E2E canary
         run: python tooling/canary/kor_n_canary.py --fixture quality/canary/SOC_N_CANARY_V1.yaml --output-dir /tmp/arc-soc-n-canary --report /tmp/arc-soc-n-canary/canary-report.json
 
-      - name: Upload KOR canary evidence
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: kor-canaries-${{ github.run_id }}
-          path: |
-            /tmp/arc-kor-canary
-            /tmp/arc-kor-n-canary
-/tmp/arc-kor-final-canary
-            /tmp/arc-soc-canary
-            /tmp/arc-soc-n-canary
-          retention-days: 7
-
       - name: Run Universal Independent Solve QA gate smoke
         run: python tooling/content_qa/test_content_qa_gate.py
 
@@ -153,6 +140,19 @@ jobs:
 
       - name: Run fixed KOR FINAL E2E canary
         run: python tooling/canary/kor_final_canary.py --output-dir /tmp/arc-kor-final-canary --report /tmp/arc-kor-final-canary/canary-report.json
+
+      - name: Upload canary evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: arc-canaries-${{ github.run_id }}
+          path: |
+            /tmp/arc-kor-canary
+            /tmp/arc-kor-n-canary
+            /tmp/arc-kor-final-canary
+            /tmp/arc-soc-canary
+            /tmp/arc-soc-n-canary
+          retention-days: 7
 
       - name: Validate active system graph and checksums
         run: python tooling/validate_system.py --strict-checksums
