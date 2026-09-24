@@ -38,6 +38,28 @@ ROOT: `/Google Drive/N제 시스템/03_통합사회`
 - 학습지의 문장을 외부 철학 지식으로 확대하지 않는다. 칸트·베카리아 문항은 1호에 명시된 진술 또는 범위 내 정당한 함의만 사용한다.
 - 원본을 열지 못했거나 체크섬이 달라지면 `SOURCE_CHANGED_OR_UNREADABLE`로 중단하고 BANK_PASS를 금지한다.
 
+
+### 1-2. A파트 『생각의 지도』 p156~233 SOURCE LOCK
+Canonical registry: `quality/source/SOC_A_THOUGHTMAP_P156_233_2026_V1.0.yaml`.
+
+Drive 원문:
+- `/Google Drive/N제 시스템/03_통합사회/학교자료/학교학습지/A파트/생각의지도_p156-233_시험범위_원문스캔.pdf`
+- Drive ID `1GxP1P7VhMi61PlDK_sSX7BW7bmQHKE9l`
+- SHA-256 `312a98ddeb8d45592bbc6d3ba1ace06c8857667acf51372bd978be074be50ff8`
+
+출제포인트 index:
+- Markdown Drive ID `1PK3v00HL3O-n7BjdMutsg_FJDACklR-h`
+- Google Doc Drive ID `1FUys9UpMVxGXfVCd56qRUt7dlgloyncGD_qDoAzVXUg`
+
+운영 규칙:
+- INDEX는 탐색·blueprint용이고 정답/선지 근거는 실제 원문 페이지를 다시 확인한다.
+- 동서양 차이는 집단 평균 경향으로 처리하고 개인에게 자동 일반화하지 않는다.
+- 선천적 지능·논리능력 차이, 문화 본질주의, 생태 단일결정론으로 확대하지 않는다.
+- 현대화=서구화, 맥락적 사고=논리 부정, 복잡성=과학성 같은 과잉 추론을 금지한다.
+- CH6/7/8의 연구 구조는 새 사례·새 수치·새 도표로 전이하되 책의 원문·실험 문장을 장문 복제하지 않는다.
+- A파트 25문항 세트에서 『생각의 지도』 5문항을 배정할 경우 최소 4개 서로 다른 축, 자료/실험형 최소 2문항, CH7 또는 CH8 적용형 최소 1문항을 우선한다.
+- 우선 고난도 축: 변증법 3원리, 모순 연구결과 처리, 사회생태 인과망, 사회구조→인지 경로, 기본적 귀인 오류, IQ검사 문화편향, 이중문화 프라이밍.
+
 ## 2. SCOPE LOCK — 2026-09-16 최신 학교자료 반영
 A = 천재 p36~43 + 『생각의 지도』 p156~233 + A학습지 1호·2호
 B = 천재 p98~107 + p124~133 + B학습지
