@@ -332,6 +332,7 @@ active:
     source_ledger: quality/ARC_SOURCE_LEDGER_V1.0.md
     source_ledger_schema: quality/source/ARC_SOURCE_LEDGER_SCHEMA_V1.0.yaml
     social_a_school_source_lock: quality/source/SOC_A_SCHOOL_WORKSHEETS_2026_V1.0.yaml
+    social_a_thoughtmap_source: quality/source/SOC_A_THOUGHTMAP_P156_233_2026_V1.0.yaml
     korean_school_source_inventory: quality/source/KOR_SCHOOL_SOURCE_INVENTORY_2026_V1.0.yaml
     korean_supplement_page_map: quality/source/KOR_SUPPLEMENT_PAGE_MAP_2026_V1.0.yaml
     social_school_source_inventory: quality/source/SOC_SCHOOL_SOURCE_INVENTORY_2026_V1.0.yaml
