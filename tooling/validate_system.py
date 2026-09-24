@@ -344,6 +344,8 @@ def main() -> int:
         "handoff_preflight_smoke_test",
         "content_qa_gate",
         "content_qa_gate_smoke_test",
+        "final_quality_gate_exec",
+        "final_quality_gate_smoke_test",
         "handoff_serializer",
         "handoff_serializer_smoke_test",
         "nightly_canary",
@@ -352,6 +354,9 @@ def main() -> int:
         "kor_n_canary",
         "kor_n_canary_smoke_test",
         "kor_n_canary_fixture",
+        "kor_final_canary",
+        "kor_final_canary_smoke_test",
+        "kor_final_canary_fixture",
         "soc_core_canary_fixture",
         "soc_n_canary_fixture",
         "xmark_detector",
@@ -408,6 +413,17 @@ def main() -> int:
         errors,
         active["quality"]["problem_prompt_dedup_policy"],
         ["DUP_HISTORY_ACCESS=UNAVAILABLE", "FINAL_USER_APPROVAL=PENDING", "DRIVE_SAVE=BLOCKED"],
+    )
+
+    require_markers(
+        errors,
+        tooling["final_quality_gate_exec"],
+        [
+            "WEAK_DISTRACTOR_HARD_FAIL",
+            "CORRECT_OPTION_LENGTH_BIAS",
+            "FINAL_TOO_EASY_DISTRIBUTION",
+            "FINAL_RELEASE",
+        ],
     )
 
     require_markers(

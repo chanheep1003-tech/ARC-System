@@ -382,9 +382,14 @@ tooling:
   kor_n_canary: tooling/canary/kor_n_canary.py
   kor_n_canary_smoke_test: tooling/canary/test_kor_n_canary.py
   kor_n_canary_fixture: quality/canary/KOR_N_CANARY_V1.yaml
+  kor_final_canary: tooling/canary/kor_final_canary.py
+  kor_final_canary_smoke_test: tooling/canary/test_kor_final_canary.py
+  kor_final_canary_fixture: quality/canary/KOR_FINAL_CANARY_V1.yaml
   soc_core_canary_fixture: quality/canary/SOC_CORE_CANARY_V1.yaml
   soc_n_canary_fixture: quality/canary/SOC_N_CANARY_V1.yaml
   content_qa_gate: tooling/content_qa/content_qa_gate.py
+  final_quality_gate_exec: tooling/final/final_quality_gate.py
+  final_quality_gate_smoke_test: tooling/final/test_final_quality_gate.py
   content_qa_gate_smoke_test: tooling/content_qa/test_content_qa_gate.py
   xmark_detector: tooling/pdf_qc/xmark_detect.py
   xmark_detector_smoke_test: tooling/pdf_qc/test_xmark_detect.py

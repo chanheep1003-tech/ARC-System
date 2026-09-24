@@ -55,6 +55,10 @@ jobs:
           python -m py_compile tooling/canary/test_kor_n_canary.py
           python -m py_compile tooling/content_qa/content_qa_gate.py
           python -m py_compile tooling/content_qa/test_content_qa_gate.py
+          python -m py_compile tooling/final/final_quality_gate.py
+          python -m py_compile tooling/final/test_final_quality_gate.py
+          python -m py_compile tooling/canary/kor_final_canary.py
+          python -m py_compile tooling/canary/test_kor_final_canary.py
           python -m py_compile tooling/visual/arc_visual_render.py
           python -m py_compile tooling/visual/visual_verify.py
           python -m py_compile tooling/validate_system.py
@@ -73,6 +77,7 @@ jobs:
               'quality/semantic/ARC_QA_EVIDENCE_SCHEMA_V1.0.yaml',
               'quality/canary/KOR_CORE_CANARY_V1.yaml',
               'quality/canary/KOR_N_CANARY_V1.yaml',
+              'quality/canary/KOR_FINAL_CANARY_V1.yaml',
               'quality/canary/SOC_CORE_CANARY_V1.yaml',
               'quality/canary/SOC_N_CANARY_V1.yaml',
               'quality/source/KOR_SCHOOL_SOURCE_INVENTORY_2026_V1.0.yaml',
@@ -135,12 +140,19 @@ jobs:
           path: |
             /tmp/arc-kor-canary
             /tmp/arc-kor-n-canary
+/tmp/arc-kor-final-canary
             /tmp/arc-soc-canary
             /tmp/arc-soc-n-canary
           retention-days: 7
 
       - name: Run Universal Independent Solve QA gate smoke
         run: python tooling/content_qa/test_content_qa_gate.py
+
+      - name: Run FINAL quality gate smoke
+        run: python tooling/final/test_final_quality_gate.py
+
+      - name: Run fixed KOR FINAL E2E canary
+        run: python tooling/canary/kor_final_canary.py --output-dir /tmp/arc-kor-final-canary --report /tmp/arc-kor-final-canary/canary-report.json
 
       - name: Validate active system graph and checksums
         run: python tooling/validate_system.py --strict-checksums
