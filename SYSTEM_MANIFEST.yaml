@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.22-dev
+  version: 1.8.23-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -244,8 +244,8 @@ active:
     drive_mirror_status: pending_sync
 
   korean_item_engine:
-    path: engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.2.md
-    version: 1.2
+    path: engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.3.md
+    version: 1.3
     drive_id: null
     drive_mirror_status: pending_sync
 
@@ -276,7 +276,7 @@ active:
       drive_id: null
       drive_mirror_status: pending_sync
     korean:
-      path: subjects/KOREAN_MASTER_V4.2.md
+      path: subjects/KOREAN_MASTER_V4.3.md
       drive_id: null
       drive_mirror_status: pending_sync
     history:
@@ -299,10 +299,15 @@ active:
       drive_id: 1t0l6juVLzJxx9UMN5YwG1eRu4enAXpmX
     item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.5.md
     final_quality_gate: quality/ARC_FINAL_QUALITY_GATE_V1.0.md
-    korean_item_qa: quality/ARC_KOREAN_ITEM_QA_V1.3.md
+    korean_item_qa: quality/ARC_KOREAN_ITEM_QA_V1.4.md
     korean_supplement_point_map: quality/source/KOR_SUPPLEMENT_POINT_MAP_2026_V1.1.md
     korean_weak_distractor_regression: quality/regression/KOR_N_WEAK_DISTRACTOR_20260923_V1.yaml
     korean_weak_distractor_regression_status: PENDING_MODEL_CANARY
+    korean_overdiscrimination_regression: quality/regression/KOR_N03_OVERDISCRIMINATION_20260924_V1.yaml
+    korean_overdiscrimination_regression_status: PENDING_MODEL_CANARY
+    korean_arc_n_core_exam_point_coverage_gate: required
+    korean_arc_n_difficulty_balance_gate: required
+    korean_arc_n_rare_task_budget_gate: required
     universal_independent_solve: quality/ARC_UNIVERSAL_INDEPENDENT_SOLVE_GATE_V1.0.md
     qa_evidence_schema: quality/semantic/ARC_QA_EVIDENCE_SCHEMA_V1.0.yaml
     core_editorial_naturalness: quality/ARC_CORE_EDITORIAL_NATURALNESS_V1.2.md
