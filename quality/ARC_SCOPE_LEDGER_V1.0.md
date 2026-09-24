@@ -142,6 +142,33 @@ COVERAGE:
 - 종합세트 인구 비중 기본 상한 20%.
 - B 단독 세트는 B학습지 직접 근거 자료/문항 비중 최소 60%.
 
+
+#### 통합사회2 사용자 제공 문제집 구조참조 — 2026-09-24
+참조 파일: `quality/source/SOC_USER_WORKBOOK_REFERENCE_20260924_V1.0.yaml`
+
+이 참조는 SCOPE SOURCE가 아니라 QUESTION_FORM / DIFFICULTY / VISUAL-DATA reference다.
+현재 CONCEPT_ID는 유지하고 아래 세부축을 내부 blueprint 태그로 사용한다.
+
+- `SOC-B-GLOBAL`
+  - GLOBAL_CORE
+  - LOCALIZATION_GLOCALIZATION
+  - MNC_FUNCTIONAL_SPATIAL_DIVISION
+  - MNC_LOCATION_FACTOR
+  - FAIR_TRADE_VALUE_CHAIN
+- `SOC-B-POP`
+  - POP_DISTRIBUTION_FACTOR
+  - POP_PYRAMID_COMPARE
+  - AGE_STRUCTURE_RATIO
+  - DEMOGRAPHIC_TRANSITION
+  - MIGRATION_PUSH_PULL
+  - LOW_FERTILITY_AGING
+  - POPULATION_POLICY_RESPONSE
+
+사용자 선별 기준상 B 인구 직접 범위 구조참조는 48문항이다.
+에너지·신재생에너지·지속가능발전 문제는 `SOC-B-POP` 커버리지에 계산하지 않는다.
+C 문제집 문항은 반드시 학교 C source와 X-mark index를 거쳐야 하며, 문제집 단원 전체를 C 범위로 간주하지 않는다.
+A 문제집 문항 중 자유지상주의/공동체주의·노직·적극적 우대조치·공간 불평등·사회보험 세부는 학교자료가 직접 끌어오지 않는 한 구조참고만 허용한다.
+
 ### 5-4. 한국사2
 
 |CONCEPT_ID|PRIORITY|SOURCE_SCOPE|핵심 평가축|STATUS|
