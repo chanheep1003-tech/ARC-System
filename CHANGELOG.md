@@ -523,3 +523,11 @@
 - Raised Dongbuk default ARC_N difficulty floor to D4+D5 >=35% and D1+D2 <=25%, subject to verified school-anchor calibration.
 - Added ARC_FINAL difficulty profile floor with D4+D5 target >=30%, no unjustified BELOW_SCHOOL items, and late-section discrimination requirements.
 - CORE remains maintenance-only; quality development priority is N° and FINAL.
+
+
+## 2026-09-24 — Midterm scope compression for deadline
+- Activated ARC_RUNTIME_PRIORITY_POLICY_V1.2.
+- Science is now hard-locked to oxidation-reduction only for generation, research, N°/FINAL, canary, and regression work in the current sprint.
+- Korean History is now ARC_N-only for the current sprint; HIS FINAL work is deferred.
+- Current RC target is KOR N°/FINAL + SOC N°/FINAL + HIS N° + SCI-REDOX N°/FINAL.
+- CORE remains maintenance-only.
