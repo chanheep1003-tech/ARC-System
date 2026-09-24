@@ -609,8 +609,20 @@ RECURRENCE_COUNT: 1
   - inject three immediate-elimination distractors
   - inject fake-D4 one-step item
   - verify gate blocks all defects before FINAL release
-- STATUS: FIXED_POLICY / CANARY_PENDING
+- STATUS: CANARY_PASS
 
 
 ### CHECKSUM_REGISTRY_NOTE_20260924
-The first CI run after N°/FINAL hardening failed only because ops/RUN_LOG.jsonl was newly added to CHECKSUMS.sha256 even though the legacy strict-checksum registry does not track that runtime log entry. Product canaries and behavioral smoke stages passed. The checksum entry was removed; no quality rule rollback was required.
+The first CI run after N°/FINAL hardening failed only because ops/RUN_LOG.jsonl was newly added to CHECKSUMS.sha256 even though the legacy strict-checksum registry does not track that runtime log entry. Product canaries and behavioral smoke stages passed. The checksum entry was removed; no quality rule rollback was required. KOR ARC_FINAL executable canary subsequently passed after the new answer-length gate correctly rejected an initial baseline whose correct option was longest in 90% of items.
+
+
+### KOR_FINAL_CANARY_PASS_20260924
+- Commit under test: 374f397469148c814be31c851f20022f91ad276e
+- GitHub Actions run: 35936878176
+- Result: PASS
+- Pipeline: Content QA -> FINAL Quality Gate -> Handoff -> Typesetter -> PDF -> PDF Preflight -> strict system validation
+- FINAL difficulty profile: D2=1, D3=5, D4=3, D5=1; D4+D5=40%; D1+D2=10%
+- Fault injection blocked: weak distractors, longest-correct cue, fake D4, too-easy set
+- Initial baseline regression caught: LONGEST_OPTION_IS_KEY_RATE=0.90; fixture corrected and same canary rerun to PASS
+- Student PDF answer isolation: PASS; separate answer artifact used
+- STATUS: CLOSED_CANARY_PASS
