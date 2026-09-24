@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.20-dev
+  version: 1.8.21-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -306,6 +306,7 @@ active:
     korean_school_source_inventory: quality/source/KOR_SCHOOL_SOURCE_INVENTORY_2026_V1.0.yaml
     korean_supplement_page_map: quality/source/KOR_SUPPLEMENT_PAGE_MAP_2026_V1.0.yaml
     social_school_source_inventory: quality/source/SOC_SCHOOL_SOURCE_INVENTORY_2026_V1.0.yaml
+    social_user_workbook_reference: quality/source/SOC_USER_WORKBOOK_REFERENCE_20260924_V1.0.yaml
     social_c_xmark_exclusion_index: quality/source/SOC_C_XMARK_EXCLUSION_INDEX_2026_V1.0.yaml
     problem_prompt_dedup_policy: quality/governance/ARC_PROMPT_DEDUP_APPROVAL_POLICY_V1.0.md
     regression_policy: quality/regression/ARC_REGRESSION_POLICY_V1.0.md
