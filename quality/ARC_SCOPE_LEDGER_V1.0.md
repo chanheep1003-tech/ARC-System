@@ -125,7 +125,7 @@ COVERAGE:
 |SOC-A-ARISTOTLE|R|A: 학습지 1호|일반적·분배적·교정적·교환적 정의 구분과 사례 적용|UNMEASURED|
 |SOC-A-PUNISHMENT|R|A: 학습지 1호|칸트 응보주의와 베카리아 공리주의의 명시 주장·정당한 함의|UNMEASURED|
 |SOC-A-DISTRIBUTION|R|A: 학습지 2호|능력·업적·필요 기준의 특성·장점·한계와 사례 적용|UNMEASURED|
-|SOC-A-THOUGHT_MAP|R|『생각의 지도』 p156~233|동서양 사고, 속성/관계·맥락, 평균→개인 오류|UNMEASURED|
+|SOC-A-THOUGHT_MAP|R|『생각의 지도』 p156~233 + canonical source registry|논리/경험·변증법·사회생태 기원·제도 적용·귀인·문화편향·프라이밍, 평균→개인 오류|UNMEASURED|
 |SOC-C-RIGHTS|R|C: 천재 p8~23 + C학습지 비X 영역|인권·기본권·헌법 적용|UNMEASURED|
 |SOC-C-REMEDY|R|동일|권리구제 기관·절차·효과|UNMEASURED|
 |SOC-C-COLLISION|R|동일|권리충돌·조정, 기본권 제한|UNMEASURED|
@@ -142,6 +142,24 @@ COVERAGE:
 - 종합세트 인구 비중 기본 상한 20%.
 - B 단독 세트는 B학습지 직접 근거 자료/문항 비중 최소 60%.
 
+
+
+#### SOC-A-THOUGHT_MAP subaxes — 2026-09-24
+Canonical source: `quality/source/SOC_A_THOUGHTMAP_P156_233_2026_V1.0.yaml`
+
+- `SOC-A-TM-VALIDITY_PLAUSIBILITY`: 형식적 타당성 vs 경험적 그럴듯함
+- `SOC-A-TM-DIALECTIC_CHANGE` / `CONTRADICTION` / `RELATIONSHIP`: 변증법 3원리
+- `SOC-A-TM-CONTRADICTORY_EVIDENCE`: 상반 연구 결과의 처리
+- `SOC-A-TM-CAUSAL_CHAIN`: 생태↔경제↔사회구조↔주의↔형이상학↔인식론↔사고
+- `SOC-A-TM-FIELD_DEPENDENCE`: 장의존성/장독립성과 사회구조
+- `SOC-A-TM-INSTITUTION_APPLICATION`: 의학·법·기업·과학·계약·인권·종교 사례
+- `SOC-A-TM-ATTRIBUTION`: 기본적 귀인 오류와 상황 정보
+- `SOC-A-TM-IQ_CULTURE_BIAS`: 문화 공정성·검사 방식에 따른 순위 변화
+- `SOC-A-TM-MODERNIZATION`: 현대화와 서구화 구분
+- `SOC-A-TM-BICULTURAL_PRIMING`: 이중문화·프라이밍과 사고의 가변성
+
+HARD GUARDRAIL:
+집단 평균→개인 일반화, 선천적 능력 차이, 문화 본질주의, 생태 단일결정론을 정답 근거로 사용하지 않는다.
 
 #### 통합사회2 사용자 제공 문제집 구조참조 — 2026-09-24
 참조 파일: `quality/source/SOC_USER_WORKBOOK_REFERENCE_20260924_V1.0.yaml`
