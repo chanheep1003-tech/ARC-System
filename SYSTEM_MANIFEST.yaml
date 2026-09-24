@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.21-dev
+  version: 1.8.22-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -36,7 +36,7 @@ runtime:
   drive_write_preflight_required: true
   scheduled_drive_write_mode: ROOT_STAGING
   drive_write_default_mode: ROOT_STAGING
-  runtime_priority_policy: ops/ARC_RUNTIME_PRIORITY_POLICY_V1.1.md
+  runtime_priority_policy: ops/ARC_RUNTIME_PRIORITY_POLICY_V1.2.md
   pipeline_integrity_contract: ops/ARC_PIPELINE_INTEGRITY_CONTRACT_V1.0.md
   post_exam_calibration: ops/ARC_POST_EXAM_CALIBRATION_V1.0.md
   claude_handoff: ops/ARC_CLAUDE_HANDOFF_V1.4.md
@@ -203,6 +203,25 @@ runtime:
     - HIS
     - SCI
     - AI
+  midterm_product_scope_lock:
+    KOR:
+      products: [ARC_N, ARC_FINAL]
+      scope: SCHOOL_SUPPLEMENT_PLUS_TEXTBOOK_UNIT_1
+      supplement_priority: true
+    SOC:
+      products: [ARC_N, ARC_FINAL]
+      scope: LOCKED_EXAM_RANGE_ALL
+    HIS:
+      products: [ARC_N]
+      scope: LOCKED_EXAM_RANGE_ALL
+      arc_final: DEFERRED_OUT_OF_CURRENT_SPRINT
+    SCI:
+      products: [ARC_N, ARC_FINAL]
+      scope: OXIDATION_REDUCTION_ONLY
+      non_redox_units: CURRENT_SPRINT_EXCLUDED
+    AI:
+      products: []
+      scope: CURRENT_SPRINT_DEFERRED
   extra_resource_weights:
     KOR: 30
     SOC: 25
