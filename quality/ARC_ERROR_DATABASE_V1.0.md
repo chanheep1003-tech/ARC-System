@@ -664,3 +664,15 @@ The first CI run after N°/FINAL hardening failed only because ops/RUN_LOG.jsonl
   - SCI non-redox current-sprint work rejected
   - HIS FINAL current-sprint work deferred
 - STATUS: ACTIVE_SCOPE_LOCK
+
+
+### READINESS_GOVERNANCE_20260924
+- TYPE: DEADLINE / RELEASE_READINESS
+- USER_REQUIREMENT: each active product must reach at least 80% preparation by 2026-09-25.
+- RISK: subjective readiness percentages can hide unfinished subject/product combinations.
+- FIX: ARC_PRODUCT_READINESS_GATE_V1.0 uses the minimum active subject/product score rather than an average.
+- ARC_N MATRIX: KOR_N, SOC_N, HIS_N, SCI_REDOX_N.
+- ARC_FINAL MATRIX: KOR_FINAL, SOC_FINAL, SCI_REDOX_FINAL.
+- SCORING: five evidence-backed gates × 20 points.
+- HARD_FAIL_OVERRIDE: readiness score cannot mask answer, scope, duplicate, difficulty, or PDF release failures.
+- STATUS: ACTIVE
