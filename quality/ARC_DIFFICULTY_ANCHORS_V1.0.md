@@ -37,8 +37,12 @@ Anchor는 문제를 복제하기 위한 저장소가 아니다.
 - 2025-2학기 동북고 중간 통합사회2 실제 시험
 - A/B/C 학교 학습지
 - 통합사회 문제집·참고자료 중 현재 범위와 직접 맞는 자료
+- 사용자 제공 마더텅 2026 고1 통합사회 스크린샷 구조맵: `quality/source/SOC_USER_WORKBOOK_REFERENCE_20260924_V1.0.yaml`
 - C파트 손글씨 X 영역은 Anchor 후보에서도 제외
-상태: ANCHOR_SELECTION_PENDING
+상태: PARTIAL_READY
+  - SCHOOL_STANDARD / SCHOOL_UPPER: 기존 학교 기출·학교자료 기준 유지
+  - WORKBOOK_MID / WORKBOOK_HIGH: 사용자 제공 문제집 구조맵으로 비교 가능
+  - 원문 복제 금지, 구조·자료밀도·오답경쟁력만 calibration에 사용
 
 ### 한국사2
 - 2025-2학기 동북고 중간 한국사2 실제 시험
