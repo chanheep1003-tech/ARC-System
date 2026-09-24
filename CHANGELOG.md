@@ -540,3 +540,12 @@
 - Korean History is now ARC_N-only for the current sprint; HIS FINAL work is deferred.
 - Current RC target is KOR N°/FINAL + SOC N°/FINAL + HIS N° + SCI-REDOX N°/FINAL.
 - CORE remains maintenance-only.
+
+
+## 2026-09-24 — Product readiness floor locked at 80%
+- Added ARC_PRODUCT_READINESS_GATE_V1.0.
+- ARC_N readiness is the minimum of KOR_N, SOC_N, HIS_N, SCI_REDOX_N.
+- ARC_FINAL readiness is the minimum of KOR_FINAL, SOC_FINAL, SCI_REDOX_FINAL.
+- Each subject/product readiness score uses five evidence-backed 20-point gates: scope/source, generation quality, QA/governance, E2E/PDF, regression/release.
+- 2026-09-25 RC requires both ARC_N_PRODUCT_READINESS >=80 and ARC_FINAL_PRODUCT_READINESS >=80.
+- Scores cannot override hard failures such as wrong-answer risk, out-of-scope evidence, duplicate leakage, FINAL difficulty failure, or PDF corruption.
