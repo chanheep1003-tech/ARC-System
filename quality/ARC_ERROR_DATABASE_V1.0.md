@@ -50,6 +50,7 @@ DETECT → CLASSIFY → FIX → REGRESSION TEST → PREVENTION RULE → CLOSE
 - ERR-KOR-003 표현효과 과잉해석
 - ERR-KOR-004 현대문학 장문 복제
 - ERR-KOR-005 매력도 낮은 오답 / 정답 즉시 노출
+- ERR-KOR-006 핵심 내신 포인트 누락 / 변별형 과잉
 
 ### SCIENCE
 - ERR-SCI-REDOX-001 전자수 보존 오류
@@ -139,6 +140,7 @@ RECURRENCE_COUNT:
 |RISK-KOR-01|국어|관찰과 화자 추론 혼동|OBSERVED_FACT / SPEAKER_INFERENCE 분리|
 |RISK-KOR-02|국어|현대문학 장문 복제|최소 인용 + 학교원문 범위|
 |RISK-KOR-03|국어|정답이 즉시 보이고 오답이 경쟁하지 못함|ATTRACTIVE_DISTRACTOR + OBVIOUS_ANSWER + SECOND_BEST gate|
+|RISK-KOR-04|국어|핵심 주제·표현법·소재 기능보다 변별형 미세분석이 과다|CORE_EXAM_POINT_COVERAGE + DIFFICULTY_BALANCE + RARE_TASK_BUDGET|
 |RISK-HIS-01|한국사|사료 시기/주체 오류|FACT CHECK MATRIX|
 |RISK-HIS-02|한국사|민족주의/사회주의 계열 혼동|IDEOLOGICAL_LINE_SWAP 검수|
 |RISK-AI-01|AI|DFS/BFS 탐색 순서 오류|방문규칙·탐색구조 독립검증|
@@ -576,6 +578,31 @@ STATUS: REGRESSION_PENDING
 RECURRENCE_COUNT: 1
 ```
 
+
+### ERR-20260924-KOR-N-003
+```yaml
+ERROR_ID: ERR-20260924-KOR-N-003
+DATE: 2026-09-24
+SUBJECT: KOR ARC_N
+SET_ID: ARC_N03_공통국어2_보충자료4편_40Q_V1.0_DRAFT
+ITEM_ID: SET_LEVEL
+ERROR_CODE: ERR-KOR-006
+SEVERITY: S1
+DETECTED_STAGE: USER_FEEDBACK
+HUMAN_FOUND: true
+DESCRIPTION: 사용자가 세트가 지나치게 변별형·미세 추론형으로 구성되어 중요 표현 방법·주제·핵심 소재 기능 등 내신 핵심 포인트 점검이 부족하다고 보고함.
+EXPECTED: ARC_N은 지문별 핵심 내신 포인트를 먼저 충분히 점검하고, 그 위에 표준 적용과 상위 변별을 단계적으로 배치.
+ACTUAL: 일부 문학 지문군에서 삭제 가정, 단어 치환, 지칭어 미세 추적 등 discrimination-only task가 두드러지고 핵심층이 얇았음.
+ROOT_CAUSE: COMMON V4.6의 ARC_N 난도 상향과 KOR V1.2의 integration-first 지표가 결합해 core exam-point coverage보다 변별 난도가 우선됨.
+FIX_APPLIED: KOR ITEM ENGINE V1.3, KOR QA V1.4, KOREAN MASTER V4.3에 balanced profile, CORE_EXAM_POINT_COVERAGE, DIFFICULTY_BALANCE, RARE_TASK_BUDGET 추가. FINAL 고난도 정책은 유지.
+PREVENTION_RULE: KOR_CORE_EXAM_POINT_COVERAGE=PASS; KOR_DIFFICULTY_BALANCE=PASS; KOR_RARE_TASK_BUDGET=PASS
+REGRESSION_BENCH_ID: KOR-N03-OVERDISCRIMINATION-20260924-V1
+REGRESSION_STATUS: PENDING
+MASTER_CHANGE: subjects/KOREAN_MASTER_V4.3.md
+COMMON_ENGINE_CHANGE: false
+STATUS: REGRESSION_PENDING
+RECURRENCE_COUNT: 1
+```
 
 ## 9. MONTHLY REVIEW
 시험기간 중 또는 10세트 생성마다:
