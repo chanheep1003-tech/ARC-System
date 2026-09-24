@@ -626,3 +626,14 @@ The first CI run after N°/FINAL hardening failed only because ops/RUN_LOG.jsonl
 - Initial baseline regression caught: LONGEST_OPTION_IS_KEY_RATE=0.90; fixture corrected and same canary rerun to PASS
 - Student PDF answer isolation: PASS; separate answer artifact used
 - STATUS: CLOSED_CANARY_PASS
+
+
+### SCOPE_COMPRESSION_20260924
+- TYPE: RUNTIME_PRIORITY / DEADLINE_RISK_REDUCTION
+- USER_DECISION: science = oxidation-reduction only; history = ARC_N only
+- RISK_BEFORE: remaining sprint still allocated work to HIS FINAL and potentially broad SCI scope, reducing probability of finishing meaningful exam-ready outputs by 2026-09-25.
+- FIX: ARC_RUNTIME_PRIORITY_POLICY_V1.2 + SYSTEM_MANIFEST 1.8.22-dev product/scope lock.
+- FAIL_CLOSED:
+  - SCI non-redox current-sprint work rejected
+  - HIS FINAL current-sprint work deferred
+- STATUS: ACTIVE_SCOPE_LOCK
