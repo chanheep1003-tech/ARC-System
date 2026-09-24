@@ -150,3 +150,19 @@ rules:
       - science_non_redox_canary_in_current_sprint
       - history_final_generation_in_current_sprint
       - history_final_canary_in_current_sprint
+  - id: KOR-N-BALANCE-V13
+    deprecated:
+      - engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.2.md
+      - quality/ARC_KOREAN_ITEM_QA_V1.3.md
+      - subjects/KOREAN_MASTER_V4.2.md
+    replacement:
+      - engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.3.md
+      - quality/ARC_KOREAN_ITEM_QA_V1.4.md
+      - subjects/KOREAN_MASTER_V4.3.md
+    reason: "2026-09-24 user review of ARC_N03 found discrimination-first overcorrection and missing core school-exam coverage."
+    forbidden_runtime_behavior:
+      - korean_arc_n_discrimination_before_core_coverage
+      - korean_arc_n_core_exam_point_rate_below_60_percent
+      - korean_arc_n_foundation_core_below_3_per_10
+      - korean_arc_n_counterfactual_edit_above_1_per_10
+      - korean_arc_n_default_d4_d5_above_35_percent_without_explicit_high_difficulty_or_school_anchor
