@@ -1,3 +1,12 @@
+## 1.8.23-dev — 2026-09-24
+- Rebalanced Korean ARC_N after user review of ARC_N03: individually valid upper-tier items had displaced core school-exam coverage.
+- Activated Korean Item Engine V1.3, Korean Item QA V1.4, and Korean Master V4.3.
+- Korean ARC_N default per 10 items is now 3 foundation/core + 4 school-standard + 2 upper + 0~1 extreme; default D4+D5 target 20~30%.
+- Added hard CORE_EXAM_POINT_COVERAGE for theme/attitude/expression/key-material/structure in literature and claim/structure/concept-relation/explicit-accuracy/application in nonfiction.
+- Added RARE_TASK_BUDGET: counterfactual deletion/replacement max 1 per 10; micro-reference trace max 1; discrimination-only tasks max 2.
+- Registered KOR_N03_OVERDISCRIMINATION_20260924_V1 as a user-found regression sentinel. Status remains PENDING_MODEL_CANARY.
+- ARC_FINAL and non-Korean hardening are unchanged.
+
 ## 1.8.19-dev — 2026-09-23
 - Added the user's third detailed Korean four-passage analysis note to Drive and activated KOR Supplement Point Map V1.1.
 - V1.1 expands per-passage priority axes and near-miss distractor seeds for 「탄궁가」, 「팔원－서행시초 3」, 「기억할 만한 지나침」, and the Kant/Hegel reading, with special emphasis on fact-vs-inference, past-vs-present, direct-intervention overstatement, device-function reduction, and concept/condition swaps.
