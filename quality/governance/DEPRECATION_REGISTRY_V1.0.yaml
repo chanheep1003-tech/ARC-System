@@ -137,3 +137,16 @@ rules:
       - arc_n_below_dongbook_difficulty_floor_without_anchor_evidence
       - arc_final_release_without_difficulty_profile
       - arc_final_release_without_item_quality_profile
+
+  - id: MIDTERM-SCOPE-PRIORITY-20260924
+    deprecated:
+      - ops/ARC_RUNTIME_PRIORITY_POLICY_V1.1.md
+    replacement:
+      - ops/ARC_RUNTIME_PRIORITY_POLICY_V1.2.md
+    reason: "User narrowed the sprint: science is oxidation-reduction only, and Korean History is ARC_N only. Resources must not be spent on non-redox science or HIS FINAL before the 2026-09-25 deadline."
+    forbidden_runtime_behavior:
+      - science_non_redox_generation_in_current_sprint
+      - science_non_redox_research_in_current_sprint
+      - science_non_redox_canary_in_current_sprint
+      - history_final_generation_in_current_sprint
+      - history_final_canary_in_current_sprint
