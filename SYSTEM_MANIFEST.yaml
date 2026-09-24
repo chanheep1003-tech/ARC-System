@@ -203,6 +203,7 @@ runtime:
     - HIS
     - SCI
     - AI
+  scope_lock_validation_marker: "HIS_N_ONLY__SCI_REDOX_ONLY"
   midterm_product_scope_lock:
     KOR:
       products: [ARC_N, ARC_FINAL]
