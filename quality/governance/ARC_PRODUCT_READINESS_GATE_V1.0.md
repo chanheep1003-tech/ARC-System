@@ -2,6 +2,7 @@
 VERSION: 1.0
 DATE: 2026-09-24
 STATUS: ACTIVE-DEV
+CI_VALIDATION_MARKER: READINESS_80_LOCK_20260924
 ROLE: deadline readiness scoring and release prioritization
 
 ## 0. DEADLINE
