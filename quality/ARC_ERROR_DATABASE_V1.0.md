@@ -610,3 +610,7 @@ RECURRENCE_COUNT: 1
   - inject fake-D4 one-step item
   - verify gate blocks all defects before FINAL release
 - STATUS: FIXED_POLICY / CANARY_PENDING
+
+
+### CHECKSUM_REGISTRY_NOTE_20260924
+The first CI run after N°/FINAL hardening failed only because ops/RUN_LOG.jsonl was newly added to CHECKSUMS.sha256 even though the legacy strict-checksum registry does not track that runtime log entry. Product canaries and behavioral smoke stages passed. The checksum entry was removed; no quality rule rollback was required.
