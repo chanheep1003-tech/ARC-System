@@ -1,3 +1,13 @@
+## 1.8.25-dev — 2026-09-25
+- Generalized the Korean ARC_N balance correction to every ARC_N subject.
+- Activated Common Generation Engine V4.7, Difficulty Engine V1.4 and universal ARC_N Balance Gate V1.0.
+- Default ARC_N content mix is now CORE_EXAM_POINT 70~80% + ADVANCED_DISCRIMINATION 20~30%. Recommended counts include 7~8/2~3 per 10, 14~16/4~6 per 20, and 28~32/8~12 per 40.
+- CORE_EXAM_POINT is not synonymous with easy recall: core items may be D3/D4 when they use strong distractors, representative data or standard application. The change limits dedicated discrimination tasks, not item quality.
+- Added subject-specific core-axis maps for Korean, Social Studies, History, Science and AI. Current sprint scope locks remain unchanged: Science is oxidation-reduction only, History is ARC_N only, and AI remains deferred.
+- Default ARC_N difficulty curve is rebalanced to D1 0~10%, D2 25~35%, D3 35~45%, D4 15~25%, D5 0~5% with D4+D5 generally 20~30%.
+- Explicit high-difficulty/elite N requests or verified school anchors may raise the advanced share, but core-axis coverage must be established first.
+- ARC_FINAL is unchanged and continues to use the dedicated FINAL difficulty/item-quality release gate.
+
 ## 1.8.23-dev — 2026-09-24
 - Rebalanced Korean ARC_N after user review of ARC_N03: individually valid upper-tier items had displaced core school-exam coverage.
 - Activated Korean Item Engine V1.3, Korean Item QA V1.4, and Korean Master V4.3.

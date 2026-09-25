@@ -166,3 +166,18 @@ rules:
       - korean_arc_n_foundation_core_below_3_per_10
       - korean_arc_n_counterfactual_edit_above_1_per_10
       - korean_arc_n_default_d4_d5_above_35_percent_without_explicit_high_difficulty_or_school_anchor
+  - id: ARC-N-UNIVERSAL-BALANCE-V10
+    deprecated:
+      - engine/common/COMMON_GENERATION_ENGINE_V4.6_ARC.md
+      - quality/ARC_DIFFICULTY_ENGINE_V1.3.md
+    replacement:
+      - engine/common/COMMON_GENERATION_ENGINE_V4.7_ARC.md
+      - quality/ARC_DIFFICULTY_ENGINE_V1.4.md
+      - quality/ARC_N_BALANCE_GATE_V1.0.md
+    reason: "2026-09-25 user directive: every ARC_N subject should default to 70-80% core school-exam points and 20-30% advanced discrimination, while preserving strong distractors and explicit high-difficulty overrides."
+    forbidden_runtime_behavior:
+      - arc_n_default_advanced_rate_above_30_percent_without_override
+      - arc_n_core_exam_point_rate_below_70_percent_without_override
+      - arc_n_core_ratio_filled_with_trivial_label_recall
+      - arc_n_advanced_difficulty_created_by_out_of_scope_knowledge
+      - arc_final_forced_to_arc_n_70_30_profile

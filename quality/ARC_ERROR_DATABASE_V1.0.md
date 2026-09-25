@@ -151,6 +151,7 @@ RECURRENCE_COUNT:
 |RISK-PDF-04|CORE|제목/문단/표/도식 의미 단위 절단|SEMANTIC_PAGINATION + source overflow + render preflight|
 |RISK-PDF-05|CORE|가벼운 폰트/작은 글씨로 인쇄 가독성 저하|typography tokens + font audit|
 |RISK-PDF-06|CORE|PART/장/절 계층 평탄화|four-level hierarchy gate|
+|RISK-N-CORE-BALANCE|ARC_N COMMON|심화/변별 문항이 핵심 시험포인트를 밀어내는 세트 드리프트|ARC_N_BALANCE_GATE 70~80% CORE + 20~30% ADVANCED|
 
 ## 7. ERROR → SYSTEM FEEDBACK
 오류 종료 시 다음 파일을 검토한다.
