@@ -1,0 +1,29 @@
+# Locked exact source texts for Korean items. Drive stays the authority;
+# the repository copy exists so the production pipeline and CI can verify
+# the SHA-256 lock without network access.
+registry_id: KOR-SOURCE-TEXT-REGISTRY-2026-V1.0
+version: 1.0
+date: 2026-09-25
+status: ACTIVE-DEV
+texts:
+  - source_text_id: KOR-SUPP-2026-NF-KANT-HEGEL
+    title: "이행남, 「칸트의 도덕적 자율성으로부터 헤겔의 인륜적 자율성으로」"
+    author: 이행남
+    role: RAW_SCHOOL_SOURCE
+    source_origin: CONNECTED_DRIVE_RAW_SCHOOL_SOURCE
+    school_source_file_id: 1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    school_source_location: "scan p2 right column ~ p3, II. 비문학 보충 1"
+    locked_text_drive_id: 1OF_fc8N6SmcwM1oRVXJF69_jlVRmFcf-
+    repo_path: quality/source/text/KOR_SUPP_2026_NF_KANT_HEGEL_V1.0.txt
+    sha256: be4709451609176eb877e753e69e7dc98b246a428eb58e5351d3d68082a0aa39
+    paragraphs: 3
+    text_fidelity: EXACT
+    verification:
+      method: DRIVE_OCR_CHARACTER_DIFF_PLUS_PRIOR_TRANSCRIPTION_CROSSCHECK
+      ocr_character_diff: "1162/1162 non-space characters identical after one OCR fix (법 직인 -> 법칙인, matches ARC N03 transcription)"
+      spacing: "no space added beyond OCR; 31 OCR line-wrap splits inside words removed"
+      punctuation_normalization: "straight single quotes rendered as ‘ ’"
+      author: "이행남 confirmed by user 2026-09-25"
+      user_authorization: "user instructed to finalize and register this text on 2026-09-25"
+      visual_line_by_line: NOT_PERFORMED
+    locks: {wording_lock: true, punctuation_lock: true, line_break_lock: true, boundary_lock: true}

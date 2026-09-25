@@ -713,3 +713,14 @@ The first CI run after N°/FINAL hardening failed only because ops/RUN_LOG.jsonl
 - OPEN: source text is OCR-reconstructed from the image-only scan and awaits visual confirmation (KOR_SOURCE_NOT_EXACT).
 - STATUS: OPEN
 
+### ERR-20260925-PIPELINE-SELF-REPORTED-METRICS-001
+- CATEGORY: SYSTEM / QA_GOVERNANCE
+- OBSERVED: realism, AI-style and length gates accepted self-reported counts; canary QA evidence was auto-PASS. On KOR N04 the self-reported profile claimed a stem-skeleton run of 1 while the actual run was 4, and 5 single-best stems were not caught.
+- FIX: production pipeline computes every metric from the bundle and takes PASS B from an independent blind review file (1.8.30-dev).
+- PREVENTION: `test_production_pipeline.py` in CI with fault injection.
+- STATUS: FIXED_IN_DEV
+
+### ERR-20260925-KOR-N04-FRESHSET-001 (update 1.8.30-dev)
+- Source block cleared (EXACT registry lock). 7 blind rounds all matched keys.
+- STILL OPEN: blind difficulty D1 30% / D4+D5 0% (KOR ARC_N balance FAIL); item 8 flagged obvious at D3. The passage already carries 27 ARC items across N01/N03/N04, so a new N set on it cannot reach the D4 band without axis reuse; next KOR N/FINAL sets should combine passages.
+

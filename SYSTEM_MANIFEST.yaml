@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.29-dev
+  version: 1.8.30-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -437,6 +437,11 @@ tooling:
   content_qa_gate_smoke_test: tooling/content_qa/test_content_qa_gate.py
   korean_exam_realism_gate_exec: tooling/korean/korean_exam_realism_gate.py
   korean_exam_realism_gate_smoke_test: tooling/korean/test_korean_exam_realism_gate.py
+  production_pipeline: tooling/production/production_pipeline.py
+  production_pipeline_regression_test: tooling/production/test_production_pipeline.py
+  korean_production_renderer: tooling/typeset/kor_renderer.py
+  korean_source_text_registry: quality/source/KOR_SOURCE_TEXT_REGISTRY_2026_V1.0.yaml
+  production_canary_bundle_kor_n04: quality/production/KOR_N04_KANTHEGEL_20260925
   xmark_detector: tooling/pdf_qc/xmark_detect.py
   xmark_detector_smoke_test: tooling/pdf_qc/test_xmark_detect.py
   visual_renderer: tooling/visual/arc_visual_render.py
