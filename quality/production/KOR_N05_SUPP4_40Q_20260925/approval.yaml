@@ -10,7 +10,8 @@ drive_save:
   target_folder_id: 1KMtIKDcc2jHe1ntIiWAALST6586OY4YC
   filename: ARC_N05_공통국어2_보충자료4편_40Q_V1.0.pdf
   pdf_sha256: aa5383ab224735c6f3213b913aab67f51156c7cd97ca6beb45df5547832df558
-  transport: MANUAL_UPLOAD_REQUIRED  # connector offers inline base64 only; ARC_DRIVE_WRITE_ADAPTER_V1.2 §13 disables it
-  storage_status: MANUAL_UPLOAD_REQUIRED
-  placement_verification: pending (verify exact parent when the file becomes visible)
+  transport: MANUAL_UPLOAD_BY_USER
+  storage_status: STORED
+  placement_verification: PASS — parentId 1KMtIKDcc2jHe1ntIiWAALST6586OY4YC, title and size (637818 bytes) match the approved PDF (2026-09-25)
+  drive_file_id: 1C7dTAOoHJ2Y0w_s4bTSmFuC6cIcUND8T
 exclusion_corpus_registration: quality/governance/KOR_APPROVED_ITEM_HISTORY_V1.0.yaml
