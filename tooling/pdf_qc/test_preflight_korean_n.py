@@ -31,7 +31,7 @@ def build(path: Path, question_numbers, answer_numbers, separator=True, gutter_c
     y = 80
     for n in question_numbers:
         page.insert_text((60, y), f"{n:02d} Which statement is best supported?", fontname="F", fontsize=10)
-        page.insert_text((60, y + 16), "① alpha  ② beta  ③ gamma  ④ delta  ⑤ epsilon", fontname="F", fontsize=10)
+        page.insert_text((60, y + 16), "① a  ② b  ③ c  ④ d  ⑤ e", fontname="F", fontsize=10)
         y += 44
     if gutter_crossing:
         page.insert_text((60, 600), "11 This stem line runs straight across the column gutter into the right column", fontname="F", fontsize=10)
