@@ -1,0 +1,190 @@
+registry_id: KOR-APPROVED-ITEM-HISTORY-V1.0
+status: ACTIVE-DEV
+role: EXCLUSION_CORPUS for future KOR problem generation (ARC_PROMPT_DEDUP_APPROVAL_POLICY_V1.0 §2)
+sets:
+- set: ARC N01
+  source: Drive 1NuYId2ENTJqLu_OWg14Oq0-M87VRlndy
+  items: 28
+  status: PRIOR_SET
+- set: ARC N02
+  source: Drive 1tWEZNM1MCsAvDRqscGGMcT5HgD0GfnF9
+  items: 20
+  status: PRIOR_SET
+- set: ARC N03
+  source: Drive 1tcJIcMBuIwcC39Z6GPqp3-Jmgqxz-0ue
+  items: 40
+  status: PRIOR_SET_NEGATIVE_REGRESSION_SAMPLE
+- set: KOR N04 Kant-Hegel
+  source: quality/production/KOR_N04_KANTHEGEL_20260925
+  items: 10
+  status: PRIOR_SET
+- set: KOR SEMIFINAL
+  source: quality/production/KOR_SEMIFINAL_20260925
+  items: 26
+  status: PRIOR_SET
+- set: ARC N°05
+  source: quality/production/KOR_N05_SUPP4_40Q_20260925
+  items: 40
+  status: USER_APPROVED
+  approved_at: '2026-09-25'
+  item_keys:
+  - item_id: KOR-N05-001
+    set: S1
+    coverage: THEME_OR_CENTRAL_MEANING
+    key_claim: lament_to_acceptance
+  - item_id: KOR-N05-002
+    set: S1
+    coverage: EXPRESSION_METHOD_AND_EFFECT
+    key_claim: l18_loan_repaid_tax_not
+  - item_id: KOR-N05-003
+    set: S1
+    coverage: KEY_WORD_IMAGE_OBJECT_FUNCTION
+    key_claim: world_abandons_contrast_ghost_loyalty
+  - item_id: KOR-N05-004
+    set: S1
+    coverage: STRUCTURE_OR_DEVELOPMENT
+    key_claim: ghost_sendoff_refused
+  - item_id: KOR-N05-005
+    set: S1
+    coverage: SPEAKER_ATTITUDE_OR_EMOTION
+    key_claim: self_mock_weeds
+  - item_id: KOR-N05-006
+    set: S1
+    coverage: STRUCTURE_OR_DEVELOPMENT
+    key_claim: summarize_then_summon_ghost
+  - item_id: KOR-N05-007
+    set: S1
+    coverage: STRUCTURE_OR_DEVELOPMENT
+    key_claim: ghost_speech_summarized
+  - item_id: KOR-N05-008
+    set: S1
+    coverage: SPEAKER_ATTITUDE_OR_EMOTION
+    key_claim: ABD
+  - item_id: KOR-N05-009
+    set: S1
+    coverage: STRUCTURE_OR_DEVELOPMENT
+    key_claim: sendoff_protest_reframe
+  - item_id: KOR-N05-010
+    set: S1
+    coverage: SPEAKER_ATTITUDE_OR_EMOTION
+    key_claim: companionship_reinterpreted_as_loyalty
+  - item_id: KOR-N05-011
+    set: S2
+    coverage: THEME_OR_CENTRAL_MEANING
+    key_claim: girl_colonial_hardship_pity
+  - item_id: KOR-N05-012
+    set: S2
+    coverage: EXPRESSION_METHOD_AND_EFFECT
+    key_claim: furrow_cause_cold_not_labor
+  - item_id: KOR-N05-013
+    set: S2
+    coverage: KEY_WORD_IMAGE_OBJECT_FUNCTION
+    key_claim: two_children_link_babysitting
+  - item_id: KOR-N05-014
+    set: S2
+    coverage: SPEAKER_ATTITUDE_OR_EMOTION
+    key_claim: calm_then_tears_then_deepen
+  - item_id: KOR-N05-015
+    set: S2
+    coverage: EXPLICIT_CONTENT_ACCURACY
+    key_claim: gnd
+  - item_id: KOR-N05-016
+    set: S2
+    coverage: STRUCTURE_OR_DEVELOPMENT
+    key_claim: guess_explains_crying
+  - item_id: KOR-N05-017
+    set: S2
+    coverage: THEME_OR_CENTRAL_MEANING
+    key_claim: numbers_past_vs_future
+  - item_id: KOR-N05-018
+    set: S2
+    coverage: THEME_OR_CENTRAL_MEANING
+    key_claim: s13
+  - item_id: KOR-N05-019
+    set: S2
+    coverage: EXPRESSION_METHOD_AND_EFFECT
+    key_claim: d_holding_back_tears
+  - item_id: KOR-N05-020
+    set: S2
+    coverage: KEY_WORD_IMAGE_OBJECT_FUNCTION
+    key_claim: boundary_and_view_medium
+  - item_id: KOR-N05-021
+    set: S3
+    coverage: THEME_OR_CENTRAL_MEANING
+    key_claim: chance_passing_recalled_empathy
+  - item_id: KOR-N05-022
+    set: S3
+    coverage: EXPRESSION_METHOD_AND_EFFECT
+    key_claim: l1_l12_same_event_repeats
+  - item_id: KOR-N05-023
+    set: S3
+    coverage: KEY_WORD_IMAGE_OBJECT_FUNCTION
+    key_claim: cold_big_room_alone
+  - item_id: KOR-N05-024
+    set: S3
+    coverage: STRUCTURE_OR_DEVELOPMENT
+    key_claim: d_learned_reason
+  - item_id: KOR-N05-025
+    set: S3
+    coverage: SPEAKER_ATTITUDE_OR_EMOTION
+    key_claim: anguish_then_affirmation
+  - item_id: KOR-N05-026
+    set: S3
+    coverage: THEME_OR_CENTRAL_MEANING
+    key_claim: recalled_in_similar_situation_understood
+  - item_id: KOR-N05-027
+    set: S3
+    coverage: STRUCTURE_OR_DEVELOPMENT
+    key_claim: gdr
+  - item_id: KOR-N05-028
+    set: S3
+    coverage: SPEAKER_ATTITUDE_OR_EMOTION
+    key_claim: alone_explains_failure
+  - item_id: KOR-N05-029
+    set: S3
+    coverage: KEY_WORD_IMAGE_OBJECT_FUNCTION
+    key_claim: position_reversal_identification
+  - item_id: KOR-N05-030
+    set: S3
+    coverage: EXPLICIT_CONTENT_ACCURACY
+    key_claim: l8_situation_not_empathy
+  - item_id: KOR-N05-031
+    set: S4
+    coverage: TEXT_OR_ARGUMENT_STRUCTURE
+    key_claim: hegel_criticizes_kant_debate
+  - item_id: KOR-N05-032
+    set: S4
+    coverage: EXPLICIT_CONTENT_ACCURACY
+    key_claim: institutions_not_sufficient_stability
+  - item_id: KOR-N05-033
+    set: S4
+    coverage: KEY_CONCEPT_RELATION_OR_CONTRAST
+    key_claim: full_chain
+  - item_id: KOR-N05-034
+    set: S4
+    coverage: APPLICATION_OR_CONDITION
+    key_claim: law_followed_freedom_conscious
+  - item_id: KOR-N05-035
+    set: S4
+    coverage: CENTRAL_CLAIM_OR_CONCEPT
+    key_claim: same_act_different_cause
+  - item_id: KOR-N05-036
+    set: S4
+    coverage: KEY_CONCEPT_RELATION_OR_CONTRAST
+    key_claim: ACD
+  - item_id: KOR-N05-037
+    set: S4
+    coverage: APPLICATION_OR_CONDITION
+    key_claim: byeong_both_views
+  - item_id: KOR-N05-038
+    set: S4
+    coverage: KEY_CONCEPT_RELATION_OR_CONTRAST
+    key_claim: distinct_grounds_of_limitation
+  - item_id: KOR-N05-039
+    set: S4
+    coverage: APPLICATION_OR_CONDITION
+    key_claim: byeong_stuck_in_civil_society
+  - item_id: KOR-N05-040
+    set: S4
+    coverage: TEXT_OR_ARGUMENT_STRUCTURE
+    key_claim: weakness_complemented_stepwise

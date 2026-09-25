@@ -1,0 +1,16 @@
+batch_id: KOR-N05-SUPP4-40Q-20260925
+version: v3
+final_user_approval: APPROVED
+approved_at: '2026-09-25'
+approval_note: 'user approved v3 as is ("그냥 이대로 저장해줘") with DIFFICULTY_BALANCE_GATE=FAIL recorded (blind v3: D1 3 / D2 26 / D3 11 / D4 0; D4+D5 0% < 15%)'
+known_open_gate: DIFFICULTY_BALANCE_GATE (D45) — user-accepted exception
+blind_rounds: 3 (v1, v2, v3; fresh agent each; 40/40 keys matched every round)
+drive_save:
+  target_folder: 01_국어/ARC_N
+  target_folder_id: 1KMtIKDcc2jHe1ntIiWAALST6586OY4YC
+  filename: ARC_N05_공통국어2_보충자료4편_40Q_V1.0.pdf
+  pdf_sha256: aa5383ab224735c6f3213b913aab67f51156c7cd97ca6beb45df5547832df558
+  transport: MANUAL_UPLOAD_REQUIRED  # connector offers inline base64 only; ARC_DRIVE_WRITE_ADAPTER_V1.2 §13 disables it
+  storage_status: MANUAL_UPLOAD_REQUIRED
+  placement_verification: pending (verify exact parent when the file becomes visible)
+exclusion_corpus_registration: quality/governance/KOR_APPROVED_ITEM_HISTORY_V1.0.yaml
