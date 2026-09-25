@@ -1,0 +1,163 @@
+name: ARC tooling smoke
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [dev]
+    paths:
+      - 'tooling/**'
+      - 'quality/**'
+      - 'engine/common/**'
+      - 'ops/ARC_GENERATOR_CONTRACT_*'
+      - 'ops/ARC_CONTENT_BUNDLE_CONTRACT_*'
+      - 'ops/ARC_TYPESETTER_CONTRACT_*'
+      - 'templates/**'
+      - 'subjects/KOREAN_MASTER_*'
+      - 'SYSTEM_MANIFEST.yaml'
+      - '.github/workflows/arc-tooling-smoke.yml'
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install light smoke dependencies
+        run: python -m pip install PyYAML PyMuPDF opencv-python-headless
+
+      - name: Compile Python tooling
+        run: |
+          python -m py_compile tooling/promptfoo/provider.py
+          python -m py_compile tooling/promptfoo/tests.py
+          python -m py_compile tooling/promptfoo/assert_regression.py
+          python -m py_compile tooling/similarity/arc_similarity.py
+          python -m py_compile tooling/similarity/calibrate_similarity.py
+          python -m py_compile tooling/pdf_qc/pdf_preflight.py
+          python -m py_compile tooling/pdf_qc/test_preflight_smoke.py
+          python -m py_compile tooling/pdf_qc/autofix_controller.py
+          python -m py_compile tooling/pdf_qc/test_autofix_controller.py
+          python -m py_compile tooling/typeset/typesetter_gateway.py
+          python -m py_compile tooling/typeset/test_typesetter_gateway.py
+          python -m py_compile tooling/pdf_qc/xmark_detect.py
+          python -m py_compile tooling/pdf_qc/test_xmark_detect.py
+          python -m py_compile tooling/handoff/handoff_preflight.py
+          python -m py_compile tooling/handoff/test_handoff_preflight.py
+          python -m py_compile tooling/handoff/handoff_serializer.py
+          python -m py_compile tooling/handoff/test_handoff_serializer.py
+          python -m py_compile tooling/canary/canary_fonts.py
+          python -m py_compile tooling/canary/nightly_canary.py
+          python -m py_compile tooling/canary/test_nightly_canary.py
+          python -m py_compile tooling/canary/kor_n_canary.py
+          python -m py_compile tooling/canary/test_kor_n_canary.py
+          python -m py_compile tooling/content_qa/content_qa_gate.py
+          python -m py_compile tooling/content_qa/test_content_qa_gate.py
+          python -m py_compile tooling/final/final_quality_gate.py
+          python -m py_compile tooling/final/test_final_quality_gate.py
+          python -m py_compile tooling/korean/korean_exam_realism_gate.py
+          python -m py_compile tooling/korean/test_korean_exam_realism_gate.py
+          python -m py_compile tooling/canary/kor_final_canary.py
+          python -m py_compile tooling/canary/test_kor_final_canary.py
+          python -m py_compile tooling/visual/arc_visual_render.py
+          python -m py_compile tooling/visual/visual_verify.py
+          python -m py_compile tooling/validate_system.py
+
+      - name: Validate YAML
+        run: |
+          python - <<'PY'
+          import yaml
+          from pathlib import Path
+          files = [
+              'SYSTEM_MANIFEST.yaml',
+              'quality/regression/REGRESSION_FIXTURES_V1.0.yaml',
+              'quality/similarity/SIMILARITY_THRESHOLDS_V1.0.yaml',
+              'tooling/promptfoo/promptfooconfig.yaml',
+              'quality/governance/DEPRECATION_REGISTRY_V1.0.yaml',
+              'quality/semantic/ARC_QA_EVIDENCE_SCHEMA_V1.0.yaml',
+              'quality/canary/KOR_CORE_CANARY_V1.yaml',
+              'quality/canary/KOR_N_CANARY_V1.yaml',
+              'quality/canary/KOR_FINAL_CANARY_V1.yaml',
+              'quality/canary/SOC_CORE_CANARY_V1.yaml',
+              'quality/canary/SOC_N_CANARY_V1.yaml',
+              'quality/source/KOR_SCHOOL_SOURCE_INVENTORY_2026_V1.0.yaml',
+              'quality/source/KOR_SUPPLEMENT_PAGE_MAP_2026_V1.0.yaml',
+              'quality/source/SOC_SCHOOL_SOURCE_INVENTORY_2026_V1.0.yaml',
+              'quality/source/SOC_C_XMARK_EXCLUSION_INDEX_2026_V1.0.yaml',
+          ]
+          for f in files:
+              yaml.safe_load(Path(f).read_text(encoding='utf-8'))
+              print('OK', f)
+          PY
+
+      - name: Validate 30 regression fixtures
+        run: |
+          python - <<'PY'
+          import sys
+          sys.path.insert(0, 'tooling/promptfoo')
+          from tests import generate_tests
+          tests = generate_tests()
+          assert len(tests) == 30, len(tests)
+          assert len({t['vars']['fixture_id'] for t in tests}) == 30
+          print('fixtures', len(tests))
+          PY
+
+      - name: Run PDF preflight behavioral smoke
+        run: python tooling/pdf_qc/test_preflight_smoke.py
+
+      - name: Run PDF auto-fix controller smoke
+        run: python tooling/pdf_qc/test_autofix_controller.py
+
+      - name: Run Social C X-mark detector smoke
+        run: python tooling/pdf_qc/test_xmark_detect.py
+
+      - name: Run manifest-owned Typesetter gateway smoke
+        run: python tooling/typeset/test_typesetter_gateway.py
+
+      - name: Run handoff preflight behavioral smoke
+        run: python tooling/handoff/test_handoff_preflight.py
+
+      - name: Run handoff serializer behavioral smoke
+        run: python tooling/handoff/test_handoff_serializer.py
+
+      - name: Run fixed KOR CORE E2E canary
+        run: python tooling/canary/nightly_canary.py --output-dir /tmp/arc-kor-canary --report /tmp/arc-kor-canary/canary-report.json
+
+      - name: Run fixed KOR N E2E canary
+        run: python tooling/canary/kor_n_canary.py --output-dir /tmp/arc-kor-n-canary --report /tmp/arc-kor-n-canary/canary-report.json
+
+      - name: Run representative SOC CORE E2E canary
+        run: python tooling/canary/nightly_canary.py --fixture quality/canary/SOC_CORE_CANARY_V1.yaml --output-dir /tmp/arc-soc-canary --report /tmp/arc-soc-canary/canary-report.json
+
+      - name: Run representative SOC N E2E canary
+        run: python tooling/canary/kor_n_canary.py --fixture quality/canary/SOC_N_CANARY_V1.yaml --output-dir /tmp/arc-soc-n-canary --report /tmp/arc-soc-n-canary/canary-report.json
+
+      - name: Run Universal Independent Solve QA gate smoke
+        run: python tooling/content_qa/test_content_qa_gate.py
+
+      - name: Run FINAL quality gate smoke
+        run: python tooling/final/test_final_quality_gate.py
+
+      - name: Run Korean exam realism gate smoke
+        run: python tooling/korean/test_korean_exam_realism_gate.py
+
+      - name: Run fixed KOR FINAL E2E canary
+        run: python tooling/canary/kor_final_canary.py --output-dir /tmp/arc-kor-final-canary --report /tmp/arc-kor-final-canary/canary-report.json
+
+      - name: Upload canary evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: arc-canaries-${{ github.run_id }}
+          path: |
+            /tmp/arc-kor-canary
+            /tmp/arc-kor-n-canary
+            /tmp/arc-kor-final-canary
+            /tmp/arc-soc-canary
+            /tmp/arc-soc-n-canary
+          retention-days: 7
+
+      - name: Validate active system graph and checksums
+        run: python tooling/validate_system.py --strict-checksums

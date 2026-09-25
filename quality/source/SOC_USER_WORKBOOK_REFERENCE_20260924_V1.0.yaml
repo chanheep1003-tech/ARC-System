@@ -1,0 +1,230 @@
+version: SOC-USER-WORKBOOK-REFERENCE-20260924-V1.0
+status: ACTIVE_REFERENCE
+subject: SOC
+curriculum: 2022 개정 교육과정
+school_context: 동북고등학교 1학년 2학기 중간고사
+registered_at: "2026-09-24"
+source:
+  source_id: SOC-USER-MTD-20260924
+  publisher_context: "마더텅 — 사용자가 대화에서 직접 확인"
+  edition_context: "2026 고1 통합사회 문제집 스크린샷"
+  acquisition: USER_SUPPLIED_CHAT_SCREENSHOTS
+  persistence: DERIVED_METADATA_ONLY
+  source_status: CHAT_SCREENSHOT_REVIEWED_NONPERSISTENT
+  answer_basis_allowed: false
+  scope_authority: false
+  copy_allowed: false
+  verbatim_stem_option_storage: forbidden
+  copyright_mode: STRUCTURE_AND_METADATA_ONLY
+
+authority_order:
+  - USER_TEACHER_EXPLICIT_SCOPE
+  - CURRENT_SCHOOL_WORKSHEET
+  - CURRENT_TEXTBOOK_SCOPE
+  - ARC_ACTIVE_MASTER
+  - THIS_WORKBOOK_REFERENCE
+
+summary:
+  observed_page_ranges:
+    - "21-41"
+    - "51-65"
+    - "106-120"
+    - "130-151"
+  observed_total_items_after_page_level_dedup: 269
+  duplicate_note: "106-120쪽 묶음은 대화 중 재전송이 있었으나 한 번만 집계."
+  use_for:
+    - QUESTION_FORM_REFERENCE
+    - DISTRACTOR_PATTERN_REFERENCE
+    - DATA_VISUAL_DENSITY_REFERENCE
+    - WORKBOOK_DIFFICULTY_CALIBRATION
+  never_use_for:
+    - SCOPE_EXPANSION
+    - VERBATIM_COPY
+    - ANSWER_BASIS_WITHOUT_SCHOOL_SOURCE
+    - C_X_MARK_OVERRIDE
+
+batches:
+  - batch_id: SOC-MTD-C-RIGHTS-20260924
+    canonical_arc_part: C
+    screenshot_pages: "21-41"
+    observed_items: 74
+    scope_status: FILTER_THROUGH_C_SCHOOL_SOURCE
+    direct_concept_ids:
+      - SOC-C-RIGHTS
+      - SOC-C-REMEDY
+      - SOC-C-COLLISION
+    high_value_forms:
+      - HUMAN_RIGHTS_HISTORY_DOCUMENT_COMPARE
+      - BASIC_RIGHT_CASE_MATCH
+      - BASIC_RIGHT_DEFINITION_TABLE
+      - LABOR_CONTRACT_STATUTE_CASE
+      - CIVIC_PARTICIPATION_CLASSIFICATION
+      - CIVIL_DISOBEDIENCE_CONDITION_MATRIX
+      - SOCIAL_MINORITY_CASE_APPLICATION
+      - AFFIRMATIVE_ACTION_PRO_CON
+      - SCORE_TABLE_ERROR_FINDING
+    mandatory_filters:
+      - C_X_MARK_FILTER
+      - "우리나라의 권력 분립 제도 confirmation figure/block 직접 근거 사용 금지"
+      - "시민불복종 Singer position block 직접 근거 사용 금지"
+      - "시민불복종 Thoreau position block 직접 근거 사용 금지"
+      - "Rawls 등 비X 학교자료 범위만 별도 확인 후 사용"
+    note: "문제집 단원 전체를 시험범위로 간주하지 않는다."
+
+  - batch_id: SOC-MTD-A-JUSTICE-20260924
+    canonical_arc_part: A
+    screenshot_pages: "51-65"
+    observed_items: 53
+    scope_status: MIXED_DIRECT_AND_STRUCTURE_ONLY
+    direct_concept_ids:
+      - SOC-A-JUSTICE-CONCEPT
+      - SOC-A-ARISTOTLE
+      - SOC-A-DISTRIBUTION
+    school_source_linked_forms:
+      - JUSTICE_DEFINITION_AND_NEED
+      - ARISTOTLE_PROPORTIONAL_EQUALITY
+      - DISTRIBUTION_NEED_MERIT_ABILITY
+      - RAWLS_PRIORITY_AND_LEAST_ADVANTAGED
+      - DISTRIBUTION_POLICY_CASE
+      - PRINCIPLE_STATEMENT_COMBINATION
+    structure_only_unless_school_source_confirms:
+      - LIBERTARIAN_COMMUNITARIAN_EXTENSIONS
+      - NOZICK_PROPERTY_RIGHTS
+      - AFFIRMATIVE_ACTION_EXTENDED_THEORY
+      - SPATIAL_INEQUALITY
+      - SOCIAL_INSURANCE_WELFARE_DETAIL
+    hard_rule: "A학습지 1호·2호와 천재 p36-43 밖 지식은 정답 근거로 승격하지 않는다."
+    note: "칸트·베카리아 형벌론은 현재 사용자 제공 문제집 묶음에서 충분히 확보되지 않았으므로 기존 학교자료 특별트랙을 유지."
+
+  - batch_id: SOC-MTD-B-GLOBAL-20260924
+    canonical_arc_part: B
+    screenshot_pages: "106-120"
+    observed_items: 55
+    scope_status: FILTER_TO_GLOBALIZATION_LOCALIZATION
+    direct_concept_ids:
+      - SOC-B-GLOBAL
+    high_value_forms:
+      - GLOBALIZATION_DEFINITION_FILL
+      - GLOBALIZATION_EFFECT_CAUSE
+      - GLOCALIZATION_LOCAL_STRATEGY
+      - WORLD_CITY_FUNCTION
+      - MNC_FUNCTIONAL_SPATIAL_DIVISION
+      - MNC_LOCATION_FACTOR
+      - OFFSHORING_FDI_RELOCATION
+      - GEOGRAPHICAL_INDICATION_LOCAL_BRAND
+      - FAIR_TRADE_VALUE_CHAIN
+      - GLOBALIZATION_POS_NEG_MULTI_STATEMENT
+    structure_only_or_blocked:
+      - POSITIVE_NEGATIVE_PEACE
+      - ARMED_CONFLICT_REGION_IDENTIFICATION
+      - REFUGEE_HUMAN_SECURITY
+      - UNIFICATION_COST_BENEFIT
+      - TERRITORIAL_DISPUTE_DETAIL
+    hard_rule: "천재 p98-107 + B학습지 세계화 범위를 넘어 평화·분쟁 단원을 자동 포함하지 않는다."
+
+  - batch_id: SOC-MTD-B-POP-20260924
+    canonical_arc_part: B
+    screenshot_pages: "130-151"
+    observed_items: 87
+    exact_direct_scope_item_count: 48
+    exact_direct_scope_refs:
+      - "p130-134: core 1-20"
+      - "p139-142: core 1-16"
+      - "p143: 17"
+      - "p147: deep 1-4"
+      - "p148: deep 5-8"
+      - "p149: deep 9-11"
+    exact_blocked_refs:
+      - "p135-138: 21-36 energy/sustainability"
+      - "p143: 18-20 energy"
+      - "p144-146: 21-31 energy/sustainability/technology ethics"
+      - "p149: 12 energy"
+      - "p150-151: 13-20 energy"
+    direct_concept_ids:
+      - SOC-B-POP
+    subaxes:
+      - POP_DISTRIBUTION_FACTOR
+      - POP_PYRAMID_COMPARE
+      - AGE_STRUCTURE_RATIO
+      - DEPENDENCY_RATIO_AGING_INDEX
+      - DEMOGRAPHIC_TRANSITION
+      - LOW_FERTILITY_AGING
+      - MIGRATION_PUSH_PULL
+      - MIGRATION_TYPE_REASON
+      - KOREA_POPULATION_CHANGE
+      - POPULATION_POLICY_RESPONSE
+    high_value_forms:
+      - TWO_PYRAMID_COMPARISON
+      - TABLE_RATIO_INFERENCE
+      - TREND_GRAPH_POLICY_LINK
+      - MAP_MIGRATION_FLOW
+      - MIGRATION_CASE_CLASSIFICATION
+      - MULTI_REGION_AGE_STRUCTURE_COMPARE
+      - POLICY_EFFECT_MATCH
+      - RATE_LEVEL_CHANGE_TRAP
+    hard_rule: "에너지·신재생에너지·지속가능발전 문항은 B 인구 범위로 승격 금지."
+
+question_form_families:
+  - id: SOC-WB-F01
+    name: MULTI_STATEMENT_SELECTION
+    description: "ㄱ·ㄴ·ㄷ 또는 복수 학생 진술 중 옳은 조합 판단"
+  - id: SOC-WB-F02
+    name: CASE_TO_CONCEPT_MATCH
+    description: "낯선 사례/계약/정책을 개념·권리·원리에 매칭"
+  - id: SOC-WB-F03
+    name: TABLE_GRAPH_FUNCTIONAL
+    description: "표·그래프의 비율/수/증감폭을 실제 정답 경로에 사용"
+  - id: SOC-WB-F04
+    name: MAP_SPATIAL_INFERENCE
+    description: "지도 위치·이동·공간 분업·분포를 자료 해석에 사용"
+  - id: SOC-WB-F05
+    name: BEFORE_AFTER_COMPARE
+    description: "두 시점/두 지역/두 집단을 비교해 변화 원인·결과 추론"
+  - id: SOC-WB-F06
+    name: PRINCIPLE_CRITIQUE
+    description: "사상가/원리의 주장과 상대 비판을 범위 내 근거로 판정"
+  - id: SOC-WB-F07
+    name: EVALUATION_TABLE
+    description: "학생 답안·채점표·O/X 표에서 오류 또는 점수 판정"
+  - id: SOC-WB-F08
+    name: CAUSE_EFFECT_REVERSAL
+    description: "원인-결과, 비율-절대수, 수준-증가율을 바꾸는 고매력 오답"
+  - id: SOC-WB-F09
+    name: POLICY_TARGET_EFFECT
+    description: "정책 대상·목적·예상 효과를 연결"
+  - id: SOC-WB-F10
+    name: SOURCE_SCOPE_TRAP
+    description: "제시자료에서 허용되는 추론 범위를 넘어서는 과잉 일반화 판별"
+
+difficulty_reference:
+  reference_class: WORKBOOK_MID_TO_HIGH
+  calibration_only: true
+  preferred_high_signals:
+    - "3점 표시 + 복수조건"
+    - "자료 2개 이상 결합"
+    - "비율/수/증감폭 동시 판단"
+    - "지도·피라미드·표를 정답 경로에 필수 사용"
+    - "HALF_TRUE 또는 원인-결과/비율-수치 교환형 오답"
+  anti_difficulty:
+    - "범위 밖 지식"
+    - "긴 읽기량만 증가"
+    - "장식용 표/지도"
+    - "애매한 절대 표현"
+
+generator_integration:
+  - "새 사회 N°/FINAL 생성 전 이 파일의 question_form_families를 후보 풀로 사용."
+  - "같은 폼 3문항 연속 금지."
+  - "B 인구 세트는 TWO_PYRAMID_COMPARISON, TABLE_RATIO_INFERENCE, MIGRATION_CASE_CLASSIFICATION 중 최소 2종 포함을 우선 검토."
+  - "B 세계화 세트는 MNC_FUNCTIONAL_SPATIAL_DIVISION 또는 MNC_LOCATION_FACTOR를 시각자료 후보로 우선 검토."
+  - "C 세트는 C_X_MARK_FILTER를 적용하기 전에는 이 문제집의 C 관련 구조도 직접 출제 근거로 승격하지 않는다."
+  - "문제집 원문/선지 문장 재사용 금지; 구조만 변형한다."
+
+qa:
+  item_level_answer_reverification: NOT_PERFORMED
+  source_persistence: METADATA_ONLY
+  copyright_check: PASS_STRUCTURE_ONLY
+  scope_expansion_allowed: false
+  bank_eligibility: false
+  notes:
+    - "이 파일은 ACTIVE_BANK가 아니라 reference map이다."
+    - "정답/선지의 사실 근거는 학교 학습지·교과서·공식 자료에서 별도 확보한다."

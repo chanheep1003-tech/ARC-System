@@ -121,8 +121,11 @@ COVERAGE:
 
 |CONCEPT_ID|PRIORITY|SOURCE_SCOPE|핵심 평가축|STATUS|
 |---|---:|---|---|---|
-|SOC-A-VIEW|R|A: 천재 p36~43 + A학습지|관점·정의·사례 적용|UNMEASURED|
-|SOC-A-THOUGHT_MAP|R|『생각의 지도』 p156~233|동서양 사고, 속성/관계·맥락, 평균→개인 오류|UNMEASURED|
+|SOC-A-JUSTICE-CONCEPT|R|A: 천재 p36~43 + A학습지 1호|불평등·평등·형평성·정의 구분, 정의의 필요성|UNMEASURED|
+|SOC-A-ARISTOTLE|R|A: 학습지 1호|일반적·분배적·교정적·교환적 정의 구분과 사례 적용|UNMEASURED|
+|SOC-A-PUNISHMENT|R|A: 학습지 1호|칸트 응보주의와 베카리아 공리주의의 명시 주장·정당한 함의|UNMEASURED|
+|SOC-A-DISTRIBUTION|R|A: 학습지 2호|능력·업적·필요 기준의 특성·장점·한계와 사례 적용|UNMEASURED|
+|SOC-A-THOUGHT_MAP|R|『생각의 지도』 p156~233 + canonical source registry|논리/경험·변증법·사회생태 기원·제도 적용·귀인·문화편향·프라이밍, 평균→개인 오류|UNMEASURED|
 |SOC-C-RIGHTS|R|C: 천재 p8~23 + C학습지 비X 영역|인권·기본권·헌법 적용|UNMEASURED|
 |SOC-C-REMEDY|R|동일|권리구제 기관·절차·효과|UNMEASURED|
 |SOC-C-COLLISION|R|동일|권리충돌·조정, 기본권 제한|UNMEASURED|
@@ -133,9 +136,56 @@ COVERAGE:
 |SOC-X-C_USER_MARK|X|C 학습지 손글씨 X 영역|정답근거/오답필수지식/<보기>/서답 채점요소 모두 금지|BLOCKED|
 
 추가 규칙:
+- A학습지 원문 식별자는 `quality/source/SOC_A_SCHOOL_WORKSHEETS_2026_V1.0.yaml`에서 Drive ID와 SHA-256으로 잠근다.
+- A학습지의 빈 기입란은 제외 범위가 아니며, 근거 없는 내용을 보충하는 생성 슬롯도 아니다.
 - `USER_X_EXCLUSION`이 모든 하위 범위보다 우선한다.
 - 종합세트 인구 비중 기본 상한 20%.
 - B 단독 세트는 B학습지 직접 근거 자료/문항 비중 최소 60%.
+
+
+
+#### SOC-A-THOUGHT_MAP subaxes — 2026-09-24
+Canonical source: `quality/source/SOC_A_THOUGHTMAP_P156_233_2026_V1.0.yaml`
+
+- `SOC-A-TM-VALIDITY_PLAUSIBILITY`: 형식적 타당성 vs 경험적 그럴듯함
+- `SOC-A-TM-DIALECTIC_CHANGE` / `CONTRADICTION` / `RELATIONSHIP`: 변증법 3원리
+- `SOC-A-TM-CONTRADICTORY_EVIDENCE`: 상반 연구 결과의 처리
+- `SOC-A-TM-CAUSAL_CHAIN`: 생태↔경제↔사회구조↔주의↔형이상학↔인식론↔사고
+- `SOC-A-TM-FIELD_DEPENDENCE`: 장의존성/장독립성과 사회구조
+- `SOC-A-TM-INSTITUTION_APPLICATION`: 의학·법·기업·과학·계약·인권·종교 사례
+- `SOC-A-TM-ATTRIBUTION`: 기본적 귀인 오류와 상황 정보
+- `SOC-A-TM-IQ_CULTURE_BIAS`: 문화 공정성·검사 방식에 따른 순위 변화
+- `SOC-A-TM-MODERNIZATION`: 현대화와 서구화 구분
+- `SOC-A-TM-BICULTURAL_PRIMING`: 이중문화·프라이밍과 사고의 가변성
+
+HARD GUARDRAIL:
+집단 평균→개인 일반화, 선천적 능력 차이, 문화 본질주의, 생태 단일결정론을 정답 근거로 사용하지 않는다.
+
+#### 통합사회2 사용자 제공 문제집 구조참조 — 2026-09-24
+참조 파일: `quality/source/SOC_USER_WORKBOOK_REFERENCE_20260924_V1.0.yaml`
+
+이 참조는 SCOPE SOURCE가 아니라 QUESTION_FORM / DIFFICULTY / VISUAL-DATA reference다.
+현재 CONCEPT_ID는 유지하고 아래 세부축을 내부 blueprint 태그로 사용한다.
+
+- `SOC-B-GLOBAL`
+  - GLOBAL_CORE
+  - LOCALIZATION_GLOCALIZATION
+  - MNC_FUNCTIONAL_SPATIAL_DIVISION
+  - MNC_LOCATION_FACTOR
+  - FAIR_TRADE_VALUE_CHAIN
+- `SOC-B-POP`
+  - POP_DISTRIBUTION_FACTOR
+  - POP_PYRAMID_COMPARE
+  - AGE_STRUCTURE_RATIO
+  - DEMOGRAPHIC_TRANSITION
+  - MIGRATION_PUSH_PULL
+  - LOW_FERTILITY_AGING
+  - POPULATION_POLICY_RESPONSE
+
+사용자 선별 기준상 B 인구 직접 범위 구조참조는 48문항이다.
+에너지·신재생에너지·지속가능발전 문제는 `SOC-B-POP` 커버리지에 계산하지 않는다.
+C 문제집 문항은 반드시 학교 C source와 X-mark index를 거쳐야 하며, 문제집 단원 전체를 C 범위로 간주하지 않는다.
+A 문제집 문항 중 자유지상주의/공동체주의·노직·적극적 우대조치·공간 불평등·사회보험 세부는 학교자료가 직접 끌어오지 않는 한 구조참고만 허용한다.
 
 ### 5-4. 한국사2
 

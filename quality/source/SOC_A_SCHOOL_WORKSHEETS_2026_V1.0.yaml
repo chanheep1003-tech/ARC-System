@@ -1,0 +1,56 @@
+version: SOC-A-SCHOOL-WORKSHEETS-2026-V1.0
+status: ACTIVE
+subject: SOC
+course: 통합사회2-A
+school: 동북고등학교
+curriculum: 2022 개정 교육과정
+registered_at: "2026-09-21T16:30:00+09:00"
+authority: CURRENT_SCHOOL_WORKSHEET
+source_priority: 2
+canonical_parent:
+  path: /Google Drive/N제 시스템/03_통합사회/학교자료/학교학습지/A파트
+  folder_id: 18RevOW6U-2CMI9pSzsz-2CpTiel88K_b
+integrity_policy:
+  required_match_fields: [drive_id, file_name, byte_size, page_count, sha256]
+  on_mismatch: SOURCE_CHANGED_OR_UNREADABLE
+  bank_pass_on_mismatch: forbidden
+  blank_student_response_cells: NO_INFERRED_CONTENT
+  visual_review_required: true
+sources:
+  - source_id: SOC-SCHOOL-A-2026-01
+    title: 2026년-1호 학습지-1학년 통합사회A-정의의 의미와 필요성
+    file_name: 2026년-1호 학습지-1학년 통합사회A-정의의 의미와 필요성.pdf
+    drive_id: 1HGx0YROa8nCUzCyEcaN-K794yRILFNbr
+    mime_type: application/pdf
+    byte_size: 90103
+    page_count: 2
+    sha256: 77504372fd2b652914a137068a40b3a12c39c1df19ce2e2f15af5f5f6573f871
+    textbook_pages: "37-39"
+    curriculum_standard: 10통사2-02-01
+    visual_review: PASS
+    direct_scope:
+      - 불평등·평등·형평성·정의
+      - 아리스토텔레스의 일반적·분배적·교정적·교환적 정의
+      - 정의가 요청되는 이유와 롤스의 정의 우선성
+      - 칸트의 응보주의와 베카리아의 공리주의 형벌론
+    concept_ids:
+      - SOC-A-JUSTICE-CONCEPT
+      - SOC-A-ARISTOTLE
+      - SOC-A-PUNISHMENT
+  - source_id: SOC-SCHOOL-A-2026-02
+    title: 2026년-2호 학습지-1학년 통합사회A-정의의 실질적 기준
+    file_name: 2026년-2호 학습지-1학년 통합사회A-정의의 실질적 기준.pdf
+    drive_id: 1KBxvZ5tNw31vi5MCOq1G8vqQPH_-NYTG
+    mime_type: application/pdf
+    byte_size: 61489
+    page_count: 1
+    sha256: e409f68daff1dfce650d3faf54406be4faf675877871ce19f81c3d91d35acc8f
+    textbook_pages: "40-43"
+    curriculum_standard: 10통사2-02-01
+    visual_review: PASS
+    direct_scope:
+      - 능력 기준의 특성·장점·한계와 사례
+      - 업적 기준의 특성·장점·한계와 사례
+      - 필요 기준의 특성·장점·한계와 사례
+    concept_ids:
+      - SOC-A-DISTRIBUTION

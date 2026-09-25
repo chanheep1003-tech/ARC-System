@@ -1,0 +1,37 @@
+version: 1.0
+status: ACTIVE-DEV
+updated: 2026-09-19
+
+# Central output target registry.
+# Do not ask the user for IDs already present here.
+
+subjects:
+  KOR:
+    manuscript:
+      folder_id: "1oPnRTZPczmXWlcDgg3aIMwuw2NWECBYQ"
+      path: "01_국어/출제원고"
+    review:
+      folder_id: "1d1nDUT7nAo-KIZZ78wb_yhXWBAqD1Z5L"
+      path: "01_국어/검수·수정본"
+    finished_n:
+      folder_id: "15P1JUMyrWoRO-VaJzg4F5cH9NIOXLoBZ"
+      path: "01_국어/완성N제"
+
+  SOC:
+    manuscript:
+      folder_id: "1w25IxhXPuF7t4vKNLHwDF8n4U6o-E8Eo"
+      path: "03_통합사회/출제원고"
+    review:
+      folder_id: "1RtlCgV2whtzyMJjxbZpThqoO4JKfkMaY"
+      path: "03_통합사회/검수·수정본"
+    finished_n:
+      folder_id: "1ZloquIO4K5vF1V35g85IC93Mj_epHL-0"
+      path: "03_통합사회/완성N제"
+
+resolution:
+  order:
+    - ARC_STORAGE_TARGETS
+    - SYSTEM_MANIFEST
+    - CONTENT_BUNDLE
+    - HANDOFF_METADATA
+  ask_user_only_if_unresolved: true

@@ -1,0 +1,42 @@
+# Visual page map only. This file does not contain or authorize an exact transcription.
+map_id: KOR-SUPPLEMENT-PAGE-MAP-2026-V1
+source:
+  drive_id: 1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+  sha256: c35c6ad3d67d286c05e25e5f702ddb4433b973b12033e7ac63ae676a8c042bb3
+  page_count: 3
+review:
+  method: rendered_page_visual_review
+  reviewed_at: 2026-09-23T12:00:00+09:00
+  heading_and_boundary_status: VERIFIED_VISUAL
+  exact_body_transcription_status: HOLD_VISUAL_LINE_BY_LINE_TRANSCRIPTION
+pages:
+  - pdf_page: 1
+    verified_sections:
+      - type: literary_source
+        title: 정훈, 「탄궁가」
+        coverage: source_text_and_school_summary
+      - type: literary_source
+        title: 백석, 「팔원 - 서행시초3」
+        coverage: source_text_begins
+  - pdf_page: 2
+    verified_sections:
+      - type: literary_source
+        title: 백석, 「팔원 - 서행시초3」
+        coverage: school_explanation_and_summary_continue
+      - type: literary_source
+        title: 기형도, 「기억할 만한 지나침」
+        coverage: source_text_school_explanation_summary_and_additional_material
+      - type: nonfiction_source
+        title: 이형남, 「칸트의 도덕적 자율성으로부터 헤겔의 인륜적 자율성으로」
+        coverage: source_text_begins
+  - pdf_page: 3
+    verified_sections:
+      - type: nonfiction_source
+        title: 이형남, 「칸트의 도덕적 자율성으로부터 헤겔의 인륜적 자율성으로」
+        coverage: source_text_continues_and_school_summary
+generation_gate:
+  allowed_scope: ONLY_THE_FOUR_LISTED_SOURCES
+  supplement_priority: REQUIRED
+  exact_quote_or_full_text_use: BLOCKED_UNTIL_TRANSCRIPTION_VERIFIED
+  title_boundary_routing: ALLOWED
+  external_interpretation_as_answer_basis: FORBIDDEN
