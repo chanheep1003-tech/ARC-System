@@ -120,3 +120,88 @@ texts:
     punctuation_lock: true
     line_break_lock: true
     boundary_lock: true
+- source_text_id: KOR-TB-2026-U1-SOKMIINGOK-MODERN
+  title: 정철, 「속미인곡」 (교과서 현대어 풀이)
+  author: 정철
+  role: RAW_SCHOOL_SOURCE
+  source_origin: USER_PROVIDED_TEXTBOOK
+  school_source_file_id: 1r3EW5jS1ZzuHoknHn2YiiKO4EnevjMam
+  school_source_location: 교과서 1단원 01 옛 노래 감상하기 pp.15-16 현대어 풀이, 발췌(임 계신 곳 소식을 ~ 끝)
+  repo_path: quality/source/text/KOR_TB_2026_U1_SOKMIINGOK_MODERN_EXCERPT_V1.0.txt
+  sha256: c7e222c9eb05325a835525aebc35fe0933028469e99c20b4af61251a327411bb
+  form: VERSE
+  lines: 28
+  text_fidelity: EXACT
+  verification:
+    method: DRIVE_PDF_TEXT_LAYER_EXTRACTION
+    note: 현대어 풀이 lines are clean in the PDF text layer; the 고어 원문 layer drops arae-a characters, so the modern rendering is used
+    user_authorization: user authorized registering these transcriptions as source texts on 2026-09-25 ("권한 허용할테니까 알아서 해줘")
+    visual_line_by_line: NOT_PERFORMED (source file over the 10MB download limit)
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
+- source_text_id: KOR-TB-2026-U1-SURA
+  title: 백석, 「수라」
+  author: 백석
+  role: RAW_SCHOOL_SOURCE
+  source_origin: USER_PROVIDED_TEXTBOOK
+  school_source_file_id: 137wTl_ah-Wddfp0Rt4mXKwXh2YjmbOXw
+  school_source_location: 교과서 1단원 03 현대 시 감상하기 p.40
+  repo_path: quality/source/text/KOR_TB_2026_U1_SURA_V1.0.txt
+  sha256: 09aa9b0939bd87c18de8882429f6ea41d8f2899be78d630b6900386b7878c7fa
+  form: VERSE
+  lines: 12
+  text_fidelity: EXACT
+  verification:
+    method: VISUAL_TRANSCRIPTION_FROM_PAGE_IMAGE
+    note: wrapped continuation lines joined; spelling kept as printed (나린, 아모, 어니젠가, 싹기도, 가제, 무서우이, 받어)
+    user_authorization: user authorized registering these transcriptions as source texts on 2026-09-25 ("권한 허용할테니까 알아서 해줘")
+    visual_line_by_line: PERFORMED_ONCE
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
+- source_text_id: KOR-TB-2026-U1-AHOP-KYEOLLAE
+  title: 윤흥길, 「아홉 켤레의 구두로 남은 사내」
+  author: 윤흥길
+  role: RAW_SCHOOL_SOURCE
+  source_origin: USER_PROVIDED_TEXTBOOK
+  school_source_file_id: 137wTl_ah-Wddfp0Rt4mXKwXh2YjmbOXw
+  school_source_location: 교과서 1단원 04 현대 소설 감상하기 p.55 l.1 ~ p.56 l.11 발췌
+  repo_path: quality/source/text/KOR_TB_2026_U1_AHOP_KYEOLLAE_EXCERPT_V1.0.txt
+  sha256: 2c12ecdb9c348bcc8cb2fcf95b58f52e9c0764caba1c6bb8a924d020e7cb640d
+  paragraphs: 16
+  text_fidelity: EXACT
+  verification:
+    method: VISUAL_TRANSCRIPTION_FROM_PAGE_IMAGE
+    user_authorization: user authorized registering these transcriptions as source texts on 2026-09-25 ("권한 허용할테니까 알아서 해줘")
+    visual_line_by_line: PERFORMED_ONCE
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
+- source_text_id: KOR-TB-2026-U2-NEGOTIATION
+  title: 「우리 학교 아래로 고속 철도가 지나간다고?」
+  author: 교과서 제재
+  role: RAW_SCHOOL_SOURCE
+  source_origin: USER_PROVIDED_TEXTBOOK
+  school_source_file_id: 1wuoa58Zdj4--bj8OrCWWt6_DyAfEAUEa
+  school_source_location: 교과서 2단원 02 지혜롭게 협상하기 p.90 l.1 ~ p.92 l.17 발췌(조정하기)
+  repo_path: quality/source/text/KOR_TB_2026_U2_NEGOTIATION_EXCERPT_V1.0.txt
+  sha256: 9de637a845aacc7dcd1775f0c79aa38b8cfd94c57ba0fad41f9d81201d296bf2
+  paragraphs: 16
+  text_fidelity: EXACT
+  verification:
+    method: VISUAL_TRANSCRIPTION_FROM_PAGE_IMAGE
+    note: 'speaker labels printed in bold without a colon; rendered as "화자: " for the exam layout'
+    user_authorization: user authorized registering these transcriptions as source texts on 2026-09-25 ("권한 허용할테니까 알아서 해줘")
+    visual_line_by_line: PERFORMED_ONCE
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true

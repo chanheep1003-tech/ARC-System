@@ -149,7 +149,7 @@ def load_sources(sets: list[dict[str, Any]]) -> list[dict[str, Any]]:
             every = int(w.get("line_numbers") or 0) if form == "VERSE" else 0
             works.append({"label": w.get("label"), "entry": entry, "sha256": digest, "form": form, "units": units,
                           "display": shown, "title": entry["title"], "line_numbers": every})
-        out.append({"id": st["id"], "works": works, "notes": st.get("notes", [])})
+        out.append({"id": st["id"], "works": works, "notes": st.get("notes", []), "lead": st.get("lead", [])})
     return out
 
 
@@ -217,6 +217,8 @@ def manuscript(bundle: dict[str, Any], sources: list[dict[str, Any]]) -> str:
     lines: list[str] = []
     for src in sources:
         lines += [set_header(bundle, src["id"], labels), ""]
+        if src.get("lead"):
+            lines += src["lead"] + [""]
         for w in src["works"]:
             if w["label"]:
                 lines.append(w["label"])

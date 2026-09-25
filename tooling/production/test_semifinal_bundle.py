@@ -123,6 +123,16 @@ def main() -> int:
         next(i for i in ref["items"] if i["item_id"] == "SF-07")["judgments"][0]["ev"] = ["W2.L15"]
         assert "EVIDENCE_REF_OUT_OF_SOURCE" in fails(run_variant(tmp, "verse_ref", items=ref))
 
+    # Final semi-final (textbook units 1-2 + supplements): one blind round, every gate but the
+    # 동북고 difficulty anchor passes; the blind profile (D2 13 / D3 9) is easier than the anchor.
+    final_dir = ROOT / "quality/production/KOR_SEMIFINAL_FINAL_20260925"
+    with tempfile.TemporaryDirectory() as tmp:
+        r = pipeline.run(final_dir, Path(tmp) / "out", LOGO)
+        assert yaml.safe_load((final_dir / "blind_review.yaml").read_text(encoding="utf-8"))["rounds"] == 1
+        for gate in MUST_PASS + ["CONTENT_QA", "TYPESETTER_ADMISSION"]:
+            assert r["gates"][gate] == "PASS", (gate, r["gates"][gate])
+        assert r["gates"]["FINAL_DIFFICULTY"] == "FAIL"
+        assert r["metrics"]["mcq_count"] == 22 and r["metrics"]["cr_count"] == 4
     print("ARC SEMI-FINAL BUNDLE REGRESSION: PASS")
     return 0
 

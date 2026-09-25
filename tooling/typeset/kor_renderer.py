@@ -140,6 +140,12 @@ def build_blocks(L: Layout, bundle: dict[str, Any], sources: list[dict[str, Any]
         head.text(L.wrap(set_header(bundle, src["id"], labels), COL_W, "B"), key="B")
         head.h += 6
         blocks.append(head)
+        if src.get("lead"):  # e.g. [앞부분의 줄거리] printed before the passage
+            lb = Block()
+            for line in src["lead"]:
+                lb.text(L.wrap(line, COL_W, size=SIZE - 0.8, first=0, rest=0), size=SIZE - 0.8, lh=(SIZE - 0.8) * 1.55)
+            lb.h += 8
+            blocks.append(lb)
         for w in src["works"]:
             if w.get("label"):
                 lab = Block()

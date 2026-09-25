@@ -1,3 +1,14 @@
+## 1.8.34-dev — 2026-09-25
+- Registered four textbook source texts in the source registry as USER_PROVIDED_TEXTBOOK / RAW_SCHOOL_SOURCE / EXACT, with the user's explicit authorization:
+  - 속미인곡: the textbook 현대어 풀이 excerpt, taken from the PDF text layer.
+  - 수라, the 아홉 켤레의 구두로 남은 사내 excerpt, and the 고속 철도 negotiation excerpt: transcribed once by eye from the page images. No second independent transcription was compared.
+- Production pipeline and renderer: a set can carry `lead` text (e.g. [앞부분의 줄거리], [상황]) that is printed before the passage.
+- Final KOR semi-final bundle `KOR_SEMIFINAL_FINAL_20260925`:
+  - 22 선택형 + 4 서술형, 100점: 속미인곡+탄궁가 / 수라+팔원+기억할 만한 지나침 / 아홉 켤레 / 협상 / 칸트–헤겔.
+  - One blind round, which matched all 22 keys. Every gate passes except FINAL_DIFFICULTY: the blind profile is D2 13 / D3 9 / D4 0 (mean 2.41), easier than the 동북고 anchor (mean 2.76).
+  - 춘향전 and 제망매가 are excluded because the textbook front file (pp.1-37) is over the 10MB download limit.
+- Drive: renamed the textbook split files by unit.
+
 ## 1.8.33-dev — 2026-09-25
 - Policy (user directive): one blind independent solve per bundle, in every pipeline. `runtime.blind_review_rounds: 1`; the production pipeline blocks any other `rounds` value with BLIND_ROUND_POLICY_VIOLATION. Findings from the single round are fixed by the author and recorded as `post_blind_edits`, with no rerun. The N04 and first semi-final bundles are marked as legacy fixtures (WARN).
 - Policy (user directive): ARC FINAL difficulty now matches the 동북고 exam instead of the fixed hard profile. The new SCHOOL_ANCHOR mode in `final_quality_gate.py` compares a set's blind profile with `quality/anchors/KOR_DONGBUK_2025_2_MID_DIFFICULTY_ANCHOR_V1.0.yaml`: the 2025-2 동북고 midterm, 21 MCQ rated by one blind rater as D1 1 / D2 7 / D3 9 / D4 4, mean 2.76. The set fails if it is easier (FINAL_SCHOOL_ANCHOR_EASIER) or harder (FINAL_SCHOOL_ANCHOR_HARDER) than the anchor.
