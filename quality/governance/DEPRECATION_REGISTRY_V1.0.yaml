@@ -181,3 +181,24 @@ rules:
       - arc_n_core_ratio_filled_with_trivial_label_recall
       - arc_n_advanced_difficulty_created_by_out_of_scope_knowledge
       - arc_final_forced_to_arc_n_70_30_profile
+
+  - id: KOR-EXAM-REALISM-20260925
+    deprecated:
+      - ops/ARC_RUNTIME_PRIORITY_POLICY_V1.2.md
+      - subjects/KOREAN_MASTER_V4.3.md
+      - engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.3.md
+      - quality/ARC_KOREAN_ITEM_QA_V1.4.md
+    replacement:
+      - ops/ARC_RUNTIME_PRIORITY_POLICY_V1.3.md
+      - subjects/KOREAN_MASTER_V4.4.md
+      - engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.4.md
+      - quality/ARC_KOREAN_ITEM_QA_V1.5.md
+      - quality/ARC_KOREAN_EXAM_REALISM_GATE_V1.0.md
+      - quality/source/KOR_DONGBOOK_EXAM_TYPE_PROFILE_2025_2026_V1.0.yaml
+    reason: "2026-09-25 user priority: Korean N/FINAL quality first; reduce AI-like wording and focus on high-frequency Dongbuk school-exam task forms."
+    forbidden_runtime_behavior:
+      - korean_internal_qa_language_in_student_text
+      - korean_unfunctional_student_wrapper_overuse
+      - korean_ai_choice_pattern
+      - korean_exotic_task_overuse_over_school_core
+      - subject_order_his_before_sci_redox
