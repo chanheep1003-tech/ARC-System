@@ -1,5 +1,7 @@
 review_id: KOR-N04-BLIND-V7
 reviewer: independent blind reviewer agent, fresh context, manuscript only (no key, no metadata)
+rounds: 7
+round_policy_exemption: LEGACY bundle reviewed before the one-round blind policy (2026-09-25); kept as a regression fixture
 rounds_history: 7 full blind rounds on successive revisions (v1-v7); every round matched all 10 keys; findings drove revisions
 difficulty_rule: reviewer range estimates resolved to the lower bound
 excluded_inputs:

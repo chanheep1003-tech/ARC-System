@@ -1,3 +1,9 @@
+## 1.8.33-dev — 2026-09-25
+- Policy (user directive): one blind independent solve per bundle, in every pipeline. `runtime.blind_review_rounds: 1`; the production pipeline blocks any other `rounds` value with BLIND_ROUND_POLICY_VIOLATION. Findings from the single round are fixed by the author and recorded as `post_blind_edits`, with no rerun. The N04 and first semi-final bundles are marked as legacy fixtures (WARN).
+- Policy (user directive): ARC FINAL difficulty now matches the 동북고 exam instead of the fixed hard profile. The new SCHOOL_ANCHOR mode in `final_quality_gate.py` compares a set's blind profile with `quality/anchors/KOR_DONGBUK_2025_2_MID_DIFFICULTY_ANCHOR_V1.0.yaml`: the 2025-2 동북고 midterm, 21 MCQ rated by one blind rater as D1 1 / D2 7 / D3 9 / D4 4, mean 2.76. The set fails if it is easier (FINAL_SCHOOL_ANCHOR_EASIER) or harder (FINAL_SCHOOL_ANCHOR_HARDER) than the anchor.
+- The three literature supplement texts (탄궁가, 팔원, 기억할 만한 지나침) are promoted to EXACT on the user's confirmation that the registry readings are correct. Files were renamed from `_DRAFT` to `_V1.0`.
+- The semi-final regression now covers the anchor pass/easier/harder cases and the round policy.
+
 ## 1.8.32-dev — 2026-09-25
 - Extended the production pipeline to real school-exam shape: multi-work passage sets (`sets`, (가)/(나) labels, set notes/glosses), verse sources with `L#` / `W<n>.L#` evidence refs, printed verse margin line numbers every N lines (`line_numbers`), constructed-response (서술형) items with <조건>, model answers, rubrics and accepted variants, and per-item points. New gates: CONSTRUCTED_RESPONSE_GATE (blind answer must meet the rubric; ambiguous conditions block) and POINTS_GATE (total must be 100).
 - Renderer: ARC_FINAL numbering (`1.` with points, `[서술형 k]` with 조건 box and answer box), key PDF with model answers and 채점 기준, verse line numbers kept on the same row across column breaks, unbreakable `( ㉠ )` blanks.

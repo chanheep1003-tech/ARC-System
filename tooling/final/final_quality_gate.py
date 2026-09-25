@@ -138,7 +138,31 @@ def analyze(data: dict[str, Any]) -> dict[str, Any]:
     d45_rate = d45 / n
     longest_rate = longest_key / n
 
-    if item_count >= 10:
+    anchor = data.get("difficulty_anchor")
+    mean_level = sum(int(k[1]) * v for k, v in difficulty_counts.items()) / n
+    anchor_view = None
+    if item_count >= 10 and isinstance(anchor, dict):
+        # SCHOOL_ANCHOR mode: the set must match the school's real exam, neither easier nor harder.
+        prof, tol = anchor["profile"], anchor["tolerance"]
+        d3_rate = difficulty_counts["D3"] / n
+        for name, got in (("D12", d12_rate), ("D3", d3_rate), ("D45", d45_rate)):
+            want = float(prof["shares"][name])
+            if abs(got - want) > float(tol["share"]):
+                code = "FINAL_SCHOOL_ANCHOR_EASIER" if (name == "D45" and got < want) or (name == "D12" and got > want) else "FINAL_SCHOOL_ANCHOR_SHARE_OFF"
+                findings.append(fail(code, f"{name} share {got:.2f} vs anchor {want:.2f} (±{float(tol['share']):.2f})"))
+        if abs(mean_level - float(prof["mean_level"])) > float(tol["mean_level"]):
+            code = "FINAL_SCHOOL_ANCHOR_EASIER" if mean_level < float(prof["mean_level"]) else "FINAL_SCHOOL_ANCHOR_HARDER"
+            findings.append(fail(code, f"mean level {mean_level:.2f} vs anchor {float(prof['mean_level']):.2f} (±{float(tol['mean_level']):.2f})"))
+        if longest_rate > 0.30:
+            findings.append(fail("LONGEST_OPTION_IS_KEY_RATE", f"rate {longest_rate:.2f} exceeds 0.30"))
+        late_start = math.floor(item_count * 0.70)
+        late_d4_plus = sum(1 for item in items[late_start:] if isinstance(item, dict) and str(item.get("actual_difficulty", "")).upper() in {"D4", "D5"})
+        late_required = int(tol.get("late_section_d45_min", 1))
+        if late_d4_plus < late_required:
+            findings.append(fail("LATE_SECTION_DISCRIMINATION_SHORT", f"late D4+ {late_d4_plus} < {late_required}"))
+        anchor_view = {"anchor_id": anchor.get("anchor_id"), "anchor_shares": prof["shares"], "anchor_mean_level": prof["mean_level"],
+                       "D3_RATE": round(d3_rate, 4), "MEAN_LEVEL": round(mean_level, 2)}
+    elif item_count >= 10:
         if d12_rate > 0.25:
             findings.append(fail("FINAL_TOO_EASY_DISTRIBUTION", f"D1+D2 rate {d12_rate:.2f} exceeds 0.25"))
         if d45_rate < 0.30:
@@ -169,12 +193,14 @@ def analyze(data: dict[str, Any]) -> dict[str, Any]:
             "D1_D2_RATE": round(d12_rate, 4),
             "D4_D5_RATE": round(d45_rate, 4),
             "LATE_SECTION_D4_PLUS": late_d4_plus,
+            "MODE": "SCHOOL_ANCHOR" if anchor_view else "FIXED_PROFILE",
+            **({"SCHOOL_ANCHOR": anchor_view} if anchor_view else {}),
         },
         "item_quality_profile": {
             "LONGEST_OPTION_IS_KEY_RATE": round(longest_rate, 4),
             "MAX_CONSECUTIVE_LONG_ITEMS": max_long_run,
         },
-        "FINAL_DIFFICULTY": "PASS" if not any(f["code"] in {"FINAL_TOO_EASY_DISTRIBUTION", "FINAL_HIGH_DIFFICULTY_FLOOR_MISSED", "LATE_SECTION_DISCRIMINATION_SHORT", "FAKE_D4", "FAKE_D5", "D5_EVIDENCE_SHORT"} for f in findings) else "FAIL",
+        "FINAL_DIFFICULTY": "PASS" if not any(f["code"] in {"FINAL_SCHOOL_ANCHOR_EASIER", "FINAL_SCHOOL_ANCHOR_HARDER", "FINAL_SCHOOL_ANCHOR_SHARE_OFF", "FINAL_TOO_EASY_DISTRIBUTION", "FINAL_HIGH_DIFFICULTY_FLOOR_MISSED", "LATE_SECTION_DISCRIMINATION_SHORT", "FAKE_D4", "FAKE_D5", "D5_EVIDENCE_SHORT"} for f in findings) else "FAIL",
         "FINAL_ITEM_QUALITY": "PASS" if not any(f["code"] in {"WEAK_DISTRACTOR_HARD_FAIL", "OBVIOUS_KEY_HARD_FAIL", "EFFECTIVE_CHOICE_COUNT_LOW", "CORRECT_OPTION_LENGTH_BIAS", "CORRECT_DETAIL_OUTLIER", "LONGEST_OPTION_IS_KEY_RATE", "SECOND_BEST_INVALID", "SECOND_BEST_REFUTATION_MISSING"} for f in findings) else "FAIL",
         "FINAL_RELEASE": "PASS" if status == "PASS" else "BLOCKED",
         "findings": findings,

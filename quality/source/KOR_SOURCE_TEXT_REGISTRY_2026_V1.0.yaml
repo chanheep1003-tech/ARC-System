@@ -1,8 +1,8 @@
 # Locked exact source texts for Korean items. Drive stays the authority;
 # the repository copy exists so the production pipeline and CI can verify
-# the SHA-256 lock without network access. Entries with text_fidelity
-# PENDING_USER_CONFIRMATION are drafts: content QA blocks them until the
-# user confirms the listed conflicts and the entry is promoted to EXACT.
+# the SHA-256 lock without network access. An entry is EXACT only after
+# verification or explicit user confirmation; PENDING_USER_CONFIRMATION
+# entries stay blocked by content QA.
 registry_id: KOR-SOURCE-TEXT-REGISTRY-2026-V1.0
 version: 1.0
 date: 2026-09-25
@@ -41,15 +41,16 @@ texts:
   school_source_file_id: 1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
   school_source_location: scan p1 (I. 문학 보충 1)
   locked_text_drive_id: null
-  repo_path: quality/source/text/KOR_SUPP_2026_LIT_TANGUNGGA_DRAFT.txt
+  repo_path: quality/source/text/KOR_SUPP_2026_LIT_TANGUNGGA_V1.0.txt
   sha256: 0604e8740ac87d5f300ffd548b4c4a7f9a6150ade7bec3adeee4f2e4b480f271
   form: VERSE
   lines: 42
-  text_fidelity: PENDING_USER_CONFIRMATION
+  text_fidelity: EXACT
   verification:
     method: DRIVE_OCR_PLUS_ARC_N01_N03_TRANSCRIPTION_CROSSCHECK
     line_breaks: taken from the ARC N03 transcription; the scan OCR merges lines
-    open_conflicts:
+    user_confirmation: "user confirmed on 2026-09-25 that every reading in this registry text is correct ('원문 표기 다 맞고'); the conflicts below are resolved in favor of the registry text"
+    resolved_conflicts:
     - '5행 안표(顔瓢)가 / 안표(顔瓢) (OCR·N01: 조사 없음)'
     - 23행 가릴꼬 (N03) / 가꼬 (OCR·N01)
     - 25행 솥 시루 (N03) / 술 시루 (OCR·N01)
@@ -71,15 +72,16 @@ texts:
   school_source_file_id: 1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
   school_source_location: scan p1 right ~ p2 (I. 문학 보충 2)
   locked_text_drive_id: null
-  repo_path: quality/source/text/KOR_SUPP_2026_LIT_PALWON_DRAFT.txt
+  repo_path: quality/source/text/KOR_SUPP_2026_LIT_PALWON_V1.0.txt
   sha256: 4ef78129dd14d43c423bf90c67fb8c5d3ae03f71ee50a21ca1c585901f8cc649
   form: VERSE
   lines: 16
-  text_fidelity: PENDING_USER_CONFIRMATION
+  text_fidelity: EXACT
   verification:
     method: DRIVE_OCR_PLUS_ARC_N01_N03_TRANSCRIPTION_CROSSCHECK
     line_breaks: taken from the ARC N03 transcription; the scan OCR merges lines
-    open_conflicts:
+    user_confirmation: "user confirmed on 2026-09-25 that every reading in this registry text is correct ('원문 표기 다 맞고'); the conflicts below are resolved in favor of the registry text"
+    resolved_conflicts:
     - 8행 어디메서 (N03) / 어디에서 (OCR)
     - 9행 쌔하얗게 (N03) / 패하얗게 (OCR)
     - 8행·16행 끝 마침표 (OCR 있음, N03 없음)
@@ -99,15 +101,16 @@ texts:
   school_source_file_id: 1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
   school_source_location: scan p2 (I. 문학 보충 3)
   locked_text_drive_id: null
-  repo_path: quality/source/text/KOR_SUPP_2026_LIT_JINACHIM_DRAFT.txt
+  repo_path: quality/source/text/KOR_SUPP_2026_LIT_JINACHIM_V1.0.txt
   sha256: 9fdd9015b6a5afcab210ce67a56d4f1830f9e1f7d5aa47cd37d5b371d044f1c0
   form: VERSE
   lines: 14
-  text_fidelity: PENDING_USER_CONFIRMATION
+  text_fidelity: EXACT
   verification:
     method: DRIVE_OCR_PLUS_ARC_N01_N03_TRANSCRIPTION_CROSSCHECK
     line_breaks: taken from the ARC N03 transcription; the scan OCR merges lines
-    open_conflicts:
+    user_confirmation: "user confirmed on 2026-09-25 that every reading in this registry text is correct ('원문 표기 다 맞고'); the conflicts below are resolved in favor of the registry text"
+    resolved_conflicts:
     - 10행 할까, (N03) / 할까. (OCR·N01)
     - 2·4·8·14행 끝 마침표 (OCR 있음, N03 없음)
     - 연 구분 위치 (11행 뒤, N03 기준)

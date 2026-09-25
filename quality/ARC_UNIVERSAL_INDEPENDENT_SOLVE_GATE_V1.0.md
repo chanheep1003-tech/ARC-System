@@ -106,6 +106,12 @@ D5 최소:
 
 장문·어려운 용어·불필요한 계산·범위 밖 지식은 난도 근거가 아니다.
 
+## 5A. BLIND ROUND POLICY (2026-09-25 사용자 지시)
+- 블라인드 독립 풀이는 번들당 1회만 진행한다. 모든 제품과 파이프라인에 적용된다(`runtime.blind_review_rounds: 1`).
+- 풀이자는 새 컨텍스트에서 원고만 받는다. 정답, 작성 의도, 목표 난도는 주지 않는다.
+- 블라인드 결과로 드러난 문제는 저자가 수정하되, 재블라인드 없이 `post_blind_edits`에 기록한다. 정답 불일치 문항은 수정 근거를 남기고 보고서에 명시한다.
+- `blind_review.yaml`의 `rounds`는 1이어야 한다. 그 밖의 값은 `BLIND_ROUND_POLICY_VIOLATION`(FAIL)이다. 정책 이전 번들만 `round_policy_exemption`으로 WARN 처리한다.
+
 ## 6. SET GATES
 다음 8개 현행 gate는 전부 PASS여야 한다.
 

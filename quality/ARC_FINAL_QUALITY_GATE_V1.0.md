@@ -60,6 +60,23 @@ DIFFICULTY_PROFILE:
   LATE_SECTION_D4_PLUS:
   RESULT: PASS/WARN/FAIL
 
+## 2A. SCHOOL ANCHOR MODE (FINAL 기본값, 2026-09-25 사용자 지시)
+"final은 무조건 동북고 시험 난이도에 맞춰서 출제한다."
+
+- `runtime.arc_final_difficulty_mode: SCHOOL_ANCHOR`이면 위 2절의 고정 곡선 대신 학교 기준치와 비교한다.
+- KOR 기준치: `quality/anchors/KOR_DONGBUK_2025_2_MID_DIFFICULTY_ANCHOR_V1.0.yaml`
+  (2025-2 동북고 1학년 중간 공통국어2, 선택형 21문항을 같은 D1~D5 척도로 1회 블라인드 평정: D1 1 · D2 7 · D3 9 · D4 4 · D5 0, 평균 2.76).
+- 판정은 세트의 블라인드 난이도를 기준으로 한다.
+  - D1+D2, D3, D4+D5 비율이 각각 기준치 ±0.15 이내여야 한다.
+  - 평균 난도(D1=1 … D5=5)가 기준치 ±0.30 이내여야 한다.
+  - 후반 30% 구간의 D4+ 문항은 기준치 −1 이상이어야 한다.
+- 실패 코드:
+  - 기준보다 쉬우면 `FINAL_SCHOOL_ANCHOR_EASIER`
+  - 기준보다 어려우면 `FINAL_SCHOOL_ANCHOR_HARDER`
+  - 비율만 벗어나면 `FINAL_SCHOOL_ANCHOR_SHARE_OFF`
+- 학교 시험보다 어렵게 만드는 것도 불합격이다. FINAL은 실제 시험과 같은 체감 난도를 목표로 한다.
+- 기출 문구·선지는 재사용하지 않는다. 기준치는 구조와 난도 보정에만 쓴다.
+
 ## 3. ITEM QUALITY PROFILE
 각 문항 최소 기록:
 ITEM_ID

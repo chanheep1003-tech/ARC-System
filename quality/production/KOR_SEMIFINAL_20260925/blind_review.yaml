@@ -1,5 +1,7 @@
 review_id: KOR-SEMIFINAL-BLIND-V3
 reviewer: independent blind reviewer agent, fresh context per round, manuscript only (no key, no metadata)
+rounds: 3
+round_policy_exemption: LEGACY bundle reviewed before the one-round blind policy (2026-09-25); kept as a regression fixture
 rounds_history: '3 full blind rounds (v1-v3), each by a fresh agent; every round matched all 22 MCQ keys. Round difficulty profiles (D1/D2/D3/D4+): v1 2/13/7/0, v2 3/9/10/0, v3 1/13/8/0. Findings drove
   revisions: quotation marks restored, SF-04 line range, printed verse line numbers, SF-15/20/22/CR4 rewritten.'
 post_blind_edits:

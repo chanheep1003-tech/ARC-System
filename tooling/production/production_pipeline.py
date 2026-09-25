@@ -500,6 +500,16 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None) -> 
     (out_dir / "student_manuscript.md").write_text(text, encoding="utf-8")
     metrics = measure(bundle, sources, blind, text)
     findings = metrics["findings"]
+    required_rounds = manifest["runtime"].get("blind_review_rounds")
+    if required_rounds is not None:
+        rounds = blind.get("rounds")
+        if rounds == required_rounds:
+            pass
+        elif blind.get("round_policy_exemption"):
+            findings.append({"code": "BLIND_ROUND_POLICY_LEGACY", "severity": "WARN", "rounds": rounds,
+                             "reason": blind["round_policy_exemption"]})
+        else:
+            findings.append({"code": "BLIND_ROUND_POLICY_VIOLATION", "severity": "FAIL", "rounds": rounds, "required": required_rounds})
 
     qa = qa_evidence(bundle, sources, blind, text, findings)
     qa_name = f"ARC_QA_EVIDENCE_{bundle['batch_id']}.yaml"
@@ -530,7 +540,11 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None) -> 
 
     final_result = None
     if product == "ARC_FINAL":
-        final_result = final_gate.analyze(final_profile(bundle, blind))
+        payload = final_profile(bundle, blind)
+        anchor_rel = manifest["runtime"].get(f"arc_final_difficulty_anchor_{bundle.get('subject', 'KOR').lower()}")
+        if manifest["runtime"].get("arc_final_difficulty_mode") == "SCHOOL_ANCHOR" and anchor_rel:
+            payload["difficulty_anchor"] = yaml.safe_load((ROOT / anchor_rel).read_text(encoding="utf-8"))
+        final_result = final_gate.analyze(payload)
 
     hard = [f for f in findings if f["severity"] == "FAIL"]
     gates = {

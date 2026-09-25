@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Regression on the KOR semi-final bundle: multi-work sets, verse line numbers, constructed
-response items, points, Hanja glyph fallback, and the honest blocks (draft literature sources,
-FINAL difficulty floor) that must stay blocked until their inputs change."""
+response items, points, Hanja glyph fallback, the one-round blind policy and the 동북고
+school-anchor FINAL difficulty gate (neither easier nor harder than the real exam)."""
 from __future__ import annotations
 
 import copy
@@ -67,14 +67,13 @@ def main() -> int:
             assert base["gates"][gate] == "PASS", (gate, base["gates"][gate], fails(base))
         m = base["metrics"]
         assert m["mcq_count"] == 22 and m["cr_count"] == 4 and abs(m["total_points"] - 100) < 1e-6
-        # Draft literature sources keep content QA and typesetter admission closed.
-        assert base["gates"]["CONTENT_QA"] == "FAIL"
-        assert "KOR_SOURCE_NOT_EXACT" in base["gates"]["TYPESETTER_ADMISSION"]
-        # The FINAL floor is judged on blind difficulty, so a set rated D1-D3 must not pass it.
+        # Literature sources are user-confirmed EXACT, so content QA and admission are open.
+        assert base["gates"]["CONTENT_QA"] == "PASS" and base["gates"]["TYPESETTER_ADMISSION"] == "PASS"
+        # FINAL difficulty is judged against the 동북고 anchor: this set (blind 1/13/8/0) is easier.
         blind = load("blind_review.yaml")
-        mcq_blind = [b for b in blind["items"] if "difficulty" in b]
-        if sum(b["difficulty"] in {"D4", "D5"} for b in mcq_blind) / len(mcq_blind) < 0.30:
-            assert base["gates"]["FINAL_DIFFICULTY"] == "FAIL"
+        assert base["gates"]["FINAL_DIFFICULTY"] == "FAIL"
+        assert "FINAL_SCHOOL_ANCHOR_EASIER" in {f["code"] for f in base["final_quality"]["findings"]}
+        assert base["final_quality"]["difficulty_profile"]["MODE"] == "SCHOOL_ANCHOR"
         assert base["governance"] == {"FINAL_USER_APPROVAL": "PENDING", "DRIVE_SAVE": "BLOCKED"}
 
         with fitz.open(base["pdf"]) as doc:
@@ -87,6 +86,29 @@ def main() -> int:
         assert "〔40〕" in manuscript, "verse margin numbers missing from the student manuscript"
 
         items = load("items.yaml")
+        mcq_ids = [b["item_id"] for b in blind["items"] if "difficulty" in b]
+
+        def with_levels(levels):
+            forged = copy.deepcopy(blind)
+            by_id = {b["item_id"]: b for b in forged["items"]}
+            for iid, level in zip(mcq_ids, levels):
+                by_id[iid]["difficulty"] = level
+            return forged
+
+        # A profile shaped like the anchor passes the FINAL difficulty gate; an all-D4 set is too hard.
+        like_anchor = ["D3", "D3", "D2", "D3", "D2", "D2", "D3", "D3", "D4", "D2", "D4",
+                       "D3", "D3", "D3", "D3", "D2", "D4", "D2", "D4", "D1", "D2", "D3"]
+        assert run_variant(tmp, "anchor_like", blind=with_levels(like_anchor))["gates"]["FINAL_DIFFICULTY"] == "PASS"
+        r = run_variant(tmp, "too_hard", blind=with_levels(["D4"] * 22))
+        assert "FINAL_SCHOOL_ANCHOR_HARDER" in {f["code"] for f in r["final_quality"]["findings"]}
+
+        # One blind round is policy; a second round without a legacy exemption is blocked.
+        twice = copy.deepcopy(blind)
+        twice["rounds"] = 2
+        twice.pop("round_policy_exemption", None)
+        r = run_variant(tmp, "two_rounds", blind=twice)
+        assert "BLIND_ROUND_POLICY_VIOLATION" in fails(r) and r["gates"]["BLIND_INDEPENDENT_SOLVE"] == "FAIL"
+
         off = copy.deepcopy(blind)
         next(b for b in off["items"] if b["item_id"] == "SF-CR4")["meets_rubric"] = False
         r = run_variant(tmp, "cr_off_rubric", blind=off)

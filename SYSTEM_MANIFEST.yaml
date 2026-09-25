@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.32-dev
+  version: 1.8.33-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -122,6 +122,10 @@ runtime:
   arc_n_core_exam_point_target: "70-80%"
   arc_n_advanced_discrimination_target: "20-30%"
   arc_final_quality_gate: required
+  arc_final_difficulty_mode: SCHOOL_ANCHOR          # user directive 2026-09-25: FINAL matches the 동북고 exam difficulty
+  arc_final_difficulty_anchor_kor: quality/anchors/KOR_DONGBUK_2025_2_MID_DIFFICULTY_ANCHOR_V1.0.yaml
+  blind_review_rounds: 1                             # user directive 2026-09-25: one blind solve per bundle, all pipelines
+  blind_review_after_round: author_fixes_recorded_as_post_blind_edits_no_rerun
   arc_final_difficulty_profile: required
   arc_final_item_quality_profile: required
   arc_final_release_gate: required
