@@ -30,7 +30,7 @@ jobs:
         run: python -m pip install PyYAML PyMuPDF opencv-python-headless
 
       - name: Install Korean fonts for production rendering
-        run: sudo apt-get update -q && sudo apt-get install -y -q fonts-nanum
+        run: sudo apt-get update -q && sudo apt-get install -y -q fonts-nanum fonts-wqy-zenhei
 
       - name: Compile Python tooling
         run: |
@@ -158,6 +158,9 @@ jobs:
 
       - name: Run production pipeline regression (real KOR N04 bundle + fault injection)
         run: python tooling/production/test_production_pipeline.py
+
+      - name: Run KOR semi-final bundle regression (sets, verse, constructed response, Hanja fallback)
+        run: python tooling/production/test_semifinal_bundle.py
 
       - name: Upload canary evidence
         if: always()

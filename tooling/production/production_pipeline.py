@@ -95,51 +95,152 @@ def sentences(paragraph: str) -> list[str]:
     return [s for s in re.split(r"(?<=[.?!])\s+", paragraph.strip()) if s]
 
 
-def load_sources(passages: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def normalize(bundle: dict[str, Any]) -> dict[str, Any]:
+    """Accept legacy single-passage bundles (`passages`) and multi-work `sets`."""
+    if "sets" not in bundle:
+        bundle["sets"] = [{"id": p["id"], "works": [{"label": None, "source_text_id": p["source_text_id"],
+                                                    "marks": p.get("marks", [])}]} for p in bundle["passages"]]
+    for it in bundle["items"]:
+        it.setdefault("set", it.get("passage"))
+        it.setdefault("format", "MCQ")
+    return bundle
+
+
+def mcq_items(bundle: dict[str, Any]) -> list[dict[str, Any]]:
+    return [it for it in bundle["items"] if it["format"] == "MCQ"]
+
+
+def cr_items(bundle: dict[str, Any]) -> list[dict[str, Any]]:
+    return [it for it in bundle["items"] if it["format"] == "CR"]
+
+
+def load_sources(sets: list[dict[str, Any]]) -> list[dict[str, Any]]:
     registry = {t["source_text_id"]: t for t in yaml.safe_load(SOURCE_REGISTRY.read_text(encoding="utf-8"))["texts"]}
     out = []
-    for p in passages:
-        entry = registry.get(p["source_text_id"])
-        if entry is None:
-            raise PipelineError(f"SOURCE_NOT_REGISTERED: {p['source_text_id']}")
-        raw = (ROOT / entry["repo_path"]).read_bytes()
-        digest = hashlib.sha256(raw).hexdigest()
-        if digest != entry["sha256"]:
-            raise PipelineError(f"SOURCE_CHECKSUM_MISMATCH: {p['source_text_id']}")
-        paragraphs = [x for x in raw.decode("utf-8").split("\n") if x.strip()]
-        if len(paragraphs) != entry.get("paragraphs", len(paragraphs)):
-            raise PipelineError(f"SOURCE_PARAGRAPH_COUNT_MISMATCH: {p['source_text_id']}")
-        shown = list(paragraphs)
-        for mark in p.get("marks", []):
-            hits = [i for i, para in enumerate(shown) if mark["find"] in para]
-            if len(hits) != 1:
-                raise PipelineError(f"SOURCE_MARK_NOT_UNIQUE: {mark['find']}")
-            i = hits[0]
-            if re.sub(r"[ⓐ-ⓩ㉠-㉯\s]", "", mark["replace"]) != re.sub(r"\s", "", mark["find"]):
-                raise PipelineError(f"SOURCE_MARK_CHANGES_WORDS: {mark['find']}")
-            shown[i] = shown[i].replace(mark["find"], mark["replace"], 1)
-        out.append({"id": p["id"], "entry": entry, "sha256": digest, "paragraphs": paragraphs,
-                    "display": shown, "title": entry["title"]})
+    for st in sets:
+        works = []
+        for w in st["works"]:
+            entry = registry.get(w["source_text_id"])
+            if entry is None:
+                raise PipelineError(f"SOURCE_NOT_REGISTERED: {w['source_text_id']}")
+            raw = (ROOT / entry["repo_path"]).read_bytes()
+            digest = hashlib.sha256(raw).hexdigest()
+            if digest != entry["sha256"]:
+                raise PipelineError(f"SOURCE_CHECKSUM_MISMATCH: {w['source_text_id']}")
+            form = entry.get("form", "PROSE")
+            text = raw.decode("utf-8").rstrip("\n")
+            if form == "VERSE":
+                units = text.split("\n")            # blank string = stanza break
+                counted = [u for u in units if u.strip()]
+                if len(counted) != entry.get("lines", len(counted)):
+                    raise PipelineError(f"SOURCE_LINE_COUNT_MISMATCH: {w['source_text_id']}")
+            else:
+                units = [x for x in text.split("\n") if x.strip()]
+                if len(units) != entry.get("paragraphs", len(units)):
+                    raise PipelineError(f"SOURCE_PARAGRAPH_COUNT_MISMATCH: {w['source_text_id']}")
+            shown = list(units)
+            for mark in w.get("marks", []):
+                hits = [i for i, u in enumerate(shown) if mark["find"] in u]
+                if len(hits) != 1:
+                    raise PipelineError(f"SOURCE_MARK_NOT_UNIQUE: {mark['find']}")
+                if re.sub(r"[ⓐ-ⓩ㉠-㉯\[\]A-Z\s]", "", mark["replace"]) != re.sub(r"\s", "", mark["find"]):
+                    raise PipelineError(f"SOURCE_MARK_CHANGES_WORDS: {mark['find']}")
+                shown[hits[0]] = shown[hits[0]].replace(mark["find"], mark["replace"], 1)
+            every = int(w.get("line_numbers") or 0) if form == "VERSE" else 0
+            works.append({"label": w.get("label"), "entry": entry, "sha256": digest, "form": form, "units": units,
+                          "display": shown, "title": entry["title"], "line_numbers": every})
+        out.append({"id": st["id"], "works": works, "notes": st.get("notes", [])})
+    return out
+
+
+def ref_ok(ref: str, st: dict[str, Any]) -> bool:
+    """Evidence refs: [W<n>.]P<p>S<s> for prose, [W<n>.]L<l> for verse (non-blank line number)."""
+    m = re.fullmatch(r"(?:W(\d+)\.)?(?:P(\d+)S(\d+)|L(\d+))", ref)
+    if not m:
+        return False
+    wi = int(m.group(1) or 1) - 1
+    if wi >= len(st["works"]):
+        return False
+    work = st["works"][wi]
+    if m.group(4):
+        return work["form"] == "VERSE" and 1 <= int(m.group(4)) <= len([u for u in work["units"] if u.strip()])
+    if work["form"] != "PROSE":
+        return False
+    p, sn = int(m.group(2)), int(m.group(3))
+    return 1 <= p <= len(work["units"]) and 1 <= sn <= len(sentences(work["units"][p - 1]))
+
+
+def numbering(bundle: dict[str, Any]) -> dict[str, str]:
+    """MCQ items numbered 1..N, constructed-response items 서술형 1..M, in bundle order."""
+    labels, m, c = {}, 0, 0
+    for it in bundle["items"]:
+        if it["format"] == "MCQ":
+            m += 1
+            labels[it["item_id"]] = str(m)
+        else:
+            c += 1
+            labels[it["item_id"]] = f"서술형 {c}"
+    return labels
+
+
+def set_header(bundle: dict[str, Any], set_id: str, labels: dict[str, str]) -> str:
+    own = [it for it in bundle["items"] if it["set"] == set_id]
+    mq = [labels[it["item_id"]] for it in own if it["format"] == "MCQ"]
+    cr = [labels[it["item_id"]].split()[-1] for it in own if it["format"] == "CR"]
+    if bundle["product_mode"] == "ARC_N" and not cr:
+        return f"[{mq[0]}~{mq[-1]}] 다음 글을 읽고 물음에 답하시오."
+    parts = []
+    if mq:
+        parts.append(f"선택형 {mq[0]}~{mq[-1]}번" if len(mq) > 1 else f"선택형 {mq[0]}번")
+    if cr:
+        parts.append(f"서술형 {cr[0]}~{cr[-1]}번" if len(cr) > 1 else f"서술형 {cr[0]}번")
+    return f"※ 다음 글을 읽고 물음에 답하시오. ({', '.join(parts)})"
+
+
+def numbered_display(work: dict[str, Any]) -> list[str]:
+    """Verse lines with the printed margin number every N non-blank lines, as students see it."""
+    every = work.get("line_numbers") or 0
+    if not every:
+        return list(work["display"])
+    out, n = [], 0
+    for unit in work["display"]:
+        if unit.strip():
+            n += 1
+            if n % every == 0:
+                unit = f"{unit}  〔{n}〕"
+        out.append(unit)
     return out
 
 
 def manuscript(bundle: dict[str, Any], sources: list[dict[str, Any]]) -> str:
+    labels = numbering(bundle)
     lines: list[str] = []
-    number = 1
     for src in sources:
-        own = [it for it in bundle["items"] if it["passage"] == src["id"]]
-        lines += [f"[{number}~{number + len(own) - 1}] 다음 글을 읽고 물음에 답하시오.", ""]
-        lines += src["display"] + ["", f"― {src['title']} ―", ""]
-        for it in own:
-            lines += [f"## QUESTION {number}", it["stem"]]
+        lines += [set_header(bundle, src["id"], labels), ""]
+        for w in src["works"]:
+            if w["label"]:
+                lines.append(w["label"])
+            lines += numbered_display(w) + ["", f"― {w['title']} ―", ""]
+        if src.get("notes"):
+            lines += src["notes"] + [""]
+        for it in [x for x in bundle["items"] if x["set"] == src["id"]]:
+            pts = f" ({it['points']}점)" if it.get("points") else ""
+            if it["format"] == "MCQ":
+                lines += [f"## QUESTION {labels[it['item_id']]}", it["stem"] + pts]
+            else:
+                lines += [f"## {labels[it['item_id']]}", it["stem"] + pts]
             if it.get("table"):
                 lines.append("| " + " | ".join(it["table"]["header"]) + " |")
                 lines += ["| " + " | ".join(r) + " |" for r in it["table"]["rows"]]
             if it.get("view"):
                 lines.append("<보 기>")
                 lines += it["view"]
-            lines += [f"{CIRC[i]} {o}" for i, o in enumerate(it["options"])] + [""]
-            number += 1
+            if it["format"] == "MCQ":
+                lines += [f"{CIRC[i]} {o}" for i, o in enumerate(it["options"])]
+            else:
+                lines.append("<조 건>")
+                lines += it["conditions"]
+            lines.append("")
     return "\n".join(lines).strip() + "\n"
 
 
@@ -155,10 +256,10 @@ def stem_ending(stem: str) -> str:
 
 
 def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[str, Any], text: str) -> dict[str, Any]:
-    items = bundle["items"]
+    items = mcq_items(bundle)
     n = len(items)
     blind_by_id = {b["item_id"]: b for b in blind["items"]}
-    sentence_counts = {s["id"]: [len(sentences(p)) for p in s["paragraphs"]] for s in sources}
+    set_by_id = {s["id"]: s for s in sources}
     findings: list[dict[str, Any]] = []
 
     def add(code, severity="FAIL", item=None, **extra):
@@ -186,9 +287,7 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
             add("OPTION_CLAIM_DUPLICATE", item=iid)
         for j in it["judgments"]:
             for ref in j["ev"]:
-                m = re.fullmatch(r"P(\d+)S(\d+)", ref)
-                counts = sentence_counts.get(it["passage"], [])
-                if not m or int(m.group(1)) > len(counts) or int(m.group(2)) > counts[int(m.group(1)) - 1]:
+                if not ref_ok(ref, set_by_id[it["set"]]):
                     add("EVIDENCE_REF_OUT_OF_SOURCE", item=iid, ref=ref)
         b = blind_by_id.get(iid)
         strong = strong_count(it, b)
@@ -221,6 +320,33 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
             add("OBVIOUS_KEY_CORE_ITEM", "WARN", item=iid)
         if b["difficulty"] in {"D4", "D5"} and (it["reasoning_steps"] < 2 or it["immediate_elimination"] > 2):
             add("FAKE_D4", item=iid)
+
+    # --- constructed response ---
+    for it in cr_items(bundle):
+        iid = it["item_id"]
+        for field in ("stem", "conditions", "model_answer", "rubric", "points"):
+            if not it.get(field):
+                add("CR_FIELD_MISSING", item=iid, field=field)
+        for ref in it.get("ev", []):
+            if not ref_ok(ref, set_by_id[it["set"]]):
+                add("EVIDENCE_REF_OUT_OF_SOURCE", item=iid, ref=ref)
+        b = blind_by_id.get(iid)
+        if b is None:
+            add("BLIND_REVIEW_MISSING", item=iid)
+            continue
+        if b.get("meets_rubric") is not True:
+            add("CR_BLIND_ANSWER_OFF_RUBRIC", item=iid)
+        flags = set(b.get("flags", [])) - set((b.get("flag_adjudication") or {}).keys())
+        if "a" in flags:
+            add("CR_CONDITIONS_AMBIGUOUS", item=iid)
+        if "d" in flags:
+            add("BLIND_OUTSIDE_KNOWLEDGE", item=iid)
+        if "e" in flags:
+            add("BLIND_AI_STYLE", item=iid)
+    points = [float(it["points"]) for it in bundle["items"] if it.get("points")]
+    total_points = round(sum(points), 2) if points else None
+    if points and len(points) == len(bundle["items"]) and abs(sum(points) - 100) > 0.01:
+        add("POINT_TOTAL_NOT_100", total=total_points)
 
     # --- set level ---
     diff = Counter(it["difficulty"] for it in items)
@@ -286,19 +412,20 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
     return {"findings": findings, "difficulty": dict(sorted(diff.items())), "answer_positions": dict(sorted(keys.items())),
             "longest_option_is_key_rate": round(longest_rate, 3), "single_best_stems": single_best,
             "except_stems": except_count, "stem_skeleton_max_run": best_run, "balance": balance,
-            "realism": realism, "length_rows": length_rows}
+            "realism": realism, "length_rows": length_rows, "total_points": total_points,
+            "mcq_count": n, "cr_count": len(cr_items(bundle))}
 
 
 def qa_evidence(bundle, sources, blind, text, findings) -> dict[str, Any]:
     blind_by_id = {b["item_id"]: b for b in blind["items"]}
     hard = [f for f in findings if f["severity"] == "FAIL"]
     items = []
-    for it in bundle["items"]:
+    for it in mcq_items(bundle):
         b = blind_by_id.get(it["item_id"], {})
         a = int(it["answer"])
-        key_ev = [f"SRC:{it['passage']}:{e}" for e in it["judgments"][a - 1]["ev"]]
+        key_ev = [f"SRC:{it['set']}:{e}" for e in it["judgments"][a - 1]["ev"]]
         codes = {f["code"] for f in hard if f.get("item_id") == it["item_id"]}
-        src = next(s for s in sources if s["id"] == it["passage"])
+        src = next(s for s in sources if s["id"] == it["set"])["works"][0]
         items.append({
             "item_id": it["item_id"], "target_difficulty": it["difficulty"],
             "pass_a": {"answer": str(a), "answer_evidence": key_ev},
@@ -310,7 +437,7 @@ def qa_evidence(bundle, sources, blind, text, findings) -> dict[str, Any]:
                 "option_judgments": [{
                     "option_id": str(i), "verdict": "TRUE" if i == a else "FALSE", "statement_truth": j["v"],
                     "claim_key": j["claim"], "axis": j["axis"], "competitiveness": "CORRECT" if i == a else j["c"],
-                    "evidence_refs": [f"SRC:{it['passage']}:{e}" for e in j["ev"]], "note": j["why"]}
+                    "evidence_refs": [f"SRC:{it['set']}:{e}" for e in j["ev"]], "note": j["why"]}
                     for i, j in enumerate(it["judgments"], start=1)],
                 "second_best_option": str(b.get("second_best", it["second_best"])), "second_best_risk": "MEDIUM",
                 "reasoning_steps": it["reasoning_steps"], "evidence_count": len(it["judgments"][a - 1]["ev"]),
@@ -327,9 +454,9 @@ def qa_evidence(bundle, sources, blind, text, findings) -> dict[str, Any]:
             "source_text_id": s["entry"]["source_text_id"], "source_origin": s["entry"]["source_origin"],
             "source_role": s["entry"]["role"], "text_fidelity": s["entry"]["text_fidelity"],
             "source_file_id": s["entry"]["school_source_file_id"], "source_location": s["entry"]["school_source_location"],
-            "source_text_sha256": s["sha256"],
-            "linked_item_ids": [it["item_id"] for it in bundle["items"] if it["passage"] == s["id"]],
-            **s["entry"]["locks"]} for s in sources],
+            "source_text_sha256": w["sha256"],
+            "linked_item_ids": [it["item_id"] for it in mcq_items(bundle) if it["set"] == st["id"]] or [it["item_id"] for it in mcq_items(bundle)][:1],
+            **w["entry"]["locks"]} for st in sources for w in st["works"] for s in [w]],
         "items": items, "set_gates": {g: ("FAIL" if set_codes & SET_GATE_CODES.get(g, set()) else "PASS") for g in content_gate.SET_GATES},
         "content_lock": True,
     }
@@ -338,7 +465,7 @@ def qa_evidence(bundle, sources, blind, text, findings) -> dict[str, Any]:
 def final_profile(bundle, blind) -> dict[str, Any]:
     blind_by_id = {b["item_id"]: b for b in blind["items"]}
     rows = []
-    for it in bundle["items"]:
+    for it in mcq_items(bundle):
         b = blind_by_id.get(it["item_id"], {})
         a = int(it["answer"])
         d = b.get("difficulty", it["difficulty"])
@@ -361,14 +488,14 @@ def final_profile(bundle, blind) -> dict[str, Any]:
 
 
 def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None) -> dict[str, Any]:
-    bundle = yaml.safe_load((bundle_dir / "items.yaml").read_text(encoding="utf-8"))
+    bundle = normalize(yaml.safe_load((bundle_dir / "items.yaml").read_text(encoding="utf-8")))
     blind = yaml.safe_load((bundle_dir / "blind_review.yaml").read_text(encoding="utf-8"))
     out_dir.mkdir(parents=True, exist_ok=True)
     manifest_path = ROOT / "SYSTEM_MANIFEST.yaml"
     manifest = yaml.safe_load(manifest_path.read_text(encoding="utf-8"))
     product = bundle["product_mode"]
 
-    sources = load_sources(bundle["passages"])
+    sources = load_sources(bundle["sets"])
     text = manuscript(bundle, sources)
     (out_dir / "student_manuscript.md").write_text(text, encoding="utf-8")
     metrics = measure(bundle, sources, blind, text)
@@ -380,10 +507,12 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None) -> 
     qa_result = content_gate.analyze(qa)
 
     content = {"batch_id": bundle["batch_id"], "generator": bundle.get("generator", "CLAUDE"), "product_mode": product,
-               "subject": bundle["subject"], "scope": bundle["scope"], "item_count": len(bundle["items"]),
+               "subject": bundle["subject"], "scope": bundle["scope"], "item_count": len(mcq_items(bundle)),
                "created_at": bundle["created_at"], "qa_evidence_filename": qa_name, "student_manuscript": text,
-               "answer_key": {i + 1: int(it["answer"]) for i, it in enumerate(bundle["items"])},
-               "visual_asset_manifest": [], "qc_status": {"STATUS": qa_result["status"]}}
+               "answer_key": {i + 1: int(it["answer"]) for i, it in enumerate(mcq_items(bundle))},
+               "visual_asset_manifest": [], "qc_status": {"STATUS": qa_result["status"], "CONSTRUCTED_RESPONSE": [
+                   {"item_id": it["item_id"], "points": it.get("points"), "model_answer": it.get("model_answer"),
+                    "rubric": it.get("rubric"), "accepted_variants": it.get("accepted_variants", [])} for it in cr_items(bundle)]}}
     handoff_name, handoff_text = serializer.serialize_bundle(content, manifest)
     handoff_path = out_dir / handoff_name
     handoff_path.write_text(handoff_text, encoding="utf-8")
@@ -396,9 +525,8 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None) -> 
 
     pdf_path = out_dir / f"{bundle['batch_id']}_DRAFT.pdf"
     key_path = out_dir / f"{bundle['batch_id']}_ANSWER_KEY.pdf" if product == "ARC_FINAL" else None
-    render = renderer.render(bundle, [{"id": s["id"], "paragraphs": s["display"], "title": s["title"]} for s in sources],
-                             pdf_path, key_pdf=key_path, logo=logo)
-    pdf_result = pdf_gate.analyze_pdf(pdf_path, product, expected_item_count=len(bundle["items"]) if product == "ARC_N" else None)
+    render = renderer.render(bundle, sources, numbering(bundle), set_header, pdf_path, key_pdf=key_path, logo=logo)
+    pdf_result = pdf_gate.analyze_pdf(pdf_path, product, expected_item_count=len(mcq_items(bundle)) if product == "ARC_N" else None)
 
     final_result = None
     if product == "ARC_FINAL":
@@ -414,6 +542,8 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None) -> 
         "ANSWER_LENGTH_AUDIT": "FAIL" if any(f["code"] in {"CORRECT_LENGTH_CUE", "LONGEST_OPTION_IS_KEY_RATE"} for f in hard) else "PASS",
         "OBVIOUS_ANSWER_GATE": "FAIL" if any(f["code"] in {"OBVIOUS_KEY_D3_PLUS", "FIRST_PASS_CANDIDATES_SHORT"} for f in hard) else "PASS",
         "ATTRACTIVE_DISTRACTOR_GATE": "FAIL" if any(f["code"] == "WEAK_DISTRACTOR_D3_PLUS" for f in hard) else "PASS",
+        "CONSTRUCTED_RESPONSE_GATE": "FAIL" if any(f["code"].startswith("CR_") or (f.get("item_id") in {c["item_id"] for c in cr_items(bundle)}) for f in hard) else ("PASS" if cr_items(bundle) else "NOT_APPLICABLE"),
+        "POINTS_GATE": "FAIL" if any(f["code"] == "POINT_TOTAL_NOT_100" for f in hard) else "PASS",
         "STEM_FORM_GATE": "FAIL" if any(f["code"] in {"SINGLE_BEST_STEM_OVERUSE", "EXCEPT_STEM_OVERUSE", "STEM_SKELETON_RUN"} for f in hard) else "PASS",
         "ANSWER_POSITION_GATE": "FAIL" if any(f["code"].startswith("ANSWER_POSITION") for f in hard) else "PASS",
         "DIFFICULTY_BALANCE_GATE": "FAIL" if any(f["code"].startswith("BALANCE_") or f["code"] == "DIFFICULTY_MISMATCH" for f in hard) else "PASS",
@@ -425,7 +555,7 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None) -> 
     if final_result:
         gates["FINAL_DIFFICULTY"] = final_result["FINAL_DIFFICULTY"]
         gates["FINAL_ITEM_QUALITY"] = final_result["FINAL_ITEM_QUALITY"]
-    blocking = [k for k, v in gates.items() if k != "BRAND" and v not in {"PASS", "WARN"}]
+    blocking = [k for k, v in gates.items() if k != "BRAND" and v not in {"PASS", "WARN", "NOT_APPLICABLE"}]
     report = {
         "tool": "ARC_PRODUCTION_PIPELINE_V1.0", "batch_id": bundle["batch_id"], "product": product,
         "status": "READY_FOR_USER_APPROVAL" if not blocking else "BLOCKED",

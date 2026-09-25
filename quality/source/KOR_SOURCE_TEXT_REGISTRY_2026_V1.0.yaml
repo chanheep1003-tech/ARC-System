@@ -1,29 +1,119 @@
 # Locked exact source texts for Korean items. Drive stays the authority;
 # the repository copy exists so the production pipeline and CI can verify
-# the SHA-256 lock without network access.
+# the SHA-256 lock without network access. Entries with text_fidelity
+# PENDING_USER_CONFIRMATION are drafts: content QA blocks them until the
+# user confirms the listed conflicts and the entry is promoted to EXACT.
 registry_id: KOR-SOURCE-TEXT-REGISTRY-2026-V1.0
 version: 1.0
 date: 2026-09-25
 status: ACTIVE-DEV
 texts:
-  - source_text_id: KOR-SUPP-2026-NF-KANT-HEGEL
-    title: "이행남, 「칸트의 도덕적 자율성으로부터 헤겔의 인륜적 자율성으로」"
-    author: 이행남
-    role: RAW_SCHOOL_SOURCE
-    source_origin: CONNECTED_DRIVE_RAW_SCHOOL_SOURCE
-    school_source_file_id: 1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
-    school_source_location: "scan p2 right column ~ p3, II. 비문학 보충 1"
-    locked_text_drive_id: 1OF_fc8N6SmcwM1oRVXJF69_jlVRmFcf-
-    repo_path: quality/source/text/KOR_SUPP_2026_NF_KANT_HEGEL_V1.0.txt
-    sha256: be4709451609176eb877e753e69e7dc98b246a428eb58e5351d3d68082a0aa39
-    paragraphs: 3
-    text_fidelity: EXACT
-    verification:
-      method: DRIVE_OCR_CHARACTER_DIFF_PLUS_PRIOR_TRANSCRIPTION_CROSSCHECK
-      ocr_character_diff: "1162/1162 non-space characters identical after one OCR fix (법 직인 -> 법칙인, matches ARC N03 transcription)"
-      spacing: "no space added beyond OCR; 31 OCR line-wrap splits inside words removed"
-      punctuation_normalization: "straight single quotes rendered as ‘ ’"
-      author: "이행남 confirmed by user 2026-09-25"
-      user_authorization: "user instructed to finalize and register this text on 2026-09-25"
-      visual_line_by_line: NOT_PERFORMED
-    locks: {wording_lock: true, punctuation_lock: true, line_break_lock: true, boundary_lock: true}
+- source_text_id: KOR-SUPP-2026-NF-KANT-HEGEL
+  title: 이행남, 「칸트의 도덕적 자율성으로부터 헤겔의 인륜적 자율성으로」
+  author: 이행남
+  role: RAW_SCHOOL_SOURCE
+  source_origin: CONNECTED_DRIVE_RAW_SCHOOL_SOURCE
+  school_source_file_id: 1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+  school_source_location: scan p2 right column ~ p3, II. 비문학 보충 1
+  locked_text_drive_id: 1OF_fc8N6SmcwM1oRVXJF69_jlVRmFcf-
+  repo_path: quality/source/text/KOR_SUPP_2026_NF_KANT_HEGEL_V1.0.txt
+  sha256: be4709451609176eb877e753e69e7dc98b246a428eb58e5351d3d68082a0aa39
+  paragraphs: 3
+  text_fidelity: EXACT
+  verification:
+    method: DRIVE_OCR_CHARACTER_DIFF_PLUS_PRIOR_TRANSCRIPTION_CROSSCHECK
+    ocr_character_diff: 1162/1162 non-space characters identical after one OCR fix (법 직인 -> 법칙인, matches ARC N03 transcription)
+    spacing: no space added beyond OCR; 31 OCR line-wrap splits inside words removed
+    punctuation_normalization: straight single quotes rendered as ‘ ’
+    author: 이행남 confirmed by user 2026-09-25
+    user_authorization: user instructed to finalize and register this text on 2026-09-25
+    visual_line_by_line: NOT_PERFORMED
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
+- source_text_id: KOR-SUPP-2026-LIT-TANGUNGGA
+  title: 정훈, 「탄궁가」
+  author: 정훈
+  role: RAW_SCHOOL_SOURCE
+  source_origin: CONNECTED_DRIVE_RAW_SCHOOL_SOURCE
+  school_source_file_id: 1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+  school_source_location: scan p1 (I. 문학 보충 1)
+  locked_text_drive_id: null
+  repo_path: quality/source/text/KOR_SUPP_2026_LIT_TANGUNGGA_DRAFT.txt
+  sha256: 0604e8740ac87d5f300ffd548b4c4a7f9a6150ade7bec3adeee4f2e4b480f271
+  form: VERSE
+  lines: 42
+  text_fidelity: PENDING_USER_CONFIRMATION
+  verification:
+    method: DRIVE_OCR_PLUS_ARC_N01_N03_TRANSCRIPTION_CROSSCHECK
+    line_breaks: taken from the ARC N03 transcription; the scan OCR merges lines
+    open_conflicts:
+    - '5행 안표(顔瓢)가 / 안표(顔瓢) (OCR·N01: 조사 없음)'
+    - 23행 가릴꼬 (N03) / 가꼬 (OCR·N01)
+    - 25행 솥 시루 (N03) / 술 시루 (OCR·N01)
+    - 26행 명일 (N03·N01) / 영일 (OCR)
+    - 36행 온가지로 (N03·OCR) / 온갖으로 (N01)
+    - 40행 여읠려냐 (N03) / 여의려나 (N01) / 여러나 (OCR)
+    - 33~35행 가난 귀신의 말에 큰따옴표 여부 (N01 있음, N03·OCR 없음)
+    visual_line_by_line: NOT_PERFORMED
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
+- source_text_id: KOR-SUPP-2026-LIT-PALWON
+  title: 백석, 「팔원 - 서행시초3」
+  author: 백석
+  role: RAW_SCHOOL_SOURCE
+  source_origin: CONNECTED_DRIVE_RAW_SCHOOL_SOURCE
+  school_source_file_id: 1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+  school_source_location: scan p1 right ~ p2 (I. 문학 보충 2)
+  locked_text_drive_id: null
+  repo_path: quality/source/text/KOR_SUPP_2026_LIT_PALWON_DRAFT.txt
+  sha256: 4ef78129dd14d43c423bf90c67fb8c5d3ae03f71ee50a21ca1c585901f8cc649
+  form: VERSE
+  lines: 16
+  text_fidelity: PENDING_USER_CONFIRMATION
+  verification:
+    method: DRIVE_OCR_PLUS_ARC_N01_N03_TRANSCRIPTION_CROSSCHECK
+    line_breaks: taken from the ARC N03 transcription; the scan OCR merges lines
+    open_conflicts:
+    - 8행 어디메서 (N03) / 어디에서 (OCR)
+    - 9행 쌔하얗게 (N03) / 패하얗게 (OCR)
+    - 8행·16행 끝 마침표 (OCR 있음, N03 없음)
+    - 6행 자성(慈城) (N03) / 자성(城) (OCR 한자 누락)
+    - 행 구분 전체 (OCR은 행을 합쳐 읽음)
+    visual_line_by_line: NOT_PERFORMED
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
+- source_text_id: KOR-SUPP-2026-LIT-JINACHIM
+  title: 기형도, 「기억할 만한 지나침」
+  author: 기형도
+  role: RAW_SCHOOL_SOURCE
+  source_origin: CONNECTED_DRIVE_RAW_SCHOOL_SOURCE
+  school_source_file_id: 1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+  school_source_location: scan p2 (I. 문학 보충 3)
+  locked_text_drive_id: null
+  repo_path: quality/source/text/KOR_SUPP_2026_LIT_JINACHIM_DRAFT.txt
+  sha256: 9fdd9015b6a5afcab210ce67a56d4f1830f9e1f7d5aa47cd37d5b371d044f1c0
+  form: VERSE
+  lines: 14
+  text_fidelity: PENDING_USER_CONFIRMATION
+  verification:
+    method: DRIVE_OCR_PLUS_ARC_N01_N03_TRANSCRIPTION_CROSSCHECK
+    line_breaks: taken from the ARC N03 transcription; the scan OCR merges lines
+    open_conflicts:
+    - 10행 할까, (N03) / 할까. (OCR·N01)
+    - 2·4·8·14행 끝 마침표 (OCR 있음, N03 없음)
+    - 연 구분 위치 (11행 뒤, N03 기준)
+    visual_line_by_line: NOT_PERFORMED
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
