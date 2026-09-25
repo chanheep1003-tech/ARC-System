@@ -27,12 +27,12 @@ pages:
         title: 기형도, 「기억할 만한 지나침」
         coverage: source_text_school_explanation_summary_and_additional_material
       - type: nonfiction_source
-        title: 이형남, 「칸트의 도덕적 자율성으로부터 헤겔의 인륜적 자율성으로」
+        title: 이행남, 「칸트의 도덕적 자율성으로부터 헤겔의 인륜적 자율성으로」
         coverage: source_text_begins
   - pdf_page: 3
     verified_sections:
       - type: nonfiction_source
-        title: 이형남, 「칸트의 도덕적 자율성으로부터 헤겔의 인륜적 자율성으로」
+        title: 이행남, 「칸트의 도덕적 자율성으로부터 헤겔의 인륜적 자율성으로」
         coverage: source_text_continues_and_school_summary
 generation_gate:
   allowed_scope: ONLY_THE_FOUR_LISTED_SOURCES

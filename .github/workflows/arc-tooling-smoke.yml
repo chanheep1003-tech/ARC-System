@@ -38,6 +38,7 @@ jobs:
           python -m py_compile tooling/similarity/calibrate_similarity.py
           python -m py_compile tooling/pdf_qc/pdf_preflight.py
           python -m py_compile tooling/pdf_qc/test_preflight_smoke.py
+          python -m py_compile tooling/pdf_qc/test_preflight_korean_n.py
           python -m py_compile tooling/pdf_qc/autofix_controller.py
           python -m py_compile tooling/pdf_qc/test_autofix_controller.py
           python -m py_compile tooling/typeset/typesetter_gateway.py
@@ -106,6 +107,9 @@ jobs:
 
       - name: Run PDF preflight behavioral smoke
         run: python tooling/pdf_qc/test_preflight_smoke.py
+
+      - name: Run Korean ARC_N question/answer marker preflight
+        run: python tooling/pdf_qc/test_preflight_korean_n.py
 
       - name: Run PDF auto-fix controller smoke
         run: python tooling/pdf_qc/test_autofix_controller.py

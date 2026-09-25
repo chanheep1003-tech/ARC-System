@@ -696,3 +696,20 @@ The first CI run after N°/FINAL hardening failed only because ops/RUN_LOG.jsonl
   - KOR_AI_STYLE_LEAK_GATE=PASS
   - KOR_SCHOOL_TASK_FAMILY_GATE=PASS
 - STATUS: FIXED_POLICY / FRESH_MODEL_SET_PENDING
+
+
+### ERR-20260925-PDF-KOR-N-MARKER-001
+- CATEGORY: PDF_QC / E2E_PDF_READY
+- OBSERVED: ARC_N preflight reported 0 questions / 0 answers for a real Korean N° PDF and FAILED it (ARC_N_QUESTION_COUNT_MISMATCH, ARC_N_ANSWER_COUNT_MISMATCH).
+- ROOT_CAUSE: question/answer counting recognised only the synthetic canary markers `QUESTION n` and `n. d`; Korean production layout uses `01 …` stems and `01 ③` key lines. Canary PASS therefore did not imply production PASS.
+- FIX: pdf_preflight counts both marker families on the correct page ranges and checks the exact id set; `test_preflight_korean_n.py` in CI.
+- PREVENTION: a valid Korean-marker PDF must PASS and missing question / missing answer / missing separator must FAIL on every CI run.
+- STATUS: FIXED_IN_DEV (1.8.29-dev)
+
+### ERR-20260925-KOR-N04-FRESHSET-001
+- CATEGORY: KOR_ITEM_QUALITY / FRESH_SET_CLOSURE
+- EVIDENCE: fresh KOR ARC_N N04 (Kant-Hegel, 10 items). Blind reviewer rounds 1-3 found easy keys (hedged/longest correct option, absurd distractors) and a repeated reasoning axis; items were revised each round and round 4 matched all 10 keys with no multiple-answer, no-answer or outside-knowledge flags.
+- OPEN: blind difficulty calibration never rated an item D4 (D1 1, D2 4, D3 5, D4 0) — below the KOR ARC_N D4+D5 20-30% target. The passage already carries 17 prior N01/N03 items, which limits non-duplicate D4 axes.
+- OPEN: source text is OCR-reconstructed from the image-only scan and awaits visual confirmation (KOR_SOURCE_NOT_EXACT).
+- STATUS: OPEN
+

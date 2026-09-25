@@ -1,3 +1,10 @@
+## 1.8.29-dev — 2026-09-25
+- Fixed an E2E_PDF_READY blocker for every real Korean ARC_N PDF: `pdf_preflight.py` only counted the synthetic canary markers (`QUESTION n`, `n. 3`), so a production N° PDF with `01 …` stems and `01 ③` key lines was reported as 0 questions / 0 answers and FAILED. Reproduced on the fresh KOR N04 draft and on the N03 layout convention.
+- ARC_N preflight now counts canary and Korean production markers, restricts question counting to problem pages and answer counting to the answer-key pages, accepts `정답` as the answer-key heading, and requires the exact id set 1..N (reports missing/unexpected ids) instead of only a count.
+- Added `tooling/pdf_qc/test_preflight_korean_n.py` (valid Korean-marker PDF passes; missing question, missing answer and missing separator are blocked) and wired it into CI.
+- Corrected the Kant-Hegel supplement author to 이행남 (user-confirmed) in the supplement page map.
+- Fresh model-backed KOR ARC_N set (N04, 칸트-헤겔 비문학 10문항) produced from the Drive school supplement: 4 blind independent-solve rounds all matched the key, answer-length cue rate 0.0, realism/AI-style/task-family gates PASS, handoff PASS, PDF preflight PASS. Content QA remains blocked only by KOR_SOURCE_NOT_EXACT until the OCR-reconstructed source text is visually confirmed; FINAL_USER_APPROVAL=PENDING, DRIVE_SAVE=BLOCKED.
+
 ## 1.8.26-dev — 2026-09-25
 - Updated strict system validation to recognize the new ARC_N 70/30 balance policy instead of the superseded D4+D5>=35% ARC_N floor.
 - Added runtime validation for ARC_N balance gate and its 70~80% core / 20~30% advanced targets.

@@ -29,6 +29,10 @@ METADATA_RE = re.compile(
 )
 LIGHT_FONT_RE = re.compile(r"(?:thin|extralight|ultralight|light|wght[-_ ]?(?:100|200|300))", re.I)
 BOLD_FONT_RE = re.compile(r"(?:bold|semibold|demibold|medium)", re.I)
+ANSWER_HEADING_RE = re.compile(r"(?:\bANSWER\s+KEY\b|^[\s\u00a0]*정답(?=[\s\u00a0]|$))", re.I | re.M)
+QUESTION_MARKER_RE = re.compile(r"\bQUESTION\s+(\d+)\b", re.I)
+KOR_QUESTION_MARKER_RE = re.compile(r"(?m)^[\s\u00a0]*(\d{2})[\s\u00a0]+(?=\S)")
+ANSWER_LINE_RE = re.compile(r"(?m)^[\s\u00a0]*(\d{1,2})[\s\u00a0]*\.?[\s\u00a0]*(?:[1-5]|[①②③④⑤])[\s\u00a0]*$")
 MAJOR_PART_RE = re.compile(r"(?:[ABC]\s*파트|파트\s*[ABC]|\bPART\s*[ABC]\b)", re.I)
 
 
@@ -506,7 +510,8 @@ def analyze_pdf(
         else:
             expected_blank_indices.add(1)
 
-        answer_indices = [i for i, text in enumerate(page_texts) if re.search(r"\bANSWER\s+KEY\b", text, re.I)]
+        answer_indices = [i for i, text in enumerate(page_texts) if ANSWER_HEADING_RE.search(text)]
+        answer_start = None
         if not answer_indices:
             pages[-1]["flags"].append({"severity": "FAIL", "type": "ARC_N_ANSWER_KEY_MISSING"})
         else:
@@ -517,13 +522,22 @@ def analyze_pdf(
             else:
                 expected_blank_indices.add(separator)
 
-        question_ids = re.findall(r"\bQUESTION\s+(\d+)\b", "\n".join(page_texts), re.I)
-        answer_ids = re.findall(r"(?m)^\s*(\d+)\.\s*[1-5]\s*$", "\n".join(page_texts))
+        # Problem pages sit between the blank cover verso and the answer key.
+        # Both the canary marker ("QUESTION n") and the Korean production
+        # marker (two-digit number opening a stem line, e.g. "01 윗글을 ...")
+        # are counted; answer lines accept "n. 3" and "01 ③".
+        problem_end = answer_start if answer_start is not None else len(page_texts)
+        problem_text = "\n".join(page_texts[2:problem_end])
+        answer_text = "\n".join(page_texts[answer_start:]) if answer_start is not None else "\n".join(page_texts)
+        question_ids = {int(n) for n in QUESTION_MARKER_RE.findall(problem_text)}
+        question_ids |= {int(n) for n in KOR_QUESTION_MARKER_RE.findall(problem_text)}
+        answer_ids = {int(n) for n in ANSWER_LINE_RE.findall(answer_text)}
         if expected_item_count is not None:
-            if len(set(question_ids)) != expected_item_count:
-                pages[-1]["flags"].append({"severity": "FAIL", "type": "ARC_N_QUESTION_COUNT_MISMATCH", "actual": len(set(question_ids)), "expected": expected_item_count})
-            if len(set(answer_ids)) != expected_item_count:
-                pages[-1]["flags"].append({"severity": "FAIL", "type": "ARC_N_ANSWER_COUNT_MISMATCH", "actual": len(set(answer_ids)), "expected": expected_item_count})
+            expected_ids = set(range(1, expected_item_count + 1))
+            if question_ids != expected_ids:
+                pages[-1]["flags"].append({"severity": "FAIL", "type": "ARC_N_QUESTION_COUNT_MISMATCH", "actual": len(question_ids), "expected": expected_item_count, "missing": sorted(expected_ids - question_ids), "unexpected": sorted(question_ids - expected_ids)})
+            if answer_ids != expected_ids:
+                pages[-1]["flags"].append({"severity": "FAIL", "type": "ARC_N_ANSWER_COUNT_MISMATCH", "actual": len(answer_ids), "expected": expected_item_count, "missing": sorted(expected_ids - answer_ids), "unexpected": sorted(answer_ids - expected_ids)})
 
         for index in expected_blank_indices:
             pages[index]["flags"] = [flag for flag in pages[index]["flags"] if flag["type"] != "EMPTY_PAGE"]
