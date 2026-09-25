@@ -202,3 +202,14 @@ rules:
       - korean_ai_choice_pattern
       - korean_exotic_task_overuse_over_school_core
       - subject_order_his_before_sci_redox
+
+  - id: KOR-PRIORITY-FOCUS-20260925
+    deprecated:
+      - ops/ARC_RUNTIME_PRIORITY_POLICY_V1.3.md
+    replacement:
+      - ops/ARC_RUNTIME_PRIORITY_POLICY_V1.4.md
+    reason: "User reprioritized the final sprint: Korean N/FINAL quality is absolute first, followed by Social, SCI redox, then History N. Korean must produce fresh meaningful quality results per run."
+    forbidden_runtime_behavior:
+      - leave_korean_quality_work_after_policy_only_change
+      - polish_lower_priority_subject_while_korean_under_80_without_hard_blocker
+      - korean_fresh_set_without_exam_realism_gate
