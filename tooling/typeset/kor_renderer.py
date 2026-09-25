@@ -83,6 +83,8 @@ def runs(text: str, key: str) -> list[tuple[str, str]]:
 def put(page: fitz.Page, pos, text: str, fontname: str = "R", fontsize: float = SIZE, color=None) -> None:
     x, y = pos
     for k, t in runs(text, fontname):
+        if k not in {f[4] for f in page.get_fonts()}:  # embed only fonts a page actually uses (unused fonts are not subset)
+            page.insert_font(fontname=k, fontfile=str(FONT_FILES.get(k) or fallback_file()))
         kw = {"color": color} if color is not None else {}
         page.insert_text((x, y), t, fontname=k, fontsize=fontsize, **kw)
         x += _FONTS[k].text_length(t, fontsize=fontsize)
@@ -295,13 +297,7 @@ def paint(page: fitz.Page, ops, x: float, y: float) -> None:
 
 
 def new_page(doc: fitz.Document) -> fitz.Page:
-    page = doc.new_page(width=A4_W, height=A4_H)
-    for k, f in FONT_FILES.items():
-        page.insert_font(fontname=k, fontfile=str(f))
-    fb = fallback_file()
-    if fb:
-        page.insert_font(fontname="H", fontfile=str(fb))
-    return page
+    return doc.new_page(width=A4_W, height=A4_H)  # fonts are embedded by put() only where used
 
 
 def problem_page(doc, L: Layout, header: str, number: int) -> fitz.Page:
