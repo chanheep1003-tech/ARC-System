@@ -1,0 +1,63 @@
+# Semantic duplicate audit — KOR-N05-SUPP4-40Q-20260925 (v2)
+# Exclusion corpus: ARC N01 (28), N02 (20), N03 (40), repo N04 (10), repo SEMIFINAL (22 MCQ + 4 CR) = 124 items.
+# Rule (ARC_PROMPT_DEDUP_APPROVAL_POLICY_V1.0 §3): duplicate = same source segment + same judgment target
+# + same answer logic. A shared passage or concept is not a duplicate when the reasoning axis differs.
+audit_id: KOR-N05-DEDUP-V2
+dup_history_access: AVAILABLE
+prior_set_references:
+- ARC_N_01_공통국어2_보충자료연계_V1_0_DRAFT.pdf (Drive 1NuYId2ENTJqLu_OWg14Oq0-M87VRlndy)
+- ARC_N02_공통국어2_보충자료4편_V1.0.pdf (Drive 1tWEZNM1MCsAvDRqscGGMcT5HgD0GfnF9)
+- ARC_N03_공통국어2_보충자료4편_40Q_V1.0_DRAFT.pdf (Drive 1tcJIcMBuIwcC39Z6GPqp3-Jmgqxz-0ue)
+- quality/production/KOR_N04_KANTHEGEL_20260925
+- quality/production/KOR_SEMIFINAL_20260925
+near_text_check:
+  method: character 6-gram containment of every stem/option/<보기> line against 1,253 prior units; grams that occur in the locked source texts are removed first (shared passage wording is allowed)
+  threshold: 0.35
+  option_level_hits: 1
+  option_level_hit_detail: "N05-039 ④ vs N03-33 ④ (0.36) — both paraphrase the passage sentence P3S5 ('법적 보호 및 이해관계의 조정이 가능해져'); different item, different task (N03-33: 세 집단을 단계에 대응, key ②; N05-039: 갑·을·병 평가, key ⑤ 병을 시민 사회로 본 오류)."
+  stem_level_hits: generic stem formulas only (e.g. '<보기>를 바탕으로 윗글을 감상한 내용으로 적절하지 않은 것은?'); not counted as item duplicates
+  embedding_tool: tooling/similarity/arc_similarity.py not used — SIMILARITY_THRESHOLDS_V1.0 status CALIBRATION_REQUIRED
+exact_duplicate_count: 0
+semantic_duplicate_count: 0
+replaced_item_ids: []
+items:
+  KOR-N05-001: {nearest: "N01-06 태도 변화 정리 / SF-06 체념·달관", differs: "주제 진술을 다섯 개의 부분 참 선지로 판별(제도 비판 초점·전송 성공·처음부터 수용·해학=견딜 만함). N01-06은 태도 단계 배열, SF-06은 결말만."}
+  KOR-N05-002: {nearest: "N03-01 3~4행 대구 / N03-02 풍년인들", differs: "다섯 곳의 대구를 한 문항에서 점검하고, 오답 논리는 18행(환곡 장리)도 방도가 없다는 물음이라는 점 — 선행 세트에 없는 판단."}
+  KOR-N05-003: {nearest: "N01-03 ⓐ~ⓔ 시어 / N01-02 종 반응", differs: "화자 주변 존재(뻐꾸기·이웃·아이들·손님·세상) 다섯을 새로 표시. 정답 논리 ‘세상=저버림 ↔ 귀신=곁에 남음이 수용의 까닭’은 SF-04ㄴ과 인접하나 SF-04는 29~42행 사건 순서 판단(ㄱㄴㄹ)."}
+  KOR-N05-004: {nearest: "N01-06 태도 변화", differs: "행 범위별 내용 요약의 정오 판단(구조 분절). 오답은 쥐 피해 정도, 살림 도구 처분, 40행 설의 오독."}
+  KOR-N05-005: {nearest: "N01-04 자조·해학 <보기>", differs: "학교 보충자료의 ‘성격(사실적·자조적·체념적)’과 행의 대응. N01-04는 자조·해학의 효과 판단(정답: 해학→궁핍 심하지 않음 확정 오류)."}
+  KOR-N05-006: {nearest: "없음", differs: "28~29행의 연결 기능(묶기→전송)은 선행 세트에 없던 축."}
+  KOR-N05-007: {nearest: "없음(가사 갈래 <보기>)", differs: "갈래 원리 적용. 정답은 33~35행이 따옴표 없는 직접 인용이라는 판단."}
+  KOR-N05-008: {nearest: "SF-06 결말 체념/달관, N01-05", differs: "학생 반응 조합형. 판별 요소는 C(서러움 소멸)와 D(원수→신의 재인식)."}
+  KOR-N05-009: {nearest: "N03-02 풍년 가정 ㄱ", differs: "‘시도→어긋난 결과’ 쌍 네 개를 판별. 풍년 가정 오독은 ㄷ 하나의 오답 요소일 뿐, 정답 조합(ㄴ,ㄹ)의 논리는 새로움."}
+  KOR-N05-010: {nearest: "N03-03 귀신 말 정리 / N03-04 인식 변화 표현쌍", differs: "말의 주체(33~35 귀신 / 38~39 화자)와 ‘신의’가 화자의 재해석이라는 점을 가르는 문항. 선행 문항은 귀신 말의 내용 요약."}
+  KOR-N05-011: {nearest: "N01-08 작품 설명", differs: "주제 진술 판별. 오답은 동일시(타 작품 방식)·가족 이별·강인함 등 부분 참 왜곡."}
+  KOR-N05-012: {nearest: "N01-09 촉각 심상 / N02-08", differs: "다섯 개 감각 표현의 효과를 점검하고, 정답 논리는 손이 터진 원인을 추위로 단정한 오류(원인 귀속)."}
+  KOR-N05-013: {nearest: "N03-16 ‘주재소장 같은’↔‘내지인 주재소장’", differs: "‘어린아이 둘’↔‘아이보개’ 연결이 정답. N03-16은 ‘같은’→짐작의 출발점."}
+  KOR-N05-014: {nearest: "SF-15 관찰→추측 전개", differs: "정서가 드러나는 방식(담담→눈물→연민 심화)의 흐름. SF-15는 정보의 성격(관찰/추측)."}
+  KOR-N05-015: {nearest: "N03-13 A/B/C 분류 / N03-17 ‘이렇게’ 삭제", differs: "짐작의 실마리를 근거 선택형으로 판별. ‘이렇게’가 지금의 추운 아침을 가리킨다는 점이 한 요소로 겹치나 과업(근거 선택)과 정답 조합이 다름."}
+  KOR-N05-016: {nearest: "N03-19 <보기> 여행자", differs: "‘서사적 서정시’ 갈래 원리(인물·사건·배경, 시간 순서, 여백) 적용. 정답은 짐작이 울음의 까닭을 밝힌다는 오류."}
+  KOR-N05-017: {nearest: "없음(「탄궁가」–「팔원」 비교는 선행 세트에 없음)", differs: "갈래를 넘나드는 작품 비교, 정답은 수치 표현의 구체화 기능."}
+  KOR-N05-018: {nearest: "N01-12 <보기> 식민지 / N03-18 학생 대화", differs: "식민지 맥락 추론의 근거 범위를 판별(학생 2: 짐작→사실 승격, 학생 4: 배웅→가족처럼 아낌)."}
+  KOR-N05-019: {nearest: "N03-11 반복 표현", differs: "학생 정리문 수정형. 정답은 ‘느끼며’의 의미(흐느낌)로 울음을 참는다는 오독을 가르는 것."}
+  KOR-N05-020: {nearest: "N03-14 유리창 공간 / N03-30 유리창 비교", differs: "경계+관찰 통로의 이중 기능을 단일 선택형으로 판별. 오답은 무관심, 주재소장 집 목격, 성에→‘같은’ 인과."}
+  KOR-N05-021: {nearest: "N02-11/14 화자 이해", differs: "주제 진술 판별(무관심 반성·사내에게 전달·관료제 촉구·지금도 곁에서)."}
+  KOR-N05-022: {nearest: "N01-17 시어 적절X / N03-23 1·2연 비교", differs: "정답은 1행·12행 병치를 ‘같은 일의 반복’으로 본 오류(회상 vs 반복)."}
+  KOR-N05-023: {nearest: "N01-16/N02-12 서류 뭉치 / SF-12", differs: "객관적 상관물 <보기>로 다섯 이미지를 판별. 정답은 ‘춥고 큰 방’=홀로 감당하는 슬픔(선행 정답: 서류 뭉치)."}
+  KOR-N05-024: {nearest: "N03-23 1연·2연 비교", differs: "표 오류 찾기. 정답은 2연에서 울음의 까닭을 알게 되었다는 칸(선행 오답 요소와 다름)."}
+  KOR-N05-025: {nearest: "N01-18 태도 / N03-29 2연 위치", differs: "1연·2연 태도 대비 판별. 오답은 자책·방향 뒤집기·‘예전엔 어리석다 여김’ 추론."}
+  KOR-N05-026: {nearest: "N03-26 제목 <보기>(사전 뜻)", differs: "‘기억할 만한’ 까닭을 인과로 묻고, 판단 시점(그때 vs 지금)을 가르는 오답을 둠. N03-26은 사전적 의미 대응."}
+  KOR-N05-027: {nearest: "N03-27 학생 해석 ㉮~㉲ / SF-11", differs: "동일시의 범위(까닭의 일치까지는 아님)를 판별. N03-27의 정답(지금 울고 있다고 밝힘)과 다른 오답 요소."}
+  KOR-N05-028: {nearest: "없음(부정 표현 패턴은 선행 세트에 없음)", differs: "‘못/없/않’ 표현의 기능. 정답은 8행을 인과로 확대한 오류."}
+  KOR-N05-029: {nearest: "N03-30 두 작품의 유리창 / SF-10", differs: "창을 사이에 둔 화자 위치의 역전(창밖→안)이 정답. SF-10 정답은 ‘같은 곳으로 다시 옴’ 오류."}
+  KOR-N05-030: {nearest: "N03-25 근거 묶기", differs: "공감의 근거가 아닌 행을 가르는 문항(8행 상황 진술)."}
+  KOR-N05-031: {nearest: "N03-31 서술 방식 / N04-02 2문단", differs: "정답은 ‘헤겔이 칸트를 비판한 논쟁’이 제시되지 않았다는 점. N03-31 정답은 문단 배치, N04-02는 2문단의 한계 지적."}
+  KOR-N05-032: {nearest: "N01-22/N02-17/SF-17 내용 일치", differs: "정답이 재진술이 아닌 추론(제도가 있어도 불안정할 수 있음). 오답은 ‘감각적 욕구만’, 가족/시민 사회 특징 교차."}
+  KOR-N05-033: {nearest: "N01-23 준칙·도덕 법칙 / N04-04 자기 입법", differs: "칸트·헤겔 개념을 한 흐름표의 빈칸으로 대응(구체적/추상적 자유, 국가/시민 사회 포함)."}
+  KOR-N05-034: {nearest: "N03-32 준칙 A / SF-CR4 지갑 / N03-35 신호", differs: "새 사례(도서관 반납). 정답은 ‘판단 뒤 실천할 때’ 자유를 의식한다는 조건. 오답은 욕구가 규정할 수 없다(정도 왜곡), 판단만으로 자유 의식."}
+  KOR-N05-035: {nearest: "N04-09 1문단 예시 / N03-35", differs: "‘같은 행위라도 원인에 따라’라는 일반 원리를 1·2문단 예시에서 추론. 선행 문항은 특정 사례 평가."}
+  KOR-N05-036: {nearest: "N03-34 ㄱㄴ / N03-38 학생", differs: "법과 제도를 ‘조건’으로 본 것을 충분조건으로 부풀린 오류(학생 B)가 핵심 판별 요소."}
+  KOR-N05-037: {nearest: "N04-08 자유주의자 <보기>", differs: "관습 순응론이라는 반대 방향의 제3 관점. 정답은 칸트의 자기 입법과 구별(N04-08 정답은 욕구 선택 포함)."}
+  KOR-N05-038: {nearest: "N03-37 개념쌍 / N03-38 D 학생", differs: "‘타율’과 ‘추상적 자유’라는 서로 다른 사상가의 두 한계 개념을 비교(단계 이름·가족 단계와의 혼동 오답)."}
+  KOR-N05-039: {nearest: "N03-33 형제/상인/법원 / N01-26 A·B", differs: "새 사례(층간 소음). 정서 기반(을)=가족 단계 구조, 정답은 병을 시민 사회로 본 단계 오류."}
+  KOR-N05-040: {nearest: "SF-19 ㄱㄴㄷㄹ / N04-06 ‘따라서’ 근거", differs: "‘점점 더 안정적’의 까닭(단계별 약점 보완)을 설명형으로 판별."}
