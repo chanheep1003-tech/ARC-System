@@ -575,3 +575,11 @@
 - Activated KOREAN_MASTER_V4.4, KOREAN_ITEM_ENGINE_V1.4, KOREAN_ITEM_QA_V1.5.
 - Korean release now blocks AI-style internal QA language, artificial wrapper use, mechanical option prose, answer-length cues, repeated stem skeletons, and exotic-task overuse.
 - Registered ARC_N03 as a realism re-audit sentinel; fresh model-backed N°/FINAL must pass before Korean realism regression is closed.
+
+
+## 2026-09-25 — Korean absolute-priority sprint
+- Activated ARC_RUNTIME_PRIORITY_POLICY_V1.4.
+- Remaining discretionary quality allocation is KOR 60 / SOC 20 / SCI-REDOX 12 / HIS-N 8.
+- Korean N°/FINAL must produce a fresh meaningful result, not only rule-document changes.
+- Fresh KOR closure requires school-task realism, AI-style leak removal, strong distractors, answer-length neutrality, dedup, and full E2E PDF verification.
+- Priority order is now KOR N°/FINAL → SOC N°/FINAL → SCI-REDOX N°/FINAL → HIS N°.
