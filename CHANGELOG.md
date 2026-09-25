@@ -565,3 +565,13 @@
 - Each subject/product readiness score uses five evidence-backed 20-point gates: scope/source, generation quality, QA/governance, E2E/PDF, regression/release.
 - 2026-09-25 RC requires both ARC_N_PRODUCT_READINESS >=80 and ARC_FINAL_PRODUCT_READINESS >=80.
 - Scores cannot override hard failures such as wrong-answer risk, out-of-scope evidence, duplicate leakage, FINAL difficulty failure, or PDF corruption.
+
+
+## 2026-09-25 — Korean-first exam realism hardening
+- Priority order changed to KOR N°/FINAL → SOC N°/FINAL → SCI-REDOX N°/FINAL → HIS N°.
+- KOR receives 50% of remaining discretionary quality allocation until its realism/quality gates pass.
+- Added KOR_DONGBOOK_EXAM_TYPE_PROFILE_2025_2026_V1.0 from four accessible Dongbuk Korean exams; historical exams calibrate task-form prevalence and difficulty only, never answer content or teacher intent.
+- Added ARC_KOREAN_EXAM_REALISM_GATE_V1.0 and executable smoke gate.
+- Activated KOREAN_MASTER_V4.4, KOREAN_ITEM_ENGINE_V1.4, KOREAN_ITEM_QA_V1.5.
+- Korean release now blocks AI-style internal QA language, artificial wrapper use, mechanical option prose, answer-length cues, repeated stem skeletons, and exotic-task overuse.
+- Registered ARC_N03 as a realism re-audit sentinel; fresh model-backed N°/FINAL must pass before Korean realism regression is closed.
