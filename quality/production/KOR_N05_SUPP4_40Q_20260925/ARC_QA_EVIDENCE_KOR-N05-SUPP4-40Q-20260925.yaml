@@ -1,0 +1,3672 @@
+schema_version: ARC-QA-EVIDENCE-V1.0
+subject: KOR
+item_count: 40
+item_format: MCQ5
+uses_source_text: true
+student_manuscript_sha256: 5825b47d70c56280f3cc6f36bafe47ec1e34dcf786729417e03000af8ad5f520
+source_text_locks:
+- source_text_id: KOR-SUPP-2026-LIT-TANGUNGGA
+  source_origin: CONNECTED_DRIVE_RAW_SCHOOL_SOURCE
+  source_role: RAW_SCHOOL_SOURCE
+  text_fidelity: EXACT
+  source_file_id: 1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+  source_location: scan p1 (I. 문학 보충 1)
+  source_text_sha256: 0604e8740ac87d5f300ffd548b4c4a7f9a6150ade7bec3adeee4f2e4b480f271
+  linked_item_ids:
+  - KOR-N05-001
+  - KOR-N05-002
+  - KOR-N05-003
+  - KOR-N05-004
+  - KOR-N05-005
+  - KOR-N05-006
+  - KOR-N05-007
+  - KOR-N05-008
+  - KOR-N05-009
+  - KOR-N05-010
+  wording_lock: true
+  punctuation_lock: true
+  line_break_lock: true
+  boundary_lock: true
+- source_text_id: KOR-SUPP-2026-LIT-PALWON
+  source_origin: CONNECTED_DRIVE_RAW_SCHOOL_SOURCE
+  source_role: RAW_SCHOOL_SOURCE
+  text_fidelity: EXACT
+  source_file_id: 1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+  source_location: scan p1 right ~ p2 (I. 문학 보충 2)
+  source_text_sha256: 4ef78129dd14d43c423bf90c67fb8c5d3ae03f71ee50a21ca1c585901f8cc649
+  linked_item_ids:
+  - KOR-N05-011
+  - KOR-N05-012
+  - KOR-N05-013
+  - KOR-N05-014
+  - KOR-N05-015
+  - KOR-N05-016
+  - KOR-N05-017
+  - KOR-N05-018
+  - KOR-N05-019
+  - KOR-N05-020
+  wording_lock: true
+  punctuation_lock: true
+  line_break_lock: true
+  boundary_lock: true
+- source_text_id: KOR-SUPP-2026-LIT-JINACHIM
+  source_origin: CONNECTED_DRIVE_RAW_SCHOOL_SOURCE
+  source_role: RAW_SCHOOL_SOURCE
+  text_fidelity: EXACT
+  source_file_id: 1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+  source_location: scan p2 (I. 문학 보충 3)
+  source_text_sha256: 9fdd9015b6a5afcab210ce67a56d4f1830f9e1f7d5aa47cd37d5b371d044f1c0
+  linked_item_ids:
+  - KOR-N05-021
+  - KOR-N05-022
+  - KOR-N05-023
+  - KOR-N05-024
+  - KOR-N05-025
+  - KOR-N05-026
+  - KOR-N05-027
+  - KOR-N05-028
+  - KOR-N05-029
+  - KOR-N05-030
+  wording_lock: true
+  punctuation_lock: true
+  line_break_lock: true
+  boundary_lock: true
+- source_text_id: KOR-SUPP-2026-NF-KANT-HEGEL
+  source_origin: CONNECTED_DRIVE_RAW_SCHOOL_SOURCE
+  source_role: RAW_SCHOOL_SOURCE
+  text_fidelity: EXACT
+  source_file_id: 1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+  source_location: scan p2 right column ~ p3, II. 비문학 보충 1
+  source_text_sha256: be4709451609176eb877e753e69e7dc98b246a428eb58e5351d3d68082a0aa39
+  linked_item_ids:
+  - KOR-N05-031
+  - KOR-N05-032
+  - KOR-N05-033
+  - KOR-N05-034
+  - KOR-N05-035
+  - KOR-N05-036
+  - KOR-N05-037
+  - KOR-N05-038
+  - KOR-N05-039
+  - KOR-N05-040
+  wording_lock: true
+  punctuation_lock: true
+  line_break_lock: true
+  boundary_lock: true
+items:
+- item_id: KOR-N05-001
+  target_difficulty: D2
+  pass_a:
+    answer: '5'
+    answer_evidence: &id001
+    - SRC:S1:L2
+    - SRC:S1:L33
+    - SRC:S1:L34
+    - SRC:S1:L41
+    - SRC:S1:L42
+  pass_b:
+    answer: '5'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: &id002
+    - ANSWER_KEY
+    - PASS_A
+    - AUTHOR_INTENT
+    - TARGET_DIFFICULTY
+    confidence: HIGH
+    answer_evidence: *id001
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: concrete_listing_institution_critique
+      axis: THEME
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L3
+      - SRC:S1:L18
+      - SRC:S1:L19
+      - SRC:S1:L41
+      - SRC:S1:L42
+      note: 생활의 어려움을 구체적으로 늘어놓은 것은 맞지만, 환곡·부역·세금은 부담의 하나로 나올 뿐 원인을 제도에서 찾아 비판하는 대목은
+        없다. 결말은 가난의 수용이다. [SOCIAL_CONTEXT_OVERDETERMINATION]
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: sendoff_success_relief
+      axis: THEME
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S1:L31
+      - SRC:S1:L32
+      - SRC:S1:L36
+      - SRC:S1:L37
+      note: 한탄에서 출발한 것은 맞지만, 가난 귀신은 떠나기를 거부하고 화자는 그 말을 옳다고 인정한다. 전송은 성공하지 않았다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: acceptance_from_start
+      axis: THEME
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L1
+      - SRC:S1:L2
+      - SRC:S1:L20
+      - SRC:S1:L29
+      note: 결말의 수용 태도는 맞지만, 처음에는 ‘이다지도 괴로운고’라며 한탄하고 20행에서 견딜 수 없다 하며 29행에서 가난을 ‘원수’라
+        부른다. 태도는 바뀐다. [TEMPORAL_STAGE_SWAP]
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: humor_bearable
+      axis: THEME
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L17
+      - SRC:S1:L20
+      note: 해학적 표현이 있는 것은 맞지만, 20행에서 ‘견딜 수가 전혀 없다’고 한다. 가난이 견딜 만했다는 깨달음은 없다. [CORRECT_DEVICE_WRONG_EFFECT]
+    - option_id: '5'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: lament_to_acceptance
+      axis: THEME
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S1:L2
+      - SRC:S1:L33
+      - SRC:S1:L34
+      - SRC:S1:L41
+      - SRC:S1:L42
+      note: 한탄(1~2행) → 평생 함께해 온 가난(33~34행) → 분수로 받아들임(41~42행). 학교 보충자료의 주제(극심한 가난에
+        대한 한탄과 가난을 분수로 받아들이는 수용적 태도)와 일치한다.
+    second_best_option: '3'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 5
+    immediate_elimination_count: 0
+    transfer_required: false
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-002
+  target_difficulty: D2
+  pass_a:
+    answer: '3'
+    answer_evidence: &id003
+    - SRC:S1:L18
+    - SRC:S1:L19
+  pass_b:
+    answer: '3'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id003
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: l3_4_parallel_food_clothes
+      axis: EXPRESSION_EFFECT
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S1:L3
+      - SRC:S1:L4
+      note: ‘얻거나 못 얻거나’, ‘쓰거나 못 쓰거나’의 대구로 끼니와 갓(의복) 모두 해결되지 않는 형편을 드러낸다.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: l8_neighbors_tools
+      axis: EXPRESSION_EFFECT
+      competitiveness: WEAK
+      evidence_refs:
+      - SRC:S1:L8
+      note: 동편·서편 이웃에게서 쟁기와 호미를 얻는다.
+    - option_id: '3'
+      verdict: 'TRUE'
+      statement_truth: HALF_TRUE
+      claim_key: l18_loan_repaid_tax_not
+      axis: EXPRESSION_EFFECT
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S1:L18
+      - SRC:S1:L19
+      note: 18행도 ‘무엇으로 장만하며’라는 물음으로, 환곡과 장리 역시 마련할 방도가 없다는 걱정이다. 빚은 갚았다는 부분이 어긋난다.
+        [CONDITION_PARTIAL_MATCH]
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: l22_23_hypothetical_no_relief
+      axis: EXPRESSION_EFFECT
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L22
+      - SRC:S1:L23
+      note: ‘-ㄴ들’, ‘한들’은 가정이다. 실제 풍년으로 오독하면 이 선지를 틀렸다고 고르기 쉽다.
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: l26_27_duty_rites_guests
+      axis: EXPRESSION_EFFECT
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S1:L26
+      - SRC:S1:L27
+      note: 제사(조상)와 원근 친척·손님 접대를 ‘무엇으로’, ‘어이하여’ 하겠느냐고 걱정한다.
+    second_best_option: '4'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 2
+    immediate_elimination_count: 1
+    transfer_required: false
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-003
+  target_difficulty: D3
+  pass_a:
+    answer: '5'
+    answer_evidence: &id004
+    - SRC:S1:L37
+    - SRC:S1:L38
+    - SRC:S1:L39
+  pass_b:
+    answer: '5'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id004
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: cuckoo_urges_harvest_success
+      axis: KEY_MATERIAL
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L7
+      - SRC:S1:L8
+      - SRC:S1:L16
+      note: ‘보채거늘’ 뒤에 농사 준비가 이어지므로 재촉하는 존재인 것은 맞지만, 16행에서 올벼는 한 발 뜯고 조 팥은 묵혀 농사를 그르친다.
+        [SPEAKER_ACTION_OVERSTATEMENT]
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: neighbors_seeds_too
+      axis: KEY_MATERIAL
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L8
+      - SRC:S1:L9
+      note: 이웃에게서 쟁기와 호미를 얻은 것은 맞지만, 씨앗은 ‘집 안에 들어가’ 마련한다. [SCOPE_OVERREACH]
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: servants_ample_food_idle
+      axis: KEY_MATERIAL
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L13
+      - SRC:S1:L14
+      - SRC:S1:L15
+      note: 당부를 받고(13행) 못마땅한 기색을 보이는(15행) 것은 맞지만, 14행에서 상전은 죽 웃물을 먹고 건더기를 종에게 줄 만큼
+        먹을거리가 모자란다. ‘넉넉히’가 어긋난다. [DEGREE_ABSOLUTIZATION]
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: guests_cut_off
+      axis: KEY_MATERIAL
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S1:L27
+      note: 대접해야 할 대상인 것은 맞지만, 27행은 ‘어이하여 접대할꼬’라는 걱정이다. 왕래를 끊었다는 말은 없다.
+    - option_id: '5'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: world_abandons_contrast_ghost_loyalty
+      axis: KEY_MATERIAL
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S1:L37
+      - SRC:S1:L38
+      - SRC:S1:L39
+      note: 38행에서 무정한 세상은 화자를 버렸고, 39행에서 가난 귀신만 버리지 않았다. 이 대비가 37행의 인정과 이어진다.
+    second_best_option: '2'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 3
+    immediate_elimination_count: 0
+    transfer_required: false
+    actual_difficulty: D3
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-004
+  target_difficulty: D3
+  pass_a:
+    answer: '4'
+    answer_evidence: &id005
+    - SRC:S1:L29
+    - SRC:S1:L30
+    - SRC:S1:L31
+    - SRC:S1:L33
+    - SRC:S1:L34
+    - SRC:S1:L35
+    - SRC:S1:L36
+  pass_b:
+    answer: '4'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id005
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: ancients_poorer_than_me
+      axis: STRUCTURE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S1:L5
+      - SRC:S1:L6
+      note: 탄식과 옛사람과의 비교는 맞지만, ‘나같이 비었으며’, ‘나같이 극심할까’는 자신의 가난이 그들보다 더하다는 뜻이다. [CONDITION_PARTIAL_MATCH]
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: rats_ate_all_no_sowing
+      axis: STRUCTURE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L10
+      - SRC:S1:L11
+      - SRC:S1:L16
+      note: 올벼 씨는 ‘반 넘게’ 쥐가 먹었고 기장·피·조·팥은 ‘서너 되 부쳤’다. 모두 먹혀 씨를 뿌리지 못했다는 것은 정도가 어긋난다.
+        [DEGREE_ABSOLUTIZATION]
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: UNSUPPORTED
+      claim_key: disposed_household_tools
+      axis: STRUCTURE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S1:L22
+      - SRC:S1:L24
+      - SRC:S1:L25
+      note: 24~25행은 베틀 북과 솥 시루를 ‘남겨 두고’, ‘버려두니’라 하여 쓰지 못하고 방치한 모습이다. 처분했다는 말은 없다.
+    - option_id: '4'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: ghost_sendoff_refused
+      axis: STRUCTURE
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S1:L29
+      - SRC:S1:L30
+      - SRC:S1:L31
+      - SRC:S1:L33
+      - SRC:S1:L34
+      - SRC:S1:L35
+      - SRC:S1:L36
+      note: 29~31행에서 전송하려 하자 33~35행에서 가난 귀신이 어려서부터 함께해 온 세월을 들어 따지며 떠나기를 거부한다.
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: ending_leaves_room_for_scheme
+      axis: STRUCTURE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L37
+      - SRC:S1:L40
+      - SRC:S1:L41
+      - SRC:S1:L42
+      note: 인정(37행)은 맞지만, 40행 ‘위협으로 회피하며 잔꾀로 여읠려냐’는 그렇게 하지 않겠다는 설의이다. 여지를 남긴 것이 아니다.
+    second_best_option: '5'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 7
+    immediate_elimination_count: 0
+    transfer_required: false
+    actual_difficulty: D3
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-005
+  target_difficulty: D3
+  pass_a:
+    answer: '2'
+    answer_evidence: &id006
+    - SRC:S1:L16
+    - SRC:S1:L17
+  pass_b:
+    answer: '2'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: MEDIUM
+    answer_evidence: *id006
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: realistic_sendoff
+      axis: ATTITUDE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L30
+      - SRC:S1:L31
+      note: 30~31행은 가난을 의인화한 가난 귀신을 떠나보내려는 장면이다. 가난한 생활 모습을 구체적 사물·장면으로 보여 주는 부분이
+        아니다.
+    - option_id: '2'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: self_mock_weeds
+      axis: ATTITUDE
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S1:L16
+      - SRC:S1:L17
+      note: 곡식은 한 발 뜯고 묵혔는데 싸리피·바랭이 같은 잡초는 잘도 난다고 되묻는 것은 자기 처지를 스스로 비웃는 자조이다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: self_mock_resignation_swap
+      axis: ATTITUDE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L41
+      - SRC:S1:L42
+      note: 41~42행은 어찌할 수 없는 처지를 받아들이는 체념이다. [CONCEPT_PAIR_SWAP]
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: resignation_farming_start
+      axis: ATTITUDE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S1:L7
+      - SRC:S1:L8
+      note: 7~8행은 농사를 시작하려는 움직임이다.
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: realistic_heaven_lament
+      axis: ATTITUDE
+      competitiveness: WEAK
+      evidence_refs:
+      - SRC:S1:L1
+      - SRC:S1:L2
+      note: 하늘을 향한 탄식이다. 구체적 사물·장면이 아니다.
+    second_best_option: '3'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 2
+    immediate_elimination_count: 1
+    transfer_required: true
+    actual_difficulty: D3
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-006
+  target_difficulty: D2
+  pass_a:
+    answer: '1'
+    answer_evidence: &id007
+    - SRC:S1:L28
+    - SRC:S1:L29
+    - SRC:S1:L30
+    - SRC:S1:L31
+  pass_b:
+    answer: '1'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id007
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: summarize_then_summon_ghost
+      axis: STRUCTURE
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S1:L28
+      - SRC:S1:L29
+      - SRC:S1:L30
+      - SRC:S1:L31
+      note: 28행 ‘어려운 일 하고많다’가 18~27행의 괴로움을 묶고, 29행에서 ‘이 원수 가난 귀신’을 불러 30~31행의 전송으로
+        이어진다.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: blame_self_repent
+      axis: STRUCTURE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L28
+      - SRC:S1:L29
+      note: 앞부분은 맞지만, 29행에서 화자는 가난 귀신을 ‘원수’라 부르며 떠나보낼 방도를 찾는다. 자기 탓으로 돌리며 반성하지 않는다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: heaven_first_blamed
+      axis: STRUCTURE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S1:L1
+      - SRC:S1:L41
+      note: 하늘은 이미 1행에 나오고, 결말에서는 수용의 근거가 된다. [TEMPORAL_STAGE_SWAP]
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: ghost_speaks_first_here
+      axis: STRUCTURE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L29
+      - SRC:S1:L32
+      - SRC:S1:L33
+      note: 29행은 화자가 가난 귀신을 부르는 말이다. 가난 귀신은 32행 ‘이른 말이’ 뒤에 처음 말한다. [OBSERVATION_IDENTIFICATION_SWAP]
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: summon_then_directly_accept
+      axis: STRUCTURE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L29
+      - SRC:S1:L30
+      - SRC:S1:L41
+      note: 28~29행의 구실은 맞게 짚었지만, 29행 뒤에는 30~31행의 전송 시도와 32~36행의 항변이 이어진다. 곧바로 수용으로
+        가지 않는다. [TEMPORAL_STAGE_SWAP]
+    second_best_option: '5'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 4
+    immediate_elimination_count: 1
+    transfer_required: false
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-007
+  target_difficulty: D2
+  pass_a:
+    answer: '4'
+    answer_evidence: &id008
+    - SRC:S1:L32
+    - SRC:S1:L33
+    - SRC:S1:L34
+    - SRC:S1:L35
+  pass_b:
+    answer: '4'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id008
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: numbers_detail
+      axis: STRUCTURE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S1:L3
+      - SRC:S1:L4
+      note: 삼십 일에 아홉 끼니, 십 년 동안 갓 하나는 체험의 세부를 수치로 풀어 놓은 것이다.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: farming_time_sequence
+      axis: STRUCTURE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L7
+      - SRC:S1:L8
+      - SRC:S1:L9
+      - SRC:S1:L10
+      - SRC:S1:L16
+      note: 봄 → 도구 → 씨앗 → 쥐 → 농사 그르침의 순서이다. ‘열거’로만 보고 시간 흐름을 부정하면 이 선지를 고르기 쉽다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: enumeration_listing
+      axis: STRUCTURE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S1:L22
+      - SRC:S1:L23
+      - SRC:S1:L24
+      - SRC:S1:L25
+      - SRC:S1:L26
+      - SRC:S1:L27
+      note: 여러 어려움을 잇달아 늘어놓은 열거이다.
+    - option_id: '4'
+      verdict: 'TRUE'
+      statement_truth: 'FALSE'
+      claim_key: ghost_speech_summarized
+      axis: STRUCTURE
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S1:L32
+      - SRC:S1:L33
+      - SRC:S1:L34
+      - SRC:S1:L35
+      note: 32행 ‘이른 말이’ 뒤의 33~35행은 ‘너와 함께하여’, ‘가라 하여 이르느뇨’처럼 가난 귀신이 화자를 ‘너’라 부르며 따지는
+        말을 그대로 옮긴 것이다. 따옴표가 없을 뿐 간추려 전한 것이 아니다.
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: long_form_full_process
+      axis: STRUCTURE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L1
+      - SRC:S1:L29
+      - SRC:S1:L42
+      note: <보기>의 ‘4음보의 율격이 길게 이어지는 형식’과 대응하고, 탄식(1~2) → 전송 시도(29~31) → 수용(41~42)의
+        과정이 펼쳐진다.
+    second_best_option: '5'
+    second_best_risk: MEDIUM
+    reasoning_steps: 3
+    evidence_count: 4
+    immediate_elimination_count: 1
+    transfer_required: true
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-008
+  target_difficulty: D3
+  pass_a:
+    answer: '4'
+    answer_evidence: &id009
+    - SRC:S1:L18
+    - SRC:S1:L27
+    - SRC:S1:L37
+    - SRC:S1:L39
+    - SRC:S1:L41
+    - SRC:S1:L42
+  pass_b:
+    answer: '4'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id009
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: AB
+      axis: ATTITUDE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L37
+      - SRC:S1:L39
+      note: D도 적절하다. 37~39행에서 화자는 가난 귀신의 말을 옳다고 여기고 ‘신의’ 있는 존재로 받아들인다.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: AC
+      axis: ATTITUDE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S1:L42
+      note: C가 부적절하고 B, D를 빠뜨렸다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: BD
+      axis: ATTITUDE
+      competitiveness: WEAK
+      evidence_refs:
+      - SRC:S1:L41
+      note: A를 빠뜨렸다.
+    - option_id: '4'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: ABD
+      axis: ATTITUDE
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S1:L18
+      - SRC:S1:L27
+      - SRC:S1:L37
+      - SRC:S1:L39
+      - SRC:S1:L41
+      - SRC:S1:L42
+      note: 'A: 41행 ‘설마한들 어이하리’는 벗어날 수 없음을 받아들이는 말. B: 형편이 나아졌다는 말이 없으므로 18~27행의 어려움이
+        남아 있다. D: 37~39행에서 가난을 원수가 아닌 신의 있는 존재로 다시 보고 받아들인다.'
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: ACD
+      axis: ATTITUDE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L42
+      note: 'C: 42행 ‘서러워해 무엇하리’는 서러움을 삭이는 말이다. 서러움 자체가 사라졌다고 볼 수 없다. [DEGREE_ABSOLUTIZATION]'
+    second_best_option: '1'
+    second_best_risk: MEDIUM
+    reasoning_steps: 3
+    evidence_count: 6
+    immediate_elimination_count: 1
+    transfer_required: true
+    actual_difficulty: D3
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-009
+  target_difficulty: D3
+  pass_a:
+    answer: '2'
+    answer_evidence: &id010
+    - SRC:S1:L13
+    - SRC:S1:L14
+    - SRC:S1:L15
+    - SRC:S1:L16
+    - SRC:S1:L30
+    - SRC:S1:L31
+    - SRC:S1:L32
+    - SRC:S1:L36
+  pass_b:
+    answer: '2'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: MEDIUM
+    answer_evidence: *id010
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: gn
+      axis: STRUCTURE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S1:L10
+      - SRC:S1:L11
+      note: ㄱ이 부적절하다.
+    - option_id: '2'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: nr
+      axis: STRUCTURE
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S1:L13
+      - SRC:S1:L14
+      - SRC:S1:L15
+      - SRC:S1:L16
+      - SRC:S1:L30
+      - SRC:S1:L31
+      - SRC:S1:L32
+      - SRC:S1:L36
+      note: 'ㄴ: 13~14행 당부와 건더기 → 15행 못마땅한 기색, 16행 농사를 그르침. ㄹ: 30~31행 전송 → 32~36행 불평·항변·협박.'
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: dr
+      axis: STRUCTURE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S1:L22
+      note: ㄷ이 부적절하고 ㄴ을 빠뜨렸다.
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: gnr
+      axis: STRUCTURE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L10
+      - SRC:S1:L11
+      note: 'ㄱ: 올벼 씨는 ‘반 넘게’ 먹혔고 기장·피·조·팥은 ‘서너 되 부쳤’다. 모두 먹혀 한 되도 부치지 못했다는 것은 정도가
+        어긋난다. [DEGREE_ABSOLUTIZATION]'
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: ndr
+      axis: STRUCTURE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L20
+      - SRC:S1:L21
+      - SRC:S1:L22
+      note: 'ㄷ: 22행 ‘시절이 풍년인들’은 가정이다. 실제로 풍년이 들어 근심이 줄었다는 것은 가정을 사실로 읽은 오답이다. [HYPOTHETICAL_AS_FACT]'
+    second_best_option: '4'
+    second_best_risk: MEDIUM
+    reasoning_steps: 3
+    evidence_count: 8
+    immediate_elimination_count: 0
+    transfer_required: true
+    actual_difficulty: D3
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-010
+  target_difficulty: D3
+  pass_a:
+    answer: '5'
+    answer_evidence: &id011
+    - SRC:S1:L33
+    - SRC:S1:L34
+    - SRC:S1:L38
+    - SRC:S1:L39
+  pass_b:
+    answer: '5'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id011
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: l33_35_speaker_request
+      axis: ATTITUDE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S1:L32
+      - SRC:S1:L33
+      - SRC:S1:L35
+      note: 32행 ‘이른 말이’의 주체는 가난 귀신이다. 33~35행은 가라는 말을 따지는 귀신의 항변이다. [OBSERVATION_IDENTIFICATION_SWAP]
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: l38_39_ghost_speech
+      axis: ATTITUDE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L37
+      - SRC:S1:L38
+      - SRC:S1:L39
+      note: 37행에서 화자가 귀신을 ‘네’라 부르고, 38~39행은 그에 이어지는 화자의 생각이다. 말의 주체가 뒤바뀌었다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: ghost_argued_world
+      axis: ATTITUDE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L33
+      - SRC:S1:L34
+      - SRC:S1:L35
+      - SRC:S1:L38
+      note: 가난 귀신의 말(33~35행)에는 ‘세상’이 나오지 않는다. 세상과의 대비는 화자가 38행에서 스스로 떠올린 것이다.
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: ghost_claims_loyalty_word
+      axis: ATTITUDE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L33
+      - SRC:S1:L34
+      - SRC:S1:L35
+      - SRC:S1:L39
+      note: 가난 귀신은 어려서부터 희로애락을 함께했고 떠난 적이 없다는 점을 들어 따질 뿐이다. ‘신의’는 39행에서 화자가 붙인 평가이다.
+    - option_id: '5'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: companionship_reinterpreted_as_loyalty
+      axis: ATTITUDE
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S1:L33
+      - SRC:S1:L34
+      - SRC:S1:L38
+      - SRC:S1:L39
+      note: 귀신은 33~34행에서 함께해 온 세월을 내세우고, 화자는 38~39행에서 이를 무정한 세상과 견주어 ‘신의’로 받아들인다.
+    second_best_option: '3'
+    second_best_risk: MEDIUM
+    reasoning_steps: 3
+    evidence_count: 4
+    immediate_elimination_count: 0
+    transfer_required: false
+    actual_difficulty: D3
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-011
+  target_difficulty: D2
+  pass_a:
+    answer: '2'
+    answer_evidence: &id012
+    - SRC:S2:L5
+    - SRC:S2:L10
+    - SRC:S2:L12
+    - SRC:S2:L13
+    - SRC:S2:L14
+    - SRC:S2:L16
+  pass_b:
+    answer: '2'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id012
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: UNSUPPORTED
+      claim_key: family_separation_longing
+      axis: THEME
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S2:L8
+      - SRC:S2:L10
+      - SRC:S2:L11
+      note: 아이가 우는 까닭은 밝혀지지 않고, 배웅하는 이는 ‘주재소장 같은 어른’이다. 가족과의 이별과 그리움을 주제로 삼을 근거가 없다.
+    - option_id: '2'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: girl_colonial_hardship_pity
+      axis: THEME
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S2:L5
+      - SRC:S2:L10
+      - SRC:S2:L12
+      - SRC:S2:L13
+      - SRC:S2:L14
+      - SRC:S2:L16
+      note: 터진 손잔등, 주재소장 같은 어른의 배웅, 눈을 씻는 ‘어느 한 사람’, 내지인 주재소장 집에서의 노동 짐작이 식민지 현실 속
+        고된 삶에 대한 연민을 이룬다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: identification_self_pity
+      axis: THEME
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S2:L12
+      - SRC:S2:L13
+      note: 화자는 아이를 관찰하고 지난 삶을 짐작할 뿐, 자신과 동일시하지 않는다. 동일시는 다른 작품의 방식이다. [OBSERVATION_IDENTIFICATION_SWAP]
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: lesson_leave_home
+      axis: THEME
+      competitiveness: WEAK
+      evidence_refs:
+      - SRC:S2:L6
+      - SRC:S2:L8
+      note: 교훈을 전하는 대목은 없다.
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: restraint_as_endurance
+      axis: THEME
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S2:L11
+      - SRC:S2:L12
+      note: 담담하게 그린 것은 맞지만, 계집아이는 ‘운다 느끼며 운다’. 슬픔을 드러내지 않고 견딘다는 것은 어긋난다.
+    second_best_option: '1'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 6
+    immediate_elimination_count: 1
+    transfer_required: false
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-012
+  target_difficulty: D2
+  pass_a:
+    answer: '3'
+    answer_evidence: &id013
+    - SRC:S2:L5
+    - SRC:S2:L13
+    - SRC:S2:L14
+    - SRC:S2:L15
+  pass_b:
+    answer: '3'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id013
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: cold_morning_tactile
+      axis: EXPRESSION_EFFECT
+      competitiveness: WEAK
+      evidence_refs:
+      - SRC:S2:L1
+      note: 촉각적 표현이 계절적 배경을 드러낸다.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: green_jacket_color
+      axis: EXPRESSION_EFFECT
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S2:L4
+      note: 선명한 색채어로 길 떠나는 차림을 드러낸다.
+    - option_id: '3'
+      verdict: 'TRUE'
+      statement_truth: HALF_TRUE
+      claim_key: furrow_cause_cold_not_labor
+      axis: EXPRESSION_EFFECT
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S2:L5
+      - SRC:S2:L13
+      - SRC:S2:L14
+      - SRC:S2:L15
+      note: 직유로 갈라진 손잔등을 드러낸 것은 맞지만, 터진 까닭을 추위로 밝히는 대목은 없다. 오히려 13~16행에서 화자는 이를 남의
+        집 노동과 잇는다. [UNSUPPORTED_CAUSE]
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: white_frozen_window
+      axis: EXPRESSION_EFFECT
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S2:L9
+      note: ‘쌔하얗게’(시각)와 ‘얼은’(촉각).
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: frozen_hands_imagined_labor
+      axis: EXPRESSION_EFFECT
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S2:L15
+      - SRC:S2:L16
+      note: ‘-었을 것이다’로 끝나는 짐작 속의 장면이지만 촉각적 표현이다. 짐작이라는 점 때문에 틀렸다고 오판하기 쉽다.
+    second_best_option: '4'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 4
+    immediate_elimination_count: 1
+    transfer_required: false
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-013
+  target_difficulty: D3
+  pass_a:
+    answer: '5'
+    answer_evidence: &id014
+    - SRC:S2:L10
+    - SRC:S2:L13
+    - SRC:S2:L14
+  pass_b:
+    answer: '5'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id014
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: UNSUPPORTED
+      claim_key: family_parting_explicit
+      axis: KEY_MATERIAL
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S2:L10
+      - SRC:S2:L11
+      - SRC:S2:L13
+      note: 아이가 우는 까닭은 밝혀져 있지 않고, 가족이라는 단정도 근거가 없다. [FACT_TO_INFERENCE_UPGRADE]
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: same_marks_not_family
+      axis: KEY_MATERIAL
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S2:L10
+      note: 유리창 밖의 배웅은 맞지만, ‘같은’은 어른의 신분(주재소장)에 대한 짐작을 나타낼 뿐 가족 여부를 밝히는 말이 아니다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: guess_confirmed_by_girl
+      axis: KEY_MATERIAL
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S2:L10
+      - SRC:S2:L13
+      - SRC:S2:L16
+      note: ‘같은’이 짐작인 것은 맞지만, 13~16행은 ‘-었을 것이다’로 끝나는 화자의 짐작이며 계집아이의 말이 아니다. [INFERENCE_TO_FACT]
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: UNSUPPORTED
+      claim_key: crying_blamed_on_farewell
+      axis: KEY_MATERIAL
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S2:L9
+      - SRC:S2:L11
+      note: 차 안팎의 위치는 맞지만, 화자는 울음의 까닭을 단정하지 않는다.
+    - option_id: '5'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: two_children_link_babysitting
+      axis: KEY_MATERIAL
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S2:L10
+      - SRC:S2:L13
+      - SRC:S2:L14
+      note: 배웅하는 ‘어린아이 둘’과 ‘주재소장 같은 어른’은 13~14행에서 화자가 짐작한 ‘내지인 주재소장 집’의 ‘아이보개’와 이어진다.
+    second_best_option: '3'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 3
+    immediate_elimination_count: 1
+    transfer_required: false
+    actual_difficulty: D3
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-014
+  target_difficulty: D2
+  pass_a:
+    answer: '2'
+    answer_evidence: &id015
+    - SRC:S2:L1
+    - SRC:S2:L5
+    - SRC:S2:L11
+    - SRC:S2:L12
+    - SRC:S2:L13
+    - SRC:S2:L16
+  pass_b:
+    answer: '2'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id015
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: direct_then_future_worry
+      axis: ATTITUDE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S2:L12
+      - SRC:S2:L16
+      note: 담담한 시작은 맞지만, 연민을 직접 토로하지 않고 끝은 앞날이 아니라 지난 삶의 짐작(‘-었을 것이다’)이다.
+    - option_id: '2'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: calm_then_tears_then_deepen
+      axis: ATTITUDE
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S2:L1
+      - SRC:S2:L5
+      - SRC:S2:L11
+      - SRC:S2:L12
+      - SRC:S2:L13
+      - SRC:S2:L16
+      note: 1~10행 담담한 묘사 → 11~12행 울음과 ‘어느 한 사람’의 눈 씻기 → 13~16행 지난 고생의 짐작.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: withdraw_at_end
+      axis: ATTITUDE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S2:L13
+      - SRC:S2:L15
+      - SRC:S2:L16
+      note: 앞부분은 맞지만, 13~16행에서 추운 아침에 찬물에 걸레를 쳤을 것이라 짐작하며 연민은 오히려 깊어진다. [TEMPORAL_STAGE_SWAP]
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: no_emotion_only_facts
+      axis: ATTITUDE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S2:L12
+      - SRC:S2:L16
+      note: 절제된 태도라는 점은 맞지만, 12행에서 눈을 씻는 모습으로 감정이 비치고 13~16행은 짐작이다. [DEGREE_ABSOLUTIZATION]
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: guess_first_then_scene
+      axis: ATTITUDE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S2:L3
+      - SRC:S2:L13
+      note: 짐작은 13~16행, 끝부분에 놓인다. 순서가 뒤바뀌었다.
+    second_best_option: '3'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 6
+    immediate_elimination_count: 0
+    transfer_required: false
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-015
+  target_difficulty: D3
+  pass_a:
+    answer: '4'
+    answer_evidence: &id016
+    - SRC:S2:L1
+    - SRC:S2:L5
+    - SRC:S2:L10
+    - SRC:S2:L13
+    - SRC:S2:L15
+  pass_b:
+    answer: '4'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: MEDIUM
+    answer_evidence: *id016
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: gn_only
+      axis: EXPLICIT_CONTENT
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S2:L1
+      - SRC:S2:L15
+      note: ㄷ을 빠뜨렸다. 15행 ‘이렇게 추운 아침에도’의 ‘이렇게’는 지금의 추운 아침을 가리킨다.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: gr
+      axis: EXPLICIT_CONTENT
+      competitiveness: WEAK
+      evidence_refs:
+      - SRC:S2:L7
+      note: ㄹ은 앞으로 갈 곳의 거리이다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: nd
+      axis: EXPLICIT_CONTENT
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S2:L5
+      note: ㄱ을 빠뜨렸다.
+    - option_id: '4'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: gnd
+      axis: EXPLICIT_CONTENT
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S2:L1
+      - SRC:S2:L5
+      - SRC:S2:L10
+      - SRC:S2:L13
+      - SRC:S2:L15
+      note: ㄱ 터진 손잔등 → 고된 노동, ㄴ 주재소장 같은 어른 → ‘내지인 주재소장 집’, ㄷ 지금의 추운 아침 → ‘이렇게 추운 아침에도’.
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: ndr
+      axis: EXPLICIT_CONTENT
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S2:L7
+      note: ㄹ이 부적절하고 ㄱ을 빠뜨렸다.
+    second_best_option: '1'
+    second_best_risk: MEDIUM
+    reasoning_steps: 3
+    evidence_count: 5
+    immediate_elimination_count: 1
+    transfer_required: true
+    actual_difficulty: D3
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-016
+  target_difficulty: D2
+  pass_a:
+    answer: '5'
+    answer_evidence: &id017
+    - SRC:S2:L13
+    - SRC:S2:L16
+    - SRC:S2:L11
+  pass_b:
+    answer: '5'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id017
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: character_setting_event
+      axis: STRUCTURE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S2:L2
+      - SRC:S2:L3
+      - SRC:S2:L11
+      note: 인물·배경·사건을 갖추었다.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: action_time_order
+      axis: STRUCTURE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S2:L3
+      - SRC:S2:L10
+      - SRC:S2:L11
+      note: 오른다 → 내임을 낸다 → 운다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: blank_reason_crying
+      axis: STRUCTURE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S2:L11
+      note: 우는 까닭은 밝히지 않는다. 13~16행이 까닭을 밝혔다고 여기면 이 선지를 틀렸다고 보기 쉽다.
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: narrator_appears_if_one_person
+      axis: STRUCTURE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S2:L12
+      note: 가정의 형식으로 진술되어 있어 참이다.
+    - option_id: '5'
+      verdict: 'TRUE'
+      statement_truth: HALF_TRUE
+      claim_key: guess_explains_crying
+      axis: STRUCTURE
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S2:L13
+      - SRC:S2:L16
+      - SRC:S2:L11
+      note: 지난 삶을 짐작해 보여 주는 것은 맞지만, 짐작(‘-었을 것이다’)일 뿐 우는 까닭을 분명히 밝히지는 않는다. 여백은 남는다.
+        [INFERENCE_TO_FACT]
+    second_best_option: '4'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 3
+    immediate_elimination_count: 1
+    transfer_required: true
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-017
+  target_difficulty: D2
+  pass_a:
+    answer: '3'
+    answer_evidence: &id018
+    - SRC:S2:L7
+  pass_b:
+    answer: '3'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id018
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: palwon_identification
+      axis: THEME
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S2:L12
+      - SRC:S2:L13
+      note: 「탄궁가」는 화자 자신의 처지가 맞지만, 윗글의 화자는 아이를 관찰하고 짐작할 뿐 동일시하지 않는다. [OBSERVATION_IDENTIFICATION_SWAP]
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: humor_lightens_restraint_eases
+      axis: THEME
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S2:L12
+      - SRC:S2:L16
+      note: 표현 방식(해학, 절제)은 맞지만 효과가 어긋난다. 해학이 괴로움을 가볍게 만들지 않고, 절제는 비애를 깊게 한다. [CORRECT_DEVICE_WRONG_EFFECT]
+    - option_id: '3'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: numbers_concretize_both
+      axis: THEME
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S2:L7
+      note: 「탄궁가」 3~4행 ‘삼십 일에 아홉 끼니’, ‘십 년 동안 갓 하나’와 윗글 7행 ‘삼백오십 리’, ‘백오십 리’는 모두 수치로
+        처지를 구체화한다.
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: speaker_asked_girl
+      axis: THEME
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S2:L6
+      - SRC:S2:L8
+      note: 앞부분은 맞지만 윗글의 정보는 ‘간다고 하는데’, ‘산다고 한다’의 전해 들은 말이다. 화자가 말을 건넨 대목은 없다.
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: both_acceptance_endings
+      axis: THEME
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S2:L16
+      note: 「탄궁가」의 결말은 맞지만, 윗글은 화자가 아이의 지난 노동을 짐작하는 데서 끝난다. 아이의 수용은 나오지 않는다.
+    second_best_option: '4'
+    second_best_risk: MEDIUM
+    reasoning_steps: 3
+    evidence_count: 1
+    immediate_elimination_count: 0
+    transfer_required: true
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-018
+  target_difficulty: D2
+  pass_a:
+    answer: '2'
+    answer_evidence: &id019
+    - SRC:S2:L3
+    - SRC:S2:L6
+    - SRC:S2:L8
+    - SRC:S2:L13
+  pass_b:
+    answer: '2'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id019
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: s12
+      axis: THEME
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S2:L13
+      - SRC:S2:L16
+      note: 학생 2가 부적절하다.
+    - option_id: '2'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: s13
+      axis: THEME
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S2:L3
+      - SRC:S2:L6
+      - SRC:S2:L8
+      - SRC:S2:L13
+      note: '학생 1: ‘내지인 주재소장’은 식민 통치와 관련된 집안을 가리킨다. 학생 3: 나이 어린 아이가 홀로 먼 길을 나서고 삼촌은
+        ‘어디메서’ 산다고만 하니 기댈 곳이 막연하다.'
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: s24
+      axis: THEME
+      competitiveness: WEAK
+      evidence_refs:
+      - SRC:S2:L10
+      note: 학생 2, 4 모두 근거가 없다.
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: s134
+      axis: THEME
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S2:L10
+      - SRC:S2:L11
+      note: '학생 4: ‘주재소장 같은 어른’이 배웅한다는 사실만으로 아이를 가족처럼 아껴 주었다고 볼 근거는 없다. 배웅 뒤 아이는 운다.
+        [UNSUPPORTED_CAUSE]'
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: s234
+      axis: THEME
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S2:L13
+      note: 학생 2, 4가 부적절하다.
+    second_best_option: '4'
+    second_best_risk: MEDIUM
+    reasoning_steps: 3
+    evidence_count: 4
+    immediate_elimination_count: 0
+    transfer_required: true
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-019
+  target_difficulty: D2
+  pass_a:
+    answer: '4'
+    answer_evidence: &id020
+    - SRC:S2:L11
+  pass_b:
+    answer: '4'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id020
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: a_opening_lonely
+      axis: EXPRESSION_EFFECT
+      competitiveness: WEAK
+      evidence_refs:
+      - SRC:S2:L1
+      - SRC:S2:L2
+      - SRC:S2:L3
+      note: 추운 아침, 텅 빈 차, 홀로 오르는 아이.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: b_jacket_hand_pair
+      axis: EXPRESSION_EFFECT
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S2:L4
+      - SRC:S2:L5
+      note: 새 저고리와 터진 손잔등을 나란히 보여 준다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: c_hearsay
+      axis: EXPRESSION_EFFECT
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S2:L6
+      - SRC:S2:L8
+      note: ‘간다고 하는데’, ‘산다고 한다’는 전해 들은 말의 형식이다. 누구에게 들었는지 나오지 않아 수정 대상으로 오인하기 쉽다.
+    - option_id: '4'
+      verdict: 'TRUE'
+      statement_truth: 'FALSE'
+      claim_key: d_holding_back_tears
+      axis: EXPRESSION_EFFECT
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S2:L11
+      note: ‘느끼며’는 흐느끼며 운다는 뜻이다. ‘운다’를 되풀이하고 ‘느끼며’를 더한 것은 울음이 깊어짐을 보여 준다. 울음을 참으려
+        애쓴다는 것은 어긋난다. [CORRECT_DEVICE_WRONG_EFFECT]
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: e_labor_listing
+      axis: EXPRESSION_EFFECT
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S2:L13
+      - SRC:S2:L14
+      - SRC:S2:L16
+      note: 화자가 짐작한 노동을 늘어놓는다.
+    second_best_option: '1'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 1
+    immediate_elimination_count: 1
+    transfer_required: true
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-020
+  target_difficulty: D2
+  pass_a:
+    answer: '1'
+    answer_evidence: &id021
+    - SRC:S2:L9
+    - SRC:S2:L10
+  pass_b:
+    answer: '1'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id021
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: boundary_and_view_medium
+      axis: KEY_MATERIAL
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S2:L9
+      - SRC:S2:L10
+      note: ‘유리창 밖에’ 배웅하는 이들이 있고, 화자는 차 안에서 그들을 본다. 경계이자 관찰의 통로이다.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: boundary_indifference
+      axis: KEY_MATERIAL
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S2:L9
+      - SRC:S2:L12
+      note: 경계인 것은 맞지만, 12행에서 ‘어느 한 사람’이 눈을 씻듯 연민이 드러난다. 무관심이 아니다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: sees_masters_house
+      axis: KEY_MATERIAL
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S2:L10
+      - SRC:S2:L13
+      note: 바깥을 내다보는 통로인 것은 맞지만, 화자가 보는 것은 배웅하는 사람들이다. 주재소장 집은 13행에서 화자가 짐작한 곳이다.
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: UNSUPPORTED
+      claim_key: frost_causes_guess
+      axis: KEY_MATERIAL
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S2:L9
+      - SRC:S2:L10
+      note: ‘같은’이 짐작을 나타내는 것은 맞지만, 그 까닭을 유리창이 흐릿해서라고 볼 근거는 없다. 화자는 어른과 ‘어린아이 둘’까지
+        분간한다. [UNSUPPORTED_CAUSE]
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: only_cold_image
+      axis: KEY_MATERIAL
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S2:L1
+      - SRC:S2:L9
+      - SRC:S2:L10
+      note: 추운 이미지와 호응하는 것은 맞지만, ‘유리창 밖에’로 공간을 나누는 기능도 한다. [FUNCTION_SINGLE_SIDED_REDUCTION]
+    second_best_option: '4'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 2
+    immediate_elimination_count: 0
+    transfer_required: false
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-021
+  target_difficulty: D2
+  pass_a:
+    answer: '3'
+    answer_evidence: &id022
+    - SRC:S3:L1
+    - SRC:S3:L7
+    - SRC:S3:L11
+    - SRC:S3:L12
+    - SRC:S3:L13
+    - SRC:S3:L14
+  pass_b:
+    answer: '3'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id022
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: repent_indifference
+      axis: THEME
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S3:L9
+      - SRC:S3:L11
+      note: 사내의 울음을 떠올리는 것은 맞지만, 1연의 화자는 고통스러워하며 울음이 그칠 때까지 떠나지 못했다. 무관심이 아니다.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: deliver_realization_to_him
+      axis: THEME
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S3:L12
+      - SRC:S3:L14
+      note: 14행의 판단은 맞지만, 사내에게 전하려 한다는 근거가 없다.
+    - option_id: '3'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: chance_passing_recalled_empathy
+      axis: THEME
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S3:L1
+      - SRC:S3:L7
+      - SRC:S3:L11
+      - SRC:S3:L12
+      - SRC:S3:L13
+      - SRC:S3:L14
+      note: 1연의 우연한 목격, 2연의 비슷한 처지(텅 빈 사무실, 퍼붓는 눈)에서의 회상, 14행의 이해가 이어진다. 학교 자료의 주제(고독과
+        슬픔을 지닌 타인에 대한 연민과 이해)와 일치한다.
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: bureaucracy_critique_call
+      axis: THEME
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S3:L4
+      - SRC:S3:L5
+      note: 관공서가 차갑게 그려지는 것은 맞지만, 화자는 창밖에서 지켜보았고 개선을 촉구하지 않는다. [SOCIAL_CONTEXT_OVERDETERMINATION]
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: still_watching_now
+      axis: THEME
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S3:L12
+      - SRC:S3:L13
+      note: 과거와 현재의 장면이 겹치는 것은 맞지만, 2연의 화자는 사내를 ‘떠올리’고 있을 뿐 지금 곁에서 지켜보지 않는다. [TEMPORAL_STAGE_SWAP]
+    second_best_option: '1'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 6
+    immediate_elimination_count: 0
+    transfer_required: false
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-022
+  target_difficulty: D2
+  pass_a:
+    answer: '1'
+    answer_evidence: &id023
+    - SRC:S3:L1
+    - SRC:S3:L12
+  pass_b:
+    answer: '1'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id023
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'TRUE'
+      statement_truth: HALF_TRUE
+      claim_key: l1_l12_same_event_repeats
+      axis: EXPRESSION_EFFECT
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S3:L1
+      - SRC:S3:L12
+      note: 비슷한 짜임과 ‘지금’은 맞지만, 12행은 ‘그를 떠올리게 되었다’는 회상이다. 과거의 일이 똑같이 되풀이되는 것이 아니다.
+        [TEMPORAL_STAGE_SWAP]
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: snow_repetition
+      axis: EXPRESSION_EFFECT
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S3:L2
+      - SRC:S3:L8
+      note: 목격 장면 내내 눈이 퍼붓는다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: exclamation_shock
+      axis: EXPRESSION_EFFECT
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S3:L7
+      note: 느낌표로 발견의 충격을 드러낸다.
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: silence_personified
+      axis: EXPRESSION_EFFECT
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S3:L9
+      note: 추상적 대상 ‘침묵’을 달아날 수 있는 존재처럼 표현하였다.
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: present_tense_now
+      axis: EXPRESSION_EFFECT
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S3:L12
+      - SRC:S3:L13
+      note: 1연의 ‘퍼부었고’와 달리 13행은 현재형이다. 두 연을 모두 과거로 읽으면 이 선지를 고르기 쉽다.
+    second_best_option: '4'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 2
+    immediate_elimination_count: 1
+    transfer_required: false
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-023
+  target_difficulty: D2
+  pass_a:
+    answer: '4'
+    answer_evidence: &id024
+    - SRC:S3:L7
+  pass_b:
+    answer: '4'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id024
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: dark_street_speaker_grief
+      axis: KEY_MATERIAL
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S3:L2
+      - SRC:S3:L9
+      note: 어두운 거리가 쓸쓸한 분위기를 만드는 것은 맞지만, <보기>대로 풍경은 정서를 직접 말하지 않고 기대어 드러내며, 목격 전 화자의
+        슬픔도 나오지 않는다.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: paper_bundle_literal_overtime
+      axis: KEY_MATERIAL
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S3:L3
+      - SRC:S3:L4
+      - SRC:S3:L7
+      note: 서기와 서류의 연관은 맞지만, 사내가 서류 일을 마무리하느라 남아 있다는 사정은 지문에 없다. 비유를 사실 전달로 축소하였다.
+        [CORRECT_DEVICE_WRONG_EFFECT]
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: dim_light_warmth
+      axis: KEY_MATERIAL
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S3:L5
+      - SRC:S3:L7
+      note: 안팎의 대비라는 틀은 그럴듯하지만, 불빛은 ‘희미한’ 빛이 ‘새어 나왔’을 뿐이고 7행의 방은 ‘춥고 큰’ 곳이다.
+    - option_id: '4'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: cold_big_room_alone
+      axis: KEY_MATERIAL
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S3:L7
+      note: ‘춥고 큰 방’에서 서기는 ‘혼자’ 울고 있다. 풍경이 인물의 고독과 겹쳐 읽힌다.
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: office_cozy_relieved
+      axis: KEY_MATERIAL
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S3:L13
+      - SRC:S3:L14
+      note: 실내라는 점은 맞지만 ‘밤은 깊고’, ‘텅 빈’, 눈이 퍼붓는 쓸쓸한 공간이며, 화자는 사내와 비슷한 처지에 놓여 있다.
+    second_best_option: '5'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 1
+    immediate_elimination_count: 0
+    transfer_required: true
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-024
+  target_difficulty: D2
+  pass_a:
+    answer: '4'
+    answer_evidence: &id025
+    - SRC:S3:L12
+    - SRC:S3:L14
+  pass_b:
+    answer: '4'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id025
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: a_present
+      axis: STRUCTURE
+      competitiveness: WEAK
+      evidence_refs:
+      - SRC:S3:L12
+      note: 12행 ‘지금’.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: b_empty_office
+      axis: STRUCTURE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S3:L13
+      note: ‘텅 빈 사무실 창밖으로 눈이 퍼붓는다’는 사무실 안에서 창밖을 보는 장면으로 읽힌다. 위치가 직접 명시되지 않아 가장 망설이기
+        쉬운 칸이다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: c_watched_from_outside
+      axis: STRUCTURE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S3:L6
+      - SRC:S3:L11
+      note: 창밖에서 지켜보며 떠나지 못했다.
+    - option_id: '4'
+      verdict: 'TRUE'
+      statement_truth: 'FALSE'
+      claim_key: d_learned_reason
+      axis: STRUCTURE
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S3:L12
+      - SRC:S3:L14
+      note: 2연의 화자는 사내를 떠올리고 어리석은 자가 아니라고 판단할 뿐, 사내가 운 까닭은 끝까지 나오지 않는다. [INFERENCE_TO_FACT]
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: e_night_snow
+      axis: STRUCTURE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S3:L13
+      note: ‘밤은 깊고’, ‘창밖으로 눈이 퍼붓는다’.
+    second_best_option: '2'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 2
+    immediate_elimination_count: 1
+    transfer_required: false
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-025
+  target_difficulty: D2
+  pass_a:
+    answer: '5'
+    answer_evidence: &id026
+    - SRC:S3:L9
+    - SRC:S3:L10
+    - SRC:S3:L12
+    - SRC:S3:L14
+  pass_b:
+    answer: '5'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id026
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: blames_self_now
+      axis: ATTITUDE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S3:L10
+      - SRC:S3:L14
+      note: 1연 부분은 맞지만, 2연에서 화자는 자신을 탓하지 않고 사내에 대해 판단한다.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: now_thinks_foolish
+      axis: ATTITUDE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S3:L14
+      note: 1연 부분은 맞지만, 14행은 ‘어리석은 자라고 생각하지 않는다’이다. 판단의 방향이 뒤바뀌었다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: UNSUPPORTED
+      claim_key: thought_foolish_then_changed
+      axis: ATTITUDE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S3:L9
+      - SRC:S3:L14
+      note: 14행의 부정 표현을 보고 예전에는 어리석다고 여겼다고 추론하기 쉽지만, 1연에 그런 판단은 없다. [UNSUPPORTED_CAUSE]
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: cold_observer_both
+      axis: ATTITUDE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S3:L9
+      - SRC:S3:L14
+      note: 유리창 너머 거리를 두고 본 것은 맞지만, 1연에서 ‘거의 고통스러웠다’고 한다. 냉정한 관찰이 아니다.
+    - option_id: '5'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: anguish_then_affirmation
+      axis: ATTITUDE
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S3:L9
+      - SRC:S3:L10
+      - SRC:S3:L12
+      - SRC:S3:L14
+      note: 9~10행의 고통과 망설임, 12행의 회상, 14행의 판단이 대응한다.
+    second_best_option: '1'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 4
+    immediate_elimination_count: 0
+    transfer_required: false
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-026
+  target_difficulty: D2
+  pass_a:
+    answer: '2'
+    answer_evidence: &id027
+    - SRC:S3:L1
+    - SRC:S3:L12
+    - SRC:S3:L13
+    - SRC:S3:L14
+  pass_b:
+    answer: '2'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id027
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: UNSUPPORTED
+      claim_key: learned_it_comforted
+      axis: THEME
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S3:L11
+      - SRC:S3:L12
+      note: 떠나지 않은 것은 맞지만, 그것이 위로가 되었음을 알게 되었다는 대목은 없다.
+    - option_id: '2'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: recalled_in_similar_situation_understood
+      axis: THEME
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S3:L1
+      - SRC:S3:L12
+      - SRC:S3:L13
+      - SRC:S3:L14
+      note: 1행의 우연한 지나침이 12~13행의 비슷한 상황에서 다시 떠오르고, 14행의 이해로 이어진다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: judged_at_that_moment
+      axis: THEME
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S3:L10
+      - SRC:S3:L12
+      - SRC:S3:L14
+      note: 우연히 지나친 것은 맞지만, 그 순간 화자는 ‘어떻게 해야 할까’라며 어찌할 줄 몰랐다. 14행의 판단은 현재형으로, 지금 떠올리며
+        내린 것이다. [TEMPORAL_STAGE_SWAP]
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: UNSUPPORTED
+      claim_key: heard_story_corrected_view
+      axis: THEME
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S3:L14
+      note: 사연을 전해 들은 대목도, 어리석다고 여겼던 대목도 없다. [FACT_TO_INFERENCE_UPGRADE]
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: passed_daily
+      axis: THEME
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S3:L12
+      note: 12행 ‘우연히 지금 그를 떠올리게 되었다’. 날마다 떠올린 것이 아니다.
+    second_best_option: '3'
+    second_best_risk: MEDIUM
+    reasoning_steps: 3
+    evidence_count: 4
+    immediate_elimination_count: 0
+    transfer_required: false
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-027
+  target_difficulty: D3
+  pass_a:
+    answer: '4'
+    answer_evidence: &id028
+    - SRC:S3:L1
+    - SRC:S3:L2
+    - SRC:S3:L8
+    - SRC:S3:L12
+    - SRC:S3:L13
+    - SRC:S3:L14
+  pass_b:
+    answer: '4'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id028
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: gn
+      axis: STRUCTURE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S3:L12
+      note: ㄴ이 부적절하고 ㄷ, ㄹ을 빠뜨렸다.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: gr
+      axis: STRUCTURE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S3:L2
+      - SRC:S3:L13
+      note: ㄷ을 빠뜨렸다. 1연의 ‘캄캄했다’와 2연의 ‘밤은 깊고’, 두 연의 퍼붓는 눈이 두 장면을 잇는다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: nd
+      axis: STRUCTURE
+      competitiveness: WEAK
+      evidence_refs:
+      - SRC:S3:L12
+      note: ㄴ이 부적절하다.
+    - option_id: '4'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: gdr
+      axis: STRUCTURE
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S3:L1
+      - SRC:S3:L2
+      - SRC:S3:L8
+      - SRC:S3:L12
+      - SRC:S3:L13
+      - SRC:S3:L14
+      note: 'ㄱ: 1행·12행의 ‘우연히’가 호응한다. ㄷ: 1연(캄캄함·퍼붓는 눈)과 2연(깊은 밤·퍼붓는 눈). ㄹ: 사내와 비슷한
+        자리(텅 빈 사무실)에서 내린 판단이다.'
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: ndr
+      axis: STRUCTURE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S3:L12
+      - SRC:S3:L14
+      note: ㄴ이 부적절하다. 동일시는 상황의 유사성이지 까닭의 일치가 밝혀진 것이 아니다.
+    second_best_option: '2'
+    second_best_risk: MEDIUM
+    reasoning_steps: 3
+    evidence_count: 6
+    immediate_elimination_count: 0
+    transfer_required: true
+    actual_difficulty: D3
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-028
+  target_difficulty: D2
+  pass_a:
+    answer: '2'
+    answer_evidence: &id029
+    - SRC:S3:L8
+    - SRC:S3:L10
+  pass_b:
+    answer: '2'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id029
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: immobile_buildings
+      axis: ATTITUDE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S3:L3
+      - SRC:S3:L4
+      note: 눈을 뒤집어쓴 건물이 경직된 모습으로 그려진다.
+    - option_id: '2'
+      verdict: 'TRUE'
+      statement_truth: HALF_TRUE
+      claim_key: alone_explains_failure
+      axis: ATTITUDE
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S3:L8
+      - SRC:S3:L10
+      note: 화자가 혼자였다는 것은 맞지만, 울음을 멈추게 하지 못한 까닭을 도와줄 사람이 없어서라고 밝힌 대목은 없다. [UNSUPPORTED_CAUSE]
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: keep_silence
+      axis: ATTITUDE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S3:L9
+      note: 침묵이 달아나지 못하게 애쓴다.
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: neither_intervene_nor_leave
+      axis: ATTITUDE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S3:L10
+      - SRC:S3:L11
+      note: ‘중지시킬 수 없었다’의 대상이 울음인지 침묵인지 망설일 수 있어 강한 매력 선지이지만, 울음을 멈추게 하지 못하고 그칠 때까지
+        떠나지 못한 상황과 맞다.
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: double_negative_affirmation
+      axis: ATTITUDE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S3:L14
+      note: 부정의 형식이 긍정을 드러낸다는 점이 낯설어 틀렸다고 판단하기 쉽지만, 조심스러운 긍정이다.
+    second_best_option: '1'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 2
+    immediate_elimination_count: 1
+    transfer_required: false
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-029
+  target_difficulty: D2
+  pass_a:
+    answer: '3'
+    answer_evidence: &id030
+    - SRC:S3:L6
+    - SRC:S3:L11
+    - SRC:S3:L13
+  pass_b:
+    answer: '3'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id030
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: outside_again_same_place
+      axis: KEY_MATERIAL
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S3:L12
+      - SRC:S3:L13
+      note: 1연 부분은 맞지만, ‘텅 빈 사무실 창밖으로 눈이 퍼붓는다’는 사무실 안에서 창밖을 보는 장면이다. [TEMPORAL_STAGE_SWAP]
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: UNSUPPORTED
+      claim_key: window_made_man_stop
+      axis: KEY_MATERIAL
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S3:L6
+      - SRC:S3:L11
+      note: 사내가 화자를 의식했다거나 그 때문에 울음을 그쳤다는 대목은 없다.
+    - option_id: '3'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: position_reversal_identification
+      axis: KEY_MATERIAL
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S3:L6
+      - SRC:S3:L11
+      - SRC:S3:L13
+      note: '1연: ‘유리창 너머 한 사내가 보였다’, ‘창밖에서 떠나지 못했다’. 2연: ‘텅 빈 사무실 창밖으로 눈이 퍼붓는다’. 창을
+        사이에 둔 위치가 뒤바뀌어, 화자가 그때의 사내와 비슷한 자리에 놓인다.'
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: window_only_medium_no_distance
+      axis: KEY_MATERIAL
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S3:L6
+      - SRC:S3:L10
+      - SRC:S3:L11
+      note: 관찰의 통로인 것은 맞지만, 화자는 창밖에서 울음을 중지시키지 못하고 머물 뿐이다. 거리를 드러내는 기능을 지웠다. [FUNCTION_SINGLE_SIDED_REDUCTION]
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: left_watcher_role_unrelated
+      axis: KEY_MATERIAL
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S3:L12
+      - SRC:S3:L14
+      note: 위치가 바뀐 것은 맞지만, 화자는 바로 그 자리에서 사내를 떠올리고 판단한다. 사내와 관련이 없다는 것은 어긋난다.
+    second_best_option: '1'
+    second_best_risk: MEDIUM
+    reasoning_steps: 3
+    evidence_count: 3
+    immediate_elimination_count: 0
+    transfer_required: false
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-030
+  target_difficulty: D2
+  pass_a:
+    answer: '1'
+    answer_evidence: &id031
+    - SRC:S3:L8
+  pass_b:
+    answer: '1'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id031
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: l8_situation_not_empathy
+      axis: EXPLICIT_CONTENT
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S3:L8
+      note: 8행은 눈이 퍼붓고 화자 뒤에 아무도 없었다는 상황을 전할 뿐이다. 사내의 슬픔에 대한 화자의 반응은 9행부터 드러난다.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: l9_anguish
+      axis: EXPLICIT_CONTENT
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S3:L9
+      note: 사내의 울음 앞에서 침묵을 지키느라 고통스러워한다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: l10_helpless_dilemma
+      axis: EXPLICIT_CONTENT
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S3:L10
+      note: ‘중지시킬 수 없었다’를 무관심으로 읽으면 고르기 쉽지만, ‘어떻게 해야 할까’라는 망설임과 함께 어찌하지 못하는 괴로움을 드러낸다.
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: l11_stayed
+      axis: EXPLICIT_CONTENT
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S3:L11
+      note: 울음을 그칠 때까지 떠나지 못한 것은 공감의 행동이다.
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: l14_affirmation
+      axis: EXPLICIT_CONTENT
+      competitiveness: WEAK
+      evidence_refs:
+      - SRC:S3:L14
+      note: 사내에 대한 이해를 드러낸다.
+    second_best_option: '3'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 1
+    immediate_elimination_count: 1
+    transfer_required: false
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-031
+  target_difficulty: D2
+  pass_a:
+    answer: '5'
+    answer_evidence: &id032
+    - SRC:S4:P3S1
+    - SRC:S4:P3S7
+    - SRC:S4:P3S8
+  pass_b:
+    answer: '5'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id032
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: common_first_then_each
+      axis: TEXT_STRUCTURE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S4:P1S1
+      - SRC:S4:P1S2
+      - SRC:S4:P3S1
+      note: 1문단 첫 문장이 공통점과 ‘각각 다른 방식’을 밝힌다. 공통점 제시를 놓치면 틀렸다고 오판하기 쉽다.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: contrast_concept_pairs
+      axis: TEXT_STRUCTURE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S4:P1S2
+      - SRC:S4:P3S1
+      - SRC:S4:P3S7
+      note: 대조되는 개념쌍을 활용한다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: kant_everyday_examples
+      axis: TEXT_STRUCTURE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S4:P1S5
+      - SRC:S4:P2S6
+      note: 배가 아파 음식을 먹지 않는 행위, 굶주린 아이에게 음식을 양보하는 행위.
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: stages_in_order
+      axis: TEXT_STRUCTURE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S4:P3S3
+      - SRC:S4:P3S4
+      - SRC:S4:P3S5
+      note: 가족 → 시민 사회 → 국가.
+    - option_id: '5'
+      verdict: 'TRUE'
+      statement_truth: 'FALSE'
+      claim_key: hegel_criticizes_kant_debate
+      axis: TEXT_STRUCTURE
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S4:P3S1
+      - SRC:S4:P3S7
+      - SRC:S4:P3S8
+      note: 3문단에서 헤겔이 비판한 대상은 자유를 선택 가능성으로만 이해하는 ‘추상적 자유’이다. 칸트를 비판하는 내용이나 두 사상가의
+        논쟁은 제시되지 않는다. [EXPLICIT_POSITION_VS_CRITIQUE_SWAP]
+    second_best_option: '2'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 3
+    immediate_elimination_count: 1
+    transfer_required: false
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-032
+  target_difficulty: D2
+  pass_a:
+    answer: '2'
+    answer_evidence: &id033
+    - SRC:S4:P3S4
+  pass_b:
+    answer: '2'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id033
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: phenomenal_only_desire
+      axis: EXPLICIT_CONTENT
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S4:P1S4
+      note: 현상계에서 이성이 아닌 것이 원인이 된다는 것은 맞지만, 윗글은 ‘감각적 욕구 등 이성이 아닌 것’이라 하였다. 감각적 욕구‘만’으로
+        한정한 것은 어긋난다. [SCOPE_OVERREACH]
+    - option_id: '2'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: institutions_not_sufficient_stability
+      axis: EXPLICIT_CONTENT
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S4:P3S4
+      note: 시민 사회 단계에서 ‘각종 제도가 수립되어’ 자유가 보다 구체화되지만 ‘이해관계의 충돌이 발생하여 불안정하다’. 제도가 있어도
+        불안정할 수 있다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: maxim_is_law
+      axis: EXPLICIT_CONTENT
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S4:P2S3
+      - SRC:S4:P2S4
+      note: 준칙은 특정 상황의 주관적 원리이고, 보편성을 갖춘 준칙만 도덕 법칙이 된다. [CONCEPT_PAIR_SWAP]
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: family_conflict_swap
+      axis: EXPLICIT_CONTENT
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S4:P3S3
+      - SRC:S4:P3S4
+      note: 가족 단계가 사랑에 기초한다는 것은 맞지만, 이해관계의 충돌로 불안정한 것은 시민 사회 단계이다. 가족 단계의 한계는 제도적
+        보장이 약한 것이다. [TEMPORAL_STAGE_SWAP]
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: law_prioritizes_order
+      axis: EXPLICIT_CONTENT
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S4:P3S6
+      note: 법과 제도가 조건인 것은 맞지만, 개인의 자유와 공동체의 질서가 ‘조화를 이루는’ 자유의 조건이다. 한쪽을 앞세우지 않는다.
+    second_best_option: '1'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 1
+    immediate_elimination_count: 1
+    transfer_required: false
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-033
+  target_difficulty: D1
+  pass_a:
+    answer: '3'
+    answer_evidence: &id034
+    - SRC:S4:P2S3
+    - SRC:S4:P2S4
+    - SRC:S4:P2S5
+    - SRC:S4:P3S1
+    - SRC:S4:P3S5
+  pass_b:
+    answer: '3'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id034
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: self_legislation_as_universality
+      axis: CONCEPT_RELATION
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S4:P2S2
+      - SRC:S4:P2S4
+      note: 모순 없이 실현되는 성질은 ‘보편성’이다. 자기 입법은 도덕 법칙을 스스로에게 부과하는 능력이다.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: abstract_freedom_swap
+      axis: CONCEPT_RELATION
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S4:P3S1
+      - SRC:S4:P3S7
+      note: 사회적 관계와 제도 속에서 구현되는 자유는 ‘구체적 자유’이다. 추상적 자유는 헤겔이 비판한 것이다. [CONCEPT_PAIR_SWAP]
+    - option_id: '3'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: full_chain
+      axis: CONCEPT_RELATION
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S4:P2S3
+      - SRC:S4:P2S4
+      - SRC:S4:P2S5
+      - SRC:S4:P3S1
+      - SRC:S4:P3S5
+      note: 준칙 → 보편성 → 이성이 원인 → 자유를 의식 / 구체적 자유 → 국가 단계에서 가장 구체화.
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: desire_and_civil
+      axis: CONCEPT_RELATION
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S4:P1S4
+      - SRC:S4:P3S4
+      - SRC:S4:P3S5
+      note: ㉰는 이성, ㉲는 국가이다. 시민 사회는 이해관계의 충돌로 불안정한 단계이다.
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: law_as_maxim_civil
+      axis: CONCEPT_RELATION
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S4:P2S3
+      - SRC:S4:P3S5
+      note: ㉮는 준칙, ㉲는 국가이다.
+    second_best_option: '1'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 5
+    immediate_elimination_count: 0
+    transfer_required: true
+    actual_difficulty: D1
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-034
+  target_difficulty: D2
+  pass_a:
+    answer: '4'
+    answer_evidence: &id035
+    - SRC:S4:P2S4
+    - SRC:S4:P2S5
+  pass_b:
+    answer: '4'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id035
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: desire_cannot_determine
+      axis: APPLICATION
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S4:P1S4
+      - SRC:S4:P1S5
+      note: ㉠이 불쾌를 피하려는 욕구인 것은 맞지만, 칸트는 현상계에서 이런 욕구가 의지를 규정한다고 본다. 그런 행위를 타율적이라 할
+        뿐이다. [DEGREE_ABSOLUTIZATION]
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: maxim_already_law
+      axis: APPLICATION
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S4:P2S3
+      - SRC:S4:P2S4
+      note: 특정 상황에서 세운 원리는 준칙이며, 보편성이 확보되어야 도덕 법칙이 된다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: judgment_alone_freedom
+      axis: APPLICATION
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S4:P2S5
+      note: 보편성 판단은 맞지만, 칸트는 도덕 법칙에 따라 ‘의지를 규정하고 행위를 실천할 때 비로소’ 자유를 의식한다고 하였다. 행위
+        이전의 판단만으로는 아니다. [CONDITION_PARTIAL_MATCH]
+    - option_id: '4'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: law_followed_freedom_conscious
+      axis: APPLICATION
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S4:P2S4
+      - SRC:S4:P2S5
+      note: 보편성을 확보한 준칙은 도덕 법칙이 되고, 이에 따라 이성이 원인이 되어 행위를 실천할 때 자유를 의식한다.
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: discomfort_means_heteronomy
+      axis: APPLICATION
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S4:P1S4
+      - SRC:S4:P2S6
+      note: 불쾌를 감수한 것은 굶주린 아이 예에서 배고픔을 참은 것과 같다. 행위의 원인이 욕구가 아니라 도덕 법칙이다.
+    second_best_option: '3'
+    second_best_risk: MEDIUM
+    reasoning_steps: 3
+    evidence_count: 2
+    immediate_elimination_count: 0
+    transfer_required: true
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-035
+  target_difficulty: D2
+  pass_a:
+    answer: '1'
+    answer_evidence: &id036
+    - SRC:S4:P1S5
+    - SRC:S4:P2S5
+    - SRC:S4:P2S6
+  pass_b:
+    answer: '1'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id036
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: same_act_different_cause
+      axis: CENTRAL_CLAIM
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S4:P1S5
+      - SRC:S4:P2S5
+      - SRC:S4:P2S6
+      note: 음식을 먹지 않는 행위라도 고통을 피하려는 욕구가 원인이면 타율적이고(1문단), 도덕 법칙에 따라 이성이 원인이 되어 음식을
+        양보하면 자유를 의식한다(2문단). 행위의 판단은 원인에 달려 있다.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: humans_not_rational
+      axis: CENTRAL_CLAIM
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S4:P2S2
+      note: 칸트는 인간을 ‘이성적 존재’라고 하였다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: any_restraint_is_freedom
+      axis: CENTRAL_CLAIM
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S4:P2S5
+      - SRC:S4:P2S6
+      note: 굶주린 아이 예처럼 욕구를 참는 경우가 있는 것은 맞지만, 자유를 의식하려면 도덕 법칙에 따라 이성이 원인이 되어야 한다. 원인이
+        무엇이든 된다는 것은 조건을 지운 것이다. [CONDITION_PARTIAL_MATCH]
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: no_maxim_universal
+      axis: CENTRAL_CLAIM
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S4:P2S3
+      - SRC:S4:P2S4
+      note: 준칙이 특정 상황의 원리인 것은 맞지만, 보편성을 확보한 준칙은 도덕 법칙이 된다고 하였다. [DEGREE_ABSOLUTIZATION]
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: self_legislation_from_observation
+      axis: CENTRAL_CLAIM
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S4:P1S2
+      - SRC:S4:P2S2
+      note: 자기 입법은 예지계에서 이성을 통해 발휘되는 능력이다. 경험적 관찰과 무관하다.
+    second_best_option: '3'
+    second_best_risk: MEDIUM
+    reasoning_steps: 3
+    evidence_count: 3
+    immediate_elimination_count: 0
+    transfer_required: false
+    actual_difficulty: D2
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-036
+  target_difficulty: D3
+  pass_a:
+    answer: '4'
+    answer_evidence: &id037
+    - SRC:S4:P3S6
+    - SRC:S4:P3S7
+    - SRC:S4:P3S8
+  pass_b:
+    answer: '4'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id037
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: AB
+      axis: CONCEPT_RELATION
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S4:P3S1
+      - SRC:S4:P3S6
+      note: B가 부적절하다.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: AC
+      axis: CONCEPT_RELATION
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S4:P3S8
+      note: D를 빠뜨렸다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: BD
+      axis: CONCEPT_RELATION
+      competitiveness: WEAK
+      evidence_refs:
+      - SRC:S4:P3S1
+      note: B가 부적절하고 A를 빠뜨렸다.
+    - option_id: '4'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: ACD
+      axis: CONCEPT_RELATION
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S4:P3S6
+      - SRC:S4:P3S7
+      - SRC:S4:P3S8
+      note: 'A: P3S6. C: 비판 대상은 자유를 선택 가능성‘으로만’ 이해하는 것(P3S7). D: 제도적 맥락 등 현실적 제약을
+        고려하지 못해 파괴적 성향을 띨 수 있다(P3S8).'
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: BCD
+      axis: CONCEPT_RELATION
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S4:P3S1
+      note: B가 부적절하다.
+    second_best_option: '2'
+    second_best_risk: MEDIUM
+    reasoning_steps: 3
+    evidence_count: 3
+    immediate_elimination_count: 1
+    transfer_required: true
+    actual_difficulty: D3
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-037
+  target_difficulty: D3
+  pass_a:
+    answer: '1'
+    answer_evidence: &id038
+    - SRC:S4:P2S2
+    - SRC:S4:P2S5
+  pass_b:
+    answer: '1'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id038
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: kant_custom_not_self_legislation
+      axis: CONCEPT_RELATION
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S4:P2S2
+      - SRC:S4:P2S5
+      note: 칸트의 자유는 이성을 통해 스스로에게 도덕 법칙을 부과하는 데서 비롯된다. 관습을 의심 없이 따르는 것은 스스로 부과한 것이
+        아니다.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: kant_custom_universal
+      axis: CONCEPT_RELATION
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S4:P2S4
+      note: 보편성은 모든 이성적 존재자에게 적용했을 때 모순 없이 실현되는가로 판단한다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: hegel_agrees_will_irrelevant
+      axis: CONCEPT_RELATION
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S4:P3S1
+      note: 헤겔이 사회적 관계와 제도를 중시하는 것은 맞지만, 자유는 ‘개인의 의지가’ 그 속에서 구현될 때 실현된다.
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: hegel_calls_it_abstract
+      axis: CONCEPT_RELATION
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S4:P3S8
+      note: 추상적 자유는 법이나 제도를 구속으로 간주하고 부정하는 것이다. <보기>는 규범을 그대로 따르자는 주장이다. [CONCEPT_PAIR_SWAP]
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: both_reject_self_principle
+      axis: CONCEPT_RELATION
+      competitiveness: WEAK
+      evidence_refs:
+      - SRC:S4:P2S2
+      - SRC:S4:P3S1
+      note: 칸트는 스스로 원리를 세우고 보편성을 따지는 것을 자유의 조건으로 본다.
+    second_best_option: '4'
+    second_best_risk: MEDIUM
+    reasoning_steps: 3
+    evidence_count: 2
+    immediate_elimination_count: 1
+    transfer_required: true
+    actual_difficulty: D3
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-038
+  target_difficulty: D3
+  pass_a:
+    answer: '3'
+    answer_evidence: &id039
+    - SRC:S4:P1S4
+    - SRC:S4:P1S5
+    - SRC:S4:P3S8
+  pass_b:
+    answer: '3'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id039
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: same_meaning_desire
+      axis: CONCEPT_RELATION
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S4:P1S4
+      - SRC:S4:P3S7
+      - SRC:S4:P3S8
+      note: 추상적 자유는 선택 가능성으로만 이해하고 법·제도를 부정하는 것이다. 이성이 아닌 것이 원인이라는 설명은 없다. [TRUE_COMMONALITY_FALSE_DIFFERENCE]
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: abstract_as_pre_state_stage
+      axis: CONCEPT_RELATION
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S4:P3S3
+      - SRC:S4:P3S4
+      - SRC:S4:P3S7
+      note: 타율 부분은 맞지만, 추상적 자유는 단계의 이름이 아니라 자유를 선택 가능성으로만 이해하는 잘못된 이해이다. 국가 이전의 가족·시민
+        사회 단계에서도 자유는 실현된다. [CONCEPT_PAIR_SWAP]
+    - option_id: '3'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: distinct_grounds_of_limitation
+      axis: CONCEPT_RELATION
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S4:P1S4
+      - SRC:S4:P1S5
+      - SRC:S4:P3S8
+      note: '칸트: 이성이 아닌 것이 원인이 된 행위는 타율적. 헤겔: 추상적 자유는 법과 제도를 구속으로 간주하고 부정한다.'
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: abstract_based_on_love
+      axis: CONCEPT_RELATION
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S4:P3S3
+      - SRC:S4:P3S8
+      note: 타율 부분은 맞지만, 사랑이라는 정서에 기초하는 것은 가족 단계이다. [CONCEPT_PAIR_SWAP]
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: UNSUPPORTED
+      claim_key: abstract_subtype_of_heteronomy
+      axis: CONCEPT_RELATION
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S4:P3S8
+      note: 윗글은 두 개념을 연결하지 않는다. 추상적 자유를 타율의 한 종류로 제시한 대목은 없다.
+    second_best_option: '2'
+    second_best_risk: MEDIUM
+    reasoning_steps: 3
+    evidence_count: 3
+    immediate_elimination_count: 0
+    transfer_required: false
+    actual_difficulty: D3
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-039
+  target_difficulty: D3
+  pass_a:
+    answer: '5'
+    answer_evidence: &id040
+    - SRC:S4:P3S4
+    - SRC:S4:P3S5
+  pass_b:
+    answer: '5'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id040
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: gap_abstract
+      axis: APPLICATION
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S4:P3S7
+      - SRC:S4:P3S8
+      note: 법과 제도를 족쇄(구속)로 여긴다.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: gap_destructive
+      axis: APPLICATION
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S4:P3S8
+      note: 현실적 제약을 고려하지 못해 공동체의 질서와 타인의 자유를 해칠 수 있다.
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: eul_family_like
+      axis: APPLICATION
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S4:P3S3
+      note: 을은 가족이 아니라 이웃이라서 틀렸다고 오판하기 쉽지만, ‘가족 단계처럼’ 정서에 기대어 제도적 보장이 약하다는 공통 구조를
+        짚은 것이다.
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: 'TRUE'
+      claim_key: byeong_state
+      axis: APPLICATION
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S4:P3S5
+      note: 법적 보호와 이해관계의 조정.
+    - option_id: '5'
+      verdict: 'TRUE'
+      statement_truth: HALF_TRUE
+      claim_key: byeong_stuck_in_civil_society
+      axis: APPLICATION
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S4:P3S4
+      - SRC:S4:P3S5
+      note: 병이 법과 절차 안에서 권리를 보호받으려 한다는 것은 맞지만, 법적 보호와 이해관계의 조정은 국가 단계의 특징이다. 이해관계의
+        충돌로 불안정한 시민 사회 단계로 본 것은 어긋난다. [TEMPORAL_STAGE_SWAP]
+    second_best_option: '3'
+    second_best_risk: MEDIUM
+    reasoning_steps: 2
+    evidence_count: 2
+    immediate_elimination_count: 1
+    transfer_required: true
+    actual_difficulty: D3
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+- item_id: KOR-N05-040
+  target_difficulty: D3
+  pass_a:
+    answer: '2'
+    answer_evidence: &id041
+    - SRC:S4:P3S3
+    - SRC:S4:P3S4
+    - SRC:S4:P3S5
+  pass_b:
+    answer: '2'
+    blind: true
+    reviewer: independent blind reviewer agent, fresh context, student manuscript
+      only (no key, no metadata)
+    excluded_inputs: *id002
+    confidence: HIGH
+    answer_evidence: *id041
+    scope_trace:
+      status: IN_SCOPE
+      source_refs:
+      - DRIVE:1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+    option_judgments:
+    - option_id: '1'
+      verdict: 'FALSE'
+      statement_truth: UNSUPPORTED
+      claim_key: emotion_replaced_by_law
+      axis: TEXT_STRUCTURE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S4:P3S2
+      - SRC:S4:P3S3
+      note: 가족 단계가 정서에 기초한다는 것은 맞지만, 뒤 단계에서 정서가 사라지고 법과 제도‘만’ 남는다는 말은 없다.
+    - option_id: '2'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: weakness_complemented_stepwise
+      axis: TEXT_STRUCTURE
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S4:P3S3
+      - SRC:S4:P3S4
+      - SRC:S4:P3S5
+      note: '가족: 제도적 보장이 약함 → 시민 사회: 제도가 수립되어 보다 구체화되나 이해관계 충돌로 불안정 → 국가: 법과 제도로 법적
+        보호와 이해관계 조정이 가능해져 가장 구체화.'
+    - option_id: '3'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: civil_conflict_disappears
+      axis: TEXT_STRUCTURE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S4:P3S4
+      note: 시민 사회에서 제도가 수립되는 것은 맞지만, 바로 그 단계에서 이해관계의 충돌이 ‘발생하여’ 불안정하다. 충돌이 사라진다는 것은
+        반대이다.
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: state_suppresses_by_limiting
+      axis: TEXT_STRUCTURE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S4:P3S5
+      - SRC:S4:P3S6
+      note: 국가가 충돌을 다룬다는 방향은 맞지만, 헤겔에게 법과 제도는 자유를 제한하는 외적 강제가 아니라 조정을 가능하게 하는 조건이다.
+        [EXPLICIT_POSITION_VS_CRITIQUE_SWAP]
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: 'FALSE'
+      claim_key: choice_expands
+      axis: TEXT_STRUCTURE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S4:P3S7
+      - SRC:S4:P3S8
+      note: 선택 가능성만으로 이해된 자유는 헤겔이 비판한 추상적 자유이다.
+    second_best_option: '3'
+    second_best_risk: MEDIUM
+    reasoning_steps: 3
+    evidence_count: 3
+    immediate_elimination_count: 0
+    transfer_required: false
+    actual_difficulty: D3
+  gates:
+    FACTUAL_ACCURACY_REVIEW: PASS
+    DIFFICULTY_MATCH: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
+    ALL_OPTION_AUDIT: PASS
+    UNIQUE_ANSWER: PASS
+set_gates:
+  D4_SHORT: PASS
+  MANUSCRIPT_CONTAMINATION: PASS
+  STRUCTURE: PASS
+  MID_GAP: PASS
+  ANSWER_COUNT_MATCH: PASS
+  PASSAGE_TRUNCATION: PASS
+  TOO_EASY: FAIL
+  STRUCTURE_BIAS: PASS
+content_lock: true

@@ -52,6 +52,7 @@ sets:
   - '* 주재소(駐在所): 일제 강점기에 순사가 머무르며 사무를 보던 곳.'
   - '* 내임을 내다: 배웅하다.'
   - '* 아이보개: 아이를 돌보는 일.'
+  - '* 느끼다: 서럽거나 벅차서 흐느껴 울다.'
 - id: S3
   works:
   - label: null
@@ -154,7 +155,7 @@ items:
   coverage: EXPRESSION_METHOD_AND_EFFECT
   core_exam_point: true
   balance: CORE_EXAM_POINT
-  difficulty: D3
+  difficulty: D2
   stem: 윗글에서 비슷한 짜임의 구절을 나란히 놓은 부분에 대한 설명으로 적절하지 않은 것은?
   options:
   - '3~4행: ‘-거나 못 -거나’를 되풀이하여, 먹는 일과 입는 일 어느 것도 제대로 해결되지 못하는 형편을 드러낸다.'
@@ -207,6 +208,7 @@ items:
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
+  author_target_difficulty: D3
 - item_id: KOR-N05-003
   set: S1
   format: MCQ
@@ -412,7 +414,7 @@ items:
   coverage: STRUCTURE_OR_DEVELOPMENT
   core_exam_point: true
   balance: CORE_EXAM_POINT
-  difficulty: D3
+  difficulty: D2
   stem: 윗글의 흐름을 고려할 때, 28~29행이 하는 역할로 가장 적절한 것은?
   options:
   - 앞에서 늘어놓은 괴로움을 ‘어려운 일’로 한데 묶은 뒤, 그 괴로움을 가져온 대상을 불러내어 뒤의 전송 장면으로 이어 준다.
@@ -470,6 +472,7 @@ items:
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
+  author_target_difficulty: D3
 - item_id: KOR-N05-007
   set: S1
   format: MCQ
@@ -477,7 +480,7 @@ items:
   coverage: STRUCTURE_OR_DEVELOPMENT
   core_exam_point: true
   balance: CORE_EXAM_POINT
-  difficulty: D3
+  difficulty: D2
   stem: <보기>를 참고하여 윗글을 감상한 내용으로 적절하지 않은 것은?
   view:
   - 가사는 4음보의 율격이 길게 이어지는 형식으로, 정서를 짧은 형식 안에 압축하고 함축하는 시조와 달리 체험의 세부를 차례로 풀어 놓을 수 있다. 그래서 가사에는 생활의 장면이 열거되기도 하고, 인물의 말이 직접 옮겨지기도 하며, 사건이 시간의 흐름에 따라 전개되기도 한다.
@@ -543,6 +546,7 @@ items:
   reasoning_steps: 3
   immediate_elimination: 1
   transfer: true
+  author_target_difficulty: D3
 - item_id: KOR-N05-008
   set: S1
   format: MCQ
@@ -618,11 +622,11 @@ items:
   coverage: STRUCTURE_OR_DEVELOPMENT
   core_exam_point: false
   balance: ADVANCED_DISCRIMINATION
-  difficulty: D4
+  difficulty: D3
   stem: 다음은 윗글에서 화자가 무언가를 하였으나 그 결과가 뜻대로 되지 않은 장면을 정리한 것이다. 윗글에 비추어 적절한 것만을 <보기>에서 있는 대로 고른 것은?
   view:
   - ㄱ. 봄을 맞아 집 안에서 씨앗을 마련하였으나(9행) → 쥐가 씨앗을 모두 먹어 버려 한 되도 부치지 못하였다(10~11행).
-  - ㄴ. 아이들에게 힘써 일하라고 당부하며 건더기를 건져 주었으나(13~14행) → 아이들은 못마땅한 기색을 보였고 농사는 끝내 그르치고 말았다(15~16행).
+  - ㄴ. 아이들에게 힘써 일하라고 당부하고 죽의 건더기를 건져 종에게 주었으나(13~14행) → 아이들은 못마땅한 기색을 보였고 농사는 끝내 그르치고 말았다(15~16행).
   - ㄷ. 견딜 수가 없어 근심 없는 장초를 부러워하였으나(20~21행) → 그해 풍년이 들어 근심이 줄자 장초를 부러워할 까닭이 사라졌다(22행).
   - ㄹ. 술과 음식을 갖추어 가난 귀신을 전송하였으나(30~31행) → 가난 귀신은 불평하며 떠나기를 거부하였다(32~36행).
   options:
@@ -683,6 +687,7 @@ items:
   reasoning_steps: 3
   immediate_elimination: 0
   transfer: true
+  author_target_difficulty: D4
 - item_id: KOR-N05-010
   set: S1
   format: MCQ
@@ -690,7 +695,7 @@ items:
   coverage: SPEAKER_ATTITUDE_OR_EMOTION
   core_exam_point: false
   balance: ADVANCED_DISCRIMINATION
-  difficulty: D4
+  difficulty: D3
   stem: 윗글의 32~39행에 나타난 인물의 말과 생각을 이해한 내용으로 가장 적절한 것은?
   options:
   - 33~35행은 화자가 가난 귀신에게 한 말로, 평생을 함께해 온 사이이니 이제는 떠나 달라고 간곡히 청하는 내용이다.
@@ -752,6 +757,7 @@ items:
   reasoning_steps: 3
   immediate_elimination: 0
   transfer: false
+  author_target_difficulty: D4
 - item_id: KOR-N05-011
   set: S2
   format: MCQ
@@ -825,7 +831,7 @@ items:
   coverage: EXPRESSION_METHOD_AND_EFFECT
   core_exam_point: true
   balance: CORE_EXAM_POINT
-  difficulty: D3
+  difficulty: D2
   stem: 윗글의 감각적 표현에 대한 설명으로 적절하지 않은 것은?
   options:
   - ‘차디찬 아침’(1행)은 촉각적 표현으로, 시의 첫머리부터 계집아이가 길을 나서는 추운 계절적 배경을 드러낸다.
@@ -878,6 +884,7 @@ items:
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
+  author_target_difficulty: D3
 - item_id: KOR-N05-013
   set: S2
   format: MCQ
@@ -948,7 +955,7 @@ items:
   coverage: SPEAKER_ATTITUDE_OR_EMOTION
   core_exam_point: true
   balance: CORE_EXAM_POINT
-  difficulty: D3
+  difficulty: D2
   stem: 윗글에서 화자의 정서가 드러나는 방식의 흐름을 정리한 것으로 가장 적절한 것은?
   options:
   - 처음에는 계집아이의 겉모습을 담담하게 그리다가, 울음을 보고는 연민을 직접 토로하고, 끝에서는 아이의 앞날을 걱정하는 말로 마무리한다.
@@ -1007,6 +1014,7 @@ items:
   reasoning_steps: 2
   immediate_elimination: 0
   transfer: false
+  author_target_difficulty: D3
 - item_id: KOR-N05-015
   set: S2
   format: MCQ
@@ -1080,7 +1088,7 @@ items:
   coverage: STRUCTURE_OR_DEVELOPMENT
   core_exam_point: true
   balance: CORE_EXAM_POINT
-  difficulty: D3
+  difficulty: D2
   stem: <보기>를 바탕으로 윗글을 감상한 내용으로 적절하지 않은 것은?
   view:
   - 서정시 가운데에는 인물과 사건, 배경을 갖추어 이야기처럼 전개되는 시가 있다. 이런 시에서 인물의 행동은 시간의 순서에 따라 제시되고, 화자는 이야기 밖에서 그것을 전하는 서술자처럼 기능하기도 한다. 다만 시는 사건의 까닭을 모두 풀어 밝히기보다 장면을 보여 주고 그 사이에 여백을 남기는 경우가 많다.
@@ -1137,6 +1145,7 @@ items:
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
+  author_target_difficulty: D3
 - item_id: KOR-N05-017
   set: S2
   format: MCQ
@@ -1144,7 +1153,7 @@ items:
   coverage: THEME_OR_CENTRAL_MEANING
   core_exam_point: false
   balance: ADVANCED_DISCRIMINATION
-  difficulty: D4
+  difficulty: D2
   stem: 윗글과 1~10번의 「탄궁가」를 비교하여 이해한 내용으로 가장 적절한 것은?
   options:
   - 두 작품은 모두 가난하고 고된 삶을 다루는데, 「탄궁가」는 화자 자신의 처지를, 윗글은 화자가 대상과 자신을 동일시한 처지를 그린다.
@@ -1196,6 +1205,7 @@ items:
   reasoning_steps: 3
   immediate_elimination: 0
   transfer: true
+  author_target_difficulty: D4
 - item_id: KOR-N05-018
   set: S2
   format: MCQ
@@ -1203,7 +1213,7 @@ items:
   coverage: THEME_OR_CENTRAL_MEANING
   core_exam_point: false
   balance: ADVANCED_DISCRIMINATION
-  difficulty: D4
+  difficulty: D2
   stem: 윗글을 읽고 학생들이 나눈 감상 가운데 윗글에 근거한 것으로 타당한 것만을 있는 대로 고른 것은?
   view:
   - '학생 1: ‘내지인 주재소장’이라는 말로 보아, 계집아이가 일한 집은 식민 통치와 관련된 집안이었다고 짐작할 수 있어.'
@@ -1263,6 +1273,7 @@ items:
   immediate_elimination: 0
   transfer: true
   author_note: '학생 2: 13~16행은 16행 ‘-었을 것이다’로 끝나는 화자의 짐작이다. 계집아이가 밝힌 사실이 아니다 [INFERENCE_TO_FACT].'
+  author_target_difficulty: D4
 - item_id: KOR-N05-019
   set: S2
   format: MCQ
@@ -1270,7 +1281,7 @@ items:
   coverage: EXPRESSION_METHOD_AND_EFFECT
   core_exam_point: true
   balance: CORE_EXAM_POINT
-  difficulty: D3
+  difficulty: D2
   stem: 다음은 윗글을 읽고 한 학생이 정리한 내용이다. ⓐ~ⓔ 중 윗글에 비추어 수정이 필요한 것은?
   view:
   - 1~3행에서는 ⓐ추운 아침, 텅 빈 차에 나이 어린 계집아이가 홀로 오르는 장면으로 시를 열어 아이의 외로운 처지를 짐작하게 한다. 4~5행에서는 ⓑ새 저고리의 선명한 빛깔과 몹시 터진 손잔등을 나란히 보여 준다. 6~8행에서는 ⓒ아이의 목적지와 삼촌이 산다는 곳을 전해 들은 말의 형식으로 제시한다. 11행에서는 ⓓ‘운다’를 되풀이하면서 ‘느끼며’를 더해, 아이가 울음을 참으려 애쓰는 모습을 보여 준다. 13~16행에서는 ⓔ아이가 남의 집에서 해 왔을 일들을 늘어놓아, 화자가 짐작한 아이의 고된 삶을 구체화한다.
@@ -1327,6 +1338,7 @@ items:
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
+  author_target_difficulty: D3
 - item_id: KOR-N05-020
   set: S2
   format: MCQ
@@ -1334,7 +1346,7 @@ items:
   coverage: KEY_WORD_IMAGE_OBJECT_FUNCTION
   core_exam_point: true
   balance: CORE_EXAM_POINT
-  difficulty: D3
+  difficulty: D2
   stem: 9행의 ‘쌔하얗게 얼은 자동차 유리창’이 윗글에서 하는 기능으로 적절한 것은?
   options:
   - 차 안과 밖을 나누는 경계이면서, 화자가 바깥에서 배웅하는 이들을 바라보게 해 주는 통로 구실을 한다.
@@ -1389,6 +1401,7 @@ items:
   reasoning_steps: 2
   immediate_elimination: 0
   transfer: false
+  author_target_difficulty: D3
 - item_id: KOR-N05-021
   set: S3
   format: MCQ
@@ -1461,7 +1474,7 @@ items:
   coverage: EXPRESSION_METHOD_AND_EFFECT
   core_exam_point: true
   balance: CORE_EXAM_POINT
-  difficulty: D3
+  difficulty: D2
   stem: 윗글의 표현에 대한 설명으로 적절하지 않은 것은?
   options:
   - 1행과 12행은 비슷한 짜임을 되풀이하되 12행에 ‘지금’을 넣어, 과거에 겪은 일이 현재에도 똑같이 되풀이되고 있음을 드러낸다.
@@ -1513,6 +1526,7 @@ items:
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
+  author_target_difficulty: D3
 - item_id: KOR-N05-023
   set: S3
   format: MCQ
@@ -1520,7 +1534,7 @@ items:
   coverage: KEY_WORD_IMAGE_OBJECT_FUNCTION
   core_exam_point: true
   balance: CORE_EXAM_POINT
-  difficulty: D3
+  difficulty: D2
   stem: <보기>를 바탕으로 ㉠~㉤을 감상한 내용으로 가장 적절한 것은?
   view:
   - 시에서는 인물의 처지나 화자의 정서를 직접 말하는 대신, 풍경이나 사물에 기대어 드러내기도 한다. 이때 풍경이나 사물은 인물이 놓인 상황과 겹쳐 읽히며 시 전체의 분위기를 만든다.
@@ -1576,6 +1590,7 @@ items:
   reasoning_steps: 2
   immediate_elimination: 0
   transfer: true
+  author_target_difficulty: D3
 - item_id: KOR-N05-024
   set: S3
   format: MCQ
@@ -1659,7 +1674,7 @@ items:
   coverage: SPEAKER_ATTITUDE_OR_EMOTION
   core_exam_point: true
   balance: CORE_EXAM_POINT
-  difficulty: D3
+  difficulty: D2
   stem: 윗글의 1연과 2연에서 사내를 대하는 화자의 태도를 비교한 것으로 적절한 것은?
   options:
   - 1연에서는 사내의 울음 앞에서 어찌할 줄 몰라 괴로워했으나, 2연에서는 그 일을 떠올리며 울음을 멈추게 하지 못한 자신을 탓한다.
@@ -1714,6 +1729,7 @@ items:
   reasoning_steps: 2
   immediate_elimination: 0
   transfer: false
+  author_target_difficulty: D3
 - item_id: KOR-N05-026
   set: S3
   format: MCQ
@@ -1721,7 +1737,7 @@ items:
   coverage: THEME_OR_CENTRAL_MEANING
   core_exam_point: true
   balance: CORE_EXAM_POINT
-  difficulty: D3
+  difficulty: D2
   stem: 제목 ‘기억할 만한 지나침’을 윗글과 관련지을 때, 그 ‘지나침’이 기억할 만한 것이 된 까닭으로 적절한 것은?
   options:
   - 그날 화자가 울음이 그칠 때까지 떠나지 않은 일이 사내에게 큰 위로가 되었다는 것을, 훗날 화자가 알게 되었기 때문이다.
@@ -1776,6 +1792,7 @@ items:
   reasoning_steps: 3
   immediate_elimination: 0
   transfer: false
+  author_target_difficulty: D3
 - item_id: KOR-N05-027
   set: S3
   format: MCQ
@@ -1783,7 +1800,7 @@ items:
   coverage: STRUCTURE_OR_DEVELOPMENT
   core_exam_point: false
   balance: ADVANCED_DISCRIMINATION
-  difficulty: D4
+  difficulty: D3
   stem: 윗글의 2연을 1연과 관련지어 이해한 내용으로 적절한 것만을 <보기>에서 있는 대로 고른 것은?
   view:
   - ㄱ. 12행의 ‘우연히’는 1행의 ‘우연히’와 호응하여, 사내를 떠올린 일 역시 화자가 뜻하여 한 일이 아니었음을 드러낸다.
@@ -1845,6 +1862,7 @@ items:
   immediate_elimination: 0
   transfer: true
   author_note: ㄴ은 동일시의 범위를 넘어선다. 사내가 울었던 까닭은 시에 나오지 않는다 [SCOPE_OVERREACH].
+  author_target_difficulty: D4
 - item_id: KOR-N05-028
   set: S3
   format: MCQ
@@ -1852,7 +1870,7 @@ items:
   coverage: SPEAKER_ATTITUDE_OR_EMOTION
   core_exam_point: false
   balance: ADVANCED_DISCRIMINATION
-  difficulty: D3
+  difficulty: D2
   stem: 윗글에서 부정의 표현이 쓰인 구절을 이해한 내용으로 적절하지 않은 것은?
   options:
   - ‘움직이지 못하는 건물들’(3행)은 눈을 뒤집어쓴 채 굳어 있는 도시의 경직된 모습을 드러낸다.
@@ -1904,6 +1922,7 @@ items:
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
+  author_target_difficulty: D3
 - item_id: KOR-N05-029
   set: S3
   format: MCQ
@@ -1911,7 +1930,7 @@ items:
   coverage: KEY_WORD_IMAGE_OBJECT_FUNCTION
   core_exam_point: false
   balance: ADVANCED_DISCRIMINATION
-  difficulty: D4
+  difficulty: D2
   stem: 윗글의 ‘창’과 관련된 표현에 주목하여 1연과 2연을 이해한 내용으로 가장 적절한 것은?
   options:
   - 1연에서 화자는 창밖에서 사내를 보았고, 2연에서도 화자는 창밖에 서서 텅 빈 사무실을 들여다보고 있어, 과거와 같은 자리에서 사내를 떠올린다.
@@ -1967,6 +1986,7 @@ items:
   reasoning_steps: 3
   immediate_elimination: 0
   transfer: false
+  author_target_difficulty: D4
 - item_id: KOR-N05-030
   set: S3
   format: MCQ
@@ -1974,7 +1994,7 @@ items:
   coverage: EXPLICIT_CONTENT_ACCURACY
   core_exam_point: true
   balance: CORE_EXAM_POINT
-  difficulty: D3
+  difficulty: D2
   stem: 윗글에서 화자가 사내의 슬픔에 공감하고 있음을 보여 주는 근거로 보기 어려운 것은?
   options:
   - 눈은 퍼부었고 내 뒤에는 아무도 없었다 (8행)
@@ -2023,6 +2043,7 @@ items:
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
+  author_target_difficulty: D3
 - item_id: KOR-N05-031
   set: S4
   format: MCQ
@@ -2030,7 +2051,7 @@ items:
   coverage: TEXT_OR_ARGUMENT_STRUCTURE
   core_exam_point: true
   balance: CORE_EXAM_POINT
-  difficulty: D3
+  difficulty: D2
   stem: 윗글의 서술 방식에 대한 설명으로 적절하지 않은 것은?
   options:
   - 두 사상가가 모두 자유를 핵심 개념으로 보았음을 먼저 밝힌 뒤, 각각의 견해를 차례로 설명하고 있다.
@@ -2088,6 +2109,7 @@ items:
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
+  author_target_difficulty: D3
 - item_id: KOR-N05-032
   set: S4
   format: MCQ
@@ -2095,7 +2117,7 @@ items:
   coverage: EXPLICIT_CONTENT_ACCURACY
   core_exam_point: true
   balance: CORE_EXAM_POINT
-  difficulty: D3
+  difficulty: D2
   stem: 윗글을 통해 알 수 있는 내용으로 가장 적절한 것은?
   options:
   - 칸트에 따르면 현상계에서 인간의 의지는 감각적 욕구에 의해서만 규정되며, 그 밖의 원인은 작용하지 않는다.
@@ -2146,6 +2168,7 @@ items:
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
+  author_target_difficulty: D3
 - item_id: KOR-N05-033
   set: S4
   format: MCQ
@@ -2153,7 +2176,7 @@ items:
   coverage: KEY_CONCEPT_RELATION_OR_CONTRAST
   core_exam_point: true
   balance: CORE_EXAM_POINT
-  difficulty: D2
+  difficulty: D1
   stem: 다음은 윗글의 내용을 정리한 것이다. ㉮~㉲에 들어갈 말을 바르게 묶은 것은?
   view:
   - '[칸트] 인간이 특정한 상황에서 세운 주관적 행위 원리인 ( ㉮ )이/가 모든 이성적 존재자에게 적용했을 때 모순 없이 실현되는 ( ㉯ )을/를 갖추면 도덕 법칙이 되고, 이 도덕 법칙에 따라 ( ㉰ )이/가 원인이 되어 의지를 규정하고 행위를 실천할 때 인간은 자유를 의식한다.'
@@ -2214,6 +2237,7 @@ items:
   reasoning_steps: 2
   immediate_elimination: 0
   transfer: true
+  author_target_difficulty: D2
 - item_id: KOR-N05-034
   set: S4
   format: MCQ
@@ -2221,7 +2245,7 @@ items:
   coverage: APPLICATION_OR_CONDITION
   core_exam_point: true
   balance: CORE_EXAM_POINT
-  difficulty: D3
+  difficulty: D2
   stem: 윗글의 칸트의 관점에서 <보기>의 ㉠~㉣을 이해한 내용으로 가장 적절한 것은?
   view:
   - 민수는 도서관에서 빌린 책의 반납일이 오늘이라는 것을 알았다. 밖에는 비가 내리고 있었고, ㉠민수는 도서관까지 걸어가는 것이 귀찮아 반납을 미루고 싶었다. 그때 민수는 ㉡‘빌린 물건은 약속한 날에 돌려주어야 한다’는 원리를 떠올렸고, ㉢이 원리를 모든 이성적 존재자에게 적용해 보아도 아무런 모순이 생기지 않는다고 판단하였다. 결국 민수는 ㉣귀찮은 마음을 누르고 비를 맞으며 책을 반납하러 갔다.
@@ -2276,6 +2300,7 @@ items:
   reasoning_steps: 3
   immediate_elimination: 0
   transfer: true
+  author_target_difficulty: D3
 - item_id: KOR-N05-035
   set: S4
   format: MCQ
@@ -2283,7 +2308,7 @@ items:
   coverage: CENTRAL_CLAIM_OR_CONCEPT
   core_exam_point: true
   balance: CORE_EXAM_POINT
-  difficulty: D3
+  difficulty: D2
   stem: 윗글에 나타난 칸트의 견해를 바탕으로 추론한 내용으로 적절한 것은?
   options:
   - 겉으로 같은 행위라도, 그 의지를 규정한 원인이 무엇이냐에 따라 타율적인 행위가 될 수도 있고 자유를 의식하는 행위가 될 수도 있다.
@@ -2337,6 +2362,7 @@ items:
   reasoning_steps: 3
   immediate_elimination: 0
   transfer: false
+  author_target_difficulty: D3
 - item_id: KOR-N05-036
   set: S4
   format: MCQ
@@ -2344,7 +2370,7 @@ items:
   coverage: KEY_CONCEPT_RELATION_OR_CONTRAST
   core_exam_point: false
   balance: ADVANCED_DISCRIMINATION
-  difficulty: D4
+  difficulty: D3
   stem: 윗글의 헤겔의 견해에 대해 학생들이 나눈 대화이다. 윗글에 비추어 적절한 판단을 한 학생만을 있는 대로 고른 것은?
   view:
   - '학생 A: 헤겔은 법과 제도를 자유를 가로막는 벽이 아니라, 완성된 형태의 자유가 실현되기 위한 조건으로 보았어.'
@@ -2402,6 +2428,7 @@ items:
   immediate_elimination: 1
   transfer: true
   author_note: 'B: 헤겔은 ‘개인의 의지가 사회적 관계와 제도 속에서 구현될 때’ 자유가 실현된다고 보았고(P3S1) 법과 제도를 ‘조건’이라 하였다. 제도만 있으면 저절로 실현된다는 것은 조건을 충분조건으로 부풀린 것이다 [CONDITION_PARTIAL_MATCH].'
+  author_target_difficulty: D4
 - item_id: KOR-N05-037
   set: S4
   format: MCQ
@@ -2409,7 +2436,7 @@ items:
   coverage: KEY_CONCEPT_RELATION_OR_CONTRAST
   core_exam_point: false
   balance: ADVANCED_DISCRIMINATION
-  difficulty: D4
+  difficulty: D3
   stem: 윗글의 칸트와 헤겔의 관점에서 <보기>의 주장을 평가한 내용으로 가장 적절한 것은?
   view:
   - 어떤 사상가는 개인이 속한 공동체에서 오래 이어져 온 관습과 규범을 의심 없이 받아들여 그대로 따를 때 사람이 가장 자유롭다고 본다. 그에 따르면 개인이 스스로 행위의 원리를 세우고 그것이 옳은지 따지는 일은 공동체를 어지럽힐 뿐이다.
@@ -2462,6 +2489,7 @@ items:
   reasoning_steps: 3
   immediate_elimination: 1
   transfer: true
+  author_target_difficulty: D4
 - item_id: KOR-N05-038
   set: S4
   format: MCQ
@@ -2469,7 +2497,7 @@ items:
   coverage: KEY_CONCEPT_RELATION_OR_CONTRAST
   core_exam_point: false
   balance: ADVANCED_DISCRIMINATION
-  difficulty: D4
+  difficulty: D3
   stem: 윗글의 ‘타율적인 것’과 ‘추상적 자유’를 비교한 내용으로 가장 적절한 것은?
   options:
   - 둘 다 감각적 욕구와 같이 이성이 아닌 것이 원인이 되어 의지가 규정된 상태를 가리킨다는 점에서, 윗글에서 같은 뜻으로 쓰인 말이다.
@@ -2525,6 +2553,7 @@ items:
   reasoning_steps: 3
   immediate_elimination: 0
   transfer: false
+  author_target_difficulty: D4
 - item_id: KOR-N05-039
   set: S4
   format: MCQ

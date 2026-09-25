@@ -1,0 +1,97 @@
+{
+  "tool": "ARC_PRODUCTION_PIPELINE_V1.0",
+  "batch_id": "KOR-N05-SUPP4-40Q-20260925",
+  "product": "ARC_N",
+  "status": "BLOCKED",
+  "blocking_gates": [
+    "CONTENT_QA",
+    "DIFFICULTY_BALANCE_GATE",
+    "TYPESETTER_ADMISSION"
+  ],
+  "gates": {
+    "CONTENT_QA": "FAIL",
+    "BLIND_INDEPENDENT_SOLVE": "PASS",
+    "KOR_EXAM_REALISM_GATE": "PASS",
+    "KOR_AI_STYLE_LEAK_GATE": "PASS",
+    "KOR_SCHOOL_TASK_FAMILY_GATE": "PASS",
+    "ANSWER_LENGTH_AUDIT": "PASS",
+    "OBVIOUS_ANSWER_GATE": "PASS",
+    "ATTRACTIVE_DISTRACTOR_GATE": "PASS",
+    "CONSTRUCTED_RESPONSE_GATE": "NOT_APPLICABLE",
+    "POINTS_GATE": "PASS",
+    "STEM_FORM_GATE": "PASS",
+    "ANSWER_POSITION_GATE": "PASS",
+    "DIFFICULTY_BALANCE_GATE": "FAIL",
+    "HANDOFF": "PASS",
+    "TYPESETTER_ADMISSION": "BLOCKED: QA_EVIDENCE_FAILED: SET_TOO_EASY_NOT_PASS",
+    "TYPESET": "PASS",
+    "BRAND": "PASS",
+    "PDF_QC": "PASS"
+  },
+  "findings": [
+    {
+      "code": "BALANCE_D2_OUT_OF_RANGE",
+      "severity": "WARN",
+      "share": 0.625,
+      "target": [
+        0.3,
+        0.4
+      ]
+    },
+    {
+      "code": "BALANCE_D4_OUT_OF_RANGE",
+      "severity": "WARN",
+      "share": 0.0,
+      "target": [
+        0.15,
+        0.25
+      ]
+    },
+    {
+      "code": "BALANCE_D45_OUT_OF_RANGE",
+      "severity": "FAIL",
+      "share": 0.0,
+      "target": [
+        0.15,
+        0.35
+      ]
+    }
+  ],
+  "metrics": {
+    "difficulty": {
+      "D1": 1,
+      "D2": 25,
+      "D3": 14
+    },
+    "answer_positions": {
+      "1": 6,
+      "2": 9,
+      "3": 7,
+      "4": 10,
+      "5": 8
+    },
+    "longest_option_is_key_rate": 0.125,
+    "single_best_stems": 14,
+    "except_stems": 8,
+    "stem_skeleton_max_run": 2,
+    "balance": {
+      "D1": 0.025,
+      "D2": 0.625,
+      "D3": 0.35,
+      "D4": 0.0,
+      "D5": 0.0,
+      "D45": 0.0,
+      "ADVANCED": 0.25
+    },
+    "total_points": null,
+    "mcq_count": 40,
+    "cr_count": 0
+  },
+  "final_quality": null,
+  "pdf": "/tmp/claude-0/-home-user-ARC-System/b5104bfa-d8eb-595b-8a6a-d463b4cbb382/scratchpad/final/KOR-N05-SUPP4-40Q-20260925_DRAFT.pdf",
+  "answer_key_pdf": null,
+  "governance": {
+    "FINAL_USER_APPROVAL": "PENDING",
+    "DRIVE_SAVE": "BLOCKED"
+  }
+}
