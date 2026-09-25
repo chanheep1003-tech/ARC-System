@@ -3,7 +3,7 @@ subject: KOR
 item_count: 40
 item_format: MCQ5
 uses_source_text: true
-student_manuscript_sha256: 5825b47d70c56280f3cc6f36bafe47ec1e34dcf786729417e03000af8ad5f520
+student_manuscript_sha256: 653b3b65815a9c5ecafd1762b7e38a2165471ed1890b987b17333cd25070c56e
 source_text_locks:
 - source_text_id: KOR-SUPP-2026-LIT-TANGUNGGA
   source_origin: CONNECTED_DRIVE_RAW_SCHOOL_SOURCE
@@ -192,13 +192,13 @@ items:
     transfer_required: false
     actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-002
   target_difficulty: D2
   pass_a:
@@ -269,7 +269,7 @@ items:
       - SRC:S1:L26
       - SRC:S1:L27
       note: 제사(조상)와 원근 친척·손님 접대를 ‘무엇으로’, ‘어이하여’ 하겠느냐고 걱정한다.
-    second_best_option: '4'
+    second_best_option: '1'
     second_best_risk: MEDIUM
     reasoning_steps: 2
     evidence_count: 2
@@ -277,15 +277,15 @@ items:
     transfer_required: false
     actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-003
-  target_difficulty: D3
+  target_difficulty: D2
   pass_a:
     answer: '5'
     answer_evidence: &id004
@@ -365,17 +365,17 @@ items:
     evidence_count: 3
     immediate_elimination_count: 0
     transfer_required: false
-    actual_difficulty: D3
+    actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-004
-  target_difficulty: D3
+  target_difficulty: D2
   pass_a:
     answer: '4'
     answer_evidence: &id005
@@ -465,17 +465,17 @@ items:
     evidence_count: 7
     immediate_elimination_count: 0
     transfer_required: false
-    actual_difficulty: D3
+    actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-005
-  target_difficulty: D3
+  target_difficulty: D2
   pass_a:
     answer: '2'
     answer_evidence: &id006
@@ -551,15 +551,15 @@ items:
     evidence_count: 2
     immediate_elimination_count: 1
     transfer_required: true
-    actual_difficulty: D3
+    actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-006
   target_difficulty: D2
   pass_a:
@@ -646,13 +646,13 @@ items:
     transfer_required: false
     actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-007
   target_difficulty: D2
   pass_a:
@@ -745,13 +745,13 @@ items:
     transfer_required: true
     actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-008
   target_difficulty: D3
   pass_a:
@@ -836,33 +836,33 @@ items:
     transfer_required: true
     actual_difficulty: D3
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-009
   target_difficulty: D3
   pass_a:
     answer: '2'
     answer_evidence: &id010
-    - SRC:S1:L13
-    - SRC:S1:L14
-    - SRC:S1:L15
-    - SRC:S1:L16
+    - SRC:S1:L29
     - SRC:S1:L30
     - SRC:S1:L31
     - SRC:S1:L32
     - SRC:S1:L36
+    - SRC:S1:L37
+    - SRC:S1:L38
+    - SRC:S1:L39
   pass_b:
     answer: '2'
     blind: true
     reviewer: independent blind reviewer agent, fresh context, student manuscript
       only (no key, no metadata)
     excluded_inputs: *id002
-    confidence: MEDIUM
+    confidence: HIGH
     answer_evidence: *id010
     scope_trace:
       status: IN_SCOPE
@@ -871,87 +871,92 @@ items:
     option_judgments:
     - option_id: '1'
       verdict: 'FALSE'
-      statement_truth: 'FALSE'
-      claim_key: gn
+      statement_truth: HALF_TRUE
+      claim_key: farming_failure_trigger
       axis: STRUCTURE
-      competitiveness: MEDIUM
+      competitiveness: STRONG
       evidence_refs:
-      - SRC:S1:L10
-      - SRC:S1:L11
-      note: ㄱ이 부적절하다.
+      - SRC:S1:L16
+      - SRC:S1:L29
+      - SRC:S1:L37
+      note: 농사의 좌절은 문제 상황에 속하지만, 그 뒤 29~36행의 전송과 항변을 거쳐 37행에서 전환이 일어난다. 전환의 계기는 가난
+        귀신의 말이다. [TEMPORAL_STAGE_SWAP]
     - option_id: '2'
       verdict: 'TRUE'
       statement_truth: 'TRUE'
-      claim_key: nr
+      claim_key: sendoff_protest_reframe
       axis: STRUCTURE
       competitiveness: CORRECT
       evidence_refs:
-      - SRC:S1:L13
-      - SRC:S1:L14
-      - SRC:S1:L15
-      - SRC:S1:L16
+      - SRC:S1:L29
       - SRC:S1:L30
       - SRC:S1:L31
       - SRC:S1:L32
       - SRC:S1:L36
-      note: 'ㄴ: 13~14행 당부와 건더기 → 15행 못마땅한 기색, 16행 농사를 그르침. ㄹ: 30~31행 전송 → 32~36행 불평·항변·협박.'
+      - SRC:S1:L37
+      - SRC:S1:L38
+      - SRC:S1:L39
+      note: 전송(해결 시도) → 귀신의 항변·협박(좌절) → ‘네 말도 다 옳도다’, ‘네 혼자 신의 있어’(관점 전환). 문제는 해결되지
+        않았고 관점이 바뀌었다.
     - option_id: '3'
       verdict: 'FALSE'
-      statement_truth: 'FALSE'
-      claim_key: dr
-      axis: STRUCTURE
-      competitiveness: MEDIUM
-      evidence_refs:
-      - SRC:S1:L22
-      note: ㄷ이 부적절하고 ㄴ을 빠뜨렸다.
-    - option_id: '4'
-      verdict: 'FALSE'
-      statement_truth: 'FALSE'
-      claim_key: gnr
+      statement_truth: HALF_TRUE
+      claim_key: problem_solved_trigger
       axis: STRUCTURE
       competitiveness: STRONG
       evidence_refs:
-      - SRC:S1:L10
-      - SRC:S1:L11
-      note: 'ㄱ: 올벼 씨는 ‘반 넘게’ 먹혔고 기장·피·조·팥은 ‘서너 되 부쳤’다. 모두 먹혀 한 되도 부치지 못했다는 것은 정도가
-        어긋난다. [DEGREE_ABSOLUTIZATION]'
-    - option_id: '5'
+      - SRC:S1:L36
+      - SRC:S1:L37
+      - SRC:S1:L41
+      note: 전송이 해결 시도인 것은 맞지만, 가난 귀신은 떠나지 않았다. <보기>가 말하듯 전환은 문제가 해결되어서가 아니다. [CONDITION_PARTIAL_MATCH]
+    - option_id: '4'
       verdict: 'FALSE'
-      statement_truth: 'FALSE'
-      claim_key: ndr
+      statement_truth: HALF_TRUE
+      claim_key: self_insight_changu
       axis: STRUCTURE
       competitiveness: STRONG
       evidence_refs:
       - SRC:S1:L20
       - SRC:S1:L21
-      - SRC:S1:L22
-      note: 'ㄷ: 22행 ‘시절이 풍년인들’은 가정이다. 실제로 풍년이 들어 근심이 줄었다는 것은 가정을 사실로 읽은 오답이다. [HYPOTHETICAL_AS_FACT]'
+      - SRC:S1:L37
+      note: 1~28행이 문제 상황인 것은 맞지만, 21행 ‘부러워하나 어찌하리’는 그럴 수 없다는 탄식이다. 전환의 계기는 가난 귀신의
+        말(37행)이다.
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: rejects_ghost_words
+      axis: STRUCTURE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S1:L37
+      - SRC:S1:L39
+      note: 32~36행이 다른 존재의 말인 것은 맞지만, 37행에서 화자는 ‘네 말도 다 옳도다’라며 받아들이고 관점이 바뀐다.
     second_best_option: '4'
     second_best_risk: MEDIUM
-    reasoning_steps: 3
+    reasoning_steps: 4
     evidence_count: 8
     immediate_elimination_count: 0
     transfer_required: true
     actual_difficulty: D3
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-010
   target_difficulty: D3
   pass_a:
-    answer: '5'
+    answer: '3'
     answer_evidence: &id011
     - SRC:S1:L33
     - SRC:S1:L34
     - SRC:S1:L38
     - SRC:S1:L39
   pass_b:
-    answer: '5'
+    answer: '3'
     blind: true
     reviewer: independent blind reviewer agent, fresh context, student manuscript
       only (no key, no metadata)
@@ -965,51 +970,27 @@ items:
     option_judgments:
     - option_id: '1'
       verdict: 'FALSE'
-      statement_truth: 'FALSE'
-      claim_key: l33_35_speaker_request
-      axis: ATTITUDE
-      competitiveness: MEDIUM
-      evidence_refs:
-      - SRC:S1:L32
-      - SRC:S1:L33
-      - SRC:S1:L35
-      note: 32행 ‘이른 말이’의 주체는 가난 귀신이다. 33~35행은 가라는 말을 따지는 귀신의 항변이다. [OBSERVATION_IDENTIFICATION_SWAP]
-    - option_id: '2'
-      verdict: 'FALSE'
-      statement_truth: 'FALSE'
+      statement_truth: HALF_TRUE
       claim_key: l38_39_ghost_speech
       axis: ATTITUDE
       competitiveness: STRONG
       evidence_refs:
+      - SRC:S1:L33
       - SRC:S1:L37
       - SRC:S1:L38
       - SRC:S1:L39
-      note: 37행에서 화자가 귀신을 ‘네’라 부르고, 38~39행은 그에 이어지는 화자의 생각이다. 말의 주체가 뒤바뀌었다.
+      note: 33~35행은 맞지만, 37행 ‘네 말도 다 옳도다’에서 화자가 귀신을 ‘네’라 부르고 38~39행은 그에 이어지는 화자의 생각이다.
+    - option_id: '2'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: fear_without_judgment
+      axis: ATTITUDE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L36
+      - SRC:S1:L37
+      note: 말의 주체는 맞지만, 37행 ‘돌이켜 생각하니’는 말을 따져 본 뒤의 인정이다. [UNSUPPORTED_CAUSE]
     - option_id: '3'
-      verdict: 'FALSE'
-      statement_truth: 'FALSE'
-      claim_key: ghost_argued_world
-      axis: ATTITUDE
-      competitiveness: STRONG
-      evidence_refs:
-      - SRC:S1:L33
-      - SRC:S1:L34
-      - SRC:S1:L35
-      - SRC:S1:L38
-      note: 가난 귀신의 말(33~35행)에는 ‘세상’이 나오지 않는다. 세상과의 대비는 화자가 38행에서 스스로 떠올린 것이다.
-    - option_id: '4'
-      verdict: 'FALSE'
-      statement_truth: 'FALSE'
-      claim_key: ghost_claims_loyalty_word
-      axis: ATTITUDE
-      competitiveness: STRONG
-      evidence_refs:
-      - SRC:S1:L33
-      - SRC:S1:L34
-      - SRC:S1:L35
-      - SRC:S1:L39
-      note: 가난 귀신은 어려서부터 희로애락을 함께했고 떠난 적이 없다는 점을 들어 따질 뿐이다. ‘신의’는 39행에서 화자가 붙인 평가이다.
-    - option_id: '5'
       verdict: 'TRUE'
       statement_truth: 'TRUE'
       claim_key: companionship_reinterpreted_as_loyalty
@@ -1020,8 +1001,30 @@ items:
       - SRC:S1:L34
       - SRC:S1:L38
       - SRC:S1:L39
-      note: 귀신은 33~34행에서 함께해 온 세월을 내세우고, 화자는 38~39행에서 이를 무정한 세상과 견주어 ‘신의’로 받아들인다.
-    second_best_option: '3'
+      note: 귀신은 어려서부터 희로애락을 함께했다고 말하고(33~34행), ‘신의’라는 평가와 세상과의 대비는 화자가 38~39행에서 덧붙인
+        것이다.
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: ghost_claims_loyalty_word
+      axis: ATTITUDE
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S1:L33
+      - SRC:S1:L34
+      - SRC:S1:L39
+      note: ‘신의’는 가난 귀신의 말에 없고 39행에서 화자가 붙인 평가이다. 되풀이한 것이 아니라 재해석한 것이다.
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: both_abandoned
+      axis: ATTITUDE
+      competitiveness: MEDIUM
+      evidence_refs:
+      - SRC:S1:L38
+      - SRC:S1:L39
+      note: 33~35행은 맞지만, 39행 ‘네 혼자 신의 있어 나를 아니 버리거든’은 가난 귀신만은 버리지 않았다는 뜻이다.
+    second_best_option: '4'
     second_best_risk: MEDIUM
     reasoning_steps: 3
     evidence_count: 4
@@ -1029,15 +1032,15 @@ items:
     transfer_required: false
     actual_difficulty: D3
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-011
-  target_difficulty: D2
+  target_difficulty: D1
   pass_a:
     answer: '2'
     answer_evidence: &id012
@@ -1122,15 +1125,15 @@ items:
     evidence_count: 6
     immediate_elimination_count: 1
     transfer_required: false
-    actual_difficulty: D2
+    actual_difficulty: D1
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-012
   target_difficulty: D2
   pass_a:
@@ -1211,15 +1214,15 @@ items:
     transfer_required: false
     actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-013
-  target_difficulty: D3
+  target_difficulty: D2
   pass_a:
     answer: '5'
     answer_evidence: &id014
@@ -1297,15 +1300,15 @@ items:
     evidence_count: 3
     immediate_elimination_count: 1
     transfer_required: false
-    actual_difficulty: D3
+    actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-014
   target_difficulty: D2
   pass_a:
@@ -1393,13 +1396,13 @@ items:
     transfer_required: false
     actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-015
   target_difficulty: D3
   pass_a:
@@ -1481,13 +1484,13 @@ items:
     transfer_required: true
     actual_difficulty: D3
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-016
   target_difficulty: D2
   pass_a:
@@ -1569,26 +1572,28 @@ items:
     transfer_required: true
     actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-017
-  target_difficulty: D2
+  target_difficulty: D3
   pass_a:
     answer: '3'
     answer_evidence: &id018
+    - SRC:S2:L6
     - SRC:S2:L7
+    - SRC:S2:L8
   pass_b:
     answer: '3'
     blind: true
     reviewer: independent blind reviewer agent, fresh context, student manuscript
       only (no key, no metadata)
     excluded_inputs: *id002
-    confidence: HIGH
+    confidence: MEDIUM
     answer_evidence: *id018
     scope_trace:
       status: IN_SCOPE
@@ -1598,75 +1603,80 @@ items:
     - option_id: '1'
       verdict: 'FALSE'
       statement_truth: HALF_TRUE
-      claim_key: palwon_identification
-      axis: THEME
-      competitiveness: STRONG
-      evidence_refs:
-      - SRC:S2:L12
-      - SRC:S2:L13
-      note: 「탄궁가」는 화자 자신의 처지가 맞지만, 윗글의 화자는 아이를 관찰하고 짐작할 뿐 동일시하지 않는다. [OBSERVATION_IDENTIFICATION_SWAP]
-    - option_id: '2'
-      verdict: 'FALSE'
-      statement_truth: HALF_TRUE
-      claim_key: humor_lightens_restraint_eases
-      axis: THEME
-      competitiveness: STRONG
-      evidence_refs:
-      - SRC:S2:L12
-      - SRC:S2:L16
-      note: 표현 방식(해학, 절제)은 맞지만 효과가 어긋난다. 해학이 괴로움을 가볍게 만들지 않고, 절제는 비애를 깊게 한다. [CORRECT_DEVICE_WRONG_EFFECT]
-    - option_id: '3'
-      verdict: 'TRUE'
-      statement_truth: 'TRUE'
-      claim_key: numbers_concretize_both
-      axis: THEME
-      competitiveness: CORRECT
-      evidence_refs:
-      - SRC:S2:L7
-      note: 「탄궁가」 3~4행 ‘삼십 일에 아홉 끼니’, ‘십 년 동안 갓 하나’와 윗글 7행 ‘삼백오십 리’, ‘백오십 리’는 모두 수치로
-        처지를 구체화한다.
-    - option_id: '4'
-      verdict: 'FALSE'
-      statement_truth: HALF_TRUE
-      claim_key: speaker_asked_girl
+      claim_key: both_direct_dialogue
       axis: THEME
       competitiveness: STRONG
       evidence_refs:
       - SRC:S2:L6
       - SRC:S2:L8
-      note: 앞부분은 맞지만 윗글의 정보는 ‘간다고 하는데’, ‘산다고 한다’의 전해 들은 말이다. 화자가 말을 건넨 대목은 없다.
-    - option_id: '5'
+      note: 「탄궁가」는 가난 귀신의 말을 직접 옮기지만, 윗글의 목적지·삼촌 정보는 ‘간다고 하는데’, ‘산다고 한다’처럼 전해 들은 말의
+        형식이다. 대화를 직접 옮긴 장면은 없다.
+    - option_id: '2'
       verdict: 'FALSE'
       statement_truth: HALF_TRUE
-      claim_key: both_acceptance_endings
+      claim_key: both_reverse_judgment
       axis: THEME
       competitiveness: MEDIUM
       evidence_refs:
+      - SRC:S2:L11
+      - SRC:S2:L12
       - SRC:S2:L16
-      note: 「탄궁가」의 결말은 맞지만, 윗글은 화자가 아이의 지난 노동을 짐작하는 데서 끝난다. 아이의 수용은 나오지 않는다.
-    second_best_option: '4'
+      note: 「탄궁가」에는 인식의 전환이 있지만, 윗글의 화자는 울음을 보고 연민을 깊게 할 뿐 처음의 판단을 뒤집지 않는다.
+    - option_id: '3'
+      verdict: 'TRUE'
+      statement_truth: 'TRUE'
+      claim_key: numbers_past_vs_future
+      axis: THEME
+      competitiveness: CORRECT
+      evidence_refs:
+      - SRC:S2:L6
+      - SRC:S2:L7
+      - SRC:S2:L8
+      note: 「탄궁가」 3행은 한 달 동안 겪어 온 끼니의 형편이고, 윗글 6~7행의 삼백오십 리는 계집아이가 앞으로 가야 할 거리이며 삼촌의
+        거처도 ‘어디메서’로 막연하다.
+    - option_id: '4'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: restraint_as_exaggeration
+      axis: THEME
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S2:L12
+      note: 두 방식을 짚은 것은 맞지만, ‘어느 한 사람’으로 자신을 감춘 것은 감정을 절제하는 방식이다. 과장이 아니다. [CORRECT_DEVICE_WRONG_EFFECT]
+    - option_id: '5'
+      verdict: 'FALSE'
+      statement_truth: HALF_TRUE
+      claim_key: palwon_ending_future
+      axis: THEME
+      competitiveness: STRONG
+      evidence_refs:
+      - SRC:S2:L13
+      - SRC:S2:L16
+      note: 「탄궁가」의 결말은 맞지만, 윗글의 결말(13~16행)은 계집아이가 지나온 날의 노동을 ‘-었을 것이다’로 짐작한 것이다. 앞날이
+        아니다. [TEMPORAL_STAGE_SWAP]
+    second_best_option: '1'
     second_best_risk: MEDIUM
-    reasoning_steps: 3
-    evidence_count: 1
+    reasoning_steps: 4
+    evidence_count: 3
     immediate_elimination_count: 0
     transfer_required: true
-    actual_difficulty: D2
+    actual_difficulty: D3
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-018
-  target_difficulty: D2
+  target_difficulty: D3
   pass_a:
     answer: '2'
     answer_evidence: &id019
     - SRC:S2:L3
-    - SRC:S2:L6
     - SRC:S2:L8
+    - SRC:S2:L10
     - SRC:S2:L13
   pass_b:
     answer: '2'
@@ -1688,7 +1698,7 @@ items:
       axis: THEME
       competitiveness: STRONG
       evidence_refs:
-      - SRC:S2:L13
+      - SRC:S2:L5
       - SRC:S2:L16
       note: 학생 2가 부적절하다.
     - option_id: '2'
@@ -1699,11 +1709,11 @@ items:
       competitiveness: CORRECT
       evidence_refs:
       - SRC:S2:L3
-      - SRC:S2:L6
       - SRC:S2:L8
+      - SRC:S2:L10
       - SRC:S2:L13
-      note: '학생 1: ‘내지인 주재소장’은 식민 통치와 관련된 집안을 가리킨다. 학생 3: 나이 어린 아이가 홀로 먼 길을 나서고 삼촌은
-        ‘어디메서’ 산다고만 하니 기댈 곳이 막연하다.'
+      note: '학생 1: 10행의 ‘주재소장 같은’ 인상과 13행의 ‘내지인 주재소장 집’이 이어진다. 학생 3: 홀로 먼 길, ‘어디메서’의
+        막연함으로 앞날을 짐작할 수 있지만 앞날 자체는 그려지지 않는다.'
     - option_id: '3'
       verdict: 'FALSE'
       statement_truth: 'FALSE'
@@ -1711,8 +1721,8 @@ items:
       axis: THEME
       competitiveness: WEAK
       evidence_refs:
-      - SRC:S2:L10
-      note: 학생 2, 4 모두 근거가 없다.
+      - SRC:S2:L12
+      note: 학생 2, 4 모두 부적절하다.
     - option_id: '4'
       verdict: 'FALSE'
       statement_truth: 'FALSE'
@@ -1720,10 +1730,10 @@ items:
       axis: THEME
       competitiveness: STRONG
       evidence_refs:
-      - SRC:S2:L10
-      - SRC:S2:L11
-      note: '학생 4: ‘주재소장 같은 어른’이 배웅한다는 사실만으로 아이를 가족처럼 아껴 주었다고 볼 근거는 없다. 배웅 뒤 아이는 운다.
-        [UNSUPPORTED_CAUSE]'
+      - SRC:S2:L2
+      - SRC:S2:L12
+      note: '학생 4: 2행 ‘텅 하니 비어서’, 12행 ‘텅 비인 차 안’으로 보아 차 안은 비어 있다. ‘어느 한 사람’은 여러 승객이
+        있었다는 근거가 되지 않는다.'
     - option_id: '5'
       verdict: 'FALSE'
       statement_truth: 'FALSE'
@@ -1731,23 +1741,23 @@ items:
       axis: THEME
       competitiveness: MEDIUM
       evidence_refs:
-      - SRC:S2:L13
+      - SRC:S2:L16
       note: 학생 2, 4가 부적절하다.
     second_best_option: '4'
     second_best_risk: MEDIUM
-    reasoning_steps: 3
+    reasoning_steps: 4
     evidence_count: 4
     immediate_elimination_count: 0
     transfer_required: true
-    actual_difficulty: D2
+    actual_difficulty: D3
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-019
   target_difficulty: D2
   pass_a:
@@ -1827,13 +1837,13 @@ items:
     transfer_required: true
     actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-020
   target_difficulty: D2
   pass_a:
@@ -1847,7 +1857,7 @@ items:
     reviewer: independent blind reviewer agent, fresh context, student manuscript
       only (no key, no metadata)
     excluded_inputs: *id002
-    confidence: HIGH
+    confidence: MEDIUM
     answer_evidence: *id021
     scope_trace:
       status: IN_SCOPE
@@ -1914,13 +1924,13 @@ items:
     transfer_required: false
     actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-021
   target_difficulty: D2
   pass_a:
@@ -2008,13 +2018,13 @@ items:
     transfer_required: false
     actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-022
   target_difficulty: D2
   pass_a:
@@ -2092,13 +2102,13 @@ items:
     transfer_required: false
     actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-023
   target_difficulty: D2
   pass_a:
@@ -2170,7 +2180,7 @@ items:
       - SRC:S3:L13
       - SRC:S3:L14
       note: 실내라는 점은 맞지만 ‘밤은 깊고’, ‘텅 빈’, 눈이 퍼붓는 쓸쓸한 공간이며, 화자는 사내와 비슷한 처지에 놓여 있다.
-    second_best_option: '5'
+    second_best_option: '2'
     second_best_risk: MEDIUM
     reasoning_steps: 2
     evidence_count: 1
@@ -2178,13 +2188,13 @@ items:
     transfer_required: true
     actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-024
   target_difficulty: D2
   pass_a:
@@ -2261,13 +2271,13 @@ items:
     transfer_required: false
     actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-025
   target_difficulty: D2
   pass_a:
@@ -2349,13 +2359,13 @@ items:
     transfer_required: false
     actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-026
   target_difficulty: D2
   pass_a:
@@ -2438,13 +2448,13 @@ items:
     transfer_required: false
     actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-027
   target_difficulty: D3
   pass_a:
@@ -2477,26 +2487,26 @@ items:
       competitiveness: MEDIUM
       evidence_refs:
       - SRC:S3:L12
-      note: ㄴ이 부적절하고 ㄷ, ㄹ을 빠뜨렸다.
+      note: ㄴ이 부적절하다.
     - option_id: '2'
       verdict: 'FALSE'
       statement_truth: 'FALSE'
-      claim_key: gr
+      claim_key: grm
       axis: STRUCTURE
       competitiveness: STRONG
       evidence_refs:
-      - SRC:S3:L2
+      - SRC:S3:L12
       - SRC:S3:L13
-      note: ㄷ을 빠뜨렸다. 1연의 ‘캄캄했다’와 2연의 ‘밤은 깊고’, 두 연의 퍼붓는 눈이 두 장면을 잇는다.
+      note: ㅁ이 부적절하고 ㄷ을 빠뜨렸다. 12행의 ‘우연히’는 떠올림에 뚜렷한 원인이 제시되지 않음을 보여 준다.
     - option_id: '3'
       verdict: 'FALSE'
       statement_truth: 'FALSE'
-      claim_key: nd
+      claim_key: ndm
       axis: STRUCTURE
       competitiveness: WEAK
       evidence_refs:
       - SRC:S3:L12
-      note: ㄴ이 부적절하다.
+      note: ㄴ, ㅁ이 부적절하다.
     - option_id: '4'
       verdict: 'TRUE'
       statement_truth: 'TRUE'
@@ -2510,33 +2520,33 @@ items:
       - SRC:S3:L12
       - SRC:S3:L13
       - SRC:S3:L14
-      note: 'ㄱ: 1행·12행의 ‘우연히’가 호응한다. ㄷ: 1연(캄캄함·퍼붓는 눈)과 2연(깊은 밤·퍼붓는 눈). ㄹ: 사내와 비슷한
-        자리(텅 빈 사무실)에서 내린 판단이다.'
+      note: 'ㄱ: 1행·12행의 ‘우연히’ 호응. ㄷ: 캄캄한 거리·퍼붓는 눈 / 깊은 밤·퍼붓는 눈. ㄹ: 비슷한 자리에서 내린 현재의
+        판단.'
     - option_id: '5'
       verdict: 'FALSE'
       statement_truth: 'FALSE'
-      claim_key: ndr
+      claim_key: drm
       axis: STRUCTURE
       competitiveness: STRONG
       evidence_refs:
       - SRC:S3:L12
-      - SRC:S3:L14
-      note: ㄴ이 부적절하다. 동일시는 상황의 유사성이지 까닭의 일치가 밝혀진 것이 아니다.
+      - SRC:S3:L13
+      note: ㅁ이 부적절하고 ㄱ을 빠뜨렸다.
     second_best_option: '2'
     second_best_risk: MEDIUM
-    reasoning_steps: 3
+    reasoning_steps: 4
     evidence_count: 6
     immediate_elimination_count: 0
     transfer_required: true
     actual_difficulty: D3
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-028
   target_difficulty: D2
   pass_a:
@@ -2614,15 +2624,15 @@ items:
     transfer_required: false
     actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-029
-  target_difficulty: D2
+  target_difficulty: D3
   pass_a:
     answer: '3'
     answer_evidence: &id030
@@ -2649,19 +2659,20 @@ items:
       axis: KEY_MATERIAL
       competitiveness: STRONG
       evidence_refs:
-      - SRC:S3:L12
+      - SRC:S3:L11
       - SRC:S3:L13
-      note: 1연 부분은 맞지만, ‘텅 빈 사무실 창밖으로 눈이 퍼붓는다’는 사무실 안에서 창밖을 보는 장면이다. [TEMPORAL_STAGE_SWAP]
+      note: 1연 부분은 맞지만, ‘텅 빈 사무실 창밖으로 눈이 퍼붓는다’는 사무실 안에서 창밖을 보는 장면이다. 위치가 뒤바뀌었다.
     - option_id: '2'
       verdict: 'FALSE'
-      statement_truth: UNSUPPORTED
-      claim_key: window_made_man_stop
+      statement_truth: HALF_TRUE
+      claim_key: window_only_medium_no_distance
       axis: KEY_MATERIAL
-      competitiveness: MEDIUM
+      competitiveness: STRONG
       evidence_refs:
       - SRC:S3:L6
+      - SRC:S3:L10
       - SRC:S3:L11
-      note: 사내가 화자를 의식했다거나 그 때문에 울음을 그쳤다는 대목은 없다.
+      note: 2연 부분은 맞지만, 1연의 유리창은 화자가 울음을 중지시키지 못하고 창밖에 머무는 거리이기도 하다. [FUNCTION_SINGLE_SIDED_REDUCTION]
     - option_id: '3'
       verdict: 'TRUE'
       statement_truth: 'TRUE'
@@ -2672,44 +2683,45 @@ items:
       - SRC:S3:L6
       - SRC:S3:L11
       - SRC:S3:L13
-      note: '1연: ‘유리창 너머 한 사내가 보였다’, ‘창밖에서 떠나지 못했다’. 2연: ‘텅 빈 사무실 창밖으로 눈이 퍼붓는다’. 창을
-        사이에 둔 위치가 뒤바뀌어, 화자가 그때의 사내와 비슷한 자리에 놓인다.'
+      note: '1연: 창밖(화자) / 방 안(사내). 2연: 사무실 안(화자) / 창밖의 눈. 창을 사이에 둔 위치가 뒤바뀌어 화자가 그때
+        사내의 자리에 놓인다.'
     - option_id: '4'
       verdict: 'FALSE'
       statement_truth: HALF_TRUE
-      claim_key: window_only_medium_no_distance
+      claim_key: office_visited_on_purpose
       axis: KEY_MATERIAL
       competitiveness: STRONG
       evidence_refs:
-      - SRC:S3:L6
-      - SRC:S3:L10
-      - SRC:S3:L11
-      note: 관찰의 통로인 것은 맞지만, 화자는 창밖에서 울음을 중지시키지 못하고 머물 뿐이다. 거리를 드러내는 기능을 지웠다. [FUNCTION_SINGLE_SIDED_REDUCTION]
+      - SRC:S3:L12
+      - SRC:S3:L13
+      note: 1연 부분은 맞지만, 12행 ‘우연히 지금 그를 떠올리게 되었다’로 보아 떠올림은 우연이며, 사내를 찾으려고 들어갔다는 근거는
+        없다.
     - option_id: '5'
       verdict: 'FALSE'
       statement_truth: HALF_TRUE
-      claim_key: left_watcher_role_unrelated
+      claim_key: now_being_watched_explicit
       axis: KEY_MATERIAL
-      competitiveness: MEDIUM
+      competitiveness: STRONG
       evidence_refs:
-      - SRC:S3:L12
+      - SRC:S3:L13
       - SRC:S3:L14
-      note: 위치가 바뀐 것은 맞지만, 화자는 바로 그 자리에서 사내를 떠올리고 판단한다. 사내와 관련이 없다는 것은 어긋난다.
-    second_best_option: '1'
+      note: 1연 부분과 위치는 맞지만, 누군가가 화자를 관찰한다는 내용은 시에 나오지 않는다. 비슷한 처지는 짐작일 뿐 ‘직접 드러난다’가
+        어긋난다. [INFERENCE_TO_FACT]
+    second_best_option: '5'
     second_best_risk: MEDIUM
-    reasoning_steps: 3
+    reasoning_steps: 4
     evidence_count: 3
     immediate_elimination_count: 0
     transfer_required: false
-    actual_difficulty: D2
+    actual_difficulty: D3
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-030
   target_difficulty: D2
   pass_a:
@@ -2722,7 +2734,7 @@ items:
     reviewer: independent blind reviewer agent, fresh context, student manuscript
       only (no key, no metadata)
     excluded_inputs: *id002
-    confidence: HIGH
+    confidence: MEDIUM
     answer_evidence: *id031
     scope_trace:
       status: IN_SCOPE
@@ -2782,15 +2794,15 @@ items:
     transfer_required: false
     actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-031
-  target_difficulty: D2
+  target_difficulty: D1
   pass_a:
     answer: '5'
     answer_evidence: &id032
@@ -2871,15 +2883,15 @@ items:
     evidence_count: 3
     immediate_elimination_count: 1
     transfer_required: false
-    actual_difficulty: D2
+    actual_difficulty: D1
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-032
   target_difficulty: D2
   pass_a:
@@ -2957,13 +2969,13 @@ items:
     transfer_required: false
     actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-033
   target_difficulty: D1
   pass_a:
@@ -3049,13 +3061,13 @@ items:
     transfer_required: true
     actual_difficulty: D1
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-034
   target_difficulty: D2
   pass_a:
@@ -3135,13 +3147,13 @@ items:
     transfer_required: true
     actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-035
   target_difficulty: D2
   pass_a:
@@ -3223,18 +3235,19 @@ items:
     transfer_required: false
     actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-036
   target_difficulty: D3
   pass_a:
     answer: '4'
     answer_evidence: &id037
+    - SRC:S4:P3S1
     - SRC:S4:P3S6
     - SRC:S4:P3S7
     - SRC:S4:P3S8
@@ -3258,8 +3271,8 @@ items:
       axis: CONCEPT_RELATION
       competitiveness: STRONG
       evidence_refs:
-      - SRC:S4:P3S1
-      - SRC:S4:P3S6
+      - SRC:S4:P3S4
+      - SRC:S4:P3S5
       note: B가 부적절하다.
     - option_id: '2'
       verdict: 'FALSE'
@@ -3273,12 +3286,13 @@ items:
     - option_id: '3'
       verdict: 'FALSE'
       statement_truth: 'FALSE'
-      claim_key: BD
+      claim_key: BDE
       axis: CONCEPT_RELATION
       competitiveness: WEAK
       evidence_refs:
-      - SRC:S4:P3S1
-      note: B가 부적절하고 A를 빠뜨렸다.
+      - SRC:S4:P3S3
+      - SRC:S4:P3S5
+      note: B, E가 부적절하다.
     - option_id: '4'
       verdict: 'TRUE'
       statement_truth: 'TRUE'
@@ -3286,42 +3300,48 @@ items:
       axis: CONCEPT_RELATION
       competitiveness: CORRECT
       evidence_refs:
+      - SRC:S4:P3S1
       - SRC:S4:P3S6
       - SRC:S4:P3S7
       - SRC:S4:P3S8
-      note: 'A: P3S6. C: 비판 대상은 자유를 선택 가능성‘으로만’ 이해하는 것(P3S7). D: 제도적 맥락 등 현실적 제약을
-        고려하지 못해 파괴적 성향을 띨 수 있다(P3S8).'
+      note: 'A: 법과 제도는 조화를 이루는 자유의 조건(P3S6)이며 개인의 의지가 제도 속에서 구현될 때 구체적 자유(P3S1). C:
+        ‘선택 가능성으로만’(P3S7). D: 추상적 자유는 법이나 제도를 구속으로 간주하고 부정하며 현실적 제약을 고려하지 못한다(P3S8).'
     - option_id: '5'
       verdict: 'FALSE'
       statement_truth: 'FALSE'
-      claim_key: BCD
+      claim_key: ACDE
       axis: CONCEPT_RELATION
-      competitiveness: MEDIUM
+      competitiveness: STRONG
       evidence_refs:
-      - SRC:S4:P3S1
-      note: B가 부적절하다.
+      - SRC:S4:P3S2
+      - SRC:S4:P3S3
+      note: 'E: 가족 단계에서도 자유가 실현되지만 제도적 보장이 약하고, 자유는 국가로 갈수록 더 안정적으로 실현된다. 정서만으로 가장
+        안정적이라는 것은 어긋난다.'
     second_best_option: '2'
     second_best_risk: MEDIUM
-    reasoning_steps: 3
-    evidence_count: 3
-    immediate_elimination_count: 1
+    reasoning_steps: 4
+    evidence_count: 4
+    immediate_elimination_count: 0
     transfer_required: true
     actual_difficulty: D3
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-037
   target_difficulty: D3
   pass_a:
     answer: '1'
     answer_evidence: &id038
-    - SRC:S4:P2S2
+    - SRC:S4:P2S4
     - SRC:S4:P2S5
+    - SRC:S4:P3S1
+    - SRC:S4:P3S5
+    - SRC:S4:P3S6
   pass_b:
     answer: '1'
     blind: true
@@ -3338,68 +3358,77 @@ items:
     - option_id: '1'
       verdict: 'TRUE'
       statement_truth: 'TRUE'
-      claim_key: kant_custom_not_self_legislation
-      axis: CONCEPT_RELATION
+      claim_key: byeong_both_views
+      axis: APPLICATION
       competitiveness: CORRECT
       evidence_refs:
-      - SRC:S4:P2S2
+      - SRC:S4:P2S4
       - SRC:S4:P2S5
-      note: 칸트의 자유는 이성을 통해 스스로에게 도덕 법칙을 부과하는 데서 비롯된다. 관습을 의심 없이 따르는 것은 스스로 부과한 것이
-        아니다.
+      - SRC:S4:P3S1
+      - SRC:S4:P3S5
+      - SRC:S4:P3S6
+      note: '칸트: 보편성이 확보된 준칙은 도덕 법칙이 되고 이에 따라 행위할 때 자유를 의식. 헤겔: 법과 제도는 개인의 자유와 공동체의
+        질서가 조화를 이루는 조건이며, 조정과 권리 보호가 가능할 때 자유가 구체화된다.'
     - option_id: '2'
       verdict: 'FALSE'
-      statement_truth: 'FALSE'
-      claim_key: kant_custom_universal
-      axis: CONCEPT_RELATION
-      competitiveness: MEDIUM
+      statement_truth: HALF_TRUE
+      claim_key: gap_custom_both_praise
+      axis: APPLICATION
+      competitiveness: STRONG
       evidence_refs:
-      - SRC:S4:P2S4
-      note: 보편성은 모든 이성적 존재자에게 적용했을 때 모순 없이 실현되는가로 판단한다.
+      - SRC:S4:P2S2
+      - SRC:S4:P3S1
+      note: 갑이 규칙을 따른다는 사실은 맞지만, 오래되었다는 이유로 따지지 않고 따르는 것은 이성으로 스스로 법칙을 부과하는 자기 입법이
+        아니다. 헤겔도 개인의 의지가 구현되는 것을 말하므로 ‘온전히’ 실현한다고 보기 어렵다.
     - option_id: '3'
       verdict: 'FALSE'
       statement_truth: HALF_TRUE
-      claim_key: hegel_agrees_will_irrelevant
-      axis: CONCEPT_RELATION
+      claim_key: eul_kant_freedom
+      axis: APPLICATION
       competitiveness: STRONG
       evidence_refs:
-      - SRC:S4:P3S1
-      note: 헤겔이 사회적 관계와 제도를 중시하는 것은 맞지만, 자유는 ‘개인의 의지가’ 그 속에서 구현될 때 실현된다.
+      - SRC:S4:P1S4
+      - SRC:S4:P2S5
+      - SRC:S4:P3S8
+      note: 헤겔의 평가는 맞지만, 을의 행위는 원하는 대로 하려는 것이며 보편성을 따진 도덕 법칙에 따른 것이 아니다. 칸트는 이를 자유를
+        의식하는 행위로 보지 않는다. [CONDITION_PARTIAL_MATCH]
     - option_id: '4'
       verdict: 'FALSE'
       statement_truth: 'FALSE'
-      claim_key: hegel_calls_it_abstract
-      axis: CONCEPT_RELATION
+      claim_key: byeong_denied_both
+      axis: APPLICATION
       competitiveness: STRONG
       evidence_refs:
-      - SRC:S4:P3S8
-      note: 추상적 자유는 법이나 제도를 구속으로 간주하고 부정하는 것이다. <보기>는 규범을 그대로 따르자는 주장이다. [CONCEPT_PAIR_SWAP]
+      - SRC:S4:P2S4
+      - SRC:S4:P3S6
+      note: 보편성이 확보된 준칙은 도덕 법칙이 된다(한 사람이 세웠다는 점은 문제되지 않음). 헤겔에게 법과 제도는 외적 강제가 아니다.
     - option_id: '5'
       verdict: 'FALSE'
       statement_truth: 'FALSE'
-      claim_key: both_reject_self_principle
-      axis: CONCEPT_RELATION
-      competitiveness: WEAK
+      claim_key: gap_byeong_equal
+      axis: APPLICATION
+      competitiveness: MEDIUM
       evidence_refs:
-      - SRC:S4:P2S2
+      - SRC:S4:P2S5
       - SRC:S4:P3S1
-      note: 칸트는 스스로 원리를 세우고 보편성을 따지는 것을 자유의 조건으로 본다.
-    second_best_option: '4'
+      note: 갑은 원리를 세워 보편성을 따지지 않았으므로 칸트의 도덕 법칙에 따른 행위로 볼 수 없다.
+    second_best_option: '3'
     second_best_risk: MEDIUM
-    reasoning_steps: 3
-    evidence_count: 2
-    immediate_elimination_count: 1
+    reasoning_steps: 4
+    evidence_count: 5
+    immediate_elimination_count: 0
     transfer_required: true
     actual_difficulty: D3
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-038
-  target_difficulty: D3
+  target_difficulty: D2
   pass_a:
     answer: '3'
     answer_evidence: &id039
@@ -3478,15 +3507,15 @@ items:
     evidence_count: 3
     immediate_elimination_count: 0
     transfer_required: false
-    actual_difficulty: D3
+    actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-039
   target_difficulty: D3
   pass_a:
@@ -3500,7 +3529,7 @@ items:
     reviewer: independent blind reviewer agent, fresh context, student manuscript
       only (no key, no metadata)
     excluded_inputs: *id002
-    confidence: HIGH
+    confidence: MEDIUM
     answer_evidence: *id040
     scope_trace:
       status: IN_SCOPE
@@ -3564,15 +3593,15 @@ items:
     transfer_required: true
     actual_difficulty: D3
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 - item_id: KOR-N05-040
-  target_difficulty: D3
+  target_difficulty: D2
   pass_a:
     answer: '2'
     answer_evidence: &id041
@@ -3651,22 +3680,22 @@ items:
     evidence_count: 3
     immediate_elimination_count: 0
     transfer_required: false
-    actual_difficulty: D3
+    actual_difficulty: D2
   gates:
-    FACTUAL_ACCURACY_REVIEW: PASS
-    DIFFICULTY_MATCH: PASS
-    SCOPE_EVIDENCE_TRACE: PASS
-    ANSWER_EVIDENCE_TRACE: PASS
     OPTION_SEMANTIC_DUPLICATION_REVIEW: PASS
     ALL_OPTION_AUDIT: PASS
+    ANSWER_EVIDENCE_TRACE: PASS
+    DIFFICULTY_MATCH: PASS
     UNIQUE_ANSWER: PASS
+    FACTUAL_ACCURACY_REVIEW: PASS
+    SCOPE_EVIDENCE_TRACE: PASS
 set_gates:
-  D4_SHORT: PASS
-  MANUSCRIPT_CONTAMINATION: PASS
   STRUCTURE: PASS
-  MID_GAP: PASS
-  ANSWER_COUNT_MATCH: PASS
-  PASSAGE_TRUNCATION: PASS
+  D4_SHORT: PASS
   TOO_EASY: FAIL
+  PASSAGE_TRUNCATION: PASS
   STRUCTURE_BIAS: PASS
+  MID_GAP: PASS
+  MANUSCRIPT_CONTAMINATION: PASS
+  ANSWER_COUNT_MATCH: PASS
 content_lock: true

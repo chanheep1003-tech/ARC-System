@@ -32,7 +32,16 @@
     {
       "code": "BALANCE_D2_OUT_OF_RANGE",
       "severity": "WARN",
-      "share": 0.625,
+      "share": 0.65,
+      "target": [
+        0.3,
+        0.4
+      ]
+    },
+    {
+      "code": "BALANCE_D3_OUT_OF_RANGE",
+      "severity": "WARN",
+      "share": 0.275,
       "target": [
         0.3,
         0.4
@@ -59,25 +68,25 @@
   ],
   "metrics": {
     "difficulty": {
-      "D1": 1,
-      "D2": 25,
-      "D3": 14
+      "D1": 3,
+      "D2": 26,
+      "D3": 11
     },
     "answer_positions": {
       "1": 6,
       "2": 9,
-      "3": 7,
+      "3": 8,
       "4": 10,
-      "5": 8
+      "5": 7
     },
-    "longest_option_is_key_rate": 0.125,
+    "longest_option_is_key_rate": 0.175,
     "single_best_stems": 14,
     "except_stems": 8,
     "stem_skeleton_max_run": 2,
     "balance": {
-      "D1": 0.025,
-      "D2": 0.625,
-      "D3": 0.35,
+      "D1": 0.075,
+      "D2": 0.65,
+      "D3": 0.275,
       "D4": 0.0,
       "D5": 0.0,
       "D45": 0.0,

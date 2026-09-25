@@ -1,12 +1,10 @@
-review_id: KOR-N05-BLIND-V2
+review_id: KOR-N05-BLIND-V3
 reviewer: independent blind reviewer agent, fresh context, student manuscript only (no key, no metadata)
 rounds: 1
-rounds_history: 'v1 bundle: one blind round (fresh agent) — 40/40 keys matched, difficulty D1 7 / D2 28 / D3 5 / D4 0. On the user''s instruction (2026-09-25, "난이도 좀 더 올려") the distractors were rewritten as near-miss options and the revised v2 bundle received this single fresh blind round — recorded as a user-directed exception to the one-round-per-bundle policy.'
-manuscript_sha256: 950e5db552064cc701212d9b88cb726ce3db974042c064c1289f2126d6bb7b4b
-post_blind_edits:
-- 'KOR-N05-009 <보기> ㄴ: "건더기를 건져 주었으나" -> "죽의 건더기를 건져 종에게 주었으나" (reviewer note: 13행 아이들 = 14행 종 연결을 명시; answer unaffected)'
-- 'S2 notes: added gloss "* 느끼다: 서럽거나 벅차서 흐느껴 울다." (reviewer note on KOR-N05-019 ⓓ; answer unaffected)'
-difficulty_rule: item difficulty = blind v2 rating (lower bound on hesitation); author targets kept as author_target_difficulty
+rounds_history: 'v1: 40/40 keys, D1 7/D2 28/D3 5/D4 0. v2 (near-miss distractor rewrite, user "난이도 좀 더 올려"): 40/40, D1 1/D2 25/D3 14/D4 0. v3 (8 compound-condition items 9,10,17,18,27,29,36,37, user option "2"): this round. Each round used a fresh agent on the revised bundle; the extra rounds are user-directed exceptions to the one-round-per-bundle policy.'
+manuscript_sha256: 653b3b65815a9c5ecafd1762b7e38a2165471ed1890b987b17333cd25070c56e
+post_blind_edits: []
+difficulty_rule: item difficulty = blind v3 rating (lower bound on hesitation); author targets kept as author_target_difficulty
 excluded_inputs:
 - ANSWER_KEY
 - PASS_A
@@ -18,9 +16,9 @@ items:
   first_pass_top3:
   - 5
   - 3
-  - 1
+  - 2
   second_best: 3
-  second_best_refutation: 1~2행·6행 등 초반은 분수 수용이 아닌 한탄('이다지도 괴로운고')이므로 '처음부터 끝까지 흔들림 없이'는 틀림.
+  second_best_refutation: 1~2, 20행 등에서 탄식·견딜 수 없음이 나오므로 분수 수용이 처음부터 흔들림 없이 이어진 것이 아님; 41~42행에서야 도달
   difficulty: D2
   confidence: HIGH
   flags: []
@@ -30,23 +28,23 @@ items:
   - 3
   - 4
   - 1
-  second_best: 4
-  second_best_refutation: 22~23행은 풍년·따뜻한 겨울을 가정해도 배부르지도 몸을 가리지도 못한다는 판단이므로 적절함.
+  second_best: 1
+  second_best_refutation: 3행 끼니(먹는 일), 4행 갓(입는 일)을 '-거나 못 -거나'로 반복하므로 적절; ③은 18행 '무엇으로 장만하며'라 빚도 못 갚음
   difficulty: D2
   confidence: HIGH
   flags: []
-  reviewer_note: ③은 18행 '무엇으로 장만하며'로 환곡 장리도 마련하지 못함이 드러나 오답이 분명함.
 - item_id: KOR-N05-003
   answer: 5
   first_pass_top3:
   - 5
   - 2
-  - 1
+  - 3
   second_best: 2
-  second_best_refutation: 9행 '집 안에 들어가 씨앗을 마련하니'로 씨앗은 빌린 것이 아님.
-  difficulty: D3
+  second_best_refutation: 씨앗은 9행 '집 안에 들어가 씨앗을 마련하니'로 집에서 마련했으므로 '씨앗까지 빌려야' 틀림
+  difficulty: D2
   confidence: HIGH
   flags: []
+  reviewer_note: ③은 14행 죽 웃물/건더기로 '넉넉히' 부정
 - item_id: KOR-N05-004
   answer: 4
   first_pass_top3:
@@ -54,11 +52,11 @@ items:
   - 5
   - 2
   second_best: 5
-  second_best_refutation: 40행 '위협으로 회피하며 잔꾀로 여읠려냐'는 떼어 놓을 여지를 부정하는 설의이고 41~42행에서 수용함.
-  difficulty: D3
+  second_best_refutation: 40행 '위협으로 회피하며 잔꾀로 여읠려냐'는 떼어 놓을 여지를 부정하는 반어이며 41~42행 수용으로 이어짐
+  difficulty: D2
   confidence: HIGH
   flags: []
-  reviewer_note: ②는 11행 '서너 되 부쳤거늘'로 파종 사실이 있어 오답.
+  reviewer_note: ②는 10행 '반 넘게'·11행 기장 등 파종으로 '모두/뿌리지도 못함' 틀림
 - item_id: KOR-N05-005
   answer: 2
   first_pass_top3:
@@ -66,11 +64,11 @@ items:
   - 3
   - 1
   second_best: 3
-  second_best_refutation: 41~42행은 스스로 비웃는 자조가 아니라 어찌할 수 없는 처지를 받아들이는 체념적 태도에 해당함.
-  difficulty: D3
+  second_best_refutation: 41~42행은 스스로를 비웃는 자조가 아니라 어찌할 수 없음을 받아들이는 체념적 태도
+  difficulty: D2
   confidence: MEDIUM
   flags: []
-  reviewer_note: ①(30~31행 술·음식·길한 날)도 '구체적 사물' 조건에 걸릴 여지가 약간 있으나, 가난 귀신 전송은 가상적 장면이라 '가난한 생활의 모습'과 거리가 있어 배제 가능.
+  reviewer_note: ①의 30~31행도 구체적 사물(술, 음식)이 있으나 '가난한 생활의 모습'이 아니라 전송 의식이라 배제
 - item_id: KOR-N05-006
   answer: 1
   first_pass_top3:
@@ -78,7 +76,7 @@ items:
   - 5
   - 2
   second_best: 5
-  second_best_refutation: 29행 뒤에는 30~36행의 전송·거부 장면이 이어지므로 '곧바로 수용하는 결말'로 이어지지 않음.
+  second_best_refutation: 29행 뒤 30~40행 전송·항변·재인식을 거친 뒤 41~42행에서 수용하므로 '곧바로' 틀림
   difficulty: D2
   confidence: HIGH
   flags: []
@@ -87,45 +85,44 @@ items:
   first_pass_top3:
   - 4
   - 5
-  - 3
+  - 2
   second_best: 5
-  second_best_refutation: 비공백 행이 42행이고 탄식→전송 시도→수용의 흐름이 맞으므로 적절함.
+  second_best_refutation: 42행 4음보 연속, 탄식(1~28)→전송(29~31)→수용(41~42) 과정이 실제로 전개되므로 적절
   difficulty: D2
   confidence: HIGH
   flags: []
-  reviewer_note: 33~35행은 32행 '이른 말이' 뒤 가난 귀신의 말을 직접 옮긴 것이어서 ④가 틀림.
+  reviewer_note: 33~35행은 귀신의 말을 직접 인용한 형태
 - item_id: KOR-N05-008
   answer: 4
   first_pass_top3:
   - 4
   - 1
-  - 3
+  - 5
   second_best: 1
-  second_best_refutation: D도 37~39행(네 말도 옳다, 세상은 버렸으나 너는 신의 있어 버리지 않음)에 근거하므로 A,B만으로는 부족함.
+  second_best_refutation: D도 38~39행 '무정한 세상…네 혼자 신의 있어 나를 아니 버리거든'으로 뒷받침되므로 A,B만으로는 부족
   difficulty: D3
   confidence: HIGH
   flags: []
-  reviewer_note: C는 42행 '서러워해 무엇하리'가 서러움 자체의 소멸을 뜻하지 않으므로 오답.
+  reviewer_note: C는 42행 '서러워해 무엇하리'가 서러움 소멸을 말하지 않으므로 과잉
 - item_id: KOR-N05-009
   answer: 2
   first_pass_top3:
   - 2
   - 4
-  - 5
+  - 1
   second_best: 4
-  second_best_refutation: ㄱ은 10행 '반 넘게 쥐 먹었고', 11행 '서너 되 부쳤거늘'과 어긋남(모두 먹힘·한 되도 못 부침 아님).
+  second_best_refutation: 전환의 계기는 장초(21행)에서 스스로 얻은 깨달음이 아니라 32~36행 귀신의 말(다른 존재의 말)이며, 20~21행 번호도 어긋남
   difficulty: D3
-  confidence: MEDIUM
+  confidence: HIGH
   flags: []
-  reviewer_note: ㄴ의 '아이들에게 건더기를 건져 주었으나'는 14행의 '종'을 13행 '아이들'과 동일시해야 성립함. 선지 구조상 ㄴ이 맞아야 정답이 나오지만 표현을 '아이들(종)에게'처럼 다듬으면 좋겠음.
 - item_id: KOR-N05-010
-  answer: 5
+  answer: 3
   first_pass_top3:
-  - 5
   - 3
   - 4
-  second_best: 3
-  second_best_refutation: 가난 귀신은 33~35행에서 함께한 세월을 내세웠고, 무정한 세상과의 대비(38행)는 화자의 생각이므로 주체가 뒤바뀜.
+  - 1
+  second_best: 4
+  second_best_refutation: 33~35행에서 귀신은 함께한 세월만 말할 뿐 '신의'라는 말은 화자가 39행에서 처음 부여함
   difficulty: D3
   confidence: HIGH
   flags: []
@@ -134,32 +131,33 @@ items:
   first_pass_top3:
   - 2
   - 1
-  - 5
+  - 3
   second_best: 1
-  second_best_refutation: 울음의 까닭이 가족과의 이별로 제시되지 않고, 13~16행은 남의 집에서의 고된 노동에 초점을 둠.
-  difficulty: D2
+  second_best_refutation: 이별·그리움보다 13~16행의 고된 노동 짐작과 '내지인 주재소장'이 보여 주는 식민지 현실 속 삶에 대한 연민이 중심
+  difficulty: D1
   confidence: HIGH
   flags: []
 - item_id: KOR-N05-012
   answer: 3
   first_pass_top3:
   - 3
-  - 5
   - 4
+  - 5
   second_best: 4
-  second_best_refutation: '''쌔하얗게''(시각)·''얼은''(촉각)이 함께 쓰여 차가운 기운을 드러내므로 적절함.'
+  second_best_refutation: '''쌔하얗게''(시각)+''얼은''(촉각)으로 차가운 기운 제시는 적절'
   difficulty: D2
   confidence: HIGH
   flags: []
+  reviewer_note: ③은 13~16행 노동과 이어지므로 '노동이 아닌' 틀림
 - item_id: KOR-N05-013
   answer: 5
   first_pass_top3:
   - 5
-  - 3
   - 2
+  - 3
   second_best: 3
-  second_best_refutation: 13~16행은 계집아이의 말이 아니라 '~쳤을 것이다'로 끝나는 화자의 짐작임.
-  difficulty: D3
+  second_best_refutation: 13~16행은 '-했을 것이다'로 끝나는 화자의 짐작이지 계집아이의 말로 확인된 사실이 아님
+  difficulty: D2
   confidence: HIGH
   flags: []
 - item_id: KOR-N05-014
@@ -169,7 +167,7 @@ items:
   - 3
   - 1
   second_best: 3
-  second_best_refutation: 13~16행에서 지난 고생을 짐작하는 것은 감정을 거두는 것이 아니라 연민을 심화하는 것임.
+  second_best_refutation: 끝의 13~16행은 손이 꽁꽁 언 채 찬물에 걸레를 쳤을 모습을 짐작하며 연민을 심화할 뿐 감정을 거두지 않음
   difficulty: D2
   confidence: HIGH
   flags: []
@@ -180,33 +178,35 @@ items:
   - 1
   - 2
   second_best: 1
-  second_best_refutation: 15행 '이렇게 추운 아침에도'는 지금의 '차디찬 아침'(1행)에서 짐작을 끌어낸 것이므로 ㄷ도 실마리임.
+  second_best_refutation: 15행 '이렇게 추운 아침에도'는 지금의 차디찬 아침(1행)에서 지난날을 미루어 짐작한 것이므로 ㄷ도 실마리
   difficulty: D3
   confidence: MEDIUM
   flags: []
-  reviewer_note: ㄷ을 '짐작의 실마리'로 보는 것은 해석적 판단이라 일부 학생은 이견을 낼 수 있으나, 15행 '이렇게'가 근거로 충분함.
+  reviewer_note: ㄹ(거리)은 지난 생활 짐작과 무관
 - item_id: KOR-N05-016
   answer: 5
   first_pass_top3:
   - 5
   - 4
-  - 2
+  - 3
   second_best: 4
-  second_best_refutation: '''어느 한 사람''을 화자로 보는 가정하에서는 서술자가 장면 안에 모습을 비치는 셈이므로 적절함.'
+  second_best_refutation: '''본다면''이라는 가정 조건 아래의 해석이므로 적절'
   difficulty: D2
   confidence: HIGH
   flags: []
+  reviewer_note: 13~16행은 짐작일 뿐 우는 까닭을 분명히 밝히지 않음
 - item_id: KOR-N05-017
   answer: 3
   first_pass_top3:
   - 3
-  - 4
   - 1
-  second_best: 4
-  second_best_refutation: 6·8행 '간다고 하는데', '산다고 한다'는 전해 들은 말일 뿐 화자가 말을 건넸다는 근거가 없음.
-  difficulty: D2
-  confidence: HIGH
+  - 5
+  second_best: 1
+  second_best_refutation: 「팔원」의 6~8행은 '간다고 하는데/산다고 한다'로 전해 들은 말을 간접 전달할 뿐 대화를 직접 옮기지 않음
+  difficulty: D3
+  confidence: MEDIUM
   flags: []
+  reviewer_note: ⑤는 「팔원」 결말이 앞날이 아니라 지난 삶 짐작
 - item_id: KOR-N05-018
   answer: 2
   first_pass_top3:
@@ -214,8 +214,8 @@ items:
   - 4
   - 1
   second_best: 4
-  second_best_refutation: 학생 4의 '가족처럼 아껴 주었다'는 10행 배웅 사실만으로 끌어낼 수 없는 과잉 해석임.
-  difficulty: D2
+  second_best_refutation: 2행·12행 '텅 비인 차'이므로 여러 승객의 공감을 알 수 없어 학생 4는 부당
+  difficulty: D3
   confidence: HIGH
   flags: []
 - item_id: KOR-N05-019
@@ -225,11 +225,11 @@ items:
   - 1
   - 3
   second_best: 1
-  second_best_refutation: 3행 '계집아이 하나가 오른다'와 2행 '텅 하니 비어서'로 홀로 오르는 장면이 맞으므로 수정 불필요.
+  second_best_refutation: 1~3행 차디찬 아침, 텅 빈 차, 계집아이 하나가 오른다로 외로운 처지 짐작 가능
   difficulty: D2
   confidence: HIGH
   flags: []
-  reviewer_note: ⓓ가 틀린 이유는 '느끼며'=흐느끼며라는 어휘 지식에 기대지만, 나머지 ⓐⓑⓒⓔ가 명확히 맞아 소거로 결정 가능. '느끼다'에 뜻풀이를 달면 더 공정함.
+  reviewer_note: '주석 ''느끼다: 흐느껴 울다''에 따라 참으려 애쓰는 모습 아님'
 - item_id: KOR-N05-020
   answer: 1
   first_pass_top3:
@@ -237,9 +237,9 @@ items:
   - 4
   - 2
   second_best: 4
-  second_best_refutation: 유리창이 바깥을 흐릿하게 가려 신분을 흐리게 만든다는 인과는 시에 근거가 없음.
+  second_best_refutation: '''같은''이 유리창에 가려서라는 인과는 시에 없음; 추측은 화자의 인상 판단'
   difficulty: D2
-  confidence: HIGH
+  confidence: MEDIUM
   flags: []
 - item_id: KOR-N05-021
   answer: 3
@@ -248,7 +248,7 @@ items:
   - 1
   - 5
   second_best: 1
-  second_best_refutation: 11행 '울음을 그칠 때까지 떠나지 못했다'에서 보듯 무관심하지 않았고, 반성의 표현도 없음.
+  second_best_refutation: 11행 울음 그칠 때까지 떠나지 못함은 무관심이 아니며 자기 반성 진술도 없음
   difficulty: D2
   confidence: HIGH
   flags: []
@@ -256,21 +256,22 @@ items:
   answer: 1
   first_pass_top3:
   - 1
-  - 5
   - 4
+  - 2
   second_best: 4
-  second_best_refutation: 9행 '침묵을 달아나지 못하게'는 침묵을 달아날 수 있는 존재로 나타내어 긴장을 드러내므로 적절함.
+  second_best_refutation: 침묵을 '달아나지 못하게'로 의인화하여 정적을 지키려는 긴장을 드러내므로 적절
   difficulty: D2
   confidence: HIGH
   flags: []
+  reviewer_note: 12행은 과거 일을 '떠올린' 것이지 똑같이 되풀이된 것이 아님
 - item_id: KOR-N05-023
   answer: 4
   first_pass_top3:
   - 4
   - 2
-  - 5
-  second_best: 5
-  second_best_refutation: ㉤ '텅 빈 사무실'은 아늑함이 아니라 1연 사내의 '춥고 큰 방'과 겹치는 고독한 공간임.
+  - 3
+  second_best: 2
+  second_best_refutation: 서류 뭉치 비유는 분위기·처지 암시일 뿐 사내가 서류 일로 늦게 남았다는 상황을 '사실대로 전함'은 근거 없음
   difficulty: D2
   confidence: HIGH
   flags: []
@@ -279,12 +280,13 @@ items:
   first_pass_top3:
   - 4
   - 2
-  - 5
+  - 1
   second_best: 2
-  second_best_refutation: 13행 '텅 빈 사무실 창밖으로 눈이 퍼붓는다'로 화자가 사무실 안에 있음을 알 수 있음.
+  second_best_refutation: 13행 '텅 빈 사무실 창밖으로 눈이 퍼붓는다'에서 화자가 사무실 안에 있음을 알 수 있음
   difficulty: D2
   confidence: HIGH
   flags: []
+  reviewer_note: ⓑ는 추론 필요(창밖이 사무실의 창밖)라 약간 해석 여지
 - item_id: KOR-N05-025
   answer: 5
   first_pass_top3:
@@ -292,11 +294,11 @@ items:
   - 1
   - 3
   second_best: 1
-  second_best_refutation: 2연에는 자신을 탓하는 표현이 없고 14행은 사내에 대한 판단임.
+  second_best_refutation: 2연 14행은 사내를 어리석지 않다고 판단할 뿐 자신을 탓하는 진술 없음
   difficulty: D2
   confidence: HIGH
   flags: []
-  reviewer_note: ①과 ⑤가 앞부분이 동일해 뒷부분만 비교하면 됨.
+  reviewer_note: ①과 ⑤ 앞부분 동일한 near-miss 구성
 - item_id: KOR-N05-026
   answer: 2
   first_pass_top3:
@@ -304,7 +306,7 @@ items:
   - 3
   - 4
   second_best: 3
-  second_best_refutation: 14행 판단은 '지금' 떠올리며 내린 것이지 그 순간의 판단이 아님.
+  second_best_refutation: '''어리석은 자라고 생각하지 않는다''는 현재(2연, 14행)의 판단이지 그 순간의 판단이 아님'
   difficulty: D2
   confidence: HIGH
   flags: []
@@ -315,7 +317,7 @@ items:
   - 2
   - 5
   second_best: 2
-  second_best_refutation: ㄷ도 2행 '눈은 퍼부었고 거리는 캄캄했다'와 13행 '밤은 깊고 … 눈이 퍼붓는다'로 확인되어 포함해야 함.
+  second_best_refutation: 12~13행은 '우연히 떠올리게 되었다'와 눈 풍경을 병치할 뿐 눈을 보고 떠올렸다는 인과를 밝히지 않으므로 ㅁ 부적절
   difficulty: D3
   confidence: HIGH
   flags: []
@@ -324,9 +326,9 @@ items:
   first_pass_top3:
   - 2
   - 1
-  - 5
+  - 3
   second_best: 1
-  second_best_refutation: '''움직이지 못하는 건물들''은 눈을 뒤집어쓰고 굳은 도시의 모습으로 읽을 수 있어 적절함.'
+  second_best_refutation: '''움직이지 못하는'' 건물은 눈을 뒤집어쓴 경직된 도시를 드러낸다고 볼 수 있음'
   difficulty: D2
   confidence: HIGH
   flags: []
@@ -334,24 +336,26 @@ items:
   answer: 3
   first_pass_top3:
   - 3
+  - 5
   - 1
-  - 4
-  second_best: 1
-  second_best_refutation: 13행 '사무실 창밖으로 눈이 퍼붓는다'로 화자는 창밖이 아니라 사무실 안에 있음.
-  difficulty: D2
+  second_best: 5
+  second_best_refutation: 2연에서 화자가 누군가에게 관찰되는 처지임은 시에 직접 드러나지 않음
+  difficulty: D3
   confidence: HIGH
   flags: []
+  reviewer_note: ③④⑤가 앞부분을 공유하는 near-miss 구성
 - item_id: KOR-N05-030
   answer: 1
   first_pass_top3:
   - 1
   - 3
-  - 5
+  - 2
   second_best: 3
-  second_best_refutation: 10행 '어떻게 해야 할까'는 사내의 울음 앞에서 안타까워하는 마음을 드러내어 공감의 근거가 됨.
+  second_best_refutation: 10행 '어떻게 해야 할까'는 울음 앞에서 어찌할 바 모르는 마음으로 공감의 근거가 됨
   difficulty: D2
-  confidence: HIGH
+  confidence: MEDIUM
   flags: []
+  reviewer_note: 8행도 고립된 상황의 정서로 볼 여지는 있으나 공감 근거로는 가장 약함
 - item_id: KOR-N05-031
   answer: 5
   first_pass_top3:
@@ -359,11 +363,11 @@ items:
   - 2
   - 4
   second_best: 2
-  second_best_refutation: 현상계/예지계, 추상적/구체적 자유는 글에서 대조적으로 설명되므로 적절함.
-  difficulty: D2
+  second_best_refutation: 현상계/예지계, 추상적/구체적 자유가 대조 개념으로 쓰였으므로 적절
+  difficulty: D1
   confidence: HIGH
   flags: []
-  reviewer_note: 헤겔이 비판한 대상은 '추상적 자유'이며 칸트의 견해를 비판하는 서술은 없음.
+  reviewer_note: 헤겔이 비판한 것은 '추상적 자유'이지 칸트가 아님
 - item_id: KOR-N05-032
   answer: 2
   first_pass_top3:
@@ -371,7 +375,7 @@ items:
   - 1
   - 5
   second_best: 1
-  second_best_refutation: 1문단은 '감각적 욕구 등 이성이 아닌 것'이라 하여 감각적 욕구만으로 한정하지 않음.
+  second_best_refutation: 지문은 '감각적 욕구 등 이성이 아닌 것'이라 하여 감각적 욕구만이라고 하지 않음
   difficulty: D2
   confidence: HIGH
   flags: []
@@ -382,7 +386,7 @@ items:
   - 1
   - 2
   second_best: 1
-  second_best_refutation: 모든 이성적 존재자에게 모순 없이 실현되는 것은 '자기 입법'이 아니라 '보편성'으로 정의됨.
+  second_best_refutation: 모순 없이 실현되는 것은 '보편성'의 정의이지 '자기 입법'이 아님
   difficulty: D1
   confidence: HIGH
   flags: []
@@ -391,9 +395,9 @@ items:
   first_pass_top3:
   - 4
   - 3
-  - 5
+  - 2
   second_best: 3
-  second_best_refutation: 칸트는 이성이 의지를 규정하고 '행위를 실천할 때 비로소' 자유를 의식한다고 함.
+  second_best_refutation: 자유 의식은 이성이 의지를 규정하고 '행위를 실천할 때' 비로소 가능하므로 판단만으로는 부족
   difficulty: D2
   confidence: HIGH
   flags: []
@@ -404,10 +408,11 @@ items:
   - 3
   - 4
   second_best: 3
-  second_best_refutation: 칸트는 이성이 원인이 되어야 한다고 했을 뿐, 욕구를 참는 행위를 모두 이성이 원인인 것으로 보지 않음.
+  second_best_refutation: 욕구를 참는 행위라도 원인이 이성(도덕 법칙)이어야 자유 의식; '원인이 무엇이든' 틀림
   difficulty: D2
   confidence: HIGH
   flags: []
+  reviewer_note: 지문의 두 '먹지 않음' 사례 대비로 도출
 - item_id: KOR-N05-036
   answer: 4
   first_pass_top3:
@@ -415,18 +420,19 @@ items:
   - 2
   - 5
   second_best: 2
-  second_best_refutation: D도 3문단 '현실적 제약을 고려하지 못하며 이로 인해 … 파괴적 성향'과 일치하므로 포함해야 함.
+  second_best_refutation: D도 '추상적 자유는 법이나 제도를 구속으로 간주하고 부정하는 것으로…현실적 제약을 고려하지 못하며'로 뒷받침됨
   difficulty: D3
   confidence: HIGH
   flags: []
+  reviewer_note: C는 '으로만'의 한정 표현에 근거한 추론
 - item_id: KOR-N05-037
   answer: 1
   first_pass_top3:
   - 1
-  - 4
   - 3
-  second_best: 4
-  second_best_refutation: <보기>의 사상가는 규범을 구속으로 여겨 부정하는 것이 아니라 오히려 의심 없이 따르므로 추상적 자유와 맞지 않음.
+  - 5
+  second_best: 3
+  second_best_refutation: 을의 선택은 원하는 대로 하려는 욕구에 따른 것일 뿐 보편성 검토를 거친 이성 원인 행위가 아님
   difficulty: D3
   confidence: HIGH
   flags: []
@@ -437,8 +443,8 @@ items:
   - 2
   - 5
   second_best: 2
-  second_best_refutation: 추상적 자유는 '자유를 개인의 선택 가능성으로만 이해'한 것으로, 국가 이전 단계의 자유를 가리키는 말이 아님.
-  difficulty: D3
+  second_best_refutation: 추상적 자유는 '개인의 선택 가능성으로만' 이해된 자유이지 국가 이전 단계의 자유를 가리키는 말이 아님
+  difficulty: D2
   confidence: HIGH
   flags: []
 - item_id: KOR-N05-039
@@ -446,13 +452,13 @@ items:
   first_pass_top3:
   - 5
   - 3
-  - 4
+  - 2
   second_best: 3
-  second_best_refutation: 을의 생각은 정서(사랑)에 기초하고 제도적 보장이 약한 가족 단계와 유사하므로 적절한 평가임.
+  second_best_refutation: 가족 단계는 사랑이라는 정서에 기초하되 제도적 보장이 약하다고 했으므로 을에 대한 평가로 타당
   difficulty: D3
-  confidence: HIGH
+  confidence: MEDIUM
   flags: []
-  reviewer_note: 병이 말한 '법적 보호와 이해관계 조정'은 3문단의 국가 단계 설명과 일치하므로 ⑤가 부적절.
+  reviewer_note: 병의 '법'+'조정'+'권리 보호'는 국가 단계 기술과 일치
 - item_id: KOR-N05-040
   answer: 2
   first_pass_top3:
@@ -460,7 +466,7 @@ items:
   - 3
   - 1
   second_best: 3
-  second_best_refutation: 시민 사회 단계는 제도가 수립되어도 '이해관계의 충돌이 발생하여 불안정'하다고 했으므로 충돌이 사라지지 않음.
-  difficulty: D3
+  second_best_refutation: 시민 사회에서 제도 수립 후에도 이해관계 충돌이 발생해 불안정하다고 했으므로 '충돌이 사라지고' 틀림
+  difficulty: D2
   confidence: HIGH
   flags: []
