@@ -154,6 +154,9 @@ def main() -> int:
         "arc_final_difficulty_profile": "required",
         "arc_final_item_quality_profile": "required",
         "arc_final_release_gate": "required",
+        "korean_exam_realism_gate": "required",
+        "korean_ai_style_leak_gate": "required",
+        "korean_school_task_family_gate": "required",
     }
     for key, expected in required_runtime.items():
         if runtime.get(key) != expected:
@@ -347,6 +350,8 @@ def main() -> int:
         "handoff_preflight_smoke_test",
         "content_qa_gate",
         "content_qa_gate_smoke_test",
+        "korean_exam_realism_gate_exec",
+        "korean_exam_realism_gate_smoke_test",
         "final_quality_gate_exec",
         "final_quality_gate_smoke_test",
         "handoff_serializer",
@@ -469,6 +474,47 @@ def main() -> int:
             "ADVANCED_DISCRIMINATION = 20~30%",
             "ARC_N_BALANCE_GATE=PASS",
             "ARC_FINAL에는 본 게이트의 70/30 비율을 강제하지 않는다.",
+        ],
+    )
+
+    require_markers(
+        errors,
+        active["quality"]["korean_exam_realism_gate"],
+        [
+            "KOR_EXAM_REALISM_GATE=PASS",
+            "KOR_AI_STYLE_LEAK_GATE=PASS",
+            "KOR_SCHOOL_TASK_FAMILY_GATE=PASS",
+            "UNANCHORED META LANGUAGE",
+            "WRAPPER WITHOUT FUNCTION",
+        ],
+    )
+    require_markers(
+        errors,
+        active["quality"]["korean_item_qa"],
+        [
+            "EXAM REALISM / AI-STYLE LEAK GATE",
+            "KOR_EXAM_REALISM_GATE=PASS",
+            "KOR_AI_STYLE_LEAK_GATE=PASS",
+            "KOR_SCHOOL_TASK_FAMILY_GATE=PASS",
+        ],
+    )
+    require_markers(
+        errors,
+        active["korean_item_engine"]["path"],
+        [
+            "SCHOOL-REALISM BLUEPRINT",
+            "AI-like generation 방지",
+            "KOR_EXAM_REALISM_GATE=PASS",
+        ],
+    )
+    require_markers(
+        errors,
+        tooling["korean_exam_realism_gate_exec"],
+        [
+            "SCHOOL_TASK_FAMILY_RATE_LOW",
+            "AI_CHOICE_PATTERN",
+            "CORRECT_LENGTH_CUE",
+            "KOR_AI_STYLE_LEAK_GATE",
         ],
     )
 
