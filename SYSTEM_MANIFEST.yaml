@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.26-dev
+  version: 1.8.27-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -36,7 +36,7 @@ runtime:
   drive_write_preflight_required: true
   scheduled_drive_write_mode: ROOT_STAGING
   drive_write_default_mode: ROOT_STAGING
-  runtime_priority_policy: ops/ARC_RUNTIME_PRIORITY_POLICY_V1.2.md
+  runtime_priority_policy: ops/ARC_RUNTIME_PRIORITY_POLICY_V1.3.md
   pipeline_integrity_contract: ops/ARC_PIPELINE_INTEGRITY_CONTRACT_V1.0.md
   post_exam_calibration: ops/ARC_POST_EXAM_CALIBRATION_V1.0.md
   claude_handoff: ops/ARC_CLAUDE_HANDOFF_V1.4.md
@@ -134,6 +134,9 @@ runtime:
   korean_second_best_gate: required
   korean_answer_length_audit: required
   korean_task_form_diversity_gate: required
+  korean_exam_realism_gate: required
+  korean_ai_style_leak_gate: required
+  korean_school_task_family_gate: required
   core_editorial_architecture_gate: required
   core_macro_coherence_gate: required
   core_anti_listing_gate: required
@@ -207,8 +210,8 @@ runtime:
   subject_priority:
     - KOR
     - SOC
-    - HIS
     - SCI
+    - HIS
     - AI
   scope_lock_validation_marker: "HIS_N_ONLY__SCI_REDOX_ONLY"
   midterm_product_scope_lock:
@@ -231,11 +234,11 @@ runtime:
       products: []
       scope: CURRENT_SPRINT_DEFERRED
   extra_resource_weights:
-    KOR: 30
+    KOR: 50
     SOC: 25
-    HIS: 20
     SCI: 15
-    AI: 10
+    HIS: 10
+    AI: 0
   source_ledger_drive_folder_id: 1CmiPOP_Ma9FIuoyLOTEhjFpX7-tYwYwZ
   school_difficulty_levels:
     - SCHOOL_LOW
@@ -251,8 +254,8 @@ active:
     drive_mirror_status: pending_sync
 
   korean_item_engine:
-    path: engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.3.md
-    version: 1.3
+    path: engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.4.md
+    version: 1.4
     drive_id: null
     drive_mirror_status: pending_sync
 
@@ -283,7 +286,7 @@ active:
       drive_id: null
       drive_mirror_status: pending_sync
     korean:
-      path: subjects/KOREAN_MASTER_V4.3.md
+      path: subjects/KOREAN_MASTER_V4.4.md
       drive_id: null
       drive_mirror_status: pending_sync
     history:
@@ -307,7 +310,11 @@ active:
       drive_id: 1t0l6juVLzJxx9UMN5YwG1eRu4enAXpmX
     item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.5.md
     final_quality_gate: quality/ARC_FINAL_QUALITY_GATE_V1.0.md
-    korean_item_qa: quality/ARC_KOREAN_ITEM_QA_V1.4.md
+    korean_item_qa: quality/ARC_KOREAN_ITEM_QA_V1.5.md
+    korean_exam_realism_gate: quality/ARC_KOREAN_EXAM_REALISM_GATE_V1.0.md
+    korean_exam_type_profile: quality/source/KOR_DONGBOOK_EXAM_TYPE_PROFILE_2025_2026_V1.0.yaml
+    korean_exam_realism_regression: quality/regression/KOR_N03_REALISM_REAUDIT_20260925_V1.yaml
+    korean_exam_realism_regression_status: PENDING_FRESH_MODEL_SET_PASS
     korean_supplement_point_map: quality/source/KOR_SUPPLEMENT_POINT_MAP_2026_V1.1.md
     korean_weak_distractor_regression: quality/regression/KOR_N_WEAK_DISTRACTOR_20260923_V1.yaml
     korean_weak_distractor_regression_status: PENDING_MODEL_CANARY
@@ -427,6 +434,8 @@ tooling:
   final_quality_gate_exec: tooling/final/final_quality_gate.py
   final_quality_gate_smoke_test: tooling/final/test_final_quality_gate.py
   content_qa_gate_smoke_test: tooling/content_qa/test_content_qa_gate.py
+  korean_exam_realism_gate_exec: tooling/korean/korean_exam_realism_gate.py
+  korean_exam_realism_gate_smoke_test: tooling/korean/test_korean_exam_realism_gate.py
   xmark_detector: tooling/pdf_qc/xmark_detect.py
   xmark_detector_smoke_test: tooling/pdf_qc/test_xmark_detect.py
   visual_renderer: tooling/visual/arc_visual_render.py
