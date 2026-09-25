@@ -57,6 +57,8 @@ jobs:
           python -m py_compile tooling/content_qa/test_content_qa_gate.py
           python -m py_compile tooling/final/final_quality_gate.py
           python -m py_compile tooling/final/test_final_quality_gate.py
+          python -m py_compile tooling/korean/korean_exam_realism_gate.py
+          python -m py_compile tooling/korean/test_korean_exam_realism_gate.py
           python -m py_compile tooling/canary/kor_final_canary.py
           python -m py_compile tooling/canary/test_kor_final_canary.py
           python -m py_compile tooling/visual/arc_visual_render.py
@@ -137,6 +139,9 @@ jobs:
 
       - name: Run FINAL quality gate smoke
         run: python tooling/final/test_final_quality_gate.py
+
+      - name: Run Korean exam realism gate smoke
+        run: python tooling/korean/test_korean_exam_realism_gate.py
 
       - name: Run fixed KOR FINAL E2E canary
         run: python tooling/canary/kor_final_canary.py --output-dir /tmp/arc-kor-final-canary --report /tmp/arc-kor-final-canary/canary-report.json
