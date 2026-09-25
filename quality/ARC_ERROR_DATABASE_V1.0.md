@@ -677,3 +677,22 @@ The first CI run after N°/FINAL hardening failed only because ops/RUN_LOG.jsonl
 - SCORING: five evidence-backed gates × 20 points.
 - HARD_FAIL_OVERRIDE: readiness score cannot mask answer, scope, duplicate, difficulty, or PDF release failures.
 - STATUS: ACTIVE
+
+
+### ERR-20260925-KOR-REALISM-001
+- CATEGORY: KOR_ITEM_QUALITY / EXAM_REALISM
+- USER_OBSERVED: Korean item quality is the highest priority; remove AI-like feel and concentrate on task forms common in actual school exams.
+- EVIDENCE: Four accessible Dongbuk Korean exams were structurally audited. Repeated patterns include <보기> application, marked-expression/function questions, compare/contrast, content understanding, student/teacher response formats, and multi-judgment questions. Existing ARC N03 remains a re-audit sentinel because prior user feedback already identified over-discrimination/core-point imbalance.
+- ROOT_CAUSE: prior QA strongly covered correctness/distractors but school-exam naturalness was partly implicit and not a separate blocking gate.
+- FIX:
+  - KOR_DONGBOOK_EXAM_TYPE_PROFILE_2025_2026_V1.0
+  - ARC_KOREAN_EXAM_REALISM_GATE_V1.0
+  - KOREAN_MASTER_V4.4
+  - KOREAN_ITEM_ENGINE_V1.4
+  - KOREAN_ITEM_QA_V1.5
+  - executable Korean realism smoke gate
+- PREVENTION:
+  - KOR_EXAM_REALISM_GATE=PASS
+  - KOR_AI_STYLE_LEAK_GATE=PASS
+  - KOR_SCHOOL_TASK_FAMILY_GATE=PASS
+- STATUS: FIXED_POLICY / FRESH_MODEL_SET_PENDING
