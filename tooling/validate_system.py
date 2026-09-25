@@ -147,6 +147,9 @@ def main() -> int:
         "universal_distractor_competitiveness_gate": "required",
         "universal_answer_length_bias_gate": "required",
         "arc_n_dongbook_difficulty_floor": "required",
+        "arc_n_balance_gate": "required",
+        "arc_n_core_exam_point_target": "70-80%",
+        "arc_n_advanced_discrimination_target": "20-30%",
         "arc_final_quality_gate": "required",
         "arc_final_difficulty_profile": "required",
         "arc_final_item_quality_profile": "required",
@@ -451,10 +454,21 @@ def main() -> int:
         errors,
         active["quality"]["difficulty_engine"],
         [
-            "DONGBOOK PRODUCT FLOOR",
-            "D4+D5 >= 35%",
+            "DONGBOOK PRODUCT PROFILE",
+            "CORE_EXAM_POINT 14~16",
+            "D4+D5 기본 20~30%",
             "D4+D5 target >= 30%",
             "DIFFICULTY_INFLATION_FAIL",
+        ],
+    )
+    require_markers(
+        errors,
+        active["quality"]["n_balance_gate"],
+        [
+            "CORE_EXAM_POINT = 70~80%",
+            "ADVANCED_DISCRIMINATION = 20~30%",
+            "ARC_N_BALANCE_GATE=PASS",
+            "ARC_FINAL에는 본 게이트의 70/30 비율을 강제하지 않는다.",
         ],
     )
 

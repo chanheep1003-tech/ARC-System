@@ -1,3 +1,9 @@
+## 1.8.26-dev — 2026-09-25
+- Updated strict system validation to recognize the new ARC_N 70/30 balance policy instead of the superseded D4+D5>=35% ARC_N floor.
+- Added runtime validation for ARC_N balance gate and its 70~80% core / 20~30% advanced targets.
+- Synchronized unrelated Social A Thought Map checksum drift discovered by CI; no Social scope or content rule was changed by this checksum repair.
+- All earlier behavioral canary stages had already passed before the strict validator caught the stale policy marker.
+
 ## 1.8.25-dev — 2026-09-25
 - Generalized the Korean ARC_N balance correction to every ARC_N subject.
 - Activated Common Generation Engine V4.7, Difficulty Engine V1.4 and universal ARC_N Balance Gate V1.0.
