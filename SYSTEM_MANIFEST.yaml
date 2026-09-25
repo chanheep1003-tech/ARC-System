@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.27-dev
+  version: 1.8.28-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -36,7 +36,7 @@ runtime:
   drive_write_preflight_required: true
   scheduled_drive_write_mode: ROOT_STAGING
   drive_write_default_mode: ROOT_STAGING
-  runtime_priority_policy: ops/ARC_RUNTIME_PRIORITY_POLICY_V1.3.md
+  runtime_priority_policy: ops/ARC_RUNTIME_PRIORITY_POLICY_V1.4.md
   pipeline_integrity_contract: ops/ARC_PIPELINE_INTEGRITY_CONTRACT_V1.0.md
   post_exam_calibration: ops/ARC_POST_EXAM_CALIBRATION_V1.0.md
   claude_handoff: ops/ARC_CLAUDE_HANDOFF_V1.4.md
@@ -234,10 +234,10 @@ runtime:
       products: []
       scope: CURRENT_SPRINT_DEFERRED
   extra_resource_weights:
-    KOR: 50
-    SOC: 25
-    SCI: 15
-    HIS: 10
+    KOR: 60
+    SOC: 20
+    SCI: 12
+    HIS: 8
     AI: 0
   source_ledger_drive_folder_id: 1CmiPOP_Ma9FIuoyLOTEhjFpX7-tYwYwZ
   school_difficulty_levels:
