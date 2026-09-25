@@ -119,7 +119,8 @@ def build_blocks(L: Layout, passages: list[dict[str, Any]], items: list[dict[str
 def question_block(L: Layout, it: dict[str, Any], number: int) -> Block:
     b = Block()
     num = f"{number:02d} "
-    stem = L.wrap(it["stem"], COL_W, "B", rest=L.width(num, "B"))
+    nw = L.width(num, "B")
+    stem = L.wrap(it["stem"], COL_W, "B", first=nw, rest=nw)
     stem[0] = (0, num + stem[0][1])
     b.text(stem, key="B")
     b.h += 4

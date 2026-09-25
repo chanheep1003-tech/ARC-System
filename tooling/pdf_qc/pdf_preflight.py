@@ -497,6 +497,17 @@ def analyze_pdf(
                             "reason": "next page opens an explicit major boundary",
                         }
                     )
+    if product in {"ARC_N", "ARC_FINAL"}:
+        # Two-column problem pages: a body line may not cross the gutter
+        # (e.g. a stem wrapped without reserving the question-number width).
+        for index in range(2, len(doc)):
+            page = doc[index]
+            mid = page.rect.width / 2
+            top, bottom = page.rect.height * 0.07, page.rect.height * 0.93
+            for line in text_lines(page):
+                x0, y0, x1, _ = line["bbox"]
+                if top <= y0 <= bottom and x0 < mid - 4 and x1 > mid - 4 and (x1 - x0) < page.rect.width * 0.8:
+                    pages[index]["flags"].append({"severity": "FAIL", "type": "COLUMN_GUTTER_CROSSING", "bbox": [round(v, 1) for v in line["bbox"]], "text": line.get("text", "")[:40]})
     if product == "ARC_N":
         def is_blank(index: int) -> bool:
             if index < 0 or index >= len(doc):

@@ -1,3 +1,7 @@
+## 1.8.31-dev — 2026-09-25
+- Fixed a Korean renderer defect: the first stem line was wrapped without reserving the question-number width, so the N04 stems for items 7 and 8 ran into the column gutter. PDF preflight had passed that PDF.
+- ARC_N / ARC_FINAL preflight now fails `COLUMN_GUTTER_CROSSING` when a problem-page line from the left column reaches the gutter. Reproduced on the unfixed renderer (items 7 and 8 flagged); PASS after the fix. A regression case was added to `test_preflight_korean_n.py`.
+
 ## 1.8.30-dev — 2026-09-25
 - Added the production pipeline (`tooling/production/production_pipeline.py`): a single item bundle (items + independent blind review) drives the manuscript, QA evidence, realism/leak/length/stem-form/answer-position/difficulty-balance metrics, handoff, typesetter admission, Korean rendering and PDF preflight. Realism counts, length cues and balance shares are now computed, not self-reported; PASS B comes from the blind review file.
 - Added the Korean production renderer (`tooling/typeset/kor_renderer.py`) for ARC_N (cover, blank verso, two columns, blank separator, key) and ARC_FINAL (problem sheet without key plus a separate key PDF), with subset-embedded Nanum fonts and hash-verified canonical logo support.

@@ -20,7 +20,7 @@ FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 CIRCLED = "①②③④⑤"
 
 
-def build(path: Path, question_numbers, answer_numbers, separator=True) -> None:
+def build(path: Path, question_numbers, answer_numbers, separator=True, gutter_crossing=False) -> None:
     doc = fitz.open()
     cover = doc.new_page(width=A4_W, height=A4_H)
     cover.insert_font(fontname="F", fontfile=FONT)
@@ -33,6 +33,8 @@ def build(path: Path, question_numbers, answer_numbers, separator=True) -> None:
         page.insert_text((60, y), f"{n:02d} Which statement is best supported?", fontname="F", fontsize=10)
         page.insert_text((60, y + 16), "① alpha  ② beta  ③ gamma  ④ delta  ⑤ epsilon", fontname="F", fontsize=10)
         y += 44
+    if gutter_crossing:
+        page.insert_text((60, 600), "11 This stem line runs straight across the column gutter into the right column", fontname="F", fontsize=10)
     page.insert_text((290, 812), "3", fontname="F", fontsize=9)
     if separator:
         doc.new_page(width=A4_W, height=A4_H)
@@ -55,13 +57,14 @@ def main() -> int:
         tmp = Path(tmp)
         cases = {
             "valid": (ids, ids, True, set()),
+            "gutter_crossing": (ids, ids, True, {"COLUMN_GUTTER_CROSSING"}),
             "question_missing": ([n for n in ids if n != 7], ids, True, {"ARC_N_QUESTION_COUNT_MISMATCH"}),
             "answer_missing": (ids, ids[:-1], True, {"ARC_N_ANSWER_COUNT_MISMATCH"}),
             "separator_missing": (ids, ids, False, {"ARC_N_SEPARATOR_NOT_BLANK"}),
         }
         for name, (questions, answers, separator, expected) in cases.items():
             pdf = tmp / f"{name}.pdf"
-            build(pdf, questions, answers, separator)
+            build(pdf, questions, answers, separator, gutter_crossing=(name == "gutter_crossing"))
             result = preflight.analyze_pdf(pdf, "ARC_N", expected_item_count=10)
             fails = flag_types(result)
             if expected:
