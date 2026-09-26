@@ -123,19 +123,21 @@ def flow(steps):
 def notes_poem(sections):
     out = []
     for head, sub, rows in sections:
-        out.append(f'<div class="seg"><span class="segh">{head}</span><span class="segs">{sub}</span></div>')
+        out.append(f'<div class="segblock"><div class="seg"><span class="segh">{head}</span><span class="segs">{sub}</span></div>')
         for (a, b), lines, note, star in rows:
             no = f"{a}" if a == b else f"{a}~{b}"
             text = "<br>".join(hl(l) for l in lines)
             out.append(f'<div class="nr{" star" if star else ""}"><div class="nno">{no}</div><div class="ntx">{text}</div><div class="nnote">{note}</div></div>')
+        out.append('</div>')
     return "\n".join(out)
 
 def notes_prose(sections):
     out = []
     for head, sub, rows in sections:
-        out.append(f'<div class="seg"><span class="segh">{head}</span><span class="segs">{sub}</span></div>')
+        out.append(f'<div class="segblock"><div class="seg"><span class="segh">{head}</span><span class="segs">{sub}</span></div>')
         for sent, note in rows:
             out.append(f'<div class="nr prose"><div class="ntx">{hl(sent)}</div><div class="nnote">{note}</div></div>')
+        out.append('</div>')
     return "\n".join(out)
 
 def block(b):
@@ -157,9 +159,9 @@ def block(b):
 def chapter(no, title, author, key, notes_html, src_note):
     ov = "".join(f'<tr><th>{k}</th><td>{v}</td></tr>' for k, v in OVERVIEW[key])
     return (f'<section class="chapter"><div class="chno">CORE {no:02d}</div><h2 class="chtitle">{title}</h2><div class="chauth">{author}</div>'
-            f'<div class="h4">작품 한눈에 보기 <span class="h4s">보충자료 학습지 핵심 정리</span></div><table class="ov">{ov}</table>'
+            f'<div class="keep"><div class="h4">작품 한눈에 보기 <span class="h4s">보충자료 학습지 핵심 정리</span></div><table class="ov">{ov}</table></div>'
             f'<div class="h4">원문 필기 <span class="h4s">{src_note}</span></div><div class="notes">{notes_html}</div>'
-            f'<div class="h4">핵심 개념</div>' + "\n".join(block(b) for b in BLOCKS[key]) + "</section>")
+            f'<div class="h4 brk">핵심 개념</div>' + "\n".join(block(b) for b in BLOCKS[key]) + "</section>")
 
 CSS = open(HERE / "core.css", encoding="utf-8").read()
 
