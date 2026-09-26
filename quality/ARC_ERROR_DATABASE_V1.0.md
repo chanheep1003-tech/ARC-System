@@ -724,3 +724,25 @@ The first CI run after N°/FINAL hardening failed only because ops/RUN_LOG.jsonl
 - Source block cleared (EXACT registry lock). 7 blind rounds all matched keys.
 - STILL OPEN: blind difficulty D1 30% / D4+D5 0% (KOR ARC_N balance FAIL); item 8 flagged obvious at D3. The passage already carries 27 ARC items across N01/N03/N04, so a new N set on it cannot reach the D4 band without axis reuse; next KOR N/FINAL sets should combine passages.
 
+
+
+### ERR-20260926-FINAL-CALIBRATION-001
+- CATEGORY: FINAL_DIFFICULTY / PRODUCT_SEMANTICS
+- USER_OBSERVED: ARC_N may intentionally span basic through advanced practice and need not match Dongbuk exam difficulty, but ARC_FINAL is a mock exam and must reproduce Dongbuk difficulty closely.
+- PREVIOUS_STATE:
+  - ARC_N still carried a Dongbuk difficulty-floor runtime token.
+  - ARC_FINAL SCHOOL_ANCHOR used only KOR 2025-2 mid as the explicit runtime anchor.
+  - SOC and SCI-REDOX had no active subject-specific FINAL anchor.
+- EVIDENCE:
+  - 16 actual Dongbuk exam PDFs audited across KOR/SOC/SCI/HIS, 2025-2 and 2026-1 mid/final.
+  - SCI 2025-2 mid Q8-Q12 are directly in the current oxidation-reduction scope and were separately profiled.
+- ROOT_CAUSE: product difficulty semantics were partially coupled and FINAL calibration was under-sampled.
+- FIX:
+  - ARC_DIFFICULTY_ENGINE_V1.5
+  - ARC_FINAL_QUALITY_GATE_V1.1
+  - DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0
+  - KOR/SOC/SCI-REDOX multi-exam FINAL anchors
+  - FINAL executable gate fail-closed on missing/invalid anchor provenance
+  - ARC_N school-distribution matching removed as a release requirement
+- LIMITATION: no school-wide item correct-rate data is available; the current anchor is structural calibration using real exam structure, teacher points as a weak signal, reasoning/data/condition burden, and option-discrimination burden.
+- STATUS: IMPLEMENTED_DEV / CI_PENDING
