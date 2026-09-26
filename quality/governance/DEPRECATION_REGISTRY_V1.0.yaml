@@ -213,3 +213,23 @@ rules:
       - leave_korean_quality_work_after_policy_only_change
       - polish_lower_priority_subject_while_korean_under_80_without_hard_blocker
       - korean_fresh_set_without_exam_realism_gate
+
+  - id: FINAL-MULTI-EXAM-CALIBRATION-20260926
+    deprecated:
+      - quality/ARC_DIFFICULTY_ENGINE_V1.4.md
+      - quality/ARC_FINAL_QUALITY_GATE_V1.0.md
+      - quality/anchors/KOR_DONGBUK_2025_2_MID_DIFFICULTY_ANCHOR_V1.0.yaml
+    replacement:
+      - quality/ARC_DIFFICULTY_ENGINE_V1.5.md
+      - quality/ARC_FINAL_QUALITY_GATE_V1.1.md
+      - quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
+      - quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+      - quality/anchors/SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+      - quality/anchors/SCI_REDOX_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+    reason: "2026-09-26 user directive: ARC_N may differ from Dongbuk exam difficulty because it is a basic-to-advanced practice product, while ARC_FINAL must match actual Dongbuk exam difficulty as a mock exam. Single-exam KOR calibration was replaced by subject-specific multi-exam ensembles."
+    forbidden_runtime_behavior:
+      - require_arc_n_to_match_school_exam_difficulty_distribution
+      - final_use_single_korean_exam_as_only_difficulty_anchor
+      - final_release_without_subject_multi_exam_anchor
+      - final_use_generic_cross_subject_difficulty_curve_when_subject_anchor_exists
+      - science_redox_final_ignore_direct_2025_2_mid_redox_items
