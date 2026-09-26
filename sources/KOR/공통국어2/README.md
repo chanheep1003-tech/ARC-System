@@ -28,3 +28,20 @@ from unit1 import SMI, SMI_NOTES
 - 1단원 원문: Drive `ARC_공통국어2_1단원_N제50_학생용.md`(`1jNYWqJ0VZXrB5NPo3DxWI6CbjPrFmRBN`) + 2025 기출(`1bNw6j5elzsIqWjaR3hG9dRmCEJtMoIK5`).
 - 속미인곡 아래아 일부(ᄌᆞᆷ결의, ᄎᆞᆯ하리, ᄉᆡᆼ각, ᄇᆞᆰ앗ᄂᆞᆫ고, ᄒᆞ돗ᄯᅥᆫ디)는 원자료 깨짐으로 복원한 것 — 교과서 대조 전까지 [미검증].
 - 보충자료 4편: ARC N°06~09에서 사용한 확정본(N°09 기준).
+
+## Drive 사본 (폴더 `ARC_지문라이브러리_공통국어2` · `1n5ZBALgxepDFrwXFS5yRiSCIsb3HQz6y`)
+업로드 시 로컬 md와 바이트 크기 일치 확인 완료(2026-09-26).
+
+| 파일 | Drive ID |
+|---|---|
+| 1단원_01_제망매가.md | `13aDdyppI70swNYroiVwO3iIjSKD7CfNr` |
+| 1단원_02_속미인곡.md | `134BxAdmA09CH-m7fvauAQxtlhLyZSH3j` |
+| 1단원_03_춘향전.md | `1AlO7AGHLIbgdJNr5p-hWQi-QLjGXzpbq` |
+| 1단원_04_수라.md | `1mUxoZQ4CgwxPwUfVPMrJqkNb30pKUAzG` |
+| 1단원_05_아홉켤레의구두로남은사내.md | `1tTY6xKXHo2Y74WO2b8qRfA0UCnJ6xvLc` |
+| 보충_01_탄궁가.md | `1uBEsT4vgkWyh-OzD-z7d1JoiZnLd54C3` |
+| 보충_02_팔원.md | `1p-Ji4U8zJrrBQYxMe9Sy_i6Qkvdb3QeU` |
+| 보충_03_기억할만한지나침.md | `1E6-HZ6bGhbzG44vm0uLTlrLyAAuoLKl9` |
+| 보충_04_칸트헤겔자유.md | `1byOHoB3DiIlM3LWrV6THPTn1LGeaaKSL` |
+
+원문 수정 시: 모듈 수정 → `export_md.py` → 해당 Drive 파일 갱신(update_file) → 이 표 유지.
