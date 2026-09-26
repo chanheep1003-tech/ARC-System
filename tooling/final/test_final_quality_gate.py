@@ -34,6 +34,33 @@ diffs=["D2","D3","D3","D3","D3","D3","D4","D4","D4","D5"]
 good={"product_mode":"ARC_FINAL","item_count":10,"items":[item(i+1,d) for i,d in enumerate(diffs)]}
 assert mod.analyze(good)["status"] == "PASS"
 
+multi_anchor = {
+    "anchor_id": "TEST_MULTI_EXAM",
+    "mode": "MULTI_EXAM_ENSEMBLE",
+    "source_exam_count": 4,
+    "corpus": "quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml",
+    "confidence": "HIGH",
+    "profile": {
+        "shares": {"D12": 0.10, "D3": 0.50, "D45": 0.40},
+        "mean_level": 3.40,
+    },
+    "tolerance": {"share": 0.001, "mean_level": 0.01, "late_section_d45_min": 1},
+}
+anchored = dict(good)
+anchored["difficulty_anchor_required"] = True
+anchored["difficulty_anchor"] = multi_anchor
+assert mod.analyze(anchored)["status"] == "PASS"
+assert mod.analyze(anchored)["difficulty_profile"]["MODE"] == "SCHOOL_MULTI_EXAM_ANCHOR"
+
+missing = dict(good)
+missing["difficulty_anchor_required"] = True
+assert "FINAL_SCHOOL_ANCHOR_MISSING" in {x["code"] for x in mod.analyze(missing)["findings"]}
+
+bad_provenance = dict(anchored)
+bad_provenance["difficulty_anchor"] = dict(multi_anchor)
+bad_provenance["difficulty_anchor"]["source_exam_count"] = 1
+assert "FINAL_ANCHOR_PROVENANCE_INVALID" in {x["code"] for x in mod.analyze(bad_provenance)["findings"]}
+
 weak={"product_mode":"ARC_FINAL","item_count":10,"items":[dict(x) for x in good["items"]]}
 weak["items"][2]["strong_distractor_count"]=0
 assert "WEAK_DISTRACTOR_HARD_FAIL" in {x["code"] for x in mod.analyze(weak)["findings"]}
