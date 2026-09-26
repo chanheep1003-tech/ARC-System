@@ -626,3 +626,16 @@
 - Korean N°/FINAL must produce a fresh meaningful result, not only rule-document changes.
 - Fresh KOR closure requires school-task realism, AI-style leak removal, strong distractors, answer-length neutrality, dedup, and full E2E PDF verification.
 - Priority order is now KOR N°/FINAL → SOC N°/FINAL → SCI-REDOX N°/FINAL → HIS N°.
+
+
+## 2026-09-26 — FINAL difficulty recalibrated from all supplied Dongbuk exams
+- Audited 16 actual Dongbuk High School exam PDFs: four KOR, four SOC, four SCI, and four HIS papers across 2025-2 and 2026-1 mid/final terms.
+- Added DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0 with structural difficulty profiles and confidence labels.
+- Replaced the single 2025-2 KOR-mid FINAL anchor with subject-specific multi-exam ensembles.
+- KOR FINAL center: D12 34.3%, D3 40.0%, D45 25.7%, mean 2.89.
+- SOC FINAL center: D12 31.0%, D3 47.2%, D45 21.8%, mean 2.87.
+- SCI-REDOX FINAL center: D12 30.1%, D3 39.1%, D45 30.8%, mean 2.97; direct 2025-2 mid redox items 8-12 receive 65% relevance weight.
+- HIS difficulty ensemble is diagnostic only because HIS FINAL is outside the active sprint.
+- ARC_N no longer has to match the school's exam difficulty distribution. N° keeps its basic→standard→advanced learning ladder and balance/quality gates.
+- ARC_FINAL now requires SCHOOL_MULTI_EXAM_ANCHOR calibration and fails closed when the subject anchor is missing.
+- Student correct-rate data is not available; these profiles are structural difficulty calibration, not psychometric difficulty claims.
