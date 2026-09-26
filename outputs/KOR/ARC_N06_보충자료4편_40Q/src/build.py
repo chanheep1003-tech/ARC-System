@@ -77,11 +77,13 @@ CSS = """
   @top-right { content: "공통국어2 · 보충자료 4편"; font-family:'Noto Sans CJK KR', sans-serif; font-size:6.9pt; color:#666c74; vertical-align:bottom; padding-bottom:2.5mm; border-bottom:.45pt solid #d9dbde; }
   @bottom-center { content: counter(page, decimal-leading-zero); font-family: Inter, sans-serif; font-size:7pt; color:#687078; }
 }
+@page blank { margin:0; @top-left{content:none; border:none} @top-right{content:none; border:none} @bottom-center{content:none} }
 @page cover { margin:0; @top-left{content:none; border:none} @top-right{content:none; border:none} @bottom-center{content:none} }
 :root{--navy:#1F2A44;--warm:#E9E7E1;--burg:#7A2E35;--ink:#17191d;--muted:#666c74;--rule:#d9dbde}
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:'Noto Sans CJK KR','Noto Sans KR',sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .cover{page:cover;width:210mm;height:297mm;position:relative;padding:24mm 20mm 18mm;break-after:page}
+.blankpage{page:blank;height:297mm;break-after:page}
 .kicker{font-family:Inter,Arial,sans-serif;font-size:10.5pt;font-weight:700;letter-spacing:.11em;color:var(--navy)}
 .toprule{height:.7pt;background:var(--navy);margin-top:7mm}
 .accent{position:absolute;left:20mm;top:82mm;width:12mm;height:1.2mm;background:var(--burg)}
@@ -129,6 +131,7 @@ def student_html():
 <div class="covermain"><h1>공통국어2</h1><div class="covermeta"><strong>동북고등학교</strong><br>2학기 중간고사 대비 · 보충자료 4편 40문항</div>
 <div class="works">정훈, 「탄궁가」<br>백석, 「팔원 - 서행시초3」<br>기형도, 「기억할 만한 지나침」<br>이행남, 「칸트의 도덕적 자율성으로부터 헤겔의 인륜적 자율성으로」</div></div>
 <div class="year">2026</div><div class="series">ARC ACADEMIC SERIES</div></section>""")
+    parts.append('<section class="blankpage"></section>')
     parts.append('<section class="set">')
     for s in SETS:
         a, b = s["rng"]
