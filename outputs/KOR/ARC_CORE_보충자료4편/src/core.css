@@ -23,7 +23,7 @@ html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:'Noto 
 .chno{font-family:Inter,Arial,sans-serif;font-size:8pt;color:var(--burg);font-weight:700;letter-spacing:.1em}
 .chtitle{font-size:19pt;line-height:1.25;font-weight:700;letter-spacing:-.04em;margin:1.5mm 0 1mm;color:var(--ink)}
 .chauth{font-size:8.6pt;color:var(--muted);padding-bottom:3.5mm;border-bottom:1.1pt solid var(--navy);margin-bottom:5mm}
-.h4{font-size:10pt;font-weight:700;color:var(--navy);margin:6mm 0 2.6mm;padding-left:2.6mm;border-left:1.2mm solid var(--navy);break-after:avoid}
+.h4{font-size:10pt;font-weight:700;color:var(--navy);margin:4.5mm 0 2.2mm;padding-left:2.6mm;border-left:1.2mm solid var(--navy);break-after:avoid}
 .h4.brk{break-before:page;margin-top:0}
 .h4s{font-size:7.4pt;font-weight:400;color:var(--muted);margin-left:2mm}
 .tip{font-size:8.4pt;line-height:1.7;background:var(--soft);padding:3.2mm 4mm;margin-top:5mm;color:#30343a}
@@ -43,18 +43,18 @@ table.ov th{width:17mm;text-align:left;vertical-align:top;color:var(--navy);font
 table.ov td{padding:1.8mm 2.6mm;border-bottom:.4pt solid #e4e5e7}
 
 .notes{border-top:.5pt solid var(--rule)}
-.seg{display:flex;align-items:baseline;gap:3mm;background:var(--navy);color:#fff;padding:1.6mm 3mm;margin-top:3mm;break-after:avoid}
+.seg{display:flex;align-items:baseline;gap:3mm;background:var(--navy);color:#fff;padding:1.3mm 3mm;margin-top:2.4mm;break-after:avoid}
 .segh{font-size:8.2pt;font-weight:700}.segs{font-size:8pt;opacity:.85}
-.nr{display:grid;grid-template-columns:8mm 74mm 1fr;gap:0 3.5mm;padding:2.1mm 0 2.1mm 1.4mm;border-bottom:.4pt dashed #d9dbde;break-inside:avoid}
+.nr{display:grid;grid-template-columns:8mm 70mm 1fr;gap:0 3.5mm;padding:1.6mm 0 1.6mm 1.4mm;border-bottom:.4pt dashed #d9dbde;break-inside:avoid}
 .nr.star{border-left:1.2mm solid var(--burg);padding-left:.8mm}
 .nr.prose{grid-template-columns:92mm 1fr}
 .nno{font-family:Inter,sans-serif;font-size:7pt;color:#8a8f96;padding-top:.9mm}
-.ntx{font-family:'Noto Serif CJK KR',serif;font-size:9pt;line-height:1.72;letter-spacing:-.02em;color:#1d2126}
+.ntx{font-family:'Noto Serif CJK KR',serif;font-size:8.8pt;line-height:1.66;letter-spacing:-.02em;color:#1d2126}
 .nr.prose .ntx{font-size:8.5pt;line-height:1.7;text-align:justify}
 .nnote{font-size:7.9pt;line-height:1.62;letter-spacing:-.02em;color:#3a3f45;border-left:.5pt solid #e1d6d6;padding-left:3mm}
 .nnote b{color:var(--burg)}
 
-.concept{padding:4.2mm 0 5mm;border-top:.6pt solid var(--rule);margin-top:3mm}
+.concept{padding:3.4mm 0 3.6mm;border-top:.6pt solid var(--rule);margin-top:2mm}
 .chead{display:flex;align-items:center;gap:2.5mm;break-after:avoid}
 .cid{font-family:Inter,sans-serif;font-size:7.2pt;font-weight:700;color:var(--burg);letter-spacing:.06em}
 .pri{font-size:6.6pt;font-weight:700;padding:.4mm 2mm;border-radius:2mm;color:#fff;background:var(--navy)}
@@ -71,17 +71,17 @@ table.ov td{padding:1.8mm 2.6mm;border-bottom:.4pt solid #e4e5e7}
 .fs{border:.6pt solid var(--navy);border-radius:1.6mm;padding:1.6mm 2.4mm;font-size:7.6pt;line-height:1.45;display:flex;flex-direction:column;background:#fff}
 .fs b{color:var(--navy);font-size:8.2pt}.fs span{color:#555a60}
 .fa{align-self:center;color:var(--burg);font-weight:700}
-.figwrap{margin:1mm 0 3.4mm;break-inside:avoid}
+.figwrap{margin:0 0 2.4mm;break-inside:avoid}
 .fig{width:100%;height:auto;display:block}
-.must{background:#f3f5f9;border-left:1.4mm solid var(--navy);padding:2.6mm 3.4mm;margin:2.6mm 0;break-inside:avoid}
+.must{background:#f3f5f9;border-left:1.4mm solid var(--navy);padding:2.2mm 3.2mm;margin:2mm 0;break-inside:avoid}
 .must ul,.exam ul{margin:0;padding-left:4.4mm;font-size:8.3pt;line-height:1.66}
 .must li,.exam li{margin-bottom:.6mm}
-.conf{background:#faf3f3;border-left:1.4mm solid var(--burg);padding:2.6mm 3.4mm;margin:2.6mm 0;break-inside:avoid}
+.conf{background:#faf3f3;border-left:1.4mm solid var(--burg);padding:2.2mm 3.2mm;margin:2mm 0;break-inside:avoid}
 .conf .lab{color:var(--burg)}
 .xo{display:grid;grid-template-columns:1fr 1fr;gap:3mm;font-size:8pt;line-height:1.55;padding:1.2mm 0;border-top:.4pt dashed #e3caca}
 .xo:first-of-type{border-top:none}
 .xo b{display:inline-block;width:4mm;font-weight:700}.x{color:#6d2a30}.x b{color:var(--burg)}.o b{color:var(--navy)}
-.exam{padding:2.2mm 3.4mm;border:.5pt solid #d5d7da;margin:2.6mm 0;break-inside:avoid}
+.exam{padding:1.8mm 3.2mm;border:.5pt solid #d5d7da;margin:2mm 0;break-inside:avoid}
 .nlink{text-align:right;font-size:7.4pt;color:var(--burg);font-weight:700;letter-spacing:.01em;margin-top:1.6mm}
 .quote{font-family:'Noto Serif CJK KR',serif;font-size:8.4pt;line-height:1.72;background:var(--soft);padding:3mm 4mm;margin:0 0 3mm;text-align:justify}
 .qsrc{font-family:'Noto Sans CJK KR',sans-serif;text-align:right;font-size:7pt;color:var(--muted);margin-top:1.2mm}
@@ -89,7 +89,7 @@ table.ov td{padding:1.8mm 2.6mm;border-bottom:.4pt solid #e4e5e7}
 .crow b{color:var(--navy)}
 .oxt{width:100%;border-collapse:collapse;font-size:8.2pt;line-height:1.5}
 .oxt th{background:var(--navy);color:#fff;padding:1.6mm;font-weight:600}
-.oxt td{padding:1.7mm 2mm;border-bottom:.4pt solid #e1e3e6;vertical-align:top}
+.oxt td{padding:1mm 2mm;border-bottom:.4pt solid #e1e3e6;vertical-align:top}
 .oxt td.k{font-family:Inter,sans-serif;color:var(--burg);font-weight:700;width:9mm;text-align:center}
 .oxt td.ans{width:10mm;text-align:center;font-weight:700;color:var(--navy)}
 .oxt td.why{width:38mm;color:var(--muted);font-size:7.6pt}

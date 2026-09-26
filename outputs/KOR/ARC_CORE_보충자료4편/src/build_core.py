@@ -86,18 +86,18 @@ def svg_kant():
     return "".join(o)
 
 def svg_hegel():
-    o = ['<svg viewBox="0 0 680 250" class="fig"><defs><marker id="ag" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="' + BURG + '"/></marker></defs>']
+    o = ['<svg viewBox="0 0 680 205" class="fig"><defs><marker id="ag" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="' + BURG + '"/></marker></defs>']
     steps = [("가족", "기반: 사랑이라는 정서", "한계: 제도적 보장이 약함"),
              ("시민 사회", "기반: 권리·이익 추구, 각종 제도 수립", "한계: 이해관계 충돌 → 불안정"),
              ("국가", "기반: 국가의 법과 제도", "법적 보호 + 이해관계 조정 → 가장 구체화")]
     for i, (n, a, b) in enumerate(steps):
-        x = 20 + i * 215; y = 170 - i * 60; h = 70 + i * 60
+        x = 20 + i * 215; y = 130 - i * 40; h = 68 + i * 40
         col = [GREY, NAVY, BURG][i]
         o.append(f'<rect x="{x}" y="{y}" width="200" height="{h}" rx="8" fill="{["#f3f2ee", "#eef0f4", "#f7eeee"][i]}" stroke="{col}" stroke-width="1.4"/>')
         o.append(t(x + 100, y + 22, n, 13, col, 700))
         o.append(t(x + 100, y + 42, a, 9.4))
         o.append(t(x + 100, y + 58, b, 9.4, col, 700))
-    o.append(f'<line x1="40" y1="28" x2="600" y2="28" stroke="{BURG}" stroke-width="1.6" marker-end="url(#ag)"/>')
+    o.append(f'<line x1="40" y1="30" x2="600" y2="30" stroke="{BURG}" stroke-width="1.6" marker-end="url(#ag)"/>')
     o.append(t(320, 20, "자유의 실현: 점점 더 안정적이고 지속 가능한 형태로 (앞 단계의 약점을 뒤 단계가 보완)", 10.5, BURG, 700))
     o.append('</svg>')
     return "".join(o)
@@ -149,14 +149,15 @@ def block(b):
     if b["conf"]:
         h.append('<div class="conf"><div class="lab">CONFUSING</div>' + "".join(
             f'<div class="xo"><div class="x"><b>×</b>{x}</div><div class="o"><b>○</b>{o}</div></div>' for x, o in b["conf"]) + "</div>")
-    h.append('<div class="exam"><div class="lab">EXAM CONNECTION</div><ul>' + "".join(f"<li>{e}</li>" for e in b["exam"]) + "</ul></div>")
+    if b["exam"]:
+        h.append('<div class="exam"><div class="lab">EXAM CONNECTION</div><ul>' + "".join(f"<li>{e}</li>" for e in b["exam"]) + "</ul></div>")
     h.append(f'<div class="nlink">N° 연결 → {b["nlink"]}</div></section>')
     return "\n".join(h)
 
 def chapter(no, title, author, key, notes_html, src_note):
     ov = "".join(f'<tr><th>{k}</th><td>{v}</td></tr>' for k, v in OVERVIEW[key])
     return (f'<section class="chapter"><div class="chno">CORE {no:02d}</div><h2 class="chtitle">{title}</h2><div class="chauth">{author}</div>'
-            f'<div class="h4">작품 한눈에 보기</div><table class="ov">{ov}</table>'
+            f'<div class="h4">작품 한눈에 보기 <span class="h4s">보충자료 학습지 핵심 정리</span></div><table class="ov">{ov}</table>'
             f'<div class="h4">원문 필기 <span class="h4s">{src_note}</span></div><div class="notes">{notes_html}</div>'
             f'<div class="h4">핵심 개념</div>' + "\n".join(block(b) for b in BLOCKS[key]) + "</section>")
 
@@ -185,7 +186,7 @@ def build():
 <tr><td><b>EXAM CONNECTION</b></td><td>문항이 이 개념을 어떤 사고 과정으로 묻는가</td></tr>
 <tr><td><b>N° 연결</b></td><td>ARC N°05~07에서 이 개념을 다룬 문항 번호 — 개념을 읽고 바로 풀어 볼 것</td></tr></table>
 <div class="h4">한눈에 보는 출제 지도</div>{table(maprows)}
-<p class="tip">공부 순서: ① 원문 필기를 원문 → 필기 순으로 읽고 ② 개념 블록의 MUST·CONFUSING을 소리 내어 정리한 뒤 ③ N° 연결 문항을 풀고 ④ 마지막 O/X로 점검한다. 틀린 문항은 해당 개념 블록으로 돌아와 CONFUSING부터 다시 본다.</p></section>""")
+<p class="tip">공부 순서: 원문 필기 → 개념 블록(MUST·CONFUSING) → N° 연결 문항 → O/X 점검. 필기의 <b>[학습지]</b> 표시는 동북고 보충자료 학습지 내용, 나머지는 ARC 해석이다.</p></section>""")
     p.append(chapter(1, "정훈, 「탄궁가」", "가사 · 가난에 대한 탄식에서 체념적 수용으로", "TAN", notes_poem(TAN_NOTES), "왼쪽 원문 · 오른쪽 필기 / 행 번호는 ARC N°과 동일"))
     p.append(chapter(2, "백석, 「팔원 - 서행시초3」", "자유시 · 식민지 현실 속 어린 계집아이에 대한 절제된 연민", "PAL", notes_poem(PAL_NOTES), "행 번호는 ARC N°과 동일"))
     p.append(chapter(3, "기형도, 「기억할 만한 지나침」", "자유시 · 우연히 목격한 타인의 울음과 훗날의 이해", "MEM", notes_poem(MEM_NOTES), "1연 1~11행 / 2연 12~14행"))
