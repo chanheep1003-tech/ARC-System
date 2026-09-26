@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.34-dev
+  version: 1.8.35-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -117,13 +117,19 @@ runtime:
   d4_d5_minimum_gate: required
   universal_distractor_competitiveness_gate: required
   universal_answer_length_bias_gate: required
-  arc_n_dongbook_difficulty_floor: required
+  arc_n_dongbook_difficulty_floor: reference_only_not_release_gate
+  arc_n_school_difficulty_match: not_required
   arc_n_balance_gate: required
   arc_n_core_exam_point_target: "70-80%"
   arc_n_advanced_discrimination_target: "20-30%"
   arc_final_quality_gate: required
-  arc_final_difficulty_mode: SCHOOL_ANCHOR          # user directive 2026-09-25: FINAL matches the 동북고 exam difficulty
-  arc_final_difficulty_anchor_kor: quality/anchors/KOR_DONGBUK_2025_2_MID_DIFFICULTY_ANCHOR_V1.0.yaml
+  arc_final_difficulty_mode: SCHOOL_MULTI_EXAM_ANCHOR
+  arc_final_multi_exam_anchor_required: true
+  arc_final_actual_exam_corpus_required: true
+  arc_final_difficulty_anchor_kor: quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+  arc_final_difficulty_anchor_soc: quality/anchors/SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+  arc_final_difficulty_anchor_sci: quality/anchors/SCI_REDOX_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+  arc_final_difficulty_anchor_sci_redox: quality/anchors/SCI_REDOX_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
   blind_review_rounds: 1                             # user directive 2026-09-25: one blind solve per bundle, all pipelines
   blind_review_after_round: author_fixes_recorded_as_post_blind_edits_no_rerun
   arc_final_difficulty_profile: required
@@ -305,7 +311,7 @@ active:
     scope_ledger: quality/ARC_SCOPE_LEDGER_V1.0.md
     qa_bench: quality/ARC_QA_BENCH_V1.6.md
     error_database: quality/ARC_ERROR_DATABASE_V1.0.md
-    difficulty_engine: quality/ARC_DIFFICULTY_ENGINE_V1.4.md
+    difficulty_engine: quality/ARC_DIFFICULTY_ENGINE_V1.5.md
     n_balance_gate: quality/ARC_N_BALANCE_GATE_V1.0.md
     difficulty_anchors: quality/ARC_DIFFICULTY_ANCHORS_V1.0.md
     school_reference_profile: quality/ARC_SCHOOL_REFERENCE_PROFILE_V1.0.md
@@ -313,7 +319,12 @@ active:
       path: quality/ARC_SCHOOL_DIFFICULTY_BENCH_V1.0.md
       drive_id: 1t0l6juVLzJxx9UMN5YwG1eRu4enAXpmX
     item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.5.md
-    final_quality_gate: quality/ARC_FINAL_QUALITY_GATE_V1.0.md
+    final_quality_gate: quality/ARC_FINAL_QUALITY_GATE_V1.1.md
+    dongbuk_actual_exam_difficulty_corpus: quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
+    final_difficulty_anchor_kor: quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+    final_difficulty_anchor_soc: quality/anchors/SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+    final_difficulty_anchor_sci_redox: quality/anchors/SCI_REDOX_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+    history_difficulty_diagnostic: quality/anchors/HIS_DONGBUK_MULTI_EXAM_DIFFICULTY_DIAGNOSTIC_V1.0.yaml
     korean_item_qa: quality/ARC_KOREAN_ITEM_QA_V1.5.md
     korean_exam_realism_gate: quality/ARC_KOREAN_EXAM_REALISM_GATE_V1.0.md
     korean_exam_type_profile: quality/source/KOR_DONGBOOK_EXAM_TYPE_PROFILE_2025_2026_V1.0.yaml
