@@ -14,7 +14,7 @@ ARC CORE / N° / FINAL 제작을 위한 엔진·규칙 저장소.
 1. `SYSTEM_MANIFEST.yaml`
 2. 해당 과목 `subjects/*_MASTER_V4.0.md`
 3. 필요한 엔진/quality 규칙
-4. Drive에서 현재 시험범위 자료
+4. 지문은 `sources/<과목>/` 라이브러리 먼저 확인 → 없을 때만 Drive에서 추출 후 라이브러리에 추가
 5. 생성
 6. QA
 7. `ops/RUN_LOG.jsonl` 기록
