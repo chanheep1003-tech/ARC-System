@@ -282,7 +282,7 @@ def fig01():
     b.append(t(352, 128, "검류계", 11.5, anchor="start"))
     b.append(t(200, 150, "레일", 11, fill="#555"))
     b.append(line(200, 140, 200, 99, sw=0.6, color="#777"))
-    return svg(400, 156, "".join(b), "90%")
+    return svg(400, 156, "".join(b), "80%")
 
 
 def fig03():
@@ -292,7 +292,7 @@ def fig03():
         cy = 62 + (i // 2) * 130
         b.append(gen_top(cx, cy, th, W=150, H=80))
         b.append(t(cx, cy + 58, lab, 12.5))
-    return svg(400, 256, "".join(b), "94%")
+    return svg(400, 256, "".join(b), "74%")
 
 
 def _dir_panel(x0, y0, mag_side, pole_face, move, coil_move=None, label=""):
@@ -665,7 +665,7 @@ def fig21():
     b.append(dot(nl, 44) + dot(nr, 44))
     b.append(magnet_h(30, 93, 80, 18))
     b.append(t(214, 150, "코일", 10.5))
-    return svg(400, 156, "".join(b), "90%")
+    return svg(400, 156, "".join(b), "80%")
 
 
 def fig22():
