@@ -543,9 +543,25 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None) -> 
     final_result = None
     if product == "ARC_FINAL":
         payload = final_profile(bundle, blind)
-        anchor_rel = manifest["runtime"].get(f"arc_final_difficulty_anchor_{bundle.get('subject', 'KOR').lower()}")
-        if manifest["runtime"].get("arc_final_difficulty_mode") == "SCHOOL_ANCHOR" and anchor_rel:
-            payload["difficulty_anchor"] = yaml.safe_load((ROOT / anchor_rel).read_text(encoding="utf-8"))
+        raw_subject = str(bundle.get("subject", "KOR")).strip().lower().replace("-", "_")
+        subject_alias = {
+            "korean": "kor",
+            "social": "soc",
+            "science": "sci",
+            "science_redox": "sci_redox",
+            "redox": "sci_redox",
+            "sci_redox": "sci_redox",
+            "history": "his",
+        }
+        subject_key = subject_alias.get(raw_subject, raw_subject)
+        runtime = manifest["runtime"]
+        anchor_rel = runtime.get(f"arc_final_difficulty_anchor_{subject_key}")
+        if not anchor_rel and subject_key in {"sci", "science"}:
+            anchor_rel = runtime.get("arc_final_difficulty_anchor_sci_redox")
+        if runtime.get("arc_final_difficulty_mode") in {"SCHOOL_ANCHOR", "SCHOOL_MULTI_EXAM_ANCHOR"}:
+            payload["difficulty_anchor_required"] = True
+            if anchor_rel:
+                payload["difficulty_anchor"] = yaml.safe_load((ROOT / anchor_rel).read_text(encoding="utf-8"))
         final_result = final_gate.analyze(payload)
 
     hard = [f for f in findings if f["severity"] == "FAIL"]
