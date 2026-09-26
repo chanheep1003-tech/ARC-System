@@ -73,7 +73,7 @@ def main() -> int:
         blind = load("blind_review.yaml")
         assert base["gates"]["FINAL_DIFFICULTY"] == "FAIL"
         assert "FINAL_SCHOOL_ANCHOR_EASIER" in {f["code"] for f in base["final_quality"]["findings"]}
-        assert base["final_quality"]["difficulty_profile"]["MODE"] == "SCHOOL_ANCHOR"
+        assert base["final_quality"]["difficulty_profile"]["MODE"] == "SCHOOL_MULTI_EXAM_ANCHOR"
         assert base["governance"] == {"FINAL_USER_APPROVAL": "PENDING", "DRIVE_SAVE": "BLOCKED"}
 
         with fitz.open(base["pdf"]) as doc:
@@ -96,9 +96,15 @@ def main() -> int:
             return forged
 
         # A profile shaped like the anchor passes the FINAL difficulty gate; an all-D4 set is too hard.
-        like_anchor = ["D3", "D3", "D2", "D3", "D2", "D2", "D3", "D3", "D4", "D2", "D4",
-                       "D3", "D3", "D3", "D3", "D2", "D4", "D2", "D4", "D1", "D2", "D3"]
-        assert run_variant(tmp, "anchor_like", blind=with_levels(like_anchor))["gates"]["FINAL_DIFFICULTY"] == "PASS"
+        # Multi-exam KOR anchor center is approximately D12 .343 / D3 .400 / D45 .257, mean 2.89.
+        # This 22-item profile is D1=1, D2=6, D3=9, D4=6 -> .318/.409/.273, mean 2.91.
+        like_anchor = [
+            "D1", "D2", "D3", "D3", "D2", "D3", "D4", "D2", "D3", "D4", "D3",
+            "D2", "D3", "D4", "D3", "D2", "D4", "D3", "D2", "D3", "D4", "D4"
+        ]
+        anchor_report = run_variant(tmp, "anchor_like", blind=with_levels(like_anchor))
+        assert anchor_report["gates"]["FINAL_DIFFICULTY"] == "PASS", anchor_report["final_quality"]
+        assert anchor_report["final_quality"]["difficulty_profile"]["MODE"] == "SCHOOL_MULTI_EXAM_ANCHOR"
         r = run_variant(tmp, "too_hard", blind=with_levels(["D4"] * 22))
         assert "FINAL_SCHOOL_ANCHOR_HARDER" in {f["code"] for f in r["final_quality"]["findings"]}
 
