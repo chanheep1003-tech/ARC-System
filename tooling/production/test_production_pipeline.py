@@ -98,8 +98,9 @@ def main() -> int:
         final["product_mode"] = "ARC_FINAL"
         r = run_variant(tmp, "final_mode", items=final)
         assert r["final_quality"] is not None and r["gates"]["FINAL_DIFFICULTY"] in {"PASS", "FAIL"}
-        if d45 < 0.30:
-            assert r["gates"]["FINAL_DIFFICULTY"] == "FAIL", "too-easy set must not pass the FINAL difficulty floor"
+        assert r["gates"]["FINAL_DIFFICULTY"] == "FAIL", "KOR N04 converted to FINAL must fail the Dongbuk multi-exam anchor"
+        assert "FINAL_SCHOOL_ANCHOR_EASIER" in {f["code"] for f in r["final_quality"]["findings"]}
+        assert r["final_quality"]["difficulty_profile"]["MODE"] == "SCHOOL_MULTI_EXAM_ANCHOR"
         assert r["answer_key_pdf"] and Path(r["answer_key_pdf"]).is_file()
         with fitz.open(r["pdf"]) as doc:
             assert not any("ANSWER KEY" in page.get_text() for page in doc), "FINAL problem sheet exposes the key"
