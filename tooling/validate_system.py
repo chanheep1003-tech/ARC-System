@@ -146,11 +146,15 @@ def main() -> int:
         "problem_drive_save_before_user_approval": "forbidden",
         "universal_distractor_competitiveness_gate": "required",
         "universal_answer_length_bias_gate": "required",
-        "arc_n_dongbook_difficulty_floor": "required",
+        "arc_n_dongbook_difficulty_floor": "reference_only_not_release_gate",
+        "arc_n_school_difficulty_match": "not_required",
         "arc_n_balance_gate": "required",
         "arc_n_core_exam_point_target": "70-80%",
         "arc_n_advanced_discrimination_target": "20-30%",
         "arc_final_quality_gate": "required",
+        "arc_final_difficulty_mode": "SCHOOL_MULTI_EXAM_ANCHOR",
+        "arc_final_multi_exam_anchor_required": True,
+        "arc_final_actual_exam_corpus_required": True,
         "arc_final_difficulty_profile": "required",
         "arc_final_item_quality_profile": "required",
         "arc_final_release_gate": "required",
@@ -429,7 +433,9 @@ def main() -> int:
         [
             "WEAK_DISTRACTOR_HARD_FAIL",
             "CORRECT_OPTION_LENGTH_BIAS",
-            "FINAL_TOO_EASY_DISTRIBUTION",
+            "FINAL_SCHOOL_ANCHOR_MISSING",
+            "FINAL_ANCHOR_PROVENANCE_INVALID",
+            "SCHOOL_MULTI_EXAM_ANCHOR",
             "FINAL_RELEASE",
         ],
     )
@@ -440,8 +446,11 @@ def main() -> int:
         [
             "DIFFICULTY_PROFILE",
             "ITEM_QUALITY_PROFILE",
-            "LONGEST_OPTION_IS_KEY_RATE",
-            "DISTRACTOR_COMPETITIVENESS=PASS",
+            "SCHOOL_MULTI_EXAM_ANCHOR",
+            "FINAL_SCHOOL_ANCHOR_MISSING",
+            "KOR TARGET",
+            "SOC TARGET",
+            "SCI-REDOX TARGET",
             "FINAL_RELEASE=BLOCKED",
         ],
     )
@@ -459,13 +468,60 @@ def main() -> int:
         errors,
         active["quality"]["difficulty_engine"],
         [
-            "DONGBOOK PRODUCT PROFILE",
-            "CORE_EXAM_POINT 14~16",
-            "D4+D5 기본 20~30%",
-            "D4+D5 target >= 30%",
-            "DIFFICULTY_INFLATION_FAIL",
+            "N° / FINAL DIFFICULTY DECOUPLING",
+            "ARC_N은 동북고 실제 시험의 난도 분포와 일치할 의무가 없다.",
+            "DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml",
+            "DIRECT-SCOPE PRIORITY",
+            "NO TEACHER-STYLE PREDICTION",
         ],
     )
+    # Subject-specific FINAL anchors must be multi-exam, normalized, and evidence-linked.
+    anchor_keys = (
+        "final_difficulty_anchor_kor",
+        "final_difficulty_anchor_soc",
+        "final_difficulty_anchor_sci_redox",
+    )
+    for key in anchor_keys:
+        rel = active["quality"].get(key)
+        if not rel or not (ROOT / rel).is_file():
+            errors.append(f"active FINAL anchor missing: {key}={rel!r}")
+            continue
+        anchor = yaml.safe_load((ROOT / rel).read_text(encoding="utf-8"))
+        if str(anchor.get("mode", "")).upper() not in {"MULTI_EXAM_ENSEMBLE", "DIRECT_SCOPE_PLUS_MULTI_EXAM"}:
+            errors.append(f"{key} must use a multi-exam anchor mode")
+        if int(anchor.get("source_exam_count", 0) or 0) < 2:
+            errors.append(f"{key} must reference at least two actual exams")
+        if not anchor.get("corpus"):
+            errors.append(f"{key} must reference the actual-exam corpus")
+        profile = anchor.get("profile", {})
+        shares = profile.get("shares", {})
+        try:
+            share_sum = float(shares["D12"]) + float(shares["D3"]) + float(shares["D45"])
+        except Exception:
+            errors.append(f"{key} has invalid difficulty shares")
+        else:
+            if abs(share_sum - 1.0) > 0.01:
+                errors.append(f"{key} difficulty shares must sum to 1.0, got {share_sum:.3f}")
+
+    corpus_rel = active["quality"].get("dongbuk_actual_exam_difficulty_corpus")
+    if not corpus_rel or not (ROOT / corpus_rel).is_file():
+        errors.append("Dongbuk actual-exam difficulty corpus is missing")
+    else:
+        corpus = yaml.safe_load((ROOT / corpus_rel).read_text(encoding="utf-8"))
+        exams = corpus.get("exams", [])
+        if len(exams) < 16:
+            errors.append(f"Dongbuk difficulty corpus must retain at least 16 actual exams, got {len(exams)}")
+        ids = {str(row.get("exam_id")) for row in exams if isinstance(row, dict)}
+        required_ids = {
+            "KOR_2025_2_MID", "KOR_2025_2_FINAL", "KOR_2026_1_MID", "KOR_2026_1_FINAL",
+            "SOC_2025_2_MID", "SOC_2025_2_FINAL", "SOC_2026_1_MID", "SOC_2026_1_FINAL",
+            "SCI_2025_2_MID", "SCI_2025_2_FINAL", "SCI_2026_1_MID", "SCI_2026_1_FINAL",
+            "HIS_2025_2_MID", "HIS_2025_2_FINAL", "HIS_2026_1_MID", "HIS_2026_1_FINAL",
+        }
+        missing_exam_ids = sorted(required_ids - ids)
+        if missing_exam_ids:
+            errors.append(f"Dongbuk difficulty corpus missing exams: {', '.join(missing_exam_ids)}")
+
     require_markers(
         errors,
         active["quality"]["n_balance_gate"],
