@@ -1,0 +1,27 @@
+anchor_id: SCI_REDOX_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0
+version: 1.0
+subject: SCI_REDOX
+school: 동북고등학교
+mode: DIRECT_SCOPE_PLUS_MULTI_EXAM
+source_exam_count: 4
+direct_scope_source:
+  exam_id: SCI_2025_2_MID
+  item_ids: [8, 9, 10, 11, 12]
+  weight: 0.65
+broader_science_ensemble_weight: 0.35
+corpus: quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
+profile:
+  shares: {D12: 0.301, D3: 0.391, D45: 0.308}
+  mean_level: 2.97
+tolerance:
+  share: 0.15
+  mean_level: 0.25
+  late_section_d45_min: 2
+format_reference:
+  mcq_typical: 24
+  constructed_typical: 4
+confidence: HIGH_RELEVANCE_MEDIUM_SAMPLE
+notes:
+  - "현재 산화·환원 범위와 직접 겹치는 실제 5문항을 최우선 앵커로 사용."
+  - "소표본 과적합을 막기 위해 동북고 통합과학 4회 전체 난도폭을 35% 혼합."
+  - "상위학년 화학 공식이나 범위 밖 산화수 기법으로 난도를 올리지 않는다."
