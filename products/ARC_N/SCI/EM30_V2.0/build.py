@@ -1,4 +1,4 @@
-"""Build the ARC N° student PDF (cover + two-column problem pages).
+"""Build the ARC N° PDF: cover, blank, two-column problems, blank, answer key.
 
 usage: python3 build.py [--png OUTDIR]
 Requires: Pretendard installed as a system font, Node + Playwright (Chromium).
@@ -69,7 +69,7 @@ CSS = r"""
 html,body{margin:0;padding:0;background:#fff;color:var(--ink);
   font-family:Pretendard,"Noto Sans KR",sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .page{width:210mm;height:297mm;position:relative;background:#fff;page-break-after:always;overflow:hidden}
-.page:last-child{page-break-after:auto}
+.page:last-child,.page.key{page-break-after:auto}
 .cover{padding:24mm 20mm 18mm}
 .kicker{font-size:10.5pt;font-weight:700;letter-spacing:.11em;color:var(--navy)}
 .toprule{height:.7pt;background:var(--navy);margin-top:7mm}
@@ -139,6 +139,9 @@ sub{vertical-align:-.25em}
 .frac span:first-child{border-bottom:.5pt solid #333;padding:0 .8mm}
 .frac.n{font-size:8.4pt}
 #measure{position:absolute;left:-9999px;top:0;width:calc((177mm - 8.4mm)/2)}
+.keytab{border-collapse:collapse;width:100%;margin-top:8mm;font-size:10pt}
+.keytab td{border:.5pt solid #9a9da2;text-align:center;padding:2.4mm 0;line-height:1.6}
+.keyh{font-size:13pt;font-weight:700;margin-top:4mm}
 """
 
 PAGINATE = r"""
@@ -184,8 +187,9 @@ def build_html():
              '<div class="sub">전자기 유도와 발전 · 30제 N°2</div>'
              '<div class="covermeta"><strong>동북고등학교</strong><br>2학기 중간고사 대비</div></div>'
              '<div class="year">2026</div><div class="series">ARC ACADEMIC SERIES</div></section>')
+    blank = '<section class="page blank"></section>'
     return (f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>{NAME}</title>'
-            f'<style>{CSS}</style></head><body>{cover}<div id="pages"></div>'
+            f'<style>{CSS}</style></head><body>{cover}{blank}<div id="pages"></div>{blank}{key_section()}'
             f'<div id="measure"></div><div id="source" style="display:none">{items}</div>'
             f'{PAGINATE.replace("__HEAD__", HEAD_RIGHT)}</body></html>')
 
@@ -207,19 +211,12 @@ const { chromium } = require(process.env.PW_MODULE || 'playwright');
 KEY = [4, 3, 1, 4, 2, 5, 3, 5, 3, 3, 5, 1, 4, 1, 3, 3, 2, 2, 1, 4, 2, 5, 4, 4, 5, 1, 2, 5, 1, 2]
 
 
-def build_key_html():
+def key_section():
     cells = "".join(f'<td><b>{i + 1:02d}</b><br>{CIRCLED[k - 1]}</td>' + ("</tr><tr>" if i % 10 == 9 else "")
                     for i, k in enumerate(KEY))
-    return (f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>{NAME} 정답</title>'
-            f'<style>{CSS}.keytab{{border-collapse:collapse;width:100%;margin-top:8mm;font-size:10pt}}'
-            f'.keytab td{{border:.5pt solid #9a9da2;text-align:center;padding:2.4mm 0;line-height:1.6}}'
-            f'.keyh{{font-size:13pt;font-weight:700;margin-top:4mm}}.keys{{font-size:8.5pt;color:#555;margin-top:2mm}}'
-            f'</style></head><body><section class="page body"><header class="head"><div class="brand">ARC N°</div>'
+    return (f'<section class="page body key"><header class="head"><div class="brand">ARC N°</div>'
             f'<div class="unit">{HEAD_RIGHT} · 정답</div></header>'
-            f'<div class="keyh">정답</div><div class="keys">교사·편집용 — 학생용 문제지와 분리하여 배포</div>'
-            f'<table class="keytab"><tr>{cells}</tr></table></section>'
-            f'<script>document.fonts.ready.then(()=>document.body.setAttribute("data-ready","1"))</script>'
-            f'</body></html>')
+            f'<div class="keyh">정답</div><table class="keytab"><tr>{cells}</tr></table></section>')
 
 
 def main():
@@ -232,14 +229,9 @@ def main():
         f.write(RENDER_JS)
     env = dict(os.environ)
     env.setdefault("PW_MODULE", "/opt/node22/lib/node_modules/playwright")
-    key_html = os.path.join(HERE, ".key.html")
-    with open(key_html, "w", encoding="utf-8") as f:
-        f.write(build_key_html())
     try:
         subprocess.run(["node", js, html_path, pdf_path], check=True, env=env)
-        subprocess.run(["node", js, key_html, os.path.join(HERE, NAME + "_정답.pdf")], check=True, env=env)
     finally:
-        os.remove(key_html)
         os.remove(js)
     print(pdf_path)
     if "--png" in sys.argv:

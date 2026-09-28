@@ -80,5 +80,5 @@ HANDOFF_GATE          PASS
 
 ## 파일
 
-- `items.py` 문항 원고 · `figures.py` / `figparts.py` 그림 · `build.py` 조판(정답 PDF 별도) · `verify.py` 독립 재풀이
-- 빌드: `python3 build.py [--png OUTDIR]` → `ARC_N_SCI_통합과학2_산화환원_30제_V1.0.pdf`, `..._정답.pdf`
+- `items.py` 문항 원고 · `figures.py` / `figparts.py` 그림 · `build.py` 조판 · `verify.py` 독립 재풀이
+- 빌드: `python3 build.py [--png OUTDIR]` → `ARC_N_SCI_통합과학2_산화환원_30제_V1.0.pdf` 1개 (표지 → 빈 쪽 → 문제 8쪽 → 빈 쪽 → 정답)

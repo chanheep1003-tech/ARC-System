@@ -65,3 +65,7 @@ COPY_RISK             LOW   (기출 구조만 참고, 문장·수치·그림 새
 PDF_RENDER_VERIFY     PASS  (전 페이지 렌더 확인, clipping/overlap 0, 대체 글꼴 0)
 HANDOFF_GATE          PASS
 ```
+
+## 파일
+
+- 빌드: `python3 build.py [--png OUTDIR]` → `ARC_N_SCI_통합과학2_전자기유도_30제_N2_V1.0.pdf` 1개 (표지 → 빈 쪽 → 문제 9쪽 → 빈 쪽 → 정답)
