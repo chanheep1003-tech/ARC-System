@@ -703,29 +703,37 @@ def fig23():
     return svg(400, 132, "".join(b), "86%")
 
 
+def coil_v(cx, y, turns=6, w=56, pitch=9, ry=5):
+    """Coil with a vertical axis seen slightly from above: each turn is an
+    ellipse; the front (lower) half is solid, the back (upper) half light.
+    Returns svg; leads leave at the top-left and bottom-right."""
+    out = [f'<rect x="{cx - w / 2 - 2:.1f}" y="{y - ry:.1f}" width="{w + 4:.1f}" height="{turns * pitch + 2 * ry:.1f}" rx="5" fill="#f6f6f6" stroke="none"/>']
+    for k in range(turns):
+        yy = y + k * pitch
+        out.append(path(f"M{cx - w / 2:.1f},{yy:.1f} A{w / 2:.1f},{ry} 0 0 1 {cx + w / 2:.1f},{yy:.1f}", sw=0.9, color=GRAY))
+        out.append(path(f"M{cx - w / 2:.1f},{yy:.1f} A{w / 2:.1f},{ry} 0 0 0 {cx + w / 2:.1f},{yy:.1f}", sw=1.5))
+    return "".join(out)
+
+
+def coil_v_leads(cx, y, turns=6, w=56, pitch=9):
+    return (cx - w / 2, y), (cx + w / 2, y + (turns - 1) * pitch)
+
+
 def fig24():
     b = []
-    cx = 90
-    b.append(coil_h(60, 150, turns=6, pitch=10, h=26).replace("<rect", "<rect", 1))
-    b.append(t(46, 168, "코일", 10.5, anchor="end"))
-    (lx, ly), (rx, ry) = coil_leads(60, 150, 6, 10, 26)
-    b.append(poly([(lx, ly), (lx, 196), (80, 196)]) + poly([(rx, ry), (rx, 196), (100, 196)]))
-    b.append(galv(90, 196, 9))
-    b.append(magnet_v(cx - 8, 20, 16, 34, top="S", bottom="N", size=10))
-    b.append(line(cx, 150, cx, 60, sw=0.6, dash="2,3", color=MID))
-    b.append(line(130, 54, 130, 150, sw=0.8, both=True))
-    b.append(ti(142, 106, "4h", 12, anchor="start"))
-    b.append(t(cx, 226, "(가)", 12))
-    b.append(t(60 + 200, 226, "(나)", 12))
-    b.append(coil_h(260, 150, turns=6, pitch=10, h=26))
-    (lx, ly), (rx, ry) = coil_leads(260, 150, 6, 10, 26)
-    b.append(poly([(lx, ly), (lx, 196), (280, 196)]) + poly([(rx, ry), (rx, 196), (300, 196)]))
-    b.append(galv(290, 196, 9))
-    b.append(magnet_v(282, 94, 16, 34, top="S", bottom="N", size=10))
-    b.append(line(290, 150, 290, 128, sw=0.6, dash="2,3", color=MID))
-    b.append(line(330, 128, 330, 150, sw=0.8, both=True))
-    b.append(ti(342, 144, "h", 12, anchor="start"))
-    return svg(400, 232, "".join(b), "80%")
+    for x0, lab, top, hl in [(90, "(가)", 20, "4h"), (290, "(나)", 94, "h")]:
+        b.append(magnet_v(x0 - 8, top, 16, 34, top="S", bottom="N", size=10))
+        b.append(line(x0, top + 34, x0, 214, sw=0.6, dash="2,3", color=MID))
+        b.append(coil_v(x0, 158, turns=5, w=56, pitch=8))
+        (lx, ly), (rx, ry) = coil_v_leads(x0, 158, 5, 56, 8)
+        b.append(poly([(rx, ry), (x0 + 50, ry), (x0 + 50, 186)]))
+        b.append(poly([(lx, ly), (x0 - 44, ly), (x0 - 44, 208), (x0 + 50, 208), (x0 + 50, 206)]))
+        b.append(galv(x0 + 50, 196, 9))
+        b.append(line(x0 + 40, top + 34, x0 + 40, 154, sw=0.8, both=True))
+        b.append(ti(x0 + 48, (top + 34 + 154) / 2 + 4, hl, 12, anchor="start"))
+        b.append(t(x0, 230, lab, 12))
+    b.append(t(46, 172, "코일", 10.5, anchor="end"))
+    return svg(400, 236, "".join(b), "80%")
 
 
 def fig25():
