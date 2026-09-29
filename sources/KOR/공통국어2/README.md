@@ -9,6 +9,8 @@
 | | `CHH_PRE`, `CHH`, `CHH_NOTES` | 「춘향전」(교과서 수록 전체) | 앞 줄거리 + 문단 list |
 | | `SURA`, `SURA_NOTES` | 백석, 「수라」 | 연 list[list] (12행) |
 | | `GU_PRE`, `GU`, `GU_NOTES` | 윤흥길, 「아홉 켤레의 구두로 남은 사내」 | (가)~(라) 발췌 + 중략 줄거리 |
+| `unit2.py` | `ESSAY`(+`ESSAY_*`) | 소민이의 논증하는 글 「반려견 보호자 자격시험을 의무화하자」(교과서 2단원 01) | 문단 list + 개념·계획·자료·개요·주석 |
+| | `NEGO`(+`NEGO_*`) | 고속 철도 공사 협상 대화 「우리 학교 아래로 고속 철도가 지나간다고?」(2단원 02) | (단계, 화자, 발언, 여백주석) list + 입장·합의안·쟁점 |
 | `supplement4.py` | `TAN_*` | 정훈, 「탄궁가」 | 행 list |
 | | `PAL_*` | 백석, 「팔원」 | 행 list |
 | | `MEM_*` | 기형도, 「기억할 만한 지나침」 | 연 list[list] |
@@ -27,6 +29,7 @@ from unit1 import SMI, SMI_NOTES
 - 교과서 PDF(Drive `17bdR-sY3W1Rl770yp1Q2cCZrNAmMNjFo`, 교사용)는 본문 텍스트층이 없어 추출 불가.
 - 1단원 원문: Drive `ARC_공통국어2_1단원_N제50_학생용.md`(`1jNYWqJ0VZXrB5NPo3DxWI6CbjPrFmRBN`) + 2025 기출(`1bNw6j5elzsIqWjaR3hG9dRmCEJtMoIK5`).
 - 속미인곡 아래아 일부(ᄌᆞᆷ결의, ᄎᆞᆯ하리, ᄉᆡᆼ각, ᄇᆞᆰ앗ᄂᆞᆫ고, ᄒᆞ돗ᄯᅥᆫ디)는 원자료 깨짐으로 복원한 것 — 교과서 대조 전까지 [미검증].
+- 2단원(`unit2.py`): 교과서 PDF 본문 글꼴이 깨져 **페이지 이미지 시각 전사**함 → 전 항목 [미검증], 교과서 대조 시 수정. 학습활동(p79~83, p94~99)·개념 영상 등은 미수록.
 - 보충자료 4편: ARC N°06~09에서 사용한 확정본(N°09 기준).
 
 ## Drive 사본 (폴더 `ARC_지문라이브러리_공통국어2` · `1n5ZBALgxepDFrwXFS5yRiSCIsb3HQz6y`)
