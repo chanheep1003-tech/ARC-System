@@ -25,8 +25,7 @@ def put_st(st, old, new):
             if old in ln and not hit:
                 st[k][j] = ln.replace(old, new, 1); hit = 1
     assert hit, old
-put_st(SMI, "어엿븐 그림재", "{㉢|어엿븐 그림재}")
-put_st(SMI, "낙월(落月)", "{㉣|낙월(落月)}")
+put_st(SMI, "낙월(落月)", "{㉢|낙월(落月)}")
 
 # 춘향전 (1단원)
 CHH = list(U.CHH)
