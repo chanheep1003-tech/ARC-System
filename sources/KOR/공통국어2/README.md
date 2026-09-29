@@ -42,6 +42,8 @@ from unit1 import SMI, SMI_NOTES
 | 1단원_03_춘향전.md | `1AlO7AGHLIbgdJNr5p-hWQi-QLjGXzpbq` |
 | 1단원_04_수라.md | `1mUxoZQ4CgwxPwUfVPMrJqkNb30pKUAzG` |
 | 1단원_05_아홉켤레의구두로남은사내.md | `1tTY6xKXHo2Y74WO2b8qRfA0UCnJ6xvLc` |
+| 2단원_01_논증하는글쓰기_반려견자격시험.md | `1RXHjf9cwZ5wHFwd5qQZnGTXkQeucS-ck` |
+| 2단원_02_지혜롭게협상하기_고속철도.md | `1a7ccnKY4BNWRuhWoduT6sh0KFn14Lo7q` |
 | 보충_01_탄궁가.md | `1uBEsT4vgkWyh-OzD-z7d1JoiZnLd54C3` |
 | 보충_02_팔원.md | `1p-Ji4U8zJrrBQYxMe9Sy_i6Qkvdb3QeU` |
 | 보충_03_기억할만한지나침.md | `1E6-HZ6bGhbzG44vm0uLTlrLyAAuoLKl9` |
