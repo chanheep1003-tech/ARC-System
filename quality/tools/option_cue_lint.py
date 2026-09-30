@@ -29,7 +29,7 @@ GATE = dict(longest_pos=0.35, longest_all=0.30, overlap=0.30, ratio_lo=0.75, rat
 ABS = ["완전히", "반드시", "오직", "전혀", "확정", "직접", "오히려", "항상", "절대", "결코", "일방적", "전부", "오로지", "즉시", "곧바로", "무관"]
 NEG = re.compile("않|아닌|다른|틀린")
 PURGE = ("common", "passages_final", "passages_final2", "items_final", "items_final2", "items_a", "items_b", "items_c",
-         "items_n12", "passages_n11", "passages_n12", "apply_rev", "revise_a", "revise_b", "revise_c", "revise_d", "revise_e", "revise_n12", "revise_final")
+         "items_n12", "passages_n11", "passages_n12", "apply_rev", "revise_a", "revise_b", "revise_c", "revise_d", "revise_e", "revise_f", "revise_g", "revise_n12", "revise_final")
 
 def clean(t):
     return re.sub(r"\{.\|([^}]*)\}", r"\1", re.sub(r"<[^>]+>", "", t or ""))
