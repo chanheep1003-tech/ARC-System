@@ -4,6 +4,8 @@ sys.path.insert(0, str(pathlib.Path(__file__).parent))
 import items_n13
 from common import Q
 from passages_n13 import SETS
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[4] / 'quality' / 'tools'))
+from line_cite import cited_lines, q_texts
 
 OUT = pathlib.Path(__file__).parent
 CIRC = "①②③④⑤"
@@ -45,24 +47,27 @@ print("dist", {CIRC[k]: cnt[k] for k in range(5)})
 for i in range(len(answers) - 2):
     assert not (answers[i] == answers[i+1] == answers[i+2]), f"triple at {i+1}"
 
-def poem_lines(lines):
-    return "".join(f'<div class="ln"><span class="lt">{mark(l)}</span><span class="lno">{(n if n % 5 == 0 else "")}</span></div>' for n, l in enumerate(lines, 1))
+def _ln(n, l, bold):
+    return f'<div class="ln{" b" if n in bold else ""}"><span class="lt">{mark(l)}</span><span class="lno">{(n if n % 5 == 0 else "")}</span></div>'
 
-def stanza_lines(sts):
+def poem_lines(lines, bold=()):
+    return "".join(_ln(n, l, bold) for n, l in enumerate(lines, 1))
+
+def stanza_lines(sts, bold=()):
     out, n = [], 0
     for k, st in enumerate(sts):
         if k: out.append('<div class="gap"></div>')
         for l in st:
             n += 1
-            out.append(f'<div class="ln"><span class="lt">{mark(l)}</span><span class="lno">{(n if n % 5 == 0 else "")}</span></div>')
+            out.append(_ln(n, l, bold))
     return "".join(out)
 
-def render_passage(s, sub=False):
+def render_passage(s, sub=False, bold=()):
     if s["kind"] == "multi":
         out = ['<div class="passage">']
         for part in s["parts"]:
             out.append(f'<div class="plabel">{part["label"]}</div>')
-            out.append(render_passage(part, sub=True))
+            out.append(render_passage(part, sub=True, bold=bold))
         out.append("</div>")
         return "\n".join(out)
     cls = "sub" if sub else "passage"
@@ -74,9 +79,9 @@ def render_passage(s, sub=False):
         out.append(f'<div class="phead">{s["head"]}</div>')
     k = s["kind"]
     if k == "poem":
-        out.append(poem_lines(s["lines"]))
+        out.append(poem_lines(s["lines"], bold))
     elif k == "stanzas":
-        out.append(stanza_lines(s["stanzas"]))
+        out.append(stanza_lines(s["stanzas"], bold))
     elif k in ("prose", "essay"):
         for p in s["paras"]:
             if p.startswith("@@SUM@@"): out.append(f'<div class="pre">{p[7:]}</div>')
@@ -179,6 +184,7 @@ html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:'Noto 
 .ln{display:flex;justify-content:space-between;gap:2mm;break-inside:avoid}
 .lno{font-family:Inter,sans-serif;font-size:6.6pt;color:#8a8f96;min-width:4mm;text-align:right}
 .gap{height:3mm}
+.ln.b .lt{font-weight:700;color:#000}
 .plabel{font-weight:700;color:#1F2A44;font-size:8.4pt;margin:2.2mm 0 1.2mm;break-after:avoid}
 .sub{margin-bottom:2mm}
 .pre{font-size:7.8pt;line-height:1.58;border:.5pt solid #cfd2d6;background:#f7f6f2;padding:2mm 2.6mm;margin:1.4mm 0 2.2mm;text-align:justify}
@@ -242,7 +248,13 @@ def student_html():
     for k, st in enumerate(SETS):
         a, b = st["rng"]
         p.append(f'<div class="bundle-title{" first" if k == 0 else ""}">[{a:02d}~{b:02d}] 다음 글을 읽고 물음에 답하시오.</div>')
-        p.append(render_passage(st))
+        cite = set()
+        for i in range(a, b + 1): cite |= cited_lines(*q_texts(Q[i - 1]))
+        nl = len(st.get("lines", [])) or sum(len(x) for x in st.get("stanzas", []))
+        if cite:
+            assert nl and max(cite) <= nl, f"{st['name']}: 인용 행 {sorted(cite)} 가 지문 행 수 {nl} 초과/행 번호 없는 지문"
+            print("bold", st["name"], sorted(cite))
+        p.append(render_passage(st, bold=cite))
         for i in range(a, b + 1):
             p.append(render_q(i, Q[i - 1]))
     p.append("</section></body></html>")
