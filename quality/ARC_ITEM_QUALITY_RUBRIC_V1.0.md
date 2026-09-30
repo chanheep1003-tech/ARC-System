@@ -96,3 +96,9 @@ QUALITY_RUBRIC_VERSION: ARC-IQR-V1.0
 과목 MASTER 또는 COMMON ENGINE 수정 후보로 올리고 QA BENCH로 회귀검사한다.
 
 END ARC ITEM QUALITY RUBRIC V1.0
+
+
+## 추가 규칙 (2026-09-30, 단서 누수 방지)
+- 선지 5개의 길이·구조·어조를 평준화한다(길이 편차 ±25% 이내). 세트 기준 '정답이 최장 선지'인 비율 ≤ 30%.
+- 오답에 과잉 단정어(완전히·반드시·직접·확정적·오직 등)를 집중시키지 않는다.
+- 세트 납품 전 `quality/tools/option_cue_lint.py`로 점검하고, 미통과 문항은 D2로 강등하거나 재출제한다.
