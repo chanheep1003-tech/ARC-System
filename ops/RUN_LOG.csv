@@ -1,2 +1,3 @@
 ﻿run_id,timestamp,product,subject,target_range,item_count,manifest_version,git_branch,git_commit,engine_version,subject_master_version,bank_pass,discarded,avg_item_quality,avg_commercial_grade,set_editorial_score,hard_fail_count,notes
 BOOTSTRAP-20260918-001,2026-09-18T00:00:00+09:00,QA,,ARC system bootstrap,,1.0.0,main,,4.0,4.0,,,,,,0,"SYSTEM_MANIFEST, main/dev policy, RUN_LOG initialized. Freeze mode intentionally not enabled."
+ARC_N03-KOR-20260930-001,2026-09-30T23:00:00+09:00,ARC_N,KOR,공통국어2 지문 11개(1단원 5·2단원 2·보충 4) × 10문항,110,1.0.0,claude/gracious-feynman-0m2o33,,4.0,4.0,,0,,,,0,지문 전문 수록(Drive 원문 전사). 단일 세션 출제자 검증(PASS A) + 구조 QC(번호·선지5·정답분포 22×5·선지길이 편향 점검·PDF 텍스트 대조). 독립 재풀이(PASS B)와 검증문항은행 저장은 미수행. 난이도는 내부 추정치이며 검증 미완.
