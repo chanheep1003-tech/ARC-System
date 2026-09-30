@@ -8,3 +8,6 @@
 - ARC FINAL N°02: `outputs/KOR/ARC_FINAL_공통국어2_N02/src/` (passages_final2.py → items_final2.py → build_final.py). 개수형·ㄱ~ㅁ·표 정오·사례 적용으로 난도 상향. 난이도 검사 결과는 각 폴더의 `난이도검사_*.md`.
 - ARC N°11: `outputs/KOR/ARC_N11_시험범위11편_110Q/src/` (items_a/b/c.py → build_n11.py; 문항마다 해설 `e` 포함, pdf.js가 문제지·정답표·해설 3종 출력).
 - ARC N°12: `outputs/KOR/ARC_N12_보충자료4편_핵심40Q/src/` (N°11 파이프라인 복사: items_n12.py → build_n12.py).
+- **문항 출제 전 필독**: `quality/ARC_DISTRACTOR_ENGINEERING_V1.0.md` (선지는 정답의 한 요소만 바꿔 만든다, 길이·구조·구체성 평준화). 납품 전 `python3 quality/tools/option_cue_lint.py <세트>` 통과 필수, 새 세트는 도구 REGISTRY에 등록. D등급은 배점에서 역산 금지.
+- 산출물 지도는 `outputs/README.md`.
+- **재사용 정책**: 새 세트가 이전 세트와 겹쳐도 된다. 핵심 문항은 이전 문항을 선지 재구성/발문 변경(EVOLVE)으로 개선해 재사용하고 계보(parent/change/delta)를 남긴다. 무개선 복붙(COPY)은 세트의 10% 이하. (quality/ARC_SIMILARITY_GUARD_V1.0.md §6)

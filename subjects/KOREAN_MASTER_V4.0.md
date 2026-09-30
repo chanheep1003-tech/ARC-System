@@ -41,6 +41,7 @@ HALF_TRUE 고난도 3~4
 동일 구조 3문항 연속 금지.
 
 ## 5. DISTRACTOR ENGINE
+(세부 규칙: `quality/ARC_DISTRACTOR_ENGINEERING_V1.0.md` — DT1~DT8, 단일 변이 규칙, CDI, 선지 린트 게이트)
 반드시 세트 전체에서 다양화:
 HALF_TRUE
 HALF_TRUE_OBSERVATION_INFERENCE_SWAP

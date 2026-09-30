@@ -351,6 +351,7 @@ FINAL용 별도 과목 프롬프트를 중복 생성하지 않는다.
 - 가짜 TRUE_VISUAL 분류
 - 불완전 VISUAL_SPEC
 - 학생용 원고에 정답/해설/QC 메타데이터 혼입
+- 선지 경쟁력 게이트 미통과 (정답이 최장 선지 편중 등 — quality/ARC_DISTRACTOR_ENGINEERING_V1.0.md §5)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 13. FINAL COMPACT SELF-CHECK
@@ -430,8 +431,8 @@ POLICY:
 - QA_STATUS=PASS 문항만 참고/재사용 후보
 - 현재 SCOPE_LOCK 및 학교자료와 충돌하면 BANK 문항을 사용하지 않는다.
 - 최근 사용 이력이 많은 문항은 우선순위를 낮춘다.
-- ARC_FINAL에서는 최근 ARC_N에 그대로 사용된 문항의 대량 반복을 피한다.
-- BANK 구조를 변형해 새 문항을 만들면 새 문항으로 취급하고 PASS A/B를 다시 수행한다.
+- 새 세트가 이전 세트와 겹쳐도 된다. 핵심 문항은 이전 문항을 선지 재구성·발문 변경으로 개선해 재사용하고(ARC_SIMILARITY_GUARD §6 EVOLVE), 원형 그대로의 재사용(COPY)만 10% 이하로 제한한다.
+- BANK 구조를 변형해 새 문항을 만들면 새 문항으로 취급하고 PASS A/B를 다시 수행하되, 계보(parent/change/delta)를 기록한다.
 
 3시간 QA 또는 품질검사에서 생성된 문항:
 - 문항 단위 PASS → 해당 과목 BANK에 저장 가능

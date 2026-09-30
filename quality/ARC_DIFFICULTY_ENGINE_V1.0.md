@@ -88,6 +88,16 @@ HARD FAIL 문항은 난이도 산정 대상에서 제외한다.
 BASE_DIFFICULTY_SCORE =
 A + B + C + D + E + F
 
+## 2-1. DISTRACTOR 축 보강 (2026-09-30)
+D. DISTRACTOR_STRENGTH(/15)는 `quality/ARC_DISTRACTOR_ENGINEERING_V1.0.md`의 CDI로 채점한다.
+- CDI 0.0~1.0 → 0~3 / 1.0~1.6 → 4~7 / 1.6~2.2 → 8~11 / 2.2 이상 → 12~15
+- **LEVEL CAP**: 최종 D = min(구조 점수 등급, CDI 등급, 선지 린트 통과 등급). 린트 미통과 문항은 D2 이하.
+
+## 2-2. LABEL INTEGRITY (라벨 무결성)
+- 학생용 배점·문항 순서·출제자의 자기 평가만으로 D등급을 부여하지 않는다(순환 금지).
+- D3 이상은 (구조 점수 + CDI + 린트 통과) 3요건이 있을 때만 부여한다. 요건이 없으면 `PROVISIONAL`로 기록한다.
+- Anchor 미등록(`ANCHOR_SELECTION_PENDING`) 상태에서는 DIFFICULTY_CONFIDENCE=LOW로 표기한다.
+
 ## 3. REFERENCE HIERARCHY
 
 난이도 비교 우선순위:

@@ -98,7 +98,8 @@ QUALITY_RUBRIC_VERSION: ARC-IQR-V1.0
 END ARC ITEM QUALITY RUBRIC V1.0
 
 
-## 추가 규칙 (2026-09-30, 단서 누수 방지)
-- 선지 5개의 길이·구조·어조를 평준화한다(길이 편차 ±25% 이내). 세트 기준 '정답이 최장 선지'인 비율 ≤ 30%.
-- 오답에 과잉 단정어(완전히·반드시·직접·확정적·오직 등)를 집중시키지 않는다.
-- 세트 납품 전 `quality/tools/option_cue_lint.py`로 점검하고, 미통과 문항은 D2로 강등하거나 재출제한다.
+## 6. 선지 경쟁력 게이트 (2026-09-30 추가)
+- 세부 규칙·오답 유형(DT1~DT8)·CDI 산정·D등급 상한은 `quality/ARC_DISTRACTOR_ENGINEERING_V1.0.md`를 따른다.
+- 세트 납품 전 `python3 quality/tools/option_cue_lint.py <세트>`를 실행한다. 게이트 미통과 세트는 HANDOFF 금지.
+- C. DISTRACTOR_QUALITY(20점) 채점 시 CDI를 반영한다: CDI ≥ 2.2 → 18~20, 1.6~2.2 → 14~17, 1.0~1.6 → 9~13, 1.0 미만 → 8 이하 (HARD FAIL '오답이 허술함' 검토).
+- HARD FAIL '정답만 유독 길거나 구체적'은 린트의 최장=정답 비율로 세트 수준에서 자동 검출한다.
