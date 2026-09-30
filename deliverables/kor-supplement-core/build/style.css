@@ -1,0 +1,134 @@
+/* ARC CORE — 공통국어2 보충자료 해설 필기노트 (흑백 1차본)
+   PRODUCT ISOLATION: 본문 흐름은 항상 1단. 2열 grid는 core-* 전용 micro-grid(원문 행 번호)만 사용한다. */
+:root{
+  --ink:#24282F; --head:#14171C; --rule:#9DA1A7; --hair:#D3D5D8; --mute:#5F646B; --fill:#F0F0F1;
+}
+@font-face{font-family:"Pretendard";font-weight:400;src:url("../fonts/pretendard/Pretendard-Regular.ttf")}
+@font-face{font-family:"Pretendard";font-weight:500;src:url("../fonts/pretendard/Pretendard-Medium.ttf")}
+@font-face{font-family:"Pretendard";font-weight:600;src:url("../fonts/pretendard/Pretendard-SemiBold.ttf")}
+@font-face{font-family:"Pretendard";font-weight:700;src:url("../fonts/pretendard/Pretendard-Bold.ttf")}
+@page{size:A4;margin:22mm 17mm 20mm 17mm}
+*{box-sizing:border-box}
+html{font-family:"Pretendard","Noto Sans KR","WenQuanYi Zen Hei",sans-serif;font-size:9.9pt;color:var(--ink)}
+body{margin:0;line-height:1.55;letter-spacing:-.005em;word-break:keep-all;overflow-wrap:break-word;text-align:left;hyphens:none;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+[data-product="arc-core"]{display:block;column-count:1;column-width:auto;width:auto;max-width:100%}
+
+/* ---------- part opening ---------- */
+.part-open{margin:0 0 5mm;padding-bottom:0}
+.part-kicker{font-size:9pt;font-weight:600;color:var(--mute)}
+h1.part-title{font-size:20pt;line-height:1.25;font-weight:700;margin:2mm 0 1.2mm;color:var(--head);letter-spacing:-.03em}
+.part-sub{font-size:10pt;color:var(--mute);margin:0 0 4mm}
+.part-lead p{margin:0 0 2.4mm}
+
+/* ---------- headings ---------- */
+h2{font-size:15pt;line-height:1.3;font-weight:700;margin:7mm 0 3mm;padding-top:3.2mm;border-top:.6pt solid var(--rule);
+  break-after:avoid;color:var(--head);letter-spacing:-.025em}
+h2 .no{color:var(--mute);margin-right:2.6mm;font-weight:600}
+h3{font-size:11.8pt;line-height:1.35;font-weight:600;margin:5mm 0 1.6mm;break-after:avoid;color:var(--head);letter-spacing:-.02em}
+h4{font-size:10.2pt;font-weight:600;margin:4mm 0 1.4mm;break-after:avoid;color:var(--head)}
+
+/* ---------- prose ---------- */
+p{margin:0 0 2.5mm;orphans:3;widows:3}
+ul,ol{margin:0 0 2.6mm;padding-left:4.6mm}
+li{margin:0 0 1.9mm;orphans:2;widows:2}
+li::marker{color:var(--mute)}
+b,strong{font-weight:600;color:var(--head)}
+u{text-decoration:underline;text-decoration-thickness:.6pt;text-underline-offset:.7mm}
+.q{white-space:normal}
+.loc{font-size:8.1pt;color:var(--mute);margin-left:.6mm;white-space:nowrap}
+.mk{font-size:9pt;color:var(--mute);margin-left:.3mm}
+
+/* ---------- source text block (원문) ---------- */
+.src{margin:4mm 0 2mm;padding:4mm 0 3.5mm;border-top:1.1pt solid var(--head)}
+.src-title{font-size:11.5pt;font-weight:600;color:var(--head);margin:0}
+.src-from{font-size:9pt;color:var(--mute);margin:.6mm 0 3.4mm}
+.core-poem .ln{display:grid;grid-template-columns:8.5mm 1fr;column-gap:2.6mm;font-size:9.3pt;line-height:1.52}
+.core-poem .no{font-size:7.6pt;color:var(--mute);text-align:right;font-variant-numeric:tabular-nums;padding-top:.55mm}
+.core-poem .gap{height:2.6mm}
+.core-prose .pp{display:grid;grid-template-columns:8.5mm 1fr;column-gap:2.6mm;margin:0 0 2mm;font-size:9.3pt;line-height:1.56}
+.core-prose .no{font-size:7.6pt;color:var(--mute);text-align:right;font-variant-numeric:tabular-nums;padding-top:.6mm}
+.core-prose .txt{text-align:left}
+.src-notes{font-size:8.9pt;line-height:1.5;margin-top:3.4mm;padding-top:2.4mm;border-top:.45pt solid var(--hair)}
+.src-notes .nh{font-weight:600;color:var(--head);margin-bottom:1mm}
+.src-notes ul{margin:0;padding-left:4mm;list-style:disc}
+.src-notes li{margin:0 0 .6mm}
+.src-extra{margin-top:3.4mm;padding-top:2.4mm;border-top:.45pt solid var(--hair);font-size:9.2pt;line-height:1.55}
+.src-extra .nh{font-weight:600;color:var(--head);margin-bottom:1mm}
+.src-extra p{margin:0}
+
+/* ---------- evidence lines (원문 근거) ---------- */
+.ev{margin:1.4mm 0 2.4mm;padding:1.4mm 0 1.2mm 3.4mm;border-left:1.2pt solid var(--rule);font-size:9.2pt;line-height:1.48;break-inside:avoid}
+.ev .ln{display:grid;grid-template-columns:7mm 1fr;column-gap:2mm}
+.ev .no{font-size:7.4pt;color:var(--mute);text-align:right;font-variant-numeric:tabular-nums;padding-top:.4mm}
+
+/* ---------- comparison table (개념·부분 비교에만 사용) ---------- */
+table.core-cmp{width:100%;border-collapse:collapse;font-size:9pt;line-height:1.42;margin:2.6mm 0 4mm;break-inside:avoid}
+.core-cmp th{font-weight:600;text-align:left;border-top:.8pt solid var(--head);border-bottom:.8pt solid var(--head);padding:1.6mm 2.2mm;background:var(--fill);color:var(--head)}
+.core-cmp td{border-bottom:.45pt solid var(--hair);padding:1.7mm 2.2mm;vertical-align:top}
+.core-cmp tr:last-child td{border-bottom:.8pt solid var(--head)}
+.core-cmp td:first-child{font-weight:600;color:var(--head)}
+
+/* ---------- plain note box (드물게) ---------- */
+.box{border:.6pt solid var(--rule);padding:2.8mm 4mm 1.6mm;margin:3mm 0 4mm;font-size:9.3pt;line-height:1.5}
+.box p{margin:0 0 1.8mm}
+.box .bt{font-weight:600;color:var(--head);margin-bottom:1.4mm}
+
+/* ---------- writing area ---------- */
+.write{margin:4.2mm 0 1mm;break-inside:avoid}
+.write .lbl{font-size:7.6pt;font-weight:600;color:var(--mute);margin-bottom:.6mm}
+.write .wl{height:6.6mm;border-bottom:.45pt solid #B9BDC2}
+
+/* ---------- cover / front matter ---------- */
+.cover{position:relative;height:253mm;page-break-after:always}
+.cover .rule{position:absolute;left:1mm;top:2mm;width:44mm;height:0;border-top:1.1pt solid var(--head)}
+.cover .title-block{position:absolute;left:1mm;top:80mm}
+.cover .c-subject{font-size:27pt;font-weight:700;line-height:1.2;letter-spacing:-.04em;color:var(--head)}
+.cover .c-sub{font-size:10.4pt;line-height:1.7;margin-top:4mm;color:var(--ink)}
+.cover .c-meta{position:absolute;left:1mm;bottom:2mm;font-size:9.6pt;line-height:1.7;color:var(--ink)}
+.front-title{border-top:0;margin-top:0;padding-top:0;font-size:15pt;font-weight:700;margin:0 0 5mm;padding-bottom:3mm;border-bottom:1.1pt solid var(--head);color:var(--head)}
+.guide dt{font-weight:600;color:var(--head);margin-top:3mm}
+.guide dd{margin:0 0 0 0}
+.toc{margin:0 0 7mm}
+.toc .row{display:grid;grid-template-columns:1fr auto;column-gap:3mm;align-items:baseline;padding:1.3mm 0;border-bottom:.45pt solid var(--hair)}
+.toc .row.l1{font-weight:600;color:var(--head);border-bottom:.6pt solid var(--rule);margin-top:3mm;font-size:10.4pt}
+.toc .row.l2{padding-left:5mm;font-size:9.3pt}
+.toc .pg{font-variant-numeric:tabular-nums;color:var(--head)}
+
+.keep{break-inside:avoid}
+
+/* ---------- readability additions (user feedback): point line, thesis line, definition grid, rule callout ---------- */
+p.point{font-size:10pt;font-weight:600;color:var(--head);margin:1.2mm 0 2mm;break-after:avoid;letter-spacing:-.015em}
+p.thesis{font-size:10pt;font-weight:600;color:var(--head);margin:0 0 3mm;padding:.4mm 0 .4mm 3.2mm;border-left:2.2pt solid var(--head);break-after:avoid}
+.core-def{margin:2mm 0 2.8mm;border-top:.9pt solid var(--head)}
+.core-def .ct{break-after:avoid;font-size:10.4pt;font-weight:700;color:var(--head);padding:1.2mm 0 .8mm;letter-spacing:-.015em}
+.core-def .r{break-inside:avoid;display:grid;grid-template-columns:11mm 1fr;column-gap:3mm;padding:.7mm 0;border-top:.45pt solid var(--hair)}
+.core-def .l{font-size:9pt;font-weight:600;color:var(--mute);padding-top:.7mm}
+.core-def .t{font-size:9.6pt;line-height:1.47}
+.core-rule{margin:2.6mm 0 3.2mm;padding:2mm 3.2mm 1.2mm;border-left:2.4pt solid var(--head);background:var(--fill);break-inside:avoid;font-size:9.6pt;line-height:1.5}
+.core-rule p{margin:0 0 1.4mm}
+.core-rule .rt{font-weight:600;color:var(--head);font-size:9pt;margin-bottom:.8mm}
+
+.src-solo{padding:2.6mm 0 2.4mm;margin:2mm 0 2mm;border-top:.6pt solid var(--rule)}
+.src-solo .src-from{margin:0 0 1.4mm}
+
+.toc .tsub{font-weight:400;font-size:9pt;color:var(--mute);margin-left:2mm}
+.front-title.f2{font-size:12.5pt;margin:8mm 0 2mm;padding-bottom:2mm}
+.guide.compact{font-size:9pt;line-height:1.45}
+.guide.compact dt{margin-top:2.2mm}
+
+.core-flow{margin:2.4mm 0 3.2mm;break-inside:avoid}
+.core-flow .ft{font-size:9pt;font-weight:600;color:var(--mute);margin-bottom:1.2mm}
+.core-flow .fr{display:flex;align-items:stretch;gap:1.6mm}
+.core-flow .fn{flex:1;border:.7pt solid var(--rule);padding:1.6mm 2.4mm 1.4mm;font-size:9pt;line-height:1.42}
+.core-flow .fn b{display:block;font-weight:700;color:var(--head);border-bottom:.45pt solid var(--hair);padding-bottom:.8mm;margin-bottom:1mm}
+.core-flow .fn span{display:block}
+.core-flow .fa{align-self:center;font-size:12pt;color:var(--mute)}
+
+.ev{break-after:avoid}
+
+/* lead-in line bound to the first list item; remaining items continue as a second list */
+.keepfirst{break-inside:avoid}
+.keepfirst ul,.keepfirst ol{margin-bottom:0}
+.keepfirst li{margin-bottom:1.9mm}
+ul.cont,ol.cont{margin-top:0}
