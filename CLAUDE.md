@@ -12,5 +12,6 @@
 - 산출물 지도는 `outputs/README.md`.
 - **재사용 정책**: 새 세트가 이전 세트와 겹쳐도 된다. 핵심 문항은 이전 문항을 선지 재구성/발문 변경(EVOLVE)으로 개선해 재사용하고 계보(parent/change/delta)를 남긴다. 무개선 복붙(COPY)은 세트의 10% 이하. (quality/ARC_SIMILARITY_GUARD_V1.0.md §6)
 - **문제지와 답지는 항상 함께 조판·납품**(합본 `…_문제지+답지.pdf` = 문제지+정답표가 기본 산출물, **해설은 합본에 넣지 않고 별도 PDF**). 세트 `src/make.sh` = 빌드 → PDF 3종 → `quality/tools/bundle_pdf.py`로 문제지+정답표 합본. 규칙: `quality/ARC_PAIRED_DELIVERY_V1.0.md`.
+- FINAL N°01(V1.2)·N°02(V1.1)도 `revise_final.py` → `apply_rev.py`로 개정본을 빌드에 적용한다(`src/make.sh`). 난이도 재검사: `python3 quality/tools/final_difficulty_recheck.py`.
 - N°11·N°12는 V1.1(선지 재구성, D2 배제): 원고는 `items_*.py`(V1.0 계보) + `revise_*.py`(선지·표·<보기> 덮어쓰기) → `apply_rev.py`가 빌드·린트에서 공통 적용. 문항 수정은 `revise_*.py`에서 한다.
 

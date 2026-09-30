@@ -2,6 +2,8 @@
 import re, collections, sys, pathlib
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from items_final2 import Q, SUBJ
+import apply_rev
+apply_rev.apply(Q)  # 개정판(REV) 적용
 from passages_final2 import SETS
 
 OUT = pathlib.Path(__file__).parent

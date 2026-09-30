@@ -33,3 +33,5 @@
 ---
 # 재검사 (2026-09-30, CDI·린트 상한 적용)
 결과와 문항별 표: `quality/reports/FINAL_DIFFICULTY_RECHECK_20260930.md`
+
+> 2차 재검사 및 난도 상향(2025 기출 비교): `quality/reports/FINAL_DIFFICULTY_RECHECK_V2_20260930.md`
