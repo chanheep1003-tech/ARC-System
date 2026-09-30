@@ -25,13 +25,12 @@ print("verify ok")
 d21 = [3, 6, 18, 3]; d23 = [4, 6, 24, 6]
 assert sum(d21) == 30 and sum(d23) == 40
 assert d21[2]/30 == d23[2]/40 == 0.6 and d21[1]/30 > d23[1]/40 and d23[3] == 2*d21[3] and max(d21) == d21[2] and max(d23) == d23[2]
-# S11
-A_ = [4, 3, 3]; B_ = [1, 6, 1]; C_ = [3, 2, 4]
-rg = lambda v: max(v)-min(v)
-assert rg(A_) < rg(C_) < rg(B_) and sum(A_) == 10 and sum(B_) == 8 and sum(C_) == 9 and max(map(sum, (A_, B_, C_))) == sum(A_)
+# Q41
+T = {"A": (500, 100), "B": (400, 240), "C": (800, 320), "D": (200, 60)}
+rt = {k: b_/a_ for k, (a_, b_) in T.items()}; print("Q41", rt)
+assert min(rt["B"], rt["C"]) > max(rt["A"], rt["D"]) and (500-100) >= 2*(200-60)
 # S14
-hx = [9, 12, 7, 15]; cf = [2, 5, 0, 3]
-r = [c/h for c, h in zip(cf, hx)]; print("S14", [round(x, 3) for x in r])
-assert r[1] > r[0] and cf.index(max(cf)) != hx.index(max(hx))
-assert sum(hx) == 43 and sum(cf) == 10 and (43-10)/43 >= 0.7
+q = {"위헌": ([40, 50], [8, 10]), "권리": ([160, 210], [8, 21])}
+g1 = 50/40-1; g2 = 210/160-1; assert g1 < g2
+assert 8/40 == 10/50 and 21/210 == 2*(8/160) and not 10 > 21
 print("special verify ok")

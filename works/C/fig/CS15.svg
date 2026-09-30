@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-09-30T22:46:22.632528</dc:date>
+    <dc:date>2026-09-30T23:01:34.046914</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -35,7 +35,7 @@ L 94.95 144.32972
 L 94.95 128.164037 
 L 10.2456 128.164037 
 z
-" clip-path="url(#p3adfa3a06a)" style="fill: #ffffff; stroke: #7a2e35; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pd3ca4ec830)" style="fill: #ffffff; stroke: #7a2e35; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 98.6328 144.32972 
@@ -43,7 +43,7 @@ L 183.3372 144.32972
 L 183.3372 128.164037 
 L 98.6328 128.164037 
 z
-" clip-path="url(#p3adfa3a06a)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pd3ca4ec830)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 15.7698 20.392822 
@@ -51,7 +51,7 @@ L 174.1302 20.392822
 L 174.1302 4.22714 
 L 15.7698 4.22714 
 z
-" clip-path="url(#p3adfa3a06a)" style="fill: #eceae5; stroke: #2b2f36; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pd3ca4ec830)" style="fill: #eceae5; stroke: #2b2f36; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
     <path d="M 15.7698 50.029907 
@@ -59,7 +59,7 @@ L 174.1302 50.029907
 L 174.1302 33.864224 
 L 15.7698 33.864224 
 z
-" clip-path="url(#p3adfa3a06a)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pd3ca4ec830)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_6">
     <path d="M 15.7698 79.666991 
@@ -67,7 +67,7 @@ L 174.1302 79.666991
 L 174.1302 63.501308 
 L 15.7698 63.501308 
 z
-" clip-path="url(#p3adfa3a06a)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pd3ca4ec830)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_7">
     <path d="M 15.7698 109.304075 
@@ -75,7 +75,7 @@ L 174.1302 109.304075
 L 174.1302 93.138393 
 L 15.7698 93.138393 
 z
-" clip-path="url(#p3adfa3a06a)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pd3ca4ec830)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- 공권력의 행사 또는 불행사로 국민의 기본권이 침해됨 -->
@@ -2272,7 +2272,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p3adfa3a06a">
+  <clipPath id="pd3ca4ec830">
    <rect x="2.88" y="2.88" width="184.14" height="144.144"/>
   </clipPath>
  </defs>

@@ -30,47 +30,6 @@ def cs06():
     save(f, OUT + "CS06.svg")
 
 
-def cs10():
-    f, ax = canvas(2.75, 100, 100)
-    L = (50, 90); A = (12, 13); S = (88, 13)
-
-    def nd(c, name, sub):
-        ax.add_patch(Rectangle((c[0] - 12, c[1] - 7), 24, 14, fc=G5, ec=G1, lw=0.8, zorder=3))
-        ax.text(c[0], c[1] + 1.6, name, ha="center", va="center", fontsize=6.8, fontweight="bold", color=NAVY, zorder=4)
-        ax.text(c[0], c[1] - 3.4, sub, ha="center", va="center", fontsize=5.6, color=G2, zorder=4)
-    nd(L, "입법부", "국회"); nd(A, "행정부", "대통령·정부"); nd(S, "사법부", "법원")
-
-    def seg(p, q, t0, t1):
-        return ((p[0] + (q[0] - p[0]) * t0, p[1] + (q[1] - p[1]) * t0), (q[0] - (q[0] - p[0]) * t1, q[1] - (q[1] - p[1]) * t1))
-
-    def draw(p, q, sign, lab, ha, lx_extra=0.0, ly_extra=0.0, off=3.3, pos=None):
-        (x1, y1), (x2, y2) = p, q
-        dx, dy = x2 - x1, y2 - y1
-        n = (dx * dx + dy * dy) ** 0.5
-        nx, ny = -dy / n * sign, dx / n * sign
-        a = (x1 + nx * off, y1 + ny * off); b = (x2 + nx * off, y2 + ny * off)
-        ax.annotate("", xy=b, xytext=a, arrowprops=dict(arrowstyle="-|>", lw=1.0, color=G1, mutation_scale=8, shrinkA=0, shrinkB=0))
-        mx, my = (a[0] + b[0]) / 2 + nx * 2.2 + lx_extra, (a[1] + b[1]) / 2 + ny * 2.2 + ly_extra
-        if pos:
-            mx, my = pos
-        ax.text(mx, my, lab, fontsize=5.9, color=BURG, fontweight="bold", ha=ha, va="center", zorder=6,
-                bbox=dict(boxstyle="round,pad=0.12", fc="white", ec="none"))
-    # 입법 <-> 행정 (왼쪽 변)
-    p, q = seg(L, A, 0.27, 0.27)
-    draw(p, q, +1, "ㄱ 국정 감사·조사권", "right")      # 입법 -> 행정, 바깥쪽(왼쪽)
-    draw(q, p, +1, "ㄴ 명령·규칙 심사", "left", pos=(27, 55))          # 행정 -> 입법, 안쪽
-    # 입법 <-> 사법 (오른쪽 변)
-    p, q = seg(L, S, 0.27, 0.27)
-    draw(q, p, +1, "ㅁ 위헌 법률 심판 제청", "right", pos=(73, 37))    # 사법 -> 입법 (안쪽)
-    draw(p, q, +1, "ㅂ 탄핵소추", "left")                # 입법 -> 사법 (바깥쪽)
-    # 행정 <-> 사법 (아래 변)
-    p, q = (A[0] + 13, A[1]), (S[0] - 13, S[1])
-    draw(q, p, +1, "ㄷ 사면권", "center", ly_extra=-1.2)   # 사법 -> 행정 (위쪽 화살표)
-    draw(p, q, +1, "ㄹ 대법원장 임명", "center", ly_extra=1.2)          # 행정 -> 사법 (아래쪽)
-    ax.set_ylim(0, 100)
-    save(f, OUT + "CS10.svg")
-
-
 def grouped(ax, labels, series, names, colors, hatches, ylim, lab_fs=6.3):
     n = len(series); w = 0.8 / n
     x = np.arange(len(labels))
@@ -82,22 +41,19 @@ def grouped(ax, labels, series, names, colors, hatches, ylim, lab_fs=6.3):
     ax.set_ylim(0, ylim); ax.tick_params(axis="y", labelsize=6.2)
 
 
-def cs11():
-    f, ax = plt.subplots(figsize=(W, 1.95))
-    grouped(ax, ["A국", "B국", "C국"], [[4, 1, 3], [3, 6, 2], [3, 1, 4]], ["입법부", "행정부", "사법부"],
-            ["white", G1, G4], ["", "", "////"], 7.6)
-    ax.set_ylabel("행사할 수 있는 견제 수단 수", fontsize=6.0)
-    ax.legend(loc="upper center", bbox_to_anchor=(0.5, 1.2), ncol=3, fontsize=6.2, frameon=False, handlelength=1.2,
-              title="견제하는 기관", title_fontsize=6.0)
-    save(f, OUT + "CS11.svg")
-
-
 def cs14():
-    f, ax = plt.subplots(figsize=(W, 1.95))
-    grouped(ax, ["2020", "2021", "2022", "2023"], [[9, 12, 7, 15], [2, 5, 0, 3]],
-            ["거부권 행사 건수", "재의결로 확정된 건수"], [G4, G1], ["", ""], 18)
-    ax.set_ylabel("건수", fontsize=6.3); ax.set_yticks(range(0, 19, 3))
-    ax.legend(loc="upper left", fontsize=6.2, frameon=False, handlelength=1.2)
+    f, axs = plt.subplots(1, 2, figsize=(W, 2.0), sharey=False)
+    yrs = ["2022", "2023"]
+    data = {"청구 건수": ([40, 50], [160, 210], 240), "인용 건수": ([8, 10], [8, 21], 26)}
+    for ax, (ttl, (a_, b_, ym)) in zip(axs, data.items()):
+        grouped(ax, yrs, [a_, b_], ["위헌 심사형", "권리 구제형"], ["white", G1], ["", ""], ym)
+        ax.set_title(ttl, fontsize=6.8, fontweight="bold", color=NAVY, pad=4)
+        ax.tick_params(axis="y", labelsize=6.0)
+    axs[0].set_ylabel("건수", fontsize=6.3)
+    from matplotlib.patches import Patch
+    f.legend(handles=[Patch(fc="white", ec=G1, label="위헌 심사형 헌법소원"), Patch(fc=G1, ec=G1, label="권리 구제형 헌법소원")],
+             loc="lower center", ncol=2, fontsize=6.2, frameon=False, bbox_to_anchor=(0.5, -0.08), handlelength=1.2)
+    f.subplots_adjust(wspace=0.32)
     save(f, OUT + "CS14.svg")
 
 
@@ -151,6 +107,6 @@ def cs18():
 
 
 if __name__ == "__main__":
-    for fn in (cs06, cs10, cs11, cs14, cs15, cs18):
+    for fn in (cs06, cs14, cs15, cs18):
         fn()
     print("ok")

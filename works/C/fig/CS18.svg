@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-09-30T22:46:22.681368</dc:date>
+    <dc:date>2026-09-30T23:01:34.091221</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -35,7 +35,7 @@ L 174.1302 21.917887
 L 174.1302 4.239849 
 L 15.7698 4.239849 
 z
-" clip-path="url(#p0e1286fdd1)" style="fill: #eceae5; stroke: #2b2f36; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pb5b8d0c546)" style="fill: #eceae5; stroke: #2b2f36; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 15.7698 54.554264 
@@ -43,7 +43,7 @@ L 174.1302 54.554264
 L 174.1302 35.516377 
 L 15.7698 35.516377 
 z
-" clip-path="url(#p0e1286fdd1)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pb5b8d0c546)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 15.7698 84.470943 
@@ -51,7 +51,7 @@ L 174.1302 84.470943
 L 174.1302 68.152755 
 L 15.7698 68.152755 
 z
-" clip-path="url(#p0e1286fdd1)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pb5b8d0c546)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
     <path d="M 15.7698 114.387623 
@@ -59,7 +59,7 @@ L 174.1302 114.387623
 L 174.1302 98.069434 
 L 15.7698 98.069434 
 z
-" clip-path="url(#p0e1286fdd1)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pb5b8d0c546)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_6">
     <path d="M 15.7698 144.304302 
@@ -67,7 +67,7 @@ L 174.1302 144.304302
 L 174.1302 127.986113 
 L 15.7698 127.986113 
 z
-" clip-path="url(#p0e1286fdd1)" style="fill: #eceae5; stroke: #2b2f36; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#pb5b8d0c546)" style="fill: #eceae5; stroke: #2b2f36; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- 갑은 ○○시로부터 영업 정지 처분을 받고 -->
@@ -1942,7 +1942,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p0e1286fdd1">
+  <clipPath id="pb5b8d0c546">
    <rect x="2.88" y="2.88" width="184.14" height="144.144"/>
   </clipPath>
  </defs>

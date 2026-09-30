@@ -179,69 +179,30 @@ def cm37():
     save(f, OUT + "CM37.svg")
 
 
-# ---------------------------------------------------------------- CM38 견제 도식
-def arr2(ax, p, q, lab, off, lab_off=(0, 0), color=G1):
-    (x1, y1), (x2, y2) = p, q
-    dx, dy = x2 - x1, y2 - y1
-    n = (dx ** 2 + dy ** 2) ** 0.5
-    nx, ny = -dy / n, dx / n
-    a = (x1 + nx * off, y1 + ny * off); b = (x2 + nx * off, y2 + ny * off)
-    ax.annotate("", xy=b, xytext=a, arrowprops=dict(arrowstyle="-|>", lw=1.0, color=color, mutation_scale=8, shrinkA=0, shrinkB=0))
-    mx, my = (a[0] + b[0]) / 2 - nx * 5.2 * (1 if off < 0 else -1) + lab_off[0], (a[1] + b[1]) / 2 - ny * 5.2 * (1 if off < 0 else -1) + lab_off[1]
-    ax.text(mx, my, lab, fontsize=6.8, fontweight="bold", color=BURG, ha="center", va="center",
-            bbox=dict(boxstyle="round,pad=0.12", fc="white", ec="none"), zorder=6)
-
-
+# ---------------------------------------------------------------- CM38 권력 분립 개념도
 def cm38():
-    f, ax = canvas(2.35, 100, 100)
-    # 기관 위치
-    L = (50, 88); A = (13, 14); S = (87, 14)
-
-    def nd(c, name, sub):
-        ax.add_patch(Rectangle((c[0] - 14, c[1] - 7.5), 28, 15, fc=G5, ec=G1, lw=0.8, zorder=3))
-        ax.text(c[0], c[1] + 1.8, name, ha="center", va="center", fontsize=7.0, fontweight="bold", color=NAVY, zorder=4)
-        ax.text(c[0], c[1] - 3.6, sub, ha="center", va="center", fontsize=5.8, color=G2, zorder=4)
-    nd(L, "입법부", "국회"); nd(A, "행정부", "대통령·정부"); nd(S, "사법부", "법원")
-    # 끝점을 박스 경계 쪽으로 당기기
-    def shrink(p, q, t0=0.27, t1=0.27):
+    f, ax = canvas(2.3, 100, 100)
+    ax.set_ylim(-8, 100)
+    specs = [((50, 84), "(가)", "법률을 만든다"), ((15, 18), "(나)", "법률을 집행한다"), ((85, 18), "(다)", "법을 적용하여\n재판한다")]
+    for (cx, cy), t, s_ in specs:
+        ax.add_patch(Rectangle((cx - 16, cy - 10), 32, 20, fc=G5, ec=G1, lw=0.8, zorder=3))
+        ax.text(cx - 14, cy + 6.6, t, fontsize=6.8, fontweight="bold", color=NAVY, va="center", zorder=4)
+        ax.text(cx, cy - 3.0, s_, fontsize=6.5, color=G1, ha="center", va="center", zorder=4, linespacing=1.3)
+    def two(p, q, off=2.6):
         (x1, y1), (x2, y2) = p, q
-        return (x1 + (x2 - x1) * t0, y1 + (y2 - y1) * t0), (x2 - (x2 - x1) * t1, y2 - (y2 - y1) * t1)
-    # 입법 <-> 행정
-    p, q = shrink(L, A, 0.30, 0.30)
-    arr2(ax, p, q, "(가)", -3.4)      # 입법 -> 행정
-    arr2(ax, q, p, "(나)", -3.4)      # 행정 -> 입법
-    # 행정 <-> 사법 (수평)
-    p, q = (A[0] + 15, A[1]), (S[0] - 15, S[1])
-    arr2(ax, q, p, "(다)", -3.4)      # 사법 -> 행정
-    arr2(ax, p, q, "(라)", -3.4)      # 행정 -> 사법
-    # 입법 <-> 사법
-    p, q = shrink(L, S, 0.30, 0.30)
-    arr2(ax, q, p, "(마)", -3.4)      # 사법 -> 입법
-    arr2(ax, p, q, "(바)", -3.4)      # 입법 -> 사법
-    ax.set_ylim(-9, 100)
-    ax.text(50, -7.5, "화살표는 견제하는 기관에서 견제받는 기관으로 향한다.", ha="center", fontsize=5.8, color=G2, va="bottom")
+        dx, dy = x2 - x1, y2 - y1
+        n = (dx * dx + dy * dy) ** 0.5
+        nx, ny = -dy / n, dx / n
+        for sgn, (a_, b_) in ((1, (p, q)), (-1, (q, p))):
+            s0 = (a_[0] + nx * off * sgn, a_[1] + ny * off * sgn)
+            s1 = (b_[0] + nx * off * sgn, b_[1] + ny * off * sgn)
+            ax.annotate("", xy=s1, xytext=s0, arrowprops=dict(arrowstyle="-|>", lw=0.9, color=G2, mutation_scale=7, shrinkA=0, shrinkB=0))
+    # 끝점 조정
+    two((42, 74), (17, 29)); two((58, 74), (83, 29)); two((33, 18), (67, 18))
+    ax.add_patch(Rectangle((36, 30), 28, 13, fc="white", ec=BURG, lw=0.9, zorder=5))
+    ax.text(50, 36.5, "서로 견제하고\n균형을 이룸", ha="center", va="center", fontsize=6.4, fontweight="bold", color=BURG, linespacing=1.3, zorder=6)
+    ax.text(50, -5, "국가 권력을 나누는 목적: 권력의 집중과 남용을 막음", ha="center", fontsize=6.0, color=G2, va="center")
     save(f, OUT + "CM38.svg")
-
-
-# ---------------------------------------------------------------- CM42 대법관 임명
-def cm42():
-    f, ax = canvas(1.65, 100, 60)
-    xs = [1, 37, 73]
-    names = ["(가)", "(나)", "(다)"]
-    for x, n in zip(xs, names):
-        ax.add_patch(Rectangle((x, 28), 20, 20, fc="white", ec=G1, lw=0.8, zorder=2))
-        ax.text(x + 10, 38, n, ha="center", va="center", fontsize=8.2, fontweight="bold", color=NAVY, zorder=3)
-    ax.add_patch(Rectangle((94, 28), 0.01, 20, fc="none", ec="none"))
-    # 화살표
-    ax.annotate("", xy=(37, 38), xytext=(21, 38), arrowprops=dict(arrowstyle="-|>", lw=0.9, color=G1, mutation_scale=7))
-    ax.text(29, 41.2, "제청", ha="center", fontsize=6.3, color=G1)
-    ax.annotate("", xy=(73, 38), xytext=(57, 38), arrowprops=dict(arrowstyle="-|>", lw=0.9, color=G1, mutation_scale=7))
-    ax.text(65, 41.2, "동의", ha="center", fontsize=6.3, color=G1)
-    ax.annotate("", xy=(99.3, 38), xytext=(93, 38), arrowprops=dict(arrowstyle="-|>", lw=0.9, color=G1, mutation_scale=7))
-    ax.text(96.5, 41.2, "임명", ha="center", fontsize=6.0, color=G1)
-    ax.text(98.5, 28, "대법관", ha="right", fontsize=6.3, fontweight="bold", color=NAVY, va="top")
-    box(ax, 1, 3, 98, 15, "참고: 대법원장은 (다)가 (나)의 동의를 얻어 임명한다.\n(가)~(다)는 입법부·행정부·사법부 중 서로 다른 기관이다.", fc=G5, fs=6.0, tc=G1)
-    save(f, OUT + "CM42.svg")
 
 
 # ---------------------------------------------------------------- CM43 위헌 법률 심판 절차도
@@ -286,6 +247,6 @@ def cm46():
 
 
 if __name__ == "__main__":
-    for fn in (cm03, cm11, cm16, cm21, cm31, cm37, cm38, cm42, cm43, cm46):
+    for fn in (cm03, cm11, cm16, cm21, cm31, cm37, cm38, cm43, cm46):
         fn()
     print("ok")
