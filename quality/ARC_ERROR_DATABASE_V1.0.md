@@ -156,9 +156,11 @@ RECURRENCE_COUNT:
 
 |ERROR_ID|SUBJECT|ERROR_CODE|SEVERITY|STATUS|REGRESSION|
 |---|---|---|---|---|---|
-|—|—|—|—|EMPTY|—|
+|ERR-KOR-20260930-01|KOR|INTERPRETATION_MISMATCH|HIGH|FIXED|REGRESSION_CASE|
 
 첫 실제 오류부터 순차적으로 기록한다.
+
+- ERR-KOR-20260930-01: 「팔원」 12행 ‘어느 한 사람’을 ‘다른 승객(공감의 확산)’으로 해석한 문항·선지·해설이 N°11·N°12·FINAL N°01·N°02에 있었음. 학교 보충자료는 ‘화자 자신의 객관화’로 해석(N°06·N°08·N°09·CORE는 이미 일치). 조치: 전 세트 수정, `PAL_INTERPRETATION` 기록, CLAUDE.md 규칙 추가. 예방: 해석이 갈리는 시어는 출제 전 `sources`의 해석 메모를 확인한다.
 
 ## 9. MONTHLY REVIEW
 시험기간 중 또는 10세트 생성마다:
