@@ -6,3 +6,4 @@
 - 실행 로그: `ops/RUN_LOG.jsonl` + `ops/RUN_LOG.csv`에 run 1건씩 추가.
 - ARC FINAL: `outputs/KOR/ARC_FINAL_공통국어2_N01/src/` (passages_final.py → items_final.py → build_final.py, pdf.js). 시험 범위 지문은 `sources/`에서 import, 선택형+서·논술형 구성·배점 합(80+20)과 정답표/채점기준 PDF를 함께 생성.
 - ARC FINAL N°02: `outputs/KOR/ARC_FINAL_공통국어2_N02/src/` (passages_final2.py → items_final2.py → build_final.py). 개수형·ㄱ~ㅁ·표 정오·사례 적용으로 난도 상향. 난이도 검사 결과는 각 폴더의 `난이도검사_*.md`.
+- ARC N°11: `outputs/KOR/ARC_N11_시험범위11편_110Q/src/` (items_a/b/c.py → build_n11.py; 문항마다 해설 `e` 포함, pdf.js가 문제지·정답표·해설 3종 출력).
