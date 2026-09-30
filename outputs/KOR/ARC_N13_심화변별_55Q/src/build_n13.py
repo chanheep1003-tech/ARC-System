@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re, collections, sys, pathlib
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
-import items_n13
+import items_n13, items_n13b
 from common import Q
 from passages_n13 import SETS
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[4] / 'quality' / 'tools'))
@@ -150,7 +150,7 @@ def render_subj(s):
 CSS = """
 @page { size: A4; margin: 19mm 15mm 16mm 15mm;
   @top-left { content: "ARC N°13"; font-family: Inter, 'Noto Sans CJK KR', sans-serif; font-weight:700; font-size:7pt; letter-spacing:.07em; color:#1F2A44; vertical-align:bottom; padding-bottom:2.4mm; border-bottom:.45pt solid #d9dbde; }
-  @top-right { content: "공통국어2 · 심화 변별 시범 22문항"; font-family:'Noto Sans CJK KR', sans-serif; font-size:6.9pt; color:#666c74; vertical-align:bottom; padding-bottom:2.4mm; border-bottom:.45pt solid #d9dbde; }
+  @top-right { content: "공통국어2 · 심화 변별 55문항"; font-family:'Noto Sans CJK KR', sans-serif; font-size:6.9pt; color:#666c74; vertical-align:bottom; padding-bottom:2.4mm; border-bottom:.45pt solid #d9dbde; }
   @bottom-center { content: "- " counter(page) " -"; font-family: Inter, sans-serif; font-size:7.2pt; color:#555; }
   @bottom-left { content: "이 문제지는 ARC 학습용 자료이며, 무단 전재와 복제를 금합니다."; font-family:'Noto Sans CJK KR', sans-serif; font-size:6pt; color:#8a8f96; }
 }
@@ -240,7 +240,7 @@ print("level", dict(lv_cnt), "sum_pts", round(sum(q["pts"] for q in Q), 1))
 def student_html():
     p = [f"<!doctype html><html lang='ko'><head><meta charset='utf-8'><title>{SERIES} 공통국어2</title><style>{CSS}</style></head><body>"]
     p.append("""<section class="cover"><div class="kicker">ARC N°13</div><div class="toprule"></div><div class="accent"></div>
-<div class="covermain"><h1>공통국어2</h1><div class="covermeta"><strong>동북고등학교</strong><br>2학기 중간고사 파이널 · 심화 변별 시범(지문당 2문항 · 11편)</div>
+<div class="covermain"><h1>공통국어2</h1><div class="covermeta"><strong>동북고등학교</strong><br>2학기 중간고사 파이널 · 심화 변별 55문항(지문당 5문항 · 11편)</div>
 <div class="works">교과서 1단원 — 「제망매가」 · 「속미인곡」 · 「춘향전」 · 「수라」 · 「아홉 켤레의 구두로 남은 사내」<br>교과서 2단원 — 논증하는 글 쓰기 · 지혜롭게 협상하기<br>보충 프린트 — 「탄궁가」 · 「팔원」 · 「기억할 만한 지나침」 · 칸트와 헤겔의 자유</div></div>
 <div class="year">2026</div><div class="series">ARC ACADEMIC SERIES</div></section>""")
     p.append('<section class="blankpage"></section>')
@@ -277,7 +277,7 @@ h2{font-size:12pt;margin:0 0 1mm}.sub2{font-size:8pt;color:#666c74}.dist{font-si
     dist = " · ".join(f"{CIRC[k]} {cnt[k]}" for k in range(5))
     lv = " · ".join(f"{k} {lv_cnt[k]}문항" for k in ("D2", "D3", "D4"))
     return (f"<!doctype html><html lang='ko'><head><meta charset='utf-8'><title>{SERIES} 정답</title><style>{css}</style></head><body>"
-            f"<h2>{SERIES} 공통국어2 — 정답표</h2><div class='sub2'>시험 범위 11편 × 2문항 · 편집·검증용 (학생용 문제지에 포함하지 않음)</div>"
+            f"<h2>{SERIES} 공통국어2 — 정답표</h2><div class='sub2'>시험 범위 11편 × 5문항 · 편집·검증용 (학생용 문제지에 포함하지 않음)</div>"
             f"<table class='kt'>{''.join(rows)}</table><div class='dist'>정답 분포: {dist} &nbsp;|&nbsp; 난이도 분포(내부 추정): {lv}</div></body></html>")
 
 def explain_html():

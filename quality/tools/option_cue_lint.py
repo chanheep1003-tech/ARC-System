@@ -21,7 +21,7 @@ REGISTRY = {  # 이름: (폴더, [문항 모듈들], 지문 모듈)
     "FINAL01": ("ARC_FINAL_공통국어2_N01", ["items_final"], "passages_final"),
     "FINAL02": ("ARC_FINAL_공통국어2_N02", ["items_final2"], "passages_final2"),
     "N11": ("ARC_N11_시험범위11편_110Q", ["common", "items_a", "items_b", "items_c"], "passages_n11"),
-    "N13": ("ARC_N13_심화변별_시범", ["common", "items_n13"], "passages_n13"),
+    "N13": ("ARC_N13_심화변별_55Q", ["common", "items_n13", "items_n13b"], "passages_n13"),
     "N12": ("ARC_N12_보충자료4편_핵심40Q", ["common", "items_n12"], "passages_n12"),
 }
 # 게이트 기준: R0(2025 동북고 기출, n=18 선택형 분석) 실측 — 최장=정답 22%(긍정 발문 2/7), 정답/오답 길이 0.79배, 근접오답유사도 0.14
