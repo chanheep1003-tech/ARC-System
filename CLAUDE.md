@@ -16,3 +16,4 @@
 - FINAL N°01(V1.2)·N°02(V1.1)도 `revise_final.py` → `apply_rev.py`로 개정본을 빌드에 적용한다(`src/make.sh`). 난이도 재검사: `python3 quality/tools/final_difficulty_recheck.py`.
 - N°11·N°12는 V1.2(난도 상향 2차; `revise_f/g.py`, `revise_n12b.py`가 V1.1 위에 덮어씀; 오답은 같은 방향의 HALF_TRUE, 표 오답은 사실 관계 칸): 원고는 `items_*.py`(V1.0 계보) + `revise_*.py`(선지·표·<보기> 덮어쓰기) → `apply_rev.py`가 빌드·린트에서 공통 적용. 문항 수정은 `revise_*.py`에서 한다.
 
+- ARC N°13(심화 변별 시범): `outputs/KOR/ARC_N13_심화변별_시범/src/` (items_n13.py → build_n13.py, make.sh). 지문마다 실수 빈발 지점(화자·청자, 관찰/추측, 개수 계산 등)만 겨냥, 외부 지문·외부 <보기> 금지. 해설 첫머리에 '함정' 명시.

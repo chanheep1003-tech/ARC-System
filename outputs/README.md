@@ -8,6 +8,7 @@
 | `KOR/ARC_N08_…` | N08 + 간단 해설 | + `explain.py` |
 | `KOR/ARC_N10_1단원_80Q` | 교과서 1단원 80문항 | `passages.py`, `items.py` → `build.py` |
 | `KOR/ARC_N11_시험범위11편_110Q` | 시험 범위 11편 × 10 (V1.1: 선지 재구성, D2 없음) — 문제지·정답표·해설(별도)·**합본(문제지+정답표)** | `items_a/b/c.py` + `revise_a~e.py` → `apply_rev.py` → `build_n11.py`, `make.sh` |
+| `KOR/ARC_N13_심화변별_시범` | 심화 변별 시범 11편 × 2 (1등급 변별, 실수 빈발 지점 중심, 외부 지문 없음) — 문제지·정답표·해설(별도)·합본 | `passages_n13.py`, `items_n13.py` → `build_n13.py`, `make.sh` |
 | `KOR/ARC_N12_보충자료4편_핵심40Q` | 보충 4편 핵심 40 (V1.1) — 3종 PDF + **합본** | `items_n12.py` + `revise_n12.py` → `apply_rev.py` → `build_n12.py`, `make.sh` |
 | `KOR/ARC_FINAL_공통국어2_N01/N02` | 시험 모사: 선택형 22 + 서·논술형 4 | `items_final*.py` → `build_final.py` |
 | `KOR/ARC_CORE_보충자료4편` | 개념서 V1.2 | `core_content.py` → `build_core.py` |
