@@ -1,7 +1,7 @@
 # CHANGELOG
 
 ## 1.2.0 — 2026-09-30
-- **문제지·답지 동시 조판 규칙**: `quality/ARC_PAIRED_DELIVERY_V1.0.md`, 도구 `quality/tools/bundle_pdf.py`, 세트별 `src/make.sh`. 모든 세트는 `…_문제지+답지.pdf` 합본이 기본 산출물. 기존 N06~N10·FINAL N01/N02도 합본 추가. QA Bench RELEASE GATE·PDF 조판 MASTER·CLAUDE.md 연결.
+- **문제지·답지 동시 조판 규칙**: `quality/ARC_PAIRED_DELIVERY_V1.0.md`, 도구 `quality/tools/bundle_pdf.py`, 세트별 `src/make.sh`. 모든 세트는 `…_문제지+답지.pdf`(문제지+정답표) 합본이 기본 산출물이고 해설은 별도 PDF. 기존 N06~N10·FINAL N01/N02도 합본 추가. QA Bench RELEASE GATE·PDF 조판 MASTER·CLAUDE.md 연결.
 - **N°11·N°12 V1.1**: 전 문항 선지 재구성(EVOLVE, COPY 0), D2 배제, 선지 린트 PASS. 보고 `quality/reports/N11_N12_REVISION_V1.1_20260930.md`.
 - 선지 린트 도구: 동률 편향 제거(유일 최장·유일 최대 중복만 단서로 계산), 개정 원고(`apply_rev.py`) 자동 반영.
 

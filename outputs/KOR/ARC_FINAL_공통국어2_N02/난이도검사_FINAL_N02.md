@@ -28,3 +28,8 @@
 | 20 | 62 | D3 |
 | 21 | 60 | D3 |
 | 22 | 65 | D4 |
+
+
+---
+# 재검사 (2026-09-30, CDI·린트 상한 적용)
+결과와 문항별 표: `quality/reports/FINAL_DIFFICULTY_RECHECK_20260930.md`
