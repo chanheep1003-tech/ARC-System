@@ -11,3 +11,6 @@
 - **문항 출제 전 필독**: `quality/ARC_DISTRACTOR_ENGINEERING_V1.0.md` (선지는 정답의 한 요소만 바꿔 만든다, 길이·구조·구체성 평준화). 납품 전 `python3 quality/tools/option_cue_lint.py <세트>` 통과 필수, 새 세트는 도구 REGISTRY에 등록. D등급은 배점에서 역산 금지.
 - 산출물 지도는 `outputs/README.md`.
 - **재사용 정책**: 새 세트가 이전 세트와 겹쳐도 된다. 핵심 문항은 이전 문항을 선지 재구성/발문 변경(EVOLVE)으로 개선해 재사용하고 계보(parent/change/delta)를 남긴다. 무개선 복붙(COPY)은 세트의 10% 이하. (quality/ARC_SIMILARITY_GUARD_V1.0.md §6)
+- **문제지와 답지는 항상 함께 조판·납품**(합본 `…_문제지+답지.pdf`가 기본 산출물). 세트 `src/make.sh` = 빌드 → PDF 3종 → `quality/tools/bundle_pdf.py` 합본. 규칙: `quality/ARC_PAIRED_DELIVERY_V1.0.md`.
+- N°11·N°12는 V1.1(선지 재구성, D2 배제): 원고는 `items_*.py`(V1.0 계보) + `revise_*.py`(선지·표·<보기> 덮어쓰기) → `apply_rev.py`가 빌드·린트에서 공통 적용. 문항 수정은 `revise_*.py`에서 한다.
+

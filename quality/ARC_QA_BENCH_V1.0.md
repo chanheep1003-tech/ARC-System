@@ -185,6 +185,7 @@ RELEASE_DECISION: PASS / RC / FAIL
 ```
 
 ## 8. RELEASE GATE
+- **[PAIRED DELIVERY]** 문제지+답지 합본 PDF 존재, 정답표·해설이 같은 빌드에서 생성됨(`quality/ARC_PAIRED_DELIVERY_V1.0.md`). 미충족 시 납품 금지.
 COMMON ENGINE:
 - 관련 5과목에서 최소 1개 BENCH씩 실행
 - HARD FAIL 0

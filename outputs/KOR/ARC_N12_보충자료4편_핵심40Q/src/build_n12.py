@@ -3,6 +3,8 @@ import re, collections, sys, pathlib
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 import items_n12
 from common import Q
+import apply_rev
+apply_rev.apply(Q)  # V1.1: 선지 재구성(REV) 적용
 from passages_n12 import SETS
 
 OUT = pathlib.Path(__file__).parent

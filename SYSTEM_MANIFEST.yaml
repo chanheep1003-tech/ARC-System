@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.1.0
+  version: 1.2.0
   status: release
   initialized: 2026-09-18
   repository_visibility: private

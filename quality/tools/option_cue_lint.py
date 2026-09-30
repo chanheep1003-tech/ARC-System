@@ -29,7 +29,7 @@ GATE = dict(longest_pos=0.35, longest_all=0.30, overlap=0.30, ratio_lo=0.75, rat
 ABS = ["완전히", "반드시", "오직", "전혀", "확정", "직접", "오히려", "항상", "절대", "결코", "일방적", "전부", "오로지", "즉시", "곧바로", "무관"]
 NEG = re.compile("않|아닌|다른|틀린")
 PURGE = ("common", "passages_final", "passages_final2", "items_final", "items_final2", "items_a", "items_b", "items_c",
-         "items_n12", "passages_n11", "passages_n12")
+         "items_n12", "passages_n11", "passages_n12", "apply_rev", "revise_a", "revise_b", "revise_c", "revise_d", "revise_e", "revise_n12")
 
 def clean(t):
     return re.sub(r"\{.\|([^}]*)\}", r"\1", re.sub(r"<[^>]+>", "", t or ""))
@@ -58,6 +58,8 @@ def load(name):
         for m in mods: importlib.import_module(m)
         sets = importlib.import_module(pmod).SETS
         Q = sys.modules["common"].Q if "common" in sys.modules else sys.modules[mods[0]].Q
+        if (KOR / folder / "src" / "apply_rev.py").exists():   # V1.1 개정본(REV) 반영
+            importlib.import_module("apply_rev").apply(Q)
     finally:
         sys.path.remove(src)
     return Q, sets
@@ -76,9 +78,9 @@ def lint(name):
         ov = [sum(min(v, cg[k]) for k, v in grams(x).items()) / max(1, sum(grams(x).values())) for x in ch]
         ln = [len(x) for x in ch]; ab = [sum(w in x for w in ABS) for x in ch]
         R["n"] += 1; R["neg" if neg else "pos"] += 1
-        longest = max(range(5), key=lambda k: ln[k]) == c
+        longest = ln[c] == max(ln) and ln.count(max(ln)) == 1   # 동률은 단서가 아님
         R["longest"] += longest; R["longest_pos"] += (longest and not neg)
-        R["overlap"] += ((min if neg else max)(range(5), key=lambda k: ov[k]) == c)
+        _t = (min if neg else max)(ov); R["overlap"] += (ov[c] == _t and ov.count(_t) == 1)
         mo = st.mean(ln[k] for k in range(5) if k != c); r = ln[c] / mo; ratios.append(r)
         R["len_outlier"] += (r > 1.25 or r < 0.75)
         if neg and max(ab) > 0:

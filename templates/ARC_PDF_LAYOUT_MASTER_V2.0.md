@@ -842,3 +842,8 @@ CHANGELOG — FROM N제 PDF 조판 MASTER V1.3
 - 단일 N제 모드 → ARC_N / ARC_FINAL / ARC_CORE 3모드
 - 기존 표지 → ARC Academic B형
 - CORE용 압축 개념 페이지네이션 추가
+
+---
+## 문제지·답지 동시 조판 (V2.0 추가, 2026-09-30)
+- 모든 세트는 문제지와 답지(정답표+해설 / 정답 및 채점 기준)를 **같은 빌드에서 함께 조판**하고, 합본 PDF `…_문제지+답지.pdf`를 기본 산출물로 한다.
+- 규칙 전문·구현: `quality/ARC_PAIRED_DELIVERY_V1.0.md`, 도구 `quality/tools/bundle_pdf.py`, 세트별 `src/make.sh`.
