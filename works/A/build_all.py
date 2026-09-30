@@ -9,7 +9,7 @@ m1 = dict(no="07", title="A파트 · 정의와 사고방식 FINAL 50", school="�
           concept_sub="각 개념 상자 오른쪽 아래의 번호는 그 개념을 다룬 문항입니다.")
 p1, n1 = ab.build_all(base, "ARC_N07_통합사회2_A파트_FINAL50_V1.0.pdf", m1, "main.txt", out_dir, concept_fig=["C_A", "C_A2"])
 m2 = dict(no="08", title="A파트 SPECIAL 20 · 칸트와 베카리아의 사형 논쟁", school="동북고등학교 1학년",
-          range="정의의 실질적 기준 · 교정적 정의: 사형제도 탐구 (칸트·베카리아·롤스)",
+          range="정의의 실질적 기준 · 교정적 정의: 사형제도 탐구 (칸트·베카리아)",
           head_right="통합사회2 · A파트 SPECIAL 20",
           answer_sub="ARC N°08 · A파트 SPECIAL 20 · 정답표",
           concept_sub="문항 번호는 해당 개념을 다룬 문항입니다.")

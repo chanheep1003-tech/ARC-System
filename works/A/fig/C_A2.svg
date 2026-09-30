@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-09-30T16:00:53.696033</dc:date>
+    <dc:date>2026-09-30T16:11:17.210193</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -32,7 +32,7 @@ z
    <g id="line2d_1">
     <path d="M 4.730792 18.373465 
 L 374.889208 18.373465 
-" clip-path="url(#pc77800ab18)" style="fill: none; stroke: #1f2a44; stroke-width: 0.9; stroke-linecap: square"/>
+" clip-path="url(#p5ff3bb49f8)" style="fill: none; stroke: #1f2a44; stroke-width: 0.9; stroke-linecap: square"/>
    </g>
    <g id="patch_2">
     <path d="M 4.730792 94.937005 
@@ -40,7 +40,7 @@ L 186.108416 94.937005
 L 186.108416 26.120198 
 L 4.730792 26.120198 
 z
-" clip-path="url(#pc77800ab18)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
+" clip-path="url(#p5ff3bb49f8)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 193.511584 94.937005 
@@ -48,7 +48,7 @@ L 374.889208 94.937005
 L 374.889208 26.120198 
 L 193.511584 26.120198 
 z
-" clip-path="url(#pc77800ab18)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
+" clip-path="url(#p5ff3bb49f8)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 4.730792 171.500545 
@@ -56,7 +56,7 @@ L 374.889208 171.500545
 L 374.889208 102.683737 
 L 4.730792 102.683737 
 z
-" clip-path="url(#pc77800ab18)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
+" clip-path="url(#p5ff3bb49f8)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
     <path d="M 4.730792 259.813296 
@@ -64,7 +64,7 @@ L 374.889208 259.813296
 L 374.889208 179.247277 
 L 4.730792 179.247277 
 z
-" clip-path="url(#pc77800ab18)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
+" clip-path="url(#p5ff3bb49f8)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
    </g>
    <g id="patch_6">
     <path d="M 4.730792 348.126047 
@@ -72,7 +72,7 @@ L 186.108416 348.126047
 L 186.108416 267.560028 
 L 4.730792 267.560028 
 z
-" clip-path="url(#pc77800ab18)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
+" clip-path="url(#p5ff3bb49f8)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
    </g>
    <g id="patch_7">
     <path d="M 193.511584 348.126047 
@@ -80,7 +80,7 @@ L 374.889208 348.126047
 L 374.889208 267.560028 
 L 193.511584 267.560028 
 z
-" clip-path="url(#pc77800ab18)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
+" clip-path="url(#p5ff3bb49f8)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- Ⅱ. 『생각의 지도』 p.156~233 — 동양과 서양의 사고 방식 -->
@@ -8359,7 +8359,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pc77800ab18">
+  <clipPath id="p5ff3bb49f8">
    <rect x="2.88" y="2.88" width="373.86" height="365.904"/>
   </clipPath>
  </defs>

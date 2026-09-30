@@ -45,7 +45,7 @@ def h_of(*bodies, extra=0):
 def table_dist(ax, ytop, h):
     ax.add_patch(Rectangle((0, ytop - h), 100, h, fc="white", ec=G1, lw=0.7, zorder=2))
     ax.text(1.6, ytop - 1.6, "분배의 실질적 기준 — 능력 · 업적 · 필요", fontsize=7.4, fontweight="bold", color=NAVY, va="top")
-    ax.text(98.6, ytop - h + 1.4, "Q 10 11 12 13 14 15 24 25", fontsize=6.4, color=BURG, fontweight="bold", ha="right", va="bottom")
+    ax.text(98.6, ytop - h + 1.4, "Q 09 10 11 12 13 14 15 24 25", fontsize=6.4, color=BURG, fontweight="bold", ha="right", va="bottom")
     cols = [1.6, 9, 33, 57, 79]   # 기준 / 분배의 근거 / 장점 / 단점 / 사례
     heads = ["기준", "분배의 근거", "장점", "단점", "사례"]
     yy = ytop - 8
@@ -94,8 +94,8 @@ def cA():
             n(title="불평등 → 평등 → 형평성 → 정의", body="평등: 차별 요소를 없애 똑같이 대우(사정 미고려)\n형평성: 출발점·필요를 인식하고 해결\n정의: 불평등의 장벽 자체를 제도적으로 개혁", qs="Q 01 02 26"),
             n(title="아리스토텔레스의 정의", body="‘같은 것은 같게, 다른 것은 다르게’\n일반적 정의(법 준수·공익)\n특수적 정의: 분배(기하학적 비례)·교정\n(산술적 비례)·교환(같은 가치의 교환)", qs="Q 03 04 05 07 22")]),
         dict(kind="pair", h=h_of("a\nb\nc\nd"), nodes=[
-            n(title="정의가 요청되는 이유", body="기본권 보장 — 인간다운 삶의 권리\n갈등 조정 — 이해관계 충돌의 조정\n사회 통합 — 동등한 대우에 대한 신뢰와 협력", qs="Q 06"),
-            n(title="롤스 vs 공리주의", body="사회 제도의 제1덕목은 정의\n큰 선을 위해 소수의 자유를 빼앗는 것은\n정당화될 수 없다 → 최대 다수의 최대 행복\n(공리주의 정의관) 비판", qs="Q 08 09 21 24")]),
+            n(title="정의가 요청되는 이유", body="기본권 보장 — 인간다운 삶의 권리\n갈등 조정 — 이해관계 충돌의 조정\n사회 통합 — 동등한 대우에 대한 신뢰와 협력", qs="Q 06 24"),
+            n(title="분배·교정·교환 유형의 적용", body="성과·기여에 비례해 나눔 → 분배적(기하학적 비례)\n손해·불공정 계약을 바로잡음 → 교정적(산술적 비례)\n같은 가치의 물건·노동과 임금 → 교환적", qs="Q 03 04 05 08")]),
         dict(kind="draw", h=48, draw=table_dist),
         dict(kind="draw", h=61, draw=table_pun),
     ]
@@ -139,7 +139,7 @@ def cS():
         box(ax, 51, y - 15, 49, 15, b, fs=6.4, fc="white")
         ax.text(100, y - 17.2, q, ha="right", fontsize=6.2, color=BURG, fontweight="bold", va="center")
         y -= 20.5
-    ax.text(0, 5.5, "공통 · 연결   범죄자 처벌은 교정적 정의(산술적 비례)의 영역 (Q 15 20)\n롤스는 큰 선을 위해 소수의 자유를 빼앗는 것을 정당화할 수 없다며 공리주의 정의관을 비판 (Q 18)\n두 사상가는 서로 다른 ‘근거’에서 출발하며, 결론이 같아도 근거는 다를 수 있다 (Q 14 17)", fontsize=6.4, va="center", color=G1, linespacing=1.6)
+    ax.text(0, 5.5, "공통 · 연결   범죄자 처벌은 교정적 정의(산술적 비례)의 영역 (Q 15 20)\n두 사상가는 서로 다른 ‘근거’에서 출발하며, 결론이 같아도 근거는 다를 수 있다 (Q 14 17)", fontsize=6.4, va="center", color=G1, linespacing=1.6)
     save(f, OUT + "C_S.svg")
 
 

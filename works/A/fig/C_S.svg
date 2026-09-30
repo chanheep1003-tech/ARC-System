@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-09-30T16:00:53.818969</dc:date>
+    <dc:date>2026-09-30T16:11:17.329248</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -32,7 +32,7 @@ z
    <g id="line2d_1">
     <path d="M 4.730792 24.480679 
 L 374.889208 24.480679 
-" clip-path="url(#p4a05642f3b)" style="fill: none; stroke: #1f2a44; stroke-width: 0.9; stroke-linecap: square"/>
+" clip-path="url(#pab079aa11e)" style="fill: none; stroke: #1f2a44; stroke-width: 0.9; stroke-linecap: square"/>
    </g>
    <g id="patch_2">
     <path d="M 60.254554 98.540151 
@@ -40,7 +40,7 @@ L 182.406832 98.540151
 L 182.406832 52.252981 
 L 60.254554 52.252981 
 z
-" clip-path="url(#p4a05642f3b)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
+" clip-path="url(#pab079aa11e)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 193.511584 98.540151 
@@ -48,7 +48,7 @@ L 374.889208 98.540151
 L 374.889208 52.252981 
 L 193.511584 52.252981 
 z
-" clip-path="url(#p4a05642f3b)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
+" clip-path="url(#pab079aa11e)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 60.254554 161.799283 
@@ -56,7 +56,7 @@ L 182.406832 161.799283
 L 182.406832 115.512113 
 L 60.254554 115.512113 
 z
-" clip-path="url(#p4a05642f3b)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
+" clip-path="url(#pab079aa11e)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
     <path d="M 193.511584 161.799283 
@@ -64,7 +64,7 @@ L 374.889208 161.799283
 L 374.889208 115.512113 
 L 193.511584 115.512113 
 z
-" clip-path="url(#p4a05642f3b)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
+" clip-path="url(#pab079aa11e)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
    </g>
    <g id="patch_6">
     <path d="M 60.254554 225.058415 
@@ -72,7 +72,7 @@ L 182.406832 225.058415
 L 182.406832 178.771245 
 L 60.254554 178.771245 
 z
-" clip-path="url(#p4a05642f3b)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
+" clip-path="url(#pab079aa11e)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
    </g>
    <g id="patch_7">
     <path d="M 193.511584 225.058415 
@@ -80,7 +80,7 @@ L 374.889208 225.058415
 L 374.889208 178.771245 
 L 193.511584 178.771245 
 z
-" clip-path="url(#p4a05642f3b)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
+" clip-path="url(#pab079aa11e)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
    </g>
    <g id="patch_8">
     <path d="M 60.254554 288.317547 
@@ -88,7 +88,7 @@ L 182.406832 288.317547
 L 182.406832 242.030377 
 L 60.254554 242.030377 
 z
-" clip-path="url(#p4a05642f3b)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
+" clip-path="url(#pab079aa11e)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
    </g>
    <g id="patch_9">
     <path d="M 193.511584 288.317547 
@@ -96,7 +96,7 @@ L 374.889208 288.317547
 L 374.889208 242.030377 
 L 193.511584 242.030377 
 z
-" clip-path="url(#p4a05642f3b)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
+" clip-path="url(#pab079aa11e)" style="fill: #ffffff; stroke: #2b2f36; stroke-width: 0.7; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- 칸트 vs 베카리아 — 사형 논쟁 핵심 대비 -->
@@ -5151,7 +5151,7 @@ z
    </g>
    <g id="text_20">
     <!-- 공통 · 연결   범죄자 처벌은 교정적 정의(산술적 비례)의 영역 (Q 15 20) -->
-    <g style="fill: #2b2f36" transform="translate(4.730792 304.783538) scale(0.064 -0.064)">
+    <g style="fill: #2b2f36" transform="translate(4.730792 309.903538) scale(0.064 -0.064)">
      <defs>
       <path id="NotoSansKR-Regular-423c" d="M 1901 4448 
 C 2458 4448 2880 4045 2880 3469 
@@ -5608,430 +5608,8 @@ z
      <use xlink:href="#NotoSansKR-Regular-5867" transform="translate(2805.46875 0)"/>
      <use xlink:href="#NotoSansKR-Regular-a" transform="translate(2860.96875 0)"/>
     </g>
-    <!-- 롤스는 큰 선을 위해 소수의 자유를 빼앗는 것을 정당화할 수 없다며 공리주의 정의관을 비판 (Q 18) -->
-    <g style="fill: #2b2f36" transform="translate(4.730792 315.052038) scale(0.064 -0.064)">
-     <defs>
-      <path id="NotoSansKR-Regular-34b0" d="M 992 3424 
-L 992 3040 
-L 2675 3040 
-L 2675 2566 
-L 314 2566 
-L 314 2163 
-L 5562 2163 
-L 5562 2566 
-L 3200 2566 
-L 3200 3040 
-L 4992 3040 
-L 4992 3424 
-L 1517 3424 
-L 1517 3923 
-L 4890 3923 
-L 4890 5126 
-L 979 5126 
-L 979 4749 
-L 4365 4749 
-L 4365 4282 
-L 992 4282 
-L 992 3424 
-z
-M 954 -51 
-L 954 -435 
-L 5094 -435 
-L 5094 -51 
-L 1478 -51 
-L 1478 493 
-L 4909 493 
-L 4909 1728 
-L 941 1728 
-L 941 1344 
-L 4384 1344 
-L 4384 858 
-L 954 858 
-L 954 -51 
-z
-" transform="scale(0.015625)"/>
-      <path id="NotoSansKR-Regular-3ef0" d="M 320 723 
-L 320 282 
-L 5568 282 
-L 5568 723 
-L 320 723 
-z
-M 2637 4890 
-L 2637 4448 
-C 2637 3462 1549 2586 538 2387 
-L 774 1946 
-C 1651 2150 2547 2771 2918 3610 
-C 3296 2765 4186 2144 5062 1946 
-L 5306 2387 
-C 4288 2579 3194 3462 3194 4448 
-L 3194 4890 
-L 2637 4890 
-z
-" transform="scale(0.015625)"/>
-      <path id="NotoSansKR-Regular-3dd8" d="M 2656 2099 
-L 2656 691 
-L 320 691 
-L 320 256 
-L 5568 256 
-L 5568 691 
-L 3181 691 
-L 3181 2099 
-L 2656 2099 
-z
-M 2637 4902 
-L 2637 4461 
-C 2637 3501 1549 2650 525 2470 
-L 755 2029 
-C 1645 2214 2541 2810 2918 3635 
-C 3296 2810 4198 2214 5088 2029 
-L 5318 2470 
-C 4294 2650 3194 3501 3194 4461 
-L 3194 4902 
-L 2637 4902 
-z
-" transform="scale(0.015625)"/>
-      <path id="NotoSansKR-Regular-28cf" d="M 3309 3661 
-L 3309 3219 
-L 4550 3219 
-L 4550 1376 
-L 5082 1376 
-L 5082 5286 
-L 4550 5286 
-L 4550 3661 
-L 3309 3661 
-z
-M 698 4832 
-L 698 4397 
-L 2714 4397 
-C 2605 3379 1779 2592 416 2163 
-L 646 1741 
-C 2304 2278 3283 3341 3283 4832 
-L 698 4832 
-z
-M 2950 1869 
-L 2950 1606 
-C 2950 768 2048 122 1018 -58 
-L 1229 -480 
-C 2086 -307 2867 141 3213 813 
-C 3558 147 4326 -301 5178 -467 
-L 5395 -45 
-C 4371 141 3475 781 3475 1606 
-L 3475 1869 
-L 2950 1869 
-z
-" transform="scale(0.015625)"/>
-      <path id="NotoSansKR-Regular-2f45" d="M 2970 1728 
-C 1792 1728 1062 1318 1062 621 
-C 1062 -77 1792 -486 2970 -486 
-C 4141 -486 4864 -77 4864 621 
-C 4864 1318 4141 1728 2970 1728 
-z
-M 2970 1299 
-C 3821 1299 4352 1050 4352 621 
-C 4352 198 3821 -58 2970 -58 
-C 2112 -58 1581 198 1581 621 
-C 1581 1050 2112 1299 2970 1299 
-z
-M 4282 5293 
-L 4282 1850 
-L 4819 1850 
-L 4819 3347 
-L 5664 3347 
-L 5664 3789 
-L 4819 3789 
-L 4819 5293 
-L 4282 5293 
-z
-M 576 4851 
-L 576 2310 
-L 1024 2310 
-C 2246 2310 2938 2342 3731 2502 
-L 3674 2938 
-C 2918 2784 2259 2746 1101 2746 
-L 1101 4416 
-L 3130 4416 
-L 3130 4851 
-L 576 4851 
-z
-" transform="scale(0.015625)"/>
-      <path id="NotoSansKR-Regular-52a0" d="M 2086 3411 
-C 2598 3411 2944 3149 2944 2752 
-C 2944 2355 2598 2099 2086 2099 
-C 1568 2099 1222 2355 1222 2752 
-C 1222 3149 1568 3411 2086 3411 
-z
-M 2086 3827 
-C 1274 3827 723 3398 723 2752 
-C 723 2182 1152 1786 1818 1702 
-L 1818 1069 
-C 1254 1050 710 1050 250 1050 
-L 333 602 
-C 1338 602 2694 614 3942 838 
-L 3904 1229 
-C 3411 1158 2880 1114 2349 1088 
-L 2349 1702 
-C 3008 1779 3450 2176 3450 2752 
-C 3450 3398 2893 3827 2086 3827 
-z
-M 4250 5293 
-L 4250 -499 
-L 4781 -499 
-L 4781 2387 
-L 5683 2387 
-L 5683 2835 
-L 4781 2835 
-L 4781 5293 
-L 4250 5293 
-z
-M 1818 5280 
-L 1818 4589 
-L 352 4589 
-L 352 4160 
-L 3808 4160 
-L 3808 4589 
-L 2349 4589 
-L 2349 5280 
-L 1818 5280 
-z
-" transform="scale(0.015625)"/>
-      <path id="NotoSansKR-Regular-36bc" d="M 2662 4301 
-L 2662 1389 
-L 1075 1389 
-L 1075 4301 
-L 2662 4301 
-z
-M 3181 3469 
-L 4557 3469 
-L 4557 2310 
-L 3181 2310 
-L 3181 3469 
-z
-M 4557 5293 
-L 4557 3904 
-L 3181 3904 
-L 3181 4723 
-L 550 4723 
-L 550 966 
-L 3181 966 
-L 3181 1875 
-L 4557 1875 
-L 4557 -506 
-L 5082 -506 
-L 5082 5293 
-L 4557 5293 
-z
-" transform="scale(0.015625)"/>
-      <path id="NotoSansKR-Regular-35f8" d="M 4538 5293 
-L 4538 -506 
-L 5062 -506 
-L 5062 5293 
-L 4538 5293 
-z
-M 640 4755 
-L 640 4320 
-L 2778 4320 
-L 2778 3117 
-L 653 3117 
-L 653 896 
-L 1133 896 
-C 2131 896 3002 934 4045 1107 
-L 3994 1542 
-C 2982 1382 2138 1338 1190 1338 
-L 1190 2688 
-L 3315 2688 
-L 3315 4755 
-L 640 4755 
-z
-" transform="scale(0.015625)"/>
-      <path id="NotoSansKR-Regular-4548" d="M 813 4928 
-L 813 4506 
-L 2637 4506 
-L 2637 4474 
-C 2637 3712 1645 3053 627 2906 
-L 832 2483 
-C 1728 2637 2586 3117 2931 3808 
-C 3283 3117 4141 2637 5043 2483 
-L 5242 2906 
-C 4224 3053 3232 3712 3232 4474 
-L 3232 4506 
-L 5050 4506 
-L 5050 4928 
-L 813 4928 
-z
-M 320 1997 
-L 320 1562 
-L 2662 1562 
-L 2662 -493 
-L 3187 -493 
-L 3187 1562 
-L 5549 1562 
-L 5549 1997 
-L 320 1997 
-z
-" transform="scale(0.015625)"/>
-      <path id="NotoSansKR-Regular-294c" d="M 634 4845 
-L 634 4403 
-L 2982 4403 
-C 2982 4038 2963 3552 2829 2874 
-L 3354 2822 
-C 3501 3578 3501 4160 3501 4538 
-L 3501 4845 
-L 634 4845 
-z
-M 339 1856 
-C 1357 1856 2739 1882 3936 2086 
-L 3904 2477 
-C 3315 2394 2662 2349 2029 2323 
-L 2029 3552 
-L 1504 3552 
-L 1504 2304 
-C 1069 2291 646 2291 282 2291 
-L 339 1856 
-z
-M 4288 5293 
-L 4288 934 
-L 4826 934 
-L 4826 2963 
-L 5651 2963 
-L 5651 3411 
-L 4826 3411 
-L 4826 5293 
-L 4288 5293 
-z
-M 1165 1331 
-L 1165 -371 
-L 5011 -371 
-L 5011 64 
-L 1696 64 
-L 1696 1331 
-L 1165 1331 
-z
-" transform="scale(0.015625)"/>
-      <path id="NotoSansKR-Regular-4f5c" d="M 397 1888 
-C 1389 1888 2739 1914 3898 2093 
-L 3859 2490 
-C 3590 2458 3302 2432 3014 2413 
-L 3014 4314 
-L 3590 4314 
-L 3590 4749 
-L 493 4749 
-L 493 4314 
-L 1069 4314 
-L 1069 2336 
-L 333 2330 
-L 397 1888 
-z
-M 1581 4314 
-L 2502 4314 
-L 2502 2381 
-L 1581 2349 
-L 1581 4314 
-z
-M 4282 5286 
-L 4282 1024 
-L 4813 1024 
-L 4813 3085 
-L 5664 3085 
-L 5664 3533 
-L 4813 3533 
-L 4813 5286 
-L 4282 5286 
-z
-M 1210 1427 
-L 1210 -371 
-L 5069 -371 
-L 5069 64 
-L 1734 64 
-L 1734 1427 
-L 1210 1427 
-z
-" transform="scale(0.015625)"/>
-      <path id="NotoSansKR-Regular-586f" d="M 1792 -83 
-C 2669 -83 3258 448 3258 1126 
-C 3258 1741 2874 2067 2470 2310 
-L 2470 2336 
-C 2746 2547 3091 2957 3091 3437 
-C 3091 4141 2605 4646 1805 4646 
-C 1075 4646 518 4179 518 3482 
-C 518 3002 813 2662 1152 2426 
-L 1152 2400 
-C 730 2170 294 1760 294 1165 
-C 294 442 922 -83 1792 -83 
-z
-M 2112 2483 
-C 1562 2701 1050 2931 1050 3482 
-C 1050 3923 1363 4211 1798 4211 
-C 2298 4211 2592 3853 2592 3405 
-C 2592 3066 2419 2765 2112 2483 
-z
-M 1798 352 
-C 1235 352 813 717 813 1216 
-C 813 1645 1088 1978 1459 2214 
-C 2118 1946 2701 1747 2701 1146 
-C 2701 678 2342 352 1798 352 
-z
-" transform="scale(0.015625)"/>
-     </defs>
-     <use xlink:href="#NotoSansKR-Regular-34b0"/>
-     <use xlink:href="#NotoSansKR-Regular-3ef0" transform="translate(92 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-2ee0" transform="translate(184 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-1" transform="translate(276 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-4cbc" transform="translate(298.40625 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-1" transform="translate(390.40625 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-3d6c" transform="translate(412.8125 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-4390" transform="translate(504.8125 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-1" transform="translate(596.8125 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-4350" transform="translate(619.21875 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-51c0" transform="translate(711.21875 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-1" transform="translate(803.21875 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-3dd8" transform="translate(825.625 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-3e64" transform="translate(917.625 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-43a4" transform="translate(1009.625 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-1" transform="translate(1101.625 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-43dc" transform="translate(1124.03125 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-436c" transform="translate(1216.03125 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-35c8" transform="translate(1308.03125 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-1" transform="translate(1400.03125 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-3ac8" transform="translate(1422.4375 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-41a3" transform="translate(1514.4375 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-2ee0" transform="translate(1606.4375 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-1" transform="translate(1698.4375 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-28cf" transform="translate(1720.84375 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-4390" transform="translate(1812.84375 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-1" transform="translate(1904.84375 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-4461" transform="translate(1927.25 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-2f45" transform="translate(2019.25 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-52a0" transform="translate(2111.25 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-51ac" transform="translate(2203.25 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-1" transform="translate(2295.25 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-3e64" transform="translate(2317.65625 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-1" transform="translate(2409.65625 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-4212" transform="translate(2432.0625 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-2f30" transform="translate(2524.0625 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-36bc" transform="translate(2616.0625 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-1" transform="translate(2708.0625 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-2941" transform="translate(2730.46875 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-35f8" transform="translate(2822.46875 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-4548" transform="translate(2914.46875 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-43a4" transform="translate(3006.46875 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-1" transform="translate(3098.46875 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-4461" transform="translate(3120.875 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-43a4" transform="translate(3212.875 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-294c" transform="translate(3304.875 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-4390" transform="translate(3396.875 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-1" transform="translate(3488.875 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-3a90" transform="translate(3511.28125 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-4f5c" transform="translate(3603.28125 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-1" transform="translate(3695.28125 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-9" transform="translate(3717.6875 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-32" transform="translate(3751.484375 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-1" transform="translate(3825.6875 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-5868" transform="translate(3848.09375 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-586f" transform="translate(3903.59375 0)"/>
-     <use xlink:href="#NotoSansKR-Regular-a" transform="translate(3959.09375 0)"/>
-    </g>
     <!-- 두 사상가는 서로 다른 ‘근거’에서 출발하며, 결론이 같아도 근거는 다를 수 있다 (Q 14 17) -->
-    <g style="fill: #2b2f36" transform="translate(4.730792 325.279538) scale(0.064 -0.064)">
+    <g style="fill: #2b2f36" transform="translate(4.730792 320.159538) scale(0.064 -0.064)">
      <defs>
       <path id="NotoSansKR-Regular-309c" d="M 1037 4954 
 L 1037 2707 
@@ -6245,6 +5823,33 @@ L 1152 1018
 L 1152 -6 
 z
 " transform="scale(0.015625)"/>
+      <path id="NotoSansKR-Regular-36bc" d="M 2662 4301 
+L 2662 1389 
+L 1075 1389 
+L 1075 4301 
+L 2662 4301 
+z
+M 3181 3469 
+L 4557 3469 
+L 4557 2310 
+L 3181 2310 
+L 3181 3469 
+z
+M 4557 5293 
+L 4557 3904 
+L 3181 3904 
+L 3181 4723 
+L 550 4723 
+L 550 966 
+L 3181 966 
+L 3181 1875 
+L 4557 1875 
+L 4557 -506 
+L 5082 -506 
+L 5082 5293 
+L 4557 5293 
+z
+" transform="scale(0.015625)"/>
       <path id="NotoSansKR-Regular-34ac" d="M 992 3034 
 L 992 2618 
 L 2675 2618 
@@ -6441,7 +6046,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p4a05642f3b">
+  <clipPath id="pab079aa11e">
    <rect x="2.88" y="2.88" width="373.86" height="327.096"/>
   </clipPath>
  </defs>
