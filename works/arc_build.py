@@ -81,6 +81,73 @@ def parse(path):
 
 
 # ----------------------------------------------------------------------------
+# 정답 번호 자동 배정 (ans 속성이 없는 문항만)
+#   CHROW: 정답 조합 앞에 * 표시 -> 표준 순서로 정렬 후 정답 번호 계산
+#   CH   : 정답 선지 앞에 ★ 표시 -> 세트 전체 정답 분포가 고르게 되도록 위치 배정
+# ----------------------------------------------------------------------------
+def _combo_key(c):
+    order = "ㄱㄴㄷㄹㅁㅂ"
+    parts = [p.strip() for p in c.split(",")]
+    return (len(parts), [order.index(p) for p in parts])
+
+
+def finalize(items, seed=11):
+    import random
+    from collections import Counter
+    rnd = random.Random(seed)
+    qs_all = [i for i in items if i["kind"] == "Q"]
+    pend = [i for i in qs_all if "ans" not in i["attrs"]]
+    counts = Counter(int(i["attrs"]["ans"]) for i in qs_all if "ans" in i["attrs"])
+    for it in pend:
+        if it["chrow"]:
+            cs = it["chrow"]
+            marked = [c for c in cs if c.startswith("*")]
+            assert len(marked) == 1, ("CHROW 정답 표시 오류", it["attrs"]["id"])
+            cc = marked[0].lstrip("*").strip()
+            cs = sorted([c.lstrip("*").strip() for c in cs], key=_combo_key)
+            assert len(set(cs)) == 5, ("CHROW 중복", it["attrs"]["id"])
+            it["chrow"] = cs
+            a = cs.index(cc) + 1
+            it["attrs"]["ans"] = str(a)
+            counts[a] += 1
+    chs = [i for i in pend if not i["chrow"]]
+    total = len(qs_all)
+    want = {a: total // 5 for a in range(1, 6)}
+    for a in rnd.sample(range(1, 6), total % 5):
+        want[a] += 1
+    targets = []
+    for a in range(1, 6):
+        targets += [a] * max(0, want[a] - counts[a])
+    while len(targets) < len(chs):
+        targets.append(rnd.randint(1, 5))
+    targets = targets[:len(chs)]
+    fixed = {id(i): int(i["attrs"]["ans"]) for i in qs_all if "ans" in i["attrs"]}
+
+    def _seq(tg):
+        m = dict(zip([id(i) for i in chs], tg))
+        return [fixed.get(id(i), m.get(id(i))) for i in qs_all]
+
+    def _ok(seq):
+        return all(not (seq[k] == seq[k + 1] == seq[k + 2]) for k in range(len(seq) - 2))
+
+    for _ in range(5000):
+        rnd.shuffle(targets)
+        if _ok(_seq(targets)):
+            break
+    for it, t in zip(chs, targets):
+        raw = [re.sub(r"^[①②③④⑤]\s*", "", c.strip()) for c in it["ch"]]
+        stars = [i for i, c in enumerate(raw) if c.startswith("★")]
+        assert len(stars) == 1 and len(raw) == 5, ("CH 정답 표시 오류", it["attrs"]["id"])
+        correct = raw[stars[0]].lstrip("★").strip()
+        others = [c for i, c in enumerate(raw) if i != stars[0]]
+        rnd.shuffle(others)
+        new = others[:t - 1] + [correct] + others[t - 1:]
+        it["ch"] = new
+        it["attrs"]["ans"] = str(t)
+    return items
+
+
+# ----------------------------------------------------------------------------
 # HTML 렌더
 # ----------------------------------------------------------------------------
 def render_blocks(blocks):
@@ -283,7 +350,7 @@ def build_all(work_dir, name, meta, main_txt, out_dir, concept_fig=None):
     import pymupdf
     work = Path(work_dir)
     out = Path(out_dir); out.mkdir(parents=True, exist_ok=True)
-    items = parse(work / main_txt)
+    items = finalize(parse(work / main_txt))
     # 번들 아이템 제외 문항 수
     qs = [i for i in items if i["kind"] == "Q"]
     meta = dict(meta); meta["count"] = len(qs)
