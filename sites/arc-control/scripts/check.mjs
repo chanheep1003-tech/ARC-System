@@ -16,7 +16,31 @@ await post('exam',{...exam,status:'APPROVED',aiVerification:{matches:true},revie
 exam=(await (await worker.fetch(new Request('https://arc.example/api/state'),env,{})).json()).exams[0];assert.equal(exam.status,'DRAFT');assert.equal(exam.aiVerification,null);
 exam=await post('audit',{id:exam.id});assert.equal(exam.qa.structural,'PASS');assert.equal(exam.qa.independent,'NOT_RUN');
 await post('approve',{id:exam.id,revision:exam.revision,review:{facts:true}},400);
-exam=await post('approve',{id:exam.id,revision:exam.revision,review:{facts:true,unique:true,scope:true,difficulty:true,duplicates:true}});assert.equal(exam.status,'APPROVED');assert.equal(exam.review.method,'HUMAN');
+const review={facts:true,unique:true,scope:true,difficulty:true,duplicates:true};
+await post('approve',{id:exam.id,revision:exam.revision,review},400);
+const originalFetch=globalThis.fetch;
+const readExam=async()=> (await (await worker.fetch(new Request('https://arc.example/api/state'),env,{})).json()).exams[0];
+try{
+ // Synthetic responses exercise server gates; no external AI call or credential is used.
+ env.OPENAI_API_KEY='synthetic-test-value';env.ARC_AI_MODEL='synthetic-test-model';
+ globalThis.fetch=async (_url,options)=>{
+  const input=JSON.parse(options.body).input;
+  const data=JSON.parse(input.slice(input.indexOf('\n')+1));
+  assert.ok(!('answer' in data.questions[0]));assert.ok(!('evidence' in data.questions[0]));
+  return Response.json({status:'completed',output:[{content:[{type:'output_text',text:JSON.stringify({questions:[{answer:1,unique:true,inScope:true,difficultyMatches:true,optionReasons:['a','b','c','d','e']}]})}]}]});
+ };
+ exam=await post('verify',{id:exam.id});assert.equal(exam.aiVerification.status,'PASS');
+ globalThis.fetch=async()=>{throw new Error('synthetic network failure');};
+ await post('verify',{id:exam.id},502);exam=await readExam();
+ assert.equal(exam.status,'QA_FAILED');assert.equal(exam.aiVerification.status,'ERROR');
+ await post('approve',{id:exam.id,revision:exam.revision,review},400);
+ globalThis.fetch=async()=>Response.json({status:'completed',output:[{content:[{type:'output_text',text:JSON.stringify({questions:[{answer:2,unique:true,inScope:true,difficultyMatches:true,optionReasons:['a','b','c','d','e']}]})}]}]});
+ exam=await post('verify',{id:exam.id});assert.equal(exam.aiVerification.status,'FAIL');
+ await post('approve',{id:exam.id,revision:exam.revision,review},400);
+ globalThis.fetch=async()=>Response.json({status:'completed',output:[{content:[{type:'output_text',text:JSON.stringify({questions:[{answer:1,unique:true,inScope:true,difficultyMatches:true,optionReasons:['a','b','c','d','e']}]})}]}]});
+ exam=await post('verify',{id:exam.id});assert.equal(exam.aiVerification.status,'PASS');
+}finally{globalThis.fetch=originalFetch;delete env.OPENAI_API_KEY;delete env.ARC_AI_MODEL;}
+exam=await post('approve',{id:exam.id,revision:exam.revision,review});assert.equal(exam.status,'APPROVED');assert.equal(exam.review.method,'AI_AND_HUMAN');
 await post('exam',exam,409);
 const duplicate=audit(exam,[exam]);assert.equal(duplicate.structural,'FAIL');
 const bad=structuredClone(exam);bad.questions[0].evidence[0].quote='원문에 없는 내용';assert.equal(audit(bad).structural,'FAIL');
