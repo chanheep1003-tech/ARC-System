@@ -99,7 +99,7 @@ def b_dtm():
         ax.text(xv, 7.6, a, ha="center", va="top", fontsize=7.8, fontweight="bold")
         ax.text(xv, 6.75, bb, ha="center", va="top", fontsize=6.5, color=D)
     mid = (sc(birth[150]) + sc(death[150])) / 2
-    ax.text(3.0, mid, "자연 증가\n가장 큼", ha="center", va="center", fontsize=6.4, fontweight="bold")
+    ax.text(3.0, mid, "인구\n급증", ha="center", va="center", fontsize=6.6, fontweight="bold")
     ax.set_xlim(0, 10); ax.set_ylim(0, 7.8)
     ax.spines["left"].set_visible(True); ax.spines["bottom"].set_visible(True)
     ax.set_xticks([]); ax.set_yticks([])

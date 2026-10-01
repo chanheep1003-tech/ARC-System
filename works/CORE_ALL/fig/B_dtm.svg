@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-01T09:44:37.662212</dc:date>
+    <dc:date>2026-10-01T10:21:32.997307</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -797,7 +797,7 @@ L 16.076072 61.023504
 L 15.338036 61.02337 
 L 14.6 61.023241 
 z
-" clip-path="url(#p69f88a71ea)" style="fill: #cfcfcf; fill-opacity: 0.9"/>
+" clip-path="url(#p98d18e267f)" style="fill: #cfcfcf; fill-opacity: 0.9"/>
    </g>
    <g id="FillBetweenPolyCollection_2">
     <path d="M 293.577635 118.447968 
@@ -1047,7 +1047,7 @@ L 295.053707 118.393007
 L 294.315671 118.420804 
 L 293.577635 118.447968 
 z
-" clip-path="url(#p69f88a71ea)" style="fill: url(#haec1c0c425)"/>
+" clip-path="url(#p98d18e267f)" style="fill: url(#hdd6f86d6b1)"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="text_1">
@@ -1588,7 +1588,7 @@ L 346.716232 120.427872
 L 367.381242 120.772669 
 L 382.88 120.909496 
 L 382.88 120.909496 
-" clip-path="url(#p69f88a71ea)" style="fill: none; stroke: #111111; stroke-width: 1.9; stroke-linecap: square"/>
+" clip-path="url(#p98d18e267f)" style="fill: none; stroke: #111111; stroke-width: 1.9; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
     <path d="M 14.6 61.468583 
@@ -1634,27 +1634,27 @@ L 355.572665 115.257397
 L 370.333387 114.848178 
 L 382.88 114.644372 
 L 382.88 114.644372 
-" clip-path="url(#p69f88a71ea)" style="fill: none; stroke-dasharray: 9.5,3.8; stroke-dashoffset: 0; stroke: #111111; stroke-width: 1.9"/>
+" clip-path="url(#p98d18e267f)" style="fill: none; stroke-dasharray: 9.5,3.8; stroke-dashoffset: 0; stroke: #111111; stroke-width: 1.9"/>
    </g>
    <g id="line2d_3">
     <path d="M 88.256 150.736582 
 L 88.256 11.177043 
-" clip-path="url(#p69f88a71ea)" style="fill: none; stroke-dasharray: 0.7,1.155; stroke-dashoffset: 0; stroke: #888888; stroke-width: 0.7"/>
+" clip-path="url(#p98d18e267f)" style="fill: none; stroke-dasharray: 0.7,1.155; stroke-dashoffset: 0; stroke: #888888; stroke-width: 0.7"/>
    </g>
    <g id="line2d_4">
     <path d="M 161.912 150.736582 
 L 161.912 11.177043 
-" clip-path="url(#p69f88a71ea)" style="fill: none; stroke-dasharray: 0.7,1.155; stroke-dashoffset: 0; stroke: #888888; stroke-width: 0.7"/>
+" clip-path="url(#p98d18e267f)" style="fill: none; stroke-dasharray: 0.7,1.155; stroke-dashoffset: 0; stroke: #888888; stroke-width: 0.7"/>
    </g>
    <g id="line2d_5">
     <path d="M 235.568 150.736582 
 L 235.568 11.177043 
-" clip-path="url(#p69f88a71ea)" style="fill: none; stroke-dasharray: 0.7,1.155; stroke-dashoffset: 0; stroke: #888888; stroke-width: 0.7"/>
+" clip-path="url(#p98d18e267f)" style="fill: none; stroke-dasharray: 0.7,1.155; stroke-dashoffset: 0; stroke: #888888; stroke-width: 0.7"/>
    </g>
    <g id="line2d_6">
     <path d="M 309.224 150.736582 
 L 309.224 11.177043 
-" clip-path="url(#p69f88a71ea)" style="fill: none; stroke-dasharray: 0.7,1.155; stroke-dashoffset: 0; stroke: #888888; stroke-width: 0.7"/>
+" clip-path="url(#p98d18e267f)" style="fill: none; stroke-dasharray: 0.7,1.155; stroke-dashoffset: 0; stroke: #888888; stroke-width: 0.7"/>
    </g>
    <g id="patch_3">
     <path d="M 14.6 150.736582 
@@ -2075,71 +2075,91 @@ z
     </g>
    </g>
    <g id="text_13">
-    <!-- 자연 증가 -->
-    <g style="fill: #111111" transform="translate(112.5815 79.148775) scale(0.064 -0.064)">
+    <!-- 인구 -->
+    <g style="fill: #111111" transform="translate(119.012 79.124775) scale(0.066 -0.066)">
      <defs>
-      <path id="NotoSansKR-Bold-43dc" d="M 358 4794 
-L 358 4090 
-L 1587 4090 
-L 1587 3757 
-C 1587 2784 1107 1677 128 1216 
-L 608 544 
-C 1293 870 1766 1523 2022 2291 
-C 2285 1594 2746 998 3405 691 
-L 3878 1370 
-C 2906 1811 2438 2861 2438 3757 
-L 2438 4090 
-L 3610 4090 
-L 3610 4794 
-L 358 4794 
+      <path id="NotoSansKR-Bold-43c4" d="M 4333 5357 
+L 4333 1101 
+L 5184 1101 
+L 5184 5357 
+L 4333 5357 
 z
-M 4045 5357 
-L 4045 -570 
-L 4902 -570 
-L 4902 2400 
-L 5760 2400 
-L 5760 3098 
-L 4902 3098 
-L 4902 5357 
-L 4045 5357 
+M 1958 4979 
+C 1050 4979 346 4358 346 3475 
+C 346 2611 1050 1971 1958 1971 
+C 2867 1971 3571 2611 3571 3475 
+C 3571 4358 2867 4979 1958 4979 
 z
-" transform="scale(0.015625)"/>
-      <path id="NotoSansKR-Bold-423c" d="M 1894 4262 
-C 2330 4262 2650 3968 2650 3475 
-C 2650 2982 2330 2688 1894 2688 
-C 1466 2688 1139 2982 1139 3475 
-C 1139 3968 1466 4262 1894 4262 
+M 1958 4250 
+C 2400 4250 2739 3968 2739 3475 
+C 2739 3002 2400 2714 1958 2714 
+C 1517 2714 1178 3002 1178 3475 
+C 1178 3968 1517 4250 1958 4250 
 z
-M 4365 3853 
-L 4365 3098 
-L 3418 3098 
-C 3450 3219 3462 3341 3462 3475 
-C 3462 3610 3450 3731 3418 3853 
-L 4365 3853 
-z
-M 1894 5005 
-C 1018 5005 333 4365 333 3475 
-C 333 2586 1018 1939 1894 1939 
-C 2355 1939 2765 2118 3046 2413 
-L 4365 2413 
-L 4365 1024 
-L 5222 1024 
-L 5222 5357 
-L 4365 5357 
-L 4365 4538 
-L 3046 4538 
-C 2765 4832 2355 5005 1894 5005 
-z
-M 1306 1446 
-L 1306 -467 
-L 5357 -467 
-L 5357 218 
-L 2157 218 
-L 2157 1446 
-L 1306 1446 
+M 1235 1523 
+L 1235 -467 
+L 5338 -467 
+L 5338 218 
+L 2086 218 
+L 2086 1523 
+L 1235 1523 
 z
 " transform="scale(0.015625)"/>
-      <path id="NotoSansKR-Bold-1" transform="scale(0.015625)"/>
+      <path id="NotoSansKR-Bold-29b8" d="M 262 2496 
+L 262 1805 
+L 2483 1805 
+L 2483 -570 
+L 3341 -570 
+L 3341 1805 
+L 5626 1805 
+L 5626 2496 
+L 4845 2496 
+C 4992 3328 4992 3936 4992 4493 
+L 4992 5018 
+L 877 5018 
+L 877 4346 
+L 4154 4346 
+C 4154 3827 4141 3251 3994 2496 
+L 262 2496 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#NotoSansKR-Bold-43c4"/>
+     <use xlink:href="#NotoSansKR-Bold-29b8" transform="translate(92 0)"/>
+    </g>
+    <!-- 급증 -->
+    <g style="fill: #111111" transform="translate(119.012 85.724775) scale(0.066 -0.066)">
+     <defs>
+      <path id="NotoSansKR-Bold-2a55" d="M 896 1984 
+L 896 -506 
+L 4979 -506 
+L 4979 1984 
+L 4134 1984 
+L 4134 1370 
+L 1734 1370 
+L 1734 1984 
+L 896 1984 
+z
+M 1734 710 
+L 4134 710 
+L 4134 173 
+L 1734 173 
+L 1734 710 
+z
+M 262 3053 
+L 262 2368 
+L 5632 2368 
+L 5632 3053 
+L 4870 3053 
+C 4998 3712 4998 4186 4998 4653 
+L 4998 5126 
+L 922 5126 
+L 922 4448 
+L 4160 4448 
+C 4160 4051 4141 3616 4026 3053 
+L 262 3053 
+z
+" transform="scale(0.015625)"/>
       <path id="NotoSansKR-Bold-45e9" d="M 256 2624 
 L 256 1952 
 L 5619 1952 
@@ -2172,106 +2192,9 @@ L 5139 5082
 L 749 5082 
 z
 " transform="scale(0.015625)"/>
-      <path id="NotoSansKR-Bold-284c" d="M 4045 5370 
-L 4045 -557 
-L 4902 -557 
-L 4902 2400 
-L 5728 2400 
-L 5728 3098 
-L 4902 3098 
-L 4902 5370 
-L 4045 5370 
-z
-M 525 4755 
-L 525 4070 
-L 2458 4070 
-C 2310 2752 1574 1818 198 1107 
-L 678 461 
-C 2650 1453 3328 2976 3328 4755 
-L 525 4755 
-z
-" transform="scale(0.015625)"/>
      </defs>
-     <use xlink:href="#NotoSansKR-Bold-43dc"/>
-     <use xlink:href="#NotoSansKR-Bold-423c" transform="translate(92 0)"/>
-     <use xlink:href="#NotoSansKR-Bold-1" transform="translate(184 0)"/>
-     <use xlink:href="#NotoSansKR-Bold-45e9" transform="translate(206.703125 0)"/>
-     <use xlink:href="#NotoSansKR-Bold-284c" transform="translate(298.703125 0)"/>
-    </g>
-    <!-- 가장 큼 -->
-    <g style="fill: #111111" transform="translate(115.5255 85.548775) scale(0.064 -0.064)">
-     <defs>
-      <path id="NotoSansKR-Bold-43f1" d="M 2989 1741 
-C 1760 1741 979 1306 979 589 
-C 979 -141 1760 -570 2989 -570 
-C 4218 -570 4992 -141 4992 589 
-C 4992 1306 4218 1741 2989 1741 
-z
-M 2989 1075 
-C 3744 1075 4147 922 4147 589 
-C 4147 250 3744 90 2989 90 
-C 2234 90 1830 250 1830 589 
-C 1830 922 2234 1075 2989 1075 
-z
-M 397 4966 
-L 397 4288 
-L 1581 4288 
-C 1568 3546 1139 2797 179 2477 
-L 602 1805 
-C 1306 2035 1773 2502 2035 3098 
-C 2291 2598 2733 2208 3386 2010 
-L 3795 2675 
-C 2861 2950 2451 3610 2438 4288 
-L 3603 4288 
-L 3603 4966 
-L 397 4966 
-z
-M 4070 5357 
-L 4070 1843 
-L 4922 1843 
-L 4922 3302 
-L 5709 3302 
-L 5709 4000 
-L 4922 4000 
-L 4922 5357 
-L 4070 5357 
-z
-" transform="scale(0.015625)"/>
-      <path id="NotoSansKR-Bold-4cc8" d="M 890 1568 
-L 890 -506 
-L 4973 -506 
-L 4973 1568 
-L 890 1568 
-z
-M 4141 902 
-L 4141 166 
-L 1728 166 
-L 1728 902 
-L 4141 902 
-z
-M 256 2733 
-L 256 2048 
-L 5626 2048 
-L 5626 2733 
-L 4858 2733 
-C 4998 3507 4998 4096 4998 4634 
-L 4998 5165 
-L 922 5165 
-L 922 4480 
-L 4160 4480 
-L 4154 4006 
-L 749 3936 
-L 858 3251 
-L 4109 3386 
-C 4083 3181 4051 2970 4000 2733 
-L 256 2733 
-z
-" transform="scale(0.015625)"/>
-     </defs>
-     <use xlink:href="#NotoSansKR-Bold-284c"/>
-     <use xlink:href="#NotoSansKR-Bold-43f1" transform="translate(92 0)"/>
-     <use xlink:href="#NotoSansKR-Bold-1" transform="translate(184 0)"/>
-     <use xlink:href="#NotoSansKR-Bold-4cc8" transform="translate(206.703125 0)"/>
+     <use xlink:href="#NotoSansKR-Bold-2a55"/>
+     <use xlink:href="#NotoSansKR-Bold-45e9" transform="translate(92 0)"/>
     </g>
    </g>
    <g id="text_14">
@@ -2639,7 +2562,7 @@ L 83.636 143.503394
 L 83.636 138.883394 
 L 70.436 138.883394 
 z
-" style="fill: url(#haec1c0c425); stroke: #444444; stroke-linejoin: miter"/>
+" style="fill: url(#hdd6f86d6b1); stroke: #444444; stroke-linejoin: miter"/>
     </g>
     <g id="text_18">
      <!-- 자연 감소 (출생 &lt; 사망) -->
@@ -2665,12 +2588,12 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p69f88a71ea">
+  <clipPath id="p98d18e267f">
    <rect x="14.6" y="9.364582" width="368.28" height="141.372"/>
   </clipPath>
  </defs>
  <defs>
-  <pattern id="haec1c0c425" patternUnits="userSpaceOnUse" x="0" y="0" width="72" height="72">
+  <pattern id="hdd6f86d6b1" patternUnits="userSpaceOnUse" x="0" y="0" width="72" height="72">
    <rect x="0" y="0" width="73" height="73" fill="#ffffff"/>
    <path d="M -36 36 
 L 36 -36 
