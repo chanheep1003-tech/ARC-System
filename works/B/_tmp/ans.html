@@ -1,0 +1,61 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>
+:root{--navy:#1F2A44;--warm:#E9E7E1;--burg:#7A2E35;--ink:#17191d;--muted:#666c74;--rule:#d9dbde}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:"Noto Sans KR","Noto Sans",sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.cols{column-count:2;column-gap:8.4mm;column-rule:.35pt solid #dfe0e2;column-fill:auto}
+.q{break-inside:avoid;page-break-inside:avoid;margin:0 0 7mm}
+.qnum{font-family:Inter,"Noto Sans KR",sans-serif;font-size:9.4pt;font-weight:700;color:var(--navy);margin-bottom:2.2mm}
+.stem{font-size:8.9pt;line-height:1.58;font-weight:500;letter-spacing:-.018em;margin-bottom:3mm;word-break:keep-all}
+.stem2{font-size:8.7pt;line-height:1.55;font-weight:500;letter-spacing:-.018em;margin:2.6mm 0 2.4mm;word-break:keep-all}
+.bodytxt{font-size:8.45pt;line-height:1.62;letter-spacing:-.018em;color:#25292e;word-break:keep-all;text-align:justify}
+.plain{font-size:8.45pt;line-height:1.62;letter-spacing:-.018em;color:#25292e;margin:2.4mm 0 3mm;word-break:keep-all}
+.box{border:.5pt solid #b9bcc1;padding:3.4mm 3.8mm;margin:2.4mm 0 3.2mm}
+.bogi{padding-top:2.6mm}.bogi-t{text-align:center;font-size:8pt;font-weight:700;margin-bottom:1.6mm;color:var(--navy)}
+.source{text-align:right;font-size:6.6pt;color:#7b8086;margin:-1.6mm 0 3mm}
+.ttl{font-size:7.6pt;font-weight:700;margin:2.4mm 0 1mm;color:#333}
+.table{width:100%;border-collapse:collapse;font-size:7.7pt;margin:1.4mm 0 3.2mm;line-height:1.42}
+.table th,.table td{border:.45pt solid #b5b8bd;padding:1.5mm 1.5mm;text-align:center;word-break:keep-all}
+.table th{background:#f2f1ed;font-weight:600}
+.fig{margin:2.2mm 0 2.4mm;text-align:center;break-inside:avoid}.fig img{width:100%;height:auto;display:block}
+.caption{font-size:6.6pt;color:#7d8288;margin:0 0 3mm;text-align:center}
+.choices{font-size:8.45pt;line-height:1.55;margin-top:2.6mm;word-break:keep-all;letter-spacing:-.015em}
+.choice{display:grid;grid-template-columns:4.6mm 1fr;gap:.6mm;margin-bottom:1.15mm}
+.cn{font-family:"Noto Sans KR";}
+.crow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.1mm .4mm}
+.cr{display:grid;grid-template-columns:4.4mm 1fr;white-space:nowrap}
+.bundle{break-inside:avoid;margin:0 0 5mm;border-top:.55pt solid var(--navy);padding-top:2.2mm;break-after:avoid}
+.bundle-title{font-size:8.5pt;font-weight:700;margin-bottom:2.2mm;color:var(--ink)}
+.sec{column-span:all;margin:0 0 5mm;padding:2.2mm 0;border-top:1.1pt solid var(--navy);border-bottom:.4pt solid var(--rule);display:flex;justify-content:space-between;align-items:baseline}
+.sec b{font-size:10.5pt;letter-spacing:-.02em;color:var(--navy)}.sec span{font-size:7.4pt;color:var(--muted)}
+.secline{margin:1mm 0 5mm;padding:1.6mm 0;border-top:.9pt solid var(--navy);border-bottom:.35pt solid var(--rule);break-after:avoid}
+.secline b{font-size:9.6pt;color:var(--navy);letter-spacing:-.02em}.secline span{font-size:7pt;color:var(--muted);margin-left:2.4mm}
+/* cover */
+.cover{width:210mm;height:297mm;position:relative;padding:24mm 20mm 18mm;page-break-after:always}
+.kicker{font-family:Inter;font-size:10.5pt;font-weight:700;letter-spacing:.11em;color:var(--navy)}
+.toprule{height:.7pt;background:var(--navy);margin-top:7mm}
+.accent{position:absolute;left:20mm;top:82mm;width:12mm;height:1.2mm;background:var(--burg)}
+.covermain{margin-top:53mm}.covermain h1{margin:0;font-size:31pt;line-height:1.15;letter-spacing:-.045em;color:var(--ink)}
+.covermain h2{margin:5mm 0 0;font-size:15pt;font-weight:500;letter-spacing:-.03em;color:#33383f}
+.covermeta{margin-top:12mm;font-size:10pt;line-height:1.9;color:#3d4248}
+.year{position:absolute;left:20mm;bottom:24mm;font-family:Inter;font-size:10pt;color:var(--muted);letter-spacing:.08em}
+.series{position:absolute;right:20mm;bottom:24mm;font-family:Inter;font-size:8pt;color:var(--navy);font-weight:700;letter-spacing:.05em}
+/* answer */
+.ans{font-size:8.2pt}
+.ans h3{font-size:12pt;margin:0 0 2mm;color:var(--navy);letter-spacing:-.02em}
+.ans .sub{font-size:7.6pt;color:var(--muted);margin-bottom:4mm}
+.akey{display:grid;grid-template-columns:repeat(10,1fr);gap:1.2mm;margin:2mm 0 5mm}
+.akey div{border:.45pt solid #c9cbcf;padding:1.4mm 0;text-align:center;font-size:8.3pt}
+.akey div b{font-family:Inter;color:var(--navy);margin-right:1.2mm;font-size:7.4pt}
+.atab{width:100%;border-collapse:collapse;font-size:7.8pt;line-height:1.5}
+.atab th{background:#f2f1ed;border-top:.8pt solid var(--navy);border-bottom:.45pt solid #b5b8bd;padding:1.4mm 1.6mm;text-align:left;font-weight:600}
+.atab td{border-bottom:.35pt solid #dcdee1;padding:1.5mm 1.6mm;vertical-align:top;word-break:keep-all}
+.atab tr{break-inside:avoid}
+.atab td.n{font-family:Inter;font-weight:700;color:var(--navy);width:9mm}
+.atab td.a{font-weight:700;width:9mm;text-align:center}
+.atab td.l{width:9mm;text-align:center;color:var(--burg);font-family:Inter;font-weight:600}
+.atab td.c{width:34mm;color:#3d4248}
+.figw{text-align:center;margin:2mm 0 4mm}.figw img{width:100%}
+.pb{break-before:page}
+@page{size:A4;margin:17mm 16.5mm 14mm}</style></head><body><div class="ans"><h3>정답</h3><div class="sub">ARC N°10 · B파트 SPECIAL 20 · 정답표</div><div class="akey"><div><b>01</b>②</div><div><b>02</b>①</div><div><b>03</b>③</div><div><b>04</b>④</div><div><b>05</b>②</div><div><b>06</b>②</div><div><b>07</b>③</div><div><b>08</b>③</div><div><b>09</b>④</div><div><b>10</b>③</div><div><b>11</b>④</div><div><b>12</b>①</div><div><b>13</b>②</div><div><b>14</b>⑤</div><div><b>15</b>⑤</div><div><b>16</b>①</div><div><b>17</b>①</div><div><b>18</b>⑤</div><div><b>19</b>⑤</div><div><b>20</b>④</div></div>
+<h3 style="margin-top:6mm">정답 및 핵심 근거</h3><div class="sub">난도(D3~D5)와 출제 개념은 학습자용 참고 표기이며, 근거는 시험범위(학교 학습지·교과서·『생각의 지도』) 안의 내용만 사용했습니다.</div>
+<table class="atab"><tr><th>번호</th><th>정답</th><th>난도</th><th>핵심 개념</th><th>핵심 근거</th></tr><tr><td class="n">01</td><td class="a">②</td><td class="l">D3</td><td class="c">피라미드 모양과 부양비의 관계</td><td>(가)는 저변이 넓은 개발 도상국형으로 유소년 부양비가 크고 노년층 비율과 고령화 지수가 낮음. (나)는 노년층이 두터운 선진국형.</td></tr><tr><td class="n">02</td><td class="a">①</td><td class="l">D4</td><td class="c">부양비와 고령화 지수의 계산</td><td>B: 41.5+12.3=53.8, 고령화 지수 29.6. C: 22.7+28.8=51.5, 고령화 지수 126.7. 노년 부양비 비는 2.3배, 고령화 지수 비는 4.3배.</td></tr><tr><td class="n">03</td><td class="a">③</td><td class="l">D4</td><td class="c">인구 구조 변화와 자연 증가율의 관계</td><td>자연 증가율 (가)24‰, (나)13‰, (다)1‰. 총부양비는 (가)약 88.7, (다)약 51.5로 (가)가 더 큼. (다)의 사망률은 (가)보다 낮음.</td></tr><tr><td class="n">04</td><td class="a">④</td><td class="l">D4</td><td class="c">인구 변천 자료의 해석</td><td>자연 증가율 3, 19, 15, 4, −2(‰). 처음 50년 동안 출생률 1 ‰, 사망률 17 ‰ 감소. 150년 차는 +4 ‰로 여전히 자연 증가.</td></tr><tr><td class="n">05</td><td class="a">②</td><td class="l">D4</td><td class="c">인구 변천 단계와 인구 구조의 결합</td><td>(가)는 사망률이 급감해 자연 증가가 가장 큰 시점(R), (나)는 출생률이 떨어지기 시작해 자연 증가가 줄어드는 시점(P), (다)는 출생률이 사망률보다 낮아진 시점(Q).</td></tr><tr><td class="n">06</td><td class="a">②</td><td class="l">D4</td><td class="c">합계 출산율과 대체 수준</td><td>A는 유지 수준(2.1)의 절반, D는 1.5배. B는 2.1에 미달하여 이동이 없다면 장기적으로 인구가 줄어듦.</td></tr><tr><td class="n">07</td><td class="a">③</td><td class="l">D5</td><td class="c">부양비의 장기 추이 계산</td><td>총부양비 51.5→72.4→100.0(증가 폭 20.9, 27.6). 60년 후 노년 부양비 84.0, 고령화 지수 525.</td></tr><tr><td class="n">08</td><td class="a">③</td><td class="l">D4</td><td class="c">유소년·노년 부양비의 크기 비교</td><td>(가)35.0, (나)15.0, (다)18.75, (라)37.5.</td></tr><tr><td class="n">09</td><td class="a">④</td><td class="l">D5</td><td class="c">인구 전망 그래프의 종합 해석</td><td>총인구 50→45백만 명(−10 %), 청장년층 비율 72 %→48.9 %(−23.1 %p), 노년 부양비 22.2→90.9(4.1배). 노년층 증가 폭은 4, 3, 2, 2, 1백만 명으로 줄어듦.</td></tr><tr><td class="n">10</td><td class="a">③</td><td class="l">D4</td><td class="c">인구 이동이 인구 구조에 미치는 영향</td><td>E는 20~40대가 두터운 유입형, F는 젊은 층이 적고 노년층이 두터운 유출형.</td></tr><tr><td class="n">11</td><td class="a">④</td><td class="l">D5</td><td class="c">자연 증가와 순이동의 분해</td><td>180→270만 명(+90), 순이동 90−20=+70. 청장년층 증가 70만 명은 증가분의 약 77.8 %이고, 유소년·노년층 증가 합은 6+14=20만 명.</td></tr><tr><td class="n">12</td><td class="a">①</td><td class="l">D4</td><td class="c">성비 불균형과 남아 선호 사상</td><td>X 560÷440×100≈127.3, Y 255÷245×100≈104.1. 남아 선호 사상이 남아 있는 일부 국가에서 성비 불균형이 발생함. 255&lt;280이므로 ㄹ 거짓.</td></tr><tr><td class="n">13</td><td class="a">②</td><td class="l">D4</td><td class="c">출산 장려 정책과 합계 출산율</td><td>A 1.2→1.3→1.5, B 1.2→1.1→1.0, C 1.2→1.5→1.3. 세 나라 모두 2.1 미만이며, 자료가 인과를 입증하지는 않음.</td></tr><tr><td class="n">14</td><td class="a">⑤</td><td class="l">D3</td><td class="c">인구 부양력과 개발 도상국의 인구 과잉</td><td>1인당 식량 지수 121÷134≈0.90. 인구 증가가 더 빨라 인구 부양력이 부족해진 상태.</td></tr><tr><td class="n">15</td><td class="a">⑤</td><td class="l">D3</td><td class="c">대륙별 연령 구조 비교</td><td>고령화 지수 아프리카 8.75, 아시아 37.5, 유럽 118.75.</td></tr><tr><td class="n">16</td><td class="a">①</td><td class="l">D4</td><td class="c">고령화의 속도</td><td>7 %→14 %는 2000→2018년(18년), 14 %→20 %는 2018→2025년(7년). 2010년은 10.8 %로 고령화 사회.</td></tr><tr><td class="n">17</td><td class="a">①</td><td class="l">D5</td><td class="c">인구 정책 조합의 효과 비교</td><td>총부양비 현 추세 72.4, (가)75.4, (나)63.9, (다)61.3. 노년 부양비 55.2, 52.6, 45.9, 38.7. (나)는 9.3 %p 낮음.</td></tr><tr><td class="n">18</td><td class="a">⑤</td><td class="l">D3</td><td class="c">국가별 인구 문제와 정책의 대응</td><td>(가)는 개발 도상국형 인구 과잉, (나)는 선진국형 저출생·고령화.</td></tr><tr><td class="n">19</td><td class="a">⑤</td><td class="l">D4</td><td class="c">인구 지표 풀이의 오류 진단</td><td>노년 부양비는 청장년층(600)으로 나눔: 150÷600×100=25, 총부양비 15+25=40. (라) 고령화 지수는 옳음.</td></tr><tr><td class="n">20</td><td class="a">④</td><td class="l">D5</td><td class="c">개발 도상국형과 초고령형 인구 구조의 비교</td><td>유소년 부양비 83.0 대 17.2(4.8배), 노년 부양비 5.7 대 55.2(9.8배), 고령화 지수 6.8 대 320(약 47배), 총부양비 88.7 대 72.4.</td></tr></table><div class="pb"></div><h3>핵심 개념 지도</h3><div class="sub">문항 번호는 해당 개념을 다룬 문항입니다.</div><div class="figw"><img src="fig/C_BS.svg"></div></div></body></html>
