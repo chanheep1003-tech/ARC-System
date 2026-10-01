@@ -1,5 +1,5 @@
 META = dict(
-    filename="ARC_CORE_통합사회2_전범위_직전정리_V1.1.pdf",
+    filename="ARC_CORE_통합사회2_전범위_직전정리_V1.2.pdf",
     subject="통합사회2",
     sub="전 범위 직전 정리<br>A 정의 · B 세계화와 인구 · C 인권과 헌법",
     school="동북고등학교 1학년 · 2학기 지필평가 직전 정리",

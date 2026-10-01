@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-01T10:21:33.137966</dc:date>
+    <dc:date>2026-10-01T12:21:04.656219</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -31,104 +31,109 @@ z
   <g id="axes_1">
    <g id="patch_2">
     <path d="M 13.644 137.1642 
-L 171 137.1642 
-L 171 123.12864 
+L 158.2776 137.1642 
+L 158.2776 123.12864 
 L 13.644 123.12864 
 z
 " style="fill: #ececec; stroke: #111111; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
-    <path d="M 172.674 137.1642 
-L 204.48 137.1642 
-L 204.48 123.12864 
-L 172.674 123.12864 
+    <path d="M 159.9516 137.1642 
+L 187.74 137.1642 
+L 187.74 123.12864 
+L 159.9516 123.12864 
 z
 " style="fill: #111111; stroke: #111111; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
-    <path d="M 206.154 137.1642 
+    <path d="M 189.414 137.1642 
 L 365.184 137.1642 
 L 365.184 123.12864 
-L 206.154 123.12864 
+L 189.414 123.12864 
 z
 " style="fill: #cfcfcf; stroke: #111111; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="line2d_1">
     <path d="M 13.644 64.7226 
 L 365.184 64.7226 
-" clip-path="url(#p3c7f5c6efd)" style="fill: none; stroke: #111111; stroke-width: 1.6; stroke-linecap: square"/>
+" clip-path="url(#pac39d99ba7)" style="fill: none; stroke: #111111; stroke-width: 1.6; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
-    <path d="M 28.71 64.7226 
-L 28.71 52.2717 
-" clip-path="url(#p3c7f5c6efd)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 27.036 64.7226 
+L 27.036 52.2717 
+" clip-path="url(#pac39d99ba7)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_3">
-    <path d="M 60.516 64.7226 
-L 60.516 77.1735 
-" clip-path="url(#p3c7f5c6efd)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 56.1636 64.7226 
+L 56.1636 77.1735 
+" clip-path="url(#pac39d99ba7)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_4">
-    <path d="M 92.322 64.7226 
-L 92.322 52.2717 
-" clip-path="url(#p3c7f5c6efd)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 85.2912 64.7226 
+L 85.2912 52.2717 
+" clip-path="url(#pac39d99ba7)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_5">
-    <path d="M 124.128 64.7226 
-L 124.128 77.1735 
-" clip-path="url(#p3c7f5c6efd)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 114.4188 64.7226 
+L 114.4188 77.1735 
+" clip-path="url(#pac39d99ba7)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_6">
-    <path d="M 155.934 64.7226 
-L 155.934 52.2717 
-" clip-path="url(#p3c7f5c6efd)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 143.5464 64.7226 
+L 143.5464 52.2717 
+" clip-path="url(#pac39d99ba7)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_7">
-    <path d="M 187.74 64.7226 
-L 187.74 77.1735 
-" clip-path="url(#p3c7f5c6efd)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 172.674 64.7226 
+L 172.674 77.1735 
+" clip-path="url(#pac39d99ba7)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_8">
-    <path d="M 219.546 64.7226 
-L 219.546 52.2717 
-" clip-path="url(#p3c7f5c6efd)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 201.8016 64.7226 
+L 201.8016 52.2717 
+" clip-path="url(#pac39d99ba7)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_9">
-    <path d="M 251.352 64.7226 
-L 251.352 77.1735 
-" clip-path="url(#p3c7f5c6efd)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 230.9292 64.7226 
+L 230.9292 77.1735 
+" clip-path="url(#pac39d99ba7)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_10">
-    <path d="M 283.158 64.7226 
-L 283.158 52.2717 
-" clip-path="url(#p3c7f5c6efd)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 260.0568 64.7226 
+L 260.0568 52.2717 
+" clip-path="url(#pac39d99ba7)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_11">
-    <path d="M 314.964 64.7226 
-L 314.964 77.1735 
-" clip-path="url(#p3c7f5c6efd)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 289.1844 64.7226 
+L 289.1844 77.1735 
+" clip-path="url(#pac39d99ba7)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_12">
-    <path d="M 346.77 64.7226 
-L 346.77 52.2717 
-" clip-path="url(#p3c7f5c6efd)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 318.312 64.7226 
+L 318.312 52.2717 
+" clip-path="url(#pac39d99ba7)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_13">
+    <path d="M 347.4396 64.7226 
+L 347.4396 77.1735 
+" clip-path="url(#pac39d99ba7)" style="fill: none; stroke: #888888; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="patch_5">
-    <path d="M 28.71 67.21278 
-C 29.68669 67.21278 30.623509 66.950399 31.314133 66.483423 
-C 32.004757 66.016447 32.3928 65.383003 32.3928 64.7226 
-C 32.3928 64.062197 32.004757 63.428753 31.314133 62.961777 
-C 30.623509 62.494801 29.68669 62.23242 28.71 62.23242 
-C 27.73331 62.23242 26.796491 62.494801 26.105867 62.961777 
-C 25.415243 63.428753 25.0272 64.062197 25.0272 64.7226 
-C 25.0272 65.383003 25.415243 66.016447 26.105867 66.483423 
-C 26.796491 66.950399 27.73331 67.21278 28.71 67.21278 
+    <path d="M 27.036 67.21278 
+C 28.01269 67.21278 28.949509 66.950399 29.640133 66.483423 
+C 30.330757 66.016447 30.7188 65.383003 30.7188 64.7226 
+C 30.7188 64.062197 30.330757 63.428753 29.640133 62.961777 
+C 28.949509 62.494801 28.01269 62.23242 27.036 62.23242 
+C 26.05931 62.23242 25.122491 62.494801 24.431867 62.961777 
+C 23.741243 63.428753 23.3532 64.062197 23.3532 64.7226 
+C 23.3532 65.383003 23.741243 66.016447 24.431867 66.483423 
+C 25.122491 66.950399 26.05931 67.21278 27.036 67.21278 
 z
-" clip-path="url(#p3c7f5c6efd)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
+" clip-path="url(#pac39d99ba7)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- 1215 -->
-    <g style="fill: #111111" transform="translate(19.27 47.916) scale(0.08 -0.08)">
+    <g style="fill: #111111" transform="translate(17.596 47.916) scale(0.08 -0.08)">
      <defs>
       <path id="NotoSansKR-Bold-12" d="M 525 0 
 L 3373 0 
@@ -186,7 +191,7 @@ z
    </g>
    <g id="text_2">
     <!-- 마그나카르타 -->
-    <g style="fill: #111111" transform="translate(11.322 35.683787) scale(0.063 -0.063)">
+    <g style="fill: #111111" transform="translate(9.648 35.683787) scale(0.063 -0.063)">
      <defs>
       <path id="NotoSansKR-Regular-3614" d="M 550 4710 
 L 550 973 
@@ -331,7 +336,7 @@ z
    </g>
    <g id="text_3">
     <!-- 영국 -->
-    <g style="fill: #888888" transform="translate(23.374 17.6187) scale(0.058 -0.058)">
+    <g style="fill: #888888" transform="translate(21.7 17.6187) scale(0.058 -0.058)">
      <defs>
       <path id="NotoSansKR-Regular-424d" d="M 1901 4493 
 C 2464 4493 2880 4115 2880 3571 
@@ -402,21 +407,21 @@ z
     </g>
    </g>
    <g id="patch_6">
-    <path d="M 60.516 67.21278 
-C 61.49269 67.21278 62.429509 66.950399 63.120133 66.483423 
-C 63.810757 66.016447 64.1988 65.383003 64.1988 64.7226 
-C 64.1988 64.062197 63.810757 63.428753 63.120133 62.961777 
-C 62.429509 62.494801 61.49269 62.23242 60.516 62.23242 
-C 59.53931 62.23242 58.602491 62.494801 57.911867 62.961777 
-C 57.221243 63.428753 56.8332 64.062197 56.8332 64.7226 
-C 56.8332 65.383003 57.221243 66.016447 57.911867 66.483423 
-C 58.602491 66.950399 59.53931 67.21278 60.516 67.21278 
+    <path d="M 56.1636 67.21278 
+C 57.14029 67.21278 58.077109 66.950399 58.767733 66.483423 
+C 59.458357 66.016447 59.8464 65.383003 59.8464 64.7226 
+C 59.8464 64.062197 59.458357 63.428753 58.767733 62.961777 
+C 58.077109 62.494801 57.14029 62.23242 56.1636 62.23242 
+C 55.18691 62.23242 54.250091 62.494801 53.559467 62.961777 
+C 52.868843 63.428753 52.4808 64.062197 52.4808 64.7226 
+C 52.4808 65.383003 52.868843 66.016447 53.559467 66.483423 
+C 54.250091 66.950399 55.18691 67.21278 56.1636 67.21278 
 z
-" clip-path="url(#p3c7f5c6efd)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
+" clip-path="url(#pac39d99ba7)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
    </g>
    <g id="text_4">
     <!-- 1689 -->
-    <g style="fill: #111111" transform="translate(51.076 87.6092) scale(0.08 -0.08)">
+    <g style="fill: #111111" transform="translate(46.7236 87.6092) scale(0.08 -0.08)">
      <defs>
       <path id="NotoSansKR-Bold-17" d="M 2022 -90 
 C 2829 -90 3507 525 3507 1498 
@@ -488,7 +493,7 @@ z
    </g>
    <g id="text_5">
     <!-- 권리 장전 -->
-    <g style="fill: #111111" transform="translate(48.218203 98.477062) scale(0.063 -0.063)">
+    <g style="fill: #111111" transform="translate(43.865803 98.477062) scale(0.063 -0.063)">
      <defs>
       <path id="NotoSansKR-Regular-29d8" d="M 800 4941 
 L 800 4512 
@@ -631,27 +636,27 @@ z
    </g>
    <g id="text_6">
     <!-- 영국 -->
-    <g style="fill: #888888" transform="translate(55.18 111.7069) scale(0.058 -0.058)">
+    <g style="fill: #888888" transform="translate(50.8276 111.7069) scale(0.058 -0.058)">
      <use xlink:href="#NotoSansKR-Regular-424d"/>
      <use xlink:href="#NotoSansKR-Regular-29b9" transform="translate(92 0)"/>
     </g>
    </g>
    <g id="patch_7">
-    <path d="M 92.322 67.21278 
-C 93.29869 67.21278 94.235509 66.950399 94.926133 66.483423 
-C 95.616757 66.016447 96.0048 65.383003 96.0048 64.7226 
-C 96.0048 64.062197 95.616757 63.428753 94.926133 62.961777 
-C 94.235509 62.494801 93.29869 62.23242 92.322 62.23242 
-C 91.34531 62.23242 90.408491 62.494801 89.717867 62.961777 
-C 89.027243 63.428753 88.6392 64.062197 88.6392 64.7226 
-C 88.6392 65.383003 89.027243 66.016447 89.717867 66.483423 
-C 90.408491 66.950399 91.34531 67.21278 92.322 67.21278 
+    <path d="M 85.2912 67.21278 
+C 86.26789 67.21278 87.204709 66.950399 87.895333 66.483423 
+C 88.585957 66.016447 88.974 65.383003 88.974 64.7226 
+C 88.974 64.062197 88.585957 63.428753 87.895333 62.961777 
+C 87.204709 62.494801 86.26789 62.23242 85.2912 62.23242 
+C 84.31451 62.23242 83.377691 62.494801 82.687067 62.961777 
+C 81.996443 63.428753 81.6084 64.062197 81.6084 64.7226 
+C 81.6084 65.383003 81.996443 66.016447 82.687067 66.483423 
+C 83.377691 66.950399 84.31451 67.21278 85.2912 67.21278 
 z
-" clip-path="url(#p3c7f5c6efd)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
+" clip-path="url(#pac39d99ba7)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
    </g>
    <g id="text_7">
     <!-- 1776 -->
-    <g style="fill: #111111" transform="translate(82.882 47.916) scale(0.08 -0.08)">
+    <g style="fill: #111111" transform="translate(75.8512 47.916) scale(0.08 -0.08)">
      <defs>
       <path id="NotoSansKR-Bold-18" d="M 1190 0 
 L 2138 0 
@@ -672,7 +677,7 @@ z
    </g>
    <g id="text_8">
     <!-- 독립 선언서 -->
-    <g style="fill: #111111" transform="translate(77.126203 35.661638) scale(0.063 -0.063)">
+    <g style="fill: #111111" transform="translate(70.095403 35.661638) scale(0.063 -0.063)">
      <defs>
       <path id="NotoSansKR-Regular-3011" d="M 902 1414 
 L 902 986 
@@ -830,7 +835,7 @@ z
    </g>
    <g id="text_9">
     <!-- 미국 -->
-    <g style="fill: #888888" transform="translate(86.986 17.6187) scale(0.058 -0.058)">
+    <g style="fill: #888888" transform="translate(79.9552 17.6187) scale(0.058 -0.058)">
      <defs>
       <path id="NotoSansKR-Regular-3844" d="M 646 4723 
 L 646 954 
@@ -857,21 +862,21 @@ z
     </g>
    </g>
    <g id="patch_8">
-    <path d="M 124.128 67.21278 
-C 125.10469 67.21278 126.041509 66.950399 126.732133 66.483423 
-C 127.422757 66.016447 127.8108 65.383003 127.8108 64.7226 
-C 127.8108 64.062197 127.422757 63.428753 126.732133 62.961777 
-C 126.041509 62.494801 125.10469 62.23242 124.128 62.23242 
-C 123.15131 62.23242 122.214491 62.494801 121.523867 62.961777 
-C 120.833243 63.428753 120.4452 64.062197 120.4452 64.7226 
-C 120.4452 65.383003 120.833243 66.016447 121.523867 66.483423 
-C 122.214491 66.950399 123.15131 67.21278 124.128 67.21278 
+    <path d="M 114.4188 67.21278 
+C 115.39549 67.21278 116.332309 66.950399 117.022933 66.483423 
+C 117.713557 66.016447 118.1016 65.383003 118.1016 64.7226 
+C 118.1016 64.062197 117.713557 63.428753 117.022933 62.961777 
+C 116.332309 62.494801 115.39549 62.23242 114.4188 62.23242 
+C 113.44211 62.23242 112.505291 62.494801 111.814667 62.961777 
+C 111.124043 63.428753 110.736 64.062197 110.736 64.7226 
+C 110.736 65.383003 111.124043 66.016447 111.814667 66.483423 
+C 112.505291 66.950399 113.44211 67.21278 114.4188 67.21278 
 z
-" clip-path="url(#p3c7f5c6efd)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
+" clip-path="url(#pac39d99ba7)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
    </g>
    <g id="text_10">
     <!-- 1789 -->
-    <g style="fill: #111111" transform="translate(114.688 87.6092) scale(0.08 -0.08)">
+    <g style="fill: #111111" transform="translate(104.9788 87.6092) scale(0.08 -0.08)">
      <use xlink:href="#NotoSansKR-Bold-12"/>
      <use xlink:href="#NotoSansKR-Bold-18" transform="translate(59 0)"/>
      <use xlink:href="#NotoSansKR-Bold-19" transform="translate(118 0)"/>
@@ -880,7 +885,7 @@ z
    </g>
    <g id="text_11">
     <!-- 인간과 시민의 -->
-    <g style="fill: #111111" transform="translate(106.034203 98.477062) scale(0.063 -0.063)">
+    <g style="fill: #111111" transform="translate(96.325003 98.477062) scale(0.063 -0.063)">
      <defs>
       <path id="NotoSansKR-Regular-43c4" d="M 4531 5286 
 L 4531 1062 
@@ -1046,7 +1051,7 @@ z
      <use xlink:href="#NotoSansKR-Regular-43a4" transform="translate(482.40625 0)"/>
     </g>
     <!-- 권리 선언 -->
-    <g style="fill: #111111" transform="translate(111.830203 106.037062) scale(0.063 -0.063)">
+    <g style="fill: #111111" transform="translate(102.121003 106.037062) scale(0.063 -0.063)">
      <use xlink:href="#NotoSansKR-Regular-29d8"/>
      <use xlink:href="#NotoSansKR-Regular-35f8" transform="translate(92 0)"/>
      <use xlink:href="#NotoSansKR-Regular-1" transform="translate(184 0)"/>
@@ -1056,7 +1061,7 @@ z
    </g>
    <g id="text_12">
     <!-- 프랑스 -->
-    <g style="fill: #888888" transform="translate(116.124 118.4983) scale(0.058 -0.058)">
+    <g style="fill: #888888" transform="translate(106.4148 118.4983) scale(0.058 -0.058)">
      <defs>
       <path id="NotoSansKR-Regular-5150" d="M 320 691 
 L 320 243 
@@ -1148,21 +1153,21 @@ z
     </g>
    </g>
    <g id="patch_9">
-    <path d="M 155.934 67.21278 
-C 156.91069 67.21278 157.847509 66.950399 158.538133 66.483423 
-C 159.228757 66.016447 159.6168 65.383003 159.6168 64.7226 
-C 159.6168 64.062197 159.228757 63.428753 158.538133 62.961777 
-C 157.847509 62.494801 156.91069 62.23242 155.934 62.23242 
-C 154.95731 62.23242 154.020491 62.494801 153.329867 62.961777 
-C 152.639243 63.428753 152.2512 64.062197 152.2512 64.7226 
-C 152.2512 65.383003 152.639243 66.016447 153.329867 66.483423 
-C 154.020491 66.950399 154.95731 67.21278 155.934 67.21278 
+    <path d="M 143.5464 67.21278 
+C 144.52309 67.21278 145.459909 66.950399 146.150533 66.483423 
+C 146.841157 66.016447 147.2292 65.383003 147.2292 64.7226 
+C 147.2292 64.062197 146.841157 63.428753 146.150533 62.961777 
+C 145.459909 62.494801 144.52309 62.23242 143.5464 62.23242 
+C 142.56971 62.23242 141.632891 62.494801 140.942267 62.961777 
+C 140.251643 63.428753 139.8636 64.062197 139.8636 64.7226 
+C 139.8636 65.383003 140.251643 66.016447 140.942267 66.483423 
+C 141.632891 66.950399 142.56971 67.21278 143.5464 67.21278 
 z
-" clip-path="url(#p3c7f5c6efd)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
+" clip-path="url(#pac39d99ba7)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
    </g>
    <g id="text_13">
     <!-- 1838 -->
-    <g style="fill: #111111" transform="translate(146.494 47.916) scale(0.08 -0.08)">
+    <g style="fill: #111111" transform="translate(134.1064 47.916) scale(0.08 -0.08)">
      <defs>
       <path id="NotoSansKR-Bold-14" d="M 1747 -90 
 C 2656 -90 3418 410 3418 1280 
@@ -1192,7 +1197,7 @@ z
    </g>
    <g id="text_14">
     <!-- 인민헌장 -->
-    <g style="fill: #111111" transform="translate(144.342 35.690185) scale(0.063 -0.063)">
+    <g style="fill: #111111" transform="translate(131.9544 35.690185) scale(0.063 -0.063)">
      <defs>
       <path id="NotoSansKR-Regular-5218" d="M 2003 3840 
 C 1222 3840 666 3398 666 2758 
@@ -1244,27 +1249,27 @@ z
    </g>
    <g id="text_15">
     <!-- 영국 -->
-    <g style="fill: #888888" transform="translate(150.598 17.6187) scale(0.058 -0.058)">
+    <g style="fill: #888888" transform="translate(138.2104 17.6187) scale(0.058 -0.058)">
      <use xlink:href="#NotoSansKR-Regular-424d"/>
      <use xlink:href="#NotoSansKR-Regular-29b9" transform="translate(92 0)"/>
     </g>
    </g>
    <g id="patch_10">
-    <path d="M 187.74 67.21278 
-C 188.71669 67.21278 189.653509 66.950399 190.344133 66.483423 
-C 191.034757 66.016447 191.4228 65.383003 191.4228 64.7226 
-C 191.4228 64.062197 191.034757 63.428753 190.344133 62.961777 
-C 189.653509 62.494801 188.71669 62.23242 187.74 62.23242 
-C 186.76331 62.23242 185.826491 62.494801 185.135867 62.961777 
-C 184.445243 63.428753 184.0572 64.062197 184.0572 64.7226 
-C 184.0572 65.383003 184.445243 66.016447 185.135867 66.483423 
-C 185.826491 66.950399 186.76331 67.21278 187.74 67.21278 
+    <path d="M 172.674 67.21278 
+C 173.65069 67.21278 174.587509 66.950399 175.278133 66.483423 
+C 175.968757 66.016447 176.3568 65.383003 176.3568 64.7226 
+C 176.3568 64.062197 175.968757 63.428753 175.278133 62.961777 
+C 174.587509 62.494801 173.65069 62.23242 172.674 62.23242 
+C 171.69731 62.23242 170.760491 62.494801 170.069867 62.961777 
+C 169.379243 63.428753 168.9912 64.062197 168.9912 64.7226 
+C 168.9912 65.383003 169.379243 66.016447 170.069867 66.483423 
+C 170.760491 66.950399 171.69731 67.21278 172.674 67.21278 
 z
-" clip-path="url(#p3c7f5c6efd)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
+" clip-path="url(#pac39d99ba7)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
    </g>
    <g id="text_16">
     <!-- 1919 -->
-    <g style="fill: #111111" transform="translate(178.3 87.6092) scale(0.08 -0.08)">
+    <g style="fill: #111111" transform="translate(163.234 87.6092) scale(0.08 -0.08)">
      <use xlink:href="#NotoSansKR-Bold-12"/>
      <use xlink:href="#NotoSansKR-Bold-1a" transform="translate(59 0)"/>
      <use xlink:href="#NotoSansKR-Bold-12" transform="translate(118 0)"/>
@@ -1273,7 +1278,7 @@ z
    </g>
    <g id="text_17">
     <!-- 바이마르 헌법 -->
-    <g style="fill: #111111" transform="translate(169.646203 98.477062) scale(0.063 -0.063)">
+    <g style="fill: #111111" transform="translate(154.580203 98.477062) scale(0.063 -0.063)">
      <defs>
       <path id="NotoSansKR-Regular-3860" d="M 550 4800 
 L 550 890 
@@ -1374,7 +1379,7 @@ z
    </g>
    <g id="text_18">
     <!-- 독일 -->
-    <g style="fill: #888888" transform="translate(182.404 111.7069) scale(0.058 -0.058)">
+    <g style="fill: #888888" transform="translate(167.338 111.7069) scale(0.058 -0.058)">
      <defs>
       <path id="NotoSansKR-Regular-43c8" d="M 1946 5082 
 C 1082 5082 448 4550 448 3795 
@@ -1416,21 +1421,21 @@ z
     </g>
    </g>
    <g id="patch_11">
-    <path d="M 219.546 67.21278 
-C 220.52269 67.21278 221.459509 66.950399 222.150133 66.483423 
-C 222.840757 66.016447 223.2288 65.383003 223.2288 64.7226 
-C 223.2288 64.062197 222.840757 63.428753 222.150133 62.961777 
-C 221.459509 62.494801 220.52269 62.23242 219.546 62.23242 
-C 218.56931 62.23242 217.632491 62.494801 216.941867 62.961777 
-C 216.251243 63.428753 215.8632 64.062197 215.8632 64.7226 
-C 215.8632 65.383003 216.251243 66.016447 216.941867 66.483423 
-C 217.632491 66.950399 218.56931 67.21278 219.546 67.21278 
+    <path d="M 201.8016 67.21278 
+C 202.77829 67.21278 203.715109 66.950399 204.405733 66.483423 
+C 205.096357 66.016447 205.4844 65.383003 205.4844 64.7226 
+C 205.4844 64.062197 205.096357 63.428753 204.405733 62.961777 
+C 203.715109 62.494801 202.77829 62.23242 201.8016 62.23242 
+C 200.82491 62.23242 199.888091 62.494801 199.197467 62.961777 
+C 198.506843 63.428753 198.1188 64.062197 198.1188 64.7226 
+C 198.1188 65.383003 198.506843 66.016447 199.197467 66.483423 
+C 199.888091 66.950399 200.82491 67.21278 201.8016 67.21278 
 z
-" clip-path="url(#p3c7f5c6efd)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
+" clip-path="url(#pac39d99ba7)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
    </g>
    <g id="text_19">
     <!-- 1948 -->
-    <g style="fill: #111111" transform="translate(210.106 47.916) scale(0.08 -0.08)">
+    <g style="fill: #111111" transform="translate(192.3616 47.916) scale(0.08 -0.08)">
      <defs>
       <path id="NotoSansKR-Bold-15" d="M 2157 0 
 L 3034 0 
@@ -1463,7 +1468,7 @@ z
    </g>
    <g id="text_20">
     <!-- 세계 인권 선언 -->
-    <g style="fill: #111111" transform="translate(200.746406 35.683787) scale(0.063 -0.063)">
+    <g style="fill: #111111" transform="translate(183.002006 35.683787) scale(0.063 -0.063)">
      <defs>
       <path id="NotoSansKR-Regular-3d84" d="M 4730 5293 
 L 4730 -499 
@@ -1533,7 +1538,7 @@ z
    </g>
    <g id="text_21">
     <!-- UN -->
-    <g style="fill: #888888" transform="translate(215.358672 17.6187) scale(0.058 -0.058)">
+    <g style="fill: #888888" transform="translate(197.614272 17.6187) scale(0.058 -0.058)">
      <defs>
       <path id="NotoSansKR-Regular-36" d="M 2310 -83 
 C 3264 -83 3994 429 3994 1933 
@@ -1573,21 +1578,21 @@ z
     </g>
    </g>
    <g id="patch_12">
-    <path d="M 251.352 67.21278 
-C 252.32869 67.21278 253.265509 66.950399 253.956133 66.483423 
-C 254.646757 66.016447 255.0348 65.383003 255.0348 64.7226 
-C 255.0348 64.062197 254.646757 63.428753 253.956133 62.961777 
-C 253.265509 62.494801 252.32869 62.23242 251.352 62.23242 
-C 250.37531 62.23242 249.438491 62.494801 248.747867 62.961777 
-C 248.057243 63.428753 247.6692 64.062197 247.6692 64.7226 
-C 247.6692 65.383003 248.057243 66.016447 248.747867 66.483423 
-C 249.438491 66.950399 250.37531 67.21278 251.352 67.21278 
+    <path d="M 230.9292 67.21278 
+C 231.90589 67.21278 232.842709 66.950399 233.533333 66.483423 
+C 234.223957 66.016447 234.612 65.383003 234.612 64.7226 
+C 234.612 64.062197 234.223957 63.428753 233.533333 62.961777 
+C 232.842709 62.494801 231.90589 62.23242 230.9292 62.23242 
+C 229.95251 62.23242 229.015691 62.494801 228.325067 62.961777 
+C 227.634443 63.428753 227.2464 64.062197 227.2464 64.7226 
+C 227.2464 65.383003 227.634443 66.016447 228.325067 66.483423 
+C 229.015691 66.950399 229.95251 67.21278 230.9292 67.21278 
 z
-" clip-path="url(#p3c7f5c6efd)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
+" clip-path="url(#pac39d99ba7)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
    </g>
    <g id="text_22">
     <!-- 1965 -->
-    <g style="fill: #111111" transform="translate(241.912 87.6092) scale(0.08 -0.08)">
+    <g style="fill: #111111" transform="translate(221.4892 87.6092) scale(0.08 -0.08)">
      <use xlink:href="#NotoSansKR-Bold-12"/>
      <use xlink:href="#NotoSansKR-Bold-1a" transform="translate(59 0)"/>
      <use xlink:href="#NotoSansKR-Bold-17" transform="translate(118 0)"/>
@@ -1596,7 +1601,7 @@ z
    </g>
    <g id="text_23">
     <!-- 인종 차별 -->
-    <g style="fill: #111111" transform="translate(239.054203 98.480507) scale(0.063 -0.063)">
+    <g style="fill: #111111" transform="translate(218.631403 98.480507) scale(0.063 -0.063)">
      <defs>
       <path id="NotoSansKR-Regular-44d1" d="M 2931 1510 
 C 1690 1510 947 1152 947 512 
@@ -1718,7 +1723,7 @@ z
      <use xlink:href="#NotoSansKR-Regular-3910" transform="translate(298.40625 0)"/>
     </g>
     <!-- 철폐 협약 -->
-    <g style="fill: #111111" transform="translate(239.054203 106.065608) scale(0.063 -0.063)">
+    <g style="fill: #111111" transform="translate(218.631403 106.065608) scale(0.063 -0.063)">
      <defs>
       <path id="NotoSansKR-Regular-48ec" d="M 1766 5318 
 L 1766 4717 
@@ -1904,27 +1909,27 @@ z
    </g>
    <g id="text_24">
     <!-- UN -->
-    <g style="fill: #888888" transform="translate(247.164672 118.4983) scale(0.058 -0.058)">
+    <g style="fill: #888888" transform="translate(226.741872 118.4983) scale(0.058 -0.058)">
      <use xlink:href="#NotoSansKR-Regular-36"/>
      <use xlink:href="#NotoSansKR-Regular-2f" transform="translate(72.09375 0)"/>
     </g>
    </g>
    <g id="patch_13">
-    <path d="M 283.158 67.21278 
-C 284.13469 67.21278 285.071509 66.950399 285.762133 66.483423 
-C 286.452757 66.016447 286.8408 65.383003 286.8408 64.7226 
-C 286.8408 64.062197 286.452757 63.428753 285.762133 62.961777 
-C 285.071509 62.494801 284.13469 62.23242 283.158 62.23242 
-C 282.18131 62.23242 281.244491 62.494801 280.553867 62.961777 
-C 279.863243 63.428753 279.4752 64.062197 279.4752 64.7226 
-C 279.4752 65.383003 279.863243 66.016447 280.553867 66.483423 
-C 281.244491 66.950399 282.18131 67.21278 283.158 67.21278 
+    <path d="M 260.0568 67.21278 
+C 261.03349 67.21278 261.970309 66.950399 262.660933 66.483423 
+C 263.351557 66.016447 263.7396 65.383003 263.7396 64.7226 
+C 263.7396 64.062197 263.351557 63.428753 262.660933 62.961777 
+C 261.970309 62.494801 261.03349 62.23242 260.0568 62.23242 
+C 259.08011 62.23242 258.143291 62.494801 257.452667 62.961777 
+C 256.762043 63.428753 256.374 64.062197 256.374 64.7226 
+C 256.374 65.383003 256.762043 66.016447 257.452667 66.483423 
+C 258.143291 66.950399 259.08011 67.21278 260.0568 67.21278 
 z
-" clip-path="url(#p3c7f5c6efd)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
+" clip-path="url(#pac39d99ba7)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
    </g>
    <g id="text_25">
     <!-- 1966 -->
-    <g style="fill: #111111" transform="translate(273.718 47.916) scale(0.08 -0.08)">
+    <g style="fill: #111111" transform="translate(250.6168 47.916) scale(0.08 -0.08)">
      <use xlink:href="#NotoSansKR-Bold-12"/>
      <use xlink:href="#NotoSansKR-Bold-1a" transform="translate(59 0)"/>
      <use xlink:href="#NotoSansKR-Bold-17" transform="translate(118 0)"/>
@@ -1933,7 +1938,7 @@ z
    </g>
    <g id="text_26">
     <!-- 국제 인권 규약 -->
-    <g style="fill: #111111" transform="translate(264.358406 35.683787) scale(0.063 -0.063)">
+    <g style="fill: #111111" transform="translate(241.257206 35.683787) scale(0.063 -0.063)">
      <defs>
       <path id="NotoSansKR-Regular-4468" d="M 4723 5293 
 L 4723 -499 
@@ -2002,27 +2007,27 @@ z
    </g>
    <g id="text_27">
     <!-- UN -->
-    <g style="fill: #888888" transform="translate(278.970672 17.6187) scale(0.058 -0.058)">
+    <g style="fill: #888888" transform="translate(255.869472 17.6187) scale(0.058 -0.058)">
      <use xlink:href="#NotoSansKR-Regular-36"/>
      <use xlink:href="#NotoSansKR-Regular-2f" transform="translate(72.09375 0)"/>
     </g>
    </g>
    <g id="patch_14">
-    <path d="M 314.964 67.21278 
-C 315.94069 67.21278 316.877509 66.950399 317.568133 66.483423 
-C 318.258757 66.016447 318.6468 65.383003 318.6468 64.7226 
-C 318.6468 64.062197 318.258757 63.428753 317.568133 62.961777 
-C 316.877509 62.494801 315.94069 62.23242 314.964 62.23242 
-C 313.98731 62.23242 313.050491 62.494801 312.359867 62.961777 
-C 311.669243 63.428753 311.2812 64.062197 311.2812 64.7226 
-C 311.2812 65.383003 311.669243 66.016447 312.359867 66.483423 
-C 313.050491 66.950399 313.98731 67.21278 314.964 67.21278 
+    <path d="M 289.1844 67.21278 
+C 290.16109 67.21278 291.097909 66.950399 291.788533 66.483423 
+C 292.479157 66.016447 292.8672 65.383003 292.8672 64.7226 
+C 292.8672 64.062197 292.479157 63.428753 291.788533 62.961777 
+C 291.097909 62.494801 290.16109 62.23242 289.1844 62.23242 
+C 288.20771 62.23242 287.270891 62.494801 286.580267 62.961777 
+C 285.889643 63.428753 285.5016 64.062197 285.5016 64.7226 
+C 285.5016 65.383003 285.889643 66.016447 286.580267 66.483423 
+C 287.270891 66.950399 288.20771 67.21278 289.1844 67.21278 
 z
-" clip-path="url(#p3c7f5c6efd)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
+" clip-path="url(#pac39d99ba7)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
    </g>
    <g id="text_28">
     <!-- 1979 -->
-    <g style="fill: #111111" transform="translate(305.524 87.6092) scale(0.08 -0.08)">
+    <g style="fill: #111111" transform="translate(279.7444 87.6092) scale(0.08 -0.08)">
      <use xlink:href="#NotoSansKR-Bold-12"/>
      <use xlink:href="#NotoSansKR-Bold-1a" transform="translate(59 0)"/>
      <use xlink:href="#NotoSansKR-Bold-18" transform="translate(118 0)"/>
@@ -2031,7 +2036,7 @@ z
    </g>
    <g id="text_29">
     <!-- 여성 차별 -->
-    <g style="fill: #111111" transform="translate(302.666203 98.477062) scale(0.063 -0.063)">
+    <g style="fill: #111111" transform="translate(276.886603 98.477062) scale(0.063 -0.063)">
      <defs>
       <path id="NotoSansKR-Regular-4238" d="M 1862 4371 
 C 2419 4371 2803 3763 2803 2829 
@@ -2102,7 +2107,7 @@ z
      <use xlink:href="#NotoSansKR-Regular-3910" transform="translate(298.40625 0)"/>
     </g>
     <!-- 철폐 협약 -->
-    <g style="fill: #111111" transform="translate(302.666203 106.065608) scale(0.063 -0.063)">
+    <g style="fill: #111111" transform="translate(276.886603 106.065608) scale(0.063 -0.063)">
      <use xlink:href="#NotoSansKR-Regular-48ec"/>
      <use xlink:href="#NotoSansKR-Regular-501c" transform="translate(92 0)"/>
      <use xlink:href="#NotoSansKR-Regular-1" transform="translate(184 0)"/>
@@ -2112,27 +2117,27 @@ z
    </g>
    <g id="text_30">
     <!-- UN -->
-    <g style="fill: #888888" transform="translate(310.776672 118.4983) scale(0.058 -0.058)">
+    <g style="fill: #888888" transform="translate(284.997072 118.4983) scale(0.058 -0.058)">
      <use xlink:href="#NotoSansKR-Regular-36"/>
      <use xlink:href="#NotoSansKR-Regular-2f" transform="translate(72.09375 0)"/>
     </g>
    </g>
    <g id="patch_15">
-    <path d="M 346.77 67.21278 
-C 347.74669 67.21278 348.683509 66.950399 349.374133 66.483423 
-C 350.064757 66.016447 350.4528 65.383003 350.4528 64.7226 
-C 350.4528 64.062197 350.064757 63.428753 349.374133 62.961777 
-C 348.683509 62.494801 347.74669 62.23242 346.77 62.23242 
-C 345.79331 62.23242 344.856491 62.494801 344.165867 62.961777 
-C 343.475243 63.428753 343.0872 64.062197 343.0872 64.7226 
-C 343.0872 65.383003 343.475243 66.016447 344.165867 66.483423 
-C 344.856491 66.950399 345.79331 67.21278 346.77 67.21278 
+    <path d="M 318.312 67.21278 
+C 319.28869 67.21278 320.225509 66.950399 320.916133 66.483423 
+C 321.606757 66.016447 321.9948 65.383003 321.9948 64.7226 
+C 321.9948 64.062197 321.606757 63.428753 320.916133 62.961777 
+C 320.225509 62.494801 319.28869 62.23242 318.312 62.23242 
+C 317.33531 62.23242 316.398491 62.494801 315.707867 62.961777 
+C 315.017243 63.428753 314.6292 64.062197 314.6292 64.7226 
+C 314.6292 65.383003 315.017243 66.016447 315.707867 66.483423 
+C 316.398491 66.950399 317.33531 67.21278 318.312 67.21278 
 z
-" clip-path="url(#p3c7f5c6efd)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
+" clip-path="url(#pac39d99ba7)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
    </g>
    <g id="text_31">
     <!-- 1989 -->
-    <g style="fill: #111111" transform="translate(337.33 47.916) scale(0.08 -0.08)">
+    <g style="fill: #111111" transform="translate(308.872 47.916) scale(0.08 -0.08)">
      <use xlink:href="#NotoSansKR-Bold-12"/>
      <use xlink:href="#NotoSansKR-Bold-1a" transform="translate(59 0)"/>
      <use xlink:href="#NotoSansKR-Bold-19" transform="translate(118 0)"/>
@@ -2141,7 +2146,7 @@ z
    </g>
    <g id="text_32">
     <!-- 아동 권리 협약 -->
-    <g style="fill: #111111" transform="translate(327.970406 35.705443) scale(0.063 -0.063)">
+    <g style="fill: #111111" transform="translate(299.512406 35.705443) scale(0.063 -0.063)">
      <defs>
       <path id="NotoSansKR-Regular-4190" d="M 1856 4845 
 C 1005 4845 403 4058 403 2829 
@@ -2210,14 +2215,103 @@ z
    </g>
    <g id="text_33">
     <!-- UN -->
-    <g style="fill: #888888" transform="translate(342.582672 17.6187) scale(0.058 -0.058)">
+    <g style="fill: #888888" transform="translate(314.124672 17.6187) scale(0.058 -0.058)">
      <use xlink:href="#NotoSansKR-Regular-36"/>
      <use xlink:href="#NotoSansKR-Regular-2f" transform="translate(72.09375 0)"/>
     </g>
    </g>
+   <g id="patch_16">
+    <path d="M 347.4396 67.21278 
+C 348.41629 67.21278 349.353109 66.950399 350.043733 66.483423 
+C 350.734357 66.016447 351.1224 65.383003 351.1224 64.7226 
+C 351.1224 64.062197 350.734357 63.428753 350.043733 62.961777 
+C 349.353109 62.494801 348.41629 62.23242 347.4396 62.23242 
+C 346.46291 62.23242 345.526091 62.494801 344.835467 62.961777 
+C 344.144843 63.428753 343.7568 64.062197 343.7568 64.7226 
+C 343.7568 65.383003 344.144843 66.016447 344.835467 66.483423 
+C 345.526091 66.950399 346.46291 67.21278 347.4396 67.21278 
+z
+" clip-path="url(#pac39d99ba7)" style="fill: #111111; stroke: #111111; stroke-linejoin: miter"/>
+   </g>
    <g id="text_34">
+    <!-- 2006 -->
+    <g style="fill: #111111" transform="translate(337.9996 87.6092) scale(0.08 -0.08)">
+     <defs>
+      <path id="NotoSansKR-Bold-11" d="M 1888 -90 
+C 2854 -90 3494 755 3494 2394 
+C 3494 4019 2854 4826 1888 4826 
+C 922 4826 282 4026 282 2394 
+C 282 755 922 -90 1888 -90 
+z
+M 1888 646 
+C 1478 646 1171 1056 1171 2394 
+C 1171 3712 1478 4102 1888 4102 
+C 2298 4102 2598 3712 2598 2394 
+C 2598 1056 2298 646 1888 646 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#NotoSansKR-Bold-13"/>
+     <use xlink:href="#NotoSansKR-Bold-11" transform="translate(59 0)"/>
+     <use xlink:href="#NotoSansKR-Bold-11" transform="translate(118 0)"/>
+     <use xlink:href="#NotoSansKR-Bold-17" transform="translate(177 0)"/>
+    </g>
+   </g>
+   <g id="text_35">
+    <!-- 장애인 -->
+    <g style="fill: #111111" transform="translate(338.7456 98.480507) scale(0.063 -0.063)">
+     <defs>
+      <path id="NotoSansKR-Regular-41ac" d="M 1619 4806 
+C 877 4806 390 4032 390 2797 
+C 390 1555 877 774 1619 774 
+C 2374 774 2861 1555 2861 2797 
+C 2861 4032 2374 4806 1619 4806 
+z
+M 1619 4314 
+C 2080 4314 2368 3731 2368 2797 
+C 2368 1856 2080 1274 1619 1274 
+C 1171 1274 883 1856 883 2797 
+C 883 3731 1171 4314 1619 4314 
+z
+M 3443 5171 
+L 3443 -205 
+L 3949 -205 
+L 3949 2560 
+L 4730 2560 
+L 4730 -499 
+L 5242 -499 
+L 5242 5293 
+L 4730 5293 
+L 4730 3002 
+L 3949 3002 
+L 3949 5171 
+L 3443 5171 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#NotoSansKR-Regular-43f1"/>
+     <use xlink:href="#NotoSansKR-Regular-41ac" transform="translate(92 0)"/>
+     <use xlink:href="#NotoSansKR-Regular-43c4" transform="translate(184 0)"/>
+    </g>
+    <!-- 권리 협약 -->
+    <g style="fill: #111111" transform="translate(335.141803 106.062163) scale(0.063 -0.063)">
+     <use xlink:href="#NotoSansKR-Regular-29d8"/>
+     <use xlink:href="#NotoSansKR-Regular-35f8" transform="translate(92 0)"/>
+     <use xlink:href="#NotoSansKR-Regular-1" transform="translate(184 0)"/>
+     <use xlink:href="#NotoSansKR-Regular-525d" transform="translate(206.40625 0)"/>
+     <use xlink:href="#NotoSansKR-Regular-41c9" transform="translate(298.40625 0)"/>
+    </g>
+   </g>
+   <g id="text_36">
+    <!-- UN -->
+    <g style="fill: #888888" transform="translate(343.252272 118.4983) scale(0.058 -0.058)">
+     <use xlink:href="#NotoSansKR-Regular-36"/>
+     <use xlink:href="#NotoSansKR-Regular-2f" transform="translate(72.09375 0)"/>
+    </g>
+   </g>
+   <g id="text_37">
     <!-- 1세대 — 자유권·평등권·참정권 -->
-    <g style="fill: #111111" transform="translate(46.588477 132.73392) scale(0.069 -0.069)">
+    <g style="fill: #111111" transform="translate(40.227277 132.73392) scale(0.069 -0.069)">
      <defs>
       <path id="NotoSansKR-Bold-3d84" d="M 4544 5363 
 L 4544 -563 
@@ -2547,15 +2641,15 @@ z
      <use xlink:href="#NotoSansKR-Bold-29d8" transform="translate(1233.609375 0)"/>
     </g>
    </g>
-   <g id="text_35">
+   <g id="text_38">
     <!-- 2세대 -->
-    <g style="fill: #ffffff" transform="translate(180.801 128.86642) scale(0.064 -0.064)">
+    <g style="fill: #ffffff" transform="translate(166.0698 128.86642) scale(0.064 -0.064)">
      <use xlink:href="#NotoSansKR-Bold-13"/>
      <use xlink:href="#NotoSansKR-Bold-3d84" transform="translate(59 0)"/>
      <use xlink:href="#NotoSansKR-Bold-2f4c" transform="translate(151 0)"/>
     </g>
     <!-- 사회권 -->
-    <g style="fill: #ffffff" transform="translate(179.745 136.22292) scale(0.064 -0.064)">
+    <g style="fill: #ffffff" transform="translate(165.0138 136.22292) scale(0.064 -0.064)">
      <defs>
       <path id="NotoSansKR-Bold-3cf8" d="M 1594 4902 
 L 1594 4045 
@@ -2621,9 +2715,9 @@ z
      <use xlink:href="#NotoSansKR-Bold-29d8" transform="translate(184 0)"/>
     </g>
    </g>
-   <g id="text_36">
+   <g id="text_39">
     <!-- 3세대 — 연대권 (국제 협약) -->
-    <g style="fill: #111111" transform="translate(246.193992 132.364662) scale(0.069 -0.069)">
+    <g style="fill: #111111" transform="translate(237.823992 132.364662) scale(0.069 -0.069)">
      <defs>
       <path id="NotoSansKR-Bold-423c" d="M 1894 4262 
 C 2330 4262 2650 3968 2650 3475 
@@ -2845,7 +2939,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p3c7f5c6efd">
+  <clipPath id="pac39d99ba7">
    <rect x="3.6" y="3.6" width="368.28" height="135.828"/>
   </clipPath>
  </defs>
