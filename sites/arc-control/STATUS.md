@@ -38,3 +38,15 @@
 - 운영 DB 조회에서 바인딩과 테이블 모두 비어 있음. GitHub manifest의 DB/FILES 선언은 확인했지만 운영 리소스 구성·마이그레이션 적용을 완료했다고 판단하지 않음.
 - 이 세션에는 Sites 커넥터 적격성/활성화 기능이 노출되지 않음. GitHub/Drive 사이트 실시간 연동과 사용자 동의·실제 동기화는 미완료.
 - 다음 재개 조건: 배포 소스 호스트에 접근 가능한 실행 환경에서 기존 저장소를 열고, GitHub `site/arc-control`의 `sites/arc-control` 최종 코드와 진행 기록을 반영한 뒤 운영 마이그레이션·빌드·검증·소스 push·소유자 전용 배포를 진행한다.
+
+## 현재 환경 재확인 — 2026-10-01 11:40 KST
+- GitHub Git fetch 성공. 지정 브랜치의 기준 커밋: `398ec9a4bc5196bc49792ffb0f62c2aba8efae29`. 기존 저장소에서 `site/arc-control`을 checkout하여 확인함. 새 Sites 프로젝트는 생성하지 않음.
+- 적용 가능한 AGENTS.md는 저장소와 상위 경로에서 발견되지 않음. cloud-environment-runtime 스킬과 네트워크 지침을 읽음. cloud/executor 스킬 목록 및 로컬 스킬 검색에서 Sites 스킬을 찾지 못함. Sites 조회·소스 열기·배포·DB·커넥터 도구도 현재 세션에 없음.
+- 따라서 프로젝트 상태·현재 접근 권한·saved version·실제 배포 저장소 URL은 이번 세션에서 재조회하지 못함. 앞선 기록의 소유자 전용 정책 및 빈 버전 목록은 이전 관찰이며 현재 재검증 결과가 아님. 공개 범위 변경 작업은 수행하지 않음.
+- 이전에 확인한 배포 호스트 `https://git.chatgpt-team.site/`에 프록시를 통한 HTTP HEAD 재시도: `HTTP/1.1 403 Forbidden`, `curl: (56) CONNECT tunnel failed, response 403`. 현재 정책은 restricted/enforced이며 이 호스트가 허용 목록에 없음. 정확한 저장소 URL은 Sites가 반환하는 값을 재조회할 수 없어 Git ls-remote 및 공식 소스 열기 재시도를 수행하지 못함. GitHub fetch 성공은 배포 저장소 접근 성공이 아님.
+- `.openai/hosting.json`의 project_id 일치 및 D1 `DB`, R2 `FILES` 선언 확인. worker 코드에서 DB.prepare와 FILES.get/put 사용 확인. 운영 리소스 생성, 기존 데이터, 운영 스키마는 조회하지 못함. 지원되는 Sites 마이그레이션 절차를 확인할 수 없어 운영 마이그레이션 생성·적용은 수행하지 않음.
+- 로컬 실행: `npm run build` 성공, `npm run validate` 성공. SQLite 저장·revision 충돌·원문 근거·중복·승인 잠금·블라인드 입력·미설정 AI 실패·origin 차단·정적 자산 응답 검증 통과. 운영 D1/R2, 브라우저 출력/PDF, 전체 ARC 엔진 E2E 검증을 의미하지 않음. 생성된 로컬 dist는 Sites saved artifact가 아님.
+- AI 구현: Responses API, 서버의 ARC_AI_MODEL 필요. blindExam은 정답·evidence/해설 필드를 포함하지 않으며 원문 내부 판단 프롬프트 유지. 실제 서버 AI 출제·재풀이와 지원 모델 목록은 미검증. 기존 사이트 키는 요청하거나 읽거나 기록하지 않음. 현재 승인 로직은 독립 재풀이 미실행 문항의 HUMAN 승인 경로를 허용하므로 AI 검증 실패/호출 실패까지 확실히 차단하는 상태 정책 보완 및 회귀 검증이 필요함.
+- 사이트 실시간 GitHub/Drive capabilities는 코드에서 false. 공식 연결 지원 방식·로그인·동의·실조회·동기화 미검증. GitHub Git 접근과 사이트 실시간 연결을 구분함.
+- 배포 저장소 push, Sites 산출물 저장, 소유자 전용 게시와 성공 URL 확인은 미완료. 실제 접속 URL은 확보하지 못함.
+- 다음 조치: Sites 스킬/공식 도구가 제공되는 세션과 실제 배포 호스트 허용 환경에서 동일 프로젝트를 재조회한 후 진행. 운영 DB/FILES 검증·지원 마이그레이션·AI 승인 게이트 보완/실호출·공식 연결 지원 확인·정확한 소스 push/산출물 저장·소유자 전용 게시가 필요함.
