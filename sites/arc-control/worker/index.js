@@ -1,0 +1,6 @@
+import {api,json} from './service.js';
+import initial from './initial.js';
+import {AppError} from './domain.js';
+import {html,css,js} from './assets.js';
+const security={'Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; form-action 'self'",'X-Content-Type-Options':'nosniff','Referrer-Policy':'same-origin','Cache-Control':'private, no-store'};
+export default {async fetch(request,env,ctx){try{const p=new URL(request.url).pathname;if(p.startsWith('/api/'))return await api(request,env,initial);if(!['GET','HEAD'].includes(request.method))return new Response('Method not allowed',{status:405});const a=p==='/'?[html,'text/html']:p==='/app.css'?[css,'text/css']:p==='/app.js'?[js,'text/javascript']:null;if(!a)return new Response('Not found',{status:404,headers:security});return new Response(request.method==='HEAD'?null:a[0],{headers:{...security,'Content-Type':a[1]+'; charset=utf-8'}});}catch(e){if(!(e instanceof AppError))console.error('ARC request failed',e.name,e.message);return json({message:e instanceof AppError?e.message:'처리하지 못했습니다. 입력 내용을 유지하고 다시 시도해 주세요.'},e instanceof AppError?e.status:503);}}};

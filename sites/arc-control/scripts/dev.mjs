@@ -1,0 +1,10 @@
+import http from 'node:http';
+import {database} from './local-db.mjs';
+import {readFileSync,mkdirSync,writeFileSync,existsSync} from 'node:fs';
+import path from 'node:path';
+import worker from '../worker/index.js';
+const root=path.resolve(import.meta.dirname,'..');mkdirSync(path.join(root,'.local/files'),{recursive:true});const {binding:DB}=database(path.join(root,'.local/arc.db'));
+const filePath=key=>{if(!/^uploads\/[0-9a-f-]{36}$/.test(key))throw new Error('Invalid key');return path.join(root,'.local/files',key.replace('/','_'));};
+const FILES={async put(key,bytes,m){writeFileSync(filePath(key),Buffer.from(bytes));writeFileSync(filePath(key)+'.json',JSON.stringify(m));},async get(key){const p=filePath(key);if(!existsSync(p))return null;return {body:readFileSync(p),...JSON.parse(readFileSync(p+'.json','utf8'))};}};
+const env={DB,FILES,OPENAI_API_KEY:process.env.OPENAI_API_KEY,ARC_AI_MODEL:process.env.ARC_AI_MODEL},port=Number(process.env.ARC_PORT||4173);
+http.createServer(async(req,res)=>{try{const chunks=[];let n=0;for await(const c of req){n+=c.length;if(n>21*1024*1024){res.writeHead(413);res.end();return;}chunks.push(c);}const r=await worker.fetch(new Request(`http://127.0.0.1:${port}${req.url}`,{method:req.method,headers:req.headers,...(['GET','HEAD'].includes(req.method)?{}:{body:Buffer.concat(chunks),duplex:'half'})}),env,{});res.writeHead(r.status,Object.fromEntries(r.headers));res.end(Buffer.from(await r.arrayBuffer()));}catch{res.writeHead(500);res.end('Local server error');}}).listen(port,'127.0.0.1',()=>console.log(`Local URL: http://127.0.0.1:${port}`));
