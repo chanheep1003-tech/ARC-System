@@ -47,6 +47,11 @@ for bad in ("34조 ⑤", "34조⑤", "제34조 ⑤"):
 chk("헌법 제34조 ⑥ 있음", "제34조 ⑥" in flat)
 for need in ("처벌의 감수", "최후의 수단", "비폭력성", "목적의 정당성", "존엄사", "1988년 설립", "2001년 설립", "2008년 설립", "선거 연령 18세"):
     chk("1과 항목 있음: " + need, need in flat)
+# V1.3: 이렇게 묻는다 칸 삭제, 보강 항목
+for bad in ("이렇게 묻는다", "푸는 순서"):
+    chk("전체에 없음: " + bad, bad not in flat)
+for need in ("단서 문장", "정의의 여신상", "성과연봉제", "치명적 위험", "73,278", "계산 예시", "그래프 읽기", "헌법 조문 한눈에", "사례로 개념 찾기", "월가"):
+    chk("V1.3 보강 항목 있음: " + need, need in flat)
 chk("시민 불복종 정당화 조건 '공개적'은 롤스 문맥에만", all(("공개적" not in text[i]) or ("롤스" in text[i]) or i + 1 not in c_pages for i in range(d.page_count)))
 
 # 범위 금지어
@@ -114,6 +119,11 @@ for it in items:
         continue
     cid = it["attrs"]["id"]
     chip = "정리" if cid.startswith("Z") else cid
+    if cid.startswith("Z"):
+        mz = re.search(r"%s\n%s\n(\d+)\n" % (re.escape(chip), re.escape(it["attrs"]["t"])), front)
+        if not mz or mz.group(1) != pages.get(cid):
+            bad.append((cid, pages.get(cid)))
+        continue
     m = re.search(r"%s\n(.+?)\n(\d+)\n" % re.escape(chip), front, flags=re.S)
     if not m or m.group(2) != pages.get(cid):
         # 제목이 두 줄이면 정규식이 어긋날 수 있어 느슨하게 재검
@@ -121,7 +131,7 @@ for it in items:
         if not m2 or m2.group(1) != pages.get(cid):
             bad.append((cid, pages.get(cid)))
 chk("목차 쪽수 일치", not bad, bad)
-chk("개념 수 28", len(ids) == 28, len(ids))
+chk("개념 수 30", len(ids) == 30, len(ids))
 
 # 불릿·MUST 길이
 long_ = []

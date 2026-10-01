@@ -115,8 +115,8 @@ def b_dtm():
 
 
 def c_timeline():
-    f, ax = plt.subplots(figsize=(W2, 2.45))
-    ax.set_xlim(0, 11); ax.set_ylim(-3.3, 2.7); ax.axis("off")
+    f, ax = plt.subplots(figsize=(W2, 2.05))
+    ax.set_xlim(0, 11); ax.set_ylim(-3.55, 2.7); ax.axis("off")
     ev = [("1215", "마그나카르타", "영국"), ("1689", "권리 장전", "영국"), ("1776", "독립 선언서", "미국"),
           ("1789", "인간과 시민의\n권리 선언", "프랑스"), ("1838", "인민헌장", "영국"), ("1919", "바이마르 헌법", "독일"),
           ("1948", "세계 인권 선언", "UN"), ("1965", "인종 차별\n철폐 협약", "UN"), ("1966", "국제 인권 규약", "UN"),
@@ -134,12 +134,12 @@ def c_timeline():
                 va="bottom" if up else "top", fontsize=5.8, color=M)
     # 세대 띠
     def band(x0, x1, y, txt, fc, fs=6.9):
-        ax.add_patch(Rectangle((x0, y), x1 - x0, 0.62, fc=fc, ec=K, lw=0.8, clip_on=False))
-        ax.text((x0 + x1) / 2, y + 0.31, txt, ha="center", va="center", fontsize=fs, fontweight="bold",
+        ax.add_patch(Rectangle((x0, y), x1 - x0, 0.8, fc=fc, ec=K, lw=0.8, clip_on=False))
+        ax.text((x0 + x1) / 2, y + 0.4, txt, ha="center", va="center", fontsize=fs, fontweight="bold",
                 color=("white" if fc == K else K), linespacing=1.15)
-    band(0.3, 4.62, -3.2, "1세대 — 자유권·평등권·참정권", XL)
-    band(4.67, 5.5, -3.2, "2세대\n사회권", K, 6.4)
-    band(5.55, 10.8, -3.2, "3세대 — 연대권 (국제 협약)", L)
+    band(0.3, 4.62, -3.5, "1세대 — 자유권·평등권·참정권", XL)
+    band(4.67, 5.5, -3.5, "2세대\n사회권", K, 6.4)
+    band(5.55, 10.8, -3.5, "3세대 — 연대권 (국제 협약)", L)
     saveW(f, "C_timeline")
 
 

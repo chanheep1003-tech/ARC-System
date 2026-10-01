@@ -75,13 +75,16 @@ figcaption{font-size:7pt}
 """
 
 
+SHOW_ASK = False  # '이렇게 묻는다' 칸: V1.3부터 제외(원고의 ASK 줄은 복구용으로 유지)
+
+
 def render_c(it, idx=0):
     a = it["attrs"]
     cid = PREFIX + a["id"]
     chip = "정리" if a["id"].startswith("Z") else a["id"]
     head_ = ("<header class='ch'><span class='no'>%s</span><h3>%s</h3><span class='meta'>%s<em>%s</em></span></header>" %
              (chip, bc.inline(a["t"]), ("<u>%s</u>" % bc.inline(a["src"])) if a.get("src") else "", cid))
-    body = "".join(bc.r_block(b) for b in it["blocks"])
+    body = "".join(bc.r_block(b) for b in it["blocks"] if SHOW_ASK or b["k"] != "ASK")
     return "<section class='c' id='c%s'>%s%s</section>" % (a["id"], head_, body)
 
 
