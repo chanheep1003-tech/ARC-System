@@ -2,9 +2,11 @@ schema_version: ARC-SOURCE-COLLECTION-V1
 target_exam_id: DONGBUK_2026_2_FINAL
 updated_at: '2026-10-03'
 collection_scope:
+  active_subjects: [SCI, SOC, KOR]
+  deferred_subjects: [HIS, AI]
   exam_registry_ref: ops/exams/EXAM_CONTEXTS_V1.yaml#exams.DONGBUK_2026_2_FINAL.provisional_scope_policy
   status: PROVISIONAL_REMAINDER
-  target: 이번 학기 전체 학습 내용 중 실제 중간고사에 포함되지 않은 나머지 전부
+  target: 과학·사회·국어의 이번 학기 전체 학습 내용 중 실제 중간고사에 포함되지 않은 나머지 전부
   note: 후보 자료의 현재 범위 적합성은 개별 검토한다. 학교 공지가 나오면 수집 기준을 확정 범위로 갱신한다.
 sources:
 - source_id: DRIVE-FINAL-CANDIDATE-001
@@ -150,6 +152,7 @@ sources:
   drive_file_id: 1Tgx0sa74CXLexodCaUYE4200gm4Zlr33
   size_bytes: 1139625
   subject: HIS
+  collection_action: PARKED_BY_USER
   role: PAST_EXAM
   curriculum: UNKNOWN
   review_status: HEADER_REVIEWED
@@ -179,6 +182,7 @@ sources:
   drive_file_id: 1M7ghQxYUyDFwhoz_tCNSLT70mXQI0wWN
   size_bytes: 1237255
   subject: HIS
+  collection_action: PARKED_BY_USER
   role: UNCLASSIFIED
   curriculum: UNKNOWN
   review_status: METADATA_ONLY
@@ -259,6 +263,7 @@ sources:
   drive_file_id: 11sYSicDpoCUb3VRfuVruVELlh1qDQOYs
   size_bytes: 679956
   subject: AI
+  collection_action: PARKED_BY_USER
   role: PAST_EXAM
   curriculum: UNKNOWN
   review_status: HEADER_REVIEWED

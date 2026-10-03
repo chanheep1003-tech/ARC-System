@@ -37,6 +37,26 @@ class ScopeTests(unittest.TestCase):
     def test_confirmed_unit_practice(self):
         self.assertEqual(self.result()["status"], "PASS")
 
+    def test_deferred_subject_blocked_even_with_confirmed_scope(self):
+        for subject in ("HIS", "AI"):
+            with self.subTest(subject=subject):
+                p = copy.deepcopy(self.profile)
+                p["active_subjects"] = ["SCI", "SOC", "KOR"]
+                p["subjects"][subject] = copy.deepcopy(p["subjects"]["KOR"])
+                b = copy.deepcopy(self.bundle)
+                b["subject"] = subject
+                b["exam_context"]["profile_sha256"] = gate.digest(p)
+                result = self.result(b, p)
+                self.assertIn("EXAM_SUBJECT_NOT_ACTIVE", self.codes(result))
+                self.assertFalse(result["release_allowed"])
+
+    def test_active_subject_still_passes(self):
+        p = copy.deepcopy(self.profile)
+        p["active_subjects"] = ["SCI", "SOC", "KOR"]
+        b = copy.deepcopy(self.bundle)
+        b["exam_context"]["profile_sha256"] = gate.digest(p)
+        self.assertEqual(self.result(b, p)["status"], "PASS")
+
     def test_yaml_date_hash_matches_iso_date(self):
         p=copy.deepcopy(self.profile);p['exam_date']=date(2026,12,1)
         q=copy.deepcopy(p);q['exam_date']='2026-12-01'

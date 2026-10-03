@@ -132,6 +132,12 @@ def analyze(bundle: dict, manifest: dict, registry: dict, *, root: Path = ROOT,
         fail("EXAM_SUBJECT_NOT_REGISTERED", "Subject has no exam-specific configuration.")
         return {"status": "FAIL", "exam_id": exam_id, "release_allowed": False,
                 "findings": findings, "anchor_path": None}
+    if "active_subjects" in profile:
+        active_subjects = identifiers(profile["active_subjects"])
+        if not active_subjects or not active_subjects <= SUBJECTS:
+            fail("EXAM_ACTIVE_SUBJECTS_INVALID", "Exam must specify a valid nonempty subject selection.")
+        elif subject not in active_subjects:
+            fail("EXAM_SUBJECT_NOT_ACTIVE", "Subject is excluded from this exam preparation cycle.")
     product = bundle.get("product_mode")
     enabled_products = identifiers(entry.get("products"))
     if not isinstance(product, str) or product not in PRODUCTS or not enabled_products or product not in enabled_products:

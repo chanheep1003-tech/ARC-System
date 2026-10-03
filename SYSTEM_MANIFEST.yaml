@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.37-dev
+  version: 1.8.38-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -16,6 +16,7 @@ source_of_truth:
 
 runtime:
   active_exam_id: DONGBUK_2026_2_FINAL
+  active_subjects: [SCI, SOC, KOR]
   exam_context_registry: ops/exams/EXAM_CONTEXTS_V1.yaml
   exam_context_policy: ops/ARC_EXAM_CONTEXT_POLICY_V1.0.md
   exam_scope_gate: required

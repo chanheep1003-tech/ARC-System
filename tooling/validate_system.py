@@ -111,27 +111,42 @@ def main() -> int:
             errors.append("active exam must exist, be preparing/active, and forbid inherited midterm scope")
         elif not isinstance(exam.get("subjects"), dict) or set(exam["subjects"]) != {"KOR", "SOC", "SCI", "HIS", "AI"}:
             errors.append("active exam must explicitly register all five subject configurations")
-        elif any(isinstance(entry, dict) and entry.get("scope_status") == "PROVISIONAL_REMAINDER"
-                 for entry in exam["subjects"].values()):
-            policy = exam.get("provisional_scope_policy", {})
-            if not isinstance(policy, dict) or policy.get("mode") != "CURRENT_SEMESTER_COURSE_MINUS_ACTUAL_MIDTERM":
-                errors.append("provisional remainder needs an explicit course-minus-actual-midterm policy")
+        else:
+            selected = exam.get("active_subjects")
+            if (not isinstance(selected, list) or not selected or
+                any(not isinstance(code, str) or code not in exam["subjects"] for code in selected) or
+                len(set(selected)) != len(selected)):
+                errors.append("active exam must select valid unique subjects")
+                exam_subjects_active = set()
             else:
-                basis = exams.get(policy.get("basis_exam_id"), {})
-                if not isinstance(basis, dict) or basis.get("status") != "ARCHIVED":
-                    errors.append("provisional remainder must identify its archived midterm basis")
-                if (policy.get("school_confirmed") is not False or
-                    policy.get("production_priority_is_scope_evidence") is not False or
-                    policy.get("collection_enabled") is not True or
-                    policy.get("on_school_scope_announcement") != "REPLACE_WITH_CONFIRMED_SCOPE"):
-                    errors.append("provisional collection scope must remain distinct from school confirmation and production priorities")
-                if set(policy.get("applies_to_subjects", [])) != set(exam["subjects"]):
-                    errors.append("provisional remainder policy must cover all registered subjects")
-                if not policy.get("authorized_by") or not policy.get("scope_expression"):
-                    errors.append("provisional remainder needs the user instruction and range expression")
-                for rel in policy.get("midterm_baseline_refs", []):
-                    if not isinstance(rel, str) or not (ROOT / rel).is_file():
-                        errors.append(f"midterm baseline reference missing: {rel!r}")
+                exam_subjects_active = set(selected)
+            if runtime.get("active_subjects") != selected:
+                errors.append("runtime and active exam subject selections must match")
+            for code, entry in exam["subjects"].items():
+                if code not in exam_subjects_active and (not isinstance(entry, dict) or
+                    entry.get("scope_status") != "DEFERRED_BY_USER" or entry.get("products") != []):
+                    errors.append(f"inactive subject must be deferred with no enabled products: {code}")
+            if any(isinstance(entry, dict) and entry.get("scope_status") == "PROVISIONAL_REMAINDER"
+                     for entry in exam["subjects"].values()):
+                policy = exam.get("provisional_scope_policy", {})
+                if not isinstance(policy, dict) or policy.get("mode") != "CURRENT_SEMESTER_COURSE_MINUS_ACTUAL_MIDTERM":
+                    errors.append("provisional remainder needs an explicit course-minus-actual-midterm policy")
+                else:
+                    basis = exams.get(policy.get("basis_exam_id"), {})
+                    if not isinstance(basis, dict) or basis.get("status") != "ARCHIVED":
+                        errors.append("provisional remainder must identify its archived midterm basis")
+                    if (policy.get("school_confirmed") is not False or
+                        policy.get("production_priority_is_scope_evidence") is not False or
+                        policy.get("collection_enabled") is not True or
+                        policy.get("on_school_scope_announcement") != "REPLACE_WITH_CONFIRMED_SCOPE"):
+                        errors.append("provisional collection scope must remain distinct from school confirmation and production priorities")
+                    if set(policy.get("applies_to_subjects", [])) != exam_subjects_active:
+                        errors.append("provisional remainder policy must cover all active subjects")
+                    if not policy.get("authorized_by") or not policy.get("scope_expression"):
+                        errors.append("provisional remainder needs the user instruction and range expression")
+                    for rel in policy.get("midterm_baseline_refs", []):
+                        if not isinstance(rel, str) or not (ROOT / rel).is_file():
+                            errors.append(f"midterm baseline reference missing: {rel!r}")
     ledger_rel = runtime.get("collection_registry")
     if ledger_rel and (ROOT / ledger_rel).is_file():
         import importlib.util
@@ -139,6 +154,9 @@ def main() -> int:
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         ledger = yaml.safe_load((ROOT / ledger_rel).read_text(encoding="utf-8"))
+        collection_subjects = ledger.get("collection_scope", {}).get("active_subjects")
+        if collection_subjects != runtime.get("active_subjects"):
+            errors.append("collection and runtime subject selections must match")
         result = module.analyze(ledger)
         if result["status"] != "PASS":
             errors.extend("collection gate: " + f["code"] for f in result["findings"])

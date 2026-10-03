@@ -1,94 +1,31 @@
 # ARC RUNTIME PRIORITY POLICY V1.5
-VERSION: 1.4
-DATE: 2026-09-25
+VERSION: 1.5
+DATE: 2026-10-03
 STATUS: ACTIVE-DEV
-ROLE: deadline scheduling, product focus, quality-first allocation
+ROLE: final preparation subject focus and quality-first allocation
 
-## 0. HARD DEADLINE
-2026-09-25 23:59 KST.
+## 1. 기말 작업 대상
 
-## 1. ABSOLUTE ORDER
-1. KOR ARC_N + ARC_FINAL — quality first
-2. SOC ARC_N + ARC_FINAL
-3. SCI-REDOX ARC_N + ARC_FINAL
-4. HIS ARC_N only
+최신 사용자 지시(2026-10-03 13:49 KST)에 따라 DONGBUK_2026_2_FINAL의 신규 자료 수집·출제·품질 개선은 과학·사회·국어(SCI·SOC·KOR)에만 배정한다. 실제 과목 선택은 runtime.active_subjects와 시험 설정 active_subjects에서 읽고 서로 일치해야 한다.
 
-CORE maintenance only.
-SCI non-redox excluded.
-HIS FINAL deferred.
+한국사·AI는 이번 기말 작업에서 제외한다. 기존 자료·MASTER·과거 원고는 보관하며 신규 수집·제작·과목별 품질 개선 자원을 배정하지 않는다. 보관 자료를 공용 엔진의 호환성 회귀 검사에 사용하는 것은 허용한다.
 
-## 2. KOREAN FOCUS LOCK
-남은 discretionary quality work의 최소 60%를 국어에 우선 배정한다.
-KOR N°와 FINAL 모두 다음을 만족할 때까지 국어 우선권 유지:
-- readiness >= 80
-- KOR_EXAM_REALISM_GATE=PASS
-- KOR_AI_STYLE_LEAK_GATE=PASS
-- KOR_SCHOOL_TASK_FAMILY_GATE=PASS
-- KOR_ATTRACTIVE_DISTRACTOR_GATE=PASS
-- KOR_ANSWER_LENGTH_AUDIT=PASS
-- no open S1 Korean item-quality regression
+세 과목 안의 작업 순서는 자료 확보 상태와 실제 품질 문제의 긴급도에 따라 정한다. 사용자 지시가 없는 과목별 비율이나 고정 순위를 만들지 않는다. 이전 중간 시즌의 국어 60%, 한국사 8% 배분은 적용하지 않는다.
 
-인프라가 PASS여도 fresh content realism이 PENDING이면 국어 품질 작업을 종료하지 않는다.
+## 2. 범위와 제품
 
-## 3. RESOURCE ORDER
-- KOR: 60
-- SOC: 20
-- SCI_REDOX: 12
-- HIS_N: 8
+준비·자료 수집의 임시 범위는 각 과목의 이번 학기 전체 학습 내용에서 실제 중간고사 포함 범위를 뺀 나머지 전부다. 남은 교과서와 학교 보충자료를 포함한다. 과학은 산화·환원만으로 제한하지 않는다. 학교 공지가 나오면 확정 범위로 교체한다.
 
-한 run에 여러 작업을 얕게 흩뿌리지 않는다.
-가장 높은 우선순위의 blocker를 실제로 닫고 동일 E2E/QA를 재실행하여 score delta 또는 PASS를 만든다.
+ARC N°와 ARC FINAL의 문제 품질·난도 조절에 신규 개선 자원을 우선 배정한다. ARC CORE는 호환성·회귀 방지·치명적 오류 수정 중심으로 유지한다. 학교 확정 범위와 원문 근거를 임시 수집 기준으로 대체하지 않는다.
 
-## 4. KOR QUALITY METHOD
-학교 실제 시험 2025~2026 구조 프로필을 TASK-FORM calibration으로 사용.
-문구 복제/교사 의도 예측 금지.
-실제 내신 빈출 과업에서 난도를 올린다:
-내용 이해, 정서·태도, 표현 효과, 핵심 표현 기능, <보기> 적용, 비교, 복수판단, 구조/개념 관계.
+## 3. 품질 기준
 
-AI 티 제거:
-- 내부 QA 언어 학생 노출 금지
-- 불필요한 학생/교사 wrapper 금지
-- 기계적 평행 선지 금지
-- 정답만 장문·온건·정교한 패턴 금지
-- 황당한 오답으로 난도 위장 금지
+독립 재풀이 1회, 전 선지 근거 검수, 정답 오류·선지 중복·범위 이탈·기존 문항 중복 검사를 유지한다. 어려운 문제는 실제 내신 과업과 설득력 있는 오답으로 구성하며 불필요한 조건이나 어색한 문장으로 난도를 올리지 않는다.
 
-## 4-A. KOREAN FRESH-SET CLOSURE
-국어는 규칙 파일만 개선하고 종료하지 않는다.
-최소 하나의 fresh KOR ARC_N 또는 ARC_FINAL 세트를 실제 현재 범위 원자료로 생성하여 다음을 모두 확인할 때까지 국어 품질 작업을 계속한다:
-- 실제 내신 빈출 task family 비율 충족
-- AI-style leak 0
-- 정답 길이 cue 0
-- D3+ strong distractor >=2
-- obvious-answer D3+ = 0
-- 동일 reasoning axis 과다 반복 없음
-- exact/semantic duplicate gate 통과
-- Generator→QA→Handoff→Typesetter→PDF→Preflight E2E PASS
+국어는 현재 학교 원자료의 학습활동·비교·표현 효과·보기 적용을 반영하고 정답만 길어지는 패턴, 황당한 오답, 내부 QA 용어의 학생 노출을 검사한다. 모든 과목에서 교사 스타일 추정과 검증되지 않은 성적 향상 주장은 금지한다.
 
-한 run에서 의미 있는 결과는 최소 하나:
-1. fresh KOR 세트가 위 gate를 통과
-2. user-found Korean regression 하나를 실제 세트에서 재현 후 수정+재검사 PASS
-3. KOR_N 또는 KOR_FINAL readiness +10 이상 상승
+## 4. 실행 결과
 
-국어 N°와 FINAL이 둘 다 80 미만이면 다른 과목 polishing보다 국어를 우선한다.
-단, 국어가 source-access hard blocker로 막힌 경우에만 다음 과목으로 이동한다.
+한 실행은 실제 품질 문제 수정과 동일 회귀 검사 통과, 새 원자료의 내용 검토·등록, 현재 범위 세트의 품질 검사 통과 등 확인 가능한 결과를 남긴다. 자료를 발견한 상태와 내용 검토를 마친 상태를 구분한다.
 
-## 5. REMAINING SUBJECTS
-SOC: KOR quality blocker가 닫힌 다음 N°/FINAL.
-SCI: OXIDATION_REDUCTION_ONLY, N°/FINAL.
-HIS: N° ONLY.
-
-## 6. MEANINGFUL RUN
-한 실행의 완료 조건은 최소 하나:
-- fresh KOR N°/FINAL quality gate PASS
-- 실제 blocker 수정 + 동일 regression PASS
-- subject/product readiness +10
-- new E2E/CANARY PASS
-- release readiness 실질 상승
-
-상태 재확인만으로 완료 처리 금지.
-
-END ARC RUNTIME PRIORITY POLICY V1.4
-
-
-## FINAL PREPARATION OVERRIDE — 2026-10-03
-For the active DONGBUK_2026_2_FINAL preparation cycle, resolve scope and product admission from runtime.exam_context_registry. The midterm SCI-REDOX-only, HIS-N-only sprint and its numeric allocation are historical. Do not use them to infer final-exam units, disable new subject collection, or carry exclusion marks into different sources. Existing subject priority is retained for discovery; current-source eligibility is evidence-bound and pending until verified. N°/FINAL quality improvements remain the development priority. CORE changes focus on compatibility, regression prevention, and critical defects. No teacher-style prediction or unverified grade claims.
+중간 시즌의 마감·산화환원 한정·한국사 N° 전용·배분 기록은 ops/ARC_RUNTIME_PRIORITY_POLICY_V1.4.md에 보관한다. 현재 기말 일정·범위·과목 선택을 그 기록에서 상속하지 않는다.

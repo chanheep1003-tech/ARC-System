@@ -28,6 +28,17 @@ def analyze(ledger: dict) -> dict:
     if not isinstance(sources, list):
         return {"status": "FAIL", "findings": [{"code": "COLLECTION_SOURCES_INVALID", "severity": "FAIL"}]}
     ids = set()
+    collection_scope = ledger.get("collection_scope", {})
+    active_subjects = None
+    if isinstance(collection_scope, dict) and "active_subjects" in collection_scope:
+        selected = collection_scope["active_subjects"]
+        if (not isinstance(selected, list) or not selected or
+            any(not isinstance(code, str) or code not in {"KOR", "SOC", "SCI", "HIS", "AI"} for code in selected) or
+            len(set(selected)) != len(selected)):
+            findings.append({"code": "COLLECTION_ACTIVE_SUBJECTS_INVALID", "severity": "FAIL"})
+            active_subjects = set()
+        else:
+            active_subjects = set(selected)
     identities, possible = defaultdict(list), defaultdict(list)
     eligible = []
     for row in sources:
@@ -61,6 +72,10 @@ def analyze(ledger: dict) -> dict:
         if not isinstance(flag, bool):
             fail("COLLECTION_ELIGIBILITY_FLAG_INVALID")
         if flag is True:
+            if active_subjects is not None and row.get("subject") not in active_subjects:
+                fail("COLLECTION_SUBJECT_NOT_ACTIVE")
+            if row.get("collection_action") == "PARKED_BY_USER":
+                fail("COLLECTION_PARKED_SOURCE_PROMOTION")
             refs = row.get("scope_evidence_refs")
             if row.get("exam_scope_status") != "CONFIRMED" or not isinstance(refs, list) or not refs or any(not isinstance(x, str) or not x.strip() for x in refs):
                 fail("COLLECTION_UNCONFIRMED_PROMOTION")

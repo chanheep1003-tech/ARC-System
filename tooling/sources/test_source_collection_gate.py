@@ -20,6 +20,25 @@ class CollectionTests(unittest.TestCase):
     def test_candidate_is_not_eligible(self):
         r=gate.analyze({'sources':[self.row]});self.assertEqual(r['status'],'PASS');self.assertEqual(r['eligible_for_current_exam_count'],0)
 
+    def test_deferred_subject_cannot_be_promoted_but_can_be_preserved(self):
+        for subject in ("HIS", "AI"):
+            with self.subTest(subject=subject):
+                row=copy.deepcopy(self.row)
+                row.update(role='RAW_SCHOOL_SOURCE',eligible_for_current_exam=True,exam_scope_status='CONFIRMED',review_status='CONTENT_REVIEWED',curriculum='2022_REVISED',scope_evidence_refs=['RANGE'],subject=subject,unit_ids=['U2'],sha256='a'*64,content_verification_ref='CHECK')
+                ledger={'collection_scope':{'active_subjects':['SCI','SOC','KOR']},'sources':[row]}
+                result=gate.analyze(ledger)
+                self.assertIn('COLLECTION_SUBJECT_NOT_ACTIVE',{f['code'] for f in result['findings']})
+                self.assertEqual(result['eligible_for_current_exam_count'],0)
+                row.update(eligible_for_current_exam=False,collection_action='PARKED_BY_USER')
+                self.assertEqual(gate.analyze(ledger)['status'],'PASS')
+
+    def test_active_subject_can_be_promoted_after_full_review(self):
+        row=copy.deepcopy(self.row)
+        row.update(role='RAW_SCHOOL_SOURCE',eligible_for_current_exam=True,exam_scope_status='CONFIRMED',review_status='CONTENT_REVIEWED',curriculum='2022_REVISED',scope_evidence_refs=['RANGE'],subject='SCI',unit_ids=['U2'],sha256='a'*64,content_verification_ref='CHECK')
+        result=gate.analyze({'collection_scope':{'active_subjects':['SCI','SOC','KOR']},'sources':[row]})
+        self.assertEqual(result['status'],'PASS')
+        self.assertEqual(result['eligible_for_current_exam_count'],1)
+
     def test_reference_cannot_be_promoted(self):
         row=copy.deepcopy(self.row);row['eligible_for_current_exam']=True
         self.assertIn('COLLECTION_UNCONFIRMED_PROMOTION',self.codes([row]))
