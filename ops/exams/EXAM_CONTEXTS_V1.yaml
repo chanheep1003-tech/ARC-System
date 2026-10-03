@@ -1,0 +1,58 @@
+schema_version: ARC-EXAM-CONTEXT-V1
+exams:
+  DONGBUK_2026_2_FINAL:
+    status: PREPARING
+    exam_date: null
+    curriculum: 2022_REVISED
+    inherit_midterm_scope: false
+    subjects:
+      KOR:
+        scope_status: PENDING
+        scope_evidence_refs: []
+        unit_ids: []
+        source_ids: []
+        excluded_unit_ids: []
+        excluded_source_ids: []
+        products: [ARC_N, ARC_FINAL]
+        difficulty_anchor: null
+      SOC:
+        scope_status: PENDING
+        scope_evidence_refs: []
+        unit_ids: []
+        source_ids: []
+        excluded_unit_ids: []
+        excluded_source_ids: []
+        products: [ARC_N, ARC_FINAL]
+        difficulty_anchor: null
+      SCI:
+        scope_status: PENDING
+        scope_evidence_refs: []
+        unit_ids: []
+        source_ids: []
+        excluded_unit_ids: []
+        excluded_source_ids: []
+        products: [ARC_N, ARC_FINAL]
+        difficulty_anchor: null
+      HIS:
+        scope_status: PENDING
+        scope_evidence_refs: []
+        unit_ids: []
+        source_ids: []
+        excluded_unit_ids: []
+        excluded_source_ids: []
+        products: [ARC_N, ARC_FINAL]
+        difficulty_anchor: null
+      AI:
+        scope_status: PENDING
+        scope_evidence_refs: []
+        unit_ids: []
+        source_ids: []
+        excluded_unit_ids: []
+        excluded_source_ids: []
+        products: [ARC_N, ARC_FINAL]
+        difficulty_anchor: null
+  DONGBUK_2026_2_MID:
+    status: ARCHIVED
+    inherit_midterm_scope: false
+    scope_snapshot: SYSTEM_MANIFEST.yaml#runtime.midterm_product_scope_lock
+    note: Historical scope retained for explicit non-release replay only.

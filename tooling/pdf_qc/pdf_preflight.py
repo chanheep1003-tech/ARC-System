@@ -32,7 +32,9 @@ BOLD_FONT_RE = re.compile(r"(?:bold|semibold|demibold|medium)", re.I)
 ANSWER_HEADING_RE = re.compile(r"(?:\bANSWER\s+KEY\b|^[\s\u00a0]*정답(?=[\s\u00a0]|$))", re.I | re.M)
 QUESTION_MARKER_RE = re.compile(r"\bQUESTION\s+(\d+)\b", re.I)
 KOR_QUESTION_MARKER_RE = re.compile(r"(?m)^[\s\u00a0]*(\d{2})[\s\u00a0]+(?=\S)")
-ANSWER_LINE_RE = re.compile(r"(?m)^[\s\u00a0]*(\d{1,2})[\s\u00a0]*\.?[\s\u00a0]*(?:[1-5]|[①②③④⑤])[\s\u00a0]*$")
+# PDF font CMaps can extract circled digits as equivalent dingbat digits.
+# Accept only the five supported answer values, preserving completeness checks.
+ANSWER_LINE_RE = re.compile(r"(?m)^[\s\u00a0]*(\d{1,2})[\s\u00a0]*\.?[\s\u00a0]*(?:[1-5]|[①②③④⑤➀➁➂➃➄❶❷❸❹❺➊➋➌➍➎])[\s\u00a0]*$")
 MAJOR_PART_RE = re.compile(r"(?:[ABC]\s*파트|파트\s*[ABC]|\bPART\s*[ABC]\b)", re.I)
 
 

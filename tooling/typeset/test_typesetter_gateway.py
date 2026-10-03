@@ -56,8 +56,15 @@ def run() -> None:
         plans = {}
         for product in sorted(gateway.PRODUCTS):
             handoff = make_handoff(product, temp)
-            html = gateway.resolve_job(handoff, renderer="html")
-            reportlab = gateway.resolve_job(handoff, renderer="reportlab")
+            try:
+                gateway.resolve_job(handoff)
+            except gateway.TypesetterAdmissionError as exc:
+                assert "EXAM_SCOPE_FAILED" in str(exc), str(exc)
+            else:
+                raise AssertionError("unbound current-exam handoff was admitted")
+            html = gateway.resolve_job(handoff, renderer="html", archived_replay=True)
+            reportlab = gateway.resolve_job(handoff, renderer="reportlab", archived_replay=True)
+            assert html["release_eligible"] is False and reportlab["release_eligible"] is False
             assert gateway.route_invariants(html) == gateway.route_invariants(reportlab)
             assert html["html_master"] != reportlab["renderer_source"]
             assert html["product"] == product and reportlab["product"] == product
@@ -79,14 +86,14 @@ def run() -> None:
         qa_proof["items"][0]["pass_b"]["answer"] = "5"
         qa_path.write_text(yaml.safe_dump(qa_proof, allow_unicode=True), encoding="utf-8")
         try:
-            gateway.resolve_job(n_handoff)
+            gateway.resolve_job(n_handoff, archived_replay=True)
         except gateway.TypesetterAdmissionError as exc:
             assert "QA_EVIDENCE_FAILED" in str(exc) or "QA_ANSWER_MISMATCH" in str(exc)
         else:
             raise AssertionError("QA proof with mutated answer was accepted")
         qa_path.unlink()
         try:
-            gateway.resolve_job(n_handoff)
+            gateway.resolve_job(n_handoff, archived_replay=True)
         except gateway.TypesetterAdmissionError as exc:
             assert "QA_EVIDENCE_MISSING" in str(exc)
         else:
@@ -99,7 +106,7 @@ def run() -> None:
         preflight_result = gateway.handoff_gate.analyze(n_handoff, ROOT / "SYSTEM_MANIFEST.yaml")
         assert preflight_result["status"] == "PASS", preflight_result
         try:
-            gateway.resolve_job(n_handoff)
+            gateway.resolve_job(n_handoff, archived_replay=True)
         except gateway.TypesetterAdmissionError as exc:
             assert "QA_ANSWER_MISMATCH at question 1" in str(exc)
         else:
@@ -119,7 +126,7 @@ def run() -> None:
         preflight_result = gateway.handoff_gate.analyze(n_handoff, ROOT / "SYSTEM_MANIFEST.yaml")
         assert preflight_result["status"] == "PASS", preflight_result
         try:
-            gateway.resolve_job(n_handoff)
+            gateway.resolve_job(n_handoff, archived_replay=True)
         except gateway.TypesetterAdmissionError as exc:
             assert "QA_MANUSCRIPT_BINDING_MISMATCH" in str(exc)
         else:
@@ -129,7 +136,7 @@ def run() -> None:
         proof.pop("student_manuscript_sha256")
         proof_path.write_text(yaml.safe_dump(proof, allow_unicode=True), encoding="utf-8")
         try:
-            gateway.resolve_job(n_handoff)
+            gateway.resolve_job(n_handoff, archived_replay=True)
         except gateway.TypesetterAdmissionError as exc:
             assert "QA_MANUSCRIPT_BINDING_MISSING" in str(exc)
         else:
@@ -141,7 +148,7 @@ def run() -> None:
         bad_path.write_text(yaml.safe_dump(bad_manifest, allow_unicode=True, sort_keys=False), encoding="utf-8")
         handoff = make_handoff("ARC_CORE", temp)
         try:
-            gateway.resolve_job(handoff, manifest_path=bad_path)
+            gateway.resolve_job(handoff, manifest_path=bad_path, archived_replay=True)
         except gateway.TypesetterAdmissionError as exc:
             assert "authority gates" in str(exc)
         else:

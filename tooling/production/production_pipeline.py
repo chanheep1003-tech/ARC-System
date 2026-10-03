@@ -47,6 +47,7 @@ final_gate = _load("arc_final_quality_gate", "tooling/final/final_quality_gate.p
 typesetter = _load("arc_typesetter_gateway", "tooling/typeset/typesetter_gateway.py")
 pdf_gate = _load("arc_pdf_preflight", "tooling/pdf_qc/pdf_preflight.py")
 renderer = _load("arc_kor_renderer", "tooling/typeset/kor_renderer.py")
+exam_gate = _load("arc_exam_scope_gate", "tooling/exams/exam_scope_gate.py")
 
 CIRC = "①②③④⑤"
 SCHOOL_FAMILIES = {
@@ -489,12 +490,23 @@ def final_profile(bundle, blind) -> dict[str, Any]:
     return {"product_mode": "ARC_FINAL", "item_count": len(rows), "items": rows}
 
 
-def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None) -> dict[str, Any]:
-    bundle = normalize(yaml.safe_load((bundle_dir / "items.yaml").read_text(encoding="utf-8")))
-    blind = yaml.safe_load((bundle_dir / "blind_review.yaml").read_text(encoding="utf-8"))
+def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, archived_replay: bool = False,
+        manifest_path: Path | None = None) -> dict[str, Any]:
+    raw_bundle = yaml.safe_load((bundle_dir / "items.yaml").read_text(encoding="utf-8"))
     out_dir.mkdir(parents=True, exist_ok=True)
-    manifest_path = ROOT / "SYSTEM_MANIFEST.yaml"
+    manifest_path = manifest_path or ROOT / "SYSTEM_MANIFEST.yaml"
     manifest = yaml.safe_load(manifest_path.read_text(encoding="utf-8"))
+    exam_result = exam_gate.check_bundle(raw_bundle if isinstance(raw_bundle, dict) else {}, manifest_path,
+                                        archived_replay=archived_replay)
+    if exam_result["status"] == "FAIL":
+        report = {"tool": "ARC_PRODUCTION_PIPELINE_V1.1", "batch_id": (raw_bundle or {}).get("batch_id") if isinstance(raw_bundle, dict) else None,
+                  "status": "BLOCKED", "blocking_gates": ["EXAM_SCOPE"], "gates": {"EXAM_SCOPE": "FAIL"},
+                  "exam_scope": exam_result, "findings": exam_result["findings"], "pdf": None,
+                  "answer_key_pdf": None, "governance": {"FINAL_USER_APPROVAL": "PENDING", "DRIVE_SAVE": "BLOCKED"}}
+        (out_dir / "production_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+        return report
+    bundle = normalize(raw_bundle)
+    blind = yaml.safe_load((bundle_dir / "blind_review.yaml").read_text(encoding="utf-8"))
     product = bundle["product_mode"]
 
     sources = load_sources(bundle["sets"])
@@ -514,6 +526,8 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None) -> 
             findings.append({"code": "BLIND_ROUND_POLICY_VIOLATION", "severity": "FAIL", "rounds": rounds, "required": required_rounds})
 
     qa = qa_evidence(bundle, sources, blind, text, findings)
+    if bundle.get("exam_context"):
+        qa["exam_context"] = bundle["exam_context"]
     qa_name = f"ARC_QA_EVIDENCE_{bundle['batch_id']}.yaml"
     (out_dir / qa_name).write_text(yaml.safe_dump(qa, allow_unicode=True, sort_keys=False), encoding="utf-8")
     qa_result = content_gate.analyze(qa)
@@ -524,21 +538,31 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None) -> 
                "answer_key": {i + 1: int(it["answer"]) for i, it in enumerate(mcq_items(bundle))},
                "visual_asset_manifest": [], "qc_status": {"STATUS": qa_result["status"], "CONSTRUCTED_RESPONSE": [
                    {"item_id": it["item_id"], "points": it.get("points"), "model_answer": it.get("model_answer"),
-                    "rubric": it.get("rubric"), "accepted_variants": it.get("accepted_variants", [])} for it in cr_items(bundle)]}}
+                   "rubric": it.get("rubric"), "accepted_variants": it.get("accepted_variants", [])} for it in cr_items(bundle)]}}
+    if bundle.get("exam_context"):
+        content["exam_context"] = bundle["exam_context"]
     handoff_name, handoff_text = serializer.serialize_bundle(content, manifest)
     handoff_path = out_dir / handoff_name
     handoff_path.write_text(handoff_text, encoding="utf-8")
     handoff_result = handoff_gate.analyze(handoff_path, manifest_path)
     try:
-        typesetter.resolve_job(handoff_path, manifest_path, renderer="reportlab")
+        typesetter.resolve_job(handoff_path, manifest_path, renderer="reportlab", archived_replay=archived_replay)
         admission = "PASS"
     except typesetter.TypesetterAdmissionError as exc:
         admission = f"BLOCKED: {exc}"
 
     pdf_path = out_dir / f"{bundle['batch_id']}_DRAFT.pdf"
     key_path = out_dir / f"{bundle['batch_id']}_ANSWER_KEY.pdf" if product == "ARC_FINAL" else None
-    render = renderer.render(bundle, sources, numbering(bundle), set_header, pdf_path, key_pdf=key_path, logo=logo)
-    pdf_result = pdf_gate.analyze_pdf(pdf_path, product, expected_item_count=len(mcq_items(bundle)) if product == "ARC_N" else None)
+    # Archived replay may render diagnostic drafts even when a content gate fails.
+    # It always remains release-blocked by EXAM_SCOPE=ARCHIVED_REPLAY.
+    if admission == "PASS" or archived_replay:
+        render = renderer.render(bundle, sources, numbering(bundle), set_header, pdf_path, key_pdf=key_path, logo=logo)
+        pdf_result = pdf_gate.analyze_pdf(pdf_path, product, expected_item_count=len(mcq_items(bundle)) if product == "ARC_N" else None)
+    else:
+        render = {"status": "BLOCKED", "brand": "NOT_RUN"}
+        pdf_result = {"status": "NOT_RUN"}
+        pdf_path = None
+        key_path = None
 
     final_result = None
     if product == "ARC_FINAL":
@@ -556,8 +580,8 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None) -> 
         subject_key = subject_alias.get(raw_subject, raw_subject)
         runtime = manifest["runtime"]
         anchor_rel = runtime.get(f"arc_final_difficulty_anchor_{subject_key}")
-        if not anchor_rel and subject_key in {"sci", "science"}:
-            anchor_rel = runtime.get("arc_final_difficulty_anchor_sci_redox")
+        if not archived_replay:
+            anchor_rel = exam_result.get("anchor_path")
         if runtime.get("arc_final_difficulty_mode") in {"SCHOOL_ANCHOR", "SCHOOL_MULTI_EXAM_ANCHOR"}:
             payload["difficulty_anchor_required"] = True
             if anchor_rel:
@@ -566,6 +590,7 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None) -> 
 
     hard = [f for f in findings if f["severity"] == "FAIL"]
     gates = {
+        "EXAM_SCOPE": exam_result["status"],
         "CONTENT_QA": qa_result["status"],
         "BLIND_INDEPENDENT_SOLVE": "FAIL" if any(f["code"].startswith("BLIND_") for f in hard) else "PASS",
         "KOR_EXAM_REALISM_GATE": metrics["realism"]["KOR_EXAM_REALISM_GATE"],
@@ -589,11 +614,12 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None) -> 
         gates["FINAL_ITEM_QUALITY"] = final_result["FINAL_ITEM_QUALITY"]
     blocking = [k for k, v in gates.items() if k != "BRAND" and v not in {"PASS", "WARN", "NOT_APPLICABLE"}]
     report = {
-        "tool": "ARC_PRODUCTION_PIPELINE_V1.0", "batch_id": bundle["batch_id"], "product": product,
+        "tool": "ARC_PRODUCTION_PIPELINE_V1.1", "batch_id": bundle["batch_id"], "product": product,
         "status": "READY_FOR_USER_APPROVAL" if not blocking else "BLOCKED",
         "blocking_gates": blocking, "gates": gates,
         "findings": findings, "metrics": {k: v for k, v in metrics.items() if k not in {"findings", "realism", "length_rows"}},
-        "final_quality": final_result, "pdf": str(pdf_path), "answer_key_pdf": str(key_path) if key_path else None,
+        "final_quality": final_result, "exam_scope": exam_result,
+        "pdf": str(pdf_path) if pdf_path else None, "answer_key_pdf": str(key_path) if key_path else None,
         "governance": {"FINAL_USER_APPROVAL": "PENDING", "DRIVE_SAVE": "BLOCKED"},
     }
     (out_dir / "production_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -607,12 +633,13 @@ def main() -> int:
     ap.add_argument("--logo", type=Path, help="canonical lockup PNG; verified against the brand registry hash")
     ap.add_argument("--logo-sha256")
     ap.add_argument("--logo-pixels", help="WxH, e.g. 565x380")
+    ap.add_argument("--archived-replay", action="store_true", help="Test-only replay; never release eligible")
     args = ap.parse_args()
     logo = None
     if args.logo:
         w, h = (int(x) for x in args.logo_pixels.lower().split("x"))
         logo = {"path": str(args.logo), "sha256": args.logo_sha256, "pixels": (w, h)}
-    report = run(args.bundle_dir, args.output_dir, logo)
+    report = run(args.bundle_dir, args.output_dir, logo, archived_replay=args.archived_replay)
     print(json.dumps({k: report[k] for k in ("batch_id", "status", "blocking_gates", "gates")}, ensure_ascii=False, indent=2))
     return 0 if report["status"] == "READY_FOR_USER_APPROVAL" else 1
 

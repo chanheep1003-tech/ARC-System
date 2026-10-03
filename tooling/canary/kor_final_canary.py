@@ -156,7 +156,7 @@ def run(fixture_path: Path, output_dir: Path) -> dict[str, Any]:
     handoff_path = output_dir / filename
     handoff_path.write_text(handoff_text, encoding="utf-8")
     handoff_result = handoff_gate.analyze(handoff_path, manifest_path)
-    render_plan = typesetter_gateway.resolve_job(handoff_path, manifest_path, renderer="reportlab")
+    render_plan = typesetter_gateway.resolve_job(handoff_path, manifest_path, renderer="reportlab", archived_replay=True)
 
     manuscript = handoff_gate.section(handoff_text, "STUDENT MANUSCRIPT").strip()
     pdf_path = output_dir / f"{subject}_FINAL_CANARY_V1.pdf"

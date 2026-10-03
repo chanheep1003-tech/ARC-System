@@ -76,6 +76,7 @@ content_gate = load_module(
     "arc_typesetter_content_qa",
     ROOT / "tooling/content_qa/content_qa_gate.py",
 )
+exam_gate = load_module("arc_typesetter_exam_scope", ROOT / "tooling/exams/exam_scope_gate.py")
 
 
 class TypesetterAdmissionError(RuntimeError):
@@ -179,6 +180,7 @@ def resolve_job(
     handoff_path: Path,
     manifest_path: Path | None = None,
     renderer: str = "reportlab",
+    *, archived_replay: bool = False,
 ) -> dict[str, Any]:
     """Admit a locked handoff and return the sole authoritative render plan."""
     manifest_path = manifest_path or (ROOT / "SYSTEM_MANIFEST.yaml")
@@ -202,6 +204,21 @@ def resolve_job(
     if product not in active_products:
         raise TypesetterAdmissionError(f"product is not active: {product}")
     qa_proof = verify_qa_evidence(handoff_path, metadata, text) if product in {"ARC_N", "ARC_FINAL"} else None
+    exam_proof = None
+    if manifest.get("runtime", {}).get("exam_scope_gate") == "required":
+        admission_bundle = {"exam_context": metadata.get("EXAM_CONTEXT"),
+                            "subject": metadata.get("SUBJECT"), "product_mode": product}
+        if qa_proof and not archived_replay:
+            raw_qa = yaml.safe_load((handoff_path.parent / qa_proof["filename"]).read_text(encoding="utf-8"))
+            if raw_qa.get("exam_context") != metadata.get("EXAM_CONTEXT"):
+                raise TypesetterAdmissionError("QA_EXAM_CONTEXT_BINDING_MISMATCH")
+            locks = raw_qa.get("source_text_locks", [])
+            if locks:
+                admission_bundle["passages"] = [{"source_text_id": lock.get("source_text_id")} for lock in locks]
+        exam_proof = exam_gate.check_bundle(admission_bundle, manifest_path, archived_replay=archived_replay)
+        if exam_proof["status"] == "FAIL":
+            codes = sorted({row["code"] for row in exam_proof["findings"]})
+            raise TypesetterAdmissionError("EXAM_SCOPE_FAILED: " + ", ".join(codes))
 
     layout = manifest.get("active", {}).get("layout", {})
     tooling = manifest.get("tooling", {})
@@ -231,6 +248,8 @@ def resolve_job(
         "max_autofix_attempts": int(manifest["runtime"]["pdf_autofix_max_attempts"]),
         "locked_content_mutation": False,
         "qa_evidence": qa_proof,
+        "exam_scope": exam_proof,
+        "release_eligible": bool(exam_proof and exam_proof.get("release_allowed")),
         "profile": dict(PRODUCT_PROFILES[product]),
         "handoff_preflight": {
             "status": preflight["status"],
@@ -258,11 +277,12 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("handoff", type=Path)
     parser.add_argument("--manifest", type=Path, default=ROOT / "SYSTEM_MANIFEST.yaml")
+    parser.add_argument("--archived-replay", action="store_true", help="Test-only admission; not release eligible")
     parser.add_argument("--renderer", choices=sorted(RENDERERS), default="reportlab")
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
     try:
-        result = resolve_job(args.handoff, args.manifest, args.renderer)
+        result = resolve_job(args.handoff, args.manifest, args.renderer, archived_replay=args.archived_replay)
     except TypesetterAdmissionError as exc:
         result = {"status": "RETURN_CONTENT", "error": str(exc)}
         code = 1

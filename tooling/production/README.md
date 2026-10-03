@@ -48,3 +48,7 @@ What the pipeline computes and enforces:
 The report status is `READY_FOR_USER_APPROVAL` or `BLOCKED`. Governance stays
 `FINAL_USER_APPROVAL=PENDING` and `DRIVE_SAVE=BLOCKED` until the user approves
 the exact artifact.
+
+
+## Exam context admission (2026-10-03)
+Normal production requires a current exam_context bound to the registered profile hash; pending scope is blocked before source loading and rendering. See tooling/exams/README.md. Archived bundles and synthetic canaries use --archived-replay explicitly; they remain release-blocked even when a diagnostic PDF is rendered. A failed normal Typesetter admission never renders a PDF.

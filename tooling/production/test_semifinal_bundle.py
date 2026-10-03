@@ -43,7 +43,7 @@ def run_variant(tmp: Path, name: str, items=None, blind=None):
     work.mkdir()
     (work / "items.yaml").write_text(yaml.safe_dump(items or load("items.yaml"), allow_unicode=True, sort_keys=False), encoding="utf-8")
     (work / "blind_review.yaml").write_text(yaml.safe_dump(blind or load("blind_review.yaml"), allow_unicode=True, sort_keys=False), encoding="utf-8")
-    return pipeline.run(work, work / "out", LOGO)
+    return pipeline.run(work, work / "out", LOGO, archived_replay=True)
 
 
 def fails(report) -> set[str]:
@@ -133,7 +133,7 @@ def main() -> int:
     # 동북고 difficulty anchor passes; the blind profile (D2 13 / D3 9) is easier than the anchor.
     final_dir = ROOT / "quality/production/KOR_SEMIFINAL_FINAL_20260925"
     with tempfile.TemporaryDirectory() as tmp:
-        r = pipeline.run(final_dir, Path(tmp) / "out", LOGO)
+        r = pipeline.run(final_dir, Path(tmp) / "out", LOGO, archived_replay=True)
         assert yaml.safe_load((final_dir / "blind_review.yaml").read_text(encoding="utf-8"))["rounds"] == 1
         for gate in MUST_PASS + ["CONTENT_QA", "TYPESETTER_ADMISSION"]:
             assert r["gates"][gate] == "PASS", (gate, r["gates"][gate])

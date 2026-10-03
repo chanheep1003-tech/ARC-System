@@ -35,7 +35,7 @@ def run_variant(tmp: Path, name: str, items=None, blind=None):
     work.mkdir()
     (work / "items.yaml").write_text(yaml.safe_dump(items or load("items.yaml"), allow_unicode=True, sort_keys=False), encoding="utf-8")
     (work / "blind_review.yaml").write_text(yaml.safe_dump(blind or load("blind_review.yaml"), allow_unicode=True, sort_keys=False), encoding="utf-8")
-    return pipeline.run(work, work / "out")
+    return pipeline.run(work, work / "out", archived_replay=True)
 
 
 def codes(report) -> set[str]:

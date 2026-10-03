@@ -117,6 +117,10 @@ def serialize_bundle(payload: dict[str, Any], manifest: dict[str, Any]) -> tuple
         "HANDOFF_MD_FILENAME": filename,
         "STUDENT_MANUSCRIPT_SHA256": sha256_text(manuscript),
     }
+    if payload.get("exam_context") is not None:
+        if not isinstance(payload["exam_context"], dict):
+            raise SerializationError("exam_context must be a mapping")
+        front["EXAM_CONTEXT"] = payload["exam_context"]
 
     if product in {"ARC_N", "ARC_FINAL"}:
         qa_filename = str(require(payload, "qa_evidence_filename"))

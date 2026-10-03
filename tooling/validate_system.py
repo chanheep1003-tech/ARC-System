@@ -86,6 +86,7 @@ def main() -> int:
         "post_exam_calibration", "claude_handoff", "multi_model_governance",
         "generator_contract", "content_bundle_contract", "typesetter_contract",
         "pipeline_integrity_contract",
+        "exam_context_registry", "exam_context_policy", "collection_registry",
     ):
         value = runtime.get(key)
         if isinstance(value, str):
@@ -95,7 +96,35 @@ def main() -> int:
         if not (ROOT / rel).is_file():
             errors.append(f"manifest target missing: {rel}")
 
+    for key in ("exam_scope_gate", "exam_scope_smoke_test", "source_collection_gate", "source_collection_smoke_test"):
+        rel = tooling.get(key)
+        if not isinstance(rel, str) or not (ROOT / rel).is_file():
+            errors.append(f"exam/collection tooling target missing: {key}={rel!r}")
+    if runtime.get("exam_scope_gate") != "required" or runtime.get("midterm_scope_reuse") != "explicit_archived_replay_only":
+        errors.append("exam scope admission must be required and midterm reuse must be replay-only")
+    registry_rel = runtime.get("exam_context_registry")
+    if registry_rel and (ROOT / registry_rel).is_file():
+        registry = yaml.safe_load((ROOT / registry_rel).read_text(encoding="utf-8"))
+        exams = registry.get("exams", {}) if isinstance(registry, dict) else {}
+        exam = exams.get(runtime.get("active_exam_id")) if isinstance(exams, dict) else None
+        if not isinstance(exam, dict) or exam.get("status") not in {"PREPARING", "ACTIVE"} or exam.get("inherit_midterm_scope") is not False:
+            errors.append("active exam must exist, be preparing/active, and forbid inherited midterm scope")
+        elif not isinstance(exam.get("subjects"), dict) or set(exam["subjects"]) != {"KOR", "SOC", "SCI", "HIS", "AI"}:
+            errors.append("active exam must explicitly register all five subject configurations")
+    ledger_rel = runtime.get("collection_registry")
+    if ledger_rel and (ROOT / ledger_rel).is_file():
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("arc_system_collection", ROOT / "tooling/sources/source_collection_gate.py")
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        ledger = yaml.safe_load((ROOT / ledger_rel).read_text(encoding="utf-8"))
+        result = module.analyze(ledger)
+        if result["status"] != "PASS":
+            errors.extend("collection gate: " + f["code"] for f in result["findings"])
+
     required_runtime = {
+        "exam_scope_gate": "required",
+        "midterm_scope_reuse": "explicit_archived_replay_only",
         "arc_n_cover_verso_blank": "required",
         "arc_n_problem_answer_separator_blank": "required",
         "arc_n_answer_key_completeness_gate": "required",

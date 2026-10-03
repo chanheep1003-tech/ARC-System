@@ -2,10 +2,14 @@ name: ARC tooling smoke
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [dev]
   push:
     branches: [dev]
     paths:
       - 'tooling/**'
+      - 'ops/exams/**'
+      - 'ops/ARC_EXAM_CONTEXT_POLICY_*'
       - 'quality/**'
       - 'engine/common/**'
       - 'ops/ARC_GENERATOR_CONTRACT_*'
@@ -146,6 +150,14 @@ jobs:
 
       - name: Run Universal Independent Solve QA gate smoke
         run: python tooling/content_qa/test_content_qa_gate.py
+
+      - name: Run exam scope admission and current-practice pipeline regression
+        run: python tooling/exams/test_exam_scope_gate.py
+
+      - name: Run collection provenance and duplicate checks
+        run: |
+          python tooling/sources/test_source_collection_gate.py
+          python tooling/sources/source_collection_gate.py quality/source/FINAL_COLLECTION_CANDIDATES_20261003_V1.yaml
 
       - name: Run FINAL quality gate smoke
         run: python tooling/final/test_final_quality_gate.py

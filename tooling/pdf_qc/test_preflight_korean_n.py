@@ -20,7 +20,7 @@ FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 CIRCLED = "①②③④⑤"
 
 
-def build(path: Path, question_numbers, answer_numbers, separator=True, gutter_crossing=False) -> None:
+def build(path: Path, question_numbers, answer_numbers, separator=True, gutter_crossing=False, key_symbols=CIRCLED) -> None:
     doc = fitz.open()
     cover = doc.new_page(width=A4_W, height=A4_H)
     cover.insert_font(fontname="F", fontfile=FONT)
@@ -42,7 +42,7 @@ def build(path: Path, question_numbers, answer_numbers, separator=True, gutter_c
     key.insert_font(fontname="F", fontfile=FONT)
     key.insert_text((60, 80), "ANSWER KEY", fontname="F", fontsize=18)
     for i, n in enumerate(answer_numbers):
-        key.insert_text((80, 130 + i * 30), f"{n:02d}  {CIRCLED[n % 5]}", fontname="F", fontsize=12)
+        key.insert_text((80, 130 + i * 30), f"{n:02d}  {key_symbols[n % 5]}", fontname="F", fontsize=12)
     doc.save(path)
     doc.close()
 
@@ -57,6 +57,8 @@ def main() -> int:
         tmp = Path(tmp)
         cases = {
             "valid": (ids, ids, True, set()),
+            "dingbat_valid": (ids, ids, True, set()),
+            "dingbat_missing": (ids, ids[:-1], True, {"ARC_N_ANSWER_COUNT_MISMATCH"}),
             "gutter_crossing": (ids, ids, True, {"COLUMN_GUTTER_CROSSING"}),
             "question_missing": ([n for n in ids if n != 7], ids, True, {"ARC_N_QUESTION_COUNT_MISMATCH"}),
             "answer_missing": (ids, ids[:-1], True, {"ARC_N_ANSWER_COUNT_MISMATCH"}),
@@ -64,13 +66,15 @@ def main() -> int:
         }
         for name, (questions, answers, separator, expected) in cases.items():
             pdf = tmp / f"{name}.pdf"
-            build(pdf, questions, answers, separator, gutter_crossing=(name == "gutter_crossing"))
+            build(pdf, questions, answers, separator, gutter_crossing=(name == "gutter_crossing"),
+                  key_symbols="➀➁➂➃➄" if name.startswith("dingbat") else CIRCLED)
             result = preflight.analyze_pdf(pdf, "ARC_N", expected_item_count=10)
             fails = flag_types(result)
             if expected:
                 assert expected <= fails, (name, fails)
             else:
                 assert result["status"] in {"PASS", "WARN"} and not fails, (name, fails)
+        assert not preflight.ANSWER_LINE_RE.findall("01 ➅\n02 ⑥\n"), "out-of-range answers accepted"
     print("ARC PREFLIGHT KOREAN N MARKERS: PASS")
     return 0
 

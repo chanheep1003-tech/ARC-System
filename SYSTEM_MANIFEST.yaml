@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.35-dev
+  version: 1.8.36-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -15,6 +15,12 @@ source_of_truth:
   generated_pdfs: google_drive
 
 runtime:
+  active_exam_id: DONGBUK_2026_2_FINAL
+  exam_context_registry: ops/exams/EXAM_CONTEXTS_V1.yaml
+  exam_context_policy: ops/ARC_EXAM_CONTEXT_POLICY_V1.0.md
+  exam_scope_gate: required
+  collection_registry: quality/source/FINAL_COLLECTION_CANDIDATES_20261003_V1.yaml
+  midterm_scope_reuse: explicit_archived_replay_only
   active_products:
     - ARC_CORE
     - ARC_N
@@ -36,7 +42,7 @@ runtime:
   drive_write_preflight_required: true
   scheduled_drive_write_mode: ROOT_STAGING
   drive_write_default_mode: ROOT_STAGING
-  runtime_priority_policy: ops/ARC_RUNTIME_PRIORITY_POLICY_V1.4.md
+  runtime_priority_policy: ops/ARC_RUNTIME_PRIORITY_POLICY_V1.5.md
   pipeline_integrity_contract: ops/ARC_PIPELINE_INTEGRITY_CONTRACT_V1.0.md
   post_exam_calibration: ops/ARC_POST_EXAM_CALIBRATION_V1.0.md
   claude_handoff: ops/ARC_CLAUDE_HANDOFF_V1.4.md
@@ -46,9 +52,9 @@ runtime:
   generation_strategy: MCP_FIRST_MULTI_MODEL
   subject_specific_item_engine_mode: MANIFEST_REQUIRED
   multi_model_governance: ops/ARC_MULTI_MODEL_GOVERNANCE_V1.1.md
-  generator_contract: ops/ARC_GENERATOR_CONTRACT_V1.8.md
+  generator_contract: ops/ARC_GENERATOR_CONTRACT_V1.9.md
   content_bundle_contract: ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.6.md
-  typesetter_contract: ops/ARC_TYPESETTER_CONTRACT_V1.6.md
+  typesetter_contract: ops/ARC_TYPESETTER_CONTRACT_V1.7.md
   production_role_split: GENERATOR_TO_TYPESETTER_TO_PUBLISHER
   content_lock_required_before_typeset: true
   handoff_markdown_required: true
@@ -243,7 +249,7 @@ runtime:
     AI:
       products: []
       scope: CURRENT_SPRINT_DEFERRED
-  extra_resource_weights:
+  archived_midterm_extra_resource_weights:
     KOR: 60
     SOC: 20
     SCI: 12
@@ -419,6 +425,10 @@ canonicalization:
   rule: "동일 이름의 Drive 중복 ACTIVE 파일은 manifest에 지정된 canonical 파일만 사용"
 
 tooling:
+  exam_scope_gate: tooling/exams/exam_scope_gate.py
+  exam_scope_smoke_test: tooling/exams/test_exam_scope_gate.py
+  source_collection_gate: tooling/sources/source_collection_gate.py
+  source_collection_smoke_test: tooling/sources/test_source_collection_gate.py
   root: tooling/
   system_validator: tooling/validate_system.py
   promptfoo_regression: tooling/promptfoo/promptfooconfig.yaml
