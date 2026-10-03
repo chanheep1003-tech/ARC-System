@@ -58,6 +58,30 @@ class ScopeTests(unittest.TestCase):
         p=copy.deepcopy(self.profile); p["subjects"]["KOR"]["scope_status"]="PENDING"
         self.assertIn("EXAM_SCOPE_PENDING", self.codes(self.result(profile=p)))
 
+    def test_provisional_remainder_is_collection_scope_not_release(self):
+        p = copy.deepcopy(self.profile)
+        p["subjects"]["KOR"]["scope_status"] = "PROVISIONAL_REMAINDER"
+        b = copy.deepcopy(self.bundle)
+        b["exam_context"]["profile_sha256"] = gate.digest(p)
+        result = self.result(b, p)
+        self.assertIn("EXAM_SCOPE_PROVISIONAL", self.codes(result))
+        self.assertFalse(result["release_allowed"])
+
+    def test_school_scope_replaces_default_and_can_reinclude_midterm(self):
+        p = copy.deepcopy(self.profile)
+        p["provisional_scope_policy"] = {"mode": "CURRENT_SEMESTER_COURSE_MINUS_ACTUAL_MIDTERM"}
+        entry = p["subjects"]["KOR"]
+        entry["scope_evidence_refs"] = ["SCHOOL:FINAL:ANNOUNCEMENT"]
+        entry["unit_ids"] = ["U1"]
+        entry["source_ids"] = ["RAW1"]
+        old_result = self.result(profile=p)
+        self.assertIn("EXAM_PROFILE_STALE", self.codes(old_result))
+        self.assertIn("EXAM_UNIT_OUT_OF_SCOPE", self.codes(old_result))
+        b = copy.deepcopy(self.bundle)
+        b["exam_context"].update(profile_sha256=gate.digest(p), unit_ids=["U1"], source_ids=["RAW1"])
+        b["passages"] = [{"source_text_id": "RAW1"}]
+        self.assertEqual(self.result(b, p)["status"], "PASS")
+
     def test_old_unit(self):
         b=copy.deepcopy(self.bundle); b["exam_context"]["unit_ids"]=["U1"]
         self.assertIn("EXAM_UNIT_OUT_OF_SCOPE", self.codes(self.result(b)))

@@ -138,7 +138,10 @@ def analyze(bundle: dict, manifest: dict, registry: dict, *, root: Path = ROOT,
         fail("EXAM_PRODUCT_NOT_ACTIVE", "Product is not enabled for this exam subject.")
     scope_state = entry.get("scope_status")
     if scope_state not in {"CONFIRMED", "CONFIRMED_UNITS_ONLY"}:
-        fail("EXAM_SCOPE_PENDING", "Scope is pending; collect sources before production.")
+        if scope_state == "PROVISIONAL_REMAINDER":
+            fail("EXAM_SCOPE_PROVISIONAL", "Course minus actual midterm is the collection scope; publication needs verified scope IDs and evidence.")
+        else:
+            fail("EXAM_SCOPE_PENDING", "Scope is pending; collect sources before production.")
     if product == "ARC_FINAL" and scope_state != "CONFIRMED":
         fail("FINAL_SCOPE_NOT_CONFIRMED", "FINAL requires the confirmed full exam range.")
     if not identifiers(entry.get("scope_evidence_refs")):

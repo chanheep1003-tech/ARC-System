@@ -1,6 +1,11 @@
 schema_version: ARC-SOURCE-COLLECTION-V1
 target_exam_id: DONGBUK_2026_2_FINAL
 updated_at: '2026-10-03'
+collection_scope:
+  exam_registry_ref: ops/exams/EXAM_CONTEXTS_V1.yaml#exams.DONGBUK_2026_2_FINAL.provisional_scope_policy
+  status: PROVISIONAL_REMAINDER
+  target: 이번 학기 전체 학습 내용 중 실제 중간고사에 포함되지 않은 나머지 전부
+  note: 후보 자료의 현재 범위 적합성은 개별 검토한다. 학교 공지가 나오면 수집 기준을 확정 범위로 갱신한다.
 sources:
 - source_id: DRIVE-FINAL-CANDIDATE-001
   title: 2024 1학년 2학기 기말고사 문제 및 정답.pdf
