@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.38-dev
+  version: 1.8.39-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -29,7 +29,14 @@ runtime:
   default_school: 동북고등학교
   curriculum: 2022 개정 교육과정
   teacher_style_prediction: disabled
-  historical_exam_usage: difficulty_calibration_only
+  historical_exam_usage: verified_item_selection_and_variation_plus_difficulty_calibration
+  generation_source_policy: quality/ARC_GENERATION_SOURCE_POLICY_V1.0.md
+  generation_past_exam_target: 0.70
+  generation_ai_original_target: 0.30
+  generation_source_gate: required
+  generation_source_policy_drive_id: 1St-y8SASCGEW9AbGkyaIX2n-h0jXwjyX
+  generator_contract_drive_id: 1D6B5kzxczFHdSd-BFlWF4jj7o-_ePi3X
+  bank_policy_drive_id: 1lM2pPiSkGNkJNEwzTnvjqmFYceNdIKQ5
   automation_runtime: ops/ARC_AUTOMATION_RUNTIME_V1.1.md
   production_orchestrator: ops/ARC_PRODUCTION_ORCHESTRATOR_V1.1.md
   publisher_contract: ops/ARC_PUBLISHER_CONTRACT_V1.1.md
@@ -265,10 +272,10 @@ runtime:
 
 active:
   common_generation_engine:
-    path: engine/common/COMMON_GENERATION_ENGINE_V4.7_ARC.md
-    version: 4.7
-    drive_id: null
-    drive_mirror_status: pending_sync
+    path: engine/common/COMMON_GENERATION_ENGINE_V4.8_ARC.md
+    version: 4.8
+    drive_id: 1rbdUAfqMZJZDF-XOdTguMCSSgBr3AB4J
+    drive_mirror_status: byte_verified
 
   korean_item_engine:
     path: engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.4.md
@@ -346,6 +353,7 @@ active:
     korean_arc_n_difficulty_balance_gate: required
     korean_arc_n_rare_task_budget_gate: required
     universal_independent_solve: quality/ARC_UNIVERSAL_INDEPENDENT_SOLVE_GATE_V1.0.md
+    generation_source_policy: quality/ARC_GENERATION_SOURCE_POLICY_V1.0.md
     qa_evidence_schema: quality/semantic/ARC_QA_EVIDENCE_SCHEMA_V1.0.yaml
     core_editorial_naturalness: quality/ARC_CORE_EDITORIAL_NATURALNESS_V1.2.md
     core_qa_bench: quality/ARC_CORE_QA_BENCH_V1.2.md
@@ -426,6 +434,8 @@ canonicalization:
   rule: "동일 이름의 Drive 중복 ACTIVE 파일은 manifest에 지정된 canonical 파일만 사용"
 
 tooling:
+  generation_source_gate: tooling/sources/generation_source_gate.py
+  generation_source_smoke_test: tooling/sources/test_generation_source_gate.py
   exam_scope_gate: tooling/exams/exam_scope_gate.py
   exam_scope_smoke_test: tooling/exams/test_exam_scope_gate.py
   source_collection_gate: tooling/sources/source_collection_gate.py

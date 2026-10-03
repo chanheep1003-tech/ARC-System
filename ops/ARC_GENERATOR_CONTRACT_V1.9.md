@@ -27,6 +27,7 @@ manifest-selected active CONTENT_BUNDLE contract
 
 ARC_N / ARC_FINAL:
 - manifest-selected common generation engine
+- runtime.generation_source_policy (actual past exams 70% / AI originals 30%)
 - active subject MASTER
 - manifest-declared subject-specific item engine when required
 - subject GOLD
@@ -52,8 +53,9 @@ SCOPE_LOCK
 → source load
 → SCHOOL_SOURCE_PRIORITY gate
 → subject-specific item engine load when required
-→ set blueprint
-→ generation
+→ set blueprint with 70/30 counts and item provenance
+→ original selection/core preservation/verified variation + AI original design
+→ GENERATION_SOURCE_MIX gate
 → PASS A
 → independent PASS B
 → all-option verdict + semantic-duplication audit
@@ -330,3 +332,6 @@ END ARC GENERATOR CONTRACT V1.8
 
 ## EXAM CONTEXT ADMISSION — 2026-10-03
 Follow ops/ARC_EXAM_CONTEXT_POLICY_V1.0.md. Resolve runtime.active_exam_id and runtime.exam_context_registry before producing new student content. The legacy midterm scope is historical and never an implicit new-exam default. Require explicit exam_context and current profile_sha256. Collect PENDING materials without claiming current-range approval. Bind context in handoff and QA evidence; Typesetter admission checks it. FINAL requires the full confirmed range and a hash-bound subject/unit anchor. Archived replay is diagnostic-only and never release eligible. Existing one-round blind policy and human final review remain in force.
+
+## GENERATION SOURCE MIX — 2026-10-03 USER OVERRIDE
+Apply quality/ARC_GENERATION_SOURCE_POLICY_V1.0.md. Source composition is independent of CORE/ADVANCED difficulty balance. Record source_composition.policy_version=ARC-SOURCE-MIX-V1.0 and provenance for every item, including constructed responses. The current production pipeline blocks missing, unverified or miscounted past-exam provenance before source loading/typesetting. SOURCE_KIND distinguishes genuine exams from publisher items or official examples. Archived diagnostics never imply current release admission. Preserve independent-solve and current-scope contracts.

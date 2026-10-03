@@ -48,6 +48,7 @@ typesetter = _load("arc_typesetter_gateway", "tooling/typeset/typesetter_gateway
 pdf_gate = _load("arc_pdf_preflight", "tooling/pdf_qc/pdf_preflight.py")
 renderer = _load("arc_kor_renderer", "tooling/typeset/kor_renderer.py")
 exam_gate = _load("arc_exam_scope_gate", "tooling/exams/exam_scope_gate.py")
+source_mix_gate = _load("arc_generation_source_mix", "tooling/sources/generation_source_gate.py")
 
 CIRC = "①②③④⑤"
 SCHOOL_FAMILIES = {
@@ -505,6 +506,19 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
                   "answer_key_pdf": None, "governance": {"FINAL_USER_APPROVAL": "PENDING", "DRIVE_SAVE": "BLOCKED"}}
         (out_dir / "production_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
         return report
+    if not archived_replay and raw_bundle.get("product_mode") in {"ARC_N", "ARC_FINAL"}:
+        source_mix = source_mix_gate.analyze(raw_bundle)
+        if source_mix["status"] != "PASS":
+            report = {"tool": "ARC_PRODUCTION_PIPELINE_V1.1", "batch_id": raw_bundle.get("batch_id"),
+                      "status": "BLOCKED", "blocking_gates": ["GENERATION_SOURCE_MIX"],
+                      "gates": {"EXAM_SCOPE": "PASS", "GENERATION_SOURCE_MIX": "FAIL"},
+                      "source_composition": source_mix, "findings": source_mix["findings"],
+                      "pdf": None, "answer_key_pdf": None,
+                      "governance": {"FINAL_USER_APPROVAL": "PENDING", "DRIVE_SAVE": "BLOCKED"}}
+            (out_dir / "production_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+            return report
+    else:
+        source_mix = {"status": "ARCHIVED_REPLAY" if archived_replay else "NOT_APPLICABLE"}
     bundle = normalize(raw_bundle)
     blind = yaml.safe_load((bundle_dir / "blind_review.yaml").read_text(encoding="utf-8"))
     product = bundle["product_mode"]
@@ -529,6 +543,7 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
     if bundle.get("exam_context"):
         qa["exam_context"] = bundle["exam_context"]
     qa_name = f"ARC_QA_EVIDENCE_{bundle['batch_id']}.yaml"
+    qa["generation_source_composition_audit"] = source_mix
     (out_dir / qa_name).write_text(yaml.safe_dump(qa, allow_unicode=True, sort_keys=False), encoding="utf-8")
     qa_result = content_gate.analyze(qa)
 
@@ -622,6 +637,8 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
         "pdf": str(pdf_path) if pdf_path else None, "answer_key_pdf": str(key_path) if key_path else None,
         "governance": {"FINAL_USER_APPROVAL": "PENDING", "DRIVE_SAVE": "BLOCKED"},
     }
+    report["source_composition"] = source_mix
+    report["gates"]["GENERATION_SOURCE_MIX"] = source_mix["status"]
     (out_dir / "production_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     return report
 

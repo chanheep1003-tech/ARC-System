@@ -86,7 +86,7 @@ def main() -> int:
         "post_exam_calibration", "claude_handoff", "multi_model_governance",
         "generator_contract", "content_bundle_contract", "typesetter_contract",
         "pipeline_integrity_contract",
-        "exam_context_registry", "exam_context_policy", "collection_registry",
+        "exam_context_registry", "exam_context_policy", "collection_registry", "generation_source_policy",
     ):
         value = runtime.get(key)
         if isinstance(value, str):
@@ -96,10 +96,14 @@ def main() -> int:
         if not (ROOT / rel).is_file():
             errors.append(f"manifest target missing: {rel}")
 
-    for key in ("exam_scope_gate", "exam_scope_smoke_test", "source_collection_gate", "source_collection_smoke_test"):
+    for key in ("exam_scope_gate", "exam_scope_smoke_test", "source_collection_gate", "source_collection_smoke_test", "generation_source_gate", "generation_source_smoke_test"):
         rel = tooling.get(key)
         if not isinstance(rel, str) or not (ROOT / rel).is_file():
             errors.append(f"exam/collection tooling target missing: {key}={rel!r}")
+    if (runtime.get("generation_source_gate") != "required" or
+        runtime.get("generation_past_exam_target") != 0.70 or
+        runtime.get("generation_ai_original_target") != 0.30):
+        errors.append("generation source mix must enforce verified past exams 70% and AI originals 30%")
     if runtime.get("exam_scope_gate") != "required" or runtime.get("midterm_scope_reuse") != "explicit_archived_replay_only":
         errors.append("exam scope admission must be required and midterm reuse must be replay-only")
     registry_rel = runtime.get("exam_context_registry")

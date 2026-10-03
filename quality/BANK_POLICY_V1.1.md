@@ -86,7 +86,9 @@ File format does not determine PASS status; metadata and QA evidence do.
 4. LEGACY BANK structure-only reference
 5. 외부 검증자료
 
-과거 다른 교사 기출은 난이도 calibration에만 사용한다.
+2026-10-03 출처 배분 수정: 현재 범위와 정답 근거를 검증한 다른 교사·학교 기출도 선별·핵심 보존·변형 원형으로 활용한다.
+ARC N°/FINAL의 기출 기반 70%·AI 창작 30% 배분은 quality/ARC_GENERATION_SOURCE_POLICY_V1.0.md를 따른다.
+교사 스타일 예측은 계속 비활성화한다. 기출 출처만으로 BANK의 QA_STATUS=PASS를 부여하지 않는다.
 
 ## HARD RULE
 V1.1 재검수되지 않은 legacy BANK는 ARC N°/FINAL의 직접 재사용 후보가 아니다.

@@ -148,6 +148,9 @@ jobs:
       - name: Run representative SOC N E2E canary
         run: python tooling/canary/kor_n_canary.py --fixture quality/canary/SOC_N_CANARY_V1.yaml --output-dir /tmp/arc-soc-n-canary --report /tmp/arc-soc-n-canary/canary-report.json
 
+      - name: Run generation source composition and provenance fault tests
+        run: python tooling/sources/test_generation_source_gate.py
+
       - name: Run Universal Independent Solve QA gate smoke
         run: python tooling/content_qa/test_content_qa_gate.py
 

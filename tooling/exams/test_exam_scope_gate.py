@@ -189,10 +189,40 @@ class ScopeTests(unittest.TestCase):
             for name in ['templates','tooling','quality']:
                 shutil.copytree(ROOT/name,root/name,ignore=shutil.ignore_patterns('__pycache__'))
             bundle['exam_context']={'exam_id':'FINAL','profile_sha256':gate.digest(p),'unit_ids':['U2'],'source_ids':source_ids}
+            # Synthetic provenance tests admission wiring, not source truth.
+            rows=prod.source_mix_gate.item_rows(bundle)
+            past,_=prod.source_mix_gate.targets(len(rows))
+            bundle['source_composition']={'policy_version':'ARC-SOURCE-MIX-V1.0'}
+            bundle['item_count']=len(rows)
+            for i,item in enumerate(rows):
+                if i<past:
+                    item['provenance']={'mode':'VERIFIED_VARIANT','source_kind':'SCHOOL_EXAM',
+                        'source_id':'SYNTHETIC-TEST-EXAM','source_item_number':str(i+1),
+                        'source_locator':f'TEST:p{i+1}','source_answer_ref':'TEST:KEY',
+                        'origin_family_id':f'TEST-ORIGIN-{i+1}','source_review_status':'CONTENT_VERIFIED',
+                        'core_preserved':'test conditions','modification_log':['synthetic admission fixture']}
+                else:
+                    item['provenance']={'mode':'AI_ORIGINAL','school_scope_refs':['SCHOOL:RANGE:1'],
+                        'design_purpose':'synthetic current-scope admission fixture'}
+            missing=copy.deepcopy(bundle);missing.pop('source_composition')
+            (root/'items.yaml').write_text(yaml.safe_dump(missing,allow_unicode=True))
+            blocked=prod.run(root,root/'missing-source-out',manifest_path=root/'SYSTEM_MANIFEST.yaml')
+            self.assertEqual(blocked['blocking_gates'],['GENERATION_SOURCE_MIX'])
+            self.assertIsNone(blocked['pdf'])
+            self.assertFalse(list((root/'missing-source-out').glob('*.pdf')))
+            unverified=copy.deepcopy(bundle)
+            prod.source_mix_gate.item_rows(unverified)[0]['provenance']['source_review_status']='HEADER_REVIEWED'
+            (root/'items.yaml').write_text(yaml.safe_dump(unverified,allow_unicode=True))
+            blocked=prod.run(root,root/'unverified-source-out',manifest_path=root/'SYSTEM_MANIFEST.yaml')
+            self.assertIn('SOURCE_UNVERIFIED',{f['code'] for f in blocked['findings']})
+            self.assertIsNone(blocked['pdf'])
             (root/'items.yaml').write_text(yaml.safe_dump(bundle,allow_unicode=True))
             (root/'blind_review.yaml').write_bytes((fixture/'blind_review.yaml').read_bytes())
             r=prod.run(root,root/'out',manifest_path=root/'SYSTEM_MANIFEST.yaml')
             self.assertEqual(r['gates']['EXAM_SCOPE'],'PASS')
+            self.assertEqual(r['gates']['GENERATION_SOURCE_MIX'],'PASS')
+            saved_qa=yaml.safe_load(next((root/'out').glob('ARC_QA_EVIDENCE_*.yaml')).read_text())
+            self.assertEqual(saved_qa['generation_source_composition_audit']['status'],'PASS')
             self.assertEqual(r['gates']['TYPESETTER_ADMISSION'],'PASS')
             self.assertTrue(Path(r['pdf']).is_file())
             handoff=next((root/'out').glob('*_READY.md'))
