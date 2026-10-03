@@ -1,0 +1,23 @@
+﻿searched_at,query,site_or_collection,new_unique_source_count,new_relevant_item_count,result_status,blocker,next_action
+2026-10-03,"EBSi 기출 페이지 접속(curl, 네트워크 허용 전)",ebsi.co.kr,0,0,FAILED,샌드박스 네트워크 정책 403(CONNECT tunnel failed),사용자가 네트워크 접근을 전체 허용한 뒤 재시도(완료)
+2026-10-03,WebSearch: 고1 통합과학 전국연합학력평가 기출 PDF 평가원,web search,0,0,METADATA_ONLY,"검색 결과는 교보문고 전자책·언론 기사 링크뿐, 원문 PDF 미제공",EBSi 직접 목록 API로 전환
+2026-10-03,EBSi previousPaperList D100 통합과학(140073)×2006~2026×전 월,ebsi.co.kr,35,,OK,,해설 PDF 자동 색인
+2026-10-03,EBSi previousPaperList D100 통합사회(140072),ebsi.co.kr,35,,OK,,
+2026-10-03,EBSi D100/D200/D300 이전과목(sciPast/socPast),ebsi.co.kr,,,OK,고2·고3 이전과목 목록에는 물리Ⅰ·물리Ⅱ·사회 선택과목 위주(화학 등 일부 누락되어 현행 과목 ID 별도 조회),현행 과목 ID로 재조회(아래)
+2026-10-03,EBSi D200 현행 과목(통합사회·통합과학·물리학Ⅰ·화학Ⅰ·생명과학Ⅰ·지구과학Ⅰ·경제·정치와 법·사회문화·지리·윤리) 개별 조회,ebsi.co.kr,,,OK,,
+2026-10-03,EBSi D300 현행 과목(물리학Ⅰ/Ⅱ·화학Ⅰ/Ⅱ·생명과학Ⅰ/Ⅱ·지구과학Ⅰ/Ⅱ·경제·정치와 법·사회문화·지리·윤리) 개별 조회,ebsi.co.kr,,,OK,,
+2026-10-03,한국사·한국근·현대사·동아시아사·세계사 항목,ebsi.co.kr,0,0,EXCLUDED(478건),이번 담당(SCI/SOC) 범위 밖(역사는 별도 수집자),역사 담당 수집자에게 이관
+2026-10-03,EBSi 2022 개정 고2·고3 선택과목(물리학 등 신규 명칭) 목록,ebsi.co.kr,0,0,NOT_FOUND,2026-10 현재 목록에 2022 개정 선택과목 시험 미게시,게시되면 재조회
+2026-10-03,동북고 공개 자료실(학교 기출) 검색,dongbuk.sen.hs.kr 등,0,0,NOT_SEARCHED,이번 배치에서 미착수,"다음 배치: 학교알리미/학교 홈페이지 자료실, 서울시교육청 공개 자료"
+2026-10-03,"시도교육청 공개 기출·평가 자료실, 공식 평가 예시",sen.go.kr; kice.re.kr,0,0,NOT_SEARCHED,이번 배치에서 미착수,다음 배치
+2026-10-03,통합과학2 목차(미래엔) / 통합사회2 목차(천재) 검색,WebSearch,0,0,PARTIAL,출판사별 상세 목차 쪽수 못 찾음. 공식 내용 요소·성취기준은 확인,교과서 목차 사진/PDF를 사용자가 올려주면 쪽수 기준으로 SCOPE_MAP 확정
+2026-10-03,2028 수능 통합과학 통합사회 예시문항 KICE,WebSearch + suneung.re.kr 기출문제 게시판(boardID=1500237),SCI 3행/SOC 3행,SCI 25+12/SOC 25+14,OK,"원 KICE 안내서(files-scs.pstatic.net)는 연결 재설정으로 실패, kcue·메가스터디 게시본으로 대체",KICE kice.re.kr 첨부 직접 경로 재시도
+2026-10-03,통합과학·통합사회 문항 자료집 경기도교육청,WebSearch + files-scs.pstatic.net / goe.go.kr,SCI 3행/SOC 2행,SCI 51/SOC 49,OK,pstatic은 curl --http1.1에서만 성공,서울·인천·부산·대구 등 다른 교육청 동일 유형 자료 탐색
+2026-10-03,통합과학 통합사회 문항 평가 자료집 서울 인천 부산 대구 등 교육청(allowed_domains 지정),WebSearch,,,NOT_FOUND,"검색 결과에 해당 교육청의 문항 자료집 PDF 없음(최소 성취수준 자료, 서·논술형 평가도구 등 간접 자료만)","각 교육청 사이트 내부 검색(sen.go.kr, pen.go.kr은 연결 불가)"
+2026-10-03,"2022 개정 최소 성취수준 보장 지도 자료 통합과학1,2",ice.go.kr / goe.go.kr,SCI 2행,SCI 2(참고 기록),OK,문항 은행이 아님. 통합사회 편은 아직 못 찾음,"통합사회1,2 최소 성취수준 자료 탐색"
+2026-10-03,2022 개정 과학과 교육과정(별책 9) PDF,vivasam 게시본 URL,,,FAILED,"curl 연결 실패(000), WebFetch/다른 호스트 미확인",ncic.go.kr 등 대체 호스트 탐색
+2026-10-03,2022 개정 사회과 교육과정(별책 7) PDF,textbook.gimmyoung.com,SOC 1행,SOC 5(참고 기록),OK,"316쪽 PDF 확보, 통합사회2 성취기준 p.122~127 확인",
+2026-10-03,동북고 통합과학/통합사회 기말 기출,WebSearch,,,NOT_FOUND,동북고 시험 원문 공개 자료 없음(학원 강사 분석 기사만),학교 알리미·동북고 홈페이지 직접 접속 가능 여부 확인
+2026-10-03,학교 정기고사 문제 및 답안 통합사회/통합과학(allowed_domains hs.kr 등),WebSearch,SCI 1행/SOC 2행,,BLOCKED,"대광고(home.dgh.hs.kr)는 서버 인증서 키 강도 부족 SSL 오류와 egress 차단, 세화여고(sehwa-gs.hs.kr)·족보닷컴·내신코치는 연결 종료. TLS 검증 해제·우회는 하지 않음","접속 가능한 다른 학교 게시판 탐색, 사용자 보유 시험지 직접 업로드"
+2026-10-03,"학교 시험지 공유 사이트(족보닷컴, 내신코치) 무료 기출",WebSearch,,,BLOCKED,"족보닷컴은 2023-12-27부터 학교별 기출 다운로드 종료(검색 설명), 무료 열람 뷰어만 제공. 내신코치 연결 종료",수동 열람 가능한 경우 사용자 직접 확인
+2026-10-03,EBSi 고2·고3 2022 개정 선택과목 신규 명칭 시험,ebsi.co.kr,0,0,NOT_FOUND,2026-10 기준 미게시,게시되면 재조회
