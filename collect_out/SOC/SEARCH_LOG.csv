@@ -1,0 +1,12 @@
+﻿searched_at,query,site_or_collection,new_unique_source_count,new_relevant_item_count,result_status,blocker,next_action
+2026-10-03,"EBSi 기출 페이지 접속(curl, 네트워크 허용 전)",ebsi.co.kr,0,0,FAILED,샌드박스 네트워크 정책 403(CONNECT tunnel failed),사용자가 네트워크 접근을 전체 허용한 뒤 재시도(완료)
+2026-10-03,WebSearch: 고1 통합과학 전국연합학력평가 기출 PDF 평가원,web search,0,0,METADATA_ONLY,"검색 결과는 교보문고 전자책·언론 기사 링크뿐, 원문 PDF 미제공",EBSi 직접 목록 API로 전환
+2026-10-03,EBSi previousPaperList D100 통합과학(140073)×2006~2026×전 월,ebsi.co.kr,35,,OK,,해설 PDF 자동 색인
+2026-10-03,EBSi previousPaperList D100 통합사회(140072),ebsi.co.kr,35,,OK,,
+2026-10-03,EBSi D100/D200/D300 이전과목(sciPast/socPast),ebsi.co.kr,,,OK,고2·고3 이전과목 목록에는 물리Ⅰ·물리Ⅱ·사회 선택과목 위주(화학 등 일부 누락되어 현행 과목 ID 별도 조회),현행 과목 ID로 재조회(아래)
+2026-10-03,EBSi D200 현행 과목(통합사회·통합과학·물리학Ⅰ·화학Ⅰ·생명과학Ⅰ·지구과학Ⅰ·경제·정치와 법·사회문화·지리·윤리) 개별 조회,ebsi.co.kr,,,OK,,
+2026-10-03,EBSi D300 현행 과목(물리학Ⅰ/Ⅱ·화학Ⅰ/Ⅱ·생명과학Ⅰ/Ⅱ·지구과학Ⅰ/Ⅱ·경제·정치와 법·사회문화·지리·윤리) 개별 조회,ebsi.co.kr,,,OK,,
+2026-10-03,한국사·한국근·현대사·동아시아사·세계사 항목,ebsi.co.kr,0,0,EXCLUDED(478건),이번 담당(SCI/SOC) 범위 밖(역사는 별도 수집자),역사 담당 수집자에게 이관
+2026-10-03,EBSi 2022 개정 고2·고3 선택과목(물리학 등 신규 명칭) 목록,ebsi.co.kr,0,0,NOT_FOUND,2026-10 현재 목록에 2022 개정 선택과목 시험 미게시,게시되면 재조회
+2026-10-03,동북고 공개 자료실(학교 기출) 검색,dongbuk.sen.hs.kr 등,0,0,NOT_SEARCHED,이번 배치에서 미착수,"다음 배치: 학교알리미/학교 홈페이지 자료실, 서울시교육청 공개 자료"
+2026-10-03,"시도교육청 공개 기출·평가 자료실, 공식 평가 예시",sen.go.kr; kice.re.kr,0,0,NOT_SEARCHED,이번 배치에서 미착수,다음 배치
