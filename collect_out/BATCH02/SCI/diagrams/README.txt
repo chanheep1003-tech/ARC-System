@@ -1,0 +1,1 @@
+원문 도식 발췌 이미지는 만들지 않았다. 도식 위치는 ITEMS.csv의 asset_locator(원본 PDF#page)를 참조.
