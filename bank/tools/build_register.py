@@ -22,8 +22,8 @@ ITEM_COLUMNS = [
     'scope_status', 'range_confirmed', 'origin_level', 'source_id', 'source_type', 'provider', 'source_title',
     'exam_year', 'grade', 'origin_subject', 'source_locator', 'question_url', 'explanation_url', 'body_access',
     'body_reviewed', 'question_form', 'asset_type', 'asset_type_basis', 'visual_required', 'answer', 'answer_source',
-    'answer_check', 'difficulty', 'difficulty_method', 'blocked_knowledge_tag', 'cluster_id', 'dup_role',
-    'reuse_mode', 'status', 'notes',
+    'answer_check', 'difficulty', 'difficulty_score', 'difficulty_method', 'solvable_with_current_knowledge', 'blocked_knowledge_tag',
+    'cluster_id', 'dup_role', 'reuse_mode', 'status', 'review_flags', 'review_pass', 'notes',
 ]
 CLUSTER_COLUMNS = ['cluster_id', 'subject', 'concept_id', 'basis', 'size', 'canonical_item_id', 'member_item_ids', 'key_sample']
 
@@ -364,7 +364,7 @@ def cluster_items(items):
         return re.sub(r'[\s\.\,·ㆍ\-\(\)\[\]]', '', s)
 
     def rank(it):
-        return (0 if it['reuse_mode'] == 'DIRECT_OK' else 1, 0 if it['answer'] else 1,
+        return (0 if it['status'].startswith('READY') else 1, 0 if it['reuse_mode'] == 'DIRECT_OK' else 1, 0 if it['answer'] else 1,
                 0 if it['body_access'] == 'DRIVE_ORIGINAL' else 1, -int(it['exam_year'] or 0), it['legacy_item_id'])
 
     groups = defaultdict(list)
@@ -435,6 +435,11 @@ def main():
             src.setdefault(r['source_id'], r)
     items = build_judge_items(judge, src, K) + build_gaya_items(gaya, K)
     assign_ids(items)
+    review_dir = os.path.join(a.bank_dir, 'review')
+    if os.path.isdir(review_dir):
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import apply_review
+        print('review applied', apply_review.apply(items, review_dir, K.concepts))
     clusters = cluster_items(items)
     for subj in ('SCI', 'SOC'):
         write_csv(os.path.join(a.bank_dir, 'items_%s.csv' % subj), ITEM_COLUMNS, [i for i in items if i['subject'] == subj])

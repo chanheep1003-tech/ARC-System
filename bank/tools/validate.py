@@ -96,11 +96,18 @@ def main():
             err('%s: answer 와 answer_source 불일치' % iid)
         # 하드 규칙
         st, sc = i['status'], i['scope_status']
-        if st == 'READY':
+        if st in ('READY', 'READY_PENDING_RANGE'):
             need = [i['body_reviewed'] == 'Y', i['answer_source'] in ('OFFICIAL_KEY', 'SOLVED_2PASS'),
-                    sc in ('IN_SCOPE', 'EXTENDED_SOLVABLE'), i['range_confirmed'] == 'Y', i['difficulty'] != 'UNRATED']
+                    sc in ('IN_SCOPE', 'EXTENDED_SOLVABLE'), i['range_confirmed'] == ('Y' if st == 'READY' else 'N'),
+                    i['difficulty'] != 'UNRATED', i['solvable_with_current_knowledge'] in ('Y', 'NA')]
             if not all(need):
-                err('%s: READY 조건 미충족 %s' % (iid, need))
+                err('%s: %s 조건 미충족 %s' % (iid, st, need))
+        if i['difficulty'] != 'UNRATED':
+            band = {'D1': (0, 24), 'D2': (25, 44), 'D3': (45, 64), 'D4': (65, 79), 'D5': (80, 100)}[i['difficulty']]
+            if not (i['difficulty_score'].isdigit() and band[0] <= int(i['difficulty_score']) <= band[1]):
+                err('%s: difficulty_score %r 가 %s 구간과 불일치' % (iid, i['difficulty_score'], i['difficulty']))
+        elif i['difficulty_score']:
+            err('%s: UNRATED 인데 difficulty_score 가 있음' % iid)
         if sc in ('OUT_OF_SCOPE', 'BLOCKED_USER_X') and st != 'EXCLUDED':
             err('%s: %s 인데 status=%s' % (iid, sc, st))
         if sc in ('ADVANCED_BLOCKED', 'NEEDS_SCOPE_CHECK') and st not in ('HOLD', 'EXCLUDED'):
@@ -141,7 +148,7 @@ def main():
             err('%s: clusters 파일에 없는 cluster_id' % cid)
 
     print('items', len(all_items), dict(Counter(i['subject'] for i in all_items)))
-    print('READY', sum(1 for i in all_items if i['status'] == 'READY'), '| clusters', len(cl_rows))
+    print('READY', sum(1 for i in all_items if i['status'] == 'READY'), '| READY_PENDING_RANGE', sum(1 for i in all_items if i['status'] == 'READY_PENDING_RANGE'), '| clusters', len(cl_rows))
     if errors:
         print('FAIL', len(errors), '건 (최대 60건 표시)')
         for e in errors:

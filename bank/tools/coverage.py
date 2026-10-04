@@ -16,7 +16,7 @@ from collections import Counter
 BANK = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 TARGET_PROTOTYPES = 6      # 개념당 후보 원형(묶음) 수 — 두 세트 이상을 중복 없이 구성할 수 있다는 가정
 LOW_PROTOTYPES = 3         # 이 미만이면 CRITICAL
-POOL_STATUS = ('NEEDS_BODY_REVIEW', 'NEEDS_ANSWER')
+POOL_STATUS = ('READY', 'READY_PENDING_RANGE', 'NEEDS_BODY_REVIEW', 'NEEDS_ANSWER')
 ACCESSIBLE = ('DRIVE_ORIGINAL', 'EXTERNAL_PDF_REACHABLE', 'SCHOOL_SEPARATED_PDF')
 
 
@@ -58,7 +58,7 @@ def render(subj, items, concepts):
          '**엄격**은 고2·3 선택과목 문항을 뺀 풀(현재 교육과정 문항·학교 시험지), **확장**은 그 문항을 포함한 풀이다. 확장은 "현재 지식으로 풀리는가"를 아직 검증하지 못해 낙관적이다.', '']
     L += ['## 1. 전체 현황', '', '|구분|건수|', '|---|---:|']
     L.append('|레지스트리 전체|%d|' % len(items))
-    for st in ('READY', 'NEEDS_BODY_REVIEW', 'NEEDS_ANSWER', 'HOLD', 'EXCLUDED'):
+    for st in ('READY', 'READY_PENDING_RANGE', 'NEEDS_BODY_REVIEW', 'NEEDS_ANSWER', 'HOLD', 'EXCLUDED'):
         L.append('|status=%s|%d|' % (st, sum(1 for i in items if i['status'] == st)))
     L += ['', '후보 풀 %d건 중 본문을 지금 도구로 열 수 있는 것: **%d건** (`DRIVE_ORIGINAL`·`EXTERNAL_PDF_REACHABLE`·`SCHOOL_SEPARATED_PDF`).' %
           (len(pool), sum(1 for i in pool if i['body_access'] in ACCESSIBLE)), '']

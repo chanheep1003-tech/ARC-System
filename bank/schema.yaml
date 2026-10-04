@@ -1,4 +1,4 @@
-# ARC REFERENCE ITEM BANK schema V0.2
+# ARC REFERENCE ITEM BANK schema V0.3
 # 대상: 통합과학2(SCI), 통합사회2(SOC). 문항 본문·선지·자료 원문은 저장하지 않는다(메타데이터 전용).
 version: "0.2"
 date: 2026-10-04
@@ -24,7 +24,7 @@ items_columns:
   phase:              "주 개념의 트랙: MIDTERM | FINAL_REMAINDER | (범위 밖은 빈칸)"
   concept_id:         "concepts.csv의 주 개념 (범위 밖·미매핑은 빈칸)"
   concept_secondary:  "보조 개념 (; 구분)"
-  mapping_basis:      [CODE_DIRECT, CODE_UNIT_KEYWORD_CONCEPT, KEYWORD_COLLECTOR_UNIT, TOPIC_MANUAL, NONE]
+  mapping_basis:      [CODE_DIRECT, CODE_UNIT_KEYWORD_CONCEPT, KEYWORD_COLLECTOR_UNIT, TOPIC_MANUAL, REVIEW_REASSIGNED, NONE]
   scope_codes:        "수집 원본 scope_id (; 구분)"
   scope_status:       [IN_SCOPE, EXTENDED_CANDIDATE, EXTENDED_SOLVABLE, ADVANCED_BLOCKED, NEEDS_SCOPE_CHECK, OUT_OF_SCOPE, BLOCKED_USER_X]
   range_confirmed:    "주 개념 기준 Y/N (N이면 READY 불가)"
@@ -43,24 +43,30 @@ items_columns:
   body_reviewed:      "Y/N — 사람 또는 독립 검토로 본문을 실제로 본 경우만 Y"
   question_form:      [선택형, 서술형, UNKNOWN]
   asset_type:         [none, passage, table, graph, particle_model, experiment_diagram, map, flowchart, composite, unknown]
-  asset_type_basis:   [VISUAL_REQUIRED_FIELD, KEYWORD_GUESS, NONE]
+  asset_type_basis:   [VISUAL_REQUIRED_FIELD, KEYWORD_GUESS, REVIEW, NONE]
   visual_required:    [YES, YES_LIKELY, NO, UNKNOWN]
   answer:             "선택형 1~5, 서술형·미확보는 빈칸"
   answer_source:      [OFFICIAL_KEY, SOLVED_2PASS, NONE]
   answer_check:       "수집 원본의 answer_verification / answer_check 보존"
   difficulty:         [D1, D2, D3, D4, D5, UNRATED]
-  difficulty_method:  [ANCHOR, STRUCTURAL, PUBLISHER_LABEL, UNRATED]
+  difficulty_score:   "ARC_DIFFICULTY_ENGINE 구조 점수 A~F 합(0~100). 미평가는 빈칸. D등급 구간: D1 0-24, D2 25-44, D3 45-64, D4 65-79, D5 80-100"
+  difficulty_method:  [ANCHOR, STRUCTURAL, PUBLISHER_LABEL, UNRATED]   # STRUCTURAL = AI 구조 점수(R5). 앵커 비교는 앵커 선정 후
+  solvable_with_current_knowledge: [Y, N, UNSURE, NA]   # 통합과학/통합사회 1·2 + 중학교 지식만으로 풀리는가 (본문 검토 결과)
   blocked_knowledge_tag: "blocked_knowledge.csv 태그 또는 ORIGIN_II"
   cluster_id:         "clusters_*.csv"
   dup_role:           [CANONICAL, VARIANT, DUPLICATE, UNCLUSTERED]
   reuse_mode:         [DIRECT_OK, ADAPT_ONLY, CALIBRATION_ONLY]
-  status:             [READY, NEEDS_BODY_REVIEW, NEEDS_ANSWER, HOLD, EXCLUDED]
+  status:             [READY, READY_PENDING_RANGE, NEEDS_BODY_REVIEW, NEEDS_ANSWER, HOLD, EXCLUDED]   # READY_PENDING_RANGE = 범위 확정만 기다림
+  review_flags:       "검토 중 발견한 문제 플래그(; 구분): ANSWER_AMBIGUOUS, KEY_DISPUTE 등"
+  review_pass:        "P1 | P1+P2 — 정답을 독립 풀이한 횟수"
   notes:              "판정 근거·출처 한계"
 
 clusters_columns: [cluster_id, subject, concept_id, basis, size, canonical_item_id, member_item_ids, key_sample]
 
 hard_rules:
   - "status=READY 이면 body_reviewed=Y, answer_source in (OFFICIAL_KEY, SOLVED_2PASS), scope_status in (IN_SCOPE, EXTENDED_SOLVABLE), range_confirmed=Y, difficulty!=UNRATED"
+  - "status=READY_PENDING_RANGE 는 READY 와 같은 조건이되 range_confirmed=N"
+  - "difficulty!=UNRATED 이면 difficulty_score 가 구간과 일치"
   - "scope_status in (OUT_OF_SCOPE, BLOCKED_USER_X) 이면 status=EXCLUDED"
   - "scope_status in (ADVANCED_BLOCKED, NEEDS_SCOPE_CHECK) 이면 status in (HOLD, EXCLUDED)"
   - "difficulty_method=UNRATED 이면 difficulty=UNRATED"
