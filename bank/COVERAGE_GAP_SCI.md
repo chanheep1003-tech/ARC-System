@@ -2,7 +2,7 @@
 
 > `bank/tools/coverage.py` 가 생성한 파일이다. 직접 고치지 말고 레지스트리를 고친 뒤 재생성한다.
 
-**읽는 법.** 본문 검토가 끝난 문항(READY)은 현재 **25건**이다. 아래 숫자는 모두 "후보 풀"(본문·정답 미검토, HOLD·EXCLUDED 제외) 기준의 **잠정치**다. 판정 기준(가정): 개념당 후보 원형 ≥ 6이면 OK, 3~5이면 LOW, < 3이면 CRITICAL.
+**읽는 법.** 본문 검토가 끝난 문항(READY)은 현재 **26건**이다. 아래 숫자는 모두 "후보 풀"(본문·정답 미검토, HOLD·EXCLUDED 제외) 기준의 **잠정치**다. 판정 기준(가정): 개념당 후보 원형 ≥ 6이면 OK, 3~5이면 LOW, < 3이면 CRITICAL.
 **엄격**은 고2·3 선택과목 문항을 뺀 풀(현재 교육과정 문항·학교 시험지), **확장**은 그 문항을 포함한 풀이다. 확장은 "현재 지식으로 풀리는가"를 아직 검증하지 못해 낙관적이다.
 
 ## 1. 전체 현황
@@ -10,14 +10,14 @@
 |구분|건수|
 |---|---:|
 |레지스트리 전체|553|
-|status=READY|25|
-|status=READY_PENDING_RANGE|73|
-|status=NEEDS_BODY_REVIEW|64|
+|status=READY|26|
+|status=READY_PENDING_RANGE|78|
+|status=NEEDS_BODY_REVIEW|53|
 |status=NEEDS_ANSWER|67|
-|status=HOLD|254|
-|status=EXCLUDED|70|
+|status=HOLD|258|
+|status=EXCLUDED|71|
 
-후보 풀 229건 중 본문을 지금 도구로 열 수 있는 것: **207건** (`DRIVE_ORIGINAL`·`EXTERNAL_PDF_REACHABLE`·`SCHOOL_SEPARATED_PDF`).
+후보 풀 224건 중 본문을 지금 도구로 열 수 있는 것: **202건** (`DRIVE_ORIGINAL`·`EXTERNAL_PDF_REACHABLE`·`SCHOOL_SEPARATED_PDF`).
 
 ## 2. 중간 트랙 (SCOPE_LEDGER, 범위 확정)
 
@@ -48,12 +48,12 @@
 
 |개념|우선순위|전체|후보 풀|원형(엄격)|원형(확장)|풀 중 정답 보유|HOLD|판정(엄격)|판정(확장)|
 |---|---|---:|---:|---:|---:|---:|---:|---|---|
-|SCI-F-ACIDBASE|P|156|76|14|59|40|79|OK|OK|
+|SCI-F-ACIDBASE|P|156|74|14|57|38|81|OK|OK|
 |SCI-F-HEAT_EXO|P|34|10|3|10|8|14|LOW|OK|
 |SCI-F-ECOSYSTEM|P|67|5|5|5|4|61|LOW|LOW|
-|SCI-F-FOODWEB|P|20|4|2|4|4|16|CRITICAL|LOW|
+|SCI-F-FOODWEB|P|21|5|2|5|4|16|CRITICAL|LOW|
 |SCI-F-SOLAR_ENERGY|P|17|8|1|8|8|7|CRITICAL|OK|
-|SCI-F-ENERGY_RES|P|92|58|8|48|49|16|OK|OK|
+|SCI-F-ENERGY_RES|P|91|54|8|45|46|18|OK|OK|
 |SCI-F-INFECTION|P|3|1|1|1|0|2|CRITICAL|CRITICAL|
 |SCI-F-BIGDATA_AI|P|4|2|2|2|2|2|CRITICAL|CRITICAL|
 |SCI-F-AI_ROBOT_IOT|P|2|2|2|2|1|0|CRITICAL|CRITICAL|
@@ -68,40 +68,40 @@
 
 |origin_level|건수|
 |---|---:|
-|UPPER|147|
+|UPPER|142|
 |CURRENT|39|
 |SCHOOL|22|
 |LEGACY_G1|21|
 
 |reuse_mode|건수|
 |---|---:|
-|ADAPT_ONLY|168|
+|ADAPT_ONLY|163|
 |DIRECT_OK|39|
 |CALIBRATION_ONLY|22|
 
 |asset_type (기준)|건수|
 |---|---:|
-|unknown (NONE)|88|
-|table (REVIEW)|20|
-|passage (REVIEW)|19|
-|composite (REVIEW)|19|
-|experiment_diagram (REVIEW)|18|
+|unknown (NONE)|78|
+|table (REVIEW)|22|
+|passage (REVIEW)|21|
+|composite (REVIEW)|20|
+|experiment_diagram (REVIEW)|19|
 |graph (REVIEW)|14|
 |particle_model (REVIEW)|12|
-|flowchart (REVIEW)|11|
+|flowchart (REVIEW)|12|
 |none (REVIEW)|10|
-|experiment_diagram (KEYWORD_GUESS)|6|
 |graph (KEYWORD_GUESS)|6|
-|unknown (VISUAL_REQUIRED_FIELD)|5|
+|experiment_diagram (KEYWORD_GUESS)|5|
+|unknown (VISUAL_REQUIRED_FIELD)|4|
 |map (REVIEW)|1|
 
 |question_form|건수|
 |---|---:|
-|선택형|176|
-|UNKNOWN|41|
+|선택형|180|
+|UNKNOWN|32|
 |서술형|12|
 
-난도(D1~D5) 분포는 **산출 불가**: 후보 풀 229건 모두 `UNRATED`다. 본문 검토(Phase 2) 후에 채운다.
+난도(D1~D5) 분포는 **산출 불가**: 후보 풀 224건 모두 `UNRATED`다. 본문 검토(Phase 2) 후에 채운다.
 
 ## 4. 해석상 한계
 
