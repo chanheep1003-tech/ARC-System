@@ -2,7 +2,7 @@
 
 > `bank/tools/coverage.py` 가 생성한 파일이다. 직접 고치지 말고 레지스트리를 고친 뒤 재생성한다.
 
-**읽는 법.** 본문 검토가 끝난 문항(READY)은 현재 **14건**이다. 아래 숫자는 모두 "후보 풀"(본문·정답 미검토, HOLD·EXCLUDED 제외) 기준의 **잠정치**다. 판정 기준(가정): 개념당 후보 원형 ≥ 6이면 OK, 3~5이면 LOW, < 3이면 CRITICAL.
+**읽는 법.** 본문 검토가 끝난 문항(READY)은 현재 **40건**이다. 아래 숫자는 모두 "후보 풀"(본문·정답 미검토, HOLD·EXCLUDED 제외) 기준의 **잠정치**다. 판정 기준(가정): 개념당 후보 원형 ≥ 6이면 OK, 3~5이면 LOW, < 3이면 CRITICAL.
 **엄격**은 고2·3 선택과목 문항을 뺀 풀(현재 교육과정 문항·학교 시험지), **확장**은 그 문항을 포함한 풀이다. 확장은 "현재 지식으로 풀리는가"를 아직 검증하지 못해 낙관적이다.
 
 ## 1. 전체 현황
@@ -10,26 +10,26 @@
 |구분|건수|
 |---|---:|
 |레지스트리 전체|1527|
-|status=READY|14|
-|status=READY_PENDING_RANGE|119|
-|status=NEEDS_BODY_REVIEW|763|
-|status=NEEDS_ANSWER|104|
-|status=HOLD|446|
-|status=EXCLUDED|81|
+|status=READY|40|
+|status=READY_PENDING_RANGE|311|
+|status=NEEDS_BODY_REVIEW|427|
+|status=NEEDS_ANSWER|101|
+|status=HOLD|531|
+|status=EXCLUDED|117|
 
-후보 풀 1000건 중 본문을 지금 도구로 열 수 있는 것: **981건** (`DRIVE_ORIGINAL`·`EXTERNAL_PDF_REACHABLE`·`SCHOOL_SEPARATED_PDF`).
+후보 풀 879건 중 본문을 지금 도구로 열 수 있는 것: **860건** (`DRIVE_ORIGINAL`·`EXTERNAL_PDF_REACHABLE`·`SCHOOL_SEPARATED_PDF`).
 
 ## 2. 중간 트랙 (SCOPE_LEDGER, 범위 확정)
 
 |개념|우선순위|전체|후보 풀|원형(엄격)|원형(확장)|풀 중 정답 보유|HOLD|판정(엄격)|판정(확장)|
 |---|---|---:|---:|---:|---:|---:|---:|---|---|
-|SOC-A-VIEW|R|50|43|24|33|32|6|OK|OK|
+|SOC-A-VIEW|R|48|40|25|31|29|7|OK|OK|
 |SOC-A-THOUGHT_MAP|R|0|0|0|0|0|0|CRITICAL|CRITICAL|
-|SOC-C-RIGHTS|R|75|65|54|56|38|9|OK|OK|
-|SOC-C-REMEDY|R|6|4|4|4|2|2|LOW|LOW|
+|SOC-C-RIGHTS|R|74|62|51|53|35|10|OK|OK|
+|SOC-C-REMEDY|R|7|4|4|4|2|3|LOW|LOW|
 |SOC-C-COLLISION|R|3|3|3|3|2|0|LOW|LOW|
 |SOC-B-GLOBAL|R|14|8|7|8|6|4|OK|OK|
-|SOC-B-POP|S|11|8|8|8|8|3|OK|OK|
+|SOC-B-POP|S|12|9|8|9|9|3|OK|OK|
 
 부족 개념(엄격 기준, 적은 순): SOC-A-THOUGHT_MAP(0, CRITICAL), SOC-C-COLLISION(3, LOW), SOC-C-REMEDY(4, LOW)
 
@@ -38,18 +38,18 @@
 |개념|우선순위|전체|후보 풀|원형(엄격)|원형(확장)|풀 중 정답 보유|HOLD|판정(엄격)|판정(확장)|
 |---|---|---:|---:|---:|---:|---:|---:|---|---|
 |SOC-F-MINORITY|P|4|0|0|0|0|4|CRITICAL|CRITICAL|
-|SOC-F-INEQUALITY|P|204|10|3|4|10|194|LOW|LOW|
-|SOC-F-CAPITALISM|P|8|7|4|7|6|0|LOW|OK|
-|SOC-F-MARKET|P|376|307|8|199|292|59|OK|OK|
-|SOC-F-FINANCE|P|103|87|5|63|84|16|LOW|OK|
-|SOC-F-TRADE_SD|P|148|107|6|76|103|39|OK|OK|
-|SOC-F-PEACE|P|65|50|10|44|45|13|OK|OK|
-|SOC-F-KOREA_EASTASIA|P|5|3|3|3|2|2|LOW|LOW|
-|SOC-F-ENERGY_CLIMATE|P|352|284|27|191|252|53|OK|OK|
+|SOC-F-INEQUALITY|P|205|10|3|4|10|195|LOW|LOW|
+|SOC-F-CAPITALISM|P|9|8|4|8|7|0|LOW|OK|
+|SOC-F-MARKET|P|373|270|7|173|256|81|OK|OK|
+|SOC-F-FINANCE|P|102|82|5|60|79|18|LOW|OK|
+|SOC-F-TRADE_SD|P|151|73|6|59|69|73|OK|OK|
+|SOC-F-PEACE|P|68|41|10|36|37|20|OK|OK|
+|SOC-F-KOREA_EASTASIA|P|7|4|4|4|3|3|LOW|LOW|
+|SOC-F-ENERGY_CLIMATE|P|347|254|27|173|223|67|OK|OK|
 |SOC-F-FUTURE|P|0|0|0|0|0|0|CRITICAL|CRITICAL|
-|SOC-F-PEACE_SD_UNSPEC|P|59|14|2|10|14|42|CRITICAL|OK|
+|SOC-F-PEACE_SD_UNSPEC|P|59|11|2|8|11|43|CRITICAL|OK|
 
-부족 개념(엄격 기준, 적은 순): SOC-F-FUTURE(0, CRITICAL), SOC-F-MINORITY(0, CRITICAL), SOC-F-PEACE_SD_UNSPEC(2, CRITICAL), SOC-F-INEQUALITY(3, LOW), SOC-F-KOREA_EASTASIA(3, LOW), SOC-F-CAPITALISM(4, LOW), SOC-F-FINANCE(5, LOW)
+부족 개념(엄격 기준, 적은 순): SOC-F-FUTURE(0, CRITICAL), SOC-F-MINORITY(0, CRITICAL), SOC-F-PEACE_SD_UNSPEC(2, CRITICAL), SOC-F-INEQUALITY(3, LOW), SOC-F-CAPITALISM(4, LOW), SOC-F-KOREA_EASTASIA(4, LOW), SOC-F-FINANCE(5, LOW)
 
 확장 기준에서만 부족이 가려지는 개념(고2·3 문항 풀이 가능성 검증이 해결의 열쇠): SOC-F-CAPITALISM(LOW→OK), SOC-F-FINANCE(LOW→OK), SOC-F-PEACE_SD_UNSPEC(CRITICAL→OK)
 
@@ -57,39 +57,40 @@
 
 |origin_level|건수|
 |---|---:|
-|UPPER|805|
-|LEGACY_G1|142|
+|UPPER|686|
+|LEGACY_G1|140|
 |CURRENT|40|
 |SCHOOL|13|
 
 |reuse_mode|건수|
 |---|---:|
-|ADAPT_ONLY|947|
+|ADAPT_ONLY|826|
 |DIRECT_OK|40|
 |CALIBRATION_ONLY|13|
 
 |asset_type (기준)|건수|
 |---|---:|
-|unknown (NONE)|798|
-|passage (REVIEW)|66|
-|table (REVIEW)|33|
-|unknown (VISUAL_REQUIRED_FIELD)|24|
-|graph (REVIEW)|23|
-|composite (REVIEW)|16|
-|map (KEYWORD_GUESS)|14|
-|none (VISUAL_REQUIRED_FIELD)|8|
-|flowchart (REVIEW)|7|
-|graph (KEYWORD_GUESS)|5|
-|map (REVIEW)|3|
-|table (KEYWORD_GUESS)|3|
+|unknown (NONE)|467|
+|passage (REVIEW)|161|
+|table (REVIEW)|73|
+|graph (REVIEW)|68|
+|composite (REVIEW)|43|
+|unknown (VISUAL_REQUIRED_FIELD)|20|
+|flowchart (REVIEW)|16|
+|map (REVIEW)|14|
+|map (KEYWORD_GUESS)|9|
+|graph (KEYWORD_GUESS)|3|
+|none (REVIEW)|2|
+|table (KEYWORD_GUESS)|2|
+|none (VISUAL_REQUIRED_FIELD)|1|
 
 |question_form|건수|
 |---|---:|
-|UNKNOWN|565|
-|선택형|428|
+|선택형|523|
+|UNKNOWN|349|
 |서술형|7|
 
-난도(D1~D5) 분포는 **산출 불가**: 후보 풀 1000건 모두 `UNRATED`다. 본문 검토(Phase 2) 후에 채운다.
+난도(D1~D5) 분포는 **산출 불가**: 후보 풀 879건 모두 `UNRATED`다. 본문 검토(Phase 2) 후에 채운다.
 
 ## 4. 해석상 한계
 
