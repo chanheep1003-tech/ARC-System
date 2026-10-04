@@ -1,0 +1,32 @@
+group,order,concept_id,regex,note
+SCI-GT,1,SCI-GT-FOSSIL,화석,
+SCI-GT,2,SCI-GT-TIME,지질 ?시대|대멸종|연대|고생대|중생대|신생대|선캄브리아|지층|환산,
+SCI-GT,99,SCI-GT-UNSPEC,,default
+SCI-EV,1,SCI-EV-SELECTION,변이|자연 ?선택|내성|진화,
+SCI-EV,2,SCI-EV-DIVERSITY,다양성|단편화|생태 ?통로|외래종|서식지,
+SCI-EV,99,SCI-EV-UNSPEC,,default
+SCI-OR,1,SCI-OR-REACTIVITY,반응성|금속|이온화|석출,
+SCI-OR,2,SCI-OR-QUANT,이온 ?수|양이온|입자|질량|양적,
+SCI-OR,3,SCI-OR-EXPERIMENT,실험|변인|가설,
+SCI-OR,4,SCI-OR-ELECTRON,산화|환원|전자|산소,
+SCI-OR,99,SCI-OR-UNSPEC,,default
+SCI-EE,1,SCI-EE-CIRCULATION,대기 ?대?순환|무역풍|용승|엘니뇨|라니냐|해류|순환,
+SCI-EE,2,SCI-EE-ENERGY,복사|알베도|온실|열수지|반사율|온난화|기후 ?변화|에너지,
+SCI-EE,99,SCI-EE-UNSPEC,,default
+SCI-EM,1,SCI-EM-GENERATION,발전|에너지 ?전환,
+SCI-EM,99,SCI-EM-INDUCTION,,default
+SCI-ECO,1,SCI-F-FOODWEB,먹이|피라미드|평형,
+SCI-ECO,99,SCI-F-ECOSYSTEM,,default
+SCI-ENR,1,SCI-F-SOLAR_ENERGY,태양|핵융합,
+SCI-ENR,99,SCI-F-ENERGY_RES,,default
+SOC-A,1,SOC-A-THOUGHT_MAP,생각의 ?지도|동양|서양|사고방식|맥락,
+SOC-A,99,SOC-A-VIEW,,default
+SOC-C,1,SOC-C-REMEDY,구제|헌법 ?재판|헌법 ?소원|법원|인권 ?위원회|청원|국가 ?배상,
+SOC-C,2,SOC-C-COLLISION,충돌|제한|과잉|비례|조정,
+SOC-C,99,SOC-C-RIGHTS,,default
+SOC-B,1,SOC-B-POP,인구|피라미드|출산|고령,
+SOC-B,99,SOC-B-GLOBAL,,default
+SOC-S05,1,SOC-F-KOREA_EASTASIA,남북|동아시아|분단|통일,
+SOC-S05,2,SOC-F-ENERGY_CLIMATE,에너지|자원|기후|환경|지속,
+SOC-S05,3,SOC-F-PEACE,평화|분쟁|갈등|난민,
+SOC-S05,99,SOC-F-PEACE_SD_UNSPEC,,default

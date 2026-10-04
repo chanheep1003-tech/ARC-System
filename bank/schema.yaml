@@ -1,0 +1,75 @@
+# ARC REFERENCE ITEM BANK schema V0.2
+# 대상: 통합과학2(SCI), 통합사회2(SOC). 문항 본문·선지·자료 원문은 저장하지 않는다(메타데이터 전용).
+version: "0.2"
+date: 2026-10-04
+tier: REFERENCE   # BANK_POLICY의 검증문항은행(QA PASS 전용)과 별개 계층
+
+files:
+  items_SCI.csv / items_SOC.csv:   문항 레지스트리
+  clusters_SCI.csv / clusters_SOC.csv: 원형 묶음
+  concepts.csv:                    개념 ID 목록 (phase·range_confirmed 포함)
+  scope_crosswalk.csv:             성취기준 코드/수집 키워드 → 개념 또는 그룹
+  concept_rules.csv:               그룹 안에서 키워드로 세부 개념을 정하는 순서 규칙
+  blocked_knowledge.csv:           고2·3 문항 보류용 키워드 (SCIENCE_MASTER §5 ADVANCED LEAK BLOCK)
+  SOURCES_MANIFEST.md:             입력 파일 이름·행 수·sha256
+
+tracks:
+  MIDTERM:          SCOPE_LEDGER 중간 범위 (range_confirmed=Y)
+  FINAL_REMAINDER:  "중간 범위 제외 나머지" 기말 후보 (range_confirmed=N, 학교 공지 확정 전 잠정)
+
+items_columns:
+  item_id:            "BREF-<SCI|SOC>-<6자리>"
+  legacy_item_id:     "수집 원본 item_id (GAYA는 GAYA_<SUB>_<번호>)"
+  subject:            [SCI, SOC]
+  phase:              "주 개념의 트랙: MIDTERM | FINAL_REMAINDER | (범위 밖은 빈칸)"
+  concept_id:         "concepts.csv의 주 개념 (범위 밖·미매핑은 빈칸)"
+  concept_secondary:  "보조 개념 (; 구분)"
+  mapping_basis:      [CODE_DIRECT, CODE_UNIT_KEYWORD_CONCEPT, KEYWORD_COLLECTOR_UNIT, TOPIC_MANUAL, NONE]
+  scope_codes:        "수집 원본 scope_id (; 구분)"
+  scope_status:       [IN_SCOPE, EXTENDED_CANDIDATE, EXTENDED_SOLVABLE, ADVANCED_BLOCKED, NEEDS_SCOPE_CHECK, OUT_OF_SCOPE, BLOCKED_USER_X]
+  range_confirmed:    "주 개념 기준 Y/N (N이면 READY 불가)"
+  origin_level:       [CURRENT, LEGACY_G1, UPPER, SCHOOL, UNKNOWN]
+  source_id:          "수집 출처 ID"
+  source_type:        [SCHOOL_FINAL, EXAM_NATIONAL, OFFICIAL_ASSESS, PUBLISHER, EXAM_PREP, UNKNOWN]
+  provider:           "출처 기관"
+  source_title:       ""
+  exam_year:          ""
+  grade:              ""
+  origin_subject:     "원 출처 과목 (예: 경제, 화학Ⅰ, 통합과학)"
+  source_locator:     "PDF 쪽·문항 번호"
+  question_url:       "공개 위치 (본문 아님)"
+  explanation_url:    ""
+  body_access:        [DRIVE_ORIGINAL, EXTERNAL_PDF_REACHABLE, EXTERNAL_PDF_UNREACHABLE, EXTERNAL_PDF_UNVERIFIED, SCHOOL_SEPARATED_PDF, NONE]
+  body_reviewed:      "Y/N — 사람 또는 독립 검토로 본문을 실제로 본 경우만 Y"
+  question_form:      [선택형, 서술형, UNKNOWN]
+  asset_type:         [none, passage, table, graph, particle_model, experiment_diagram, map, flowchart, composite, unknown]
+  asset_type_basis:   [VISUAL_REQUIRED_FIELD, KEYWORD_GUESS, NONE]
+  visual_required:    [YES, YES_LIKELY, NO, UNKNOWN]
+  answer:             "선택형 1~5, 서술형·미확보는 빈칸"
+  answer_source:      [OFFICIAL_KEY, SOLVED_2PASS, NONE]
+  answer_check:       "수집 원본의 answer_verification / answer_check 보존"
+  difficulty:         [D1, D2, D3, D4, D5, UNRATED]
+  difficulty_method:  [ANCHOR, STRUCTURAL, PUBLISHER_LABEL, UNRATED]
+  blocked_knowledge_tag: "blocked_knowledge.csv 태그 또는 ORIGIN_II"
+  cluster_id:         "clusters_*.csv"
+  dup_role:           [CANONICAL, VARIANT, DUPLICATE, UNCLUSTERED]
+  reuse_mode:         [DIRECT_OK, ADAPT_ONLY, CALIBRATION_ONLY]
+  status:             [READY, NEEDS_BODY_REVIEW, NEEDS_ANSWER, HOLD, EXCLUDED]
+  notes:              "판정 근거·출처 한계"
+
+clusters_columns: [cluster_id, subject, concept_id, basis, size, canonical_item_id, member_item_ids, key_sample]
+
+hard_rules:
+  - "status=READY 이면 body_reviewed=Y, answer_source in (OFFICIAL_KEY, SOLVED_2PASS), scope_status in (IN_SCOPE, EXTENDED_SOLVABLE), range_confirmed=Y, difficulty!=UNRATED"
+  - "scope_status in (OUT_OF_SCOPE, BLOCKED_USER_X) 이면 status=EXCLUDED"
+  - "scope_status in (ADVANCED_BLOCKED, NEEDS_SCOPE_CHECK) 이면 status in (HOLD, EXCLUDED)"
+  - "difficulty_method=UNRATED 이면 difficulty=UNRATED"
+  - "dup_role=DUPLICATE 이면 status in (HOLD, EXCLUDED)"
+  - "cluster 하나에 dup_role=CANONICAL 은 정확히 1건"
+  - "문제 본문·선지·자료 원문 컬럼을 추가하지 않는다"
+  - "정답·난도를 추정으로 채우지 않는다"
+
+reuse_mode_rule:
+  DIRECT_OK:        "공식 공개자료(교육부·평가원·시도교육청 문항 자료집·예시문항)"
+  ADAPT_ONLY:       "전국연합학력평가·평가원 모의평가·수능 기출, 출판사 자료 — 구조 참고 후 새 문항 생성·재검증"
+  CALIBRATION_ONLY: "타 학교 정기고사 — 난이도 보정 전용 (SYSTEM_MANIFEST historical_exam_usage)"

@@ -1,0 +1,34 @@
+source_id,topic,concept_id,concept_secondary,out_of_scope,note
+GAYA_SCI,화석 연료의 생성과 고갈,SCI-F-ENERGY_RES,,N,
+GAYA_SCI,태양 에너지와 지구 에너지,SCI-F-SOLAR_ENERGY,,N,10통과2-02-04 경계
+GAYA_SCI,신재생 에너지,SCI-F-ENERGY_RES,,N,
+GAYA_SCI,연료 전지,SCI-F-ENERGY_RES,,N,
+GAYA_SCI,전력 수송,SCI-F-ENERGY_RES,,N,
+GAYA_SCI,산성과 염기성,SCI-F-ACIDBASE,,N,
+GAYA_SCI,주변의 산과 염기,SCI-F-ACIDBASE,,N,
+GAYA_SCI,산성과 염기성이 나타나는 까닭,SCI-F-ACIDBASE,,N,
+GAYA_SCI,생활 속 중화 반응,SCI-F-ACIDBASE,,N,
+GAYA_SCI,산과 염기가 만날 때의 변화,SCI-F-ACIDBASE,,N,
+GAYA_SCI,산·염기 혼합,SCI-F-ACIDBASE,,N,
+GAYA_SCI,생물과 환경의 상호 관계,SCI-F-ECOSYSTEM,,N,
+GAYA_SCI,생태계 구성 요소,SCI-F-ECOSYSTEM,,N,
+GAYA_SCI,먹이 그물,SCI-F-FOODWEB,,N,
+GAYA_SCI,울타리 조직과 표피 조직,,,Y,수집 SCOPE_MAP·SCOPE_LEDGER 어디에도 없는 주제 — 본문 확인 전 제외
+GAYA_SCI,생물의 체온 유지,,,Y,수집 SCOPE_MAP·SCOPE_LEDGER 어디에도 없는 주제 — 본문 확인 전 제외
+GAYA_SCI,대기 대순환,SCI-EE-CIRCULATION,,N,
+GAYA_SCI,멕시코 만류의 특성,SCI-EE-CIRCULATION,,N,
+GAYA_SCI,난류와 한류,SCI-EE-CIRCULATION,,N,
+GAYA_SCI,지표 반사율,SCI-EE-ENERGY,,N,
+GAYA_SCI,기후 변화,SCI-EE-ENERGY,,N,
+GAYA_SCI,지구 온난화와 생태계 평형,SCI-EE-ENERGY,SCI-F-FOODWEB,N,
+GAYA_SCI,엘니뇨와 라니냐,SCI-EE-CIRCULATION,,N,
+GAYA_SOC,문화 변동,,,Y,통합사회1 참고(정답교정.csv mapping)
+GAYA_SOC,문화 이해 태도,,,Y,통합사회1 참고(정답교정.csv mapping)
+GAYA_SOC,문화 속성,,,Y,통합사회1 참고(정답교정.csv mapping)
+GAYA_SOC,문화 이해,,,Y,통합사회1 참고(정답교정.csv mapping)
+GAYA_SOC,다문화 사회,,,Y,통합사회1 참고(정답교정.csv mapping)
+GAYA_SOC,사회 복지 제도,SOC-F-INEQUALITY,,N,
+GAYA_SOC,자유주의와 공동체주의,SOC-A-VIEW,,N,
+GAYA_SOC,사회적 약자,SOC-F-INEQUALITY,SOC-F-MINORITY,N,
+GAYA_SOC,사회 불평등,SOC-F-INEQUALITY,,N,
+GAYA_SOC,정의의 의미,SOC-A-VIEW,,N,

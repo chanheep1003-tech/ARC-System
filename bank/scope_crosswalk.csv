@@ -1,0 +1,50 @@
+key_type,key,subject,target,needs_scope_check,note
+CODE,10통과2-01-01,SCI,GROUP:SCI-GT,N,지질 시대의 환경 변화와 생물·화석 (중간 트랙)
+CODE,10통과2-01-02,SCI,GROUP:SCI-EV,N,변이·자연선택·진화와 생물다양성 (중간 트랙)
+CODE,10통과2-01-03,SCI,GROUP:SCI-OR,N,산화와 환원 (중간 트랙)
+CODE,10통과2-01-04,SCI,SCI-F-ACIDBASE,N,
+CODE,10통과2-01-05,SCI,SCI-F-HEAT_EXO,N,
+CODE,10통과2-02-01,SCI,SCI-F-ECOSYSTEM,N,
+CODE,10통과2-02-02,SCI,SCI-F-FOODWEB,N,
+CODE,10통과2-02-03,SCI,GROUP:SCI-EE,N,"온실효과·지구온난화·엘니뇨·사막화 (중간 트랙, 생태계 평형 쪽 경계 확인 필요)"
+CODE,10통과2-02-04,SCI,SCI-F-SOLAR_ENERGY,Y,p92~101 경계 — 학교 표시 확인 필요
+CODE,10통과2-02-05,SCI,GROUP:SCI-EM,N,"발전기·발전소 (중간 트랙, 화석연료·핵에너지 발전소 서술 경계 확인 필요)"
+CODE,10통과2-02-06,SCI,SCI-F-ENERGY_RES,N,
+CODE,10통과2-03-01,SCI,SCI-F-INFECTION,N,
+CODE,10통과2-03-02,SCI,SCI-F-BIGDATA_AI,N,
+CODE,10통과2-03-03,SCI,SCI-F-AI_ROBOT_IOT,N,
+CODE,10통과2-03-04,SCI,SCI-F-SSI_ETHICS,N,
+SCOPE,SCI-M01,SCI,GROUP:SCI-OR,N,수집 키워드: 산화·환원(중간)
+SCOPE,SCI-M02,SCI,GROUP:SCI-GT,N,수집 키워드: 지질 시대(중간)
+SCOPE,SCI-M03,SCI,GROUP:SCI-EV,N,수집 키워드: 진화·생물다양성(중간)
+SCOPE,SCI-M04,SCI,GROUP:SCI-EE,N,수집 키워드: 지구 환경 변화(중간)
+SCOPE,SCI-M05,SCI,GROUP:SCI-EM,N,수집 키워드: 전자기 유도·발전(중간)
+SCOPE,SCI-S01,SCI,SCI-F-ACIDBASE,N,수집 키워드: 산·염기와 중화
+SCOPE,SCI-S02,SCI,SCI-F-HEAT_EXO,N,수집 키워드: 발열·흡열
+SCOPE,SCI-S03,SCI,GROUP:SCI-ECO,Y,수집 키워드: 생태계와 환경 — 지구 환경 변화(p82~91)와 경계 확인 필요
+SCOPE,SCI-S04,SCI,GROUP:SCI-ENR,N,수집 키워드: 에너지 자원·전환·효율·신재생
+SCOPE,SCI-S05,SCI,SCI-F-SCI_TECH_LIFE,Y,수집 키워드: 과학기술의 생활 활용 — 통합과학1 정보·센서와 겹칠 수 있음
+CODE,10통사2-01-01,SOC,GROUP:SOC-C,N,인권의 의미 변화와 인권 확장 (중간 트랙 C)
+CODE,10통사2-01-02,SOC,GROUP:SOC-C,N,헌법의 역할·시민 참여 (중간 트랙 C)
+CODE,10통사2-01-03,SOC,SOC-F-MINORITY,Y,p24~26 — 중간 범위 제외(SCOPE_LEDGER). 기말 포함 여부 미확정
+CODE,10통사2-02-01,SOC,GROUP:SOC-A,N,정의의 의미 (중간 트랙 A)
+CODE,10통사2-02-02,SOC,GROUP:SOC-A,N,자유주의·공동체주의 정의관 (중간 트랙 A)
+CODE,10통사2-02-03,SOC,SOC-F-INEQUALITY,Y,p44~49 — 중간 범위 제외(SCOPE_LEDGER). 기말 포함 여부 미확정
+CODE,10통사2-03-01,SOC,SOC-F-CAPITALISM,N,
+CODE,10통사2-03-02,SOC,SOC-F-MARKET,N,
+CODE,10통사2-03-03,SOC,SOC-F-FINANCE,N,
+CODE,10통사2-03-04,SOC,SOC-F-TRADE_SD,N,
+CODE,10통사2-04-01,SOC,GROUP:SOC-B,N,세계화 (중간 트랙 B)
+CODE,10통사2-04-02,SOC,SOC-F-PEACE,N,
+CODE,10통사2-04-03,SOC,SOC-F-KOREA_EASTASIA,N,
+CODE,10통사2-05-01,SOC,GROUP:SOC-B,N,인구 (중간 트랙 B)
+CODE,10통사2-05-02,SOC,SOC-F-ENERGY_CLIMATE,N,
+CODE,10통사2-05-03,SOC,SOC-F-FUTURE,N,
+SCOPE,SOC-M01,SOC,GROUP:SOC-A,N,수집 키워드: 정의·분배·형벌(중간 A)
+SCOPE,SOC-M02,SOC,GROUP:SOC-B,N,수집 키워드: 세계화·인구(중간 B)
+SCOPE,SOC-M03,SOC,GROUP:SOC-C,N,수집 키워드: 인권·헌법(중간 C)
+SCOPE,SOC-S01,SOC,SOC-F-MARKET,N,수집 키워드: 시장경제·합리적 선택
+SCOPE,SOC-S02,SOC,SOC-F-FINANCE,N,수집 키워드: 금융·자산 관리
+SCOPE,SOC-S03,SOC,SOC-F-TRADE_SD,N,수집 키워드: 국제 무역
+SCOPE,SOC-S04,SOC,SOC-F-INEQUALITY,Y,수집 키워드: 사회 불평등과 제도 — 정의·분배는 중간 기록과 경계 확인
+SCOPE,SOC-S05,SOC,GROUP:SOC-S05,N,수집 키워드: 평화·지속가능한 삶·자원과 환경

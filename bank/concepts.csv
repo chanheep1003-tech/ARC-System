@@ -1,0 +1,46 @@
+concept_id,subject,phase,priority,unit,label,range_confirmed,source_scope,note
+SCI-GT-FOSSIL,SCI,MIDTERM,R,지질 시대,표준화석·시상화석·화석 생성,Y,p14~19,SCOPE_LEDGER 5-2
+SCI-GT-TIME,SCI,MIDTERM,R,지질 시대,연대표·시기·대멸종·회복구간,Y,p14~19,SCOPE_LEDGER 5-2
+SCI-GT-UNSPEC,SCI,MIDTERM,R,지질 시대,지질 시대(세부 개념 미분류),Y,p14~19,키워드로 세부 개념을 못 정한 경우의 단원 단위 버킷
+SCI-EV-SELECTION,SCI,MIDTERM,R,진화·생물다양성,변이·자연선택·내성,Y,p20~35,SCOPE_LEDGER 5-2
+SCI-EV-DIVERSITY,SCI,MIDTERM,R,진화·생물다양성,종/유전적 다양성·단편화·생태통로·외래종,Y,p20~35,SCOPE_LEDGER 5-2
+SCI-EV-UNSPEC,SCI,MIDTERM,R,진화·생물다양성,진화·생물다양성(세부 개념 미분류),Y,p20~35,단원 단위 버킷
+SCI-OR-ELECTRON,SCI,MIDTERM,R,산화·환원,산소/전자 이동·산화·환원 판정,Y,p38~45,SCOPE_LEDGER 5-2
+SCI-OR-REACTIVITY,SCI,MIDTERM,R,산화·환원,금속-금속이온·반응성 서열·미지 금속,Y,p38~45,SCOPE_LEDGER 5-2
+SCI-OR-QUANT,SCI,MIDTERM,R,산화·환원,양이온/전체 이온 수·입자모형·질량 변화,Y,p38~45,SCOPE_LEDGER 5-2
+SCI-OR-EXPERIMENT,SCI,MIDTERM,S,산화·환원,순차 투입·그래프·변인 통제·가설 검증,Y,p38~45,SCOPE_LEDGER 5-2
+SCI-OR-UNSPEC,SCI,MIDTERM,R,산화·환원,산화·환원(세부 개념 미분류),Y,p38~45,단원 단위 버킷
+SCI-EE-ENERGY,SCI,MIDTERM,R,지구 환경 변화,복사평형·열수지·알베도·온실효과,Y,p82~91,SCOPE_LEDGER 5-2
+SCI-EE-CIRCULATION,SCI,MIDTERM,R,지구 환경 변화,대기대순환·무역풍·용승·엘니뇨·라니냐,Y,p82~91,SCOPE_LEDGER 5-2
+SCI-EE-UNSPEC,SCI,MIDTERM,R,지구 환경 변화,지구 환경 변화(세부 개념 미분류),Y,p82~91,단원 단위 버킷
+SCI-EM-INDUCTION,SCI,MIDTERM,R,전자기 유도·발전,자석·코일 이동·방향·세기,Y,p102~109,SCOPE_LEDGER 5-2
+SCI-EM-GENERATION,SCI,MIDTERM,S,전자기 유도·발전,발전기·에너지전환·시간그래프,Y,p102~109,SCOPE_LEDGER 5-2
+SCI-F-ACIDBASE,SCI,FINAL_REMAINDER,P,산·염기와 중화,산·염기 물질의 특징과 중화 반응,N,10통과2-01-04,수집 SCOPE_MAP(2026-10-03). 기말 범위는 학교 공지 확정 전 잠정
+SCI-F-HEAT_EXO,SCI,FINAL_REMAINDER,P,물질 변화와 에너지 출입,발열·흡열 반응,N,10통과2-01-05,잠정
+SCI-F-ECOSYSTEM,SCI,FINAL_REMAINDER,P,생태계와 환경,생태계 구성요소·생물-환경 상호관계,N,10통과2-02-01,잠정
+SCI-F-FOODWEB,SCI,FINAL_REMAINDER,P,생태계와 환경,먹이 관계·생태 피라미드·생태계 평형,N,10통과2-02-02,잠정
+SCI-F-SOLAR_ENERGY,SCI,FINAL_REMAINDER,P,생태계와 환경,태양의 핵융합과 지구의 에너지 흐름,N,10통과2-02-04,경계 불명(NEEDS_SCOPE_CHECK)
+SCI-F-ENERGY_RES,SCI,FINAL_REMAINDER,P,에너지 자원,에너지 효율·신재생 에너지·에너지 자원,N,10통과2-02-06,잠정
+SCI-F-INFECTION,SCI,FINAL_REMAINDER,P,과학의 유용성,감염병 진단·추적과 과학의 유용성,N,10통과2-03-01,잠정
+SCI-F-BIGDATA_AI,SCI,FINAL_REMAINDER,P,과학의 유용성,빅데이터·인공지능과 과학 탐구,N,10통과2-03-02,잠정
+SCI-F-AI_ROBOT_IOT,SCI,FINAL_REMAINDER,P,과학의 유용성,인공지능 로봇·사물인터넷의 유용성과 한계,N,10통과2-03-03,잠정
+SCI-F-SSI_ETHICS,SCI,FINAL_REMAINDER,P,과학의 유용성,과학 관련 사회적 쟁점(SSI)과 과학 윤리,N,10통과2-03-04,잠정
+SCI-F-SCI_TECH_LIFE,SCI,FINAL_REMAINDER,P,과학기술의 생활 활용,과학기술의 생활 활용(통합과학1 정보·센서와 겹칠 수 있음),N,수집 키워드 SCI-S05,경계 불명 — 키워드 기반 버킷
+SOC-A-VIEW,SOC,MIDTERM,R,A 관점·정의,관점·정의·사례 적용(정의·분배·형벌·자유주의/공동체주의),Y,천재 p36~43 + A학습지,SCOPE_LEDGER 5-3
+SOC-A-THOUGHT_MAP,SOC,MIDTERM,R,A 생각의 지도,동서양 사고·속성/관계·맥락,Y,『생각의 지도』 p156~233,SCOPE_LEDGER 5-3
+SOC-C-RIGHTS,SOC,MIDTERM,R,C 인권·기본권,인권·기본권·헌법 적용,Y,천재 p8~23 + C학습지 비X,C 학습지 X 표시 영역은 시각 확인 전 BLOCKED 후보
+SOC-C-REMEDY,SOC,MIDTERM,R,C 권리구제,권리구제 기관·절차·효과,Y,동일,동일
+SOC-C-COLLISION,SOC,MIDTERM,R,C 권리충돌,권리충돌·조정·기본권 제한,Y,동일,동일
+SOC-B-GLOBAL,SOC,MIDTERM,R,B 세계화·지역화,세계화·지역화·세계도시·다국적기업,Y,천재 p98~107 + B학습지,SCOPE_LEDGER 5-3
+SOC-B-POP,SOC,MIDTERM,S,B 인구,인구분포·피라미드·변천·이동,Y,천재 p124~133 + B학습지,종합세트 비중 상한 20%
+SOC-F-MINORITY,SOC,FINAL_REMAINDER,P,인권(p24~26 경계),사회적 소수자 차별·청소년 노동권·세계 인권 문제,N,10통사2-01-03,SCOPE_LEDGER가 중간에서 제외한 p24~26. 기말 포함 여부 미확정
+SOC-F-INEQUALITY,SOC,FINAL_REMAINDER,P,사회 불평등과 제도,사회·공간 불평등과 제도(복지·적극적 평등 실현 조치),N,10통사2-02-03,SCOPE_LEDGER가 중간에서 제외한 p44~49. 기말 포함 여부 미확정
+SOC-F-CAPITALISM,SOC,FINAL_REMAINDER,P,시장경제,자본주의의 역사적 전개와 시장·정부 관계,N,10통사2-03-01,잠정
+SOC-F-MARKET,SOC,FINAL_REMAINDER,P,시장경제,합리적 선택·시장 실패·경제 주체의 역할,N,10통사2-03-02,잠정
+SOC-F-FINANCE,SOC,FINAL_REMAINDER,P,금융,금융 자산·자산 관리 원칙·금융 의사 결정,N,10통사2-03-03,잠정
+SOC-F-TRADE_SD,SOC,FINAL_REMAINDER,P,국제 무역,국제 분업과 무역·지속가능발전,N,10통사2-03-04,잠정
+SOC-F-PEACE,SOC,FINAL_REMAINDER,P,평화,평화의 관점에서 본 국제 사회의 갈등과 협력,N,10통사2-04-02,잠정
+SOC-F-KOREA_EASTASIA,SOC,FINAL_REMAINDER,P,평화,남북 분단과 동아시아 역사 갈등,N,10통사2-04-03,잠정
+SOC-F-ENERGY_CLIMATE,SOC,FINAL_REMAINDER,P,자원과 환경,에너지 자원의 분포·소비와 기후변화 대응,N,10통사2-05-02,잠정
+SOC-F-FUTURE,SOC,FINAL_REMAINDER,P,미래 사회,미래 사회의 모습 예측과 세계시민의 삶,N,10통사2-05-03,잠정
+SOC-F-PEACE_SD_UNSPEC,SOC,FINAL_REMAINDER,P,평화·지속가능한 삶·자원과 환경,평화·지속가능·자원 환경(세부 개념 미분류),N,수집 키워드 SOC-S05,단원 단위 버킷

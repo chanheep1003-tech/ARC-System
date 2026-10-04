@@ -1,0 +1,10 @@
+tag,subject,regex,source,note
+MAG_FLUX_FORMULA,SCI,자기 ?선속|유도 ?기전력|패러데이,SCIENCE_MASTER §5,자기선속·유도기전력 공식
+TORQUE_CIRCUIT,SCI,토크|키르히호프,SCIENCE_MASTER §5,토크·회로방정식
+MOLE_STOICH,SCI,(?<![가-힣])몰(?![가-힣])|화학량|한계 ?반응물|원자량|분자량|몰 ?농도|양적 ?관계|화학 ?반응식,SCIENCE_MASTER §5,몰·원자량 화학량론·한계반응물
+CELL_POTENTIAL,SCI,표준 ?환원 ?전위|전지 ?전위|전극 ?전위,SCIENCE_MASTER §5,전지전위
+OXIDATION_NUMBER,SCI,산화수|반쪽 ?반응,SCIENCE_MASTER §5,복잡한 산화수·반쪽반응 계산
+HARDY_WEINBERG,SCI,하디|바인베르크|유전자 ?빈도,SCIENCE_MASTER §5,하디-바인베르크
+TRANSCRIPTION_TRANSLATION,SCI,전사(?![가-힣])|번역(?![가-힣])|코돈|mRNA|리보솜,SCIENCE_MASTER §5,전사·번역
+POPULATION_EQUATION,SCI,로지스틱|개체군 ?증가 ?(?:식|방정식),SCIENCE_MASTER §5,개체군 증가방정식
+RADIOACTIVE_AGE,SCI,반감기|방사성 ?동위 ?원소|절대 ?연령,SCIENCE_MASTER §5,방사성동위원소 절대연령 계산
