@@ -1,3 +1,8 @@
+## 1.8.39-dev — 2026-10-07 (archive)
+- Moved 102 superseded rule-file versions to `archive/` (mirrored paths); active files are unchanged and still resolved only through the manifest.
+- Six superseded files still referenced by `skills/` stay in place; see `archive/README.md`.
+- `DEPRECATION_REGISTRY_V1.0.yaml` now points at the archived paths. `validate_system --strict-checksums`, all tooling tests and canaries pass.
+
 ## 1.8.34-dev — 2026-09-25
 - Registered four textbook source texts in the source registry as USER_PROVIDED_TEXTBOOK / RAW_SCHOOL_SOURCE / EXACT, with the user's explicit authorization:
   - 속미인곡: the textbook 현대어 풀이 excerpt, taken from the PDF text layer.
