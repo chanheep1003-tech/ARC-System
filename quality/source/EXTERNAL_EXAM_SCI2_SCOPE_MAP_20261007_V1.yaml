@@ -1,0 +1,531 @@
+schema_version: ARC-EXTERNAL-EXAM-SCOPE-MAP-V1
+audited_at: '2026-10-07'
+target: 통합과학2
+basis: 해설 PDF의 문항별 [출제의도] 텍스트만 읽음. 문제지 PDF와 그림은 열지 않음.
+scope_reference: subjects/SCIENCE_MASTER_V4.0.md 중간고사 SCOPE LOCK(GT·EV·OR·EE·EM)과 SCI3(과학과 미래 사회, 사용자 포함 지시). 기말 범위는 미확정.
+tiers:
+  IN: 통합과학2 개념으로 직접 판단 가능
+  BORDER: 인접 내용이나 통합과학2 소속이 불명확
+  ADV: 주제는 겹치나 풀이에 범위 밖 심화 지식이 필요. 정답 근거로 사용 금지(ADVANCED LEAK BLOCK)
+figure_policy: 그림 후보는 위치와 유형만 등록한다. 원본 그림은 복사하지 않는다. 사용 시 개념과 공식 자료로 재도식화한다(EBSi 무단 전재 금지, 저작권 자료 복제는 HARD FAIL). figure_expected는 문항 의도에서 추정한
+  값이며 미검증이다.
+subject_verdict:
+  g2_통합과학(3회): 범위 포함. 75문항 중 IN 22(통합과학2 개념 17 + SCI3 5), BORDER 2, ADV 2. 202606 Q25는 엘니뇨와 빅데이터 복합이라 SCI3와도 겹침. 나머지는 통합과학1.
+  물리학1 5회: 일부 포함. 전자기 유도·발전 문항만 IN 4. 나머지는 심화 또는 범위 밖.
+  화학1·2 4회: 일부 포함. g2_202503 화학1의 산화 환원 4문항만 IN. 산화수·몰 문항은 ADV.
+  생명과학1 3회: 일부 포함. g2_202503만 IN 4(생물다양성·자연선택·지질 시대). 나머지 범위 밖.
+  지구과학1 3회: 일부 포함. 지질 시대·엘니뇨·대기 대순환 IN 8. 절대 연령·밀란코비치는 ADV.
+  생활과윤리: 범위 밖(다른 과목)
+exams:
+- exam: g2_202603_intsci
+  title: 고2 2026-03 통합과학
+  question_file_id: 1UFxx0FzssX1FabBUCoiq9u7pWiAgoDJw
+  explanation_file_id: 1kHqHX-p8meQyaDfOdej-7cdPlPF65aox
+  counts:
+    IN: 8
+  items:
+  - q: 4
+    tier: IN
+    concept: SCI-OR-ELECTRON
+    figure_expected: none
+    note: 녹슴·세포호흡 산화, 정성
+  - q: 8
+    tier: IN
+    concept: SCI-EV-SELECTION
+    figure_expected: graph
+    note: 핀치 부리 변이·자연선택
+  - q: 9
+    tier: IN
+    concept: SCI-EM-INDUCTION
+    figure_expected: experiment_diagram
+    note: 자석 속력·세기와 유도 전류
+  - q: 14
+    tier: IN
+    concept: SCI-GT-TIME
+    figure_expected: graph
+    note: 대멸종 시기별 특징·생물 다양성
+  - q: 22
+    tier: IN
+    concept: SCI-EE-ENERGY
+    figure_expected: graph
+    note: CO2 농도 자료·복사 흡수/방출
+  - q: 11
+    tier: IN
+    concept: SCI3
+    figure_expected: none
+    note: 자율주행 SSI
+  - q: 19
+    tier: IN
+    concept: SCI3
+    figure_expected: table
+    note: 감염병 진단·빅데이터
+  - q: 21
+    tier: IN
+    concept: SCI3
+    figure_expected: none
+    note: 센서·아날로그/디지털 정보 변환
+  remaining: 나머지 문항은 통합과학1(기본량·원소·삼투·효소·중화·핵융합·에너지 효율 등)
+- exam: g2_202609_intsci
+  title: 고2 2026-09 통합과학
+  question_file_id: 15PI3WQNKfWhYkTyP-AQKRBNooBxiGfRY
+  explanation_file_id: 1WXO89MBT9gyKAFARuQMCwXvztePGZWbU
+  counts:
+    IN: 7
+    BORDER: 1
+    ADV: 1
+  items:
+  - q: 10
+    tier: IN
+    concept: SCI-OR-EXPERIMENT
+    figure_expected: experiment_diagram
+    note: CuO 환원·석회수 확인 실험 설계
+  - q: 18
+    tier: IN
+    concept: SCI-EV-DIVERSITY
+    figure_expected: diagram
+    note: 생물다양성 3종 사례
+  - q: 19
+    tier: IN
+    concept: SCI-EM-INDUCTION
+    figure_expected: experiment_diagram
+    note: 자석 세기·속력 실험 결론
+  - q: 21
+    tier: IN
+    concept: SCI-EE-ENERGY
+    figure_expected: schematic
+    note: 복사 에너지와 열수지
+  - q: 23
+    tier: IN
+    concept: SCI-EV-SELECTION
+    figure_expected: graph
+    note: 엘니뇨 강수와 핀치 부리 자연선택. SCI-EE-CIRCULATION 복합
+  - q: 9
+    tier: IN
+    concept: SCI3
+    figure_expected: graph
+    note: 빅데이터 결론 도출(미세먼지)
+  - q: 22
+    tier: IN
+    concept: SCI3
+    figure_expected: table
+    note: 감염병 진단 기술
+  - q: 13
+    tier: BORDER
+    concept: SCI-EE-ENERGY
+    figure_expected: graph
+    note: CO2·해양 산성화 자료. 통합과학1 지구시스템에 가까움
+  - q: 15
+    tier: ADV
+    concept: SCI-EV-SELECTION
+    figure_expected: table
+    note: 전사·번역 코돈 추론. 범위 밖 심화
+  remaining: 나머지 문항은 통합과학1(기본량·별·판·삼투·효소·중화·화학결합 등)
+- exam: g2_202606_intsci
+  title: 고2 2026-06 통합과학
+  question_file_id: 1Qi8mIVgJmlWsy2-boLzu0BHoWKE3CONl
+  explanation_file_id: 1beptbqZ23PTWJhA7N5nwGlORt4fe--NA
+  counts:
+    IN: 7
+    BORDER: 1
+    ADV: 1
+  items:
+  - q: 2
+    tier: IN
+    concept: SCI-EV-DIVERSITY
+    figure_expected: diagram
+    note: 생물다양성 3종 구분
+  - q: 8
+    tier: IN
+    concept: SCI-GT-TIME
+    figure_expected: graph
+    note: 지질 시대 경계·대멸종·삼엽충. SCI-GT-FOSSIL 복합
+  - q: 16
+    tier: IN
+    concept: SCI-OR-ELECTRON
+    figure_expected: diagram
+    note: Mg·Fe 산화, O2 환원, 에너지 출입
+  - q: 19
+    tier: IN
+    concept: SCI-EE-ENERGY
+    figure_expected: schematic
+    note: 복사 평형·지구 열수지
+  - q: 21
+    tier: IN
+    concept: SCI-EV-DIVERSITY
+    figure_expected: diagram
+    note: 환경 변화가 생물다양성에 미치는 영향
+  - q: 24
+    tier: IN
+    concept: SCI-EM-INDUCTION
+    figure_expected: graph
+    note: 유도 전류 세기·방향, 에너지 전환. SCI-EM-GENERATION 복합
+  - q: 25
+    tier: IN
+    concept: SCI-EE-CIRCULATION
+    figure_expected: graph
+    note: 엘니뇨 수온·해면기압 편차 빅데이터. SCI3 복합
+  - q: 3
+    tier: BORDER
+    concept: SCI-EE-ENERGY
+    figure_expected: map
+    note: 판 구조·화산재의 복사 영향. 통합과학1 지구시스템에 가까움
+  - q: 18
+    tier: ADV
+    concept: SCI-EV-SELECTION
+    figure_expected: table
+    note: 전사·번역. 범위 밖 심화
+  remaining: 나머지 문항은 통합과학1(규산염·기본량·탄소 순환·단백질·화학결합·중력 등)
+- exam: g2_202503_phy1
+  title: 고2 2025-03 물리학1
+  question_file_id: 1IBeL3iebTy_lJgXJ0XQHI5mdWgIQFRKP
+  explanation_file_id: 1WZCagRxZYbnkPylhATKqOV8Aqljof3zn
+  counts:
+    IN: 3
+    BORDER: 3
+    ADV: 2
+  items:
+  - q: 10
+    tier: IN
+    concept: SCI-EM-INDUCTION
+    figure_expected: experiment_diagram
+    note: 자석 극·속력과 유도 전류 방향·세기
+  - q: 1
+    tier: IN
+    concept: SCI-EM-GENERATION
+    figure_expected: schematic
+    note: 태양광·풍력 발전
+  - q: 6
+    tier: IN
+    concept: SCI-EM-GENERATION
+    figure_expected: schematic
+    note: 파력 발전 에너지 전환
+  - q: 9
+    tier: BORDER
+    concept: SCI-EM-GENERATION
+    figure_expected: schematic
+    note: 핵발전. 발전 방식이나 중간 범위 근거 없음
+  - q: 17
+    tier: BORDER
+    concept: SCI-EE-ENERGY
+    figure_expected: schematic
+    note: 태양 에너지 순환·수력 발전
+  - q: 8
+    tier: BORDER
+    concept: SCI-EM-GENERATION
+    figure_expected: table
+    note: 열기관·연료전지 에너지 효율. 통합과학1 에너지 효율에 가까움
+  - q: 15
+    tier: ADV
+    concept: SCI-EM-GENERATION
+    figure_expected: diagram
+    note: 변압기. 범위 밖 심화
+  - q: 16
+    tier: ADV
+    concept: SCI-EM-GENERATION
+    figure_expected: diagram
+    note: 송전 손실 전력. 범위 밖 심화
+- exam: g2_202509_phy1
+  title: 고2 2025-09 물리학1
+  question_file_id: 1L-cNUj1EUF1LgaFhB_mQ06bEtlJGy2zk
+  explanation_file_id: 1zuSwInIBWHx19hWzOxNnsjs483TpODeM
+  counts: {}
+  items: []
+  remaining: 범위 안 문항 없음. 역학·열역학·상대성·반도체 등 물리학1 고유 내용
+- exam: g2_202510_phy1
+  title: 고2 2025-10 물리학1
+  question_file_id: 1eTJWJ1ZRTuxy5_zkSFDTHailRLRC98g9
+  explanation_file_id: 1o0aV1msgknVFhofUnESKIFpgX-XdHgyD
+  counts:
+    IN: 1
+    ADV: 2
+  items:
+  - q: 11
+    tier: IN
+    concept: SCI-EM-INDUCTION
+    figure_expected: experiment_diagram
+    note: 풍력 발전 자석 회전 속력과 유도 전류. SCI-EM-GENERATION 복합
+  - q: 13
+    tier: ADV
+    concept: SCI-EM-INDUCTION
+    figure_expected: diagram
+    note: 도선 전류의 자기장. 앙페르 법칙 심화
+  - q: 18
+    tier: ADV
+    concept: SCI-EM-INDUCTION
+    figure_expected: graph
+    note: 자기선속 변화율. 심화
+- exam: g3_202503_phy1
+  title: 고3 2025-03 물리학1
+  question_file_id: 1fEakGp-sOmZgy90beG0jQhlHZYp8NUlO
+  explanation_file_id: 18KF1C5qv67PwmARkim-90gSgx_d-krbX
+  counts:
+    ADV: 1
+  items:
+  - q: 7
+    tier: ADV
+    concept: SCI-EM-INDUCTION
+    figure_expected: graph
+    note: 자기장 방향·세기 비교. 자기선속 변화율 심화
+- exam: g3_202510_phy1
+  title: 고3 2025-10 물리학1
+  question_file_id: 1Ja4T3tq0QuCFuGMiswVR1Z9vs9G5JBW2
+  explanation_file_id: 1S1TAPMqrCG11TkD3lU33hYLoHSKv9CzV
+  counts:
+    ADV: 1
+  items:
+  - q: 13
+    tier: ADV
+    concept: SCI-EM-INDUCTION
+    figure_expected: graph
+    note: 자기선속 변화율 심화
+- exam: g2_202503_chem1
+  title: 고2 2025-03 화학1
+  question_file_id: 1YLO4KBs9__PyV1uWeTmnrsB6csEHieSe
+  explanation_file_id: 1oiv6i4uvYg6VIf-Z9-UrV8BF9fCuUiN7
+  counts:
+    IN: 4
+    ADV: 3
+  items:
+  - q: 2
+    tier: IN
+    concept: SCI-OR-ELECTRON
+    figure_expected: none
+    note: 녹슴·연소 산소 관여 산화 환원
+  - q: 9
+    tier: IN
+    concept: SCI-OR-ELECTRON
+    figure_expected: table
+    note: 철광석 환원 등 생활 맥락
+  - q: 14
+    tier: IN
+    concept: SCI-OR-QUANT
+    figure_expected: particle_model
+    note: Cu+Ag 이온 반응, 전체 양이온 수. SCI-OR-REACTIVITY 복합
+  - q: 19
+    tier: IN
+    concept: SCI-OR-QUANT
+    figure_expected: particle_model
+    note: 반응 입자 수와 양이온 수 증가
+  - q: 10
+    tier: ADV
+    concept: SCI-OR-QUANT
+    figure_expected: table
+    note: 화학식량·몰. 몰 계산은 범위 밖
+  - q: 17
+    tier: ADV
+    concept: SCI-OR-QUANT
+    figure_expected: none
+    note: 몰·아보가드로수. 범위 밖
+  - q: 20
+    tier: ADV
+    concept: SCI-OR-QUANT
+    figure_expected: none
+    note: 원자량·몰. 범위 밖
+- exam: g3_202503_chem1
+  title: 고3 2025-03 화학1
+  question_file_id: 1o6wp-zKlBU70dxyU0Hj_mYr-p1h-Va_-
+  explanation_file_id: 1lQzbNF3qgaWCXxiMB4nDkpNvk53eWecs
+  counts:
+    ADV: 2
+  items:
+  - q: 10
+    tier: ADV
+    concept: SCI-OR-ELECTRON
+    figure_expected: none
+    note: 산화수. 범위 밖
+  - q: 18
+    tier: ADV
+    concept: SCI-OR-QUANT
+    figure_expected: particle_model
+    note: 금속 이온 양(mol). 몰 계산 범위 밖
+- exam: g3_202510_chem1
+  title: 고3 2025-10 화학1
+  question_file_id: 1bjw8yUED1E3WmhjNgS1ty5e8AwdtpN2F
+  explanation_file_id: 10_ppN9df6wJIy4B0KnsRnFpqcXvMrh8p
+  counts:
+    ADV: 2
+  items:
+  - q: 12
+    tier: ADV
+    concept: SCI-OR-ELECTRON
+    figure_expected: none
+    note: 산화수. 범위 밖
+  - q: 17
+    tier: ADV
+    concept: SCI-OR-QUANT
+    figure_expected: table
+    note: 금속 양이온 몰 순차 반응. 범위 밖
+- exam: g3_202510_chem2
+  title: 고3 2025-10 화학2
+  question_file_id: 1GO7Ed-Re4alByYVi7CKk6Ca6lDFqV89W
+  explanation_file_id: 1p3_PJ_BAcoyOM2fV7oI3Wolw6g6r2GUx
+  counts:
+    ADV: 1
+  items:
+  - q: 3
+    tier: ADV
+    concept: SCI-OR-REACTIVITY
+    figure_expected: diagram
+    note: 화학 전지·이온화 경향. 전지 범위 밖
+- exam: g2_202503_bio1
+  title: 고2 2025-03 생명과학1
+  question_file_id: 1s6Kdqi5AP4eI_WlZ7iz2U-FHt2QUUKun
+  explanation_file_id: 1ydS51HFIfH_PC2NTAcGbCHxToFSn8UxO
+  counts:
+    IN: 4
+    ADV: 2
+  items:
+  - q: 12
+    tier: IN
+    concept: SCI-EV-DIVERSITY
+    figure_expected: diagram
+    note: 유전적·종다양성
+  - q: 15
+    tier: IN
+    concept: SCI-EV-SELECTION
+    figure_expected: graph
+    note: 사슴쥐 변이·자연선택
+  - q: 16
+    tier: IN
+    concept: SCI-GT-FOSSIL
+    figure_expected: table
+    note: 암모나이트·삼엽충, 지질 시대
+  - q: 20
+    tier: IN
+    concept: SCI-EV-SELECTION
+    figure_expected: graph
+    note: 항생제 내성 세균 비율 변화
+  - q: 2
+    tier: ADV
+    concept: SCI-EV-SELECTION
+    figure_expected: diagram
+    note: 전사·번역. 범위 밖
+  - q: 19
+    tier: ADV
+    concept: SCI-EV-SELECTION
+    figure_expected: table
+    note: 유전 정보 흐름. 범위 밖
+- exam: g2_202510_bio1
+  title: 고2 2025-10 생명과학1
+  question_file_id: 1gYSYSqxB1fnIRUIELEX99XN6qGFhpCsn
+  explanation_file_id: 1kqxD-cOF4sck2Qdgkr7P7zG9sdj9x-H_
+  counts: {}
+  items: []
+  remaining: 범위 안 문항 없음. 생태계·개체군은 통합과학1, 나머지는 생명과학1 고유 내용
+- exam: g3_202503_bio1
+  title: 고3 2025-03 생명과학1
+  question_file_id: 1V5dgIImoPx7DHKRmUC6Yo7I9e5kUNt4C
+  explanation_file_id: 1lBuaEUsLh4i7gDZhrE_cgBkr0l-cT1cK
+  counts: {}
+  items: []
+  remaining: 범위 안 문항 없음. 생명과학1 고유 내용
+- exam: g2_202503_earth1
+  title: 고2 2025-03 지구과학1
+  question_file_id: 1TtlNv486-_KNoEhV1LkbCO9AtV33sd36
+  explanation_file_id: 11mljKzt9Y7MtYIUWP4DLjE8Hl8a56A6m
+  counts:
+    IN: 4
+    BORDER: 3
+  items:
+  - q: 5
+    tier: IN
+    concept: SCI-GT-FOSSIL
+    figure_expected: table
+    note: 선캄브리아·고생대 환경, 암모나이트 오답
+  - q: 10
+    tier: IN
+    concept: SCI-GT-TIME
+    figure_expected: graph
+    note: 대멸종 시기. 판게아
+  - q: 7
+    tier: IN
+    concept: SCI-EE-CIRCULATION
+    figure_expected: schematic
+    note: 해들리 순환·무역풍
+  - q: 15
+    tier: IN
+    concept: SCI-EE-CIRCULATION
+    figure_expected: schematic
+    note: 엘니뇨·라니냐 비교
+  - q: 1
+    tier: BORDER
+    concept: SCI-EE-ENERGY
+    figure_expected: graph
+    note: 기후 변화 영향 서술
+  - q: 12
+    tier: BORDER
+    concept: SCI-EE-ENERGY
+    figure_expected: graph
+    note: 지구 온난화 경향 그래프
+  - q: 3
+    tier: BORDER
+    concept: SCI-EM-GENERATION
+    figure_expected: schematic
+    note: 신재생 에너지 발전
+- exam: g2_202510_earth1
+  title: 고2 2025-10 지구과학1
+  question_file_id: 1Sakb-CoUcbA4iGRj3X98Unmog5fdyK7g
+  explanation_file_id: 1mSm-q6iOnlm3i9X1-OJdjoUKzqWorpkX
+  counts:
+    IN: 3
+    BORDER: 2
+    ADV: 2
+  items:
+  - q: 8
+    tier: IN
+    concept: SCI-GT-FOSSIL
+    figure_expected: stratigraphic_column
+    note: 표준화석, 지질 시대
+  - q: 16
+    tier: IN
+    concept: SCI-EE-CIRCULATION
+    figure_expected: schematic
+    note: 엘니뇨·라니냐, 용승
+  - q: 19
+    tier: IN
+    concept: SCI-EE-CIRCULATION
+    figure_expected: map
+    note: 대기 대순환·표층 해류
+  - q: 15
+    tier: BORDER
+    concept: SCI-EE-ENERGY
+    figure_expected: graph
+    note: 인위적 요인·해빙 반사율
+  - q: 7
+    tier: BORDER
+    concept: SCI-GT-TIME
+    figure_expected: stratigraphic_column
+    note: 지층 대비·건층. 현재 범위 근거 없음
+  - q: 9
+    tier: ADV
+    concept: SCI-GT-TIME
+    figure_expected: graph
+    note: 방사성 동위원소 절대 연령 계산
+  - q: 17
+    tier: ADV
+    concept: SCI-EE-ENERGY
+    figure_expected: diagram
+    note: 밀란코비치 주기
+- exam: g3_202510_earth1
+  title: 고3 2025-10 지구과학1
+  question_file_id: 1xi2cOcbcyuWM8eKMeEGMJFpMRoxZG4m9
+  explanation_file_id: 1b4l-nEBpxg96dGUMWyNllD5vc05GKqar
+  counts:
+    IN: 1
+    ADV: 2
+  items:
+  - q: 12
+    tier: IN
+    concept: SCI-EE-CIRCULATION
+    figure_expected: schematic
+    note: 엘니뇨 해수면 높이·기압
+  - q: 14
+    tier: ADV
+    concept: SCI-EE-ENERGY
+    figure_expected: graph
+    note: 기후 변화 외적 요인
+  - q: 18
+    tier: ADV
+    concept: SCI-GT-TIME
+    figure_expected: graph
+    note: 절대 연령 측정

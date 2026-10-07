@@ -83,6 +83,12 @@ decisions_made:
     date: '2026-10-07'
     authorized_by: USER_DIRECTIVE:2026-10-07
     text: Canonical copy of duplicated index CSVs is left undecided for now (batch3 vs new_batch).
+  - id: D4
+    date: '2026-10-07'
+    authorized_by: USER_DIRECTIVE:2026-10-07
+    text: Judged whether the grade 2 and 3 external exams contain 통합과학2 content. 18 explanation files were read (3 통합과학, 15 선택과목). Result is in quality/source/EXTERNAL_EXAM_SCI2_SCOPE_MAP_20261007_V1.yaml and Drive file SCI2_SCOPE_MAP_20261007.csv (1IpKt-uWutVfrshZYaZMLEtSOB1aKB-TY).
+    result: 74 items classified. IN 42, BORDER 10, ADV 22. 고2 통합과학 3회분은 범위에 포함. 선택과목은 일부 문항만 포함.
+    caveat: Based on 출제의도 text only. Question PDFs and figures were not opened. Figure types are inferred and unverified. Figures are registered by location and type only, not copied.
 decisions_needed:
   - Final-exam scope for SOC and SCI (textbook pages, school worksheets, excluded areas), or the school announcement. User holds this for now.
   - Which duplicate copy is canonical (batch3 or new_batch). User leaves it open.
