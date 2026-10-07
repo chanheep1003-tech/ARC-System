@@ -529,3 +529,66 @@ exams:
     concept: SCI-GT-TIME
     figure_expected: graph
     note: 절대 연령 측정
+- exam: g2_202506_earth1
+  title: 고2 2025-06 지구과학1
+  source_folder: Drive g23 (미분류)
+  question_file_id: 1rfWhdtl6LbhuLEb7i3kK-6WXq8hJcKzg
+  explanation_file_id: 19VuyUAyVoL9GyMByQ_Nn4JDIijL4HUy3
+  counts:
+    IN: 2
+    BORDER: 1
+    ADV: 1
+  items:
+  - {q: 2, tier: IN, concept: SCI-GT-TIME, figure_expected: diagram, note: 지질 시대 구분 흐름도·환경 특징}
+  - {q: 17, tier: IN, concept: SCI-GT-TIME, figure_expected: table, note: 누대·기별 주요 특징, 판게아·대멸종}
+  - {q: 12, tier: BORDER, concept: SCI-GT-FOSSIL, figure_expected: none, note: 삼엽충·양치식물 출현 시기, 지질 조사 보고서 중심}
+  - {q: 19, tier: ADV, concept: SCI-GT-TIME, figure_expected: experiment_diagram, note: 동전 모형 방사성 붕괴 계산}
+- exam: g2_202509_earth1
+  title: 고2 2025-09 지구과학1
+  source_folder: Drive g23 (미분류)
+  question_file_id: 1W5xKaPg-oay0iRs6zQnARILUcZwppZke
+  explanation_file_id: 1_46955_F9n7iq7qwUmhcTlnlkFheE32R
+  counts:
+    IN: 2
+    BORDER: 1
+    ADV: 2
+  items:
+  - {q: 8, tier: IN, concept: SCI-GT-FOSSIL, figure_expected: stratigraphic_column, note: 화석·지층 대비}
+  - {q: 13, tier: IN, concept: SCI-GT-TIME, figure_expected: stratigraphic_column, note: 지질 시대 환경 변화}
+  - {q: 7, tier: BORDER, concept: SCI-GT-TIME, figure_expected: stratigraphic_column, note: 지질 단면 사건 순서}
+  - {q: 14, tier: ADV, concept: SCI-GT-TIME, figure_expected: graph, note: 해설 텍스트 기준 심화 판정}
+  - {q: 17, tier: ADV, concept: SCI-EE-ENERGY, figure_expected: graph, note: 해설 텍스트 기준 심화 판정}
+- exam: g2_202506_phy1
+  title: 고2 2025-06 물리학1
+  question_file_id: 1z8ZQl9IinlMhyd8ZYLo5IXO6ndqlNoXr
+  explanation_file_id: 181YC5JvHUcACsesZ473QJckqnvIucHRr
+  verdict: 대체로 범위 밖(해설 훑어보기 기준, 문항별 판독 아님)
+- exam: g2_202506_chem1
+  title: 고2 2025-06 화학1
+  question_file_id: 148BKUAAoCSVaUbl02kf4-IA6WJE7FMod
+  explanation_file_id: 1grtMa7W4Fdg78co3tpMces5oCTzXj54p
+  verdict: 몰·오비탈·양적 관계 중심이라 ADV/OUT. 정답 근거 사용 금지.
+- exam: g2_202506_bio1
+  title: 고2 2025-06 생명과학1
+  question_file_id: 1zD3vqt_rFfzR96jyZN2dTQLRaiTvGuMk
+  explanation_file_id: 1wHozf8B5lPWhVj13dqHb4WYp4jRrKHpN
+  verdict: 신경·호르몬 등 범위 밖
+- exam: g2_202509_chem1
+  title: 고2 2025-09 화학1
+  question_file_id: 1kmIwRnBSsWPM8lnBNYD5KQqavsrz3rbT
+  explanation_file_id: 1unwcvUQgWUNLb6w2rPSG-76VDIpFrnmN
+  verdict: ADV/OUT (몰·화학 결합 중심)
+- exam: g2_202509_bio1
+  title: 고2 2025-09 생명과학1
+  question_file_id: 1R_u67QsBTsUHIF3VSMJaVJp0GytbbKKL
+  explanation_file_id: 1sBl3BU0cQ54ebn6qXkMyabGKH9QH4vLj
+  verdict: 범위 밖
+- exam: g2_202510_chem1
+  title: 고2 2025-10 화학1
+  question_file_id: 1xQ4pOoF4MTnwkITh4-aGmE-X3SoNraJi
+  explanation_file_id: 1L7ht_Eta2djjShSroNF6BfJE9pu2DWTV
+  verdict: ADV/OUT
+pending_unread:
+  note: Drive g23 폴더의 고3 해설 약 21개(g3_202503 earth1; 202506/202509 phy1·2 chem1·2 bio1·2 earth1·2; 202510 bio1·2 phy2 earth2)는 아직 문항별 판독 전. 사용자 확인 후 진행.
+  source_folder_id: 1H5UcOFJWDXQNwWGzyUpHyYXVE4PSOeoa
+ebsi_access: 방화벽으로 접근 불가. EBSi 자료는 무단 전재 금지. Drive 보유분만 정리함.
