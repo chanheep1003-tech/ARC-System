@@ -1,0 +1,88 @@
+schema_version: ARC-DRIVE-FOLDER-INVENTORY-V1
+target_exam_id: DONGBUK_2026_2_FINAL
+audited_at: '2026-10-07'
+method: Google Drive metadata, summary CSV and index document reads only. PDF bodies were not opened.
+status: UNVERIFIED_INVENTORY
+policy_note: >-
+  Folder presence is not scope evidence. Nothing here makes a source eligible_for_current_exam.
+  SUMMARY school_scope is PENDING for every unit. Reconcile with
+  ops/exams/EXAM_CONTEXTS_V1.yaml provisional_scope_policy before any unit_ids are filled.
+enumeration_limit: >-
+  Drive search pagination returned overlapping pages, so file totals were not enumerated.
+  Only the checks listed under verified_checks were confirmed by direct lookup.
+folders:
+  SOC:
+    root: {title: 통합사회2_기말자료_20261003, drive_id: 1EUA5Cc401EFom74dBbSS7pATw3pAaWW7}
+    units:
+      - {code: SOC1, name: 인권 보장과 헌법, folder: 01_인권_보장과_헌법, drive_id: 1VvDY84uzEPH3pRzQGDXDR7H_WLz8lBDC, summary_index_records: 84, summary_extra_pdf_links: 3}
+      - {code: SOC2, name: 사회정의와 불평등, folder: 02_사회정의와_불평등, drive_id: 1H4rVlv6eOOMHz3eAoyPxITbW53Lfexce, summary_index_records: 83, summary_extra_pdf_links: 5}
+      - {code: SOC3, name: 시장경제와 지속가능발전, folder: 03_시장경제와_지속가능발전, drive_id: 1dvc9pPm26al4OZmTm1RdlHugDQ1MvC8g, summary_index_records: 140, summary_extra_pdf_links: 3}
+      - {code: SOC4, name: 세계화와 평화, folder: 04_세계화와_평화, drive_id: 1yuRIwHCmewzvZrJgzt3kbmFiR7Cccqpm, summary_index_records: 65, summary_extra_pdf_links: 3}
+      - {code: SOC5, name: 미래와 지속가능한 삶, folder: 05_미래와_지속가능한_삶, drive_id: 1TK2m23tqWGYzkpqfBEJKQOLz6a5WRJd0, summary_index_records: 57, summary_extra_pdf_links: 3}
+    common: {folder: 00_공통_정리노트·정답, drive_id: 1ArqUtI1q9T_3wtGO2kXGn5q1MHh35t6y}
+    summary_file: {title: ARC_SOC_2_SUMMARY.csv, drive_id: 19VqXRigfDTmUyswo3GNMioGOyiDle_dR, school_scope: PENDING}
+    textbook: 통합사회2(박윤경) 천재교과서 1~5과 PDF 5개 (Drive 존재 확인)
+  SCI:
+    root: {title: 통합과학2_기말자료_20261003, drive_id: 1L_Eq08Rq-cACwao8cuQCAjXx6tkka1gd}
+    units:
+      - {code: SCI1, name: 변화와 다양성, folder: 01_변화와_다양성, drive_id: 1bbUhgwkZkh1u-Q95rF1p9qn1PUsisiYO, summary_index_records: 84, summary_extra_pdf_links: 8}
+      - {code: SCI2, name: 환경과 에너지, folder: 02_환경과_에너지, drive_id: 13u1zXP9VSwjAPXwKwr9K-9_BrnycYo6K, summary_index_records: 107, summary_extra_pdf_links: 5}
+      - {code: SCI3, name: 과학과 미래 사회, folder: 03_과학과_미래_사회, drive_id: 1wPpYZ8oKPQTM9cvVZ2zilJDegc0zE-_I, summary_index_records: 13, summary_extra_pdf_links: 5}
+    common: {folder: 00_공통_정리노트·정답·여러단원, drive_id: 1sWgIvdoJ7FfafRv4OIoI9_tA-HkMMWP4}
+    summary_file: {title: ARC_SCI_2_SUMMARY.csv, drive_id: 1lNQZ67JSRt6yDKwm0lPZg8AiEH1zJ62Z, school_scope: PENDING}
+    index_doc: {title: ARC_SCI3_문항목록.md, drive_id: 1dk4EswkZCMzatrJciRbjDkmT0ovYwYSY, statement: 학교 기말 범위는 확인 대기}
+verified_checks:
+  - SOC 01~05 and SCI 01~03 unit folders exist; both roots have a common folder.
+  - Q/EXPL pairs confirmed present for sampled IDs SOC 0014 and 0017 (unit 01) and for every ID seen in SOC units 02~05 and SCI units 01~02.
+findings:
+  - id: F1
+    severity: HIGH
+    text: No file in the repository references the Drive final-exam folders, the SOC_CLD/SCI_CLD file family, or the SUMMARY/INDEX CSVs. The 22 registered candidates are metadata-only and none is eligible.
+  - id: F2
+    severity: HIGH
+    text: All SUMMARY rows have school_scope PENDING. unit_ids and source_ids in EXAM_CONTEXTS_V1.yaml are still empty. Final scope is not confirmed.
+  - id: F3
+    severity: MEDIUM
+    status: PARTLY_ADDRESSED_D1_D2
+    text: SCI3 has no SCI_CLD files. It holds one external exam pair (g2_202509_ethics) and index files only. ARC_SCI3_문항목록.md lists 13 candidates, several UNVERIFIED, and its first candidate is a 생활과윤리 item.
+  - id: F4
+    severity: MEDIUM
+    status: ADDRESSED_D2
+    text: SCI1 and SCI2 folders contain external exams of other courses or grades (g1_sci_* 통합과학1, g3_* 고3 화학·물리·생물·지구과학). Their relevance to 통합과학2 is unconfirmed.
+  - id: F5
+    severity: MEDIUM
+    text: SOC common folder holds SRC_1987_Q, 1989_Q, 1990_Q. An ANS exists only for 1987 and only inside an originals folder. No answer file was found for 1989 or 1990. SRC_1991 is a GUIDE, not a question file.
+  - id: F6
+    severity: MEDIUM
+    text: Duplicate copies. Source PDFs exist under several originals folders. Index CSVs exist in two sibling folders with different sizes (new_batch vs batch3, for example ARC_SOC1_INDEX 68826 vs 64732 bytes, ARC_SCI_2_SUMMARY 571 vs 575 bytes). The final-exam folder copy matches batch3. A canonical copy is not designated.
+  - id: F7
+    severity: LOW
+    text: A file named 폐기_실제통합과학1_자이스토리_2026_잘못된파일명.pdf remains in the reference folder.
+decisions_made:
+  - id: D1
+    date: '2026-10-07'
+    authorized_by: USER_DIRECTIVE:2026-10-07
+    text: SCI3 (과학과 미래 사회) is included in the provisional final-exam scope.
+    caveat: SCI3 has no SCI_CLD question files. Only 13 unverified external candidates plus index files exist. Coverage is thin until real 통합과학2 sources are added.
+  - id: D2
+    date: '2026-10-07'
+    authorized_by: USER_DIRECTIVE:2026-10-07
+    text: External exams of other grades or subjects were separated from the unit folders and grouped by related exam series. Files were moved by ID, titles unchanged, so existing links stay valid.
+    target_folder: {title: 외부기출_분리_20261007, drive_id: 1hyXjrU2m_M8HM3Qwx6h3RDvbH1n5VoHe}
+    groups:
+      - {folder: 01_통합과학_고1학평, drive_id: 1GrLfD1JXMQi7p4UH_TwPu8k9Cy2T5PS-, files: 26, series: g1_sci_*}
+      - {folder: 02_통합과학_고2학평, drive_id: 1Kg4CQ450NnhJ9AjQYV--U9yRx8BQs228, files: 6, series: g2_*_intsci_*}
+      - {folder: 03_타과목_물리학1, drive_id: 1JnU57GJL7VBKKt27U_E9K_dvFZ9dzDA4, files: 10, series: g2/g3 phy1}
+      - {folder: 04_타과목_화학(1·2), drive_id: 1K6kQF7gJsUh06yaIerVPsjIEkMzATxPD, files: 8, series: g2/g3 chem1, g3 chem2}
+      - {folder: 05_타과목_생명과학1, drive_id: 1lcmZ1M54Z3Jkm892tSlsRDHnIMAHhXer, files: 6, series: g2/g3 bio1}
+      - {folder: 06_타과목_지구과학1, drive_id: 1dtPGtwmAqLJ8R8ETu0iRhadpGuXBVH0h, files: 6, series: g2/g3 earth1}
+      - {folder: 07_타과목_생활과윤리, drive_id: 1mbW5QmfoijdAW903aO8sfe3EBf53khc5, files: 2, series: g2_202509_ethics}
+    move_log: {title: MOVE_LOG_20261007.csv, drive_id: 1OpthA1fiesNMhBlXAUoELZwdY2tL2JtH}
+    note: Moved 64 files. Unit folders no longer contain g1_/g2_/g3_ files (verified by lookup). Relevance of the 통합과학 groups to 통합과학2 scope is still unconfirmed.
+  - id: D3
+    date: '2026-10-07'
+    authorized_by: USER_DIRECTIVE:2026-10-07
+    text: Canonical copy of duplicated index CSVs is left undecided for now (batch3 vs new_batch).
+decisions_needed:
+  - Final-exam scope for SOC and SCI (textbook pages, school worksheets, excluded areas), or the school announcement. User holds this for now.
+  - Which duplicate copy is canonical (batch3 or new_batch). User leaves it open.
