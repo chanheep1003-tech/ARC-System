@@ -1181,3 +1181,159 @@ science_exams:
     OUT_MID: 0
     OUT_EXC: 0
     OUT: 14
+- exam: g1_sci_2021_09
+  subject: intsci
+  title: "고1 2021-09 통합과학"
+  drive_folder: 외부기출_분리_20261007/01_통합과학_고1학평
+  explanation_file_id: 1JCxHF_G3k2IJ_ADQENk-3xV45JG0U6J6
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 20
+- exam: g1_sci_2021_11
+  subject: intsci
+  title: "고1 2021-11 통합과학"
+  drive_folder: 외부기출_분리_20261007/01_통합과학_고1학평
+  explanation_file_id: 1adOAWNCjx0DsRFaqH1Ms_3wBh2adktuD
+  counts:
+    IN: 1
+    BORDER: 2
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 17
+- exam: g1_sci_2022_11
+  subject: intsci
+  title: "고1 2022-11 통합과학"
+  drive_folder: 외부기출_분리_20261007/01_통합과학_고1학평
+  explanation_file_id: 1qGbtAtdOZIHpouYyXKN7dYrngxadMtSo
+  counts:
+    IN: 4
+    BORDER: 1
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 15
+- exam: g1_sci_2023_09
+  subject: intsci
+  title: "고1 2023-09 통합과학"
+  drive_folder: 외부기출_분리_20261007/01_통합과학_고1학평
+  explanation_file_id: 1gE_9guF4pmHziseaZDvFvUlFVsUhHS-L
+  counts:
+    IN: 0
+    BORDER: 1
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 19
+- exam: g1_sci_2024_06
+  subject: intsci
+  title: "고1 2024-06 통합과학"
+  drive_folder: 외부기출_분리_20261007/01_통합과학_고1학평
+  explanation_file_id: 1jIXA80LaUc3Io0kI06gZKk3NfJo1WM3Y
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 20
+- exam: g1_sci_2024_09
+  subject: intsci
+  title: "고1 2024-09 통합과학"
+  drive_folder: 외부기출_분리_20261007/01_통합과학_고1학평
+  explanation_file_id: 1HkCfQJMGIniOZpKdxXtqRVgUHQ9lggTQ
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 20
+- exam: g1_sci_2024_10
+  subject: intsci
+  title: "고1 2024-10 통합과학"
+  drive_folder: 외부기출_분리_20261007/01_통합과학_고1학평
+  explanation_file_id: 1nuPnNh5zXuwAN5d3h8zNbdLvayPa4c_B
+  counts:
+    IN: 2
+    BORDER: 0
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 18
+- exam: g1_sci_2025_03
+  subject: intsci
+  title: "고1 2025-03 과학(중학 범위)"
+  drive_folder: 외부기출_분리_20261007/01_통합과학_고1학평
+  explanation_file_id: 14Tk8JMrdfDtUMoXPjGrfZUhLW6wASQ8I
+  counts:
+    IN: 0
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 17
+- exam: g1_sci_2025_06
+  subject: intsci
+  title: "고1 2025-06 통합과학"
+  drive_folder: 외부기출_분리_20261007/01_통합과학_고1학평
+  explanation_file_id: 1vJStmv95vNSZeKgjb3cU8DcBz3XTzcHi
+  counts:
+    IN: 0
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 22
+- exam: g1_sci_2025_09
+  subject: intsci
+  title: "고1 2025-09 통합과학"
+  drive_folder: 외부기출_분리_20261007/01_통합과학_고1학평
+  explanation_file_id: 1EHVU3th9M8I6hiAKFl8z8vNg6TifQicU
+  counts:
+    IN: 3
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 19
+- exam: g1_sci_2025_10
+  subject: intsci
+  title: "고1 2025-10 통합과학"
+  drive_folder: 외부기출_분리_20261007/01_통합과학_고1학평
+  explanation_file_id: 1UawOYNQfCQceFtLXCwsRmb3VRhWAiOFe
+  counts:
+    IN: 5
+    BORDER: 4
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 16
+- exam: g1_sci_2026_06
+  subject: intsci
+  title: "고1 2026-06 통합과학"
+  drive_folder: 외부기출_분리_20261007/01_통합과학_고1학평
+  explanation_file_id: 1g9KcU7ysdk5Ml0trAQwvdclzCFgidg_e
+  counts:
+    IN: 0
+    BORDER: 4
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 21
+- exam: g1_sci_2026_09
+  subject: intsci
+  title: "고1 2026-09 통합과학"
+  drive_folder: 외부기출_분리_20261007/01_통합과학_고1학평
+  explanation_file_id: 1ywsU4T3mwI1F4IvuNUeoaQb0pST5jEDw
+  counts:
+    IN: 3
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 19

@@ -856,6 +856,333 @@ exams:
   - {q: 12, tier: ADV, concept: "SCI-EE-CIRCULATION", figure_expected: schematic, note: "지상풍 힘의 균형과 반구 판단, 대기 순환 심화"}
   - {q: 17, tier: BORDER, concept: "SCI-GT-TIME", figure_expected: map, note: "지층 연령 순서 추론, 지질도 해독은 심화"}
   verdict: "일부 포함 — IN 없음, 지질 시대·지질도·전향력 관련 BORDER 4문항만 인접, 대기·해수 순환 2문항은 심화(ADV)"
+- exam: g1_sci_2021_09
+  title: "고1 2021-09 통합과학"
+  question_file_id: 1DoN0587HMfhNAIwXe9NGwMplY3tldMZ-
+  explanation_file_id: 1JCxHF_G3k2IJ_ADQENk-3xV45JG0U6J6
+  counts:
+    IN: 0
+    BORDER: 0
+    OUT: 20
+  items: []
+- exam: g1_sci_2021_11
+  title: "고1 2021-11 통합과학"
+  question_file_id: 1FQTbjl_nPoVfcMb20Eh5BYQ3Vh_-8KsX
+  explanation_file_id: 1adOAWNCjx0DsRFaqH1Ms_3wBh2adktuD
+  counts:
+    IN: 1
+    BORDER: 2
+    OUT: 17
+  items:
+  - q: 6
+    tier: IN
+    concept: "SCI-GT-TIME"
+    figure_expected: diagram
+    note: "지질 시대 지속 기간 순서와 시대별 특징 구분"
+  - q: 13
+    tier: BORDER
+    concept: "SCI-EV-DIVERSITY"
+    figure_expected: diagram
+    note: "생태계 먹이 관계, 통합과학2 포함 여부 불명확"
+  - q: 18
+    tier: BORDER
+    concept: "SCI-OR-ELECTRON"
+    figure_expected: schematic
+    note: "촉매 판단이 주이고 산화는 전자 잃음 보기 하나"
+- exam: g1_sci_2022_11
+  title: "고1 2022-11 통합과학"
+  question_file_id: 1p6YLM_pTpRAjPVRXk6g7UxKYTt-NtzV1
+  explanation_file_id: 1qGbtAtdOZIHpouYyXKN7dYrngxadMtSo
+  counts:
+    IN: 4
+    BORDER: 1
+    OUT: 15
+  items:
+  - q: 5
+    tier: IN
+    concept: "SCI-GT-TIME"
+    figure_expected: schematic
+    note: "고생대 말 초대륙 형성과 대멸종 연결"
+  - q: 9
+    tier: BORDER
+    concept: "SCI-EV-DIVERSITY"
+    figure_expected: diagram
+    note: "생태계 구성 요소 상호 관계, 범위 불명확"
+  - q: 13
+    tier: IN
+    concept: "SCI-OR-ELECTRON"
+    figure_expected: particle_model
+    note: "금속과 이온 반응에서 전자 이동, 산화 환원 판별"
+  - q: 16
+    tier: IN
+    concept: "SCI-EV-SELECTION"
+    figure_expected: graph
+    note: "항생제 내성 세균 증가를 자연선택으로 해석"
+  - q: 19
+    tier: IN
+    concept: "SCI-EE-CIRCULATION"
+    figure_expected: table
+    note: "엘니뇨 때 무역풍 약화와 해역별 강수 변화"
+- exam: g1_sci_2023_09
+  title: "고1 2023-09 통합과학"
+  question_file_id: 1NeXOu4y1HyKWrvgVM1sPGdtwh6KgmN-Q
+  explanation_file_id: 1gE_9guF4pmHziseaZDvFvUlFVsUhHS-L
+  counts:
+    IN: 0
+    BORDER: 1
+    OUT: 19
+  items:
+  - q: 6
+    tier: BORDER
+    concept: "SCI-OR-ELECTRON"
+    figure_expected: experiment_diagram
+    note: "알칼리 금속 성질이 주이고 산소와 반응 시 전자 이동 언급"
+- exam: g1_sci_2024_06
+  title: "고1 2024-06 통합과학"
+  question_file_id: 1_pzMUUcStg7LD5aBRg0v6cdnt70WW7Dh
+  explanation_file_id: 1jIXA80LaUc3Io0kI06gZKk3NfJo1WM3Y
+  counts:
+    IN: 0
+    BORDER: 0
+    OUT: 20
+  items: []
+- exam: g1_sci_2024_09
+  title: "고1 2024-09 통합과학"
+  question_file_id: 15OpJfjhfaGwtOcZdS7Qz3egsxajxYd7G
+  explanation_file_id: 1HkCfQJMGIniOZpKdxXtqRVgUHQ9lggTQ
+  counts:
+    IN: 0
+    BORDER: 0
+    OUT: 20
+  items: []
+- exam: g1_sci_2024_10
+  title: "고1 2024-10 통합과학"
+  question_file_id: 1naPC-idcFjbrgaCMNwJ9WT81sqfLRXeg
+  explanation_file_id: 1nuPnNh5zXuwAN5d3h8zNbdLvayPa4c_B
+  counts:
+    IN: 2
+    BORDER: 0
+    OUT: 18
+  items:
+  - q: 5
+    tier: IN
+    concept: "SCI-GT-FOSSIL"
+    figure_expected: diagram
+    note: "지질 시대 길이 순서와 대표 화석 시대 연결"
+  - q: 16
+    tier: IN
+    concept: "SCI-OR-ELECTRON"
+    figure_expected: schematic
+    note: "철 제련 환원과 산소 증가 맥락의 산화 환원 판단"
+- exam: g1_sci_2025_03
+  title: "고1 2025-03 과학(중학 범위)"
+  question_file_id: 14kFmGlIZBzR5EmG4lUws8OIgquLpTftD
+  explanation_file_id: 14Tk8JMrdfDtUMoXPjGrfZUhLW6wASQ8I
+  counts:
+    IN: 0
+    BORDER: 3
+    OUT: 17
+  items:
+  - q: 1
+    tier: BORDER
+    concept: "SCI-EE-CIRCULATION"
+    figure_expected: diagram
+    note: "해륙풍 원리, 대기 순환의 기초 수준"
+  - q: 4
+    tier: BORDER
+    concept: "NONE"
+    figure_expected: diagram
+    note: "열출입: 발열·흡열 반응 사례, 산화환원과 직접 연결 약함"
+  - q: 12
+    tier: BORDER
+    concept: "SCI-EE-CIRCULATION"
+    figure_expected: experiment_diagram
+    note: "염분과 밀도 개념, 해수 순환의 선수 지식"
+- exam: g1_sci_2025_06
+  title: "고1 2025-06 통합과학"
+  question_file_id: 1yEHBLkjHYXT1KDNo8sDBbv5K9Ie2ExQr
+  explanation_file_id: 1vJStmv95vNSZeKgjb3cU8DcBz3XTzcHi
+  counts:
+    IN: 0
+    BORDER: 3
+    OUT: 22
+  items:
+  - q: 6
+    tier: BORDER
+    concept: "SCI3"
+    figure_expected: schematic
+    note: "센서: 센서의 신호 변환, 통합과학1 정보 단원과 겹침"
+  - q: 7
+    tier: BORDER
+    concept: "SCI3"
+    figure_expected: graph
+    note: "센서: 아날로그·디지털 신호 구분"
+  - q: 25
+    tier: BORDER
+    concept: "SCI-EE-ENERGY"
+    figure_expected: diagram
+    note: "화산 분출물이 태양 복사 에너지를 줄이는 기후 요인"
+- exam: g1_sci_2025_09
+  title: "고1 2025-09 통합과학"
+  question_file_id: 15c_e9-0rDBX9w999nbyjzjx9FS8Yaowu
+  explanation_file_id: 1EHVU3th9M8I6hiAKFl8z8vNg6TifQicU
+  counts:
+    IN: 3
+    BORDER: 3
+    OUT: 19
+  items:
+  - q: 3
+    tier: BORDER
+    concept: "SCI3"
+    figure_expected: schematic
+    note: "센서: 센서의 신호 변환과 디지털 정보 비교"
+  - q: 14
+    tier: BORDER
+    concept: "SCI-EE-ENERGY"
+    figure_expected: diagram
+    note: "지구 시스템 에너지원 구분, 태양 에너지 비중"
+  - q: 15
+    tier: BORDER
+    concept: "SCI-EE-CIRCULATION"
+    figure_expected: graph
+    note: "수온 연직 분포 해석, 해수 층 구조"
+  - q: 23
+    tier: IN
+    concept: "SCI-GT-TIME"
+    figure_expected: graph
+    note: "지질 시대별 생물과 기온 변화 해석"
+  - q: 24
+    tier: IN
+    concept: "SCI-EV-DIVERSITY"
+    figure_expected: none
+    note: "생물다양성 세 수준과 보전 필요성"
+  - q: 25
+    tier: IN
+    concept: "SCI-EV-SELECTION"
+    figure_expected: experiment_diagram
+    note: "바둑돌 모의실험으로 환경 적응 개체의 생존 확인"
+- exam: g1_sci_2025_10
+  title: "고1 2025-10 통합과학"
+  question_file_id: 1mT-0oC6kr1pL5XrhGSJPUC3ksBGlT8N7
+  explanation_file_id: 1UawOYNQfCQceFtLXCwsRmb3VRhWAiOFe
+  counts:
+    IN: 5
+    BORDER: 4
+    OUT: 16
+  items:
+  - q: 5
+    tier: IN
+    concept: "SCI-OR-ELECTRON"
+    figure_expected: particle_model
+    note: "산소·전자 이동 관점으로 산화와 환원 판별"
+  - q: 6
+    tier: IN
+    concept: "SCI3"
+    figure_expected: graph
+    note: "센서: 센서 기반 시스템 도입 효과를 자료로 판단"
+  - q: 10
+    tier: BORDER
+    concept: "SCI3"
+    figure_expected: none
+    note: "센서: 센서 역할 포함, 어림·단위는 통합과학1"
+  - q: 11
+    tier: BORDER
+    concept: "SCI-EV-DIVERSITY"
+    figure_expected: diagram
+    note: "생태계 평형과 먹이 관계, 생물다양성과 인접"
+  - q: 13
+    tier: IN
+    concept: "SCI-GT-TIME"
+    figure_expected: diagram
+    note: "지질 시대 환경 변화와 대표 화석 연결"
+  - q: 15
+    tier: IN
+    concept: "SCI-EV-SELECTION"
+    figure_expected: diagram
+    note: "집단 털색 변화로 자연선택과 유전적 다양성 판단"
+  - q: 17
+    tier: BORDER
+    concept: "NONE"
+    figure_expected: graph
+    note: "열출입: 반응 열 출입과 에너지 합 비교, 발열 반응"
+  - q: 22
+    tier: IN
+    concept: "SCI-EE-CIRCULATION"
+    figure_expected: diagram
+    note: "엘니뇨 시기 무역풍·수온·강수 변화"
+  - q: 23
+    tier: BORDER
+    concept: "NONE"
+    figure_expected: experiment_diagram
+    note: "중화반응: 중화 반응의 열 발생과 이온 수 비교"
+- exam: g1_sci_2026_06
+  title: "고1 2026-06 통합과학"
+  question_file_id: 1KyvPK06YADLY-b6Q-rBKlJu0_fh6kr-8
+  explanation_file_id: 1g9KcU7ysdk5Ml0trAQwvdclzCFgidg_e
+  counts:
+    IN: 0
+    BORDER: 4
+    OUT: 21
+  items:
+  - q: 4
+    tier: BORDER
+    concept: "SCI3"
+    figure_expected: schematic
+    note: "센서: 연속 신호와 센서의 전기 신호 변환"
+  - q: 6
+    tier: BORDER
+    concept: "SCI3"
+    figure_expected: diagram
+    note: "센서: 혈당 측정기 디지털 정보, 나머지 보기는 통합과학1"
+  - q: 19
+    tier: BORDER
+    concept: "SCI-EE-ENERGY"
+    figure_expected: diagram
+    note: "물의 순환 과정과 태양 에너지원, 일부만 관련"
+  - q: 21
+    tier: BORDER
+    concept: "SCI-EE-ENERGY"
+    figure_expected: diagram
+    note: "화산재의 기온 저하 효과와 지구 내부 에너지 방출"
+- exam: g1_sci_2026_09
+  title: "고1 2026-09 통합과학"
+  question_file_id: 1FtcoyvQWidLZIR4_CgM5lA1Egl_-X4Gr
+  explanation_file_id: 1ywsU4T3mwI1F4IvuNUeoaQb0pST5jEDw
+  counts:
+    IN: 3
+    BORDER: 3
+    OUT: 19
+  items:
+  - q: 3
+    tier: BORDER
+    concept: "SCI3"
+    figure_expected: schematic
+    note: "센서: 광센서의 신호 변환과 디지털 정보"
+  - q: 14
+    tier: BORDER
+    concept: "SCI-EE-ENERGY"
+    figure_expected: diagram
+    note: "물의 순환 에너지원과 증발량·강수량 수지"
+  - q: 15
+    tier: BORDER
+    concept: "SCI-EV-DIVERSITY"
+    figure_expected: graph
+    note: "탄소 순환과 종다양성 감소 요인이 혼합"
+  - q: 23
+    tier: IN
+    concept: "SCI-EV-DIVERSITY"
+    figure_expected: none
+    note: "종다양성 정의와 포획 등 보전 방안"
+  - q: 24
+    tier: IN
+    concept: "SCI-GT-TIME"
+    figure_expected: diagram
+    note: "지질 시대 화석, 식물 출현, 대멸종 순서"
+  - q: 25
+    tier: IN
+    concept: "SCI-EV-SELECTION"
+    figure_expected: diagram
+    note: "돌연변이로 변이 발생, 말라리아 저항성의 자연선택"
 subject_verdict_g3:
   "지구과학Ⅰ": "3회 · IN 6 · BORDER 12 · ADV 3 · OUT 39 (합계 60)"
   "지구과학Ⅱ": "3회 · IN 0 · BORDER 7 · ADV 2 · OUT 51 (합계 60)"
@@ -878,6 +1205,10 @@ subject_summary_current:
       exams: 3
       counts: {IN: 22, BORDER: 2, ADV: 2, OUT: 34}
       list: "g2_202603(문항기록); g2_202609(문항기록); g2_202606(문항기록)"
+    - subject: "통합과학(고1)"
+      exams: 13
+      counts: {IN: 18, BORDER: 24, ADV: 0, OUT: 243}
+      list: "g1_2021_09(범위 밖); g1_2021_11; g1_2022_11; g1_2023_09; g1_2024_06(범위 밖); g1_2024_09(범위 밖); g1_2024_10; g1_2025_03; g1_2025_06; g1_2025_09; g1_2025_10; g1_2026_06; g1_2026_09 (전부 문항기록)"
     - subject: "지구과학Ⅰ"
       exams: 8
       counts: {IN: 18, BORDER: 19, ADV: 10, OUT: 113}
