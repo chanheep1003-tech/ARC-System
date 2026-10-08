@@ -9,7 +9,7 @@ tiers:
   ADV: 주제는 겹치나 풀이에 범위 밖 심화 지식이 필요. 정답 근거로 사용 금지(ADVANCED LEAK BLOCK)
 figure_policy: 그림 후보는 위치와 유형만 등록한다. 원본 그림은 복사하지 않는다. 사용 시 개념과 공식 자료로 재도식화한다(EBSi 무단 전재 금지, 저작권 자료 복제는 HARD FAIL). figure_expected는 문항 의도에서 추정한
   값이며 미검증이다.
-subject_verdict:
+subject_verdict:  # 초기 18회분 기준. 최신 집계는 subject_summary_current 참조
   g2_통합과학(3회): 범위 포함. 75문항 중 IN 22(통합과학2 개념 17 + SCI3 5), BORDER 2, ADV 2. 202606 Q25는 엘니뇨와 빅데이터 복합이라 SCI3와도 겹침. 나머지는 통합과학1.
   물리학1 5회: 일부 포함. 전자기 유도·발전 문항만 IN 4. 나머지는 심화 또는 범위 밖.
   화학1·2 4회: 일부 포함. g2_202503 화학1의 산화 환원 4문항만 IN. 산화수·몰 문항은 ADV.
@@ -842,3 +842,53 @@ g3_status:
   caveat: "일부 지구과학 해설(2025-06·09)은 [출제의도] 줄이 없어 소제목 기준으로 판정함. 판정은 해설 텍스트만 보고 낸 분류이므로 IN 항목은 사람 검토 후 사용."
   leak_block: "ADV 항목은 정답 근거로 쓰지 않음(ADVANCED LEAK BLOCK)."
 ebsi_access: 방화벽으로 접근 불가. EBSi 자료는 무단 전재 금지. Drive 보유분만 정리함.
+subject_summary_current:
+  basis: "2026-10-08 재집계. 문항기록이 있으면 문항 합계, 없으면 counts, 판정문만 있으면 집계 제외."
+  rows:
+    - subject: "통합과학(고2 전용)"
+      exams: 3
+      counts: {IN: 22, BORDER: 2, ADV: 2, OUT: 34}
+      list: 'g2_202603(문항기록); g2_202609(문항기록); g2_202606(문항기록)'
+    - subject: "지구과학Ⅰ"
+      exams: 8
+      counts: {IN: 18, BORDER: 19, ADV: 10, OUT: 113}
+      list: 'g2_202503(문항기록); g2_202510(문항기록); g3_202510(문항기록); g2_202506(문항기록); g2_202509(문항기록); g3_202503(문항기록); g3_202506(문항기록); g3_202509(문항기록)'
+    - subject: "지구과학Ⅱ"
+      exams: 3
+      counts: {IN: 0, BORDER: 7, ADV: 2, OUT: 51}
+      list: 'g3_202506(문항기록); g3_202509(문항기록); g3_202510(문항기록)'
+    - subject: "물리학Ⅰ"
+      exams: 8
+      counts: {IN: 4, BORDER: 4, ADV: 8, OUT: 104}
+      list: 'g2_202503(문항기록); g2_202509(미기록); g2_202510(문항기록); g3_202503(문항기록); g3_202510(문항기록); g2_202506(판정문만); g3_202506(문항기록); g3_202509(문항기록)'
+    - subject: "물리학Ⅱ"
+      exams: 3
+      counts: {IN: 0, BORDER: 2, ADV: 4, OUT: 54}
+      list: 'g3_202506(문항기록); g3_202509(문항기록); g3_202510(문항기록)'
+    - subject: "화학Ⅰ"
+      exams: 8
+      counts: {IN: 4, BORDER: 2, ADV: 10, OUT: 84}
+      list: 'g2_202503(문항기록); g3_202503(문항기록); g3_202510(문항기록); g2_202506(판정문만); g2_202509(판정문만); g2_202510(판정문만); g3_202506(문항기록); g3_202509(문항기록)'
+    - subject: "화학Ⅱ"
+      exams: 3
+      counts: {IN: 0, BORDER: 0, ADV: 3, OUT: 57}
+      list: 'g3_202510(문항기록); g3_202506(합계만); g3_202509(문항기록)'
+    - subject: "생명과학Ⅰ"
+      exams: 8
+      counts: {IN: 5, BORDER: 7, ADV: 4, OUT: 64}
+      list: 'g2_202503(문항기록); g2_202510(미기록); g3_202503(미기록); g2_202506(판정문만); g2_202509(판정문만); g3_202506(문항기록); g3_202509(문항기록); g3_202510(문항기록)'
+    - subject: "생명과학Ⅱ"
+      exams: 3
+      counts: {IN: 0, BORDER: 7, ADV: 8, OUT: 45}
+      list: 'g3_202506(문항기록); g3_202509(문항기록); g3_202510(문항기록)'
+unrecorded_exams:
+  - {exam: g2_202509_phy1, status: "미기록"}
+  - {exam: g2_202510_bio1, status: "미기록"}
+  - {exam: g3_202503_bio1, status: "미기록"}
+  - {exam: g2_202506_phy1, status: "판정문만"}
+  - {exam: g2_202506_chem1, status: "판정문만"}
+  - {exam: g2_202506_bio1, status: "판정문만"}
+  - {exam: g2_202509_chem1, status: "판정문만"}
+  - {exam: g2_202509_bio1, status: "판정문만"}
+  - {exam: g2_202510_chem1, status: "판정문만"}
+unrecorded_note: "판정문만 있는 시험은 집계에서 빠졌다. 미기록 시험은 해설을 다시 읽어야 한다."
