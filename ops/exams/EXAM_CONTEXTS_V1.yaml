@@ -1,7 +1,7 @@
 schema_version: ARC-EXAM-CONTEXT-V1
 exams:
   DONGBUK_2026_2_FINAL:
-    status: PREPARING
+    status: PROVISIONAL_SCOPE_LOCKED
     exam_date: null
     curriculum: 2022_REVISED
     inherit_midterm_scope: false
@@ -11,18 +11,29 @@ exams:
       mode: CURRENT_SEMESTER_COURSE_MINUS_ACTUAL_MIDTERM
       applies_to_subjects: [SCI, SOC, KOR]
       basis_exam_id: DONGBUK_2026_2_MID
-      authorized_by: USER_DIRECTIVE:2026-10-03
+      authorized_by: USER_DIRECTIVE:2026-10-08
       scope_expression: 이번 학기 과목별 전체 학습 내용 - 실제 중간고사 포함 범위
       include_remaining_textbook_content: true
       include_remaining_school_supplements: true
       collection_enabled: true
       school_confirmed: false
+      user_provisional_lock: true
+      scope_change_requires_school_notice_or_user_directive: true
       midterm_baseline_status: RECONCILIATION_REQUIRED
       midterm_baseline_refs:
         - quality/ARC_SCOPE_LEDGER_V1.0.md
         - subjects/KOREAN_MASTER_V4.4.md
         - subjects/SOCIAL_MASTER_V4.1.md
         - subjects/SCIENCE_MASTER_V4.0.md
+      final_difficulty_policy:
+        reference: DONGBUK_2026_2_MID_STRUCTURAL_CALIBRATION
+        target: SLIGHTLY_ABOVE_MIDTERM
+        adjustment: QUALITATIVE_NOT_UNVERIFIED_NUMERIC
+        applies_to: ARC_FINAL_ONLY
+        preserve_arc_n_learning_ladder: true
+        require_subject_specific_verified_final_anchor: true
+        approval_status: PENDING
+        drive_save: BLOCKED
       production_priority_is_scope_evidence: false
       on_school_scope_announcement: REPLACE_WITH_CONFIRMED_SCOPE
       note: 기존 범위 기록을 대조해 단원·원문 ID를 채운다. 학교 공지는 이 임시 제외 기준보다 우선하며 중간 내용 재포함도 허용한다.
