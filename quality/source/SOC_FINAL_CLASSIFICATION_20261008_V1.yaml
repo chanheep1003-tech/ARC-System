@@ -1,0 +1,2513 @@
+# 사회 기말 임시범위 판정 결과 (고1·2·3 사회 기출 47회)
+schema_version: ARC-SOC-FINAL-CLASSIFICATION-V1
+recorded_at: '2026-10-08'
+scope_ref: quality/source/SOC_FINAL_PROVISIONAL_SCOPE_20261008_V1.yaml
+scope_status: PROVISIONAL_REMAINDER
+school_confirmed: false
+basis: 해설 텍스트의 문항별 [출제의도] 또는 소제목만 사용. 문제지 PDF·그림은 열지 않음. 판정은 모델 분류이며 사람 검토 전.
+discovery_limits: Drive 검색 페이징이 중간에 멈춰 목록이 완전하지 않을 수 있음. 고1은 11회 확인(2019_11~2026_09), 1dvc9 등 일부 폴더는 첫 페이지만 확인.
+totals:
+  exams: 47
+  items: 980
+  IN: 106
+  BORDER: 101
+  ADV: 42
+  OUT_MID: 85
+  OUT_EXC: 19
+  OUT: 627
+by_grade:
+  고1:
+    IN: 24
+    BORDER: 20
+    ADV: 2
+    OUT_MID: 33
+    OUT_EXC: 7
+    OUT: 159
+    exams: 11
+  고2:
+    IN: 62
+    BORDER: 59
+    ADV: 14
+    OUT_MID: 35
+    OUT_EXC: 9
+    OUT: 296
+    exams: 23
+  고3:
+    IN: 20
+    BORDER: 22
+    ADV: 26
+    OUT_MID: 17
+    OUT_EXC: 3
+    OUT: 172
+    exams: 13
+exams:
+- exam: g3_202510_econ
+  grade: 고3
+  subject: 상업 경제(직업탐구)
+  title: 상업 경제(직업탐구) 2025학년도 10월 고3 전국연합학력평가 (파일 헤더상 '상업 경제'; 일반 경제 아님)
+  explanation_file_id: 1KjGrF1uPlXWeDyljnqoc1YxGV_7FZySY
+  total: 20
+  counts:
+    IN: 0
+    BORDER: 2
+    ADV: 5
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 13
+  items:
+  - q: 1
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 국제 환경 협약의 목적, 지속가능발전과 인접
+  - q: 9
+    tier: ADV
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 보험 실무와 계약자 의무, 금융생활 심화
+  - q: 10
+    tier: ADV
+    concept: FIN-TRADE-SD
+    figure_expected: table
+    note: 경제 통합 단계 구분, 외국 협정 세부 필요
+  - q: 11
+    tier: BORDER
+    concept: FIN-TRADE-SD
+    figure_expected: graph
+    note: 환율 변동이 수입에 미치는 영향, 범위 불명확
+  - q: 12
+    tier: ADV
+    concept: FIN-TRADE-SD
+    figure_expected: table
+    note: 국제수지 항목 해석과 수치 계산
+  - q: 13
+    tier: ADV
+    concept: FIN-TRADE-SD
+    figure_expected: none
+    note: 무역 형태 분류, 상업 실무 용어 필요
+  - q: 17
+    tier: ADV
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 기업 자금 조달 방식, 자본시장 심화
+  verdict: 범위 밖 - 20문항 모두 [출제의도] 있음, 상업 실무(운송·유통·마케팅·결제·경영) 중심이라 IN 0문항이고 무역·금융·환경 7문항만 주변부로 걸침
+- exam: g2_202509_econ
+  grade: 고2
+  subject: 경제
+  title: 경제 2025학년도 9월 고2 전국연합학력평가 (원문이 2단 레이아웃이라 텍스트 순서가 뒤섞임, 번호별 [출제의도]로 매핑)
+  explanation_file_id: 1MjtPsd8FCcO1NdDvkH7-nlcK8AcIbPli
+  total: 20
+  counts:
+    IN: 10
+    BORDER: 0
+    ADV: 4
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 6
+  items:
+  - q: 1
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: diagram
+    note: 가계·기업·정부의 경제 순환과 역할
+  - q: 2
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 희소성 개념과 무상재·경제재 구분
+  - q: 3
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 윤리적 소비와 기업의 사회적 책임
+  - q: 4
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 기본적인 경제 문제 세 가지
+  - q: 5
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 기회비용과 순편익을 비교하는 합리적 선택
+  - q: 6
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 계획 경제와 시장 경제 체제 비교
+  - q: 7
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 긍정적·부정적 유인 구분
+  - q: 8
+    tier: ADV
+    concept: FIN-MARKET
+    figure_expected: graph
+    note: 가격 규제와 잉여 분석, 경제학 심화
+  - q: 9
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: graph
+    note: 시장 균형 가격과 초과 공급 판단
+  - q: 10
+    tier: ADV
+    concept: FIN-MARKET
+    figure_expected: graph
+    note: 외부 효과와 사회적 최적 거래량 곡선 분석
+  - q: 11
+    tier: ADV
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 소비자·생산자 잉여 계산
+  - q: 14
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: graph
+    note: 수요·공급 변동 요인 판별
+  - q: 15
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: graph
+    note: 수요·공급 동시 증가 시 균형 변화
+  - q: 19
+    tier: ADV
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 재정·통화정책의 총수요 효과, 거시 심화
+  verdict: 일부 포함 - 경제 기초(경제 주체·체제·합리적 선택·시장 가격) 10문항은 단원 3과 겹치나 수요·공급 문항(q9, q14, q15)은 시장 가격 결정이 단원 3-1 범위라는 가정이 필요하고, 거시(총수요·고용·GDP·인플레이션 등 q12, q13, q16, q17, q18, q20) 6문항은 범위 밖
+- exam: g2_202503_econ
+  grade: 고2
+  subject: 경제
+  title: 경제 2025년 3월 고2 전국연합학력평가 (연도는 파일명 기준, 본문 텍스트에 연도 헤더 없음)
+  explanation_file_id: 1_Lz0n6exUu7uGukOVKAf9lBXcYN-kKvp
+  total: 20
+  counts:
+    IN: 14
+    BORDER: 2
+    ADV: 2
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 2
+  items:
+  - q: 1
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: diagram
+    note: 가계·기업의 역할과 생산 활동
+  - q: 2
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 시장 경제와 계획 경제 특징 구분
+  - q: 3
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 희소성과 희귀성 구별
+  - q: 4
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 분산 투자 등 자산 관리 원칙
+  - q: 5
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 기회비용을 사례에 적용
+  - q: 6
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 가격에 따른 초과 수요와 가격 압력
+  - q: 7
+    tier: BORDER
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 인플레이션의 영향, 금융생활과 인접
+  - q: 9
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 수요·공급 변동 요인과 균형 가격 변화
+  - q: 10
+    tier: IN
+    concept: FIN-TRADE-SD
+    figure_expected: diagram
+    note: 자유 무역과 규모의 경제 효과
+  - q: 11
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 기업가 정신의 의미
+  - q: 12
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 주식·채권·예금의 특징 비교
+  - q: 14
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 공공재와 공유 자원의 특성
+  - q: 15
+    tier: ADV
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 부정적 외부 효과 수치 분석, 심화
+  - q: 16
+    tier: BORDER
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 경기 침체기 재정·통화정책 구분
+  - q: 17
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 스태그플레이션과 신자유주의, 자본주의 전개
+  - q: 18
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 신용 관리 방법
+  - q: 19
+    tier: ADV
+    concept: FIN-TRADE-SD
+    figure_expected: table
+    note: 두 통화 환율 변동과 외채 부담
+  - q: 20
+    tier: IN
+    concept: FIN-TRADE-SD
+    figure_expected: graph
+    note: 비교 우위 특화와 교역, 계산 부담 있음
+  verdict: 일부 포함 - 경제 주체·체제·금융·시장 실패·무역 중심이라 14문항이 단원 3과 겹치고(가장 높은 적합도), q8 GDP 계산과 q13 고용 지표 2문항만 범위 밖
+- exam: g3_202503_ethics
+  grade: 고3
+  subject: 생활과 윤리
+  title: 생활과 윤리 2025 고3 3월 (해설 헤더에 학년·월 미표기, 파일명 기준)
+  explanation_file_id: 1_x3UNG3_QVnPBy2HOyg5ZtOvRKszWCMP
+  total: 20
+  counts:
+    IN: 2
+    BORDER: 3
+    ADV: 2
+    OUT_MID: 1
+    OUT_EXC: 1
+    OUT: 11
+  items:
+  - q: 5
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 자연 윤리 사상가 비교, 지속가능 삶과 인접
+  - q: 7
+    tier: IN
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 자율주행 개인정보 제공 찬반, 과학기술 윤리
+  - q: 10
+    tier: ADV
+    concept: FIN-PEACE
+    figure_expected: none
+    note: 국제 평화 관점, 칸트·모겐소 지식 필요
+  - q: 12
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 유전자 가위 논증, 생명 윤리 쪽에 가까움
+  - q: 13
+    tier: IN
+    concept: FIN-DIVIDED
+    figure_expected: none
+    note: 통일의 필요성과 가치 논거
+  - q: 16
+    tier: OUT_EXC
+    concept: EXC-P44_49
+    figure_expected: none
+    note: 롤스·노직 분배 정의, 자유주의 정의관
+  - q: 18
+    tier: ADV
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 요나스 책임 윤리, 원전 철학 필요
+  - q: 19
+    tier: BORDER
+    concept: FIN-INEQUALITY
+    figure_expected: none
+    note: 해외 원조 철학자 입장, 범위 연결 불확실
+  - q: 20
+    tier: OUT_MID
+    concept: MID-A
+    figure_expected: none
+    note: 베카리아·칸트 형벌론 비교
+  verdict: 일부 포함 — 통일·자율주행 2문항만 IN이고 나머지 다수는 철학자 중심이며 형벌론·정의관은 중간고사/제외 범위. 20문항 모두 [출제의도] 있음.
+- exam: g2_202510_ethics
+  grade: 고2
+  subject: 생활과 윤리
+  title: 생활과 윤리 2025 고2 10월
+  explanation_file_id: 1Bt71zCFfBoY1VjGegR1tmdeZLJ5qXVML
+  total: 20
+  counts:
+    IN: 1
+    BORDER: 4
+    ADV: 1
+    OUT_MID: 2
+    OUT_EXC: 1
+    OUT: 11
+  items:
+  - q: 4
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 시민 불복종 싱어·롤스 비교
+  - q: 5
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 자연관 레오폴드·테일러·레건, 환경윤리 인접
+  - q: 8
+    tier: OUT_EXC
+    concept: EXC-P44_49
+    figure_expected: none
+    note: 롤스·노직 분배 정의
+  - q: 9
+    tier: BORDER
+    concept: FIN-GLOBAL-SOLVE
+    figure_expected: none
+    note: 다문화 사회 통합 찬반, 세계화 문제 해결 인접
+  - q: 11
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 인간 배아 지위, 생명 윤리 인접
+  - q: 14
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 패스트 패션 문제와 윤리적 소비
+  - q: 15
+    tier: OUT_MID
+    concept: MID-A
+    figure_expected: none
+    note: 베카리아·칸트·루소 형벌관
+  - q: 19
+    tier: ADV
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 요나스 책임 윤리, 원전 철학 필요
+  - q: 20
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 정보 공유 대 사유, 정보 윤리 인접
+  verdict: 일부 포함 — IN은 윤리적 소비 1문항뿐이고 BORDER 4문항, 중간고사/제외 범위 3문항이 섞여 있음. 20문항 모두 [출제의도] 있음.
+- exam: g2_202509_ethics
+  grade: 고2
+  subject: 생활과 윤리
+  title: 생활과 윤리 2025 고2 9월 (PDF 2단 텍스트 순서 뒤섞임, 20문항 모두 확인)
+  explanation_file_id: 1IBVIE2IpNZSrR78Z_dBbSKH5q7D0gAyQ
+  total: 20
+  counts:
+    IN: 1
+    BORDER: 2
+    ADV: 2
+    OUT_MID: 2
+    OUT_EXC: 1
+    OUT: 12
+  items:
+  - q: 3
+    tier: OUT_MID
+    concept: MID-A
+    figure_expected: none
+    note: 칸트·베카리아 형벌론 비교
+  - q: 4
+    tier: IN
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 디지털 미디어 환경 윤리 문제, 소비자 역할
+  - q: 6
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 배아 복제 허용 여부, 생명 윤리 인접
+  - q: 8
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: image
+    note: 롤스 시민 불복종 요건
+  - q: 10
+    tier: ADV
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 요나스 책임 윤리, 원전 철학 필요
+  - q: 16
+    tier: ADV
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 과학기술관 베이컨·하이데거, 철학자 지식 필요
+  - q: 18
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 테일러 생명 중심 자연관, 환경윤리 인접
+  - q: 20
+    tier: OUT_EXC
+    concept: EXC-P44_49
+    figure_expected: none
+    note: 롤스·노직 분배 정의
+  verdict: 일부 포함 — 정보사회 윤리 1문항만 IN이고 과학기술 문항은 사상가 지식이 필요하며 형벌론·시민 불복종·정의관은 범위 밖. 20문항 모두 [출제의도] 있음.
+- exam: g2_202506_ethics
+  grade: 고2
+  subject: 생활과 윤리
+  title: 생활과 윤리 2025 고2 6월
+  explanation_file_id: 1b7_-Iz2QyzuLiCR25V5cP1kgK-5iRtjz
+  total: 20
+  counts:
+    IN: 1
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 2
+    OUT_EXC: 1
+    OUT: 13
+  items:
+  - q: 2
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 기업의 사회적 책임 두 입장 비교
+  - q: 5
+    tier: OUT_EXC
+    concept: EXC-P44_49
+    figure_expected: none
+    note: 노직·롤스 분배 정의
+  - q: 7
+    tier: OUT_MID
+    concept: MID-A
+    figure_expected: none
+    note: 베카리아·칸트 형벌론 비교
+  - q: 9
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 롤스 시민 불복종 조건
+  - q: 13
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 인간 배아 지위, 생명 윤리 인접
+  - q: 15
+    tier: BORDER
+    concept: FIN-INEQUALITY
+    figure_expected: none
+    note: 니부어 사회 윤리, 불평등 해결과 접점 약함
+  - q: 20
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 유전자 편집 상용화와 안전성
+  verdict: 일부 포함 — IN은 기업의 사회적 책임 1문항뿐이고 대부분 범위 밖이며 형벌·시민 불복종·정의관 4문항이 중간/제외 범위와 겹침. 20문항 모두 [출제의도] 있음.
+- exam: g2_202503_ethics
+  grade: 고2
+  subject: 생활과 윤리
+  title: 생활과 윤리 2025 고2 3월 (해설 헤더에 학년·월 미표기, 파일명 기준)
+  explanation_file_id: 1CTG49VfmQ4eVWZdP2nO1iMEeZ5U_r6B4
+  total: 20
+  counts:
+    IN: 6
+    BORDER: 6
+    ADV: 1
+    OUT_MID: 3
+    OUT_EXC: 1
+    OUT: 3
+  items:
+  - q: 2
+    tier: ADV
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 요나스 책임 윤리, 원전 철학 필요
+  - q: 3
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 합리적 소비와 윤리적 소비 비교
+  - q: 6
+    tier: OUT_EXC
+    concept: EXC-P44_49
+    figure_expected: none
+    note: 롤스·노직 분배 정의
+  - q: 7
+    tier: BORDER
+    concept: FIN-GLOBAL-SOLVE
+    figure_expected: none
+    note: 다문화 사회 갈등 해결 태도
+  - q: 8
+    tier: OUT_MID
+    concept: MID-B-GLOBAL
+    figure_expected: none
+    note: 문화 세계화의 일방성 대 상호성
+  - q: 9
+    tier: BORDER
+    concept: FIN-GLOBAL-SOLVE
+    figure_expected: none
+    note: 전통문화 재해석과 가치 창출, 연관 불확실
+  - q: 10
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 스미스 자기 이익 추구와 시장
+  - q: 11
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 생태 법인 개념, 환경 인접
+  - q: 12
+    tier: BORDER
+    concept: FIN-RIGHTS-LATE
+    figure_expected: none
+    note: 주거권 보장 방안
+  - q: 13
+    tier: OUT_MID
+    concept: MID-A
+    figure_expected: none
+    note: 플라톤 정의로운 국가, 정의의 의미
+  - q: 14
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 기업의 사회적 책임 두 입장
+  - q: 15
+    tier: IN
+    concept: FIN-DIVIDED
+    figure_expected: none
+    note: 통일 지지 확보와 가치 논거
+  - q: 16
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 소로 시민 불복종
+  - q: 17
+    tier: IN
+    concept: FIN-INEQUALITY
+    figure_expected: none
+    note: 디지털 격차 해소 방안
+  - q: 18
+    tier: BORDER
+    concept: FIN-INEQUALITY
+    figure_expected: none
+    note: 싱어 해외 원조, 범위 연결 불확실
+  - q: 19
+    tier: IN
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 생성형 AI 편향과 책임 주체
+  - q: 20
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 베이컨·레오폴드 자연관, 환경윤리 인접
+  verdict: 기말 임시범위 포함 — 시장·기업 책임·통일·디지털 격차·AI 등 IN 6문항으로 후보 중 IN 비중이 가장 높음. 단 중간/제외 범위 4문항과 BORDER 6문항이 섞여 있음. 20문항 모두 [출제의도] 있음.
+- exam: g2_202510_econ
+  grade: 고2
+  subject: 상업 경제(직업탐구)
+  title: 상업 경제(직업탐구) 2025 고2 10월 (일반 경제 아님, 직업탐구 과목)
+  explanation_file_id: 1UIFhtGucUXe_yg1pFf_y2DuABHjKVPFi
+  total: 20
+  counts:
+    IN: 2
+    BORDER: 5
+    ADV: 2
+    OUT_MID: 1
+    OUT_EXC: 0
+    OUT: 10
+  items:
+  - q: 3
+    tier: BORDER
+    concept: FIN-TRADE-SD
+    figure_expected: none
+    note: 국제 환경 협약(바젤), 세부 지식 필요
+  - q: 7
+    tier: ADV
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 보험 비례 보상 계산, 금융생활 심화
+  - q: 8
+    tier: OUT_MID
+    concept: MID-B-GLOBAL
+    figure_expected: none
+    note: 해외 직접 투자, 다국적 기업 활동
+  - q: 9
+    tier: BORDER
+    concept: FIN-MARKET
+    figure_expected: diagram
+    note: 기업 집중 형태 구분, 독점 시장실패 인접
+  - q: 11
+    tier: BORDER
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 기준금리·통화정책 수단, 금융 인접
+  - q: 15
+    tier: BORDER
+    concept: FIN-TRADE-SD
+    figure_expected: none
+    note: 환율 변동 영향, 국제무역 인접
+  - q: 17
+    tier: BORDER
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 직접·간접 금융 시장 구분, 금융 인접
+  - q: 19
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: graph
+    note: 금융 상품 특징과 투자 비중 해석
+  - q: 20
+    tier: ADV
+    concept: FIN-TRADE-SD
+    figure_expected: table
+    note: 경제 통합 단계와 관세 가격 계산
+  - q: 1
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 최소 비용·최대 효과 경제 원칙
+  verdict: 일부 포함 — IN은 경제 원칙·금융 상품 2문항뿐이고 상업 실무 문항이 절반이라 범위 밖, 나머지는 BORDER·ADV. 20문항 모두 [출제의도] 있음.
+- exam: g3_202503_econ
+  grade: 고3
+  subject: 경제
+  title: 경제 2025 고3 3월 (해설 헤더에 학년·월 미표기, 파일명 기준)
+  explanation_file_id: 19P_5igxvQa6SJAsVkHqsaaMIfAEgB8De
+  total: 20
+  counts:
+    IN: 10
+    BORDER: 4
+    ADV: 3
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 3
+  items:
+  - q: 1
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: diagram
+    note: 가계·기업 경제 순환과 시장
+  - q: 2
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 계획 경제와 시장 경제 비교
+  - q: 3
+    tier: ADV
+    concept: FIN-MARKET
+    figure_expected: graph
+    note: 소비자 잉여 계산, 수요공급 심화
+  - q: 4
+    tier: ADV
+    concept: FIN-MARKET
+    figure_expected: graph
+    note: 정부 가격 규제와 수입 계산
+  - q: 5
+    tier: BORDER
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 인플레이션 유형 구분, 물가 인접
+  - q: 7
+    tier: BORDER
+    concept: FIN-TRADE-SD
+    figure_expected: graph
+    note: 환율 변동 요인, 국제무역 인접
+  - q: 8
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 가계 소득·지출 항목 구분
+  - q: 9
+    tier: IN
+    concept: FIN-TRADE-SD
+    figure_expected: table
+    note: 비교 우위와 교역 이익, 교환 비율 계산 포함
+  - q: 10
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 수요·공급 변동 요인 구분
+  - q: 11
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 주식·채권 금융 상품 특징
+  - q: 13
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 정보 비대칭에 의한 시장 실패
+  - q: 14
+    tier: BORDER
+    concept: FIN-TRADE-SD
+    figure_expected: table
+    note: 국제수지 항목 구분, 무역 인접
+  - q: 15
+    tier: BORDER
+    concept: FIN-MARKET
+    figure_expected: diagram
+    note: 재정·통화 안정화 정책, 정부 역할 인접
+  - q: 16
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 기업 이윤과 합리적 생산량 선택
+  - q: 17
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: graph
+    note: 외부 불경제와 사회적 비용
+  - q: 19
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 편익·비용에 따른 합리적 선택
+  - q: 20
+    tier: ADV
+    concept: FIN-TRADE-SD
+    figure_expected: graph
+    note: 관세 부과 효과, 수량 계산 필요
+  verdict: 기말 임시범위 포함 — 시장·합리적 선택·금융·비교우위 IN 10문항으로 겹침이 가장 큼. 다만 상당수가 경제 과목 수준의 그래프·계산 문항이라 통합사회2 깊이를 넘음. 20문항 모두 [출제의도] 있음.
+- exam: g1_soc_2019_11
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 통합사회 2019학년도 11월 고1 전국연합학력평가 (파일 헤더에 연도 없음, 파일명 일치)
+  explanation_file_id: 1R_ZYuI3LlkdeOvxe3fV9BwC842c5HubW
+  total: 20
+  counts:
+    IN: 4
+    BORDER: 2
+    ADV: 0
+    OUT_MID: 4
+    OUT_EXC: 1
+    OUT: 9
+  items:
+  - q: 4
+    tier: BORDER
+    concept: FIN-INEQUALITY
+    figure_expected: none
+    note: 적극적 우대 정책 찬반, 단원 귀속 불명확
+  - q: 5
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 시민 불복종 정당화 조건
+  - q: 6
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 윤리적 소비, 소비자 역할
+  - q: 7
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: table
+    note: 자유권·사회권·청구권 구분, 인권 확장
+  - q: 8
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 희소성, 기회비용, 합리적 선택
+  - q: 10
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 자본주의 전개 단계와 신자유주의 비교
+  - q: 13
+    tier: OUT_EXC
+    concept: EXC-P44_49
+    figure_expected: none
+    note: 자유주의와 공동체주의 비교
+  - q: 14
+    tier: OUT_MID
+    concept: MID-B-GLOBAL
+    figure_expected: none
+    note: 세계화 변화 위주, 공정무역 선지 일부
+  - q: 15
+    tier: BORDER
+    concept: FIN-RIGHTS-LATE
+    figure_expected: none
+    note: 청소년 근로 보호, 쪽수 미확인
+  - q: 17
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 기본권 제한 조항
+  - q: 20
+    tier: IN
+    concept: FIN-PEACE
+    figure_expected: none
+    note: 인간 안보, 적극적 평화
+  verdict: 일부 포함 - 출제의도 전 문항 있음. 기말 IN은 시장·평화 4문항이고 중간 겹침 4문항, 나머지는 통합사회1 영역
+- exam: g1_soc_2022_11
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 통합사회 2022학년도 11월 고1 전국연합학력평가
+  explanation_file_id: 1YNuH3XwG47_uKcZ4wfGjAhijo-JBpROG
+  total: 20
+  counts:
+    IN: 5
+    BORDER: 1
+    ADV: 0
+    OUT_MID: 3
+    OUT_EXC: 1
+    OUT: 10
+  items:
+  - q: 2
+    tier: OUT_MID
+    concept: MID-B-GLOBAL
+    figure_expected: none
+    note: 지역화 전략, 지역 축제, 지리적 표시제
+  - q: 7
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 천부 인권 사상, 인권 발전
+  - q: 8
+    tier: IN
+    concept: FIN-PEACE
+    figure_expected: none
+    note: 소극적·적극적 평화 구분
+  - q: 13
+    tier: BORDER
+    concept: FIN-RIGHTS-LATE
+    figure_expected: table
+    note: 미성년 근로 계약과 휴게 시간
+  - q: 14
+    tier: IN
+    concept: FIN-INEQUALITY
+    figure_expected: none
+    note: 성장 거점 개발, 공간 불평등
+  - q: 15
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 예금·채권·주식 특징 비교
+  - q: 17
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 헌법의 인권 보장 역할, 국가 기관
+  - q: 18
+    tier: OUT_EXC
+    concept: EXC-P44_49
+    figure_expected: none
+    note: 자유주의와 공동체주의 비교
+  - q: 19
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 편익·기회비용 표 분석
+  - q: 20
+    tier: IN
+    concept: FIN-TRADE-SD
+    figure_expected: table
+    note: 기회비용 비교, 무역 발생 원리
+  verdict: 일부 포함 - 출제의도 전 문항 있음(q20 본문은 잘렸으나 소제목 있음). 시장·무역·불평등 IN 5문항
+- exam: g1_soc_2023_09
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 통합사회 2023학년도 9월 고1 전국연합학력평가
+  explanation_file_id: 14gV1devKzO-s2YjpZ20XPOkA4BT_j7bD
+  total: 20
+  counts:
+    IN: 3
+    BORDER: 2
+    ADV: 0
+    OUT_MID: 4
+    OUT_EXC: 0
+    OUT: 11
+  items:
+  - q: 2
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 안전·환경 시민 권리 제목, 해설은 재해 위주
+  - q: 11
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: diagram
+    note: 자유권·참정권·평등권 구분
+  - q: 12
+    tier: BORDER
+    concept: FIN-RIGHTS-LATE
+    figure_expected: none
+    note: 연소 근로자 권리, 노동 3권
+  - q: 13
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 수정 자본주의와 신자유주의 비교
+  - q: 15
+    tier: BORDER
+    concept: FIN-RIGHTS-LATE
+    figure_expected: none
+    note: 사회적 소수자 차별, 국내 인권 문제
+  - q: 16
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 기본권 제한 요건과 한계
+  - q: 17
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 시민 불복종 정당화 조건
+  - q: 18
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 기회비용, 매몰 비용, 합리적 선택
+  - q: 20
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 기업의 사회적 책임, 환경친화 생산
+  verdict: 일부 포함 - 출제의도 전 문항 있음(본문 단 순서 뒤섞임). q2는 제목 기준 MID-C로 분류, 해설 내용은 자연재해라 OUT일 수 있음
+- exam: g1_soc_2024_06
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 통합사회 2024학년도 6월 고1 전국연합학력평가
+  explanation_file_id: 1pueZ_CSs_jriElyeye7CTuL6Q4xf1ebK
+  total: 20
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 0
+    OUT_MID: 3
+    OUT_EXC: 0
+    OUT: 17
+  items:
+  - q: 13
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 차티스트 운동, 참정권 확대
+  - q: 14
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 주거권·문화권 등 새로운 인권
+  - q: 20
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: table
+    note: 문화권 보장 격차, 비율 표 해석
+  verdict: 범위 밖 - 출제의도 전 문항 있음. IN·BORDER 없음, 인권 확장 3문항은 중간 범위, 나머지는 통합사회1(자연·행복·환경·정보)
+- exam: g1_soc_2024_09
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 통합사회 2024학년도 9월 고1 전국연합학력평가
+  explanation_file_id: 1G5nZ2R9xInXcATTPNHcb1LttMI2Tvbcr
+  total: 20
+  counts:
+    IN: 3
+    BORDER: 2
+    ADV: 0
+    OUT_MID: 2
+    OUT_EXC: 0
+    OUT: 13
+  items:
+  - q: 5
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 수정 자본주의와 신자유주의 비교
+  - q: 9
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: diagram
+    note: 자유권·사회권·평등권 구분
+  - q: 10
+    tier: BORDER
+    concept: FIN-RIGHTS-LATE
+    figure_expected: none
+    note: 사회적 소수자 특징, 국내 인권 문제
+  - q: 12
+    tier: BORDER
+    concept: FIN-RIGHTS-LATE
+    figure_expected: table
+    note: 연소 근로자 권리, 퀴즈 형식
+  - q: 15
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 명시적·암묵적 비용, 기회비용 분석
+  - q: 16
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 시장 실패, 공공재와 외부 효과
+  - q: 19
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 시민 불복종 정당화 조건
+  verdict: 일부 포함 - 출제의도 전 문항 있음(본문 단 순서 뒤섞임). 시장·합리적 선택 IN 3문항
+- exam: g1_soc_2025_03
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 사회(통합사회·윤리·지리·경제·정치 혼합) 2025학년도 3월 고1 (헤더에 연도 없음, 파일명 일치)
+  explanation_file_id: 1GJB4f7LHXGvMNwtNHjt-WLwsXG5_CALt
+  total: 20
+  counts:
+    IN: 1
+    BORDER: 2
+    ADV: 2
+    OUT_MID: 1
+    OUT_EXC: 1
+    OUT: 13
+  items:
+  - q: 4
+    tier: OUT_EXC
+    concept: EXC-P44_49
+    figure_expected: none
+    note: 롤스 정의 원칙, 자유주의 정의관
+  - q: 5
+    tier: IN
+    concept: FIN-DIVIDED
+    figure_expected: map
+    note: 독일 통일 사례, 교류 협력 필요성
+  - q: 8
+    tier: BORDER
+    concept: FIN-DIVIDED
+    figure_expected: none
+    note: 독도 지리 특색, 영유권 갈등과 인접
+  - q: 13
+    tier: OUT_MID
+    concept: MID-B-POP
+    figure_expected: graph
+    note: 선진국·개도국 인구 구조, 노년 부양비
+  - q: 16
+    tier: ADV
+    concept: FIN-TRADE-SD
+    figure_expected: none
+    note: 환율 변동 영향, 경제 과목 수준
+  - q: 18
+    tier: BORDER
+    concept: FIN-MARKET
+    figure_expected: graph
+    note: 수요·공급 변동 요인, 단원 포함 불명확
+  - q: 20
+    tier: ADV
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 경기 변동별 물가·고용 정책, 경제 과목 수준
+  verdict: 일부 포함 - 출제의도 전 문항 있음, 과목 혼합이라 주제 매핑. IN은 통일 1문항뿐이고 경제 문항 3개는 범위 불확실 또는 심화
+- exam: g1_2025_06
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 통합사회 2025학년도 6월 고1 전국연합학력평가 (파일 제목 2025_06_e.pdf, 헤더 일치)
+  explanation_file_id: 1J3yMYH_5Ch4HO2HAjcpWmpDcfALvERGD
+  total: 25
+  counts:
+    IN: 0
+    BORDER: 1
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 24
+  items:
+  - q: 8
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: diagram
+    note: 생태시민 자세, 녹색 소비(지속가능한 생활 인접)
+  verdict: 범위 밖 - 25문항, 출제의도 전 문항 있음(본문 단 순서 뒤섞임). 전부 통합사회1(자연·행복·문화·환경)이며 q8만 Unit5 인접 BORDER
+- exam: g1_soc_2025_09
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 통합사회 2025학년도 9월 고1 전국연합학력평가
+  explanation_file_id: 1L1I-pTVzHqu9dL5gnrSOKfeTIrzdbJwc
+  total: 25
+  counts:
+    IN: 2
+    BORDER: 1
+    ADV: 0
+    OUT_MID: 5
+    OUT_EXC: 1
+    OUT: 16
+  items:
+  - q: 4
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 시민 불복종 정당화 조건
+  - q: 6
+    tier: OUT_EXC
+    concept: EXC-P44_49
+    figure_expected: none
+    note: 롤스와 노직 정의관 비교
+  - q: 7
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 인권 선언 문서 비교, 인권 확장
+  - q: 10
+    tier: BORDER
+    concept: FIN-RIGHTS-LATE
+    figure_expected: table
+    note: 연소 근로자 임금·대리 계약
+  - q: 13
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 평등권·청구권 구분
+  - q: 15
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: diagram
+    note: 환경권·문화권·안전권 등 확장 인권
+  - q: 16
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 헌법소원, 권력 분립
+  - q: 22
+    tier: IN
+    concept: FIN-INEQUALITY
+    figure_expected: table
+    note: 사회 보험과 공공 부조 비교
+  - q: 24
+    tier: IN
+    concept: FIN-INEQUALITY
+    figure_expected: graph
+    note: 계층 양극화, 공간 불평등 해소
+  verdict: 일부 포함 - 25문항, 출제의도 전 문항 있음(본문 단 순서 뒤섞임). 불평등 IN 2문항이고 중간 겹침 5문항이 많음
+- exam: g1_soc_2025_10
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 통합사회 2025학년도 10월 고1 전국연합학력평가
+  explanation_file_id: 1AEf810gyZ6-QV43fjHUtz7iJji2HDibb
+  total: 25
+  counts:
+    IN: 5
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 5
+    OUT_EXC: 1
+    OUT: 11
+  items:
+  - q: 6
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 헌법재판소 역할과 헌법 소원
+  - q: 7
+    tier: OUT_MID
+    concept: MID-A
+    figure_expected: none
+    note: 베카리아 예방주의 형벌론
+  - q: 8
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 산성비·오존층 문제와 국제 협약, 통합사회1 환경 단원
+  - q: 9
+    tier: BORDER
+    concept: FIN-RIGHTS-LATE
+    figure_expected: map
+    note: 난민·여성 중첩 소수자, 종교 선지 혼합
+  - q: 14
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: image
+    note: 수정자본주의와 신자유주의 학자 비교
+  - q: 15
+    tier: BORDER
+    concept: FIN-INEQUALITY
+    figure_expected: table
+    note: 디지털 정보 격차 수치 비교, 노동시장 선지
+  - q: 16
+    tier: IN
+    concept: FIN-INEQUALITY
+    figure_expected: none
+    note: 공간 불평등 완화, 사회 서비스, 적극적 조치
+  - q: 17
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 예금·주식·채권 수익과 안전성 비교
+  - q: 18
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 참정권 확대와 기본권 성격
+  - q: 19
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 명시적·암묵적 비용, 외부 효과, 정부 대책
+  - q: 20
+    tier: OUT_EXC
+    concept: EXC-P44_49
+    figure_expected: none
+    note: 롤스·노직 정의관 비교
+  - q: 21
+    tier: OUT_MID
+    concept: MID-B-GLOBAL
+    figure_expected: none
+    note: 다국적 기업의 공간적 분업
+  - q: 23
+    tier: IN
+    concept: FIN-TRADE-SD
+    figure_expected: table
+    note: 절대 우위·비교 우위 무역 원리
+  - q: 24
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 롤스의 시민 불복종 조건
+  verdict: 일부 포함 - 시장경제·금융·무역·불평등 IN 5문항, 단 중간 범위 겹침 6문항(OUT_MID 5, OUT_EXC 1); [출제의도] 라인 있음.
+- exam: g1_2026_06
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 통합사회 2026학년도 6월 고1 전국연합학력평가
+  explanation_file_id: 1jbPk4KZVEAuNf1f5FFLpkmRt6Q9JuZiQ
+  total: 25
+  counts:
+    IN: 0
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 1
+    OUT_EXC: 0
+    OUT: 21
+  items:
+  - q: 7
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: diagram
+    note: 정부·기업·시민사회의 환경 대응 구분
+  - q: 16
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 지구 온난화 영향과 연기설의 환경 시사점
+  - q: 21
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 사막화·산성비 원인과 국제 협약
+  - q: 24
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 환경권 보장과 재난 행동 요령
+  verdict: 범위 밖 - 행복·문화·지리·환경 중심으로 IN 0문항, BORDER는 환경 문제 3문항뿐; 텍스트가 2단 편집으로 뒤섞였으나 25문항 모두 식별, [출제의도] 라인 있음.
+- exam: g1_soc_2026_09
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 통합사회 2026학년도 9월 고1 전국연합학력평가
+  explanation_file_id: 1gi8BgH1WD0WsDT3-Ll0B-PeflY2wJSWH
+  total: 25
+  counts:
+    IN: 1
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 5
+    OUT_EXC: 2
+    OUT: 14
+  items:
+  - q: 2
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: map
+    note: 산성비·사막화 해결과 몬트리올 의정서
+  - q: 3
+    tier: OUT_EXC
+    concept: EXC-P44_49
+    figure_expected: diagram
+    note: 출제의도는 행복 조건, 축은 자유·공동체주의 유사, 불확실
+  - q: 4
+    tier: OUT_EXC
+    concept: EXC-P44_49
+    figure_expected: none
+    note: 롤스·노직 분배 정의관 비교
+  - q: 5
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: diagram
+    note: 참정권·평등권·자유권 성격 구분
+  - q: 7
+    tier: OUT_MID
+    concept: MID-A
+    figure_expected: none
+    note: 베카리아와 칸트 형벌관 비교
+  - q: 8
+    tier: IN
+    concept: FIN-INEQUALITY
+    figure_expected: none
+    note: 공공 부조·사회 서비스·지역 격차 정책
+  - q: 11
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 확장된 인권 사례, 법치주의
+  - q: 14
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 연대권 등장과 사회권 최초 명시
+  - q: 20
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 기업·시민 단체·정부의 환경 대응
+  - q: 23
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 롤스 시민 불복종 정당화 조건
+  - q: 24
+    tier: BORDER
+    concept: FIN-RIGHTS-LATE
+    figure_expected: none
+    note: 사회적 소수자 개념, 청소년 노동권 침해 대응
+  verdict: 일부 포함(소수) - IN 1문항, BORDER 3문항이고 중간·제외 범위 겹침이 7문항; q3은 출제의도 기준 OUT이나 선지 축이 EXC와 유사해 OUT_EXC로 표기; [출제의도] 라인 있음.
+- exam: g2_202603_intsoc
+  grade: 고2
+  subject: 통합사회
+  title: 통합사회 2026년 3월 고2 (헤더에 학년도·학년 표기 없음, 파일명 기준)
+  explanation_file_id: 1TRTsFGpp75ZVgLcLn4PKnFL_ltWgeYT8
+  total: 25
+  counts:
+    IN: 8
+    BORDER: 1
+    ADV: 0
+    OUT_MID: 4
+    OUT_EXC: 1
+    OUT: 11
+  items:
+  - q: 1
+    tier: BORDER
+    concept: FIN-INEQUALITY
+    figure_expected: none
+    note: 통합적 관점 문항, 불평등·복지 제도 선지 포함
+  - q: 2
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 헌법재판소 역할, 헌법 소원과 시민 불복종 구분
+  - q: 4
+    tier: IN
+    concept: FIN-DIVIDED
+    figure_expected: none
+    note: 동아시아 역사 갈등의 평화적 해결 방안
+  - q: 9
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 영국 선거권 확대와 명예혁명
+  - q: 10
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 편익·기회비용으로 합리적 선택 판단
+  - q: 11
+    tier: OUT_MID
+    concept: MID-B-POP
+    figure_expected: graph
+    note: 국가별 인구 구조 비교
+  - q: 12
+    tier: OUT_EXC
+    concept: EXC-P44_49
+    figure_expected: none
+    note: 노직·롤스 분배 정의 비교
+  - q: 14
+    tier: IN
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 미래 사회 세계 시민의 삶의 방향
+  - q: 15
+    tier: OUT_MID
+    concept: MID-A
+    figure_expected: none
+    note: 베카리아와 칸트 교정적 정의
+  - q: 18
+    tier: IN
+    concept: FIN-PEACE
+    figure_expected: diagram
+    note: 국제기구·NGO·개인 등 행위 주체 구분
+  - q: 19
+    tier: IN
+    concept: FIN-PEACE
+    figure_expected: image
+    note: 갈퉁의 직접·구조·문화적 폭력
+  - q: 21
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: diagram
+    note: 주식·채권 특징 카드 논리 퍼즐
+  - q: 22
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: image
+    note: 대공황 후 뉴딜과 수정자본주의
+  - q: 25
+    tier: IN
+    concept: FIN-TRADE-SD
+    figure_expected: table
+    note: 기회비용 표로 비교 우위 분석
+  verdict: 일부 포함 - 시장경제·무역·평화·동아시아·미래 IN 8문항으로 비중 큼, 중간·제외 겹침 5문항; 헤더에 연도·월 없어 파일명으로 식별, [출제의도] 라인 있음.
+- exam: g2_202606_intsoc
+  grade: 고2
+  subject: 통합사회
+  title: 통합사회 2026학년도 6월 고2 전국연합학력평가
+  explanation_file_id: 19MrIIj8F6ABxNsc_2L1eEWgHXjb8oHiO
+  total: 25
+  counts:
+    IN: 6
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 5
+    OUT_EXC: 1
+    OUT: 10
+  items:
+  - q: 1
+    tier: BORDER
+    concept: FIN-INEQUALITY
+    figure_expected: none
+    note: 정보 격차의 영향과 관점별 탐구
+  - q: 4
+    tier: OUT_MID
+    concept: MID-A
+    figure_expected: none
+    note: 베카리아 형벌론 진위 판단
+  - q: 6
+    tier: IN
+    concept: FIN-INEQUALITY
+    figure_expected: diagram
+    note: 공공 부조·사회 보험·사회 서비스 비교
+  - q: 9
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 헌법 소원 심판과 기본권 구제
+  - q: 10
+    tier: OUT_EXC
+    concept: EXC-P44_49
+    figure_expected: none
+    note: 롤스·노직 분배 정의 비교
+  - q: 11
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: map
+    note: 시민불복종 조건, 인도 문화 혼합
+  - q: 12
+    tier: IN
+    concept: FIN-PEACE
+    figure_expected: none
+    note: 갈퉁 적극적 평화, 아동 노동 착취 사례
+  - q: 13
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: graph
+    note: 정기예금·주식·채권 비중과 특징
+  - q: 14
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 1~3세대 인권 확장 과정
+  - q: 19
+    tier: BORDER
+    concept: FIN-RIGHTS-LATE
+    figure_expected: none
+    note: 소수자·국제기구 선지 포함 복합 문항
+  - q: 20
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 국부론과 자유방임주의 시기 이해
+  - q: 21
+    tier: IN
+    concept: FIN-TRADE-SD
+    figure_expected: table
+    note: 비교 우위와 무역의 이익
+  - q: 23
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 편익·기회비용 판단, 외부 경제 정책
+  - q: 24
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: map
+    note: 몬트리올 의정서·산성비 등 환경 대응
+  - q: 25
+    tier: OUT_MID
+    concept: MID-B-POP
+    figure_expected: graph
+    note: 국가별 인구 구조 비교
+  verdict: 일부 포함 - 복지 제도·평화·시장경제·무역 IN 6문항, 중간·제외 겹침 6문항; 텍스트가 2단 편집으로 뒤섞였으나 25문항 모두 식별, [출제의도] 라인 있음.
+- exam: g2_202609_intsoc
+  grade: 고2
+  subject: 통합사회
+  title: 통합사회 2026학년도 9월 고2 전국연합학력평가
+  explanation_file_id: 1deDdxupyJJuNAxX72aBn-wZuX9bt1zdG
+  total: 25
+  counts:
+    IN: 6
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 6
+    OUT_EXC: 1
+    OUT: 9
+  items:
+  - q: 4
+    tier: BORDER
+    concept: FIN-RIGHTS-LATE
+    figure_expected: table
+    note: 청소년 근로시간·연장 가산임금 계산 포함
+  - q: 6
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 정부·기업·시민 단체 환경 대응
+  - q: 8
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 자연재해 중심, 안전권 일부
+  - q: 9
+    tier: BORDER
+    concept: FIN-INEQUALITY
+    figure_expected: none
+    note: 재난 문자로 본 세대 간 정보 격차
+  - q: 11
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 수정자본주의와 신자유주의 비교
+  - q: 12
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 롤스 시민 불복종 조건
+  - q: 13
+    tier: OUT_MID
+    concept: MID-A
+    figure_expected: none
+    note: 필요·업적 분배 기준
+  - q: 15
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 인권 문서 순서와 사회권 규정
+  - q: 16
+    tier: OUT_EXC
+    concept: EXC-P44_49
+    figure_expected: none
+    note: 롤스·노직 정의관 비교
+  - q: 17
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 편익·비용·기회비용으로 합리적 선택
+  - q: 18
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: table
+    note: 채권·주식·예금 수익 특성 구분
+  - q: 19
+    tier: OUT_MID
+    concept: MID-B-POP
+    figure_expected: graph
+    note: 인구 변천 모형과 국가별 인구 구조
+  - q: 20
+    tier: IN
+    concept: FIN-DIVIDED
+    figure_expected: none
+    note: 일본·중국 역사 갈등, 동북공정
+  - q: 21
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 평등·자유·청구권 성격
+  - q: 23
+    tier: IN
+    concept: FIN-PEACE
+    figure_expected: none
+    note: 갈퉁의 직접·구조·문화적 폭력
+  - q: 24
+    tier: IN
+    concept: FIN-TRADE-SD
+    figure_expected: table
+    note: 비교 우위와 교역 후 소비량
+  verdict: 일부 포함 - 시장경제·동아시아·평화·무역 IN 6문항, 중간·제외 겹침 7문항; q8은 자연재해 중심이라 OUT_MID 표기가 약함, [출제의도] 라인 있음.
+- exam: g3_202510_soccul
+  grade: 고3
+  subject: 사회·문화
+  title: 사회·문화 2025학년도 10월 고3 전국연합학력평가 (2026 수능 대비)
+  explanation_file_id: 1F9u4L1I5TxuT0OT9WpxrHbGR4TGlqZaN
+  total: 20
+  counts:
+    IN: 0
+    BORDER: 2
+    ADV: 3
+    OUT_MID: 1
+    OUT_EXC: 0
+    OUT: 14
+  items:
+  - q: 6
+    tier: BORDER
+    concept: FIN-INEQUALITY
+    figure_expected: none
+    note: 기능론의 불평등 인식, 사회·문화 이론 성격
+  - q: 7
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 정보 사회 긍정 효과 근거
+  - q: 10
+    tier: ADV
+    concept: FIN-INEQUALITY
+    figure_expected: table
+    note: 중위소득 기준 상대·절대 빈곤 가구 계산
+  - q: 14
+    tier: ADV
+    concept: FIN-INEQUALITY
+    figure_expected: table
+    note: 세대 간 계층 이동 표 계산
+  - q: 15
+    tier: ADV
+    concept: FIN-INEQUALITY
+    figure_expected: table
+    note: 복지 제도별 인구 계산 퍼즐
+  - q: 20
+    tier: OUT_MID
+    concept: MID-B-POP
+    figure_expected: table
+    note: 연령별 인구 비율 변화 계산
+  verdict: 일부 포함(낮음) - 타 과목(사회·문화)이라 IN 0, 불평등·복지 4문항이 심화 수준(ADV 3, BORDER 1)으로만 겹침; [출제의도] 라인 있음.
+- exam: g3_202503_kgeo
+  grade: 고3
+  subject: 한국지리
+  title: 한국지리 2025학년도 3월 고3 전국연합학력평가 (학년도는 파일 키 기준, 본문 미표기)
+  explanation_file_id: 1eNKRMwhRXMiYBIFmRNxzZbkygh-ry4W5
+  total: 20
+  counts:
+    IN: 1
+    BORDER: 2
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 17
+  items:
+  - q: 3
+    tier: BORDER
+    concept: FIN-DIVIDED
+    figure_expected: table
+    note: 독도 위치와 영해 기준 비교, 영유권 주제와 인접
+  - q: 5
+    tier: BORDER
+    concept: FIN-DIVIDED
+    figure_expected: map
+    note: 북한 주요 도시와 경제특구 위치, 분단 주제와 인접
+  - q: 20
+    tier: IN
+    concept: FIN-INEQUALITY
+    figure_expected: image
+    note: 재개발 이후 임대료 상승과 젠트리피케이션 영향
+  verdict: 일부 포함. 출제의도 있음. 도시 재생 1문항만 IN이고 독도·북한 2문항은 인접이며, 나머지는 지형·기후·지역 특성이라 범위 밖.
+- exam: g2_202509_kgeo
+  grade: 고2
+  subject: 한국지리
+  title: 한국지리 2025학년도 9월 고2 전국연합학력평가
+  explanation_file_id: 1Vo4JvCrFi_MgQWPvuJlzAhlyLT9J5EOK
+  total: 20
+  counts:
+    IN: 0
+    BORDER: 4
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 16
+  items:
+  - q: 1
+    tier: BORDER
+    concept: FIN-DIVIDED
+    figure_expected: map
+    note: 독도의 위치와 성격 파악, 영토 갈등 주제와 인접
+  - q: 12
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 지구 온난화의 국내 영향, 단원5 환경 주제와 인접
+  - q: 17
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: graph
+    note: 지역별 신재생 에너지 생산 특성, 지속가능 에너지와 인접
+  - q: 18
+    tier: BORDER
+    concept: FIN-INEQUALITY
+    figure_expected: table
+    note: 재개발 유형 비교, 공간 불평등과 간접 연계
+  verdict: 범위 밖. 출제의도 있음(PDF 단 배치가 뒤섞여 있으나 20문항 모두 확인). IN이 없고 인접 BORDER 4문항뿐이며 나머지는 자연지리·지역 지리 중심.
+- exam: g2_202503_kgeo
+  grade: 고2
+  subject: 한국지리
+  title: 한국지리 2025학년도 3월 고2 전국연합학력평가 (학년도는 파일 키 기준, 본문 미표기)
+  explanation_file_id: 11XKL3fQTJrzh4gu4pC86faF9JsoYiaoA
+  total: 20
+  counts:
+    IN: 0
+    BORDER: 5
+    ADV: 0
+    OUT_MID: 1
+    OUT_EXC: 0
+    OUT: 14
+  items:
+  - q: 1
+    tier: BORDER
+    concept: FIN-DIVIDED
+    figure_expected: none
+    note: 울릉도·독도 특징 비교, 영토 갈등 주제와 인접
+  - q: 8
+    tier: BORDER
+    concept: FIN-INEQUALITY
+    figure_expected: image
+    note: 재개발 유형 비교, 공간 불평등과 간접 연계
+  - q: 9
+    tier: BORDER
+    concept: FIN-TRADE-SD
+    figure_expected: graph
+    note: 시기별 수출 품목 변화, 국제무역과 약한 연계
+  - q: 11
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 지구 온난화의 영향, 단원5 환경 주제와 인접
+  - q: 16
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: graph
+    note: 신재생 에너지(수력) 특성, 지속가능 에너지와 인접
+  - q: 17
+    tier: OUT_MID
+    concept: MID-B-POP
+    figure_expected: table
+    note: 세종·전북 인구 구조 비교, 인구 단원과 중복
+  verdict: 범위 밖. 출제의도 있음. IN이 없고 BORDER 5문항은 모두 연계가 약하며, 인구 1문항은 중간고사와 중복.
+- exam: g2_202506_kgeo
+  grade: 고2
+  subject: 한국지리
+  title: 한국지리 2025학년도 6월 고2 전국연합학력평가
+  explanation_file_id: 1b87Yj9j6_JmDMSlB1XuMJlyJYxeCOmQ_
+  total: 20
+  counts:
+    IN: 0
+    BORDER: 2
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 18
+  items:
+  - q: 2
+    tier: BORDER
+    concept: FIN-PEACE
+    figure_expected: map
+    note: 영해·배타적경제수역 개념, 국제 영역 분쟁과 인접
+  - q: 6
+    tier: BORDER
+    concept: FIN-DIVIDED
+    figure_expected: none
+    note: 독도의 지리적 특성, 영유권 주제와 인접
+  verdict: 범위 밖. 출제의도 있음(PDF 단 배치가 뒤섞여 있으나 20문항 모두 확인). IN이 없고 영역·독도 2문항만 인접이며 나머지는 자연지리 중심.
+- exam: g3_202503_eththought
+  grade: 고3
+  subject: 윤리와 사상
+  title: 윤리와 사상 2025학년도 3월 고3 전국연합학력평가 (학년도는 파일 키 기준, 본문 미표기)
+  explanation_file_id: 1xwhS2DQ42gnFhrUZ6mBfl43i6CLUL9Oa
+  total: 20
+  counts:
+    IN: 1
+    BORDER: 0
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 18
+  items:
+  - q: 6
+    tier: ADV
+    concept: FIN-PEACE
+    figure_expected: none
+    note: 갈퉁 적극적 평화 포함, 묵자 지식 병행 필요
+  - q: 18
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 수정 자본주의와 신자유주의의 정부 역할 비교
+  verdict: 일부 포함. 출제의도 있음. 시장과 정부 1문항은 IN, 평화 1문항은 ADV이며 나머지는 동서양 사상가 비교(사회계약론 q15 포함)라 범위 밖.
+- exam: g2_202503_eththought
+  grade: 고2
+  subject: 윤리와 사상
+  title: 윤리와 사상 2025학년도 3월 고2 전국연합학력평가 (학년도는 파일 키 기준, 본문 미표기)
+  explanation_file_id: 1dLnlABA53t84GWsWsfpiI7Onw5YPbhiF
+  total: 20
+  counts:
+    IN: 2
+    BORDER: 4
+    ADV: 0
+    OUT_MID: 2
+    OUT_EXC: 2
+    OUT: 10
+  items:
+  - q: 3
+    tier: BORDER
+    concept: FIN-GLOBAL-SOLVE
+    figure_expected: image
+    note: 세계시민주의 관점, 세계화 문제 해결과 인접
+  - q: 6
+    tier: IN
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 시장 효율 대 정부 개입 관점 비교
+  - q: 9
+    tier: OUT_EXC
+    concept: EXC-P44_49
+    figure_expected: none
+    note: 롤스 분배 정의, 자유주의 정의관에 해당
+  - q: 10
+    tier: IN
+    concept: FIN-PEACE
+    figure_expected: none
+    note: 적극적 평화와 구조적·문화적 폭력 개념
+  - q: 13
+    tier: BORDER
+    concept: FIN-PEACE
+    figure_expected: none
+    note: 묵자의 반전·평등애, 평화와 간접 연계
+  - q: 15
+    tier: BORDER
+    concept: FIN-PEACE
+    figure_expected: none
+    note: 문명 공존과 대화, 평화 구축 주제와 인접
+  - q: 16
+    tier: BORDER
+    concept: FIN-GLOBAL-SOLVE
+    figure_expected: none
+    note: 롤스의 국제 원조관, 원전 철학 지식 필요
+  - q: 18
+    tier: OUT_EXC
+    concept: EXC-P44_49
+    figure_expected: none
+    note: 자유주의 대 공동체주의 관점 비교
+  - q: 19
+    tier: OUT_MID
+    concept: MID-A
+    figure_expected: none
+    note: 정의의 의미, 강자 이익설 대 소크라테스
+  - q: 20
+    tier: OUT_MID
+    concept: MID-A
+    figure_expected: none
+    note: 아리스토텔레스의 일반적·분배적 정의 구분
+  verdict: 일부 포함. 출제의도 있음. 시장과 정부, 평화 2문항은 IN이고 BORDER 4문항에 정의 관련 OUT_MID·OUT_EXC 4문항이 섞여 있으며, 사회계약론 q2는 OUT 처리.
+- exam: g3_202510_eththought
+  grade: 고3
+  subject: 윤리와 사상
+  title: 윤리와 사상 2025학년도 10월 고3 전국연합학력평가 (2026 수능 대비)
+  explanation_file_id: 1LQUJC29o8QAdbXXXmA5VgeSLAZLWpO5x
+  total: 20
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 1
+    OUT: 18
+  items:
+  - q: 2
+    tier: ADV
+    concept: FIN-MARKET
+    figure_expected: none
+    note: 케인스 정부 개입 포함, 마르크스 지식 병행 필요
+  - q: 13
+    tier: OUT_EXC
+    concept: EXC-P44_49
+    figure_expected: none
+    note: 자유주의·공화주의 자유관 비교, 간접 연계
+  verdict: 범위 밖. 출제의도 있음. IN이 없고 ADV 1문항과 제외 범위 1문항이며 나머지는 사상가 비교(사회계약론 q19 포함).
+- exam: g2_202509_eththought
+  grade: 고2
+  subject: 윤리와 사상
+  title: 윤리와 사상 2025학년도 9월 고2 전국연합학력평가
+  explanation_file_id: 1iZmkcuIc7WVM520AWGPO4JCo9iVTvdtv
+  total: 20
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 20
+  items: []
+  verdict: 범위 밖. 출제의도 있음(PDF 단 배치가 뒤섞여 있으나 20문항 모두 확인). 20문항 모두 개별 사상가 비교이고 플라톤 정의론 q17은 연계가 약해 OUT 처리.
+- exam: g3_202510_law
+  grade: 고3
+  subject: 정치와 법
+  title: 정치와 법, 2025학년도 10월 고3 전국연합학력평가
+  explanation_file_id: 1bMUtsqf_fOkD_3sSzvIRBnRLccR25bOH
+  total: 20
+  counts:
+    IN: 1
+    BORDER: 2
+    ADV: 2
+    OUT_MID: 3
+    OUT_EXC: 0
+    OUT: 12
+  items:
+  - q: 3
+    tier: ADV
+    concept: FIN-PEACE
+    figure_expected: none
+    note: 국제법 법원 유형 구분, 법과정치 수준 지식 필요
+  - q: 4
+    tier: ADV
+    concept: FIN-RIGHTS-LATE
+    figure_expected: none
+    note: 청소년 근로 보호, 근로기준법 세부 기준 필요
+  - q: 6
+    tier: BORDER
+    concept: FIN-RIGHTS-LATE
+    figure_expected: none
+    note: 헌법 기본 원리, 복지국가 원리 범위 미확인
+  - q: 8
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: diagram
+    note: 형사 절차와 권리 구제 제도, 신체의 자유
+  - q: 9
+    tier: IN
+    concept: FIN-PEACE
+    figure_expected: none
+    note: 국제연합 기관 역할과 집단 안보
+  - q: 14
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 헌법소원 심판, 권리 구제
+  - q: 17
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 기본권 유형 중 사회권
+  - q: 18
+    tier: BORDER
+    concept: FIN-RIGHTS-LATE
+    figure_expected: none
+    note: 부당 노동 행위와 구제 신청, 근로자 권리
+  verdict: 일부 포함 - 국제기구 1문항 IN, 근로·헌법원리 BORDER/ADV 4문항, 기본권·권리구제 3문항은 중간범위, 나머지 12문항은 정치·법 고유 내용.
+- exam: g3_202503_law
+  grade: 고3
+  subject: 정치와 법
+  title: 정치와 법, 2025학년도 3월 고3 전국연합학력평가 (해설 머리글에 연도 표기 없음)
+  explanation_file_id: 1YJEcTZcDqrpSkAtbbsdn4UNfkFDtc8fl
+  total: 20
+  counts:
+    IN: 1
+    BORDER: 1
+    ADV: 2
+    OUT_MID: 3
+    OUT_EXC: 0
+    OUT: 13
+  items:
+  - q: 2
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: table
+    note: 기본권 유형 분류, 사회권·청구권·평등권
+  - q: 4
+    tier: IN
+    concept: FIN-PEACE
+    figure_expected: none
+    note: 현실주의 관점, 세력 균형 전략
+  - q: 6
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 형사 절차, 무죄 추정 원칙
+  - q: 8
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: diagram
+    note: 위헌 법률 심판 절차, 헌법재판소
+  - q: 16
+    tier: BORDER
+    concept: FIN-RIGHTS-LATE
+    figure_expected: none
+    note: 헌법 기본 원리, 복지국가 원리 범위 미확인
+  - q: 17
+    tier: ADV
+    concept: FIN-RIGHTS-LATE
+    figure_expected: none
+    note: 연소 근로자 연장 근로, 법규 세부 필요
+  - q: 19
+    tier: ADV
+    concept: FIN-PEACE
+    figure_expected: table
+    note: 국제법 법원 구분, 재판 준거 세부
+  verdict: 일부 포함 - 현실주의 관점 1문항만 IN, 근로·국제법 ADV와 헌법원리 BORDER, 기본권·권리구제 3문항 중간범위, 13문항은 범위 밖.
+- exam: g2_202503_law
+  grade: 고2
+  subject: 정치와 법
+  title: 정치와 법, 2025학년도 3월 고2 전국연합학력평가 (해설 머리글에 연도 표기 없음)
+  explanation_file_id: 1rrlRoSo9XLL3BjMCysaxve459dVUzlET
+  total: 20
+  counts:
+    IN: 1
+    BORDER: 2
+    ADV: 1
+    OUT_MID: 2
+    OUT_EXC: 0
+    OUT: 14
+  items:
+  - q: 9
+    tier: IN
+    concept: FIN-PEACE
+    figure_expected: none
+    note: 현실주의와 자유주의의 국제 평화 관점 비교
+  - q: 11
+    tier: BORDER
+    concept: FIN-INEQUALITY
+    figure_expected: diagram
+    note: 사회법 분류, 사회보장 연관 인접 주제
+  - q: 15
+    tier: ADV
+    concept: FIN-RIGHTS-LATE
+    figure_expected: none
+    note: 근로 계약 효력, 최저임금 등 법규 세부
+  - q: 17
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 헌법재판소 역할, 헌법소원 심판
+  - q: 18
+    tier: BORDER
+    concept: FIN-PEACE
+    figure_expected: none
+    note: 국제 행위 주체, 다국적 기업은 중간범위
+  - q: 20
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: diagram
+    note: 기본권 유형별 내용 분류
+  verdict: 일부 포함 - 국제 관점 1문항 IN, 사회법·행위주체 BORDER, 근로 ADV, 기본권·헌법소원 2문항 중간범위, 14문항은 범위 밖.
+- exam: g2_202506_law
+  grade: 고2
+  subject: 정치와 법
+  title: 정치와 법, 2025학년도 6월 고2 전국연합학력평가
+  explanation_file_id: 1-2b63zxkTEsz2DnVNXpq9sEmV3pc1TCb
+  total: 20
+  counts:
+    IN: 0
+    BORDER: 1
+    ADV: 0
+    OUT_MID: 2
+    OUT_EXC: 0
+    OUT: 17
+  items:
+  - q: 4
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 기본권 제한, 위헌 심사형 헌법소원
+  - q: 7
+    tier: BORDER
+    concept: FIN-RIGHTS-LATE
+    figure_expected: none
+    note: 헌법 기본 원리, 복지국가 원리 범위 미확인
+  - q: 14
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 기본권 유형 중 참정권
+  verdict: 범위 밖 - IN 문항 없음, BORDER 1문항(헌법 기본 원리)과 중간범위 2문항 외 17문항은 정치·법 고유 내용. 해설 PDF 단 구성이 뒤섞여 일부 문항 해설 순서가 어긋남.
+- exam: g2_202509_law
+  grade: 고2
+  subject: 정치와 법
+  title: 정치와 법, 2025학년도 9월 고2 전국연합학력평가
+  explanation_file_id: 1UdhTvIuahRRV0Q4DLlS5QJ74khBMhyie
+  total: 20
+  counts:
+    IN: 0
+    BORDER: 1
+    ADV: 0
+    OUT_MID: 1
+    OUT_EXC: 0
+    OUT: 18
+  items:
+  - q: 4
+    tier: BORDER
+    concept: FIN-RIGHTS-LATE
+    figure_expected: none
+    note: 헌법 기본 원리, 복지국가·자유민주주의 범위 미확인
+  - q: 17
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 기본권 유형, 자유권과 사회권
+  verdict: 범위 밖 - IN 문항 없음, BORDER 1·중간범위 1 외 18문항은 정치·법 고유 내용. 해설 PDF 단 구성이 뒤섞여 일부 문항 해설 순서가 어긋남.
+- exam: g3_202506_law
+  grade: 고3
+  subject: 정치와 법
+  title: 정치와 법, 2026학년도 대학수학능력시험 6월 모의평가 (해설에 [출제의도] 표기 없고 문항별 소제목 사용)
+  explanation_file_id: 1pRLZwoYoJcjk5tyj0IlWcXqe4uQUPEVT
+  total: 20
+  counts:
+    IN: 1
+    BORDER: 1
+    ADV: 2
+    OUT_MID: 4
+    OUT_EXC: 0
+    OUT: 12
+  items:
+  - q: 3
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 기본권 유형 중 자유권
+  - q: 4
+    tier: BORDER
+    concept: FIN-RIGHTS-LATE
+    figure_expected: none
+    note: 헌법 기본 원리, 복지국가 원리 범위 미확인
+  - q: 7
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 헌법소원 유형과 과잉금지 원칙 판단
+  - q: 10
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 형사 인권 제도, 피해자 구조 청구권 등
+  - q: 11
+    tier: IN
+    concept: FIN-PEACE
+    figure_expected: none
+    note: 자유주의와 현실주의 국제 관계 관점
+  - q: 14
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 형사 절차, 구속 적부 심사와 보석
+  - q: 18
+    tier: ADV
+    concept: FIN-RIGHTS-LATE
+    figure_expected: none
+    note: 연소 근로자 근로 계약, 법규 세부
+  - q: 19
+    tier: ADV
+    concept: FIN-PEACE
+    figure_expected: diagram
+    note: 국제연합 기관별 의결·관할 세부
+  verdict: 일부 포함 - 국제 관점 1문항 IN, UN·근로 ADV와 헌법원리 BORDER, 기본권·형사·헌법소원 4문항 중간범위, 12문항은 범위 밖. 이 파일은 출제의도 줄 대신 소제목으로 분류함.
+- exam: g3_202510_ethics
+  grade: 고3
+  subject: 생활과 윤리
+  title: 생활과 윤리, 2025학년도 10월 고3 전국연합학력평가
+  explanation_file_id: 1eWiGqz2LKbz6aTyb9aJdSKfKIbecKPpW
+  total: 20
+  counts:
+    IN: 2
+    BORDER: 1
+    ADV: 3
+    OUT_MID: 2
+    OUT_EXC: 1
+    OUT: 11
+  items:
+  - q: 3
+    tier: OUT_MID
+    concept: MID-C
+    figure_expected: none
+    note: 롤스의 시민 불복종 입장
+  - q: 6
+    tier: OUT_EXC
+    concept: EXC-P44_49
+    figure_expected: none
+    note: 롤스와 노직의 분배적 정의관 비교
+  - q: 10
+    tier: OUT_MID
+    concept: MID-A
+    figure_expected: none
+    note: 교정적 정의, 칸트와 루소의 형벌론
+  - q: 11
+    tier: ADV
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 요나스 책임 윤리, 미래 세대 의무
+  - q: 12
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: table
+    note: 자연관 사상가 비교, 지속가능한 삶과 인접 불확실
+  - q: 16
+    tier: ADV
+    concept: FIN-PEACE
+    figure_expected: none
+    note: 칸트와 모겐소의 국제 평화관, 원전 지식
+  - q: 17
+    tier: IN
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 생성형 인공지능 사용 태도, 과학기술 윤리
+  - q: 18
+    tier: IN
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 패스트패션과 기후 문제, 정부 규제 대 소비자 실천
+  - q: 19
+    tier: ADV
+    concept: FIN-INEQUALITY
+    figure_expected: none
+    note: 해외 원조 관련 롤스·싱어 입장, 범위 연결 불확실
+  verdict: 일부 포함 - 과학기술·소비 윤리 2문항 IN, 미래세대·원조·국제평화 사상가 문항은 ADV/BORDER, 시민불복종·형벌론 중간범위 2문항, 롤스·노직 정의관 1문항 제외범위(p.44-49), 11문항은 범위 밖.
+- exam: g3_202503_soccul
+  grade: 고3
+  subject: 사회·문화
+  title: 사회ㆍ문화, 2025년 3월 고3 (연도는 파일명 기준, 본문에 연도 없음)
+  explanation_file_id: 1PXMnEfQVDJtyTZke99KmH0ghUtiJJd6V
+  total: 20
+  counts:
+    IN: 1
+    BORDER: 1
+    ADV: 2
+    OUT_MID: 1
+    OUT_EXC: 0
+    OUT: 15
+  items:
+  - q: 6
+    tier: BORDER
+    concept: FIN-INEQUALITY
+    figure_expected: none
+    note: 사회적 소수자 차별 사례, 단원 귀속 불명확
+  - q: 12
+    tier: ADV
+    concept: FIN-INEQUALITY
+    figure_expected: table
+    note: 공공 부조·사회 보험 수급자 수 계산
+  - q: 15
+    tier: IN
+    concept: FIN-INEQUALITY
+    figure_expected: graph
+    note: 계층 구조 비교와 사회 통합
+  - q: 17
+    tier: ADV
+    concept: FIN-INEQUALITY
+    figure_expected: table
+    note: 성 불평등 지수 수치 계산
+  - q: 20
+    tier: OUT_MID
+    concept: MID-B-POP
+    figure_expected: table
+    note: 저출산·고령화 인구 구성 자료 분석
+  verdict: 일부 포함. [출제의도] 줄 사용. 계층·사회 보장·성 불평등 지표 5문항만 연결되고 나머지는 사회·문화 고유 주제(문화 접변 포함)라 OUT 처리.
+- exam: g2_202503_soccul
+  grade: 고2
+  subject: 사회·문화
+  title: 사회ㆍ문화, 2025년 3월 고2 (연도는 파일명 기준, 본문에 연도 없음)
+  explanation_file_id: 1KQljBybyWBBn2nMO6RVfm5MXIbbycJ-f
+  total: 20
+  counts:
+    IN: 3
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 1
+    OUT_EXC: 0
+    OUT: 13
+  items:
+  - q: 4
+    tier: BORDER
+    concept: FIN-INEQUALITY
+    figure_expected: none
+    note: 불평등을 보는 갈등론 관점, 교과서 밖 용어
+  - q: 5
+    tier: BORDER
+    concept: FIN-GLOBAL-SOLVE
+    figure_expected: none
+    note: 다문화 정책 두 관점 비교
+  - q: 10
+    tier: IN
+    concept: FIN-INEQUALITY
+    figure_expected: table
+    note: 사회 보험과 공공 부조 구분, 점수 게임형
+  - q: 14
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 정보 사회와 산업 사회 비교, 연결 약함
+  - q: 17
+    tier: IN
+    concept: FIN-INEQUALITY
+    figure_expected: table
+    note: 절대적·상대적 빈곤의 관계 비교
+  - q: 18
+    tier: IN
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 지속 가능한 사회의 의미, 단원 귀속 미확인
+  - q: 20
+    tier: OUT_MID
+    concept: MID-B-POP
+    figure_expected: table
+    note: 부양비·노년 비율 등 인구 자료 분석
+  verdict: 일부 포함. [출제의도] 줄 사용. 사회 보장·빈곤·지속 가능한 사회 3문항이 IN이고 인구 1문항은 중간 범위와 겹침.
+- exam: g2_202509_soccul
+  grade: 고2
+  subject: 사회·문화
+  title: 사회ㆍ문화, 2025년 9월 고2
+  explanation_file_id: 1E2wUrRfHe1NkQXV_nk5M7ZpQqGDKe_rj
+  total: 20
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 20
+  items: []
+  verdict: 범위 밖. [출제의도] 줄 사용(본문이 2단 조판으로 뒤섞였으나 1~20번 모두 확인). 연구 방법, 문화, 일탈, 사회 집단 중심이라 기말 범위와 연결되는 문항 없음.
+- exam: g2_202510_soccul
+  grade: 고2
+  subject: 사회·문화
+  title: 사회ㆍ문화, 2025년 10월 고2
+  explanation_file_id: 1fighCvt2uyAEmAipeWogdQj56-4zHlxD
+  total: 20
+  counts:
+    IN: 1
+    BORDER: 2
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 16
+  items:
+  - q: 6
+    tier: BORDER
+    concept: FIN-INEQUALITY
+    figure_expected: table
+    note: 기능론·갈등론의 불평등 관점 비교
+  - q: 7
+    tier: BORDER
+    concept: FIN-INEQUALITY
+    figure_expected: none
+    note: 사회적 소수자 개념, 단원 귀속 불명확
+  - q: 15
+    tier: ADV
+    concept: FIN-INEQUALITY
+    figure_expected: table
+    note: 절대적·상대적 빈곤 가구 수 계산
+  - q: 20
+    tier: IN
+    concept: FIN-INEQUALITY
+    figure_expected: table
+    note: 국가별 시기별 계층 구성 변화 분석
+  verdict: 일부 포함. [출제의도] 줄 사용. 불평등·빈곤·계층 4문항만 연결되고 나머지는 사회·문화 고유 주제.
+- exam: g2_202506_soccul
+  grade: 고2
+  subject: 사회·문화
+  title: 사회ㆍ문화, 2025년 6월 고2
+  explanation_file_id: 14SFuRHVp8zwqWC-G-t1OcU5mQOL2pNns
+  total: 20
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 20
+  items: []
+  verdict: 범위 밖. [출제의도] 줄 사용(본문이 2단 조판으로 뒤섞였으나 1~20번 모두 확인). 연구 방법, 사회화, 문화, 일탈, 조직 중심이라 기말 범위와 연결되는 문항 없음.
+- exam: g3_202510_kgeo
+  grade: 고3
+  subject: 한국지리
+  title: 한국지리, 2025년 10월 고3 (2026 수능 대비)
+  explanation_file_id: 1OULQUY3akrCcgYRIJHJZS30lSo2ntl2t
+  total: 20
+  counts:
+    IN: 0
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 2
+    OUT_EXC: 0
+    OUT: 15
+  items:
+  - q: 5
+    tier: BORDER
+    concept: FIN-INEQUALITY
+    figure_expected: none
+    note: 균형 개발과 성장 거점 개발, 지역 격차 해소
+  - q: 12
+    tier: OUT_MID
+    concept: MID-B-POP
+    figure_expected: graph
+    note: 출생·사망·자연 증가 지표와 지역 인구
+  - q: 16
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: map
+    note: 신·재생 에너지 지역 분포, 지속가능성과 간접 연결
+  - q: 17
+    tier: BORDER
+    concept: FIN-DIVIDED
+    figure_expected: map
+    note: 북한 주요 지역 위치·기후, 분단 주제와 간접 연결
+  - q: 20
+    tier: OUT_MID
+    concept: MID-B-POP
+    figure_expected: graph
+    note: 출산율과 외국인 주민 등 인구 특성
+  verdict: 범위 밖. [출제의도] 줄 사용. IN 문항이 없고 경계 3문항과 중간 범위 중복 2문항만 연결됨. 지리 고유 주제(영역 포함)는 OUT 처리.
+- exam: g2_202510_kgeo
+  grade: 고2
+  subject: 한국지리
+  title: 한국지리, 2025년 10월 고2
+  explanation_file_id: 1578uwcSHE7pNDD2YYbkQitbMnqIrM2L6
+  total: 20
+  counts:
+    IN: 0
+    BORDER: 6
+    ADV: 0
+    OUT_MID: 1
+    OUT_EXC: 0
+    OUT: 13
+  items:
+  - q: 4
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: none
+    note: 지구 온난화의 영향 추론, 단원 귀속 불명확
+  - q: 5
+    tier: OUT_MID
+    concept: MID-B-POP
+    figure_expected: graph
+    note: 시도별 노령화·부양비 등 인구 특성
+  - q: 6
+    tier: BORDER
+    concept: FIN-DIVIDED
+    figure_expected: map
+    note: 영해·배타적 경제수역, 해양 영토 갈등과 인접
+  - q: 9
+    tier: BORDER
+    concept: FIN-GLOBAL-SOLVE
+    figure_expected: map
+    note: 외국인 주민 유형별 지역 판별, 다문화와 인접
+  - q: 11
+    tier: BORDER
+    concept: FIN-INEQUALITY
+    figure_expected: none
+    note: 철거·수복 재개발 비교, 공간 불평등 해결과 인접
+  - q: 19
+    tier: BORDER
+    concept: FIN-DIVIDED
+    figure_expected: map
+    note: 북한 도시 위치와 특구, 분단 주제와 간접 연결
+  - q: 20
+    tier: BORDER
+    concept: FIN-FUTURE
+    figure_expected: map
+    note: 신·재생 에너지 지역별 분포
+  verdict: 일부 포함. [출제의도] 줄 사용. IN 문항은 없고 BORDER 6문항 위주라 연결이 약하며, 인구 1문항은 중간 범위와 겹침.
