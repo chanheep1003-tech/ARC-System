@@ -27,8 +27,14 @@ exams:
         - subjects/SCIENCE_MASTER_V4.0.md
       final_difficulty_policy:
         reference: DONGBUK_2026_2_MID_STRUCTURAL_CALIBRATION
-        target: SLIGHTLY_ABOVE_MIDTERM
-        adjustment: QUALITATIVE_NOT_UNVERIFIED_NUMERIC
+        target: CHALLENGING_FINAL_3_0_TO_3_5
+        target_mean_min: 3.00
+        target_mean_center: 3.25
+        target_mean_max: 3.50
+        target_mean_basis: STRUCTURAL_CALIBRATION_D1_TO_D5
+        adjustment: USER_REQUESTED_2026_10_08
+        release_gate: REQUIRE_MEAN_AND_SUBJECT_SPECIFIC_DISTRIBUTION_AND_TIME_LOAD
+        previous_midterm_anchor: REFERENCE_ONLY_NOT_CURRENT_FINAL_OVERRIDE
         applies_to: ARC_FINAL_ONLY
         preserve_arc_n_learning_ladder: true
         require_subject_specific_verified_final_anchor: true
