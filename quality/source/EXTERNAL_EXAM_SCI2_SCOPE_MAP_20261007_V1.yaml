@@ -588,7 +588,257 @@ exams:
   question_file_id: 1xQ4pOoF4MTnwkITh4-aGmE-X3SoNraJi
   explanation_file_id: 1L7ht_Eta2djjShSroNF6BfJE9pu2DWTV
   verdict: ADV/OUT
-pending_unread:
-  note: Drive g23 폴더의 고3 해설 약 21개(g3_202503 earth1; 202506/202509 phy1·2 chem1·2 bio1·2 earth1·2; 202510 bio1·2 phy2 earth2)는 아직 문항별 판독 전. 사용자 확인 후 진행.
-  source_folder_id: 1H5UcOFJWDXQNwWGzyUpHyYXVE4PSOeoa
+- exam: g3_202503_earth1
+  title: "고3 2025-03 지구과학Ⅰ"
+  drive_folder: "외부기출_분리_20261007/06_타과목_지구과학(1·2)"
+  question_file_id: "1PQ_gPOe6sihlBUnxrYvIPhLWI3FXhyDj"
+  explanation_file_id: "1y6fQh13KfNz2wEyWDF1WPbkVVe7xX7nk"
+  counts: {IN: 2, BORDER: 4, ADV: 1, OUT: 13}
+  items:
+  - {q: 5, tier: IN, concept: "SCI-EE-CIRCULATION", figure_expected: schematic, note: "온난화가 해수 순환과 에너지 수송에 주는 영향"}
+  - {q: 6, tier: BORDER, concept: "SCI-GT-TIME", figure_expected: stratigraphic_column, note: "관입·단층·부정합 선후 판단, 구조 용어는 범위 밖일 수 있음"}
+  - {q: 8, tier: BORDER, concept: "SCI-EE-CIRCULATION", figure_expected: graph, note: "위도별 남북 에너지 수송과 대기 순환 세포 구분"}
+  - {q: 11, tier: BORDER, concept: "SCI-EE-ENERGY", figure_expected: table, note: "자전축 경사각·이심률이 기온 연교차에 주는 영향 비교"}
+  - {q: 13, tier: ADV, concept: "SCI-GT-TIME", figure_expected: graph, note: "방사성 원소 개수비로 반감기·연대 산출하는 정량 문항"}
+  - {q: 16, tier: BORDER, concept: "SCI-EE-CIRCULATION", figure_expected: graph, note: "수온·염분 깊이 분포로 해수 밀도·혼합층 해석"}
+  - {q: 19, tier: IN, concept: "SCI-EE-CIRCULATION", figure_expected: graph, note: "해양 관측 자료에서 엘니뇨·라니냐 구분"}
+  verdict: "일부 포함 — 해수 순환 변화·엘니뇨 2문항만 IN, 지사학·에너지 수송·기후 요인·해수 성질은 BORDER, 절대 연령 1문항 ADV, 우주·판 구조·기상 중심 13문항은 범위 밖"
+- exam: g3_202506_earth1
+  title: "고3 2025-06 지구과학Ⅰ (2026학년도 수능 6월 모평)"
+  drive_folder: "외부기출_분리_20261007/06_타과목_지구과학(1·2)"
+  question_file_id: "1ODhsx2XieDhli3o9tf7R6lGkFIiNlLEb"
+  explanation_file_id: "19Uq0M75unOeao7qM8kHcFxhX3Zjk37Tb"
+  counts: {IN: 2, BORDER: 4, ADV: 1, OUT: 13}
+  items:
+  - {q: 3, tier: BORDER, concept: "SCI-EE-CIRCULATION", figure_expected: graph, note: "표층 수온·염분 변화와 수온-염분도 밀도 비교"}
+  - {q: 5, tier: BORDER, concept: "SCI-EE-CIRCULATION", figure_expected: map, note: "북태평양 표층 순환의 개별 해류 특성, 해류 이름 필요"}
+  - {q: 7, tier: BORDER, concept: "SCI-GT-TIME", figure_expected: stratigraphic_column, note: "지질 단면의 사건 순서 판단과 특수 지질 구조 식별"}
+  - {q: 10, tier: IN, concept: "SCI-GT-TIME", figure_expected: graph, note: "지질 시대 경계, 생물 과의 수 변화, 시대별 화석"}
+  - {q: 11, tier: BORDER, concept: "SCI-EE-ENERGY", figure_expected: schematic, note: "세차 운동과 근일점 위치에 따른 계절·연교차 비교"}
+  - {q: 12, tier: IN, concept: "SCI-EE-CIRCULATION", figure_expected: graph, note: "엘니뇨·라니냐 구분 후 해류·기압·수온 약층 비교"}
+  - {q: 20, tier: ADV, concept: "SCI-GT-TIME", figure_expected: table, note: "두 방사성 원소의 반감기·잔존량 비교 계산"}
+  verdict: "일부 포함 — 지질 시대 환경·생물과 엘니뇨 2문항 IN, 해수 성질·표층 순환·지질 단면·세차 4문항 BORDER, 절대 연령 1문항 ADV, 플룸·마그마·별·은하 등 13문항 범위 밖 (해설에 출제의도 줄 없어 소제목 기준)"
+- exam: g3_202506_earth2
+  title: "고3 2025-06 지구과학Ⅱ (2026학년도 수능 6월 모평)"
+  drive_folder: "외부기출_분리_20261007/06_타과목_지구과학(1·2)"
+  question_file_id: "1MMfblImgCb1csM-Yq40pZcpQ83Zp7mbY"
+  explanation_file_id: "1cioNC6Vz6xkRBA_uG_yPxqY_0j-xeCaj"
+  counts: {IN: 0, BORDER: 2, ADV: 0, OUT: 18}
+  items:
+  - {q: 3, tier: BORDER, concept: "SCI-EM-GENERATION", figure_expected: none, note: "조력·파력 등 해양 발전 방식 분류, 전자기 유도 무관"}
+  - {q: 8, tier: BORDER, concept: "SCI-GT-FOSSIL", figure_expected: stratigraphic_column, note: "한반도 누층군을 지질 시대·화석과 연결, 약한 인접"}
+  verdict: "범위 밖 — 광물·암석·지질도·대기 해양 역학 등 지구과학Ⅱ 고유 주제가 대부분이라 IN 0, 해양 발전·한반도 지질 2문항만 약하게 인접 (해설에 출제의도 줄 없어 소제목 기준)"
+- exam: g3_202509_earth1
+  title: "고3 2025-09 지구과학Ⅰ (2026학년도 수능 9월 모평)"
+  drive_folder: "외부기출_분리_20261007/06_타과목_지구과학(1·2)"
+  question_file_id: "11E-9JtfwNr4UP0Ro-A3ns1KCq37vAPjo"
+  explanation_file_id: "1wCmMmxb9a2bgaFhq0yzs4q9EoaLvzgnV"
+  counts: {IN: 2, BORDER: 4, ADV: 1, OUT: 13}
+  items:
+  - {q: 2, tier: BORDER, concept: "SCI-EE-CIRCULATION", figure_expected: graph, note: "수온-염분도로 대서양 심층 수괴 구분, 담수 유입 영향"}
+  - {q: 4, tier: IN, concept: "SCI-GT-FOSSIL", figure_expected: stratigraphic_column, note: "암상 대비와 건층을 이용한 지층 대비"}
+  - {q: 10, tier: IN, concept: "SCI-GT-TIME", figure_expected: diagram, note: "지질 시대 경계의 생물 출현·멸종과 대서양 형성 시기"}
+  - {q: 13, tier: BORDER, concept: "SCI-EE-CIRCULATION", figure_expected: graph, note: "위도별 대기 대순환의 연직 기류와 표층 해류 위치"}
+  - {q: 15, tier: BORDER, concept: "SCI-EE-CIRCULATION", figure_expected: graph, note: "엘니뇨·라니냐 판별에 수온·기압·적외 복사 편차 해석 추가"}
+  - {q: 17, tier: BORDER, concept: "SCI-EE-ENERGY", figure_expected: table, note: "경사각·이심률·경사 방향 변화와 기온 연교차 비교"}
+  - {q: 20, tier: ADV, concept: "SCI-GT-TIME", figure_expected: graph, note: "두 방사성 원소의 반감기·함량비로 절대 연령 계산"}
+  verdict: "일부 포함 — 지층 대비·지질 시대 2문항 IN, 심층 수괴·대순환·엘니뇨·천문 기후 요인 4문항 BORDER, 절대 연령 1문항 ADV, 나머지 13문항 범위 밖 (해설에 출제의도 줄 없어 소제목 기준)"
+- exam: g3_202509_earth2
+  title: "고3 2025-09 지구과학Ⅱ (2026학년도 수능 9월 모평)"
+  drive_folder: "외부기출_분리_20261007/06_타과목_지구과학(1·2)"
+  question_file_id: "1oBo8NtwsBWmfIgSoN7MBZVdQGBUmKnek"
+  explanation_file_id: "1q-MkoeDQ3yuHCy3hltIzwPzrcFtYSwBv"
+  counts: {IN: 0, BORDER: 1, ADV: 0, OUT: 19}
+  items:
+  - {q: 6, tier: BORDER, concept: "SCI-GT-FOSSIL", figure_expected: map, note: "한반도 지체 구조별 지층 시대와 화석 대응, 약한 인접"}
+  verdict: "범위 밖 — 광물·지질도·해파·역학 등 지구과학Ⅱ 고유 주제 중심으로 IN 0, 한반도 지체 구조 1문항만 약하게 인접 (해설에 출제의도 줄 없어 소제목 기준)"
+- exam: g3_202506_phy1
+  title: "고3 2025-06 물리학Ⅰ"
+  drive_folder: "외부기출_분리_20261007/03_타과목_물리학(1·2)"
+  question_file_id: "1vD6PGwIYmkYy9VzFKqF0KMK8PTWAczuR"
+  explanation_file_id: "1hqO7tCzJcWwuzUImBhjxmy278xS28Rms"
+  counts: {IN: 0, BORDER: 0, ADV: 1, OUT: 19}
+  items:
+  - {q: 18, tier: ADV, concept: "SCI-EM-INDUCTION", figure_expected: graph, note: "고리의 유도 전류 정량 비교, 자기선속 변화율 심화"}
+  verdict: "범위 밖(수능 6월 모평 물리학Ⅰ): 통합과학2와 겹치는 것은 전자기 유도 ADV 1문항뿐이고 IN 없음, 전류 자기장·전자기파·핵반응은 OUT 처리"
+- exam: g3_202506_phy2
+  title: "고3 2025-06 물리학Ⅱ"
+  drive_folder: "외부기출_분리_20261007/03_타과목_물리학(1·2)"
+  question_file_id: "1S3TId1m24Wl55k0Sz8lpMV-BcAqXeEdT"
+  explanation_file_id: "1gfV2NXB_KpIDSly1Y_Brsa11iexj8gN2"
+  counts: {IN: 0, BORDER: 1, ADV: 1, OUT: 18}
+  items:
+  - {q: 12, tier: BORDER, concept: "SCI-EM-INDUCTION", figure_expected: experiment_diagram, note: "코일 두 개의 상호유도, 유도 전류 방향·세기 정성 판단"}
+  - {q: 17, tier: ADV, concept: "SCI-EM-INDUCTION", figure_expected: schematic, note: "사분원 고리의 자기장 영역 통과, 선속 계산·전류 비교 심화"}
+  verdict: "범위 밖(수능 6월 모평 물리학Ⅱ): 상호유도 BORDER 1과 전자기 유도 ADV 1만 인접하고 IN 없음, 전류 자기장은 OUT 처리"
+- exam: g3_202506_chem1
+  title: "고3 2025-06 화학Ⅰ"
+  drive_folder: "외부기출_분리_20261007/04_타과목_화학(1·2)"
+  question_file_id: "16_lcCeaOYJ0kDx-AoUKJppTjlL3a49YR"
+  explanation_file_id: "1OXtW-eKHDJbjvJGqaMQiTmGhltjI_ZQx"
+  counts: {IN: 0, BORDER: 1, ADV: 1, OUT: 18}
+  items:
+  - {q: 1, tier: BORDER, concept: "SCI-OR-ELECTRON", figure_expected: none, note: "발열 반응·연소 판단과 탄소 화합물 구분, 산화환원 직접 아님"}
+  - {q: 17, tier: ADV, concept: "SCI-OR-ELECTRON", figure_expected: table, note: "산화수 증감과 몰 농도·부피 계산 결합, 범위 밖 심화"}
+  verdict: "범위 밖(수능 6월 모평 화학Ⅰ): 결합·오비탈·몰·중화 중심이며 연소 발열 BORDER 1과 산화수 ADV 1만 인접, IN 없음(중화는 통합과학1로 보아 OUT)"
+- exam: g3_202509_phy1
+  title: "고3 2025-09 물리학Ⅰ"
+  drive_folder: "외부기출_분리_20261007/03_타과목_물리학(1·2)"
+  question_file_id: "1hypTynfCDzZR3nu3D2nyVyR3CCcurcCB"
+  explanation_file_id: "1WFF6gjGe-eppZs2izAzZtd4aaCZTRXKv"
+  counts: {IN: 0, BORDER: 1, ADV: 1, OUT: 18}
+  items:
+  - {q: 1, tier: BORDER, concept: "SCI3", figure_expected: table, note: "센서 맥락(적외선 활용)의 전자기파 종류·진동수 비교, 물리학Ⅰ 성격"}
+  - {q: 15, tier: ADV, concept: "SCI-EM-INDUCTION", figure_expected: graph, note: "단위 시간당 선속 변화량 비교로 자기장 추론, 심화"}
+  verdict: "범위 밖(수능 9월 모평 물리학Ⅰ): 적외선 센서 맥락 BORDER 1과 전자기 유도 ADV 1만 인접하고 IN 없음, 전류 자기장·핵반응·반도체는 OUT 처리"
+- exam: g3_202509_phy2
+  title: "고3 2025-09 물리학Ⅱ"
+  drive_folder: "외부기출_분리_20261007/03_타과목_물리학(1·2)"
+  question_file_id: "1an7nafQXgODohKQd2pfy2AJPPAIdTWfM"
+  explanation_file_id: "16zfm6pFTNGkOe7YhXTYTTK7bY1s4NyJz"
+  counts: {IN: 0, BORDER: 0, ADV: 1, OUT: 19}
+  items:
+  - {q: 5, tier: ADV, concept: "SCI-EM-INDUCTION", figure_expected: graph, note: "상호유도 시간 그래프 해석, 선속 기울기와 기전력 관계 심화"}
+  verdict: "범위 밖(수능 9월 모평 물리학Ⅱ): 상호유도 ADV 1문항뿐이고 IN·BORDER 없음, 전류 자기장·RLC·트랜지스터는 OUT 처리"
+- exam: g3_202509_chem1
+  title: "고3 2025-09 화학Ⅰ"
+  drive_folder: "외부기출_분리_20261007/04_타과목_화학(1·2)"
+  question_file_id: "1yh9TKJ2maO6aKzBureNe_mYM0VCbTjio"
+  explanation_file_id: "1p4hKrhE5d8zgGD5y6xQsYBirWV5PXI_G"
+  counts: {IN: 0, BORDER: 1, ADV: 2, OUT: 17}
+  items:
+  - {q: 1, tier: BORDER, concept: "SCI3", figure_expected: none, note: "과학기술 기여(암모니아 합성)·연소 발열·탄소 화합물 구분 혼합"}
+  - {q: 10, tier: ADV, concept: "SCI-OR-QUANT", figure_expected: table, note: "금속과 양이온 반응의 양이온 몰 수 계산, 몰은 범위 밖"}
+  - {q: 13, tier: ADV, concept: "SCI-OR-ELECTRON", figure_expected: none, note: "산화수 변화와 반응식 계수 추론, 범위 밖 심화"}
+  verdict: "범위 밖(수능 9월 모평 화학Ⅰ): 결합·오비탈·몰·중화 중심이며 산화환원 ADV 2와 BORDER 1만 인접, IN 없음(중화는 통합과학1로 보아 OUT)"
+- exam: g3_202506_chem2
+  title: "고3 2025-06 화학Ⅱ"
+  drive_folder: "외부기출_분리_20261007/04_타과목_화학(1·2)"
+  question_file_id: "1EbmJMgdevaBehJUZsL5gThjZH7e3j0-H"
+  explanation_file_id: "1tAAjPMl2dlwmYbEs4BlSTDjZ-d0qz0jx"
+  counts: {IN: 0, BORDER: 0, ADV: 0, OUT: 20}
+  items: []
+  verdict: "범위 밖 - 용액·기체·평형·반응 속도·결정 구조 등 화학Ⅱ 전용 주제뿐이며 산화·환원 문항이 없음"
+- exam: g3_202506_bio1
+  title: "고3 2025-06 생명과학Ⅰ"
+  drive_folder: "외부기출_분리_20261007/05_타과목_생명과학(1·2)"
+  question_file_id: "12sP7bN7bBL6119R86mmgUIWd9p1rVMhR"
+  explanation_file_id: "1zpd6nzG9CkACInDwZvFyz_LC2oHjEjGX"
+  counts: {IN: 1, BORDER: 3, ADV: 1, OUT: 15}
+  items:
+  - {q: 1, tier: BORDER, concept: "SCI-EV-SELECTION", figure_expected: none, note: "적응과 진화 사례가 섞인 생물의 특성 분류"}
+  - {q: 6, tier: BORDER, concept: "SCI3", figure_expected: experiment_diagram, note: "감염병 진단 태그 인접, 병원체 구분 실험"}
+  - {q: 7, tier: IN, concept: "SCI-EV-DIVERSITY", figure_expected: none, note: "유전적·종·생태계 다양성과 감소 원인 구분"}
+  - {q: 11, tier: BORDER, concept: "SCI3", figure_expected: experiment_diagram, note: "감염병 태그 인접, 기억 세포 면역 반응 실험"}
+  - {q: 20, tier: ADV, concept: "SCI-EV-DIVERSITY", figure_expected: table, note: "방형구 상대값 계산 필요, 군집 수직 분포"}
+  verdict: "일부 포함 - 생물 다양성 1문항만 IN, 병원체·면역·생물의 특성은 경계, 군집 조사는 계산이 필요한 ADV"
+- exam: g3_202506_bio2
+  title: "고3 2025-06 생명과학Ⅱ"
+  drive_folder: "외부기출_분리_20261007/05_타과목_생명과학(1·2)"
+  question_file_id: "11THa5485PDmZatFGlaw3ht9YBL3Nkxsj"
+  explanation_file_id: "1A7W6qjs2bTKM56_JWg7LvWC9CkeNkK7y"
+  counts: {IN: 0, BORDER: 0, ADV: 1, OUT: 19}
+  items:
+  - {q: 17, tier: ADV, concept: "SCI-EV-DIVERSITY", figure_expected: table, note: "염기 결실 돌연변이, 코돈 해석(전사·번역) 필요"}
+  verdict: "범위 밖 - 세포·대사·유전자 발현 중심의 생명과학Ⅱ 전용 주제이며 돌연변이 1문항도 전사·번역 지식이 필요한 ADV"
+- exam: g3_202509_chem2
+  title: "고3 2025-09 화학Ⅱ"
+  drive_folder: "외부기출_분리_20261007/04_타과목_화학(1·2)"
+  question_file_id: "1DUlJLWA_ZeRTJlXvwEqQWp-YX0lRAraS"
+  explanation_file_id: "1PqXBt43Hfgb6peXqbkqZc8vxeJBhz-0E"
+  counts: {IN: 0, BORDER: 0, ADV: 2, OUT: 18}
+  items:
+  - {q: 1, tier: ADV, concept: "SCI-OR-ELECTRON", figure_expected: experiment_diagram, note: "다니엘 전지의 에너지 전환, 전지는 범위 밖"}
+  - {q: 6, tier: ADV, concept: "SCI-OR-ELECTRON", figure_expected: experiment_diagram, note: "전기 분해 극 반응과 전자 몰수 비교"}
+  verdict: "범위 밖 - 산화·환원 인접 2문항은 전지·전기 분해라 ADV이고 나머지는 용액·평형·반응 속도 등 화학Ⅱ 전용"
+- exam: g3_202509_bio1
+  title: "고3 2025-09 생명과학Ⅰ"
+  drive_folder: "외부기출_분리_20261007/05_타과목_생명과학(1·2)"
+  question_file_id: "1R88bZnWOJ4XnskgNv5UeLooP5TNUo7CF"
+  explanation_file_id: "1FL9CFxHnUxzGiBB8Px2DgcLiJGBD6S9j"
+  counts: {IN: 0, BORDER: 3, ADV: 1, OUT: 16}
+  items:
+  - {q: 1, tier: BORDER, concept: "SCI-EV-SELECTION", figure_expected: none, note: "적응과 진화 사례가 섞인 생물의 특성 분류"}
+  - {q: 9, tier: BORDER, concept: "SCI3", figure_expected: experiment_diagram, note: "감염병 태그 인접, 세균 항균 물질 실험"}
+  - {q: 13, tier: BORDER, concept: "SCI3", figure_expected: graph, note: "감염병 태그 인접, 기억 세포와 항체 농도 변화"}
+  - {q: 20, tier: ADV, concept: "SCI-EV-DIVERSITY", figure_expected: table, note: "종 다양성 판정에 방형구 중요치 계산 필요"}
+  verdict: "일부 포함 - IN 없이 경계 3문항(적응과 진화, 병원체, 면역)뿐이고 종 다양성 문항은 방형구 계산이 필요한 ADV"
+- exam: g3_202509_bio2
+  title: "고3 2025-09 생명과학Ⅱ"
+  drive_folder: "외부기출_분리_20261007/05_타과목_생명과학(1·2)"
+  question_file_id: "1L0ztrBpJOTtwH_ocpUtMW5bAGufjMNsK"
+  explanation_file_id: "1ifRt5TZuTrQITs-HYRYVs4B9Jg4g2BmG"
+  counts: {IN: 0, BORDER: 3, ADV: 3, OUT: 14}
+  items:
+  - {q: 4, tier: BORDER, concept: "SCI-EV-SELECTION", figure_expected: diagram, note: "지리적 격리와 종분화, 생물학적 종 개념"}
+  - {q: 8, tier: BORDER, concept: "SCI-GT-TIME", figure_expected: diagram, note: "원핵·진핵·다세포 출현 순서, 지질 시대 인접"}
+  - {q: 12, tier: ADV, concept: "SCI-EV-DIVERSITY", figure_expected: diagram, note: "계통수와 선구·후구동물 분류 지식 필요"}
+  - {q: 16, tier: ADV, concept: "SCI-EV-SELECTION", figure_expected: table, note: "집단 대립유전자 빈도 정량 계산 필요"}
+  - {q: 18, tier: ADV, concept: "SCI-EV-DIVERSITY", figure_expected: table, note: "염기 결실에 따른 아미노산 변화, 코돈 해석 필요"}
+  - {q: 19, tier: BORDER, concept: "SCI-EV-SELECTION", figure_expected: table, note: "돌연변이·유전적 부동·자연선택 구분"}
+  verdict: "일부 포함 - 진화(종분화·생명체 진화·진화의 요인) 경계 3문항이 있고 하디-바인베르크 등 3문항은 ADV"
+- exam: g3_202510_bio1
+  title: "고3 2025-10 생명과학Ⅰ"
+  drive_folder: "외부기출_분리_20261007/05_타과목_생명과학(1·2)"
+  question_file_id: "10fxAgk30rEs1ByFMdkyjwCmAjsJd3gio"
+  explanation_file_id: "1lMTI9PDG3zadB2Mb3kV2rBBIYzx6OMne"
+  counts: {IN: 0, BORDER: 1, ADV: 0, OUT: 19}
+  items:
+  - {q: 5, tier: BORDER, concept: "SCI3 감염병 진단", figure_expected: table, note: "병원체 종류 구분, 진단 기술이 아닌 인접 내용"}
+  verdict: "범위 밖 — 항상성·유전·생태 등 생명과학Ⅰ 내용 중심이며 IN 없음, 감염병 병원체 1문항만 SCI3와 인접"
+- exam: g3_202510_bio2
+  title: "고3 2025-10 생명과학Ⅱ"
+  drive_folder: "외부기출_분리_20261007/05_타과목_생명과학(1·2)"
+  question_file_id: "1J6EcTEF6WiSjSi43XBwGoEjB9NVHe5sp"
+  explanation_file_id: "19LfeDWa3I2zhIcUs1HBK0OB16b_lwMIJ"
+  counts: {IN: 0, BORDER: 4, ADV: 4, OUT: 12}
+  items:
+  - {q: 6, tier: BORDER, concept: "SCI-GT-TIME", figure_expected: diagram, note: "초기 생명 출현 순서, 선캄브리아 환경 변화와 연결"}
+  - {q: 9, tier: BORDER, concept: "SCI-EV-DIVERSITY", figure_expected: table, note: "식물 분류군 특징 비교, 생물다양성 인접 주제"}
+  - {q: 10, tier: ADV, concept: "SCI-EV-DIVERSITY", figure_expected: table, note: "핵산 염기 계산과 전사 지식 필요, 범위 밖"}
+  - {q: 11, tier: ADV, concept: "SCI-EV-DIVERSITY", figure_expected: schematic, note: "전사 조절 요소 이해 필요, 분자유전 심화"}
+  - {q: 14, tier: BORDER, concept: "SCI-EV-DIVERSITY", figure_expected: table, note: "생물 분류 체계 이해, 종 다양성과 인접"}
+  - {q: 16, tier: ADV, concept: "SCI-EV-SELECTION", figure_expected: table, note: "집단 유전 빈도 정량 계산, 진화 심화 내용"}
+  - {q: 17, tier: BORDER, concept: "SCI-EV-SELECTION", figure_expected: table, note: "자연선택 포함, 병목·창시자 효과는 범위 밖일 수 있음"}
+  - {q: 20, tier: ADV, concept: "SCI-EV-DIVERSITY", figure_expected: table, note: "전사와 번역 규칙 적용, 코돈 해석 필요"}
+  verdict: "일부 포함 — IN 없음, 초기 생명·생물다양성·자연선택 관련 BORDER 4문항만 인접하고 나머지는 대사·세포·분자유전 중심"
+- exam: g3_202510_phy2
+  title: "고3 2025-10 물리학Ⅱ"
+  drive_folder: "외부기출_분리_20261007/03_타과목_물리학(1·2)"
+  question_file_id: "1g2sLCOB4UYdNKhrURlEwj2KwKikT8PXY"
+  explanation_file_id: "1WW7U5MsWh-Kq4AIqi4jmYkrghGFpPUhA"
+  counts: {IN: 0, BORDER: 1, ADV: 2, OUT: 17}
+  items:
+  - {q: 1, tier: BORDER, concept: "SCI-EM-INDUCTION", figure_expected: schematic, note: "전자기파 수신과 공명, 유도 현상의 응용 인접"}
+  - {q: 14, tier: ADV, concept: "SCI-EM-INDUCTION", figure_expected: schematic, note: "전류 자기장 세기 합성 계산, 공식 필요"}
+  - {q: 19, tier: ADV, concept: "SCI-EM-INDUCTION", figure_expected: schematic, note: "유도 기전력 정량 계산, 자기선속 공식 필요"}
+  verdict: "범위 밖 — 역학·파동·현대물리 중심이며 IN 없음, 전자기 유도 관련은 인접 1문항과 공식이 필요한 ADV 2문항뿐"
+- exam: g3_202510_earth2
+  title: "고3 2025-10 지구과학Ⅱ"
+  drive_folder: "외부기출_분리_20261007/06_타과목_지구과학(1·2)"
+  question_file_id: "1UZb8oDsc4qevrdrj4EgE19wHxuiKI1Tw"
+  explanation_file_id: "1I_gq0n4clXENfBWcMju-8b2I7YyPJULd"
+  counts: {IN: 0, BORDER: 4, ADV: 2, OUT: 14}
+  items:
+  - {q: 1, tier: BORDER, concept: "SCI-GT-TIME", figure_expected: diagram, note: "산소 증가에 따른 철 침전, 광상 분류는 심화"}
+  - {q: 4, tier: BORDER, concept: "SCI-EE-CIRCULATION", figure_expected: experiment_diagram, note: "전향력 방향 판단은 가능, 크기 의존성은 심화"}
+  - {q: 9, tier: BORDER, concept: "SCI-GT-TIME", figure_expected: stratigraphic_column, note: "한반도 지층 시대와 화석 연결, 누층군 지식 필요"}
+  - {q: 11, tier: ADV, concept: "SCI-EE-CIRCULATION", figure_expected: map, note: "지형류 힘의 평형, 해류 심화 개념"}
+  - {q: 12, tier: ADV, concept: "SCI-EE-CIRCULATION", figure_expected: schematic, note: "지상풍 힘의 균형과 반구 판단, 대기 순환 심화"}
+  - {q: 17, tier: BORDER, concept: "SCI-GT-TIME", figure_expected: map, note: "지층 연령 순서 추론, 지질도 해독은 심화"}
+  verdict: "일부 포함 — IN 없음, 지질 시대·지질도·전향력 관련 BORDER 4문항만 인접, 대기·해수 순환 2문항은 심화(ADV)"
+subject_verdict_g3:
+  "지구과학Ⅰ": "3회 · IN 6 · BORDER 12 · ADV 3 · OUT 39 (합계 60)"
+  "지구과학Ⅱ": "3회 · IN 0 · BORDER 7 · ADV 2 · OUT 51 (합계 60)"
+  "물리학Ⅰ": "2회 · IN 0 · BORDER 1 · ADV 2 · OUT 37 (합계 40)"
+  "물리학Ⅱ": "3회 · IN 0 · BORDER 2 · ADV 4 · OUT 54 (합계 60)"
+  "화학Ⅰ": "2회 · IN 0 · BORDER 2 · ADV 3 · OUT 35 (합계 40)"
+  "화학Ⅱ": "2회 · IN 0 · BORDER 0 · ADV 2 · OUT 38 (합계 40)"
+  "생명과학Ⅰ": "3회 · IN 1 · BORDER 7 · ADV 2 · OUT 50 (합계 60)"
+  "생명과학Ⅱ": "3회 · IN 0 · BORDER 7 · ADV 8 · OUT 45 (합계 60)"
+g3_status:
+  resolved_at: "2026-10-08"
+  coverage: "고3 학평 해설 21회분(2025년 3·6·9·10월, 8개 과목) 문항별 판정. 문제지 PDF와 그림은 열지 않음."
+  caveat: "일부 지구과학 해설(2025-06·09)은 [출제의도] 줄이 없어 소제목 기준으로 판정함. 판정은 해설 텍스트만 보고 낸 분류이므로 IN 항목은 사람 검토 후 사용."
+  leak_block: "ADV 항목은 정답 근거로 쓰지 않음(ADVANCED LEAK BLOCK)."
 ebsi_access: 방화벽으로 접근 불가. EBSi 자료는 무단 전재 금지. Drive 보유분만 정리함.
