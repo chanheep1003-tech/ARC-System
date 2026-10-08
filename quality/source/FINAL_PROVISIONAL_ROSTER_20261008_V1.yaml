@@ -1,0 +1,1183 @@
+# 기말 임시범위 명단 (전부 포함, 임시)
+schema_version: ARC-FINAL-PROVISIONAL-ROSTER-V1
+recorded_at: '2026-10-08'
+status: PROVISIONAL_ALL_INCLUDED
+instruction: '사용자 지시(2026-10-08): 일단 기말범위에 전부 포함. 정책상 중간범위 중복 항목(OUT_MID)과 과학 GT·EV·OR·EE·EM 주제는 중간고사 범위와 겹치므로 표시만 한다.'
+answer_basis_rule: IN은 검토 후 정답 근거 가능, BORDER는 보조, ADV는 낮춘 버전만 사용(원 문항 정답 근거 금지), OUT은 사용하지 않음.
+social_exams:
+- exam: g3_202510_econ
+  grade: 고3
+  subject: 상업 경제(직업탐구)
+  title: 상업 경제(직업탐구) 2025학년도 10월 고3 전국연합학력평가 (파일 헤더상 '상업 경제'; 일반 경제 아님)
+  drive_folder: 외부기출_분리_20261007/14_사회_타과목_상업경제(직업탐구)
+  explanation_file_id: 1KjGrF1uPlXWeDyljnqoc1YxGV_7FZySY
+  counts:
+    IN: 0
+    BORDER: 2
+    ADV: 5
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 13
+- exam: g2_202509_econ
+  grade: 고2
+  subject: 경제
+  title: 경제 2025학년도 9월 고2 전국연합학력평가 (원문이 2단 레이아웃이라 텍스트 순서가 뒤섞임, 번호별 [출제의도]로 매핑)
+  drive_folder: 외부기출_분리_20261007/09_사회_타과목_경제
+  explanation_file_id: 1MjtPsd8FCcO1NdDvkH7-nlcK8AcIbPli
+  counts:
+    IN: 10
+    BORDER: 0
+    ADV: 4
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 6
+- exam: g2_202503_econ
+  grade: 고2
+  subject: 경제
+  title: 경제 2025년 3월 고2 전국연합학력평가 (연도는 파일명 기준, 본문 텍스트에 연도 헤더 없음)
+  drive_folder: 외부기출_분리_20261007/09_사회_타과목_경제
+  explanation_file_id: 1_Lz0n6exUu7uGukOVKAf9lBXcYN-kKvp
+  counts:
+    IN: 14
+    BORDER: 2
+    ADV: 2
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 2
+- exam: g3_202503_ethics
+  grade: 고3
+  subject: 생활과 윤리
+  title: 생활과 윤리 2025 고3 3월 (해설 헤더에 학년·월 미표기, 파일명 기준)
+  drive_folder: 외부기출_분리_20261007/07_타과목_생활과윤리
+  explanation_file_id: 1_x3UNG3_QVnPBy2HOyg5ZtOvRKszWCMP
+  counts:
+    IN: 2
+    BORDER: 3
+    ADV: 2
+    OUT_MID: 1
+    OUT_EXC: 1
+    OUT: 11
+- exam: g2_202510_ethics
+  grade: 고2
+  subject: 생활과 윤리
+  title: 생활과 윤리 2025 고2 10월
+  drive_folder: 외부기출_분리_20261007/07_타과목_생활과윤리
+  explanation_file_id: 1Bt71zCFfBoY1VjGegR1tmdeZLJ5qXVML
+  counts:
+    IN: 1
+    BORDER: 4
+    ADV: 1
+    OUT_MID: 2
+    OUT_EXC: 1
+    OUT: 11
+- exam: g2_202509_ethics
+  grade: 고2
+  subject: 생활과 윤리
+  title: 생활과 윤리 2025 고2 9월 (PDF 2단 텍스트 순서 뒤섞임, 20문항 모두 확인)
+  drive_folder: 외부기출_분리_20261007/07_타과목_생활과윤리
+  explanation_file_id: 1IBVIE2IpNZSrR78Z_dBbSKH5q7D0gAyQ
+  counts:
+    IN: 1
+    BORDER: 2
+    ADV: 2
+    OUT_MID: 2
+    OUT_EXC: 1
+    OUT: 12
+- exam: g2_202506_ethics
+  grade: 고2
+  subject: 생활과 윤리
+  title: 생활과 윤리 2025 고2 6월
+  drive_folder: 외부기출_분리_20261007/07_타과목_생활과윤리
+  explanation_file_id: 1b7_-Iz2QyzuLiCR25V5cP1kgK-5iRtjz
+  counts:
+    IN: 1
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 2
+    OUT_EXC: 1
+    OUT: 13
+- exam: g2_202503_ethics
+  grade: 고2
+  subject: 생활과 윤리
+  title: 생활과 윤리 2025 고2 3월 (해설 헤더에 학년·월 미표기, 파일명 기준)
+  drive_folder: 외부기출_분리_20261007/07_타과목_생활과윤리
+  explanation_file_id: 1CTG49VfmQ4eVWZdP2nO1iMEeZ5U_r6B4
+  counts:
+    IN: 6
+    BORDER: 6
+    ADV: 1
+    OUT_MID: 3
+    OUT_EXC: 1
+    OUT: 3
+- exam: g2_202510_econ
+  grade: 고2
+  subject: 상업 경제(직업탐구)
+  title: 상업 경제(직업탐구) 2025 고2 10월 (일반 경제 아님, 직업탐구 과목)
+  drive_folder: 외부기출_분리_20261007/14_사회_타과목_상업경제(직업탐구)
+  explanation_file_id: 1UIFhtGucUXe_yg1pFf_y2DuABHjKVPFi
+  counts:
+    IN: 2
+    BORDER: 5
+    ADV: 2
+    OUT_MID: 1
+    OUT_EXC: 0
+    OUT: 10
+- exam: g3_202503_econ
+  grade: 고3
+  subject: 경제
+  title: 경제 2025 고3 3월 (해설 헤더에 학년·월 미표기, 파일명 기준)
+  drive_folder: 외부기출_분리_20261007/09_사회_타과목_경제
+  explanation_file_id: 19P_5igxvQa6SJAsVkHqsaaMIfAEgB8De
+  counts:
+    IN: 10
+    BORDER: 4
+    ADV: 3
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 3
+- exam: g1_soc_2019_11
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 통합사회 2019학년도 11월 고1 전국연합학력평가 (파일 헤더에 연도 없음, 파일명 일치)
+  drive_folder: 외부기출_분리_20261007/08_사회_통합사회(고1·고2)
+  explanation_file_id: 1R_ZYuI3LlkdeOvxe3fV9BwC842c5HubW
+  counts:
+    IN: 4
+    BORDER: 2
+    ADV: 0
+    OUT_MID: 4
+    OUT_EXC: 1
+    OUT: 9
+- exam: g1_soc_2022_11
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 통합사회 2022학년도 11월 고1 전국연합학력평가
+  drive_folder: 외부기출_분리_20261007/08_사회_통합사회(고1·고2)
+  explanation_file_id: 1YNuH3XwG47_uKcZ4wfGjAhijo-JBpROG
+  counts:
+    IN: 5
+    BORDER: 1
+    ADV: 0
+    OUT_MID: 3
+    OUT_EXC: 1
+    OUT: 10
+- exam: g1_soc_2023_09
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 통합사회 2023학년도 9월 고1 전국연합학력평가
+  drive_folder: 외부기출_분리_20261007/08_사회_통합사회(고1·고2)
+  explanation_file_id: 14gV1devKzO-s2YjpZ20XPOkA4BT_j7bD
+  counts:
+    IN: 3
+    BORDER: 2
+    ADV: 0
+    OUT_MID: 4
+    OUT_EXC: 0
+    OUT: 11
+- exam: g1_soc_2024_06
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 통합사회 2024학년도 6월 고1 전국연합학력평가
+  drive_folder: 외부기출_분리_20261007/08_사회_통합사회(고1·고2)
+  explanation_file_id: 1pueZ_CSs_jriElyeye7CTuL6Q4xf1ebK
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 0
+    OUT_MID: 3
+    OUT_EXC: 0
+    OUT: 17
+- exam: g1_soc_2024_09
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 통합사회 2024학년도 9월 고1 전국연합학력평가
+  drive_folder: 외부기출_분리_20261007/08_사회_통합사회(고1·고2)
+  explanation_file_id: 1G5nZ2R9xInXcATTPNHcb1LttMI2Tvbcr
+  counts:
+    IN: 3
+    BORDER: 2
+    ADV: 0
+    OUT_MID: 2
+    OUT_EXC: 0
+    OUT: 13
+- exam: g1_soc_2025_03
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 사회(통합사회·윤리·지리·경제·정치 혼합) 2025학년도 3월 고1 (헤더에 연도 없음, 파일명 일치)
+  drive_folder: 외부기출_분리_20261007/08_사회_통합사회(고1·고2)
+  explanation_file_id: 1GJB4f7LHXGvMNwtNHjt-WLwsXG5_CALt
+  counts:
+    IN: 1
+    BORDER: 2
+    ADV: 2
+    OUT_MID: 1
+    OUT_EXC: 1
+    OUT: 13
+- exam: g1_2025_06
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 통합사회 2025학년도 6월 고1 전국연합학력평가 (파일 제목 2025_06_e.pdf, 헤더 일치)
+  drive_folder: 외부기출_분리_20261007/08_사회_통합사회(고1·고2)
+  explanation_file_id: 1J3yMYH_5Ch4HO2HAjcpWmpDcfALvERGD
+  counts:
+    IN: 0
+    BORDER: 1
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 24
+- exam: g1_soc_2025_09
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 통합사회 2025학년도 9월 고1 전국연합학력평가
+  drive_folder: 외부기출_분리_20261007/08_사회_통합사회(고1·고2)
+  explanation_file_id: 1L1I-pTVzHqu9dL5gnrSOKfeTIrzdbJwc
+  counts:
+    IN: 2
+    BORDER: 1
+    ADV: 0
+    OUT_MID: 5
+    OUT_EXC: 1
+    OUT: 16
+- exam: g1_soc_2025_10
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 통합사회 2025학년도 10월 고1 전국연합학력평가
+  drive_folder: 외부기출_분리_20261007/08_사회_통합사회(고1·고2)
+  explanation_file_id: 1AEf810gyZ6-QV43fjHUtz7iJji2HDibb
+  counts:
+    IN: 5
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 5
+    OUT_EXC: 1
+    OUT: 11
+- exam: g1_2026_06
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 통합사회 2026학년도 6월 고1 전국연합학력평가
+  drive_folder: 외부기출_분리_20261007/08_사회_통합사회(고1·고2)
+  explanation_file_id: 1jbPk4KZVEAuNf1f5FFLpkmRt6Q9JuZiQ
+  counts:
+    IN: 0
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 1
+    OUT_EXC: 0
+    OUT: 21
+- exam: g1_soc_2026_09
+  grade: 고1
+  subject: 통합사회(고1)
+  title: 통합사회 2026학년도 9월 고1 전국연합학력평가
+  drive_folder: 외부기출_분리_20261007/08_사회_통합사회(고1·고2)
+  explanation_file_id: 1gi8BgH1WD0WsDT3-Ll0B-PeflY2wJSWH
+  counts:
+    IN: 1
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 5
+    OUT_EXC: 2
+    OUT: 14
+- exam: g2_202603_intsoc
+  grade: 고2
+  subject: 통합사회
+  title: 통합사회 2026년 3월 고2 (헤더에 학년도·학년 표기 없음, 파일명 기준)
+  drive_folder: 외부기출_분리_20261007/08_사회_통합사회(고1·고2)
+  explanation_file_id: 1TRTsFGpp75ZVgLcLn4PKnFL_ltWgeYT8
+  counts:
+    IN: 8
+    BORDER: 1
+    ADV: 0
+    OUT_MID: 4
+    OUT_EXC: 1
+    OUT: 11
+- exam: g2_202606_intsoc
+  grade: 고2
+  subject: 통합사회
+  title: 통합사회 2026학년도 6월 고2 전국연합학력평가
+  drive_folder: 외부기출_분리_20261007/08_사회_통합사회(고1·고2)
+  explanation_file_id: 19MrIIj8F6ABxNsc_2L1eEWgHXjb8oHiO
+  counts:
+    IN: 6
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 5
+    OUT_EXC: 1
+    OUT: 10
+- exam: g2_202609_intsoc
+  grade: 고2
+  subject: 통합사회
+  title: 통합사회 2026학년도 9월 고2 전국연합학력평가
+  drive_folder: 외부기출_분리_20261007/08_사회_통합사회(고1·고2)
+  explanation_file_id: 1deDdxupyJJuNAxX72aBn-wZuX9bt1zdG
+  counts:
+    IN: 6
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 6
+    OUT_EXC: 1
+    OUT: 9
+- exam: g3_202510_soccul
+  grade: 고3
+  subject: 사회·문화
+  title: 사회·문화 2025학년도 10월 고3 전국연합학력평가 (2026 수능 대비)
+  drive_folder: 외부기출_분리_20261007/11_사회_타과목_사회문화
+  explanation_file_id: 1F9u4L1I5TxuT0OT9WpxrHbGR4TGlqZaN
+  counts:
+    IN: 0
+    BORDER: 2
+    ADV: 3
+    OUT_MID: 1
+    OUT_EXC: 0
+    OUT: 14
+- exam: g3_202503_kgeo
+  grade: 고3
+  subject: 한국지리
+  title: 한국지리 2025학년도 3월 고3 전국연합학력평가 (학년도는 파일 키 기준, 본문 미표기)
+  drive_folder: 외부기출_분리_20261007/12_사회_타과목_한국지리
+  explanation_file_id: 1eNKRMwhRXMiYBIFmRNxzZbkygh-ry4W5
+  counts:
+    IN: 1
+    BORDER: 2
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 17
+- exam: g2_202509_kgeo
+  grade: 고2
+  subject: 한국지리
+  title: 한국지리 2025학년도 9월 고2 전국연합학력평가
+  drive_folder: 외부기출_분리_20261007/12_사회_타과목_한국지리
+  explanation_file_id: 1Vo4JvCrFi_MgQWPvuJlzAhlyLT9J5EOK
+  counts:
+    IN: 0
+    BORDER: 4
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 16
+- exam: g2_202503_kgeo
+  grade: 고2
+  subject: 한국지리
+  title: 한국지리 2025학년도 3월 고2 전국연합학력평가 (학년도는 파일 키 기준, 본문 미표기)
+  drive_folder: 외부기출_분리_20261007/12_사회_타과목_한국지리
+  explanation_file_id: 11XKL3fQTJrzh4gu4pC86faF9JsoYiaoA
+  counts:
+    IN: 0
+    BORDER: 5
+    ADV: 0
+    OUT_MID: 1
+    OUT_EXC: 0
+    OUT: 14
+- exam: g2_202506_kgeo
+  grade: 고2
+  subject: 한국지리
+  title: 한국지리 2025학년도 6월 고2 전국연합학력평가
+  drive_folder: 외부기출_분리_20261007/12_사회_타과목_한국지리
+  explanation_file_id: 1b87Yj9j6_JmDMSlB1XuMJlyJYxeCOmQ_
+  counts:
+    IN: 0
+    BORDER: 2
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 18
+- exam: g3_202503_eththought
+  grade: 고3
+  subject: 윤리와 사상
+  title: 윤리와 사상 2025학년도 3월 고3 전국연합학력평가 (학년도는 파일 키 기준, 본문 미표기)
+  drive_folder: 외부기출_분리_20261007/13_사회_타과목_윤리와사상
+  explanation_file_id: 1xwhS2DQ42gnFhrUZ6mBfl43i6CLUL9Oa
+  counts:
+    IN: 1
+    BORDER: 0
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 18
+- exam: g2_202503_eththought
+  grade: 고2
+  subject: 윤리와 사상
+  title: 윤리와 사상 2025학년도 3월 고2 전국연합학력평가 (학년도는 파일 키 기준, 본문 미표기)
+  drive_folder: 외부기출_분리_20261007/13_사회_타과목_윤리와사상
+  explanation_file_id: 1dLnlABA53t84GWsWsfpiI7Onw5YPbhiF
+  counts:
+    IN: 2
+    BORDER: 4
+    ADV: 0
+    OUT_MID: 2
+    OUT_EXC: 2
+    OUT: 10
+- exam: g3_202510_eththought
+  grade: 고3
+  subject: 윤리와 사상
+  title: 윤리와 사상 2025학년도 10월 고3 전국연합학력평가 (2026 수능 대비)
+  drive_folder: 외부기출_분리_20261007/13_사회_타과목_윤리와사상
+  explanation_file_id: 1LQUJC29o8QAdbXXXmA5VgeSLAZLWpO5x
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 1
+    OUT: 18
+- exam: g2_202509_eththought
+  grade: 고2
+  subject: 윤리와 사상
+  title: 윤리와 사상 2025학년도 9월 고2 전국연합학력평가
+  drive_folder: 외부기출_분리_20261007/13_사회_타과목_윤리와사상
+  explanation_file_id: 1iZmkcuIc7WVM520AWGPO4JCo9iVTvdtv
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 20
+- exam: g3_202510_law
+  grade: 고3
+  subject: 정치와 법
+  title: 정치와 법, 2025학년도 10월 고3 전국연합학력평가
+  drive_folder: 외부기출_분리_20261007/10_사회_타과목_정치와법
+  explanation_file_id: 1bMUtsqf_fOkD_3sSzvIRBnRLccR25bOH
+  counts:
+    IN: 1
+    BORDER: 2
+    ADV: 2
+    OUT_MID: 3
+    OUT_EXC: 0
+    OUT: 12
+- exam: g3_202503_law
+  grade: 고3
+  subject: 정치와 법
+  title: 정치와 법, 2025학년도 3월 고3 전국연합학력평가 (해설 머리글에 연도 표기 없음)
+  drive_folder: 외부기출_분리_20261007/10_사회_타과목_정치와법
+  explanation_file_id: 1YJEcTZcDqrpSkAtbbsdn4UNfkFDtc8fl
+  counts:
+    IN: 1
+    BORDER: 1
+    ADV: 2
+    OUT_MID: 3
+    OUT_EXC: 0
+    OUT: 13
+- exam: g2_202503_law
+  grade: 고2
+  subject: 정치와 법
+  title: 정치와 법, 2025학년도 3월 고2 전국연합학력평가 (해설 머리글에 연도 표기 없음)
+  drive_folder: 외부기출_분리_20261007/10_사회_타과목_정치와법
+  explanation_file_id: 1rrlRoSo9XLL3BjMCysaxve459dVUzlET
+  counts:
+    IN: 1
+    BORDER: 2
+    ADV: 1
+    OUT_MID: 2
+    OUT_EXC: 0
+    OUT: 14
+- exam: g2_202506_law
+  grade: 고2
+  subject: 정치와 법
+  title: 정치와 법, 2025학년도 6월 고2 전국연합학력평가
+  drive_folder: 외부기출_분리_20261007/10_사회_타과목_정치와법
+  explanation_file_id: 1-2b63zxkTEsz2DnVNXpq9sEmV3pc1TCb
+  counts:
+    IN: 0
+    BORDER: 1
+    ADV: 0
+    OUT_MID: 2
+    OUT_EXC: 0
+    OUT: 17
+- exam: g2_202509_law
+  grade: 고2
+  subject: 정치와 법
+  title: 정치와 법, 2025학년도 9월 고2 전국연합학력평가
+  drive_folder: 외부기출_분리_20261007/10_사회_타과목_정치와법
+  explanation_file_id: 1UdhTvIuahRRV0Q4DLlS5QJ74khBMhyie
+  counts:
+    IN: 0
+    BORDER: 1
+    ADV: 0
+    OUT_MID: 1
+    OUT_EXC: 0
+    OUT: 18
+- exam: g3_202506_law
+  grade: 고3
+  subject: 정치와 법
+  title: 정치와 법, 2026학년도 대학수학능력시험 6월 모의평가 (해설에 [출제의도] 표기 없고 문항별 소제목 사용)
+  drive_folder: 외부기출_분리_20261007/10_사회_타과목_정치와법
+  explanation_file_id: 1pRLZwoYoJcjk5tyj0IlWcXqe4uQUPEVT
+  counts:
+    IN: 1
+    BORDER: 1
+    ADV: 2
+    OUT_MID: 4
+    OUT_EXC: 0
+    OUT: 12
+- exam: g3_202510_ethics
+  grade: 고3
+  subject: 생활과 윤리
+  title: 생활과 윤리, 2025학년도 10월 고3 전국연합학력평가
+  drive_folder: 외부기출_분리_20261007/07_타과목_생활과윤리
+  explanation_file_id: 1eWiGqz2LKbz6aTyb9aJdSKfKIbecKPpW
+  counts:
+    IN: 2
+    BORDER: 1
+    ADV: 3
+    OUT_MID: 2
+    OUT_EXC: 1
+    OUT: 11
+- exam: g3_202503_soccul
+  grade: 고3
+  subject: 사회·문화
+  title: 사회ㆍ문화, 2025년 3월 고3 (연도는 파일명 기준, 본문에 연도 없음)
+  drive_folder: 외부기출_분리_20261007/11_사회_타과목_사회문화
+  explanation_file_id: 1PXMnEfQVDJtyTZke99KmH0ghUtiJJd6V
+  counts:
+    IN: 1
+    BORDER: 1
+    ADV: 2
+    OUT_MID: 1
+    OUT_EXC: 0
+    OUT: 15
+- exam: g2_202503_soccul
+  grade: 고2
+  subject: 사회·문화
+  title: 사회ㆍ문화, 2025년 3월 고2 (연도는 파일명 기준, 본문에 연도 없음)
+  drive_folder: 외부기출_분리_20261007/11_사회_타과목_사회문화
+  explanation_file_id: 1KQljBybyWBBn2nMO6RVfm5MXIbbycJ-f
+  counts:
+    IN: 3
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 1
+    OUT_EXC: 0
+    OUT: 13
+- exam: g2_202509_soccul
+  grade: 고2
+  subject: 사회·문화
+  title: 사회ㆍ문화, 2025년 9월 고2
+  drive_folder: 외부기출_분리_20261007/11_사회_타과목_사회문화
+  explanation_file_id: 1E2wUrRfHe1NkQXV_nk5M7ZpQqGDKe_rj
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 20
+- exam: g2_202510_soccul
+  grade: 고2
+  subject: 사회·문화
+  title: 사회ㆍ문화, 2025년 10월 고2
+  drive_folder: 외부기출_분리_20261007/11_사회_타과목_사회문화
+  explanation_file_id: 1fighCvt2uyAEmAipeWogdQj56-4zHlxD
+  counts:
+    IN: 1
+    BORDER: 2
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 16
+- exam: g2_202506_soccul
+  grade: 고2
+  subject: 사회·문화
+  title: 사회ㆍ문화, 2025년 6월 고2
+  drive_folder: 외부기출_분리_20261007/11_사회_타과목_사회문화
+  explanation_file_id: 14SFuRHVp8zwqWC-G-t1OcU5mQOL2pNns
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 20
+- exam: g3_202510_kgeo
+  grade: 고3
+  subject: 한국지리
+  title: 한국지리, 2025년 10월 고3 (2026 수능 대비)
+  drive_folder: 외부기출_분리_20261007/12_사회_타과목_한국지리
+  explanation_file_id: 1OULQUY3akrCcgYRIJHJZS30lSo2ntl2t
+  counts:
+    IN: 0
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 2
+    OUT_EXC: 0
+    OUT: 15
+- exam: g2_202510_kgeo
+  grade: 고2
+  subject: 한국지리
+  title: 한국지리, 2025년 10월 고2
+  drive_folder: 외부기출_분리_20261007/12_사회_타과목_한국지리
+  explanation_file_id: 1578uwcSHE7pNDD2YYbkQitbMnqIrM2L6
+  counts:
+    IN: 0
+    BORDER: 6
+    ADV: 0
+    OUT_MID: 1
+    OUT_EXC: 0
+    OUT: 13
+science_exams:
+- exam: g2_202603_intsci
+  subject: intsci
+  title: 고2 2026-03 통합과학
+  drive_folder: 외부기출_분리_20261007/02_통합과학_고2학평
+  explanation_file_id: 1kHqHX-p8meQyaDfOdej-7cdPlPF65aox
+  counts:
+    IN: 8
+    BORDER: 0
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 12
+- exam: g2_202609_intsci
+  subject: intsci
+  title: 고2 2026-09 통합과학
+  drive_folder: 외부기출_분리_20261007/02_통합과학_고2학평
+  explanation_file_id: 1WXO89MBT9gyKAFARuQMCwXvztePGZWbU
+  counts:
+    IN: 7
+    BORDER: 1
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 11
+- exam: g2_202606_intsci
+  subject: intsci
+  title: 고2 2026-06 통합과학
+  drive_folder: 외부기출_분리_20261007/02_통합과학_고2학평
+  explanation_file_id: 1beptbqZ23PTWJhA7N5nwGlORt4fe--NA
+  counts:
+    IN: 7
+    BORDER: 1
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 11
+- exam: g2_202503_phy1
+  subject: phy
+  title: 고2 2025-03 물리학1
+  drive_folder: 외부기출_분리_20261007/03_타과목_물리학(1·2)
+  explanation_file_id: 1WZCagRxZYbnkPylhATKqOV8Aqljof3zn
+  counts:
+    IN: 3
+    BORDER: 3
+    ADV: 2
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 12
+- exam: g2_202509_phy1
+  subject: phy
+  title: 고2 2025-09 물리학1
+  drive_folder: 외부기출_분리_20261007/03_타과목_물리학(1·2)
+  explanation_file_id: 1zuSwInIBWHx19hWzOxNnsjs483TpODeM
+  counts:
+    IN: 0
+    BORDER: 1
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 18
+- exam: g2_202510_phy1
+  subject: phy
+  title: 고2 2025-10 물리학1
+  drive_folder: 외부기출_분리_20261007/03_타과목_물리학(1·2)
+  explanation_file_id: 1o0aV1msgknVFhofUnESKIFpgX-XdHgyD
+  counts:
+    IN: 1
+    BORDER: 0
+    ADV: 2
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 17
+- exam: g3_202503_phy1
+  subject: phy
+  title: 고3 2025-03 물리학1
+  drive_folder: 외부기출_분리_20261007/03_타과목_물리학(1·2)
+  explanation_file_id: 18KF1C5qv67PwmARkim-90gSgx_d-krbX
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 19
+- exam: g3_202510_phy1
+  subject: phy
+  title: 고3 2025-10 물리학1
+  drive_folder: 외부기출_분리_20261007/03_타과목_물리학(1·2)
+  explanation_file_id: 1S1TAPMqrCG11TkD3lU33hYLoHSKv9CzV
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 19
+- exam: g2_202503_chem1
+  subject: chem
+  title: 고2 2025-03 화학1
+  drive_folder: 외부기출_분리_20261007/04_타과목_화학(1·2)
+  explanation_file_id: 1oiv6i4uvYg6VIf-Z9-UrV8BF9fCuUiN7
+  counts:
+    IN: 4
+    BORDER: 0
+    ADV: 3
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 13
+- exam: g3_202503_chem1
+  subject: chem
+  title: 고3 2025-03 화학1
+  drive_folder: 외부기출_분리_20261007/04_타과목_화학(1·2)
+  explanation_file_id: 1lQzbNF3qgaWCXxiMB4nDkpNvk53eWecs
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 2
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 18
+- exam: g3_202510_chem1
+  subject: chem
+  title: 고3 2025-10 화학1
+  drive_folder: 외부기출_분리_20261007/04_타과목_화학(1·2)
+  explanation_file_id: 10_ppN9df6wJIy4B0KnsRnFpqcXvMrh8p
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 2
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 18
+- exam: g3_202510_chem2
+  subject: chem
+  title: 고3 2025-10 화학2
+  drive_folder: 외부기출_분리_20261007/04_타과목_화학(1·2)
+  explanation_file_id: 1p3_PJ_BAcoyOM2fV7oI3Wolw6g6r2GUx
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 19
+- exam: g2_202503_bio1
+  subject: bio
+  title: 고2 2025-03 생명과학1
+  drive_folder: 외부기출_분리_20261007/05_타과목_생명과학(1·2)
+  explanation_file_id: 1ydS51HFIfH_PC2NTAcGbCHxToFSn8UxO
+  counts:
+    IN: 4
+    BORDER: 0
+    ADV: 2
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 14
+- exam: g2_202510_bio1
+  subject: bio
+  title: 고2 2025-10 생명과학1
+  drive_folder: 외부기출_분리_20261007/05_타과목_생명과학(1·2)
+  explanation_file_id: 1kqxD-cOF4sck2Qdgkr7P7zG9sdj9x-H_
+  counts:
+    IN: 0
+    BORDER: 4
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 15
+- exam: g3_202503_bio1
+  subject: bio
+  title: 고3 2025-03 생명과학1
+  drive_folder: 외부기출_분리_20261007/05_타과목_생명과학(1·2)
+  explanation_file_id: 1lBuaEUsLh4i7gDZhrE_cgBkr0l-cT1cK
+  counts:
+    IN: 0
+    BORDER: 5
+    ADV: 2
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 13
+- exam: g2_202503_earth1
+  subject: earth
+  title: 고2 2025-03 지구과학1
+  drive_folder: 외부기출_분리_20261007/06_타과목_지구과학(1·2)
+  explanation_file_id: 11mljKzt9Y7MtYIUWP4DLjE8Hl8a56A6m
+  counts:
+    IN: 4
+    BORDER: 3
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 13
+- exam: g2_202510_earth1
+  subject: earth
+  title: 고2 2025-10 지구과학1
+  drive_folder: 외부기출_분리_20261007/06_타과목_지구과학(1·2)
+  explanation_file_id: 1mSm-q6iOnlm3i9X1-OJdjoUKzqWorpkX
+  counts:
+    IN: 3
+    BORDER: 2
+    ADV: 2
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 13
+- exam: g3_202510_earth1
+  subject: earth
+  title: 고3 2025-10 지구과학1
+  drive_folder: 외부기출_분리_20261007/06_타과목_지구과학(1·2)
+  explanation_file_id: 1b4l-nEBpxg96dGUMWyNllD5vc05GKqar
+  counts:
+    IN: 1
+    BORDER: 0
+    ADV: 2
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 17
+- exam: g2_202506_earth1
+  subject: earth
+  title: 고2 2025-06 지구과학1
+  drive_folder: 외부기출_분리_20261007/06_타과목_지구과학(1·2)
+  explanation_file_id: 19VuyUAyVoL9GyMByQ_Nn4JDIijL4HUy3
+  counts:
+    IN: 2
+    BORDER: 1
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 16
+- exam: g2_202509_earth1
+  subject: earth
+  title: 고2 2025-09 지구과학1
+  drive_folder: 외부기출_분리_20261007/06_타과목_지구과학(1·2)
+  explanation_file_id: 1_46955_F9n7iq7qwUmhcTlnlkFheE32R
+  counts:
+    IN: 2
+    BORDER: 1
+    ADV: 2
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 15
+- exam: g2_202506_phy1
+  subject: phy
+  title: 고2 2025-06 물리학1
+  drive_folder: 외부기출_분리_20261007/03_타과목_물리학(1·2)
+  explanation_file_id: 181YC5JvHUcACsesZ473QJckqnvIucHRr
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 20
+- exam: g2_202506_chem1
+  subject: chem
+  title: 고2 2025-06 화학1
+  drive_folder: 외부기출_분리_20261007/04_타과목_화학(1·2)
+  explanation_file_id: 1grtMa7W4Fdg78co3tpMces5oCTzXj54p
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 20
+- exam: g2_202506_bio1
+  subject: bio
+  title: 고2 2025-06 생명과학1
+  drive_folder: 외부기출_분리_20261007/05_타과목_생명과학(1·2)
+  explanation_file_id: 1wHozf8B5lPWhVj13dqHb4WYp4jRrKHpN
+  counts:
+    IN: 0
+    BORDER: 1
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 19
+- exam: g2_202509_chem1
+  subject: chem
+  title: 고2 2025-09 화학1
+  drive_folder: 외부기출_분리_20261007/04_타과목_화학(1·2)
+  explanation_file_id: 1unwcvUQgWUNLb6w2rPSG-76VDIpFrnmN
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 20
+- exam: g2_202509_bio1
+  subject: bio
+  title: 고2 2025-09 생명과학1
+  drive_folder: 외부기출_분리_20261007/05_타과목_생명과학(1·2)
+  explanation_file_id: 1sBl3BU0cQ54ebn6qXkMyabGKH9QH4vLj
+  counts:
+    IN: 0
+    BORDER: 1
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 18
+- exam: g2_202510_chem1
+  subject: chem
+  title: 고2 2025-10 화학1
+  drive_folder: 외부기출_분리_20261007/04_타과목_화학(1·2)
+  explanation_file_id: 1L7ht_Eta2djjShSroNF6BfJE9pu2DWTV
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 20
+- exam: g3_202503_earth1
+  subject: earth
+  title: 고3 2025-03 지구과학Ⅰ
+  drive_folder: 외부기출_분리_20261007/06_타과목_지구과학(1·2)
+  explanation_file_id: 1y6fQh13KfNz2wEyWDF1WPbkVVe7xX7nk
+  counts:
+    IN: 2
+    BORDER: 4
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 13
+- exam: g3_202506_earth1
+  subject: earth
+  title: 고3 2025-06 지구과학Ⅰ (2026학년도 수능 6월 모평)
+  drive_folder: 외부기출_분리_20261007/06_타과목_지구과학(1·2)
+  explanation_file_id: 19Uq0M75unOeao7qM8kHcFxhX3Zjk37Tb
+  counts:
+    IN: 2
+    BORDER: 4
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 13
+- exam: g3_202506_earth2
+  subject: earth
+  title: 고3 2025-06 지구과학Ⅱ (2026학년도 수능 6월 모평)
+  drive_folder: 외부기출_분리_20261007/06_타과목_지구과학(1·2)
+  explanation_file_id: 1cioNC6Vz6xkRBA_uG_yPxqY_0j-xeCaj
+  counts:
+    IN: 0
+    BORDER: 2
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 18
+- exam: g3_202509_earth1
+  subject: earth
+  title: 고3 2025-09 지구과학Ⅰ (2026학년도 수능 9월 모평)
+  drive_folder: 외부기출_분리_20261007/06_타과목_지구과학(1·2)
+  explanation_file_id: 1wCmMmxb9a2bgaFhq0yzs4q9EoaLvzgnV
+  counts:
+    IN: 2
+    BORDER: 4
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 13
+- exam: g3_202509_earth2
+  subject: earth
+  title: 고3 2025-09 지구과학Ⅱ (2026학년도 수능 9월 모평)
+  drive_folder: 외부기출_분리_20261007/06_타과목_지구과학(1·2)
+  explanation_file_id: 1q-MkoeDQ3yuHCy3hltIzwPzrcFtYSwBv
+  counts:
+    IN: 0
+    BORDER: 1
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 19
+- exam: g3_202506_phy1
+  subject: phy
+  title: 고3 2025-06 물리학Ⅰ
+  drive_folder: 외부기출_분리_20261007/03_타과목_물리학(1·2)
+  explanation_file_id: 1hqO7tCzJcWwuzUImBhjxmy278xS28Rms
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 19
+- exam: g3_202506_phy2
+  subject: phy
+  title: 고3 2025-06 물리학Ⅱ
+  drive_folder: 외부기출_분리_20261007/03_타과목_물리학(1·2)
+  explanation_file_id: 1gfV2NXB_KpIDSly1Y_Brsa11iexj8gN2
+  counts:
+    IN: 0
+    BORDER: 1
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 18
+- exam: g3_202506_chem1
+  subject: chem
+  title: 고3 2025-06 화학Ⅰ
+  drive_folder: 외부기출_분리_20261007/04_타과목_화학(1·2)
+  explanation_file_id: 1OXtW-eKHDJbjvJGqaMQiTmGhltjI_ZQx
+  counts:
+    IN: 0
+    BORDER: 1
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 18
+- exam: g3_202509_phy1
+  subject: phy
+  title: 고3 2025-09 물리학Ⅰ
+  drive_folder: 외부기출_분리_20261007/03_타과목_물리학(1·2)
+  explanation_file_id: 1WFF6gjGe-eppZs2izAzZtd4aaCZTRXKv
+  counts:
+    IN: 0
+    BORDER: 1
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 18
+- exam: g3_202509_phy2
+  subject: phy
+  title: 고3 2025-09 물리학Ⅱ
+  drive_folder: 외부기출_분리_20261007/03_타과목_물리학(1·2)
+  explanation_file_id: 16zfm6pFTNGkOe7YhXTYTTK7bY1s4NyJz
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 19
+- exam: g3_202509_chem1
+  subject: chem
+  title: 고3 2025-09 화학Ⅰ
+  drive_folder: 외부기출_분리_20261007/04_타과목_화학(1·2)
+  explanation_file_id: 1p4hKrhE5d8zgGD5y6xQsYBirWV5PXI_G
+  counts:
+    IN: 0
+    BORDER: 1
+    ADV: 2
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 17
+- exam: g3_202506_chem2
+  subject: chem
+  title: 고3 2025-06 화학Ⅱ
+  drive_folder: 외부기출_분리_20261007/04_타과목_화학(1·2)
+  explanation_file_id: 1tAAjPMl2dlwmYbEs4BlSTDjZ-d0qz0jx
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 20
+- exam: g3_202506_bio1
+  subject: bio
+  title: 고3 2025-06 생명과학Ⅰ
+  drive_folder: 외부기출_분리_20261007/05_타과목_생명과학(1·2)
+  explanation_file_id: 1zpd6nzG9CkACInDwZvFyz_LC2oHjEjGX
+  counts:
+    IN: 1
+    BORDER: 3
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 15
+- exam: g3_202506_bio2
+  subject: bio
+  title: 고3 2025-06 생명과학Ⅱ
+  drive_folder: 외부기출_분리_20261007/05_타과목_생명과학(1·2)
+  explanation_file_id: 1A7W6qjs2bTKM56_JWg7LvWC9CkeNkK7y
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 19
+- exam: g3_202509_chem2
+  subject: chem
+  title: 고3 2025-09 화학Ⅱ
+  drive_folder: 외부기출_분리_20261007/04_타과목_화학(1·2)
+  explanation_file_id: 1PqXBt43Hfgb6peXqbkqZc8vxeJBhz-0E
+  counts:
+    IN: 0
+    BORDER: 0
+    ADV: 2
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 18
+- exam: g3_202509_bio1
+  subject: bio
+  title: 고3 2025-09 생명과학Ⅰ
+  drive_folder: 외부기출_분리_20261007/05_타과목_생명과학(1·2)
+  explanation_file_id: 1FL9CFxHnUxzGiBB8Px2DgcLiJGBD6S9j
+  counts:
+    IN: 0
+    BORDER: 3
+    ADV: 1
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 16
+- exam: g3_202509_bio2
+  subject: bio
+  title: 고3 2025-09 생명과학Ⅱ
+  drive_folder: 외부기출_분리_20261007/05_타과목_생명과학(1·2)
+  explanation_file_id: 1ifRt5TZuTrQITs-HYRYVs4B9Jg4g2BmG
+  counts:
+    IN: 0
+    BORDER: 3
+    ADV: 3
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 14
+- exam: g3_202510_bio1
+  subject: bio
+  title: 고3 2025-10 생명과학Ⅰ
+  drive_folder: 외부기출_분리_20261007/05_타과목_생명과학(1·2)
+  explanation_file_id: 1lMTI9PDG3zadB2Mb3kV2rBBIYzx6OMne
+  counts:
+    IN: 0
+    BORDER: 1
+    ADV: 0
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 19
+- exam: g3_202510_bio2
+  subject: bio
+  title: 고3 2025-10 생명과학Ⅱ
+  drive_folder: 외부기출_분리_20261007/05_타과목_생명과학(1·2)
+  explanation_file_id: 19LfeDWa3I2zhIcUs1HBK0OB16b_lwMIJ
+  counts:
+    IN: 0
+    BORDER: 4
+    ADV: 4
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 12
+- exam: g3_202510_phy2
+  subject: phy
+  title: 고3 2025-10 물리학Ⅱ
+  drive_folder: 외부기출_분리_20261007/03_타과목_물리학(1·2)
+  explanation_file_id: 1WW7U5MsWh-Kq4AIqi4jmYkrghGFpPUhA
+  counts:
+    IN: 0
+    BORDER: 1
+    ADV: 2
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 17
+- exam: g3_202510_earth2
+  subject: earth
+  title: 고3 2025-10 지구과학Ⅱ
+  drive_folder: 외부기출_분리_20261007/06_타과목_지구과학(1·2)
+  explanation_file_id: 1I_gq0n4clXENfBWcMju-8b2I7YyPJULd
+  counts:
+    IN: 0
+    BORDER: 4
+    ADV: 2
+    OUT_MID: 0
+    OUT_EXC: 0
+    OUT: 14
