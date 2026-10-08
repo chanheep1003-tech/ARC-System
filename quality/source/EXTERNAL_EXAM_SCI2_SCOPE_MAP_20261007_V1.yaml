@@ -225,12 +225,14 @@ exams:
     figure_expected: diagram
     note: 송전 손실 전력. 범위 밖 심화
 - exam: g2_202509_phy1
-  title: 고2 2025-09 물리학1
-  question_file_id: 1L-cNUj1EUF1LgaFhB_mQ06bEtlJGy2zk
-  explanation_file_id: 1zuSwInIBWHx19hWzOxNnsjs483TpODeM
-  counts: {}
-  items: []
-  remaining: 범위 안 문항 없음. 역학·열역학·상대성·반도체 등 물리학1 고유 내용
+  title: "고2 2025-09 물리학1"
+  question_file_id: "1L-cNUj1EUF1LgaFhB_mQ06bEtlJGy2zk"
+  explanation_file_id: "1zuSwInIBWHx19hWzOxNnsjs483TpODeM"
+  counts: {IN: 0, BORDER: 1, ADV: 1, OUT: 18}
+  items:
+  - {q: 11, tier: ADV, concept: "SCI3 반도체", figure_expected: schematic, note: "p-n 접합 순방향·역방향 판단, 물리학Ⅰ 세부 지식 필요"}
+  - {q: 17, tier: BORDER, concept: "SCI3 반도체", figure_expected: experiment_diagram, note: "도체·반도체·절연체 전도성 비교, 통합과학1 성격"}
+  verdict: "범위 밖 - 역학·열역학·상대성·원자 중심이며 반도체 2문항만 SCI3에 인접(전자기 유도·발전 문항 없음)"
 - exam: g2_202510_phy1
   title: 고2 2025-10 물리학1
   question_file_id: 1eTJWJ1ZRTuxy5_zkSFDTHailRLRC98g9
@@ -406,19 +408,31 @@ exams:
     figure_expected: table
     note: 유전 정보 흐름. 범위 밖
 - exam: g2_202510_bio1
-  title: 고2 2025-10 생명과학1
-  question_file_id: 1gYSYSqxB1fnIRUIELEX99XN6qGFhpCsn
-  explanation_file_id: 1kqxD-cOF4sck2Qdgkr7P7zG9sdj9x-H_
-  counts: {}
-  items: []
-  remaining: 범위 안 문항 없음. 생태계·개체군은 통합과학1, 나머지는 생명과학1 고유 내용
+  title: "고2 2025-10 생명과학1"
+  question_file_id: "1gYSYSqxB1fnIRUIELEX99XN6qGFhpCsn"
+  explanation_file_id: "1kqxD-cOF4sck2Qdgkr7P7zG9sdj9x-H_"
+  counts: {IN: 0, BORDER: 4, ADV: 1, OUT: 15}
+  items:
+  - {q: 1, tier: BORDER, concept: "SCI-EV-SELECTION", figure_expected: none, note: "생물 특성 분류 중 적응과 진화 사례 식별"}
+  - {q: 3, tier: BORDER, concept: "SCI-EV-DIVERSITY", figure_expected: diagram, note: "생태계 구성 요소 간 작용·상호 관계 분류"}
+  - {q: 4, tier: BORDER, concept: "SCI3 감염병 진단", figure_expected: table, note: "병원체 종류별 질병 구분, 감염성 여부 판단"}
+  - {q: 8, tier: ADV, concept: "SCI3 감염병 진단", figure_expected: diagram, note: "특이적 면역 세포 기능, 생명과학Ⅰ 세부 지식 필요"}
+  - {q: 20, tier: BORDER, concept: "SCI-EV-DIVERSITY", figure_expected: graph, note: "포식-피식 관계와 환경 저항, 개체 수 변화 해석"}
+  verdict: "범위 밖 - 신경·유전·대사 등 생명과학Ⅰ 내용이 대부분이며 생태계·병원체 4문항만 인접"
 - exam: g3_202503_bio1
-  title: 고3 2025-03 생명과학1
-  question_file_id: 1V5dgIImoPx7DHKRmUC6Yo7I9e5kUNt4C
-  explanation_file_id: 1lBuaEUsLh4i7gDZhrE_cgBkr0l-cT1cK
-  counts: {}
-  items: []
-  remaining: 범위 안 문항 없음. 생명과학1 고유 내용
+  title: "고3 2025-03 생명과학1"
+  question_file_id: "1V5dgIImoPx7DHKRmUC6Yo7I9e5kUNt4C"
+  explanation_file_id: "1lBuaEUsLh4i7gDZhrE_cgBkr0l-cT1cK"
+  counts: {IN: 0, BORDER: 5, ADV: 2, OUT: 13}
+  items:
+  - {q: 1, tier: BORDER, concept: "SCI-EV-SELECTION", figure_expected: none, note: "생물 특성 분류 중 적응과 진화 사례"}
+  - {q: 2, tier: BORDER, concept: "SCI3 감염병 진단", figure_expected: table, note: "질병별 병원체와 전염 방식 구분"}
+  - {q: 3, tier: BORDER, concept: "SCI-EV-DIVERSITY", figure_expected: diagram, note: "생태계 에너지 흐름, 효율 계산은 범위 불명확"}
+  - {q: 7, tier: BORDER, concept: "SCI-EV-SELECTION", figure_expected: experiment_diagram, note: "털색 변인과 포식 실험, 자연선택 맥락 가능성"}
+  - {q: 9, tier: ADV, concept: "SCI3 감염병 진단", figure_expected: graph, note: "2차 면역 반응 세포 분화, 세부 지식 필요"}
+  - {q: 15, tier: ADV, concept: "SCI-EV-DIVERSITY", figure_expected: table, note: "방형구 조사 밀도·빈도 계산, 정량 계산 필요"}
+  - {q: 20, tier: BORDER, concept: "SCI-EV-DIVERSITY", figure_expected: diagram, note: "개체군 내·간 상호 작용과 생태계 구성"}
+  verdict: "범위 밖 - IN 문항 없음, 생태계·병원체·적응 관련 일부만 인접(BORDER)이고 나머지는 생명과학Ⅰ 세부 내용"
 - exam: g2_202503_earth1
   title: 고2 2025-03 지구과학1
   question_file_id: 1TtlNv486-_KNoEhV1LkbCO9AtV33sd36
@@ -559,35 +573,50 @@ exams:
   - {q: 14, tier: ADV, concept: SCI-GT-TIME, figure_expected: graph, note: 해설 텍스트 기준 심화 판정}
   - {q: 17, tier: ADV, concept: SCI-EE-ENERGY, figure_expected: graph, note: 해설 텍스트 기준 심화 판정}
 - exam: g2_202506_phy1
-  title: 고2 2025-06 물리학1
-  question_file_id: 1z8ZQl9IinlMhyd8ZYLo5IXO6ndqlNoXr
-  explanation_file_id: 181YC5JvHUcACsesZ473QJckqnvIucHRr
-  verdict: 대체로 범위 밖(해설 훑어보기 기준, 문항별 판독 아님)
+  title: "고2 2025-06 물리학1"
+  question_file_id: "1z8ZQl9IinlMhyd8ZYLo5IXO6ndqlNoXr"
+  explanation_file_id: "181YC5JvHUcACsesZ473QJckqnvIucHRr"
+  counts: {IN: 0, BORDER: 0, ADV: 0, OUT: 20}
+  items: []
+  verdict: "범위 밖 - 운동·충격량·운동량 보존·열역학만 다루며 통합과학2 범위 문항 없음"
 - exam: g2_202506_chem1
-  title: 고2 2025-06 화학1
-  question_file_id: 148BKUAAoCSVaUbl02kf4-IA6WJE7FMod
-  explanation_file_id: 1grtMa7W4Fdg78co3tpMces5oCTzXj54p
-  verdict: 몰·오비탈·양적 관계 중심이라 ADV/OUT. 정답 근거 사용 금지.
+  title: "고2 2025-06 화학1"
+  question_file_id: "148BKUAAoCSVaUbl02kf4-IA6WJE7FMod"
+  explanation_file_id: "1grtMa7W4Fdg78co3tpMces5oCTzXj54p"
+  counts: {IN: 0, BORDER: 0, ADV: 0, OUT: 20}
+  items: []
+  verdict: "범위 밖 - 원자 구조·주기성·몰·양적 관계 중심이며 산화·환원 문항 없음"
 - exam: g2_202506_bio1
-  title: 고2 2025-06 생명과학1
-  question_file_id: 1zD3vqt_rFfzR96jyZN2dTQLRaiTvGuMk
-  explanation_file_id: 1wHozf8B5lPWhVj13dqHb4WYp4jRrKHpN
-  verdict: 신경·호르몬 등 범위 밖
+  title: "고2 2025-06 생명과학1"
+  question_file_id: "1zD3vqt_rFfzR96jyZN2dTQLRaiTvGuMk"
+  explanation_file_id: "1wHozf8B5lPWhVj13dqHb4WYp4jRrKHpN"
+  counts: {IN: 0, BORDER: 1, ADV: 0, OUT: 19}
+  items:
+  - {q: 14, tier: BORDER, concept: "SCI3 융합", figure_expected: none, note: "생명과학과 타 학문 분야 연계 사례 식별"}
+  verdict: "범위 밖 - 신경·호르몬·항상성·근수축 중심, 융합 사례 1문항만 SCI3에 인접"
 - exam: g2_202509_chem1
-  title: 고2 2025-09 화학1
-  question_file_id: 1kmIwRnBSsWPM8lnBNYD5KQqavsrz3rbT
-  explanation_file_id: 1unwcvUQgWUNLb6w2rPSG-76VDIpFrnmN
-  verdict: ADV/OUT (몰·화학 결합 중심)
+  title: "고2 2025-09 화학1"
+  question_file_id: "1kmIwRnBSsWPM8lnBNYD5KQqavsrz3rbT"
+  explanation_file_id: "1unwcvUQgWUNLb6w2rPSG-76VDIpFrnmN"
+  counts: {IN: 0, BORDER: 0, ADV: 0, OUT: 20}
+  items: []
+  verdict: "범위 밖 - 주기성·화학 결합·몰·양적 관계 중심이며 산화·환원 문항 없음 (3번은 해설 본문이 비어 [출제의도] 제목만 확인)"
 - exam: g2_202509_bio1
-  title: 고2 2025-09 생명과학1
-  question_file_id: 1R_u67QsBTsUHIF3VSMJaVJp0GytbbKKL
-  explanation_file_id: 1sBl3BU0cQ54ebn6qXkMyabGKH9QH4vLj
-  verdict: 범위 밖
+  title: "고2 2025-09 생명과학1"
+  question_file_id: "1R_u67QsBTsUHIF3VSMJaVJp0GytbbKKL"
+  explanation_file_id: "1sBl3BU0cQ54ebn6qXkMyabGKH9QH4vLj"
+  counts: {IN: 0, BORDER: 1, ADV: 1, OUT: 18}
+  items:
+  - {q: 9, tier: BORDER, concept: "SCI3 감염병 진단", figure_expected: table, note: "병원체 종류별 질병과 특성 구분"}
+  - {q: 18, tier: ADV, concept: "SCI3 감염병 진단", figure_expected: diagram, note: "면역 세포 기능 구분, 세부 지식 필요"}
+  verdict: "범위 밖 - 신경·세포 주기·유전 중심이며 병원체·면역 2문항만 SCI3에 인접"
 - exam: g2_202510_chem1
-  title: 고2 2025-10 화학1
-  question_file_id: 1xQ4pOoF4MTnwkITh4-aGmE-X3SoNraJi
-  explanation_file_id: 1L7ht_Eta2djjShSroNF6BfJE9pu2DWTV
-  verdict: ADV/OUT
+  title: "고2 2025-10 화학1"
+  question_file_id: "1xQ4pOoF4MTnwkITh4-aGmE-X3SoNraJi"
+  explanation_file_id: "1L7ht_Eta2djjShSroNF6BfJE9pu2DWTV"
+  counts: {IN: 0, BORDER: 0, ADV: 0, OUT: 20}
+  items: []
+  verdict: "범위 밖 - 결합·분자 구조·몰·동적 평형 중심이며 산화·환원 문항 없음 (4번은 반응식 계수 완성 문항으로 산화·환원 개념은 묻지 않아 OUT 처리)"
 - exam: g3_202503_earth1
   title: "고3 2025-03 지구과학Ⅰ"
   drive_folder: "외부기출_분리_20261007/06_타과목_지구과학(1·2)"
@@ -848,47 +877,38 @@ subject_summary_current:
     - subject: "통합과학(고2 전용)"
       exams: 3
       counts: {IN: 22, BORDER: 2, ADV: 2, OUT: 34}
-      list: 'g2_202603(문항기록); g2_202609(문항기록); g2_202606(문항기록)'
+      list: "g2_202603(문항기록); g2_202609(문항기록); g2_202606(문항기록)"
     - subject: "지구과학Ⅰ"
       exams: 8
       counts: {IN: 18, BORDER: 19, ADV: 10, OUT: 113}
-      list: 'g2_202503(문항기록); g2_202510(문항기록); g3_202510(문항기록); g2_202506(문항기록); g2_202509(문항기록); g3_202503(문항기록); g3_202506(문항기록); g3_202509(문항기록)'
+      list: "g2_202503(문항기록); g2_202510(문항기록); g3_202510(문항기록); g2_202506(문항기록); g2_202509(문항기록); g3_202503(문항기록); g3_202506(문항기록); g3_202509(문항기록)"
     - subject: "지구과학Ⅱ"
       exams: 3
       counts: {IN: 0, BORDER: 7, ADV: 2, OUT: 51}
-      list: 'g3_202506(문항기록); g3_202509(문항기록); g3_202510(문항기록)'
+      list: "g3_202506(문항기록); g3_202509(문항기록); g3_202510(문항기록)"
     - subject: "물리학Ⅰ"
       exams: 8
-      counts: {IN: 4, BORDER: 4, ADV: 8, OUT: 104}
-      list: 'g2_202503(문항기록); g2_202509(미기록); g2_202510(문항기록); g3_202503(문항기록); g3_202510(문항기록); g2_202506(판정문만); g3_202506(문항기록); g3_202509(문항기록)'
+      counts: {IN: 4, BORDER: 5, ADV: 9, OUT: 142}
+      list: "g2_202503(문항기록); g2_202509(문항기록); g2_202510(문항기록); g3_202503(문항기록); g3_202510(문항기록); g2_202506(합계만); g3_202506(문항기록); g3_202509(문항기록)"
     - subject: "물리학Ⅱ"
       exams: 3
       counts: {IN: 0, BORDER: 2, ADV: 4, OUT: 54}
-      list: 'g3_202506(문항기록); g3_202509(문항기록); g3_202510(문항기록)'
+      list: "g3_202506(문항기록); g3_202509(문항기록); g3_202510(문항기록)"
     - subject: "화학Ⅰ"
       exams: 8
-      counts: {IN: 4, BORDER: 2, ADV: 10, OUT: 84}
-      list: 'g2_202503(문항기록); g3_202503(문항기록); g3_202510(문항기록); g2_202506(판정문만); g2_202509(판정문만); g2_202510(판정문만); g3_202506(문항기록); g3_202509(문항기록)'
+      counts: {IN: 4, BORDER: 2, ADV: 10, OUT: 144}
+      list: "g2_202503(문항기록); g3_202503(문항기록); g3_202510(문항기록); g2_202506(합계만); g2_202509(합계만); g2_202510(합계만); g3_202506(문항기록); g3_202509(문항기록)"
     - subject: "화학Ⅱ"
       exams: 3
       counts: {IN: 0, BORDER: 0, ADV: 3, OUT: 57}
-      list: 'g3_202510(문항기록); g3_202506(합계만); g3_202509(문항기록)'
+      list: "g3_202510(문항기록); g3_202506(합계만); g3_202509(문항기록)"
     - subject: "생명과학Ⅰ"
       exams: 8
-      counts: {IN: 5, BORDER: 7, ADV: 4, OUT: 64}
-      list: 'g2_202503(문항기록); g2_202510(미기록); g3_202503(미기록); g2_202506(판정문만); g2_202509(판정문만); g3_202506(문항기록); g3_202509(문항기록); g3_202510(문항기록)'
+      counts: {IN: 5, BORDER: 18, ADV: 8, OUT: 129}
+      list: "g2_202503(문항기록); g2_202510(문항기록); g3_202503(문항기록); g2_202506(문항기록); g2_202509(문항기록); g3_202506(문항기록); g3_202509(문항기록); g3_202510(문항기록)"
     - subject: "생명과학Ⅱ"
       exams: 3
       counts: {IN: 0, BORDER: 7, ADV: 8, OUT: 45}
-      list: 'g3_202506(문항기록); g3_202509(문항기록); g3_202510(문항기록)'
-unrecorded_exams:
-  - {exam: g2_202509_phy1, status: "미기록"}
-  - {exam: g2_202510_bio1, status: "미기록"}
-  - {exam: g3_202503_bio1, status: "미기록"}
-  - {exam: g2_202506_phy1, status: "판정문만"}
-  - {exam: g2_202506_chem1, status: "판정문만"}
-  - {exam: g2_202506_bio1, status: "판정문만"}
-  - {exam: g2_202509_chem1, status: "판정문만"}
-  - {exam: g2_202509_bio1, status: "판정문만"}
-  - {exam: g2_202510_chem1, status: "판정문만"}
+      list: "g3_202506(문항기록); g3_202509(문항기록); g3_202510(문항기록)"
+unrecorded_exams: []
 unrecorded_note: "판정문만 있는 시험은 집계에서 빠졌다. 미기록 시험은 해설을 다시 읽어야 한다."
