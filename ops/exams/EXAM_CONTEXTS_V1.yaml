@@ -1,7 +1,7 @@
 schema_version: ARC-EXAM-CONTEXT-V1
 exams:
   DONGBUK_2026_2_FINAL:
-    status: PROVISIONAL_SCOPE_LOCKED
+    status: PREPARING
     exam_date: null
     curriculum: 2022_REVISED
     inherit_midterm_scope: false
