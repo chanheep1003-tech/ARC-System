@@ -1,0 +1,16 @@
+anchor_id: HIS_DONGBUK_MULTI_EXAM_DIFFICULTY_DIAGNOSTIC_V1.0
+version: 1.0
+subject: HIS
+school: 동북고등학교
+mode: DIAGNOSTIC_ONLY
+source_exam_count: 4
+corpus: quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
+profile:
+  shares: {D12: 0.505, D3: 0.372, D45: 0.123}
+  mean_level: 2.55
+tolerance:
+  share: 0.15
+  mean_level: 0.25
+active_final: false
+notes:
+  - "현재 스프린트에서 한국사 FINAL은 비활성. N° 난도 참고용 진단 프로필만 유지."

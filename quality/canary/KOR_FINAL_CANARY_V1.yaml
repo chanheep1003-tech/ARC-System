@@ -1,0 +1,81 @@
+fixture_id: KOR-FINAL-CANARY-V1
+source_mode: SYNTHETIC_PIPELINE_ONLY
+purpose: Deterministic ARC_FINAL 10-item E2E plus difficulty, distractor, answer-length and PDF regression.
+content_bundle:
+  batch_id: KOR-FINAL-CANARY-001
+  generator: GPT
+  product_mode: ARC_FINAL
+  subject: KOR
+  scope: supplementary material first + textbook unit 1 structural fixture
+  item_count: 10
+  created_at: 2026-09-24T09:00:00+09:00
+  qa_evidence_filename: ARC_QA_EVIDENCE_KOR_FINAL_CANARY_001.yaml
+  student_manuscript: |-
+    ## QUESTION 1
+    Which reading is supported when a source states a limited condition?
+    1) Extend the claim to every case. 2) Preserve the stated limitation. 3) Ignore the condition. 4) Replace the source with background knowledge. 5) Choose the most detailed sentence.
+
+    ## QUESTION 2
+    Two interpretations share one detail. What should decide between them?
+    1) Option position. 2) Sentence length. 3) The full evidence chain and limiting condition. 4) Personal preference. 5) The number of nouns.
+
+    ## QUESTION 3
+    Which comparison method best avoids a half-true answer?
+    1) Check only the common point. 2) Check common and contrasting axes together. 3) Select the familiar phrase. 4) Ignore the second source. 5) Use outside facts.
+
+    ## QUESTION 4
+    A choice correctly names a technique but gives the wrong effect. How should it be judged?
+    1) Fully correct. 2) Correct if it is long. 3) Correct if the term appears in class. 4) Half-true and therefore rejected. 5) Correct when placed first.
+
+    ## QUESTION 5
+    When a speaker inference exceeds the observed fact, which review is required?
+    1) Distinguish observation from inference. 2) Count punctuation. 3) Prefer the broadest claim. 4) Remove the source condition. 5) Choose the shortest answer.
+
+    ## QUESTION 6
+    Which evidence pattern supports a higher-level comparison?
+    1) One isolated word only. 2) A title only. 3) Two relevant details linked to one judgment axis. 4) An unrelated biography. 5) A repeated phrase without context.
+
+    ## QUESTION 7
+    A new case changes one condition from the source. What must the solver do?
+    1) Reapply the rule while tracking the changed condition. 2) Reuse the old answer unchanged. 3) Ignore the new case. 4) Choose the longest option. 5) Use an outside theory.
+
+    ## QUESTION 8
+    Two passages agree on a surface feature but differ in attitude. Which approach is strongest?
+    1) Treat them as identical. 2) Compare only vocabulary. 3) Ignore attitude. 4) Integrate the shared feature and the attitude difference. 5) Choose the first passage.
+
+    ## QUESTION 9
+    A choice is true for passage A but overgeneralizes passage B. What is the best judgment?
+    1) Accept because half is true. 2) Reject because the comparison claim fails for B. 3) Accept if it is detailed. 4) Ignore B. 5) Replace B with outside context.
+
+    ## QUESTION 10
+    Which final verification best protects a difficult comparison item?
+    1) Confirm one keyword. 2) Confirm the answer is longest. 3) Confirm every option against all required evidence and conditions. 4) Confirm the answer position is balanced. 5) Confirm the stem looks difficult.
+  answer_key:
+    1: 2
+    2: 3
+    3: 2
+    4: 4
+    5: 1
+    6: 3
+    7: 1
+    8: 4
+    9: 2
+    10: 3
+  visual_asset_manifest: []
+  qc_status:
+    STATUS: PASS
+    SOURCE_MODE: SYNTHETIC_PIPELINE_ONLY
+final_quality_profile:
+  product_mode: ARC_FINAL
+  item_count: 10
+  items:
+    - {item_id: KOR-FINAL-CANARY-001, actual_difficulty: D2, reasoning_steps: 1, evidence_count: 1, strong_distractor_count: 1, effective_choice_count: 4, first_pass_plausible_candidates: 3, immediate_elimination_count: 2, correct_option: 2, second_best_option: 1, second_best_refutation: "Overgeneralizes the explicit limitation.", option_lengths_chars: [34, 36, 32, 38, 33], correct_detail_outlier: false, length_justified: false, school_relative: SCHOOL_STANDARD, expected_time_class: SHORT}
+    - {item_id: KOR-FINAL-CANARY-002, actual_difficulty: D3, reasoning_steps: 2, evidence_count: 1, strong_distractor_count: 2, effective_choice_count: 4, first_pass_plausible_candidates: 3, immediate_elimination_count: 2, correct_option: 3, second_best_option: 1, second_best_refutation: "Uses only one shared detail and ignores the limiting condition.", option_lengths_chars: [34, 31, 36, 39, 35], correct_detail_outlier: false, length_justified: false, school_relative: SCHOOL_STANDARD, expected_time_class: STANDARD}
+    - {item_id: KOR-FINAL-CANARY-003, actual_difficulty: D3, reasoning_steps: 2, evidence_count: 1, strong_distractor_count: 2, effective_choice_count: 4, first_pass_plausible_candidates: 3, immediate_elimination_count: 2, correct_option: 2, second_best_option: 1, second_best_refutation: "Checks the common point but not the contrast axis.", option_lengths_chars: [35, 37, 40, 34, 36], correct_detail_outlier: false, length_justified: false, school_relative: SCHOOL_STANDARD, expected_time_class: STANDARD}
+    - {item_id: KOR-FINAL-CANARY-004, actual_difficulty: D3, reasoning_steps: 2, evidence_count: 1, strong_distractor_count: 2, effective_choice_count: 4, first_pass_plausible_candidates: 3, immediate_elimination_count: 2, correct_option: 4, second_best_option: 1, second_best_refutation: "Correct technique label does not rescue an incorrect effect.", option_lengths_chars: [39, 31, 33, 36, 35], correct_detail_outlier: false, length_justified: false, school_relative: SCHOOL_STANDARD, expected_time_class: STANDARD}
+    - {item_id: KOR-FINAL-CANARY-005, actual_difficulty: D3, reasoning_steps: 2, evidence_count: 1, strong_distractor_count: 2, effective_choice_count: 4, first_pass_plausible_candidates: 3, immediate_elimination_count: 2, correct_option: 1, second_best_option: 3, second_best_refutation: "Broad claim exceeds the observed fact.", option_lengths_chars: [35, 33, 36, 32, 34], correct_detail_outlier: false, length_justified: false, school_relative: SCHOOL_STANDARD, expected_time_class: STANDARD}
+    - {item_id: KOR-FINAL-CANARY-006, actual_difficulty: D3, reasoning_steps: 2, evidence_count: 1, strong_distractor_count: 2, effective_choice_count: 4, first_pass_plausible_candidates: 3, immediate_elimination_count: 2, correct_option: 3, second_best_option: 5, second_best_refutation: "Repeated phrase lacks the second evidence link.", option_lengths_chars: [31, 39, 36, 34, 35], correct_detail_outlier: false, length_justified: false, school_relative: SCHOOL_UPPER, expected_time_class: STANDARD}
+    - {item_id: KOR-FINAL-CANARY-007, actual_difficulty: D4, reasoning_steps: 2, evidence_count: 2, strong_distractor_count: 2, effective_choice_count: 4, first_pass_plausible_candidates: 3, immediate_elimination_count: 2, correct_option: 1, second_best_option: 2, second_best_refutation: "Reusing the old answer ignores the changed condition.", option_lengths_chars: [37, 35, 40, 36, 33], correct_detail_outlier: false, length_justified: false, school_relative: SCHOOL_UPPER, expected_time_class: STANDARD}
+    - {item_id: KOR-FINAL-CANARY-008, actual_difficulty: D4, reasoning_steps: 2, evidence_count: 2, strong_distractor_count: 2, effective_choice_count: 4, first_pass_plausible_candidates: 3, immediate_elimination_count: 2, correct_option: 4, second_best_option: 1, second_best_refutation: "Surface similarity does not erase the attitude difference.", option_lengths_chars: [41, 33, 34, 37, 36], correct_detail_outlier: false, length_justified: false, school_relative: SCHOOL_UPPER, expected_time_class: LONG}
+    - {item_id: KOR-FINAL-CANARY-009, actual_difficulty: D4, reasoning_steps: 2, evidence_count: 2, strong_distractor_count: 2, effective_choice_count: 4, first_pass_plausible_candidates: 3, immediate_elimination_count: 2, correct_option: 2, second_best_option: 1, second_best_refutation: "Partial truth in A cannot validate the failed comparison with B.", option_lengths_chars: [36, 38, 35, 34, 37], correct_detail_outlier: false, length_justified: false, school_relative: SCHOOL_UPPER, expected_time_class: STANDARD}
+    - {item_id: KOR-FINAL-CANARY-010, actual_difficulty: D5, reasoning_steps: 3, evidence_count: 2, strong_distractor_count: 2, effective_choice_count: 5, first_pass_plausible_candidates: 3, immediate_elimination_count: 1, correct_option: 3, second_best_option: 1, second_best_refutation: "One keyword cannot verify all required evidence and conditions.", option_lengths_chars: [35, 34, 38, 36, 37], correct_detail_outlier: false, length_justified: false, school_relative: ABOVE_SCHOOL, expected_time_class: LONG}

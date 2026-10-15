@@ -1,0 +1,614 @@
+#!/usr/bin/env python3
+"""ARC PDF deterministic preflight V1.2.
+
+Focuses on rendered-PDF invariants. It does not replace source-level HTML
+overflow checks or human visual review.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import shutil
+import subprocess
+from pathlib import Path
+from typing import Iterable
+
+import fitz
+
+A4_W = 595.276
+A4_H = 841.890
+PAGE_TOLERANCE_PT = 2.0
+BROKEN_GLYPHS = {"�"}
+RAW_MARKUP_RE = re.compile(r"<\s*/?\s*(?:br|b|i|span)\b[^>]*>", re.I)
+METADATA_RE = re.compile(
+    r"(?:CONTENT_LOCK|HANDOFF_STATUS|CONTENT_QA_STATUS|BATCH_ID|SOURCE_ID|"
+    r"DRIVE[_ ]?(?:ID|STATUS)|READY_FOR_TYPESET|PDF_QC_STATUS|"
+    r"TYPESET_STATUS|STUDENT_METADATA_LEAK)",
+    re.I,
+)
+LIGHT_FONT_RE = re.compile(r"(?:thin|extralight|ultralight|light|wght[-_ ]?(?:100|200|300))", re.I)
+BOLD_FONT_RE = re.compile(r"(?:bold|semibold|demibold|medium)", re.I)
+ANSWER_HEADING_RE = re.compile(r"(?:\bANSWER\s+KEY\b|^[\s\u00a0]*정답(?=[\s\u00a0]|$))", re.I | re.M)
+QUESTION_MARKER_RE = re.compile(r"\bQUESTION\s+(\d+)\b", re.I)
+KOR_QUESTION_MARKER_RE = re.compile(r"(?m)^[\s\u00a0]*(\d{2})[\s\u00a0]+(?=\S)")
+# PDF font CMaps can extract circled digits as equivalent dingbat digits.
+# Accept only the five supported answer values, preserving completeness checks.
+ANSWER_LINE_RE = re.compile(r"(?m)^[\s\u00a0]*(\d{1,2})[\s\u00a0]*\.?[\s\u00a0]*(?:[1-5]|[①②③④⑤➀➁➂➃➄❶❷❸❹❺➊➋➌➍➎])[\s\u00a0]*$")
+MAJOR_PART_RE = re.compile(r"(?:[ABC]\s*파트|파트\s*[ABC]|\bPART\s*[ABC]\b)", re.I)
+
+
+def rect_outside(inner: fitz.Rect, outer: fitz.Rect, tol: float = 0.5) -> bool:
+    return (
+        inner.x0 < outer.x0 - tol
+        or inner.y0 < outer.y0 - tol
+        or inner.x1 > outer.x1 + tol
+        or inner.y1 > outer.y1 + tol
+    )
+
+
+def overlap_ratio(a: fitz.Rect, b: fitz.Rect) -> float:
+    inter = a & b
+    if inter.is_empty:
+        return 0.0
+    ia = max(0.0, inter.width) * max(0.0, inter.height)
+    ma = max(1e-6, min(a.width * a.height, b.width * b.height))
+    return ia / ma
+
+
+def merge_intervals(intervals: Iterable[tuple[float, float]]) -> list[tuple[float, float]]:
+    rows = sorted((float(a), float(b)) for a, b in intervals if b > a)
+    merged: list[list[float]] = []
+    for a, b in rows:
+        if not merged or a > merged[-1][1] + 0.5:
+            merged.append([a, b])
+        else:
+            merged[-1][1] = max(merged[-1][1], b)
+    return [(a, b) for a, b in merged]
+
+
+def interval_union_length(intervals: Iterable[tuple[float, float]]) -> float:
+    return sum(b - a for a, b in merge_intervals(intervals))
+
+
+def text_blocks(page: fitz.Page) -> list[dict]:
+    """Return normalized text blocks from PyMuPDF dict output."""
+    out: list[dict] = []
+    data = page.get_text("dict")
+    for block in data.get("blocks", []):
+        if block.get("type") != 0:
+            continue
+        spans = []
+        text_parts = []
+        for line in block.get("lines", []):
+            for span in line.get("spans", []):
+                text = span.get("text", "")
+                if text:
+                    text_parts.append(text)
+                    spans.append(
+                        {
+                            "text": text,
+                            "font": str(span.get("font", "")),
+                            "size": float(span.get("size", 0.0)),
+                            "bbox": list(span.get("bbox", (0, 0, 0, 0))),
+                        }
+                    )
+        text = "".join(text_parts).strip()
+        if not text:
+            continue
+        out.append({"bbox": list(block.get("bbox", (0, 0, 0, 0))), "text": text, "spans": spans})
+    return out
+
+
+def text_lines(page: fitz.Page) -> list[dict]:
+    """Return visual text lines for lane-flow detection."""
+    out: list[dict] = []
+    data = page.get_text("dict")
+    for block in data.get("blocks", []):
+        if block.get("type") != 0:
+            continue
+        for line in block.get("lines", []):
+            spans = line.get("spans", [])
+            text = "".join(str(span.get("text", "")) for span in spans).strip()
+            if not text:
+                continue
+            sizes = [
+                float(span.get("size", 0.0))
+                for span in spans
+                if str(span.get("text", "")).strip()
+            ]
+            out.append(
+                {
+                    "bbox": list(line.get("bbox", (0, 0, 0, 0))),
+                    "text": text,
+                    "avg_size": (sum(sizes) / len(sizes)) if sizes else 0.0,
+                }
+            )
+    return out
+
+
+def body_typography(blocks: list[dict], page_height: float) -> dict:
+    total_chars = 0
+    weighted_size = 0.0
+    light_chars = 0
+    font_chars: dict[str, int] = {}
+    for block in blocks:
+        x0, y0, x1, y1 = block["bbox"]
+        if y1 < page_height * 0.07 or y0 > page_height * 0.94:
+            continue
+        for span in block["spans"]:
+            size = span["size"]
+            text = span["text"].strip()
+            chars = len(text)
+            if chars == 0 or not (7.0 <= size <= 12.8):
+                continue
+            total_chars += chars
+            weighted_size += size * chars
+            font = span["font"]
+            font_chars[font] = font_chars.get(font, 0) + chars
+            if LIGHT_FONT_RE.search(font):
+                light_chars += chars
+    avg_size = weighted_size / total_chars if total_chars else None
+    light_ratio = light_chars / total_chars if total_chars else 0.0
+    top_fonts = sorted(font_chars.items(), key=lambda kv: kv[1], reverse=True)[:8]
+    return {
+        "body_chars": total_chars,
+        "body_font_avg_pt": round(avg_size, 3) if avg_size is not None else None,
+        "light_body_ratio": round(light_ratio, 4),
+        "body_fonts": top_fonts,
+    }
+
+
+def occupancy_ratio(blocks: list[dict], page_height: float, top: float, bottom: float) -> float:
+    intervals: list[tuple[float, float]] = []
+    for block in blocks:
+        _x0, y0, _x1, y1 = block["bbox"]
+        a = max(top, y0)
+        b = min(bottom, y1)
+        if b > a:
+            intervals.append((a, b))
+    usable = max(1.0, bottom - top)
+    return min(1.0, interval_union_length(intervals) / usable)
+
+
+def column_signal(lines: list[dict], page_rect: fitz.Rect) -> dict:
+    """Detect two independent reading lanes while resisting ordinary table false positives."""
+    from collections import Counter
+
+    mid = page_rect.width / 2.0
+    body_top = page_rect.height * 0.07
+    body_bottom = page_rect.height * 0.94
+    max_line_width = page_rect.width * 0.47
+
+    candidates: list[dict] = []
+    for line in lines:
+        text = re.sub(r"\s+", " ", line["text"]).strip()
+        x0, y0, x1, y1 = line["bbox"]
+        width = x1 - x0
+        if y0 < body_top or y1 > body_bottom:
+            continue
+        if len(text) < 18 or width < 90 or width > max_line_width:
+            continue
+        candidates.append(
+            {
+                "bbox": line["bbox"],
+                "chars": len(text),
+                "avg_size": line.get("avg_size", 0.0),
+            }
+        )
+
+    left = [x for x in candidates if x["bbox"][2] <= mid + 25]
+    right = [x for x in candidates if x["bbox"][0] >= mid - 25]
+
+    def dominant_anchor(items: list[dict]) -> tuple[float | None, int]:
+        if not items:
+            return None, 0
+        bins = Counter(round(x["bbox"][0] / 5.0) * 5.0 for x in items)
+        anchor, count = bins.most_common(1)[0]
+        return float(anchor), int(count)
+
+    left_anchor, _ = dominant_anchor(left)
+    right_anchor, _ = dominant_anchor(right)
+    if left_anchor is not None:
+        left = [x for x in left if abs(x["bbox"][0] - left_anchor) <= 18]
+    if right_anchor is not None:
+        right = [x for x in right if abs(x["bbox"][0] - right_anchor) <= 18]
+
+    left_chars = sum(x["chars"] for x in left)
+    right_chars = sum(x["chars"] for x in right)
+    left_y = [(x["bbox"][1], x["bbox"][3]) for x in left]
+    right_y = [(x["bbox"][1], x["bbox"][3]) for x in right]
+
+    overlap_y = 0.0
+    for la, lb in merge_intervals(left_y):
+        for ra, rb in merge_intervals(right_y):
+            overlap_y += max(0.0, min(lb, rb) - max(la, ra))
+    usable = max(1.0, body_bottom - body_top)
+    overlap_ratio_y = overlap_y / usable
+
+    detected = (
+        len(left) >= 8
+        and len(right) >= 8
+        and left_chars >= 220
+        and right_chars >= 220
+        and overlap_ratio_y >= 0.12
+    )
+    return {
+        "detected": detected,
+        "left_lines": len(left),
+        "right_lines": len(right),
+        "left_anchor": left_anchor,
+        "right_anchor": right_anchor,
+        "left_chars": left_chars,
+        "right_chars": right_chars,
+        "vertical_overlap_ratio": round(overlap_ratio_y, 4),
+    }
+
+
+def heading_orphan_flags(blocks: list[dict], page_rect: fitz.Rect, body_avg: float | None) -> list[dict]:
+    flags: list[dict] = []
+    if not blocks:
+        return flags
+    size_base = body_avg or 9.9
+    threshold_y = page_rect.height * 0.70
+    footer_cut = page_rect.height * 0.94
+    for block in blocks:
+        text = re.sub(r"\s+", " ", block["text"]).strip()
+        x0, y0, x1, y1 = block["bbox"]
+        if y0 < threshold_y or y0 > footer_cut or len(text) > 110:
+            continue
+        # Exclude graph axes / page-number-like numeric labels.
+        if not re.search(r"[A-Za-z가-힣]{2,}", text):
+            continue
+        max_size = max((span["size"] for span in block["spans"]), default=0)
+        boldish = any(BOLD_FONT_RE.search(span["font"]) for span in block["spans"])
+        heading_like = max_size >= size_base + 1.2 or (boldish and max_size >= size_base + 0.3)
+        if not heading_like:
+            continue
+        following_chars = 0
+        for other in blocks:
+            ox0, oy0, ox1, oy1 = other["bbox"]
+            if oy0 >= y1 + 0.5 and oy0 < footer_cut:
+                following_chars += len(other["text"].strip())
+        if following_chars < 90:
+            severity = "FAIL" if y0 >= page_rect.height * 0.84 and following_chars < 45 else "WARN"
+            flags.append(
+                {
+                    "severity": severity,
+                    "type": "HEADING_ORPHAN_CANDIDATE",
+                    "text": text[:120],
+                    "bbox": [x0, y0, x1, y1],
+                    "following_chars": following_chars,
+                }
+            )
+    return flags
+
+
+def major_boundary_signal(blocks: list[dict], page_rect: fitz.Rect) -> dict:
+    """Find an explicit A/B/C part title and verify that it opens the body page."""
+    candidates = []
+    for block in blocks:
+        text = re.sub(r"\s+", " ", block["text"]).strip()
+        if not MAJOR_PART_RE.search(text):
+            continue
+        max_size = max((span["size"] for span in block["spans"]), default=0.0)
+        if max_size < 14.0:
+            continue
+        candidates.append(
+            {
+                "text": text[:160],
+                "bbox": block["bbox"],
+                "max_size": round(max_size, 2),
+                "at_page_start": block["bbox"][1] <= page_rect.height * 0.28,
+            }
+        )
+    if not candidates:
+        return {"detected": False, "at_page_start": False, "candidates": []}
+    return {
+        "detected": True,
+        "at_page_start": all(item["at_page_start"] for item in candidates),
+        "candidates": candidates,
+    }
+
+
+def page_report(
+    page: fitz.Page,
+    product: str,
+    margin_pt: float,
+    overlap_threshold: float,
+) -> dict:
+    page_rect = page.rect
+    safe = fitz.Rect(
+        page_rect.x0 + margin_pt,
+        page_rect.y0 + margin_pt,
+        page_rect.x1 - margin_pt,
+        page_rect.y1 - margin_pt,
+    )
+    flags: list[dict] = []
+
+    words = page.get_text("words")
+    text = page.get_text("text")
+    blocks = text_blocks(page)
+    lines = text_lines(page)
+
+    if abs(page_rect.width - A4_W) > PAGE_TOLERANCE_PT or abs(page_rect.height - A4_H) > PAGE_TOLERANCE_PT:
+        flags.append(
+            {
+                "severity": "FAIL",
+                "type": "UNEXPECTED_PAGE_SIZE",
+                "actual_pt": [round(page_rect.width, 2), round(page_rect.height, 2)],
+                "expected_pt": [A4_W, A4_H],
+            }
+        )
+
+    if not text.strip() and not page.get_images(full=True) and not page.get_drawings():
+        flags.append({"severity": "WARN", "type": "EMPTY_PAGE"})
+
+    if any(g in text for g in BROKEN_GLYPHS):
+        flags.append({"severity": "FAIL", "type": "BROKEN_GLYPH_CANDIDATE"})
+
+    if RAW_MARKUP_RE.search(text):
+        flags.append({"severity": "FAIL", "type": "RAW_MARKUP_LEAK"})
+
+    if METADATA_RE.search(text):
+        flags.append({"severity": "FAIL", "type": "STUDENT_METADATA_LEAK"})
+
+    word_rects = []
+    for w in words:
+        r = fitz.Rect(w[:4])
+        token = str(w[4])
+        if rect_outside(r, page_rect):
+            flags.append({"severity": "FAIL", "type": "TEXT_OUTSIDE_PAGE", "token": token, "bbox": list(r)})
+        elif rect_outside(r, safe):
+            flags.append({"severity": "WARN", "type": "TEXT_IN_MARGIN", "token": token, "bbox": list(r)})
+        word_rects.append((r, token, int(w[5]), int(w[6])))
+
+    # Suspicious word overlap. Ignore words from the same text line.
+    # Cap comparison count to avoid quadratic explosions on exceptionally dense pages.
+    capped = word_rects[:2200]
+    for i in range(len(capped)):
+        a, ta, ba, la = capped[i]
+        for j in range(i + 1, len(capped)):
+            b, tb, bb, lb = capped[j]
+            if ba == bb and la == lb:
+                continue
+            ratio = overlap_ratio(a, b)
+            if ratio >= overlap_threshold:
+                flags.append(
+                    {
+                        "severity": "WARN",
+                        "type": "TEXT_TEXT_OVERLAP",
+                        "a": ta,
+                        "b": tb,
+                        "ratio": round(ratio, 3),
+                        "bbox_a": list(a),
+                        "bbox_b": list(b),
+                    }
+                )
+                if sum(1 for x in flags if x["type"] == "TEXT_TEXT_OVERLAP") >= 100:
+                    break
+        if sum(1 for x in flags if x["type"] == "TEXT_TEXT_OVERLAP") >= 100:
+            break
+
+    for img in page.get_images(full=True):
+        xref = img[0]
+        for r in page.get_image_rects(xref):
+            if rect_outside(r, page_rect):
+                flags.append({"severity": "FAIL", "type": "IMAGE_OUTSIDE_PAGE", "xref": xref, "bbox": list(r)})
+
+    for drawing in page.get_drawings():
+        r = drawing.get("rect")
+        if r and rect_outside(r, page_rect):
+            flags.append({"severity": "FAIL", "type": "DRAWING_OUTSIDE_PAGE", "bbox": list(r)})
+
+    typo = body_typography(blocks, page_rect.height)
+    top = max(margin_pt, page_rect.height * 0.07)
+    bottom = min(page_rect.height - margin_pt, page_rect.height * 0.93)
+    occ = occupancy_ratio(blocks, page_rect.height, top, bottom)
+    cols = column_signal(lines, page_rect)
+    major_boundary = major_boundary_signal(blocks, page_rect)
+
+    if product == "ARC_CORE" and page.number > 0:
+        if occ < 0.25:
+            flags.append({"severity": "FAIL", "type": "CORE_NEAR_EMPTY_PAGE", "occupancy_ratio": round(occ, 4)})
+        elif occ < 0.45:
+            flags.append({"severity": "WARN", "type": "CORE_SPARSE_PAGE_REFLOW", "occupancy_ratio": round(occ, 4)})
+
+        if cols["detected"]:
+            flags.append({"severity": "FAIL", "type": "CORE_TWO_COLUMN_FLOW", "details": cols})
+
+        avg = typo["body_font_avg_pt"]
+        if typo["body_chars"] >= 180 and avg is not None and avg < 9.2:
+            flags.append({"severity": "FAIL", "type": "CORE_BODY_FONT_TOO_SMALL", "avg_pt": avg})
+        if typo["body_chars"] >= 180 and typo["light_body_ratio"] > 0.15:
+            flags.append(
+                {
+                    "severity": "FAIL",
+                    "type": "CORE_LIGHT_BODY_FONT",
+                    "light_body_ratio": typo["light_body_ratio"],
+                    "fonts": typo["body_fonts"],
+                }
+            )
+
+        flags.extend(heading_orphan_flags(blocks, page_rect, typo["body_font_avg_pt"]))
+        if major_boundary["detected"] and not major_boundary["at_page_start"]:
+            flags.append(
+                {
+                    "severity": "FAIL",
+                    "type": "CORE_MAJOR_BOUNDARY_NOT_PAGE_START",
+                    "details": major_boundary["candidates"],
+                }
+            )
+
+    return {
+        "page": page.number + 1,
+        "page_size_pt": [round(page_rect.width, 3), round(page_rect.height, 3)],
+        "word_count": len(words),
+        "block_count": len(blocks),
+        "occupancy_ratio": round(occ, 4),
+        "typography": typo,
+        "column_signal": cols,
+        "major_boundary_signal": major_boundary,
+        "flags": flags,
+    }
+
+
+def render_pdf(pdf_path: str | Path, outdir: str | Path, dpi: int = 300) -> dict:
+    outdir = Path(outdir)
+    outdir.mkdir(parents=True, exist_ok=True)
+    pdftoppm = shutil.which("pdftoppm")
+    if pdftoppm:
+        prefix = outdir / "page"
+        proc = subprocess.run(
+            [pdftoppm, "-png", "-r", str(dpi), str(pdf_path), str(prefix)],
+            capture_output=True,
+            text=True,
+        )
+        return {"renderer": "pdftoppm", "ok": proc.returncode == 0, "stderr": proc.stderr[-1000:]}
+    doc = fitz.open(pdf_path)
+    zoom = dpi / 72.0
+    for page in doc:
+        pix = page.get_pixmap(matrix=fitz.Matrix(zoom, zoom), alpha=False)
+        pix.save(outdir / f"page-{page.number + 1:03d}.png")
+    return {"renderer": "pymupdf", "ok": True}
+
+
+def analyze_pdf(
+    pdf_path: str | Path,
+    product: str,
+    margin_pt: float = 18.0,
+    overlap_threshold: float = 0.30,
+    render_dir: str | Path | None = None,
+    dpi: int = 300,
+    expected_item_count: int | None = None,
+) -> dict:
+    doc = fitz.open(pdf_path)
+    page_texts = [page.get_text("text") for page in doc]
+    pages = [page_report(p, product, margin_pt, overlap_threshold) for p in doc]
+    if product == "ARC_CORE":
+        for index, page in enumerate(pages[:-1]):
+            next_boundary = pages[index + 1]["major_boundary_signal"]
+            if not (next_boundary["detected"] and next_boundary["at_page_start"]):
+                continue
+            for flag in page["flags"]:
+                if flag["type"] == "CORE_SPARSE_PAGE_REFLOW":
+                    flag.update(
+                        {
+                            "severity": "INFO",
+                            "type": "CORE_REGISTERED_BOUNDARY_REMAINDER",
+                            "reason": "next page opens an explicit major boundary",
+                        }
+                    )
+    if product in {"ARC_N", "ARC_FINAL"}:
+        # Two-column problem pages: a body line may not cross the gutter
+        # (e.g. a stem wrapped without reserving the question-number width).
+        for index in range(2, len(doc)):
+            page = doc[index]
+            mid = page.rect.width / 2
+            top, bottom = page.rect.height * 0.07, page.rect.height * 0.93
+            for line in text_lines(page):
+                x0, y0, x1, _ = line["bbox"]
+                if top <= y0 <= bottom and x0 < mid - 4 and x1 > mid - 4 and (x1 - x0) < page.rect.width * 0.8:
+                    pages[index]["flags"].append({"severity": "FAIL", "type": "COLUMN_GUTTER_CROSSING", "bbox": [round(v, 1) for v in line["bbox"]], "text": line.get("text", "")[:40]})
+    if product == "ARC_N":
+        def is_blank(index: int) -> bool:
+            if index < 0 or index >= len(doc):
+                return False
+            page = doc[index]
+            return not page_texts[index].strip() and not page.get_images(full=True) and not page.get_drawings()
+
+        expected_blank_indices: set[int] = set()
+        if len(doc) < 2 or not is_blank(1):
+            pages[0]["flags"].append({"severity": "FAIL", "type": "ARC_N_COVER_VERSO_NOT_BLANK"})
+        else:
+            expected_blank_indices.add(1)
+
+        answer_indices = [i for i, text in enumerate(page_texts) if ANSWER_HEADING_RE.search(text)]
+        answer_start = None
+        if not answer_indices:
+            pages[-1]["flags"].append({"severity": "FAIL", "type": "ARC_N_ANSWER_KEY_MISSING"})
+        else:
+            answer_start = answer_indices[0]
+            separator = answer_start - 1
+            if separator < 2 or not is_blank(separator):
+                pages[answer_start]["flags"].append({"severity": "FAIL", "type": "ARC_N_SEPARATOR_NOT_BLANK"})
+            else:
+                expected_blank_indices.add(separator)
+
+        # Problem pages sit between the blank cover verso and the answer key.
+        # Both the canary marker ("QUESTION n") and the Korean production
+        # marker (two-digit number opening a stem line, e.g. "01 윗글을 ...")
+        # are counted; answer lines accept "n. 3" and "01 ③".
+        problem_end = answer_start if answer_start is not None else len(page_texts)
+        problem_text = "\n".join(page_texts[2:problem_end])
+        answer_text = "\n".join(page_texts[answer_start:]) if answer_start is not None else "\n".join(page_texts)
+        question_ids = {int(n) for n in QUESTION_MARKER_RE.findall(problem_text)}
+        question_ids |= {int(n) for n in KOR_QUESTION_MARKER_RE.findall(problem_text)}
+        answer_ids = {int(n) for n in ANSWER_LINE_RE.findall(answer_text)}
+        if expected_item_count is not None:
+            expected_ids = set(range(1, expected_item_count + 1))
+            if question_ids != expected_ids:
+                pages[-1]["flags"].append({"severity": "FAIL", "type": "ARC_N_QUESTION_COUNT_MISMATCH", "actual": len(question_ids), "expected": expected_item_count, "missing": sorted(expected_ids - question_ids), "unexpected": sorted(question_ids - expected_ids)})
+            if answer_ids != expected_ids:
+                pages[-1]["flags"].append({"severity": "FAIL", "type": "ARC_N_ANSWER_COUNT_MISMATCH", "actual": len(answer_ids), "expected": expected_item_count, "missing": sorted(expected_ids - answer_ids), "unexpected": sorted(answer_ids - expected_ids)})
+
+        for index in expected_blank_indices:
+            pages[index]["flags"] = [flag for flag in pages[index]["flags"] if flag["type"] != "EMPTY_PAGE"]
+
+        fail_count = sum(1 for p in pages for f in p["flags"] if f["severity"] == "FAIL")
+        warn_count = sum(1 for p in pages for f in p["flags"] if f["severity"] == "WARN")
+        status = "FAIL" if fail_count else ("WARN" if warn_count else "PASS")
+    fail_count = sum(1 for p in pages for f in p["flags"] if f["severity"] == "FAIL")
+    warn_count = sum(1 for p in pages for f in p["flags"] if f["severity"] == "WARN")
+    status = "FAIL" if fail_count else ("WARN" if warn_count else "PASS")
+
+    render = None
+    if render_dir:
+        render = render_pdf(pdf_path, render_dir, dpi)
+        if not render.get("ok"):
+            status = "FAIL"
+            fail_count += 1
+
+    return {
+        "tool": "ARC_PDF_PREFLIGHT_V1.2",
+        "pdf": str(pdf_path),
+        "product": product,
+        "status": status,
+        "page_count": len(pages),
+        "fail_count": fail_count,
+        "warn_count": warn_count,
+        "render": render,
+        "pages": pages,
+    }
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("pdf")
+    ap.add_argument("--product", required=True, choices=["ARC_CORE", "ARC_N", "ARC_FINAL"])
+    ap.add_argument("--margin-pt", type=float, default=18.0)
+    ap.add_argument("--overlap-threshold", type=float, default=0.30)
+    ap.add_argument("--report", default=None)
+    ap.add_argument("--render-dir", default=None)
+    ap.add_argument("--dpi", type=int, default=300)
+    ap.add_argument("--expected-item-count", type=int)
+    args = ap.parse_args()
+
+    result = analyze_pdf(
+        args.pdf,
+        product=args.product,
+        margin_pt=args.margin_pt,
+        overlap_threshold=args.overlap_threshold,
+        render_dir=args.render_dir,
+        dpi=args.dpi,
+        expected_item_count=args.expected_item_count,
+    )
+    output = json.dumps(result, ensure_ascii=False, indent=2)
+    if args.report:
+        Path(args.report).write_text(output, encoding="utf-8")
+    print(output)
+    raise SystemExit(1 if result["status"] == "FAIL" else 0)
+
+
+if __name__ == "__main__":
+    main()

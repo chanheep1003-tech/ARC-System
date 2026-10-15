@@ -1,0 +1,443 @@
+schema_version: ARC-SOURCE-COLLECTION-V1
+target_exam_id: DONGBUK_2026_2_FINAL
+updated_at: '2026-10-03'
+collection_scope:
+  active_subjects: [SCI, SOC, KOR]
+  deferred_subjects: [HIS, AI]
+  exam_registry_ref: ops/exams/EXAM_CONTEXTS_V1.yaml#exams.DONGBUK_2026_2_FINAL.provisional_scope_policy
+  status: PROVISIONAL_REMAINDER
+  target: 과학·사회·국어의 이번 학기 전체 학습 내용 중 실제 중간고사에 포함되지 않은 나머지 전부
+  note: 후보 자료의 현재 범위 적합성은 개별 검토한다. 학교 공지가 나오면 수집 기준을 확정 범위로 갱신한다.
+sources:
+- source_id: DRIVE-FINAL-CANDIDATE-001
+  title: 2024 1학년 2학기 기말고사 문제 및 정답.pdf
+  provider: USER_CONNECTED_DRIVE
+  url: https://drive.google.com/file/d/1_4y-YXeXl0RF-46O9EwuDQz3zXJGTBxB/view?usp=drivesdk
+  drive_file_id: 1_4y-YXeXl0RF-46O9EwuDQz3zXJGTBxB
+  size_bytes: 22351396
+  subject: UNKNOWN
+  role: UNCLASSIFIED
+  curriculum: UNKNOWN
+  review_status: METADATA_ONLY
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+  notes: Filename metadata only; content and current exam relevance not confirmed.
+- source_id: DRIVE-FINAL-CANDIDATE-002
+  title: 동북고등학교 1학년 국어 기말고사 문법 보충자료 실전 모의고사 40제 해설편.pdf
+  provider: USER_CONNECTED_DRIVE
+  url: https://drive.google.com/file/d/1V6iO-lH-_invdFXjPF49Y5gs-BCB5Dat/view?usp=drivesdk
+  drive_file_id: 1V6iO-lH-_invdFXjPF49Y5gs-BCB5Dat
+  size_bytes: 548321
+  subject: KOR
+  role: PRACTICE_REFERENCE
+  curriculum: UNKNOWN
+  review_status: METADATA_ONLY
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+  notes: Filename metadata only; content and current exam relevance not confirmed.
+- source_id: DRIVE-FINAL-CANDIDATE-003
+  title: 동북고등학교 1학년 국어 기말고사 문법 보충자료 실전 모의고사 40제 문제편pdf.pdf
+  provider: USER_CONNECTED_DRIVE
+  url: https://drive.google.com/file/d/1wd-Q1US8hUIMutw_uXnEYNsg6Eeb70cC/view?usp=drivesdk
+  drive_file_id: 1wd-Q1US8hUIMutw_uXnEYNsg6Eeb70cC
+  size_bytes: 941998
+  subject: KOR
+  role: PRACTICE_REFERENCE
+  curriculum: UNKNOWN
+  review_status: METADATA_ONLY
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+  notes: Filename metadata only; content and current exam relevance not confirmed.
+- source_id: DRIVE-FINAL-CANDIDATE-004
+  title: 동북고 1학년 국어 기말고사 대비 48제.pdf
+  provider: USER_CONNECTED_DRIVE
+  url: https://drive.google.com/file/d/1Qx8gHHjg22ANSx1NhJgpTeq4andcPaNA/view?usp=drivesdk
+  drive_file_id: 1Qx8gHHjg22ANSx1NhJgpTeq4andcPaNA
+  size_bytes: 356340
+  subject: KOR
+  role: PRACTICE_REFERENCE
+  curriculum: UNKNOWN
+  review_status: METADATA_ONLY
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+  notes: Filename metadata only; content and current exam relevance not confirmed.
+- source_id: DRIVE-FINAL-CANDIDATE-005
+  title: 통합과학2_2025년도_2학기_중간기말고사_출제대비_문제은행_1단원_해설.pdf
+  provider: USER_CONNECTED_DRIVE
+  url: https://drive.google.com/file/d/1ZR7VycLIW5r-UODzYXdOI6nZ0yOPaCaR/view?usp=drivesdk
+  drive_file_id: 1ZR7VycLIW5r-UODzYXdOI6nZ0yOPaCaR
+  size_bytes: 223302
+  subject: SCI
+  role: PRACTICE_REFERENCE
+  curriculum: UNKNOWN
+  review_status: METADATA_ONLY
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+  notes: Filename metadata only; content and current exam relevance not confirmed.
+- source_id: DRIVE-FINAL-CANDIDATE-006
+  title: 2026년, 1학기 기말, 1학년, 공통국어1(공통).pdf
+  provider: USER_CONNECTED_DRIVE
+  url: https://drive.google.com/file/d/1ZZ4wwb7xzF6D2QGUHfg0i-A2myYWi76J/view?usp=drivesdk
+  drive_file_id: 1ZZ4wwb7xzF6D2QGUHfg0i-A2myYWi76J
+  size_bytes: 988090
+  subject: KOR
+  role: UNCLASSIFIED
+  curriculum: UNKNOWN
+  review_status: METADATA_ONLY
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+  notes: Filename metadata only; content and current exam relevance not confirmed.
+- source_id: DRIVE-FINAL-CANDIDATE-007
+  title: 2024 1학년 2학기 기말고사 문제 및 정답.pdf
+  provider: USER_CONNECTED_DRIVE
+  url: https://drive.google.com/file/d/1KNvedT7Nkl_cI3J2ru-LQRN9nFk4dsGr/view?usp=drivesdk
+  drive_file_id: 1KNvedT7Nkl_cI3J2ru-LQRN9nFk4dsGr
+  size_bytes: 22351396
+  subject: UNKNOWN
+  role: UNCLASSIFIED
+  curriculum: UNKNOWN
+  review_status: METADATA_ONLY
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+  notes: Filename metadata only; content and current exam relevance not confirmed.
+- source_id: DRIVE-FINAL-CANDIDATE-008
+  title: 통합과학2_2025년도_2학기_중간기말고사_출제대비_문제은행_1단원.pdf
+  provider: USER_CONNECTED_DRIVE
+  url: https://drive.google.com/file/d/1NQelcGMwNf2syQXhdtssduqqtJhldcCq/view?usp=drivesdk
+  drive_file_id: 1NQelcGMwNf2syQXhdtssduqqtJhldcCq
+  size_bytes: 593480
+  subject: SCI
+  role: PRACTICE_REFERENCE
+  curriculum: UNKNOWN
+  review_status: METADATA_ONLY
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+  notes: Filename metadata only; content and current exam relevance not confirmed.
+- source_id: DRIVE-FINAL-CANDIDATE-009
+  title: 2025년,1학년,2학기기말,한국사2.pdf
+  provider: USER_CONNECTED_DRIVE
+  url: https://drive.google.com/file/d/1Tgx0sa74CXLexodCaUYE4200gm4Zlr33/view?usp=drivesdk
+  drive_file_id: 1Tgx0sa74CXLexodCaUYE4200gm4Zlr33
+  size_bytes: 1139625
+  subject: HIS
+  collection_action: PARKED_BY_USER
+  role: PAST_EXAM
+  curriculum: UNKNOWN
+  review_status: HEADER_REVIEWED
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+  notes: Readable header confirms Dongbuk 2025 second-semester final. Diagrams, full
+    source fidelity, and current scope not verified.
+  exam_header:
+    year: 2025
+    semester: 2
+    exam_type: FINAL
+    mcq_count: 25
+    constructed_response_count: 2
+    total_item_count: 27
+    page_count: 7
+    review_method: READABLE_HEADER_CROSSCHECK
+    current_teacher_match: UNVERIFIED
+    current_scope_match: PENDING
+- source_id: DRIVE-FINAL-CANDIDATE-010
+  title: 2026년, 1학기기말, 1학년, 한국사1(공통).pdf
+  provider: USER_CONNECTED_DRIVE
+  url: https://drive.google.com/file/d/1M7ghQxYUyDFwhoz_tCNSLT70mXQI0wWN/view?usp=drivesdk
+  drive_file_id: 1M7ghQxYUyDFwhoz_tCNSLT70mXQI0wWN
+  size_bytes: 1237255
+  subject: HIS
+  collection_action: PARKED_BY_USER
+  role: UNCLASSIFIED
+  curriculum: UNKNOWN
+  review_status: METADATA_ONLY
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+  notes: Filename metadata only; content and current exam relevance not confirmed.
+- source_id: DRIVE-FINAL-CANDIDATE-011
+  title: 2026년, 1학기 기말, 1학년, 통합사회1(공통).pdf
+  provider: USER_CONNECTED_DRIVE
+  url: https://drive.google.com/file/d/1Hx3IsjqYqXgY8ra87kZz8eKLFEFzwYDX/view?usp=drivesdk
+  drive_file_id: 1Hx3IsjqYqXgY8ra87kZz8eKLFEFzwYDX
+  size_bytes: 1116559
+  subject: SOC
+  role: UNCLASSIFIED
+  curriculum: UNKNOWN
+  review_status: METADATA_ONLY
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+  notes: Filename metadata only; content and current exam relevance not confirmed.
+- source_id: DRIVE-FINAL-CANDIDATE-012
+  title: 2026년, 1학기 기말, 1학년, 통합과학1(공통).pdf
+  provider: USER_CONNECTED_DRIVE
+  url: https://drive.google.com/file/d/18IpSnaChp1GOb4l6t7RttmO3UJUJ4kqR/view?usp=drivesdk
+  drive_file_id: 18IpSnaChp1GOb4l6t7RttmO3UJUJ4kqR
+  size_bytes: 878254
+  subject: SCI
+  role: UNCLASSIFIED
+  curriculum: UNKNOWN
+  review_status: METADATA_ONLY
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+  notes: Filename metadata only; content and current exam relevance not confirmed.
+- source_id: DRIVE-FINAL-CANDIDATE-013
+  title: 2025년,2학기기말,1학년,공통국어2(공통).pdf
+  provider: USER_CONNECTED_DRIVE
+  url: https://drive.google.com/file/d/16jv7Qh0qRQ7vP109SSLMgVLuSFhVC7rA/view?usp=drivesdk
+  drive_file_id: 16jv7Qh0qRQ7vP109SSLMgVLuSFhVC7rA
+  size_bytes: 877183
+  subject: KOR
+  role: PAST_EXAM
+  curriculum: UNKNOWN
+  review_status: HEADER_REVIEWED
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+  notes: Readable header confirms Dongbuk 2025 second-semester final. Diagrams, full
+    source fidelity, and current scope not verified.
+  exam_header:
+    year: 2025
+    semester: 2
+    exam_type: FINAL
+    mcq_count: 21
+    constructed_response_count: 4
+    total_item_count: 25
+    page_count: 7
+    review_method: READABLE_HEADER_CROSSCHECK
+    current_teacher_match: UNVERIFIED
+    current_scope_match: PENDING
+- source_id: DRIVE-FINAL-CANDIDATE-014
+  title: 2025년 2학기 기말 정기고사 출제원안(1학년-인공지능기초).pdf
+  provider: USER_CONNECTED_DRIVE
+  url: https://drive.google.com/file/d/11sYSicDpoCUb3VRfuVruVELlh1qDQOYs/view?usp=drivesdk
+  drive_file_id: 11sYSicDpoCUb3VRfuVruVELlh1qDQOYs
+  size_bytes: 679956
+  subject: AI
+  collection_action: PARKED_BY_USER
+  role: PAST_EXAM
+  curriculum: UNKNOWN
+  review_status: HEADER_REVIEWED
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+  notes: Readable header confirms Dongbuk 2025 second-semester final. Diagrams, full
+    source fidelity, and current scope not verified.
+  exam_header:
+    year: 2025
+    semester: 2
+    exam_type: FINAL
+    mcq_count: 20
+    constructed_response_count: 2
+    total_item_count: 22
+    page_count: 3
+    review_method: READABLE_HEADER_CROSSCHECK
+    current_teacher_match: UNVERIFIED
+    current_scope_match: PENDING
+- source_id: DRIVE-FINAL-CANDIDATE-015
+  title: 2026년, 1학기 기말, 1학년, 정보(선택).pdf
+  provider: USER_CONNECTED_DRIVE
+  url: https://drive.google.com/file/d/1Fw3BxtHjE6VWibAqFXquksx7-paZfUEU/view?usp=drivesdk
+  drive_file_id: 1Fw3BxtHjE6VWibAqFXquksx7-paZfUEU
+  size_bytes: 595522
+  subject: UNKNOWN
+  role: UNCLASSIFIED
+  curriculum: UNKNOWN
+  review_status: METADATA_ONLY
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+  notes: Filename metadata only; content and current exam relevance not confirmed.
+- source_id: DRIVE-FINAL-CANDIDATE-016
+  title: 통합과학2_2025년도_2학기_중간기말고사_출제대비_문제은행_1단원.pdf
+  provider: USER_CONNECTED_DRIVE
+  url: https://drive.google.com/file/d/1-syPs-NS44L9jgJTJf-gldbDglOejaNN/view?usp=drivesdk
+  drive_file_id: 1-syPs-NS44L9jgJTJf-gldbDglOejaNN
+  size_bytes: 593480
+  subject: SCI
+  role: PRACTICE_REFERENCE
+  curriculum: UNKNOWN
+  review_status: METADATA_ONLY
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+  notes: Filename metadata only; content and current exam relevance not confirmed.
+- source_id: DRIVE-FINAL-CANDIDATE-017
+  title: 통합과학2_2025년도_2학기_중간기말고사_출제대비_문제은행_1단원_해설.pdf
+  provider: USER_CONNECTED_DRIVE
+  url: https://drive.google.com/file/d/1BBBHY_Jca6rtalGSQEEEfuDNkSjO9eaj/view?usp=drivesdk
+  drive_file_id: 1BBBHY_Jca6rtalGSQEEEfuDNkSjO9eaj
+  size_bytes: 223302
+  subject: SCI
+  role: PRACTICE_REFERENCE
+  curriculum: UNKNOWN
+  review_status: METADATA_ONLY
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+  notes: Filename metadata only; content and current exam relevance not confirmed.
+- source_id: DRIVE-FINAL-CANDIDATE-018
+  title: 2025 통합과학2 원안(고사 후 제출)_수정.pdf
+  provider: USER_CONNECTED_DRIVE
+  url: https://drive.google.com/file/d/1_N_CxoACXQl6NIbNBWYv_93TqawqLbBU/view?usp=drivesdk
+  drive_file_id: 1_N_CxoACXQl6NIbNBWYv_93TqawqLbBU
+  size_bytes: 556877
+  subject: SCI
+  role: PAST_EXAM
+  curriculum: UNKNOWN
+  review_status: HEADER_REVIEWED
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+  notes: Readable header confirms Dongbuk 2025 second-semester final. Diagrams, full
+    source fidelity, and current scope not verified.
+  exam_header:
+    year: 2025
+    semester: 2
+    exam_type: FINAL
+    mcq_count: 24
+    constructed_response_count: 4
+    total_item_count: 28
+    page_count: 7
+    review_method: READABLE_HEADER_CROSSCHECK
+    current_teacher_match: UNVERIFIED
+    current_scope_match: PENDING
+- source_id: DRIVE-FINAL-CANDIDATE-019
+  title: 2025-2 기말 통합사회2 원안지.pdf
+  provider: USER_CONNECTED_DRIVE
+  url: https://drive.google.com/file/d/1jNfzCL_FGP9nFdqmQOntzYs9MxfvUGt4/view?usp=drivesdk
+  drive_file_id: 1jNfzCL_FGP9nFdqmQOntzYs9MxfvUGt4
+  size_bytes: 1080165
+  subject: SOC
+  role: PAST_EXAM
+  curriculum: UNKNOWN
+  review_status: HEADER_REVIEWED
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+  notes: Readable header confirms Dongbuk 2025 second-semester final. Diagrams, full
+    source fidelity, and current scope not verified.
+  exam_header:
+    year: 2025
+    semester: 2
+    exam_type: FINAL
+    mcq_count: 22
+    constructed_response_count: 2
+    total_item_count: 24
+    page_count: 7
+    review_method: READABLE_HEADER_CROSSCHECK
+    current_teacher_match: UNVERIFIED
+    current_scope_match: PENDING
+- source_id: EBS-2022-CONCEPT-SERIES
+  title: EBS 개념완성·문항편 2022 개정 시리즈
+  provider: EBS
+  url: https://www.ebsi.co.kr/ebs/pot/potg/retrieveSeriesSubjectList.ebs?seriesGrpId=PKG_0069&seriesId=PRO_1870
+  subject: MULTI
+  role: OFFICIAL_REFERENCE
+  curriculum: 2022_REVISED
+  review_status: LINK_REVIEWED
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+- source_id: EBS-ACHIEVEMENT-GUIDE-2025
+  title: EBS 최소 성취수준 보장지도 온라인 콘텐츠 활용 가이드
+  provider: EBS
+  url: https://wdown.ebsi.co.kr/LMS/lmsx/EBS_retrive_Achievement_Level_Guide.pdf
+  subject: MULTI
+  role: OFFICIAL_GUIDE
+  curriculum: 2022_REVISED
+  review_status: LINK_REVIEWED
+  notes: Public 40-page guide opened; school range and full per-subject contents not
+    verified.
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []
+- source_id: EBS-SOC-G1-20251014
+  title: 2025년 10월 고1 전국연합학력평가 통합사회 문제지
+  provider: EBS_OFFICIAL_HOST
+  url: https://wdown.ebsi.co.kr/W61001/01exam/20251014/go1/sat_main_mun_91357A96.pdf
+  subject: SOC
+  role: OFFICIAL_REFERENCE
+  curriculum: UNKNOWN
+  review_status: LINK_REVIEWED
+  notes: Public 6-page PDF opened; grade/curriculum/scope compatibility still needs
+    item-level review.
+  collected_at: '2026-10-03'
+  reviewed_at: '2026-10-03'
+  exam_scope_status: PENDING
+  eligible_for_current_exam: false
+  unit_ids: []
+  scope_evidence_refs: []

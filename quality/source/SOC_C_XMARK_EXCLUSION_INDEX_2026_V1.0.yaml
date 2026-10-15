@@ -1,0 +1,58 @@
+# Visual exclusion index derived from the canonical school scan. It is not OCR-only evidence.
+index_id: SOC-C-XMARK-EXCLUSION-2026-V1
+source:
+  drive_id: 1wVNF887DhNqai2HBVn6WKE2E87Mm4BaM
+  filename: 통합사회2_C파트_학습지.pdf
+  sha256: 34ca281ad9ee5051ec2ce5587a46be34d415ced7f9b032ad5022081cfa17e9d2
+  page_count: 10
+review:
+  rendered_dpi: 180
+  reviewed_at: 2026-09-23T12:00:00+09:00
+  automated_detector:
+    tool: tooling/pdf_qc/xmark_detect.py
+    auto_exclude_count: 0
+    human_check_count: 33
+    disposition: HUMAN_VISUAL_REVIEW_REQUIRED_AND_COMPLETED_FOR_LARGE_X_REGIONS
+  boundary_rule: Exclude the complete labeled block crossed by a large X; do not expand an inline correction mark to the surrounding section.
+exclusions:
+  - exclusion_id: SOC-C-X-001
+    pdf_page: 8
+    printed_page: 10
+    label: 우리나라의 권력 분립 제도
+    region: confirmation figure and its explanatory box
+    confidence: HIGH
+    status: EXCLUDE
+  - exclusion_id: SOC-C-X-002
+    pdf_page: 9
+    printed_page: 11
+    label: 시민불복종 - 사상가의 견해 - 싱어
+    region: entire Singer position block
+    confidence: HIGH
+    status: EXCLUDE
+  - exclusion_id: SOC-C-X-003
+    pdf_page: 9
+    printed_page: 11
+    label: 시민불복종 - 사상가의 견해 - 소로
+    region: entire Thoreau position block
+    confidence: HIGH
+    status: EXCLUDE
+non_exclusion_annotations:
+  - pdf_page: 6
+    printed_page: 8
+    description: inline handwritten X used inside a correction note near constitutional review procedure
+    disposition: DO_NOT_EXPAND_TO_SECTION_EXCLUSION
+  - pdf_page: 7
+    printed_page: 9
+    description: circles, underlines and numbered notes around limits on basic rights
+    disposition: STUDY_ANNOTATION_NOT_X_EXCLUSION
+  - pdf_page: 9
+    printed_page: 11
+    description: boxed and circled Rawls position
+    disposition: INCLUDED_NON_X_AREA
+gate:
+  excluded_as_answer_basis: true
+  excluded_as_required_distractor_knowledge: true
+  excluded_as_visual_source: true
+  excluded_as_core_required_content: true
+  ambiguous_marks_default: HOLD
+  final_user_review_required: true

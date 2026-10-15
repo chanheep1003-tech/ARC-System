@@ -1,0 +1,74 @@
+schema_version: ARC-QA-EVIDENCE-V1.0
+description: Canonical internal evidence payload for Universal Independent Solve & Difficulty Gate
+typesetter_required_binding:
+  - student_manuscript_sha256  # lowercase SHA-256 of final normalized student manuscript, including trailing newline
+top_level_required:
+  - schema_version
+  - subject
+  - item_count
+  - item_format
+  - uses_source_text
+  - items
+  - set_gates
+  - content_lock
+subjects: [KOR, SOC, HIS, SCI, AI]
+item_formats: [MCQ5]
+option_verdicts: [TRUE, FALSE, HALF_TRUE, UNSUPPORTED]
+competitiveness: [STRONG, MEDIUM, WEAK, CORRECT]
+difficulty_levels: [D1, D2, D3, D4, D5]
+per_item_required:
+  - item_id
+  - target_difficulty
+  - pass_a
+  - pass_b
+  - gates
+pass_b_required:
+  - answer
+  - blind
+  - excluded_inputs
+  - confidence
+  - answer_evidence
+  - scope_trace
+  - option_judgments
+  - second_best_option
+  - second_best_risk
+  - reasoning_steps
+  - evidence_count
+  - immediate_elimination_count
+  - transfer_required
+  - actual_difficulty
+per_item_gates:
+  - FACTUAL_ACCURACY_REVIEW
+  - OPTION_SEMANTIC_DUPLICATION_REVIEW
+  - ANSWER_EVIDENCE_TRACE
+  - SCOPE_EVIDENCE_TRACE
+  - ALL_OPTION_AUDIT
+  - UNIQUE_ANSWER
+  - DIFFICULTY_MATCH
+set_gates:
+  - STRUCTURE
+  - ANSWER_COUNT_MATCH
+  - MANUSCRIPT_CONTAMINATION
+  - TOO_EASY
+  - MID_GAP
+  - STRUCTURE_BIAS
+  - D4_SHORT
+  - PASSAGE_TRUNCATION
+korean_allowed_source_origins:
+  - USER_UPLOAD
+  - USER_PROVIDED_SCHOOL_SUPPLEMENT
+  - USER_PROVIDED_TEXTBOOK
+  - CONNECTED_DRIVE_RAW_SCHOOL_SOURCE
+korean_source_lock_required:
+  - source_text_id
+  - source_origin
+  - source_role
+  - text_fidelity
+  - source_file_id
+  - source_location
+  - source_text_sha256
+  - linked_item_ids
+  - wording_lock
+  - punctuation_lock
+  - line_break_lock
+  - boundary_lock

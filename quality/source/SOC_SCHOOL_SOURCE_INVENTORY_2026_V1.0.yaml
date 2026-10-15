@@ -1,0 +1,37 @@
+# Verified file identity and scope-readiness inventory. It does not transcribe school content.
+inventory_id: SOC-MIDTERM-2026-SOURCES-V1
+authority: GOOGLE_DRIVE_RAW_SCHOOL_SOURCE
+parts:
+  A:
+    textbook_scope: 천재 통합사회2 p36-43 + 생각의 지도 p156-233
+    sources:
+      - drive_id: 1HGx0YROa8nCUzCyEcaN-K794yRILFNbr
+        filename: 2026년-1호 학습지-1학년 통합사회A-정의의 의미와 필요성.pdf
+        sha256: 77504372fd2b652914a137068a40b3a12c39c1df19ce2e2f15af5f5f6573f871
+        page_count: 2
+      - drive_id: 1KBxvZ5tNw31vi5MCOq1G8vqQPH_-NYTG
+        filename: 2026년-2호 학습지-1학년 통합사회A-정의의 실질적 기준.pdf
+        sha256: e409f68daff1dfce650d3faf54406be4faf675877871ce19f81c3d91d35acc8f
+        page_count: 1
+    readiness: SOURCE_LOCKED
+  B:
+    textbook_scope: 천재 통합사회2 p98-107 + p124-133
+    sources:
+      - drive_id: 1TGkgbgWPiuQePXJc_QsEJODIoro30MlC
+        filename: 통합사회2_B파트_학습지_세계화·인구.pdf
+        sha256: d9de07f70549d743031c9d91edfd687fb5312ee64415cef1b9b513ec4114e3af
+        page_count: 8
+    readiness: SOURCE_FILE_LOCKED_VISUAL_EXTRACTION_PENDING
+  C:
+    textbook_scope: 천재 통합사회2 p8-23 + C학습지 비X 영역만
+    sources:
+      - drive_id: 1wVNF887DhNqai2HBVn6WKE2E87Mm4BaM
+        filename: 통합사회2_C파트_학습지.pdf
+        sha256: 34ca281ad9ee5051ec2ce5587a46be34d415ced7f9b032ad5022081cfa17e9d2
+        page_count: 10
+    x_mark_filter: quality/source/SOC_C_XMARK_EXCLUSION_INDEX_2026_V1.0.yaml
+    readiness: SOURCE_LOCKED_WITH_VISUAL_X_EXCLUSION_INDEX
+release_gate:
+  full_scope_core_source_fidelity: HOLD
+  full_scope_n_source_fidelity: HOLD
+  reason: B visual extraction remains incomplete; C large-X exclusions are indexed but still require the normal final user review gate.

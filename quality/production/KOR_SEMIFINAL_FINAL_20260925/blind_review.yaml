@@ -1,0 +1,268 @@
+review_id: KOR-SEMIFINAL-FINAL-BLIND-R1
+reviewer: independent blind reviewer agent, fresh context, manuscript only (no key, no metadata)
+rounds: 1
+rounds_history: single blind round per policy; all 22 MCQ keys matched; profile D2 13 / D3 9 / D4 0
+post_blind_edits:
+- FS-07 stem typo fixed ("(다)와 (다)" -> "(나)와 (다)")
+- FS-CR1 conditions clarified (ⓑ 33~34행, ⓒ 한 행 전체)
+- FS-CR2 and FS-CR3 accepted variants added
+difficulty_rule: item difficulty = blind rating (single round)
+excluded_inputs:
+- ANSWER_KEY
+- PASS_A
+- AUTHOR_INTENT
+- TARGET_DIFFICULTY
+items:
+- item_id: FS-01
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 5
+  - 3
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags:
+  - c
+- item_id: FS-02
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 2
+  - 3
+  second_best: 2
+  difficulty: D3
+  confidence: MEDIUM
+  flags: []
+- item_id: FS-03
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 4
+  - 5
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: FS-04
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 5
+  - 1
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: FS-05
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 4
+  - 2
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: FS-06
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 2
+  - 4
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags:
+  - c
+- item_id: FS-07
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 1
+  - 5
+  second_best: 1
+  difficulty: D3
+  confidence: MEDIUM
+  flags:
+  - e
+  flag_adjudication:
+    e: stem typo "(다)와 (다)" (relabel bug) fixed after the blind round to "(나)와 (다)"; wording only
+- item_id: FS-08
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 2
+  - 5
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: FS-09
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 3
+  - 4
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: FS-10
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 3
+  - 4
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: FS-11
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 2
+  - 4
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags:
+  - c
+- item_id: FS-12
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 1
+  - 5
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: FS-13
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 4
+  - 3
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: FS-14
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 4
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags:
+  - c
+- item_id: FS-15
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 1
+  - 3
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: FS-16
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 5
+  - 1
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: FS-17
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 2
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags:
+  - c
+- item_id: FS-18
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 4
+  - 2
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: FS-19
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 5
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: FS-20
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 3
+  - 5
+  second_best: 3
+  difficulty: D3
+  confidence: MEDIUM
+  flags: []
+- item_id: FS-21
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 3
+  - 4
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: FS-22
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 3
+  - 1
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: FS-CR1
+  submitted_answer: 화자가 떠나보내려 한 대상은 가난 귀신이며, 그 대상은 어려서부터 지금까지 희로애락을 화자와 함께해 왔다는 점을 들어 항변한다. 이를 들은 화자는 “돌이켜 생각하니 네 말도 다 옳도다”라고 말하며 태도를 바꾼다.
+  meets_rubric: true
+  flags:
+  - a
+  flag_adjudication:
+    a: 'after the round: ⓒ condition now asks for the whole line; ⓑ range narrowed to 33~34행'
+- item_id: FS-CR2
+  submitted_answer: ⓐ 서러워한다 / ⓑ 새끼 거미를 보드라운 종이에 받아 문밖으로 버린다. / ⓒ 슬퍼한다 / 화자의 정서는 서러움에서 슬픔으로 점층적으로 심화된다.
+  meets_rubric: true
+  flags:
+  - a
+  flag_adjudication:
+    a: 'after the round: accepted variants added (서러워; 짜릿함 → 메이는 듯함 → 슬픔)'
+- item_id: FS-CR3
+  submitted_answer: 강도는 '나'가 대문 쪽을 알려 주는 말과 행동을 통해 '나'가 이미 자신의 정체와 딱한 사정을 알고 있음을 알아차렸음에도 불구하고, 대학까지 나온 사람이라는 마지막 자존심만은 지키려 했기 때문이다.
+  meets_rubric: true
+  flags:
+  - a
+  flag_adjudication:
+    a: 'after the round: accepted variant added (나가 자신의 사정을 알고 있음을 알아차림)'
+- item_id: FS-CR4
+  submitted_answer: ⓐ 준칙 / ⓑ 보편성 / ⓒ 도덕 법칙 / ⓓ 돌려주지 않으면 나중에 들킬까 두렵다는 생각 / ⓔ 타율적 / ⓕ 의식할 수 없다
+  meets_rubric: true
+  flags: []

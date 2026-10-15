@@ -18,6 +18,8 @@ AI 장식성, 과도한 대칭, 비현실적 디테일, 정보 왜곡을 제거�
 - 저해상도·글자 깨짐·한글 렌더 오류
 - 과도한 3D·광택·일러스트풍·비정상 도형
 - 실제 교재/시험지 톤과 현저히 동떨어짐
+- 실제 reference를 확인할 수 있었는데도 무참조로 임의 스타일 생성
+- 원본 교재/문제집 visual을 과도하게 모사하여 독창성/저작권 위험이 큼
 - 자료가 정답을 노골적으로 암시
 
 ## SCORE 100
@@ -27,6 +29,8 @@ AI 장식성, 과도한 대칭, 비현실적 디테일, 정보 왜곡을 제거�
 - SUBJECT_AUTHENTICITY 15
 - PRINT_ROBUSTNESS 10
 - VISUAL_CONSISTENCY 10
+
+REFERENCE_AUTHENTICITY는 EDITORIAL_NATURALNESS와 SUBJECT_AUTHENTICITY에 포함하여 평가한다. reference-first protocol 미준수는 상한 VISUAL_B.
 
 ## PASS
 92~100 VISUAL_A
@@ -79,6 +83,9 @@ VISUAL_FLAGS
 BLACK_WHITE_SAFE
 INFORMATION_COMPLETE
 SUBJECT_AUTHENTICITY
+REFERENCE_FIRST_CHECK=true/false
+REFERENCE_GAP=true/false
+COPY_RISK=LOW/MEDIUM/HIGH
 VISUAL_RUBRIC_VERSION=ARC-VAR-V1.0
 
 END ARC VISUAL AUTHENTICITY RUBRIC V1.0

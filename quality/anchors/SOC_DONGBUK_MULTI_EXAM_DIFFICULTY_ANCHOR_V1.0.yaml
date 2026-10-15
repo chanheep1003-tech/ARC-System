@@ -1,0 +1,21 @@
+anchor_id: SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0
+version: 1.0
+subject: SOC
+school: 동북고등학교
+mode: MULTI_EXAM_ENSEMBLE
+source_exam_count: 4
+corpus: quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
+profile:
+  shares: {D12: 0.310, D3: 0.472, D45: 0.218}
+  mean_level: 2.87
+tolerance:
+  share: 0.12
+  mean_level: 0.22
+  late_section_d45_min: 2
+format_reference:
+  mcq_range: [22, 24]
+  constructed_range: [0, 2]
+confidence: MEDIUM_HIGH
+notes:
+  - "사회는 ㄱㄴㄷ 복수판단·사상가 비교·그래프/지도 적용이 SCHOOL_STANDARD 자체에 자주 포함됨."
+  - "단순 D4 수를 늘리기보다 후보 선지 경쟁과 복합판단 밀도를 맞춘다."

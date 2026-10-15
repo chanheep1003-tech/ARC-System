@@ -1,0 +1,66 @@
+fixture_id: KOR-CORE-CANARY-V1
+source_mode: SYNTHETIC_PIPELINE_ONLY
+purpose: Deterministic serializer, handoff, typesetter, PDF preflight, and fault-injection regression.
+content_bundle:
+  batch_id: KOR-CANARY-001
+  generator: GPT
+  product_mode: ARC_CORE
+  subject: KOR
+  scope: supplementary material first + textbook unit 1 pipeline fixture
+  item_count: 0
+  created_at: 2026-09-21T04:00:00+09:00
+  core_architecture_summary:
+    CENTRAL_QUESTION: How does textual evidence support a defensible interpretation?
+    MAJOR_BOUNDARIES:
+      - PART A - Read the claim
+      - PART B - Test the evidence
+      - PART C - Build the explanation
+  internal_metadata:
+    concept_index:
+      - ARC-KOR-C-001
+  student_manuscript: |-
+    # PART A - Read the claim
+
+    A strong reading begins by identifying the exact claim that the passage asks the learner to examine. The reader separates what the text states from what the reader merely expects. Keywords, contrasts, and repeated expressions help establish the local context, but each inference must remain connected to visible evidence.
+
+    The first checkpoint is scope. A sentence may sound generally true while exceeding the passage. The learner therefore marks the speaker, situation, and limiting condition before judging an option. This habit reduces attractive but unsupported interpretations and keeps the explanation faithful to the supplied material.
+
+    Evidence becomes useful only when its role is named. A quotation may define a concept, reveal a change, support a comparison, or qualify an earlier statement. Naming that role turns a fragment into a reason and prepares the learner to explain why one interpretation is stronger than another.
+
+    # PART B - Test the evidence
+
+    The next step is to compare every option with the same evidence standard. Correctness is not decided by familiarity or by one matching word. Each option must preserve the relationship among subject, action, condition, and result. A small change in cause, degree, or time can make an otherwise plausible statement incorrect.
+
+    Counterevidence deserves equal attention. When an option overstates the passage, the learner locates the phrase that limits the claim. When two options appear similar, the learner rewrites both as short propositions and checks which one accounts for all relevant details without importing an outside assumption.
+
+    This comparison should be recorded in concise language: supported, contradicted, or not established. The label alone is not enough; the learner adds the decisive phrase and explains its function. That two-part record makes later review faster and exposes gaps that a vague impression would hide.
+
+    # PART C - Build the explanation
+
+    A complete explanation links claim, evidence, and reasoning in that order. It first states the judgment, then identifies the relevant detail, and finally shows how the detail proves the judgment. The final sentence should answer the task directly rather than repeat the passage in different words.
+
+    Revision focuses on precision. The learner removes claims that are broader than the source, replaces unclear pronouns, and checks whether comparison terms identify both sides. If the explanation depends on a missing step, that step is supplied explicitly so another reader can reproduce the reasoning.
+
+    The finished response is short enough to inspect yet complete enough to stand alone. It preserves the original text, distinguishes observation from inference, and makes the evidence path visible. These features support both independent solving and reliable answer verification.
+  visual_asset_manifest: []
+  qc_status:
+    CORE_QA_STATUS: PASS
+    SOURCE_MODE: SYNTHETIC_PIPELINE_ONLY
+
+fault_injection:
+  - id: STALE_PDF_MASTER
+    field: pdf_master
+    value: ARC_PDF_LAYOUT_MASTER_V2.1
+    expected_gate: SERIALIZER_BLOCK
+  - id: TWO_COLUMN
+    field: student_manuscript_suffix
+    value: "\n\nRender this body as two-column."
+    expected_gate: SERIALIZER_BLOCK
+  - id: SMALL_BODY
+    field: student_manuscript_suffix
+    value: "\n\nUse body 8.8pt."
+    expected_gate: SERIALIZER_BLOCK
+  - id: INTERNAL_ID
+    field: student_manuscript_suffix
+    value: "\n\n[ARC-KOR-C-999]"
+    expected_gate: SERIALIZER_BLOCK

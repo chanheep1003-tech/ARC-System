@@ -1,0 +1,94 @@
+# ARC PDF PREFLIGHT V1.2
+VERSION: 1.2
+DATE: 2026-09-19
+STATUS: ACTIVE-DEV
+
+## PURPOSE
+육안 검수 전에 PyMuPDF 기반 deterministic 1차 QC를 수행한다.
+V1.2는 실제 사용자 발견 조판 결함을 직접 차단한다: CORE 2단 오염, 의미 블록 절단, 낮은 본문 가독성, heading orphan, raw markup/metadata leak, sparse carry-over.
+
+## TOOL
+`tooling/pdf_qc/pdf_preflight.py`
+
+## REQUIRED INVOCATION
+제품 모드를 전달한다.
+- ARC_CORE: `--product ARC_CORE`
+- ARC_N: `--product ARC_N`
+- ARC_FINAL: `--product ARC_FINAL`
+
+## COMMON CHECKS
+- A4 page-size tolerance
+- page boundary overflow
+- configured margin 침범
+- suspicious text-text bbox overlap
+- image/drawing bbox outside page
+- broken/replacement glyph 후보
+- visible raw HTML token
+- student-facing production metadata leak
+- render failure
+- optional pdftoppm/PyMuPDF raster export
+
+## ARC CORE HARD CHECKS
+- physical page 1 cover를 제외한 unregistered near-empty page <25% vertical content coverage = FAIL
+- sparse page <45% = WARN/REFLOW
+- substantial two-column body-flow signal = FAIL (CORE_TWO_COLUMN_FLOW)
+- body text가 Thin/ExtraLight/Light 계열에 유의미하게 의존 = FAIL
+- body average size가 print floor 아래로 내려감 = FAIL
+- page bottom의 isolated large/heading-like text = FAIL/WARN
+- A/B/C major part title가 본문 페이지 상단에서 시작하지 않음 = FAIL
+- raw <br>/<b>/<span> 등 markup token 노출 = FAIL
+- CONTENT_LOCK/BATCH_ID/SOURCE_ID/Drive 상태 같은 production metadata 노출 = FAIL
+
+## COLUMN DETECTION PRINCIPLE
+표의 셀 여러 개를 '2단 본문'으로 오인하지 않도록:
+- PDF의 visual text line을 lane 후보로 사용
+- 충분한 길이/폭의 body line만 후보로 남김
+- 각 lane의 반복되는 left-edge anchor를 찾아 표 내부의 여러 셀 시작점을 제거
+- 좌/우 lane 각각 충분한 line 수와 문자량이 있어야 함
+- 두 lane의 vertical coverage가 실제로 겹치는 경우에만 CORE_TWO_COLUMN_FLOW로 판정
+
+## OCCUPANCY
+단순 bounding box 높이가 아니라 body content의 vertical interval union을 사용한다.
+footer/page number가 페이지 하단에 있다는 이유만으로 sparse page를 정상으로 오판하지 않는다.
+단, 다음 페이지가 상단에서 명시적 A/B/C 대경계를 시작하고 직전 페이지 점유율이
+25~45%이면 CORE_REGISTERED_BOUNDARY_REMAINDER로 등록한다. 25% 미만 near-empty는
+대경계가 뒤따라도 FAIL이며 같은 파트 내부에서 재조판한다.
+
+## TYPOGRAPHY
+CORE 기본:
+- Pretendard/Noto Sans KR Regular(400) 이상
+- target body 9.9pt
+- allowed body 9.6~10.2pt
+- Light 계열 장문 사용 금지
+- heading hierarchy는 rendered size/weight 차이로 확인
+
+## SOURCE-LEVEL OVERFLOW
+HTML source가 있는 Typesetter는 PDF export 전에 scrollHeight/clientHeight 검사도 수행한다.
+PDF preflight는 이미 잘려 사라진 DOM content를 복원할 수 없으므로 source overflow audit와 PDF render audit를 모두 사용한다.
+
+## RESULT
+PASS: hard issue 없음
+WARN: reflow 또는 육안 확인 필요
+FAIL: reading/solving/brand/product-mode integrity에 영향을 주는 hard issue
+
+## BOUNDED AUTO-FIX CONNECTION
+`tooling/pdf_qc/autofix_controller.py`가 FAIL/WARN 코드를 분류한다.
+
+- AUTO_FIX: Typesetter 소유의 allowlisted layout profile만 변경 후 재렌더·동일 preflight 재실행
+- CONTENT_RETURN: 정답, 문항 수, 원문, glyph, raw markup, 학생 metadata 등 locked-content 계층으로 반환
+- HOLD: 미등록 오류, 제품 규칙 누출, 2회 초과 또는 동일 fingerprint 반복
+
+AUTO_FIX는 CORE 1단, 9.9pt/Regular, 의미 단위 reflow, heading keep,
+A4/safe margin, ARC_N 필수 공백 페이지 같은 조판 상태만 복구한다.
+학생 원문·문항·선지·정답은 절대 변경하지 않는다.
+
+## LIMIT
+PDF bbox 분석은 원본 DOM semantic class를 직접 알 수 없다.
+heading/column detection은 conservative heuristic이며 WARN은 human visual review로 확인한다.
+자동 preflight는 최종 육안 검수를 대체하지 않는다.
+
+## RELEASE
+PDF_PREFLIGHT_STATUS와 PDF_PREFLIGHT_REPORT가 없으면 FINAL_RELEASE 금지.
+FAIL은 human approval로 덮을 수 없다.
+
+END ARC PDF PREFLIGHT V1.2

@@ -1,0 +1,76 @@
+profile_id: KOR_DONGBOOK_EXAM_TYPE_PROFILE_2025_2026_V1.0
+version: 1.0
+date: 2026-09-25
+status: ACTIVE_DEV
+role: STRUCTURE_AND_DIFFICULTY_CALIBRATION_ONLY
+school: 동북고등학교
+teacher_style_prediction: false
+copyright_policy: DO_NOT_COPY_QUESTION_TEXT_OR_OPTION_WORDING
+measurement_note: "Counts below are text-occurrence signals from accessible exam text, not exact item counts. They calibrate task-form prevalence only."
+
+sources:
+  - source_id: KOR-EXAM-2025-2-MID
+    drive_id: 1bNw6j5elzsIqWjaR3hG9dRmCEJtMoIK5
+    subject: 공통국어2
+    role: FORMAT_DIFFICULTY_CALIBRATION
+    signals: {view_markers: 36, most_appropriate: 8, inappropriate: 10, all_correct: 1, compare: 3, appreciation: 18, understanding: 5, analysis: 4, student: 3, teacher: 2, marked_expression_tokens: 117}
+  - source_id: KOR-EXAM-2025-2-FINAL
+    drive_id: 16jv7Qh0qRQ7vP109SSLMgVLuSFhVC7rA
+    subject: 공통국어2
+    role: FORMAT_DIFFICULTY_CALIBRATION
+    signals: {view_markers: 27, most_appropriate: 9, inappropriate: 7, all_correct: 2, compare: 2, appreciation: 1, understanding: 7, analysis: 0, student: 3, teacher: 2, marked_expression_tokens: 164}
+  - source_id: KOR-EXAM-2026-1-MID
+    drive_id: 1hdeOhrryej_vG7fZa7NizV8a_5HJ3P9y
+    subject: 공통국어1
+    role: FORMAT_DIFFICULTY_CALIBRATION
+    signals: {view_markers: 16, most_appropriate: 10, inappropriate: 7, all_correct: 1, compare: 0, appreciation: 1, understanding: 3, analysis: 3, student: 2, teacher: 1, marked_expression_tokens: 99}
+  - source_id: KOR-EXAM-2026-1-FINAL
+    drive_id: 1ZZ4wwb7xzF6D2QGUHfg0i-A2myYWi76J
+    subject: 공통국어1
+    role: FORMAT_DIFFICULTY_CALIBRATION
+    signals: {view_markers: 0, most_appropriate: 9, inappropriate: 5, all_correct: 1, compare: 5, appreciation: 1, understanding: 7, analysis: 8, student: 11, teacher: 10, marked_expression_tokens: 110}
+
+high_frequency_task_families:
+  CONTENT_UNDERSTANDING: HIGH
+  VIEW_APPLICATION: HIGH
+  MARKED_EXPRESSION_FUNCTION: HIGH
+  EXPRESSION_EFFECT: HIGH
+  COMPARE_CONTRAST: HIGH
+  SPEAKER_CHARACTER_ATTITUDE: HIGH
+  STRUCTURE_DEVELOPMENT: MEDIUM_HIGH
+  MULTI_JUDGMENT: MEDIUM_HIGH
+  STUDENT_TEACHER_RESPONSE: MEDIUM
+
+current_scope_priority:
+  literature:
+    - CONTENT_UNDERSTANDING
+    - SPEAKER_ATTITUDE
+    - EXPRESSION_EFFECT
+    - KEY_WORD_IMAGE_OBJECT_FUNCTION
+    - STRUCTURE_DEVELOPMENT
+    - VIEW_APPLICATION
+    - COMPARE_CONTRAST
+    - MULTI_JUDGMENT
+  nonfiction:
+    - CENTRAL_CLAIM_CONCEPT
+    - TEXT_ARGUMENT_STRUCTURE
+    - CONCEPT_RELATION_CONTRAST
+    - EXPLICIT_CONTENT_ACCURACY
+    - VIEW_APPLICATION
+    - CASE_APPLICATION
+    - MULTI_JUDGMENT
+    - COMPARE_CONTRAST
+
+low_priority_or_artificial_when_overused:
+  - META_READING_STRATEGY
+  - COUNTERFACTUAL_DELETE_REPLACE
+  - MICRO_REFERENCE_TRACE
+  - UNFUNCTIONAL_STUDENT_WRAPPER
+  - ABSTRACT_QA_LANGUAGE_IN_STUDENT_TEXT
+
+guardrails:
+  historical_exam_use: "structure/difficulty calibration only"
+  teacher_intent_prediction: forbidden
+  direct_question_copying: forbidden
+  direct_option_copying: forbidden
+  current_school_source_answer_authority: required
