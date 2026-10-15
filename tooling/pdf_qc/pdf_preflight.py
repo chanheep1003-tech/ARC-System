@@ -19,6 +19,14 @@ import fitz
 A4_W = 595.276
 A4_H = 841.890
 PAGE_TOLERANCE_PT = 2.0
+
+# CORE layout profiles. LEGACY keeps the one-column prose thresholds (default).
+# BOOK is the detailed concept-book profile (tables, side columns, boxed points,
+# Noto Serif 9.7pt body); selected explicitly via --core-profile or the manifest.
+CORE_PROFILES = {
+    "LEGACY": {"occ_fail": 0.25, "occ_warn": 0.45, "body_min_pt": 9.2, "grid_severity": "FAIL"},
+    "BOOK": {"occ_fail": 0.10, "occ_warn": 0.20, "body_min_pt": 7.5, "grid_severity": "WARN"},
+}
 BROKEN_GLYPHS = {"�"}
 RAW_MARKUP_RE = re.compile(r"<\s*/?\s*(?:br|b|i|span)\b[^>]*>", re.I)
 METADATA_RE = re.compile(
@@ -316,7 +324,9 @@ def page_report(
     product: str,
     margin_pt: float,
     overlap_threshold: float,
+    core_profile: str = "LEGACY",
 ) -> dict:
+    prof = CORE_PROFILES[core_profile]
     page_rect = page.rect
     safe = fitz.Rect(
         page_rect.x0 + margin_pt,
@@ -409,16 +419,16 @@ def page_report(
     major_boundary = major_boundary_signal(blocks, page_rect)
 
     if product == "ARC_CORE" and page.number > 0:
-        if occ < 0.25:
+        if occ < prof["occ_fail"]:
             flags.append({"severity": "FAIL", "type": "CORE_NEAR_EMPTY_PAGE", "occupancy_ratio": round(occ, 4)})
-        elif occ < 0.45:
+        elif occ < prof["occ_warn"]:
             flags.append({"severity": "WARN", "type": "CORE_SPARSE_PAGE_REFLOW", "occupancy_ratio": round(occ, 4)})
 
         if cols["detected"]:
-            flags.append({"severity": "FAIL", "type": "CORE_TWO_COLUMN_FLOW", "details": cols})
+            flags.append({"severity": prof["grid_severity"], "type": "CORE_TWO_COLUMN_FLOW", "details": cols})
 
         avg = typo["body_font_avg_pt"]
-        if typo["body_chars"] >= 180 and avg is not None and avg < 9.2:
+        if typo["body_chars"] >= 180 and avg is not None and avg < prof["body_min_pt"]:
             flags.append({"severity": "FAIL", "type": "CORE_BODY_FONT_TOO_SMALL", "avg_pt": avg})
         if typo["body_chars"] >= 180 and typo["light_body_ratio"] > 0.15:
             flags.append(
@@ -481,10 +491,13 @@ def analyze_pdf(
     render_dir: str | Path | None = None,
     dpi: int = 300,
     expected_item_count: int | None = None,
+    core_profile: str = "LEGACY",
 ) -> dict:
+    if core_profile not in CORE_PROFILES:
+        raise ValueError(f"unknown core_profile: {core_profile}")
     doc = fitz.open(pdf_path)
     page_texts = [page.get_text("text") for page in doc]
-    pages = [page_report(p, product, margin_pt, overlap_threshold) for p in doc]
+    pages = [page_report(p, product, margin_pt, overlap_threshold, core_profile) for p in doc]
     if product == "ARC_CORE":
         for index, page in enumerate(pages[:-1]):
             next_boundary = pages[index + 1]["major_boundary_signal"]
@@ -573,6 +586,7 @@ def analyze_pdf(
         "tool": "ARC_PDF_PREFLIGHT_V1.2",
         "pdf": str(pdf_path),
         "product": product,
+        "core_profile": core_profile if product == "ARC_CORE" else None,
         "status": status,
         "page_count": len(pages),
         "fail_count": fail_count,
@@ -592,6 +606,7 @@ def main() -> None:
     ap.add_argument("--render-dir", default=None)
     ap.add_argument("--dpi", type=int, default=300)
     ap.add_argument("--expected-item-count", type=int)
+    ap.add_argument("--core-profile", choices=sorted(CORE_PROFILES), default="LEGACY")
     args = ap.parse_args()
 
     result = analyze_pdf(
@@ -602,6 +617,7 @@ def main() -> None:
         render_dir=args.render_dir,
         dpi=args.dpi,
         expected_item_count=args.expected_item_count,
+        core_profile=args.core_profile,
     )
     output = json.dumps(result, ensure_ascii=False, indent=2)
     if args.report:

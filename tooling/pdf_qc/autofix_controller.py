@@ -76,7 +76,7 @@ def apply_profile_fixes(profile: dict[str, Any], plan: dict[str, Any]) -> dict[s
     fixed = dict(profile)
     for action in plan.get("actions", []):
         if action == "FORCE_CORE_ONE_COLUMN": fixed["columns"] = 1
-        elif action == "RESTORE_CORE_BODY_9_9PT": fixed["body_size"] = 9.9
+        elif action == "RESTORE_CORE_BODY_9_9PT": fixed["body_size"] = 9.7 if fixed.get("core_profile") == "BOOK" else 9.9
         elif action == "RESTORE_BODY_WEIGHT_400": fixed["body_weight"] = 400
         elif action == "REFLOW_WITHIN_MAJOR_SECTION": fixed["semantic_reflow"] = True
         elif action == "KEEP_HEADING_WITH_FOLLOWING_BODY": fixed["keep_heading_with_body"] = True

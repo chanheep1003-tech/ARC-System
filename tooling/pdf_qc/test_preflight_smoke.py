@@ -140,6 +140,22 @@ def run() -> None:
         result = mod.analyze_pdf(path, "ARC_CORE")
         assert "CORE_MAJOR_BOUNDARY_NOT_PAGE_START" in flag_types(result), result
 
+        # BOOK profile: grid/side-column pages and 8.5pt body are legal, but
+        # the default profile stays strict and empty pages still fail.
+        result = mod.analyze_pdf(td / "two.pdf", "ARC_CORE", core_profile="BOOK")
+        two = [f for pg in result["pages"] for f in pg["flags"] if f["type"] == "CORE_TWO_COLUMN_FLOW"]
+        assert two and all(f["severity"] == "WARN" for f in two), result
+        result = mod.analyze_pdf(td / "smallfont.pdf", "ARC_CORE", core_profile="BOOK")
+        assert "CORE_BODY_FONT_TOO_SMALL" not in flag_types(result), result
+        result = mod.analyze_pdf(td / "sparse.pdf", "ARC_CORE", core_profile="BOOK")
+        assert "CORE_NEAR_EMPTY_PAGE" in flag_types(result), result
+        try:
+            mod.analyze_pdf(td / "one.pdf", "ARC_CORE", core_profile="NOPE")
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("unknown core_profile must raise")
+
         # ARC_N page-order rules must not leak into ARC_FINAL.
         doc = fitz.open()
         p = doc.new_page(width=mod.A4_W, height=mod.A4_H)

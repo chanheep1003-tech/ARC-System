@@ -139,14 +139,17 @@ def run(fixture_path: Path, output_dir: Path) -> dict[str, Any]:
     pdf_path = output_dir / f"{subject}_CORE_CANARY_V1.pdf"
     injected_path = output_dir / "_fault_small_font.pdf"
     injected_profile = dict(render_plan["profile"])
-    injected_profile["body_size"] = 8.5
+    core_profile = str(render_plan["profile"].get("core_profile", "LEGACY"))
+    # Fault must sit below the active profile's floor (LEGACY 9.2pt, BOOK 7.5pt); restore target is the profile body size.
+    injected_profile["body_size"] = 7.0 if core_profile == "BOOK" else 8.5
+    expected_body = 9.7 if core_profile == "BOOK" else 9.9
     typeset_core(manuscript, injected_path, injected_profile, subject)
-    injected_result = pdf_gate.analyze_pdf(injected_path, "ARC_CORE")
+    injected_result = pdf_gate.analyze_pdf(injected_path, "ARC_CORE", core_profile=core_profile)
     autofix_plan = autofix.build_plan(injected_result, "ARC_CORE")
     fixed_profile = autofix.apply_profile_fixes(injected_profile, autofix_plan)
     typeset_result = typeset_core(manuscript, pdf_path, fixed_profile, subject)
     render_dir = output_dir / "render"
-    pdf_result = pdf_gate.analyze_pdf(pdf_path, "ARC_CORE", render_dir=render_dir, dpi=144)
+    pdf_result = pdf_gate.analyze_pdf(pdf_path, "ARC_CORE", render_dir=render_dir, dpi=144, core_profile=core_profile)
     fault_results = run_faults(fixture, manifest)
 
     pdf_text = "\n".join(page.get_text("text") for page in fitz.open(pdf_path))
@@ -163,7 +166,7 @@ def run(fixture_path: Path, output_dir: Path) -> dict[str, Any]:
         failures.append("STUDENT_METADATA_LEAK")
     if missed_faults:
         failures.append("FAULT_INJECTION")
-    if injected_result["status"] != "FAIL" or autofix_plan["decision"] != "AUTO_FIX" or fixed_profile.get("body_size") != 9.9:
+    if injected_result["status"] != "FAIL" or autofix_plan["decision"] != "AUTO_FIX" or fixed_profile.get("body_size") != expected_body:
         failures.append("AUTO_FIX_EXERCISE")
 
     return {

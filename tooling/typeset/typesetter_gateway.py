@@ -60,6 +60,26 @@ PRODUCT_PROFILES: dict[str, dict[str, Any]] = {
 }
 
 
+# ARC_CORE BOOK profile (detailed concept book). Selected by manifest
+# runtime.core_profile; LEGACY remains the code default so older manifests and
+# fixtures keep their one-column prose profile.
+CORE_BOOK_PROFILE: dict[str, Any] = {
+    "core_profile": "BOOK",
+    "layout_mode": "ONE_COLUMN",
+    "columns": 1,
+    "body_size": 9.7,
+    "body_weight": 400,
+    "body_family": "serif",
+    "side_column_allowed": True,
+    "table_grid_allowed": True,
+    "small_unit_break_inside": "avoid",
+    "major_boundary_page_break": True,
+    "cover_verso_blank": False,
+    "answer_separator_blank": False,
+    "answer_key_mode": "NONE",
+}
+
+
 def load_module(name: str, path: Path):
     spec = importlib.util.spec_from_file_location(name, path)
     module = importlib.util.module_from_spec(spec)
@@ -223,7 +243,15 @@ def resolve_job(
     layout = manifest.get("active", {}).get("layout", {})
     tooling = manifest.get("tooling", {})
     pdf_master = manifest_path.parent / str(layout.get("pdf_master", ""))
-    html_master = manifest_path.parent / str(layout.get(HTML_MASTER_KEYS[product], ""))
+    core_profile = "LEGACY"
+    html_master_key = HTML_MASTER_KEYS[product]
+    if product == "ARC_CORE":
+        core_profile = str(manifest.get("runtime", {}).get("core_profile", "LEGACY")).upper()
+        if core_profile not in {"LEGACY", "BOOK"}:
+            raise TypesetterAdmissionError(f"unsupported core_profile: {core_profile}")
+        if core_profile == "BOOK":
+            html_master_key = "core_book_html_master"
+    html_master = manifest_path.parent / str(layout.get(html_master_key, ""))
     preflight_tool = manifest_path.parent / str(tooling.get("pdf_preflight", ""))
     autofix_tool = manifest_path.parent / str(tooling.get("pdf_autofix_controller", ""))
 
@@ -250,7 +278,8 @@ def resolve_job(
         "qa_evidence": qa_proof,
         "exam_scope": exam_proof,
         "release_eligible": bool(exam_proof and exam_proof.get("release_allowed")),
-        "profile": dict(PRODUCT_PROFILES[product]),
+        "profile": dict(CORE_BOOK_PROFILE if core_profile == "BOOK" else PRODUCT_PROFILES[product]),
+        "preflight_args": ["--core-profile", "BOOK"] if core_profile == "BOOK" else [],
         "handoff_preflight": {
             "status": preflight["status"],
             "warning_codes": sorted(
@@ -268,7 +297,7 @@ def route_invariants(plan: dict[str, Any]) -> dict[str, Any]:
         for key in (
             "ruleset_version", "batch_id", "product", "subject", "pdf_master",
             "pdf_preflight", "pdf_autofix", "max_autofix_attempts",
-            "locked_content_mutation", "profile",
+            "locked_content_mutation", "profile", "preflight_args",
         )
     }
 

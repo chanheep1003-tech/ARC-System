@@ -1,0 +1,121 @@
+/* ARC CORE BOOK style v0.4 — 상세 개념서 형식 (흑백 인쇄용, 모든 과목 공통)
+   builder placeholders: {{RUNNING_LEFT}} {{RUNNING_RIGHT}}
+   규칙: 색은 gray(r=g=b)만 사용한다. 강조는 굵기·반전·선·점선으로 만든다. */
+@page{size:A4;margin:18mm 17mm 19mm 19mm;
+  @top-left{content:"{{RUNNING_LEFT}}";font:500 7.8pt 'Noto Sans CJK KR';color:#555;border-bottom:.5pt solid #777;padding:0 0 1.2mm;width:100%}
+  @top-right{content:"{{RUNNING_RIGHT}}";font:500 7.8pt 'Noto Sans CJK KR';color:#555;border-bottom:.5pt solid #777;padding:0 0 1.2mm;width:100%}
+  @bottom-center{content:counter(page);font:600 8.4pt 'Noto Sans CJK KR';color:#333}}
+@page cover{margin:0;@top-left{content:none;border:0}@top-right{content:none;border:0}@bottom-center{content:none}}
+@page opener{@top-left{content:none;border:0}@top-right{content:none;border:0}}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;font-family:'Noto Serif CJK KR','Noto Serif KR',serif;font-size:9.7pt;line-height:1.82;color:#111;word-break:keep-all;text-align:left}
+p{margin:0 0 2.2mm}
+b,strong{font-weight:700}
+.sans{font-family:"Pretendard",'Noto Sans CJK KR',sans-serif}
+/* PRODUCT ISOLATION: 본문 reading flow는 1단(다단 컨텍스트 없음). 옆 칸(.sd)·표·점검표 grid는 core-book 전용 micro-grid로만 허용.
+   주의: 페이지 흐름 wrapper에 column-count 값 1을 주면 multicol 컨텍스트가 생겨 break-before:page가 단 나눔으로 바뀐다
+   (장 시작 쪽·개념 시작 쪽 분리가 사라져 68쪽이 50쪽으로 줄어든 실측 사례). 그래서 auto를 강제한다. */
+[data-product="arc-core"] .core-flow{column-count:auto!important;column-width:auto!important;display:block!important;grid-template-columns:none!important;overflow:visible}
+ul,ol{margin:0 0 2.2mm;padding-left:5mm}
+li{margin:0 0 .9mm}
+.mk-s,.star{font-family:'Noto Sans CJK KR';font-weight:800}
+.dag,.dia{font-family:'Noto Sans CJK KR';font-weight:700}
+
+/* 표지 */
+.cover{page:cover;width:210mm;height:297mm;position:relative;break-after:page;font-family:'Noto Sans CJK KR';background:#fff}
+.cover .top{position:absolute;left:24mm;right:24mm;top:24mm;border-top:3pt solid #000;padding-top:3mm;font-size:9.5pt;letter-spacing:.3em;font-weight:700}
+.cover .logo{position:absolute;left:24mm;top:30mm}
+.cover .logo img{height:13mm;display:block}   /* canonical ARC CORE lockup asset only (brand registry) */
+.cover .t1{position:absolute;left:24mm;top:84mm;font-size:15pt;font-weight:500;letter-spacing:.08em;color:#333}
+.cover .t2{position:absolute;left:24mm;top:96mm;font-size:44pt;line-height:1.22;font-weight:900;letter-spacing:-.01em}
+.cover .t3{position:absolute;left:24mm;top:146mm;font-size:17pt;font-weight:700}
+.cover .rule{position:absolute;left:24mm;right:24mm;top:170mm;border-top:.6pt solid #000}
+.cover .t4{position:absolute;left:24mm;right:24mm;top:176mm;font-size:10pt;line-height:2;color:#222;font-family:'Noto Serif CJK KR'}
+.cover .bot{position:absolute;left:24mm;right:24mm;bottom:22mm;border-top:.6pt solid #000;padding-top:3mm;font-size:8.6pt;display:flex;justify-content:space-between;letter-spacing:.15em}
+
+/* 장 표지 */
+.opener{page:opener;break-before:page;break-after:page;font-family:'Noto Sans CJK KR';padding-top:18mm}
+.opener .rn{font-size:78pt;font-weight:900;line-height:1;letter-spacing:-.02em}
+.opener h1{margin:4mm 0 1.5mm;font-size:25pt;font-weight:900;border-top:2pt solid #000;padding-top:4mm}
+.opener .sub{font-size:10.4pt;color:#333;margin:0 0 10mm;font-family:'Noto Serif CJK KR'}
+.opener h3{font-size:10pt;margin:0 0 2mm;border-bottom:.6pt solid #000;padding-bottom:1mm;letter-spacing:.06em}
+.opener ol,.opener ul{font-family:'Noto Serif CJK KR';font-size:10pt;line-height:2;margin:0 0 7mm}
+.opener table{font-family:'Noto Serif CJK KR'}
+
+/* 개념 머리 */
+.cp{break-before:page;margin:0 0 5mm}
+.cp .row{display:flex;align-items:flex-end;gap:4mm;border-bottom:1.6pt solid #000;padding-bottom:2mm;font-family:'Noto Sans CJK KR'}
+.cp .no{background:#000;color:#fff;font-weight:900;font-size:19pt;line-height:1;padding:2.4mm 3.2mm;min-width:15mm;text-align:center}
+.cp .tt{font-size:18pt;font-weight:900;line-height:1.25;letter-spacing:-.01em;flex:1}
+.cp .id{font-size:7pt;color:#666;letter-spacing:.05em;white-space:nowrap}
+.cp .lead{margin:3mm 0 0;font-size:10.2pt;line-height:1.85;color:#222}
+.cp + .s, .cp ~ .s:first-of-type{margin-top:0}
+
+/* 소단락 (쪽 중간에서 끊기지 않음) */
+.s{break-inside:avoid;margin:0 0 5.2mm}
+.s h4{font-family:'Noto Sans CJK KR';font-size:11pt;font-weight:800;margin:0 0 2mm;padding-bottom:.9mm;border-bottom:.6pt solid #888;break-after:avoid;display:flex;gap:2.4mm;align-items:baseline}
+.s h4 .n{display:inline-block;min-width:5.4mm;height:5.4mm;line-height:5.4mm;text-align:center;border:1pt solid #000;font-size:8.6pt;font-weight:800;flex:none}
+.s h5{font-family:'Noto Sans CJK KR';font-size:9.6pt;font-weight:800;margin:2.4mm 0 1mm}
+.s.sd{display:grid;grid-template-columns:1fr 36mm;column-gap:5mm}
+.s.sd > h4{grid-column:1 / 3}
+.side{border-left:.6pt solid #777;padding-left:3mm;font-family:'Noto Sans CJK KR';font-size:8pt;line-height:1.6;color:#222}
+.side .lb{display:block;font-weight:800;font-size:7.6pt;letter-spacing:.1em;margin:0 0 .6mm}
+.side p{margin:0 0 2.6mm}
+
+/* 표 */
+table.t{width:100%;border-collapse:collapse;margin:0 0 2.6mm;font-family:'Noto Sans CJK KR';font-size:8.7pt;line-height:1.55}
+table.t th,table.t td{border:.5pt solid #666;padding:1.2mm 2mm;vertical-align:top;text-align:left}
+table.t th{background:#e4e4e4;font-weight:800}
+table.t td.k,table.t th.k{background:#f0f0f0;font-weight:800;white-space:nowrap}
+table.t tr{break-inside:avoid}
+table.t tr.hi td{background:#ededed}
+table.t.c td,table.t.c th{text-align:center}
+table.t caption{caption-side:top;text-align:left;font-weight:800;padding:0 0 1mm;font-size:8.7pt}
+.g{font-size:12.4pt;font-weight:700;font-family:'Noto Serif CJK KR'}
+
+/* 중요 · 심화 · 참고 */
+.imp,.adv,.ref{margin:0 0 3.4mm;font-size:9.5pt;line-height:1.75;break-inside:avoid}
+.imp{border:1.6pt solid #000;margin-top:2mm}
+.adv{border:1pt dashed #000;margin-top:2mm;background:#f6f6f6}
+.imp .tg,.adv .tg{display:block;font-family:'Noto Sans CJK KR';font-size:8.4pt;font-weight:800;letter-spacing:.2em;padding:.5mm 3mm;line-height:1.7}
+.imp .tg{background:#000;color:#fff}
+.adv .tg{background:#e2e2e2;color:#000;border-bottom:1pt dashed #000}
+.imp > :not(.tg),.adv > :not(.tg){margin-left:4mm;margin-right:4mm}
+.imp > :not(.tg):nth-child(2),.adv > :not(.tg):nth-child(2){margin-top:2.2mm}
+.imp > :last-child,.adv > :last-child{margin-bottom:2.2mm}
+.imp ul,.imp ol,.adv ul,.adv ol{padding-left:5mm}
+.ref{border-left:2.4pt solid #888;padding:.4mm 0 .4mm 3.4mm;font-size:9.2pt;color:#222}
+.ref .tg{font-family:'Noto Sans CJK KR';font-weight:800;font-size:8pt;letter-spacing:.1em;margin-right:1.6mm}
+
+/* 확인 문제 */
+.chk{break-inside:avoid;margin:3.6mm 0 3mm;border-top:2pt double #000;padding-top:2mm;font-size:9.4pt}
+.chk .hd{font-family:'Noto Sans CJK KR';font-weight:800;font-size:9pt;letter-spacing:.12em;margin:0 0 1.2mm}
+.chk ol{margin:0 0 1.2mm;padding-left:5.2mm}
+.chk .ans{font-family:'Noto Sans CJK KR';font-size:7.8pt;color:#555;border-top:.4pt dotted #777;padding-top:.8mm;margin:0}
+
+/* 동북고 시험 포인트 */
+.ex{break-inside:avoid;margin:3.2mm 0 0;font-family:'Noto Sans CJK KR';font-size:8.6pt;line-height:1.6}
+.ex .hd{background:#000;color:#fff;font-weight:800;padding:.9mm 3mm;font-size:8.4pt;letter-spacing:.08em;display:flex;justify-content:space-between}
+.ex table{width:100%;border-collapse:collapse}
+.ex td,.ex th{border:.5pt solid #000;border-top:0;padding:1.1mm 2.2mm;vertical-align:top;text-align:left}
+.ex th{width:19mm;background:#ececec;font-weight:800;white-space:nowrap}
+.ex .ev{white-space:nowrap}
+
+/* 흐름 */
+.flow{font-family:'Noto Sans CJK KR';font-size:8.8pt;margin:0 0 3mm;display:flex;flex-wrap:wrap;gap:1.6mm;align-items:center}
+.flow .b{border:.8pt solid #000;padding:.6mm 2.4mm}
+.flow .b.k{background:#000;color:#fff}
+.flow .a{font-weight:900}
+.note{font-family:'Noto Sans CJK KR';font-size:8pt;color:#444;margin:0 0 2.4mm;line-height:1.6}
+.box{border:.8pt solid #000;padding:2.4mm 3.4mm;margin:0 0 3mm;font-size:9.2pt}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.q{margin:0 0 2.2mm;padding:1.4mm 3mm;border:.5pt solid #777;font-size:9.3pt;break-inside:avoid}
+.q .a{font-family:'Noto Sans CJK KR';font-weight:800}
+.ck{list-style:none;padding-left:0}
+.ck li:before{content:"□ ";font-family:'Noto Sans CJK KR'}
+.pb{break-before:page}
+.ctr{text-align:center}
+.sol{font-family:'Noto Sans CJK KR',sans-serif;font-size:8.6pt;line-height:1.6;margin:1mm 0 0;padding:.6mm 0 .6mm 3mm;border-left:2.2pt solid #888;color:#222}
+.sol b.k{letter-spacing:.08em}
+.exm .q{margin-bottom:2.4mm}

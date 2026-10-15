@@ -233,3 +233,14 @@ rules:
       - final_release_without_subject_multi_exam_anchor
       - final_use_generic_cross_subject_difficulty_curve_when_subject_anchor_exists
       - science_redox_final_ignore_direct_2025_2_mid_redox_items
+  - id: CORE-LEGACY-PROSE-V08
+    deprecated: templates/core/ARC_TEMPLATE_SYSTEM_v0.8_CORE_PATCH.md
+    replacement: templates/core/ARC_TEMPLATE_SYSTEM_v0.9_CORE_BOOK_PATCH.md
+    scope: "runtime.core_profile=BOOK (default since 1.8.40-dev); v0.8 stays valid only for core_profile=LEGACY"
+    reason: "User-approved 상세 개념서 format (공통국어2 중세 국어 V2.0) became the ARC CORE standard for all subjects on 2026-10-15."
+    forbidden_runtime_behavior:
+      - color_in_core_book_pdf
+      - core_book_small_unit_split_across_pages
+      - core_book_internal_sections_in_student_pdf
+      - core_book_text_logo_instead_of_canonical_asset
+      - core_book_exam_prediction_assertion

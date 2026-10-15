@@ -62,6 +62,20 @@ CORE 기본:
 - Light 계열 장문 사용 금지
 - heading hierarchy는 rendered size/weight 차이로 확인
 
+## CORE PROFILE (added 2026-10-15, ARC_CORE only)
+`pdf_preflight.py --core-profile LEGACY|BOOK` (default LEGACY). 선택값은 SYSTEM_MANIFEST `runtime.core_profile`과 같아야 하며 typesetter_gateway가 plan에 `preflight_args`로 고정한다.
+
+| 검사 | LEGACY | BOOK |
+|---|---|---|
+| CORE_NEAR_EMPTY_PAGE (점유율) | FAIL < 0.25 | FAIL < 0.10 |
+| CORE_SPARSE_PAGE_REFLOW | WARN < 0.45 | WARN < 0.20 |
+| CORE_BODY_FONT_TOO_SMALL (본문 평균) | FAIL < 9.2pt | FAIL < 7.5pt |
+| CORE_TWO_COLUMN_FLOW | FAIL | WARN (옆 칸·표·점검표 micro-grid 한정, 사람이 확인) |
+| 나머지(light font, heading orphan, 대경계 쪽 시작, raw markup, metadata leak) | 동일 | 동일 |
+
+BOOK 임계의 근거는 quality/ARC_CORE_BOOK_QA_V1.0.md §2의 승인본 측정값이다.
+autofix `RESTORE_CORE_BODY_9_9PT`는 profile이 BOOK이면 9.7pt로 복구한다(LEGACY 9.9pt).
+
 ## SOURCE-LEVEL OVERFLOW
 HTML source가 있는 Typesetter는 PDF export 전에 scrollHeight/clientHeight 검사도 수행한다.
 PDF preflight는 이미 잘려 사라진 DOM content를 복원할 수 없으므로 source overflow audit와 PDF render audit를 모두 사용한다.

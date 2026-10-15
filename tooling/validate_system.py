@@ -309,7 +309,10 @@ def main() -> int:
     common_path = active["common_generation_engine"]["path"]
     pdf_master = active["layout"]["pdf_master"]
     core_patch = active["layout"]["core_patch"]
+    core_patch_legacy = active["layout"]["core_patch_legacy"]
     core_html_master = active["layout"]["core_html_master"]
+    core_book_html_master = active["layout"]["core_book_html_master"]
+    core_book_style = active["layout"]["core_book_style"]
     pdf_preflight_policy = active["quality"]["pdf_preflight"]
     pipeline_contract = runtime["pipeline_integrity_contract"]
     typesetter_contract = runtime["typesetter_contract"]
@@ -358,7 +361,7 @@ def main() -> int:
     )
     require_markers(
         errors,
-        core_patch,
+        core_patch_legacy,
         [
             "PRODUCT ISOLATION — HARD LOCK",
             "INFORMATION HIERARCHY — FOUR LEVELS",
@@ -367,6 +370,61 @@ def main() -> int:
             "fixed-height page + overflow:hidden",
         ],
     )
+    # Active CORE patch is the BOOK profile patch (runtime.core_profile = BOOK).
+    if runtime.get("core_profile") not in {"BOOK", "LEGACY"}:
+        errors.append("runtime.core_profile must be BOOK or LEGACY")
+    if runtime.get("core_profile") == "BOOK" and "v0.9_CORE_BOOK" not in core_patch:
+        errors.append("core_profile BOOK requires the v0.9 CORE BOOK patch as active core_patch")
+    require_markers(
+        errors,
+        core_patch,
+        [
+            "PRODUCT ISOLATION — HARD LOCK",
+            "INFORMATION HIERARCHY — FOUR LEVELS",
+            "CORE_TWO_COLUMN_FLOW = 0",
+            "CORE_REGISTERED_BOUNDARY_REMAINDER",
+            "fixed-height page + overflow:hidden",
+            "GRAYSCALE_ONLY = PASS",
+            "SMALL_UNIT_BREAK_INSIDE = PASS",
+            "column-count:auto!important",
+            "CORE_PROFILE = BOOK",
+        ],
+    )
+    require_markers(
+        errors,
+        active["core_book_editorial"]["path"],
+        ["INTERNAL / DO NOT PRINT", "회색조(r=g=b)만", "break-before:page", "반드시 나온다 / 100% / 무조건", "canonical ARC CORE lockup asset만"],
+    )
+    require_markers(
+        errors,
+        active["quality"]["core_book_qa"],
+        ["B11", "B12", "B14", "--core-profile BOOK"],
+    )
+    require_markers(
+        errors,
+        core_book_html_master,
+        [
+            'data-product="arc-core"',
+            'data-core-profile="BOOK"',
+            'column-count:auto!important',
+            '"Pretendard"',
+            'ARC_CORE_SOURCE_PREFLIGHT',
+            'data-boundary="major-topic"',
+            'overflow:visible',
+            'CANONICAL_ARC_CORE_LOCKUP_ASSET',
+        ],
+    )
+    book_style_text = (ROOT / core_book_style).read_text(encoding="utf-8")
+    for marker in (".s{break-inside:avoid", "{{RUNNING_LEFT}}", "{{RUNNING_RIGHT}}"):
+        if marker not in book_style_text:
+            errors.append(f"BOOK style marker missing: {marker}")
+    bad_colors = []
+    for c in re.findall(r"#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})\b", book_style_text):
+        c = c.lower()
+        if not ((len(c) == 3 and c[0] == c[1] == c[2]) or (len(c) == 6 and c[0:2] == c[2:4] == c[4:6])):
+            bad_colors.append("#" + c)
+    if bad_colors:
+        errors.append(f"BOOK style must be grayscale-only; non-gray colors: {sorted(set(bad_colors))}")
     require_markers(
         errors,
         core_html_master,

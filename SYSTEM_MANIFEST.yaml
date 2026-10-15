@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.39-dev
+  version: 1.8.40-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -172,6 +172,13 @@ runtime:
   core_page_occupancy_audit: required
   core_sparse_page_reflow: required
   core_layout_mode: ONE_COLUMN
+  core_profile: BOOK
+  core_book_grayscale_only: required
+  core_book_small_unit_break_inside: required
+  core_book_box_tag_inside_header: required
+  core_book_internal_sections_in_student_pdf: forbidden
+  core_book_exam_prediction_assertion: forbidden
+  core_book_micro_grid_signal_severity: WARN
   core_two_column_flow: forbidden
   core_semantic_pagination_gate: required
   core_major_boundary_page_break: required
@@ -301,6 +308,12 @@ active:
     drive_id: null
     drive_mirror_status: pending_sync
 
+  core_book_editorial:
+    path: engine/core/ARC_CORE_BOOK_EDITORIAL_V1.0.md
+    version: 1.0
+    drive_id: null
+    drive_mirror_status: pending_sync
+
   subjects:
     science:
       path: subjects/SCIENCE_MASTER_V4.0.md
@@ -357,6 +370,7 @@ active:
     qa_evidence_schema: quality/semantic/ARC_QA_EVIDENCE_SCHEMA_V1.0.yaml
     core_editorial_naturalness: quality/ARC_CORE_EDITORIAL_NATURALNESS_V1.2.md
     core_qa_bench: quality/ARC_CORE_QA_BENCH_V1.2.md
+    core_book_qa: quality/ARC_CORE_BOOK_QA_V1.0.md
     visual_authenticity: quality/ARC_VISUAL_AUTHENTICITY_RUBRIC_V1.1.md
     visual_template: quality/ARC_VISUAL_TEMPLATE_SYSTEM_V1.1.md
     visual_anchors: quality/ARC_VISUAL_ANCHORS_V1.1.md
@@ -418,8 +432,11 @@ active:
     brand_lockup: templates/brand/ARC_BRAND_LOCKUP_SPEC_V1.0.md
     brand_asset_registry: templates/brand/ARC_BRAND_ASSET_REGISTRY_V1.0.md
     pdf_master: templates/ARC_PDF_LAYOUT_MASTER_V2.4.md
-    core_patch: templates/core/ARC_TEMPLATE_SYSTEM_v0.8_CORE_PATCH.md
+    core_patch: templates/core/ARC_TEMPLATE_SYSTEM_v0.9_CORE_BOOK_PATCH.md
+    core_patch_legacy: templates/core/ARC_TEMPLATE_SYSTEM_v0.8_CORE_PATCH.md
     core_html_master: templates/core/ARC_CORE_master_v0.3.html
+    core_book_html_master: templates/core/ARC_CORE_BOOK_master_v0.4.html
+    core_book_style: templates/core/book/ARC_CORE_BOOK_style_v0.4.css
     arc_n_html_master: templates/n/ARC_N_master_v0.2.html
     arc_final_html_master: templates/final/ARC_FINAL_master_v0.2.html
     arc_n_typeset_reference: templates/gold/ARC_N_TYPESET_REFERENCE_V1.0.md
@@ -450,6 +467,8 @@ tooling:
   pdf_preflight_korean_n_marker_test: tooling/pdf_qc/test_preflight_korean_n.py
   pdf_autofix_controller: tooling/pdf_qc/autofix_controller.py
   pdf_autofix_smoke_test: tooling/pdf_qc/test_autofix_controller.py
+  core_book_builder: tooling/core_book/build_book.py
+  core_book_renderer: tooling/core_book/render_pdf.js
   typesetter_gateway: tooling/typeset/typesetter_gateway.py
   typesetter_gateway_smoke_test: tooling/typeset/test_typesetter_gateway.py
   handoff_preflight: tooling/handoff/handoff_preflight.py

@@ -16,6 +16,8 @@ allowlisted Typesetter-profile repair plan. It never mutates locked content and
 returns content/count/source defects upstream. A repeated finding fingerprint
 or more than two attempts becomes HOLD.
 
+ARC CORE has two layout profiles: `--core-profile LEGACY` (default, one-column prose thresholds) and `--core-profile BOOK` (detailed concept book: tables, side columns, boxed points; see `quality/ARC_CORE_BOOK_QA_V1.0.md`). The manifest value `runtime.core_profile` selects which one production uses.
+
 Behavioral smoke test:
 
 ```bash
