@@ -2,7 +2,7 @@
 name: arc-item-qa
 description: 'ARC 문항을 기준참조형 rubric으로 검수해 PASS/REVISE/DISCARD를 결정한다. 정답 유일성, 범위, 추론, 오답, 자연스러움, 학교 적합성, 시각자료를 통합 평가한다.'
 metadata:
-  version: 1.4.0
+  version: 1.4.1
   arc-role: item-quality-gate
 ---
 # ARC Item QA
