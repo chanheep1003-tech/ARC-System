@@ -1,3 +1,13 @@
+## 1.8.40-dev — 2026-10-30
+- External intake: ARC-specific independent adaptations, no upstream text/code copied or installed; upstream authority remains below user, manifest, subject and QA rules.
+- NVIDIA/SkillEvaluator README at dd81e6fe98f38347586853de9696e7c03ef3b588, Apache-2.0: paired skill/no-skill comparison design; ARC comparator is independently written and does not verify model correctness.
+- anthropics/skills skills/pdf/SKILL.md at ca45fc496a3436251f191354091d557da31c15b5, proprietary/source-available: REFERENCE_ONLY; page-level extraction and render checks; no vendoring.
+- obra/superpowers skills/verification-before-completion/SKILL.md at 2ce8aa15d05bd57213e6f746f953aafb7ded7a8b, MIT: evidence before status claims.
+- OthmanAdi/planning-with-files skills/planning-with-files/SKILL.md at 5d29800bf8b919ca9a88ee7885b90050b5cb64ed, MIT: recoverable checkpoint pattern; hooks not installed.
+- GarethManning/education-agent-skills skills/original-frameworks/assessment-design-orchestrator/SKILL.md at 135d6275e7db0657d70b147f46d3191c5430677d, license unverified: REFERENCE_ONLY; learning-goal validity audit.
+- blader/humanizer SKILL.md at 0ef9fe5bc3572734fd3ae6c448fe00a30cd5dcf0, MIT: repeated-pattern editorial audit; ARC-specific meaning-preservation rule.
+- CI and unit tests check the comparator and skill structure. They do not establish improvement in exam questions or constitute the 30-fixture model-backed regression. Full generation and independent solve remain separate gates.
+
 ## 1.8.34-dev — 2026-09-25
 - Registered four textbook source texts in the source registry as USER_PROVIDED_TEXTBOOK / RAW_SCHOOL_SOURCE / EXACT, with the user's explicit authorization:
   - 속미인곡: the textbook 현대어 풀이 excerpt, taken from the PDF text layer.
