@@ -14,7 +14,9 @@ REVIEW = {'rounds': 1, 'fresh_context': True,
           'excluded_inputs': ['answer_key', 'author_solution', 'author_history', 'target_difficulty'],
           'items': [{'id': 'SCI-001', 'sha256': 'b' * 64, 'answer': 3, 'option_verdicts': [False, False, True, False, False],
                      'evidence_refs': ['drive:source#p1'], 'fact_pass': True, 'scope_pass': True, 'quality_pass': True}]}
-PUBLISH = {'mode': 'verified', 'artifacts': [{'file_ref': 'drive:output', 'readback_verified': True}]}
+PUBLISH = {'mode': 'verified', 'artifacts': [{'file_ref': 'drive:output', 'readback_verified': True}],
+           'gate_receipts': {g: {'pass': True, 'evidence_ref': 'gate-report.json#' + g}
+                             for g in ['exam_scope', 'generation_source', 'similarity', 'product_quality']}}
 
 def draft():
     return advance(advance(create(REQUEST, 'GPT'), 'source', SOURCE), 'draft', DRAFT)
@@ -53,6 +55,10 @@ class WorkflowTests(unittest.TestCase):
     def test_multiple_accepted_options_rejected(self):
         r = json.loads(json.dumps(REVIEW)); r['items'][0]['option_verdicts'] = [True, False, True, False, False]
         with self.assertRaises(ValueError): advance(draft(), 'review', r)
+
+    def test_verified_publish_needs_ancillary_gate_receipts(self):
+        s = advance(draft(), 'review', REVIEW)
+        with self.assertRaises(ValueError): advance(s, 'publish', dict(PUBLISH, gate_receipts={}))
 
     def test_draft_can_be_saved_without_independent_review(self):
         p = dict(PUBLISH, mode='draft')
