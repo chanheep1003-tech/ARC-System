@@ -106,6 +106,9 @@ jobs:
               print('OK', f)
           PY
 
+      - name: Test paired skill trial comparison
+        run: python tooling/skills/test_compare_skill_trials.py
+
       - name: Validate ARC skill registry
         run: python ops/validate_skills.py
 

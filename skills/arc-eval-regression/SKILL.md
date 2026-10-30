@@ -2,7 +2,7 @@
 name: arc-eval-regression
 description: 'ARC 엔진·MASTER·QA 규칙 변경 전후의 품질 회귀를 고정 fixture로 검출한다. 30개 frozen fixture와 기대 판정을 사용해 버전 비교할 때 사용한다.'
 metadata:
-  version: 1.2.0
+  version: 1.2.1
   arc-role: regression-evaluation
 ---
 # ARC Eval Regression
@@ -87,3 +87,10 @@ candidate adapter는 `ARC_CANDIDATE_CMD` 또는 사전 생성된 result director
 - 30개 중 일부만 돌리고 전체 통과라고 보고
 
 END ARC EVAL REGRESSION V1.1
+
+## 스킬 효과 비교 (선택 실험)
+- 동일한 고정 입력, 근거자료와 평가 기준을 사용해 스킬 미적용 baseline과 적용 candidate를 분리 실행한다. 각 결과의 입력 ID, 규칙 커밋, 모델/설정, 실행 환경, 판정 근거를 기록한다.
+- 양쪽의 입력 누락·중복, 조건 차이, 오류는 별도 보고하며 성공률로 임의 환산하지 않는다. 가능한 경우 정답·출처·범위 오류, 수정 필요 수와 비용/시간을 항목별 비교한다.
+- 구조 검사나 모의 실행은 실제 모델 평가가 아니다. 실행하지 못한 비교는 NOT_RUN으로 두고 효능 향상을 단정하지 않는다. 도구 부재 시 스킬 도입 자체를 이유로 검수 게이트를 건너뛰지 않는다.
+
+- 실행 가능한 환경에서 쌍별 ID와 상태를 대조할 때 `python tooling/skills/compare_skill_trials.py baseline.json candidate.json`을 사용할 수 있다. 입력은 각각 `[{"id":"...","status":"PASS|FAIL|NOT_RUN"}]` 형식이며, 실제 평가 조건·정답과 근거의 검증을 대신하지 않는다.

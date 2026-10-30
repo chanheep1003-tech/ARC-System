@@ -2,7 +2,7 @@
 name: arc-typeset-qa
 description: ARC CORE/N°/FINAL 조판에서 제품 레이아웃 격리, 의미 단위 페이지네이션, 인쇄 타이포그래피, 렌더 기반 PDF QA를 JIT로 수행한다.
 metadata:
-  version: 1.1.0
+  version: 1.1.1
   arc-role: typesetting-quality
 ---
 
@@ -151,3 +151,7 @@ TOOLING_EXECUTED
 FINDINGS[]
 
 END ARC TYPESET QA V1.0
+
+## PDF 원본 및 출력 확인
+- 추출 텍스트의 페이지/단 순서와 표·수식·그림을 원본 페이지 이미지에 대조한다. 출력 PDF는 폰트 포함 여부, 텍스트 선택/검색 가능 여부, 페이지 수와 누락·잘림을 확인한다.
+- 텍스트 검사 PASS만으로 시각 검사까지 완료했다고 보고하지 않는다. 확인하지 못한 페이지 또는 도구는 범위와 함께 NOT_RUN으로 남긴다.

@@ -2,7 +2,7 @@
 name: arc-item-qa
 description: 'ARC 문항을 기준참조형 rubric으로 검수해 PASS/REVISE/DISCARD를 결정한다. 정답 유일성, 범위, 추론, 오답, 자연스러움, 학교 적합성, 시각자료를 통합 평가한다.'
 metadata:
-  version: 1.4.0
+  version: 1.4.1
   arc-role: item-quality-gate
 ---
 # ARC Item QA
@@ -83,3 +83,8 @@ ESSENTIAL visual은 VISUAL_PASS_A=PASS, VISUAL_PASS_B=PASS, QUESTION_VISUAL_CROS
 - 문항 검수와 세트 검수는 분리한다.
 - 답지 검증은 독립적으로 한 번 더 수행한다.
 - 점수 분포가 기계적으로 반복되면 전체 재검토한다.
+
+## 학습 목표와 문항 타당도
+- 각 문항의 확인된 학습 목표, 판단해야 하는 개념·기능, 원자료 위치, 질문과 선지의 판정 근거를 연결한다. 그 연결이 없으면 검토 대기로 둔다.
+- 정답이 교과 개념과 자료 조건을 통해 결정되는지, 단순한 문장 단서·선지 길이·불필요한 배경지식으로 결정되지 않는지 확인한다. 근거를 벗어나는 판단이나 고1 범위 밖 선행지식을 요구하면 수정 또는 보류한다.
+- rubric은 판단 보조이며 독립 재풀이, 전선지 판정, 근거 및 범위 검증을 대체하지 않는다.

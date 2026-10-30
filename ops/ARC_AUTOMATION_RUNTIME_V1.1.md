@@ -184,3 +184,8 @@ For every artifact that claims STORAGE_PLACEMENT=VERIFIED:
 
 A root-level PDF or Doc is not VERIFIED merely because upload succeeded.
 If actual metadata and QA/placement-note status disagree, set STORAGE_METADATA_MISMATCH and repair before release.
+
+## 16. CHECKPOINT RECOVERY EVIDENCE (USER DIRECTIVE FIRST)
+For the current user-defined batch and file format, persist the batch report and item files after each completed chunk. Do not override an explicit current user's batch size, subject split or Drive target with the older defaults above.
+Record batch ID, pinned ruleset SHA, target/drafted/checked/active counts, completed IDs, pending IDs, remaining slots, source verification, last verified file IDs and next action. Re-read the saved checkpoint before claiming it is durable.
+On restart, load the latest relevant incomplete run, verify IDs and content, then continue only missing slots. Report resumed items separately from newly created items. Never replace another run's artifacts or turn a draft into an active item without the required checks. If host termination or storage prevents continuation, report the last verified checkpoint; do not promise uninterrupted execution.
