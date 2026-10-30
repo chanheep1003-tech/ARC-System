@@ -1,5 +1,5 @@
 # ARC team contract V1
-Status: trial. Entry point: AGENTS.md. Roles are provider-neutral; assign a model only after checking its actual tools and source access.
+Status: trial. Operational entry point: ops/ARC_RUNBOOK.md via AGENTS.md. The CLI state is canonical for each run; role handoff labels below describe responsibilities and do not create a second progress ledger. Roles are provider-neutral; assign a model only after checking its actual tools and source access.
 
 |Role|Instructions|Required skills|
 |---|---|---|
