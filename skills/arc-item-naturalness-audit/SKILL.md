@@ -2,7 +2,7 @@
 name: arc-item-naturalness-audit
 description: 'ARC 문항·선지·자료 설명에서 반복되는 AI 문체 신호와 상업 문제집답지 않은 인공성을 탐지하고 최소 수정한다. 사실·난도·출제 의도는 바꾸지 않는다.'
 metadata:
-  version: 1.0.0
+  version: 1.0.1
   arc-role: editorial-audit
 ---
 # ARC Item Naturalness Audit
