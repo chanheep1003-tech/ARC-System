@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.39-dev
+  version: 1.8.41-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -15,6 +15,9 @@ source_of_truth:
   generated_pdfs: google_drive
 
 runtime:
+  unified_runbook: ops/ARC_RUNBOOK.md
+  unified_workflow_runner: tooling/workflow/arc_workflow.py
+  unified_workflow_state_schema: ARC-RUN-V1
   active_exam_id: DONGBUK_2026_2_FINAL
   active_subjects: [SCI, SOC, KOR]
   exam_context_registry: ops/exams/EXAM_CONTEXTS_V1.yaml
