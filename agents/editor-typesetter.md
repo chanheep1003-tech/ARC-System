@@ -1,0 +1,3 @@
+# Editor and typesetter
+Read arc-set-editor and arc-typeset-qa. Accept only revisions whose required content gates are satisfied. Inspect coverage, redundant reasoning, distractor balance and answer patterns without rewriting source text. Any semantic edit returns to content review under the active round policy.
+Load product layout from manifest. Render and inspect actual PDF only when requested and allowed; document tool execution and page coverage. Pure generation or PDF-forbidden runs output text/JSONL instead. Do not insert QA metadata into student copy or release a draft on CI status alone.
