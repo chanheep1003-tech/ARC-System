@@ -8,6 +8,9 @@ on:
     branches: [dev]
     paths:
       - 'tooling/**'
+      - 'skills/**'
+      - 'ops/validate_skills.py'
+      - 'CHECKSUMS.sha256'
       - 'ops/exams/**'
       - 'ops/ARC_EXAM_CONTEXT_POLICY_*'
       - 'quality/**'
@@ -102,6 +105,9 @@ jobs:
               yaml.safe_load(Path(f).read_text(encoding='utf-8'))
               print('OK', f)
           PY
+
+      - name: Validate ARC skill registry
+        run: python ops/validate_skills.py
 
       - name: Validate 30 regression fixtures
         run: |
