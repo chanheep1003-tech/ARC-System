@@ -16,6 +16,7 @@ from pathlib import Path
 
 STAGES = ['request', 'source', 'draft', 'review', 'publish']
 EXCLUDED = {'answer_key', 'author_solution', 'author_history', 'target_difficulty'}
+REQUIRED_GATES = {'exam_scope', 'generation_source', 'similarity', 'product_quality'}
 
 def require(ok, message):
     if not ok:
@@ -115,6 +116,9 @@ def advance(state, stage, payload):
                 'actual persisted artifact and readback receipt required')
         if payload['mode'] == 'verified':
             require(counts(state)['eligible'] == state['request']['count'], 'required content gates not passed')
+            receipts = payload.get('gate_receipts', {})
+            require(all(receipts.get(g, {}).get('pass') is True and receipts[g].get('evidence_ref')
+                        for g in REQUIRED_GATES), 'scope/source/similarity/product gate receipts required')
     state[stage] = payload
     state['stage'] = stage
     state['status'] = 'DONE' if stage == 'publish' else 'READY'
