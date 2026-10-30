@@ -2,7 +2,7 @@
 name: arc-typeset-qa
 description: ARC CORE/N°/FINAL 조판에서 제품 레이아웃 격리, 의미 단위 페이지네이션, 인쇄 타이포그래피, 렌더 기반 PDF QA를 JIT로 수행한다.
 metadata:
-  version: 1.1.0
+  version: 1.1.1
   arc-role: typesetting-quality
 ---
 
