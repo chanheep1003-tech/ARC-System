@@ -2,7 +2,7 @@
 - Added a single request/run-state CLI and canonical operational runbook. Chunk checkpoints, ownership, expected-version guards, stage gates, isolated-review handoffs, manuscript hash binding and verified storage receipts now share one state contract.
 - The CLI is an evidence ledger; external AI calls, Drive writes and semantic correctness are still host responsibilities. Draft storage and post-blind edits cannot silently become active bank items.
 - Root AGENTS, expert TEAM, manifest and CI point to the common entry. Prior policy versions and unmerged PR #6 remain preserved.
-- Local workflow suite: 10 behavioral tests PASS. Full repository CI is checked on this PR; static success is not model-quality proof.
+- Local workflow suite: 11 behavioral tests PASS. Full repository CI is checked on this PR; static success is not model-quality proof.
 
 ## 1.8.34-dev — 2026-09-25
 - Registered four textbook source texts in the source registry as USER_PROVIDED_TEXTBOOK / RAW_SCHOOL_SOURCE / EXACT, with the user's explicit authorization:
