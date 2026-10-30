@@ -2,7 +2,7 @@
 name: arc-source-ingest
 description: 'ARC의 교과서·학습지·기출·외부자료를 구조와 위치를 보존해 추출하고 SOURCE_PACKET/SOURCE_LEDGER 입력으로 정규화한다.'
 metadata:
-  version: 1.2.0
+  version: 1.2.1
   arc-role: source-ingest
 ---
 # ARC Source Ingest
