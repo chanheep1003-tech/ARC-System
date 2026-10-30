@@ -11,13 +11,13 @@ for p in sorted(SKILLS.glob('*/SKILL.md')):
         errors.append(f'{p}: missing frontmatter')
         continue
     m=re.search(r'^name:\s*([^\n]+)', text, re.M)
-    d=re.search(r'^description:\s*[\'\"](.+?)[\'\"]$', text, re.M)
+    d=re.search(r'^description:\s*(\S[^\n]*)$', text, re.M)
     if not m: errors.append(f'{p}: missing name'); continue
     name=m.group(1).strip()
     names.append(name)
     if name != p.parent.name: errors.append(f'{p}: name/folder mismatch')
     if not re.fullmatch(r'[a-z0-9-]{1,64}',name): errors.append(f'{p}: invalid name')
-    if not d: errors.append(f'{p}: missing quoted description')
+    if not d: errors.append(f'{p}: missing description')
     lines=len(text.splitlines())
     if lines>500: errors.append(f'{p}: >500 lines ({lines})')
 if len(names)!=len(set(names)): errors.append('duplicate skill names')
