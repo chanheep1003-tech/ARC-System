@@ -4,6 +4,7 @@ school: 동북고등학교
 grade: 1
 as_of: "2026-11-06"
 inventory_type: ORIGINAL_EXAM_ONLY
+cross_subject_exam_index: quality/exams/DONGBUK_G1_2026_S1_MID_ORIGINALS_V1.yaml
 search_basis:
   - "Google Drive full paginated filename searches for 공통국어, 국어 PDF"
   - "Direct inspection of two previously available 2025/2026 original exams"
