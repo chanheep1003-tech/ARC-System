@@ -76,3 +76,8 @@ Unverified facts MUST be listed as UNCONFIRMED; do not convert selection recomme
 - COPYRIGHT_STATUS: 길이가 긴 실제 가사/현대 문학의 발췌 이용허락이 미확인되면 BLOCKED_LICENSE; 제목·메타만 색인 가능.
 - FACT_GATE: 학생용 문항/다섯 선지/해설의 근거와 진리값 불일치 0.
 - EDITION_GATE: 고전·옛한글 원형의 OCR 오염 및 시대 혼합 0.
+
+## 2026-11-06 운영 정정 (최신 우선 적용)
+- 여기에 적힌 문헌·장르·예시들은 **출제 직전 선택할 고정 지문 후보가 아니다.** 실제 원안지의 풀이 구조만 참고하고 새로운 문항의 개념·비교축을 먼저 설계한다.
+- 해당 문항이 생산되는 시점마다 `quality/korean/ARC_KOR_DYNAMIC_SOURCE_SELECTION_V1.0.yaml`에 따라 새 자료를 검색한다. 이전 권장 작품명은 출제 자료 채택의 우선순위나 반복 출제 허가 근거가 아님.
+- 보유 원안지 / 미확인 1학년 시험은 `quality/korean/ARC_DONGBUK_G1_KOR_EXAM_INVENTORY_20261106.yaml`에서 관리한다.
