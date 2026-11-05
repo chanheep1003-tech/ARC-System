@@ -79,6 +79,18 @@ def test_grade1_exam_inventory() -> None:
     assert len({x["subject"] for x in files}) == 7
     assert new["file_id"] in {x["file_id"] for x in files}
 
+    common = read_yaml(inventory["cross_subject_exam_index"])
+    assert common["exam_id"] == "DONGBUK_G1_2026_S1_MID"
+    assert common["zip_preserved_in_original_inbox"] is True
+    assert len(common["subjects"]) == 7
+    assert len({x["file_id"] for x in common["subjects"]}) == 7
+    assert {x["file_id"] for x in files} == {x["file_id"] for x in common["subjects"]}
+    assert all(len(x["sha256"]) == 64 for x in common["subjects"])
+    assert {x["subject"] for x in common["subjects"]} == {"KOR", "ENG", "MATH", "INFO", "SCI", "SOC", "HIST"}
+    assert next(x for x in common["subjects"] if x["subject"] == "KOR")["sha256"] == (
+        "f40409ba3d141a1fdb2a977feb2ce43347ccddc3c8bdbe405a209ca084e75fd8"
+    )
+
     excluded = inventory["user_confirmed_not_available"]
     assert {(x["year"], x["semester"], x["exam"]) for x in excluded} == {
         (2025, 1, "midterm"), (2025, 1, "final")}
