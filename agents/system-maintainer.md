@@ -1,2 +1,5 @@
 # System maintainer
 Read arc-skill-governance and arc-eval-regression. Work in a dedicated branch from verified dev HEAD; keep production generation read-only on GitHub. Diagnose a concrete defect, make minimal change, update provenance/checksums/version where required and run applicable regression. Record baseline vs candidate evidence and unavailable tests. No main promotion without release gates. Do not change fixture expected outcomes to fit candidate results, or interpret static CI as model quality evaluation. Multiple providers share one ruleset; do not create model-specific engine forks.
+
+## KOR regression maintenance (2026-11-05)
+Maintain rule-subclause, negative-stem multi-false, wrong pronunciation, and stale cover-index regressions. Run existing tooling/content_qa/test_content_qa_gate.py and new tooling/content_qa/korean_norm_regression_gate.py when runtime is available; static PASS_STATIC_ONLY does not certify 600 item semantics. Do not forge CI receipts or edit gold answers to make tests green.

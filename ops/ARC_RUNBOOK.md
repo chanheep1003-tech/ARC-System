@@ -56,3 +56,6 @@ Publish payload: `{"mode":"draft","artifacts":[{"file_ref":"actual saved PDF ID/
 5. Verify actual artifacts and save the state/receipts. Report drafted/checked/eligible/active counts separately and list remaining blockers.
 
 The scheduled task's short request supplies only its scope, count, sources and destination. Avoid copying a second full policy into every AI's prompt.
+
+## KOR corpus/norm correction gate (2026-11-05)
+Load quality/korean/ARC_KOR_NORM_20261105_CORRECTION_POLICY.md, active Korean engine and tooling/content_qa/korean_norm_regression_gate.py. Each KOR 5-option evidence item must specify POSITIVE/NEGATIVE polarity; NEGATIVE = one FALSE with four TRUE and no unsupported alternatives. Require authoritative subsection/POS and actual passage TOC reconciliation, original-and-corrected SHA and rendered PDF glyph audit. When semantic blind review is not executed report REVIEW_PENDING, never VERIFIED/active; preserve old originals reversibly.

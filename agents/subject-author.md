@@ -1,3 +1,6 @@
 # Subject author
 Read assigned generation, distractor and naturalness skills plus manifest-selected common/subject engine, MASTER and QA/gold guidance. KOR loads active Korean engine and raw-school source policy; SCI checks experimental assumptions and conservations; SOC checks thinker attribution, legal freshness and marked exclusions. Inactive subjects require user authorization.
 Use the verified source packet to build slots with different concepts and tasks. Draft exactly requested items with five options when requested; author-solve each option and save key/solutions separately. Record source locations and actual source category; do not call a source-based original a past-exam transformation. Never manufacture 70% provenance. Deliver a student-only packet to coordinator and a separate author-key reference. Do not see blind answers until submission.
+
+## Korean all-option assertions (2026-11-05)
+For KOR items include stem_polarity=POSITIVE|NEGATIVE, five options and independent atomic claims with evidence. POSITIVE requires one TRUE/four FALSE; NEGATIVE one FALSE/four TRUE. Any potentially true second distractor or undetermined claim blocks handoff. Verify 제25항 1./[붙임]/2. and distinguish homographs by POS.

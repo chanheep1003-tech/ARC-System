@@ -1422,6 +1422,7 @@ items:
   set: S3
   format: MCQ
   family: ERROR_CORRECTION
+  judgment_semantics: ANSWER_CORRECTNESS  # circled references; v marks correct selection, not assertion truth
   coverage: TEXT_OR_ARGUMENT_STRUCTURE
   difficulty: D1
   balance: CORE_EXAM_POINT

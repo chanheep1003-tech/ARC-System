@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.41-dev
+  version: 1.8.42-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -152,6 +152,12 @@ runtime:
   arc_final_difficulty_profile: required
   arc_final_item_quality_profile: required
   arc_final_release_gate: required
+  korean_norm_quality_policy: quality/korean/ARC_KOR_NORM_20261105_CORRECTION_POLICY.md
+  korean_norm_static_gate: tooling/content_qa/korean_norm_regression_gate.py
+  korean_norm_all_option_evidence_gate: required
+  korean_norm_negative_stem_truth_pattern: FALSE_1_TRUE_4
+  korean_norm_toc_source_reconciliation: required
+  korean_norm_release_static_only: forbidden
   korean_item_engine_required: true
   korean_passage_utilization_gate: required
   korean_duplicate_axis_gate: required
@@ -281,8 +287,8 @@ active:
     drive_mirror_status: byte_verified
 
   korean_item_engine:
-    path: engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.4.md
-    version: 1.4
+    path: engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.5.md
+    version: 1.5
     drive_id: null
     drive_mirror_status: pending_sync
 

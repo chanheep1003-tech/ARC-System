@@ -51,6 +51,7 @@ def make_qa_evidence(answers: dict[int, int], subject: str = "KOR") -> dict[str,
         second_best = next(str(option) for option in range(1, 6) if option != answer)
         items.append({
             "item_id": f"{subject}-CANARY-{number:03d}",
+            "stem_polarity": "POSITIVE", # synthetic canary choices use one TRUE answer
             "target_difficulty": "D3",
             "pass_a": {"answer": str(answer), "answer_evidence": [f"FIXTURE:Q{number}"]},
             "pass_b": {

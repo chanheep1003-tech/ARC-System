@@ -27,3 +27,6 @@ Follow manifest-selected blind round policy. Answer-changing post-review edits m
 
 ## Trial acceptance
 Verify source access, file handoff, isolated solve, key comparison, provenance and persistence on five items. Report each unavailable gate. Ordinary question production never changes engine files. No active-bank promotion solely from two agents agreeing.
+
+## KOR norm review ownership (2026-11-05)
+This is a responsibility refinement, not an automatic multi-model dispatch. Source analyst verifies current official clause/lexeme POS/medieval witness, subject author records stem polarity and atomic assertions, blind reviewer independently judges all five choices, editor/typesetter reconciles passage inventory and rendered TOC/phonetic glyphs, maintainer adds regression tests, coordinator checks source/reviewer/render receipts and withholds release when any are unavailable. Follow quality/korean/ARC_KOR_NORM_20261105_CORRECTION_POLICY.md; published PDFs must not inherit stale pre-edit review.

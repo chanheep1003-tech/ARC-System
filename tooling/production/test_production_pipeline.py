@@ -43,6 +43,48 @@ def codes(report) -> set[str]:
 
 
 def main() -> int:
+    # Regression: six exception-stem items in the real 2026 semifinal fixture
+    # require one FALSE answer; do not infer polarity from family alone.
+    semifinal = yaml.safe_load((
+        ROOT / "quality/production/KOR_SEMIFINAL_FINAL_20260925/items.yaml"
+    ).read_text(encoding="utf-8"))
+    semiconductor_items = pipeline.mcq_items(semifinal)
+    negative_ids = {
+        item["item_id"] for item in semiconductor_items
+        if pipeline.korean_stem_polarity(item) == "NEGATIVE"
+    }
+    assert negative_ids == {"FS-03", "FS-08", "FS-13", "FS-18", "FS-19", "FS-21"}, negative_ids
+    for item in semiconductor_items:
+        polarity = pipeline.korean_stem_polarity(item)
+        truth = [judgment["v"] for judgment in item["judgments"]]
+        answer_index = int(item["answer"]) - 1
+        expected = "FALSE" if polarity == "NEGATIVE" else "TRUE"
+        assert truth[answer_index] == expected, (item["item_id"], polarity)
+        assert truth.count(expected) == 1, (item["item_id"], truth)
+
+    # The 2026 semifinal SF-22 choices are ⓐ...ⓔ reference labels: its
+    # original v field denotes answer selection, not literal statement truth.
+    # Preserve the fixture's answer and raw verdicts; normalize explicitly.
+    older = yaml.safe_load((
+        ROOT / "quality/production/KOR_SEMIFINAL_20260925/items.yaml"
+    ).read_text(encoding="utf-8"))
+    sf22 = next(item for item in pipeline.mcq_items(older) if item["item_id"] == "SF-22")
+    assert sf22["judgment_semantics"] == "ANSWER_CORRECTNESS"
+    assert pipeline.korean_stem_polarity(sf22) == "NEGATIVE"
+    normalized = [pipeline.korean_judgment_truth(sf22, j) for j in sf22["judgments"]]
+    assert normalized == ["TRUE", "TRUE", "FALSE", "TRUE", "TRUE"]
+    assert normalized[int(sf22["answer"]) - 1] == "FALSE"
+
+    # Explicit contradictory metadata must never override the question itself.
+    conflict = dict(semiconductor_items[0])
+    conflict["stem_polarity"] = "NEGATIVE"
+    try:
+        pipeline.korean_stem_polarity(conflict)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("contradictory stem polarity was accepted")
+
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
         base = run_variant(tmp, "baseline")
