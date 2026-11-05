@@ -1,15 +1,15 @@
-# Dongbuk High School grade-1 Korean original paper inventory, searched 2026-11-06
+# Dongbuk grade-1 original-paper inventory (verified on 2026-11-06)
 subject: KOR
 school: 동북고등학교
 grade: 1
 as_of: "2026-11-06"
 inventory_type: ORIGINAL_EXAM_ONLY
 search_basis:
-  - "Google Drive title search using Korean subject, school, year, and semester terms"
-  - "Full paginated Drive metadata scan for filename containing 공통국어 and PDF filename containing 국어"
-  - "Direct listing of 2025 semester-2 final and 2026 semester-2 mid original-paper folders"
-  - "Readable original exam text verified for the two found files"
-limits: "Search indexes and filenames can omit misnamed or unindexed files. NOT_FOUND_IN_CURRENT_SEARCH is not proof of absence from all user storage."
+  - "Google Drive full paginated filename searches for 공통국어, 국어 PDF"
+  - "Direct inspection of two previously available 2025/2026 original exams"
+  - "Read original ZIP uploaded to Drive inbox on 2026-11-05 containing seven 2026 semester-1 midterm subject PDFs"
+  - "Read title, year, semester and original Dongbuk copyright header of all seven PDFs"
+limits: "Missing means no verified original found in currently inspected files; the user's '2025 semester-1 not available' statement is recorded separately. A ZIP containing one exam session is not evidence of other periods."
 known_originals:
   - year: 2025
     semester: 2
@@ -19,7 +19,19 @@ known_originals:
     file_id: 1bN5wDVbQ1bGlixjzMsWIEJjKpVSTP8iN
     url: https://drive.google.com/file/d/1bN5wDVbQ1bGlixjzMsWIEJjKpVSTP8iN/view
     questions: {mcq: 21, constructed: 4}
-    pages: 7
+    pages_declared: 7
+  - year: 2026
+    semester: 1
+    exam: midterm
+    subject: 공통국어1
+    status: VERIFIED
+    file_id: 1Sh7VxadM72s6QUH0e0E55oVdjBpYmDzn
+    url: https://drive.google.com/file/d/1Sh7VxadM72s6QUH0e0E55oVdjBpYmDzn/view
+    folder_url: https://drive.google.com/drive/folders/1jC55w1xhEx5clnzdlPb7SJZniSFdcOzM
+    source_zip_id: 1-rwkpvattljgrr5caM-iRc_EAN-Q3T0K
+    questions: {mcq: 20, constructed: 4}
+    pages_declared: 6
+    pdf_pages: 7
   - year: 2026
     semester: 2
     exam: midterm
@@ -28,19 +40,34 @@ known_originals:
     file_id: 1GZ_ubNF25Q1U1Jy3C9DSszycs7cmf3HK
     url: https://drive.google.com/file/d/1GZ_ubNF25Q1U1Jy3C9DSszycs7cmf3HK/view
     questions: {mcq: 22, constructed: 4}
-    pages: 12
+    pages_declared: 12
+newly_indexed_session:
+  year: 2026
+  semester: 1
+  exam: midterm
+  source_zip_url: https://drive.google.com/file/d/1-rwkpvattljgrr5caM-iRc_EAN-Q3T0K/view
+  folder_url: https://drive.google.com/drive/folders/1jC55w1xhEx5clnzdlPb7SJZniSFdcOzM
+  source_zip_kept_in_inbox: true
+  original_papers:
+    - {subject: 공통국어1, file_id: 1Sh7VxadM72s6QUH0e0E55oVdjBpYmDzn}
+    - {subject: 공통영어1, file_id: 1x2QfzvEMH3Fu7WD9WBis5G62j34d9ZC4}
+    - {subject: 공통수학1, file_id: 1GWRZJ2ziwTG6mVUlKsGY3hyK8BM6Rkl5}
+    - {subject: 정보, file_id: 1JofMTOJ_DsHCb7QCq3KiCOANWCNqC3Xs}
+    - {subject: 통합과학1, file_id: 1HreiYYCSks6muwxjElEKm1hfRIMMdioZ}
+    - {subject: 통합사회1, file_id: 15jDS4mqCVGPwQQ3poSqYbeeAz6X3STAC}
+    - {subject: 한국사1, file_id: 1HeHt9nPWCilxmRFlgB-znOCRK-Z_Ybm3}
+user_confirmed_not_available:
+  - {year: 2025, semester: 1, exam: midterm, status: NOT_AVAILABLE_USER_CONFIRMED}
+  - {year: 2025, semester: 1, exam: final, status: NOT_AVAILABLE_USER_CONFIRMED}
 missing_search_targets:
-  - {year: 2025, semester: 1, exam: midterm, expected_subject: 공통국어1, status: NOT_FOUND_IN_CURRENT_SEARCH, priority: HIGH}
-  - {year: 2025, semester: 1, exam: final, expected_subject: 공통국어1, status: NOT_FOUND_IN_CURRENT_SEARCH, priority: HIGH}
-  - {year: 2025, semester: 2, exam: midterm, expected_subject: 공통국어2, status: NOT_FOUND_IN_CURRENT_SEARCH, priority: VERY_HIGH}
-  - {year: 2026, semester: 1, exam: midterm, expected_subject: 공통국어1, status: NOT_FOUND_IN_CURRENT_SEARCH, priority: HIGH}
+  - {year: 2025, semester: 2, exam: midterm, expected_subject: 공통국어2, status: NOT_FOUND_IN_CURRENT_SEARCH, priority: HIGH}
   - {year: 2026, semester: 1, exam: final, expected_subject: 공통국어1, status: NOT_FOUND_IN_CURRENT_SEARCH, priority: HIGH}
 future:
   - {year: 2026, semester: 2, exam: final, expected_subject: 공통국어2, status: NOT_YET_HELD_AS_OF_2026_11_06}
 older_history:
-  2024_and_before: "NO_VERIFIED_ORIGINALS_FOUND_IN_THIS_SEARCH; optional extra collection for long-term style analysis."
-exclude_from_verified_exam_count:
-  - "ARC-generated booklets and mock papers"
-  - "School worksheets or concept supplements"
-  - "Past-exam analysis reports without the original paper"
-upload_guideline: "Store new originals in per-year/semester/exam subfolders, preserve source filename and record collection date; never label mock papers as school originals."
+  2024_and_before: "NOT_CHECKED_EXHAUSTIVELY; optional collection for style calibration"
+excluded_from_verified_exam_count:
+  - "ARC-produced question banks, mock exams and printed workbooks"
+  - "School supplements/worksheets without original examination text"
+  - "Past-exam analyses without original exam PDFs"
+upload_guideline: "Preserve the original ZIP; store extracted PDFs together under the exam session; compare file ID, date, semester, grade and subject before marking VERIFIED."
