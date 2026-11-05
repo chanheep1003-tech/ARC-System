@@ -123,8 +123,17 @@ def analyze_item(item: Any, item_format: str) -> list[dict[str, Any]]:
         findings.append(finding("OPTION_JUDGMENT_COUNT", "MCQ5 requires exactly five option judgments", item_id))
         option_judgments = option_judgments if isinstance(option_judgments, list) else []
 
+    polarity = str(item.get("stem_polarity", "")).upper()
+    if polarity not in {"POSITIVE", "NEGATIVE"} and item.get("subject_qa_mode") == "KOR_NORM":
+        findings.append(finding("STEM_POLARITY_MISSING", "KOR normative items require explicit POSITIVE/NEGATIVE polarity", item_id))
+    if not polarity:
+        polarity = "POSITIVE"  # legacy fixtures remain compatible; Korean reviewer must specify polarity
+    if polarity not in {"POSITIVE", "NEGATIVE"}:
+        findings.append(finding("STEM_POLARITY_INVALID", "stem_polarity must be POSITIVE/NEGATIVE", item_id))
     option_ids: list[str] = []
     true_ids: list[str] = []
+    false_ids: list[str] = []
+    uncertain_ids: list[str] = []
     semantic_keys: list[str] = []
     strong_distractors = 0
     for option in option_judgments or []:
@@ -139,11 +148,15 @@ def analyze_item(item: Any, item_format: str) -> list[dict[str, Any]]:
         option_ids.append(option_id)
         if verdict == "TRUE":
             true_ids.append(option_id)
+        elif verdict == "FALSE":
+            false_ids.append(option_id)
+        elif verdict in {"HALF_TRUE", "UNSUPPORTED"}:
+            uncertain_ids.append(option_id)
         if verdict not in VERDICTS:
             findings.append(finding("OPTION_VERDICT_INVALID", f"Invalid verdict for option {option_id}", item_id))
         if competitiveness not in COMPETITIVENESS:
             findings.append(finding("OPTION_COMPETITIVENESS_INVALID", f"Invalid competitiveness for option {option_id}", item_id))
-        elif verdict != "TRUE" and competitiveness == "STRONG":
+        elif option_id != answer_b and competitiveness == "STRONG":
             strong_distractors += 1
         if not axis or not claim_key:
             findings.append(finding("OPTION_SEMANTIC_KEY_MISSING", f"axis and claim_key required for option {option_id}", item_id))
@@ -154,8 +167,13 @@ def analyze_item(item: Any, item_format: str) -> list[dict[str, Any]]:
 
     if len(option_ids) != len(set(option_ids)):
         findings.append(finding("OPTION_ID_DUPLICATE", "Option IDs must be unique", item_id))
-    if len(true_ids) != 1 or (true_ids and true_ids[0] != answer_b):
-        findings.append(finding("UNIQUE_ANSWER_INVALID", "Exactly one TRUE option must match PASS B answer", item_id))
+    if polarity == "NEGATIVE":
+        if len(false_ids) != 1 or false_ids[0] != answer_b or len(true_ids) != 4:
+            findings.append(finding("UNIQUE_ANSWER_INVALID", "Negative stem requires exactly one FALSE answer and four TRUE choices", item_id))
+    elif len(true_ids) != 1 or (true_ids and true_ids[0] != answer_b):
+        findings.append(finding("UNIQUE_ANSWER_INVALID", "Positive stem requires exactly one TRUE answer", item_id))
+    if item.get("subject_qa_mode") == "KOR_NORM" and uncertain_ids:
+        findings.append(finding("KOR_OPTION_UNSUPPORTED", "KOR normative release cannot contain HALF_TRUE/UNSUPPORTED judgments", item_id))
     if len(semantic_keys) != len(set(semantic_keys)):
         findings.append(finding("OPTION_SEMANTIC_DUPLICATION", "Duplicate AXIS + CLAIM_KEY detected", item_id))
 
