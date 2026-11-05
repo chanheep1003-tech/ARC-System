@@ -1,6 +1,6 @@
 # ARC KOREAN ITEM ENGINE V1.5
-VERSION: 1.4
-DATE: 2026-09-24
+VERSION: 1.5
+DATE: 2026-11-05
 STATUS: ACTIVE-DEV
 ROLE: ARC_N / ARC_FINAL 국어 문항 설계·지문 활용·오답 경쟁력 전용 엔진
 
@@ -533,3 +533,13 @@ For all KOR ARC N°/FINAL content, read `quality/korean/ARC_KOR_NORM_20261105_CO
 - Corpus item: passage source lock, original work vs extant edition date, quote fidelity, passage sequence and title. Generate TOC from actual content, then verify each entry against rendered PDF and question range.
 - After any student text/answer/solution edits, invalidate prior review hash and rerun source and five-option validation; static PDF regex check alone NEVER permits CONTENT_LOCK.
 - Test with `tooling/content_qa/korean_norm_regression_gate.py`; maintain actual negative regression examples in `quality/reviews/ARC_KOR_N_20261105_REVIEW_REPORT.md`. Current 2026-11-05 patched PDFs remain REVIEW_PENDING until full independent audit.
+
+## 15. ARC 5-LEVEL LEARNING LADDER (2026-11-05 / REQUIRED)
+Load quality/ARC_V1_V5_LEARNING_LADDER_V1.0.md on every new ARC_N or ARC_FINAL Korean item build.
+- V1 ARC_N: full textbook range + diverse item families + foundational concepts, NOT a subset focused only on frequent rules.
+- V2 ARC_N: higher share for evidence-backed priority concepts; require more interdependent decisions/diagnosis.
+- V3 ARC_N: unfamiliar authorized outside passage or genuinely novel examples. Passage must be necessary to solve; no unteachable outside concept.
+- V4 ARC_N: true advanced discrimination based on compound evidence/conditions and strong distractors with exactly one supported answer.
+- V5 ARC_FINAL: re-create measured school examination structure, stems, passage loading, answer choices, difficulty and time from **verified Dongbuk past exams**; not guaranteed harder than V4 and never claim to predict teacher intent.
+Item metadata MUST retain level, product, textbook anchor, novel passage origin when V3, and verified-school-exam anchor when V5. Version maps: V1-V4=ARC_N; V5=ARC_FINAL. Do not call V1 ARC_CORE.
+When a project explicitly requests V1~V3 orthography, the per-level slots and coverage are defined by quality/korean/ARC_KOR_ORTHOGRAPHY_V123_TEXTBOOK_REBUILD_SPEC_20261105.md. Older V3 "DISCRIMINATION only" terminology is overridden by this requirement.
