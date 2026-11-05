@@ -62,6 +62,19 @@ def main() -> int:
         assert truth[answer_index] == expected, (item["item_id"], polarity)
         assert truth.count(expected) == 1, (item["item_id"], truth)
 
+    # The 2026 semifinal SF-22 choices are ⓐ...ⓔ reference labels: its
+    # original v field denotes answer selection, not literal statement truth.
+    # Preserve the fixture's answer and raw verdicts; normalize explicitly.
+    older = yaml.safe_load((
+        ROOT / "quality/production/KOR_SEMIFINAL_20260925/items.yaml"
+    ).read_text(encoding="utf-8"))
+    sf22 = next(item for item in pipeline.mcq_items(older) if item["item_id"] == "SF-22")
+    assert sf22["judgment_semantics"] == "ANSWER_CORRECTNESS"
+    assert pipeline.korean_stem_polarity(sf22) == "NEGATIVE"
+    normalized = [pipeline.korean_judgment_truth(sf22, j) for j in sf22["judgments"]]
+    assert normalized == ["TRUE", "TRUE", "FALSE", "TRUE", "TRUE"]
+    assert normalized[int(sf22["answer"]) - 1] == "FALSE"
+
     # Explicit contradictory metadata must never override the question itself.
     conflict = dict(semiconductor_items[0])
     conflict["stem_polarity"] = "NEGATIVE"
