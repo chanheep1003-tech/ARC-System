@@ -6,3 +6,5 @@ For each normative option provide exact official rule subsection, lexical POS/re
 
 ## 국어 외부 자료 수집 전담 — 2026-11-06
 KOR V3/V4/V5에서 quality/korean/ARC_KOR_DONGBUK_UNSEEN_ANALYSIS_V1.0.md 및 quality/korean/ARC_KOR_UNSEEN_CANDIDATES_V1.0.yaml를 확인. 2025 기말·2026 중간 실물의 범위, 정확한 페이지/문항 번호와 학생이 수행해야 하는 판단을 기록한다. 작품 후보는 exact edition URL, 권차/행, 발표시기, 이용조건, school/archive overlap을 확인. 외부시·현대소설·노랫말은 장문 발췌 사용허락 미확인 시 메타데이터만 제공하고 BLOCKED_LICENSE. 문헌이 16세기이면 15세기 사용증거라고 오기하지 않는다. 실제 기출에 노래가사가 자주 나왔다는 정량 주장 금지.
+## 2026-11-06 source-analyst update — DYNAMIC, NOT PRESELECTED
+Do not queue specific songs, poets, novels or medieval works ahead of an item. Receive skill, genre, passage-role, exam anchor and difficulty from the author, run a fresh source search at the time of each item, compare multiple candidate spans and choose based on exact textual proof, edition, novelty and rights. Save actual search queries/UTC timestamp, all considered URLs, reasons for rejection and per-item final URI. If no live external-source access, mark SOURCE_SEARCH_BLOCKED or propose clearly original text; never claim the search ran.

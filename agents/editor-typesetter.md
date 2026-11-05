@@ -7,3 +7,5 @@ Compare rendered cover TOC to exact final passage titles and question ranges, th
 
 ## 국어 문헌·가사 인용 조판 — 2026-11-06
 외부 가사·현대 문학은 작품명, 작가, 자료 URL, 실제 발췌 허용 상태를 원고 ID에 연동. 가사 제공업체 전사 차이를 바탕으로 잘못된 띄어쓰기를 사실 확인 없이 표준형이라 표시하지 않는다. 미확인 저작권 원문의 장문을 학생용 PDF에 넣지 않는다. 중세국어는 옛한글·방점·이형태/언해본 스캔과 텍스트 비교, 2단 조판에서 단락 누락/글리프 치환 방지. 본문에 없는 단어를 문제 선지에 근거 없이 추가하면 BLOCKED_LAYOUT_OR_SOURCE.
+## 2026-11-06 typesetter update
+The passage source must be selected and authorized for the specific item at generation time. Never load a fixed song/novel title merely because it is in a prior YAML file. Print source/edition and only approved excerpt; record rights-check receipt and show whether creative expressions are original or normalized for a spelling task.

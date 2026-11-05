@@ -535,7 +535,7 @@ For all KOR ARC N°/FINAL content, read `quality/korean/ARC_KOR_NORM_20261105_CO
 - Test with `tooling/content_qa/korean_norm_regression_gate.py`; maintain actual negative regression examples in `quality/reviews/ARC_KOR_N_20261105_REVIEW_REPORT.md`. Current 2026-11-05 patched PDFs remain REVIEW_PENDING until full independent audit.
 
 ## 15. ARC 5-LEVEL LEARNING LADDER (2026-11-05 / REQUIRED)
-Load quality/korean/ARC_KOR_V1_V5_LEVEL_POLICY_V1.1.md on every new KOR ARC_N or KOR ARC_FINAL item build; this ladder does not apply to other subjects. Resolve sources through quality/korean/ARC_KOR_UNSEEN_CANDIDATES_V1.0.yaml and verified exam evidence before authoring.
+Load quality/korean/ARC_KOR_V1_V5_LEVEL_POLICY_V1.1.md on every new KOR ARC_N or KOR ARC_FINAL item build; this ladder does not apply to other subjects. Select external text **per item and per run** through quality/korean/ARC_KOR_DYNAMIC_SOURCE_SELECTION_V1.0.yaml; first decide skill/comparison axis and then search and compare new texts. Never preassign songs, writers or medieval excerpts from a static list. Use verified school exam evidence only to determine question style.
 - V1 ARC_N: full textbook range + diverse item families + foundational concepts, NOT a subset focused only on frequent rules.
 - V2 ARC_N: higher share for evidence-backed priority concepts; require more interdependent decisions/diagnosis.
 - V3 ARC_N: unfamiliar authorized outside passage or genuinely novel examples. Passage must be necessary to solve; no unteachable outside concept.

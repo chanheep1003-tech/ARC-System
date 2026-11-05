@@ -10,4 +10,4 @@ When reviewing KOR N° spelling/medieval corpora, additionally read quality/kore
 
 
 ## KOR-only V1–V5 learning levels (corrected 2026-11-06)
-For subject=KOR ONLY, load quality/korean/ARC_KOR_V1_V5_LEVEL_POLICY_V1.1.md, its source analysis and registry. Other subjects do not inherit this ladder. Korean V3 unseen materials vary by genre: literature compares a new literary text, nonfiction explains and compares new concepts, grammar uses authentic new examples (including song lyrics, poems and fiction when licensing allows). V1–V4=ARC_N, V5=ARC_FINAL. Unverified source text or licensing remains BLOCKED.
+For subject=KOR ONLY, load quality/korean/ARC_KOR_V1_V5_LEVEL_POLICY_V1.1.md, verified exam inventory and quality/korean/ARC_KOR_DYNAMIC_SOURCE_SELECTION_V1.0.yaml (NO preselected source titles). Other subjects do not inherit this ladder. Korean V3 unseen materials vary by genre: literature compares a new literary text, nonfiction explains and compares new concepts, grammar uses authentic new examples (including song lyrics, poems and fiction when licensing allows). V1–V4=ARC_N, V5=ARC_FINAL. Unverified source text or licensing remains BLOCKED.

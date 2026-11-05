@@ -3,7 +3,7 @@ STATUS: SPEC_APPROVED_FOR_PRODUCTION / ITEMS_REVIEW_PENDING
 DATE: 2026-11-05
 SOURCE_PRIORITY: SCHOOL_TEXTBOOK > SCHOOL_HANDOUT > TEXTBOOK_DERIVED_APPLICATION > NIKL_VALIDATION
 CANONICAL_LEVEL_POLICY: quality/korean/ARC_KOR_V1_V5_LEVEL_POLICY_V1.1.md
-UNSEEN_SOURCE_REGISTRY: quality/korean/ARC_KOR_UNSEEN_CANDIDATES_V1.0.yaml
+DYNAMIC_SOURCE_POLICY: quality/korean/ARC_KOR_DYNAMIC_SOURCE_SELECTION_V1.0.yaml
 
 ## 1. 확정한 교과서 근거
 미래엔 『공통국어2』 3단원 「국어의 어제와 오늘」 02 「한글 맞춤법과 오늘날의 국어생활」 pp.116–127.
@@ -29,7 +29,7 @@ V1은 **전체 범위·다양한 유형의 개념 습득**, V2는 **중요 포�
 ## 3. 사고 유형별 구분
 - V1: 기본 개념 확인·교과서 활동 변형·맞는 표기 선택·단순 근거 구별을 균형 있게. 다양한 item_family 확보.
 - V2: 서로 혼동하기 쉬운 개념 간 비교, 2~3개 조건 결합, 오류 원인 판정. 외부 규정 자체의 암기 확대 금지.
-- V3: **노래 가사·현대시·소설·학생 일기 등 처음 보는 문맥**을 읽고 문법적 근거를 찾아야 하는 문제. 외부 가사·문학의 실제 발췌는 이용조건을 검토하고 원문/규범 교정안을 분리한다. 새 문헌·사례는 학교 범위의 문법으로만 판정하며 출제용 창작 예문을 함께 운용한다. 낯선 규정 지식의 암기를 요구하는 것은 금지.
+- V3: **출제할 문항을 먼저 설계한 뒤 매번 그에 맞는 가사·시·소설·학생 글 등을 새로 검색·검증**하고, 처음 보는 문맥을 읽어 문법적 근거를 찾아야 하는 문제. 외부 가사·문학의 실제 발췌는 이용조건을 검토하고 원문/규범 교정안을 분리한다. 새 문헌·사례는 학교 범위의 문법으로만 판정하며 출제용 창작 예문을 함께 운용한다. 낯선 규정 지식의 암기를 요구하는 것은 금지.
 - V4(후속): 교과서 범위에 남되 다층 조건과 반례/매력적 오답을 갖춘 본격 상위권 고난도. V3의 새 지문이 곧 V4의 고난도를 뜻하지 않는다.
 - V5 ARC FINAL(후속): 실제 동북고의 **확인된 기출**에서 출제 형식·난도·분량·시간·배점을 추출하여 시험처럼 구성. V4보다 무조건 어려워야 하는 것은 아니다.
 - 난도 라벨은 생성 단계 목표이며 독립 재풀이의 실측 판단과 다를 수 있다.

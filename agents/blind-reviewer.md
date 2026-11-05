@@ -7,3 +7,5 @@ Without answer key, classify all five Korean alternatives against actual authori
 
 ## 국어 낯선 지문 블라인드 감사 — 2026-11-06
 출제자 정답을 보지 않고, 새 문학 작품의 비교축, 새로운 비문학 X/Y의 자족성, 한글 맞춤법 및 중세국어 발췌의 정확한 형태·품사를 각각 독립 검토. 지문 없이도 답이 나오는지 실제로 제거 실험(necessity test)하고, 원문보다 과도한 문법적 일반화가 있는지 확인. 고유어/한자어·원형·사이시옷·의존명사 판단은 전 5선지 근거 영수증으로 관리. 자료 이용권이 불명확하면 법적 승인으로 착각하지 않고 BLOCKED_LICENSE.
+## 2026-11-06 dynamic-source review update
+Check that the source-selection receipt was generated for this specific item and contains timestamp, queries, considered candidates, selected span, curricular skill and passage necessity. Reject a copied fixed-candidate title without an item-level source search and evidence, as well as a preconfirmed answer that depends on an unverifiable lyric line.
