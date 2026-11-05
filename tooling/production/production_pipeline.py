@@ -432,6 +432,9 @@ def qa_evidence(bundle, sources, blind, text, findings) -> dict[str, Any]:
         src = next(s for s in sources if s["id"] == it["set"])["works"][0]
         items.append({
             "item_id": it["item_id"], "target_difficulty": it["difficulty"],
+            "stem_polarity": ("NEGATIVE" if it.get("family") == "EXCEPT_INCORRECT" or
+                re.search(r"(?:적절|옳|바르)지\\s*않은|틀린\\s*것|아닌\\s*것", it["stem"])
+                else "POSITIVE"),
             "pass_a": {"answer": str(a), "answer_evidence": key_ev},
             "pass_b": {
                 "answer": str(b.get("answer", "")), "blind": True, "reviewer": blind.get("reviewer"),
@@ -439,7 +442,7 @@ def qa_evidence(bundle, sources, blind, text, findings) -> dict[str, Any]:
                 "answer_evidence": key_ev,
                 "scope_trace": {"status": "IN_SCOPE", "source_refs": [f"DRIVE:{src['entry']['school_source_file_id']}"]},
                 "option_judgments": [{
-                    "option_id": str(i), "verdict": "TRUE" if i == a else "FALSE", "statement_truth": j["v"],
+                    "option_id": str(i), "verdict": j["v"], "statement_truth": j["v"],
                     "claim_key": j["claim"], "axis": j["axis"], "competitiveness": "CORRECT" if i == a else j["c"],
                     "evidence_refs": [f"SRC:{it['set']}:{e}" for e in j["ev"]], "note": j["why"]}
                     for i, j in enumerate(it["judgments"], start=1)],
