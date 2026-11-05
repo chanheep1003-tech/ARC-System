@@ -103,6 +103,9 @@ def run() -> None:
     assert "D4_SHORT" in codes(result)
 
     korean = base_payload("KOR")
+    korean["items"][0]["stem_polarity"] = "POSITIVE"
+    korean["items"][0]["pass_b"]["option_judgments"][1]["verdict"] = "FALSE"
+    korean["items"][0]["pass_b"]["option_judgments"][4]["verdict"] = "FALSE"
     korean["uses_source_text"] = True
     korean["source_text_locks"] = [{
         "source_text_id": "KOR-TEXT-01",
@@ -120,6 +123,22 @@ def run() -> None:
     }]
     result = mod.analyze(korean)
     assert result["status"] == "PASS", result
+
+    negative = copy.deepcopy(korean)
+    item = negative["items"][0]
+    item["stem_polarity"] = "NEGATIVE"
+    for judgement in item["pass_b"]["option_judgments"]:
+        judgement["verdict"] = "FALSE" if judgement["option_id"] == "3" else "TRUE"
+    assert mod.analyze(negative)["status"] == "PASS"
+    multi_false = copy.deepcopy(negative)
+    multi_false["items"][0]["pass_b"]["option_judgments"][0]["verdict"] = "FALSE"
+    assert "UNIQUE_ANSWER_INVALID" in codes(mod.analyze(multi_false))
+    missing_polarity = copy.deepcopy(korean)
+    del missing_polarity["items"][0]["stem_polarity"]
+    assert "STEM_POLARITY_MISSING" in codes(mod.analyze(missing_polarity))
+    unsupported = copy.deepcopy(korean)
+    unsupported["items"][0]["pass_b"]["option_judgments"][0]["verdict"] = "UNSUPPORTED"
+    assert "KOR_OPTION_UNSUPPORTED" in codes(mod.analyze(unsupported))
 
     korean_bad = copy.deepcopy(korean)
     korean_bad["source_text_locks"][0]["source_origin"] = "ARC_N_OUTPUT"
