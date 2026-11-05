@@ -82,7 +82,7 @@ def gate_failures(gates: Any, required: set[str], prefix: str, item_id: str | No
     return failures
 
 
-def analyze_item(item: Any, item_format: str) -> list[dict[str, Any]]:
+def analyze_item(item: Any, item_format: str, subject: str = "") -> list[dict[str, Any]]:
     if not isinstance(item, dict):
         return [finding("ITEM_NOT_MAPPING", "Each item must be a mapping")]
     item_id = str(item.get("item_id", "")).strip() or "<missing>"
@@ -124,7 +124,7 @@ def analyze_item(item: Any, item_format: str) -> list[dict[str, Any]]:
         option_judgments = option_judgments if isinstance(option_judgments, list) else []
 
     polarity = str(item.get("stem_polarity", "")).upper()
-    if polarity not in {"POSITIVE", "NEGATIVE"} and item.get("subject_qa_mode") == "KOR_NORM":
+    if polarity not in {"POSITIVE", "NEGATIVE"} and subject == "KOR":
         findings.append(finding("STEM_POLARITY_MISSING", "KOR normative items require explicit POSITIVE/NEGATIVE polarity", item_id))
     if not polarity:
         polarity = "POSITIVE"  # legacy fixtures remain compatible; Korean reviewer must specify polarity
@@ -172,7 +172,7 @@ def analyze_item(item: Any, item_format: str) -> list[dict[str, Any]]:
             findings.append(finding("UNIQUE_ANSWER_INVALID", "Negative stem requires exactly one FALSE answer and four TRUE choices", item_id))
     elif len(true_ids) != 1 or (true_ids and true_ids[0] != answer_b):
         findings.append(finding("UNIQUE_ANSWER_INVALID", "Positive stem requires exactly one TRUE answer", item_id))
-    if item.get("subject_qa_mode") == "KOR_NORM" and uncertain_ids:
+    if subject == "KOR" and uncertain_ids:
         findings.append(finding("KOR_OPTION_UNSUPPORTED", "KOR normative release cannot contain HALF_TRUE/UNSUPPORTED judgments", item_id))
     if len(semantic_keys) != len(set(semantic_keys)):
         findings.append(finding("OPTION_SEMANTIC_DUPLICATION", "Duplicate AXIS + CLAIM_KEY detected", item_id))
@@ -260,7 +260,7 @@ def analyze(data: dict[str, Any]) -> dict[str, Any]:
     if any(not item_id for item_id in item_ids) or len(item_ids) != len(set(item_ids)):
         findings.append(finding("ITEM_ID_INVALID", "Every item_id must be non-empty and unique"))
     for item in items:
-        findings.extend(analyze_item(item, item_format))
+        findings.extend(analyze_item(item, item_format, subject))
 
     findings.extend(gate_failures(data.get("set_gates"), SET_GATES, "SET"))
     if subject == "KOR":
