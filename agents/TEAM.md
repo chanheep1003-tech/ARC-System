@@ -30,3 +30,7 @@ Verify source access, file handoff, isolated solve, key comparison, provenance a
 
 ## KOR norm review ownership (2026-11-05)
 This is a responsibility refinement, not an automatic multi-model dispatch. Source analyst verifies current official clause/lexeme POS/medieval witness, subject author records stem polarity and atomic assertions, blind reviewer independently judges all five choices, editor/typesetter reconciles passage inventory and rendered TOC/phonetic glyphs, maintainer adds regression tests, coordinator checks source/reviewer/render receipts and withholds release when any are unavailable. Follow quality/korean/ARC_KOR_NORM_20261105_CORRECTION_POLICY.md; published PDFs must not inherit stale pre-edit review.
+
+
+## 2026-11-05 five-stage authoring responsibility
+Use quality/ARC_V1_V5_LEARNING_LADDER_V1.0.md as the current level contract. Source analyst maps textbook coverage for V1, priority evidence for V2, permissible new passage for V3, edge-case reference for V4, and actual Dongbuk multi-exam anchors for V5. Subject author writes each level's distinct blueprint. Blind reviewer verifies that V3 cannot be answered without its supplied passage, V4's competing distractors have uniquely correct evaluations, and V5 does not invent school style. Editor/typesetter separates ARC_N V1–V4 layouts from ARC_FINAL V5 exam layout. Coordinator records distinct batch/product/level statuses; never marks an unverified V5 as Dongbuk-calibrated.
