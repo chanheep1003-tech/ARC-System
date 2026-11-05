@@ -16,6 +16,10 @@ item_formats: [MCQ5]
 option_verdicts: [TRUE, FALSE, HALF_TRUE, UNSUPPORTED]
 competitiveness: [STRONG, MEDIUM, WEAK, CORRECT]
 difficulty_levels: [D1, D2, D3, D4, D5]
+korean_required_item_field: stem_polarity  # POSITIVE or NEGATIVE; strict in content QA for KOR
+korean_positive_truth_pattern: TRUE_1_FALSE_4
+korean_negative_truth_pattern: FALSE_1_TRUE_4
+korean_ambiguous_option_verdicts_forbidden: [HALF_TRUE, UNSUPPORTED]
 per_item_required:
   - item_id
   - target_difficulty
