@@ -9,5 +9,5 @@ No file creates a running agent by itself. Actual delegation needs a supported h
 When reviewing KOR N° spelling/medieval corpora, additionally read quality/korean/ARC_KOR_NORM_20261105_CORRECTION_POLICY.md. A negative stem requires exactly one FALSE answer. Static PDF PASS does not confer content lock; preserve original source, pending patches and review receipts separately.
 
 
-## ARC five learning levels (2026-11-05)
-Always load quality/ARC_V1_V5_LEARNING_LADDER_V1.0.md and the subject-specific blueprint when level V1~V5 appears. V1=full textbook coverage, V2=priority weighted, V3=unseen passage transfer, V4=advanced discrimination, V5=ARC_FINAL Dongbuk simulation. V1~V4 are ARC_N, not ARC_CORE; V5 is ARC_FINAL. A level label does not certify generated files or release readiness.
+## KOR-only V1–V5 learning levels (corrected 2026-11-06)
+For subject=KOR ONLY, load quality/korean/ARC_KOR_V1_V5_LEVEL_POLICY_V1.1.md, its source analysis and registry. Other subjects do not inherit this ladder. Korean V3 unseen materials vary by genre: literature compares a new literary text, nonfiction explains and compares new concepts, grammar uses authentic new examples (including song lyrics, poems and fiction when licensing allows). V1–V4=ARC_N, V5=ARC_FINAL. Unverified source text or licensing remains BLOCKED.
