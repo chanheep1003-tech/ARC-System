@@ -4,7 +4,8 @@ SCOPE: subject=KOR ONLY. SCI/SOC/기타 과목에는 적용하지 않는다.
 STATUS: ACTIVE DEV POLICY / NOT RELEASE CERTIFICATION
 PREVIOUS_GENERIC_FILE: quality/ARC_V1_V5_LEARNING_LADDER_V1.0.md (deprecated as global policy)
 EVIDENCE: quality/korean/ARC_KOR_DONGBUK_UNSEEN_ANALYSIS_V1.0.md
-SOURCE_REGISTRY: quality/korean/ARC_KOR_UNSEEN_CANDIDATES_V1.0.yaml
+DYNAMIC_SOURCE_POLICY: quality/korean/ARC_KOR_DYNAMIC_SOURCE_SELECTION_V1.0.yaml
+GRADE1_EXAM_INVENTORY: quality/korean/ARC_DONGBUK_G1_KOR_EXAM_INVENTORY_20261106.yaml
 
 ## 국어 제품 버전
 | 레벨 | 제품 | 목표 |
@@ -57,4 +58,4 @@ V5는 실제 해당 시험범위의 동북고 기출을 확인해 '문항수·�
 이 계약은 KOR 전용이다. SCI, SOC 등의 학습/문항 버전은 각 과목 엔진 및 실제 사용자 지시만 적용. 기존 범용 quality/ARC_V1_V5_LEARNING_LADDER_V1.0.md 경로를 신규 프로덕션에서 사용하지 않는다.
 
 ## 실행 상태
-이 문서는 외부 지문/후보의 연구·등록 및 출제 정책이다. 중세국어/맞춤법 원문 전사, 300문항 교체, 최종 학생용·해설용 PDF 제작 완료를 주장하는 근거가 아니다.
+이 문서는 문항 출제 시점의 외부 지문 검색·후보 비교 및 출제 정책이다. **작품·가수·문헌을 미리 확정하는 정적 후보 목록은 사용하지 않는다.** 문항의 개념, 독해 동작, 오답 함정과 난도에 맞추어 매번 자료를 새로 검색하며 원전·허가·문항 의존성을 검증한다. 중세국어/맞춤법 원문 전사, 300문항 교체, 최종 학생용·해설용 PDF 제작 완료를 주장하는 근거가 아니다.
