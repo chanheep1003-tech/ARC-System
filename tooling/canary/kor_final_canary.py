@@ -52,6 +52,7 @@ def make_qa_evidence(profile: dict[str, Any], answers: dict[int, int], subject: 
             })
         items.append({
             "item_id": meta["item_id"],
+            "stem_polarity": "POSITIVE", # synthetic final fixture has exactly one TRUE
             "target_difficulty": meta["actual_difficulty"],
             "pass_a": {"answer": str(answer), "answer_evidence": [f"FINAL_FIXTURE:Q{idx}"]},
             "pass_b": {
