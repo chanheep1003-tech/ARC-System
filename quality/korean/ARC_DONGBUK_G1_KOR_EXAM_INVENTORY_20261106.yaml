@@ -1,0 +1,46 @@
+# Dongbuk High School grade-1 Korean original paper inventory, searched 2026-11-06
+subject: KOR
+school: 동북고등학교
+grade: 1
+as_of: "2026-11-06"
+inventory_type: ORIGINAL_EXAM_ONLY
+search_basis:
+  - "Google Drive title search using Korean subject, school, year, and semester terms"
+  - "Full paginated Drive metadata scan for filename containing 공통국어 and PDF filename containing 국어"
+  - "Direct listing of 2025 semester-2 final and 2026 semester-2 mid original-paper folders"
+  - "Readable original exam text verified for the two found files"
+limits: "Search indexes and filenames can omit misnamed or unindexed files. NOT_FOUND_IN_CURRENT_SEARCH is not proof of absence from all user storage."
+known_originals:
+  - year: 2025
+    semester: 2
+    exam: final
+    subject: 공통국어2
+    status: VERIFIED
+    file_id: 1bN5wDVbQ1bGlixjzMsWIEJjKpVSTP8iN
+    url: https://drive.google.com/file/d/1bN5wDVbQ1bGlixjzMsWIEJjKpVSTP8iN/view
+    questions: {mcq: 21, constructed: 4}
+    pages: 7
+  - year: 2026
+    semester: 2
+    exam: midterm
+    subject: 공통국어2
+    status: VERIFIED
+    file_id: 1GZ_ubNF25Q1U1Jy3C9DSszycs7cmf3HK
+    url: https://drive.google.com/file/d/1GZ_ubNF25Q1U1Jy3C9DSszycs7cmf3HK/view
+    questions: {mcq: 22, constructed: 4}
+    pages: 12
+missing_search_targets:
+  - {year: 2025, semester: 1, exam: midterm, expected_subject: 공통국어1, status: NOT_FOUND_IN_CURRENT_SEARCH, priority: HIGH}
+  - {year: 2025, semester: 1, exam: final, expected_subject: 공통국어1, status: NOT_FOUND_IN_CURRENT_SEARCH, priority: HIGH}
+  - {year: 2025, semester: 2, exam: midterm, expected_subject: 공통국어2, status: NOT_FOUND_IN_CURRENT_SEARCH, priority: VERY_HIGH}
+  - {year: 2026, semester: 1, exam: midterm, expected_subject: 공통국어1, status: NOT_FOUND_IN_CURRENT_SEARCH, priority: HIGH}
+  - {year: 2026, semester: 1, exam: final, expected_subject: 공통국어1, status: NOT_FOUND_IN_CURRENT_SEARCH, priority: HIGH}
+future:
+  - {year: 2026, semester: 2, exam: final, expected_subject: 공통국어2, status: NOT_YET_HELD_AS_OF_2026_11_06}
+older_history:
+  2024_and_before: "NO_VERIFIED_ORIGINALS_FOUND_IN_THIS_SEARCH; optional extra collection for long-term style analysis."
+exclude_from_verified_exam_count:
+  - "ARC-generated booklets and mock papers"
+  - "School worksheets or concept supplements"
+  - "Past-exam analysis reports without the original paper"
+upload_guideline: "Store new originals in per-year/semester/exam subfolders, preserve source filename and record collection date; never label mock papers as school originals."
