@@ -7,3 +7,7 @@ No file creates a running agent by itself. Actual delegation needs a supported h
 
 ## KOR 2026-11-05 correction patch
 When reviewing KOR N° spelling/medieval corpora, additionally read quality/korean/ARC_KOR_NORM_20261105_CORRECTION_POLICY.md. A negative stem requires exactly one FALSE answer. Static PDF PASS does not confer content lock; preserve original source, pending patches and review receipts separately.
+
+
+## ARC five learning levels (2026-11-05)
+Always load quality/ARC_V1_V5_LEARNING_LADDER_V1.0.md and the subject-specific blueprint when level V1~V5 appears. V1=full textbook coverage, V2=priority weighted, V3=unseen passage transfer, V4=advanced discrimination, V5=ARC_FINAL Dongbuk simulation. V1~V4 are ARC_N, not ARC_CORE; V5 is ARC_FINAL. A level label does not certify generated files or release readiness.
