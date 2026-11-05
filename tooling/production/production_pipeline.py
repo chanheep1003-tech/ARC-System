@@ -420,6 +420,30 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
             "mcq_count": n, "cr_count": len(cr_items(bundle))}
 
 
+def korean_stem_polarity(item: dict[str, Any]) -> str:
+    """Determine truth-direction from explicit metadata or an observed Korean exam stem.
+    This is an admission preflight, not a substitute for source-based verification.
+    """
+    compact = re.sub(r"\\s+", "", str(item.get("stem", "")))
+    negative_markers = (
+        "적절하지않은", "옳지않은", "바르지않은", "타당하지않은",
+        "일치하지않는", "어긋나는", "맞지않는", "적절하지않는",
+        "틀린것은", "아닌것은", "잘못된", "부적절한", "위배되는",
+    )
+    inferred_negative = (
+        str(item.get("family", "")).upper() == "EXCEPT_INCORRECT"
+        or any(marker in compact for marker in negative_markers)
+    )
+    explicit = str(item.get("stem_polarity", "")).upper()
+    if explicit in {"POSITIVE", "NEGATIVE"}:
+        if (explicit == "NEGATIVE") != inferred_negative:
+            raise ValueError(f"stem_polarity conflicts with stem or family: {item.get('item_id')}")
+        return explicit
+    if explicit:
+        raise ValueError(f"invalid stem_polarity for {item.get('item_id')}: {explicit}")
+    return "NEGATIVE" if inferred_negative else "POSITIVE"
+
+
 def qa_evidence(bundle, sources, blind, text, findings) -> dict[str, Any]:
     blind_by_id = {b["item_id"]: b for b in blind["items"]}
     hard = [f for f in findings if f["severity"] == "FAIL"]
@@ -432,9 +456,7 @@ def qa_evidence(bundle, sources, blind, text, findings) -> dict[str, Any]:
         src = next(s for s in sources if s["id"] == it["set"])["works"][0]
         items.append({
             "item_id": it["item_id"], "target_difficulty": it["difficulty"],
-            "stem_polarity": ("NEGATIVE" if it.get("family") == "EXCEPT_INCORRECT" or
-                re.search(r"(?:적절|옳|바르)지\s*않은|틀린\s*것|아닌\s*것", it["stem"])
-                else "POSITIVE"),
+            "stem_polarity": korean_stem_polarity(it),
             "pass_a": {"answer": str(a), "answer_evidence": key_ev},
             "pass_b": {
                 "answer": str(b.get("answer", "")), "blind": True, "reviewer": blind.get("reviewer"),
