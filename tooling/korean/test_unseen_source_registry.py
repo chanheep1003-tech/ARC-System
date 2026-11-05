@@ -85,10 +85,15 @@ def test_grade1_exam_inventory() -> None:
     assert len(common["subjects"]) == 7
     assert len({x["file_id"] for x in common["subjects"]}) == 7
     assert {x["file_id"] for x in files} == {x["file_id"] for x in common["subjects"]}
-    assert all(len(x["sha256"]) == 64 for x in common["subjects"])
+    assert all(len(x["sha256_uploaded_pdf"]) == 64 for x in common["subjects"])
+    assert all(len(x["sha256_original_zip_member"]) == 64 for x in common["subjects"])
     assert {x["subject"] for x in common["subjects"]} == {"KOR", "ENG", "MATH", "INFO", "SCI", "SOC", "HIST"}
-    assert next(x for x in common["subjects"] if x["subject"] == "KOR")["sha256"] == (
+    kor = next(x for x in common["subjects"] if x["subject"] == "KOR")
+    assert kor["sha256_uploaded_pdf"] == (
         "f40409ba3d141a1fdb2a977feb2ce43347ccddc3c8bdbe405a209ca084e75fd8"
+    )
+    assert kor["sha256_original_zip_member"] == (
+        "934faece3bba5ae2f117db8b7b99c7390a25f1114455bde590f33c856623f094"
     )
 
     excluded = inventory["user_confirmed_not_available"]
