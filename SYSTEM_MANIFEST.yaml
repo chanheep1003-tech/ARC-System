@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.42-dev
+  version: 1.8.43-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -29,13 +29,19 @@ runtime:
     - ARC_CORE
     - ARC_N
     - ARC_FINAL
-  learning_level_policy: quality/ARC_V1_V5_LEARNING_LADDER_V1.0.md
-  learning_level_v1: ARC_N_FULL_SCOPE
-  learning_level_v2: ARC_N_PRIORITY_APPLICATION
-  learning_level_v3: ARC_N_UNSEEN_TRANSFER
-  learning_level_v4: ARC_N_ADVANCED_DISCRIMINATION
-  learning_level_v5: ARC_FINAL_DONGBUK_SIMULATION
-  learning_level_school_style_unverified: BLOCKED_ANCHOR
+  # KOR-only; other subjects keep their own active engines and scopes
+  korean_learning_level_policy: quality/korean/ARC_KOR_V1_V5_LEVEL_POLICY_V1.1.md
+  korean_learning_level_v1: ARC_N_FULL_SCOPE
+  korean_learning_level_v2: ARC_N_PRIORITY_APPLICATION
+  korean_learning_level_v3: ARC_N_UNSEEN_TRANSFER
+  korean_learning_level_v4: ARC_N_ADVANCED_DISCRIMINATION
+  korean_learning_level_v5: ARC_FINAL_DONGBUK_SIMULATION
+  korean_unseen_exam_evidence: quality/korean/ARC_KOR_DONGBUK_UNSEEN_ANALYSIS_V1.0.md
+  korean_unseen_source_registry: quality/korean/ARC_KOR_UNSEEN_CANDIDATES_V1.0.yaml
+  korean_lyrics_full_text_copyright_gate: required
+  korean_unseen_source_necessity_gate: required
+  korean_medieval_edition_and_period_gate: required
+  korean_school_style_unverified: BLOCKED_ANCHOR
   default_school: 동북고등학교
   curriculum: 2022 개정 교육과정
   teacher_style_prediction: disabled

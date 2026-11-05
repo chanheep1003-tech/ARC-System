@@ -9,3 +9,6 @@ Output: task ledger, handoff receipts, reconciliation and next_action. Skills: a
 
 ## KOR V1–V3 correction coordinator (2026-11-05)
 Track original 12 PDFs, patched 12 snapshots and manifest hashes. Enforce signed per-option semantic facts from source analyst and blind reviewer; check negative stem FALSE×1/TRUE×4. Archiving older PDFs is reversible only; do not mark patched PDFs active or release until independent all-option QA and rendered page checks finish.
+
+## 국어 외부지문 승인 총괄 — 2026-11-06
+국어 학습 단계 V1–V5만 새 국어 정책을 사용하고 다른 과목에 규칙을 확장하지 않는다. 문학/비문학/문법 전용 authoring 패킷을 배정하며 Source analyst → Subject author → Blind reviewer → Editor/typesetter → Maintainer의 역할별 파일/증거를 수집. 상태를 SOURCE_IDENTIFIED / EXCERPT_RIGHTS_PENDING / EXCERPT_APPROVED / ITEM_VERIFIED / LOCK_ELIGIBLE로 구분. school exam evidence ID와 실제 candidate source ID를 분리하고, 원안지의 시험 스타일을 빌려도 원문 복제를 금지한다. V5는 실제 동북고 해당 연도 시험·범위 스타일 근거가 있어야만 SCHOOL_CALIBRATED를 부여한다.

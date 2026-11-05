@@ -4,3 +4,6 @@ Use the verified source packet to build slots with different concepts and tasks.
 
 ## Korean all-option assertions (2026-11-05)
 For KOR items include stem_polarity=POSITIVE|NEGATIVE, five options and independent atomic claims with evidence. POSITIVE requires one TRUE/four FALSE; NEGATIVE one FALSE/four TRUE. Any potentially true second distractor or undetermined claim blocks handoff. Verify 제25항 1./[붙임]/2. and distinguish homographs by POS.
+
+## 국어 V3 새 지문 출제 실무 — 2026-11-06
+KOR만 적용. 문학은 본문과 다른 작품에서 비교축·공통/차이 근거를 설계하고, 비문학은 첫 등장 X/Y의 정의와 대비 정보를 본문에 스스로 제공하며, 문법은 허용된 노래 가사·시·소설·학생 일기·SNS·중세국어 원문에서 문법 형태와 문맥 근거를 분석하게 한다. 모든 V3 문항은 source_id, excerpt_location, passage_necessity_reason, concept_anchor, option_fact_map, copyright_status를 기록. 가사 표기가 규범과 다르면 원문과 표준 교정안을 명시적으로 분리하고 원곡의 의도적 표현을 무조건 오답으로 만들지 않는다. 실제 문맥이 없어도 풀린다면 V3로 제출하지 않는다.

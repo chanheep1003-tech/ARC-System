@@ -76,6 +76,7 @@ jobs:
           python -m py_compile tooling/final/test_final_quality_gate.py
           python -m py_compile tooling/korean/korean_exam_realism_gate.py
           python -m py_compile tooling/korean/test_korean_exam_realism_gate.py
+          python -m py_compile tooling/korean/test_unseen_source_registry.py
           python -m py_compile tooling/canary/kor_final_canary.py
           python -m py_compile tooling/canary/test_kor_final_canary.py
           python -m py_compile tooling/visual/arc_visual_render.py
@@ -176,6 +177,9 @@ jobs:
 
       - name: Run FINAL quality gate smoke
         run: python tooling/final/test_final_quality_gate.py
+
+      - name: Verify Korean-only V1-V5 routing and licensed external-source candidates
+        run: python tooling/korean/test_unseen_source_registry.py
 
       - name: Run Korean exam realism gate smoke
         run: python tooling/korean/test_korean_exam_realism_gate.py

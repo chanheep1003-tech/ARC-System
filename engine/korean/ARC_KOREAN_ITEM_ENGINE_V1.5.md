@@ -535,7 +535,7 @@ For all KOR ARC N°/FINAL content, read `quality/korean/ARC_KOR_NORM_20261105_CO
 - Test with `tooling/content_qa/korean_norm_regression_gate.py`; maintain actual negative regression examples in `quality/reviews/ARC_KOR_N_20261105_REVIEW_REPORT.md`. Current 2026-11-05 patched PDFs remain REVIEW_PENDING until full independent audit.
 
 ## 15. ARC 5-LEVEL LEARNING LADDER (2026-11-05 / REQUIRED)
-Load quality/ARC_V1_V5_LEARNING_LADDER_V1.0.md on every new ARC_N or ARC_FINAL Korean item build.
+Load quality/korean/ARC_KOR_V1_V5_LEVEL_POLICY_V1.1.md on every new KOR ARC_N or KOR ARC_FINAL item build; this ladder does not apply to other subjects. Resolve sources through quality/korean/ARC_KOR_UNSEEN_CANDIDATES_V1.0.yaml and verified exam evidence before authoring.
 - V1 ARC_N: full textbook range + diverse item families + foundational concepts, NOT a subset focused only on frequent rules.
 - V2 ARC_N: higher share for evidence-backed priority concepts; require more interdependent decisions/diagnosis.
 - V3 ARC_N: unfamiliar authorized outside passage or genuinely novel examples. Passage must be necessary to solve; no unteachable outside concept.
@@ -543,3 +543,6 @@ Load quality/ARC_V1_V5_LEARNING_LADDER_V1.0.md on every new ARC_N or ARC_FINAL K
 - V5 ARC_FINAL: re-create measured school examination structure, stems, passage loading, answer choices, difficulty and time from **verified Dongbuk past exams**; not guaranteed harder than V4 and never claim to predict teacher intent.
 Item metadata MUST retain level, product, textbook anchor, novel passage origin when V3, and verified-school-exam anchor when V5. Version maps: V1-V4=ARC_N; V5=ARC_FINAL. Do not call V1 ARC_CORE.
 When a project explicitly requests V1~V3 orthography, the per-level slots and coverage are defined by quality/korean/ARC_KOR_ORTHOGRAPHY_V123_TEXTBOOK_REBUILD_SPEC_20261105.md. Older V3 "DISCRIMINATION only" terminology is overridden by this requirement.
+
+## 16. GENRE-DEPENDENT UNSEEN KOR PASSAGE (2026-11-06)
+Literature: actual new literary text with comparison axes; nonfiction: unfamiliar X/Y concepts defined within new self-contained passage then applied to an unfamiliar example; grammar: unfamiliar old-Korean documentary excerpts OR modern orthography evidence in short licensed song lyrics, poems, novel dialogue, school diary, SNS. For medieval texts lock original edition, period, original lines and modernization and avoid duplicate excerpts. Song transcripts may contain nonstandard artist spelling; do not treat a lyric as the standard dictionary. Cite rule and original words separately, and obtain rights to print extensive copyrighted lyrics/modern creative passages. Example must be necessary (if removable, reject V3). Match V5 only to confirmed Dongbuk exam formats. Evidence: 2025 final Q4–10 and Q15–21, 2026 mid Q1 and Q20–22, not generalization about lyric frequency.

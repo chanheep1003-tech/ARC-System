@@ -3,3 +3,6 @@ Read source-ingest, research-grounding and fact-audit skills. Load current scope
 
 ## Korean spelling/medieval source extension (2026-11-05)
 For each normative option provide exact official rule subsection, lexical POS/reading, source URL and inspection date. For medieval passages separate composition date from printing/edition date. Report lost Hangul glyphs and contradictory transcriptions as BLOCKED_SOURCE; never treat earlier ARC questions as authority.
+
+## 국어 외부 자료 수집 전담 — 2026-11-06
+KOR V3/V4/V5에서 quality/korean/ARC_KOR_DONGBUK_UNSEEN_ANALYSIS_V1.0.md 및 quality/korean/ARC_KOR_UNSEEN_CANDIDATES_V1.0.yaml를 확인. 2025 기말·2026 중간 실물의 범위, 정확한 페이지/문항 번호와 학생이 수행해야 하는 판단을 기록한다. 작품 후보는 exact edition URL, 권차/행, 발표시기, 이용조건, school/archive overlap을 확인. 외부시·현대소설·노랫말은 장문 발췌 사용허락 미확인 시 메타데이터만 제공하고 BLOCKED_LICENSE. 문헌이 16세기이면 15세기 사용증거라고 오기하지 않는다. 실제 기출에 노래가사가 자주 나왔다는 정량 주장 금지.
