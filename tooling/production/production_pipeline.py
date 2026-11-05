@@ -424,7 +424,7 @@ def korean_stem_polarity(item: dict[str, Any]) -> str:
     """Determine truth-direction from explicit metadata or an observed Korean exam stem.
     This is an admission preflight, not a substitute for source-based verification.
     """
-    compact = re.sub(r"\\s+", "", str(item.get("stem", "")))
+    compact = re.sub(r"\s+", "", str(item.get("stem", "")))
     negative_markers = (
         "적절하지않은", "옳지않은", "바르지않은", "타당하지않은",
         "일치하지않는", "어긋나는", "맞지않는", "적절하지않는",
