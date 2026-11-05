@@ -433,7 +433,7 @@ def qa_evidence(bundle, sources, blind, text, findings) -> dict[str, Any]:
         items.append({
             "item_id": it["item_id"], "target_difficulty": it["difficulty"],
             "stem_polarity": ("NEGATIVE" if it.get("family") == "EXCEPT_INCORRECT" or
-                re.search(r"(?:적절|옳|바르)지\\s*않은|틀린\\s*것|아닌\\s*것", it["stem"])
+                re.search(r"(?:적절|옳|바르)지\s*않은|틀린\s*것|아닌\s*것", it["stem"])
                 else "POSITIVE"),
             "pass_a": {"answer": str(a), "answer_evidence": key_ev},
             "pass_b": {
