@@ -444,6 +444,27 @@ def korean_stem_polarity(item: dict[str, Any]) -> str:
     return "NEGATIVE" if inferred_negative else "POSITIVE"
 
 
+def korean_judgment_truth(item: dict[str, Any], judgment: dict[str, Any]) -> str:
+    """Normalize statement truth and answer-correctness metadata without changing the key.
+
+    SOURCE_TRUTH: v is the truth of the candidate's asserted statement.
+    ANSWER_CORRECTNESS: v indicates that the candidate is the correct choice,
+    e.g. selecting ⓒ as the false phrase in a summarized passage.
+    The mode must be explicit; guessing it would silently approve defective items.
+    """
+    verdict = str(judgment.get("v", "")).upper()
+    mode = str(item.get("judgment_semantics", "STATEMENT_TRUTH")).upper()
+    if mode == "STATEMENT_TRUTH":
+        return verdict
+    if mode != "ANSWER_CORRECTNESS":
+        raise ValueError(f"Unknown judgment_semantics: {mode}")
+    if verdict not in {"TRUE", "FALSE"}:
+        raise ValueError("ANSWER_CORRECTNESS requires explicit TRUE/FALSE")
+    if korean_stem_polarity(item) == "NEGATIVE":
+        return "FALSE" if verdict == "TRUE" else "TRUE"
+    return verdict
+
+
 def qa_evidence(bundle, sources, blind, text, findings) -> dict[str, Any]:
     blind_by_id = {b["item_id"]: b for b in blind["items"]}
     hard = [f for f in findings if f["severity"] == "FAIL"]
@@ -464,7 +485,10 @@ def qa_evidence(bundle, sources, blind, text, findings) -> dict[str, Any]:
                 "answer_evidence": key_ev,
                 "scope_trace": {"status": "IN_SCOPE", "source_refs": [f"DRIVE:{src['entry']['school_source_file_id']}"]},
                 "option_judgments": [{
-                    "option_id": str(i), "verdict": j["v"], "statement_truth": j["v"],
+                    "option_id": str(i), "verdict": korean_judgment_truth(it, j),
+                    "statement_truth": korean_judgment_truth(it, j),
+                    "author_marked_verdict": j["v"],
+                    "judgment_semantics": it.get("judgment_semantics", "STATEMENT_TRUTH"),
                     "claim_key": j["claim"], "axis": j["axis"], "competitiveness": "CORRECT" if i == a else j["c"],
                     "evidence_refs": [f"SRC:{it['set']}:{e}" for e in j["ev"]], "note": j["why"]}
                     for i, j in enumerate(it["judgments"], start=1)],
