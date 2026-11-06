@@ -74,6 +74,8 @@ def test_dynamic_source_policy() -> None:
     supplement = (ROOT / spacing_path).read_text(encoding="utf-8")
     assert all(k in supplement for k in ("KOR ONLY", "보조사", "의존 명사", "어미", "격 조사", "제41", "제42", "제47", "2025", "65문항"))
     assert "30" in supplement and "100" in supplement
+    assert "DIRECT_TEXTBOOK_EVIDENCE:" in supplement
+    assert all(x in supplement for x in ("뿐", "대로", "지", "시", "124~125", "제43항"))
     assert "NO_FIXED_LEXEME" not in supplement or "고정" in supplement
     assert "V6_SPACING_POLICY:" in policy
 
