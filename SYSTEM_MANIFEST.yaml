@@ -30,12 +30,17 @@ runtime:
     - ARC_N
     - ARC_FINAL
   # KOR-only; other subjects keep their own active engines and scopes
-  korean_learning_level_policy: quality/korean/ARC_KOR_V1_V5_LEVEL_POLICY_V1.1.md
+  korean_learning_level_policy: quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md
   korean_learning_level_v1: ARC_N_FULL_SCOPE
   korean_learning_level_v2: ARC_N_PRIORITY_APPLICATION
   korean_learning_level_v3: ARC_N_UNSEEN_TRANSFER
   korean_learning_level_v4: ARC_N_ADVANCED_DISCRIMINATION
   korean_learning_level_v5: ARC_FINAL_DONGBUK_SIMULATION
+  korean_learning_level_v6: ARC_N_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY
+  korean_v6_specialist_policy: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md
+  korean_v6_no_fixed_lexeme_bank: required
+  korean_v6_lexical_pos_and_clause_evidence: required
+  korean_v6_blind_solution_before_answer: required
   korean_unseen_exam_evidence: quality/korean/ARC_KOR_DONGBUK_UNSEEN_ANALYSIS_V1.0.md
   korean_dynamic_source_selection_policy: quality/korean/ARC_KOR_DYNAMIC_SOURCE_SELECTION_V1.0.yaml
   korean_grade1_exam_inventory: quality/korean/ARC_DONGBUK_G1_KOR_EXAM_INVENTORY_20261106.yaml
