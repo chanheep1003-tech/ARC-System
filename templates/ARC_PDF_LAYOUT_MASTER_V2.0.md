@@ -1,3 +1,8 @@
+
+
+## ARC_N BLACK & WHITE OVERRIDE — 2026-11-06
+For PRODUCT_MODE=ARC_N, `templates/n/ARC_N_BW_LAYOUT_V1.0.md` overrides conflicting color/reference/presentation declarations below. Use the compatibility N HTML shell and `templates/gold/ARC_N_TYPESET_REFERENCE_V1.1.md`. CORE and FINAL are unaffected. Do not carry source/difficulty/point tags from the reference into student pages.
+
 # ARC SYSTEM — PDF 조판 MASTER V2.0
 # VERSION_DATE: 2026-09-17
 # BASE: N제_PDF_조판_MASTER_V1.3 + ARC Template System v0.2
