@@ -38,6 +38,11 @@ runtime:
   korean_learning_level_v5: ARC_FINAL_DONGBUK_SIMULATION
   korean_learning_level_v6: ARC_N_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY
   korean_v6_specialist_policy: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md
+  korean_v6_spacing_pos_policy: quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.0.md
+  korean_v6_spacing_min_questions_target: 65
+  korean_v6_particle_vs_dependent_noun_target: 30
+  korean_v6_particle_subtype_validation: required
+  korean_v6_orthography_permissible_forms_gate: required
   korean_v6_no_fixed_lexeme_bank: required
   korean_v6_lexical_pos_and_clause_evidence: required
   korean_v6_blind_solution_before_answer: required

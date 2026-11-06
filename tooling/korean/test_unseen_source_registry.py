@@ -65,6 +65,20 @@ def test_dynamic_source_policy() -> None:
         assert runtime[v6_gate] == "required", v6_gate
     assert "learning_level_v6" not in runtime and "korean_learning_level_v6" in runtime
 
+    spacing_path = "quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.0.md"
+    assert runtime["korean_v6_spacing_pos_policy"] == spacing_path
+    assert runtime["korean_v6_spacing_min_questions_target"] == 65
+    assert runtime["korean_v6_particle_vs_dependent_noun_target"] == 30
+    assert runtime["korean_v6_particle_subtype_validation"] == "required"
+    assert runtime["korean_v6_orthography_permissible_forms_gate"] == "required"
+    supplement = (ROOT / spacing_path).read_text(encoding="utf-8")
+    assert all(k in supplement for k in ("KOR ONLY", "보조사", "의존 명사", "어미", "격 조사", "제41", "제42", "제47", "2025", "65문항"))
+    assert "30" in supplement and "100" in supplement
+    assert "DIRECT_TEXTBOOK_EVIDENCE:" in supplement
+    assert all(x in supplement for x in ("뿐", "대로", "지", "시", "124~125", "제43항"))
+    assert "NO_FIXED_LEXEME" not in supplement or "고정" in supplement
+    assert "V6_SPACING_POLICY:" in policy
+
     pilot = (ROOT / "quality/korean/ARC_KOR_V6_5Q_PILOT_AUTHOR_DRAFT_20261106.md").read_text(encoding="utf-8")
     assert "NEED_INDEPENDENT_BLIND_REVIEW" in pilot
     assert all(f"### Q{n:02d}" in pilot for n in range(1, 6))
