@@ -65,6 +65,13 @@ def test_dynamic_source_policy() -> None:
         assert runtime[v6_gate] == "required", v6_gate
     assert "learning_level_v6" not in runtime and "korean_learning_level_v6" in runtime
 
+    pilot = (ROOT / "quality/korean/ARC_KOR_V6_5Q_PILOT_AUTHOR_DRAFT_20261106.md").read_text(encoding="utf-8")
+    assert "NEED_INDEPENDENT_BLIND_REVIEW" in pilot
+    assert all(f"### Q{n:02d}" in pilot for n in range(1, 6))
+    assert "산 넘어 산" in pilot and "제15항" in pilot
+    assert all(x in pilot for x in ("동아리", "이틀간", "약속대로", "뿐", "갈빗집"))
+    assert "검증 문항 5개 완성" in pilot
+
 
 def test_grade1_exam_inventory() -> None:
     runtime = read_yaml("SYSTEM_MANIFEST.yaml")["runtime"]
