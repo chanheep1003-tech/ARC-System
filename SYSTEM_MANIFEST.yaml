@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.44-dev
+  version: 1.8.45-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -457,7 +457,8 @@ active:
     core_html_master: templates/core/ARC_CORE_master_v0.3.html
     arc_n_html_master: templates/n/ARC_N_master_v0.2.html
     arc_final_html_master: templates/final/ARC_FINAL_master_v0.2.html
-    arc_n_typeset_reference: templates/gold/ARC_N_TYPESET_REFERENCE_V1.0.md
+    arc_n_typeset_reference: templates/gold/ARC_N_TYPESET_REFERENCE_V1.1.md
+    arc_n_layout_override: templates/n/ARC_N_BW_LAYOUT_V1.0.md
 
 excluded_from_release:
   school_dna_seed:
