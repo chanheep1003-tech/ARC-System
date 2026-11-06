@@ -2,7 +2,7 @@
 STATUS: SPEC_APPROVED_FOR_PRODUCTION / ITEMS_REVIEW_PENDING
 DATE: 2026-11-05
 SOURCE_PRIORITY: SCHOOL_TEXTBOOK > SCHOOL_HANDOUT > TEXTBOOK_DERIVED_APPLICATION > NIKL_VALIDATION
-CANONICAL_LEVEL_POLICY: quality/korean/ARC_KOR_V1_V5_LEVEL_POLICY_V1.1.md
+CANONICAL_LEVEL_POLICY: quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md
 DYNAMIC_SOURCE_POLICY: quality/korean/ARC_KOR_DYNAMIC_SOURCE_SELECTION_V1.0.yaml
 
 ## 1. 확정한 교과서 근거
@@ -61,3 +61,6 @@ V1은 **전체 범위·다양한 유형의 개념 습득**, V2는 **중요 포�
 - 학생용 문제집과 해설집을 V1/V2/V3 각 1권씩, 총 6 PDF로 생성.
 - 출제 원고·문항별 근거·중복 보고·QA 리포트·변경 내역을 함께 저장.
 - 100문항 작성만으로 검증 완료로 간주하지 않는다.
+
+## V6 별도 트랙
+이 V1~V3 재출제 명세와 무관하게 현대 맞춤법 특화 V6를 `quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md`에 추가한다. V6는 낯선 단어·속담·짧은 문장에서 품사와 조항 적용을 추론하는 별도 ARC N° 제품이며 본 파일의 V1~V3 300문항과 혼동하지 않는다.
