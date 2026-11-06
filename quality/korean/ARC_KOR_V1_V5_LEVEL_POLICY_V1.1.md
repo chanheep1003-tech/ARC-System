@@ -59,3 +59,7 @@ V5는 실제 해당 시험범위의 동북고 기출을 확인해 '문항수·�
 
 ## 실행 상태
 이 문서는 문항 출제 시점의 외부 지문 검색·후보 비교 및 출제 정책이다. **작품·가수·문헌을 미리 확정하는 정적 후보 목록은 사용하지 않는다.** 문항의 개념, 독해 동작, 오답 함정과 난도에 맞추어 매번 자료를 새로 검색하며 원전·허가·문항 의존성을 검증한다. 중세국어/맞춤법 원문 전사, 300문항 교체, 최종 학생용·해설용 PDF 제작 완료를 주장하는 근거가 아니다.
+
+
+## ARCHIVED / SUPERSEDED AS ACTIVE POLICY — 2026-11-06
+For all NEW KOR item production, load `quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md` instead. V1–V5 historical definitions remain here as an audit reference, but the active six-version policy includes the new KOR-only V6 unfamiliar expression/orthography specialist. V6 is an ARC N° supplement; V5 remains ARC FINAL. Do not infer V6 production completion from the policy.
