@@ -20,7 +20,7 @@ def test_dynamic_source_policy() -> None:
     assert runtime["korean_dynamic_source_selection_policy"] == policy_path
     assert runtime["korean_unseen_sources_selected_per_item"] == "required"
     assert runtime["korean_fixed_candidate_pool"] == "forbidden"
-    assert runtime["korean_learning_level_policy"] == "quality/korean/ARC_KOR_V1_V5_LEVEL_POLICY_V1.1.md"
+    assert runtime["korean_learning_level_policy"] == "quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md"
     assert "learning_level_policy" not in runtime
     assert "korean_unseen_source_registry" not in runtime
     assert all(not k.startswith("learning_level_v") for k in runtime)
@@ -55,7 +55,16 @@ def test_dynamic_source_policy() -> None:
     assert "DEPRECATED AS UNIVERSAL" in older
     policy = (ROOT / runtime["korean_learning_level_policy"]).read_text(encoding="utf-8")
     assert "KOR ONLY" in policy
-    assert all(x in policy for x in ("문학", "비문학", "문법"))
+    assert all(x in policy for x in ("문학", "비문학", "문법", "V6"))
+    assert runtime["korean_learning_level_v5"] == "ARC_FINAL_DONGBUK_SIMULATION"
+    assert runtime["korean_learning_level_v6"] == "ARC_N_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY"
+    v6 = (ROOT / runtime["korean_v6_specialist_policy"]).read_text(encoding="utf-8")
+    assert "KOR ONLY" in v6 and "ARC N°" in v6 and "V5 ARC FINAL" in v6
+    assert all(x in v6 for x in ("산 넘어 산", "너머", "제15항", "독립풀이", "100문항"))
+    for v6_gate in ("korean_v6_no_fixed_lexeme_bank", "korean_v6_lexical_pos_and_clause_evidence", "korean_v6_blind_solution_before_answer"):
+        assert runtime[v6_gate] == "required", v6_gate
+    assert "learning_level_v6" not in runtime and "korean_learning_level_v6" in runtime
+
 
 def test_grade1_exam_inventory() -> None:
     runtime = read_yaml("SYSTEM_MANIFEST.yaml")["runtime"]
@@ -108,7 +117,7 @@ def test_grade1_exam_inventory() -> None:
 def main() -> None:
     test_dynamic_source_policy()
     test_grade1_exam_inventory()
-    print("PASS: per-item KOR source search + 3 verified grade-1 papers and 7-subject 2026S1 midterm archive")
+    print("PASS: KOR V1-V6 incl V6 specialist + per-item sources + 3 verified papers + 7-subject archive")
 
 if __name__ == "__main__":
     main()
