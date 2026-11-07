@@ -1,5 +1,5 @@
-## USER-SELECTED PURE B&W ENLARGED OVERRIDE — 2026-11-07
-For ARC_N and ARC_FINAL body presentation, `templates/n/ARC_N_BW_LAYOUT_V1.0.md` is authoritative over conflicting legacy layout text. It adopts the user-uploaded enlarged two-column template, preserving Academic B cover styling, pure black/white body, measured packing and marker underlines. CORE is unaffected. Sample questions/keys from reference templates are never production content.
+## USER CORRECTION — ACTUAL ARC_N PDF STYLE — 2026-11-07
+For ARC_N, templates/n/ARC_N_BW_LAYOUT_V1.0.md supersedes every conflicting cover, packing, typography and choice arrangement below. Use the actual uploaded SCI/KOR PDFs, not the previously inferred Academic B ZIP treatment. ARC_FINAL/CORE retain their product-specific layouts.
 
 # ARC SYSTEM — PDF 조판 MASTER V2.4
 # VERSION_DATE: 2026-09-19
