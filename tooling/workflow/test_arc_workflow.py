@@ -114,5 +114,16 @@ class WorkflowTests(unittest.TestCase):
             with contextlib.redirect_stdout(io.StringIO()): self.assertEqual(main(args), 0)
             self.assertEqual(read(state)['status'], 'READY')
 
+    def test_init_with_manifest_yaml_dates(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            request, manifest, state = root / 'request.json', root / 'manifest.yaml', root / 'state.json'
+            request.write_text(json.dumps(REQUEST))
+            manifest.write_text('runtime:\n  deadline: 2026-11-07\n  nested:\n    - 2026-11-08\nactive: {}\n')
+            with contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(main(['init', '--state', str(state), '--input', str(request), '--actor', 'GPT', '--manifest', str(manifest)]), 0)
+            self.assertEqual(read(state)['manifest_paths']['runtime']['deadline'], '2026-11-07')
+            self.assertEqual(read(state)['manifest_paths']['runtime']['nested'], ['2026-11-08'])
+
 if __name__ == '__main__':
     unittest.main()
