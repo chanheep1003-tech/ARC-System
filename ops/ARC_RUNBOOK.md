@@ -2,6 +2,11 @@
 
 This runbook is the operational entry point for current production tasks. It replaces duplicated startup instructions in prompts; archived policy versions remain preserved. Current user scope and the pinned manifest decide the subject, file format, quantity and active rules. Do not inherit older 5-subject/Google-Docs defaults when the current request specifies a different job.
 
+
+## Drive reference and generation provenance (candidate)
+
+For every generation request, execute `quality/source/ARC_DRIVE_REFERENCE_WORKFLOW_V1.0.md` alongside the existing source and scope gates. Start discovery from `quality/source/ARC_DRIVE_DONGBUK_REFERENCE_20261107.md`, then search the connected Drive for the current subject and scope. The coordinator records actual retrieval, source locations and per-item lineage beside the batch state; unverified or unavailable sources remain blocked. This is a host-executed process, not a Drive connector, model training, or proof that any source has been read.
+
 ## One request, one state
 
 Run `python tooling/workflow/arc_workflow.py` with a local JSON request and one durable `state.json` per unique batch. Persist the same state beside actual artifacts through the authorized Drive connector; never overwrite another batch. One coordinator owns the state. Worker outputs are separate evidence files. The coordinator records their receipts and transitions in this state, not in competing status documents.
