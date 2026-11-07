@@ -1,0 +1,218 @@
+{
+  "schema": "ARC-EXTERNAL-DOCTOR-V1",
+  "tools": {
+    "orkas": {
+      "source_present": true,
+      "commit_match": true,
+      "runtime": "JS_DEPENDENCIES_INSTALLED",
+      "functional": "NATIVE_GUI_SETUP_REQUIRED",
+      "typecheck": "PASS"
+    },
+    "heretic": {
+      "source_present": true,
+      "commit_match": true,
+      "runtime": "INSTALLED",
+      "functional": "MODEL_AND_HARDWARE_SETUP_REQUIRED",
+      "version": "2.1.0.dev0",
+      "cuda_available": false,
+      "automatic_model_modification": false
+    },
+    "deeptutor": {
+      "source_present": true,
+      "commit_match": true,
+      "runtime": "INSTALLED",
+      "functional": "MODEL_SETUP_REQUIRED",
+      "checks": [
+        {
+          "key": "llm_config",
+          "label": "LLM configuration",
+          "status": "fail",
+          "detail": "No active LLM model is configured.",
+          "required": true
+        },
+        {
+          "key": "llm_credentials",
+          "label": "LLM credentials",
+          "status": "fail",
+          "detail": "No credentials are configured for openai.",
+          "required": true
+        },
+        {
+          "key": "llm_endpoint",
+          "label": "LLM endpoint",
+          "status": "pass",
+          "detail": "https://api.openai.com",
+          "required": true
+        },
+        {
+          "key": "storage",
+          "label": "Runtime storage",
+          "status": "pass",
+          "detail": "Writable: ${ARC_ROOT}/.arc-tools/deeptutor-home/data/user",
+          "required": true
+        },
+        {
+          "key": "rag",
+          "label": "RAG prerequisites",
+          "status": "skip",
+          "detail": "Knowledge module is unavailable.",
+          "required": false
+        },
+        {
+          "key": "online",
+          "label": "Provider response",
+          "status": "skip",
+          "detail": "Not requested. Use --online to send a small model request.",
+          "required": false
+        }
+      ]
+    },
+    "superpowers": {
+      "source_present": true,
+      "commit_match": true,
+      "runtime": "INSTALLED",
+      "functional": "ON_DEMAND_FILES",
+      "skill_count": 15
+    },
+    "impeccable": {
+      "source_present": true,
+      "commit_match": true,
+      "runtime": "INSTALLED",
+      "functional": "STATIC_DETECTOR_SMOKE_PASS",
+      "version": "4.8.0"
+    },
+    "mattpocock": {
+      "source_present": true,
+      "commit_match": true,
+      "runtime": "INSTALLED",
+      "functional": "ON_DEMAND_FILES",
+      "skill_count": 27
+    },
+    "claude-mem": {
+      "source_present": true,
+      "commit_match": true,
+      "runtime": "SDK_INSTALLED",
+      "functional": "WORKER_NOT_RUNNING",
+      "version": "15.11.0",
+      "global_hooks": false,
+      "worker_boot_log_observed": true,
+      "save_search_e2e": "NOT_VERIFIED_HTTP_UNREACHABLE",
+      "automatic_transcript_capture": false
+    },
+    "markitdown": {
+      "source_present": true,
+      "commit_match": true,
+      "runtime": "INSTALLED",
+      "functional": "CONVERSION_SMOKE_PASS",
+      "version": "0.1.9"
+    }
+  },
+  "model_quality_regression_executed": false,
+  "production_enabled": false,
+  "global_agent_hooks_installed": false,
+  "verified_on": "2026-11-07",
+  "baseline_commit": "1a7ec3d06be493d855daee9a6cd1004db7b53cf0",
+  "installation_scope": "CURRENT_MANAGED_RUNTIME_ONLY",
+  "native_user_computer_installation": false,
+  "release_branch_modified": false,
+  "conversion_tests": [
+    {
+      "format": "txt",
+      "status": "PASS",
+      "receipt_status": "UNVERIFIED"
+    },
+    {
+      "format": "docx",
+      "status": "PASS",
+      "receipt_status": "UNVERIFIED"
+    },
+    {
+      "format": "pptx",
+      "status": "PASS",
+      "receipt_status": "UNVERIFIED"
+    },
+    {
+      "format": "xlsx",
+      "status": "PASS",
+      "receipt_status": "UNVERIFIED"
+    },
+    {
+      "format": "pdf",
+      "status": "PASS",
+      "receipt_status": "UNVERIFIED"
+    }
+  ],
+  "adapter_tests": {
+    "command": "python -m unittest discover -s tooling/external -p 'test_*.py' -v",
+    "passed": 9,
+    "failed": 0
+  },
+  "dependency_compatibility": {
+    "markitdown": {
+      "packages": 37,
+      "status": "PASS"
+    },
+    "deeptutor": {
+      "packages": 75,
+      "status": "PASS"
+    },
+    "heretic": {
+      "packages": 124,
+      "status": "PASS"
+    }
+  },
+  "system_validation": {
+    "baseline": "PASS",
+    "candidate": "PASS",
+    "strict_checksums": "PASS_AFTER_REFRESH"
+  },
+  "existing_regression": [
+    {
+      "test": "tooling/workflow/test_arc_workflow.py",
+      "exit": 0,
+      "result": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.008s\n\nOK\n"
+    },
+    {
+      "test": "tooling/sources/test_generation_source_gate.py",
+      "exit": 0,
+      "result": "................\n----------------------------------------------------------------------\nRan 16 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "test": "tooling/sources/test_source_collection_gate.py",
+      "exit": 0,
+      "result": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "test": "tooling/content_qa/test_content_qa_gate.py",
+      "exit": 0,
+      "result": "ARC CONTENT QA GATE SMOKE: PASS\n"
+    },
+    {
+      "test": "tooling/exams/test_exam_scope_gate.py",
+      "exit": 1,
+      "result": "gjoBold.ttf, /usr/share/fonts/truetype/nanum/NanumGothic.ttf, /usr/share/fonts/truetype/nanum/NanumGothicBold.ttf (install fonts-nanum)\n\n----------------------------------------------------------------------\nRan 24 tests in 1.570s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "test": "tooling/typeset/test_typesetter_gateway.py",
+      "exit": 0,
+      "result": "ARC TYPESETTER GATEWAY SMOKE: PASS\n"
+    },
+    {
+      "test": "tooling/handoff/test_handoff_preflight.py",
+      "exit": 0,
+      "result": "ARC HANDOFF PREFLIGHT SMOKE: PASS\n"
+    },
+    {
+      "test": "tooling/handoff/test_handoff_serializer.py",
+      "exit": 0,
+      "result": "ARC HANDOFF SERIALIZER SMOKE: PASS\n"
+    }
+  ],
+  "remaining_setup": [
+    "Orkas native Electron dependencies, desktop and provider configuration",
+    "DeepTutor provider/model/credentials, plus optional modules if required",
+    "claude-mem host hooks/accessible worker; SDK installation is not automatic capture",
+    "Heretic target weights and adequate model hardware; model processing not executed",
+    "Existing exam-scope render smoke requires fonts-nanum in this environment"
+  ]
+}

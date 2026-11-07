@@ -3,3 +3,7 @@ tooling/**/__pycache__/
 tooling/**/*.pyc
 tooling/results/
 *.promptfoo.db
+
+# Local external runtimes, native links and private settings
+.arc-tools/
+.agents/skills/

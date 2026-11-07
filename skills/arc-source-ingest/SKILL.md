@@ -2,7 +2,7 @@
 name: arc-source-ingest
 description: 'ARC의 교과서·학습지·기출·외부자료를 구조와 위치를 보존해 추출하고 SOURCE_PACKET/SOURCE_LEDGER 입력으로 정규화한다.'
 metadata:
-  version: 1.2.0
+  version: 1.2.1
   arc-role: source-ingest
 ---
 # ARC Source Ingest
@@ -58,3 +58,6 @@ HUMAN_CHECK는 포함으로 간주하지 않고 사람이 확인할 때까지 �
 - 표 행·열 관계가 깨졌는데 정상으로 간주
 - 스캔/그림 자료를 텍스트만 보고 완전 추출로 표시
 - 실제로 읽지 않은 자료를 SOURCE_PACKET에 포함
+
+## MarkItDown adapter
+When the authorized source is already downloaded locally, `python tooling/external/arc_external.py convert <file> --output <new.md> --source-ref <actual-file-id-and-location>` creates text plus a hash-bound extraction receipt. This is a preliminary extraction only: scope, page mapping, original fidelity, scans, equations and handwritten exclusion marks require the existing checks above. Empty results fail; output never becomes SOURCE_VERIFIED or bank eligible automatically. Do not send Drive archives to DeepTutor, memory, or other remote services as a side effect.
