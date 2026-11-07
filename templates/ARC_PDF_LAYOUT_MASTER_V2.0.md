@@ -1,7 +1,5 @@
-
-
-## ARC_N BLACK & WHITE OVERRIDE — 2026-11-06
-For PRODUCT_MODE=ARC_N, `templates/n/ARC_N_BW_LAYOUT_V1.0.md` overrides conflicting color/reference/presentation declarations below. Use the compatibility N HTML shell and `templates/gold/ARC_N_TYPESET_REFERENCE_V1.1.md`. CORE and FINAL are unaffected. Do not carry source/difficulty/point tags from the reference into student pages.
+## USER-SELECTED PURE B&W ENLARGED OVERRIDE — 2026-11-07
+For ARC_N and ARC_FINAL body presentation, `templates/n/ARC_N_BW_LAYOUT_V1.0.md` is authoritative over conflicting legacy layout text. It adopts the user-uploaded enlarged two-column template, preserving Academic B cover styling, pure black/white body, measured packing and marker underlines. CORE is unaffected. Sample questions/keys from reference templates are never production content.
 
 # ARC SYSTEM — PDF 조판 MASTER V2.0
 # VERSION_DATE: 2026-09-17
@@ -279,49 +277,41 @@ ARC 표지는 전 제품군에서 Academic B형을 유지한다.
 - `ARC`, `N°`, 선, 여백이 브랜드 역할을 수행
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-6. ARC N° — TWO COLUMN ENGINE
+6. ARC N° — PURE B&W ENLARGED TWO-COLUMN ENGINE (본문 흑백 확대 조판)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-기본:
-- A4 세로
-- 2단
-- 좌열 → 우열
-- 외곽 좌우 여백 약 16.5 mm
-- 단 간격 약 8.4 mm
-- 중앙 얇은 구분선
-- 본문 약 8.5~9 pt
-- 선택지 약 8.5 pt
-- 문항 번호: `01`, `02`, `03` 형식
+표지 및 간지 구성 원칙:
+- 1쪽 (표지): 제5절의 기존 ARC Academic B형 표지 디자인을 그대로 유지한다.
+- 2쪽 (표지 뒤 백면): 표지 바로 뒤에 머리말·꼬리말이 없는 완전 백지 1쪽을 삽입하고, 3쪽부터 본문 문제를 시작한다.
+- 본문 종료 직후 백면 + 권말 빠른 정답표: 본문 마지막 페이지 직후 완전 백지 1쪽을 띄우고, 그 다음 쪽에 빠른 정답 확인표를 배치한다(상세 해설은 별책 『정답 및 해설집』으로 분리).
 
-러닝헤드:
-좌 `ARC N°xx`
-우 `과목명 · 단원/범위`
+본문 순수 흑백(Pure B&W) 및 외곽선 박스 조판 원칙:
+- 본문 문제 영역은 컬러나 회색 음영(`background` 채우기)을 일절 사용하지 않고, 오직 순수 흑백(`#000000` 텍스트·실선 / `#FFFFFF` 배경)과 외곽 실선 테두리 박스만으로 조판한다.
+- 판형 및 여백: A4 세로 (`210mm × 297mm`), 상하 여백 `11.0mm`, 좌우 여백 `12.8mm`
+- 2단 테이블 레이아웃 (`.two-col-body`, `height: 256mm`):
+  * 좌단 (`.col-left`): `width: 48.2%`, `padding-right: 2px`
+  * 중앙 구분선 (`.col-divider`): `width: 3.6%`, 중앙 `0.8pt solid #000000` 수직 실선 (`height: 254mm`)
+  * 우단 (`.col-right`): `width: 48.2%`, `padding-left: 2px`
+- 상단 러닝헤드 (`.page-header`, 하단 `1.2pt solid #000000`):
+  * 좌측: `ARC N° | <과목명·단원명> [Vx.x]` (`8.4pt`, `font-weight: 800`, `#000000`)
+  * 우측: 파트 및 세부 단원명 (`8.1pt`, `font-weight: 700`, `#000000`)
+- 하단 푸터 (`.page-footer`, 상단 `0.9pt solid #000000`):
+  * 좌측 시리즈명 (`8.2pt`), 중앙 물리 페이지 번호 `- 3 -` ~ `- N -` (`8.8pt`, `font-weight: 800`, `#000000`)
 
-본문에는 문제만 포함한다.
+본문 가독성 확대 타이포그래피 및 박스 규격:
+- 문항 태그 박스 (`.q-tag`): `border: 0.9pt solid #000000`, `padding: 1.5px 6px`, `font-size: 7.7pt`, `font-weight: 800`, 배경 없음(`#FFFFFF`)
+- 발문 (`.q-stem`): `font-size: 9.5pt ~ 9.7pt`, `font-weight: 800`, `line-height: 1.42`, 내어쓰기(`padding-left: 18px; text-indent: -18px`), 문항 번호 `01.`, `02.` 형식
+- `< 보 기 >` 박스 (`.bogi-box`): `border: 0.9pt solid #000000`, `padding: 5px 7px 6px 7px`, `margin-bottom: 6px`, 배경 없음(`#FFFFFF`)
+  * 라벨 (`.bogi-title`): 중앙 정렬 `&lt; 보 기 &gt;` (`8.4pt`, `font-weight: 800`)
+  * 본문 (`.bogi-content`): 명조 계열 (`Noto Serif CJK KR`), `font-size: 8.8pt ~ 8.95pt`, `line-height: 1.42`
+  * 내부 표 (`.bogi-table`): `border: 0.75pt solid #000000`, `font-size: 8.0pt`, 셀 배경 음영 없이 순수 흑백 실선만 사용
+- 외부 지문 박스 (`.passage-box`, V3.0 지문형): `border: 1.1pt solid #000000`, `padding: 5.5px 7.5px 6.5px 7.5px`, 지시문(`8.8pt` 굵게, 하단 `0.8pt solid #000000` 구분선), 출전(`8.1pt` 굵게), 지문 본문(`Noto Serif CJK KR`, `8.65pt`, `line-height: 1.40`)
+- 선택지 (`.choice-item`): `font-size: 9.1pt`, `line-height: 1.36`, 내어쓰기(`padding-left: 14px; text-indent: -14px`), 하단 간격 `2.5px`
+- 기호 및 타깃 어휘 밑줄 강조 (`u`): 지문 및 `<보기>` 내부의 모든 `ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅂ`과 `㉠~㉯`, `ⓐ~ⓩ`, `①~⑤` 타깃 어휘에 밑줄(`text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px`)을 적용하여 시인성을 확보한다.
 
-문항 요소:
-- 문항 번호
-- 발문
-- 지문/자료
-- <보기>
-- 선택지
-
-제외:
-- 난도
-- 유형
-- 개념 태그
-- KEY
-- TRAP
-- 해설
-- 정답
-
-선지:
-hanging indent를 유지한다.
-두 줄 이상 선지의 두 번째 줄은 첫 줄 본문 시작점과 정렬한다.
-
-문항 간격:
-가독성을 확보하되
-페이지 낭비가 생길 정도로 과도하게 벌리지 않는다.
+스마트 2단 밀도 최적화 (Smart Column Packing):
+- 한 단에 문항 1개가 추가로 들어갈 수 있는 여백이 있으면 남겨두지 않고 다음 문항을 채워 넣는다(단당 평균 2~3문항 배치).
+- 단, 이미 문항이 배치된 상태에서 하단에 남은 공간이 좁거나 다음 문항을 넣기에 애매한 경우에는 억지로 축소하거나 쪼개지 않고 깔끔하게 비워 둔다.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 7. ARC FINAL — EXAM ENGINE
