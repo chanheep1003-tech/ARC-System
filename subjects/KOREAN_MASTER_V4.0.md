@@ -125,3 +125,15 @@ SCOPE / DRIVE_FIRST / UNIQUE_ANSWER / INDEPENDENT_RECHECK / COPYRIGHT / NUMBERIN
 생성 전 GOOD 3문항, BAD 3문항을 실제 비교 기준으로 읽는다.
 각 생성 문항 내부 메타데이터에 `NEAREST_GOOD_ANCHOR / NEAREST_BAD_ANCHOR / ANCHOR_MATCH_NOTE`를 기록한다.
 앵커는 범위를 확장하지 않으며 현재 SCOPE/학교자료가 항상 우선한다.
+
+
+## 13. 중세 국어 별도 품질 모듈 (DEV PATCH 2026-11-07)
+- 트리거: 사용자가 중세 국어/국어의 어제와 오늘/변화하는 국어의 모습을 명시하거나 해당 학교 학습지·교과서 범위를 직접 지정한 경우에만.
+- 위 1절의 기본 문학 SCOPE를 자동 확장하지 않는다. 명시적 요청 범위를 별도 SCOPE_LOCK으로 고정하고 해당 원문·학교자료의 실열람을 선행한다.
+- 해당 요청의 필수 규칙: `subjects/KOREAN_MIDDLE_KOREAN_QUALITY_RULES_V1.0.md`.
+- 강제 게이트: `KOR_MID_SOURCE_QA`, `KOR_MID_UNIQUE_ANSWER`, `KOR_MID_DISTRACTOR_QA`, `KOR_MID_DIFFICULTY_QA` 전부 PASS. 하나라도 FAIL/PENDING이면 BANK_PASS/학생용 배포/CONTENT_LOCK/TYPESET_HANDOFF 금지.
+- D3는 형태소/음운/문법 등 독립 조건 2개 이상; D4는 3개 실질 추론 단계와 근거로 경쟁하는 오답 2개 이상; D5는 새로운 문헌 자료의 전이 + 반례/예외 검토를 확인한다. 긴 문장·극단 단정어·ㄱㄴㄷㄹ 조합으로 난도 부풀리기 금지.
+- 형태소 경계/조사·어미 기능/음운 환경/문헌 표기를 선지 5개 각각 원문 근거에 대조하는 TRUTH TABLE 및 독립 PASS A/B를 의무화한다.
+- `quality/KOR_MIDDLE_KOREAN_V2_REGRESSION_V1.0.md`의 회귀검사 상태는 실측 결과만 기록한다. 테스트를 실행하지 않았다면 PENDING으로 유지한다.
+- ARC_N° 중세국어 V2 원본 전체는 재검증 전까지 검증 완료 은행으로 취급하지 않는다. 기존 PDF를 자동 수정한 것으로 보고하지 않는다.
+
