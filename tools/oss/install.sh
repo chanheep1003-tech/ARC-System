@@ -44,6 +44,27 @@ install_orkas() {
   log "Orkas ready: $OSS_HOME/Orkas (./run.sh)"
 }
 
-install_markitdown; install_rtk
-if [ "$MODE" = "--full" ]; then install_heretic; install_deeptutor; install_orkas; fi
+install_graphify() {
+  command -v graphify >/dev/null && { log "graphify ok"; return; }
+  uv tool install graphifyy >/dev/null 2>&1 && log "graphify installed" || log "graphify FAILED"
+}
+install_headroom() {
+  command -v headroom >/dev/null && { log "headroom ok"; return; }
+  uv tool install --python 3.13 'headroom-ai[all]' >/dev/null 2>&1 && log "headroom installed" || log "headroom FAILED"
+}
+install_agency_agents() {
+  [ -d "$HOME/.claude/agents" ] && ls "$HOME/.claude/agents" 2>/dev/null | grep -q . && { log "agency-agents ok"; return; }
+  clone msitarzewski/agency-agents agency-agents || return
+  "$OSS_HOME/agency-agents/scripts/install.sh" --tool claude-code --no-interactive >/dev/null 2>&1 && log "agency-agents installed" || log "agency-agents FAILED"
+}
+install_comfyui() {
+  clone Comfy-Org/ComfyUI ComfyUI || return
+  cd "$OSS_HOME/ComfyUI" || return
+  [ -x .venv/bin/python ] || { uv venv -q .venv && uv pip install -q --python .venv/bin/python torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu \
+    && uv pip install -q --python .venv/bin/python -r requirements.txt; }
+  log "ComfyUI ready (CPU only): cd $OSS_HOME/ComfyUI && .venv/bin/python main.py --cpu"
+}
+
+install_markitdown; install_rtk; install_graphify; install_agency_agents
+if [ "$MODE" = "--full" ]; then install_heretic; install_headroom; install_comfyui; install_deeptutor; install_orkas; fi
 log "done ($MODE)"

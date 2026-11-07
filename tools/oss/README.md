@@ -16,6 +16,12 @@
 | HKUDS/DeepTutor | 앱(Python+Node) | 학습 튜터/RAG 참고 | `--full` 설치 |
 | Orkas-AI/Orkas | 앱(Node) | 멀티 에이전트 지휘 | `--full` 설치 |
 | p-e-w/heretic | CLI(pip) | 모델 abliteration (**GPU 필요**, 이 클라우드엔 GPU 없음) | `--full` 설치만 |
+| headroomlabs-ai/headroom | CLI(pip)+플러그인 | LLM 컨텍스트 압축 프록시(`headroom proxy`). 스킬 플러그인만 활성, 훅/프록시 플러그인은 미활성 | skill 활성, CLI `--full` |
+| msitarzewski/agency-agents | 에이전트 모음 | 역할별 서브에이전트를 `~/.claude/agents`에 설치 | 자동 설치(--quick) |
+| Graphify-Labs/graphify | CLI(pip `graphifyy`) | 저장소/문서 지식 그래프 생성 | 자동 설치(--quick) |
+| ruvnet/ruflo | 플러그인(+npx) | 멀티 에이전트 스웜. `ruflo-core`만 활성(나머지 50여개는 필요 시 추가) | 활성 |
+| Comfy-Org/ComfyUI | 앱(Python) | 이미지/시각자료 생성 워크플로. **CPU torch만**(GPU 없음, 매우 느림) | `--full` 설치 |
+| DietrichGebert/ponytail | 플러그인 | 응답 레벨 조절 스킬 | 활성 |
 
 활성/비활성은 `.claude/settings.json`의 `enabledPlugins`를 true/false로 바꾸면 된다.
 세션 시작 시 `--quick`이 자동 실행되며, 앱류는 `./tools/oss/install.sh --full` (기본 위치 `~/.arc-oss`, `ARC_OSS_HOME`으로 변경).
