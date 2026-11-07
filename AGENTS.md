@@ -14,3 +14,7 @@ For subject=KOR ONLY, load quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md, ve
 
 ## KOR V6 emergency specialist (2026-11-06)
 NEW KOR policy is `quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md`; treat old V1–V5 document as archived. For modern Korean orthography V6, read `quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md`. ARC N° V6 chooses unfamiliar lexemes/idioms/sentences per item after locking the target grammar rule; distinguishes POS vs dictionary fact vs formal rule, and requires key-blind independent solving, all-option truth audits, novelty/rights receipts. V5 remains ARC FINAL. This applies to KOR only; SCI/SOC unaffected. NEVER claim 100-question V6 produced from policy existence.
+
+## 2026-11-07 사용자 확정 기준 (충돌 시 우선)
+
+`quality/korean/ARC_KOR_V1_V6_USER_CLARIFICATION_20261107.md`를 함께 읽는다. V1은 교과서 중심 전체 범위의 고른 출제, V2는 중요 부분 집중과 추론 강화, V3는 문법·문학·비문학의 다양한 새 지문, V4는 동북고 실제 시험의 상위 변별 수준까지, V5는 지정 범위 전체의 실제 시험 한 회, V6는 지정 범위 내 모든 문법 영역에 적용하는 낯선 표현 노출·판단 훈련이다. V6의 개별 어휘 뜻·품사·발음을 먼저 알려 주는 것은 필수 조건이 아니다. 기존 100문항/65문항/30문항 고정 배분은 폐기하고 요청별 범위에 맞게 배분한다.

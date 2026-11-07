@@ -67,8 +67,11 @@ def test_dynamic_source_policy() -> None:
 
     spacing_path = "quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.0.md"
     assert runtime["korean_v6_spacing_pos_policy"] == spacing_path
-    assert runtime["korean_v6_spacing_min_questions_target"] == 65
-    assert runtime["korean_v6_particle_vs_dependent_noun_target"] == 30
+    assert runtime["korean_v6_spacing_min_questions_target"] is None
+    assert runtime["korean_v6_particle_vs_dependent_noun_target"] is None
+    assert runtime["korean_v6_scope"] == "USER_SPECIFIED_GRAMMAR_ONLY"
+    assert runtime["korean_v6_lexeme_hints_required"] is False
+    assert (ROOT / runtime["korean_user_version_clarification_policy"]).is_file()
     assert runtime["korean_v6_particle_subtype_validation"] == "required"
     assert runtime["korean_v6_orthography_permissible_forms_gate"] == "required"
     supplement = (ROOT / spacing_path).read_text(encoding="utf-8")

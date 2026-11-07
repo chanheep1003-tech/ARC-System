@@ -39,8 +39,11 @@ runtime:
   korean_learning_level_v6: ARC_N_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY
   korean_v6_specialist_policy: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md
   korean_v6_spacing_pos_policy: quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.0.md
-  korean_v6_spacing_min_questions_target: 65
-  korean_v6_particle_vs_dependent_noun_target: 30
+  korean_v6_spacing_min_questions_target: null # request-specific; no universal quota
+  korean_v6_particle_vs_dependent_noun_target: null # request-specific; no universal quota
+  korean_user_version_clarification_policy: quality/korean/ARC_KOR_V1_V6_USER_CLARIFICATION_20261107.md
+  korean_v6_scope: USER_SPECIFIED_GRAMMAR_ONLY
+  korean_v6_lexeme_hints_required: false
   korean_v6_particle_subtype_validation: required
   korean_v6_orthography_permissible_forms_gate: required
   korean_v6_no_fixed_lexeme_bank: required
