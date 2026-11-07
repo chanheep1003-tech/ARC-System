@@ -1,0 +1,10 @@
+{
+  "name": "arc-external-tools-runtime",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "bun": "1.4.4",
+    "claude-mem": "15.11.0",
+    "impeccable": "4.8.0"
+  }
+}

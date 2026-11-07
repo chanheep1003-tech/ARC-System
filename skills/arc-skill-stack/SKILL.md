@@ -2,7 +2,7 @@
 name: arc-skill-stack
 description: 'ARC 작업 목표에 맞춰 가장 작은 호환 skill 조합을 선택하고 실행 순서를 정한다. 모든 skill을 매번 불러 토큰을 낭비하지 않도록 orchestration할 때 사용한다.'
 metadata:
-  version: 1.0.0
+  version: 1.0.1
   arc-role: orchestration
 ---
 # ARC Skill Stack
@@ -32,3 +32,6 @@ metadata:
 
 ## 비활성 기능
 개인 오답 기반 재출제, 학습자 프로파일링, 개인별 약점 추적은 ARC skill stack에 포함하지 않는다.
+
+## Optional installed external bundles
+Resolve the pinned tools via `tooling/external/tools.lock.json` and `ops/ARC_EXTERNAL_TOOLS_V1.0.md`. Run `python tooling/external/arc_external.py route <task>` and load only the listed task-specific reference: MarkItDown for source extraction, Superpowers/Matt Pocock for software maintenance, Impeccable for explicitly requested interface work, DeepTutor for tutor drafts, claude-mem for explicit project-memory operations, Orkas for supported team hosts, Heretic only for a separate requested model experiment. Use `skills superpowers|mattpocock|impeccable` to resolve actual SKILL.md paths. Do not enable global bootstraps or use generic design rules to override an approved ARC PDF reference. Existing authority and profiling exclusions remain binding.

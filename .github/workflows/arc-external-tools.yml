@@ -1,0 +1,20 @@
+name: ARC external adapter checks
+on:
+  push:
+    paths:
+      - 'tooling/external/**'
+      - '.github/workflows/arc-external-tools.yml'
+  pull_request:
+    paths:
+      - 'tooling/external/**'
+      - '.github/workflows/arc-external-tools.yml'
+jobs:
+  external-adapter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tooling/external -p 'test_*.py' -v
+      - run: python -m py_compile tooling/external/arc_external.py

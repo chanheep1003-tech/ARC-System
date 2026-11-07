@@ -1,0 +1,73 @@
+{
+  "schema": "ARC-EXTERNAL-TOOLS-V1",
+  "verified_on": "2026-11-07",
+  "bun_package": "bun@1.4.4",
+  "tools": {
+    "orkas": {
+      "repository": "Orkas-AI/Orkas",
+      "commit": "7f8a980e1c23c26a3f11f4a972070d409b7a4491",
+      "license": "MIT",
+      "role": "team",
+      "intake_mode": "ISOLATED_LOCAL_INSTALL",
+      "automatic_activation": false
+    },
+    "heretic": {
+      "repository": "p-e-w/heretic",
+      "commit": "ce61e18206990bc1f4c51a6cbecd1bfee4b631bb",
+      "license": "AGPL-3.0-or-later",
+      "role": "model-lab",
+      "intake_mode": "ISOLATED_LOCAL_INSTALL",
+      "automatic_activation": false
+    },
+    "deeptutor": {
+      "repository": "HKUDS/DeepTutor",
+      "commit": "60fb3bdfddb30b7740c7ce3bd9b28d908f2af6db",
+      "license": "Apache-2.0",
+      "role": "tutor",
+      "intake_mode": "ISOLATED_LOCAL_INSTALL",
+      "automatic_activation": false
+    },
+    "superpowers": {
+      "repository": "obra/superpowers",
+      "commit": "22f0b463e7a5e579904dd6211a520321035526f7",
+      "license": "MIT",
+      "role": "maintenance",
+      "intake_mode": "ISOLATED_LOCAL_INSTALL",
+      "automatic_activation": false
+    },
+    "impeccable": {
+      "repository": "pbakaus/impeccable",
+      "commit": "687bc381bc9091bf252c0a05303640561014a425",
+      "license": "Apache-2.0",
+      "role": "design",
+      "intake_mode": "ISOLATED_LOCAL_INSTALL",
+      "automatic_activation": false,
+      "npm_package": "impeccable@4.8.0"
+    },
+    "mattpocock": {
+      "repository": "mattpocock/skills",
+      "commit": "4ae2317ddb22b046e26455e4f9c9b3aaaf62212d",
+      "license": "MIT",
+      "role": "maintenance",
+      "intake_mode": "ISOLATED_LOCAL_INSTALL",
+      "automatic_activation": false
+    },
+    "claude-mem": {
+      "repository": "thedotmack/claude-mem",
+      "commit": "8618199533e3f93f7d2d039a9f34234eed81f7e6",
+      "license": "Apache-2.0",
+      "role": "memory",
+      "intake_mode": "ISOLATED_LOCAL_INSTALL",
+      "automatic_activation": false,
+      "npm_package": "claude-mem@15.11.0"
+    },
+    "markitdown": {
+      "repository": "microsoft/markitdown",
+      "commit": "ed178952a6672abdfd35b5f9e76a80b6cefc086e",
+      "license": "MIT",
+      "role": "source",
+      "intake_mode": "ISOLATED_LOCAL_INSTALL",
+      "automatic_activation": false
+    }
+  }
+}
