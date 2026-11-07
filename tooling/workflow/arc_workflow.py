@@ -6,6 +6,7 @@ The host supplies actual worker results and verified storage receipts.
 """
 import argparse
 import copy
+import datetime
 import fcntl
 import json
 import os
@@ -31,6 +32,15 @@ def save(path, state):
     temp = path.with_suffix(path.suffix + '.tmp')
     temp.write_text(json.dumps(state, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     os.replace(temp, path)
+
+def normalize_manifest(value):
+    if isinstance(value, (datetime.datetime, datetime.date)):
+        return value.isoformat()
+    if isinstance(value, dict):
+        return {key: normalize_manifest(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [normalize_manifest(item) for item in value]
+    return value
 
 @contextmanager
 def lock(path):
@@ -160,7 +170,7 @@ def main(argv=None):
                 if args.manifest:
                     import yaml
                     m = yaml.safe_load(Path(args.manifest).read_text(encoding='utf-8'))
-                    manifest = {'active': m.get('active', {}), 'runtime': m.get('runtime', {})}
+                    manifest = normalize_manifest({'active': m.get('active', {}), 'runtime': m.get('runtime', {})})
                 state = create(read(args.input), args.actor, manifest)
                 save(args.state, state)
             else:
