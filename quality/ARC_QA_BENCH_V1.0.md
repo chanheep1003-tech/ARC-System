@@ -149,6 +149,14 @@ STATUS: ACTIVE
 - 정답 노출 0
 - 시험지 메타데이터 정상
 
+**INT-B03 ARC_CORE**
+- 대상: 과학 1개 단원, DETAIL과 COMPACT 각 1부
+- 기대: 순수 흑백, 1단 본문, 큰 시각자료만 전폭, 정답표 없음
+- DETAIL 1~2개/페이지, COMPACT 2~4개/페이지·4~8줄
+- 두 에디션의 같은 CONCEPT_ID 사실·조건 일치, SCOPE_CONCEPT_ID 연결 존재
+
+**INT-B01 보강**: N° PDF 문제 본문 뒤에 번호→정답만 있는 빠른 정답표가 정확히 1개, 본문 중간·표지에는 정답 노출 0.
+
 ## 7. BENCH REPORT TEMPLATE
 ```yaml
 BENCH_RUN_ID:

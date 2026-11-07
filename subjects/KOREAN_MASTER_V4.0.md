@@ -92,4 +92,7 @@ SCOPE / DRIVE_FIRST / UNIQUE_ANSWER / INDEPENDENT_RECHECK / COPYRIGHT / NUMBERIN
 
 
 ## 11. ARC HANDOFF
-공통 엔진 V4.0의 HANDOFF_META와 SECTION A~D를 그대로 따른다. ANSWER_KEY는 편집/검증용이며 학생 PDF에 직접 삽입하지 않는다. FINAL 요청도 별도 FINAL 프롬프트를 쓰지 않고 PRODUCT_MODE=ARC_FINAL로 처리한다.
+공통 엔진 V4.0의 HANDOFF_META와 SECTION A~D를 그대로 따른다. ANSWER_KEY는 편집/검증용이며 문제 본문에 직접 삽입하지 않는다 (ARC_N은 조판 단계의 권말 빠른 정답표로만 반영). FINAL 요청도 별도 FINAL 프롬프트를 쓰지 않고 PRODUCT_MODE=ARC_FINAL로 처리한다.
+
+## ARC CORE
+개념서 요청(PRODUCT_MODE=ARC_CORE)은 문항 생성 규칙을 쓰지 않고 `engine/core/ARC_CORE_CONTENT_ENGINE_V1.1`로 처리한다. 이 MASTER의 SCOPE LOCK과 자료 우선순위는 그대로 적용한다. 에디션: DETAIL(상세 개념서) / COMPACT(시험 직전 압축본).

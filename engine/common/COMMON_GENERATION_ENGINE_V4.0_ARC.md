@@ -29,6 +29,9 @@
 MODE_MAP:
 - N제 / 문제집 / 유형별 / 범위별 → PRODUCT_MODE = ARC_N
 - 파이널 / 모의고사 / 실전 → PRODUCT_MODE = ARC_FINAL
+- 개념서 / 개념 정리 / CORE / 압축본 / 요약본 → PRODUCT_MODE = ARC_CORE
+  → 문항 생성 파이프라인(§2~§13)을 쓰지 않고 `engine/core/ARC_CORE_CONTENT_ENGINE_V1.0.md`로 위임한다.
+  → CORE_VARIANT: 상세/개념서 = DETAIL(기본), 압축/직전/요약 = COMPACT
 
 필수 파라미터:
 SUBJECT
@@ -268,7 +271,7 @@ SET_NO = ...
 SCHOOL = 동북고등학교 (해당 시)
 EXAM_PERIOD = ... (해당 시)
 EXAM_TIME = ... (FINAL에서 확인 가능할 때)
-PDF_MASTER = ARC_PDF_조판_MASTER_V2.0
+PDF_MASTER = ARC_PDF_LAYOUT_MASTER_V2.0 (templates/ARC_PDF_LAYOUT_MASTER_V2.0.md)
 
 그 뒤 정확히 4개 SECTION:
 
@@ -279,7 +282,7 @@ SECTION A — QUESTION_MANUSCRIPT
 SECTION B — ANSWER_KEY
 편집·검증용 정답 데이터.
 학생 PDF에 자동 삽입한다는 의미가 아니다.
-ARC_N: 학생 PDF에는 넣지 않음.
+ARC_N: 본문 문제 페이지에는 넣지 않는다. 조판 단계가 문제 본문 뒤 권말 빠른 정답표(번호→정답만) 1쪽으로만 사용한다.
 ARC_FINAL: 기본적으로 학생 시험지에는 넣지 않으며, 필요 시 별도 정답 파일 생성에 사용.
 
 SECTION C — LAYOUT_ASSET_MANIFEST
@@ -324,7 +327,7 @@ NUMBERING = PASS
 ARC_N:
 - 학습용 N제 원고
 - 문제 본문에 난도/유형/힌트/해설을 삽입하지 않는다.
-- 정답은 SECTION B에서만 유지.
+- 정답은 SECTION B에서만 유지 (학생 PDF에는 조판 단계의 권말 빠른 정답표로만 반영).
 
 ARC_FINAL:
 - 실제 시험지에 가까운 세트 설계
@@ -435,7 +438,10 @@ POLICY:
 
 3시간 QA 또는 품질검사에서 생성된 문항:
 - 문항 단위 PASS → 해당 과목 BANK에 저장 가능
-- FAIL → 본문/선지/자료 저장 금지, [... ELLIPSIZATION ...]7. COMMERCIAL QUALITY GATE
+- FAIL → 본문/선지/자료 저장 금지. ERROR DATABASE에는 ERROR_ID·원인·회귀 상태만 기록한다.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+17. COMMERCIAL QUALITY GATE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 생성 문항은 기능적 정답성만으로 PASS하지 않는다.
 다음 편집 품질을 별도 검사한다.
@@ -450,3 +456,5 @@ POLICY:
 
 상업 문제집처럼 보이되 실제 문제집 문장을 복제하지 않는다.
 문항 자연스러움이 낮으면 정답이 맞더라도 수정한다.
+
+END COMMON GENERATION ENGINE V4.0

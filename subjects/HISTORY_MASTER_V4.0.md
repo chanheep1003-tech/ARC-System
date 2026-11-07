@@ -59,3 +59,6 @@ D QC_STATUS
 
 ## 10. ARC HANDOFF
 공통 엔진 V4.0의 HANDOFF_META와 SECTION A~D를 따른다. FINAL은 PRODUCT_MODE=ARC_FINAL로 처리하고 별도 FINAL 프롬프트를 사용하지 않는다.
+
+## ARC CORE
+개념서 요청(PRODUCT_MODE=ARC_CORE)은 문항 생성 규칙을 쓰지 않고 `engine/core/ARC_CORE_CONTENT_ENGINE_V1.1`로 처리한다. 이 MASTER의 SCOPE LOCK과 자료 우선순위는 그대로 적용한다. 에디션: DETAIL(상세 개념서) / COMPACT(시험 직전 압축본).

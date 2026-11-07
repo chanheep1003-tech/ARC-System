@@ -1,5 +1,9 @@
-## USER CORRECTION — ACTUAL ARC_N PDF STYLE — 2026-11-07
-For ARC_N, templates/n/ARC_N_BW_LAYOUT_V1.0.md supersedes every conflicting cover, packing, typography and choice arrangement below. Use the actual uploaded SCI/KOR PDFs, not the previously inferred Academic B ZIP treatment. ARC_FINAL/CORE retain their product-specific layouts.
+## LAYOUT PRECEDENCE — 2026-11-07 (통일 규칙)
+제품별 조판 기준 파일이 이 MASTER보다 우선한다. 충돌하면 아래 파일을 따른다.
+- ARC_N: `templates/n/ARC_N_BW_LAYOUT_V1.0.md` (순수 흑백, 4문항 고정 슬롯, 표지→백지→문제→백지→**권말 빠른 정답표**)
+- ARC_CORE: `templates/core/ARC_CORE_BW_LAYOUT_V1.0.md` (순수 흑백, 1단+전폭 시각자료, DETAIL/COMPACT 2에디션)
+- ARC_FINAL: 이 MASTER §7 (시험지형, 정답표는 별도 PDF)
+이 MASTER의 Navy/Burgundy/Warm Gray 컬러 규정은 ARC_FINAL에만 적용한다. ARC_N·ARC_CORE는 컬러·회색 음영을 쓰지 않는다.
 
 # ARC SYSTEM — PDF 조판 MASTER V2.0
 # VERSION_DATE: 2026-09-17
@@ -88,9 +92,14 @@ A. ARC_N
 학생 PDF:
 1. 표지
 2. 문제지
+3. 권말 빠른 정답표 (문제 본문 뒤, 완전 백지 1쪽 다음 전폭 1쪽)
+
+빠른 정답표 규칙:
+- 문항 번호 → 정답 번호/기호만 표로 표시
+- 해설·배점·난도·유형·풀이 일절 금지
+- 정답표는 문제 본문 뒤에만 존재하며 본문 중간·표지에는 노출하지 않는다
 
 포함 금지:
-- 정답표
 - 상세 해설
 - 난도 배지
 - 유형 태그
@@ -99,7 +108,7 @@ A. ARC_N
 - 오답 분석
 
 핵심:
-문제만 보여 준다.
+문제 본문 뒤에 빠른 정답표 1쪽만 둔다. 상세 해설은 별책.
 
 
 B. ARC_FINAL
@@ -122,28 +131,14 @@ ARC 브랜딩보다 실제 시험 경험이 우선이다.
 
 C. ARC_CORE
 역할:
-시험 범위 압축 개념 정리본
+과목별 개념서. 에디션 2종 — DETAIL(상세 개념서) / COMPACT(시험 직전 압축본)
 
 학생 PDF:
 1. 표지
-2. 개념 정리 페이지
+2. 개념 페이지
 
-핵심:
-교과서를 다시 쓰는 장문 개념서가 아니라
-“요약본보다 자세하고 교과서보다 짧은” 중간 밀도 개념서.
-
-기본 구조:
-- 개념 제목
-- 핵심 설명
-- MUST
-- 필요 시 CONFUSING
-- 필요 시 비교표 / 흐름도 / 그림
-
-포함 금지:
-- 불필요한 장문 반복
-- 모든 개념에 강제된 박스
-- 별도 EXAM POINT 남발
-- 문제집식 문항 페이지
+상세 규칙은 `templates/core/ARC_CORE_BW_LAYOUT_V1.0.md`를 따른다.
+포함 금지: 문제집식 문항 페이지, 정답표, 컬러/회색 음영
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 3. INPUT CONTRACT
@@ -185,8 +180,10 @@ D. VISUAL_ASSET 또는 VISUAL_SPEC
 ARC_CORE 필수 입력:
 
 A. CORE_MANUSCRIPT
+CORE_VARIANT (DETAIL | COMPACT)
 각 개념마다:
 - CONCEPT_ID
+- SCOPE_CONCEPT_ID
 - CONCEPT_TITLE
 - EXPLANATION
 - MUST
@@ -352,49 +349,21 @@ ARC 표지는 전 제품군에서 Academic B형을 유지한다.
 
 실전성을 해치는 장식은 제거한다.
 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+8. ARC CORE — BW CONCEPT ENGINE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-8. ARC CORE — COMPACT CONCEPT ENGINE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-목표:
-한 페이지에 약 2~4개 개념.
+ARC_CORE의 레이아웃·블록·밀도 규칙은 전부
+`templates/core/ARC_CORE_BW_LAYOUT_V1.0.md`가 정의한다.
+이 MASTER에는 중복 규정을 두지 않는다.
 
-기본 원칙:
-- 개념 본문은 원칙적으로 4~8줄
-- 설명은 충분히 하되 반복 금지
-- MUST는 핵심에만 사용
-- CONFUSING은 실제 혼동 가능성이 높은 경우에만 사용
-- EXAM POINT 별도 박스는 기본적으로 사용하지 않음
-- 시험 포인트는 MUST / CONFUSING에 흡수
-- 비교표·흐름도·그림은 글보다 빠르게 이해될 때만 사용
+요약:
+- DETAIL: 1~2개 개념/페이지, 전체 블록
+- COMPACT: 2~4개 개념/페이지, 4~8줄
+- 순수 흑백, 1단 본문, 큰 시각자료만 전폭
+- 조판 단계에서 요약·확장 금지 (CORE_LENGTH_FLAG)
 
-권장 정보 계층:
-1. 개념 번호
-2. 개념명
-3. 설명
-4. MUST
-5. CONFUSING(optional)
-6. 비교/흐름/그림(optional)
-
-색상 의미:
-- MUST: Deep Navy
-- CONFUSING: Burgundy
-- 보조 면: Warm Gray
-
-분량 제어:
-한 개념의 설명이 지나치게 길어지면
-조판 AI가 임의 요약하지 않는다.
-
-대신:
-CORE_LENGTH_FLAG를 발생시키고
-원고 단계에 압축 요청을 반환한다.
-
-조판 단계에서 내용 손실을 만들어서는 안 된다.
-
-페이지가 비더라도
-불필요한 박스를 만들어 채우지 않는다.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━
 9. WIDE MATERIAL / FULL WIDTH
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -686,7 +655,7 @@ PRINT
 
 ARC_N PASS:
 - 문제 외 학습 태그 0
-- 정답 페이지 0
+- 권말 빠른 정답표 정확히 1개 (번호→정답만, 문제 본문 뒤)
 - 해설 페이지 0
 - 기본 2단 유지
 - 필요한 대형 자료만 FULL_WIDTH
@@ -700,12 +669,7 @@ ARC_FINAL PASS:
 - 시험 시간/문항수/페이지 번호 일치
 
 ARC_CORE PASS:
-- 개념 설명이 읽기 쉬움
-- 장문 개념서처럼 과도하게 늘어나지 않음
-- 2~4개 개념/page 목표를 가능한 범위에서 유지
-- MUST 시각 위계 명확
-- CONFUSING 선택적 사용
-- 불필요한 박스 남발 없음
+- `ARC_CORE_BW_LAYOUT_V1.0.md` §7 전 항목 충족
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 17. FINAL VISUAL AUDIT
@@ -742,9 +706,9 @@ manifest와 실제 렌더 수가 다르면 FAIL.
 - glyph 깨짐
 - ARC 규격 위반
 - 제품 모드 혼합
-- N°에 정답/해설 삽입
+- N°에 빠른 정답표 외 정답/해설 삽입 (본문 중간·표지 포함)
 - FINAL에 힌트/학습 태그 삽입
-- CORE를 장문 교과서처럼 임의 확장
+- CORE를 요청 에디션 밀도 밖으로 임의 확장/요약
 - 렌더 검증 미실시
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -775,13 +739,13 @@ ARC_FINAL:
 `ARC_FINAL_N°<번호>_<과목>_<시험명>_Vx.x.pdf`
 
 ARC_CORE:
-`ARC_CORE_<과목>_<범위>_Vx.x.pdf`
+`ARC_CORE_<DETAIL|COMPACT>_<과목>_<범위>_Vx.x.pdf`
 
 선택 산출물:
 - HTML / CSS / 조판 소스
 - VISUAL_ASSET 폴더
 - EDITOR_QC_REPORT
-- ARC_FINAL 정답표 별도 PDF
+- ARC_FINAL 정답표 별도 PDF (ARC_N의 빠른 정답표는 본 PDF 안에 포함)
 
 학생 PDF에는
 내부 QC 로그 / BANK ID / SOURCE_TAG / 제작 메모를 넣지 않는다.

@@ -136,7 +136,7 @@ RECURRENCE_COUNT:
 |RISK-HIS-02|한국사|민족주의/사회주의 계열 혼동|IDEOLOGICAL_LINE_SWAP 검수|
 |RISK-AI-01|AI|DFS/BFS 탐색 순서 오류|방문규칙·탐색구조 독립검증|
 |RISK-AI-02|AI|상관↔인과 혼동|AI verification gate|
-|RISK-PDF-01|공통|정답이 ARC N° 학생 PDF에 노출|ANSWER_KEY 편집자용 분리|
+|RISK-PDF-01|공통|정답/해설이 ARC N° 문제 본문·표지에 노출 (권말 빠른 정답표 1쪽 제외)|ANSWER_KEY 편집자용 분리 + 조판 PASS 기준|
 |RISK-PDF-02|공통|TRUE_VISUAL을 표로 대체|ARC PDF V2.0 TRUE_VISUAL gate|
 
 ## 7. ERROR → SYSTEM FEEDBACK

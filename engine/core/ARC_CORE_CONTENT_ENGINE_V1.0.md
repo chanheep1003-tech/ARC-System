@@ -1,4 +1,14 @@
-# ARC CORE CONTENT ENGINE V1.0
+# ARC CORE CONTENT ENGINE V1.1
+# ENTRY: COMMON ENGINE §1 MODE_MAP (PRODUCT_MODE = ARC_CORE)
+# LAYOUT: templates/core/ARC_CORE_BW_LAYOUT_V1.0.md (유일한 CORE 조판 기준)
+
+## 00. EDITIONS — 과목별 2종
+과목(SCI/SOC/KOR/HIS/AI)마다 아래 2개 에디션을 만든다. 요청에 에디션이 없으면 DETAIL.
+- DETAIL = 상세 개념서
+- COMPACT = 시험 직전 압축본
+두 에디션은 같은 CONCEPT_ID·같은 SCOPE_CONCEPT_ID를 쓰며 밀도와 블록만 다르다 (§5, §5-1).
+COMPACT는 DETAIL을 조판 단계에서 줄여 만드는 것이 아니라 이 엔진이 **원고 단계에서** 따로 쓴다.
+과목별 SCOPE/자료 규칙은 해당 과목 ACTIVE MASTER가 우선한다.
 
 ## 0. PURPOSE
 ARC CORE는 단순 요약노트가 아니라 시험 직전까지 반복 사용할 수 있는 `개념 설명 + 시각자료 + 함정 정리 + N° 연결`형 개념서다.
@@ -35,6 +45,9 @@ ARC CORE는 단순 요약노트가 아니라 시험 직전까지 반복 사용�
 모든 핵심 개념에 영구 식별자를 부여한다.
 형식:
 `ARC-{SUBJECT}-{UNIT}-{NNN}`
+각 CONCEPT_ID는 부모 `SCOPE_CONCEPT_ID`(quality/ARC_SCOPE_LEDGER의 `SUBJECT-UNIT-CONCEPT`, 예: SCI-OR-REACTIVITY)를 반드시 하나 가진다.
+CORE 개념 1개 → SCOPE_CONCEPT_ID 1개, SCOPE_CONCEPT_ID 1개 → CORE 개념 여러 개 가능.
+N° 문항의 PRIMARY_CONCEPT_ID는 CORE CONCEPT_ID, 커버리지 집계는 SCOPE_CONCEPT_ID로 한다.
 
 예:
 - ARC-SCI-EV-001
@@ -53,6 +66,7 @@ CONCEPT_ID는 제목이 약간 바뀌어도 동일 개념이면 유지한다.
 각 concept에는 내부적으로 다음을 보유한다.
 
 CONCEPT_ID
+SCOPE_CONCEPT_ID
 TITLE
 SCOPE_SOURCE
 PRIORITY = R | S | C
@@ -67,8 +81,8 @@ R = 시험범위 핵심
 S = 핵심 이해를 보조
 C = 학교자료에 직접 있을 때만 사용
 
-## 5. CORE BLOCK
-학생용 CORE에는 다음 구조를 기본으로 한다.
+## 5. CORE BLOCK — DETAIL
+학생용 DETAIL에는 다음 구조를 기본으로 한다.
 
 ### 1. CONCEPT_ID + TITLE
 작고 깔끔하게 표시.
@@ -112,6 +126,13 @@ C = 학교자료에 직접 있을 때만 사용
 
 내부적으로는 N° 문항 ID/CONCEPT_ID와 직접 연결 가능.
 
+## 5-1. CORE BLOCK — COMPACT
+COMPACT는 시험 직전 압축본이다. 한 개념당 4~8줄, 1페이지 2~4개 개념.
+블록: CONCEPT_ID+TITLE → CORE EXPLANATION(핵심만) → MUST(필수) → CONFUSING(실제 혼동만) → 비교표/흐름(글보다 빠를 때만) → N° LINK 한 줄.
+생략: ONE-LINE DEFINITION, 별도 EXAM CONNECTION(MUST/CONFUSING에 흡수), 보충 시각자료.
+금지: 핵심 조건·단서를 줄이기 위해 삭제, DETAIL에 없는 새 내용 추가.
+DETAIL과 사실·조건이 충돌하면 안 된다 (같은 CONCEPT_ID는 같은 사실).
+
 ## 6. N° CONNECTION
 N° 문항 metadata:
 PRIMARY_CONCEPT_ID
@@ -120,7 +141,7 @@ SECONDARY_CONCEPT_IDS[]
 학생용 N° 문제지에는 CONCEPT_ID를 굳이 노출하지 않아도 된다.
 편집/분석용 metadata에서 유지한다.
 
-CORE concept → N°:
+CORE concept → N° (N_LINK):
 FOUNDATION = 개념 직접 확인/기본 자료
 APPLICATION = 조건/자료 적용
 HIGH = 복수조건/통합/고난도
@@ -135,9 +156,10 @@ HIGH = 복수조건/통합/고난도
 - 시각자료가 필요한데 텍스트만 사용
 - 지나친 카드 쪼개기로 흐름 단절
 
-본문 권장:
+본문 권장 (DETAIL):
 8.5~9.2pt
 line-height 1.60~1.72
+(COMPACT: 8.3~8.8pt / 1.50~1.60 — 상세는 BW_LAYOUT 문서 기준)
 
 ## 8. SUBJECT BEHAVIOR
 ### SCIENCE
@@ -165,7 +187,7 @@ C파트 X 표시 금지.
 
 원칙:
 - 1 concept = 1 page 강제 금지
-- 1 page = 4 concepts 강제 금지
+- 페이지당 개념 수는 에디션 규칙을 따른다 (DETAIL 1~2, COMPACT 2~4)
 - 내용 길이에 따라 동적 페이지 구성
 - concept block 중간 분할은 가능한 피함
 - VISUAL + 해당 설명은 함께 유지
@@ -197,9 +219,11 @@ ARC CORE 생성 요청 시 출력은 다음 구조를 따른다.
 
 CORE_META
 SUBJECT
+CORE_VARIANT = DETAIL | COMPACT
 TARGET_RANGE
 SOURCE_SCOPE
 CONCEPT_COUNT
+PDF_MASTER = ARC_PDF_LAYOUT_MASTER_V2.0 + templates/core/ARC_CORE_BW_LAYOUT_V1.0.md
 
 CONCEPT_BLOCKS
 각 concept의 학생용 본문
