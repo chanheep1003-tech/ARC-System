@@ -74,7 +74,8 @@
     "claude-mem@thedotmack": false,
     "headroom-skill@headroom-marketplace": true,
     "ruflo-core@ruflo": true,
-    "ponytail@ponytail": true
+    "ponytail@ponytail": true,
+    "headroom@headroom-marketplace": true
   },
   "hooks": {
     "SessionStart": [
@@ -87,5 +88,10 @@
         ]
       }
     ]
+  },
+  "env": {
+    "HEADROOM_BEACON": "off",
+    "HEADROOM_TELEMETRY": "off",
+    "DO_NOT_TRACK": "1"
   }
 }
