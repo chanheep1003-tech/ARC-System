@@ -20,7 +20,7 @@ FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 CIRCLED = "①②③④⑤"
 
 
-def build(path: Path, question_numbers, answer_numbers, separator=True, gutter_crossing=False, key_symbols=CIRCLED) -> None:
+def build(path: Path, question_numbers, answer_numbers, separator=True, gutter_crossing=False, key_symbols=CIRCLED, fullwidth_key=False) -> None:
     doc = fitz.open()
     cover = doc.new_page(width=A4_W, height=A4_H)
     cover.insert_font(fontname="F", fontfile=FONT)
@@ -41,6 +41,8 @@ def build(path: Path, question_numbers, answer_numbers, separator=True, gutter_c
     key = doc.new_page(width=A4_W, height=A4_H)
     key.insert_font(fontname="F", fontfile=FONT)
     key.insert_text((60, 80), "ANSWER KEY", fontname="F", fontsize=18)
+    if fullwidth_key:
+        key.insert_text((272, 500), "21-30 | QUICK ANSWER GRID", fontname="F", fontsize=10)
     for i, n in enumerate(answer_numbers):
         key.insert_text((80, 130 + i * 30), f"{n:02d}  {key_symbols[n % 5]}", fontname="F", fontsize=12)
     doc.save(path)
@@ -57,6 +59,7 @@ def main() -> int:
         tmp = Path(tmp)
         cases = {
             "valid": (ids, ids, True, set()),
+            "fullwidth_key": (ids, ids, True, set()),
             "dingbat_valid": (ids, ids, True, set()),
             "dingbat_missing": (ids, ids[:-1], True, {"ARC_N_ANSWER_COUNT_MISMATCH"}),
             "gutter_crossing": (ids, ids, True, {"COLUMN_GUTTER_CROSSING"}),
@@ -67,7 +70,7 @@ def main() -> int:
         for name, (questions, answers, separator, expected) in cases.items():
             pdf = tmp / f"{name}.pdf"
             build(pdf, questions, answers, separator, gutter_crossing=(name == "gutter_crossing"),
-                  key_symbols="➀➁➂➃➄" if name.startswith("dingbat") else CIRCLED)
+                  key_symbols="➀➁➂➃➄" if name.startswith("dingbat") else CIRCLED, fullwidth_key=(name == "fullwidth_key"))
             result = preflight.analyze_pdf(pdf, "ARC_N", expected_item_count=10)
             fails = flag_types(result)
             if expected:

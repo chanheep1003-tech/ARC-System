@@ -502,7 +502,11 @@ def analyze_pdf(
     if product in {"ARC_N", "ARC_FINAL"}:
         # Two-column problem pages: a body line may not cross the gutter
         # (e.g. a stem wrapped without reserving the question-number width).
-        for index in range(2, len(doc)):
+        problem_end = len(doc)
+        if product == "ARC_N":
+            # Quick answer grids use full-width layout after the problem pages.
+            problem_end = next((i for i in range(2, len(doc)) if ANSWER_HEADING_RE.search(page_texts[i])), len(doc))
+        for index in range(2, problem_end):
             page = doc[index]
             mid = page.rect.width / 2
             top, bottom = page.rect.height * 0.07, page.rect.height * 0.93
