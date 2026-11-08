@@ -205,3 +205,113 @@ texts:
     punctuation_lock: true
     line_break_lock: true
     boundary_lock: true
+- source_text_id: KOR-TB-2026-U3-MEDIEVAL-FEATURES
+  title: 공통국어2 3단원 01 변화하는 국어의 모습 — 꼭 알아 두기(중세 국어의 특징)
+  author: 미래엔 『공통국어2』
+  role: RAW_SCHOOL_SOURCE
+  source_origin: USER_PROVIDED_TEXTBOOK
+  school_source_file_id: 1623XYA9MyGsQ0XRs-5Uho5c1WqgH591h
+  school_source_location: 교과서 p.108 도입 문단과 「꼭 알아 두기」 6개 항목 중 고어 글자를 포함한 첫 항목을 제외한 5개
+  repo_path: quality/source/text/KOR_TB_2026_U3_MEDIEVAL_FEATURES_V1.0.txt
+  sha256: 33f3ef6aa7b6a0532796559b5c5e0653c322f916b690a01275097c881151afda
+  form: PROSE
+  paragraphs: 6
+  text_fidelity: EXACT
+  verification:
+    method: DRIVE_PDF_TEXT_LAYER_PLUS_PAGE_IMAGE_READ
+    note: "p.108 쪽 이미지 판독. 학생에게 보이는 본문·상자글·활동 제시문만 옮겼고 지도 방안·예시 답은 제외했다. 방점·고어 글자는 글꼴 문제로 제외했고 표는 한 줄로 옮겼다."
+    user_confirmation: PENDING   # 사용자 내용 승인 단계에서 확인
+    visual_line_by_line: PARTIAL
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
+- source_text_id: KOR-TB-2026-U3-MEDIEVAL-ACTIVITIES
+  title: 공통국어2 3단원 01 변화하는 국어의 모습 — 원리 확인 활동(음운·문법·어휘)
+  author: 미래엔 『공통국어2』
+  role: RAW_SCHOOL_SOURCE
+  source_origin: USER_PROVIDED_TEXTBOOK
+  school_source_file_id: 1623XYA9MyGsQ0XRs-5Uho5c1WqgH591h
+  school_source_location: 교과서 pp.109·111 원리 확인 활동 1~4의 제시문과 상자글. 방점, 고어 글자, 예시 답은 제외하고 표는 행 순서대로 한 줄로 옮김
+  repo_path: quality/source/text/KOR_TB_2026_U3_MEDIEVAL_ACTIVITIES_V1.0.txt
+  sha256: ec58a61ada7765c0cda92cce9f3e93360b642c2e8a026b80fb7996edaec61ab6
+  form: PROSE
+  paragraphs: 8
+  text_fidelity: EXACT
+  verification:
+    method: DRIVE_PDF_TEXT_LAYER_PLUS_PAGE_IMAGE_READ
+    note: "pp.109, 111 쪽 이미지 판독. 학생에게 보이는 본문·상자글·활동 제시문만 옮겼고 지도 방안·예시 답은 제외했다. 방점·고어 글자는 글꼴 문제로 제외했고 표는 한 줄로 옮겼다."
+    user_confirmation: PENDING   # 사용자 내용 승인 단계에서 확인
+    visual_line_by_line: PARTIAL
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
+- source_text_id: KOR-TB-2026-U3-ORTHO-RULES
+  title: 공통국어2 3단원 02 한글 맞춤법 — 제1항·제5항·제11항·제25항 및 설명
+  author: 미래엔 『공통국어2』
+  role: RAW_SCHOOL_SOURCE
+  source_origin: USER_PROVIDED_TEXTBOOK
+  school_source_file_id: 1623XYA9MyGsQ0XRs-5Uho5c1WqgH591h
+  school_source_location: 교과서 pp.117·119·120 규정 상자와 본문. 표는 줄글로 옮김
+  repo_path: quality/source/text/KOR_TB_2026_U3_ORTHO_RULES_V1.0.txt
+  sha256: 6100d8686a8c3cc9d17cd42b9d5feef9bfa1f36cc08b4d8435be9e6eb815d793
+  form: PROSE
+  paragraphs: 6
+  text_fidelity: EXACT
+  verification:
+    method: DRIVE_PDF_TEXT_LAYER_PLUS_PAGE_IMAGE_READ
+    note: "pp.119, 120 쪽 이미지 판독; p.117 텍스트 층. 학생에게 보이는 본문·상자글·활동 제시문만 옮겼고 지도 방안·예시 답은 제외했다. 방점·고어 글자는 글꼴 문제로 제외했고 표는 한 줄로 옮겼다."
+    user_confirmation: PENDING   # 사용자 내용 승인 단계에서 확인
+    visual_line_by_line: PARTIAL
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
+- source_text_id: KOR-TB-2026-U3-SAISIOT
+  title: 공통국어2 3단원 02 한글 맞춤법 — 사이시옷(제30항) 및 ㄴ 첨가
+  author: 미래엔 『공통국어2』
+  role: RAW_SCHOOL_SOURCE
+  source_origin: USER_PROVIDED_TEXTBOOK
+  school_source_file_id: 1623XYA9MyGsQ0XRs-5Uho5c1WqgH591h
+  school_source_location: 교과서 p.122 제30항, 용어 설명, 더 알아보기
+  repo_path: quality/source/text/KOR_TB_2026_U3_SAISIOT_V1.0.txt
+  sha256: 70da79d4aa3e3c0510998b3b7767037de19c6990aff0f7fb5d145c01e75401fd
+  form: PROSE
+  paragraphs: 4
+  text_fidelity: EXACT
+  verification:
+    method: DRIVE_PDF_TEXT_LAYER_PLUS_PAGE_IMAGE_READ
+    note: "p.122 텍스트 층(쪽 이미지는 판독하지 않음). 학생에게 보이는 본문·상자글·활동 제시문만 옮겼고 지도 방안·예시 답은 제외했다. 방점·고어 글자는 글꼴 문제로 제외했고 표는 한 줄로 옮겼다."
+    user_confirmation: PENDING   # 사용자 내용 승인 단계에서 확인
+    visual_line_by_line: PARTIAL
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
+- source_text_id: KOR-TB-2026-U3-SPACING
+  title: 공통국어2 3단원 02 한글 맞춤법 — 띄어쓰기 규정
+  author: 미래엔 『공통국어2』
+  role: RAW_SCHOOL_SOURCE
+  source_origin: USER_PROVIDED_TEXTBOOK
+  school_source_file_id: 1623XYA9MyGsQ0XRs-5Uho5c1WqgH591h
+  school_source_location: 교과서 pp.124·125 본문, 규정 상자, 용어 설명, 원리 확인 7·8, 더 알아보기
+  repo_path: quality/source/text/KOR_TB_2026_U3_SPACING_V1.0.txt
+  sha256: 44951f930826282140da218f766a26dfa9f0da343fea87221d9e09c15a7d6a7f
+  form: PROSE
+  paragraphs: 8
+  text_fidelity: EXACT
+  verification:
+    method: DRIVE_PDF_TEXT_LAYER_PLUS_PAGE_IMAGE_READ
+    note: "pp.124, 125 쪽 이미지 판독. 학생에게 보이는 본문·상자글·활동 제시문만 옮겼고 지도 방안·예시 답은 제외했다. 방점·고어 글자는 글꼴 문제로 제외했고 표는 한 줄로 옮겼다."
+    user_confirmation: PENDING   # 사용자 내용 승인 단계에서 확인
+    visual_line_by_line: PARTIAL
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true

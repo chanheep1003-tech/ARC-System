@@ -59,7 +59,11 @@ exams:
           - KOR-C2-U3-01-MEDIEVAL-KOREAN
           - KOR-C2-U3-02-HANGEUL-ORTHOGRAPHY
         source_ids:
-          - KOR-TB-2026-U3-P104-131
+          - KOR-TB-2026-U3-MEDIEVAL-FEATURES
+          - KOR-TB-2026-U3-MEDIEVAL-ACTIVITIES
+          - KOR-TB-2026-U3-ORTHO-RULES
+          - KOR-TB-2026-U3-SAISIOT
+          - KOR-TB-2026-U3-SPACING
         excluded_unit_ids: []
         excluded_source_ids: []
         products: [ARC_N, ARC_FINAL]
