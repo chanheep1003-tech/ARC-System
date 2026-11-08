@@ -16,10 +16,11 @@
 | D-11 | 초안은 임시 폴더 저장 허용, 제품 폴더 이동·중복 이력·BANK 등록은 사용자 내용 승인 후. | 중복·승인 정책 §6-A, 오케스트레이터, 사람 검토 게이트 §8, manifest |
 | D-13 | 기말 ARC_FINAL은 학교 공지 없이 사용자 임시 확정만으로 출시 허용. 공지로 범위가 바뀌면 프로필 해시가 달라져 재검토. | EXAM_CONTEXTS release_on_user_provisional_lock |
 | D-14 | 마감 2026-12-07(사용자 입력 "12 7일"). 시험일인지 준비 마감일인지 미확인. | 준비도 게이트, EXAM_CONTEXTS target_date, manifest readiness_deadline |
-| D-15 | 사회·과학 ARC_N 은 4단계(S1~S4), 기준은 사고 동작. 국어 V1~V6 과 별개. | quality/ARC_N_STAGE_LADDER_SOC_SCI_V1.0.md, manifest arc_n_stage_ladder_soc_sci |
+| D-15 | 사회·과학 ARC_N 은 4단계(S1~S4), 기준은 사고 동작. 국어 V1~V6 과 별개. | quality/ARC_N_STAGE_LADDER_V1.1.md, manifest arc_n_stage_ladder |
 | D-16 | 기출/변형/창작 구성은 단계가 아니라 문제은행 재고로 결정: 재고 충분 → 사용자가 변형 요청, 부족 → 창작 위주(ORIGINAL_TRIAL, 상시 허용). D-07 의 과목별 고정 프로필 중 SOC·SCI 는 이 규칙이 보완. | ARC_GENERATION_SOURCE_POLICY §10, 사다리 §4 |
 | D-17 | ARC N° 흑백 로고는 컬러 마스터의 휘도 변환 파생본으로 등록(사용자 지시 예외). Drive 업로드·ID 기록 대기. | brand registry |
-| D-18 | 사회·과학 ARC_N 에 D1 문항 금지(모든 단계 D2~D5). ARC_FINAL 은 영향 없음. | 사다리 §1-A, manifest arc_n_soc_sci_forbid_difficulty, production_pipeline PROFILES(BALANCE_D1_OUT_OF_RANGE) |
+| D-18 | KOR·SOC·SCI ARC_N 에 D1 문항 금지(모든 단계 D2~D5, 국어의 D1 10% 허용 폐지). ARC_FINAL 은 영향 없음. | 사다리 §1-A, manifest arc_n_forbid_difficulty, production_pipeline PROFILES(BALANCE_D1_OUT_OF_RANGE) |
+| D-19 | 국어도 사회·과학과 같은 4단계(S1~S4)로 통일. 국어 V5(FINAL 단계)와 V6(별도 모듈 단계) 제거. FINAL 은 단계가 아니라 과목 공통 별도 제품으로 유지. 기출 구성(국어 STRUCTURE_REFERENCE_ONLY)은 유지. | quality/ARC_N_STAGE_LADDER_V1.1.md, manifest korean_stage_ladder, AGENTS.md |
 
 ## 이 정비로 해결되지 않은 것 (후속 과제)
 1. 흑백 로고 자산 파일이 없다. 등록(Drive ID, 해시) 전까지 ARC_N 표지는 생성되지 않는다.

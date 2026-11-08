@@ -1,4 +1,6 @@
 # ARC 국어 V1–V6 전용 단계 계약 (V1.2)
+> 2026-11-08 변경: 이 문서의 단계 구조(V1~V6)는 quality/ARC_N_STAGE_LADDER_V1.1.md (S1~S4, D1 금지, V5·V6 제거)로 대체되었다. 아래 장르별 출처·검수 규칙은 내용 규칙으로 계속 유효하다.
+
 DATE: 2026-11-06
 SCOPE: subject=KOR ONLY. SCI/SOC/기타 과목에는 적용하지 않는다.
 STATUS: ACTIVE DEV POLICY / NOT RELEASE CERTIFICATION

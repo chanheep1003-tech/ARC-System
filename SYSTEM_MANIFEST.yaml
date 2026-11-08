@@ -30,6 +30,7 @@ runtime:
     - ARC_N
     - ARC_FINAL
   # KOR-only; other subjects keep their own active engines and scopes
+  korean_stage_ladder: quality/ARC_N_STAGE_LADDER_V1.1.md   # supersedes the V1-V6 structure of the policy below (2026-11-08)
   korean_learning_level_policy: quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md
   korean_learning_level_v1: ARC_N_FULL_SCOPE
   korean_learning_level_v2: ARC_N_PRIORITY_APPLICATION
@@ -120,8 +121,8 @@ runtime:
   arc_n_detailed_explanation_default: disabled
   # 2026-11-08 user decisions (see ops/ARC_DECISIONS_20261108.md)
   arc_n_metadata_strip_difficulty: D1_D5_DISPLAY            # strip only; never in stems/choices; ARC_FINAL shows none
-  arc_n_soc_sci_forbid_difficulty: [D1]   # user 2026-11-08: no D1 items in SOC/SCI ARC_N
-  arc_n_stage_ladder_soc_sci: quality/ARC_N_STAGE_LADDER_SOC_SCI_V1.0.md   # 4 stages by thinking action; source mix by bank inventory (STANDING_USER_RULE_20261108)
+  arc_n_forbid_difficulty: [D1]   # user 2026-11-08: no D1 items in KOR/SOC/SCI ARC_N
+  arc_n_stage_ladder: quality/ARC_N_STAGE_LADDER_V1.1.md   # 4 stages by thinking action; source mix by bank inventory (STANDING_USER_RULE_20261108)
   arc_n_cover_logo_variant: BW_REGISTERED_ASSET_REQUIRED    # N cover is blocked (BRAND_ASSET_MISSING) until the B/W asset is registered
   arc_n_question_packing: FOUR_BASE_FILL_MORE_WHEN_WHOLE_QUESTION_FITS   # 4 is the baseline, not a cap; never split or shrink
   arc_final_layout_basis: templates/final/ARC_FINAL_master_v0.2.html

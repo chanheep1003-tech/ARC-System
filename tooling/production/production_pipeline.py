@@ -63,15 +63,22 @@ LEAK_TERMS = ["판단축", "정답 후보", "추론 단계", "검토 절차", "�
               "true kernel", "distractor", "reasoning axis", "evidence span", "QA", "난도", "D1", "D2", "D3", "D4", "D5"]
 # Generic AI-exam phrasing the Korean realism gate forbids.
 AI_PHRASES = ["종합적으로 고려하면", "정확한 근거를 바탕으로", "판단 기준에 따라", "다각도로", "총체적으로"]
+# User 2026-11-08: no D1 items in KOR/SOC/SCI ARC_N (quality/ARC_N_STAGE_LADDER_V1.1.md §1-A).
+# Legacy KOR mix bounds apply only to bundles that do not declare a stage; D1 is 0 for every subject.
 PROFILES = {
-    # (min, max) share of items per difficulty; KOR ARC_N subject balance.
-    ("KOR", "ARC_N"): {"D1": (0.0, 0.10), "D2": (0.30, 0.40), "D3": (0.30, 0.40), "D4": (0.15, 0.25), "D5": (0.0, 0.05),
+    ("KOR", "ARC_N"): {"D1": (0.0, 0.0), "D2": (0.30, 0.40), "D3": (0.30, 0.40), "D4": (0.15, 0.25), "D5": (0.0, 0.05),
                        "D45": (0.15, 0.35), "ADVANCED": (0.20, 0.30)},
-    # User 2026-11-08: no D1 items in SOC/SCI ARC_N (quality/ARC_N_STAGE_LADDER_SOC_SCI_V1.0.md §1-A). Only D1 is bounded here;
-    # the stage-specific D2..D5 shares are stage-dependent and stay provisional in the ladder document.
     ("SOC", "ARC_N"): {"D1": (0.0, 0.0)},
     ("SCI", "ARC_N"): {"D1": (0.0, 0.0)},
 }
+# Provisional per-stage share targets from the ladder (±STAGE_TOL, reported as WARN until the user confirms the numbers).
+STAGE_SHARES = {
+    "S1": {"D2": 0.65, "D3": 0.30, "D45": 0.05},
+    "S2": {"D2": 0.30, "D3": 0.45, "D45": 0.25},
+    "S3": {"D2": 0.15, "D3": 0.40, "D45": 0.45},
+    "S4": {"D2": 0.10, "D3": 0.35, "D45": 0.55},
+}
+STAGE_TOL = 0.12
 
 
 ITEM_GATE_CODES = {
@@ -402,10 +409,20 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
         shares["D45"] = shares["D4"] + shares["D5"]
         shares["ADVANCED"] = sum(1 for it in items if it.get("balance") == "ADVANCED_DISCRIMINATION") / n
         balance = {k: round(v, 3) for k, v in shares.items()}
-        for k, (lo, hi) in profile.items():
+        stage = bundle.get("stage")
+        if stage is not None and stage not in STAGE_SHARES:
+            add("STAGE_INVALID", stage=stage, allowed=sorted(STAGE_SHARES))
+            stage = None
+        # A declared stage replaces the legacy KOR mix bounds; the D1 ban always applies.
+        bounds = {"D1": profile["D1"]} if stage else profile
+        for k, (lo, hi) in bounds.items():
             if not lo - 1e-9 <= shares[k] <= hi + 1e-9:
                 hard = k in {"D1", "D45", "ADVANCED"}
                 add(f"BALANCE_{k}_OUT_OF_RANGE", "FAIL" if hard else "WARN", share=round(shares[k], 3), target=[lo, hi])
+        if stage:
+            for k, want in STAGE_SHARES[stage].items():
+                if abs(shares[k] - want) > STAGE_TOL + 1e-9:
+                    add(f"STAGE_{k}_SHARE_OFF", "WARN", stage=stage, share=round(shares[k], 3), target=want)
 
     realism = realism_gate.analyze({"product_mode": bundle["product_mode"], "item_count": n, "counts": {
         "school_task_family_count": sum(f in SCHOOL_FAMILIES for f in fams),

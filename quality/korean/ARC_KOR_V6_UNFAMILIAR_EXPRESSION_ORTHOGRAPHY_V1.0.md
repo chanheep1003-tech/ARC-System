@@ -1,4 +1,5 @@
 # ARC 국어 V6 — 낯선 표현의 품사·표기·맞춤법 조항 적용 훈련
+> 2026-11-08: V6 은 더 이상 단계가 아니다(quality/ARC_N_STAGE_LADDER_V1.1.md §4-A). 이 문서는 국어 문법 S3·S4 설계 참고 자료이며 "V6 100문항"·65/100 같은 세트 목표는 효력이 없다.
 VERSION: V1.0
 DATE: 2026-11-06
 STATUS: ACTIVE_DEV_SPEC / CONTENT_NOT_RELEASED
