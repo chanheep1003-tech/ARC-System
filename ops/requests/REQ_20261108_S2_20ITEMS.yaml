@@ -1,7 +1,7 @@
 # 요청 기록 (사용자 결정값). 생성 전 request_spec 의 원천. 상태가 BLOCKED 이면 생성하지 않는다.
 request_id: REQ_20261108_S2_20ITEMS
 date: 2026-11-08
-status: KOR_DRAFT_AUTHORED_BLIND_REVIEW_PENDING
+status: KOR_V2_BLIND_REVIEW_IN_PROGRESS
 exam_id: DONGBUK_2026_2_FINAL
 product: ARC_N
 stage: S2
@@ -24,8 +24,10 @@ scope:
   SOC: "천재 통합사회2 II-2 자유주의와 공동체주의 정의관 pp.44-49 (본문 읽음; 소단원 선택은 제 임시 판단)"
   SCI: "통합과학2 산·염기와 중화 반응 (학교 자료 미확인, 사용자 지시만 근거)"
 kor_progress: >
-  KOR 20문항 초안(quality/production/KOR_S2_MEDIEVAL_ORTHO_20261108/items.yaml)과 교과서 원문 발췌 5개를 등록했다. 구조 게이트는 가짜 독립 풀이로만
-  확인했고 실제 독립 풀이(PASS_B), blind_review.yaml, PDF 생성, 사용자 내용 승인은 아직 하지 않았다. SCI·SOC 는 시작 전.
+  KOR 20문항 초안 v1 의 1차 독립 풀이: 정답 20/20 일치, 그러나 난이도 실측이 D2 9·D3 11·D4 0 으로 요청(D3 70%·D4+ 30%)에 미달했고
+  절대 표현 단서(1·3번), 원문 밖 규칙 필요(13번), 보기에 정답 단서 노출(14번), 보이지 않는 밑줄(9·19번), 중복(4·8번) 결함이 지적되었다.
+  v1 은 잠금 전 초안이므로 폐기하고 문항을 고쳐 v2(현재 items.yaml)를 만들었다. v2 에 대해 새 독립 풀이를 1회 실시하는 중이다(결과 미확인).
+  구조 게이트는 가짜 독립 풀이로만 확인했다. blind_review.yaml, PDF 생성, 사용자 내용 승인은 아직 하지 않았다. SCI·SOC 는 시작 전.
 remaining_before_release:
   - SCI 는 학교 자료가 없어 SCHOOL_SOURCE_PRIORITY 증빙 불가(ORIGINAL_TRIAL, 통합과학 수준 개념만 사용)
   - KOR 중세국어 쪽수(106-115 추정)와 교과서 전 쪽 확인
