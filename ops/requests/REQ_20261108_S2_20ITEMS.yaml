@@ -1,7 +1,7 @@
 # 요청 기록 (사용자 결정값). 생성 전 request_spec 의 원천. 상태가 BLOCKED 이면 생성하지 않는다.
 request_id: REQ_20261108_S2_20ITEMS
 date: 2026-11-08
-status: ALL_THREE_SUBJECTS_FAILED_DIFFICULTY_GATE_AWAITING_USER_DECISION
+status: SOC_V2_ALSO_FAILED_DIFFICULTY_GATE_MEASUREMENT_CALIBRATION_DECISION_NEEDED
 exam_id: DONGBUK_2026_2_FINAL
 product: ARC_N
 stage: S2
@@ -70,3 +70,9 @@ soc_round1_result: >
   결함 보고: 11·12·13번 오답 ㄷ 에 '언제나/어떤 경우에도' 절대 표현(길이·표현 단서, flag c).
   주의: 풀이 후 Q1·Q16 선지 길이 단서만 수정(정답 번호 불변)했고 풀이는 수정 전 원고(student_manuscript_pre_review.md) 기준.
   결과 파일은 blind_review_v1_REJECTED.yaml 로 보관. 세 과목 결과를 모아 난이도 판정 방식을 사용자와 정한다.
+soc_round2_result: >
+  SOC v2(D-21 적용: 교과서에 없는 새 사례·발언·수치로 전이 적용 문항 재구성) 독립 풀이: 정답 20/20 일치, 17문항 HIGH 확신.
+  난이도 실측 D2 15·D3 5(014·016·018·019·020)·D4 0 — v1(D2 15·D3 5·D4 0)과 분포가 사실상 같다. 목표 D2 .20/D3 .50/D4 .30(±.12) 불합격.
+  해석: 소재를 교과서 밖으로 바꿔도 측정 난이도가 변하지 않았으므로 병목은 문항 소재만이 아니라 '단일 AI 풀이자의 체감 난이도' 측정 자체일 가능성이 크다.
+  (AI 풀이자는 정답이 맞고 확신이 높으면 낮은 쪽을 고르도록 지시받으며, 고2 학생 정답률과 교정된 눈금이 아니다.) 기출 앵커 문항으로 눈금을 맞추는 보정이 필요.
+  플래그: 003·009·015·017 정답 선지가 가장 길어 길이 단서(c), 009 을의 정체 미명시(b), 020 ㄱ '절대적' 표현이 다소 강함(b). 결과 파일 blind_review_v2_REJECTED.yaml 로 보관.
