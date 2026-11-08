@@ -31,3 +31,9 @@
 ## 5. 파이프라인 연결
 - `production_pipeline.run()`: REQUEST_SPEC 단계에서 feasibility FAIL 을 확인하고, SOC/SCI(및 template 코드를 쓰는 KOR) ARC_N 은 EXAM_SCOPE·GENERATION_SOURCE_MIX 다음에 ITEM_STRUCTURE 게이트를 실행한다. 보고서에 `item_structure`, `difficulty_calibration` 이 포함된다.
 - 사용법: `python tooling/production/item_structure_gate.py <items.yaml> [교과서 원문.txt ...]`, `python tooling/production/difficulty_calibration.py <blind_output.yaml>`.
+
+## 6. 자료 제시형 추론 문항 (D-24, 사용자 지시 2026-11-08)
+- ARC N 은 앞으로 **자료 제시형 추론 문항**을 기본 방식으로 쓴다: 교과서에 없는 개념이 필요하면 학생이 외웠다고 가정하지 않고, 문항 안(view)에서 한두 문장으로 정의해 주고 그 정의로 입장을 분류·추론·적용하게 한다. (예: "분배의 정의를 그 소유가 생긴 과정으로 판단하는 관점을 (나)라 한다 → 갑, 을을 (가)/(나)로 분류". 동북고 통합사회 7번, 국어 7번이 같은 방식이다.)
+- 교과서 밖 용어(`supplied_concept_rule.outside_terms`: 원초적 입장, 무지의 베일, 정형적 분배, 역사적 원리, 응분, 최소국가, 축차적 등)가 문항에 이름으로 나오면 view 에 정의 문장이 있고 `supplied_concepts` 에 기록되어야 한다. 아니면 FAIL(OUTSIDE_CONCEPT_NOT_SUPPLIED). 용어 이름 없이 풀어 쓴 문장은 허용한다.
+- 정의를 제시해 추론하게 한 문항은 구조 점수에 +1.5 를 준다(`supplied_concept`). 소단원 범위(scope)는 바뀌지 않는다.
+- 금지: 정의 없이 교과서 밖 용어를 이름으로 쓰기, 교과서 문장 복제(D-21).

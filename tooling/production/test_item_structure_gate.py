@@ -115,6 +115,31 @@ class StructureGateTests(unittest.TestCase):
         self.assertNotIn("TEMPLATE_DIFFICULTY_OUT_OF_RANGE", self.codes(res))
 
 
+class SuppliedConceptTests(unittest.TestCase):
+    def codes(self, res):
+        return {f["code"] for f in res["findings"]}
+
+    def test_outside_term_without_definition_fails(self):
+        it = item(1, 1, view=["갑: 원초적 입장에서 합의한 원칙이 정의입니다.", "ㄱ. a", "ㄴ. b", "ㄷ. c"])
+        self.assertIn("OUTSIDE_CONCEPT_NOT_SUPPLIED", self.codes(g.check_bundle(bundle([it]))))
+
+    def test_outside_term_defined_in_item_passes_and_scores(self):
+        view = ["<자료> 분배의 정의를 그 소유가 생긴 과정으로 판단하는 관점을 '역사적 원리'라 한다.", "갑: 정당한 취득과 양도의 결과이면 정당합니다.", "ㄱ. a", "ㄴ. b", "ㄷ. c"]
+        base = item(1, 1, view=view)
+        res_no = g.check_bundle(bundle([base]))
+        self.assertIn("OUTSIDE_CONCEPT_NOT_SUPPLIED", self.codes(res_no))      # supplied_concepts 기록 없음
+        ok = item(1, 1, view=view, supplied_concepts=["역사적 원리"])
+        res_ok = g.check_bundle(bundle([ok]))
+        self.assertNotIn("OUTSIDE_CONCEPT_NOT_SUPPLIED", self.codes(res_ok))
+        s_ok = g.structure_features(ok, "SOC", LIB)["score"]
+        s_base = g.structure_features(base, "SOC", LIB)["score"]
+        self.assertGreater(s_ok, s_base)
+
+    def test_plain_wording_without_term_needs_nothing(self):
+        it = item(1, 1, view=["갑: 공정한 조건에서 합의한 것이 정의의 원칙입니다.", "ㄱ. a", "ㄴ. b", "ㄷ. c"])
+        self.assertNotIn("OUTSIDE_CONCEPT_NOT_SUPPLIED", self.codes(g.check_bundle(bundle([it]))))
+
+
 class PipelineFeasibilityTests(unittest.TestCase):
     def test_pipeline_blocks_infeasible_request_before_anything_else(self):
         import json

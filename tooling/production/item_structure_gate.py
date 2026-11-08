@@ -73,6 +73,7 @@ def structure_features(item: dict[str, Any], subject: str, lib: dict[str, Any]) 
         "entity_extra": w["entity_extra"] * (2 if ents >= 3 else 1 if ents >= 2 else 0),
         "computation": w["computation"] if tpl.get("computation") else 0.0,
         "low_elimination": w["low_elimination"] if (isinstance(item.get("immediate_elimination"), int) and item["immediate_elimination"] <= 1) else 0.0,
+        "supplied_concept": w.get("supplied_concept", 0.0) if (item.get("supplied_concepts") and len(view) >= 1) else 0.0,
     }
     score = round(sum(feats.values()), 2)
     return {"features": feats, "score": score}
@@ -98,6 +99,26 @@ def _f(code: str, severity: str, message: str, **extra: Any) -> dict[str, Any]:
 def _symbolic(options: list[str]) -> bool:
     """ㄱ, ㄴ 조합·㉠~㉤·(가)(나) 처럼 길이가 의미 없는 선지."""
     return max((len(o) for o in options), default=0) <= 12
+
+
+def outside_concept_findings(item: dict[str, Any], subject: str, lib: dict[str, Any]) -> list[dict[str, Any]]:
+    """D-24: 교과서 밖 용어는 view 에서 정의를 줄 때만 쓸 수 있다(item.supplied_concepts 에 기록)."""
+    rule = lib.get("supplied_concept_rule") or {}
+    terms = rule.get("outside_terms", {}).get(subject, [])
+    markers = rule.get("definitional_markers", [])
+    supplied = [str(x) for x in item.get("supplied_concepts", []) or []]
+    view = [str(x) for x in item.get("view", [])]
+    out = []
+    for term in terms:
+        in_text = _text_of(item)
+        if term not in in_text:
+            continue
+        defined = any(term in ln and any(m in ln for m in markers) for ln in view)
+        if term in supplied and defined:
+            continue
+        out.append(_f("OUTSIDE_CONCEPT_NOT_SUPPLIED", "FAIL",
+                      f"{item.get('item_id')}: 교과서 밖 개념 '{term}' 을(를) 학생이 안다고 가정했다. view 에서 정의를 주고 supplied_concepts 에 기록해야 한다(D-24)", item_id=item.get("item_id")))
+    return out
 
 
 def length_cue(item: dict[str, Any]) -> dict[str, Any] | None:
@@ -229,6 +250,7 @@ def check_bundle(raw: dict[str, Any], *, source_texts: list[str] | None = None, 
             sev = "FAIL" if label == "D4" else "WARN"
             findings.append(_f("STRUCTURE_BAND_BELOW_LABEL", sev,
                                f"{iid}: 라벨 {label} 인데 구조 점수 {sf['score']} 는 {band} 밴드다(판단 횟수·자료 가공이 부족하다)", item_id=iid, score=sf["score"], band=band))
+        findings += outside_concept_findings(it, subject, lib)
         lc = length_cue(it)
         if lc:
             findings.append(lc)
