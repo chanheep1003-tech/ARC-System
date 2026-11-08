@@ -52,3 +52,8 @@ the exact artifact.
 
 ## Exam context admission (2026-10-03)
 Normal production requires a current exam_context bound to the registered profile hash; pending scope is blocked before source loading and rendering. See tooling/exams/README.md. Archived bundles and synthetic canaries use --archived-replay explicitly; they remain release-blocked even when a diagnostic PDF is rendered. A failed normal Typesetter admission never renders a PDF.
+
+
+## Item structure gate and calibration (D-22/D-23)
+
+`item_structure_gate.py` checks template codes, structure score bands, scope feasibility and length/absolute-word/answer-position/textbook-copy cues; `difficulty_calibration.py` measures the blind solver's scale against anchor items. Rules: `quality/ARC_ITEM_STRUCTURE_AND_CALIBRATION_V1.0.md`.

@@ -54,6 +54,9 @@ jobs:
           python -m py_compile tooling/pdf_qc/test_preflight_korean_n.py
           python -m py_compile tooling/pdf_qc/test_arc_n_layout_rules.py
           python -m py_compile tooling/production/test_n_no_d1_and_stages.py
+          python -m py_compile tooling/production/item_structure_gate.py
+          python -m py_compile tooling/production/difficulty_calibration.py
+          python -m unittest tooling/production/test_item_structure_gate.py tooling/production/test_difficulty_calibration.py
           python -m py_compile tooling/typeset/kor_renderer.py
           python -m py_compile tooling/production/production_pipeline.py
           python -m py_compile tooling/production/test_production_pipeline.py

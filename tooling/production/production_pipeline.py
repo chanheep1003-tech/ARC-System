@@ -49,6 +49,8 @@ pdf_gate = _load("arc_pdf_preflight", "tooling/pdf_qc/pdf_preflight.py")
 renderer = _load("arc_kor_renderer", "tooling/typeset/kor_renderer.py")
 exam_gate = _load("arc_exam_scope_gate", "tooling/exams/exam_scope_gate.py")
 source_mix_gate = _load("arc_generation_source_mix", "tooling/sources/generation_source_gate.py")
+structure_gate = _load("arc_item_structure_gate", "tooling/production/item_structure_gate.py")
+calibration = _load("arc_difficulty_calibration", "tooling/production/difficulty_calibration.py")
 
 CIRC = "①②③④⑤"
 SCHOOL_FAMILIES = {
@@ -596,6 +598,9 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
     out_dir.mkdir(parents=True, exist_ok=True)
     if not archived_replay and isinstance(raw_bundle, dict):
         spec_findings = request_spec_findings(raw_bundle)
+        if not spec_findings:
+            # D-23: 범위(소단원 수) 대비 D4+ 목표가 비현실적이면 생성 전에 사용자에게 묻는다.
+            spec_findings = [f for f in structure_gate.feasibility(raw_bundle, structure_gate.load_library()) if f["severity"] == "FAIL"]
         if spec_findings:
             report = {"tool": "ARC_PRODUCTION_PIPELINE_V1.1", "batch_id": raw_bundle.get("batch_id"), "status": "BLOCKED",
                       "blocking_gates": ["REQUEST_SPEC"], "gates": {"REQUEST_SPEC": "FAIL"}, "findings": spec_findings,
@@ -626,6 +631,20 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
             return report
     else:
         source_mix = {"status": "ARCHIVED_REPLAY" if archived_replay else "NOT_APPLICABLE"}
+    structure = {"status": "NOT_APPLICABLE"}
+    if not archived_replay and raw_bundle.get("product_mode") == "ARC_N":
+        # D-22/D-23: SOC/SCI 는 항상, KOR 는 template 코드를 쓰는 번들부터 구조 게이트(템플릿·구조 점수·길이/절대 표현/정답 분포)를 적용한다.
+        subj = str(raw_bundle.get("subject", "")).upper()
+        if subj in {"SOC", "SCI"} or any(isinstance(i, dict) and i.get("template") for i in raw_bundle.get("items", [])):
+            structure = structure_gate.check_bundle(raw_bundle)
+            if structure["status"] == "FAIL":
+                report = {"tool": "ARC_PRODUCTION_PIPELINE_V1.1", "batch_id": raw_bundle.get("batch_id"),
+                          "status": "BLOCKED", "blocking_gates": ["ITEM_STRUCTURE"],
+                          "gates": {"EXAM_SCOPE": "PASS", "GENERATION_SOURCE_MIX": "PASS", "ITEM_STRUCTURE": "FAIL"},
+                          "item_structure": structure, "findings": structure["findings"], "pdf": None, "answer_key_pdf": None,
+                          "governance": {"FINAL_USER_APPROVAL": "PENDING", "DRIVE_SAVE": "BLOCKED"}}
+                (out_dir / "production_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+                return report
     bundle = normalize(raw_bundle)
     blind = yaml.safe_load((bundle_dir / "blind_review.yaml").read_text(encoding="utf-8"))
     product = bundle["product_mode"]
@@ -751,6 +770,11 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
     }
     report["source_composition"] = source_mix
     report["gates"]["GENERATION_SOURCE_MIX"] = source_mix["status"]
+    report["item_structure"] = structure
+    report["gates"]["ITEM_STRUCTURE"] = structure["status"]
+    cal = calibration.calibrate(blind.get("items", []) if isinstance(blind, dict) else [])
+    report["difficulty_calibration"] = {**cal, "distribution": calibration.calibrated_distribution(blind.get("items", []) if isinstance(blind, dict) else [], cal)}
+    report["gates"]["DIFFICULTY_MEASUREMENT"] = "PASS" if cal["status"] in {"CALIBRATED", "SOLVER_LENIENT", "SOLVER_HARSH"} else "WARN"
     (out_dir / "production_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     return report
 

@@ -188,6 +188,12 @@ runtime:
   arc_final_difficulty_anchor_soc: quality/anchors/SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
   arc_final_difficulty_anchor_sci: quality/anchors/SCI_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
   arc_final_difficulty_anchor_sci_redox: quality/anchors/SCI_REDOX_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+  arc_n_exam_structure_library: quality/exam_style/EXAM_STRUCTURE_LIBRARY_V1.0.yaml
+  arc_n_structure_gate: tooling/production/item_structure_gate.py
+  arc_n_structure_policy: quality/ARC_ITEM_STRUCTURE_AND_CALIBRATION_V1.0.md
+  arc_n_difficulty_calibration: tooling/production/difficulty_calibration.py
+  arc_n_calibration_anchor_registry: quality/anchors/CALIBRATION_ANCHOR_REGISTRY_V1.0.yaml
+  arc_n_structure_gate_required: SOC_SCI_ALWAYS_KOR_WHEN_TEMPLATE_PRESENT
   blind_review_rounds: 1                             # user directive 2026-09-25: one blind solve per bundle, all pipelines
   blind_review_after_round: author_fixes_recorded_as_post_blind_edits_no_rerun
   arc_final_difficulty_profile: required

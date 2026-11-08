@@ -1,0 +1,32 @@
+registry_id: ARC_CALIBRATION_ANCHOR_REGISTRY_V1.0
+version: 1.0
+date: 2026-11-08
+status: ACTIVE_DEV
+decision: D-23
+purpose: >
+  AI 풀이자의 난이도 눈금이 실제 시험의 난이도 표기와 얼마나 어긋나는지 재기 위한 기준 문항의 위치 목록이다.
+  문항 원문은 저작물이라 저장소에 넣지 않는다. 풀이 평가를 돌릴 때 아래 Drive 파일에서 해당 문항을 읽어 원고 끝에
+  ANCHOR-<id> 문항으로 붙이고, 풀이자 결과를 tooling/production/difficulty_calibration.py 에 넣는다.
+label_to_level:            # 출판사 난이도 라벨 → 수치(2=D2, 3=D3, 4=D4)
+  하: 2.0
+  중하: 2.0
+  중: 3.0
+  중상: 3.5
+  상: 4.0
+limits: >
+  라벨은 출판사 모의고사 해설의 주관 표기이며 학생 정답률이 아니다. 라벨과 ARC D 등급이 1:1로 대응한다는 보장은 없다.
+  기준 문항이 4개 미만이거나 낮은 쪽(하)과 높은 쪽(상)이 모두 없으면 눈금 보정은 INSUFFICIENT_ANCHORS 이며 보정값을 적용하지 않는다.
+anchors:
+  - {id: MEGA3-08, subject: SOC, drive_id: 1KXJshyZPnoqMii4Z9h4vr3fCP-Cf5cRy, item_no: 8,  label: 상,   structure: "노직·롤스 질문 흐름도"}
+  - {id: MEGA4-17, subject: SOC, drive_id: 14U-fN5Slez0r1f3WmXJBkTBkdZ1K2gjS, item_no: 17, label: 중상, structure: "노직·롤스 질문 흐름도"}
+  - {id: MEGA4-13, subject: SOC, drive_id: 14U-fN5Slez0r1f3WmXJBkTBkdZ1K2gjS, item_no: 13, label: 상,   structure: "벤 다이어그램(레오폴드·싱어)"}
+  - {id: MEGA3-25, subject: SOC, drive_id: 1KXJshyZPnoqMii4Z9h4vr3fCP-Cf5cRy, item_no: 25, label: 상,   structure: "표 가공 + 문자 변수"}
+  - {id: MEGA3-12, subject: SOC, drive_id: 1KXJshyZPnoqMii4Z9h4vr3fCP-Cf5cRy, item_no: 12, label: 상,   structure: "계산 2~3단계 연쇄"}
+  - {id: MEGA4-21, subject: SOC, drive_id: 14U-fN5Slez0r1f3WmXJBkTBkdZ1K2gjS, item_no: 21, label: 상,   structure: "다건 법 적용"}
+  - {id: MEGA3-14, subject: SOC, drive_id: 1KXJshyZPnoqMii4Z9h4vr3fCP-Cf5cRy, item_no: 14, label: 중상, structure: "사상가 옳지 않은 것"}
+  - {id: MEGA3-01, subject: SOC, drive_id: 1KXJshyZPnoqMii4Z9h4vr3fCP-Cf5cRy, item_no: 1,  label: 하,   structure: "관점 4가지 매칭"}
+  - {id: MEGA4-01, subject: SOC, drive_id: 14U-fN5Slez0r1f3WmXJBkTBkdZ1K2gjS, item_no: 1,  label: 하,   structure: "관점 매칭"}
+observed_only:
+  # 기준 라벨이 없어 눈금 계산에는 쓰지 않고, 풀이자가 어떻게 평가했는지만 기록한다.
+  - {id: DONGBUK-SOC-2025-2-Q6,  drive_id: 1ovD6tA5QtEyEnwvH5hQxc1kCuRwcEiQM, item_no: 6,  points: 4.2, solver_observed: D3, date: 2026-11-08, structure: "원전 인용 문장 귀속 판별"}
+  - {id: DONGBUK-SOC-2025-2-Q17, drive_id: 1ovD6tA5QtEyEnwvH5hQxc1kCuRwcEiQM, item_no: 17, points: 4.2, solver_observed: D4, date: 2026-11-08, structure: "응답표 점수 계산(노동법 지식 필요)"}

@@ -24,6 +24,7 @@
 | D-20 | 단계·세트 문항 수·난이도 분포·국어 기출/창작 구성은 기본값 없이 요청마다 사용자가 정한다. 비어 있으면 생성 전에 사용자에게 묻는다(코드 게이트 REQUEST_SPEC_*, SOURCE_PROFILE_UNDECLARED=FAIL). 앞서 제안한 단계별 분포 수치는 참고 예시로 강등. | 사다리 §0, production_pipeline.request_spec_findings, generation_source_gate |
 | D-21 | ARC N° 문항은 교과서 개념·예문·표를 그대로 옮겨 만들지 않는다. 교과서는 '출제 개념의 범위'일 뿐이고, 자료·사례·제시문·수치는 새것(미공개 소재)으로 구성해 개념을 전이 적용하게 한다. 실제 시험이 교과서 문장 대응 수준으로 나오지 않으므로(사용자 2026-11-08). 교과서 문장을 선지에 그대로 쓰면 불합격. | 사다리 §2 S2 비고, 생성 전 점검 |
 | D-22 | 난이도 조절(게이트)이 실패하면 반복 재생성 전에 문제은행·기출·모의 자료와 `quality/exam_style` 종합 노트를 참고해 해당 난이도의 실제 출제 구조로 재설계한다(사용자 2026-11-08). 이번 사회 S2 요청은 선택형 20문항만 만든다(서술형 제외). | 사다리 §2, quality/exam_style/README_EXAM_STYLE_SUMMARY_20261108.md |
+| D-23 | S2 20문항 실험 불합격 후 시스템 수정(사용자 지시): ①출제 구조 라이브러리·template 코드 필수 ②풀이자 눈금 보정용 기준 문항 레지스트리 ③요청 전 범위 대비 D4+ 가능성 점검(feasibility, 사용자에게 묻기) ④정답 길이·절대 표현·정답 분포·교과서 복제 자동 검사. 임계값은 모두 잠정. | quality/ARC_ITEM_STRUCTURE_AND_CALIBRATION_V1.0.md, tooling/production/item_structure_gate.py, difficulty_calibration.py |
 
 ## 이 정비로 해결되지 않은 것 (후속 과제)
 1. 흑백 로고 자산 파일이 없다. 등록(Drive ID, 해시) 전까지 ARC_N 표지는 생성되지 않는다.

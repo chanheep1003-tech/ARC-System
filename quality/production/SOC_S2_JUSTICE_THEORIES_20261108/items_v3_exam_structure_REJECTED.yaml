@@ -1,0 +1,1357 @@
+batch_id: SOC-S2-JUSTICE-THEORIES-20261108-V3
+product_mode: ARC_N
+subject: SOC
+generator: CLAUDE
+set_label: ARC N°
+course: 통합사회2
+cover_subtitle: Ⅱ-2 자유주의와 공동체주의 정의관 20문항 (선택형)
+school_line: 동북고등학교 1학년 · 2026
+created_at: '2026-11-08T21:00:00+09:00'
+scope: '2026 동북고 1학년 2학기 기말 임시 범위(사용자 지정, 소단원 선택은 임시 판단): 천재 통합사회2 Ⅱ-2 자유주의와 공동체주의 정의관 pp.44-49'
+request_spec:
+  decided_by: USER
+  stage: S2
+  item_count: 20
+  difficulty_targets:
+    D2: 0.2
+    D3: 0.5
+    D45: 0.3
+source_composition:
+  policy_version: ARC-SOURCE-MIX-V1.0
+  profile: PAST_70_AI_30
+  mode: ORIGINAL_TRIAL
+  authorized_by: STANDING_USER_RULE_20261108
+  shortage_reason: 현재 범위의 CONTENT_VERIFIED 문제은행 B=0 < R=14
+design_rule: D-21(교과서 문장 직접 대응 금지) + D-22(난이도 실패 후 quality/exam_style 템플릿으로 재설계). 선택형 20문항만(서술형 제외).
+school_source_status: TEXTBOOK_TEXT_READ_PP34_61_VISUALS_NOT_CHECKED
+school_source_ref: SOC-TB-CHUNJAE-2-P44-49
+items:
+- item_id: SOC-S2-001
+  format: MCQ
+  family: NEGATIVE_FOUR_TRUE
+  template: T14
+  coverage: LIB_COM_NOTE
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: 자유주의와 공동체주의에 대한 학생 노트의 ①~⑤ 중 옳지 않은 것은?
+  options:
+  - 자유주의에서 개인은 스스로 선택한 삶의 목적을 추구하는 존재로 이해된다.
+  - 자유주의에서 공동체와 국가는 개인의 자유와 권리를 지키는 수단의 성격이 강하다.
+  - 공동체주의에서 개인의 정체성은 개인이 선택한 목적만으로 형성된다.
+  - 공동체주의에서 구성원은 공동체의 유산과 그에 따른 의무를 물려받는다.
+  - 공동체주의는 공동선을 실현하는 것을 정의로운 상태와 연결 짓는다.
+  answer: 3
+  second_best: 3
+  judgments:
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: opt1
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.46
+    why: 자유주의의 설명이다.
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: opt2
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.46
+    why: 자유주의의 설명이다.
+  - v: false
+    c: CORRECT
+    axis: application
+    claim: opt3
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.46
+    why: 공동체주의는 정체성이 공동체의 역할과 유산 속에서 형성된다고 본다.
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: opt4
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.46
+    why: 공동체주의의 설명이다.
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: opt5
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.46
+    why: 공동체주의의 설명이다.
+  reasoning_steps: 1
+  immediate_elimination: 2
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SOC-TB-CHUNJAE-2-P44-49
+    design_purpose: 'S2 자료 해석·적용(D-21/D-22, 템플릿 T14): 교과서 pp.44-49 개념 범위 안에서 새 자료에 전이 적용'
+- item_id: SOC-S2-002
+  format: MCQ
+  family: SINGLE_THINKER_STATEMENT
+  template: T2
+  coverage: ROWLS_STATEMENT
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: 롤스의 정의관에 대한 설명으로 옳은 것은?
+  options:
+  - 소유가 정당한 취득과 양도의 결과라면 분배 결과의 격차는 문제 삼지 않는다고 본다.
+  - 개인은 공동체에서 물려받은 의무를 개인의 선택보다 먼저 받아들여야 한다고 본다.
+  - 사회 전체의 평균 이익이 높아진다면 일부 사람의 기본적 자유를 제한할 수 있다고 본다.
+  - 불평등이 최소 수혜자의 처지를 개선하지 못해도 소유가 정당하면 허용된다고 본다.
+  - 직책과 지위를 모두에게 개방하고, 불평등은 가장 불리한 사람에게 최대 이익일 때 허용한다고 본다.
+  answer: 5
+  second_best: 1
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt1
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 노직의 입장이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt2
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 매킨타이어 쪽(공동체주의)의 입장이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt3
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 롤스는 평등한 자유를 보장하므로 반대이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt4
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 노직의 입장이다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: opt5
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 기회균등의 원칙과 차등의 원칙이다.
+  reasoning_steps: 1
+  immediate_elimination: 2
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SOC-TB-CHUNJAE-2-P44-49
+    design_purpose: 'S2 자료 해석·적용(D-21/D-22, 템플릿 T2): 교과서 pp.44-49 개념 범위 안에서 새 자료에 전이 적용'
+- item_id: SOC-S2-003
+  format: MCQ
+  family: CASE_APPLICATION
+  template: T9
+  coverage: NOZICK_ENTITLEMENT
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: 노직의 관점에서 다음 사례를 평가한 것으로 가장 적절한 것은?
+  options:
+  - 갑의 수익이 사회 전체의 공동선에 크게 기여하였으므로 일부 환수는 정당하다고 본다.
+  - 수익이 정당한 취득과 양도의 결과라면 동의 없는 환수는 소유 권리를 침해한다고 본다.
+  - 지원 대상이 가장 불리한 처지의 사람들이므로 환수의 정당성이 소유 권리보다 앞선다고 본다.
+  - 수익이 지나치게 크기 때문에 일정 수준을 넘는 부분은 공동체의 몫이라고 본다.
+  - 앱 개발에는 공동체의 유산이 기여하였으므로 수익 일부를 돌려줄 책무가 있다고 본다.
+  answer: 2
+  second_best: 3
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt1
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 공동선을 이유로 정당한 소유를 환수하는 것은 노직의 입장이 아니다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: opt2
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 노직은 정당한 취득·양도로 얻은 소유를 권리로 보호한다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt3
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 최소 수혜자 기준은 롤스의 입장이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt4
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 수익 크기로 몫을 가르는 것은 노직의 기준이 아니다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt5
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 유산에 따른 책무는 공동체주의 쪽 논거이다.
+  reasoning_steps: 2
+  immediate_elimination: 2
+  view:
+  - 앱 개발자 갑은 직접 만든 앱을 팔아 큰 수익을 얻었다. 정부는 이 수익의 일부를 갑의 동의 없이 거두어 저소득층 지원에 쓰려 한다.
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SOC-TB-CHUNJAE-2-P44-49
+    design_purpose: 'S2 자료 해석·적용(D-21/D-22, 템플릿 T9): 교과서 pp.44-49 개념 범위 안에서 새 자료에 전이 적용'
+- item_id: SOC-S2-004
+  format: MCQ
+  family: MATCHING
+  template: T13
+  coverage: THREE_THINKERS_CUE
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: (가)~(다)의 사상가를 옳게 짝지은 것은?
+  options:
+  - (가) 롤스, (나) 노직, (다) 매킨타이어
+  - (가) 매킨타이어, (나) 롤스, (다) 노직
+  - (가) 노직, (나) 롤스, (다) 매킨타이어
+  - (가) 노직, (나) 매킨타이어, (다) 롤스
+  - (가) 롤스, (나) 매킨타이어, (다) 노직
+  answer: 4
+  second_best: 3
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt1
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: (가)는 정당한 취득·양도이므로 노직이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt2
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: (가)가 매킨타이어가 아니다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt3
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: (나)와 (다)가 바뀌었다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: opt4
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: (가) 노직, (나) 매킨타이어, (다) 롤스가 맞다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt5
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: (가)와 (다)가 바뀌었다.
+  reasoning_steps: 1
+  immediate_elimination: 2
+  view:
+  - (가) 정당한 방법으로 얻은 소유물은 그 사람의 권리입니다.
+  - (나) 나는 공동체가 물려준 유산과 의무 속에서 살아가는 존재입니다.
+  - (다) 불평등은 가장 불리한 처지의 사람에게 최대의 이익이 될 때만 허용됩니다.
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SOC-TB-CHUNJAE-2-P44-49
+    design_purpose: 'S2 자료 해석·적용(D-21/D-22, 템플릿 T13): 교과서 pp.44-49 개념 범위 안에서 새 자료에 전이 적용'
+- item_id: SOC-S2-005
+  format: MCQ
+  family: MULTI_JUDGMENT
+  template: T3
+  coverage: ROWLS_NOZICK_PAIR
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 갑, 을의 입장에 대한 <보기>의 설명 중 옳은 것만을 있는 대로 고른 것은?
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ
+  - ㄴ, ㄹ
+  - ㄱ, ㄴ, ㄹ
+  - ㄴ, ㄷ, ㄹ
+  answer: 1
+  second_best: 4
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: opt1
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄱ과 ㄴ이 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt2
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄷ이 틀리다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt3
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄱ이 옳다. ㄹ이 틀리다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: opt4
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄹ이 틀리다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt5
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄷ, ㄹ이 틀리다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  view:
+  - '갑: 사회적·경제적 불평등은 가장 불리한 처지의 사람에게 최대의 이익이 될 때에만 허용되어야 합니다.'
+  - '을: 개인이 정당하게 취득하고 양도받은 소유는 그 사람의 권리이므로, 결과가 불평등해도 정의에 어긋나지 않습니다.'
+  - ㄱ. 갑은 분배 결과가 최소 수혜자에게 미치는 영향을 정의 판단에 반영한다.
+  - ㄴ. 을은 소유의 정당성이 취득과 양도 과정의 정당성에서 나온다고 본다.
+  - ㄷ. 갑과 을은 모두 사회 전체의 이익을 최대화하는 것을 분배의 최우선 원칙으로 삼는다.
+  - ㄹ. 을은 갑과 달리 빈부 격차가 있는 사회는 그 자체로 정의롭지 않다고 본다.
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SOC-TB-CHUNJAE-2-P44-49
+    design_purpose: 'S2 자료 해석·적용(D-21/D-22, 템플릿 T3): 교과서 pp.44-49 개념 범위 안에서 새 자료에 전이 적용'
+- item_id: SOC-S2-006
+  format: MCQ
+  family: MULTI_JUDGMENT
+  template: T3
+  coverage: ROWLS_VS_MACINTYRE
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 갑, 을의 입장에 대한 <보기>의 설명 중 옳은 것만을 있는 대로 고른 것은?
+  options:
+  - ㄱ
+  - ㄹ
+  - ㄱ, ㄹ
+  - ㄴ, ㄷ
+  - ㄱ, ㄴ
+  answer: 3
+  second_best: 1
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: opt1
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄹ도 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: opt2
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄱ도 옳다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: opt3
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄱ과 ㄹ이 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt4
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄴ, ㄷ이 틀리다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt5
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄴ이 틀리다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  view:
+  - '갑: 모든 사람은 동등한 기본적 자유를 누려야 합니다. 그 위에서 불평등은 가장 불리한 사람에게 이익이 될 때만 허용됩니다.'
+  - '을: 나는 가족과 지역, 나라의 구성원으로서 물려받은 유산과 의무에서 도덕을 시작합니다.'
+  - ㄱ. 갑은 개인의 기본적 자유를 정의의 원칙에 포함한다.
+  - ㄴ. 을은 개인이 공동체와 독립적으로 선택한 목적만으로 도덕이 시작된다고 본다.
+  - ㄷ. 갑과 을은 모두 불평등이 최소 수혜자에게 이익이 될 때에만 정당하다고 본다.
+  - ㄹ. 을은 갑과 달리 구성원의 의무가 개인의 선택과 무관하게 주어진다고 본다.
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SOC-TB-CHUNJAE-2-P44-49
+    design_purpose: 'S2 자료 해석·적용(D-21/D-22, 템플릿 T3): 교과서 pp.44-49 개념 범위 안에서 새 자료에 전이 적용'
+- item_id: SOC-S2-007
+  format: MCQ
+  family: HIDDEN_SPEAKER
+  template: T8
+  coverage: COMMUNITARIAN_COLUMN
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 다음 칼럼을 쓴 사람의 입장에서 지지할 주장으로 가장 적절한 것은?
+  options:
+  - 개인이 합리적으로 선택하지 않은 책무는 구속력이 없다.
+  - 후손은 공동체가 이어 온 과거의 잘못에 대해서도 응답할 책임을 질 수 있다.
+  - 국가는 모든 시민이 서로 다른 삶의 방식을 선택하도록 중립을 지켜야 한다.
+  - 개인의 정당한 소유는 공동체의 필요보다 언제나 앞선다.
+  - 공동선을 위해서라면 구성원의 기본적 자유는 얼마든지 제한할 수 있다.
+  answer: 2
+  second_best: 1
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt1
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.46
+    why: 선택하지 않은 책무의 구속력을 부정하는 것은 자유주의 쪽이다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: opt2
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.46
+    why: 칼럼은 공동체가 물려준 빚과 유산을 말하므로 후손의 책임을 지지할 수 있다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt3
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.46
+    why: 국가의 중립성은 자유주의의 입장이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt4
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.46
+    why: 소유의 우선성은 노직 쪽이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt5
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.46
+    why: '''얼마든지''는 과도한 일반화이다.'
+  reasoning_steps: 2
+  immediate_elimination: 2
+  view:
+  - 우리가 맡을 책임은 백지에서 고르는 것이 아닙니다. 어느 마을, 어느 집안, 어느 나라의 사람으로 태어났는지가 책임의 출발점입니다. 선조가 남긴 빚과 유산도 우리가 함께 물려받습니다.
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SOC-TB-CHUNJAE-2-P44-49
+    design_purpose: 'S2 자료 해석·적용(D-21/D-22, 템플릿 T8): 교과서 pp.44-49 개념 범위 안에서 새 자료에 전이 적용'
+- item_id: SOC-S2-008
+  format: MCQ
+  family: CASE_APPLICATION
+  template: T9
+  coverage: NOZICK_VS_MACINTYRE_CASE
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 갈등에 대한 노직과 매킨타이어의 입장으로 옳은 것은?
+  options:
+  - 노직은 고택이 마을의 유산이므로 갑의 소유 권리가 제한된다고 본다.
+  - 매킨타이어는 고택이 개인의 소유물이므로 마을이 보존을 요구할 근거가 없다고 본다.
+  - 노직은 고택의 보존 여부를 마을 구성원 다수의 뜻으로 정해야 한다고 본다.
+  - 매킨타이어는 갑도 마을의 유산을 이어 갈 구성원으로서의 책임을 고려해야 한다고 본다.
+  - 노직과 매킨타이어는 모두 고택의 철거 여부를 소유자의 판단에만 맡겨야 한다고 본다.
+  answer: 4
+  second_best: 5
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: opt1
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 노직은 정당한 소유를 공동체의 유산을 이유로 제한하는 입장이 아니다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt2
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 매킨타이어는 구성원의 유산과 의무를 강조한다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt3
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 다수의 뜻으로 소유를 정하는 것은 노직의 입장이 아니다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: opt4
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 매킨타이어는 공동체의 유산을 구성원이 이어 갈 책임으로 본다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: opt5
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 매킨타이어는 소유자 판단에만 맡기지 않는다.
+  reasoning_steps: 2
+  immediate_elimination: 1
+  view:
+  - 갑은 마을의 오래된 고택을 정당하게 양도받았다. 갑이 고택을 철거하고 상가를 지으려 하자, 주민회는 고택이 마을이 함께 이어 온 유산이므로 보존해야 한다고 주장한다.
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SOC-TB-CHUNJAE-2-P44-49
+    design_purpose: 'S2 자료 해석·적용(D-21/D-22, 템플릿 T9): 교과서 pp.44-49 개념 범위 안에서 새 자료에 전이 적용'
+- item_id: SOC-S2-009
+  format: MCQ
+  family: QUOTE_ATTRIBUTION
+  template: T15
+  coverage: COMMUNITARIAN_PARAGRAPH
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 다음 글은 공동체주의적 정의관의 입장에서 쓴 것이다. 밑줄 친 ①~⑤ 중 이 입장과 어긋나는 것은?
+  options:
+  - ①
+  - ②
+  - ③
+  - ④
+  - ⑤
+  answer: 5
+  second_best: 1
+  judgments:
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: opt1
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.46
+    why: 공동체주의와 부합한다.
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: opt2
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.46
+    why: 공동체주의와 부합한다.
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: opt3
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.46
+    why: 공동체주의와 부합한다.
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: opt4
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.46
+    why: 공동체주의와 부합한다.
+  - v: false
+    c: CORRECT
+    axis: application
+    claim: opt5
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.46
+    why: 구성원 자격과 책임을 순전히 선택의 문제로 보는 것은 자유주의의 관점이다.
+  reasoning_steps: 3
+  immediate_elimination: 2
+  view:
+  - ①사람은 자신이 속한 공동체와 떨어져서 존재할 수 없습니다. ②나의 정체성은 가족과 지역, 나라 속에서 맡은 역할과 관계를 통해 형성됩니다. ③그래서 공동체에서 물려받은 책임을 다하는 일은 도덕적 삶의 출발점입니다. ④공동체의 선을 함께 추구하는 일은 개인의 좋은 삶과도 이어져 있습니다. ⑤그러므로 어떤 공동체의 구성원이 될지, 그 책임을 질지는 순전히 내가 스스로 선택하는 문제입니다.
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SOC-TB-CHUNJAE-2-P44-49
+    design_purpose: 'S2 자료 해석·적용(D-21/D-22, 템플릿 T15): 교과서 pp.44-49 개념 범위 안에서 새 자료에 전이 적용'
+- item_id: SOC-S2-010
+  format: MCQ
+  family: VENN_DIAGRAM
+  template: T5
+  coverage: ROWLS_NOZICK_VENN
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 그림은 갑, 을의 공통점과 차이점을 나타낸 것이다. A~C에 들어갈 진술을 <보기>에서 옳게 고른 것은? (단, 갑은 롤스, 을은 노직의 입장이다.)
+  options:
+  - 'A: ㄱ, B: ㄷ, C: ㄴ'
+  - 'A: ㄱ, B: ㄴ, C: ㄷ'
+  - 'A: ㄴ, B: ㄱ, C: ㄷ'
+  - 'A: ㄷ, B: ㄴ, C: ㄱ'
+  - 'A: ㄴ, B: ㄷ, C: ㄱ'
+  answer: 2
+  second_best: 1
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt1
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: B와 C가 바뀌었다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: opt2
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: A는 갑만, B는 공통, C는 을만의 진술이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt3
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: A와 B가 바뀌었다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt4
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: A와 C가 바뀌었다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt5
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 순서가 모두 어긋났다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  view:
+  - '[A: 갑만 해당] — [B: 갑과 을 모두 해당] — [C: 을만 해당]'
+  - ㄱ. 사회적·경제적 불평등이 정당화되려면 가장 불리한 처지의 사람에게 이익이 돌아가야 한다.
+  - ㄴ. 국가가 개인의 기본적인 자유와 권리를 함부로 침해해서는 안 된다.
+  - ㄷ. 분배의 결과보다 소유가 어떤 과정을 거쳐 형성되었는지를 중시한다.
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SOC-TB-CHUNJAE-2-P44-49
+    design_purpose: 'S2 자료 해석·적용(D-21/D-22, 템플릿 T5): 교과서 pp.44-49 개념 범위 안에서 새 자료에 전이 적용'
+- item_id: SOC-S2-011
+  format: MCQ
+  family: STUDENT_RESPONSE_EVALUATION
+  template: T9
+  coverage: PUBLIC_PRIVATE_NIMBY
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 송전탑 건설 문제에 대한 <보기>의 학생 A~C의 평가 중 적절한 것만을 고른 것은?
+  options:
+  - A
+  - B
+  - A, B
+  - A, C
+  - B, C
+  answer: 3
+  second_best: 3
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: opt1
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.48
+    why: B도 적절하다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: opt2
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.48
+    why: A도 적절하다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: opt3
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.48
+    why: A와 B가 적절하다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt4
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.48
+    why: C가 부적절하다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt5
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.48
+    why: C가 부적절하다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  view:
+  - '상황: 시가 도시 전력 공급을 위해 마을 인근에 송전탑을 세우려 하자, 주민들은 건강 피해와 재산 가치 하락을 이유로 반대한다.'
+  - '학생 A: 주민들이 공동체의 필요를 전혀 고려하지 않고 자신의 이익만 내세운다면 님비로 비판받을 수 있어.'
+  - '학생 B: 시가 주민 의견 수렴과 피해 보상 없이 건설을 강행하면 공익만 강조해 주민의 권리를 침해할 수 있어.'
+  - '학생 C: 개인의 권리와 공동체의 필요를 조화시키려면 주민 의견은 모두 배제하고 건설 방식은 전문가만 정해야 해.'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SOC-TB-CHUNJAE-2-P44-49
+    design_purpose: 'S2 자료 해석·적용(D-21/D-22, 템플릿 T9): 교과서 pp.44-49 개념 범위 안에서 새 자료에 전이 적용'
+- item_id: SOC-S2-012
+  format: MCQ
+  family: DATA_INTERPRETATION
+  template: T11
+  coverage: RAWLS_INCOME_TABLE
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 표는 정책별 계층 소득을 나타낸 것이다. 롤스의 입장에서 옳은 것만을 <보기>에서 있는 대로 고른 것은? (단, 모든 정책은 평등한 자유의 원칙과 기회균등의 원칙을 충족한다.)
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ
+  - ㄴ, ㄷ
+  - ㄷ
+  - ㄱ, ㄴ, ㄷ
+  answer: 1
+  second_best: 5
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: opt1
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄱ과 ㄴ이 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt2
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄷ이 틀리다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt3
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄷ이 틀리다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt4
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄷ이 틀리다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt5
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄷ이 틀리다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  view:
+  - ㄱ. (가)는 현행보다 최소 수혜자의 소득을 높이므로 현행보다 더 정당하다고 본다.
+  - ㄴ. (가)~(라) 중에서는 (라)가 가장 정당하다고 본다.
+  - ㄷ. (다)는 (나)보다 상위 계층 소득이 높으므로 (나)보다 (다)를 택한다고 본다.
+  table:
+    header:
+    - 구분
+    - 하위 계층
+    - 중간 계층
+    - 상위 계층
+    rows:
+    - - 현행
+      - '100'
+      - '300'
+      - '600'
+    - - (가)
+      - '120'
+      - '310'
+      - '700'
+    - - (나)
+      - '150'
+      - '280'
+      - '400'
+    - - (다)
+      - '140'
+      - '340'
+      - '500'
+    - - (라)
+      - '155'
+      - '300'
+      - '480'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SOC-TB-CHUNJAE-2-P44-49
+    design_purpose: 'S2 자료 해석·적용(D-21/D-22, 템플릿 T11): 교과서 pp.44-49 개념 범위 안에서 새 자료에 전이 적용'
+- item_id: SOC-S2-013
+  format: MCQ
+  family: MULTI_JUDGMENT
+  template: T3
+  coverage: MILL_VS_MACINTYRE
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 갑, 을의 입장에 대한 <보기>의 설명 중 옳은 것만을 있는 대로 고른 것은?
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄹ
+  - ㄱ, ㄴ, ㄹ
+  - ㄴ, ㄷ, ㄹ
+  - ㄱ, ㄷ
+  answer: 3
+  second_best: 1
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: opt1
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.45
+    why: ㄹ도 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: opt2
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.45
+    why: ㄴ도 옳다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: opt3
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.45
+    why: ㄱ, ㄴ, ㄹ이 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt4
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.45
+    why: ㄷ이 틀리다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt5
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.45
+    why: ㄷ이 틀리다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  view:
+  - '갑(밀): 타인에게 영향을 미치지 않는 행위에 대해서는 개인에게 절대적인 자유가 있습니다. 타인에게 해를 주는 행위는 제한될 수 있습니다.'
+  - '을(매킨타이어): 나는 가족, 도시, 민족의 구성원으로서 다양한 빚과 유산, 기대와 의무를 물려받습니다.'
+  - ㄱ. 갑은 타인에게 영향을 주지 않는 개인의 선택에 사회가 간섭하는 것을 경계한다.
+  - ㄴ. 을은 구성원이 공동체로부터 물려받은 의무를 도덕의 출발점으로 본다.
+  - ㄷ. 갑은 타인에게 해를 주는 행위라도 개인의 자유이므로 제한할 수 없다고 본다.
+  - ㄹ. 을은 갑과 달리 구성원의 책임이 선택하지 않아도 주어진다고 본다.
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SOC-TB-CHUNJAE-2-P44-49
+    design_purpose: 'S2 자료 해석·적용(D-21/D-22, 템플릿 T3): 교과서 pp.44-49 개념 범위 안에서 새 자료에 전이 적용'
+- item_id: SOC-S2-014
+  format: MCQ
+  family: HIDDEN_SPEAKER
+  template: T2
+  coverage: NOZICK_STATEMENT
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 다음 주장을 한 사상가의 입장으로 가장 적절한 것은?
+  options:
+  - 불평등은 가장 불리한 처지의 사람에게 이익이 될 때에만 정당화된다.
+  - 공동체에서 부여된 책임은 개인의 선택과 무관하게 주어진다.
+  - 과정이 정당했더라도 결과의 격차가 크다면 국가가 재분배해야 한다.
+  - 정당한 취득과 양도를 거친 소유라면 분배의 불평등만으로 부당하다고 할 수 없다.
+  - 모든 시민이 결과적으로 같은 몫을 가져야 정의로운 사회라고 할 수 있다.
+  answer: 4
+  second_best: 1
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt1
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 롤스의 입장이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt2
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 공동체주의의 입장이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt3
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 주장과 반대이다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: opt4
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 주장은 과정의 정당성을 근거로 결과의 불평등을 문제 삼지 않는다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt5
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 주장과 무관하다.
+  reasoning_steps: 2
+  immediate_elimination: 2
+  view:
+  - 일하고 거래해서 번 것은 내 것입니다. 거래의 과정이 정당하다면 그 결과가 불평등하더라도 문제 삼을 수 없습니다. 국가는 그 권리를 지키는 데 그쳐야 합니다.
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SOC-TB-CHUNJAE-2-P44-49
+    design_purpose: 'S2 자료 해석·적용(D-21/D-22, 템플릿 T2): 교과서 pp.44-49 개념 범위 안에서 새 자료에 전이 적용'
+- item_id: SOC-S2-015
+  format: MCQ
+  family: FLOWCHART
+  template: T4
+  coverage: ROWLS_NOZICK_FLOW
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: 그림은 갑, 을의 입장을 질문으로 구분한 것이다. A~C에 들어갈 질문을 <보기>에서 옳게 고른 것은?
+  options:
+  - 'A: ㄱ, B: ㄴ, C: ㄷ'
+  - 'A: ㄷ, B: ㄱ, C: ㄴ'
+  - 'A: ㄹ, B: ㄴ, C: ㄱ'
+  - 'A: ㄴ, B: ㄷ, C: ㄱ'
+  - 'A: ㄷ, B: ㄴ, C: ㄱ'
+  answer: 5
+  second_best: 4
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt1
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: A는 둘 다 '예'인 ㄷ이어야 한다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: opt2
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: B와 C가 바뀌었다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt3
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄹ은 둘 다 '아니요'이다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: opt4
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: A와 B가 바뀌었다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: opt5
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: A=ㄷ(둘 다 예), B=ㄴ(갑만 예), C=ㄱ(을만 예).
+  reasoning_steps: 4
+  immediate_elimination: 1
+  view:
+  - '갑: 모든 사람의 기본적 자유는 동등하게 보장되어야 하며, 불평등은 가장 불리한 처지의 사람에게 최대의 이익이 될 때에만 허용됩니다.'
+  - '을: 소유가 정당한 취득과 양도의 결과라면 그것은 개인의 권리입니다. 국가가 그것을 옮기는 것은 개인을 불가침의 존재로 대하지 않는 일입니다.'
+  - '[그림] 질문 A: 갑 ''예'', 을 ''예'' / 질문 B: 갑 ''예'', 을 ''아니요'' / 질문 C: 갑 ''아니요'', 을 ''예'''
+  - ㄱ. 소유의 정당성을 취득과 양도 과정의 정당성으로 판단하는가?
+  - ㄴ. 불평등은 가장 불리한 사람에게 최대 이익이 될 때에만 허용되는가?
+  - ㄷ. 개인의 권리를 침해하지 않는 범위에서 분배 문제를 따져야 하는가?
+  - ㄹ. 사회 전체의 이익을 최대화하는 것이 분배의 최우선 원칙인가?
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SOC-TB-CHUNJAE-2-P44-49
+    design_purpose: 'S2 자료 해석·적용(D-21/D-22, 템플릿 T4): 교과서 pp.44-49 개념 범위 안에서 새 자료에 전이 적용'
+- item_id: SOC-S2-016
+  format: MCQ
+  family: RESPONSE_TABLE_RULE
+  template: T10
+  coverage: RESPONSE_SCORE_PUZZLE
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: 표는 질문 (가)~(라)에 대한 학생 A~C의 응답과 규칙이다. 옳은 것만을 <보기>에서 있는 대로 고른 것은?
+  options:
+  - ㄱ
+  - ㄴ
+  - ㄱ, ㄹ
+  - ㄱ, ㄴ
+  - ㄴ, ㄷ
+  answer: 4
+  second_best: 4
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: opt1
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄴ도 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: opt2
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄱ도 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt3
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄹ은 점수 차가 2점이므로 틀리다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: opt4
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄱ과 ㄴ이 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt5
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄷ은 B와 C가 옳게 답한 개수가 같으므로 틀리다.
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[규칙] 각 질문에 대해 ''예''라고 답할 입장을 갑(롤스의 입장), 을(노직의 입장) 중에서 ''갑만'', ''을만'', ''둘 다 예'', ''둘 다 아니요'' 가운데 하나로 응답한다. 응답이 맞으면 배점만큼 얻고 틀리면 0점이다.'
+  - ㄱ. A가 얻은 점수는 6점이다.
+  - ㄴ. 가장 높은 점수를 얻은 학생은 B이다.
+  - ㄷ. C가 옳게 답한 질문의 수는 B보다 1개 적다.
+  - ㄹ. A와 C의 점수 차는 3점이다.
+  table:
+    header:
+    - 질문(배점)
+    - 학생 A
+    - 학생 B
+    - 학생 C
+    rows:
+    - - (가) 소유의 정당성을 취득과 양도 과정의 정당성으로 판단하는가? (1점)
+      - 을만
+      - 갑만
+      - 을만
+    - - (나) 불평등은 가장 불리한 사람에게 최대 이익이 될 때에만 허용되는가? (2점)
+      - 갑만
+      - 갑만
+      - 을만
+    - - (다) 사회 전체의 이익 최대화가 분배의 최우선 원칙인가? (3점)
+      - 둘 다 아니요
+      - 둘 다 아니요
+      - 둘 다 아니요
+    - - (라) 개인의 기본적 권리를 존중해야 하는가? (4점)
+      - 갑만
+      - 둘 다 예
+      - 둘 다 예
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SOC-TB-CHUNJAE-2-P44-49
+    design_purpose: 'S2 자료 해석·적용(D-21/D-22, 템플릿 T10): 교과서 pp.44-49 개념 범위 안에서 새 자료에 전이 적용'
+- item_id: SOC-S2-017
+  format: MCQ
+  family: CRITIQUE_DIRECTION
+  template: T6
+  coverage: NOZICK_CRITIQUE_OF_ROWLS
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: 갑(노직의 입장)이 을(롤스의 입장)에게 제기할 수 있는 비판으로 적절한 것만을 <보기>에서 있는 대로 고른 것은?
+  options:
+  - ㄱ, ㄷ
+  - ㄴ
+  - ㄱ, ㄴ
+  - ㄴ, ㄹ
+  - ㄷ, ㄹ
+  answer: 1
+  second_best: 3
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: opt1
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄱ과 ㄷ이 노직이 롤스에게 하는 비판이다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: opt2
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄴ은 롤스가 노직에게 하는 비판이다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: opt3
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄴ은 방향이 반대이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt4
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄴ은 방향이 반대이고 ㄹ은 근거가 없다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt5
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: ㄹ은 어느 입장의 비판도 아니다.
+  reasoning_steps: 4
+  immediate_elimination: 1
+  view:
+  - '갑(노직의 입장): 정당한 취득과 양도로 형성된 소유는 개인의 권리입니다.'
+  - '을(롤스의 입장): 불평등은 가장 불리한 처지의 사람에게 최대의 이익이 될 때에만 허용됩니다.'
+  - ㄱ. 최소 수혜자를 돕는다는 이유로 정당하게 형성된 소유를 옮기면 개인의 권리를 침해한다는 점을 간과한다.
+  - ㄴ. 분배 상태가 가장 불리한 사람에게 최대 이익이 되는지를 따지지 않는다는 점을 간과한다.
+  - ㄷ. 소유가 어떤 취득과 양도의 과정을 거쳤는지가 정의의 근거라는 점을 간과한다.
+  - ㄹ. 공동체가 물려준 유산과 의무가 개인의 책임의 출발점이라는 점을 간과한다.
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SOC-TB-CHUNJAE-2-P44-49
+    design_purpose: 'S2 자료 해석·적용(D-21/D-22, 템플릿 T6): 교과서 pp.44-49 개념 범위 안에서 새 자료에 전이 적용'
+- item_id: SOC-S2-018
+  format: MCQ
+  family: CONDITION_MATRIX
+  template: T9
+  coverage: TWO_THINKERS_DIFFER
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: 표는 사례 (가)~(라)이다. 노직과 롤스의 판단이 서로 다른 사례만을 있는 대로 고른 것은? (단, 노직은 취득과 양도가 모두 정당한 소유를, 롤스는 최소 수혜자의 처지가 개선되는 분배를 정당하다고 보며, 롤스의 나머지 원칙은 모든 사례에서 충족된다.)
+  options:
+  - (가)
+  - (나)
+  - (다), (라)
+  - (가), (나)
+  - (나), (라)
+  answer: 5
+  second_best: 2
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt1
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: (가)는 둘 다 정당하다고 본다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: opt2
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: (라)도 판단이 다르다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt3
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: (다)는 둘 다 정당하지 않다고 본다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: opt4
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: (가)는 둘 다 정당하다고 본다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: opt5
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: (나)는 노직 부정·롤스 긍정, (라)는 노직 긍정·롤스 부정이다.
+  reasoning_steps: 6
+  immediate_elimination: 1
+  table:
+    header:
+    - 구분
+    - 소유의 취득 과정
+    - 소유의 양도 과정
+    - 가장 불리한 사람의 처지
+    rows:
+    - - (가)
+      - 정당함
+      - 정당함
+      - 개선됨
+    - - (나)
+      - 정당함
+      - 정당하지 않음
+      - 개선됨
+    - - (다)
+      - 정당하지 않음
+      - 정당함
+      - 악화됨
+    - - (라)
+      - 정당함
+      - 정당함
+      - 악화됨
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SOC-TB-CHUNJAE-2-P44-49
+    design_purpose: 'S2 자료 해석·적용(D-21/D-22, 템플릿 T9): 교과서 pp.44-49 개념 범위 안에서 새 자료에 전이 적용'
+- item_id: SOC-S2-019
+  format: MCQ
+  family: QUOTE_ATTRIBUTION
+  template: T15
+  coverage: ROWLS_PARAGRAPH_MIXED
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: 다음은 롤스의 입장에서 정의의 원칙을 정리한 글이다. ㉠~㉤ 중 롤스의 입장과 어긋나는 것은?
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 2
+  second_best: 4
+  judgments:
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: opt1
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 롤스의 평등한 자유의 원칙이다.
+  - v: false
+    c: CORRECT
+    axis: application
+    claim: opt2
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 분배의 결과는 따지지 않고 취득과 양도의 과정만 본다는 것은 노직의 입장이다.
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: opt3
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 기회균등의 원칙이다.
+  - v: true
+    c: STRONG
+    axis: application
+    claim: opt4
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 차등의 원칙이다.
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: opt5
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.47
+    why: 기본적 자유가 사회 전체의 이익보다 우선한다는 롤스의 입장과 부합한다.
+  reasoning_steps: 3
+  immediate_elimination: 2
+  view:
+  - ㉠모든 사람은 동등한 기본적 자유를 누려야 한다. ㉡정의의 기준은 소유가 정당한 취득과 양도를 거쳤는지에 있으며, 분배의 결과는 따지지 않는다. ㉢불평등의 계기가 되는 직책과 지위는 모든 사람에게 개방되어야 한다. ㉣사회적·경제적 불평등은 가장 불리한 처지의 사람에게 최대의 이익이 될 때에만 허용된다. ㉤사회 전체의 이익이 커지더라도 기본적 자유는 침해될 수 없다.
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SOC-TB-CHUNJAE-2-P44-49
+    design_purpose: 'S2 자료 해석·적용(D-21/D-22, 템플릿 T15): 교과서 pp.44-49 개념 범위 안에서 새 자료에 전이 적용'
+- item_id: SOC-S2-020
+  format: MCQ
+  family: THREE_WAY_COMPARISON
+  template: T7
+  coverage: COMMON_POINT_TRAP
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: 갑~병의 입장에 대한 설명으로 옳은 것은?
+  options:
+  - 병은 갑, 을과 달리 개인이 공동체의 역사와 유산에서 분리되어 존재하지 않는다고 본다.
+  - 갑은 을, 병과 달리 개인의 기본적 권리를 존중한다.
+  - 을은 갑과 달리 공동체의 유산에서 비롯된 의무를 근거로 소유의 정당성을 설명한다.
+  - 갑과 병은 모두 소득 격차를 줄이는 국가의 재분배가 소유 권리를 침해한다고 본다.
+  - 갑은 병과 달리 불평등의 허용 조건을 최소 수혜자의 처지와 연결 짓지 않는다.
+  answer: 1
+  second_best: 2
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: opt1
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.48
+    why: 병은 유산과 의무를 물려받은 구성원으로서 도덕을 시작한다고 말한다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: opt2
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.48
+    why: 을도 개인의 권리를 존중하므로 갑만의 특징이 아니다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt3
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.48
+    why: 을은 소유의 정당성을 취득과 양도 과정으로 설명한다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt4
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.48
+    why: 갑은 재분배가 소유 권리를 침해한다고 보지 않는다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: opt5
+    ev:
+    - SOC-TB-CHUNJAE-2-P44-49:p.48
+    why: 갑은 불평등의 허용 조건을 최소 수혜자와 연결 짓는다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  view:
+  - '갑: 모든 사람은 동등한 기본적 자유를 누려야 하고, 불평등은 가장 불리한 사람에게 이익이 될 때에만 허용됩니다.'
+  - '을: 정당한 취득과 양도를 거쳐 얻은 소유는 개인의 권리이므로 국가나 다수가 함부로 옮길 수 없습니다.'
+  - '병: 나는 가족, 지역, 나라의 구성원으로서 물려받은 유산과 의무에서 도덕을 시작합니다.'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SOC-TB-CHUNJAE-2-P44-49
+    design_purpose: 'S2 자료 해석·적용(D-21/D-22, 템플릿 T7): 교과서 pp.44-49 개념 범위 안에서 새 자료에 전이 적용'
