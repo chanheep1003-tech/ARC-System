@@ -35,6 +35,8 @@ exams:
         target_mean_max: 3.20
         user_direction: "동북고 평균 난이도보다 조금 더 어렵게"   # 2026-11-08; numeric values PROVISIONAL
         offset_over_school_anchor: {min: 0.1, center: 0.2, max: 0.3}
+        per_subject_target_rule: SUBJECT_ANCHOR_MEAN_PLUS_OFFSET   # 위 target_mean_*는 KOR·SOC용 요약값. 과목별 목표는 각 앵커의 profile.mean_level
+        per_subject_target_mean: {KOR: 3.09, SOC: 3.07, SCI: 2.73}
         target_mean_basis: STRUCTURAL_CALIBRATION_D1_TO_D5
         adjustment: USER_REQUESTED_2026_10_08
         release_gate: REQUIRE_MEAN_AND_SUBJECT_SPECIFIC_DISTRIBUTION_AND_TIME_LOAD

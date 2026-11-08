@@ -79,3 +79,24 @@ codes={x["code"] for x in mod.analyze(easy)["findings"]}
 assert "FINAL_TOO_EASY_DISTRIBUTION" in codes
 assert "FINAL_HIGH_DIFFICULTY_FLOOR_MISSED" in codes
 print("ARC FINAL QUALITY GATE SMOKE: PASS")
+
+# --- SCI final anchor (school ensemble + provisional offset) ---
+import yaml
+sci_anchor = yaml.safe_load((ROOT / "quality/anchors/SCI_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml").read_text(encoding="utf-8"))
+assert sci_anchor["mode"] == "MULTI_EXAM_ENSEMBLE" and sci_anchor["source_exam_count"] == 4
+assert abs(sci_anchor["profile"]["mean_level"] - (sci_anchor["school_baseline"]["mean_level"] + sci_anchor["final_offset"]["center"])) < 1e-9
+assert abs(sum(sci_anchor["profile"]["shares"].values()) - 1.0) < 1e-9
+
+def sci_set(counts):
+    seq = [d for d in ("D1", "D2", "D3", "D4", "D5") for _ in range(counts.get(d, 0))]
+    return {"product_mode": "ARC_FINAL", "item_count": len(seq), "difficulty_anchor_required": True,
+            "difficulty_anchor": sci_anchor, "items": [item(i + 1, d) for i, d in enumerate(seq)]}
+
+ANCHOR_CODES = {"FINAL_SCHOOL_ANCHOR_EASIER", "FINAL_SCHOOL_ANCHOR_HARDER", "FINAL_SCHOOL_ANCHOR_SHARE_OFF"}
+on_target = mod.analyze(sci_set({"D1": 1, "D2": 9, "D3": 9, "D4": 5}))
+assert not ANCHOR_CODES & {x["code"] for x in on_target["findings"]}, on_target["findings"]
+school_level = mod.analyze(sci_set({"D1": 3, "D2": 10, "D3": 8, "D4": 3}))  # mean 2.46: at or below the school's own average
+assert "FINAL_SCHOOL_ANCHOR_EASIER" in {x["code"] for x in school_level["findings"]}
+too_hard = mod.analyze(sci_set({"D2": 4, "D3": 8, "D4": 8, "D5": 4}))
+assert "FINAL_SCHOOL_ANCHOR_HARDER" in {x["code"] for x in too_hard["findings"]}
+print("SCI anchor gate checks OK")
