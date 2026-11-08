@@ -1,7 +1,7 @@
 # 요청 기록 (사용자 결정값). 생성 전 request_spec 의 원천. 상태가 BLOCKED 이면 생성하지 않는다.
 request_id: REQ_20261108_S2_20ITEMS
 date: 2026-11-08
-status: KOR_V4_BLIND_REVIEW_IN_PROGRESS
+status: KOR_V4_BLIND_REVIEW_REJECTED_DIFFICULTY_GATE_STOPPED_FOR_USER_DECISION
 exam_id: DONGBUK_2026_2_FINAL
 product: ARC_N
 stage: S2
@@ -42,3 +42,9 @@ remaining_before_release:
   - KOR 중세국어 쪽수(106-115 추정)와 교과서 전 쪽 확인
   - SOC·SCI 는 production_pipeline 이 KOR 원문 레지스트리 중심이라 별도 번들/게이트 경로 필요
   - 문항 생성, 독립 풀이(PASS_B), 사용자 내용 승인, 사람 검토는 아직 시작 전
+kor_round3_result: >
+  v4(사용자 새 분포 D2 20·D3 50·D4 30 반영) 독립 풀이: 정답 20/20 일치. 난이도 실측 D2 17·D3 3·D4 0 으로 목표와 12문항이 어긋나 불합격.
+  '표의 각 행을 규정에 대조해 어긋난 행 찾기' D4 설계 5개(2·10·14·17·19번)는 4개가 D2, 1개(10번)가 D3 로 평가되어 이 설계 가설은 틀렸다.
+  지적: 10번 ㉠ 판정문 '이'로 적은 이 부정확해 복수정답 소지, 8·18번 부자연스러운 문장, 1·2·5·7번 / 17·18·19번 / 13·14번 / 8·12번 중복, 2번과 4번·7번과 5번 사이 정답 단서 누설.
+  세 번의 독립 풀이(v1, v2, v4)에서 D4 는 한 번도 나오지 않았다. 결과 파일은 blind_review_v4_REJECTED.yaml 로 보관(채택 안 함).
+  추가 반복은 비용이 크고 성공을 보장할 수 없어 중단하고 사용자에게 방향을 묻는다. SCI·SOC 시작 전.
