@@ -8,7 +8,7 @@
 - 문항의 난이도 라벨은 그 템플릿이 허용하는 범위 안이어야 한다(TEMPLATE_DIFFICULTY_OUT_OF_RANGE).
 - 구조 점수(structure score): 풀이 단계(최대 5), 표·도식, 4줄 이상 자료, 판단 진술 3개/4개 이상, 비교 대상 수, 계산 템플릿(+2), 즉시 소거 가능 선지 ≤1 을 더한다. 밴드는 D2 ≤6, D3 ≤9, D4 >9.
   라벨이 D4 인데 구조 밴드가 D3 이하이면 FAIL(STRUCTURE_BAND_BELOW_LABEL), 라벨이 D3 인데 밴드가 D2 이면 WARN.
-- 밴드 경계는 SOC S2 v1~v3 60문항에서 구조 밴드와 AI 풀이자 라벨의 일치율 46/60 (77%) 로 정한 잠정값이다. v3 의 D4 라벨 6문항 중 5문항은 풀이 평가 전에 구조 점수로 예측된 대로 D3 이하였다.
+- 밴드 경계는 SOC S2 v1~v3 60문항에서 구조 밴드와 AI 풀이자 라벨의 일치율 45/60 (75%) 로 정한 잠정값이다. v3 의 D4 라벨 6문항 중 5문항은 풀이 평가 전에 구조 점수로 예측된 대로 D3 이하였다.
 - 구조 분포가 사용자 목표 ±허용치 밖이면 WARN(STRUCTURE_DISTRIBUTION_OFF_TARGET) — 풀이 평가를 돌리기 전 사전 점검이다.
 
 ## 2. 난이도 측정 보정 (`quality/anchors/CALIBRATION_ANCHOR_REGISTRY_V1.0.yaml`, `tooling/production/difficulty_calibration.py`)

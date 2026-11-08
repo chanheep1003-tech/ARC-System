@@ -53,7 +53,8 @@ def statement_count(item: dict[str, Any]) -> int:
 def entity_count(item: dict[str, Any], subject: str, lib: dict[str, Any]) -> int:
     terms = lib.get("structure_score", {}).get("entity_terms", {}).get(subject, [])
     text = _text_of(item)
-    return sum(1 for t in terms if t in text)
+    named = sum(1 for t in terms if t in text)
+    return named
 
 
 def structure_features(item: dict[str, Any], subject: str, lib: dict[str, Any]) -> dict[str, Any]:
