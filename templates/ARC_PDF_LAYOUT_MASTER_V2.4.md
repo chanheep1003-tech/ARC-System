@@ -2,7 +2,7 @@
 1) ARC_N 문항 메타 스트립에는 D1~D5 추정 난이도를 그대로 표시한다(본문·선지에는 표시 금지, ARC_FINAL에는 표시 금지).
 2) ARC_FINAL 조판 기준은 templates/final/ARC_FINAL_master_v0.2.html의 확대 흑백 2단(좌우 12.8mm, 발문 9.5pt, 선택지 9.1pt)이다(§7).
 3) ARC_N 표지에는 승인된 흑백 로고 자산(ARC_N_LOCKUP_MASTER_BW.png)을 쓴다. 자산 등록·해시 확정 전에는 BRAND_ASSET_MISSING으로 표지 생성을 중단한다.
-4) 국어 등 지문 세트는 지문 구간만 4문항 고정 슬롯을 해제하고 지문 뒤에 문항을 이어 배치한다(N 레이아웃 문서 참조).
+4) ARC_N은 페이지당 4문항을 기본으로 하되 4개를 놓고도 다음 문항이 통째로 들어갈 여백이 있으면 5·6문항으로 늘린다. 지문 세트는 지문 1회 + 문항군을 이어 배치한다(N 레이아웃 문서 참조).
 
 ## USER CORRECTION — ACTUAL ARC_N PDF STYLE — 2026-11-07
 For ARC_N, templates/n/ARC_N_BW_LAYOUT_V1.0.md supersedes every conflicting cover, packing, typography and choice arrangement below. Use the actual uploaded SCI/KOR PDFs, not the previously inferred Academic B ZIP treatment. ARC_FINAL/CORE retain their product-specific layouts.
@@ -415,8 +415,8 @@ BOTTOM META:
 - 기호 및 타깃 어휘 밑줄 강조 (`u`): 지문 및 `<보기>` 내부의 모든 `ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅂ`과 `㉠~㉯`, `ⓐ~ⓩ`, `①~⑤` 타깃 어휘에 밑줄(`text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px`)을 적용하여 시인성을 확보한다.
 
 문항 배치 규칙:
-- ARC_N: 일반 페이지는 단당 고정 슬롯 2개(페이지당 4문항, 읽는 순서 좌 1·2 → 우 3·4)다. 남는 공간이 있어도 3번째 문항을 채우지 않는다. 슬롯에 안 들어가는 문항은 다른 페이지를 배정한다(축소·절단·조건 삭제 금지).
-- ARC_N 지문 세트: 지문이 있는 세트는 지문 구간만 슬롯 고정을 해제한다. 지문을 단/페이지로 이어 배치하고 연계 문항을 그 뒤에 이어 배치한다(지문 1회 + 문항군 KEEP_TOGETHER). 지문 없는 일반 문항에만 4슬롯 고정을 적용한다. 이는 FULL_WIDTH/1단 전환이 아니다.
+- ARC_N: 페이지당 4문항(단당 2개, 읽는 순서 좌 1·2 → 우 3·4)을 기본으로 한다. 4문항을 놓은 뒤 다음 문항이 통째로 들어갈 여백이 남으면 같은 페이지에 이어 배치해 5·6문항으로 늘린다(사용자 결정 2026-11-08). 문항은 쪼개거나 글자 크기 토큰 아래로 줄이지 않으며, 들어가지 않는 문항은 통째로 다음 단/페이지로 보낸다.
+- ARC_N 지문 세트: 지문을 단/페이지로 이어 배치하고 연계 문항을 그 뒤에 이어 배치한다(지문 1회 + 문항군 KEEP_TOGETHER). 지문 없는 문항에는 위 4문항 기본 + 여유 시 확장 규칙을 적용한다. 이는 FULL_WIDTH/1단 전환이 아니다.
 - ARC_FINAL: 한 단에 문항이 더 들어갈 여백이 있으면 다음 문항을 채워 넣는다(단당 평균 2~3문항). 남은 공간이 애매하면 억지로 축소하거나 쪼개지 않고 비워 둔다.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -102,9 +102,10 @@ class RendererStrip(unittest.TestCase):
 class GatewayProfile(unittest.TestCase):
     def test_profiles(self):
         n, f = gw.PRODUCT_PROFILES["ARC_N"], gw.PRODUCT_PROFILES["ARC_FINAL"]
-        self.assertEqual((n["slots_per_page"], n["metadata_strip_difficulty"], n["passage_set_slot_release"]), (4, "D1_D5", True))
+        self.assertEqual((n["base_questions_per_page"], n["metadata_strip_difficulty"], n["dense_fill_when_whole_question_fits"]), (4, "D1_D5", True))
+        self.assertNotIn("slots_per_page", n)
         self.assertEqual(f["metadata_strip_difficulty"], "NONE")
-        self.assertEqual(gw.preflight_args(n), ["--max-questions-per-page", "4", "--require-difficulty-strip"])
+        self.assertEqual(gw.preflight_args(n), ["--require-difficulty-strip"])  # no per-page cap: more than four is allowed
         self.assertEqual(gw.preflight_args(f), [])
 
     def make_root(self, d, registry_row="", asset=None):

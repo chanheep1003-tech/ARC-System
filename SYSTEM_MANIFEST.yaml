@@ -121,7 +121,7 @@ runtime:
   # 2026-11-08 user decisions (see ops/ARC_DECISIONS_20261108.md)
   arc_n_metadata_strip_difficulty: D1_D5_DISPLAY            # strip only; never in stems/choices; ARC_FINAL shows none
   arc_n_cover_logo_variant: BW_REGISTERED_ASSET_REQUIRED    # N cover is blocked (BRAND_ASSET_MISSING) until the B/W asset is registered
-  arc_n_passage_set_slots: PASSAGE_SPAN_CONTINUOUS_OTHER_ITEMS_FOUR_SLOT
+  arc_n_question_packing: FOUR_BASE_FILL_MORE_WHEN_WHOLE_QUESTION_FITS   # 4 is the baseline, not a cap; never split or shrink
   arc_final_layout_basis: templates/final/ARC_FINAL_master_v0.2.html
   arc_final_release_on_user_provisional_scope: true
   arc_final_difficulty_offset_over_school_anchor: "+0.1..+0.3"   # PROVISIONAL, user: "slightly harder than school average"

@@ -624,8 +624,7 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
         pdf_result = pdf_gate.analyze_pdf(
             pdf_path, product,
             expected_item_count=len(mcq_items(bundle)) if product == "ARC_N" else None,
-            # ARC_N profile (typesetter_gateway): four fixed slots per page, D1-D5 metadata strip per question.
-            max_questions_per_page=4 if product == "ARC_N" else None,
+            # ARC_N profile (typesetter_gateway): D1-D5 metadata strip per question; four per page is a baseline, not a cap.
             require_difficulty_strip=product == "ARC_N",
         )
     else:

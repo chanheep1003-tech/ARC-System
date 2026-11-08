@@ -48,9 +48,8 @@ PRODUCT_PROFILES: dict[str, dict[str, Any]] = {
         "answer_separator_blank": True,
         "answer_key_mode": "INLINE_FINAL_COMPACT",
         # User decisions 2026-11-08 (ops/ARC_DECISIONS_20261108.md)
-        "slots_per_page": 4,
-        "slot_layout": "TWO_PER_COLUMN_FIXED",
-        "passage_set_slot_release": True,
+        "base_questions_per_page": 4,
+        "dense_fill_when_whole_question_fits": True,
         "metadata_strip_difficulty": "D1_D5",
         "cover_logo_variant": "BW_REGISTERED_ASSET",
     },
@@ -91,8 +90,6 @@ def brand_release_blockers(root: Path, manifest: dict[str, Any], product: str) -
 def preflight_args(profile: dict[str, Any]) -> list[str]:
     """Extra pdf_preflight flags implied by a product profile (the caller must pass them)."""
     args: list[str] = []
-    if profile.get("slots_per_page"):
-        args += ["--max-questions-per-page", str(profile["slots_per_page"])]
     if profile.get("metadata_strip_difficulty") == "D1_D5":
         args.append("--require-difficulty-strip")
     return args

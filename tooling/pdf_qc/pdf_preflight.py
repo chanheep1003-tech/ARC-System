@@ -568,7 +568,7 @@ def analyze_pdf(
             page_ids = {int(n) for n in QUESTION_MARKER_RE.findall(page_texts[index])}
             page_ids |= {int(n) for n in KOR_QUESTION_MARKER_RE.findall(page_texts[index])}
             if max_questions_per_page is not None and len(page_ids) > max_questions_per_page:
-                # Passage sets legitimately release the fixed slots, so this is a review warning, not a hard fail.
+                # Optional generic limit; ARC_N does not use it by default (four per page is a baseline, not a cap).
                 pages[index]["flags"].append({"severity": "WARN", "type": "ARC_N_SLOT_OVERFILL", "questions": len(page_ids), "limit": max_questions_per_page})
             if require_difficulty_strip and page_ids:
                 strips = len(DIFFICULTY_STRIP_RE.findall(page_texts[index]))
@@ -614,7 +614,7 @@ def main() -> None:
     ap.add_argument("--render-dir", default=None)
     ap.add_argument("--dpi", type=int, default=300)
     ap.add_argument("--expected-item-count", type=int)
-    ap.add_argument("--max-questions-per-page", type=int, help="ARC_N fixed-slot limit (warn when exceeded)")
+    ap.add_argument("--max-questions-per-page", type=int, help="optional ARC_N per-page question limit (warn when exceeded); off by default")
     ap.add_argument("--require-difficulty-strip", action="store_true", help="ARC_N: every question needs a 난이도 D1-D5 metadata strip")
     args = ap.parse_args()
 

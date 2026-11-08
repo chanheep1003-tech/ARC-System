@@ -47,8 +47,8 @@ V1.2는 실제 사용자 발견 조판 결함을 직접 차단한다: CORE 2단 
 ## ARC_N LAYOUT CHECKS (user decisions 2026-11-08; typesetter_gateway profile ARC_N supplies the flags)
 - `--require-difficulty-strip`: every question on a problem page needs a `난이도 D1`~`D5` metadata strip (FAIL ARC_N_DIFFICULTY_STRIP_MISSING)
 - the same `난이도 D#` text on an answer page is a FAIL (ARC_N_DIFFICULTY_IN_ANSWER_PAGE); difficulty is allowed only in the strip
-- `--max-questions-per-page 4`: more than four questions on one problem page is a WARN (ARC_N_SLOT_OVERFILL); passage sets legitimately release the fixed slots, so a human confirms those pages
-- not machine-checked yet: exact slot geometry (56pt/416pt tops), horizontal choice grid, B/W logo pixels. The B/W logo is enforced at the gateway as a release blocker (BRAND_ASSET_MISSING / BRAND_HASH_MISMATCH), not in this tool.
+- `--max-questions-per-page N`: optional generic limit (WARN ARC_N_SLOT_OVERFILL). Not used for ARC_N by default: four questions per page is the baseline and more are allowed when whole questions fit (user decision 2026-11-08)
+- not machine-checked yet: whole-question packing (no split questions, no shrinking below size tokens), horizontal choice grid, B/W logo pixels. The B/W logo is enforced at the gateway as a release blocker (BRAND_ASSET_MISSING / BRAND_HASH_MISMATCH), not in this tool.
 
 ## COLUMN DETECTION PRINCIPLE
 표의 셀 여러 개를 '2단 본문'으로 오인하지 않도록:

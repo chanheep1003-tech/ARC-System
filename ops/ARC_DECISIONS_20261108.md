@@ -7,7 +7,7 @@
 | D-01 | ARC_N 문항 메타 스트립에 추정 난이도를 표시한다. 표기는 D1~D5 그대로(D-10). 본문·선지·정답표에는 표시하지 않고 ARC_FINAL에는 표시하지 않는다. | 공통 엔진 §11, 난이도 엔진 §0, V2.4 §2·§16, N 레이아웃, manifest arc_n_metadata_strip_difficulty |
 | D-02 | ARC_FINAL 조판 기준은 FINAL HTML 마스터의 확대 흑백 2단(12.8mm, 발문 9.5pt, 선택지 9.1pt). | V2.4 §6·§7, manifest arc_final_layout_basis |
 | D-03/D-12 | ARC_N 표지에 승인 로고를 넣되 흑백 로고 자산(ARC_N_LOCKUP_MASTER_BW.png)을 신규 등록해 쓴다. 등록 전에는 BRAND_ASSET_MISSING. | V2.4 §5·§23, N 레이아웃, 조판 계약 §1-A, 브랜드 자산 등록부, manifest arc_n_cover_logo_variant |
-| D-04 | 지문 세트는 지문 구간만 4문항 고정 슬롯을 해제한다. | V2.4 §6, N 레이아웃, manifest arc_n_passage_set_slots |
+| D-04 | ARC_N은 페이지당 4문항을 기본으로 하되, 4개를 놓고도 다음 문항이 통째로 들어갈 여백이 있으면 5·6문항으로 늘린다(상한 없음, 문항 분할·축소 금지). 지문 세트는 지문 1회 + 문항군을 이어 배치. (같은 날 후속 정정: 처음엔 "4문항 고정, 지문 구간만 해제"로 기록했다가 사용자가 "4는 기본이지 상한이 아니다"라고 정정) | V2.4 §6, N 레이아웃, manifest arc_n_question_packing |
 | D-05 | 기말 범위는 학교 공지 전까지 "2학기 전체 − 2학기 중간 실제 범위"로 확정(임시). MASTER의 SCOPE LOCK은 중간고사 스냅샷(참고용)으로 표시하고 범위 기준은 EXAM_CONTEXTS 하나로 일원화. | 국어·사회·과학 MASTER, EXAM_CONTEXTS |
 | D-06 | 사회 CORE에서도 C파트 X표시 제외는 막는 규칙(BLOCKING). | CORE 엔진 V1.3 §8-A |
 | D-07 | 기출 70% / 창작 30%는 과목마다 다르게 적용. 초기값(PROVISIONAL): SOC·SCI=PAST_70_AI_30, KOR=STRUCTURE_REFERENCE_ONLY(기출 문항 미사용), 부족 시 사용자 허용 하에 ORIGINAL_TRIAL. | 기출·창작 정책 §10, tooling/sources/generation_source_gate.py |
@@ -19,7 +19,7 @@
 
 ## 이 정비로 해결되지 않은 것 (후속 과제)
 1. 흑백 로고 자산 파일이 없다. 등록(Drive ID, 해시) 전까지 ARC_N 표지는 생성되지 않는다.
-2. N 레이아웃 코드 강제 일부 완료(난이도 스트립 렌더·검사, 슬롯 초과 경고, BW 로고 release_blocker). 아직 없음: 4문항 고정 슬롯 배치 자체(kor_renderer는 여전히 흐름 배치), 지문 구간 예외 처리, 선택지 가로 3열 배치, 슬롯 좌표 검사. 기준 PDF 샘플과 눈으로 비교하며 구현해야 한다.
+2. N 레이아웃 코드 강제 일부 완료(난이도 스트립 렌더·검사, BW 로고 release_blocker). 배치: kor_renderer(국어 N·FINAL 렌더러)는 문항을 쪼개지 않고 통째로 단에 이어 채우며 들어가지 않으면 다음 단/페이지로 넘기므로(코드 확인) 새 규칙의 동작과 일치한다. 다만 기준 샘플 PDF와 눈으로 비교하지는 않았다. 아직 없음: 선택지 가로 3열 배치 확인, 렌더러가 아닌 다른 경로(과학·사회 N)의 배치.
 3. 과학 기말용 앵커가 없다(현재 FINAL 앵커는 중간고사 산화·환원 전용). 과학 전체 코퍼스 앙상블 앵커 파일을 새로 만들어야 한다.
 4. D-07 과목별 값, D-09 오프셋 수치, D-14 날짜의 의미는 사용자 확인이 필요하다.
 5. 국어 V1~V6 레벨별 난이도·CORE/심화 비율 수치가 정의돼 있지 않다.
