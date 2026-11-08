@@ -131,7 +131,7 @@ QUALITY_COMPONENTS:
   asset_function: {score, evidence}
 QUALITY_FLAGS: []
 SCORE_CEILINGS_APPLIED: []
-QUALITY_RUBRIC_VERSION: ARC-IQR-V1.4
+QUALITY_RUBRIC_VERSION: ARC-IQR-V1.5
 
 ## 10. EXPLICIT-CUE / RESTATEMENT CEILING
 다음 중 하나면 고난도·PREMIUM으로 인정하지 않는다.
@@ -257,9 +257,9 @@ PASS 조건:
 
 Runner PASS는 기록의 완결성과 내부 일관성을 뜻하며, 사실·해석의 참을 자동 보증하지 않는다.
 
-## 14. OPTION COMPETITIVENESS & LENGTH-BIAS GATE — V1.5
+## 18. OPTION COMPETITIVENESS & LENGTH-BIAS GATE — V1.5
 
-### 14.1 EFFECTIVE FIVE-CHOICE RULE
+### 18.1 EFFECTIVE FIVE-CHOICE RULE
 5지선다의 형식만 갖춘 2~3지선다를 금지한다.
 
 내부 기록:
@@ -280,7 +280,7 @@ Runner PASS는 기록의 완결성과 내부 일관성을 뜻하며, 사실·해
 즉시 탈락 선지 3개 이상이면 WEAK_DISTRACTOR_HARD_FAIL.
 D3+인데 plausible candidates <= 2면 OBVIOUS_KEY_HARD_FAIL.
 
-### 14.2 CORRECT OPTION LENGTH BIAS
+### 18.2 CORRECT OPTION LENGTH BIAS
 정답 길이를 평가 단서로 만들지 않는다.
 
 각 문항:
@@ -304,7 +304,7 @@ HARD FAIL:
 정답과 오답의 길이를 기계적으로 동일하게 만들 필요는 없다.
 핵심은 '길이/친절함/구체성'이 정답 단서가 되지 않게 하는 것이다.
 
-### 14.3 DONGBOOK QUALITY FLOOR
+### 18.3 DONGBOOK QUALITY FLOOR
 동북고 대비 ARC_N / ARC_FINAL은 다음을 PREMIUM 이전의 기본 합격조건으로 본다.
 - 직접회상만으로 끝나는 문항의 세트 비율 제한
 - D3+는 실제 2단계 이상 판단
@@ -314,6 +314,6 @@ HARD FAIL:
 - 정답을 보기 전에 최소 3개 후보가 경쟁하는 D3+ 문항을 우선
 - 길이·절대어·문법 힌트로 쉽게 제거되는 선지 비중 최소화
 
-FINAL은 추가로 quality/ARC_FINAL_QUALITY_GATE_V1.0.md를 통과해야 한다.
+FINAL은 추가로 SYSTEM_MANIFEST의 active.quality.final_quality_gate(현재 V1.1)를 통과해야 한다.
 
 END ARC ITEM QUALITY RUBRIC V1.5

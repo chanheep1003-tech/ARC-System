@@ -537,7 +537,8 @@ CONTENT_QA_RUNNER = PASS when executable runtime is available
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ARC_N:
 - 학습용 N제 원고
-- 문제 본문에 난도/유형/힌트/해설/정답을 삽입하지 않는다.
+- 문제 본문(발문·자료·선지)에 유형/힌트/해설/정답을 삽입하지 않는다.
+- 난이도는 ARC_N 문항 메타 스트립에만 D1~D5로 표시한다(사용자 결정 2026-11-08). 발문·선지에는 금지, ARC_FINAL에는 표시 금지.
 - 정답은 SECTION B에 반드시 완전하게 유지한다.
 - Typesetter는 잠긴 SECTION B를 사용하여 표지 → 완전 공백 → 문제지 → 완전 공백 → 정답지 순서로 학생 PDF를 만든다.
 - 정답지는 문항 번호 + 정답만 수록하며 상세 해설은 별도 요청 없이는 생성하지 않는다.
@@ -615,13 +616,9 @@ FINAL용 별도 과목 프롬프트를 중복 생성하지 않는다.
 15. ARC QUALITY LAYER
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ACTIVE QUALITY FILES:
-- SCOPE LEDGER: `/Google Drive/N제 시스템/90_공통프롬프트/현재사용본/품질관리/00_ACTIVE_ARC_SCOPE_LEDGER_V1.0.md`
-- QA BENCH: `/Google Drive/N제 시스템/90_공통프롬프트/현재사용본/품질관리/00_ACTIVE_ARC_QA_BENCH_V1.0.md`
-- ERROR DATABASE: `/Google Drive/N제 시스템/90_공통프롬프트/현재사용본/품질관리/00_ACTIVE_ARC_ERROR_DATABASE_V1.0.md`
-- DIFFICULTY ENGINE: `/Google Drive/N제 시스템/90_공통프롬프트/현재사용본/품질관리/00_ACTIVE_ARC_DIFFICULTY_ENGINE_V1.0.md`
-- VISUAL AUTHENTICITY: `/Google Drive/N제 시스템/90_공통프롬프트/현재사용본/품질관리/00_ACTIVE_ARC_VISUAL_AUTHENTICITY_RUBRIC_V1.0.md`
-- VISUAL TEMPLATE: `/Google Drive/N제 시스템/90_공통프롬프트/현재사용본/품질관리/00_ACTIVE_ARC_VISUAL_TEMPLATE_SYSTEM_V1.0.md`
-- VISUAL ANCHORS: `/Google Drive/N제 시스템/90_공통프롬프트/현재사용본/품질관리/00_ACTIVE_ARC_VISUAL_ANCHORS_V1.0.md`
+SYSTEM_MANIFEST의 active.quality.* 키가 가리키는 저장소 경로만 사용한다(SCOPE LEDGER, QA BENCH, ERROR DATABASE, DIFFICULTY ENGINE,
+ITEM QUALITY, SET EDITORIAL, SIMILARITY GUARD, VISUAL 규칙, BANK POLICY 등). 파일명·버전을 이 문서에 직접 적지 않는다.
+Drive의 00_ACTIVE_* 사본은 manifest의 drive_mirror_status가 byte_verified일 때만 동등한 사본으로 취급한다.
 
 일반 출제 시:
 1. SCOPE LEDGER에서 요청 범위의 CONCEPT_ID와 X/BLOCKED 항목을 확인한다.
@@ -789,19 +786,14 @@ Final student PDF requires a compact answer section separated from the problem s
 FINAL은 단순 고난도 N제가 아니라 실제 시험 직전 실전 세트다.
 그러나 학교 대비력이 떨어지는 쉬운 세트는 FINAL로 승인하지 않는다.
 
-기본 20문항 시작 곡선:
-- D1: 0~5%
-- D2: 10~20%
-- D3: 40~50%
-- D4: 25~35%
-- D5: 5~10%
+FINAL 난도는 과목별 실제 동북고 시험 앵커(quality/anchors/*_MULTI_EXAM_*)의 분포와 평균을 기준으로 한다.
+사용자 결정(2026-11-08)에 따라 평균 난도만 앵커 평균보다 약간 높게(+0.1~+0.3, PROVISIONAL) 설정하고,
+D1+D2 / D3 / D4+D5 비율의 허용오차는 이 오프셋을 반영해 계산한다. 어려움은 범위 밖 지식·장문노동이 아니라 오답 경쟁력과 추론 단계로 만든다.
+앵커가 없는 과목·범위에서만 아래 곡선을 임시 하한으로 사용하며 FINAL_ANCHOR_PROVENANCE.CONFIDENCE=LOW로 기록한다.
+- 임시 하한 곡선(20문항): D1 0~5% / D2 10~20% / D3 40~50% / D4 25~35% / D5 5~10%
 - SCHOOL_RELATIVE=BELOW_SCHOOL 문항은 원칙적으로 0
-- SCHOOL_STANDARD + SCHOOL_UPPER + ABOVE_SCHOOL 중심
 - 마지막 30% 구간에 최소 2개의 D4+ 변별 문항 배치 권장
 - 초반 4문항을 직접개념 확인으로만 구성 금지
-
-학교 실제 시험 앵커가 다른 분포를 명확히 보이면 그 분포로 보정한다.
-단, 사용자 피드백상 현재 세트가 지나치게 쉬운 경우 학교 앵커 확인 전까지 위 곡선을 임시 하한으로 사용한다.
 
 ### 21.5 PRODUCT LOCK
 ARC_N:
@@ -812,10 +804,10 @@ ARC_N:
 - 유사 판단축 반복은 semantic duplicate로 처리
 
 ARC_FINAL:
-- quality/ARC_FINAL_QUALITY_GATE_V1.0.md PASS 필수
+- SYSTEM_MANIFEST의 active.quality.final_quality_gate(현재 V1.1) PASS 필수
 - DIFFICULTY_PROFILE / ITEM_QUALITY_PROFILE 필수
 - FINAL_DIFFICULTY=PASS, FINAL_ITEM_QUALITY=PASS 없이는 CONTENT_LOCK 금지
 
-END DONGBOOK N° / FINAL HARDENING V4.7
+END DONGBOOK N° / FINAL HARDENING V4.8
 
 END ARC N제 SYSTEM — COMMON GENERATION ENGINE V4.8

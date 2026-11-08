@@ -6,7 +6,10 @@
 ROOT: `/Google Drive/N제 시스템/01_국어`
 우선순위: 학교자료/학습활동 → 교과서 → 2025 동북고 실제 기출 → 작품별 BANK/외부자료 색인 → 오류사례·금지패턴 → 참고자료/우수문항.
 
-## 1. SCOPE LOCK
+## 1. SCOPE LOCK — ARCHIVED_MIDTERM_SNAPSHOT (참고용)
+이 절의 범위는 중간고사 시기 기록이다. 현재 시험 범위의 유일한 기준은 SYSTEM_MANIFEST runtime.active_exam_id가 가리키는
+ops/exams/EXAM_CONTEXTS_V1.yaml이며, 기말 임시 범위는 "이번 학기 전체 − 실제 중간고사 범위"다(사용자 확정 2026-11-08).
+
 미래엔 공통국어2 p10~99
 정훈 「탄궁가」
 백석 「팔원-서행시초3」
@@ -59,6 +62,7 @@ FOUNDATION_CORE_ITEM 최소 3.
 미세 지칭어 추적 최대 1.
 
 ARC_N 기본 난도:
+- D1 0~10%
 - D2 30~40%
 - D3 30~40%
 - D4 15~25%
@@ -219,7 +223,7 @@ FINAL 요청도 별도 FINAL 프롬프트를 쓰지 않고 PRODUCT_MODE=ARC_FINA
 - quality/source/KOR_DONGBOOK_EXAM_TYPE_PROFILE_2025_2026_V1.0.yaml
 - quality/ARC_KOREAN_EXAM_REALISM_GATE_V1.0.md
 
-실제 동북고 기출은 문제 문장 복제나 교사 의도 예측에 사용하지 않는다.
+국어의 SOURCE_MIX_PROFILE는 STRUCTURE_REFERENCE_ONLY다(quality/ARC_GENERATION_SOURCE_POLICY_V1.0.md §10). 실제 동북고 기출은 문제 문장·선지 복제나 교사 의도 예측에 사용하지 않는다.
 사용 목적은 반복되는 과업 형식, 정보 밀도, 보기 활용, 비교/복수판단 방식과 난도 감각의 보정이다.
 
 현재 우선 과업:

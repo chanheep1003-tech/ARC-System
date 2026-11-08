@@ -3,6 +3,7 @@ exams:
   DONGBUK_2026_2_FINAL:
     status: PREPARING
     exam_date: null
+    target_date: "2026-12-07"   # user input "12 7일" on 2026-11-08; exam date vs preparation deadline not yet confirmed
     curriculum: 2022_REVISED
     inherit_midterm_scope: false
     active_subjects: [SCI, SOC, KOR]
@@ -18,6 +19,7 @@ exams:
       collection_enabled: true
       school_confirmed: false
       user_provisional_lock: true
+      release_on_user_provisional_lock: true   # 2026-11-08: FINAL may be released without a school notice; a later notice changes the profile hash and forces re-review
       scope_change_requires_school_notice_or_user_directive: true
       midterm_baseline_status: RECONCILIATION_REQUIRED
       midterm_baseline_refs:
@@ -29,8 +31,10 @@ exams:
         reference: DONGBUK_2026_2_MID_STRUCTURAL_CALIBRATION
         target: CHALLENGING_FINAL_3_0_TO_3_5
         target_mean_min: 3.00
-        target_mean_center: 3.25
-        target_mean_max: 3.50
+        target_mean_center: 3.10
+        target_mean_max: 3.20
+        user_direction: "동북고 평균 난이도보다 조금 더 어렵게"   # 2026-11-08; numeric values PROVISIONAL
+        offset_over_school_anchor: {min: 0.1, center: 0.2, max: 0.3}
         target_mean_basis: STRUCTURAL_CALIBRATION_D1_TO_D5
         adjustment: USER_REQUESTED_2026_10_08
         release_gate: REQUIRE_MEAN_AND_SUBJECT_SPECIFIC_DISTRIBUTION_AND_TIME_LOAD
@@ -38,7 +42,7 @@ exams:
         applies_to: ARC_FINAL_ONLY
         preserve_arc_n_learning_ladder: true
         require_subject_specific_verified_final_anchor: true
-        approval_status: PENDING
+        approval_status: DIRECTION_APPROVED_NUMERIC_PROVISIONAL
         drive_save: BLOCKED
       production_priority_is_scope_evidence: false
       on_school_scope_announcement: REPLACE_WITH_CONFIRMED_SCOPE

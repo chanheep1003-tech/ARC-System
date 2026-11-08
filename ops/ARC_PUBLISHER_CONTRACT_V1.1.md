@@ -52,7 +52,7 @@ REQUIRED_ACTION=render locked key exactly
 Do not return to Generator unless the locked bundle itself is internally inconsistent.
 
 ## 3. STORAGE
-Resolve destination using ops/ARC_STORAGE_TARGETS_V1.0.yaml first.
+Resolve destination using ops/ARC_STORAGE_TARGETS_V1.1.yaml first.
 
 Upload transport preference:
 1. connector/runtime file reference (file_uri)

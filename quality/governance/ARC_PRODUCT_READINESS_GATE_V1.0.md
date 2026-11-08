@@ -6,13 +6,14 @@ CI_VALIDATION_MARKER: READINESS_80_LOCK_20260924
 ROLE: deadline readiness scoring and release prioritization
 
 ## 0. DEADLINE
-HARD DEADLINE: 2026-09-25 23:59 KST
+HARD DEADLINE: 2026-12-07 23:59 KST (user input 2026-11-08; whether this is the exam date or the preparation deadline is not yet confirmed)
 
-Current active subject/product matrix:
+Current active subject/product matrix (final exam, runtime.active_subjects):
 - KOR: ARC_N, ARC_FINAL
 - SOC: ARC_N, ARC_FINAL
-- HIS: ARC_N only
-- SCI: ARC_N, ARC_FINAL, OXIDATION_REDUCTION_ONLY
+- SCI: ARC_N, ARC_FINAL
+- HIS, AI: DEFERRED_BY_USER (not scored)
+Scope comes from ops/exams/EXAM_CONTEXTS_V1.yaml (provisional: full semester minus the actual midterm range). The 2026-09-25 midterm sprint matrix (SCI redox only, HIS N) is archived.
 
 CORE is maintenance-only and excluded from the 80% sprint target.
 
@@ -37,13 +38,13 @@ Product readiness is the MINIMUM score among all currently active subject/produc
 This prevents a strong subject from masking an unfinished subject.
 
 ARC_N product readiness:
-MIN(KOR_N, SOC_N, HIS_N, SCI_REDOX_N)
+MIN(KOR_N, SOC_N, SCI_N)
 
 ARC_FINAL product readiness:
-MIN(KOR_FINAL, SOC_FINAL, SCI_REDOX_FINAL)
+MIN(KOR_FINAL, SOC_FINAL, SCI_FINAL)
 
 ## 2. HARD TARGET
-By 2026-09-25 23:59 KST:
+By 2026-12-07 23:59 KST:
 - ARC_N_PRODUCT_READINESS >= 80
 - ARC_FINAL_PRODUCT_READINESS >= 80
 - Every active subject/product combination should target >=80.
@@ -67,7 +68,7 @@ If time is insufficient, always work on the lowest-scoring active subject/produc
 0:
 - scope unresolved
 - required answer-basis source unavailable
-- science outside redox or history FINAL requested in current sprint
+- scope not resolved against ops/exams/EXAM_CONTEXTS_V1.yaml, or a deferred subject (HIS/AI) requested
 
 ### G2 GENERATION_QUALITY_READY — 20
 20:
@@ -127,7 +128,7 @@ If time is insufficient, always work on the lowest-scoring active subject/produc
 
 ## 4. PRIORITIZATION
 At every scheduled run:
-1. recompute all seven active subject/product readiness scores
+1. recompute all six active subject/product readiness scores
 2. identify the minimum score
 3. work on the smallest number of blockers that can increase that score by at least 10 points
 4. rerun the same canary/E2E
@@ -153,12 +154,11 @@ are HARD FAIL and keep release blocked.
 Every meaningful run reports:
 - KOR_N
 - SOC_N
-- HIS_N
-- SCI_REDOX_N
+- SCI_N
 - ARC_N_PRODUCT_READINESS = minimum above
 - KOR_FINAL
 - SOC_FINAL
-- SCI_REDOX_FINAL
+- SCI_FINAL
 - ARC_FINAL_PRODUCT_READINESS = minimum above
 - lowest blocker
 - score delta this run

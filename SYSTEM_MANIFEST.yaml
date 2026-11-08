@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.47-dev
+  version: 1.8.48-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -118,6 +118,17 @@ runtime:
   arc_n_answer_key_page_break_before: required
   arc_n_answer_key_position: AFTER_REQUIRED_SEPARATOR_BLANK
   arc_n_detailed_explanation_default: disabled
+  # 2026-11-08 user decisions (see ops/ARC_DECISIONS_20261108.md)
+  arc_n_metadata_strip_difficulty: D1_D5_DISPLAY            # strip only; never in stems/choices; ARC_FINAL shows none
+  arc_n_cover_logo_variant: BW_REGISTERED_ASSET_REQUIRED    # N cover is blocked (BRAND_ASSET_MISSING) until the B/W asset is registered
+  arc_n_passage_set_slots: PASSAGE_SPAN_CONTINUOUS_OTHER_ITEMS_FOUR_SLOT
+  arc_final_layout_basis: templates/final/ARC_FINAL_master_v0.2.html
+  arc_final_release_on_user_provisional_scope: true
+  arc_final_difficulty_offset_over_school_anchor: "+0.1..+0.3"   # PROVISIONAL, user: "slightly harder than school average"
+  draft_staging_before_user_approval: allowed
+  product_folder_before_user_approval: forbidden
+  generation_source_mix_profile: per_subject
+  readiness_deadline: "2026-12-07"                          # user input "12 7일"; exam date vs prep deadline unconfirmed
   cover_logo_mode: CANONICAL_ASSET_ONLY
   cover_logo_redraw: forbidden
   arc_n_full_width: disabled

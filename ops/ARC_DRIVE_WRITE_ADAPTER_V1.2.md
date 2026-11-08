@@ -206,7 +206,7 @@ If only inline base64 is available:
 
 ## 14. REGISTERED TARGET RESOLUTION
 Before asking the user for a destination folder:
-1. read ops/ARC_STORAGE_TARGETS_V1.0.yaml
+1. read ops/ARC_STORAGE_TARGETS_V1.1.yaml
 2. check SYSTEM_MANIFEST
 3. check locked bundle/handoff metadata
 

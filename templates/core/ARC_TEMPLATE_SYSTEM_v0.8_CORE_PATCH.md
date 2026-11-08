@@ -92,7 +92,7 @@ engine/core/ARC_CORE_DEPTH_ENGINE_V1.1.md
 - 같은 네이비 헤더 카드가 한 페이지에 과도하게 반복되지 않게 함
 
 ## KOREAN CORE
-- KOREAN_MASTER_V4.1 SOURCE-BOUND ORIGINAL TEXT MODE 적용
+- manifest의 active.subjects.korean MASTER의 SOURCE-BOUND ORIGINAL TEXT MODE 적용
 - SOURCE_TEXT_BLOCK은 작품/지문 시작 부분에 배치 가능
 - 원문과 해설은 시각적으로 구분
 - 시의 행/연, 산문의 문단 순서 보존

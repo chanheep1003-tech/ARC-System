@@ -11,7 +11,7 @@ Do not call Drive metadata move/update_file in scheduled QA because background s
 For the first subject, create the actual RAW shell at root/default, write its staging header, re-read it, and use that as the persistence preflight.
 If create/write/read succeeds, set DRIVE_PREFLIGHT_STATUS=PASS and continue.
 
-Before loading KOR sources or generating any RAW items, read `ops/ARC_DRIVE_WRITE_ADAPTER_V1.1.md` and perform its one-time write preflight.
+Before loading KOR sources or generating any RAW items, read `ops/ARC_DRIVE_WRITE_ADAPTER_V1.2.md` and perform its one-time write preflight.
 Default scheduled path:
 root create → staging-header write → non-empty readback → chunked content append.
 
@@ -32,20 +32,18 @@ Per subject:
 5. checkpoint
 Then release that subject context and continue.
 
-## 4. SUBJECT CHECKPOINT ORDER
-Default priority follows `ops/ARC_RUNTIME_PRIORITY_POLICY_V1.1.md`:
+## 4-A. SUBJECT CHECKPOINT ORDER
+Priority follows `ops/ARC_RUNTIME_PRIORITY_POLICY_V1.5.md`, runtime.active_subjects and subject_priority in SYSTEM_MANIFEST (currently KOR → SOC → SCI; HIS and AI are DEFERRED_BY_USER):
 1. KOR
 2. SOC
-3. HIS
-4. SCI
-5. AI
+3. SCI
 
-Normal 100-item runs still target 20 items per subject. Priority controls processing order, retries, extra review, research, and context budget rather than reducing required item counts.
+A normal run targets 20 items per ACTIVE subject. Priority controls processing order, retries, extra review, research, and context budget rather than reducing required item counts.
 
 Each subject is an independent transaction.
 Failure in one subject must not erase completed subjects.
 
-## 4. PERSIST-FIRST
+## 4-B. PERSIST-FIRST
 For each subject:
 A. create a ROOT_STAGED RAW Google Doc and verify its staging header
 B. generate RAW in chunks of 5 items and append each chunk immediately
@@ -85,10 +83,10 @@ On any failure:
 - mark subject FAILED_PENDING_RESUME
 Do not report SUCCESS when required artifacts are absent.
 
-A subject failure is isolated. After logging, continue to the next subject. After one pass across all subjects, resume failed subjects in KOR → SOC → SCI → HIS → AI order. Default automatic retry budget is one retry per failed subject/stage; do not loop indefinitely.
+A subject failure is isolated. After logging, continue to the next subject. After one pass across all subjects, resume failed subjects in manifest subject_priority order (active subjects only). Default automatic retry budget is one retry per failed subject/stage; do not loop indefinitely.
 
-## 8. QUALITY CONTRACT
-Use ARC_ITEM_QUALITY_RUBRIC_V1.2, ARC_QA_BENCH_V1.3, and the subject GOLD_ANCHORS_V1.0 pack.
+## 9. QUALITY CONTRACT
+Use the manifest-selected item quality rubric, QA bench and the subject GOLD anchor pack (active.quality.*).
 Do not assign target-looking scores before inspecting the actual item.
 Score components require evidence.
 Direct recall, explicit-cue/restatement, weak-distractor, and distractor-distance ceilings apply automatically.
@@ -103,7 +101,7 @@ Executable tooling:
 - connector-only scheduled host: do not fake execution. Record TOOLING_UNAVAILABLE and apply policy fallback. Essential accuracy gates remain mandatory.
 
 ## 10. RUNTIME BUDGET
-Follow `ops/ARC_RUNTIME_PRIORITY_POLICY_V1.1.md`.
+Follow `ops/ARC_RUNTIME_PRIORITY_POLICY_V1.5.md`.
 
 Stage priority:
 P0 Scope/Accuracy/Unique Answer
@@ -115,14 +113,13 @@ P5 Research/Optimization
 
 If runtime is constrained, defer P5 first, then nonessential P4, then nonessential P3. P0–P2 must never be skipped. Required visuals are not optional.
 
-Recommended extra-resource shares:
-KOR 30 / SOC 25 / SCI 20 / HIS 15 / AI 10.
+No fixed extra-resource shares are used (RUNTIME_PRIORITY_POLICY V1.5); allocate by source readiness and real quality problems among active subjects.
 
 ## 11. OPTIMIZATION
 No engine/prompt optimization until subject production and persistence completes.
 Repeated defect >=3 may create a patch candidate; do not mutate GitHub during ordinary scheduled generation.
 
-END ARC AUTOMATION RUNTIME V1.0
+END ARC AUTOMATION RUNTIME V1.1
 
 
 ## 12. HOURLY PRODUCTION MODE
@@ -131,8 +128,8 @@ For hourly automation, reliability beats one-run breadth.
 - minimum success target per run: one complete 20-item subject batch through required QA
 - if runtime remains, continue to the next subject
 - do not regenerate a subject that already has a fresh STUDY_READY/COMPUTE_SUCCESS_ROOT_STAGED batch from the current cycle
-- subject order remains KOR → SOC → SCI → HIS → AI
-- after all five have fresh batches, begin a new cycle
+- subject order follows manifest subject_priority (active subjects only)
+- after every active subject has a fresh batch, begin a new cycle
 - persist every 5 RAW items to limit loss on interruption
 
 This prevents a 100-item monolithic hourly transaction from repeatedly timing out or losing all progress.

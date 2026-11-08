@@ -1,4 +1,12 @@
+## 1.8.48-dev — 2026-11-08
+- 사용자 결정 반영(ops/ARC_DECISIONS_20261108.md): ARC_N 메타 스트립 D1~D5 난이도 표시, ARC_FINAL 확대 흑백 기준, ARC_N 흑백 로고, 지문 세트 슬롯 예외, 기말 임시 범위 일원화(MASTER SCOPE LOCK은 중간 스냅샷 표시), 사회 CORE X표시 BLOCKING, 사회 C X표시 기말 제외 유지, FINAL 난이도 오프셋, 초안 임시 저장/제품 폴더 승인 후, 기말 FINAL 임시 확정 출시 허용, 마감 2026-12-07.
+- 기출·창작 정책 §10 과목별 프로필(PAST_70_AI_30 / STRUCTURE_REFERENCE_ONLY)과 ORIGINAL_TRIAL을 정의하고 generation_source_gate.py에 구현·테스트 추가.
+- 규칙 내부 모순 정비: V2.4 §25 정답표 위치(LAST+2), V2.4 §6~§8·§16, 공통 엔진 §15·§21, 문항 품질 루브릭 번호·참조, 국어 엔진 중복 절 번호, 자동화 런타임(과목 순서·자원 비중·참조), 준비도 게이트 기말 재기준화.
+- 낡은 버전 참조 정리(활성 파일 20여 개). 이력 문서(오류 DB, 폐기 레지스트리, 동결 회귀 fixture)는 변경하지 않음.
+- 알려진 미완: 흑백 로고 자산 미등록, N 레이아웃 코드 강제 없음, 과학 기말 앵커 없음. 상세는 ops/ARC_DECISIONS_20261108.md.
+
 ## 1.8.47-dev external tools integration candidate — 2026-11-07
+
 - Added a pinned registry and project-local installer, task router, preliminary document converter and optional tutor/memory adapters for Orkas-AI/Orkas, p-e-w/heretic, HKUDS/DeepTutor, obra/superpowers, pbakaus/impeccable, mattpocock/skills, thedotmack/claude-mem and microsoft/markitdown.
 - Intake: isolated local installs plus ARC-owned adapter; no upstream executable/skill text copied into the ARC engine. Upstream revisions and MIT/Apache-2.0/AGPL-3.0-or-later license identifiers are recorded in tooling/external/tools.lock.json; each installed checkout retains its LICENSE/notice. Node release dependencies retain npm integrity hashes. Python transitive packages remain platform-resolved upstream dependencies, not a portable frozen environment.
 - Existing source, QA, blind-review, CONTENT_LOCK, print-template and one-run-state authority remains unchanged. Converted text stays UNVERIFIED; optional model output stays draft. Global hooks, automatic capture, model-weight changes and production activation remain disabled/unverified.

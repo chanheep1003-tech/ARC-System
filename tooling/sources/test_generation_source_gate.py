@@ -106,3 +106,48 @@ class Tests(unittest.TestCase):
 
 if __name__=='__main__':
     unittest.main()
+
+class ProfileTests(unittest.TestCase):
+    """Per-subject profiles and ORIGINAL_TRIAL (user decision 2026-11-08)."""
+
+    def all_ai(self, n=10, **meta):
+        items = [{"item_id": f"Q{i+1}", "provenance": {"mode": "AI_ORIGINAL", "school_scope_refs": ["SCHOOL:p1"],
+                                                       "design_purpose": "current-scope task"}} for i in range(n)]
+        comp = {"policy_version": gate.POLICY_VERSION}
+        comp.update(meta)
+        return {"source_composition": comp, "item_count": n, "items": items}
+
+    def codes(self, b):
+        return {f["code"] for f in gate.analyze(b)["findings"]}
+
+    def test_default_profile_still_requires_70_30(self):
+        self.assertIn("SOURCE_MIX_MISMATCH", self.codes(self.all_ai()))
+
+    def test_structure_reference_only_accepts_all_ai_original(self):
+        r = gate.analyze(self.all_ai(profile="STRUCTURE_REFERENCE_ONLY"))
+        self.assertEqual(r["status"], "PASS", r["findings"])
+        self.assertFalse(r["meets_70_30"])
+
+    def test_structure_reference_only_rejects_past_items(self):
+        b = bundle(10)
+        b["source_composition"]["profile"] = "STRUCTURE_REFERENCE_ONLY"
+        self.assertIn("PAST_ITEM_NOT_ALLOWED", self.codes(b))
+
+    def test_original_trial_needs_authorization_and_reason(self):
+        self.assertIn("ORIGINAL_TRIAL_UNAUTHORIZED", self.codes(self.all_ai(mode="ORIGINAL_TRIAL")))
+        ok = gate.analyze(self.all_ai(mode="ORIGINAL_TRIAL", authorized_by="user 2026-11-08", shortage_reason="no verified past items for the new range"))
+        self.assertEqual(ok["status"], "PASS", ok["findings"])
+        self.assertEqual(ok["composition_mode"], "ORIGINAL_TRIAL")
+        self.assertFalse(ok["meets_70_30"])
+
+    def test_invalid_profile_and_mode(self):
+        self.assertIn("SOURCE_PROFILE_INVALID", self.codes(self.all_ai(profile="NOPE")))
+        self.assertIn("SOURCE_COMPOSITION_MODE_INVALID", self.codes(self.all_ai(mode="SKIP")))
+
+    def test_kor_without_profile_warns_but_does_not_fail_by_itself(self):
+        b = bundle(10)
+        b["subject"] = "KOR"
+        r = gate.analyze(b)
+        self.assertEqual(r["status"], "PASS", r["findings"])
+        self.assertTrue(any(f["code"] == "SOURCE_PROFILE_UNDECLARED" and f["severity"] == "WARN" for f in r["findings"]))
+

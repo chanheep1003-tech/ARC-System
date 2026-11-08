@@ -128,7 +128,7 @@ Generator and Typesetter SHOULD run as separate chats/projects/sessions to preve
 The Generator does not need the full PDF master.
 The Typesetter does not need subject textbooks, worksheets, GOLD anchors, or generation QA by default.
 
-The transfer object is governed by `ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.0.md`.
+The transfer object is governed by `ops/ARC_CONTENT_BUNDLE_CONTRACT(manifest active).md`.
 
 ## 6. PRODUCT OWNERSHIP
 

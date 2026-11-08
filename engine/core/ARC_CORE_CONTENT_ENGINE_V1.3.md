@@ -259,21 +259,10 @@ quality/ARC_CORE_EDITORIAL_NATURALNESS_V1.2.md를 반드시 적용한다.
 - 근거 없는 '시험에 잘 나온다/선생님이 낸다' 표현 금지.
 - 학생용에 내부 metadata가 보이면 HARD FAIL.
 
-## 8-A. CURRENT SOCIAL CORE SCOPE OVERRIDE
-This override applies only to PRODUCT_MODE=ARC_CORE.
-
-For the current user workflow:
-- C-part handwritten X detection is NON_BLOCKING for CORE manuscript production.
-- If the X-mark boundary cannot be reliably verified, do not stop CORE generation.
-- Preserve the chapter flow and allow the user to ignore excluded material during study.
-- Record internally: SOCIAL_CORE_X_MARK_STATUS=UNVERIFIED_NONBLOCKING.
-- Do not claim that X-mark filtering passed when it was not verified.
-
-This does NOT relax ARC_N / ARC_FINAL scope rules. Their active SOCIAL_MASTER USER_X_EXCLUSION remains binding.
-
-Current Social CORE exclusion:
-- Jeremy Bentham / 벤담 is not included in the student-facing CORE unless the user explicitly restores it.
-- Kant/Beccaria comparison remains within the active school scope and claim-fidelity rules.
+## 8-A. SOCIAL CORE — C파트 X표시 (사용자 결정 2026-11-08)
+사회 ARC_CORE에서도 C학습지 손글씨 X표시 제외는 BLOCKING_SCOPE_EXCLUSION이다(manifest core_social_x_mark_mode).
+경계를 검증하지 못하면 해당 영역을 본문에서 제외하고, 검증하지 않은 채 필터를 통과했다고 주장하지 않는다.
+벤담(Jeremy Bentham)은 사용자가 복원하기 전까지 학생용 CORE에 포함하지 않는다. 칸트·베카리아 비교는 활성 학교 범위와 CLAIM FIDELITY 규칙 안에서 유지한다.
 
 ## 9. SUBJECT BEHAVIOR
 
@@ -287,7 +276,7 @@ TRAP은 산화제/환원제, 원인/결과, 입자 수, 그래프 축 해석 등
 - OR 산화·환원
 - EM 전자기 유도
 
-OR/EM은 ARC_CORE_DEPTH_ENGINE_V1.0의 과학 profile을 적용한다.
+OR/EM은 ARC_CORE_DEPTH_ENGINE(manifest의 active.core_depth_engine)의 과학 profile을 적용한다.
 단, SCIENCE_MASTER의 ADVANCED LEAK BLOCK을 넘어서는 심화는 금지한다.
 깊이는 공식 추가가 아니라 조건 해석·자료 읽기·개념 경계·복합 판단을 강화하는 방식으로 만든다.
 
@@ -315,7 +304,7 @@ evidence 없이 '이 단원은 어렵다'고 임의 승격하지 않는다.
 
 ### KOREAN
 기본 규칙:
-subjects/KOREAN_MASTER_V4.1.md의 SOURCE-BOUND ORIGINAL TEXT MODE를 그대로 적용한다.
+manifest의 active.subjects.korean MASTER의 SOURCE-BOUND ORIGINAL TEXT MODE(KOR EXACT SOURCE-BOUND ORIGINAL TEXT MODE)를 그대로 적용한다.
 
 국어 CORE는 작품을 '주제/정서/표현법' 카드 세트로 잘게 분해하는 방식을 기본으로 하지 않는다.
 작품 전체의 흐름과 학교 보충자료의 해석 구조를 우선한다.

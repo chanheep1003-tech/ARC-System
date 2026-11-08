@@ -497,7 +497,7 @@ TASK_FORM_FLAGS[]
 
 학생용에는 노출하지 않는다.
 
-## 12. SCHOOL-REALISM BLUEPRINT — V1.5
+## 12-B. SCHOOL-REALISM BLUEPRINT — V1.5
 문항 생성 전에 KOR_DONGBOOK_EXAM_TYPE_PROFILE_2025_2026_V1.0을 구조 앵커로 로드한다.
 과거 시험의 원문/선지 문장을 복제하지 않고 TASK FAMILY와 난도 감각만 사용한다.
 
@@ -521,9 +521,8 @@ AI-like generation 방지:
 KOR_EXAM_REALISM_GATE=PASS 전에는 CONTENT_LOCK 금지.
 
 
-END ARC KOREAN ITEM ENGINE V1.5
 
-## 14. KOR ORTHOGRAPHY SUBCLAUSE & EXCEPT-STEM GATE (V1.5 / 2026-11-05)
+## 14-B. KOR ORTHOGRAPHY SUBCLAUSE & EXCEPT-STEM GATE (V1.5 / 2026-11-05)
 
 For all KOR ARC N°/FINAL content, read `quality/korean/ARC_KOR_NORM_20261105_CORRECTION_POLICY.md`.
 
@@ -534,7 +533,7 @@ For all KOR ARC N°/FINAL content, read `quality/korean/ARC_KOR_NORM_20261105_CO
 - After any student text/answer/solution edits, invalidate prior review hash and rerun source and five-option validation; static PDF regex check alone NEVER permits CONTENT_LOCK.
 - Test with `tooling/content_qa/korean_norm_regression_gate.py`; maintain actual negative regression examples in `quality/reviews/ARC_KOR_N_20261105_REVIEW_REPORT.md`. Current 2026-11-05 patched PDFs remain REVIEW_PENDING until full independent audit.
 
-## 15. ARC 5-LEVEL LEARNING LADDER (2026-11-05 / REQUIRED)
+## 15. ARC V1~V6 LEARNING LADDER (2026-11-05 / REQUIRED)
 Load quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md on every new KOR ARC_N or KOR ARC_FINAL item build; this ladder does not apply to other subjects. Select external text **per item and per run** through quality/korean/ARC_KOR_DYNAMIC_SOURCE_SELECTION_V1.0.yaml; first decide skill/comparison axis and then search and compare new texts. Never preassign songs, writers or medieval excerpts from a static list. Use verified school exam evidence only to determine question style.
 - V1 ARC_N: full textbook range + diverse item families + foundational concepts, NOT a subset focused only on frequent rules.
 - V2 ARC_N: higher share for evidence-backed priority concepts; require more interdependent decisions/diagnosis.
@@ -548,7 +547,9 @@ When a project explicitly requests V1~V3 orthography, the per-level slots and co
 Literature: actual new literary text with comparison axes; nonfiction: unfamiliar X/Y concepts defined within new self-contained passage then applied to an unfamiliar example; grammar: unfamiliar old-Korean documentary excerpts OR modern orthography evidence in short licensed song lyrics, poems, novel dialogue, school diary, SNS. For medieval texts lock original edition, period, original lines and modernization and avoid duplicate excerpts. Song transcripts may contain nonstandard artist spelling; do not treat a lyric as the standard dictionary. Cite rule and original words separately, and obtain rights to print extensive copyrighted lyrics/modern creative passages. Example must be necessary (if removable, reject V3). Match V5 only to confirmed Dongbuk exam formats. Evidence: 2025 final Q4–10 and Q15–21, 2026 mid Q1 and Q20–22, not generalization about lyric frequency.
 
 ## KOR V6 precision specialist (2026-11-06, active override)
-Load `quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md` as the canonical KOR-only version policy. The former `quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md` is historical. For level=V6 use `quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md`: ARC N° short-context unusual lexemes/idioms with exact contextual POS, morphology, orthography clause and correct wording. Build an item-specific source and dictionary receipt *before* generating options. Do not hard-code specific rare words to every question or infer clause numbers from a token alone. Blind-solve before comparing the answer. V5 ARC FINAL stays school-simulation; no automatic level inheritance to SCI/SOC. V6 100 items remain NOT_PRODUCED until actual generated and independently reviewed.
+Load `quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md` as the canonical KOR-only version policy. The former `quality/korean/ARC_KOR_V1_V5_LEVEL_POLICY_V1.1.md` is historical (archived). For level=V6 use `quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md`: ARC N° short-context unusual lexemes/idioms with exact contextual POS, morphology, orthography clause and correct wording. Build an item-specific source and dictionary receipt *before* generating options. Do not hard-code specific rare words to every question or infer clause numbers from a token alone. Blind-solve before comparing the answer. V5 ARC FINAL stays school-simulation; no automatic level inheritance to SCI/SOC. V6 100 items remain NOT_PRODUCED until actual generated and independently reviewed.
 
 ## KOR V6 띄어쓰기 우선 오버라이드(2026-11-06)
 For V6 modern orthography load `quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.0.md` before any drafting. Distinguish **보조사 ⊂ 조사** vs dependent noun vs inflectional ending vs derivational suffix vs auxiliary predicate. Never treat every token after a noun as a 보조사: '만큼' can be an adverbial-case particle or an auxiliary particle depending on its meaning. Prioritize 30 items particle/dependent-noun and 65 direct spacing items per 100 target, with authentic unfamiliar short contexts selected per item, school textbook/practice scope and 2025 Dongbuk 2S final Q9 as style anchor. For each item, independent dictionary POS and 41/42/43/47 rule receipts plus permissive spacing decisions required. Draft remains non-publishable without key-blind per-option solve.
+
+END ARC KOREAN ITEM ENGINE V1.5

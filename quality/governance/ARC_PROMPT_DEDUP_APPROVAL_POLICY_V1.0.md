@@ -69,7 +69,7 @@ EXACT_DUPLICATE_COUNT=0
 SEMANTIC_DUPLICATE_COUNT=0
 
 ## 5. PROMPT AUTHORING RULE
-When ChatGPT writes a problem-generation prompt for the user, the prompt itself must include:
+When the assistant writes a problem-generation prompt for the user, the prompt itself must include:
 - prior approved set loading
 - exclusion registry construction
 - duplication definitions
@@ -104,6 +104,11 @@ FINAL_USER_APPROVAL=PASS
 DRIVE_SAVE=ALLOWED
 
 A general instruction to run automatically is not a substitute for approval of a specific final problem set.
+
+### 6-A. DRAFT STAGING (user decision 2026-11-08)
+- A DRAFT_REVIEW manuscript or PDF may be saved to a temporary/manuscript staging folder so work survives an interrupted session.
+- Staging does not change FINAL_USER_APPROVAL=PENDING and DRIVE_SAVE=BLOCKED for the product folder.
+- Moving a set to the ARC_N/ARC_FINAL product folder, registering it in the dedup history and BANK registration happen only after explicit user content approval.
 
 ## 7. POST-APPROVAL DRIVE SAVE
 After approval:

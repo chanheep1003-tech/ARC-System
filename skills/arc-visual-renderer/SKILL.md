@@ -64,7 +64,7 @@ ESSENTIAL visual은 다음을 모두 통과해야 한다.
 2. 별도 `tooling/visual/visual_verify.py` 또는 동등한 독립 verifier의 PASS B
 3. QUESTION_VISUAL_CROSSCHECK
 4. ARC_VISUAL_AUTHENTICITY_RUBRIC_V1.1
-5. PDF 단계에서 ARC_PDF_PREFLIGHT_V1.0
+5. PDF 단계에서 ARC_PDF_PREFLIGHT(manifest active)
 
 SCI-PARTICLE 산화환원은 REDOX_LEDGER의 전자수·이온수와 actual particle count를 교차검증한다.
 

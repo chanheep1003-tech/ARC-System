@@ -17,7 +17,10 @@ ROOT: `/Google Drive/N제 시스템/02_통합과학`
 
 요청 단원과 직접 관련 없는 단원은 불필요하게 읽지 않는다.
 
-## 1. SCOPE LOCK
+## 1. SCOPE LOCK — ARCHIVED_MIDTERM_SNAPSHOT (참고용)
+현재 시험 범위의 유일한 기준은 ops/exams/EXAM_CONTEXTS_V1.yaml이다. 기말 임시 범위는 "이번 학기 전체 − 실제 중간고사 범위"다(사용자 확정 2026-11-08).
+아래 단원 목록은 이 MASTER가 다루는 후보 단원이며, 어느 단원이 기말 범위인지는 EXAM_CONTEXTS가 정한다.
+
 GT p14~19 지질 시대
 EV p20~35 진화·생물다양성
 OR p38~45 산화·환원

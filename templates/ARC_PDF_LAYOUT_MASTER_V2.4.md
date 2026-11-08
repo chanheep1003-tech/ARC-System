@@ -1,3 +1,9 @@
+## USER DECISIONS — 2026-11-08
+1) ARC_N 문항 메타 스트립에는 D1~D5 추정 난이도를 그대로 표시한다(본문·선지에는 표시 금지, ARC_FINAL에는 표시 금지).
+2) ARC_FINAL 조판 기준은 templates/final/ARC_FINAL_master_v0.2.html의 확대 흑백 2단(좌우 12.8mm, 발문 9.5pt, 선택지 9.1pt)이다(§7).
+3) ARC_N 표지에는 승인된 흑백 로고 자산(ARC_N_LOCKUP_MASTER_BW.png)을 쓴다. 자산 등록·해시 확정 전에는 BRAND_ASSET_MISSING으로 표지 생성을 중단한다.
+4) 국어 등 지문 세트는 지문 구간만 4문항 고정 슬롯을 해제하고 지문 뒤에 문항을 이어 배치한다(N 레이아웃 문서 참조).
+
 ## USER CORRECTION — ACTUAL ARC_N PDF STYLE — 2026-11-07
 For ARC_N, templates/n/ARC_N_BW_LAYOUT_V1.0.md supersedes every conflicting cover, packing, typography and choice arrangement below. Use the actual uploaded SCI/KOR PDFs, not the previously inferred Academic B ZIP treatment. ARC_FINAL/CORE retain their product-specific layouts.
 
@@ -82,13 +88,11 @@ ARC 마스터 템플릿이 Drive에 존재하면 그것을 최우선 기준으�
 권장 위치:
 `/Google Drive/N제 시스템/00_브랜드/마스터템플릿/`
 
-예정 기준 파일:
-- ARC_N_master_v1.0
-- ARC_FINAL_master_v1.0
-- ARC_CORE_master_v1.0
-- ARC_DESIGN_SYSTEM_v1.0
-
-아직 v1.0이 없으면 본 프롬프트의 내장 규격을 기준으로 조판한다.
+기준 파일(저장소, manifest active.layout):
+- templates/n/ARC_N_master_v0.2.html + templates/n/ARC_N_BW_LAYOUT_V1.0.md
+- templates/final/ARC_FINAL_master_v0.2.html
+- templates/core/ARC_CORE_master_v0.3.html
+Drive의 v1.0 마스터 템플릿은 승인·등록되기 전까지 사용하지 않는다. 등록 전에는 위 저장소 파일과 본 문서의 내장 규격을 기준으로 조판한다.
 
 디자인 충돌 우선순위:
 1. 승인된 ARC v1.x 마스터
@@ -138,7 +142,7 @@ A. ARC_N
 
 포함 금지:
 - 상세 해설
-- 난도 배지
+- 난도 배지 (단, ARC_N 문항 메타 스트립의 D1~D5 표기는 허용)
 - 유형 태그
 - 힌트
 - 출제 의도
@@ -330,7 +334,7 @@ ARC 표지는 전 제품군에서 Academic B형 / Swiss-editorial grid를 유지
 반드시 Drive의 승인된 raster master를 그대로 사용한다.
 
 - ARC CORE: `/Google Drive/N제 시스템/00_브랜드/로고·디자인요소/ARC_CORE_LOCKUP_MASTER.png`
-- ARC N°: `/Google Drive/N제 시스템/00_브랜드/로고·디자인요소/ARC_N_LOCKUP_MASTER.png`
+- ARC N°: `/Google Drive/N제 시스템/00_브랜드/로고·디자인요소/ARC_N_LOCKUP_MASTER_BW.png` (흑백 승인 자산. 컬러 ARC_N_LOCKUP_MASTER.png는 N 표지에 쓰지 않는다. BW 자산이 registry에 등록·해시 확정되기 전에는 BRAND_ASSET_MISSING)
 - ARC FINAL: `/Google Drive/N제 시스템/00_브랜드/로고·디자인요소/ARC_FINAL_LOCKUP_MASTER.png`
 
 금지:
@@ -342,6 +346,8 @@ ARC 표지는 전 제품군에서 Academic B형 / Swiss-editorial grid를 유지
 - 이미지 생성 모델로 로고 재생성
 
 ### ARC N° 표지 기본 그리드
+ARC_N 표지는 templates/n/ARC_N_BW_LAYOUT_V1.0.md의 흑백 표지(기관선·에디션 배지·2줄 제목·범위 박스·흑백 승인 로고)가 우선한다.
+아래 그리드의 좌측 기준선·여백·로고 폭은 로고 배치 참고로만 사용하며, Navy/Burgundy 색은 N 표지에 쓰지 않는다.
 A4 portrait.
 가운데 정렬형의 '떠 있는' 구성을 사용하지 않는다.
 
@@ -376,11 +382,11 @@ BOTTOM META:
 - N° volume number는 로고 이미지 안에 합성하지 않는다.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-6. ARC N° — PURE B&W ENLARGED TWO-COLUMN ENGINE (본문 흑백 확대 조판)
+6. ARC N° / ARC FINAL — PURE B&W ENLARGED TWO-COLUMN ENGINE (공통 서식 토큰 · ARC_N은 N 레이아웃 문서가 우선)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 표지 및 간지 구성 원칙:
-- 1쪽 (표지): 제5절의 기존 ARC Academic B형 표지 디자인을 그대로 유지한다.
+- 1쪽 (표지): ARC_N은 N 레이아웃 문서의 흑백 표지를 따른다. ARC_FINAL/ARC_CORE는 제5절의 Academic B형 표지를 유지한다.
 - 2쪽 (표지 뒤 백면): 표지 바로 뒤에 머리말·꼬리말이 없는 완전 백지 1쪽을 삽입하고, 3쪽부터 본문 문제를 시작한다.
 - 본문 종료 직후 백면 + 권말 빠른 정답표: 본문 마지막 페이지 직후 완전 백지 1쪽을 띄우고, 그 다음 쪽에 빠른 정답 확인표를 배치한다(상세 해설은 별책 『정답 및 해설집』으로 분리).
 
@@ -397,7 +403,7 @@ BOTTOM META:
 - 하단 푸터 (`.page-footer`, 상단 `0.9pt solid #000000`):
   * 좌측 시리즈명 (`8.2pt`), 중앙 물리 페이지 번호 `- 3 -` ~ `- N -` (`8.8pt`, `font-weight: 800`, `#000000`)
 
-본문 가독성 확대 타이포그래피 및 박스 규격:
+본문 가독성 확대 타이포그래피 및 박스 규격 (ARC_FINAL 기준 수치. ARC_N은 N 레이아웃 문서의 수치를 따른다: 발문 9.1pt, 선택지 8.4pt, 짧은 선택지는 가로 3열+2열 배열):
 - 문항 태그 박스 (`.q-tag`): `border: 0.9pt solid #000000`, `padding: 1.5px 6px`, `font-size: 7.7pt`, `font-weight: 800`, 배경 없음(`#FFFFFF`)
 - 발문 (`.q-stem`): `font-size: 9.5pt ~ 9.7pt`, `font-weight: 800`, `line-height: 1.42`, 내어쓰기(`padding-left: 18px; text-indent: -18px`), 문항 번호 `01.`, `02.` 형식
 - `< 보 기 >` 박스 (`.bogi-box`): `border: 0.9pt solid #000000`, `padding: 5px 7px 6px 7px`, `margin-bottom: 6px`, 배경 없음(`#FFFFFF`)
@@ -408,9 +414,10 @@ BOTTOM META:
 - 선택지 (`.choice-item`): `font-size: 9.1pt`, `line-height: 1.36`, 내어쓰기(`padding-left: 14px; text-indent: -14px`), 하단 간격 `2.5px`
 - 기호 및 타깃 어휘 밑줄 강조 (`u`): 지문 및 `<보기>` 내부의 모든 `ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅂ`과 `㉠~㉯`, `ⓐ~ⓩ`, `①~⑤` 타깃 어휘에 밑줄(`text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px`)을 적용하여 시인성을 확보한다.
 
-스마트 2단 밀도 최적화 (Smart Column Packing):
-- 한 단에 문항 1개가 추가로 들어갈 수 있는 여백이 있으면 남겨두지 않고 다음 문항을 채워 넣는다(단당 평균 2~3문항 배치).
-- 단, 이미 문항이 배치된 상태에서 하단에 남은 공간이 좁거나 다음 문항을 넣기에 애매한 경우에는 억지로 축소하거나 쪼개지 않고 깔끔하게 비워 둔다.
+문항 배치 규칙:
+- ARC_N: 일반 페이지는 단당 고정 슬롯 2개(페이지당 4문항, 읽는 순서 좌 1·2 → 우 3·4)다. 남는 공간이 있어도 3번째 문항을 채우지 않는다. 슬롯에 안 들어가는 문항은 다른 페이지를 배정한다(축소·절단·조건 삭제 금지).
+- ARC_N 지문 세트: 지문이 있는 세트는 지문 구간만 슬롯 고정을 해제한다. 지문을 단/페이지로 이어 배치하고 연계 문항을 그 뒤에 이어 배치한다(지문 1회 + 문항군 KEEP_TOGETHER). 지문 없는 일반 문항에만 4슬롯 고정을 적용한다. 이는 FULL_WIDTH/1단 전환이 아니다.
+- ARC_FINAL: 한 단에 문항이 더 들어갈 여백이 있으면 다음 문항을 채워 넣는다(단당 평균 2~3문항). 남은 공간이 애매하면 억지로 축소하거나 쪼개지 않고 비워 둔다.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 7. ARC FINAL — EXAM ENGINE
@@ -419,9 +426,8 @@ BOTTOM META:
 기본:
 - A4 세로
 - 실제 학교 시험지 느낌
-- 외곽 좌우 여백 약 15.5 mm
-- 본문 약 8.7~8.9 pt
-- 선택지 약 8.4~8.6 pt
+- 외곽 좌우 여백 12.8 mm (상하 11.0 mm)
+- 발문 9.5~9.7 pt, 선택지 9.1 pt (확대 흑백, templates/final/ARC_FINAL_master_v0.2.html 기준)
 - 2단
 - 중앙 구분선은 N°보다 약간 선명
 
@@ -459,7 +465,7 @@ BOTTOM META:
 한 페이지에 약 1~4개의 개념/클러스터 단위를 자연스럽게 배치한다. 개수보다 읽기 흐름과 의미 단위 보존을 우선한다.
 
 기본 원칙:
-- 개념 본문은 원칙적으로 4~8줄
+- 개념 본문의 길이는 내용이 정한다(고정 줄 수 없음. 기준: CORE 패치 v0.8, CORE 엔진 V1.3)
 - 설명은 충분히 하되 반복 금지
 - MUST는 핵심에만 사용
 - CONFUSING은 실제 혼동 가능성이 높은 경우에만 사용
@@ -926,7 +932,7 @@ STEP 9 — AUTO FIX
 실패 항목 수정 후 재출력
 
 STEP 10 — HUMAN REVIEW PACKET
-`quality/ARC_HUMAN_REVIEW_GATE_V1.0.md`에 따라 짧은 검토 패킷을 만든다.
+SYSTEM_MANIFEST active.quality.human_review_gate에 따라 짧은 검토 패킷을 만든다.
 AI QA가 PASS한 뒤에만 사람에게 넘긴다.
 
 STEP 11 — HUMAN REVIEW GATE
@@ -997,7 +1003,7 @@ PRINT
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ARC_N PASS:
-- 문제 외 학습 태그 0
+- 문제 외 학습 태그 0 (문항 메타 스트립의 출처·설명·D1~D5 난이도 제외)
 - 마지막 compact 정답표 존재 = 1
 - 상세 해설 페이지 0
 - 기본 2단 유지
@@ -1021,9 +1027,8 @@ ARC_CORE PASS:
 - PART_CHAPTER_SECTION_HIERARCHY = PASS
 - 개념 설명이 읽기 쉬움
 - 장문 개념서처럼 과도하게 늘어나지 않음
-- 2~4개 개념/page 목표를 가능한 범위에서 유지
-- MUST 시각 위계 명확
-- CONFUSING 선택적 사용
+- 선택 블록(MUST/CONFUSING/TRAP)은 원고에 있을 때만 존재하며 부재는 FAIL이 아님
+- 개념 수/page 목표는 두지 않고 의미 블록 보존을 우선
 - 불필요한 박스 남발 없음
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1147,7 +1152,7 @@ CONTENT_RETURN_REQUIRED.
 
 조판 AI가 임의로 메우지 않는다.
 
-END ARC PDF TYPESETTING MASTER V2.3
+END ARC PDF TYPESETTING MASTER V2.4
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1180,7 +1185,7 @@ CHANGELOG — FROM N제 PDF 조판 MASTER V1.3
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 22. EXECUTABLE PDF PREFLIGHT
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-FINAL/HUMAN_REVIEW 전 `quality/pdf/ARC_PDF_PREFLIGHT_V1.0.md`를 적용한다.
+FINAL/HUMAN_REVIEW 전 SYSTEM_MANIFEST active.quality.pdf_preflight를 적용한다.
 실행 가능한 host에서는 `tooling/pdf_qc/pdf_preflight.py`로 좌표 기반 1차 검사를 수행한다.
 
 필수 결과:
@@ -1216,7 +1221,7 @@ END EXECUTABLE PDF PREFLIGHT
 
 하나라도 어기면 BRAND_LOCKUP_FAIL.
 
-ARC N° 표지의 logo source는 기본적으로 `ARC_N_LOCKUP_MASTER.png`여야 한다.
+ARC N° 표지의 logo source는 `ARC_N_LOCKUP_MASTER_BW.png`(흑백 승인 자산)여야 한다.
 asset 접근 불가 시 임의 재생성하지 말고 BRAND_ASSET_MISSING으로 반환한다.
 
 END ARC LOGO LOCKUP ACCEPTANCE
@@ -1226,9 +1231,7 @@ END ARC LOGO LOCKUP ACCEPTANCE
 24. LOCKED CONTENT BUNDLE GATE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Typesetting starts only from a bundle compliant with:
-`ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.1.md`
-and
-`ops/ARC_TYPESETTER_CONTRACT_V1.1.md`.
+the SYSTEM_MANIFEST-selected active content bundle contract and typesetter contract.
 
 Required:
 CONTENT_QA_STATUS=PASS
@@ -1265,7 +1268,8 @@ ARC_N has a fixed physical print sequence.
 PHYSICAL_PAGE_1 = COVER
 PHYSICAL_PAGE_2 = BLANK_COVER_VERSO
 PHYSICAL_PAGE_3...N = PROBLEM_PAGES
-PHYSICAL_PAGE_N+1 = ANSWER_KEY_START
+LAST_PROBLEM_PAGE + 1 = BLANK_BEFORE_ANSWER
+LAST_PROBLEM_PAGE + 2 = ANSWER_KEY_START
 
 BLANK_COVER_VERSO:
 - exactly one page
@@ -1279,8 +1283,8 @@ BLANK_COVER_VERSO:
 
 ANSWER_KEY_START:
 - force page-break-before
-- must be the immediate next page after the last problem page
-- no additional spacer between problems and answer
+- starts exactly one blank separator page after the last problem page (LAST_PROBLEM_PAGE + 2)
+- the separator page itself holds no content
 - item number + answer only
 - no explanations
 - no difficulty/type/hint/editor metadata
@@ -1289,7 +1293,7 @@ PDF QC must explicitly record:
 COVER_VERSO_BLANK=PASS/FAIL
 FIRST_PROBLEM_PHYSICAL_PAGE=3
 ANSWER_KEY_NEW_PAGE=PASS/FAIL
-ANSWER_KEY_IMMEDIATE_AFTER_PROBLEMS=PASS/FAIL
+ANSWER_KEY_AFTER_ONE_BLANK_SEPARATOR=PASS/FAIL
 
 END ARC N° PRINT SIGNATURE / ANSWER PAGE
 

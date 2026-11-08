@@ -247,7 +247,7 @@ If the connected environment cannot place a file directly, preserve a durable st
 Do not typeset the student PDF in the Generator project. A dedicated Typesetter project consumes READY_FOR_TYPESET bundles.
 
 ## 11. GOVERNANCE / GITHUB SAFETY
-Read `ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md`.
+Read `ops/ARC_MULTI_MODEL_GOVERNANCE_V1.1.md`.
 During ordinary item generation:
 - GitHub rules/MASTER are read-only
 - do not edit MASTER, QA, manifest, or policy files

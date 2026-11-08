@@ -18,8 +18,10 @@ REQUEST
 → TYPESETTER_GATEWAY
 → TYPESETTER
 → PDF_QC
+→ DRAFT_STAGING (temporary folder, allowed)
+→ USER_CONTENT_APPROVAL
 → PUBLISHER
-→ STORAGE_PLACEMENT
+→ STORAGE_PLACEMENT (product folder)
 → READY_FOR_PHYSICAL_REVIEW
 → HUMAN_REVIEW
 → FINAL_RELEASED
@@ -110,6 +112,7 @@ Ask the user only for genuine preference decisions, such as:
 - competing visual identities with no approved ARC precedent
 - scope choice not inferable from supplied school materials
 - intentional content change after CONTENT_LOCK
+- USER_CONTENT_APPROVAL of the final problem set before it is moved to the product folder (ARC_PROMPT_DEDUP_APPROVAL_POLICY §6, 6-A)
 - physical HUMAN REVIEW approval for FINAL_RELEASED
 
 ## 6. SAMPLE POLICY
@@ -146,7 +149,7 @@ It must not derive a new answer distribution from its own content interpretation
 
 ## 8. STORAGE TARGET RESOLUTION
 Resolve target without asking in this order:
-1. ops/ARC_STORAGE_TARGETS_V1.0.yaml
+1. ops/ARC_STORAGE_TARGETS_V1.1.yaml
 2. SYSTEM_MANIFEST runtime/product configuration
 3. locked CONTENT_BUNDLE / handoff metadata
 4. existing subject output registry

@@ -66,7 +66,7 @@ TYPESET_STATUS=RETURN_CONTENT with STALE_HANDOFF_GATE=FAIL.
 ## 1-A. BRAND ASSET GATE
 For cover full lockups, use the canonical Drive assets exactly:
 - ARC_CORE_LOCKUP_MASTER.png
-- ARC_N_LOCKUP_MASTER.png
+- ARC_N_LOCKUP_MASTER_BW.png (ARC_N cover; manifest arc_n_cover_logo_variant)
 - ARC_FINAL_LOCKUP_MASTER.png
 under `N제 시스템/00_브랜드/로고·디자인요소`.
 
@@ -335,7 +335,7 @@ The loop is capped at two attempts and stops on an unchanged finding
 fingerprint. Answer, item-count, source-fidelity, broken-glyph, raw-markup,
 student-metadata, and unknown defects are never silently rewritten.
 
-END ARC TYPESETTER CONTRACT V1.6
+END ARC TYPESETTER CONTRACT V1.7
 
 
 ## EXAM CONTEXT ADMISSION — 2026-10-03

@@ -26,8 +26,9 @@ ARC의 난이도는 AI가 단독으로 “쉬움/어려움”을 감으로 판�
 모든 ARC_N / ARC_FINAL 문항은 STRUCTURAL ESTIMATE 뒤 blind PASS B에서 실제 해결 부담을 다시 측정한다.
 TARGET_DIFFICULTY는 PASS B의 ACTUAL_DIFFICULTY와 일치하도록 수정 또는 재분류한 뒤 CONTENT_LOCK한다.
 
-난이도는 학생 PDF에 표시하지 않는다.
-ARC N°/FINAL의 내부 설계와 문제은행 메타데이터에만 사용한다.
+난이도는 학생용 문제 본문(발문·자료·선지)에 표시하지 않는다.
+예외(사용자 결정 2026-11-08): ARC_N 문항 메타 스트립에는 D1~D5 등급을 그대로 표시한다. ARC_FINAL에는 어떤 형태로도 표시하지 않는다.
+그 밖에는 ARC N°/FINAL의 내부 설계와 문제은행 메타데이터에만 사용한다.
 
 ## 1. ARC DIFFICULTY LEVEL
 
@@ -538,7 +539,7 @@ ARC_N은 쉬워지는 것이 아니라,
 
 명시적 고난도 N제 요청 또는 검증된 학교 앵커가 있으면 난도/ADVANCED 비율을 상향할 수 있다.
 
-### ARC_FINAL — 20 items
+### ARC_FINAL — 20 items (앵커가 없는 과목·범위의 임시 하한 곡선; 앵커가 있으면 §23이 우선)
 D1 0~5%
 D2 10~20%
 D3 40~50%
@@ -617,6 +618,12 @@ FINAL_DIFFICULTY는 최소 다음을 동시에 비교한다.
 
 평균만 맞고 분포가 무너지면 FAIL.
 분포만 맞고 평균이 크게 벗어나도 FAIL.
+
+### TARGET OFFSET — 2026-11-08 USER DIRECTIVE (PROVISIONAL)
+목표는 "동북고 평균 난이도보다 조금 더 어렵게"다. 과목 앵커 평균에 +0.1~+0.3(중심 +0.2)을 더한 값을 FINAL 목표 평균으로 한다.
+- 공통 하한(D4+D5 ≥ 30%)은 폐지하고 과목별 앵커 분포에 오프셋을 반영해 사용한다.
+- 오프셋 수치는 사용자 확인 전까지 PROVISIONAL이며 ops/exams/EXAM_CONTEXTS_V1.yaml이 값을 보유한다.
+- 평균과 분포 형태가 모두 맞아야 한다(아래 CALIBRATION AXES).
 
 ### DIFFICULTY ADJUSTMENT
 FINAL이 학교보다 쉬운 경우:

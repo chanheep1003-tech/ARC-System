@@ -1,8 +1,8 @@
 # KOR GOLD ANCHORS V1.1
 SUBJECT: 공통국어2
-SCOPE: KOREAN_MASTER_V4.1
+SCOPE: KOREAN_MASTER(manifest active)
 ANCHOR_POLICY: ARC_GOLD_ANCHOR_POLICY_V1.0
-NOTE: GOLD 예시 자체는 ARC 원문으로 작성한다. 다만 실제 KOR 생성에서는 KOREAN_MASTER_V4.1의 SOURCE-BOUND ORIGINAL TEXT MODE에 따라 사용자 제공/업로드/연결 Drive 학교자료·교과서의 실제 원문을 SOURCE_TEXT_BLOCK으로 전문 또는 시험범위 전체 수록할 수 있다.
+NOTE: GOLD 예시 자체는 ARC 원문으로 작성한다. 다만 실제 KOR 생성에서는 KOREAN_MASTER(manifest active)의 SOURCE-BOUND ORIGINAL TEXT MODE에 따라 사용자 제공/업로드/연결 Drive 학교자료·교과서의 실제 원문을 SOURCE_TEXT_BLOCK으로 전문 또는 시험범위 전체 수록할 수 있다.
 
 ## GOOD
 

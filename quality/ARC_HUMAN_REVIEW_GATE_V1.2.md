@@ -183,7 +183,7 @@ Before asking for physical review, the system should normally already have:
 A pending physical print review must not stop:
 - full PDF rendering
 - PDF QC
-- Drive upload
+- Drive upload (draft staging; product-folder placement follows the user content approval of ARC_PROMPT_DEDUP_APPROVAL_POLICY)
 - exact parent metadata verification
 
 Normal digital endpoint:

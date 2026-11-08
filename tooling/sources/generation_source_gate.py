@@ -16,6 +16,9 @@ import yaml
 POLICY_VERSION = "ARC-SOURCE-MIX-V1.0"
 PAST_MODES = {"SELECT_ORIGINAL", "PRESERVE_CORE", "VERIFIED_VARIANT"}
 PAST_KINDS = {"SCHOOL_EXAM", "NATIONAL_MOCK", "KICE_EXAM", "CSAT"}
+# Per-subject profiles (user decision 2026-11-08, quality/ARC_GENERATION_SOURCE_POLICY_V1.0.md section 10).
+PROFILES = {"PAST_70_AI_30", "STRUCTURE_REFERENCE_ONLY"}
+COMPOSITION_MODES = {None, "ORIGINAL_TRIAL"}
 
 
 def targets(count: int) -> tuple[int, int]:
@@ -38,8 +41,8 @@ def item_rows(bundle: dict[str, Any]) -> list[Any]:
 def analyze(bundle: dict[str, Any]) -> dict[str, Any]:
     rows = item_rows(bundle)
     findings = []
-    def fail(code: str, message: str, iid: str | None = None):
-        row = {"severity": "FAIL", "code": code, "message": message}
+    def fail(code: str, message: str, iid: str | None = None, severity: str = "FAIL"):
+        row = {"severity": severity, "code": code, "message": message}
         if iid is not None:
             row["item_id"] = iid
         findings.append(row)
@@ -47,6 +50,21 @@ def analyze(bundle: dict[str, Any]) -> dict[str, Any]:
     meta = bundle.get("source_composition")
     if not isinstance(meta, dict) or meta.get("policy_version") != POLICY_VERSION:
         fail("SOURCE_POLICY_MISSING", f"source_composition.policy_version must be {POLICY_VERSION}")
+    meta_d = meta if isinstance(meta, dict) else {}
+    profile = meta_d.get("profile", "PAST_70_AI_30")
+    comp_mode = meta_d.get("mode")
+    if profile not in PROFILES:
+        fail("SOURCE_PROFILE_INVALID", f"source_composition.profile must be one of {sorted(PROFILES)}")
+        profile = "PAST_70_AI_30"
+    if comp_mode not in COMPOSITION_MODES:
+        fail("SOURCE_COMPOSITION_MODE_INVALID", "source_composition.mode may only be ORIGINAL_TRIAL when present")
+    if comp_mode == "ORIGINAL_TRIAL":
+        for field in ("authorized_by", "shortage_reason"):
+            if not isinstance(meta_d.get(field), str) or not meta_d[field].strip():
+                fail("ORIGINAL_TRIAL_UNAUTHORIZED", f"ORIGINAL_TRIAL requires an explicit source_composition.{field}")
+    if "profile" not in meta_d and str(bundle.get("subject", "")).upper() == "KOR":
+        fail("SOURCE_PROFILE_UNDECLARED", "KOR bundles should declare profile STRUCTURE_REFERENCE_ONLY", severity="WARN")
+    no_past = profile == "STRUCTURE_REFERENCE_ONLY" or comp_mode == "ORIGINAL_TRIAL"
     count = len(rows)
     if not count:
         fail("SOURCE_ITEMS_EMPTY", "Source mix requires at least one item")
@@ -71,6 +89,8 @@ def analyze(bundle: dict[str, Any]) -> dict[str, Any]:
         mode = p.get("mode")
         if mode in PAST_MODES:
             past += 1
+            if no_past:
+                fail("PAST_ITEM_NOT_ALLOWED", "This profile/mode allows only AI_ORIGINAL items (no past-exam items)", iid)
             if p.get("source_kind") not in PAST_KINDS:
                 fail("NOT_ACTUAL_PAST_EXAM", "Publisher exercises, official samples and prior AI items are not actual past exams", iid)
             for field in ("source_id", "source_item_number", "source_locator", "source_answer_ref", "origin_family_id", "core_preserved"):
@@ -93,10 +113,13 @@ def analyze(bundle: dict[str, Any]) -> dict[str, Any]:
                 fail("CREATIVE_PURPOSE_MISSING", "Creative item must record what current-scope task it evaluates", iid)
         else:
             fail("SOURCE_MODE_INVALID", "Use an original/edited/variant past exam or AI_ORIGINAL", iid)
-    expected = targets(count) if count else (0, 0)
+    expected = ((0, count) if no_past else targets(count)) if count else (0, 0)
     if (past, creative) != expected:
         fail("SOURCE_MIX_MISMATCH", f"Expected past/creative {expected[0]}/{expected[1]}, got {past}/{creative}")
-    return {"tool": POLICY_VERSION, "status": "FAIL" if findings else "PASS",
+    failed = any(f["severity"] == "FAIL" for f in findings)
+    return {"tool": POLICY_VERSION, "status": "FAIL" if failed else "PASS",
+            "profile": profile, "composition_mode": comp_mode or "STANDARD",
+            "meets_70_30": (not no_past) and not failed,
             "item_count": count, "past_exam_count": past, "ai_original_count": creative,
             "target_past_exam_count": expected[0], "target_ai_original_count": expected[1],
             "findings": findings, "semantic_source_truth_verified_by_runner": False}
