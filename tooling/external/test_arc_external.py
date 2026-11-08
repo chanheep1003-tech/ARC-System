@@ -99,3 +99,31 @@ class ExternalToolTests(unittest.TestCase):
 
 
 if __name__=='__main__':unittest.main()
+
+class BunSelectionTests(unittest.TestCase):
+    """npm installs both libc builds of bun; only the one that runs on this host may be selected."""
+
+    def make(self, root, name, exit_code):
+        path = Path(root) / '.arc-tools/node/node_modules/@oven' / name / 'bin/bun'
+        path.parent.mkdir(parents=True)
+        path.write_text(f'#!/bin/sh\nexit {exit_code}\n', encoding='utf-8')
+        path.chmod(0o755)
+        return path
+
+    def test_skips_a_build_that_cannot_execute(self):
+        with tempfile.TemporaryDirectory() as d:
+            self.make(d, 'bun-linux-x64-musl', 127)  # musl build on a glibc host fails to start
+            good = self.make(d, 'bun-linux-x64', 0)
+            self.assertEqual(a.bunbin(Path(d)), good)
+
+    def test_prefers_non_musl_when_both_run(self):
+        with tempfile.TemporaryDirectory() as d:
+            self.make(d, 'bun-linux-x64-musl', 0)
+            good = self.make(d, 'bun-linux-x64', 0)
+            self.assertEqual(a.bunbin(Path(d)), good)
+
+    def test_no_runnable_bun_is_an_error(self):
+        with tempfile.TemporaryDirectory() as d:
+            self.make(d, 'bun-linux-x64-musl', 1)
+            with self.assertRaises(RuntimeError):
+                a.bunbin(Path(d))

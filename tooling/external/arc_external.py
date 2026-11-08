@@ -70,11 +70,21 @@ def appbin(name, root=ROOT):
     return runtime(root) / 'node/node_modules/.bin' / (name + '.cmd' if os.name == 'nt' else name)
 
 
+def _bun_runs(path):
+    """True only when this binary can execute on the host (the musl build cannot on glibc and vice versa)."""
+    try:
+        return subprocess.run([str(path), '--version'], capture_output=True, timeout=15).returncode == 0
+    except (OSError, subprocess.SubprocessError):
+        return False
+
+
 def bunbin(root=ROOT):
     base = runtime(root) / 'node/node_modules'
-    binaries = list(base.glob('@oven/bun-*/bin/bun')) + list(base.glob('@oven/bun-*/bin/bun.exe'))
-    if binaries:
-        return binaries[0]
+    candidates = list(base.glob('@oven/bun-*/bin/bun')) + list(base.glob('@oven/bun-*/bin/bun.exe'))
+    # npm installs both libc variants; try the non-musl package first, then keep only a binary that really runs.
+    for path in sorted(candidates, key=lambda c: ('musl' in str(c), str(c))):
+        if path.is_file() and _bun_runs(path):
+            return path
     ordinary = appbin('bun', root)
     if ordinary.exists():
         return ordinary
