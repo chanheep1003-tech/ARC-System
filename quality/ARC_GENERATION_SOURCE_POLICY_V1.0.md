@@ -138,6 +138,9 @@ SOURCE_MIX_PROFILE는 과목마다 하나를 갖는다. 아래 초기값은 사�
 
 source_composition.profile 필드에 위 값을 기록한다. 필드가 없으면 PAST_70_AI_30으로 본다. 국어 번들에 필드가 없으면 SOURCE_PROFILE_UNDECLARED 경고를 남긴다.
 
+### 문제은행 재고 기준 모드 선택 (2026-11-08 상시 사용자 규칙)
+SOC·SCI 는 요청마다 현재 범위의 CONTENT_VERIFIED 은행 재고(B)와 필요 기출 기반 문항 수 ceil(0.7×N)(R)을 비교한다. B ≥ R 이면 사용자가 변형을 요청할 수 있고 위 PAST_70_AI_30 을 적용한다. B < R 이면 ORIGINAL_TRIAL 로 창작 위주로 진행하며 authorized_by="STANDING_USER_RULE_20261108" 이 사용자 허용을 대신한다. 절차는 quality/ARC_N_STAGE_LADDER_SOC_SCI_V1.0.md §4.
+
 ### ORIGINAL_TRIAL (예외 모드)
 PAST_70_AI_30 과목에서 현재 범위의 CONTENT_VERIFIED 기출이 부족하고 사용자가 명시적으로 허용한 경우에만 쓴다.
 - source_composition.mode = ORIGINAL_TRIAL, authorized_by(허용한 사용자 지시), shortage_reason을 모두 기록한다.
