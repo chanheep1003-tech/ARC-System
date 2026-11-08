@@ -1,0 +1,1487 @@
+batch_id: SCI-S2-NEUTRALIZATION-20261108
+product_mode: ARC_N
+subject: SCI
+generator: CLAUDE
+set_label: ARC N°
+course: 통합과학2
+cover_subtitle: 산·염기와 중화 반응 20문항
+school_line: 동북고등학교 1학년 · 2026
+created_at: '2026-11-08T14:00:00+09:00'
+scope: '2026 동북고 1학년 2학기 기말 임시 범위(사용자 지정): 통합과학2 산·염기와 중화 반응'
+request_spec:
+  decided_by: USER
+  stage: S2
+  item_count: 20
+  difficulty_targets:
+    D2: 0.2
+    D3: 0.5
+    D45: 0.3
+source_composition:
+  policy_version: ARC-SOURCE-MIX-V1.0
+  profile: PAST_70_AI_30
+  mode: ORIGINAL_TRIAL
+  authorized_by: STANDING_USER_RULE_20261108
+  shortage_reason: 현재 범위의 CONTENT_VERIFIED 문제은행 B=0 < R=14; 학교 교과서·학습지 미확인
+school_source_status: NOT_READ
+calibration_reference: quality/anchors/SCI_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml (난도·형식 참고만, 문항·수치 미사용)
+items:
+- item_id: SCI-S2-001
+  format: MCQ
+  family: KEY_WORD_FUNCTION
+  coverage: ACID_PROPERTIES
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: 염산(HCl) 수용액에 대한 설명으로 옳은 것은?
+  options:
+  - BTB 용액을 떨어뜨리면 파란색이 된다.
+  - 페놀프탈레인 용액을 붉게 변화시킨다.
+  - 푸른색 리트머스 종이를 붉게 변화시킨다.
+  - 마그네슘 리본을 넣으면 산소 기체가 발생한다.
+  - 수용액에서 수산화 이온(OH⁻)을 내놓는다.
+  answer: 3
+  second_best: 4
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: btb_blue
+    ev:
+    - CONCEPT
+    why: 산성에서 BTB 용액은 노란색이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: pp_red
+    ev:
+    - CONCEPT
+    why: 산성에서 페놀프탈레인 용액은 색이 변하지 않는다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: litmus
+    ev:
+    - CONCEPT
+    why: 산성 수용액은 푸른색 리트머스 종이를 붉게 변화시킨다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: mg_o2
+    ev:
+    - CONCEPT
+    why: 산과 마그네슘이 반응하면 수소 기체가 발생한다.
+  - v: false
+    c: WEAK
+    axis: application
+    claim: oh_out
+    ev:
+    - CONCEPT
+    why: 산은 수소 이온(H⁺)을 내놓는다.
+  reasoning_steps: 1
+  immediate_elimination: 2
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SCI-SCOPE-USER-20261108
+    design_purpose: 'S2 자료 해석·적용: 이온 수 모형과 혼합 부피 자료로 중화 반응을 추론'
+- item_id: SCI-S2-002
+  format: MCQ
+  family: KEY_WORD_FUNCTION
+  coverage: NET_IONS
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: 염산(HCl)과 수산화 나트륨(NaOH) 수용액이 중화 반응하여 물이 생성될 때, 실제로 반응하는 이온(알짜 이온)만을 모두 고른 것은?
+  options:
+  - Na⁺, Cl⁻
+  - H⁺, Cl⁻
+  - Na⁺, OH⁻
+  - H⁺, Na⁺, OH⁻
+  - H⁺, OH⁻
+  answer: 5
+  second_best: 1
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: na_cl
+    ev:
+    - CONCEPT
+    why: Na⁺과 Cl⁻은 반응에 참여하지 않는 구경꾼 이온이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: h_cl
+    ev:
+    - CONCEPT
+    why: Cl⁻은 구경꾼 이온이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: na_oh
+    ev:
+    - CONCEPT
+    why: Na⁺은 구경꾼 이온이다.
+  - v: false
+    c: WEAK
+    axis: application
+    claim: h_na_oh
+    ev:
+    - CONCEPT
+    why: Na⁺은 구경꾼 이온이다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: h_oh
+    ev:
+    - CONCEPT
+    why: 물이 생성되는 반응은 H⁺ + OH⁻ → H₂O 이다.
+  reasoning_steps: 1
+  immediate_elimination: 2
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SCI-SCOPE-USER-20261108
+    design_purpose: 'S2 자료 해석·적용: 이온 수 모형과 혼합 부피 자료로 중화 반응을 추론'
+- item_id: SCI-S2-003
+  format: MCQ
+  family: MULTI_JUDGMENT
+  coverage: NEUTRALIZATION_DAILY
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: 중화 반응을 이용한 사례로 옳은 것만을 <보기>에서 있는 대로 고른 것은?
+  options:
+  - ㄱ
+  - ㄱ, ㄴ
+  - ㄴ
+  - ㄷ
+  - ㄴ, ㄷ
+  answer: 2
+  second_best: 1
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_g
+    ev:
+    - CONCEPT
+    why: ㄴ도 중화 반응의 이용이다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: gn
+    ev:
+    - CONCEPT
+    why: ㄱ(제산제)과 ㄴ(염기성 물질을 바르는 것)은 중화 반응의 이용이다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_n
+    ev:
+    - CONCEPT
+    why: ㄱ도 중화 반응의 이용이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: only_d
+    ev:
+    - CONCEPT
+    why: 산성 토양에는 염기성 물질을 뿌려야 하므로 ㄷ은 틀리다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: nd
+    ev:
+    - CONCEPT
+    why: ㄷ이 틀리다.
+  reasoning_steps: 1
+  immediate_elimination: 2
+  view:
+  - ㄱ. 속쓰림이 있을 때 염기성 물질이 든 제산제를 먹어 위산을 중화한다.
+  - ㄴ. 산성 물질에 쏘인 곳에 염기성 물질이 든 약을 발라 산을 중화한다.
+  - ㄷ. 산성화된 토양에 묽은 염산을 뿌려 토양의 산성을 중화한다.
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SCI-SCOPE-USER-20261108
+    design_purpose: 'S2 자료 해석·적용: 이온 수 모형과 혼합 부피 자료로 중화 반응을 추론'
+- item_id: SCI-S2-004
+  format: MCQ
+  family: SEQUENCE_ORDER
+  coverage: BTB_COLOR_SEQUENCE
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: 묽은 염산(HCl)에 BTB 용액을 떨어뜨린 뒤 NaOH 수용액을 조금씩 넣어 완전히 중화시키고 계속 넣을 때, 용액의 색 변화를 순서대로 옳게 나타낸 것은?
+  options:
+  - 파란색 → 초록색 → 노란색
+  - 노란색 → 파란색 → 초록색
+  - 초록색 → 노란색 → 파란색
+  - 노란색 → 초록색 → 파란색
+  - 붉은색 → 무색 → 파란색
+  answer: 4
+  second_best: 1
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: b_g_y
+    ev:
+    - CONCEPT
+    why: 산과 염기의 색이 반대로 되었다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: y_b_g
+    ev:
+    - CONCEPT
+    why: 중성은 파란색과 노란색 사이의 초록색이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: g_y_b
+    ev:
+    - CONCEPT
+    why: 처음 산성 용액은 노란색이다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: y_g_b
+    ev:
+    - CONCEPT
+    why: 산성은 노란색, 중성은 초록색, 염기성은 파란색이다.
+  - v: false
+    c: WEAK
+    axis: application
+    claim: r_c_b
+    ev:
+    - CONCEPT
+    why: BTB 용액의 색 변화가 아니다.
+  reasoning_steps: 1
+  immediate_elimination: 2
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SCI-SCOPE-USER-20261108
+    design_purpose: 'S2 자료 해석·적용: 이온 수 모형과 혼합 부피 자료로 중화 반응을 추론'
+- item_id: SCI-S2-005
+  format: MCQ
+  family: MULTI_JUDGMENT
+  coverage: MIX_SAME_CONC_LIQUID
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 표는 농도가 같은 HCl 수용액과 NaOH 수용액의 부피를 달리하여 혼합한 용액 (가)~(다)에 대한 자료이다. 이에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은? (단, 혼합 전 수용액의 온도는 모두 같다.)
+  options:
+  - ㄱ, ㄴ
+  - ㄱ
+  - ㄴ
+  - ㄷ
+  - ㄱ, ㄷ
+  answer: 1
+  second_best: 2
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: gn
+    ev:
+    - CONCEPT
+    why: (가)는 산성이라 BTB가 노란색이고, (다)는 염기성이라 BTB가 파란색이다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_g
+    ev:
+    - CONCEPT
+    why: (다)가 염기성이므로 ㄴ도 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_n
+    ev:
+    - CONCEPT
+    why: (가)가 산성이므로 ㄱ도 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: only_d
+    ev:
+    - CONCEPT
+    why: (가)에서 생성된 물이 (다)보다 많아 최고 온도가 (가)에서 더 높다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: gd
+    ev:
+    - CONCEPT
+    why: ㄷ이 틀리다.
+  reasoning_steps: 2
+  immediate_elimination: 1
+  view:
+  - ㄱ. (가)에 BTB 용액을 떨어뜨리면 노란색이 된다.
+  - ㄴ. (다)에 BTB 용액을 떨어뜨리면 파란색이 된다.
+  - ㄷ. 혼합 후 최고 온도는 (가)와 (다)에서 같다.
+  table:
+    header:
+    - 혼합 용액
+    - (가)
+    - (나)
+    - (다)
+    rows:
+    - - HCl 수용액 부피(mL)
+      - '6'
+      - '5'
+      - '3'
+    - - NaOH 수용액 부피(mL)
+      - '4'
+      - '5'
+      - '7'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SCI-SCOPE-USER-20261108
+    design_purpose: 'S2 자료 해석·적용: 이온 수 모형과 혼합 부피 자료로 중화 반응을 추론'
+- item_id: SCI-S2-006
+  format: MCQ
+  family: COMPARISON_MATRIX
+  coverage: WATER_COUNT_COMPARE
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 표는 농도가 같은 HCl 수용액과 NaOH 수용액을 부피를 달리하여 혼합한 용액 (가)~(라)이다. 생성된 물 분자 수가 가장 많은 용액과, (가)와 생성된 물 분자 수가 같은 용액을 옳게 짝지은 것은?
+  options:
+  - (나), (라)
+  - (라), (다)
+  - (나), (다)
+  - (다), (나)
+  - (나), (가)
+  answer: 3
+  second_best: 1
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: nb_d
+    ev:
+    - CONCEPT
+    why: (라)의 물 분자 수는 4로 (가)의 2와 다르다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: d_c
+    ev:
+    - CONCEPT
+    why: 가장 많은 것은 (나)이다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: nb_c
+    ev:
+    - CONCEPT
+    why: 생성된 물 분자 수는 (가)2, (나)5, (다)2, (라)4이므로 가장 많은 것은 (나), (가)와 같은 것은 (다)이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: c_nb
+    ev:
+    - CONCEPT
+    why: 가장 많은 것은 (나)이다.
+  - v: false
+    c: WEAK
+    axis: application
+    claim: nb_a
+    ev:
+    - CONCEPT
+    why: (가) 자신과 비교할 수 없다.
+  reasoning_steps: 2
+  immediate_elimination: 1
+  table:
+    header:
+    - 혼합 용액
+    - (가)
+    - (나)
+    - (다)
+    - (라)
+    rows:
+    - - HCl 수용액 부피(mL)
+      - '2'
+      - '5'
+      - '8'
+      - '6'
+    - - NaOH 수용액 부피(mL)
+      - '8'
+      - '5'
+      - '2'
+      - '4'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SCI-SCOPE-USER-20261108
+    design_purpose: 'S2 자료 해석·적용: 이온 수 모형과 혼합 부피 자료로 중화 반응을 추론'
+- item_id: SCI-S2-007
+  format: MCQ
+  family: MULTI_JUDGMENT
+  coverage: PEAK_TEMPERATURE
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 농도가 같은 HCl 수용액과 NaOH 수용액을 부피의 합이 10 mL가 되도록 표와 같이 혼합하였다. 이에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은? (단, 혼합 전 수용액의 온도는 모두 같다.)
+  options:
+  - ㄱ
+  - ㄱ, ㄴ
+  - ㄴ
+  - ㄷ
+  - ㄴ, ㄷ
+  answer: 2
+  second_best: 1
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_g
+    ev:
+    - CONCEPT
+    why: (나)와 (라)의 물 분자 수가 같으므로 ㄴ도 옳다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: gn
+    ev:
+    - CONCEPT
+    why: 생성된 물 분자 수가 (다)에서 가장 많아 최고 온도가 가장 높고, (나)와 (라)는 물 분자 수가 3으로 같다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_n
+    ev:
+    - CONCEPT
+    why: (다)에서 가장 높으므로 ㄱ도 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: only_d
+    ev:
+    - CONCEPT
+    why: (가)는 염기성이고 (마)는 산성이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: nd
+    ev:
+    - CONCEPT
+    why: ㄷ이 틀리다.
+  reasoning_steps: 2
+  immediate_elimination: 1
+  view:
+  - ㄱ. 혼합 후 최고 온도가 가장 높은 것은 (다)이다.
+  - ㄴ. (나)와 (라)의 혼합 후 최고 온도는 같다.
+  - ㄷ. (가)와 (마)는 모두 염기성이다.
+  table:
+    header:
+    - 혼합 용액
+    - (가)
+    - (나)
+    - (다)
+    - (라)
+    - (마)
+    rows:
+    - - HCl 수용액 부피(mL)
+      - '1'
+      - '3'
+      - '5'
+      - '7'
+      - '9'
+    - - NaOH 수용액 부피(mL)
+      - '9'
+      - '7'
+      - '5'
+      - '3'
+      - '1'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SCI-SCOPE-USER-20261108
+    design_purpose: 'S2 자료 해석·적용: 이온 수 모형과 혼합 부피 자료로 중화 반응을 추론'
+- item_id: SCI-S2-008
+  format: MCQ
+  family: MULTI_JUDGMENT
+  coverage: TOTAL_IONS_COMPARE
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 표는 농도가 같은 HCl 수용액과 NaOH 수용액을 혼합한 용액 (가)~(다)에 대한 자료이다. 혼합 전 각 수용액 1 mL에 들어 있는 양이온과 음이온의 수는 각각 1개씩이라고 할 때, 이에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ
+  - ㄴ
+  - ㄴ, ㄷ
+  - ㄱ, ㄴ, ㄷ
+  answer: 4
+  second_best: 1
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: gn
+    ev:
+    - CONCEPT
+    why: (가)는 (나)보다 전체 이온 수가 많다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: gd
+    ev:
+    - CONCEPT
+    why: ㄱ이 틀리다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: only_n
+    ev:
+    - CONCEPT
+    why: ㄷ도 옳다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: nd
+    ev:
+    - CONCEPT
+    why: 전체 이온 수는 (가)16, (나)12, (다)20이므로 (다)가 가장 많고 (나)는 (가)의 3/4이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: gnd
+    ev:
+    - CONCEPT
+    why: ㄱ이 틀리다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  view:
+  - ㄱ. 전체 이온 수는 (가)가 (나)보다 적다.
+  - ㄴ. 전체 이온 수는 (다)가 가장 많다.
+  - ㄷ. (나)의 전체 이온 수는 (가)의 전체 이온 수의 3/4배이다.
+  table:
+    header:
+    - 혼합 용액
+    - (가)
+    - (나)
+    - (다)
+    rows:
+    - - HCl 수용액 부피(mL)
+      - '4'
+      - '6'
+      - '10'
+    - - NaOH 수용액 부피(mL)
+      - '8'
+      - '6'
+      - '2'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SCI-SCOPE-USER-20261108
+    design_purpose: 'S2 자료 해석·적용: 이온 수 모형과 혼합 부피 자료로 중화 반응을 추론'
+- item_id: SCI-S2-009
+  format: MCQ
+  family: MULTI_JUDGMENT
+  coverage: CATION_MODEL
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 표는 수산화 나트륨(NaOH) 수용액 10 mL에 묽은 질산(HNO₃) 10 mL씩을 차례로 넣었을 때 수용액 (가)~(다)에 들어 있는 양이온의 모형 수를 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?
+  options:
+  - ㄱ, ㄴ
+  - ㄱ
+  - ㄴ, ㄷ
+  - ㄴ
+  - ㄱ, ㄷ
+  answer: 5
+  second_best: 2
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: gn
+    ev:
+    - CONCEPT
+    why: (나)는 중성이므로 ㄴ(염기성)이 틀리다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_g
+    ev:
+    - CONCEPT
+    why: ㄷ도 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: nd
+    ev:
+    - CONCEPT
+    why: ㄴ이 틀리다.
+  - v: false
+    c: WEAK
+    axis: application
+    claim: only_n
+    ev:
+    - CONCEPT
+    why: ㄴ은 틀리다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: gd
+    ev:
+    - CONCEPT
+    why: ■는 H⁺이고, 전체 이온 수는 (나)16, (다)24로 (다)가 (나)의 1.5배이다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  view:
+  - ㄱ. ■는 H⁺이다.
+  - ㄴ. (나)는 염기성이다.
+  - ㄷ. 수용액에 들어 있는 전체 이온 수는 (다)가 (나)의 1.5배이다.
+  table:
+    header:
+    - 수용액
+    - (가)
+    - (나)
+    - (다)
+    rows:
+    - - ● (Na⁺)의 수
+      - '8'
+      - '8'
+      - '8'
+    - - ■의 수
+      - '0'
+      - '0'
+      - '4'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SCI-SCOPE-USER-20261108
+    design_purpose: 'S2 자료 해석·적용: 이온 수 모형과 혼합 부피 자료로 중화 반응을 추론'
+- item_id: SCI-S2-010
+  format: MCQ
+  family: MULTI_JUDGMENT
+  coverage: SPECTATOR_ION_RATIO
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 표는 농도가 같은 HCl 수용액과 NaOH 수용액을 부피를 달리하여 혼합한 용액 A~C에 대한 자료이다. 이에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?
+  options:
+  - ㄱ
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ
+  - ㄴ, ㄷ
+  - ㄷ
+  answer: 2
+  second_best: 3
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_g
+    ev:
+    - CONCEPT
+    why: ㄴ도 옳다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: gn
+    ev:
+    - CONCEPT
+    why: A는 Na⁺ 8, Cl⁻ 2이므로 4배, B는 5와 5로 같다. C는 1/4이다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: gd
+    ev:
+    - CONCEPT
+    why: ㄷ에서 C는 1/4이므로 틀리다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: nd
+    ev:
+    - CONCEPT
+    why: ㄷ이 틀리다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: only_d
+    ev:
+    - CONCEPT
+    why: ㄷ은 틀리다.
+  reasoning_steps: 2
+  immediate_elimination: 1
+  view:
+  - ㄱ. A에서 Na⁺의 수는 Cl⁻의 수의 4배이다.
+  - ㄴ. B에서 Na⁺의 수와 Cl⁻의 수는 같다.
+  - ㄷ. C에서 (Na⁺의 수 / Cl⁻의 수)는 4이다.
+  table:
+    header:
+    - 혼합 용액
+    - A
+    - B
+    - C
+    rows:
+    - - HCl 수용액 부피(mL)
+      - '2'
+      - '5'
+      - '8'
+    - - NaOH 수용액 부피(mL)
+      - '8'
+      - '5'
+      - '2'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SCI-SCOPE-USER-20261108
+    design_purpose: 'S2 자료 해석·적용: 이온 수 모형과 혼합 부피 자료로 중화 반응을 추론'
+- item_id: SCI-S2-011
+  format: MCQ
+  family: MULTI_JUDGMENT
+  coverage: SALT_AFTER_EVAPORATION
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 농도가 같은 HCl 수용액과 NaOH 수용액을 (가) HCl 6 mL + NaOH 6 mL, (나) HCl 4 mL + NaOH 6 mL로 혼합하였다. 두 혼합 용액의 물을 완전히 증발시켜 고체를 얻었을 때, 이에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은? (단, 증발 과정에서 NaOH은 변하지 않는다.)
+  options:
+  - ㄱ
+  - ㄴ
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ
+  - ㄴ, ㄷ
+  answer: 3
+  second_best: 1
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_g
+    ev:
+    - CONCEPT
+    why: (나)에는 NaCl과 NaOH이 모두 남으므로 ㄴ도 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_n
+    ev:
+    - CONCEPT
+    why: (가)에는 NaCl만 남으므로 ㄱ도 옳다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: gn
+    ev:
+    - CONCEPT
+    why: (가)는 완전 중화되어 NaCl만, (나)는 NaOH이 남아 NaCl과 NaOH이 남는다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: gd
+    ev:
+    - CONCEPT
+    why: ㄷ은 생성된 물 분자 수가 (가)가 더 많으므로 틀리다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: nd
+    ev:
+    - CONCEPT
+    why: ㄷ이 틀리다.
+  reasoning_steps: 2
+  immediate_elimination: 1
+  view:
+  - ㄱ. (가)에서는 염화 나트륨(NaCl)만 얻는다.
+  - ㄴ. (나)에서는 염화 나트륨(NaCl)과 수산화 나트륨(NaOH)이 얻어진다.
+  - ㄷ. 생성된 물 분자 수는 (나)가 (가)보다 많다.
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SCI-SCOPE-USER-20261108
+    design_purpose: 'S2 자료 해석·적용: 이온 수 모형과 혼합 부피 자료로 중화 반응을 추론'
+- item_id: SCI-S2-012
+  format: MCQ
+  family: MULTI_JUDGMENT
+  coverage: ELECTROPHORESIS
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 다음은 이온의 이동을 알아보는 실험이다. 유리판 위에 질산 칼륨(KNO₃) 수용액과 BTB 용액을 적셔 초록색이 된 거름종이를 올려놓고, 수용액 ㉠을 적신 실을 가운데에 놓은 뒤 전류를 흘려 주었더니 거름종이가 실에서부터 B극 쪽으로 노랗게 변했다. 이에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?
+  options:
+  - ㄱ, ㄷ
+  - ㄱ
+  - ㄷ
+  - ㄱ, ㄴ
+  - ㄴ, ㄷ
+  answer: 1
+  second_best: 2
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: gd
+    ev:
+    - CONCEPT
+    why: 노랗게 변한 것은 H⁺이 (−)극인 B극 쪽으로 이동했기 때문이고, 이동한 이온은 H⁺이다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_g
+    ev:
+    - CONCEPT
+    why: ㄷ도 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_d
+    ev:
+    - CONCEPT
+    why: ㄱ도 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: gn
+    ev:
+    - CONCEPT
+    why: 수산화 나트륨 수용액을 쓰면 OH⁻이 (+)극으로 이동해 파랗게 변하므로 ㄴ이 틀리다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: nd
+    ev:
+    - CONCEPT
+    why: ㄴ이 틀리다.
+  reasoning_steps: 2
+  immediate_elimination: 1
+  view:
+  - ㄱ. B극은 (−)극이다.
+  - ㄴ. ㉠으로 수산화 나트륨 수용액을 쓰면 같은 결과가 나타난다.
+  - ㄷ. 거름종이에서 노랗게 변한 부분으로 이동한 이온은 H⁺이다.
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SCI-SCOPE-USER-20261108
+    design_purpose: 'S2 자료 해석·적용: 이온 수 모형과 혼합 부피 자료로 중화 반응을 추론'
+- item_id: SCI-S2-013
+  format: MCQ
+  family: COMPARISON_MATRIX
+  coverage: INDICATOR_TABLE
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 표는 용액 A~D에 마그네슘 리본, BTB 용액, 페놀프탈레인 용액을 각각 넣었을 때의 결과이다. 이에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?
+  options:
+  - ㄱ
+  - ㄴ
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ
+  - ㄴ, ㄷ
+  answer: 3
+  second_best: 1
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_g
+    ev:
+    - CONCEPT
+    why: B가 중성이므로 ㄴ도 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_n
+    ev:
+    - CONCEPT
+    why: A와 D가 산성이므로 ㄱ도 옳다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: gn
+    ev:
+    - CONCEPT
+    why: A와 D는 산성이고 B는 중성이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: gd
+    ev:
+    - CONCEPT
+    why: B와 C를 섞어도 중성이 되는 것은 아니며, ㄷ은 B(중성)이므로 중화 반응이 일어나지 않아 틀리다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: nd
+    ev:
+    - CONCEPT
+    why: ㄷ이 틀리다.
+  reasoning_steps: 2
+  immediate_elimination: 1
+  view:
+  - ㄱ. A와 D는 모두 산성이다.
+  - ㄴ. B는 중성이다.
+  - ㄷ. B와 C를 섞으면 중화 반응이 일어난다.
+  table:
+    header:
+    - 용액
+    - 마그네슘 리본
+    - BTB 용액
+    - 페놀프탈레인 용액
+    rows:
+    - - A
+      - 기체 발생
+      - 노란색
+      - 무색
+    - - B
+      - 변화 없음
+      - 초록색
+      - 무색
+    - - C
+      - 변화 없음
+      - 파란색
+      - 붉은색
+    - - D
+      - 기체 발생
+      - 노란색
+      - 무색
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SCI-SCOPE-USER-20261108
+    design_purpose: 'S2 자료 해석·적용: 이온 수 모형과 혼합 부피 자료로 중화 반응을 추론'
+- item_id: SCI-S2-014
+  format: MCQ
+  family: MULTI_JUDGMENT
+  coverage: DIFFERENT_CONC_BASIC
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 농도가 c인 HCl 수용액 10 mL에 농도가 2c인 NaOH 수용액을 (가) 4 mL, (나) 5 mL, (다) 6 mL 넣어 혼합하였다. 이에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?
+  options:
+  - ㄱ
+  - ㄷ
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ
+  - ㄴ, ㄷ
+  answer: 4
+  second_best: 1
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_g
+    ev:
+    - CONCEPT
+    why: ㄷ도 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_d
+    ev:
+    - CONCEPT
+    why: ㄱ도 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: gn
+    ev:
+    - CONCEPT
+    why: (다)는 염기성이라 BTB가 파란색이므로 ㄴ이 틀리다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: gd
+    ev:
+    - CONCEPT
+    why: (가)는 H⁺이 남아 산성이고, (나)와 (다)에서 생성된 물 분자 수는 모두 10으로 같다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: nd
+    ev:
+    - CONCEPT
+    why: ㄴ이 틀리다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  view:
+  - ㄱ. (가)는 산성이다.
+  - ㄴ. (다)에 BTB 용액을 떨어뜨리면 노란색이 된다.
+  - ㄷ. 생성된 물 분자 수는 (나)와 (다)에서 같다.
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SCI-SCOPE-USER-20261108
+    design_purpose: 'S2 자료 해석·적용: 이온 수 모형과 혼합 부피 자료로 중화 반응을 추론'
+- item_id: SCI-S2-015
+  format: MCQ
+  family: MULTI_JUDGMENT
+  coverage: UNKNOWN_CONC_RATIO
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: 표는 HCl 수용액과 NaOH 수용액의 부피를 달리하여 혼합한 용액 (가)~(다)에 대한 자료이다. (가)는 중성이다. 이에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은? (단, 혼합 전 수용액 1 mL에 들어 있는 양이온과 음이온의 수는 각 수용액에서 일정하다.)
+  options:
+  - ㄱ, ㄴ
+  - ㄱ
+  - ㄴ, ㄷ
+  - ㄷ
+  - ㄱ, ㄷ
+  answer: 5
+  second_best: 2
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: gn
+    ev:
+    - CONCEPT
+    why: 생성된 물 분자 수는 (가)~(다)에서 모두 10으로 같다. ㄴ이 틀리다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_g
+    ev:
+    - CONCEPT
+    why: ㄷ도 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: nd
+    ev:
+    - CONCEPT
+    why: ㄴ이 틀리다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: only_d
+    ev:
+    - CONCEPT
+    why: ㄱ도 옳다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: gd
+    ev:
+    - CONCEPT
+    why: (가)가 중성이므로 HCl 농도가 NaOH의 2배이고, 전체 이온 수는 20:30:40 = 2:3:4이다.
+  reasoning_steps: 4
+  immediate_elimination: 1
+  view:
+  - ㄱ. HCl 수용액의 농도는 NaOH 수용액 농도의 2배이다.
+  - ㄴ. 생성된 물 분자 수는 (나)가 (가)보다 많다.
+  - 'ㄷ. 혼합 용액 속 전체 이온 수는 (가) : (나) : (다) = 2 : 3 : 4 이다.'
+  table:
+    header:
+    - 혼합 용액
+    - (가)
+    - (나)
+    - (다)
+    rows:
+    - - HCl 수용액 부피(mL)
+      - '5'
+      - '5'
+      - '10'
+    - - NaOH 수용액 부피(mL)
+      - '10'
+      - '15'
+      - '10'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SCI-SCOPE-USER-20261108
+    design_purpose: 'S2 자료 해석·적용: 이온 수 모형과 혼합 부피 자료로 중화 반응을 추론'
+- item_id: SCI-S2-016
+  format: MCQ
+  family: MULTI_JUDGMENT
+  coverage: UNKNOWN_ION_ID
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: 표는 NaOH 수용액 10 mL에 HCl 수용액의 부피를 달리하여 넣어 만든 혼합 용액 (가)~(다)에 들어 있는 이온 ㉠과 ㉡의 수를 나타낸 것이다. ㉠과 ㉡은 각각 H⁺, Na⁺, Cl⁻, OH⁻ 중 하나이며, Na⁺의 수는 일정하다. 이에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은? (단, 혼합 전 수용액 1 mL에 들어 있는 이온 수는 각 수용액에서 일정하고, 두 수용액의 농도는 같다.)
+  options:
+  - ㄱ, ㄴ
+  - ㄱ
+  - ㄴ, ㄷ
+  - ㄱ, ㄷ
+  - ㄷ
+  answer: 4
+  second_best: 2
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: gn
+    ev:
+    - CONCEPT
+    why: (나)에는 H⁺이 남아 산성이므로 ㄴ이 틀리다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_g
+    ev:
+    - CONCEPT
+    why: ㄷ도 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: nd
+    ev:
+    - CONCEPT
+    why: ㄴ이 틀리다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: gd
+    ev:
+    - CONCEPT
+    why: ㉠은 늘어나는 Cl⁻, ㉡은 줄어드는 OH⁻이고, 생성된 물 분자 수는 (가)5, (다)10으로 (다)가 2배이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: only_d
+    ev:
+    - CONCEPT
+    why: ㄱ도 옳다.
+  reasoning_steps: 4
+  immediate_elimination: 1
+  view:
+  - ㄱ. ㉠은 Cl⁻이다.
+  - ㄴ. (나)는 염기성이다.
+  - ㄷ. 생성된 물 분자 수는 (다)에서가 (가)에서의 2배이다.
+  table:
+    header:
+    - 혼합 용액
+    - (가)
+    - (나)
+    - (다)
+    rows:
+    - - HCl 수용액 부피(mL)
+      - '5'
+      - '15'
+      - '30'
+    - - ㉠의 수
+      - '5'
+      - '15'
+      - '30'
+    - - ㉡의 수
+      - '5'
+      - '0'
+      - '0'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SCI-SCOPE-USER-20261108
+    design_purpose: 'S2 자료 해석·적용: 이온 수 모형과 혼합 부피 자료로 중화 반응을 추론'
+- item_id: SCI-S2-017
+  format: MCQ
+  family: MULTI_JUDGMENT
+  coverage: INDICATOR_PREDICTION
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: 표는 HCl 수용액과 NaOH 수용액의 부피를 달리하여 혼합한 용액 (가)~(라)에 BTB 용액을 떨어뜨린 결과이다. 이에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은? (단, 혼합 전 수용액 1 mL에 들어 있는 양이온과 음이온의 수는 각 수용액에서 일정하다.)
+  options:
+  - ㄱ, ㄴ
+  - ㄱ
+  - ㄴ
+  - ㄱ, ㄷ
+  - ㄴ, ㄷ
+  answer: 1
+  second_best: 3
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: gn
+    ev:
+    - CONCEPT
+    why: (가)가 초록색(중성)이므로 HCl 농도가 NaOH의 2배이다. (나)는 H⁺이 남아 노란색, (다)는 OH⁻이 남아 파란색이다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_g
+    ev:
+    - CONCEPT
+    why: ㄴ도 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_n
+    ev:
+    - CONCEPT
+    why: ㄱ도 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: gd
+    ev:
+    - CONCEPT
+    why: (라)는 H⁺이 남아 노란색이므로 ㄷ은 틀리다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: nd
+    ev:
+    - CONCEPT
+    why: ㄷ이 틀리다.
+  reasoning_steps: 4
+  immediate_elimination: 1
+  view:
+  - ㄱ. (나)는 노란색이다.
+  - ㄴ. (다)는 파란색이다.
+  - ㄷ. (라)는 초록색이다.
+  table:
+    header:
+    - 혼합 용액
+    - (가)
+    - (나)
+    - (다)
+    - (라)
+    rows:
+    - - HCl 수용액 부피(mL)
+      - '3'
+      - '6'
+      - '4'
+      - '5'
+    - - NaOH 수용액 부피(mL)
+      - '6'
+      - '6'
+      - '10'
+      - '8'
+    - - BTB 용액의 색
+      - 초록색
+      - '?'
+      - '?'
+      - '?'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SCI-SCOPE-USER-20261108
+    design_purpose: 'S2 자료 해석·적용: 이온 수 모형과 혼합 부피 자료로 중화 반응을 추론'
+- item_id: SCI-S2-018
+  format: MCQ
+  family: MULTI_JUDGMENT
+  coverage: TEMPERATURE_TO_CONC
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: HCl 수용액과 NaOH 수용액을 부피의 합이 20 mL가 되도록 혼합했을 때의 최고 온도는 표와 같다. 혼합 전 수용액의 온도는 모두 20.0 ℃이고, 최고 온도의 상승 폭은 생성된 물 분자 수에 비례한다. 이에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은? (단, 혼합 전 수용액 1 mL에 들어 있는 양이온과 음이온의 수는 각 수용액에서 일정하다.)
+  options:
+  - ㄱ
+  - ㄴ
+  - ㄱ, ㄷ
+  - ㄴ, ㄷ
+  - ㄱ, ㄴ
+  answer: 5
+  second_best: 2
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_g
+    ev:
+    - CONCEPT
+    why: ㄴ도 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_n
+    ev:
+    - CONCEPT
+    why: ㄱ도 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: gd
+    ev:
+    - CONCEPT
+    why: (12, 8)은 H⁺이 남아 산성이므로 ㄷ은 틀리다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: nd
+    ev:
+    - CONCEPT
+    why: ㄷ이 틀리다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: gn
+    ev:
+    - CONCEPT
+    why: (4 mL, 16 mL)에서 물 분자 6개를 만든 비로 HCl 농도가 NaOH의 1.5배임을 알 수 있고, (8, 12)에서 중성이다.
+  reasoning_steps: 4
+  immediate_elimination: 1
+  view:
+  - ㄱ. HCl 수용액의 농도는 NaOH 수용액 농도의 1.5배이다.
+  - ㄴ. (나)는 중성이다.
+  - ㄷ. (다)는 염기성이다.
+  table:
+    header:
+    - 혼합 용액
+    - (가)
+    - (나)
+    - (다)
+    rows:
+    - - HCl 수용액 부피(mL)
+      - '4'
+      - '8'
+      - '12'
+    - - NaOH 수용액 부피(mL)
+      - '16'
+      - '12'
+      - '8'
+    - - 최고 온도(℃)
+      - '23.0'
+      - '26.0'
+      - '24.0'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SCI-SCOPE-USER-20261108
+    design_purpose: 'S2 자료 해석·적용: 이온 수 모형과 혼합 부피 자료로 중화 반응을 추론'
+- item_id: SCI-S2-019
+  format: MCQ
+  family: MULTI_JUDGMENT
+  coverage: RATIO_TO_CONC
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: 표는 NaOH 수용액 10 mL에 HCl 수용액의 부피를 달리하여 넣은 혼합 용액 (가)~(다)에서 Na⁺의 수와 Cl⁻의 수의 비를 나타낸 것이다. 이에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은? (단, 혼합 전 수용액 1 mL에 들어 있는 양이온과 음이온의 수는 각 수용액에서 일정하다.)
+  options:
+  - ㄱ
+  - ㄱ, ㄴ
+  - ㄴ
+  - ㄴ, ㄷ
+  - ㄷ
+  answer: 2
+  second_best: 3
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_g
+    ev:
+    - CONCEPT
+    why: ㄴ도 옳다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: gn
+    ev:
+    - CONCEPT
+    why: (가)에서 Na⁺과 Cl⁻ 수가 같으므로 중성이고 HCl 농도는 NaOH의 2배이다. (나)와 (다)의 생성된 물 분자 수는 모두 10이다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: only_n
+    ev:
+    - CONCEPT
+    why: ㄱ도 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: nd
+    ev:
+    - CONCEPT
+    why: ㄷ에서 두 수용액의 농도는 같지 않으므로 틀리다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: only_d
+    ev:
+    - CONCEPT
+    why: ㄷ이 틀리다.
+  reasoning_steps: 4
+  immediate_elimination: 1
+  view:
+  - ㄱ. (가)는 중성이다.
+  - ㄴ. 생성된 물 분자 수는 (나)와 (다)에서 같다.
+  - ㄷ. 혼합 전 HCl 수용액과 NaOH 수용액의 농도는 같다.
+  table:
+    header:
+    - 혼합 용액
+    - (가)
+    - (나)
+    - (다)
+    rows:
+    - - HCl 수용액 부피(mL)
+      - '5'
+      - '10'
+      - '20'
+    - - Na⁺의 수 / Cl⁻의 수
+      - '1'
+      - 1/2
+      - 1/4
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SCI-SCOPE-USER-20261108
+    design_purpose: 'S2 자료 해석·적용: 이온 수 모형과 혼합 부피 자료로 중화 반응을 추론'
+- item_id: SCI-S2-020
+  format: MCQ
+  family: CASE_APPLICATION
+  coverage: TABLE_FILL_IN
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: 표는 NaOH 수용액 20 mL에 HCl 수용액을 넣어 만든 혼합 용액 (가)~(다)에 들어 있는 이온의 수를 나타낸 것이다. (나)는 중성이고, 혼합 전 수용액 1 mL에 들어 있는 양이온과 음이온의 수는 각 수용액에서 일정하다. x + y + z는? (단, 두 수용액의 농도는 같다.)
+  options:
+  - '20'
+  - '30'
+  - '40'
+  - '50'
+  - '60'
+  answer: 2
+  second_best: 1
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: n20
+    ev:
+    - CONCEPT
+    why: 세 값을 모두 더하면 30이다.
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: n30
+    ev:
+    - CONCEPT
+    why: (나)가 중성이므로 두 수용액 농도가 같아 (가)에서 Cl⁻ x = 10, OH⁻ y = 10, (다)에서 H⁺ z = 10이다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: n40
+    ev:
+    - CONCEPT
+    why: 세 값을 모두 더하면 30이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: n50
+    ev:
+    - CONCEPT
+    why: 세 값을 모두 더하면 30이다.
+  - v: false
+    c: WEAK
+    axis: application
+    claim: n60
+    ev:
+    - CONCEPT
+    why: 세 값을 모두 더하면 30이다.
+  reasoning_steps: 4
+  immediate_elimination: 1
+  table:
+    header:
+    - 혼합 용액
+    - (가)
+    - (나)
+    - (다)
+    rows:
+    - - HCl 수용액 부피(mL)
+      - '10'
+      - '20'
+      - '30'
+    - - Na⁺의 수
+      - '20'
+      - '20'
+      - '20'
+    - - Cl⁻의 수
+      - x
+      - '20'
+      - '30'
+    - - OH⁻의 수
+      - y
+      - '0'
+      - '0'
+    - - H⁺의 수
+      - '0'
+      - '0'
+      - z
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - SCI-SCOPE-USER-20261108
+    design_purpose: 'S2 자료 해석·적용: 이온 수 모형과 혼합 부피 자료로 중화 반응을 추론'
