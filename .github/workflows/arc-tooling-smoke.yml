@@ -53,6 +53,7 @@ jobs:
           python -m py_compile tooling/pdf_qc/test_preflight_smoke.py
           python -m py_compile tooling/pdf_qc/test_preflight_korean_n.py
           python -m py_compile tooling/pdf_qc/test_arc_n_layout_rules.py
+          python -m py_compile tooling/production/test_soc_sci_no_d1.py
           python -m py_compile tooling/typeset/kor_renderer.py
           python -m py_compile tooling/production/production_pipeline.py
           python -m py_compile tooling/production/test_production_pipeline.py
@@ -137,6 +138,9 @@ jobs:
 
       - name: Run ARC_N layout-rule tests (difficulty strip, slots, B/W logo blocker)
         run: python tooling/pdf_qc/test_arc_n_layout_rules.py
+
+      - name: Run SOC/SCI ARC_N no-D1 gate test
+        run: python tooling/production/test_soc_sci_no_d1.py
 
       - name: Run PDF auto-fix controller smoke
         run: python tooling/pdf_qc/test_autofix_controller.py

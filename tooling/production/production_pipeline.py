@@ -67,6 +67,10 @@ PROFILES = {
     # (min, max) share of items per difficulty; KOR ARC_N subject balance.
     ("KOR", "ARC_N"): {"D1": (0.0, 0.10), "D2": (0.30, 0.40), "D3": (0.30, 0.40), "D4": (0.15, 0.25), "D5": (0.0, 0.05),
                        "D45": (0.15, 0.35), "ADVANCED": (0.20, 0.30)},
+    # User 2026-11-08: no D1 items in SOC/SCI ARC_N (quality/ARC_N_STAGE_LADDER_SOC_SCI_V1.0.md §1-A). Only D1 is bounded here;
+    # the stage-specific D2..D5 shares are stage-dependent and stay provisional in the ladder document.
+    ("SOC", "ARC_N"): {"D1": (0.0, 0.0)},
+    ("SCI", "ARC_N"): {"D1": (0.0, 0.0)},
 }
 
 

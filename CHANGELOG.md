@@ -7,6 +7,7 @@
 - 과학 기말 FINAL 앵커 신설(quality/anchors/SCI_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml): 학교 시험 4회 앙상블(평균 2.53)에 임시 오프셋 +0.2를 적용한 목표 2.73. 매니페스트 arc_final_difficulty_anchor_sci를 교체하고 산화·환원 앵커는 참고용으로 강등. EXAM_CONTEXTS에 과목별 목표 평균(KOR 3.09/SOC 3.07/SCI 2.73) 추가.
 - ARC N° 흑백 로고 등록: Drive 원본(해시 검증) → 휘도 변환으로 ARC_N_LOCKUP_MASTER_BW.png 생성(565×380, 재그리기 없음), 등록부에 해시 기록. N 표지의 BRAND_ASSET_MISSING 차단 해제. Drive 업로드(ID 기록)는 대기.
 - 사회·과학 ARC_N 4단계 사다리 신설(quality/ARC_N_STAGE_LADDER_SOC_SCI_V1.0.md): 사고 동작 기준 S1~S4, 기출/변형/창작 구성은 문제은행 재고(B vs ceil(0.7N))로 결정(상시 사용자 규칙). 수치는 PROVISIONAL.
+- 사회·과학 ARC_N 에서 D1 문항 전면 금지(D2~D5), S1 분포 D2 0.65/D3 0.30/D4+ 0.05 로 조정. production_pipeline PROFILES 에 (SOC|SCI, ARC_N) D1=0 하드 게이트 추가(test_soc_sci_no_d1.py, CI 등록).
 - 알려진 미완: N 레이아웃 코드 강제 없음, 흑백 로고 Drive 업로드, 사다리 코드 게이트 없음(문서 규칙만). 상세는 ops/ARC_DECISIONS_20261108.md.
 
 ## 1.8.47-dev external tools integration candidate — 2026-11-07
