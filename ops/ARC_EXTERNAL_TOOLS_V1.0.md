@@ -88,3 +88,7 @@ python tooling/validate_system.py
 ## 출처와 라이선스
 
 각 도구의 README, 설치 안내, package manifest, LICENSE 및 필요한 AGENTS 문서를 실제 확인했다. 정확한 upstream 경로와 commit은 lock에 있다. MIT: Orkas, Superpowers, Matt Pocock, MarkItDown. Apache-2.0: DeepTutor, Impeccable, claude-mem. AGPL-3.0-or-later: Heretic. 외부 실행 코드를 ARC에 복제하지 않고 별도 로컬 패키지/checkout으로 설치한다. 외부 스킬 문구도 ARC engine에 복제하지 않는다. ARC가 새로 작성한 adapter만 저장하며, 각 설치 checkout은 원본 LICENSE/notice를 유지한다. Node lock은 패키지 출처·integrity를 기록한다.
+
+## 매 작업 자동 연결 (2026-11-08)
+
+`.claude/settings.json`이 `main`의 플러그인 목록(Superpowers, Impeccable, MattPocock, toothlessdev 4종, i-have-adhd, headroom, ruflo-core, ponytail 활성; caveman·claude-mem 비활성)을 가져오고, `UserPromptSubmit` 훅으로 `tooling/external/arc_prompt_hook.py`를 모든 요청에 실행한다. 훅은 요청을 `source/design/memory/tutor/team/model-lab/maintenance`로 분류해 `arc_external.py route` 결과(JSON)만 컨텍스트에 붙인다. 도구를 직접 실행하거나 메모리를 저장하지 않으며 오류 시 아무것도 출력하지 않고 통과한다(요청을 막지 않음). 플러그인이 실제로 로드되는지는 호스트(Claude Code)가 이 설정을 신뢰·적용한 뒤 `/plugin`에서 확인해야 하며, 설정 파일 존재만으로 실행됐다고 보고하지 않는다. claude-mem을 켜면 자동 대화 수집이 생기므로 ARC 데이터 정책상 기본은 비활성이다.

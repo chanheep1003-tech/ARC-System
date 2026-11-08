@@ -127,3 +127,15 @@ class BunSelectionTests(unittest.TestCase):
             self.make(d, 'bun-linux-x64-musl', 1)
             with self.assertRaises(RuntimeError):
                 a.bunbin(Path(d))
+
+
+class PromptHookTests(unittest.TestCase):
+    def test_classify_and_failopen(self):
+        import importlib.util as u, subprocess, sys as _s
+        path = Path(__file__).with_name('arc_prompt_hook.py')
+        spec = u.spec_from_file_location('arc_prompt_hook', path)
+        h = u.module_from_spec(spec); spec.loader.exec_module(h)
+        self.assertEqual(h.classify('기출 PDF 변환'), ['source'])
+        self.assertEqual(h.classify('안녕'), ['maintenance'])
+        r = subprocess.run([_s.executable, str(path)], input='not json', capture_output=True, text=True)
+        self.assertEqual((r.returncode, r.stdout), (0, ''))
