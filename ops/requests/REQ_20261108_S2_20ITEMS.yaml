@@ -1,7 +1,7 @@
 # 요청 기록 (사용자 결정값). 생성 전 request_spec 의 원천. 상태가 BLOCKED 이면 생성하지 않는다.
 request_id: REQ_20261108_S2_20ITEMS
 date: 2026-11-08
-status: KOR_V4_BLIND_REVIEW_REJECTED_DIFFICULTY_GATE_STOPPED_FOR_USER_DECISION
+status: ALL_THREE_SUBJECTS_FAILED_DIFFICULTY_GATE_AWAITING_USER_DECISION
 exam_id: DONGBUK_2026_2_FINAL
 product: ARC_N
 stage: S2
@@ -63,3 +63,10 @@ sci_round2_result: >
   v1(D4 3개)과 v2(D4 2개)의 D4 판정이 같은 문항군에서도 흔들려 난이도 판정에는 평가자 오차가 있다. D4 로 안정적으로 평가된 문항은 15번(미지의 농도비)과 18번(최고 온도→농도비)뿐이었다.
   결함: 5·6·7·10·11번이 같은 '같은 농도 물 분자 수' 기술을 반복, 16·19·20번 유사한 NaOH 고정 설정, 13번 C·D 행 동일, 6번 ⑤ 약한 오답, 12번 ㉠(산)을 노란색으로 추론해야 함.
   결과 파일은 blind_review_v2_REJECTED.yaml 로 보관(채택 안 함). 추가 반복은 비용이 커서 중단하고 사회로 이동. 세 과목 결과를 모아 난이도 판정 방식을 사용자와 정한다.
+soc_round1_result: >
+  SOC v1 독립 풀이(원고만 열람): 정답 20/20 일치, 모두 HIGH 확신, 정답 중복·사실 오류 의심 없음.
+  난이도 실측 D2 15·D3 5·D4 0(비율 .75/.25/.00). 목표(D2 .20·D3 .50·D4 .30, 허용 ±.12)에서 크게 벗어나 불합격.
+  D3 로 평가된 문항: 5, 8, 15, 16, 20. 의도한 D4(15~20번) 중 15·16·20번만 D3로 평가되고 17·18·19번은 D2.
+  결함 보고: 11·12·13번 오답 ㄷ 에 '언제나/어떤 경우에도' 절대 표현(길이·표현 단서, flag c).
+  주의: 풀이 후 Q1·Q16 선지 길이 단서만 수정(정답 번호 불변)했고 풀이는 수정 전 원고(student_manuscript_pre_review.md) 기준.
+  결과 파일은 blind_review_v1_REJECTED.yaml 로 보관. 세 과목 결과를 모아 난이도 판정 방식을 사용자와 정한다.

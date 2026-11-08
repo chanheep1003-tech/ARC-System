@@ -1,0 +1,161 @@
+items:
+- item_id: SOC-S2-001
+  answer: 3
+  first_pass_top3: [3, 4, 1]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "자유주의 정의관 정의 그대로(개인선 실현). 나머지는 공동체주의 서술."
+- item_id: SOC-S2-002
+  answer: 5
+  first_pass_top3: [5, 4, 2]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "공동체와 분리된 독립적 개인은 없다는 것이 공동체주의 인간관. 나머지는 자유주의."
+- item_id: SOC-S2-003
+  answer: 2
+  first_pass_top3: [2, 1, 3]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "(가) 개인선 우선=자유주의, (나) 유대·역할·공동선=공동체주의."
+- item_id: SOC-S2-004
+  answer: 4
+  first_pass_top3: [4, 2, 1]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "(가) 평등한 자유, (나) 차등, (다) 기회균등. 교과서 재인."
+- item_id: SOC-S2-005
+  answer: 1
+  first_pass_top3: [1, 2, 3]
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "A(자유주의 무관), B(공동체주의 책무 계승) 옳음. C는 정의관이 뒤바뀐 서술."
+- item_id: SOC-S2-006
+  answer: 3
+  first_pass_top3: [3, 2, 1]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "ㄱ 둘 다 개인 권리 존중, ㄴ 노직은 재분배 반대. ㄷ 노직은 격차 해소를 요구하지 않음."
+- item_id: SOC-S2-007
+  answer: 2
+  first_pass_top3: [2, 3, 1]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "노직: 정당한 취득·양도면 소유권 인정, 격차 자체는 문제 아님. ㄷ 오답."
+- item_id: SOC-S2-008
+  answer: 4
+  first_pass_top3: [4, 1, 2]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "(가) 차등 부합, (나) 차등 위배, (다) 특정 집단 한정은 기회균등 위배이므로 ㄷ 오답."
+- item_id: SOC-S2-009
+  answer: 5
+  first_pass_top3: [5, 1, 2]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "밀의 타인에게 해를 주지 않는 자기 관련 행위의 자유. (나)는 타인 피해라 ㄴ 오답."
+- item_id: SOC-S2-010
+  answer: 2
+  first_pass_top3: [2, 1, 3]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "ㄱ, ㄴ 매킨타이어 입장. ㄷ은 개인주의적 인간관이 분열의 원인이라는 반대 서술."
+- item_id: SOC-S2-011
+  answer: 3
+  first_pass_top3: [3, 1, 2]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: [c]
+  note: "ㄱ, ㄴ 각 정의관의 전형적 반응. ㄷ은 '어떤 경우에도' 절대 표현이라 오답 단서."
+- item_id: SOC-S2-012
+  answer: 1
+  first_pass_top3: [1, 3, 2]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: [c]
+  note: "ㄱ 님비 정의, ㄴ 공동체주의 책임 분담. ㄷ '어떤 경우에도 인정하지 않는다'는 과도한 단정."
+- item_id: SOC-S2-013
+  answer: 3
+  first_pass_top3: [3, 1, 2]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: [c]
+  note: "ㄱ, ㄴ 권리-의무, 사익-공익 상호 보완. ㄷ '언제나' 절대 표현 오답."
+- item_id: SOC-S2-014
+  answer: 4
+  first_pass_top3: [4, 3, 2]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "㉣ 자아 정체성 서술이 두 정의관에서 뒤바뀜."
+- item_id: SOC-S2-015
+  answer: 5
+  first_pass_top3: [5, 1, 3]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "갑 소유 권리=노직, 을 최소 수혜자 최대 이익=롤스, 병 물려받은 공동체 책임=매킨타이어."
+- item_id: SOC-S2-016
+  answer: 4
+  first_pass_top3: [4, 3, 1]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "(가) 노직식 소유권, (다) 롤스식 무지의 베일·차등. (다)는 공동체주의 아님."
+- item_id: SOC-S2-017
+  answer: 1
+  first_pass_top3: [1, 3, 2]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "A, C 옳음. B는 자유주의 관점을 공동체주의에 귀속, D는 정반대."
+- item_id: SOC-S2-018
+  answer: 5
+  first_pass_top3: [5, 2, 3]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "㉤ 최소 수혜자 처지 악화는 차등의 원칙 위배인데 부합이라 했으므로 오류."
+- item_id: SOC-S2-019
+  answer: 2
+  first_pass_top3: [2, 1, 3]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "ㄱ(가) 보상으로 절충, ㄴ(나) 공익만 강조해 권리 침해 가능. ㄷ(다)는 환경 무시라 오답."
+- item_id: SOC-S2-020
+  answer: 1
+  first_pass_top3: [1, 2, 3]
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "ㄱ 노직은 (가)(나) 모두 소유 인정, ㄷ 롤스 (가) 위배 (나) 부합. ㄴ은 노직 입장과 어긋남."
