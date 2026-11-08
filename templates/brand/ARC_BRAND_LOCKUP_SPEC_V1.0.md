@@ -25,6 +25,7 @@ Rules:
 Canonical cover lockup assets:
 - ARC CORE: Drive file `ARC_CORE_LOCKUP_MASTER.png` / ID `1J2ojEjyXKCJlRs21SW6gAekaCZvEJ4vE`
 - ARC N°: Drive file `ARC_N_LOCKUP_MASTER.png` / ID `12389-txbX5JzYuyj1cjbw7MUO7--f9JE`
+- ARC N° B/W (ARC_N cover): `ARC_N_LOCKUP_MASTER_BW.png`, user-directed luminance derivative of the N° master; see the asset registry for method and hash
 - ARC FINAL: Drive file `ARC_FINAL_LOCKUP_MASTER.png` / ID `1q9WyXajXA6V13yOYhnPqBBdLkEUwcbcB`
 
 These files are the canonical full-cover lockups.

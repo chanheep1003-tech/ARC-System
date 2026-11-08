@@ -143,9 +143,15 @@ class GatewayProfile(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             self.assertEqual(gw.brand_release_blockers(self.make_root(d), self.MANIFEST, "ARC_FINAL"), [])
 
-    def test_repo_registry_row_is_pending_not_a_hash(self):
-        b = gw.brand_release_blockers(ROOT, yaml_manifest(), "ARC_N")
-        self.assertTrue(b and b[0].startswith("BRAND_ASSET_MISSING"))
+    def test_repo_registers_bw_logo_and_hash_matches(self):
+        self.assertEqual(gw.brand_release_blockers(ROOT, yaml_manifest(), "ARC_N"), [])
+
+    def test_repo_bw_logo_is_grayscale_and_same_size_as_color_master(self):
+        from PIL import Image
+        bw = Image.open(ROOT / "templates/brand/assets" / gw.BW_LOGO).convert("RGBA")
+        color = Image.open(ROOT / "templates/brand/assets/ARC_N_LOCKUP_MASTER.png")
+        self.assertEqual(bw.size, color.size)
+        self.assertTrue(all(r == g == b for r, g, b, _ in bw.getdata()))
 
 
 def yaml_manifest():
