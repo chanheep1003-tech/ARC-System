@@ -1,0 +1,27 @@
+# 요청 기록 (사용자 결정값). 생성 전 request_spec 의 원천. 상태가 BLOCKED 이면 생성하지 않는다.
+request_id: REQ_20261108_S2_20ITEMS
+date: 2026-11-08
+status: BLOCKED_SCOPE_UNCONFIRMED
+exam_id: DONGBUK_2026_2_FINAL
+product: ARC_N
+stage: S2
+subjects: [KOR, SOC, SCI]
+decided_by: USER
+common_spec:            # 모든 과목 공통, 사용자가 2026-11-08 에 정함
+  item_count: 20
+  difficulty_targets: {D2: 0.0, D3: 0.70, D45: 0.30}   # D1 금지, 이번에는 D2 도 제외(사용자). 20문항 = D3 14 + D4/D5 6
+  tolerance: 0.12
+per_subject:
+  KOR:
+    source_composition: {profile: PAST_70_AI_30, mode: ORIGINAL_TRIAL, authorized_by: "USER_20261108_REQ_S2_20ITEMS", shortage_reason: "사용자가 이번 요청을 창작 위주(테스트)로 지정; 기말 범위가 확정되지 않아 현재 범위의 CONTENT_VERIFIED 기출이 없음"}
+  SOC:
+    source_composition: UNDETERMINED   # 문제은행 재고 B vs ceil(0.7*20)=14 비교 필요. 범위 미확정이라 B 를 셀 수 없음
+  SCI:
+    source_composition: UNDETERMINED
+blocker:
+  gate: EXAM_SCOPE / SCOPE_LOCK
+  reason: >
+    기말 범위가 PROVISIONAL_REMAINDER(2학기 전체 − 실제 중간범위)이며 EXAM_CONTEXTS 의 KOR·SOC·SCI unit_ids / source_ids 가 비어 있다.
+    저장소에는 중간 범위 스냅샷(KOR 공통국어2 1단원+「탄궁가」, SOC 시험범위 전체, SCI 산화·환원)과 과거 학년도 기말 구조만 있고
+    이번 학기 기말에 해당하는 단원·학습지·원문 확인 기록(CONTENT_REVIEWED)이 없다. Drive 의 교과서는 수백 MB 스캔 PDF 라 커넥터로 읽을 수 없다.
+  needed_from_user: "과목별 기말에 포함할 단원/쪽수(또는 학습지·교과서 쪽 사진/텍스트). 학교 공지가 없으면 임시 단원 목록을 직접 확정."
