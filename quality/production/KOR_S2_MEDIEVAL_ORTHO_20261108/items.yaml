@@ -182,8 +182,8 @@ items:
   balance: CORE_EXAM_POINT
   stem: (가)에서 알 수 있는 중세 국어의 특징으로 적절하지 않은 것은?
   options:
-  - 글자 왼쪽에 찍은 점으로 성조를 표시하였다.
-  - 어간과 어미가 결합할 때에는 모음 조화가 지켜지지 않았다.
+  - 어간과 어미가 결합할 때에도 모음 조화가 잘 지켜졌다.
+  - 글자 오른쪽에 점을 찍어 성조를 표시하였다.
   - 음절의 첫머리에 둘 이상의 자음이 오는 경우가 있었다.
   - 주격 조사가 '이', 'ㅣ', '∅'의 형태로 나타났다.
   - 이어 적기가 일반적이다가 후에 끊어 적기와 혼용되기도 하였다.
@@ -193,17 +193,17 @@ items:
   - v: true
     c: WEAK
     axis: application
-    claim: bangjeom
+    claim: harmony_stem
     ev:
-    - W1.P2S1
-    why: 방점이 쓰였다는 내용과 일치한다.
+    - W1.P6S1
+    why: 어간과 어미의 결합에서도 모음 조화가 지켜졌다는 내용과 일치한다.
   - v: false
     c: CORRECT
     axis: application
-    claim: harmony_not_stem
+    claim: bangjeom_right
     ev:
-    - W1.P6S1
-    why: 어간과 어미가 결합할 때에도 모음 조화가 잘 지켜졌다고 하였다.
+    - W1.P2S1
+    why: 방점은 글자 왼쪽에 찍었다고 하였다.
   - v: true
     c: MEDIUM
     axis: application
@@ -308,10 +308,10 @@ items:
   balance: ADVANCED_DISCRIMINATION
   stem: (나)의 '중세 국어의 주격 조사'를 바탕으로 <보기>의 ㉠~㉣을 설명한 내용으로 가장 적절한 것은?
   options:
-  - ㉢은 앞말이 'ㅣ' 모음으로 끝나므로 주격 조사가 영형태로 실현되었다.
+  - ㉢은 앞말이 반모음 'ㅣ'로 끝나므로 주격 조사가 영형태로 실현되었다.
   - ㉠은 앞말이 'ㅣ' 이외의 모음으로 끝나므로 주격 조사 'ㅣ'가 쓰였다.
   - ㉡은 앞말이 자음으로 끝나므로 주격 조사 '이'가 쓰였다.
-  - ㉣은 앞말이 'ㅣ' 모음으로 끝나므로 주격 조사가 영형태로 실현되었다.
+  - ㉣은 앞말이 'ㅣ' 모음이나 반모음 'ㅣ'로 끝나므로 주격 조사가 영형태로 실현되었다.
   - ㉠~㉣에 쓰인 주격 조사는 모두 같은 형태이다.
   answer: 1
   second_best: 2
@@ -322,7 +322,7 @@ items:
     claim: c_zero
     ev:
     - W2.P4S1
-    why: '''불휘''는 ''ㅣ'' 모음으로 끝나 주격 조사가 영형태로 실현된다.'
+    why: '''불휘''는 반모음 ''ㅣ''로 끝나 주격 조사가 영형태로 실현된다.'
   - v: false
     c: STRONG
     axis: application
@@ -498,7 +498,7 @@ items:
   reasoning_steps: 2
   immediate_elimination: 1
   view:
-  - '학생 A: 중세 국어 ''내''가 현대 국어 ''내가''로 바뀐 것은, ''ㅣ'' 이외의 모음 뒤에서 쓰이던 ''ㅣ''가 ''가''로 바뀐 것이야.'
+  - '학생 A: 중세 국어 ''내''는 ''나''에 주격 조사 ''ㅣ''가 결합한 것이고, 현대 국어에서는 같은 자리에 주격 조사 ''가''가 쓰여.'
   - '학생 B: 중세 국어는 이어 적기를 했으니까 ''믈''에 ''이''가 붙으면 ''므리''처럼 적었을 거야.'
   - '학생 C: ''불휘''가 ''뿌리가''로 바뀐 것은, 중세 국어의 주격 조사 ''이''가 현대 국어에서 ''가''로 바뀐 거야.'
   provenance:
@@ -513,7 +513,7 @@ items:
   coverage: ORTHOGRAPHY_ERROR_CORRECTION
   difficulty: D3
   balance: CORE_EXAM_POINT
-  stem: 윗글을 바탕으로 <보기>의 (가)~(마)에서 잘못 쓴 단어를 고친 것으로 적절하지 않은 것은?
+  stem: 윗글을 바탕으로 <보기>의 (가)~(마)의 단어를 바꾸어 적은 것으로 적절하지 않은 것은?
   options:
   - '운률 → 운율: ''ㄴ'' 받침 뒤에 오는 ''률''은 ''율''로 적는다.'
   - '듬북 → 듬뿍: ''ㅁ'' 받침 뒤에서 나는 된소리는 소리 나는 대로 적는다.'
@@ -708,7 +708,7 @@ items:
   coverage: RULE_CLAUSE_MATCHING
   difficulty: D3
   balance: CORE_EXAM_POINT
-  stem: 윗글의 제25항에서 <보기>의 단어가 각각 해당하는 조항을 ㉠~㉢에서 바르게 찾은 것은?
+  stem: 윗글의 제25항에서 1.은 ㉠, [붙임]은 ㉡, 2.는 ㉢으로 표시되어 있다. <보기>의 단어가 각각 해당하는 조항을 바르게 찾은 것은?
   options:
   - (가) ㉠, (나) ㉢, (다) ㉡
   - (가) ㉡, (나) ㉠, (다) ㉢
@@ -844,10 +844,10 @@ items:
   options:
   - 1개
   - 2개
-  - 4개
   - 3개
+  - 4개
   - 5개
-  answer: 4
+  answer: 3
   second_best: 2
   judgments:
   - v: false
@@ -864,14 +864,6 @@ items:
     ev:
     - P1S5
     why: 수+자(한자어 예외)를 빠뜨린 경우이다.
-  - v: false
-    c: STRONG
-    axis: application
-    claim: four
-    ev:
-    - P3S2
-    - P1S5
-    why: 솜+이불이나 치+과를 포함한 경우이다.
   - v: true
     c: CORRECT
     axis: application
@@ -881,6 +873,14 @@ items:
     - P1S4
     - P1S5
     why: 나무+잎, 시내+물, 수(數)+자(字) 세 개가 사이시옷을 적는다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: four
+    ev:
+    - P3S2
+    - P1S5
+    why: 솜+이불이나 치+과를 포함한 경우이다.
   - v: false
     c: MEDIUM
     axis: application
@@ -909,10 +909,10 @@ items:
   options:
   - ㉢
   - ㉣, ㉤
-  - ㉢, ㉣
   - ㉠, ㉢, ㉣
+  - ㉢, ㉣
   - ㉡, ㉢, ㉣
-  answer: 3
+  answer: 4
   second_best: 1
   judgments:
   - v: false
@@ -929,6 +929,13 @@ items:
     ev:
     - P1S3
     why: ㉤ '아랫니'는 'ㄴ' 소리가 덧나 사이시옷을 적는다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: acd
+    ev:
+    - P1S3
+    why: ㉠ '나룻배'는 된소리로 나므로 사이시옷을 적는다.
   - v: true
     c: CORRECT
     axis: application
@@ -940,13 +947,6 @@ items:
   - v: false
     c: MEDIUM
     axis: application
-    claim: acd
-    ev:
-    - P1S3
-    why: ㉠ '나룻배'는 된소리로 나므로 사이시옷을 적는다.
-  - v: false
-    c: MEDIUM
-    axis: application
     claim: bcd
     ev:
     - P1S4
@@ -954,7 +954,8 @@ items:
   reasoning_steps: 3
   immediate_elimination: 2
   view:
-  - ㉠ 나루 + 배  ㉡ 전세(傳貰) + 집  ㉢ 인사(人事) + 말  ㉣ 머리 + 말  ㉤ 아래 + 이  ㉥ 기차 + 길
+  - ㉠ 나루 + 배 [나루빼]  ㉡ 전세(傳貰) + 집 [전세찝]  ㉢ 인사(人事) + 말 [인사말]
+  - ㉣ 머리 + 말 [머리말]  ㉤ 아래 + 이 [아랜니]  ㉥ 기차 + 길 [기차낄]
   provenance:
     mode: AI_ORIGINAL
     school_scope_refs:
@@ -1088,61 +1089,62 @@ items:
 - item_id: KOR-S2-017
   set: S4
   format: MCQ
-  family: CASE_APPLICATION
+  family: MULTI_JUDGMENT
   coverage: SPACING_COMBINED
   difficulty: D4
   balance: ADVANCED_DISCRIMINATION
-  stem: 윗글을 바탕으로 다음 문장의 띄어쓰기가 모두 올바른 것을 고른 것은?
+  stem: 윗글을 바탕으로 <보기>의 문장에서 띄어쓰기를 고쳐야 할 부분만을 있는 대로 고른 것은?
   options:
-  - 나는 집을 떠난 지 한 달 만에 돌아와 시키는 대로 짐을 정리할 수밖에 없었다.
-  - 나는 집을 떠난지 한 달 만에 돌아와 시키는 대로 짐을 정리할 수밖에 없었다.
-  - 나는 집을 떠난 지 한 달만에 돌아와 시키는 대로 짐을 정리할 수밖에 없었다.
-  - 나는 집을 떠난 지 한 달 만에 돌아와 시키는대로 짐을 정리할 수밖에 없었다.
-  - 나는 집을 떠난 지 한 달 만에 돌아와 시키는 대로 짐을 정리할 수 밖에 없었다.
+  - ㉠, ㉢, ㉣
+  - ㉠, ㉢
+  - ㉠, ㉡, ㉢
+  - ㉢, ㉣
+  - ㉡, ㉣
   answer: 1
   second_best: 2
   judgments:
   - v: true
     c: CORRECT
     axis: application
-    claim: s_ok
+    claim: ace
     ev:
     - P8S1
-    - P3S1
     - P6S4
     - P7S2
-    - P4S2
-    why: 지·만·대로·수밖에·한 달 모두 규정에 맞다.
+    - P3S1
+    why: '''떠난 지'', ''시키는 대로'', ''수밖에'' 형태로 고쳐야 하며 ''한 달 만에''는 올바르다.'
   - v: false
     c: STRONG
     axis: application
-    claim: s_ji
+    claim: ac
     ev:
-    - P8S1
-    why: '''떠난 지''로 띄어 써야 한다.'
+    - P7S2
+    why: ㉣ '수 밖에'도 '수밖에'로 고쳐야 한다.
   - v: false
     c: STRONG
     axis: application
-    claim: s_man
+    claim: abc
     ev:
     - P3S1
-    why: '''한 달 만에''의 ''만''은 의존 명사라 띄어 쓴다.'
+    why: ㉡ '한 달 만에'는 이미 올바르다.
   - v: false
     c: MEDIUM
     axis: application
-    claim: s_daero
+    claim: ce
     ev:
-    - P6S4
-    why: '''시키는 대로''로 띄어 써야 한다.'
+    - P8S1
+    why: ㉠ '떠난지'도 고쳐야 한다.
   - v: false
     c: MEDIUM
     axis: application
-    claim: s_subakke
+    claim: be
     ev:
-    - P7S2
-    why: '''수밖에''는 붙여 쓴다.'
+    - P3S1
+    why: ㉡은 올바르고 ㉠, ㉢도 고쳐야 한다.
   reasoning_steps: 3
   immediate_elimination: 1
+  view:
+  - 나는 집을 ㉠떠난지 ㉡한 달 만에 돌아와 ㉢시키는대로 짐을 정리할 ㉣수 밖에 없었다.
   provenance:
     mode: AI_ORIGINAL
     school_scope_refs:

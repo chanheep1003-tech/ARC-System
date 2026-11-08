@@ -1,7 +1,7 @@
 # 요청 기록 (사용자 결정값). 생성 전 request_spec 의 원천. 상태가 BLOCKED 이면 생성하지 않는다.
 request_id: REQ_20261108_S2_20ITEMS
 date: 2026-11-08
-status: KOR_V2_BLIND_REVIEW_REJECTED_DIFFICULTY_GATE
+status: KOR_V3_DEFECTS_FIXED_AWAITING_USER_DIFFICULTY_DECISION
 exam_id: DONGBUK_2026_2_FINAL
 product: ARC_N
 stage: S2
@@ -31,7 +31,9 @@ kor_progress: >
   13번 선지 순서(1,2,4,3,5개), 17번 단일 수정 변형이라 형태만으로 정답 노출, 3번 부정문 단서, 5번 '불휘'가 반모음 ㅟ 로 끝나 'ㅣ 모음' 표현이 느슨함,
   문항 간 중복(주격 조사 표 1·2·5·7번, 맞춤법 규정 8·9·10·12번, 띄어쓰기 16~20번).
   판단: 교과서 규정을 그대로 적용하는 문항은 독립 풀이자가 D3 이하로 평가하는 경향이 있어, 현재 범위에서 D4 를 만들려면 문항 설계 자체를 바꿔야 한다.
-  blind_review.yaml(채택본), PDF 생성, 사용자 내용 승인은 하지 않았다. SCI·SOC 는 시작 전.
+  v3: 사용자가 '결함만 고치고 난이도 기준 재협의'를 선택(2026-11-08)해 위 결함 중 7·14·11·8·13·17·3·5번을 고쳤다(중복은 남아 있음).
+  새 난이도 분포는 사용자가 아직 정하지 않았으므로 번들의 request_spec 은 기존 값(D2 0·D3 0.7·D45 0.3) 그대로이며 v3 는 그 기준을 만족하지 못할 가능성이 크다.
+  v3 독립 풀이는 새 분포 확정 후에 1회 실시한다. blind_review.yaml(채택본), PDF 생성, 사용자 내용 승인은 하지 않았다. SCI·SOC 는 시작 전.
 remaining_before_release:
   - SCI 는 학교 자료가 없어 SCHOOL_SOURCE_PRIORITY 증빙 불가(ORIGINAL_TRIAL, 통합과학 수준 개념만 사용)
   - KOR 중세국어 쪽수(106-115 추정)와 교과서 전 쪽 확인
