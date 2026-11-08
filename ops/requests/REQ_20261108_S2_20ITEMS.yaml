@@ -1,7 +1,7 @@
 # 요청 기록 (사용자 결정값). 생성 전 request_spec 의 원천. 상태가 BLOCKED 이면 생성하지 않는다.
 request_id: REQ_20261108_S2_20ITEMS
 date: 2026-11-08
-status: SOC_V3_STILL_FAILED_D4_SHARE_USER_DECISION_ON_TARGET_OR_SCOPE
+status: EXPERIMENT_CLOSED_BY_USER_ALL_DRAFTS_REJECTED_SYSTEM_REVISION_PENDING
 exam_id: DONGBUK_2026_2_FINAL
 product: ARC_N
 stage: S2
@@ -83,3 +83,6 @@ soc_round3_result: >
   눈금 확인용 실제 동북고 기출 2문항: 정의관 원전 귀속 판별(기출 6번) → D3, 청소년 노동권 응답표 계산(기출 17번) → D4(노동법 지식 필요, 범위 밖 플래그 d). 즉 풀이자는 4.2점급 정의관 문항을 D3로 보므로 우리 D3 와 같은 선이고,
   실제 D4 로 평가된 기출은 단원 밖 지식이 섞인 응답표였다. 한 소단원(Ⅱ-2)만으로는 D4 30% 가 비현실적일 수 있다는 근거.
   결과 파일은 blind_review_v3_REJECTED.yaml 로 보관. 기준 문항 원문은 저장소에 넣지 않았다(학교 저작물).
+experiment_closed: >
+  2026-11-08 사용자 지시로 S2 20문항 실험을 여기서 종료한다("시스템 자체를 수정해야 될 것 같다"). 국어 v4·과학 v2·사회 v3 는 모두 난이도 게이트 불합격 상태로 보관(채택·출시 아님).
+  다음은 출제/난이도 측정 시스템 수정이며, 수정 범위는 사용자 확인 후 진행한다.
