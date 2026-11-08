@@ -1,0 +1,177 @@
+items:
+- item_id: SOC-S2-001
+  answer: 3
+  first_pass_top3: [3, 5, 4]
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "공동체주의는 선택한 목적만으로 정체성이 형성된다고 보지 않으므로 ③이 옳지 않음"
+- item_id: SOC-S2-002
+  answer: 5
+  first_pass_top3: [5, 1, 3]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "롤스의 정의의 2원칙(기회균등+차등) 서술이 ⑤"
+- item_id: SOC-S2-003
+  answer: 2
+  first_pass_top3: [2, 3, 1]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "노직은 정당한 취득·양도의 소유를 동의 없이 환수하면 권리 침해로 봄"
+- item_id: SOC-S2-004
+  answer: 4
+  first_pass_top3: [4, 3, 1]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "(가) 노직, (나) 매킨타이어, (다) 롤스"
+- item_id: SOC-S2-005
+  answer: 1
+  first_pass_top3: [1, 4, 2]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "ㄱ,ㄴ 옳음; ㄷ(공리주의적 입장)과 ㄹ(노직은 격차 자체를 부정의로 보지 않음)은 틀림"
+- item_id: SOC-S2-006
+  answer: 3
+  first_pass_top3: [3, 1, 5]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "ㄱ 옳음, ㄴ 공동체주의는 선택만으로 도덕이 시작된다고 보지 않음, ㄷ 을은 차등원칙 아님, ㄹ 옳음"
+- item_id: SOC-S2-007
+  answer: 2
+  first_pass_top3: [2, 1, 3]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "물려받은 유산·빚 강조는 매킨타이어식 서사적 정체성; 과거 잘못에 대한 응답 책임이 부합"
+- item_id: SOC-S2-008
+  answer: 4
+  first_pass_top3: [4, 1, 5]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "노직은 정당한 양도 소유는 소유자 권리, 매킨타이어는 구성원 책임 고려"
+- item_id: SOC-S2-009
+  answer: 5
+  first_pass_top3: [5, 3, 4]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "⑤는 순전히 선택이라는 자유주의적 주장으로 공동체주의와 어긋남"
+- item_id: SOC-S2-010
+  answer: 2
+  first_pass_top3: [2, 3, 1]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "A 갑만=ㄱ(차등원칙), B 공통=ㄴ(기본권 존중), C 을만=ㄷ(과정 중시)"
+- item_id: SOC-S2-011
+  answer: 3
+  first_pass_top3: [3, 1, 2]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "A,B 적절; C는 주민 의견 전부 배제라 조화와 거리가 멈"
+- item_id: SOC-S2-012
+  answer: 1
+  first_pass_top3: [1, 5, 3]
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "최소 수혜자 소득 기준: 라(155) 최고. ㄱ,ㄴ 옳고 ㄷ(나 150 > 다 140) 틀림"
+- item_id: SOC-S2-013
+  answer: 3
+  first_pass_top3: [3, 1, 2]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "ㄱ,ㄴ,ㄹ 옳음, ㄷ은 밀의 해악 원칙에 반함"
+- item_id: SOC-S2-014
+  answer: 4
+  first_pass_top3: [4, 3, 1]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "노직의 소유권리론; 정당한 취득·양도라면 불평등 자체는 부당하지 않음"
+- item_id: SOC-S2-015
+  answer: 5
+  first_pass_top3: [5, 2, 4]
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "A 둘 다 예=ㄷ, B 갑만 예=ㄴ, C 을만 예=ㄱ"
+- item_id: SOC-S2-016
+  answer: 4
+  first_pass_top3: [4, 3, 1]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "정답 (가)을만 (나)갑만 (다)둘다아니요 (라)둘다예. A=6, B=9, C=8. ㄷ은 같은 3개라 거짓, ㄹ은 2점 차"
+- item_id: SOC-S2-017
+  answer: 1
+  first_pass_top3: [1, 3, 2]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "노직이 롤스에게: 권리 침해(ㄱ)와 과정 중시 간과(ㄷ). ㄴ은 롤스 입장, ㄹ은 공동체주의"
+- item_id: SOC-S2-018
+  answer: 5
+  first_pass_top3: [5, 3, 2]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "(나) 노직 부당/롤스 정당, (라) 노직 정당/롤스 부당 -> 서로 다름; (가) 둘 다 정당, (다) 둘 다 부당"
+- item_id: SOC-S2-019
+  answer: 2
+  first_pass_top3: [2, 5, 4]
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "㉡은 노직의 입장이며 롤스는 분배 결과를 따짐"
+- item_id: SOC-S2-020
+  answer: 1
+  first_pass_top3: [1, 2, 3]
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "병(매킨타이어)만 개인이 공동체와 분리되지 않는다고 봄; ②는 을도 권리 존중, ③④⑤ 틀림"
+- item_id: SOC-S2-021
+  answer: 4
+  first_pass_top3: [4, 3, 1]
+  second_best: 3
+  difficulty: D3
+  confidence: MEDIUM
+  flags: [b]
+  note: "자유주의적 관점 문맥에서는 자아가 역할·지위로부터 분리될 수 있다고 해야 하므로 ④가 옳지 않음; 제시문 구조가 다소 모호"
+- item_id: SOC-S2-022
+  answer: 2
+  first_pass_top3: [2, 3, 4]
+  second_best: 3
+  difficulty: D4
+  confidence: MEDIUM
+  flags: [d]
+  note: "정답 X,X,O,O -> 을 10점 전부 정답(4개), 병 6점(3개), 갑 4점; 취직인허증은 만 15세 미만 대상이라는 노동법 지식 필요(단원 범위 밖)"
