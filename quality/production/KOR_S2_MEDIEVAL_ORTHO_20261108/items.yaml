@@ -13,8 +13,8 @@ request_spec:
   stage: S2
   item_count: 20
   difficulty_targets:
-    D2: 0.0
-    D3: 0.7
+    D2: 0.2
+    D3: 0.5
     D45: 0.3
 source_composition:
   policy_version: ARC-SOURCE-MIX-V1.0
@@ -114,60 +114,87 @@ items:
 - item_id: KOR-S2-002
   set: S1
   format: MCQ
-  family: CASE_APPLICATION
-  coverage: ESSENTIAL_CONCEPT_APPLICATION
-  difficulty: D3
-  balance: CORE_EXAM_POINT
-  stem: (가), (나)를 바탕으로 <보기>의 ㉠~㉣ 중 '이어 적기'가 나타나면서 주격 조사 '이'가 쓰인 것만을 있는 대로 고른 것은?
+  family: COMPARISON_MATRIX
+  coverage: MEDIEVAL_TABLE_CONSISTENCY
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: (가), (나)를 바탕으로 <보기>의 표에서 ㉠~㉤ 중 분석이 옳지 않은 것은?
   options:
-  - ㉢, ㉣
-  - ㉠, ㉢
-  - ㉡, ㉣
-  - ㉠, ㉡, ㉢
-  - ㉠, ㉡
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
   answer: 5
   second_best: 2
   judgments:
-  - v: false
-    c: STRONG
-    axis: application
-    claim: cd
-    ev:
-    - W2.P4S1
-    why: ㉢은 'ㅣ', ㉣은 영형태가 쓰였다.
-  - v: false
-    c: STRONG
-    axis: application
-    claim: ac
-    ev:
-    - W2.P4S1
-    why: ㉢은 주격 조사 'ㅣ'가 쓰인 예이다.
-  - v: false
-    c: MEDIUM
-    axis: application
-    claim: bd
-    ev:
-    - W2.P4S1
-    why: ㉣은 영형태가 쓰인 예이다.
-  - v: false
-    c: MEDIUM
-    axis: application
-    claim: abc
-    ev:
-    - W2.P4S1
-    why: ㉢은 주격 조사 'ㅣ'이다.
   - v: true
-    c: CORRECT
+    c: MEDIUM
     axis: application
-    claim: ab
+    claim: row_㉠
     ev:
     - W1.P5S1
     - W2.P4S1
-    why: ㉠(놈+이)과 ㉡(믈+이)만 자음으로 끝난 앞말에 '이'가 이어 적힌다.
-  reasoning_steps: 2
-  immediate_elimination: 1
-  view:
-  - ㉠ 노미 (놈+이)  ㉡ 므리 (믈+이)  ㉢ 내 (나+ㅣ)  ㉣ 불휘 (불휘+∅)
+    why: 이어 적기와 주격 '이'에 대한 설명이 모두 맞다.
+  - v: true
+    c: STRONG
+    axis: application
+    claim: row_㉡
+    ev:
+    - W2.P4S1
+    - W2.P6S2
+    why: '''나''는 ''ㅣ'' 이외의 모음으로 끝나 ''ㅣ''가 쓰였다는 설명이 맞다.'
+  - v: true
+    c: STRONG
+    axis: application
+    claim: row_㉢
+    ev:
+    - W2.P4S1
+    why: '''불휘''는 반모음 ''ㅣ''로 끝나 영형태가 쓰였다는 설명이 맞다.'
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: row_㉣
+    ev:
+    - W2.P1S1
+    why: '''펴디→펴지''는 구개음화라는 설명이 맞다.'
+  - v: false
+    c: CORRECT
+    axis: application
+    claim: row_㉤
+    ev:
+    - W2.P2S1
+    - W2.P3S1
+    why: '''스믈→스물''은 원순 모음화이지 두음 법칙이 아니다.'
+  reasoning_steps: 3
+  immediate_elimination: 2
+  table:
+    header:
+    - 구분
+    - 중세 국어 → 현대 국어
+    - 분석
+    - 설명
+    rows:
+    - - ㉠
+      - 노미 → 놈이
+      - 놈 + 이
+      - 이어 적기가 끊어 적기로 바뀌었고, 앞말이 자음으로 끝나 주격 조사 '이'가 쓰였다.
+    - - ㉡
+      - 내 → 내가
+      - 나 + ㅣ
+      - 앞말이 'ㅣ' 이외의 모음으로 끝나 주격 조사 'ㅣ'가 쓰였고, 현대 국어에서는 '가'가 쓰인다.
+    - - ㉢
+      - 불휘 → 뿌리가
+      - 불휘 + ∅
+      - 앞말이 반모음 'ㅣ'로 끝나 주격 조사가 영형태로 실현되었다.
+    - - ㉣
+      - 펴디 → 펴지
+      - 펴 + 디
+      - '''ㅣ'' 모음에 선행하는 ''ㄷ''이 ''ㅈ''으로 바뀌는 구개음화가 반영되었다.'
+    - - ㉤
+      - 스믈 → 스물
+      - 스믈
+      - 모음 'ㅣ' 앞에서 'ㄴ'이 탈락하는 두음 법칙이 반영되었다.
   provenance:
     mode: AI_ORIGINAL
     school_scope_refs:
@@ -305,7 +332,7 @@ items:
   family: CASE_APPLICATION
   coverage: NOMINATIVE_PARTICLE_APPLICATION
   difficulty: D3
-  balance: ADVANCED_DISCRIMINATION
+  balance: CORE_EXAM_POINT
   stem: (나)의 '중세 국어의 주격 조사'를 바탕으로 <보기>의 ㉠~㉣을 설명한 내용으로 가장 적절한 것은?
   options:
   - ㉢은 앞말이 반모음 'ㅣ'로 끝나므로 주격 조사가 영형태로 실현되었다.
@@ -639,63 +666,94 @@ items:
 - item_id: KOR-S2-010
   set: S2
   format: MCQ
-  family: MULTI_JUDGMENT
-  coverage: DUEUM_RULE_APPLICATION
+  family: COMPARISON_MATRIX
+  coverage: DUEUM_RULE_TABLE
   difficulty: D4
   balance: ADVANCED_DISCRIMINATION
-  stem: 윗글의 제11항과 관련 설명에 따라 <보기>의 ㉠~㉥ 중 표기가 올바른 것만을 있는 대로 고른 것은?
+  stem: 윗글의 제11항과 관련 설명에 따라 <보기>의 표에서 ㉠~㉤ 중 판정이 옳지 않은 것은?
   options:
-  - ㉡, ㉢
-  - ㉡, ㉢, ㉤
-  - ㉠, ㉡, ㉤
-  - ㉡, ㉣, ㉥
-  - ㉢, ㉤, ㉥
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
   answer: 2
-  second_best: 1
+  second_best: 3
   judgments:
-  - v: false
-    c: STRONG
-    axis: application
-    claim: bc
-    ev:
-    - P5S3
-    why: ㉤ '행렬'도 바르다.
   - v: true
+    c: MEDIUM
+    axis: application
+    claim: row_㉠
+    ev:
+    - P6S1
+    - P5S2
+    why: 단어 첫머리의 '력'을 '역'으로 적은 것이 맞다.
+  - v: false
     c: CORRECT
     axis: application
-    claim: bce
+    claim: row_㉡
     ev:
-    - P5S2
     - P5S3
     - P6S5
-    why: 개량(비첫머리 본음), 진열(ㄴ 받침 뒤 열), 행렬(ㅇ 받침 뒤 렬)이 바르다.
-  - v: false
+    why: 모음 뒤의 '률'은 '율'로 적어야 하므로 '비율'이 맞다.
+  - v: true
     c: STRONG
     axis: application
-    claim: abe
+    claim: row_㉢
     ev:
-    - P5S2
-    - P6S1
-    why: ㉠ '력사'는 단어 첫머리라 '역사'가 바르다.
-  - v: false
-    c: MEDIUM
+    - P5S3
+    - P6S5
+    why: '''ㄴ'' 받침 뒤의 ''률''은 ''율''로 적으므로 ''환율''이 맞다.'
+  - v: true
+    c: STRONG
     axis: application
-    claim: bdf
+    claim: row_㉣
     ev:
     - P5S4
-    - P6S5
-    why: '''성공율'', ''환률''은 틀렸다.'
-  - v: false
+    why: '''ㅇ'' 받침 뒤에서는 ''률''로 적으므로 ''성공률''이 맞다.'
+  - v: true
     c: MEDIUM
     axis: application
-    claim: cef
+    claim: row_㉤
     ev:
-    - P6S5
-    why: ㉥ '환률'은 'ㄴ' 받침 뒤라 '환율'이 바르다.
+    - P5S2
+    - P6S3
+    why: 첫머리 이외에서는 '량'을 본음대로 적으므로 '개량'이 맞다.
   reasoning_steps: 3
-  immediate_elimination: 1
-  view:
-  - ㉠ 력사  ㉡ 개량  ㉢ 진열  ㉣ 성공율  ㉤ 행렬  ㉥ 환률
+  immediate_elimination: 2
+  table:
+    header:
+    - 구분
+    - 표기
+    - 단어 첫머리
+    - 앞 음절의 받침
+    - 판정
+    rows:
+    - - ㉠
+      - 역사
+      - 첫머리임
+      - 해당 없음
+      - 두음 법칙에 따라 '이'로 적은 올바른 표기이다.
+    - - ㉡
+      - 비률
+      - 첫머리 아님
+      - 없음(모음)
+      - '''률''을 본음대로 적은 올바른 표기이다.'
+    - - ㉢
+      - 환율
+      - 첫머리 아님
+      - ㄴ
+      - '''ㄴ'' 받침 뒤라 ''율''로 적은 올바른 표기이다.'
+    - - ㉣
+      - 성공률
+      - 첫머리 아님
+      - ㅇ
+      - '''ㄴ''이 아닌 받침 뒤라 ''률''로 적은 올바른 표기이다.'
+    - - ㉤
+      - 개량
+      - 첫머리 아님
+      - 없음(모음)
+      - 단어 첫머리가 아니므로 본음대로 적은 올바른 표기이다.
   provenance:
     mode: AI_ORIGINAL
     school_scope_refs:
@@ -770,8 +828,8 @@ items:
   format: MCQ
   family: MULTI_JUDGMENT
   coverage: ORTHOGRAPHY_COMBINED
-  difficulty: D4
-  balance: ADVANCED_DISCRIMINATION
+  difficulty: D3
+  balance: CORE_EXAM_POINT
   stem: 윗글을 바탕으로 <보기>의 ㉠~㉥ 중 표기가 모두 올바른 문장만을 있는 대로 고른 것은?
   options:
   - ㉠, ㉢, ㉤
@@ -902,60 +960,89 @@ items:
   set: S3
   format: MCQ
   family: COMPARISON_MATRIX
-  coverage: SAISIOT_CONDITION_ANALYSIS
+  coverage: SAISIOT_TABLE_CONSISTENCY
   difficulty: D4
   balance: ADVANCED_DISCRIMINATION
-  stem: 윗글의 제30항에 따라 <보기>의 ㉠~㉥ 중 사이시옷을 받치어 적지 않는 것만을 있는 대로 고른 것은?
+  stem: 윗글의 제30항에 따라 <보기>의 표에서 ㉠~㉤ 중 표기가 옳지 않은 것은?
   options:
+  - ㉠
+  - ㉡
   - ㉢
-  - ㉣, ㉤
-  - ㉠, ㉢, ㉣
-  - ㉢, ㉣
-  - ㉡, ㉢, ㉣
+  - ㉣
+  - ㉤
   answer: 4
-  second_best: 1
+  second_best: 3
   judgments:
-  - v: false
-    c: STRONG
-    axis: application
-    claim: only_c
-    ev:
-    - P1S1
-    why: ㉣ '머리말'도 사이시옷을 적지 않는다.
-  - v: false
-    c: STRONG
-    axis: application
-    claim: de
-    ev:
-    - P1S3
-    why: ㉤ '아랫니'는 'ㄴ' 소리가 덧나 사이시옷을 적는다.
-  - v: false
-    c: MEDIUM
-    axis: application
-    claim: acd
-    ev:
-    - P1S3
-    why: ㉠ '나룻배'는 된소리로 나므로 사이시옷을 적는다.
   - v: true
-    c: CORRECT
-    axis: application
-    claim: cd
-    ev:
-    - P1S1
-    - P1S3
-    why: '''인사말''과 ''머리말''은 된소리나 ''ㄴ'' 소리가 덧나지 않아 사이시옷을 적지 않는다.'
-  - v: false
     c: MEDIUM
     axis: application
-    claim: bcd
+    claim: row_㉠
+    ev:
+    - P1S3
+    why: 순우리말 합성어로 앞말이 모음으로 끝나고 된소리가 나므로 '나룻배'가 맞다.
+  - v: true
+    c: STRONG
+    axis: application
+    claim: row_㉡
     ev:
     - P1S4
-    why: ㉡ '전셋집'은 된소리로 나므로 사이시옷을 적는다.
+    why: 고유어와 한자어로 된 합성어로 앞말이 모음으로 끝나고 된소리가 나므로 '전셋집'이 맞다.
+  - v: true
+    c: STRONG
+    axis: application
+    claim: row_㉢
+    ev:
+    - P3S2
+    why: 앞말에 받침이 있어 'ㄴ' 소리가 덧나도 사이시옷을 적지 않으므로 '솜이불'이 맞다.
+  - v: false
+    c: CORRECT
+    axis: application
+    claim: row_㉣
+    ev:
+    - P1S5
+    why: '''초점''은 예외로 정한 한자어가 아니므로 사이시옷을 적지 않는다.'
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: row_㉤
+    ev:
+    - P1S5
+    why: '''숫자''는 두 음절 한자어 예외라 사이시옷을 적는다.'
   reasoning_steps: 3
   immediate_elimination: 2
-  view:
-  - ㉠ 나루 + 배 [나루빼]  ㉡ 전세(傳貰) + 집 [전세찝]  ㉢ 인사(人事) + 말 [인사말]
-  - ㉣ 머리 + 말 [머리말]  ㉤ 아래 + 이 [아랜니]  ㉥ 기차 + 길 [기차낄]
+  table:
+    header:
+    - 구분
+    - 구성
+    - 어종
+    - 발음
+    - 표기
+    rows:
+    - - ㉠
+      - 나루 + 배
+      - 고유어 + 고유어
+      - '[나루빼]'
+      - 나룻배
+    - - ㉡
+      - 전세(傳貰) + 집
+      - 한자어 + 고유어
+      - '[전세찝]'
+      - 전셋집
+    - - ㉢
+      - 솜 + 이불
+      - 고유어 + 고유어
+      - '[솜니불]'
+      - 솜이불
+    - - ㉣
+      - 초(焦) + 점(點)
+      - 한자어 + 한자어
+      - '[초쩜]'
+      - 촛점
+    - - ㉤
+      - 수(數) + 자(字)
+      - 한자어 + 한자어
+      - '[수짜]'
+      - 숫자
   provenance:
     mode: AI_ORIGINAL
     school_scope_refs:
@@ -966,7 +1053,7 @@ items:
   format: MCQ
   family: STUDENT_RESPONSE_EVALUATION
   coverage: SAISIOT_RULE_APPLICATION
-  difficulty: D3
+  difficulty: D2
   balance: CORE_EXAM_POINT
   stem: 윗글을 바탕으로 <보기>의 학생 A~C의 판단 중 적절한 것만을 고른 것은?
   options:
@@ -1030,7 +1117,7 @@ items:
   format: MCQ
   family: SINGLE_BEST_STATEMENT
   coverage: SPACING_SENTENCE_JUDGMENT
-  difficulty: D3
+  difficulty: D2
   balance: CORE_EXAM_POINT
   stem: 윗글을 바탕으로 띄어쓰기가 모두 올바른 문장은?
   options:
@@ -1089,62 +1176,93 @@ items:
 - item_id: KOR-S2-017
   set: S4
   format: MCQ
-  family: MULTI_JUDGMENT
-  coverage: SPACING_COMBINED
+  family: COMPARISON_MATRIX
+  coverage: SPACING_TABLE_CONSISTENCY
   difficulty: D4
   balance: ADVANCED_DISCRIMINATION
-  stem: 윗글을 바탕으로 <보기>의 문장에서 띄어쓰기를 고쳐야 할 부분만을 있는 대로 고른 것은?
+  stem: 윗글을 바탕으로 <보기>의 표에서 ㉠~㉤ 중 판단이 옳지 않은 것은?
   options:
-  - ㉠, ㉢, ㉣
-  - ㉠, ㉢
-  - ㉠, ㉡, ㉢
-  - ㉢, ㉣
-  - ㉡, ㉣
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
   answer: 1
-  second_best: 2
+  second_best: 4
   judgments:
-  - v: true
+  - v: false
     c: CORRECT
     axis: application
-    claim: ace
+    claim: row_㉠
     ev:
-    - P8S1
+    - P6S1
+    - P6S2
+    - P5S1
+    why: 체언 '셋' 뒤의 '뿐'은 조사이므로 붙여 써야 하는데 의존 명사로 보고 띄어 쓴다고 했다.
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: row_㉡
+    ev:
     - P6S4
-    - P7S2
-    - P3S1
-    why: '''떠난 지'', ''시키는 대로'', ''수밖에'' 형태로 고쳐야 하며 ''한 달 만에''는 올바르다.'
-  - v: false
+    why: 어미 '-는' 뒤의 '대로'는 의존 명사이므로 띄어 쓴다.
+  - v: true
     c: STRONG
     axis: application
-    claim: ac
+    claim: row_㉢
     ev:
-    - P7S2
-    why: ㉣ '수 밖에'도 '수밖에'로 고쳐야 한다.
-  - v: false
+    - P6S3
+    why: 체언 뒤의 '대로'는 조사이므로 붙여 쓴다.
+  - v: true
     c: STRONG
     axis: application
-    claim: abc
+    claim: row_㉣
     ev:
-    - P3S1
-    why: ㉡ '한 달 만에'는 이미 올바르다.
-  - v: false
+    - P6S2
+    - P4S1
+    why: 어미 '-을' 뒤의 '뿐'은 의존 명사이므로 띄어 쓴다.
+  - v: true
     c: MEDIUM
     axis: application
-    claim: ce
+    claim: row_㉤
     ev:
-    - P8S1
-    why: ㉠ '떠난지'도 고쳐야 한다.
-  - v: false
-    c: MEDIUM
-    axis: application
-    claim: be
-    ev:
-    - P3S1
-    why: ㉡은 올바르고 ㉠, ㉢도 고쳐야 한다.
+    - P7S2
+    why: '''수''는 의존 명사, ''밖에''는 조사라 ''수밖에''로 붙여 쓴다.'
   reasoning_steps: 3
-  immediate_elimination: 1
-  view:
-  - 나는 집을 ㉠떠난지 ㉡한 달 만에 돌아와 ㉢시키는대로 짐을 정리할 ㉣수 밖에 없었다.
+  immediate_elimination: 2
+  table:
+    header:
+    - 구분
+    - 문장
+    - '[ ] 안의 말'
+    - 품사
+    - 띄어쓰기
+    rows:
+    - - ㉠
+      - 우리 셋[뿐]이다.
+      - 뿐
+      - 의존 명사
+      - 앞말과 띄어 쓴다.
+    - - ㉡
+      - 시키는 [대로] 하겠다.
+      - 대로
+      - 의존 명사
+      - 앞말과 띄어 쓴다.
+    - - ㉢
+      - 약속[대로] 마쳤다.
+      - 대로
+      - 조사
+      - 앞말에 붙여 쓴다.
+    - - ㉣
+      - 웃었을 [뿐] 말이 없었다.
+      - 뿐
+      - 의존 명사
+      - 앞말과 띄어 쓴다.
+    - - ㉤
+      - 할 [수밖에] 없다.
+      - 수밖에
+      - '''수''는 의존 명사, ''밖에''는 조사'
+      - '''수밖에''로 붙여 쓴다.'
   provenance:
     mode: AI_ORIGINAL
     school_scope_refs:
@@ -1155,7 +1273,7 @@ items:
   format: MCQ
   family: CASE_APPLICATION
   coverage: SPACING_JI_SI
-  difficulty: D3
+  difficulty: D2
   balance: CORE_EXAM_POINT
   stem: 윗글을 바탕으로 <보기>의 ㉠~㉣에서 [ ] 안의 말을 앞말과 띄어 써야 하는 것만을 있는 대로 고른 것은?
   options:
@@ -1216,64 +1334,91 @@ items:
 - item_id: KOR-S2-019
   set: S4
   format: MCQ
-  family: STUDENT_RESPONSE_EVALUATION
-  coverage: SPACING_STUDENT_JUDGMENT
-  difficulty: D3
-  balance: CORE_EXAM_POINT
-  stem: 윗글을 바탕으로 <보기>의 학생 A~D의 판단 중 적절한 것만을 고른 것은?
+  family: COMPARISON_MATRIX
+  coverage: SPACING_JI_SI_MAN_TABLE
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: 윗글을 바탕으로 <보기>의 표에서 ㉠~㉤ 중 띄어쓰기에 대한 판단이 옳지 않은 것은?
   options:
-  - A
-  - A, C
-  - C
-  - A, D
-  - B, C, D
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
   answer: 2
-  second_best: 1
+  second_best: 3
   judgments:
-  - v: false
-    c: STRONG
-    axis: application
-    claim: only_a
-    ev:
-    - P7S2
-    why: C의 판단도 적절하다.
   - v: true
+    c: MEDIUM
+    axis: application
+    claim: row_㉠
+    ev:
+    - P8S1
+    why: 때로부터의 동안을 뜻하는 '지'는 의존 명사라 띄어 쓴다.
+  - v: false
     c: CORRECT
     axis: application
-    claim: ac
-    ev:
-    - P3S2
-    - P7S2
-    why: A의 '공연장만'(조사)과 C의 '수밖에'가 윗글과 일치한다.
-  - v: false
-    c: STRONG
-    axis: application
-    claim: only_c
-    ev:
-    - P3S2
-    why: A의 판단도 적절하다.
-  - v: false
-    c: MEDIUM
-    axis: application
-    claim: ad
-    ev:
-    - P8S1
-    why: D는 '지'를 어미로 잘못 판단했다.
-  - v: false
-    c: MEDIUM
-    axis: application
-    claim: bcd
+    claim: row_㉡
     ev:
     - P3S1
+    - P3S2
+    why: '''삼십 분 만에''의 ''만''은 앞말이 가리키는 동안을 뜻하는 의존 명사라 띄어 쓴다.'
+  - v: true
+    c: STRONG
+    axis: application
+    claim: row_㉢
+    ev:
     - P8S1
-    why: B와 D가 부적절하다.
-  reasoning_steps: 2
-  immediate_elimination: 1
-  view:
-  - '학생 A: ''공연장만''의 ''만''은 체언 뒤에서 한정의 뜻을 나타내는 조사이니까 붙여 써야 해.'
-  - '학생 B: ''삼십 분 만에''의 ''만''은 조사이니까 ''삼십 분만에''처럼 붙여 써야 해.'
-  - '학생 C: ''할 수밖에 없다''에서 ''수''는 의존 명사, ''밖에''는 조사라서 ''수밖에''로 적어야 해.'
-  - '학생 D: ''집을 떠난 지 삼 년''의 ''지''는 어미의 일부니까 ''떠난지''로 붙여 써야 해.'
+    why: 어미의 일부인 '지'는 앞말에 붙여 쓴다.
+  - v: true
+    c: STRONG
+    axis: application
+    claim: row_㉣
+    ev:
+    - P8S4
+    why: 경우를 뜻하는 '시'는 의존 명사라 띄어 쓴다.
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: row_㉤
+    ev:
+    - P8S4
+    why: 접미사 '-시'는 앞말에 붙여 쓴다.
+  reasoning_steps: 3
+  immediate_elimination: 2
+  table:
+    header:
+    - 구분
+    - 문장
+    - '[ ] 안의 말'
+    - 판단 근거
+    - 띄어쓰기
+    rows:
+    - - ㉠
+      - 집을 떠난 [지] 삼 년이 되었다.
+      - 지
+      - 때로부터 지금까지의 동안을 뜻하는 의존 명사
+      - 앞말과 띄어 쓴다.
+    - - ㉡
+      - 삼십 분 [만]에 도착했다.
+      - 만
+      - 체언 뒤에서 한정의 뜻을 나타내는 조사
+      - 앞말에 붙여 쓴다.
+    - - ㉢
+      - 얼마나 아름다운[지] 모른다.
+      - 지
+      - 어미 '-ㄴ지'의 일부
+      - 앞말에 붙여 쓴다.
+    - - ㉣
+      - 신청자 초과 [시] 예매가 마감된다.
+      - 시
+      - 일이 일어날 때나 경우를 뜻하는 의존 명사
+      - 앞말과 띄어 쓴다.
+    - - ㉤
+      - 문해력을 중요[시]한다.
+      - 시
+      - '''그렇게 여김''의 뜻을 더하는 접미사'
+      - 앞말에 붙여 쓴다.
   provenance:
     mode: AI_ORIGINAL
     school_scope_refs:
@@ -1284,7 +1429,7 @@ items:
   format: MCQ
   family: CASE_APPLICATION
   coverage: SPACING_UNIT_NOUN
-  difficulty: D3
+  difficulty: D2
   balance: CORE_EXAM_POINT
   stem: 윗글을 바탕으로 <보기>의 ㉠~㉣ 중 띄어쓰기가 올바른 것만을 있는 대로 고른 것은?
   options:

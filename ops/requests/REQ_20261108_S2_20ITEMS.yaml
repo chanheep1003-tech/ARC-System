@@ -1,7 +1,7 @@
 # 요청 기록 (사용자 결정값). 생성 전 request_spec 의 원천. 상태가 BLOCKED 이면 생성하지 않는다.
 request_id: REQ_20261108_S2_20ITEMS
 date: 2026-11-08
-status: KOR_V3_DEFECTS_FIXED_AWAITING_USER_DIFFICULTY_DECISION
+status: KOR_V4_BLIND_REVIEW_IN_PROGRESS
 exam_id: DONGBUK_2026_2_FINAL
 product: ARC_N
 stage: S2
@@ -9,7 +9,7 @@ subjects: [KOR, SOC, SCI]
 decided_by: USER
 common_spec:            # 모든 과목 공통, 사용자가 2026-11-08 에 정함
   item_count: 20
-  difficulty_targets: {D2: 0.0, D3: 0.70, D45: 0.30}   # D1 금지, 이번에는 D2 도 제외(사용자). 20문항 = D3 14 + D4/D5 6
+  difficulty_targets: {D2: 0.20, D3: 0.50, D45: 0.30}   # 사용자 재지정 2026-11-08(국어 결과 후): D2 20 / D3 50 / D4 30; 이전 값은 D2 0 / D3 70 / D45 30   # D1 금지, 이번에는 D2 도 제외(사용자). 20문항 = D3 14 + D4/D5 6
   tolerance: 0.12
 per_subject:
   KOR:
@@ -32,6 +32,9 @@ kor_progress: >
   문항 간 중복(주격 조사 표 1·2·5·7번, 맞춤법 규정 8·9·10·12번, 띄어쓰기 16~20번).
   판단: 교과서 규정을 그대로 적용하는 문항은 독립 풀이자가 D3 이하로 평가하는 경향이 있어, 현재 범위에서 D4 를 만들려면 문항 설계 자체를 바꿔야 한다.
   v3: 사용자가 '결함만 고치고 난이도 기준 재협의'를 선택(2026-11-08)해 위 결함 중 7·14·11·8·13·17·3·5번을 고쳤다(중복은 남아 있음).
+  [갱신] 사용자가 새 분포를 D2 20·D3 50·D4 30 으로 정했다. v4 는 이 분포에 맞춰 문항을 재배치했다(D2 6·D3 9·D4 5):
+  독립 풀이가 D2·D3 로 평가한 문항군은 그 수준으로 표시하고, D4 는 표의 각 행을 규정에 대조해 어긋난 행을 찾는 문항 5개를 새로 설계했다.
+  v4 독립 풀이 결과는 아직 확인하지 않았다. (아래 두 줄은 v3 시점 기록)
   새 난이도 분포는 사용자가 아직 정하지 않았으므로 번들의 request_spec 은 기존 값(D2 0·D3 0.7·D45 0.3) 그대로이며 v3 는 그 기준을 만족하지 못할 가능성이 크다.
   v3 독립 풀이는 새 분포 확정 후에 1회 실시한다. blind_review.yaml(채택본), PDF 생성, 사용자 내용 승인은 하지 않았다. SCI·SOC 는 시작 전.
 remaining_before_release:
