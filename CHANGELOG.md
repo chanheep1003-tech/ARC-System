@@ -10,6 +10,7 @@
 - 사회·과학 ARC_N 에서 D1 문항 전면 금지(D2~D5), S1 분포 D2 0.65/D3 0.30/D4+ 0.05 로 조정. production_pipeline PROFILES 에 (SOC|SCI, ARC_N) D1=0 하드 게이트 추가(test_n_no_d1_and_stages.py, CI 등록).
 - 국어를 사회·과학과 같은 4단계(S1~S4)로 통일: 사다리 문서를 quality/ARC_N_STAGE_LADDER_V1.1.md(KOR·SOC·SCI 공통)로 개정, 국어 D1 금지(기존 10% 허용 폐지), 국어 V5·V6 단계 제거(옛 V1~V6 문서·AGENTS·RUNBOOK·TEAM 에 대체 표기, 장르별 출처·검수 규칙은 유효). production_pipeline: KOR D1=0, 번들 stage(S1~S4) 선언 시 단계별 분포 WARN 검사(수치 PROVISIONAL), 테스트 test_n_no_d1_and_stages.py.
 - 요청별 사용자 결정(D-20): 단계·세트 문항 수·난이도 분포(ARC_N)·국어 기출/창작 구성에 기본값을 두지 않고 비어 있으면 사용자에게 묻도록 변경. production_pipeline.request_spec_findings(REQUEST_SPEC_MISSING/NOT_USER_DECIDED/ITEM_COUNT_*/STAGE_INVALID/DIFFICULTY_*)와 사용자 분포 일치 검사(REQUEST_DIFFICULTY_*_OFF) 추가, 고정 STAGE_SHARES 제거, KOR SOURCE_PROFILE_UNDECLARED 를 WARN→FAIL. 국어 V5 는 ARC_FINAL 로 통일.
+- 기말 임시 범위 등록(사용자 지시 2026-11-08): KOR 공통국어2 3단원(중세 국어+한글 맞춤법), SOC 천재 통합사회2 II-2 자유주의와 공동체주의 정의관(pp.44-49; 소단원 선택은 교과서 확인 후 임시 판단), SCI 산·염기와 중화 반응(학교 자료 미확인). EXAM_CONTEXTS 세 과목 CONFIRMED_UNITS_ONLY, 근거는 quality/source/FINAL_SCOPE_REGISTRATION_20261108.yaml. 요청 기록 ops/requests/REQ_20261108_S2_20ITEMS.yaml 상태 갱신. exam gate 테스트가 REQUEST_SPEC·KOR 소스 프로필 규칙을 반영하도록 수정.
 - 알려진 미완: N 레이아웃 코드 강제 없음, 흑백 로고 Drive 업로드, 사다리 코드 게이트 없음(문서 규칙만). 상세는 ops/ARC_DECISIONS_20261108.md.
 
 ## 1.8.47-dev external tools integration candidate — 2026-11-07

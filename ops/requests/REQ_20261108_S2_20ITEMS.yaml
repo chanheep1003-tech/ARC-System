@@ -1,7 +1,7 @@
 # 요청 기록 (사용자 결정값). 생성 전 request_spec 의 원천. 상태가 BLOCKED 이면 생성하지 않는다.
 request_id: REQ_20261108_S2_20ITEMS
 date: 2026-11-08
-status: BLOCKED_SCOPE_UNCONFIRMED
+status: SCOPE_REGISTERED_GENERATION_PENDING
 exam_id: DONGBUK_2026_2_FINAL
 product: ARC_N
 stage: S2
@@ -18,10 +18,13 @@ per_subject:
     source_composition: UNDETERMINED   # 문제은행 재고 B vs ceil(0.7*20)=14 비교 필요. 범위 미확정이라 B 를 셀 수 없음
   SCI:
     source_composition: UNDETERMINED
-blocker:
-  gate: EXAM_SCOPE / SCOPE_LOCK
-  reason: >
-    기말 범위가 PROVISIONAL_REMAINDER(2학기 전체 − 실제 중간범위)이며 EXAM_CONTEXTS 의 KOR·SOC·SCI unit_ids / source_ids 가 비어 있다.
-    저장소에는 중간 범위 스냅샷(KOR 공통국어2 1단원+「탄궁가」, SOC 시험범위 전체, SCI 산화·환원)과 과거 학년도 기말 구조만 있고
-    이번 학기 기말에 해당하는 단원·학습지·원문 확인 기록(CONTENT_REVIEWED)이 없다. Drive 의 교과서는 수백 MB 스캔 PDF 라 커넥터로 읽을 수 없다.
-  needed_from_user: "과목별 기말에 포함할 단원/쪽수(또는 학습지·교과서 쪽 사진/텍스트). 학교 공지가 없으면 임시 단원 목록을 직접 확정."
+scope_registered: quality/source/FINAL_SCOPE_REGISTRATION_20261108.yaml   # 사용자 임시 확정, exam_scope_gate N° 통과
+scope:
+  KOR: "공통국어2 3단원 pp.104-131: 중세 국어 + 한글 맞춤법 (본문은 일부만 읽음)"
+  SOC: "천재 통합사회2 II-2 자유주의와 공동체주의 정의관 pp.44-49 (본문 읽음; 소단원 선택은 제 임시 판단)"
+  SCI: "통합과학2 산·염기와 중화 반응 (학교 자료 미확인, 사용자 지시만 근거)"
+remaining_before_release:
+  - SCI 는 학교 자료가 없어 SCHOOL_SOURCE_PRIORITY 증빙 불가(ORIGINAL_TRIAL, 통합과학 수준 개념만 사용)
+  - KOR 중세국어 쪽수(106-115 추정)와 교과서 전 쪽 확인
+  - SOC·SCI 는 production_pipeline 이 KOR 원문 레지스트리 중심이라 별도 번들/게이트 경로 필요
+  - 문항 생성, 독립 풀이(PASS_B), 사용자 내용 승인, 사람 검토는 아직 시작 전

@@ -153,7 +153,7 @@ class ScopeTests(unittest.TestCase):
         spec=importlib.util.spec_from_file_location('arc_prod_exam_test',ROOT/'tooling/production/production_pipeline.py')
         prod=importlib.util.module_from_spec(spec);spec.loader.exec_module(prod)
         with tempfile.TemporaryDirectory() as d:
-            root=Path(d); (root/'items.yaml').write_text(yaml.safe_dump({'batch_id':'CURRENT','subject':'KOR','product_mode':'ARC_N'}))
+            root=Path(d); (root/'items.yaml').write_text(yaml.safe_dump({'batch_id':'CURRENT','subject':'KOR','product_mode':'ARC_N','items':[{}],'request_spec':{'decided_by':'USER','stage':'S2','item_count':1,'difficulty_targets':{'D2':0.0,'D3':0.7,'D45':0.3}}}))
             result=prod.run(root,root/'out')
             self.assertEqual(result['blocking_gates'],['EXAM_SCOPE'])
             self.assertIsNone(result['pdf']); self.assertFalse(list((root/'out').glob('*.pdf')))
@@ -192,8 +192,10 @@ class ScopeTests(unittest.TestCase):
             # Synthetic provenance tests admission wiring, not source truth.
             rows=prod.source_mix_gate.item_rows(bundle)
             past,_=prod.source_mix_gate.targets(len(rows))
-            bundle['source_composition']={'policy_version':'ARC-SOURCE-MIX-V1.0'}
+            bundle['source_composition']={'policy_version':'ARC-SOURCE-MIX-V1.0','profile':'PAST_70_AI_30'}  # KOR source mix is user-declared per request
             bundle['item_count']=len(rows)
+            # The per-request user decisions are a separate gate that runs first; give it a complete spec so this test reaches the gate it targets.
+            bundle['request_spec']={'decided_by':'USER','stage':'S2','item_count':len(rows),'difficulty_targets':{'D2':0.0,'D3':0.7,'D45':0.3}}
             for i,item in enumerate(rows):
                 if i<past:
                     item['provenance']={'mode':'VERIFIED_VARIANT','source_kind':'SCHOOL_EXAM',
