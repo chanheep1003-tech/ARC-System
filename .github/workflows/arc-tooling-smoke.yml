@@ -52,6 +52,7 @@ jobs:
           python -m py_compile tooling/pdf_qc/pdf_preflight.py
           python -m py_compile tooling/pdf_qc/test_preflight_smoke.py
           python -m py_compile tooling/pdf_qc/test_preflight_korean_n.py
+          python -m py_compile tooling/pdf_qc/test_arc_n_layout_rules.py
           python -m py_compile tooling/typeset/kor_renderer.py
           python -m py_compile tooling/production/production_pipeline.py
           python -m py_compile tooling/production/test_production_pipeline.py
@@ -133,6 +134,9 @@ jobs:
 
       - name: Run Korean ARC_N question/answer marker preflight
         run: python tooling/pdf_qc/test_preflight_korean_n.py
+
+      - name: Run ARC_N layout-rule tests (difficulty strip, slots, B/W logo blocker)
+        run: python tooling/pdf_qc/test_arc_n_layout_rules.py
 
       - name: Run PDF auto-fix controller smoke
         run: python tooling/pdf_qc/test_autofix_controller.py

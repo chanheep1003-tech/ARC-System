@@ -192,6 +192,14 @@ def build_blocks(L: Layout, bundle: dict[str, Any], sources: list[dict[str, Any]
 
 def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "ARC_N") -> Block:
     b = Block()
+    if product == "ARC_N" and re.fullmatch(r"D[1-5]", str(it.get("difficulty", ""))):
+        # Metadata strip (user decision 2026-11-08): the internal grade D1-D5 is shown here only,
+        # never in the stem/choices, never in ARC_FINAL, and never invented when absent.
+        top = b.h
+        b.h += 13
+        b.ops.append(("rect", 0, top, COL_W, b.h))
+        b.ops.append(("text", 5, top + 9.4, f"난이도 {it['difficulty']}", "B", 7.3))
+        b.h += 5
     pts = f" ({it['points']}점)" if it.get("points") else ""
     if it.get("format") == "CR":
         num = f"[{label}] "

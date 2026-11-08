@@ -31,6 +31,7 @@ LIGHT_FONT_RE = re.compile(r"(?:thin|extralight|ultralight|light|wght[-_ ]?(?:10
 BOLD_FONT_RE = re.compile(r"(?:bold|semibold|demibold|medium)", re.I)
 ANSWER_HEADING_RE = re.compile(r"(?:\bANSWER\s+KEY\b|^[\s\u00a0]*정답(?=[\s\u00a0]|$))", re.I | re.M)
 QUESTION_MARKER_RE = re.compile(r"\bQUESTION\s+(\d+)\b", re.I)
+DIFFICULTY_STRIP_RE = re.compile(r"난이도\s*D[1-5]\b")
 KOR_QUESTION_MARKER_RE = re.compile(r"(?m)^[\s\u00a0]*(\d{2})[\s\u00a0]+(?=\S)")
 # PDF font CMaps can extract circled digits as equivalent dingbat digits.
 # Accept only the five supported answer values, preserving completeness checks.
@@ -481,6 +482,8 @@ def analyze_pdf(
     render_dir: str | Path | None = None,
     dpi: int = 300,
     expected_item_count: int | None = None,
+    max_questions_per_page: int | None = None,
+    require_difficulty_strip: bool = False,
 ) -> dict:
     doc = fitz.open(pdf_path)
     page_texts = [page.get_text("text") for page in doc]
@@ -556,6 +559,21 @@ def analyze_pdf(
             if answer_ids != expected_ids:
                 pages[-1]["flags"].append({"severity": "FAIL", "type": "ARC_N_ANSWER_COUNT_MISMATCH", "actual": len(answer_ids), "expected": expected_item_count, "missing": sorted(expected_ids - answer_ids), "unexpected": sorted(answer_ids - expected_ids)})
 
+        # Difficulty is shown only in the per-question metadata strip (user decision 2026-11-08).
+        if answer_start is not None:
+            for index in range(answer_start, len(page_texts)):
+                if DIFFICULTY_STRIP_RE.search(page_texts[index]):
+                    pages[index]["flags"].append({"severity": "FAIL", "type": "ARC_N_DIFFICULTY_IN_ANSWER_PAGE"})
+        for index in range(2, problem_end):
+            page_ids = {int(n) for n in QUESTION_MARKER_RE.findall(page_texts[index])}
+            page_ids |= {int(n) for n in KOR_QUESTION_MARKER_RE.findall(page_texts[index])}
+            if max_questions_per_page is not None and len(page_ids) > max_questions_per_page:
+                # Passage sets legitimately release the fixed slots, so this is a review warning, not a hard fail.
+                pages[index]["flags"].append({"severity": "WARN", "type": "ARC_N_SLOT_OVERFILL", "questions": len(page_ids), "limit": max_questions_per_page})
+            if require_difficulty_strip and page_ids:
+                strips = len(DIFFICULTY_STRIP_RE.findall(page_texts[index]))
+                if strips < len(page_ids):
+                    pages[index]["flags"].append({"severity": "FAIL", "type": "ARC_N_DIFFICULTY_STRIP_MISSING", "questions": len(page_ids), "strips": strips})
         for index in expected_blank_indices:
             pages[index]["flags"] = [flag for flag in pages[index]["flags"] if flag["type"] != "EMPTY_PAGE"]
 
@@ -596,6 +614,8 @@ def main() -> None:
     ap.add_argument("--render-dir", default=None)
     ap.add_argument("--dpi", type=int, default=300)
     ap.add_argument("--expected-item-count", type=int)
+    ap.add_argument("--max-questions-per-page", type=int, help="ARC_N fixed-slot limit (warn when exceeded)")
+    ap.add_argument("--require-difficulty-strip", action="store_true", help="ARC_N: every question needs a 난이도 D1-D5 metadata strip")
     args = ap.parse_args()
 
     result = analyze_pdf(
@@ -606,6 +626,8 @@ def main() -> None:
         render_dir=args.render_dir,
         dpi=args.dpi,
         expected_item_count=args.expected_item_count,
+        max_questions_per_page=args.max_questions_per_page,
+        require_difficulty_strip=args.require_difficulty_strip,
     )
     output = json.dumps(result, ensure_ascii=False, indent=2)
     if args.report:

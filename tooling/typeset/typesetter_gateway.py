@@ -36,6 +36,7 @@ PRODUCT_PROFILES: dict[str, dict[str, Any]] = {
         "cover_verso_blank": False,
         "answer_separator_blank": False,
         "answer_key_mode": "NONE",
+        "metadata_strip_difficulty": "NONE",
     },
     "ARC_N": {
         "layout_mode": "COLUMN_ONLY",
@@ -46,6 +47,12 @@ PRODUCT_PROFILES: dict[str, dict[str, Any]] = {
         "cover_verso_blank": True,
         "answer_separator_blank": True,
         "answer_key_mode": "INLINE_FINAL_COMPACT",
+        # User decisions 2026-11-08 (ops/ARC_DECISIONS_20261108.md)
+        "slots_per_page": 4,
+        "slot_layout": "TWO_PER_COLUMN_FIXED",
+        "passage_set_slot_release": True,
+        "metadata_strip_difficulty": "D1_D5",
+        "cover_logo_variant": "BW_REGISTERED_ASSET",
     },
     "ARC_FINAL": {
         "layout_mode": "PRODUCT_MASTER",
@@ -56,8 +63,39 @@ PRODUCT_PROFILES: dict[str, dict[str, Any]] = {
         "cover_verso_blank": False,
         "answer_separator_blank": False,
         "answer_key_mode": "SEPARATE_ARTIFACT_ONLY",
+        "metadata_strip_difficulty": "NONE",
     },
 }
+
+
+BW_LOGO = "ARC_N_LOCKUP_MASTER_BW.png"
+
+
+def brand_release_blockers(root: Path, manifest: dict[str, Any], product: str) -> list[str]:
+    """The ARC_N cover needs the registered B/W logo (exact registry row + byte-identical repo copy)."""
+    if product != "ARC_N" or manifest.get("runtime", {}).get("arc_n_cover_logo_variant") != "BW_REGISTERED_ASSET_REQUIRED":
+        return []
+    registry = root / "templates/brand/ARC_BRAND_ASSET_REGISTRY_V1.0.md"
+    row = next((line for line in registry.read_text(encoding="utf-8").splitlines() if BW_LOGO in line), "") if registry.is_file() else ""
+    match = re.search(r"\b([0-9a-f]{64})\b", row)
+    if not match:
+        return ["BRAND_ASSET_MISSING:" + BW_LOGO + " (no registered SHA-256 in the brand asset registry)"]
+    asset = root / "templates/brand/assets" / BW_LOGO
+    if not asset.is_file():
+        return ["BRAND_ASSET_MISSING:" + BW_LOGO + " (registered, but the repository copy is absent)"]
+    if hashlib.sha256(asset.read_bytes()).hexdigest() != match.group(1):
+        return ["BRAND_HASH_MISMATCH:" + BW_LOGO]
+    return []
+
+
+def preflight_args(profile: dict[str, Any]) -> list[str]:
+    """Extra pdf_preflight flags implied by a product profile (the caller must pass them)."""
+    args: list[str] = []
+    if profile.get("slots_per_page"):
+        args += ["--max-questions-per-page", str(profile["slots_per_page"])]
+    if profile.get("metadata_strip_difficulty") == "D1_D5":
+        args.append("--require-difficulty-strip")
+    return args
 
 
 def load_module(name: str, path: Path):
@@ -228,6 +266,7 @@ def resolve_job(
     autofix_tool = manifest_path.parent / str(tooling.get("pdf_autofix_controller", ""))
 
     root = manifest_path.parent
+    blockers = brand_release_blockers(root, manifest, product)
     plan = {
         "status": "ADMITTED",
         "authority": "TYPESETTER_GATEWAY",
@@ -249,8 +288,10 @@ def resolve_job(
         "locked_content_mutation": False,
         "qa_evidence": qa_proof,
         "exam_scope": exam_proof,
-        "release_eligible": bool(exam_proof and exam_proof.get("release_allowed")),
+        "release_blockers": blockers,
+        "release_eligible": bool(exam_proof and exam_proof.get("release_allowed")) and not blockers,
         "profile": dict(PRODUCT_PROFILES[product]),
+        "preflight_args": preflight_args(PRODUCT_PROFILES[product]),
         "handoff_preflight": {
             "status": preflight["status"],
             "warning_codes": sorted(

@@ -3,6 +3,7 @@
 - 기출·창작 정책 §10 과목별 프로필(PAST_70_AI_30 / STRUCTURE_REFERENCE_ONLY)과 ORIGINAL_TRIAL을 정의하고 generation_source_gate.py에 구현·테스트 추가.
 - 규칙 내부 모순 정비: V2.4 §25 정답표 위치(LAST+2), V2.4 §6~§8·§16, 공통 엔진 §15·§21, 문항 품질 루브릭 번호·참조, 국어 엔진 중복 절 번호, 자동화 런타임(과목 순서·자원 비중·참조), 준비도 게이트 기말 재기준화.
 - 낡은 버전 참조 정리(활성 파일 20여 개). 이력 문서(오류 DB, 폐기 레지스트리, 동결 회귀 fixture)는 변경하지 않음.
+- 코드 강제(ARC_N): kor_renderer가 D1~D5 난이도 스트립을 그림(ARC_FINAL 제외, 값이 없으면 만들지 않음), pdf_preflight에 --require-difficulty-strip / --max-questions-per-page 추가, typesetter_gateway 프로필에 슬롯·스트립·로고 항목과 release_blockers(BRAND_ASSET_MISSING) 추가, 테스트 14개 신설.
 - 알려진 미완: 흑백 로고 자산 미등록, N 레이아웃 코드 강제 없음, 과학 기말 앵커 없음. 상세는 ops/ARC_DECISIONS_20261108.md.
 
 ## 1.8.47-dev external tools integration candidate — 2026-11-07

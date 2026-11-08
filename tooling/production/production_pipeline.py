@@ -621,7 +621,13 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
     # It always remains release-blocked by EXAM_SCOPE=ARCHIVED_REPLAY.
     if admission == "PASS" or archived_replay:
         render = renderer.render(bundle, sources, numbering(bundle), set_header, pdf_path, key_pdf=key_path, logo=logo)
-        pdf_result = pdf_gate.analyze_pdf(pdf_path, product, expected_item_count=len(mcq_items(bundle)) if product == "ARC_N" else None)
+        pdf_result = pdf_gate.analyze_pdf(
+            pdf_path, product,
+            expected_item_count=len(mcq_items(bundle)) if product == "ARC_N" else None,
+            # ARC_N profile (typesetter_gateway): four fixed slots per page, D1-D5 metadata strip per question.
+            max_questions_per_page=4 if product == "ARC_N" else None,
+            require_difficulty_strip=product == "ARC_N",
+        )
     else:
         render = {"status": "BLOCKED", "brand": "NOT_RUN"}
         pdf_result = {"status": "NOT_RUN"}
