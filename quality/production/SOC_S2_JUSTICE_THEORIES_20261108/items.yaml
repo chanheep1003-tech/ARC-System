@@ -1282,8 +1282,8 @@ items:
   balance: ADVANCED_DISCRIMINATION
   stem: 그림은 갑~병의 입장에서 각 진술이 어디에 해당하는지를 나타낸 것이다. A~D에 들어갈 진술을 <보기>에서 옳게 고른 것은?
   options:
-  - 'A: ㄱ, B: ㄴ, C: ㄷ, D: ㄹ'
   - 'A: ㄴ, B: ㄱ, C: ㄷ, D: ㄹ'
+  - 'A: ㄱ, B: ㄴ, C: ㄷ, D: ㄹ'
   - 'A: ㄱ, B: ㄴ, C: ㄹ, D: ㄷ'
   - 'A: ㄹ, B: ㄴ, C: ㄷ, D: ㄱ'
   - 'A: ㄱ, B: ㄷ, C: ㄴ, D: ㄹ'
@@ -1296,14 +1296,14 @@ items:
     claim: opt1
     ev:
     - SOC-TB-CHUNJAE-2-P44-49:p.47
-    why: A=ㄱ(갑만), B=ㄴ(을만), C=ㄷ(병만), D=ㄹ(갑과 을 공통)이다.
+    why: A와 B가 바뀌었다.
   - v: true
     c: CORRECT
     axis: application
     claim: opt2
     ev:
     - SOC-TB-CHUNJAE-2-P44-49:p.47
-    why: A와 B가 바뀌었다.
+    why: A=ㄱ(갑만), B=ㄴ(을만), C=ㄷ(병만), D=ㄹ(갑과 을 공통)이다.
   - v: false
     c: MEDIUM
     axis: application

@@ -1,0 +1,217 @@
+items:
+- item_id: SOC-S2-001
+  answer: 3
+  first_pass_top3: [3, 2, 4]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "공동체주의는 정체성이 선택한 목적만이 아니라 공동체의 유산·역할로 형성된다고 보므로 ③이 틀림."
+- item_id: SOC-S2-002
+  answer: 5
+  first_pass_top3: [5, 1, 3]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: [c]
+  note: "기회균등 + 차등의 원칙 서술은 롤스. ⑤가 가장 길고 구체적이라 형식 단서가 약간 있음."
+- item_id: SOC-S2-003
+  answer: 2
+  first_pass_top3: [2, 5, 1]
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "노직: 정당한 취득·양도의 소유를 동의 없이 환수하면 권리 침해."
+- item_id: SOC-S2-004
+  answer: 4
+  first_pass_top3: [4, 3, 1]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "(가) 노직, (나) 매킨타이어, (다) 롤스."
+- item_id: SOC-S2-005
+  answer: 1
+  first_pass_top3: [1, 2, 4]
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "갑(롤스)=결과 기준, 을(노직)=과정 기준. ㄱ,ㄴ,ㄹ 옳고 ㄷ 틀림. 정의된 용어를 적용하는 2단계."
+- item_id: SOC-S2-006
+  answer: 3
+  first_pass_top3: [3, 4, 1]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "③은 롤스의 차등 원칙이라 노직과 어긋남."
+- item_id: SOC-S2-007
+  answer: 2
+  first_pass_top3: [2, 4, 1]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "무지의 베일은 롤스, 지지할 주장은 차등 원칙."
+- item_id: SOC-S2-008
+  answer: 4
+  first_pass_top3: [4, 2, 1]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "A, B 적절. C는 의견을 모두 배제하여 조화와 맞지 않음."
+- item_id: SOC-S2-009
+  answer: 5
+  first_pass_top3: [5, 3, 1]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "ㄱ 롤스만, ㄴ 공통(기본권 존중), ㄷ 노직만."
+- item_id: SOC-S2-010
+  answer: 2
+  first_pass_top3: [2, 3, 1]
+  second_best: 3
+  difficulty: D3
+  confidence: MEDIUM
+  flags: [b]
+  note: "ㄱ,ㄴ은 을의 진술에서 직접 도출. ㄷ은 을 진술에 직접 없어 애매하고 ㄹ은 롤스의 비판이라 제외."
+- item_id: SOC-S2-011
+  answer: 3
+  first_pass_top3: [3, 1, 2]
+  second_best: 1
+  difficulty: D3
+  confidence: MEDIUM
+  flags: [b]
+  note: "ㄱ,ㄴ 옳고 ㄷ 틀림. ㄹ '갑과 달리'는 갑 진술에 책임 언급이 없어 다소 추정이나 옳다고 판단."
+- item_id: SOC-S2-012
+  answer: 1
+  first_pass_top3: [1, 3, 2]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "(가)는 자유 제한, (나)는 기회 불개방으로 탈락, (다)>(라)로 (다)가 가장 정당. ㄱ,ㄴ 옳고 ㄷ 틀림."
+- item_id: SOC-S2-013
+  answer: 3
+  first_pass_top3: [3, 2, 1]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "A(노직)와 B(매킨타이어) 적절, C는 매킨타이어와 반대."
+- item_id: SOC-S2-014
+  answer: 4
+  first_pass_top3: [4, 1, 3]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "갑 노직, 을 롤스. ㄱ,ㄴ,ㄹ 옳고 ㄷ은 을(롤스)에게 해당하지 않음."
+- item_id: SOC-S2-015
+  answer: 5
+  first_pass_top3: [5, 3, 4]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "A: 사회 전체 이익을 위한 자유 제한(병만 예), B: 과정 기준(을만 예)."
+- item_id: SOC-S2-016
+  answer: 4
+  first_pass_top3: [4, 3, 1]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "정답 (가)을 (나)갑 (다)병 (라)갑·을. 점수 A6 B9 C7. ㄷ은 둘 다 3개로 차이 0이라 틀림. ㄱ,ㄴ,ㄹ 옳음."
+- item_id: SOC-S2-017
+  answer: 1
+  first_pass_top3: [1, 2, 5]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "병(공리주의)은 소유의 정당성을 과정으로 판단하지 않으므로 ㉠이 '아니요'여야 함."
+- item_id: SOC-S2-018
+  answer: 5
+  first_pass_top3: [5, 4, 3]
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "노직 (가)(나)정당 (다)(라)부당, 롤스 (가)(다)정당 (나)(라)부당. 다른 것은 (나),(다)."
+- item_id: SOC-S2-019
+  answer: 1
+  first_pass_top3: [1, 3, 2]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "A ㄱ, B ㄴ, C ㄷ, D ㄹ(갑·을 공통)."
+- item_id: SOC-S2-020
+  answer: 1
+  first_pass_top3: [1, 5, 2]
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "노직 비판: 을에겐 ㄱ(소유권 침해), 병에겐 ㄴ(수단화)·ㄹ(과정 기준 부재). ㄷ은 노직이 하지 않을 비판."
+- item_id: ANCHOR-MEGA3-08
+  answer: 1
+  first_pass_top3: [1, 4, 3]
+  second_best: 4
+  difficulty: D4
+  confidence: LOW
+  flags: [a, b]
+  note: "ㄷ은 롤스에서 기회균등이 차등에 우선하므로 부적절. ㄱ(절차→결과, 노직 예)과 ㄴ(정형적 원리는 재분배 요구, 노직 비판) 선택. ㄹ과 ㄱ 중 판별이 모호하고 롤스의 순수 절차적 정의 해석에 따라 흔들림."
+- item_id: ANCHOR-MEGA3-14
+  answer: 3
+  first_pass_top3: [3, 5, 2]
+  second_best: 5
+  difficulty: D4
+  confidence: LOW
+  flags: [d, f]
+  note: "베카리아(사형 반대, 공리적 형벌). 사형은 인상이 강하나 일시적이라는 것이지 효과가 전혀 없다는 것은 아님이라 ③을 과장으로 판단. ②의 교화, ⑤의 공포감 서술도 원전 지식 필요해 불확실."
+- item_id: ANCHOR-MEGA3-25
+  answer: 4
+  first_pass_top3: [4, 2, 3]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "상대 지수 해석에서 비취약 계층 수준이 상승(t→t+20)한 점을 반영. 저소득층 지수 동일(20)이어도 절대 수준은 상승해 피해 가능성이 작아짐. ①②③⑤는 틀림."
+- item_id: ANCHOR-MEGA3-01
+  answer: 2
+  first_pass_top3: [2, 1, 5]
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "A 공간, B 윤리, C 사회, D 시간. ㄱ(공간), ㄷ(사회) 적절, ㄴ은 시간, ㄹ은 윤리 활동."
+- item_id: ANCHOR-MEGA4-17
+  answer: 5
+  first_pass_top3: [5, 4, 3]
+  second_best: 4
+  difficulty: D4
+  confidence: MEDIUM
+  flags: [b, d]
+  note: "ㄱ은 '모든 세금'이 과도(노직은 소득에 대한 과세를 강제 노동과 같다고 봄, 최소 국가 유지 세금은 허용)해 부적절. ㄴ(B, 노직), ㄷ,ㄹ(C, 롤스) 적절."
+- item_id: ANCHOR-MEGA4-13
+  answer: 4
+  first_pass_top3: [4, 3, 2]
+  second_best: 3
+  difficulty: D4
+  confidence: LOW
+  flags: [a, b, d]
+  note: "레오폴드(대지 윤리) vs 싱어. ㄱ(갑만) 옳음, ㄹ(을만) 옳음, ㄷ은 싱어가 '모든 동물'이 아닌 쾌고 감수 존재만 고려해 공통 진술로 부적절, ㄴ은 공통으로 해석. 해석 의존도 큼."
+- item_id: ANCHOR-MEGA4-01
+  answer: 2
+  first_pass_top3: [2, 4, 3]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "A 윤리, B 사회, C 공간, D 시간. ②만 옳고 이촌향도는 1960~70년대, (가)에는 역사적 배경이 들어갈 수 있음."
