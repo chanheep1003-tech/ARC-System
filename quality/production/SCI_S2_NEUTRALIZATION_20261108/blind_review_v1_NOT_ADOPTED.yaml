@@ -1,0 +1,161 @@
+items:
+- item_id: SCI-S2-001
+  answer: 3
+  first_pass_top3: [3, 1, 2]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "HCl turns blue litmus red; BTB gives yellow, PP stays colorless, Mg gives H2 not O2; pure recall, option 5 (OH-) is a trivial distractor."
+- item_id: SCI-S2-002
+  answer: 5
+  first_pass_top3: [5, 4, 2]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "Net ionic equation H+ + OH- -> H2O; Na+ and Cl- are spectators; single-rule recall."
+- item_id: SCI-S2-003
+  answer: 2
+  first_pass_top3: [2, 1, 5]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "Antacid and treating acid stings are neutralization; spraying dilute HCl on acidic soil is absurd (use lime), so statement ㄷ is a very weak distractor."
+- item_id: SCI-S2-004
+  answer: 4
+  first_pass_top3: [4, 1, 2]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "Acid yellow -> neutral green -> base blue; option 5 (red -> colorless -> blue) is implausible for BTB and signals a weak distractor."
+- item_id: SCI-S2-005
+  answer: 1
+  first_pass_top3: [1, 2, 5]
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "Equal conc.: (가) HCl excess -> yellow, (다) NaOH excess -> blue, water made 4 vs 3 with equal total 10 mL so peak temps differ; ㄷ false. Overlaps heavily with items 6, 7."
+- item_id: SCI-S2-006
+  answer: 3
+  first_pass_top3: [3, 4, 1]
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "Water formed = min(HCl,NaOH): 가 2, 나 5, 다 2, 라 4, so most is 나 and same as 가 is 다. Near-duplicate of item 10 (identical 2/8, 5/5, 8/2 volume table)."
+- item_id: SCI-S2-007
+  answer: 2
+  first_pass_top3: [2, 1, 5]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "Water 1,3,5,3,1 so max at 다 and 나=라; ㄷ false since (마) has excess HCl (acidic). Same concept as items 5, 6."
+- item_id: SCI-S2-008
+  answer: 4
+  first_pass_top3: [4, 3, 5]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "Total ions 가=16, 나=12, 다=20 (2 per mL minus 2 per water); ㄴ and ㄷ (12/16=3/4) true, ㄱ false; data sufficient and unique."
+- item_id: SCI-S2-009
+  answer: 5
+  first_pass_top3: [5, 2, 1]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "■ must be H+ (only other cation); (다) excess 4 H+ over 3 portions gives 4 H+ per portion, so (나) is exactly neutral (ㄴ false); ions 나=16, 다=24 -> 1.5x. Particle figure not shown but table suffices."
+- item_id: SCI-S2-010
+  answer: 2
+  first_pass_top3: [2, 3, 1]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "A: Na+8/Cl-2=4; B equal; C ratio is 1/4 not 4 (inversion trap). Same volume table as item 6, so near-duplicate; low reasoning demand."
+- item_id: SCI-S2-011
+  answer: 3
+  first_pass_top3: [3, 1, 5]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: [e]
+  note: "(가) NaCl only; (나) NaCl + leftover NaOH; water 가 6 > 나 4 so ㄷ false. The parenthetical 'NaOH은 변하지 않는다' reads slightly unnatural."
+- item_id: SCI-S2-012
+  answer: 1
+  first_pass_top3: [1, 2, 3]
+  second_best: 2
+  difficulty: D3
+  confidence: MEDIUM
+  flags: []
+  note: "Yellow (acid) zone moves toward B so H+ moves to the (-) pole: ㄱ,ㄷ true; NaOH would give blue toward (+) pole so ㄴ false. Defect: ㉠ is never identified (acid must be inferred from the yellow colour) and no figure is given."
+- item_id: SCI-S2-013
+  answer: 3
+  first_pass_top3: [3, 1, 5]
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "A,D acid (Mg gas + yellow); B neutral (green); C basic; mixing neutral B with basic C is no neutralization so ㄷ false. A and D rows are redundant (identical results)."
+- item_id: SCI-S2-014
+  answer: 4
+  first_pass_top3: [4, 2, 3]
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "Amounts (HCl 10c): 가 NaOH 8c -> acid left, 나 10c neutral, 다 12c -> base left (BTB blue, ㄴ false); water 나 = 다 = 10c since HCl limits both; unique."
+- item_id: SCI-S2-015
+  answer: 5
+  first_pass_top3: [5, 1, 2]
+  second_best: 1
+  difficulty: D4
+  confidence: HIGH
+  flags: []
+  note: "(가) neutral gives HCl per mL = 2x NaOH per mL; water 가=나=10 (HCl limits) so ㄴ false; ions 20:30:40 = 2:3:4 true. Ratio-inference item; same device as items 17, 18, 19."
+- item_id: SCI-S2-016
+  answer: 4
+  first_pass_top3: [4, 2, 1]
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "㉠ = Cl- (tracks HCl volume), ㉡ = OH- (10-5=5 then 0); (나) has 5 excess H+ so acidic (ㄴ false); water 다 10 = 2x 가 5. Slightly redundant (Na+ constant hint makes ㄱ easy)."
+- item_id: SCI-S2-017
+  answer: 1
+  first_pass_top3: [1, 5, 4]
+  second_best: 5
+  difficulty: D4
+  confidence: HIGH
+  flags: []
+  note: "(가) neutral gives HCl 2x NaOH per mL; 나 acid excess (yellow), 다 8 vs 10 base excess (blue), 라 10 vs 8 acid excess (yellow, not green); unique. Same ratio-inference template as items 15, 19."
+- item_id: SCI-S2-018
+  answer: 5
+  first_pass_top3: [5, 3, 1]
+  second_best: 3
+  difficulty: D4
+  confidence: HIGH
+  flags: []
+  note: "Rises 3,6,4 give HCl 0.75k/mL and NaOH 0.5k/mL (unique solution) so HCl = 1.5x NaOH, 나 exactly neutral (8a=12b=6k), 다 acid excess so ㄷ false. Solvable but the only fully rigorous route is a short system of equations, harder than typical grade-10 level."
+- item_id: SCI-S2-019
+  answer: 2
+  first_pass_top3: [2, 1, 4]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "Na+/Cl-=1 at 5 mL gives HCl per mL = 2x NaOH and (가) neutral; 나 and 다 both make 10 units of water; concentrations differ so ㄷ false. Ratios in 나, 다 are redundant confirmation; third item using the same 2:1 template."
+- item_id: SCI-S2-020
+  answer: 2
+  first_pass_top3: [2, 3, 1]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: "1 ion per mL for both: x=10, y=20-10=10, z=30-20=10, sum 30. The statement that (나) is neutral is redundant with 'equal concentration'."
