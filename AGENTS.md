@@ -10,7 +10,7 @@ When reviewing KOR N° spelling/medieval corpora, additionally read quality/kore
 
 
 ## ARC N° stages S1–S4 for KOR/SOC/SCI (2026-11-08, supersedes KOR V1–V6)
-Level structure is `quality/ARC_N_STAGE_LADDER_V1.1.md`: four thinking-action stages, no D1 items, KOR V5 (FINAL) and V6 removed as levels; ARC_FINAL stays a separate product. The KOR-only text below keeps genre/source/rights rules but its V-numbering is historical.
+Level structure is `quality/ARC_N_STAGE_LADDER_V1.1.md`: four thinking-action stages, no D1 items, KOR V5 (FINAL) and V6 removed as levels; ARC_FINAL stays a separate product (old KOR V5 is merged into FINAL). Stage, item count, difficulty shares (and for KOR the source composition) have NO defaults: the user decides per request, and if any is missing ASK THE USER before generating (bundle request_spec / source_composition.profile; gates REQUEST_SPEC_* and SOURCE_PROFILE_UNDECLARED). The KOR-only text below keeps genre/source/rights rules but its V-numbering is historical.
 
 ## KOR-only V1–V6 learning levels (corrected 2026-11-06)
 For subject=KOR ONLY, load quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md, verified exam inventory and quality/korean/ARC_KOR_DYNAMIC_SOURCE_SELECTION_V1.0.yaml (NO preselected source titles). Other subjects do not inherit this ladder. Korean V3 unseen materials vary by genre: literature compares a new literary text, nonfiction explains and compares new concepts, grammar uses authentic new examples (including song lyrics, poems and fiction when licensing allows). V1–V4=ARC_N, V5=ARC_FINAL, V6=ARC_N specialist. Unverified source text or licensing remains BLOCKED.

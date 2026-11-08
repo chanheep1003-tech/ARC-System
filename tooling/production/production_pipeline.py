@@ -71,14 +71,44 @@ PROFILES = {
     ("SOC", "ARC_N"): {"D1": (0.0, 0.0)},
     ("SCI", "ARC_N"): {"D1": (0.0, 0.0)},
 }
-# Provisional per-stage share targets from the ladder (±STAGE_TOL, reported as WARN until the user confirms the numbers).
-STAGE_SHARES = {
-    "S1": {"D2": 0.65, "D3": 0.30, "D45": 0.05},
-    "S2": {"D2": 0.30, "D3": 0.45, "D45": 0.25},
-    "S3": {"D2": 0.15, "D3": 0.40, "D45": 0.45},
-    "S4": {"D2": 0.10, "D3": 0.35, "D45": 0.55},
-}
-STAGE_TOL = 0.12
+# Per-request parameters are decided by the user each time (quality/ARC_N_STAGE_LADDER_V1.1.md §0). There are no default
+# stage shares or item counts: a bundle without a complete user-decided request_spec is blocked.
+STAGES = ("S1", "S2", "S3", "S4")
+REQUEST_SPEC_SUBJECTS = {"KOR", "SOC", "SCI"}
+DEFAULT_SPEC_TOL = 0.12
+
+
+def request_spec_findings(raw: dict[str, Any]) -> list[dict[str, Any]]:
+    """The user must have decided stage, item count and difficulty shares (ARC_N) / item count (ARC_FINAL) for this request."""
+    if raw.get("product_mode") not in {"ARC_N", "ARC_FINAL"} or str(raw.get("subject", "")).upper() not in REQUEST_SPEC_SUBJECTS:
+        return []
+    spec = raw.get("request_spec")
+    out: list[dict[str, Any]] = []
+
+    def bad(code, message):
+        out.append({"severity": "FAIL", "code": code, "message": message})
+
+    if not isinstance(spec, dict):
+        bad("REQUEST_SPEC_MISSING", "ASK THE USER: stage(S1-S4), item count and difficulty shares are decided per request; none were provided")
+        return out
+    if spec.get("decided_by") != "USER":
+        bad("REQUEST_SPEC_NOT_USER_DECIDED", "request_spec.decided_by must be USER; never fill these values by default")
+    count = spec.get("item_count")
+    rows = raw.get("items") if isinstance(raw.get("items"), list) else []
+    if type(count) is not int or count < 1:
+        bad("REQUEST_ITEM_COUNT_MISSING", "ASK THE USER: request_spec.item_count must be a positive integer")
+    elif count != len(rows):
+        bad("REQUEST_ITEM_COUNT_MISMATCH", f"user-decided item_count {count} != bundle items {len(rows)}")
+    if raw.get("product_mode") == "ARC_N":
+        if spec.get("stage") not in STAGES:
+            bad("REQUEST_STAGE_INVALID", f"ASK THE USER: request_spec.stage must be one of {list(STAGES)}")
+        t = spec.get("difficulty_targets")
+        keys = {"D2", "D3", "D45"}
+        if not isinstance(t, dict) or set(t) != keys or not all(isinstance(v, (int, float)) and not isinstance(v, bool) for v in t.values()):
+            bad("REQUEST_DIFFICULTY_MISSING", "ASK THE USER: request_spec.difficulty_targets needs numeric D2, D3, D45 shares (D1 is banned)")
+        elif abs(sum(t.values()) - 1.0) > 0.01:
+            bad("REQUEST_DIFFICULTY_SUM", f"difficulty_targets must sum to 1.0, got {sum(t.values()):.3f}")
+    return out
 
 
 ITEM_GATE_CODES = {
@@ -409,20 +439,19 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
         shares["D45"] = shares["D4"] + shares["D5"]
         shares["ADVANCED"] = sum(1 for it in items if it.get("balance") == "ADVANCED_DISCRIMINATION") / n
         balance = {k: round(v, 3) for k, v in shares.items()}
-        stage = bundle.get("stage")
-        if stage is not None and stage not in STAGE_SHARES:
-            add("STAGE_INVALID", stage=stage, allowed=sorted(STAGE_SHARES))
-            stage = None
-        # A declared stage replaces the legacy KOR mix bounds; the D1 ban always applies.
-        bounds = {"D1": profile["D1"]} if stage else profile
+        spec = bundle.get("request_spec") if isinstance(bundle.get("request_spec"), dict) else {}
+        targets = spec.get("difficulty_targets") if isinstance(spec.get("difficulty_targets"), dict) else None
+        # A user-decided difficulty target replaces the legacy KOR mix bounds; the D1 ban always applies.
+        bounds = {"D1": profile["D1"]} if targets else profile
         for k, (lo, hi) in bounds.items():
             if not lo - 1e-9 <= shares[k] <= hi + 1e-9:
                 hard = k in {"D1", "D45", "ADVANCED"}
                 add(f"BALANCE_{k}_OUT_OF_RANGE", "FAIL" if hard else "WARN", share=round(shares[k], 3), target=[lo, hi])
-        if stage:
-            for k, want in STAGE_SHARES[stage].items():
-                if abs(shares[k] - want) > STAGE_TOL + 1e-9:
-                    add(f"STAGE_{k}_SHARE_OFF", "WARN", stage=stage, share=round(shares[k], 3), target=want)
+        if targets:
+            tol = float(spec.get("tolerance", DEFAULT_SPEC_TOL))
+            for k, want in targets.items():
+                if k in shares and abs(shares[k] - float(want)) > tol + 1e-9:
+                    add(f"REQUEST_DIFFICULTY_{k}_OFF", "FAIL", share=round(shares[k], 3), target=float(want), tolerance=tol)
 
     realism = realism_gate.analyze({"product_mode": bundle["product_mode"], "item_count": n, "counts": {
         "school_task_family_count": sum(f in SCHOOL_FAMILIES for f in fams),
@@ -565,6 +594,14 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
         manifest_path: Path | None = None) -> dict[str, Any]:
     raw_bundle = yaml.safe_load((bundle_dir / "items.yaml").read_text(encoding="utf-8"))
     out_dir.mkdir(parents=True, exist_ok=True)
+    if not archived_replay and isinstance(raw_bundle, dict):
+        spec_findings = request_spec_findings(raw_bundle)
+        if spec_findings:
+            report = {"tool": "ARC_PRODUCTION_PIPELINE_V1.1", "batch_id": raw_bundle.get("batch_id"), "status": "BLOCKED",
+                      "blocking_gates": ["REQUEST_SPEC"], "gates": {"REQUEST_SPEC": "FAIL"}, "findings": spec_findings,
+                      "pdf": None, "answer_key_pdf": None, "governance": {"FINAL_USER_APPROVAL": "PENDING", "DRIVE_SAVE": "BLOCKED"}}
+            (out_dir / "production_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+            return report
     manifest_path = manifest_path or ROOT / "SYSTEM_MANIFEST.yaml"
     manifest = yaml.safe_load(manifest_path.read_text(encoding="utf-8"))
     exam_result = exam_gate.check_bundle(raw_bundle if isinstance(raw_bundle, dict) else {}, manifest_path,

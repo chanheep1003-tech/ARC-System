@@ -63,7 +63,7 @@ def analyze(bundle: dict[str, Any]) -> dict[str, Any]:
             if not isinstance(meta_d.get(field), str) or not meta_d[field].strip():
                 fail("ORIGINAL_TRIAL_UNAUTHORIZED", f"ORIGINAL_TRIAL requires an explicit source_composition.{field}")
     if "profile" not in meta_d and str(bundle.get("subject", "")).upper() == "KOR":
-        fail("SOURCE_PROFILE_UNDECLARED", "KOR bundles should declare profile STRUCTURE_REFERENCE_ONLY", severity="WARN")
+        fail("SOURCE_PROFILE_UNDECLARED", "KOR source mix is decided by the user per request: ASK THE USER and declare source_composition.profile")
     no_past = profile == "STRUCTURE_REFERENCE_ONLY" or comp_mode == "ORIGINAL_TRIAL"
     count = len(rows)
     if not count:

@@ -20,7 +20,8 @@
 | D-16 | 기출/변형/창작 구성은 단계가 아니라 문제은행 재고로 결정: 재고 충분 → 사용자가 변형 요청, 부족 → 창작 위주(ORIGINAL_TRIAL, 상시 허용). D-07 의 과목별 고정 프로필 중 SOC·SCI 는 이 규칙이 보완. | ARC_GENERATION_SOURCE_POLICY §10, 사다리 §4 |
 | D-17 | ARC N° 흑백 로고는 컬러 마스터의 휘도 변환 파생본으로 등록(사용자 지시 예외). Drive 업로드·ID 기록 대기. | brand registry |
 | D-18 | KOR·SOC·SCI ARC_N 에 D1 문항 금지(모든 단계 D2~D5, 국어의 D1 10% 허용 폐지). ARC_FINAL 은 영향 없음. | 사다리 §1-A, manifest arc_n_forbid_difficulty, production_pipeline PROFILES(BALANCE_D1_OUT_OF_RANGE) |
-| D-19 | 국어도 사회·과학과 같은 4단계(S1~S4)로 통일. 국어 V5(FINAL 단계)와 V6(별도 모듈 단계) 제거. FINAL 은 단계가 아니라 과목 공통 별도 제품으로 유지. 기출 구성(국어 STRUCTURE_REFERENCE_ONLY)은 유지. | quality/ARC_N_STAGE_LADDER_V1.1.md, manifest korean_stage_ladder, AGENTS.md |
+| D-19 | 국어도 사회·과학과 같은 4단계(S1~S4)로 통일. 국어 V5 는 ARC_FINAL 과 겹쳐 FINAL 로 통일(V5 명칭 폐지), V6 별도 모듈 단계 제거. | quality/ARC_N_STAGE_LADDER_V1.1.md, manifest korean_stage_ladder, AGENTS.md |
+| D-20 | 단계·세트 문항 수·난이도 분포·국어 기출/창작 구성은 기본값 없이 요청마다 사용자가 정한다. 비어 있으면 생성 전에 사용자에게 묻는다(코드 게이트 REQUEST_SPEC_*, SOURCE_PROFILE_UNDECLARED=FAIL). 앞서 제안한 단계별 분포 수치는 참고 예시로 강등. | 사다리 §0, production_pipeline.request_spec_findings, generation_source_gate |
 
 ## 이 정비로 해결되지 않은 것 (후속 과제)
 1. 흑백 로고 자산 파일이 없다. 등록(Drive ID, 해시) 전까지 ARC_N 표지는 생성되지 않는다.

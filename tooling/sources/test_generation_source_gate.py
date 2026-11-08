@@ -41,6 +41,8 @@ class Tests(unittest.TestCase):
     def test_valid_five_subjects(self):
         for subject in ('SCI','SOC','KOR','HIS','AI'):
             b=bundle();b['subject']=subject
+            if subject=='KOR':  # KOR must have a user-declared profile; PAST_70_AI_30 is one valid choice
+                b['source_composition']['profile']='PAST_70_AI_30'
             self.assertEqual(gate.analyze(b)['status'],'PASS')
 
     def test_old_90_10_rejected(self):
@@ -144,10 +146,12 @@ class ProfileTests(unittest.TestCase):
         self.assertIn("SOURCE_PROFILE_INVALID", self.codes(self.all_ai(profile="NOPE")))
         self.assertIn("SOURCE_COMPOSITION_MODE_INVALID", self.codes(self.all_ai(mode="SKIP")))
 
-    def test_kor_without_profile_warns_but_does_not_fail_by_itself(self):
+    def test_kor_without_profile_fails_and_tells_to_ask_the_user(self):
         b = bundle(10)
         b["subject"] = "KOR"
         r = gate.analyze(b)
-        self.assertEqual(r["status"], "PASS", r["findings"])
-        self.assertTrue(any(f["code"] == "SOURCE_PROFILE_UNDECLARED" and f["severity"] == "WARN" for f in r["findings"]))
+        self.assertEqual(r["status"], "FAIL")
+        row = next(f for f in r["findings"] if f["code"] == "SOURCE_PROFILE_UNDECLARED")
+        self.assertEqual(row["severity"], "FAIL")
+        self.assertIn("ASK THE USER", row["message"])
 

@@ -133,10 +133,10 @@ SOURCE_MIX_PROFILE는 과목마다 하나를 갖는다. 아래 초기값은 사�
 | 과목 | PROFILE | 의미 |
 |---|---|---|
 | SOC, SCI | PAST_70_AI_30 | 1~9절을 그대로 적용한다. |
-| KOR | STRUCTURE_REFERENCE_ONLY | 기출 문항·선지를 사용하지 않는다(과업 형식·난도 감각만 참고). 모든 문항 provenance.mode=AI_ORIGINAL이며 70/30 배분 검사는 적용하지 않는다. 원문 고정, 현실성, 전 선지 근거 등 국어 게이트는 그대로 적용한다. |
+| KOR | 요청마다 사용자가 정함 (STRUCTURE_REFERENCE_ONLY \| PAST_70_AI_30 \| ORIGINAL_TRIAL) | 기본값 없음(2026-11-08). 사용자가 정하지 않았으면 생성 전에 묻는다. STRUCTURE_REFERENCE_ONLY 를 고르면 기출 문항·선지를 쓰지 않고 모든 문항 provenance.mode=AI_ORIGINAL 이며 70/30 배분 검사는 적용하지 않는다. 원문 고정, 현실성, 전 선지 근거 등 국어 게이트는 그대로 적용한다. |
 | HIS, AI | (이번 기말 제외) | DEFERRED_BY_USER |
 
-source_composition.profile 필드에 위 값을 기록한다. 필드가 없으면 PAST_70_AI_30으로 본다. 국어 번들에 필드가 없으면 SOURCE_PROFILE_UNDECLARED 경고를 남긴다.
+source_composition.profile 필드에 위 값을 기록한다. SOC·SCI 는 필드가 없으면 PAST_70_AI_30으로 본다. 국어 번들에 필드가 없으면 SOURCE_PROFILE_UNDECLARED 로 차단하며 사용자에게 묻는다.
 
 ### 문제은행 재고 기준 모드 선택 (2026-11-08 상시 사용자 규칙)
 SOC·SCI 는 요청마다 현재 범위의 CONTENT_VERIFIED 은행 재고(B)와 필요 기출 기반 문항 수 ceil(0.7×N)(R)을 비교한다. B ≥ R 이면 사용자가 변형을 요청할 수 있고 위 PAST_70_AI_30 을 적용한다. B < R 이면 ORIGINAL_TRIAL 로 창작 위주로 진행하며 authorized_by="STANDING_USER_RULE_20261108" 이 사용자 허용을 대신한다. 절차는 quality/ARC_N_STAGE_LADDER_V1.1.md §4.
