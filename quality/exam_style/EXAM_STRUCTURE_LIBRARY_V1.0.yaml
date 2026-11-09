@@ -14,6 +14,7 @@ evidence:
   - quality/exam_style/DONGBUK_SCI_KOR_2025_2_STYLE_NOTES_20261108.md
   - quality/exam_style/SOC_DONGBUK_2025_2_FINAL_STYLE_NOTES_20261108.md
 note: >
+  KOR 템플릿의 difficulty 범위는 D-25 기출 대응 등급(reference.tier)을 포함하도록 2026-11-09에 정렬했다.
   KOR 템플릿의 reference 는 동북고 2025-2 기말 공통국어2 실제 문항의 배점 대역(3.5~3.7=D2, 3.8~3.9=D3, 4.0~4.2=D4, 사용자 승인 전 제안값)으로 정한 기출 대응 등급이다. reference 가 없는 KOR 템플릿(K8, K11~K13 등 확장형)은 D3 를 넘는 라벨을 받을 수 없다.
   difficulty 범위는 출제 방식 분석에서 나온 가설이다(PROVISIONAL). observed_solver 는 이 시스템에서 실제 AI 풀이자 평가를 받은 표본이며
   표본이 1~3개이므로 범위를 바꾸는 근거가 아니라 참고값이다.
@@ -86,15 +87,15 @@ templates:
   S11: {subject: SCI, name: "농도가 다른 두 용액 혼합형", difficulty: [D4, D4], computation: true}
   # ---- KOR (공통국어2 중세국어·맞춤법) ----
   K1:  {subject: KOR, name: "중세국어 표기 특징 고르기", difficulty: [D2, D3], computation: false, reference: {exam: DONGBUK-KOR-2025-2-FINAL, item_no: 4, points: 3.5, tier: D2}}
-  K2:  {subject: KOR, name: "중세국어 자료 설명 5개 중 가장 적절한 것", difficulty: [D3, D3], computation: false, reference: {exam: DONGBUK-KOR-2025-2-FINAL, item_no: 5, points: 4.1, tier: D4}}
-  K3:  {subject: KOR, name: "탐구 주제/언어 자료 표에서 부적절한 행 찾기", difficulty: [D3, D4], computation: false, reference: {exam: DONGBUK-KOR-2025-2-FINAL, item_no: 6, points: 3.7, tier: D2}}
+  K2:  {subject: KOR, name: "중세국어 자료 설명 5개 중 가장 적절한 것", difficulty: [D3, D4], computation: false, reference: {exam: DONGBUK-KOR-2025-2-FINAL, item_no: 5, points: 4.1, tier: D4}}
+  K3:  {subject: KOR, name: "탐구 주제/언어 자료 표에서 부적절한 행 찾기", difficulty: [D2, D3], computation: false, reference: {exam: DONGBUK-KOR-2025-2-FINAL, item_no: 6, points: 3.7, tier: D2}}
   K4:  {subject: KOR, name: "새 규칙 적용형(중세국어)", difficulty: [D3, D4], computation: false, reference: {exam: DONGBUK-KOR-2025-2-FINAL, item_no: 7, points: 4.2, tier: D4}}
-  K5:  {subject: KOR, name: "총칙/규정 해석 + 예시 판단", difficulty: [D3, D3], computation: false, reference: {exam: DONGBUK-KOR-2025-2-FINAL, item_no: 8, points: 3.6, tier: D2}}
+  K5:  {subject: KOR, name: "총칙/규정 해석 + 예시 판단", difficulty: [D2, D3], computation: false, reference: {exam: DONGBUK-KOR-2025-2-FINAL, item_no: 8, points: 3.6, tier: D2}}
   K6:  {subject: KOR, name: "띄어쓰기 오류 위치 찾기", difficulty: [D2, D3], computation: false, reference: {exam: DONGBUK-KOR-2025-2-FINAL, item_no: 9, points: 3.9, tier: D3}}
   K7:  {subject: KOR, name: "조건 제시형 분류표(사이시옷 등)", difficulty: [D3, D4], computation: false, reference: {exam: DONGBUK-KOR-2025-2-FINAL, item_no: 10, points: 4.0, tier: D4}}
   K8:  {subject: KOR, name: "맞춤법 규정 + 용례 5개 중 부적절한 표기", difficulty: [D2, D3], computation: false}
-  K11: {subject: KOR, name: "중세/현대 대응표 완성형", difficulty: [D3, D4], computation: false}
-  K12: {subject: KOR, name: "소리대로/어법 분류 단어 세기", difficulty: [D3, D4], computation: true}
+  K11: {subject: KOR, name: "중세/현대 대응표 완성형", difficulty: [D2, D3], computation: false}
+  K12: {subject: KOR, name: "소리대로/어법 분류 단어 세기", difficulty: [D2, D3], computation: true}
   K13: {subject: KOR, name: "협상/화법 합의안형", difficulty: [D3, D3], computation: false}
 
 supplied_concept_rule:
