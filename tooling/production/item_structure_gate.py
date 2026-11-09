@@ -123,8 +123,10 @@ def kor_combined_assessment(item: dict[str, Any], lib: dict[str, Any], catalog: 
             tagged += 1
     mis_level = "D4" if tagged >= 3 else ("D3" if tagged == 2 else "D2")
     exc_level = "D4" if item.get("exception_rules") else "D3"
+    n_novel = len(item.get("novel_examples") or [])
+    novelty_level = "D4" if (n_novel >= 2 and item.get("morpheme_analysis") is True) else ("D3" if n_novel >= 1 else "D2")
     levels = {"reference": ref_level if not (ref_level == "D4" and not ref_ok_for_d4) else "D3",
-              "structure": struct_level, "misconception": mis_level, "exception": exc_level}
+              "structure": struct_level, "misconception": mis_level, "exception": exc_level, "novelty": novelty_level}
     assessed = min(levels.values(), key=lambda x: RANK[x])
     return {"assessed": assessed, "levels": levels, "structure_score": sf["score"], "tagged_distractors": tagged,
             "unknown_misconception_codes": unknown, "reference_item": item.get("reference_exam_item")}

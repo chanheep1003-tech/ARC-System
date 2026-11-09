@@ -147,6 +147,7 @@ def kor_item(no, ans, **kw):
             "options": ["가나다라마바사", "아자차카타파하", "하나둘셋넷다섯", "여섯일곱여덟", "아홉열하나둘"], "answer": ans,
             "judgments": judg, "reasoning_steps": 5, "immediate_elimination": 1,
             "reference_exam_item": "DONGBUK-KOR-2025-2-FINAL#7", "exception_rules": ["붙임 규정"], "supplied_concepts": ["새 규칙"],
+            "novel_examples": ["낯선 단어1", "낯선 단어2"], "morpheme_analysis": True,
             "table": {"header": ["a", "b", "c"], "rows": [["1", "2", "3"]] * 5},
             "view": ["<자료> 새 규칙을 제시한다.", "ㄱ. a", "ㄴ. b", "ㄷ. c", "ㄹ. d"]}
     base.update(kw)
@@ -184,6 +185,16 @@ class KorCombinedBasisTests(unittest.TestCase):
         self.assertTrue(any("misconception" in f["message"] for f in res["findings"] if f["code"] == "KOR_BASIS_BELOW_LABEL"))
         weak = kor_item(1, 3, reasoning_steps=1, view=["x"], table=None, supplied_concepts=[], immediate_elimination=3, exception_rules=[])
         self.assertIn("KOR_BASIS_BELOW_LABEL", self.codes(g.check_bundle(kor_bundle([weak]))))
+
+    def test_novelty_axis_requires_outside_examples_and_morpheme_analysis(self):
+        none = kor_item(1, 3, novel_examples=[])
+        res = g.check_bundle(kor_bundle([none]))
+        self.assertEqual(res["kor_combined"][0]["levels"]["novelty"], "D2")
+        self.assertIn("KOR_BASIS_BELOW_LABEL", self.codes(res))
+        one = kor_item(1, 3, novel_examples=["낯선 단어1"])
+        self.assertEqual(g.check_bundle(kor_bundle([one]))["kor_combined"][0]["levels"]["novelty"], "D3")
+        no_morph = kor_item(1, 3, morpheme_analysis=False)
+        self.assertEqual(g.check_bundle(kor_bundle([no_morph]))["kor_combined"][0]["levels"]["novelty"], "D3")
 
     def test_wrong_reference_item_cannot_unlock_d4(self):
         it = kor_item(1, 3, reference_exam_item="DONGBUK-KOR-2025-2-FINAL#10")   # K4 의 기출은 7번

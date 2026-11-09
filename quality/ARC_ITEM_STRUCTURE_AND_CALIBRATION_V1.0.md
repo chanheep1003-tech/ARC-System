@@ -46,7 +46,14 @@
   2. 구조 점수: 풀이 단계, 표·도식, 4줄 이상 자료, 판단 진술 수, 비교 대상, 새 규칙 제시(supplied_concepts), 예외 규정 수(최대 2), 표 12칸 이상. 밴드 D2 ≤6, D3 ≤9, D4 >9.
   3. 오답 유도: 오답 judgment 에 `mis`(quality/exam_style/KOR_MISCONCEPTION_CATALOG_V1.0.yaml 코드)를 기록하고, 경쟁(STRONG/MEDIUM) 오답 중 코드가 붙은 수가 2개면 D3, 3개 이상이면 D4.
   4. D4 는 `exception_rules`(예외·붙임 규정) 1개 이상이 있어야 한다. 없으면 D3 상한.
+  5. 낯선 예문·단어(novelty, D-26): `novel_examples`(교과서에 없는 예문·단어) 0개 D2, 1개 D3, 2개 이상이고 `morpheme_analysis: true`(어간·어미·접사·조사 경계를 가려야 함)이면 D4.
 - 라벨이 평가 등급보다 높으면 FAIL(KOR_BASIS_BELOW_LABEL). 미등록 코드는 FAIL(KOR_BASIS_UNKNOWN_MISCONCEPTION).
 - 풀이자 평가(블라인드 풀이)는 정답 유일성·키 오류·모호성·길이 단서 확인용으로 계속 필수다. 풀이자 난이도는 보고서에 `solver_difficulty_advisory` 로 남기고 DIFFICULTY_SOLVER_ADVISORY(WARN)로만 취급한다.
 - 선생님(사용자) 표본 검토: D4 문항 일부를 사용자에게 보여 확인한다(최종 확인 단계).
 - 한계: 배점 대역→등급 대응, 오답 코드 목록, 임계값(2개/3개)은 모두 잠정이며 학생 정답률 자료가 생기면 재보정한다.
+
+## 8. 국어 내신 변별 특성 (D-26, 사용자 지시 2026-11-09)
+- 내신 시험은 학생 등급을 나눠야 하므로 교과서에 없는 예문·단어, 헷갈리게 하는 표현, 단어의 형태소 분석(어간·어미·접사·조사 경계)이 자세하게 들어간다. 2학기 기말 범위는 문법 파트가 중심이라 문법 대비를 강하게 한다.
+- 국어 ARC N 은 따라서 (1) 교과서 발췌문의 문장을 선지에 옮기지 않고(TEXTBOOK_COPY, 등록 발췌문과 대조), (2) 낯선 단어·예문을 쓰며(`novel_examples`), (3) D4 는 형태소 경계 분석이 필요한 문항(`morpheme_analysis: true`)을 포함한다.
+- 오답 착각 코드 KM13(형태소 경계 오분석), KM14(낯선 단어에 규칙 적용 실패), KM15(형태가 같은 다른 문법 요소)를 추가했다.
+- 헷갈림·킬러 지도: quality/exam_style/KOR_CONFUSION_RAW_{A,B,C,D}_*_20261109.yaml 및 병합본(KOR_CONFUSION_AND_KILLER_MAP).

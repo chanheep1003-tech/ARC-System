@@ -114,5 +114,6 @@ kor_combined_basis:
     structure: "structure score 밴드(D2 ≤6, D3 ≤9, D4 >9)"
     misconception: "경쟁(STRONG/MEDIUM) 오답 중 misconception 코드가 붙은 수: 0~1개 D2, 2개 D3, 3개 이상 D4"
     exception: "D4 는 item.exception_rules 가 1개 이상이어야 한다(없으면 D3 상한)"
-  assessed_level: "min(reference, structure, misconception, exception)"
+    novelty: "교과서 밖 낯선 예문·단어(item.novel_examples): 0개 D2, 1개 D3, 2개 이상이면서 item.morpheme_analysis 가 true(형태소 경계 분석 필요)이면 D4 (D-26)"
+  assessed_level: "min(reference, structure, misconception, exception, novelty)"
   fail_if: "라벨 > assessed_level"

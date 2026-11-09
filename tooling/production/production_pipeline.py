@@ -649,7 +649,11 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
         subj = str(raw_bundle.get("subject", "")).upper()
         kor_combined = isinstance(raw_bundle.get("request_spec"), dict) and raw_bundle["request_spec"].get("difficulty_basis") == "KOR_COMBINED_V1"
         if subj in {"SOC", "SCI"} or kor_combined or any(isinstance(i, dict) and i.get("template") for i in raw_bundle.get("items", [])):
-            structure = structure_gate.check_bundle(raw_bundle)
+            tb_texts = None
+            if subj == "KOR":
+                # D-21/D-26: 국어 선지·보기가 등록된 교과서 발췌문을 그대로 옮기지 않았는지 확인한다.
+                tb_texts = [pp.read_text(encoding="utf-8") for pp in sorted((ROOT / "quality/source/text").glob("KOR_TB_2026_U3_*.txt"))] or None
+            structure = structure_gate.check_bundle(raw_bundle, source_texts=tb_texts)
             if structure["status"] == "FAIL":
                 report = {"tool": "ARC_PRODUCTION_PIPELINE_V1.1", "batch_id": raw_bundle.get("batch_id"),
                           "status": "BLOCKED", "blocking_gates": ["ITEM_STRUCTURE"],
