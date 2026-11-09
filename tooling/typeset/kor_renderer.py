@@ -401,7 +401,7 @@ def render(bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[s
     items = bundle["items"]
     L = Layout()
     doc = fitz.open()
-    titles = [w["title"] for src in sources for w in src["works"]]
+    titles = list(dict.fromkeys(w["title"] for src in sources for w in src["works"]))  # short per-item excerpts repeat a source: list it once
     meta = dict(bundle, passage_titles=titles)
     brand = cover(doc, meta, logo)
     doc.new_page(width=A4_W, height=A4_H)  # blank verso

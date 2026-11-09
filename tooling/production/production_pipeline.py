@@ -164,6 +164,27 @@ def cr_items(bundle: dict[str, Any]) -> list[dict[str, Any]]:
     return [it for it in bundle["items"] if it["format"] == "CR"]
 
 
+def excerpt_units(units: list[str], show: list[Any], form: str, source_id: str) -> list[str]:
+    """Keep only the paragraphs/sentences a short item actually needs (`show`: "3" = paragraph 3, "3:2-4" = its sentences 2-4).
+    Evidence refs (P<p>S<s>) then count inside the excerpt, so an item can only cite text its students see."""
+    if form != "PROSE":
+        raise PipelineError(f"SOURCE_SHOW_PROSE_ONLY: {source_id}")
+    out = []
+    for spec in show:
+        m = re.fullmatch(r"(\d+)(?::(\d+)(?:-(\d+))?)?", str(spec))
+        if not m or not 1 <= int(m.group(1)) <= len(units):
+            raise PipelineError(f"SOURCE_SHOW_INVALID: {source_id} {spec!r}")
+        para = units[int(m.group(1)) - 1]
+        if m.group(2):
+            sents = sentences(para)
+            a, b = int(m.group(2)), int(m.group(3) or m.group(2))
+            if not 1 <= a <= b <= len(sents):
+                raise PipelineError(f"SOURCE_SHOW_INVALID: {source_id} {spec!r}")
+            para = " ".join(sents[a - 1:b])
+        out.append(para)
+    return out
+
+
 def load_sources(sets: list[dict[str, Any]]) -> list[dict[str, Any]]:
     registry = {t["source_text_id"]: t for t in yaml.safe_load(SOURCE_REGISTRY.read_text(encoding="utf-8"))["texts"]}
     out = []
@@ -188,6 +209,8 @@ def load_sources(sets: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 units = [x for x in text.split("\n") if x.strip()]
                 if len(units) != entry.get("paragraphs", len(units)):
                     raise PipelineError(f"SOURCE_PARAGRAPH_COUNT_MISMATCH: {w['source_text_id']}")
+            if w.get("show"):
+                units = excerpt_units(units, w["show"], form, w["source_text_id"])
             shown = list(units)
             for mark in w.get("marks", []):
                 hits = [i for i, u in enumerate(shown) if mark["find"] in u]
@@ -238,7 +261,7 @@ def set_header(bundle: dict[str, Any], set_id: str, labels: dict[str, str]) -> s
     mq = [labels[it["item_id"]] for it in own if it["format"] == "MCQ"]
     cr = [labels[it["item_id"]].split()[-1] for it in own if it["format"] == "CR"]
     if bundle["product_mode"] == "ARC_N" and not cr:
-        return f"[{mq[0]}~{mq[-1]}] 다음 글을 읽고 물음에 답하시오."
+        return (f"[{mq[0]}] " if len(mq) == 1 else f"[{mq[0]}~{mq[-1]}] ") + "다음 글을 읽고 물음에 답하시오."
     parts = []
     if mq:
         parts.append(f"선택형 {mq[0]}~{mq[-1]}번" if len(mq) > 1 else f"선택형 {mq[0]}번")
