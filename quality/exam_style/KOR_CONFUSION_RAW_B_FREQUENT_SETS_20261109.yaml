@@ -1,0 +1,950 @@
+meta:
+  title: "KOR 고1 공통국어2 3단원 국어의 어제와 오늘 - 최다빈출 세트 헷갈림 원자료(B)"
+  date: "2026-11-09"
+  source_family: "족보닷컴 미래엔(신유식) 공통국어2 3단원 최다빈출공략 (중세국어 + 한글 맞춤법)"
+  sets_read:
+    - {abbr: B01, name: "최다빈출공략_01", fileId: "10O33iJOec5yOH2wVOecybOqnGm0qdOR4", items: 20, read: "문제 20 + 해설 20 전체"}
+    - {abbr: B02, name: "최다빈출공략_02", fileId: "1i_IUDdqPwZh_Y3fpmuG3zNuhXW0yxu_9", items: 20, read: "문제 20 + 해설 20 전체"}
+    - {abbr: B03, name: "최다빈출공략_03", fileId: "1r7BvpSA-DpjoRDBK6KKhnglYwq4bhwc_", items: 20, read: "문제 20 + 해설 20 전체"}
+    - {abbr: B04, name: "최다빈출공략_04", fileId: "1RMw0nuBrwayNXUCASPnMnmCiiLRfvlMR", items: 20, read: "문제 20 + 해설 20 전체"}
+    - {abbr: B05, name: "최다빈출공략_05", fileId: "1YDWnDZ9d48uiYCpuGINpBw15lvsGi2HN", items: 20, read: "문제 20 + 해설 20 전체"}
+  total_items_read: 100
+  not_read:
+    - "같은 세트의 중복 파일과 병합됨 파일은 지시에 따라 읽지 않음. search_files 첫 검색이 nextPageToken을 돌려주었으므로 그 뒤쪽 결과(중복·병합본 추정)는 열람하지 않았다."
+    - "킬러(최다오답) 세트는 다른 담당자 몫이라 읽지 않음."
+  answer_explanation_status:
+    separate_answer_file: "없음. search_files(최다빈출 + 정답/해설/정답률) 결과 0건."
+    inline_explanation: "있음. 각 PDF 뒤쪽에 문항별 해설이 들어 있어 오답 이유를 수집함."
+    answer_number_markers: "추출 텍스트에서 선지 번호(①~⑤)와 정답 번호 표시가 소실됨. 정답은 해설 문장과 직접 풀이로 추정했다. 정답 선지를 특정한 항목은 해설이 '적절하지 않다/타당하다'로 직접 말한 경우에 한한다."
+    correct_rate_data: "없음. 정답률·오답률 통계 자료는 이 세트에 없다. frequency와 difficulty_feel은 출제 횟수와 직접 풀이에서 나온 체감이며 통계가 아니다."
+  extraction_caveats:
+    - "옛한글 자모(아래아, 반치음, 순경음 비읖, 여린히읗, 옛이응)와 방점이 많은 곳에서 깨지거나 누락됨. 해당 항목은 '추정'으로 표시했다."
+    - "표와 보기의 일부(B05 Q14 표, B01 Q7 표, B01 Q17 보기 1)가 줄 단위로 흩어져 있어 구조는 해설을 근거로 복원함."
+    - "해설 자체의 오류·모호함 의심 지점: B02 Q6의 므른을 '주격 조사 은'으로 서술한 부분(보조사로 보는 것이 통설), B01 Q6 ㉲의 ㆆ 설명, B01 Q7 ⓐ의 달아 해설, B01 Q13 졸이다 해설. 해당 항목에 confidence를 낮춰 적음."
+  passage_reuse_observation: "중세국어 50문항 중 약 37문항이 같은 두 지문(훈민정음 언해 서문, 용비어천가 1·2장)을 쓴다. 소재는 고정이고 묻는 각도만 바뀐다. 맞춤법 50문항은 대부분 '제N항 규정 + 단어 적용' 보기형이다."
+  quoting_policy: "문항·선지 원문은 15자 이내 인용만 사용. 나머지는 구조와 이유로 서술."
+  secondary_inputs:
+    - "coordinator 추가 지침(2026-11-09): 항목마다 outside_textbook_variation, morpheme_analysis_needed, confusing_expression 필드를 추가하고 문법(형태소 분석 포함) 대비를 강하게 한다. 모든 항목에 반영함."
+  field_notes:
+    frequency_field: "HIGH=이 세트 5개 중 4개 이상에서 또는 6문항 이상 등장, MID=3~5문항, LOW=1~2문항"
+    morpheme_analysis_needed: "문항을 풀거나 오답 선지를 걸러내려면 어간·어미·접사·조사·체언 경계를 가려야 하면 true"
+
+frequency:
+  note: "1문항당 대표 개념 1개로 분류한 주된 출제 수(합계 100). 아래 frequency_appearance는 선지 수준의 중복 등장을 포함한 추정치."
+  중세국어_합계: 50
+  맞춤법_합계: 50
+  중세국어:
+    중세국어_특징_종합_표기_음운_문자_혼합: 13
+    격조사_종합판별_관형격_비교_주격_목적격_서술격: 6
+    음운변화_구개음화_두음_원순모음화_탈락_축약_오분석: 5
+    훈민정음_제자원리: 4
+    국어생활_신어_외래어_역사성: 4
+    주격조사: 3
+    ㅎ종성체언_ㄱ덧생김체언: 3
+    의미변화: 3
+    표기법_연철_8종성: 2
+    목적격조사: 2
+    주체높임_선어말어미: 2
+    창제정신_용비어천가_작품: 2
+    관형격조사: 1
+    성조_방점_단독: 0
+  맞춤법:
+    띄어쓰기_조사_의존명사_단위명사_보조용언: 13
+    사이시옷: 8
+    총칙_소리대로_어법: 7
+    두음법칙_률_렬_포함: 5
+    복합규정_여러항_혼합: 5
+    된소리_제5항: 4
+    부사_이_히_명사파생_이_제23_25_51항: 4
+    준말_활용_제18_34_40항: 3
+    든지_던_제56항: 1
+  frequency_appearance:
+    note: "대표 개념이 아니라 선지·보기 한 줄이라도 등장하는 문항 수. 추정."
+    뿐_만큼_대로_조사_vs_의존명사: 10
+    중세_모음조화: 12
+    중세_연철_분철_이어적기: 8
+    중세_주격_이_형태_기능_판별: 9
+    중세_비교_부사격_에_이: 9
+    중세_8종성_곶_예외: 7
+    중세_주체높임_시_샤: 7
+    중세_두음법칙_미적용: 7
+    중세_어두자음군_병서: 6
+    중세_소실문자_ㅸ_ㅿ_ㆆ_ㆍ: 8
+    중세_ㅎ종성_ㄱ덧생김: 7
+    중세_구개음화_미적용: 4
+    중세_방점_성조: 4
+    중세_의미변화: 5
+    중세_원순모음화: 3
+    맞춤법_률_렬_율_열: 8
+    맞춤법_사이시옷: 8
+    맞춤법_소리대로_어법_총칙: 8
+    맞춤법_된소리_제5항: 7
+    맞춤법_깨끗이_히_이_부사: 6
+    맞춤법_든지_던: 3
+  top5_frequent_concepts:
+    - "띄어쓰기: 조사 vs 의존명사 vs 단위명사 (뿐·만큼·대로·지·만 포함)"
+    - "중세국어 격조사 판별: 형태가 같은 '이'와 '에'를 현대어 풀이로 기능 판정"
+    - "사이시옷 (파생어·한자어 결합·이미 된소리 제외 조건 포함)"
+    - "두음법칙과 한자 '률/렬'의 율/열 환원 규칙"
+    - "중세국어 특징 종합 (표기법·소실문자·모음조화·연철·ㅎ종성)"
+  top5_confusion_points:
+    - "같은 형태 '이'(주격·비교 부사격·서술격 어간)와 '에'(비교 부사격)를 해석(현대어 풀이)으로 기능 판정하는 것"
+    - "'뿐·만큼·대로'가 앞말이 체언이면 조사, 관형사형 어미 뒤면 의존명사라는 판정 기준"
+    - "'률/율' 선택 기준 (모음이나 ㄴ 받침 뒤만 율)과 단어 첫머리 여부의 이중 조건"
+    - "사이시옷이 붙지 않는 조건들 (파생어 해님·홑이불, 한자어끼리, 이미 된소리·거센소리, 예외 6단어)"
+    - "형태소 경계 판단: 어간 받침 뒤 된소리(담고·숙제)와 한 단어 안의 된소리(담뿍)의 구분, 그리고 '하다' 계열 파생에서 -이/-히 선택"
+
+entries:
+- id: B-001
+  unit: 중세국어
+  concept: "형태가 같은 '이'의 기능 판별 (주격·비교 부사격·서술격 어간·관형격 ㅣ)"
+  confusion: "‘육룡이’의 이는 주격, ‘고성이’의 이는 ‘옛 성인과’라는 비교 부사격, ‘천복이시니’의 이는 서술격 어간이라서 겉모양이 같아 모두 주격으로 묶어 버린다."
+  cause: SURFACE_SIMILARITY
+  frequency: HIGH
+  difficulty_feel: MEDIUM
+  evidence: "B01 Q3,Q5,Q9 / B02 Q6 / B03 Q6 / B04 Q4 약 6문항(선지 수준 포함 9)"
+  distractor_pattern: "해설 속 ‘고성이’를 ‘육룡이’와 같은 주격으로 서술한 선지('서로 비교되는 주체이므로 둘 다 주격')를 만든다. 현대어 풀이를 제시한 뒤 풀이와 모순되는 격 이름을 붙이는 방식도 쓴다."
+  design_hint: "같은 지문 안에 형태가 같은 조사를 두 개 이상 넣고 현대어 풀이만 단서로 주어, 각각의 격을 고르게 한다. 오답은 풀이 단서와 어긋나는 격 이름으로 만든다."
+  outside_textbook_variation: "교과서 밖 15세기 문헌(석보상절·월인천강지곡·두시언해)에서 ‘X이 Y 달라’ 같은 비교 구문을 새로 가져와 현대어 풀이를 붙여 주고 ‘이’의 기능을 묻는 변형이 가능하다."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "체언 + 조사 이 / 이(서술격 어간) + 시(선어말) + 니(어미) 경계를 가려야 한다."
+  confusing_expression: "‘~와 비교하므로 주격’, ‘서로 비교되는 주체’처럼 의미 설명을 격 이름으로 슬쩍 바꾸는 표현"
+  confidence: HIGH
+
+- id: B-002
+  unit: 중세국어
+  concept: "비교 부사격 조사 ‘에’ (중국에 달아 = 중국과 달라)"
+  confusion: "현대 국어의 ‘에’(장소·원인)와 같은 부사격이라 보고, 해설이 ‘과’로 풀이한 비교 기능을 놓친다."
+  cause: TIME_SCOPE
+  frequency: HIGH
+  difficulty_feel: EASY
+  evidence: "B01 Q1,Q8 / B02 Q4 / B03 Q1,Q4 / B04 없음 약 5문항(선지 수준 9)"
+  distractor_pattern: "‘에’를 처소격이나 원인으로 바꾼 선지, 또는 ‘귁에’를 ‘중국과’로 풀이하는 것을 보고 ‘과’가 조사이므로 ‘에’도 접속 조사라고 서술한 선지."
+  design_hint: "비교 서술어(다르다, 같다) 앞의 ‘에’를 쓰고, 현대어로는 ‘과/와’ 대응임을 근거로 판정하게 한다. 오답은 시간·장소 부사격."
+  outside_textbook_variation: "‘이 말씀이 우리 말씀에 다른다’처럼 교과서에 없는 비교 구문을 새로 짓는 변형이 가능하다."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "한자어 체언 中國과 조사 에를 끊어 적는 경계(연철 아님)를 확인해야 한다."
+  confusing_expression: "‘에’가 비교의 부사격 조사로 쓰였다 / 처소의 부사격 조사로 쓰였다 식의 한 단어 차이 선지"
+  confidence: HIGH
+
+- id: B-003
+  unit: 중세국어
+  concept: "관형격 조사: ‘제’의 ㅣ와 ‘나랏’의 ㅅ"
+  confusion: "‘제’를 ‘자신이’로 풀어 주격으로 오해한다. 해설은 ‘저 + 관형격 ㅣ’, 즉 ‘자신의’라고 본다."
+  cause: CATEGORY_SWAP
+  frequency: MID
+  difficulty_feel: MEDIUM
+  evidence: "B01 Q1(해설에서 ‘제’), Q8(㉣), Q8 해설 / B02 Q3(나랏 ㅅ) 약 3문항"
+  distractor_pattern: "‘제’ 뒤에 주격 조사 ㅣ를 붙여 ‘자신이’로 풀이한 선지. ‘나랏’의 ㅅ을 현대 사이시옷과 같다고 한 선지."
+  design_hint: "대명사의 관형격 형태(저+ㅣ, 나+ㅣ)를 넣고 ‘의’로 풀면 관형어, ‘이/가’로 풀면 주어임을 구분하게 한다."
+  outside_textbook_variation: "‘내 그를 알다’처럼 낯선 15세기 구에서 ‘내/네/제’의 격을 묻는 변형. 교과서에 없는 대명사 ‘뉘’를 정의해 주고 격을 판단시키는 방식."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "대명사 어간 + ㅣ(관형격/주격) 구분, 체언 + ㅅ 경계"
+  confusing_expression: "‘~가’로 풀이해야 하는지 ‘~의’로 풀이해야 하는지 현대어 풀이가 걸리는 표현"
+  confidence: MEDIUM
+
+- id: B-004
+  unit: 중세국어
+  concept: "주격 조사 이/ㅣ/∅ 선택 (체언 끝소리 조건)"
+  confusion: "자음 뒤 이, 모음 뒤 ㅣ, 체언이 ㅣ나 반모음 j로 끝나면 무표지(∅)라는 3분을 외우고도, ‘불휘’의 ∅와 ‘내히’의 이를 바꿔 짝짓는다."
+  cause: MULTI_CONDITION
+  frequency: HIGH
+  difficulty_feel: MEDIUM
+  evidence: "B01 Q5,Q9 / B02 Q6 / B04 Q4,Q6 약 5문항"
+  distractor_pattern: "㉠·㉡·㉢ 자리에 ‘고성이/여름/내히’처럼 각 칸에 하나씩 둔 짝짓기에서 두 칸을 맞바꾼다. ∅가 쓰인 ‘여름 하니’를 ‘주격 조사 생략’ 정도로 서술해 맞는 선지처럼 보이게 한다."
+  design_hint: "체언 끝소리를 자음·모음·ㅣ/j로 나눠 세 칸 짝짓기를 만들고, ㅎ종성 체언과 ㄱ덧생김 체언을 섞어 조건을 두 겹으로 건다."
+  outside_textbook_variation: "‘믈’ ‘부텨’ ‘엄마’ 같은 교과서 밖 체언을 제시하고 주격 형태를 쓰게 하는 변형. 한자어 체언에는 형식 종성 ㅇ을 붙여 조건을 겹친다."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "체언 어간의 마지막 소리(자음/모음/ㅣ/j)와 주격 조사(이/ㅣ/∅) 경계, 체언이 특수 어간(나모→남ㄱ)일 때 교체형"
+  confusing_expression: "‘주격 조사가 나타나지 않았다’ vs ‘주격 조사가 생략되었다’ 식 서술"
+  confidence: HIGH
+
+- id: B-005
+  unit: 중세국어
+  concept: "보조사 ‘ㅇ/은’을 주격 조사로 오분류 (믈은, 남ㄱ은)"
+  confusion: "‘므른’의 ‘은’과 ‘남ᄀᆞᆫ’의 ‘ᄋᆞᆫ’은 보조사인데 앞말이 주어처럼 보여 주격으로 판단한다."
+  cause: CATEGORY_SWAP
+  frequency: MID
+  difficulty_feel: MEDIUM
+  evidence: "B02 Q6 / B01 Q9 약 2문항"
+  distractor_pattern: "‘체언이 자음으로 끝나 음성 모음 주격 조사 은이 사용되었다’처럼 보조사를 주격 조사로 단정한 선지."
+  design_hint: "주어 자리의 명사에 보조사가 붙은 예(‘뿌리 깊은 나모는’)를 주고, 조사 종류(주격/보조사)를 묻는다. 모음조화 형태 선택(ㅇ/은)은 맞고 격 분류만 틀리게 한다."
+  outside_textbook_variation: "‘물은 어디서 오는가’처럼 교과서에 없는 문장에서 ‘은/는’의 정체(보조사)를 묻는 현대 문법 문항으로의 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "체언 + 보조사 ㅇ/은 경계, 앞의 조사 결합 여부"
+  confusing_expression: "‘주격 조사 은’처럼 형태는 맞고 범주만 틀린 서술"
+  confidence: LOW
+  note: "B02 Q6 해설이 ‘주격 조사’라고 설명하는 대목은 해설 쪽 오류일 가능성이 있어 확신이 낮다. 통설은 보조사."
+
+- id: B-006
+  unit: 중세국어
+  concept: "목적격 조사 4형(ᄋᆞᆯ/을/ᄅᆞᆯ/를) 선택"
+  confusion: "자음·모음 끝소리와 양성·음성 모음 두 조건을 동시에 보아야 하는데 한 조건만 보고 고른다."
+  cause: MULTI_CONDITION
+  frequency: MID
+  difficulty_feel: HARD
+  evidence: "B03 Q7 / B04 Q1 약 2문항 (선지 수준 B01 Q1·B02 Q3)"
+  distractor_pattern: "자음 끝 음성 체언에 ‘ᄅᆞᆯ’을, 모음 끝 양성 체언에 ‘을’을 붙인 선지. 보기에 규칙을 직접 주어도 칸 순서를 섞는다."
+  design_hint: "체언 4개를 자음/모음 × 양성/음성이 한 칸씩 겹치지 않게 골라 조사 4형을 모두 쓰게 한다."
+  outside_textbook_variation: "‘사ᄅᆞᆷ’ ‘나라’ ‘구름’ ‘뫼’처럼 교과서에 없는 체언으로 바꾸고 마지막 모음이 ㆍ·ㅡ인 경우를 포함시킨다."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "체언의 마지막 음절 모음(양성/음성)과 받침 유무에 따른 조사 선택, 이어적기 후 형태"
+  confusing_expression: "체언이 받침 있는 음성 모음인 경우를 ‘모음이 ㅡ이므로 음성’처럼 풀게 하는 표현"
+  confidence: HIGH
+
+- id: B-007
+  unit: 중세국어
+  concept: "관형격 조사 ㅅ/ᄋᆡ/의 선택 (무정·높임 → ㅅ, 평칭 유정 → ᄋᆡ/의)"
+  confusion: "유정/무정, 평칭/높임 구분과 모음조화(양성 ᄋᆡ, 음성 의)가 겹쳐 어느 기준이 먼저인지 헷갈린다."
+  cause: MULTI_CONDITION
+  frequency: LOW
+  difficulty_feel: HARD
+  evidence: "B04 Q7 약 1문항 (선지 수준 B01 Q1·B02 Q3)"
+  distractor_pattern: "무정 명사 ‘수플’에 ᄋᆡ를 붙인 선지, 평칭 유정 명사에 ㅅ을 붙인 선지, 양성 도적에 ‘의’를 붙인 선지."
+  design_hint: "도적/거붑/수플처럼 유정(평칭)·유정(음성)·무정을 하나씩 두고 현대어 풀이를 준다."
+  outside_textbook_variation: "높임 유정 명사 ‘님금/부텨’와 무정 명사를 새 문장에 넣어 ㅅ이 와야 하는 곳을 묻는 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "체언 끝모음과 관형격 조사 결합 후 줄어든 형태(거부븨, 수픐)"
+  confusing_expression: "‘도적ᄋᆡ’와 ‘도적의’ 차이처럼 한 글자 차이로 모음조화를 시험하는 선지"
+  confidence: MEDIUM
+
+- id: B-008
+  unit: 중세국어
+  concept: "서술격 조사 ‘이다’의 쓰임과 활용 (천복이시니, 마니라)"
+  confusion: "서술격 조사를 용언으로 오해하거나, ‘마니라’의 ‘이라’를 의존명사에 붙은 어미로만 본다."
+  cause: TERM_CONFUSION
+  frequency: MID
+  difficulty_feel: MEDIUM
+  evidence: "B01 Q1,Q3,Q9 / B02 Q3 / B04 Q6 약 5문항"
+  distractor_pattern: "‘동부시니’도 ‘천복이시니’처럼 체언+서술격 조사의 활용이라고 서술하는 선지. 해설은 ‘동부 + 하시니’로 용언 활용으로 본다(표현은 어색)."
+  design_hint: "‘체언+이-+시+니’ 경계를 쪼개게 하고, 서술격 조사 어간 ‘이-’의 생략·탈락을 묻는다."
+  outside_textbook_variation: "‘이 뜻이니라’ ‘한갓 꿈이로다’ 같은 교과서 밖 종결 형태를 제시해 서술격 조사 활용을 쪼개게 하는 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "체언 / 서술격 조사 어간 이- / 선어말 -시- / 어미 -니 네 경계"
+  confusing_expression: "‘체언과 조사가 만나 활용’ 같은 용어를 일부러 섞은 서술"
+  confidence: MEDIUM
+
+- id: B-009
+  unit: 중세국어
+  concept: "주체 높임 선어말 어미 -시-/-샤-의 교체 조건"
+  confusion: "-샤-와 -시-가 다른 이유를 모음조화 때문이라고 생각한다. 실제 조건은 뒤따르는 어미 첫소리가 모음(-샤-, -시-+-아)이냐 자음이냐이다."
+  cause: TERM_CONFUSION
+  frequency: HIGH
+  difficulty_feel: MEDIUM
+  evidence: "B01 Q3 / B02 Q6 / B03 Q5 / B05 Q2,Q7 / B04 Q6 약 6문항"
+  distractor_pattern: "‘형태를 달리한 것은 모음조화를 지키기 위해서’라는 선지. ‘중세에는 주체 높임 어미가 없었다’는 선지. 높임 대상을 ‘듣는 이’로 바꾼 선지."
+  design_hint: "이어지는 어미 첫소리를 바꾸어 -샤-/-시-를 모두 쓰고, 높임의 대상(서술의 주체)을 묻는다. 모음조화와 구별하는 오답을 넣는다."
+  outside_textbook_variation: "‘님금하 아ᄅᆞ쇼셔’ 같은 교과서 밖 상대 높임 표현과 섞어 주체/상대/객체 높임을 가르게 한다."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "어간 / 선어말 -시- / 어미 사이 경계, -샤-는 -시- + -아 의 축약"
+  confusing_expression: "‘높임 대상은 말하는 이/듣는 이/서술의 주체’ 같은 세 대상 나열형 선지"
+  confidence: HIGH
+
+- id: B-010
+  unit: 중세국어
+  concept: "‘이셔’의 ‘시’를 주체 높임으로 오인"
+  confusion: "‘배이셔도’의 ‘시’를 주체 높임 선어말 어미로 보지만, 해설은 ‘잇-’ + 어 형태로 보아 -시-가 없다고 한다."
+  cause: SURFACE_SIMILARITY
+  frequency: LOW
+  difficulty_feel: HARD
+  evidence: "B02 Q1 약 1문항"
+  distractor_pattern: "‘이셔도’를 보니 주체를 높이는 -시-가 사용되었다는 선지 (정답이 되는 오설명)."
+  design_hint: "모양이 -시-처럼 보이는 어간(이시-/있-) 사례를 넣어 선어말 어미와 어간의 일부를 구분하게 한다."
+  outside_textbook_variation: "‘겨시다’ ‘이시다’ 계열 용언을 교과서 밖에서 가져와 -시-와 어간을 구분하는 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "어간 이시-/잇-과 어미 -어의 경계, -시-가 선어말 어미인지 어간 일부인지"
+  confusing_expression: "-시-와 닮은 어간 음절을 높임 표지처럼 보이게 하는 표현"
+  confidence: LOW
+  note: "해설의 ‘잇어’ 분석은 단순화된 것으로 보이며 이 항목은 추정."
+
+- id: B-011
+  unit: 중세국어
+  concept: "이어적기(연철)·끊어적기(분철)·혼용 방향과 용어"
+  confusion: "‘말미’가 ‘말+이’의 끊어적기라고 보거나, 한자어 체언 뒤 조사가 끊어 적힌 것(中國에, 文字와)을 연철로 오해한다. 또 ‘이어적기가 일반적, 후에 혼용’이라는 시대 서술도 단정으로 쓴다."
+  cause: RULE_DIRECTION
+  frequency: HIGH
+  difficulty_feel: MEDIUM
+  evidence: "B01 Q2,Q6 / B02 Q1,Q9 / B03 Q1 / B04 Q3 / B05 Q7 약 7문항"
+  distractor_pattern: "연철과 분철의 이름을 맞바꾼 선지. ‘현대 국어는 이어적기를 쓴다’처럼 시대를 뒤집은 선지. 용언 어간+어미의 이어적기를 체언 조사에만 적용한다고 한 선지."
+  design_hint: "한 문항 안에서 체언+조사, 어간+어미, 한자어 체언+조사의 세 가지 표기 방식을 대비시켜 이어적기가 적용되는 범위와 되지 않는 범위를 묻는다."
+  outside_textbook_variation: "‘님금이’ ‘ᄇᆞ미’ ‘나리’ 같은 교과서 밖 어휘의 이어적기를 현대어 끊어적기로 환원시키는 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "체언 말음 + 조사 이/을, 어간 말음 + 어미 첫소리의 이어 적힌 경계, 한자어 체언과 조사의 끊어 적힌 경계"
+  confusing_expression: "‘이어적기’ ‘연철’ ‘분철’ ‘끊어적기’ 등 같은 대상을 부르는 이름이 섞여 나오는 표현"
+  confidence: HIGH
+
+- id: B-012
+  unit: 중세국어
+  concept: "8종성법과 예외 표기(곶), 종성부용초성"
+  confusion: "‘곶’의 ㅈ 받침을 8종성법의 일반 규칙으로 읽거나, ‘됴코’처럼 받침 글자가 없는 단어를 8종성법과 관련 있다고 본다. 또 8종성법을 현대의 ‘음절의 끝소리 규칙’이라 부른다."
+  cause: TERM_CONFUSION
+  frequency: HIGH
+  difficulty_feel: MEDIUM
+  evidence: "B01 Q2,Q3 / B03 Q4 / B05 Q5 / B04 Q6 / B02 Q9 약 6문항"
+  distractor_pattern: "‘곶’이 당시 보편적 표기법의 예라는 선지, 8종성법 이름을 ‘음절의 끝소리 규칙’으로 바꾼 선지, ㅎ이 8종성에 해당한다는 선지."
+  design_hint: "8종성(ㄱㄴㄷㄹㅁㅂㅅㅇ)에 없는 받침 글자가 쓰인 단어를 예외로 찾게 한다. 지문의 ‘디(ㅅ 종성)’와 대비시킨다."
+  outside_textbook_variation: "‘닢’ ‘닙’ ‘빛’ ‘돐’처럼 교과서 밖 받침 표기를 제시해 8종성 규칙 적용 여부를 판정하게 한다."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "어간 받침 글자와 어미 첫소리 사이에서 받침이 이어적기로 옮겨지는 경계"
+  confusing_expression: "‘종성’ ‘받침’ ‘끝소리’가 한 선지에 섞여 쓰이는 표현"
+  confidence: HIGH
+
+- id: B-013
+  unit: 중세국어
+  concept: "병서와 어두자음군 (ㅳ·ㅄ·ㅆ), 지문에 없는 글자 구별"
+  confusion: "어두자음군이 쓰인 예를 찾을 때 지문에 실제 있는 글자(ㅳ, ㅄ)와 없는 글자(ㅵ)를 가리지 않고 선지의 말만 믿는다."
+  cause: COUNTING
+  frequency: MID
+  difficulty_feel: MEDIUM
+  evidence: "B01 Q6 / B02 Q4 / B03 Q2,Q3 / B04 Q3 / B05 Q7 약 6문항"
+  distractor_pattern: "지문에 나오지 않는 병서 글자를 포함한 목록 선지 ('ㅵ, ㅳ, ㅄ')."
+  design_hint: "제시된 지문에서 실제로 쓰인 글자만 근거로 판정하게 하고, 그 글자가 자음군인지 합용 병서의 일부인지 묻는다."
+  outside_textbook_variation: "교과서 밖 어휘 ‘뿔’ ‘ᄣᅳ’ ‘ᄠᅳᆮ’ ‘ᄲᆞᆯ’ 중 어두자음군을 고르는 변형."
+  morpheme_analysis_needed: false
+  morpheme_boundary: "해당 없음. 음절 첫머리 자음 개수를 센다."
+  confusing_expression: "‘병서’ ‘합용 병서’ ‘연서’ ‘어두자음군’이 섞인 용어 선지"
+  confidence: MEDIUM
+
+- id: B-014
+  unit: 중세국어
+  concept: "현대에 쓰이지 않는 문자 (ㅸ·ㅿ·ㆆ·ㆍ)의 종류와 소리 범주"
+  confusion: "ㅸ을 모음이라고 하거나(해설: 자음), ‘홇배’의 ㆆ을 된소리 부호로 설명하는 식으로 문자 이름과 기능을 뒤섞는다."
+  cause: CATEGORY_SWAP
+  frequency: HIGH
+  difficulty_feel: MEDIUM
+  evidence: "B01 Q6,Q7,Q8 / B02 Q1 / B03 Q3,Q9 / B04 Q3 / B05 Q7 약 8문항"
+  distractor_pattern: "‘수비’의 ㅸ을 ‘특수한 모음’이라고 한 선지, ㅿ·ㆆ의 유무를 지문과 다르게 서술한 선지."
+  design_hint: "자음자와 모음자를 구분하게 하고, 그 문자가 지문에서 어느 어휘에 쓰였는지 근거를 찾게 한다."
+  outside_textbook_variation: "‘ᄒᆞ다’ ‘아ᅀᆞᆷ’ ‘ᅌᅡ’ 같은 교과서 밖 어휘에서 사라진 문자를 찾는 변형."
+  morpheme_analysis_needed: false
+  morpheme_boundary: "해당 없음"
+  confusing_expression: "‘자음’과 ‘모음’이라는 범주어를 한 글자로 바꿔 놓는 서술"
+  confidence: LOW
+  note: "B01 Q6 ㉲의 ㆆ 해설은 옛한글 깨짐으로 정확하지 않아 추정. 방점(절음 부호)과 ㆆ을 학생이 섞는 지점으로만 기록."
+
+- id: B-015
+  unit: 중세국어
+  concept: "구개음화 미적용 (디→지, 됴코→좋고) 판정"
+  confusion: "‘ㄷ→ㅈ’ 변화가 현대에 일어난 것인데 중세 표기에 이미 반영되었다고 보거나, 반대로 미적용 근거(‘펴디’)를 어간이 아니라 어미에서 찾는다."
+  cause: TIME_SCOPE
+  frequency: MID
+  difficulty_feel: EASY
+  evidence: "B01 Q7 / B02 Q4 / B03 Q4 / B05 Q4 약 4문항"
+  distractor_pattern: "‘펴디’를 현대 ‘펴지’와 비교하며 구개음화가 적용되었다고 서술한 선지, 방향을 ㅈ→ㄷ으로 뒤집은 선지."
+  design_hint: "구개음화 환경(ㄷ·ㅌ + ㅣ/j)을 가진 중세 형태와 현대 형태를 나란히 놓고 변화 방향을 묻는다."
+  outside_textbook_variation: "‘티다’ ‘텬하’ ‘됴타’ ‘ᄀᆞᄅᆞ치다’ 같은 교과서 밖 어휘를 제시하는 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "어간 말 ㄷ/ㅌ + 어미(ㅣ·j) 경계, 형태소 내부 vs 형태소 경계의 구개음화"
+  confusing_expression: "‘구개음화가 일어난다 / 일어나지 않는다’ 방향 서술"
+  confidence: HIGH
+
+- id: B-016
+  unit: 중세국어
+  concept: "두음 법칙 미적용 (니르고져, 니겨, 너겨)과 ‘어린’의 ㄹ"
+  confusion: "‘어린’의 ㄹ을 어두의 ㄹ로 보고 두음 법칙이 적용되지 않았다고 판단한다. 해설: ㄹ이 두 번째 음절이므로 어두가 아니다."
+  cause: TIME_SCOPE
+  frequency: HIGH
+  difficulty_feel: MEDIUM
+  evidence: "B01 Q7 / B02 Q1,Q2,Q4 / B03 Q1,Q4,Q9 약 6문항 (선지 수준 7)"
+  distractor_pattern: "‘어린’에서 두음 법칙 미적용을 판단하는 선지, ‘니겨 → 익혀’의 변화를 ㄴ 탈락이 아닌 다른 이름으로 부르는 선지."
+  design_hint: "어두 위치와 비어두 위치를 구분하게 하고, ㄴ·ㄹ이 ㅣ·j 앞에서 탈락하는 현대 변화와 연결한다."
+  outside_textbook_variation: "‘녀름’ ‘니르다’ ‘녀자’ ‘뉴리’ 등 교과서 밖 어휘에서 두음 법칙 적용 여부를 판정시키는 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "어휘 첫음절인지 아닌지(형태소 첫머리) 판정, 합성어 경계에서의 두음"
+  confusing_expression: "‘두음’을 ‘어두’와 ‘어두 뒤 음절’로 헷갈리게 쓰는 서술"
+  confidence: HIGH
+
+- id: B-017
+  unit: 중세국어
+  concept: "원순모음화 (믈→물, 스믈→스물)"
+  confusion: "입술소리 ㅁ·ㅂ·ㅍ 뒤에서 ㅡ가 ㅜ로 바뀌는 변화를 현대 국어에도 그 방향으로 일어났는지, 중세에 있었는지 시대를 뒤섞는다."
+  cause: TIME_SCOPE
+  frequency: MID
+  difficulty_feel: MEDIUM
+  evidence: "B01 Q7 / B02 Q2,Q9 약 3문항"
+  distractor_pattern: "‘중세에는 원순모음화가 일어났다’ ‘현대에는 원순모음화가 없다’처럼 시대를 뒤집은 선지."
+  design_hint: "중세 표기 ‘믈·블·플’과 현대 ‘물·불·풀’을 쌍으로 주고 변화 이름과 환경을 묻는다."
+  outside_textbook_variation: "‘거믄’ ‘보람’ ‘미리’ 같은 교과서 밖 어휘의 변화를 판정하는 문항."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "어간 모음이 ㅁ·ㅂ·ㅍ 뒤에서 ㅡ인지 ㅜ인지, 조사 결합 전후 형태"
+  confusing_expression: "‘원순모음화/모음조화/움라우트’ 같은 모음 관련 용어 섞기"
+  confidence: HIGH
+
+- id: B-018
+  unit: 중세국어
+  concept: "ㅎ종성 체언: 조사·어미 첫소리별 3가지 실현 (모음 앞 이어적기, ㄱ·ㄷ 앞 축약, ㅅ 앞 탈락)"
+  confusion: "‘내ㅎ’ 같은 ㅎ종성 체언이 현대에 ‘ㅎ’이 탈락한 것인지 다른 음절과 축약된 것인지, 그리고 ㅎ이 ‘덧붙는’ 건지 ‘원래 끝소리’인지 용어가 섞인다."
+  cause: TERM_CONFUSION
+  frequency: HIGH
+  difficulty_feel: HARD
+  evidence: "B01 Q4,Q5 / B02 Q8 / B04 Q9 / B05 Q3 약 5문항"
+  distractor_pattern: "‘ㅎ이 8종성에 해당한다’는 선지, ‘ㅎ이 현재도 유지된다’는 선지, ‘홀로 쓰이면 ㅎ이 덧붙는다’는 선지."
+  design_hint: "관형격 ㅅ 앞(탈락), 과 앞(축약), 이 앞(이어적기)을 각각 보기로 제시해 3분을 칸에 채우게 한다."
+  outside_textbook_variation: "‘하ᄂᆞᆯ’ ‘ᄯᅡ’ ‘길’ ‘안’처럼 교과서 밖 ㅎ종성 체언을 여러 조사와 결합해 보이는 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "체언 어간(ㅎ 포함 형태) + 조사 경계에서 ㅎ의 실현 방식, 축약된 형태의 분해"
+  confusing_expression: "‘덧붙다/탈락하다/축약되다/실현되다’ 동사를 바꿔 끼운 서술"
+  confidence: HIGH
+
+- id: B-019
+  unit: 중세국어
+  concept: "ㄱ덧생김 체언 (나모→남ㄱ)과 ‘조사가 아니라 체언이 교체’라는 설명"
+  confusion: "‘남’(낡+ᄋᆞᆫ)처럼 조사 앞에서 체언 형태가 바뀌는 것을 ‘조사의 형태가 달라진다’로 읽는다. 해설은 체언 자체가 교체되는 특수 체언이라고 한다."
+  cause: CATEGORY_SWAP
+  frequency: MID
+  difficulty_feel: HARD
+  evidence: "B01 Q4,Q5 / B05 Q3 약 3문항"
+  distractor_pattern: "㉢과 ㉣이 ‘조사의 형태가 달라지는 체언’이라고 묶은 선지, ‘홀로 쓰이거나 자음 조사 앞에서 나모’ 서술의 일부를 뒤바꾼 선지."
+  design_hint: "체언이 홀로 쓰일 때, 자음 조사 앞, 모음 조사 앞의 세 형태를 표로 주고 칸을 채우거나 오설명을 찾게 한다."
+  outside_textbook_variation: "‘구무→굼ㄱ’ ‘불무’ 같은 교과서 밖 ㄱ덧생김 체언을 제시하는 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "체언 형태 교체형(나모/낡/남ㄱ) + 조사 첫소리 경계, 어느 형태가 어느 환경에서 쓰이는지"
+  confusing_expression: "‘체언 끝 모음 탈락 후 ㄱ이 덧생기다’처럼 길게 이어진 설명"
+  confidence: MEDIUM
+
+- id: B-020
+  unit: 중세국어
+  concept: "모음조화 (체언+조사, 어간+어미) 적용과 현대 약화"
+  confusion: "모음조화가 지켜졌다는 판단의 근거가 앞 음절의 모음인지 마지막 음절 모음인지, ㅡ·ㆍ 판정에서 헷갈리고, 현대 국어에서 더 규칙적으로 지켜진다고 거꾸로 이해한다."
+  cause: RULE_DIRECTION
+  frequency: HIGH
+  difficulty_feel: MEDIUM
+  evidence: "B01 Q4,Q6 / B02 Q1,Q4 / B03 Q3,Q7,Q9 / B04 Q1,Q6,Q7 / B05 Q2,Q8 약 12문항(선지 수준 포함)"
+  distractor_pattern: "‘문자와로’에서 ㆍ가 ㅘ와 어울린다는 서술(맞음)과 ‘현대 국어는 모음조화가 더 철저’(틀림)를 섞어 놓는 선지."
+  design_hint: "체언 말음절 모음(ㆍ·ㅏ·ㅗ vs ㅡ·ㅓ·ㅜ)을 기준으로 조사 모음을 고르게 하고, 높임 어미 교체와는 별개임을 구분시킨다."
+  outside_textbook_variation: "‘마ᄅᆞᆷ’ ‘ᄇᆞᄅᆞᆷ’ ‘브르’ 같은 낯선 어휘의 조사 결합형을 고르는 변형. 현대 국어의 ‘아/어’ 교체와 대비."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "체언/어간의 마지막 음절 모음과 뒤따르는 조사·어미 모음의 경계"
+  confusing_expression: "‘양성 모음과 양성 모음’ ‘음성과 음성’ 나열이 헷갈리게 이어진 서술"
+  confidence: HIGH
+
+- id: B-021
+  unit: 중세국어
+  concept: "의미 변화 유형: 확대·축소·이동 판정과 소멸 어휘"
+  confusion: "‘어리다’(어리석다→나이 적다)를 축소나 확대로, ‘여름’(열매→계절)을 확대로 잘못 분류한다. 또 ‘하다’(많다)는 의미가 이동한 것이 아니라 사라진 어휘다."
+  cause: CATEGORY_SWAP
+  frequency: MID
+  difficulty_feel: MEDIUM
+  evidence: "B01 Q10 / B03 Q1,Q4 / B04 Q2 / B05 Q1 약 5문항"
+  distractor_pattern: "‘놈’을 축소로 맞게 쓰면서 ‘어리다’를 축소라 한 선지, ‘여름’을 확대라 한 선지, ‘하다’를 이동이라 한 선지."
+  design_hint: "의미 영역이 넓어졌는지 좁아졌는지 다른 영역으로 옮겼는지를 기준으로 한 표를 주고, 소멸 어휘는 따로 구분해 정의에 포함시킨다."
+  outside_textbook_variation: "‘얼굴(형체→낯)’ ‘어리다’ ‘싸다’ ‘졍’ 같은 교과서 밖 어휘의 의미 변화를 묻고, 유형 정의를 문항 안에 제공."
+  morpheme_analysis_needed: false
+  morpheme_boundary: "해당 없음. 다만 ‘여름(열-+-음)’의 파생 경계 설명이 선지에 끼는 경우 있음."
+  confusing_expression: "‘축소/이동/확대’ 용어와 ‘소멸’을 한 목록에 섞어 선지를 만드는 표현"
+  confidence: HIGH
+
+- id: B-022
+  unit: 중세국어
+  concept: "훈민정음 초성 제자 원리: 상형·가획·이체자 (ㄹ·ㅿ·ㆁ), 위치 분류"
+  confusion: "ㄹ을 ㄴ에 가획한 글자로 보거나(해설: 이체자), ㆁ을 후음 이체자로 보는 등 이체자 3개의 소속(ㆁ 어금니, ㄹ 혀, ㅿ 이)을 섞는다."
+  cause: CATEGORY_SWAP
+  frequency: HIGH
+  difficulty_feel: MEDIUM
+  evidence: "B03 Q8 / B04 Q8,Q10 / B05 Q6 약 4문항"
+  distractor_pattern: "표의 빈칸 ⓐ~ⓔ에 ㄲ(된소리)이나 ㄴ을 이체자 칸에 넣는 선지, ‘ㄴ은 혀뿌리가 목구멍을 막는 모양’이라는 상형 설명 맞바꿈."
+  design_hint: "기본자 5, 가획자, 이체자 3을 표에 놓고 일부 칸을 비운 뒤 알맞은 글자를 채우게 한다. 상형 설명 문장도 함께 건다."
+  outside_textbook_variation: "ㅱ·ㅹ·ㅸ(연서) 같은 교과서 밖 글자나 병서 규칙을 곁들이는 변형."
+  morpheme_analysis_needed: false
+  morpheme_boundary: "해당 없음"
+  confusing_expression: "‘가획’과 ‘이체’ ‘병서’ ‘연서’ 용어를 한 문장에 섞은 서술"
+  confidence: HIGH
+
+- id: B-023
+  unit: 중세국어
+  concept: "훈민정음 모음 제자: 기본자·초출자·재출자·합용자"
+  confusion: "ㅑ를 초출자나 재출자 중 어디에 둘지, ㅚ·ㅟ를 재출자로 볼지(해설: 합용자) 헷갈리고, 지문 속 ㅏ·ㅣ를 기본자로 오인한다."
+  cause: CATEGORY_SWAP
+  frequency: MID
+  difficulty_feel: MEDIUM
+  evidence: "B03 Q2,Q3,Q8 / B04 Q8 / B05 Q6 약 4문항"
+  distractor_pattern: "‘ㅚ, ㅟ가 두 번 합성되어 재출자’라는 선지, ‘사용된 모음자가 모두 기본자’라는 선지, ㅓ의 합성 재료를 틀리게 서술한 선지."
+  design_hint: "기본자 3, 초출 4, 재출 4와 합용자를 구분하는 표를 만들고, 지문 어휘에서 실제 쓰인 모음의 소속을 묻는다."
+  outside_textbook_variation: "‘ㆎ’ ‘ㅢ’ 같은 교과서 밖 이중 모음자를 제시해 합용인지 판정하는 변형."
+  morpheme_analysis_needed: false
+  morpheme_boundary: "해당 없음"
+  confusing_expression: "‘합성’ ‘합용’ ‘결합’이 같은 뜻으로 쓰이는 서술"
+  confidence: MEDIUM
+
+- id: B-024
+  unit: 중세국어
+  concept: "방점과 성조: 위치(왼쪽)와 성격(비분절 음운)"
+  confusion: "방점을 글자 오른쪽에 찍었다고 하거나, 성조를 소리의 ‘길이’로 오해한다."
+  cause: OTHER
+  frequency: MID
+  difficulty_feel: EASY
+  evidence: "B02 Q4,Q9 / B04 Q3 / B05 Q8 약 4문항"
+  distractor_pattern: "‘글자 오른쪽’으로 위치를 바꾼 선지, ‘소리의 길이를 나타내는 성조’ 선지, ‘현대에도 방점을 쓴다’ 선지."
+  design_hint: "방점이 달린 단어를 제시하고 방점의 위치, 현대 국어의 성조 소실(길이는 남음)을 짝지어 묻는다."
+  outside_textbook_variation: "‘:말’(상성)과 ‘말’(평성)처럼 방점으로 뜻이 갈리는 교과서 밖 쌍을 제시하는 변형."
+  morpheme_analysis_needed: false
+  morpheme_boundary: "해당 없음"
+  confusing_expression: "‘음의 높낮이’와 ‘음의 길이’를 혼동시키는 서술"
+  confidence: HIGH
+
+- id: B-025
+  unit: 중세국어
+  concept: "동국정운식 한자음 표기와 형식 종성 ㅇ, 주격 조사 결합"
+  confusion: "孟子처럼 받침 없는 한자음에 형식 종성 ㅇ이 붙은 표기를 모르면 모음 끝 체언으로 볼지 자음 끝 체언으로 볼지 판단이 갈린다."
+  cause: MULTI_CONDITION
+  frequency: LOW
+  difficulty_feel: HARD
+  evidence: "B04 Q4 / B03 Q9 약 2문항"
+  distractor_pattern: "孟子 뒤에 이를, 王 뒤에 ∅를 붙인 선지 등 이/ㅣ/∅ 짝짓기. 동국정운식 표기를 ‘쓰다’라는 순우리말 ‘ᄡᅳ다’에 적용한 선지."
+  design_hint: "한자음 형식 종성이 붙은 체언에 주격 조사 결합형을 고르게 한다. 표기 방식이 바뀌면 조사도 바뀌는 점을 건다."
+  outside_textbook_variation: "‘天下’ ‘君子’ ‘世尊’ 같은 한자어 체언을 교과서 밖에서 가져와 형식 종성 여부와 조사 결합을 묻는 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "한자음 + 형식 종성 ㅇ + 조사 경계, 체언 끝소리 판정"
+  confusing_expression: "‘받침이 있다/없다’가 표기와 실제 소리에서 달라지는 서술"
+  confidence: MEDIUM
+
+- id: B-026
+  unit: 중세국어
+  concept: "훈민정음 창제 정신 (자주·애민·실용·창조)과 근거 문장 대응"
+  confusion: "‘새로 스물여덟 글자를 만든다’를 창조 정신의 근거로 들면서 ‘중국 말에 기반하여’라는 틀린 전제를 못 거른다."
+  cause: OTHER
+  frequency: LOW
+  difficulty_feel: EASY
+  evidence: "B02 Q5 약 1문항"
+  distractor_pattern: "창제 정신 이름은 맞고 근거 설명만 틀린 선지 ('중국 말에 기반하여 창조 정신')."
+  design_hint: "정신 이름 4개와 해당 구절을 짝짓고, 구절이 엉뚱한 정신 이름에 매칭된 선지를 만든다."
+  outside_textbook_variation: "해례본 서문이나 정인지 서문 일부를 교과서 밖에서 가져와 창제 정신을 매칭하는 변형."
+  morpheme_analysis_needed: false
+  morpheme_boundary: "해당 없음"
+  confusing_expression: "‘~에 기반하여’처럼 근거 전제를 슬쩍 바꾸는 서술"
+  confidence: MEDIUM
+
+- id: B-027
+  unit: 중세국어
+  concept: "용비어천가 제1장·제2장 특성 구분 (악장·최초 문헌 vs 최초 문학, 제1장·제2장 수사)"
+  confusion: "‘제1장은 상징적 시어를 활용’이라는 서술은 제2장의 특징이다. 또 ‘한글로 기록된 최초의 문학’이라는 서술도 정확한지 헷갈린다."
+  cause: OTHER
+  frequency: LOW
+  difficulty_feel: MEDIUM
+  evidence: "B04 Q5 약 1문항"
+  distractor_pattern: "장 번호만 바꿔 특징을 이동시킨 선지."
+  design_hint: "각 장의 표현상 특징(직설적 개괄 vs 대구·비유)을 묻는다."
+  outside_textbook_variation: "‘월인천강지곡’ 일부를 가져와 두 작품의 표현을 비교하게 하는 변형."
+  morpheme_analysis_needed: false
+  morpheme_boundary: "해당 없음"
+  confusing_expression: "‘제1장/제2장’ 숫자 바꿔치기"
+  confidence: MEDIUM
+
+- id: B-028
+  unit: 중세국어
+  concept: "국어의 역사성·신어·외래어 남용 (국어 생활)"
+  confusion: "‘모든 신어가 공인을 얻었다’고 단정하거나, 외래어 남용 문제와 줄임말·비속어 문제를 구분하지 못한다."
+  cause: OTHER
+  frequency: MID
+  difficulty_feel: EASY
+  evidence: "B02 Q10 / B03 Q10 / B05 Q9,Q10 약 4문항"
+  distractor_pattern: "언어의 역사성을 사회성·불변성·방언·개인 습관으로 바꾼 선지, ‘신어는 시간이 지나면 정착된다’ 단정."
+  design_hint: "제시 상황의 소통 문제 원인(정보 소외)을 정확히 짚는 선지와 그럴듯한 다른 문제(비속어, 문법 오류)를 대비시킨다."
+  outside_textbook_variation: "교과서에 없는 새 신어 목록(예: 2025 신어)이나 광고 문구를 가져와 정착 여부를 묻는 변형."
+  morpheme_analysis_needed: false
+  morpheme_boundary: "신어가 복합어일 때 구성 단어 경계(온라인+개학)"
+  confusing_expression: "‘역사성/사회성/기호성/자의성’ 용어 바꿔치기"
+  confidence: HIGH
+
+- id: B-029
+  unit: 중세국어
+  concept: "중세→현대 차이 종합 오설명 (중세에 주체 높임이 없었다, 어두자음군 소실 등)"
+  confusion: "옛 문법 요소가 현대에도 이어진다는 사실(-시-)을 단절로 오해하거나, 현대와 같은 부분을 차이로 서술하는 선지를 고르지 못한다."
+  cause: TIME_SCOPE
+  frequency: MID
+  difficulty_feel: EASY
+  evidence: "B05 Q7,Q8 / B02 Q9 약 3문항"
+  distractor_pattern: "‘중세 국어에는 주체 높임 선어말 어미가 없었다’ ‘현대 국어가 모음조화를 더 지킨다’처럼 사실을 정반대로 서술."
+  design_hint: "중세와 현대에서 유지되는 것과 바뀐 것을 한 표에 나누어 틀린 서술을 찾게 한다."
+  outside_textbook_variation: "근대 국어(18~19세기) 자료를 가져와 중세·현대와의 3단 비교를 묻는 변형."
+  morpheme_analysis_needed: false
+  morpheme_boundary: "해당 없음"
+  confusing_expression: "‘~에 와서야’ ‘~부터’ 같은 시기 한정 표현"
+  confidence: HIGH
+
+- id: B-030
+  unit: 중세국어
+  concept: "음운 변동 오분석: ㄹ 탈락·거센소리되기·된소리되기·유음화·모음 축약을 잘못 붙이기"
+  confusion: "‘하니’의 ㄹ 탈락, ‘그츨’의 관형사형 어미 뒤 된소리, ‘바람애’의 유음화, ‘불휘’의 모음 축약처럼 근거 없이 현대 음운 현상 이름을 중세 어형에 붙인 선지를 잘 거르지 못한다."
+  cause: TERM_CONFUSION
+  frequency: MID
+  difficulty_feel: HARD
+  evidence: "B02 Q7 / B01 Q4,Q8 / B04 Q6 약 3문항"
+  distractor_pattern: "어간·어미의 기본형을 잘못 잡아 음운 변동을 허구로 만든 선지 ('할 다' vs '하다' 기본형)."
+  design_hint: "기본형부터 정확히 분해(어간+어미)해야 풀리는 오분석 선지를 쓴다. 정답은 어간의 기본형을 확인하면 해결."
+  outside_textbook_variation: "교과서 밖 어휘 ‘ᄒᆞ니’ ‘머그니’ ‘두ᇰ’로 같은 음운 현상 이름을 붙이는 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "어간(하-, 둏-, 긏-) + 어미 -ㄴ/-ㄹ/-고 경계, 어간 받침이 어미 첫소리로 이어 적힌 위치"
+  confusing_expression: "‘발생하고 있다’ 같은 현상 선언형 서술"
+  confidence: MEDIUM
+
+- id: B-031
+  unit: 한글맞춤법
+  concept: "총칙 제1항 소리대로 적되 어법에 맞도록: 환경에 따라 달라지는 발음 vs 형태 고정"
+  confusion: "‘꽃이/꽃만’ 같은 예에서 형태를 고정하는 것이 어법에 맞는 방식이고 소리대로 적는 것이 아니라는 방향을 뒤바꾼다. ‘(나)는 환경에 따라 모양을 바꾸어 적는다’는 오서술이 그럴듯하다."
+  cause: RULE_DIRECTION
+  frequency: HIGH
+  difficulty_feel: EASY
+  evidence: "B01 Q11 / B02 Q12 / B03 Q13,Q17 / B04 Q13,Q14 약 6문항(선지 수준 8)"
+  distractor_pattern: "표음 예(‘나무, 구름’)를 어법의 예로 바꾸거나, 어법의 예(‘잡아’ ‘흙만’)를 소리대로의 예로 바꾼 선지. ‘빗’을 소리대로 적은 예라 한 선지."
+  design_hint: "소리와 표기가 일치하는 예와 일치하지 않는 예를 나란히 놓고 어느 원칙인지 분류시킨다."
+  outside_textbook_variation: "‘값’ ‘읊다’ ‘밟다’ ‘낯’ ‘젖’ 같은 교과서 밖 어간·체언의 표기를 분류하는 변형. 환경별 발음 [ ]를 준다."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "체언·어간과 조사·어미 경계에서 형태를 고정한 위치"
+  confusing_expression: "‘소리대로’와 ‘어법에 맞도록’의 정의를 슬쩍 바꾼 서술"
+  confidence: HIGH
+
+- id: B-032
+  unit: 한글맞춤법
+  concept: "표음주의·표의주의 두 원칙을 동시에 반영한 단어 (줄자, 눈물) vs 한쪽만 반영 (소나무, 화살)"
+  confusion: "발음과 표기가 일치하면 곧바로 표음주의라고만 판단하고, 형태소가 드러나면 표의도 겸한다는 해설 기준(줄자, 눈물)을 놓친다. 해설은 ‘소나무’를 표음, ‘축하해요’를 표의로 본다."
+  cause: MULTI_CONDITION
+  frequency: LOW
+  difficulty_feel: HARD
+  evidence: "B02 Q12 약 1문항"
+  distractor_pattern: "‘줄자’를 표음만, ‘소나무’를 표의로 서술한 선지."
+  design_hint: "발음 [ ]와 표기를 쌍으로 주고 ‘형태소가 드러났는가’와 ‘발음과 일치하는가’ 두 질문으로 판정하게 한다."
+  outside_textbook_variation: "‘마소’ ‘따님’ ‘바느질’ 같은 ㄹ 탈락 합성어를 교과서 밖에서 제시하는 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "합성어의 앞 어근·뒤 어근 경계에서 ㄹ 탈락 여부, 접사 경계"
+  confusing_expression: "‘모두 반영/일부 반영’ 표현"
+  confidence: LOW
+  note: "‘소나무’ 해설은 솔+나무에서 ㄹ이 탈락한 형태를 소리대로 적었다고 설명한다. 해설이 의도한 판정 기준이 다소 모호해 확신이 낮다."
+
+- id: B-033
+  unit: 한글맞춤법
+  concept: "혼동 어휘의 소리/어법 분류 (맞히다-마치다, 졸이다-조리다, 시키다-식히다, 부딪치다-부딪히다, 늘이다-느리다)"
+  confusion: "‘시키다’는 소리대로, ‘식히다’는 어법(식다+히)이라는 해설 기준을 반대로 짝지어 ㉠·㉡을 맞바꾼다."
+  cause: SURFACE_SIMILARITY
+  frequency: MID
+  difficulty_feel: HARD
+  evidence: "B01 Q13 약 1문항 (B01의 ⓐ~ⓔ 5쌍)"
+  distractor_pattern: "소리가 같거나 비슷한 두 단어에서 ㉠과 ㉡의 칸을 뒤바꾼 선지. 가령 ‘시킨다 ㉠, 식힌다 ㉡’을 반대로 둔 선지(정답)."
+  design_hint: "어근(식다·맞다·부딪다)이 살아 있는 파생어는 어법, 어근이 안 보이는 단어는 소리대로로 분류하는 표를 만든다."
+  outside_textbook_variation: "‘갖다/가지다’ ‘바치다/받치다/받히다/밭치다’처럼 교과서 밖 혼동어를 동원한 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "어근 + 피동·사동 접사(-히-, -이-) 경계, 어근이 있는 단어와 없는 단어"
+  confusing_expression: "발음이 같은 두 단어 중 어느 쪽이 파생어인지 묻는 표현"
+  confidence: MEDIUM
+  note: "‘졸이다/조리다’ 해설(‘조리다의 사동형’)은 부정확해 보인다. 이 부분은 추정으로만 쓴다."
+
+- id: B-034
+  unit: 한글맞춤법
+  concept: "사이시옷 표기 조건 총합: 합성어·어종·앞말 모음 끝·덧나는 소리 3유형"
+  confusion: "조건이 네 개(합성어, 어종, 모음 끝, 소리 덧남)라서 하나를 놓친다. 특히 어종 조건에서 고유어+한자어는 되고 한자어+한자어는 안 되는 점."
+  cause: MULTI_CONDITION
+  frequency: HIGH
+  difficulty_feel: HARD
+  evidence: "B01 Q14,Q17,Q18,Q20 / B02 Q14,Q19 / B04 Q17 / B05 Q16 약 8문항"
+  distractor_pattern: "조건 4개를 표로 준 뒤 단어마다 어느 조건에 걸리는지 틀리게 서술한 선지. 소리 덧남 유형(ㄴ·ㄴㄴ·된소리)을 바꿔치기."
+  design_hint: "단어를 조건 표에 대입하게 하고, 한 조건씩만 어긋나는 오답 단어를 4개 배치한다."
+  outside_textbook_variation: "‘바닷가’ ‘나뭇잎’ ‘빗물’ ‘장맛비’ ‘도맷값’ ‘마굿간’ 같은 교과서 밖 합성어로 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "합성어의 두 어근 경계, 접사(-님·-쪽·-층)인지 어근인지, 어종(고유어/한자어/외래어)"
+  confusing_expression: "‘사이시옷을 받치어 적다’ ‘표기에 고려되는 조건’ 같은 규정 문장 속에서 조건 번호 맞추기"
+  confidence: HIGH
+
+- id: B-035
+  unit: 한글맞춤법
+  concept: "사이시옷 제외: 파생어(해님, 홑이불)·한자어끼리(내과, 전세방, 초점)·이미 된소리/거센소리(아래쪽, 위층, 뒤꿈치)"
+  confusion: "소리가 덧나거나 된소리로 나는 것만 보고 사이시옷을 붙인다. ‘님’이나 ‘홑’이 접사라 합성어가 아니라는 점, 뒷말이 이미 된소리·거센소리라는 점, 한자어끼리는 불가하다는 점을 놓친다."
+  cause: EXCEPTION_RULE
+  frequency: HIGH
+  difficulty_feel: HARD
+  evidence: "B01 Q17,Q18 / B02 Q19 / B04 Q17 / B05 Q16 약 5문항"
+  distractor_pattern: "‘햇님’ ‘윗층’ ‘아랫쪽’ ‘뒷꿈치’ ‘전셋방’처럼 사이시옷을 잘못 붙인 표기를 올바른 것으로 설명한 선지."
+  design_hint: "한 문항에 틀린 이유가 다른 오표기를 3~4개 넣고 각각 어느 조건(파생어, 이미 거센소리, 한자어끼리)에서 위반했는지 묻는다."
+  outside_textbook_variation: "‘시가집’ ‘수자’ ‘머릿말’ ‘나잇값’ 등 교과서 밖 합성어와 파생어를 섞는 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "접사(-님, 홑-, 윗-)와 어근 구분, 어종 판정, 뒷말 첫소리가 된소리·거센소리인지"
+  confusing_expression: "‘접사’와 ‘어근’ 경계를 헷갈리게 하는 동일 형태(님/홑/쪽/층)"
+  confidence: HIGH
+
+- id: B-036
+  unit: 한글맞춤법
+  concept: "사이시옷 예외 한자어 6개 (곳간·셋방·숫자·찻간·툇간·횟수)와 ‘대가’ 같은 비예외"
+  confusion: "한자어끼리는 사이시옷을 안 쓴다는 일반 규칙과 예외 6개가 충돌한다. ‘댓가(代價)’ ‘초점’ 같은 비예외를 예외로 오인한다."
+  cause: EXCEPTION_RULE
+  frequency: MID
+  difficulty_feel: MEDIUM
+  evidence: "B01 Q17,Q18,Q20 / B05 Q16 약 4문항"
+  distractor_pattern: "예외 6개 중 하나를 포함한 단어는 모두 사이시옷을 써야 한다는 선지, ‘횟수’의 예외 설명을 다른 한자어에 확대한 선지."
+  design_hint: "예외 6개의 이름은 보기에 주고, 그 밖의 한자어 결합 단어의 사이시옷 여부를 판정하게 한다."
+  outside_textbook_variation: "‘대가’ ‘개수’ ‘초점’ ‘마구간’ ‘귓병’ 등 교과서 밖 한자어 결합어를 제시하는 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "한자어 두 음절 구성, 앞말이 모음 끝인지, 두 말의 어종"
+  confusing_expression: "‘두 음절로 된 한자어’라는 조건 문구"
+  confidence: HIGH
+
+- id: B-037
+  unit: 한글맞춤법
+  concept: "한자 ‘률/렬’과 ‘리/례/류’의 두음법칙 및 모음·ㄴ 받침 뒤 율/열 환원"
+  confusion: "‘률’이 단어 첫머리가 아니면 본음대로 적되 모음이나 ㄴ 받침 뒤에서는 ‘율’이라는 예외가 이중 조건이라서, ‘선률/선율’ ‘백분률/백분율’ ‘합격율/합격률’ ‘외형율/외형률’을 뒤섞는다."
+  cause: MULTI_CONDITION
+  frequency: HIGH
+  difficulty_feel: HARD
+  evidence: "B01 Q15,Q16 / B02 Q17 / B03 Q11,Q12,Q15 / B04 Q11,Q16 약 8문항"
+  distractor_pattern: "‘취업율’ ‘진행율’ ‘출생율’ ‘외형율’ ‘합격율’처럼 ㄴ·모음이 아닌 받침 뒤에 율을 쓴 오표기와, 반대로 ‘백분률’ ‘선률’ 오표기를 섞는다."
+  design_hint: "앞 음절 받침을 모음/ㄴ/그 외(ㄱ·ㅂ·ㅇ·ㄹ·ㅁ)로 나누어 단어를 배치하고 율/률/렬/열을 고르게 한다. 단어 첫머리 예(율사, 열사)를 대비로 넣는다."
+  outside_textbook_variation: "‘수익률’ ‘이직률’ ‘회전율’ ‘할인율’ ‘성장률’ ‘상승률’ 등 교과서 밖 단어를 변형으로 쓴다. 사회·경제 지문에서 가져온 신출 단어로 변형하기 쉽다."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "한자어 합성에서 앞말 끝 받침(모음, ㄴ, 그 외)과 뒷말 률/렬의 경계"
+  confusing_expression: "‘ㄴ 받침’과 ‘ㄹ 받침’, 모음 뒤 ‘률/율’ 같은 받침 이름 구별 문제"
+  confidence: HIGH
+
+- id: B-038
+  unit: 한글맞춤법
+  concept: "두음법칙 적용 범위: 첫머리 vs 이외, 독립 단어 결합(이슬양), 의존명사 ‘년도’, 숫자·고유 명사"
+  confusion: "합성어·접두사 뒤 한자는 본음대로 적는 줄 알면서 ‘고유어/외래어 + 한자어’는 독립 단어로 보아 두음법칙을 적용한다는 점, ‘2025 년도’처럼 의존명사에서는 본음을 인정한다는 점이 한꺼번에 나오면 흔들린다."
+  cause: EXCEPTION_RULE
+  frequency: MID
+  difficulty_feel: HARD
+  evidence: "B01 Q15 / B04 Q11,Q16 / B05 Q13 약 4문항"
+  distractor_pattern: "‘六六三十六’을 육육삼십육으로 쓰도록 한 선지(관용 예외로 육륙삼십육), ‘이슬양’을 ‘이슬량’으로 한 선지."
+  design_hint: "독립 단어 여부를 단서로 하는 선지(‘고유어+한자어’, ‘의존명사’)를 만들고 규정 문장은 보기에 요약해 준다."
+  outside_textbook_variation: "‘구름양’ ‘알칼리량’ ‘신년도’ ‘2026 년도’ ‘뇨소’ ‘냉면’ 등 교과서 밖 단어를 변형으로 쓴다."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "고유어/외래어 + 한자어 경계, 접두사처럼 쓰이는 한자와 독립 단어 구별, 의존명사 년도 앞 숫자"
+  confusing_expression: "‘독립적인 한 단어로 인식’ ‘접두사처럼 쓰이는’ 같은 모호한 규정 문구"
+  confidence: MEDIUM
+
+- id: B-039
+  unit: 한글맞춤법
+  concept: "된소리 표기 제5항 3갈래: 두 모음 사이 / ㄴㄹㅁㅇ 받침 뒤 / ㄱㅂ 받침 뒤(다만)와 겹침 예외"
+  confusion: "ㄱ·ㅂ 받침 뒤 된소리는 안 적는다는 ‘다만’ 규정(법석, 싹둑, 국수)과 같은 음절 겹침 예외(싹싹, 짭짤)가 함께 나오면 헷갈린다. ㄴ·ㄹ·ㅁ·ㅇ 뒤의 된소리(담뿍, 몽땅, 잔뜩)는 적는다."
+  cause: MULTI_CONDITION
+  frequency: HIGH
+  difficulty_feel: HARD
+  evidence: "B01 Q16 / B02 Q16 / B03 Q18,Q20 / B04 Q15 / B05 Q12 약 6문항"
+  distractor_pattern: "‘싹뚝’ ‘국쑤’ ‘납짝’ ‘담북’ ‘해슥’처럼 규정에 어긋난 철자를 고르게 하는 선지, 겹침 예외를 일반 규정으로 설명하는 선지."
+  design_hint: "받침 종류를 변수로 하여 예사소리/된소리 철자 쌍(담뿍/담북 등) 중 맞는 것을 고르게 하고, 겹침 예외를 한 문항에 하나씩 넣는다."
+  outside_textbook_variation: "‘깍두기’ ‘뻐꾸기’ ‘딱지’ ‘색깔’ ‘법썩’ ‘홀쭉이’ ‘빨랑’ ‘싹둑싹둑’ 등 교과서 밖 단어로 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "한 단어 내부(형태소 내부) vs 어간+어미·합성어 경계, 같은 음절 겹침 여부"
+  confusing_expression: "‘뚜렷한 까닭 없이’ ‘같은 음절이나 비슷한 음절이 겹쳐 나는’ 같은 규정 문구"
+  confidence: HIGH
+
+- id: B-040
+  unit: 한글맞춤법
+  concept: "형태소 경계의 된소리: 어간 받침 뒤(담고, 숙제 등) 된소리되기는 표기에 반영하지 않음"
+  confusion: "[담꼬]의 ㅁ 뒤 된소리를 제5항 2호(담뿍 같은 경우)로 설명하고 ‘담꼬’로 적는다고 착각한다. 실제로는 용언 어간+어미 경계의 음운변동(된소리되기)이라 표기에 반영하지 않는다. 한 단어 안 ‘뚜렷한 까닭 없는’ 된소리와 구분해야 한다."
+  cause: MULTI_CONDITION
+  frequency: MID
+  difficulty_feel: HARD
+  evidence: "B02 Q16,Q17 / B03 Q20(㉢ 아끼다·기쁘다) 약 2~3문항"
+  distractor_pattern: "‘담고는 된소리되기와 관계가 없으므로’처럼 근거 문장을 틀린 전제로 쓴 선지, ‘숙제’를 ‘숙쩨’로 고쳐야 한다는 선지."
+  design_hint: "소리는 같은 된소리지만 형태소 경계 여부가 다른 두 단어를 쌍으로 제시해(예: 담고/담뿍) 규정 적용 여부를 묻는다."
+  outside_textbook_variation: "‘앉고’ ‘넓다’ ‘안고’ ‘감다’ ‘닭장’ 같은 교과서 밖 어간+어미·합성어 경계 단어를 변형으로 쓴다."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "어간 / 어미 첫소리, 한 단어 내부 vs 형태소 경계"
+  confusing_expression: "‘된소리되기와 관계가 있다/없다’라는 이중 부정형 서술"
+  confidence: MEDIUM
+
+- id: B-041
+  unit: 한글맞춤법
+  concept: "부사 -이/-히 (제25항·제51항): ㅅ받침 -이, 첩어 -이, ㅂ불규칙 -이, 그 밖 하다 어근 -히, 하다 없으면 소리대로"
+  confusion: "‘깨끗이/깨끗히’ ‘소홀히/소홀이’ ‘깊숙이’ ‘번번이’ ‘가만히’ ‘지그시’에서 -하다 결합 가능 여부와 어근 끝소리를 동시에 본다. -하다 없는 어근(지그시, 슬며시, 갑자기)은 소리대로 적는다는 사실도 헷갈린다."
+  cause: MULTI_CONDITION
+  frequency: HIGH
+  difficulty_feel: HARD
+  evidence: "B01 Q12 / B02 Q15 / B03 Q12,Q18 / B05 Q11,Q15 약 6문항"
+  distractor_pattern: "‘깨끗히’ ‘소홀이’ ‘쓸쓸이’ ‘번번히’ ‘깊숙히’ 같은 오표기를 올바른 것으로 서술한 선지. 규정 문구를 분류 표(㉠ 하다 있음 / ㉡ 하다 없음 / ㉢ 부사+이)에 짝짓게 하는 선지."
+  design_hint: "어근 끝소리(ㅅ, ㄱ, 기타)와 -하다 결합 가능성 두 축으로 단어를 배열하고 어느 규정(㉠㉡㉢)에 해당하는지 맞히게 한다."
+  outside_textbook_variation: "‘조용히’ ‘꼼꼼이’ ‘간간이’ ‘나날이’ ‘틈틈이’ ‘따뜻이’ ‘열심히’ ‘솔직히’ ‘정확히’ 등 교과서 밖 부사를 변형으로 쓴다."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "어근(깨끗-, 소홀-, 곰곰) + 부사 파생 접미사 -이/-히 경계, 어근이 -하다와 결합 가능한지"
+  confusing_expression: "‘~이로 적고, ~히로만 나거나 이/히로 나는 것은 히로 적는다’ 식 이중 조건 규정 문구"
+  confidence: HIGH
+
+- id: B-042
+  unit: 한글맞춤법
+  concept: "명사 파생 -이 (제23항: 오뚝이, 삐죽이) vs 부사 파생 (제25항: 더욱이)"
+  confusion: "‘-하다/-거리다 붙는 어근 + -이’의 명사형(오뚝이)을 부사 ‘-이’ 규정으로 설명한다."
+  cause: CATEGORY_SWAP
+  frequency: LOW
+  difficulty_feel: MEDIUM
+  evidence: "B01 Q12 / B03 Q18 약 2문항"
+  distractor_pattern: "‘오뚝이’가 ‘더욱이’와 같은 규정이라고 서술한 선지."
+  design_hint: "명사 파생 -이와 부사 파생 -이를 나란히 놓고 품사를 먼저 판정하게 한다."
+  outside_textbook_variation: "‘꿀꿀이’ ‘홀쭉이’ ‘얼룩이’ ‘딸랑이’ 같은 교과서 밖 의성·의태 어근 + -이 명사를 변형으로 쓴다."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "어근 + 접미사 -이의 품사 결정(명사/부사)"
+  confusing_expression: "‘원형을 밝혀 적는다’는 같은 문구가 두 규정에 모두 등장"
+  confidence: MEDIUM
+
+- id: B-043
+  unit: 한글맞춤법
+  concept: "제56항 -던 vs -든지: 회상(과거) 어미와 선택·무관의 어미"
+  confusion: "‘어찌하던지’ ‘잘하든데’ ‘놀랐든지’처럼 회상 의미가 있는데 -든을 쓰거나 선택·무관의 뜻인데 -던을 쓴다. 의미 판정이 문맥 읽기에 달려 있다."
+  cause: MULTI_CONDITION
+  frequency: MID
+  difficulty_feel: MEDIUM
+  evidence: "B03 Q11,Q12 / B04 Q12 약 3문항"
+  distractor_pattern: "‘잘하든데’ ‘영화나 보러 가던가’ ‘무엇이던지’ 같은 오표기. 문맥으로는 회상이 없는데 -던을 쓴 문장."
+  design_hint: "회상/선택 의미를 문맥으로 판정해야만 알 수 있는 문장 쌍을 만들고 맞는 표기를 고르게 한다."
+  outside_textbook_variation: "‘그리 좋던데’ ‘먹든지 말든지’ ‘누구든지’ ‘어디든’ ‘얼마나 빨랐던지’ 등 교과서 밖 문장으로 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "어간 + 어미(-던, -든지, -던가, -든가) 경계, 조사 ‘이든지’ 구분"
+  confusing_expression: "‘던지/든지’ 철자 차이만으로 의미가 갈리는 점"
+  confidence: HIGH
+
+- id: B-044
+  unit: 한글맞춤법
+  concept: "제6항 닫히다·걷히다: 구개음화 환경에서도 ㄷ·ㅌ으로 적음"
+  confusion: "[다치다]로 발음되니 ‘다치다’처럼 소리대로 적는다는 오개념이 남는다."
+  cause: RULE_DIRECTION
+  frequency: LOW
+  difficulty_feel: EASY
+  evidence: "B03 Q11,Q20 약 2문항"
+  distractor_pattern: "‘다치고’ ‘거치다’ 등 소리대로 적은 오표기를 올바르다고 한 선지."
+  design_hint: "종속적 관계를 가진 -이-·-히-가 오는 경우 어간 받침을 고정하는 규정을 보기로 준 뒤 단어 표기를 판정하게 한다."
+  outside_textbook_variation: "‘붙이다’ ‘묻히다’ ‘굳이’ ‘해돋이’ ‘같이’ ‘미닫이’ 같은 교과서 밖 어휘 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "어간 받침 ㄷ/ㅌ + 접사 -이-/-히- 경계, ‘굳이’ 같은 부사형"
+  confusing_expression: "‘종속적 관계’라는 추상 규정어"
+  confidence: HIGH
+
+- id: B-045
+  unit: 한글맞춤법
+  concept: "띄어쓰기: ‘뿐·만큼·대로’의 조사 vs 의존명사 (체언 뒤 조사, 관형사형 어미 뒤 의존명사)"
+  confusion: "‘뿐’의 의존명사 용법 두 가지((-을) 뿐, -다 뿐이지)와 조사 용법을 사전 뜻풀이로 가려야 하고, ‘만큼’ ‘대로’도 앞말이 체언인지 용언의 관형사형인지로 갈린다. 의미를 읽고도 앞말 품사를 놓친다."
+  cause: TERM_CONFUSION
+  frequency: HIGH
+  difficulty_feel: HARD
+  evidence: "B01 Q19 / B02 Q11,Q20 / B03 Q14,Q18,Q19 / B04 Q18,Q19 / B05 Q19,Q20 약 10문항"
+  distractor_pattern: "‘너 만큼’ ‘추측 대로’ ‘있을뿐’ ‘나간지’ 같은 잘못된 띄어쓰기를 올바르다고 하는 선지. 사전 뜻 풀이를 근거로 ‘뿐1[2]’ 용례를 잘못 연결한 선지."
+  design_hint: "사전 뜻풀이 2~3개를 보기에 주고 용례 문장에서 앞말 품사(체언/관형사형 어미)를 단서로 판정하게 한다."
+  outside_textbook_variation: "‘만큼/대로/뿐/밖에/마다/처럼/보다’ 등을 교과서 밖 문장에 넣어 변형. 사전식 의존명사·조사 이중 품사를 제시."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "체언 + 조사 / 관형사형 어미(-ㄴ,-ㄹ,-는) + 의존명사 경계, '-ㄹ 뿐이다'의 서술격 조사 ‘이다’ 경계"
+  confusing_expression: "‘뿐’ ‘만큼’ ‘대로’처럼 같은 형태가 두 품사로 쓰이고, 서술어 ‘이다’가 붙어 ‘뿐이다’가 한 덩어리처럼 보이는 표현"
+  confidence: HIGH
+
+- id: B-046
+  unit: 한글맞춤법
+  concept: "띄어쓰기: 의존명사 ‘지·만·때’와 단위 명사 (한 잔, 세 켤레, 삼십 단)"
+  confusion: "‘나간 지’ ‘사흘 만에’ ‘올 때’는 앞말과 띄어야 하는데 어미나 조사로 착각해 붙인다. 단위 명사도 수사 뒤에서 ‘물세잔’처럼 모두 붙여 쓴다."
+  cause: TERM_CONFUSION
+  frequency: HIGH
+  difficulty_feel: MEDIUM
+  evidence: "B02 Q18 / B03 Q14 / B04 Q18,Q20 / B05 Q20 약 5문항"
+  distractor_pattern: "붙여 쓴 형태(‘물세잔’ ‘한잔’ ‘다섯벌’ ‘올때’ ‘잊은지’)를 그대로 올바른 문장으로 제시한 선지."
+  design_hint: "단어를 붙여 쓴 한 문장을 주고 띄어 써야 하는 위치와 규정(제42·43항)을 대응시키게 한다."
+  outside_textbook_variation: "‘두 번째’ ‘한 달 간’ ‘사 년 만에’ ‘이 년 전’처럼 교과서 밖 단위·수 표현으로 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "관형사형 어미 + 의존명사, 수관형사 + 단위명사, 명사 + 조사 경계"
+  confusing_expression: "‘~지(시간의 경과)’ ‘~ㄴ지(막연한 의문 어미)’처럼 같은 형태가 어미와 의존명사로 나뉘는 표현"
+  confidence: HIGH
+
+- id: B-047
+  unit: 한글맞춤법
+  concept: "띄어쓰기: 서술격 조사 ‘입니다’, 보조용언 허용, 접사 ‘짜리’, 두 말 이어 주는 ‘겸·및’, 단음절 연속"
+  confusion: "‘10시부터 입니다’처럼 서술격 조사(활용)를 따로 띄거나, 보조용언 붙임 허용(꺼져 간다/꺼져간다)과 ‘허용이므로 반드시 붙인다’를 혼동한다. ‘만 원짜리’의 ‘짜리’는 접사라 붙여야 한다."
+  cause: EXCEPTION_RULE
+  frequency: MID
+  difficulty_feel: HARD
+  evidence: "B03 Q14 / B04 Q18,Q19,Q20 / B05 Q20 약 4문항"
+  distractor_pattern: "‘허용’ 규정을 ‘반드시’로 뒤집은 선지, ‘내것 네것’만 가능하다고 한 선지, ‘안오시네’ ‘못왔다’ 같은 붙여 쓰기."
+  design_hint: "원칙 + 허용(둘 다 맞음) 구조를 활용한 ‘적절한 것을 모두 고르기’ 문항을 쓴다."
+  outside_textbook_variation: "‘잘 먹어 버렸다/먹어버렸다’ ‘안 돼/안돼’ ‘이십 대/이십대’ 등 교과서 밖 표현을 변형으로 쓴다."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "본용언 + 보조용언, 조사/서술격 조사 ‘이다’의 붙임, 접사 ‘짜리’와 의존명사 구분"
+  confusing_expression: "‘띄어 쓴다 / 붙여 쓸 수 있다 / 반드시 붙여 쓴다’ 같은 허용 표현의 정도 차이"
+  confidence: MEDIUM
+
+- id: B-048
+  unit: 한글맞춤법
+  concept: "띄어쓰기 규정 매칭과 필요 이유 (제2항·제41~43항, 큰집 vs 큰 집)"
+  confusion: "‘샀을 뿐이다’의 ‘뿐’을 단위 명사로 분류하는 등 의존 명사와 단위 명사 라벨을 혼동하고, 띄어쓰기의 필요를 문장 성분 수·어순·활용 형태로 오해한다."
+  cause: TERM_CONFUSION
+  frequency: MID
+  difficulty_feel: EASY
+  evidence: "B02 Q11,Q13 / B03 Q16 약 3문항"
+  distractor_pattern: "규정 번호(㉠~㉣)와 사례를 짝짓는 선지에서 ‘뿐’을 ㉣(단위 명사)에 연결한 오답, 띄어쓰기 필요 이유를 ‘어순 자유’로 쓴 오답."
+  design_hint: "띄어쓰기에 따라 뜻이 갈리는 쌍(큰집/큰 집)과 규정 번호 매칭을 섞어 낸다."
+  outside_textbook_variation: "‘작은형/작은 형’ ‘한번/한 번’ ‘이모부/이 모부’ 같은 교과서 밖 쌍."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "합성어와 구(관형어+명사)의 경계, 의존명사와 단위명사 라벨"
+  confusing_expression: "‘의존 명사’와 ‘단위를 나타내는 명사’가 한 문장에 병렬되는 표현"
+  confidence: HIGH
+
+- id: B-049
+  unit: 한글맞춤법
+  concept: "준말 표기: 제34~38항 (쏘이어→쐬어/쏘여, 쇠어, 서었다→섰다, 세었다/셌다, 두었다/뒀다)"
+  confusion: "어간 모음별로 본말과 준말이 둘 다 되는 경우(세다, 두다)와 준말만 되는 경우(서다)가 섞여 있다. ‘쇠여’처럼 규정에 없는 형태를 만들어 낸다."
+  cause: EXCEPTION_RULE
+  frequency: MID
+  difficulty_feel: HARD
+  evidence: "B05 Q17 약 1문항"
+  distractor_pattern: "‘쇠다’에 ‘쇠여’를 허용한다고 한 선지, ‘서다’에 ‘서었다’를 허용한다고 한 선지."
+  design_hint: "어간 끝 모음 + 어미 조합별 규정 표를 보기에 주고 각 단어에 적용되는 형태를 모두 쓰게 한다."
+  outside_textbook_variation: "‘보이다/뵈다’ ‘펴이다/폐다’ ‘누이다/뉘다’ ‘되어/돼’ 등 교과서 밖 용언으로 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "어간 끝 모음 + 어미(-어/-었-) / 어간 + 피동 접사 -이- + 어미"
+  confusing_expression: "‘준 대로 적는다’ 문구 안에 허용/강제 구분이 숨은 표현"
+  confidence: HIGH
+
+- id: B-050
+  unit: 한글맞춤법
+  concept: "‘하’ 준말 (제40항): ㄱ·ㄷ·ㅂ 소리 뒤 ‘하’ 통째 탈락 / 그 외 ㅎ이 거센소리로"
+  confusion: "‘익숙지’ ‘생각건대’ ‘못지않다’는 ‘하’ 전체가 줄고, ‘정결타’ ‘회상컨대’ ‘연구토록’은 ‘ㅎ’이 남아 거센소리가 되는 이유를 앞 받침 소리(ㄱ·ㄷ·ㅂ인지 아닌지)로 가려야 한다."
+  cause: MULTI_CONDITION
+  frequency: MID
+  difficulty_feel: HARD
+  evidence: "B05 Q18 약 1문항"
+  distractor_pattern: "‘정결다’ ‘회상건대’ ‘못하지않다’처럼 ㅎ의 유무를 틀리게 한 선지."
+  design_hint: "‘하’ 앞 받침 소리를 변수로 만든 6단어 표에서 올바른 준말을 고르게 한다."
+  outside_textbook_variation: "‘넉넉하지→넉넉지’ ‘깨끗하지→깨끗지’ ‘섭섭하지→섭섭지’ ‘흔하다→흔타’ 등 교과서 밖 용언."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "어간 끝음절 ‘하’ 앞 받침 소리 판정, 어간+어미 경계"
+  confusing_expression: "‘받침 글자’와 ‘받침 소리’(예: ㅅ→ㄷ)를 혼동하게 만드는 표현"
+  confidence: HIGH
+
+- id: B-051
+  unit: 한글맞춤법
+  concept: "용언 불규칙 활용의 표기 (제18항): ㅅ·ㅎ·ㄷ·르 불규칙과 규칙 활용의 구분"
+  confusion: "‘붓다/젓다’(ㅅ 불규칙)와 ‘치르다’(규칙, ㅡ탈락), ‘이르다(도착)’(러 불규칙), ‘걷다(걸음/빨래)’, ‘누르다/나르다’의 활용 유형이 단어 의미에 따라 갈려서 규칙과 불규칙을 맞바꾼다."
+  cause: CATEGORY_SWAP
+  frequency: LOW
+  difficulty_feel: HARD
+  evidence: "B05 Q14 약 1문항 (표)"
+  distractor_pattern: "규칙 예와 불규칙 예의 칸을 뒤바꾼 선지('치르다'를 원칙 벗어난 예로, '이르다(도착)'를 원칙 따른 예로 둔다)."
+  design_hint: "의미에 따라 활용이 달라지는 동음이의어(걷다, 이르다)를 한 문항에 넣고 규칙/불규칙을 구분하게 한다."
+  outside_textbook_variation: "‘묻다(質問/埋)’ ‘붇다’ ‘푸다’ ‘잇다’ ‘낫다’ ‘굽다’ ‘돕다’ 등 교과서 밖 용언으로 변형."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "어간 끝소리 변화(ㅅ탈락, ㅎ탈락, ㄷ→ㄹ, 르→ㄹ러) 위치와 어미 모음 시작 여부"
+  confusing_expression: "‘원칙에서 벗어난’ ‘원칙에 벗어나지 않은’처럼 부정이 이중으로 쓰인 표현"
+  confidence: MEDIUM
+  note: "표 구조가 추출에서 깨져 해설을 근거로 복원했다."
+
+- id: B-052
+  unit: 한글맞춤법
+  concept: "사이시옷 소리 덧남 3유형 판별 (ㄴ, ㄴㄴ, 된소리)과 사잇소리 현상 용어"
+  confusion: "‘콧날’은 앞말이 ㅅ 받침이라 ‘모음 끝’ 조건 ㉡이 아닌데도 ㉢으로 설명하는 오설명이 나오고, ‘깻잎[깬닙]’은 ㄴㄴ 첨가이며 ‘등불’의 ㉠ 해당 여부는 뒷말 첫소리가 ㅂ이라서 오답이 된다."
+  cause: COUNTING
+  frequency: MID
+  difficulty_feel: HARD
+  evidence: "B01 Q14,Q20 / B02 Q14 약 3문항"
+  distractor_pattern: "‘~으로 끝나고 뒷말이 ~으로 시작해 ㄴ이 첨가된 ㉢에 해당’ 식 조건 문장에서 한 부분(받침, 뒷말 첫소리)만 틀리게 만든 선지."
+  design_hint: "덧나는 소리 유형을 ㉠㉡㉢으로 정의하고 단어의 앞말 끝소리·뒷말 첫소리 정보를 주어 유형을 판정하게 한다."
+  outside_textbook_variation: "‘나뭇잎[나문닙]’ ‘베갯잇’ ‘고갯짓’ ‘인삿말’ 같은 교과서 밖 어휘의 발음 [ ]와 함께 유형 판정."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "앞말 끝소리(모음/ㅅ 받침), 뒷말 첫소리(ㄴ·ㅁ·모음·안울림 예사소리), 합성어 경계"
+  confusing_expression: "‘받침에 상관없이’ ‘모음으로 끝나고’ 등 조건 어구 한 곳만 바꾼 서술"
+  confidence: MEDIUM
+
+- id: B-053
+  unit: 한글맞춤법
+  concept: "복합 규정 판단: 한 문항에 두음법칙·이/히·든지·닫히다 등 서로 다른 항을 섞어 올바른 표기를 고르기"
+  confusion: "각 표기가 어느 항(제6·11·51·56항)으로 판정되는지 한꺼번에 떠올려야 하므로 하나씩 보면 쉬워도 섞이면 틀린다."
+  cause: MULTI_CONDITION
+  frequency: HIGH
+  difficulty_feel: HARD
+  evidence: "B02 Q17 / B03 Q11,Q12,Q18,Q20 약 5문항"
+  distractor_pattern: "‘취업율’ ‘깨끗히’ ‘어찌하던지’ ‘백분률’ ‘외형율’처럼 항마다 하나씩 틀린 표기를 한 문항에 섞은 선지."
+  design_hint: "항마다 하나씩 대표 오류를 담은 선지 5개를 만들어 ‘올바르게 표기된 것을 모두 고르기’ 형식으로 구성한다."
+  outside_textbook_variation: "교과서에 없는 단어와 문장으로 구성한 신유형 보기. 항 번호는 보기에 주되 단어는 새것."
+  morpheme_analysis_needed: true
+  morpheme_boundary: "항마다 필요한 경계(어간/어미, 어근/접사, 한자어 두음, 형태소 내부)가 다름"
+  confusing_expression: "‘올바르게 표기된 것을 있는 대로 고른 것’(복수 정답) 문두"
+  confidence: HIGH
