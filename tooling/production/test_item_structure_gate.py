@@ -140,6 +140,83 @@ class SuppliedConceptTests(unittest.TestCase):
         self.assertNotIn("OUTSIDE_CONCEPT_NOT_SUPPLIED", self.codes(g.check_bundle(bundle([it]))))
 
 
+def kor_item(no, ans, **kw):
+    judg = [{"v": i == ans - 1, "c": "CORRECT" if i == ans - 1 else "STRONG", "axis": "application", "claim": f"c{i}", "ev": ["P1S1"],
+             "why": "w", "mis": None if i == ans - 1 else f"KM0{(i % 8) + 1}"} for i in range(5)]
+    base = {"item_id": f"KOR-S2-{no:03d}", "format": "MCQ", "difficulty": "D4", "template": "K4", "stem": "s",
+            "options": ["가나다라마바사", "아자차카타파하", "하나둘셋넷다섯", "여섯일곱여덟", "아홉열하나둘"], "answer": ans,
+            "judgments": judg, "reasoning_steps": 5, "immediate_elimination": 1,
+            "reference_exam_item": "DONGBUK-KOR-2025-2-FINAL#7", "exception_rules": ["붙임 규정"], "supplied_concepts": ["새 규칙"],
+            "table": {"header": ["a", "b", "c"], "rows": [["1", "2", "3"]] * 5},
+            "view": ["<자료> 새 규칙을 제시한다.", "ㄱ. a", "ㄴ. b", "ㄷ. c", "ㄹ. d"]}
+    base.update(kw)
+    return base
+
+
+def kor_bundle(items, **spec):
+    b = {"product_mode": "ARC_N", "subject": "KOR", "items": items,
+         "request_spec": {"decided_by": "USER", "stage": "S2", "item_count": len(items),
+                          "difficulty_targets": {"D2": 0.2, "D3": 0.5, "D45": 0.3},
+                          "difficulty_basis": "KOR_COMBINED_V1", "difficulty_basis_decided_by": "USER"}}
+    b["request_spec"].update(spec)
+    return b
+
+
+class KorCombinedBasisTests(unittest.TestCase):
+    def codes(self, res):
+        return {f["code"] for f in res["findings"]}
+
+    def test_full_d4_item_passes(self):
+        res = g.check_bundle(kor_bundle([kor_item(1, 3)]))
+        self.assertNotIn("KOR_BASIS_BELOW_LABEL", self.codes(res))
+        self.assertEqual(res["kor_combined"][0]["assessed"], "D4")
+
+    def test_each_axis_caps_the_level(self):
+        no_ref = kor_item(1, 3); no_ref.pop("reference_exam_item")
+        self.assertIn("KOR_BASIS_BELOW_LABEL", self.codes(g.check_bundle(kor_bundle([no_ref]))))
+        no_exc = kor_item(1, 3); no_exc.pop("exception_rules")
+        self.assertIn("KOR_BASIS_BELOW_LABEL", self.codes(g.check_bundle(kor_bundle([no_exc]))))
+        few_mis = kor_item(1, 3)
+        for j in few_mis["judgments"][:3]:
+            j["mis"] = None
+        res = g.check_bundle(kor_bundle([few_mis]))
+        self.assertIn("KOR_BASIS_BELOW_LABEL", self.codes(res))
+        self.assertTrue(any("misconception" in f["message"] for f in res["findings"] if f["code"] == "KOR_BASIS_BELOW_LABEL"))
+        weak = kor_item(1, 3, reasoning_steps=1, view=["x"], table=None, supplied_concepts=[], immediate_elimination=3, exception_rules=[])
+        self.assertIn("KOR_BASIS_BELOW_LABEL", self.codes(g.check_bundle(kor_bundle([weak]))))
+
+    def test_wrong_reference_item_cannot_unlock_d4(self):
+        it = kor_item(1, 3, reference_exam_item="DONGBUK-KOR-2025-2-FINAL#10")   # K4 의 기출은 7번
+        self.assertIn("KOR_BASIS_BELOW_LABEL", self.codes(g.check_bundle(kor_bundle([it]))))
+
+    def test_extension_template_without_reference_is_capped_at_d3(self):
+        it = kor_item(1, 3, template="K8")
+        self.assertIn("KOR_BASIS_BELOW_LABEL", self.codes(g.check_bundle(kor_bundle([it]))))
+        it3 = kor_item(1, 3, template="K8", difficulty="D3")
+        self.assertNotIn("KOR_BASIS_BELOW_LABEL", self.codes(g.check_bundle(kor_bundle([it3]))))
+
+    def test_unknown_misconception_code_fails(self):
+        it = kor_item(1, 3)
+        it["judgments"][0]["mis"] = "KM99"
+        self.assertIn("KOR_BASIS_UNKNOWN_MISCONCEPTION", self.codes(g.check_bundle(kor_bundle([it]))))
+
+    def test_basis_only_applies_when_declared(self):
+        it = kor_item(1, 3, reference_exam_item=None)
+        b = kor_bundle([it]); b["request_spec"].pop("difficulty_basis"); b["request_spec"].pop("difficulty_basis_decided_by")
+        self.assertNotIn("KOR_BASIS_BELOW_LABEL", self.codes(g.check_bundle(b)))
+
+    def test_request_spec_basis_must_be_user_decided_and_kor_only(self):
+        pipeline = _load("arc_production_pipeline_t2", "tooling/production/production_pipeline.py")
+        ok = kor_bundle([kor_item(1, 3)])
+        self.assertEqual(pipeline.request_spec_findings(ok), [])
+        no_user = kor_bundle([kor_item(1, 3)]); no_user["request_spec"].pop("difficulty_basis_decided_by")
+        self.assertIn("REQUEST_DIFFICULTY_BASIS_NOT_USER_DECIDED", {f["code"] for f in pipeline.request_spec_findings(no_user)})
+        soc = bundle([item(1, 1)]); soc["request_spec"]["difficulty_basis"] = "KOR_COMBINED_V1"; soc["request_spec"]["difficulty_basis_decided_by"] = "USER"
+        self.assertIn("REQUEST_DIFFICULTY_BASIS_NOT_USER_DECIDED", {f["code"] for f in pipeline.request_spec_findings(soc)})
+        bad = kor_bundle([kor_item(1, 3)], difficulty_basis="WHATEVER")
+        self.assertIn("REQUEST_DIFFICULTY_BASIS_INVALID", {f["code"] for f in pipeline.request_spec_findings(bad)})
+
+
 class PipelineFeasibilityTests(unittest.TestCase):
     def test_pipeline_blocks_infeasible_request_before_anything_else(self):
         import json

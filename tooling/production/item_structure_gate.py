@@ -20,6 +20,8 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
 LIBRARY = ROOT / "quality/exam_style/EXAM_STRUCTURE_LIBRARY_V1.0.yaml"
+KOR_CATALOG = ROOT / "quality/exam_style/KOR_MISCONCEPTION_CATALOG_V1.0.yaml"
+KOR_BASIS = "KOR_COMBINED_V1"
 RANK = {"D1": 1, "D2": 2, "D3": 3, "D4": 4, "D5": 5}
 ABSOLUTE_WORDS = ["언제나", "어떤 경우에도", "반드시", "오직", "전혀", "절대", "모든 경우", "얼마든지", "무조건", "항상", "순전히"]
 STATEMENT_RE = re.compile(r"^\s*(?:[ㄱ-ㅎ]\.|학생\s*[A-Z]\s*:|\([가-라]\)|[㉠-㉤]|[갑-병]\s*(?:\(.*?\))?\s*:)")
@@ -76,6 +78,12 @@ def structure_features(item: dict[str, Any], subject: str, lib: dict[str, Any]) 
         "low_elimination": w["low_elimination"] if (isinstance(item.get("immediate_elimination"), int) and item["immediate_elimination"] <= 1) else 0.0,
         "supplied_concept": w.get("supplied_concept", 0.0) if (item.get("supplied_concepts") and len(view) >= 1) else 0.0,
     }
+    if subject == "KOR":
+        n_exc = len(item.get("exception_rules") or [])
+        feats["exception_rule"] = w.get("exception_rule", 1.0) * min(n_exc, 2)
+        table = item.get("table")
+        cells = sum(len(r) for r in table.get("rows", [])) if isinstance(table, dict) else 0
+        feats["large_table"] = w.get("large_table", 1.0) if cells >= 12 else 0.0
     score = round(sum(feats.values()), 2)
     return {"features": feats, "score": score}
 
@@ -87,6 +95,39 @@ def band_of(score: float, lib: dict[str, Any]) -> str:
     if score <= bands["D3"][1]:
         return "D3"
     return "D4"
+
+
+def load_kor_catalog(path: Path | None = None) -> dict[str, Any]:
+    return yaml.safe_load((path or KOR_CATALOG).read_text(encoding="utf-8"))
+
+
+def kor_combined_assessment(item: dict[str, Any], lib: dict[str, Any], catalog: dict[str, Any]) -> dict[str, Any]:
+    """D-25: 기출 대응 + 구조 점수 + 오답 유도 3축(+ D4 예외 규정)의 최저 등급을 문항 난이도로 본다."""
+    tpl = lib.get("templates", {}).get(item.get("template"), {})
+    ref = tpl.get("reference") or {}
+    if ref:
+        ref_level = ref["tier"]
+        ref_ok_for_d4 = ref["tier"] == "D4" and item.get("reference_exam_item") == f"{ref['exam']}#{ref['item_no']}"
+    else:
+        ref_level, ref_ok_for_d4 = "D3", False
+    sf = structure_features(item, "KOR", lib)
+    struct_level = band_of(sf["score"], lib)
+    codes = catalog.get("codes", {})
+    tagged = 0
+    unknown = []
+    for j in item.get("judgments", []):
+        m = j.get("mis")
+        if m is not None and m not in codes:
+            unknown.append(m)
+        if m in codes and j.get("c") in {"STRONG", "MEDIUM"}:
+            tagged += 1
+    mis_level = "D4" if tagged >= 3 else ("D3" if tagged == 2 else "D2")
+    exc_level = "D4" if item.get("exception_rules") else "D3"
+    levels = {"reference": ref_level if not (ref_level == "D4" and not ref_ok_for_d4) else "D3",
+              "structure": struct_level, "misconception": mis_level, "exception": exc_level}
+    assessed = min(levels.values(), key=lambda x: RANK[x])
+    return {"assessed": assessed, "levels": levels, "structure_score": sf["score"], "tagged_distractors": tagged,
+            "unknown_misconception_codes": unknown, "reference_item": item.get("reference_exam_item")}
 
 
 def _mcq(raw: dict[str, Any]) -> list[dict[str, Any]]:
@@ -272,10 +313,25 @@ def check_bundle(raw: dict[str, Any], *, source_texts: list[str] | None = None, 
                 if key in t and abs(got - t[key]) > tol:
                     findings.append(_f("STRUCTURE_DISTRIBUTION_OFF_TARGET", "WARN",
                                        f"구조 점수 기준 {key} 비율 {got:.0%} 가 목표 {t[key]:.0%} ±{tol:.0%} 밖이다(풀이 평가 전 사전 점검)"))
+    spec0 = raw.get("request_spec") if isinstance(raw.get("request_spec"), dict) else {}
+    kor_rows = []
+    if subject == "KOR" and spec0.get("difficulty_basis") == KOR_BASIS:
+        catalog = load_kor_catalog()
+        for it in items:
+            a = kor_combined_assessment(it, lib, catalog)
+            kor_rows.append({"item_id": it.get("item_id"), "label": it.get("difficulty"), **a})
+            for u in a["unknown_misconception_codes"]:
+                findings.append(_f("KOR_BASIS_UNKNOWN_MISCONCEPTION", "FAIL", f"{it.get('item_id')}: 목록에 없는 misconception 코드 {u}", item_id=it.get("item_id")))
+            label = it.get("difficulty")
+            if label in RANK and RANK[label] > RANK[a["assessed"]]:
+                weakest = [k for k, v in a["levels"].items() if v == a["assessed"]]
+                findings.append(_f("KOR_BASIS_BELOW_LABEL", "FAIL",
+                                   f"{it.get('item_id')}: 라벨 {label} 인데 국어 결합 기준 평가는 {a['assessed']} (부족한 축: {', '.join(weakest)})",
+                                   item_id=it.get("item_id"), levels=a["levels"]))
     findings = feasibility(raw, lib) + findings
     status = "FAIL" if any(f["severity"] == "FAIL" for f in findings) else ("WARN" if findings else "PASS")
     return {"tool": "ARC_ITEM_STRUCTURE_GATE_V1.0", "status": status, "structure_distribution": distribution,
-            "items": struct_rows, "findings": findings}
+            "items": struct_rows, "kor_combined": kor_rows, "findings": findings}
 
 
 def main(argv: list[str]) -> int:

@@ -1,0 +1,25 @@
+catalog_id: ARC_KOR_MISCONCEPTION_CATALOG_V1.0
+version: 1.0
+date: 2026-11-09
+status: ACTIVE_DEV
+decision: D-25
+purpose: >
+  국어 오답 선지를 '학생이 실제로 하는 전형적 착각'에 붙이기 위한 코드 목록이다. 문항의 각 오답 judgment 에 misconception 코드를 기록하고,
+  경쟁하는(STRONG/MEDIUM) 오답 중 코드가 붙은 개수가 난이도 기준(KOR_COMBINED_V1)의 한 축이 된다.
+evidence:
+  - quality/exam_style/DONGBUK_SCI_KOR_2025_2_STYLE_NOTES_20261108.md (§9 국어 난이도 장치와 오답 설계)
+  - quality/exam_style/SOC_MOCK_AND_HAKPYEONG_STYLE_NOTES_20261108.md (§C 선지·보기 구성)
+limits: "출제 분석에서 관찰한 유형이며 학생 오답률 자료는 없다(PROVISIONAL). 새 유형을 확인하면 코드를 추가한다."
+codes:
+  KM01: {name: "조사/의존 명사 혼동", pattern: "표면이 같은 조사와 의존 명사(대로, 만큼, 뿐 등)의 띄어쓰기를 바꿔 틀리게 만든다"}
+  KM02: {name: "한정어 첨가", pattern: "맞는 설명에 '오직/엄격히/반드시/전혀' 같은 한정어를 붙여 거짓으로 만든다"}
+  KM03: {name: "시기 바꿔치기", pattern: "중세국어에 없는 현상(구개음화, 현대의 두음 법칙 등)을 그 시기의 특징으로 말한다"}
+  KM04: {name: "범주 바꿔치기", pattern: "유정/무정, 초성/종성, 표음/표의, 어미/접미사 같은 범주를 서로 바꾼다"}
+  KM05: {name: "귀속 바꿔치기", pattern: "맞는 현상을 엉뚱한 자료·화자·항목에 대응시킨다"}
+  KM06: {name: "소리대로/어법 혼동", pattern: "표음적 표기와 표의적 표기, 발음과 표기를 같은 것으로 본다"}
+  KM07: {name: "조건 혼동", pattern: "사이시옷의 세 조건(된소리, ㄴ 덧남, ㄴㄴ 덧남)처럼 비슷한 조건을 서로 바꿔 분류한다"}
+  KM08: {name: "방향/규칙 반대 적용", pattern: "모음조화 방향 등 새로 준 규칙을 반대로 적용한다"}
+  KM09: {name: "예외 규정 누락", pattern: "일반 규정만 적용하고 예외·붙임 규정을 놓친다"}
+  KM10: {name: "현대와 연속성 단정", pattern: "중세국어와 현대국어의 형식이 같다고 단정한다"}
+  KM11: {name: "정오 혼합 목록", pattern: "맞는 표기와 틀린 표기가 섞인 목록에서 표면 유사성으로 속인다"}
+  KM12: {name: "개수/조합 착오", pattern: "조합 선지에서 항목 수를 세다 하나를 빠뜨리거나 더한다"}

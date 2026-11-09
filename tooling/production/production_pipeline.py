@@ -95,6 +95,11 @@ def request_spec_findings(raw: dict[str, Any]) -> list[dict[str, Any]]:
         return out
     if spec.get("decided_by") != "USER":
         bad("REQUEST_SPEC_NOT_USER_DECIDED", "request_spec.decided_by must be USER; never fill these values by default")
+    basis = spec.get("difficulty_basis")
+    if basis not in {None, "SOLVER", "KOR_COMBINED_V1"}:
+        bad("REQUEST_DIFFICULTY_BASIS_INVALID", f"difficulty_basis must be SOLVER or KOR_COMBINED_V1, got {basis!r}")
+    elif basis == "KOR_COMBINED_V1" and (str(raw.get("subject", "")).upper() != "KOR" or spec.get("difficulty_basis_decided_by") != "USER"):
+        bad("REQUEST_DIFFICULTY_BASIS_NOT_USER_DECIDED", "KOR_COMBINED_V1 is KOR only and needs request_spec.difficulty_basis_decided_by: USER (D-25)")
     count = spec.get("item_count")
     rows = raw.get("items") if isinstance(raw.get("items"), list) else []
     if type(count) is not int or count < 1:
@@ -308,6 +313,10 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
     blind_by_id = {b["item_id"]: b for b in blind["items"]}
     set_by_id = {s["id"]: s for s in sources}
     findings: list[dict[str, Any]] = []
+    # D-25: 국어는 풀이자 난이도가 포화(SOLVER_SATURATED)라서 사용자가 정한 결합 기준(기출 대응+구조+오답 유도)을 쓰면
+    # 풀이자 난이도는 참고(advisory)로만 남기고, 난이도 관련 판정은 작성 라벨(결합 기준 게이트 통과)로 한다.
+    spec_ = bundle.get("request_spec") if isinstance(bundle.get("request_spec"), dict) else {}
+    combined = spec_.get("difficulty_basis") == "KOR_COMBINED_V1"
 
     def add(code, severity="FAIL", item=None, **extra):
         findings.append({"code": code, "severity": severity, **({"item_id": item} if item else {}), **extra})
@@ -354,9 +363,11 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
                 add(code, item=iid)
         if "e" in flags:
             add("BLIND_AI_STYLE", item=iid)
+        eff = it["difficulty"] if combined else b["difficulty"]
         if b["difficulty"] != it["difficulty"]:
-            add("DIFFICULTY_MISMATCH", item=iid, target=it["difficulty"], blind=b["difficulty"])
-        if b["difficulty"] in {"D3", "D4", "D5"}:
+            add("DIFFICULTY_SOLVER_ADVISORY" if combined else "DIFFICULTY_MISMATCH", "WARN" if combined else "FAIL",
+                item=iid, target=it["difficulty"], blind=b["difficulty"])
+        if eff in {"D3", "D4", "D5"}:
             if "c" in flags:
                 add("OBVIOUS_KEY_D3_PLUS", item=iid)
             if strong < 2:
@@ -365,7 +376,7 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
                 add("FIRST_PASS_CANDIDATES_SHORT", item=iid)
         elif "c" in flags:
             add("OBVIOUS_KEY_CORE_ITEM", "WARN", item=iid)
-        if b["difficulty"] in {"D4", "D5"} and (it["reasoning_steps"] < 2 or it["immediate_elimination"] > 2):
+        if eff in {"D4", "D5"} and (it["reasoning_steps"] < 2 or it["immediate_elimination"] > 2):
             add("FAKE_D4", item=iid)
 
     # --- constructed response ---
@@ -547,7 +558,8 @@ def qa_evidence(bundle, sources, blind, text, findings) -> dict[str, Any]:
                 "second_best_option": str(b.get("second_best", it["second_best"])), "second_best_risk": "MEDIUM",
                 "reasoning_steps": it["reasoning_steps"], "evidence_count": len(it["judgments"][a - 1]["ev"]),
                 "immediate_elimination_count": it["immediate_elimination"], "transfer_required": bool(it.get("transfer")),
-                "actual_difficulty": b.get("difficulty", ""),
+                "actual_difficulty": it["difficulty"] if (bundle.get("request_spec") or {}).get("difficulty_basis") == "KOR_COMBINED_V1" else b.get("difficulty", ""),
+                "solver_difficulty_advisory": b.get("difficulty", ""),
             },
             "gates": {g: ("FAIL" if codes & ITEM_GATE_CODES.get(g, set()) else "PASS") for g in content_gate.ITEM_GATES},
         })
@@ -635,7 +647,8 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
     if not archived_replay and raw_bundle.get("product_mode") == "ARC_N":
         # D-22/D-23: SOC/SCI 는 항상, KOR 는 template 코드를 쓰는 번들부터 구조 게이트(템플릿·구조 점수·길이/절대 표현/정답 분포)를 적용한다.
         subj = str(raw_bundle.get("subject", "")).upper()
-        if subj in {"SOC", "SCI"} or any(isinstance(i, dict) and i.get("template") for i in raw_bundle.get("items", [])):
+        kor_combined = isinstance(raw_bundle.get("request_spec"), dict) and raw_bundle["request_spec"].get("difficulty_basis") == "KOR_COMBINED_V1"
+        if subj in {"SOC", "SCI"} or kor_combined or any(isinstance(i, dict) and i.get("template") for i in raw_bundle.get("items", [])):
             structure = structure_gate.check_bundle(raw_bundle)
             if structure["status"] == "FAIL":
                 report = {"tool": "ARC_PRODUCTION_PIPELINE_V1.1", "batch_id": raw_bundle.get("batch_id"),

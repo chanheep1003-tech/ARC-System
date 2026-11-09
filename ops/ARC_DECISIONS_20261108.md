@@ -26,6 +26,7 @@
 | D-22 | 난이도 조절(게이트)이 실패하면 반복 재생성 전에 문제은행·기출·모의 자료와 `quality/exam_style` 종합 노트를 참고해 해당 난이도의 실제 출제 구조로 재설계한다(사용자 2026-11-08). 이번 사회 S2 요청은 선택형 20문항만 만든다(서술형 제외). | 사다리 §2, quality/exam_style/README_EXAM_STYLE_SUMMARY_20261108.md |
 | D-23 | S2 20문항 실험 불합격 후 시스템 수정(사용자 지시): ①출제 구조 라이브러리·template 코드 필수 ②풀이자 눈금 보정용 기준 문항 레지스트리 ③요청 전 범위 대비 D4+ 가능성 점검(feasibility, 사용자에게 묻기) ④정답 길이·절대 표현·정답 분포·교과서 복제 자동 검사. 임계값은 모두 잠정. | quality/ARC_ITEM_STRUCTURE_AND_CALIBRATION_V1.0.md, tooling/production/item_structure_gate.py, difficulty_calibration.py |
 | D-24 | ARC N 은 자료 제시형 추론 문항을 기본으로 한다: 교과서 밖 개념은 문항 안(view)에서 정의를 주고 적용·추론하게 하며, 정의 없이 교과서 밖 용어를 이름으로 쓰면 FAIL(사용자 2026-11-08 "이런 추론식 문제 만들도록 저장"). 범위(소단원)는 그대로. | quality/ARC_ITEM_STRUCTURE_AND_CALIBRATION_V1.0.md §6, EXAM_STRUCTURE_LIBRARY supplied_concept_rule, item_structure_gate.py |
+| D-25 | 국어(ARC N) 난이도는 AI 풀이자 대신 '기출 대응 + 구조 점수 + 오답 유도' 3축 결합 기준(KOR_COMBINED_V1)으로 정한다. 풀이자 평가는 정답·모호성 검증용으로만 유지(사용자 2026-11-09 \"1,2,3 병합\"). 근거: 실제 동북고 맞춤법 문항 3개를 풀이자가 모두 D2·HIGH 로 평가(SOLVER_SATURATED). | quality/ARC_ITEM_STRUCTURE_AND_CALIBRATION_V1.0.md §7, KOR_MISCONCEPTION_CATALOG_V1.0.yaml, item_structure_gate.py, production_pipeline.py |
 
 ## 이 정비로 해결되지 않은 것 (후속 과제)
 1. 흑백 로고 자산 파일이 없다. 등록(Drive ID, 해시) 전까지 ARC_N 표지는 생성되지 않는다.

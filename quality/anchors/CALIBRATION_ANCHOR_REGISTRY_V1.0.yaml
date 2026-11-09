@@ -39,4 +39,5 @@ solver_saturation:
     observed_real_items: [DONGBUK-KOR-2025-2-Q08, DONGBUK-KOR-2025-2-Q09, DONGBUK-KOR-2025-2-Q10]
     all_rated: D2
     status: SOLVER_SATURATED
-    consequence: "국어 맞춤법/문법 문항은 AI 풀이자 난이도(D)를 난이도 게이트로 쓰지 않고, 구조 점수 밴드와 사람(선생님) 검토를 기준으로 한다. 이 변경은 사용자 정책 결정이 필요하다(제안 상태)."
+    consequence: "국어 맞춤법/문법 문항은 AI 풀이자 난이도(D)를 난이도 게이트로 쓰지 않고 request_spec.difficulty_basis KOR_COMBINED_V1(기출 대응+구조 점수+오답 유도)을 쓴다. 사용자 승인 2026-11-09(D-25)."
+    user_decision: "APPROVED 2026-11-09 (1,2,3 병합)"

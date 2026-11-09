@@ -107,3 +107,6 @@ kor_saturation_check_20261109: >
   구조 점수 기준 국어 v4: D2 19·D3 1 (템플릿 코드 없는 v4 에 enforce_templates=False 로 계산). 실제 기출 대비 상대 비교는 아직 안 했다.
   결과 파일: quality/production/KOR_S2_MEDIEVAL_ORTHO_20261108/real_exam_orthography_solver_check.yaml. 기출 원문은 저장소에 넣지 않았다.
   제안(사용자 정책 결정 대기): 국어 맞춤법/문법은 AI 풀이자 난이도를 게이트로 쓰지 않고 구조 점수 밴드와 선생님 검토를 기준으로 한다. 레지스트리 solver_saturation.KOR_ORTHOGRAPHY 에 제안 상태로 기록했다.
+kor_basis_decision_20261109: >
+  사용자 결정(2026-11-09): 국어 난이도 기준을 '기출 대응 + 구조 점수 + 오답 유도' 3축 병합(KOR_COMBINED_V1, D-25)으로 한다. 국어 요청은 request_spec.difficulty_basis: KOR_COMBINED_V1,
+  difficulty_basis_decided_by: USER 를 기록한다. 국어 v5 는 구조 템플릿(K4 새 규칙 적용형, K7 조건 분류표, K2 심화 등)으로 새로 설계하고 오답마다 misconception 코드를 단다.

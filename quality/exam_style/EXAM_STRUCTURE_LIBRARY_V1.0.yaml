@@ -14,6 +14,7 @@ evidence:
   - quality/exam_style/DONGBUK_SCI_KOR_2025_2_STYLE_NOTES_20261108.md
   - quality/exam_style/SOC_DONGBUK_2025_2_FINAL_STYLE_NOTES_20261108.md
 note: >
+  KOR 템플릿의 reference 는 동북고 2025-2 기말 공통국어2 실제 문항의 배점 대역(3.5~3.7=D2, 3.8~3.9=D3, 4.0~4.2=D4, 사용자 승인 전 제안값)으로 정한 기출 대응 등급이다. reference 가 없는 KOR 템플릿(K8, K11~K13 등 확장형)은 D3 를 넘는 라벨을 받을 수 없다.
   difficulty 범위는 출제 방식 분석에서 나온 가설이다(PROVISIONAL). observed_solver 는 이 시스템에서 실제 AI 풀이자 평가를 받은 표본이며
   표본이 1~3개이므로 범위를 바꾸는 근거가 아니라 참고값이다.
 
@@ -28,6 +29,8 @@ structure_score:
     entity_extra: 1.0           # 사상가/주체 등 비교 대상 수가 2 이상이면 1, 3 이상이면 2 (entity_terms 기준)
     computation: 2.0            # 템플릿이 computation: true
     low_elimination: 1.0        # immediate_elimination <= 1
+    exception_rule: 1.0        # KOR: item.exception_rules 개수(최대 2)
+    large_table: 1.0           # KOR: 표 칸 수 12 이상
     supplied_concept: 1.5       # item.supplied_concepts 가 있고 view 에서 정의를 주어 학생이 추론해 적용하게 한 경우(D-24)
   bands:
     D2: [0, 6.0]                # score <= 6.0
@@ -82,13 +85,13 @@ templates:
   S10: {subject: SCI, name: "중화점 이후 이온·물 분자 수 변화형", difficulty: [D3, D4], computation: false}
   S11: {subject: SCI, name: "농도가 다른 두 용액 혼합형", difficulty: [D4, D4], computation: true}
   # ---- KOR (공통국어2 중세국어·맞춤법) ----
-  K1:  {subject: KOR, name: "중세국어 표기 특징 고르기", difficulty: [D2, D3], computation: false}
-  K2:  {subject: KOR, name: "중세국어 자료 설명 5개 중 가장 적절한 것", difficulty: [D3, D3], computation: false}
-  K3:  {subject: KOR, name: "탐구 주제/언어 자료 표에서 부적절한 행 찾기", difficulty: [D3, D4], computation: false}
-  K4:  {subject: KOR, name: "새 규칙 적용형(중세국어)", difficulty: [D3, D4], computation: false}
-  K5:  {subject: KOR, name: "총칙/규정 해석 + 예시 판단", difficulty: [D3, D3], computation: false}
-  K6:  {subject: KOR, name: "띄어쓰기 오류 위치 찾기", difficulty: [D2, D3], computation: false}
-  K7:  {subject: KOR, name: "조건 제시형 분류표(사이시옷 등)", difficulty: [D3, D4], computation: false}
+  K1:  {subject: KOR, name: "중세국어 표기 특징 고르기", difficulty: [D2, D3], computation: false, reference: {exam: DONGBUK-KOR-2025-2-FINAL, item_no: 4, points: 3.5, tier: D2}}
+  K2:  {subject: KOR, name: "중세국어 자료 설명 5개 중 가장 적절한 것", difficulty: [D3, D3], computation: false, reference: {exam: DONGBUK-KOR-2025-2-FINAL, item_no: 5, points: 4.1, tier: D4}}
+  K3:  {subject: KOR, name: "탐구 주제/언어 자료 표에서 부적절한 행 찾기", difficulty: [D3, D4], computation: false, reference: {exam: DONGBUK-KOR-2025-2-FINAL, item_no: 6, points: 3.7, tier: D2}}
+  K4:  {subject: KOR, name: "새 규칙 적용형(중세국어)", difficulty: [D3, D4], computation: false, reference: {exam: DONGBUK-KOR-2025-2-FINAL, item_no: 7, points: 4.2, tier: D4}}
+  K5:  {subject: KOR, name: "총칙/규정 해석 + 예시 판단", difficulty: [D3, D3], computation: false, reference: {exam: DONGBUK-KOR-2025-2-FINAL, item_no: 8, points: 3.6, tier: D2}}
+  K6:  {subject: KOR, name: "띄어쓰기 오류 위치 찾기", difficulty: [D2, D3], computation: false, reference: {exam: DONGBUK-KOR-2025-2-FINAL, item_no: 9, points: 3.9, tier: D3}}
+  K7:  {subject: KOR, name: "조건 제시형 분류표(사이시옷 등)", difficulty: [D3, D4], computation: false, reference: {exam: DONGBUK-KOR-2025-2-FINAL, item_no: 10, points: 4.0, tier: D4}}
   K8:  {subject: KOR, name: "맞춤법 규정 + 용례 5개 중 부적절한 표기", difficulty: [D2, D3], computation: false}
   K11: {subject: KOR, name: "중세/현대 대응표 완성형", difficulty: [D3, D4], computation: false}
   K12: {subject: KOR, name: "소리대로/어법 분류 단어 세기", difficulty: [D3, D4], computation: true}
@@ -102,3 +105,14 @@ supplied_concept_rule:
     SOC: ["원초적 입장", "무지의 베일", "정형적 분배", "역사적 원리", "응분", "최소국가", "최소 국가", "축차적", "공정한 기회균등", "형식적 기회균등"]
     SCI: []
     KOR: []
+
+kor_combined_basis:
+  # D-25: 국어 맞춤법/문법/중세국어는 AI 풀이자 난이도가 포화(SOLVER_SATURATED)이므로 request_spec.difficulty_basis: KOR_COMBINED_V1 일 때
+  # 기출 대응 + 구조 점수 + 오답 유도 3축의 최저 등급을 문항 난이도로 본다. 풀이자 난이도는 참고(advisory)다.
+  levels:
+    reference: "템플릿 reference.tier (reference 없는 템플릿은 D3 상한). D4 라벨은 item.reference_exam_item 에 같은 기출 문항 id 를 기록해야 한다"
+    structure: "structure score 밴드(D2 ≤6, D3 ≤9, D4 >9)"
+    misconception: "경쟁(STRONG/MEDIUM) 오답 중 misconception 코드가 붙은 수: 0~1개 D2, 2개 D3, 3개 이상 D4"
+    exception: "D4 는 item.exception_rules 가 1개 이상이어야 한다(없으면 D3 상한)"
+  assessed_level: "min(reference, structure, misconception, exception)"
+  fail_if: "라벨 > assessed_level"

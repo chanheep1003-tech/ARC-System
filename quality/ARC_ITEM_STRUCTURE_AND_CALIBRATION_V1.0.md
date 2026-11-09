@@ -37,3 +37,16 @@
 - 교과서 밖 용어(`supplied_concept_rule.outside_terms`: 원초적 입장, 무지의 베일, 정형적 분배, 역사적 원리, 응분, 최소국가, 축차적 등)가 문항에 이름으로 나오면 view 에 정의 문장이 있고 `supplied_concepts` 에 기록되어야 한다. 아니면 FAIL(OUTSIDE_CONCEPT_NOT_SUPPLIED). 용어 이름 없이 풀어 쓴 문장은 허용한다.
 - 정의를 제시해 추론하게 한 문항은 구조 점수에 +1.5 를 준다(`supplied_concept`). 소단원 범위(scope)는 바뀌지 않는다.
 - 금지: 정의 없이 교과서 밖 용어를 이름으로 쓰기, 교과서 문장 복제(D-21).
+
+## 7. 국어 결합 난이도 기준 KOR_COMBINED_V1 (D-25, 사용자 지시 2026-11-09 "1,2,3 병합")
+- 배경: 동북고 실제 맞춤법 문항(8·9·10번, 배점 3.6~4.0점 이상)을 같은 AI 풀이자가 모두 D2·확신 HIGH로 평가했다(SOLVER_SATURATED). 국어 맞춤법·문법·중세국어는 풀이자 난이도로 변별할 수 없다.
+- 적용: `request_spec.difficulty_basis: KOR_COMBINED_V1` + `difficulty_basis_decided_by: USER` (KOR 전용). 선언하지 않은 요청은 기존 풀이자 기준을 그대로 쓴다.
+- 문항 난이도 = 세 축(+D4 예외 규정)의 **최저 등급**이다.
+  1. 기출 대응(reference): 템플릿이 가리키는 동북고 2025-2 기말 실제 문항의 배점 대역(3.5~3.7=D2, 3.8~3.9=D3, 4.0~4.2=D4). D4 라벨은 `reference_exam_item: DONGBUK-KOR-2025-2-FINAL#<문항번호>` 가 템플릿의 기출과 같아야 한다. 기출이 없는 확장 템플릿(K8, K11~K13)은 D3 상한.
+  2. 구조 점수: 풀이 단계, 표·도식, 4줄 이상 자료, 판단 진술 수, 비교 대상, 새 규칙 제시(supplied_concepts), 예외 규정 수(최대 2), 표 12칸 이상. 밴드 D2 ≤6, D3 ≤9, D4 >9.
+  3. 오답 유도: 오답 judgment 에 `mis`(quality/exam_style/KOR_MISCONCEPTION_CATALOG_V1.0.yaml 코드)를 기록하고, 경쟁(STRONG/MEDIUM) 오답 중 코드가 붙은 수가 2개면 D3, 3개 이상이면 D4.
+  4. D4 는 `exception_rules`(예외·붙임 규정) 1개 이상이 있어야 한다. 없으면 D3 상한.
+- 라벨이 평가 등급보다 높으면 FAIL(KOR_BASIS_BELOW_LABEL). 미등록 코드는 FAIL(KOR_BASIS_UNKNOWN_MISCONCEPTION).
+- 풀이자 평가(블라인드 풀이)는 정답 유일성·키 오류·모호성·길이 단서 확인용으로 계속 필수다. 풀이자 난이도는 보고서에 `solver_difficulty_advisory` 로 남기고 DIFFICULTY_SOLVER_ADVISORY(WARN)로만 취급한다.
+- 선생님(사용자) 표본 검토: D4 문항 일부를 사용자에게 보여 확인한다(최종 확인 단계).
+- 한계: 배점 대역→등급 대응, 오답 코드 목록, 임계값(2개/3개)은 모두 잠정이며 학생 정답률 자료가 생기면 재보정한다.
