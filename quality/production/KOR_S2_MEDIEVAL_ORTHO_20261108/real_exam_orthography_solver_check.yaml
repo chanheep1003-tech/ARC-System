@@ -1,0 +1,25 @@
+items:
+- item_id: ANCHOR-DB-KOR-08
+  answer: 3
+  first_pass_top3: [3, 5, 2]
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "'노래'와 조사 '가'는 소리대로 적은 단어(좋다는 ㅎ 받침을 밝혀 적은 어법 표기)라 두 개; ①방언은 표준어 아님, ②'닭'은 어법, ④㉢은 표의주의, ⑤'얼음'은 어간을 밝혀 적은 어법 표기."
+- item_id: ANCHOR-DB-KOR-09
+  answer: 3
+  first_pass_top3: [3, 4, 1]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "틀린 곳은 ㉡(먹을 수: 의존 명사), ㉢(먹은 건데: 의존 명사 '것'), ㉥(나대로: 조사); ㉠㉣은 조사, ㉤은 어미 '-는지'라 붙여 쓰는 것이 맞음."
+- item_id: ANCHOR-DB-KOR-10
+  answer: 5
+  first_pass_top3: [5, 4, 1]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: "바닷물[바단물]=Ⓑ, 텃세·촛불=된소리 Ⓐ, 깻잎[깬닙]·뒷일[뒨닐]=ㄴㄴ 덧남 Ⓒ."

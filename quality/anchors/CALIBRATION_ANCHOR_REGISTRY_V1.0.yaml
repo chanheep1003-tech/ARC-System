@@ -30,3 +30,13 @@ observed_only:
   # 기준 라벨이 없어 눈금 계산에는 쓰지 않고, 풀이자가 어떻게 평가했는지만 기록한다.
   - {id: DONGBUK-SOC-2025-2-Q6,  drive_id: 1ovD6tA5QtEyEnwvH5hQxc1kCuRwcEiQM, item_no: 6,  points: 4.2, solver_observed: D3, date: 2026-11-08, structure: "원전 인용 문장 귀속 판별"}
   - {id: DONGBUK-SOC-2025-2-Q17, drive_id: 1ovD6tA5QtEyEnwvH5hQxc1kCuRwcEiQM, item_no: 17, points: 4.2, solver_observed: D4, date: 2026-11-08, structure: "응답표 점수 계산(노동법 지식 필요)"}
+  - {id: DONGBUK-KOR-2025-2-Q08, drive_id: 1bN5wDVbQ1bGlixjzMsWIEJjKpVSTP8iN, item_no: 8,  points_note: "3점대(맞춤법 소리대로/어법 분류)", solver_observed: D2, confidence: HIGH, date: 2026-11-08, structure: "한글 맞춤법 소리대로/어법"}
+  - {id: DONGBUK-KOR-2025-2-Q09, drive_id: 1bN5wDVbQ1bGlixjzMsWIEJjKpVSTP8iN, item_no: 9,  points_note: "3.8~3.9점(밑줄 6곳 정오 판단)", solver_observed: D2, confidence: HIGH, date: 2026-11-08, structure: "밑줄 6곳 중 틀린 표기 찾기"}
+  - {id: DONGBUK-KOR-2025-2-Q10, drive_id: 1bN5wDVbQ1bGlixjzMsWIEJjKpVSTP8iN, item_no: 10, points_note: "4.0점 이상(사이시옷 조건 분류표)", solver_observed: D2, confidence: HIGH, date: 2026-11-08, structure: "사이시옷 세 갈래 조건 분류표"}
+solver_saturation:
+  # D-23: 실제 학교 시험의 고배점 문항을 풀이자가 모두 D2 로 평가하면 그 영역은 풀이자 난이도로 변별할 수 없다(SOLVER_SATURATED).
+  KOR_ORTHOGRAPHY:
+    observed_real_items: [DONGBUK-KOR-2025-2-Q08, DONGBUK-KOR-2025-2-Q09, DONGBUK-KOR-2025-2-Q10]
+    all_rated: D2
+    status: SOLVER_SATURATED
+    consequence: "국어 맞춤법/문법 문항은 AI 풀이자 난이도(D)를 난이도 게이트로 쓰지 않고, 구조 점수 밴드와 사람(선생님) 검토를 기준으로 한다. 이 변경은 사용자 정책 결정이 필요하다(제안 상태)."
