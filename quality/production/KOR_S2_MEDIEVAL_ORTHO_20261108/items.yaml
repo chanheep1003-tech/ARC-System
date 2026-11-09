@@ -230,23 +230,29 @@ items:
   immediate_elimination: 1
   table:
     header:
+    - 구분
     - 중세 국어 → 현대 국어
     - 분석
     - 변화 설명
     rows:
-    - - 노미 → 놈이
+    - - ㉠
+      - 노미 → 놈이
       - 놈 + 이
       - 이어 적기가 끊어 적기로 바뀌었다.
-    - - 므리 → 물이
+    - - ㉡
+      - 므리 → 물이
       - 믈 + 이
       - 이어 적기가 끊어 적기로 바뀌고, 'ㅁ' 뒤에서 'ㅡ'가 'ㅜ'로 바뀌었다.
-    - - 내 → 내가
+    - - ㉢
+      - 내 → 내가
       - 나 + ㅣ
       - 앞말이 'ㅣ' 이외의 모음으로 끝나 주격 조사 'ㅣ'가 쓰였고, 현대 국어에서는 '가'가 쓰인다.
-    - - 티다 → 치다
+    - - ㉣
+      - 티다 → 치다
       - 티 + 다
       - '''ㅣ'' 모음에 선행하는 ''ㅌ''이 ''ㅊ''으로 바뀌는 구개음화가 일어났다.'
-    - - 니르다 → 이르다
+    - - ㉤
+      - 니르다 → 이르다
       - 니르 + 다
       - '''ㅣ'' 모음 앞에서 ''ㄴ''이 탈락하는 구개음화가 일어났다.'
   novel_examples:
@@ -604,7 +610,7 @@ items:
   coverage: JUKYEOK_CLASSIFY
   difficulty: D4
   balance: ADVANCED_DISCRIMINATION
-  stem: (나)의 '중세 국어의 주격 조사'를 바탕으로 <보기>의 주격형 ㉮~㉳를 ㉠~㉢으로 분류한 것으로 가장 적절한 것은?
+  stem: (나)의 '중세 국어의 주격 조사'를 바탕으로 <보기>의 주격형을 ㉠~㉢으로 분류한 것으로 가장 적절한 것은?
   options:
   - '㉠: 누니, 다리 / ㉡: 아비 / ㉢: 내, 불휘'
   - '㉠: 누니, 다리 / ㉡: 내 / ㉢: 아비, 불휘'
@@ -855,7 +861,7 @@ items:
   coverage: DOENSORI_JE5HANG
   difficulty: D3
   balance: CORE_EXAM_POINT
-  stem: 윗글의 제5항을 바탕으로 <보기>의 ㉠~㉥ 중 뒷음절의 첫소리를 된소리로 적는 단어만을 있는 대로 고른 것은?
+  stem: 윗글의 제5항을 바탕으로 <보기>의 ㉠~㉥ 중 뒷음절의 첫소리를 된소리로 적는 단어만 묶은 것은?
   options:
   - ㉠, ㉡, ㉤
   - ㉠, ㉢, ㉤
@@ -944,7 +950,7 @@ items:
   coverage: RYUL_YUL_DUEUM
   difficulty: D3
   balance: CORE_EXAM_POINT
-  stem: 윗글의 두음 법칙 설명을 바탕으로 <보기>의 ㉠~㉥ 중 표기가 올바른 것만을 있는 대로 고른 것은?
+  stem: 윗글의 두음 법칙 설명을 바탕으로 <보기>의 ㉠~㉥ 중 표기가 올바른 것끼리 짝지은 것은?
   options:
   - ㉠, ㉡, ㉢
   - ㉠, ㉢, ㉥
@@ -1027,7 +1033,7 @@ items:
   coverage: ADVERB_I_HI_CLASSIFY
   difficulty: D4
   balance: ADVANCED_DISCRIMINATION
-  stem: 윗글의 제25항을 바탕으로 <보기>의 ㉮~㉳를 ㉠~㉢으로 분류한 것으로 가장 적절한 것은?
+  stem: 윗글의 제25항을 바탕으로 <보기>의 단어를 ㉠~㉢으로 분류한 것으로 가장 적절한 것은?
   options:
   - '㉠: 반듯이, 정확히 / ㉡: 반드시, 슬며시 / ㉢: 곰곰이'
   - '㉠: 반드시, 정확히 / ㉡: 반듯이, 슬며시 / ㉢: 곰곰이'
@@ -1209,7 +1215,7 @@ items:
   coverage: SAISIOT_THREE_TYPES
   difficulty: D4
   balance: ADVANCED_DISCRIMINATION
-  stem: 윗글의 제30항을 바탕으로 <보기>의 ㉮~㉳를 ㉠~㉢으로 분류한 것으로 가장 적절한 것은?
+  stem: 윗글의 제30항을 바탕으로 <보기>의 단어를 ㉠~㉢으로 분류한 것으로 가장 적절한 것은?
   options:
   - '㉠: 촛불, 콧물 / ㉡: 냇물 / ㉢: 베갯잇, 나뭇잎'
   - '㉠: 촛불 / ㉡: 베갯잇, 냇물 / ㉢: 콧물, 나뭇잎'
@@ -1443,7 +1449,7 @@ items:
   coverage: SPACING_SIX_UNDERLINES
   difficulty: D3
   balance: CORE_EXAM_POINT
-  stem: 윗글을 바탕으로 <보기>의 ㉠~㉥ 중 띄어쓰기가 옳지 않은 것만을 있는 대로 고른 것은?
+  stem: 윗글을 바탕으로 <보기>의 ㉠~㉥ 중 띄어쓰기를 고쳐야 하는 것만을 있는 대로 고른 것은?
   options:
   - ㉡, ㉢, ㉤
   - ㉠, ㉢, ㉤

@@ -31,6 +31,9 @@ FONT_FILES = {
 # Hanja (漢字) and other glyphs Nanum lacks fall back to a CJK font; first existing file wins.
 FALLBACK_FILES = [Path("/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc"),
                   Path("/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc")]
+# Math/linguistic symbols (e.g. U+2205 empty set used for zero morphemes) that neither Nanum nor the CJK fallback carries.
+SYMBOL_FILES = [Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
+                Path("/usr/share/fonts/truetype/freefont/FreeSerif.ttf")]
 SIZE = 9.8
 LH = SIZE * 1.62
 NAVY = (0.08, 0.16, 0.30)
@@ -45,6 +48,10 @@ def fallback_file() -> Path | None:
     return next((p for p in FALLBACK_FILES if p.is_file()), None)
 
 
+def symbol_file() -> Path | None:
+    return next((p for p in SYMBOL_FILES if p.is_file()), None)
+
+
 def fonts() -> dict[str, fitz.Font]:
     missing = [str(p) for p in FONT_FILES.values() if not p.is_file()]
     if missing:
@@ -53,6 +60,9 @@ def fonts() -> dict[str, fitz.Font]:
     fb = fallback_file()
     if fb:
         out["H"] = fitz.Font(fontfile=str(fb))
+    sf = symbol_file()
+    if sf:
+        out["S"] = fitz.Font(fontfile=str(sf))
     return out
 
 
@@ -71,6 +81,8 @@ def runs(text: str, key: str) -> list[tuple[str, str]]:
         if not ch.isspace() and not _FONTS[key].has_glyph(ord(ch)):
             if "H" in _FONTS and _FONTS["H"].has_glyph(ord(ch)):
                 k = "H"
+            elif "S" in _FONTS and _FONTS["S"].has_glyph(ord(ch)):
+                k = "S"
             else:
                 raise RenderError(f"GLYPH_MISSING: U+{ord(ch):04X} {ch!r} (install fonts-noto-cjk or fonts-wqy-zenhei)")
         if out and out[-1][0] == k:
@@ -84,7 +96,7 @@ def put(page: fitz.Page, pos, text: str, fontname: str = "R", fontsize: float = 
     x, y = pos
     for k, t in runs(text, fontname):
         if k not in {f[4] for f in page.get_fonts()}:  # embed only fonts a page actually uses (unused fonts are not subset)
-            page.insert_font(fontname=k, fontfile=str(FONT_FILES.get(k) or fallback_file()))
+            page.insert_font(fontname=k, fontfile=str(FONT_FILES.get(k) or (symbol_file() if k == "S" else fallback_file())))
         kw = {"color": color} if color is not None else {}
         page.insert_text((x, y), t, fontname=k, fontsize=fontsize, **kw)
         x += _FONTS[k].text_length(t, fontsize=fontsize)

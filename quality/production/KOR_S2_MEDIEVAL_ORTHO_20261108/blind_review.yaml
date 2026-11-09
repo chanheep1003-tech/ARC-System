@@ -1,0 +1,242 @@
+reviewer: independent_subagent_manuscript_only
+rounds: 1
+excluded_inputs:
+- ANSWER_KEY
+- AUTHOR_INTENT
+- PASS_A
+- TARGET_DIFFICULTY
+post_blind_edits:
+- item_id: KOR-S2-002
+  change: '표에 ㉠~㉤ 구분 열 추가(풀이자 지적: 표지 없음)'
+- item_id: KOR-S2-007
+  change: 발문 기호 ㉮~㉳ 를 실제 분류 기호에 맞게 수정
+- item_id: KOR-S2-012
+  change: 발문 기호 ㉮~㉳ 를 '단어'로 수정
+- item_id: KOR-S2-010,KOR-S2-011
+  change: '발문 끝말 변경(같은 발문 3연속 방지): 고른 것은→묶은 것은/짝지은 것은, 내용·선지 불변'
+- item_id: KOR-S2-017
+  change: 발문 '옳지 않은 것만' → '고쳐야 하는 것만'(부정 발문 자동판정과 합집합형 선지 충돌 방지), 내용·선지 불변
+items:
+- item_id: KOR-S2-001
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 4
+  - 1
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: ③은 띄어쓰기를 하지 않았다면서 글자 사이 간격으로 단어를 구별했다고 하여 자기모순. ①②④⑤는 (가)에 그대로 있음.
+- item_id: KOR-S2-002
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 2
+  - 3
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: 표에 ㉠~㉤ 표지는 없으나 행 순서로 판단. 5행 '니르다→이르다'의 ㄴ 탈락은 구개음화가 아니라 두음 법칙((나)). 4행 티다→치다는 구개음화로 맞음.
+- item_id: KOR-S2-003
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 3
+  - 1
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: ㄱ(믈+이), ㄴ(나+ㅣ), ㄹ(불휘, 반모음 ㅣ로 끝나 영형태)은 옳음. ㄷ은 '새'가 ㅣ 모음/반모음 ㅣ로 끝나 영형태인데 '새이'로 적힌다고 해서 틀림. 가장 끌린 ③은 ㄷ 때문에 오답.
+- item_id: KOR-S2-004
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 2
+  - 1
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags:
+  - e
+  note: '(나)에 따라 영감 확대, 얼굴 축소, 어엿비 이동이므로 ④. 정답에는 영향 없으나 ''영감: 당상관 이상 정1품 이하''라는 풀이는 실제(정3품~종2품 관원 호칭)와 어긋날 수 있어 확인 필요.'
+  flag_adjudication:
+    e: '''영감''의 풀이는 교과서 제시문(원리 확인 활동 상자글)을 그대로 옮긴 것이며 정답(확대/축소/이동 짝짓기)에 영향이 없다. 교과서 원문 확인 항목으로 남긴다.'
+- item_id: KOR-S2-005
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 4
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: A 맞음(이어 적기 대 끊어 적기). B는 '불휘'가 영형태이므로 틀림. C 맞음(믈→물 원순 모음화). 끌린 ②는 C를 놓친 것.
+- item_id: KOR-S2-006
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 5
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: ③은 므리가 이어 적기이고 믈→물이 원순 모음화라서 옳음. ①은 '새'가 영형태이므로 틀림. ②④⑤도 모두 틀림.
+- item_id: KOR-S2-007
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 1
+  - 5
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: 누니·다리(달+이)는 자음 뒤라 ㉠, 내는 ㉡, 아비·불휘는 ㅣ/반모음 ㅣ 뒤라 ㉢. 끌린 ①은 아비와 내를 거꾸로 분류. 질문 머리의 ㉮~㉳ 표기는 실제 ㉠~㉢ 분류와 불일치하나 해석에는 지장 없음.
+- item_id: KOR-S2-008
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 3
+  - 1
+  second_best: 3
+  difficulty: D3
+  confidence: MEDIUM
+  flags: []
+  note: 꽃이, 먹어, 값이는 소리와 달리 형태소 원형(꽃, 먹-, 값)을 밝혀 적은 것. 어깨는 소리대로. 나무[나무]는 소리와 표기가 같아 판단이 다소 애매하나, 선지 구성상 ㉤을 포함한 ④만 성립. 끌린 ③은 값이를 빠뜨림.
+- item_id: KOR-S2-009
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 4
+  - 1
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 조건대로 깨끗이(ㅅ→이), 정확히, 급히 맞음. 반드시는 -하다가 붙지 않아 소리대로 적어 맞음. 솔직이·엄격이는 조건과 실제 모두 '-히'여야 하므로 틀림. 끌린 ④는 ㉥ 엄격이 때문에 오답.
+- item_id: KOR-S2-010
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 1
+  - 5
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: 아끼다(모음 사이), 훨씬(ㄹ 뒤), 몽땅(ㅇ 뒤)은 된소리로 적음. 법석·국밥·학교는 음운 변동이라 된소리로 적지 않음. 끌린 ①은 법석이 오답 요소.
+- item_id: KOR-S2-011
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 2
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 합격률(ㄱ 받침 뒤 률), 환율(ㄴ 받침 뒤 율), 정렬(ㅇ 받침 뒤 렬)이 맞음. 성공율→성공률, 분렬→분열, 이률→이율로 써야 하므로 ㉡㉣㉥은 틀림. 끌린 ①은 성공율 때문에 오답.
+- item_id: KOR-S2-012
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 3
+  - 2
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 반듯이·정확히는 -하다 어근+이/히(㉠), 반드시·슬며시는 -하다가 붙지 않아 소리대로(㉡), 곰곰이는 부사+이(㉢). 끌린 ③은 곰곰이를 ㉠으로 보고 ㉢을 없음으로 처리해 오답. 질문 머리의 ㉮~㉳ 표기는 불일치하나 해석에 지장 없음.
+- item_id: KOR-S2-013
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 2
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: 나뭇잎, 시냇물, 햇빛이 사이시옷 표기. 해님은 파생어, 솜이불은 앞말에 받침, 위층은 뒷말이 거센소리로 시작해 사이시옷 불필요. 끌린 ②는 솜이불 때문에 오답.
+- item_id: KOR-S2-014
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 1
+  - 3
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: 촛불은 된소리(㉠), 콧물·냇물은 ㄴ/ㅁ 앞 ㄴ 덧남(㉡), 베갯잇·나뭇잎은 모음 앞 ㄴㄴ 덧남(㉢). 끌린 ③은 냇물을 ㉠으로 오분류.
+- item_id: KOR-S2-015
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 3
+  - 1
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: 해님은 접미사 '-님'이 결합한 파생어(㉠), 솜이불은 앞말에 받침(㉡), 개수는 두 음절 한자어이나 예외 6단어에 없음(㉢).
+- item_id: KOR-S2-016
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 3
+  - 2
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: 마굿간은 '마구간'이 옳음(한자어 예외 6단어에 없고 마구간은 표준 표기). 곳간·횟수는 예외 6단어, 귓병은 2-1, 나뭇잎은 1-3.
+- item_id: KOR-S2-017
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 4
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: ㉡ '약속한 대로', ㉢ '사흘 만에', ㉤ '수밖에'로 고쳐야 함. ㉠ 한 권뿐(조사), ㉣ 너만큼(조사), ㉥ 이사한 지(의존 명사)는 맞음. 끌린 ②는 ㉠을 틀렸다고 본 것.
+- item_id: KOR-S2-018
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 3
+  - 2
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: ㄱ(읽는 데), ㄴ(오는데, 어미), ㄹ(간 데)가 규칙에 맞음. ㄷ은 '사는 데는'(곳), ㅁ은 '설득하는 데'(일)로 띄어야 하므로 틀림. 끌린 ③은 ㅁ 때문에 오답.
+- item_id: KOR-S2-019
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 3
+  - 1
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: '''했을 뿐이다''의 ''뿐''은 관형어의 꾸밈을 받는 의존 명사이므로 띄어 써야 함. 나머지 행은 본문 설명과 일치.'
+- item_id: KOR-S2-020
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 3
+  - 2
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: A(문제시, 접미사 -시)와 B(필요 시, 의존 명사)는 맞음. C는 당연시의 '시'가 접미사이므로 틀림. 끌린 ②는 B를 놓친 것.
