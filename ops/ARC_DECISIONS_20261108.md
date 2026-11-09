@@ -28,6 +28,7 @@
 | D-24 | ARC N 은 자료 제시형 추론 문항을 기본으로 한다: 교과서 밖 개념은 문항 안(view)에서 정의를 주고 적용·추론하게 하며, 정의 없이 교과서 밖 용어를 이름으로 쓰면 FAIL(사용자 2026-11-08 "이런 추론식 문제 만들도록 저장"). 범위(소단원)는 그대로. | quality/ARC_ITEM_STRUCTURE_AND_CALIBRATION_V1.0.md §6, EXAM_STRUCTURE_LIBRARY supplied_concept_rule, item_structure_gate.py |
 | D-25 | 국어(ARC N) 난이도는 AI 풀이자 대신 '기출 대응 + 구조 점수 + 오답 유도' 3축 결합 기준(KOR_COMBINED_V1)으로 정한다. 풀이자 평가는 정답·모호성 검증용으로만 유지(사용자 2026-11-09 \"1,2,3 병합\"). 근거: 실제 동북고 맞춤법 문항 3개를 풀이자가 모두 D2·HIGH 로 평가(SOLVER_SATURATED). | quality/ARC_ITEM_STRUCTURE_AND_CALIBRATION_V1.0.md §7, KOR_MISCONCEPTION_CATALOG_V1.0.yaml, item_structure_gate.py, production_pipeline.py |
 | D-26 | 국어 내신은 등급을 나누기 위해 교과서에 없는 예문·단어, 헷갈리게 하는 표현, 형태소 분석(어간·어미·접사·조사 경계)이 들어가고 기말 범위가 문법 중심이다. 국어 ARC N 은 낯선 단어·예문(novel_examples)과 D4 형태소 분석(morpheme_analysis)을 요구하고 등록 교과서 발췌문과의 문장 복제를 검사한다(사용자 2026-11-09). | 정책 문서 §8, KOR_MISCONCEPTION_CATALOG KM13~15, item_structure_gate.py, production_pipeline.py |
+| D-27 | ARC 시스템을 새로 구성·개편(구조 설계, 게이트 추가, 파이프라인 변경)할 때는 superpowers 스킬을 쓴다: 설계 전 `brainstorming`, 계획 `writing-plans`, 구현 `test-driven-development`·`subagent-driven-development`, 오류 추적 `systematic-debugging`, 완료 선언 전 `verification-before-completion`. 스킬은 `.arc-tools/src/superpowers/skills/*/SKILL.md` 를 읽어 적용하며(arc_external.py skills superpowers), ARC 매니페스트와 사용자 범위가 우선한다(사용자 2026-11-09). 문항 생산에는 적용하지 않는다. | ops/ARC_EXTERNAL_TOOLS_V1.0.md, AGENTS.md |
 
 ## 이 정비로 해결되지 않은 것 (후속 과제)
 1. 흑백 로고 자산 파일이 없다. 등록(Drive ID, 해시) 전까지 ARC_N 표지는 생성되지 않는다.
