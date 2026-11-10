@@ -750,8 +750,30 @@ Q(50, 'D3', 'K6', 'EXCEPT_INCORRECT', 'SPACING_PREFIX_DETERMINER',
   [None, 'KM15', 'KM15', 'KM13', 'KM15'], (2, 4), 4, 1, neg=True, novel=['맨손', '첫눈'],
   exc=["접두사 '맨-'과 관형사 '맨'의 구별", "합성어 '첫눈'은 붙여 씀"])
 
-# ---------------------------------------------------------------- bundle
+# ---------------------------------------------------------------- packing order (user 2026-11-10: no near-empty page)
 assert len(ITEMS) == 50
+import importlib.util
+import re
+_spec = importlib.util.spec_from_file_location('kr', ROOT / 'tooling/typeset/kor_renderer.py')
+kr = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(kr)
+
+
+def _ending(it):
+    return re.sub(r'\s', '', it['stem'])[-8:]
+
+
+def _ok(placed, cand):
+    last = placed[-2:]
+    if len(last) == 2 and all(p['answer'] == cand['answer'] for p in last):
+        return False
+    if len(last) == 2 and all(_ending(p) == _ending(cand) for p in last):
+        return False
+    return True
+
+
+ORDER = kr.pack_columns(ITEMS, [0 if i < 20 else 1 for i in range(len(ITEMS))], ok=_ok)  # 중세 20 다음 맞춤법 30
+ITEMS = [ITEMS[i] for i in ORDER]
 OLD = yaml.safe_load((ROOT / 'quality/production/KOR_S2_MEDIEVAL_ORTHO_20261108/items.yaml').read_text(encoding='utf-8'))
 bundle = {k: OLD[k] for k in ('product_mode', 'subject', 'generator', 'set_label', 'course', 'school_line', 'scope', 'exam_context')}
 bundle.update(
@@ -764,7 +786,7 @@ bundle.update(
                             shortage_reason='사용자 지정(2026-11-10): 낯선 용례+문헌 원문 혼합, 새로 보는 문항. 범위 내 CONTENT_VERIFIED 기출 문항 원문은 복사하지 않음'),
     scope_profile=dict(subunit_count=2, note='중세 국어 20 + 한글 맞춤법 30(띄어쓰기·사이시옷·준말 포함)'),
     design_rule='2026-11-10 형식 조사(kor_research_20261110) 반영: 문항마다 짧은 자료(<보기>)만 제시, 규정 조항+낯선 용례, 문헌 원문+현대어 풀이, 일기·안내문·게시판·대화 틀; D-21~D-26',
-    sets=[dict(id=f'Q{n:02d}', works=[]) for n in range(1, 51)],
+    sets=[dict(id=it['set'], works=[]) for it in ITEMS],
     items=ITEMS)
 for it in ITEMS:
     it['provenance'] = dict(mode='AI_ORIGINAL', school_scope_refs=['KOR-TB-2026-U3-P104-131'],

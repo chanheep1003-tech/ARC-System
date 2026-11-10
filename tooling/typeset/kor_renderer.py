@@ -11,6 +11,7 @@ line by line. Content is rendered exactly as given; this module never edits it.
 from __future__ import annotations
 
 import hashlib
+import math
 import re
 from pathlib import Path
 from typing import Any
@@ -491,3 +492,75 @@ def render(bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[s
     pages = len(doc)
     doc.close()
     return {"status": "PASS", "pages": pages, "brand": brand, "product": product}
+
+def pack_order(items: list[dict[str, Any]], product: str = "ARC_N", window: int = 5, ok=None, section=None) -> list[int]:
+    """Order for item-supplied-material questions that fills column gaps (school papers rarely leave half columns empty).
+    Greedy two-column fill: keep the original order while the next question fits; when it does not, pull the
+    largest question that still fits from the next `window` questions of the same section. `ok(placed, cand)`
+    may veto a choice (e.g. three same answer positions in a row). Returns indices into `items`."""
+    L = Layout()
+    h = [question_block(L, it, "00", product).h for it in items]
+    col_h = (A4_H - MB) - MT
+    left = list(range(len(items)))
+    out: list[int] = []
+    y = 0.0
+    sec = section or (lambda i: 0)
+    while left:
+        head_sec = sec(left[0])
+        win = [i for i in left if sec(i) == head_sec][:window]
+        allowed = [i for i in win if ok is None or ok([items[j] for j in out], items[i])] or win
+        fits = [i for i in allowed if y + h[i] <= col_h]
+        if fits:
+            pick = fits[0] if fits[0] == left[0] or y == 0 else max(fits, key=lambda i: h[i])
+            out.append(pick)
+            left.remove(pick)
+            y += h[pick]
+        else:
+            y = 0.0  # next column
+            pick = allowed[0]
+            out.append(pick)
+            left.remove(pick)
+            y += h[pick]
+    return out
+
+def pack_columns(items: list[dict[str, Any]], sections: list[int], product: str = "ARC_N", ok=None) -> list[int]:
+    """Balanced packing of whole questions (user 2026-11-10: no page with one lonely question, no half-empty
+    columns). Each section gets the fewest columns into which LPT (largest question first, into the emptiest
+    column) fits; if the total is odd, one more column goes to the fullest section so every page has two filled
+    columns. Inside a column questions keep authoring order; columns follow their earliest question.
+    `ok(prev2, cand)` vetoes sequences (e.g. three equal answer positions) and is repaired by nearby swaps."""
+    L = Layout()
+    h = [question_block(L, it, "00", product).h for it in items]
+    cap = (A4_H - MB) - MT
+
+    def lpt(idx: list[int], n: int) -> list[list[int]]:
+        bins: list[list[int]] = [[] for _ in range(n)]
+        for i in sorted(idx, key=lambda i: -h[i]):
+            min(bins, key=lambda bn: sum(h[j] for j in bn)).append(i)
+        return bins
+
+    secs = sorted(set(sections))
+    members = {sec: [i for i in range(len(items)) if sections[i] == sec] for sec in secs}
+    count = {}
+    for sec in secs:
+        n = max(1, math.ceil(sum(h[i] for i in members[sec]) / cap))
+        while max(sum(h[j] for j in bn) for bn in lpt(members[sec], n)) > cap:
+            n += 1
+        count[sec] = n
+    if sum(count.values()) % 2:
+        fullest = max(secs, key=lambda sec: sum(h[i] for i in members[sec]) / count[sec])
+        count[fullest] += 1
+    order: list[int] = []
+    for sec in secs:
+        cols = [sorted(bn) for bn in lpt(members[sec], count[sec]) if bn]
+        for c in sorted(cols, key=min):
+            order += c
+    if ok is not None:
+        for _ in range(3):
+            for k in range(2, len(order)):
+                if not ok([items[j] for j in order[k - 2:k]], items[order[k]]):
+                    for m in range(k + 1, min(k + 4, len(order))):
+                        if sections[order[m]] == sections[order[k]] and ok([items[j] for j in order[k - 2:k]], items[order[m]]):
+                            order[k], order[m] = order[m], order[k]
+                            break
+    return order
