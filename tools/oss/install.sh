@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ARC-System 오픈소스 도구 설치기 (idempotent)
-#   ./tools/oss/install.sh --quick   markitdown + rtk 만 (세션 시작 훅용, 수 초)
+#   ./tools/oss/install.sh --quick   ARC 도구 의존성(PyYAML·PyMuPDF·OpenCV·나눔폰트) + markitdown + rtk (세션 시작 훅용)
 #   ./tools/oss/install.sh --full    + heretic, DeepTutor, Orkas 소스/의존성 (수 GB)
 # 소스는 저장소에 커밋하지 않고 $ARC_OSS_HOME (기본 ~/.arc-oss) 에 둔다.
 set -uo pipefail
@@ -10,6 +10,22 @@ mkdir -p "$OSS_HOME" "$HOME/.local/bin"
 export PATH="$HOME/.local/bin:$PATH"
 log() { printf '[arc-oss] %s\n' "$*"; }
 
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+# ARC 자체 도구(tooling/arc.py, 카나리, PDF 검사)가 실제로 돌려면 필요한 것: 파이썬 3종 + 나눔 폰트.
+install_arc_tooling() {
+  if python3 -c 'import yaml, fitz, cv2' >/dev/null 2>&1; then log "arc tooling deps ok"
+  else
+    python3 -m pip install -q -r "$REPO_ROOT/tooling/requirements-smoke.txt" >/dev/null 2>&1 \
+      && log "arc tooling deps installed" || log "arc tooling deps FAILED (python3 -m pip install -r tooling/requirements-smoke.txt)"
+  fi
+  if [ -f /usr/share/fonts/truetype/nanum/NanumMyeongjo.ttf ]; then log "nanum fonts ok"
+  elif command -v apt-get >/dev/null; then
+    SUDO=""; [ "$(id -u)" -ne 0 ] && SUDO="sudo -n"
+    { $SUDO apt-get install -y -q fonts-nanum fonts-wqy-zenhei >/dev/null 2>&1 \
+      || { $SUDO apt-get update -q >/dev/null 2>&1 && $SUDO apt-get install -y -q fonts-nanum fonts-wqy-zenhei >/dev/null 2>&1; }; } \
+      && log "nanum fonts installed" || log "nanum fonts FAILED (PDF 조판·카나리 불가: apt-get install fonts-nanum)"
+  else log "nanum fonts MISSING (no apt-get)"; fi
+}
 install_markitdown() {
   command -v markitdown >/dev/null && { log "markitdown ok"; return; }
   uv tool install 'markitdown[all]' >/dev/null 2>&1 || pip install -q 'markitdown[all]' && log "markitdown installed"
@@ -58,6 +74,6 @@ install_agency_agents() {
   "$OSS_HOME/agency-agents/scripts/install.sh" --tool claude-code --no-interactive >/dev/null 2>&1 && log "agency-agents installed" || log "agency-agents FAILED"
 }
 
-install_markitdown; install_rtk; install_graphify; install_agency_agents
+install_arc_tooling; install_markitdown; install_rtk; install_graphify; install_agency_agents
 if [ "$MODE" = "--full" ]; then install_heretic; install_headroom; install_deeptutor; install_orkas; fi
 log "done ($MODE)"

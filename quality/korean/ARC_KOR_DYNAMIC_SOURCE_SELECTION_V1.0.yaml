@@ -1,0 +1,58 @@
+# ARC Korean V3/V4/V5 production-time external-source retrieval contract
+version: "1.0"
+subject: KOR
+scope_only: true
+status: ACTIVE_DEV_POLICY
+selection_mode: PER_ITEM_JUST_IN_TIME_SEARCH
+fixed_candidate_pool: false
+reuse_from_preselected_title_list: false
+source_gate: SOURCE_VERIFIED_BEFORE_ITEM_DRAFT
+steps:
+  - "Lock learning objective, exam_scope, item_type, specific skill and comparison/reasoning axis."
+  - "Derive 2-4 source search queries from THIS item's skill and difficulty, not from a preset title/artist/work list."
+  - "Search authorized school materials and external trusted literature/corpus/document sources in the current run; preserve source URI, edition and retrieval date."
+  - "Score 2-5 candidates by curriculum fit, real passage necessity, authenticity/edition, novelty, licensing and proof availability."
+  - "Reject duplicates against previously used ARC passages at the paragraph/span and question-inference level."
+  - "Select ONE or a justified comparison pair, verify original passage, exact span and provenance, then create the item. Do not select a work merely because it was used in the past."
+  - "Verify each claim against in-scope concept and source (five-choice semantic QA). Reject if passage removal does not affect resolution."
+  - "If no original excerpt is verifiable or legally usable, re-query; when a modern creative excerpt is unavailable, create an original natural passage and document this fallback."
+genres:
+  literature:
+    search_dimensions: ["comparable emotional situation", "contrastive imagery/function", "speaker/narrative structure", "genre and period"]
+    required: ["school_anchor_work", "comparison_axis", "fresh_excerpt", "shared_grounds", "distinct_grounds"]
+  nonfiction:
+    search_dimensions: ["two related unfamiliar concepts", "self-contained definitions", "boundary condition", "case application"]
+    required: ["new_concepts_defined_in_passage", "comparison_axis", "transfer_case"]
+  medieval_grammar:
+    search_dimensions: ["target phoneme/morpheme", "matching 15C or clearly marked 16C witness", "available facsimile/edition", "different excerpt"]
+    required: ["document_title", "edition", "source_date_and_period", "original_span", "readable_transcription", "gloss"]
+  modern_orthography:
+    source_genres: ["lyrics", "poem", "fiction", "diary", "dialogue", "article", "original_text"]
+    search_dimensions: ["specific orthography/spacing phenomenon", "sentence context sufficient to classify", "natural mixed examples"]
+    required: ["original_text_status", "normative_comparison", "evidence_span", "lexeme_pos", "usage_permission"]
+rights:
+  store_full_copyrighted_lyrics_in_repo: false
+  print_copyrighted_excerpt_without_review: false
+  require_exact_original_source: true
+  require_permission_or_lawful_short_quote: true
+  permissible_fallback: ORIGINAL_NEW_PASSAGE
+  verify_artistic_spelling_separately: true
+receipt_required:
+  - "item_id"
+  - "curriculum_anchor"
+  - "school_exam_style_anchor"
+  - "search_queries"
+  - "search_timestamp"
+  - "considered_sources"
+  - "selected_source_url"
+  - "exact_edition_and_span"
+  - "rights_decision"
+  - "novelty_fingerprint"
+  - "why_this_passage"
+  - "why_unseen_passage_needed"
+  - "five_option_truth_receipt"
+on_failure: REVIEW_PENDING
+not_claimed:
+  - "That a source has already been selected when only this policy exists."
+  - "That historical recommendations are a permanent or exclusive source bank."
+  - "That production can search without an authorized tool or connector."

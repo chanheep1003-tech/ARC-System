@@ -1,0 +1,81 @@
+fixture_id: SOC-N-CANARY-V1
+source_mode: SYNTHETIC_SCOPE_REPRESENTATIVE_ONLY
+purpose: Deterministic 10-item SOC ARC_N QA, handoff, page-order, answer-key, and PDF regression.
+governance:
+  DUP_HISTORY_ACCESS: UNAVAILABLE
+  DUPLICATE_GATE: NOT_CLAIMED_CANARY
+  FINAL_USER_APPROVAL: NOT_APPLICABLE_CANARY
+  DRIVE_SAVE: BLOCKED
+  SCOPE_EXCLUSION_INDEX: quality/source/SOC_C_XMARK_EXCLUSION_INDEX_2026_V1.0.yaml
+  C_X_MARK_FILTER: PASS_SYNTHETIC_EXCLUDED_REGIONS_NOT_USED
+  excluded_regions_not_used:
+    - power-separation confirmation figure
+    - Singer civil-disobedience block
+    - Thoreau civil-disobedience block
+content_bundle:
+  batch_id: SOC-N-CANARY-001
+  generator: GPT
+  product_mode: ARC_N
+  subject: SOC
+  scope: registered A/B/C scope signals; synthetic structural fixture only
+  item_count: 10
+  created_at: 2026-09-23T04:00:00+09:00
+  qa_evidence_filename: ARC_QA_EVIDENCE_SOC_N_CANARY_001.yaml
+  student_manuscript: |-
+    ## QUESTION 1
+    Which statement best distinguishes equality from equity?
+    1) Equality always uses different rules. 2) Equity ignores relevant differences. 3) Equality applies the same rule while equity considers relevant differences. 4) Both reject criteria. 5) Both mean identical outcomes.
+
+    ## QUESTION 2
+    A distribution judgment is strongest when it does what?
+    1) Names and applies a relevant criterion. 2) Uses the longest description. 3) Ignores the allocated shares. 4) Assumes every difference is unfair. 5) Replaces reasons with preference.
+
+    ## QUESTION 3
+    Which question belongs to corrective rather than distributive reasoning?
+    1) Which region is largest? 2) How should an unjust imbalance be restored? 3) Which resource is most popular? 4) How old is a city? 5) Which map color is darkest?
+
+    ## QUESTION 4
+    What should a reader identify in a global production network?
+    1) Connections and spatial roles. 2) One country name only. 3) Decorative colors only. 4) The page number. 5) Personal preference.
+
+    ## QUESTION 5
+    What does a population pyramid primarily represent?
+    1) Trade value. 2) Age and sex composition. 3) Constitutional hierarchy. 4) Punishment purpose. 5) Cultural diffusion alone.
+
+    ## QUESTION 6
+    Which evidence is most suitable for examining population movement?
+    1) A migration-flow map. 2) A logo. 3) A punishment quotation. 4) A rights checklist. 5) A title page.
+
+    ## QUESTION 7
+    A rights-restriction judgment should first identify what?
+    1) The right, actor, purpose, and means. 2) The longest sentence. 3) The most familiar slogan. 4) An unrelated historical date. 5) A preferred result only.
+
+    ## QUESTION 8
+    What is required when two rights conflict?
+    1) Ignore one claim. 2) State both claims and compare the proposed arrangement. 3) Choose randomly. 4) Count repeated words. 5) Avoid reasons.
+
+    ## QUESTION 9
+    Why can a transition graph not replace a population pyramid?
+    1) They necessarily use different colors. 2) They represent different kinds of evidence. 3) One is always incorrect. 4) One has no labels. 5) They concern unrelated subjects.
+
+    ## QUESTION 10
+    What must happen before C-part content is treated as production-ready?
+    1) Ignore handwritten marks. 2) Apply the verified visual X-mark exclusion filter. 3) Use OCR alone. 4) Include every line automatically. 5) Replace the school worksheet.
+  answer_key:
+    1: 3
+    2: 1
+    3: 2
+    4: 1
+    5: 2
+    6: 1
+    7: 1
+    8: 2
+    9: 2
+    10: 2
+  visual_asset_manifest: []
+  qc_status:
+    STATUS: PASS
+    SOURCE_MODE: SYNTHETIC_SCOPE_REPRESENTATIVE_ONLY
+    C_X_MARK_FILTER: PASS_SYNTHETIC_EXCLUDED_REGIONS_NOT_USED
+    FINAL_USER_APPROVAL: NOT_APPLICABLE_CANARY
+    DRIVE_SAVE: BLOCKED

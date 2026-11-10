@@ -1,5 +1,5 @@
 # 00_ACTIVE_통합과학2_동북고_MASTER_V4.0
-# BASE: ARC COMMON GENERATION ENGINE V4.0
+# BASE: manifest-selected common generation engine
 # PRODUCT_MODE: ARC_N / ARC_FINAL inherited
 # MODE: CONTENT GENERATION ONLY
 
@@ -118,6 +118,32 @@ DATA_TABLE_COUNT: x
 VISUAL_RENDER: PENDING_PDF (SPEC_ONLY일 때)
 
 ## 11. ARC HANDOFF
-공통 엔진 V4.0의 HANDOFF_META + SECTION A~D를 그대로 따른다.
-ANSWER_KEY는 검증용이며 ARC_N 학생 PDF에는 넣지 않는다.
+manifest-selected 공통 엔진의 HANDOFF_META + SECTION A~D를 그대로 따른다.
+ANSWER_KEY는 Generator/Publisher 검증용 잠금 데이터이며, ARC_N에서는 활성 PDF master에 따라 문제지 뒤의 필수 완전 공백 페이지 다음 compact answer section으로 정확히 삽입한다. 문제 페이지에는 노출하지 않는다.
 FINAL 요청은 PRODUCT_MODE=ARC_FINAL로 처리하고 별도 FINAL 프롬프트를 사용하지 않는다.
+
+## 12. GOLD STANDARD ANCHORS
+필수 로드: `quality/gold/SCI_GOLD_ANCHORS_V1.0.md`
+GOOD/BAD 앵커와 비교한 뒤 문항의 자료 기능, 추론 단계, 오답 강도를 판정한다.
+직접개념형이 BAD 앵커와 가까우면 PREMIUM 금지 및 V1.1 점수 상한을 적용한다.
+
+
+## EXECUTABLE VISUAL GATE — V1.0
+필수 참조:
+- quality/visual/ARC_VISUAL_RENDERER_POLICY_V1.0.md
+- quality/visual/ARC_VISUAL_PASS_AB_V1.0.md
+- quality/ARC_VISUAL_TEMPLATE_SYSTEM_V1.1.md
+- quality/ARC_VISUAL_AUTHENTICITY_RUBRIC_V1.1.md
+
+SCI-GRAPH는 수치 배열에서 deterministic chart로 렌더한다.
+SCI-PARTICLE는 freehand/생성형 이미지로 만들지 않고 species/count 기반 deterministic SVG를 사용한다.
+SCI-EXPERIMENT는 element/connection/direction spec이 완전해야 렌더한다.
+
+산화·환원 입자모형:
+- REDOX_LEDGER를 문항 검증에서 독립 생성
+- visual spec의 before/after species count와 대조
+- actual rendered element count와 다시 대조
+- electron conservation / cation count / total ion count를 분리 확인
+- REDOX_VISUAL_CROSSCHECK=PASS 필수
+
+ESSENTIAL visual은 VISUAL_PASS_A, VISUAL_PASS_B, QUESTION_VISUAL_CROSSCHECK가 모두 PASS가 아니면 BANK/FINAL 후보가 아니다.

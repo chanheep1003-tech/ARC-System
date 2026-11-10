@@ -1,0 +1,22 @@
+anchor_id: KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0
+version: 1.0
+subject: KOR
+school: 동북고등학교
+mode: MULTI_EXAM_ENSEMBLE
+source_exam_count: 4
+corpus: quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
+profile:
+  shares: {D12: 0.343, D3: 0.400, D45: 0.257}
+  mean_level: 2.89
+tolerance:
+  share: 0.12
+  mean_level: 0.20
+  late_section_d45_min: 2
+format_reference:
+  mcq_range: [20, 24]
+  constructed_typical: 4
+confidence: HIGH_FOR_ENSEMBLE
+notes:
+  - "2025-2 중간/기말을 각각 0.35, 2026-1 중간/기말을 각각 0.15로 가중."
+  - "단일 시험 하나가 아니라 실제 4회 시험의 중앙 난도대를 모사."
+  - "FINAL이 더 어렵거나 더 쉬운 것 모두 보정 대상."

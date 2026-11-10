@@ -1,0 +1,207 @@
+# Locked exact source texts for Korean items. Drive stays the authority;
+# the repository copy exists so the production pipeline and CI can verify
+# the SHA-256 lock without network access. An entry is EXACT only after
+# verification or explicit user confirmation; PENDING_USER_CONFIRMATION
+# entries stay blocked by content QA.
+registry_id: KOR-SOURCE-TEXT-REGISTRY-2026-V1.0
+version: 1.0
+date: 2026-09-25
+status: ACTIVE-DEV
+texts:
+- source_text_id: KOR-SUPP-2026-NF-KANT-HEGEL
+  title: 이행남, 「칸트의 도덕적 자율성으로부터 헤겔의 인륜적 자율성으로」
+  author: 이행남
+  role: RAW_SCHOOL_SOURCE
+  source_origin: CONNECTED_DRIVE_RAW_SCHOOL_SOURCE
+  school_source_file_id: 1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+  school_source_location: scan p2 right column ~ p3, II. 비문학 보충 1
+  locked_text_drive_id: 1OF_fc8N6SmcwM1oRVXJF69_jlVRmFcf-
+  repo_path: quality/source/text/KOR_SUPP_2026_NF_KANT_HEGEL_V1.0.txt
+  sha256: be4709451609176eb877e753e69e7dc98b246a428eb58e5351d3d68082a0aa39
+  paragraphs: 3
+  text_fidelity: EXACT
+  verification:
+    method: DRIVE_OCR_CHARACTER_DIFF_PLUS_PRIOR_TRANSCRIPTION_CROSSCHECK
+    ocr_character_diff: 1162/1162 non-space characters identical after one OCR fix (법 직인 -> 법칙인, matches ARC N03 transcription)
+    spacing: no space added beyond OCR; 31 OCR line-wrap splits inside words removed
+    punctuation_normalization: straight single quotes rendered as ‘ ’
+    author: 이행남 confirmed by user 2026-09-25
+    user_authorization: user instructed to finalize and register this text on 2026-09-25
+    visual_line_by_line: NOT_PERFORMED
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
+- source_text_id: KOR-SUPP-2026-LIT-TANGUNGGA
+  title: 정훈, 「탄궁가」
+  author: 정훈
+  role: RAW_SCHOOL_SOURCE
+  source_origin: CONNECTED_DRIVE_RAW_SCHOOL_SOURCE
+  school_source_file_id: 1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+  school_source_location: scan p1 (I. 문학 보충 1)
+  locked_text_drive_id: null
+  repo_path: quality/source/text/KOR_SUPP_2026_LIT_TANGUNGGA_V1.0.txt
+  sha256: 0604e8740ac87d5f300ffd548b4c4a7f9a6150ade7bec3adeee4f2e4b480f271
+  form: VERSE
+  lines: 42
+  text_fidelity: EXACT
+  verification:
+    method: DRIVE_OCR_PLUS_ARC_N01_N03_TRANSCRIPTION_CROSSCHECK
+    line_breaks: taken from the ARC N03 transcription; the scan OCR merges lines
+    user_confirmation: "user confirmed on 2026-09-25 that every reading in this registry text is correct ('원문 표기 다 맞고'); the conflicts below are resolved in favor of the registry text"
+    resolved_conflicts:
+    - '5행 안표(顔瓢)가 / 안표(顔瓢) (OCR·N01: 조사 없음)'
+    - 23행 가릴꼬 (N03) / 가꼬 (OCR·N01)
+    - 25행 솥 시루 (N03) / 술 시루 (OCR·N01)
+    - 26행 명일 (N03·N01) / 영일 (OCR)
+    - 36행 온가지로 (N03·OCR) / 온갖으로 (N01)
+    - 40행 여읠려냐 (N03) / 여의려나 (N01) / 여러나 (OCR)
+    - 33~35행 가난 귀신의 말에 큰따옴표 여부 (N01 있음, N03·OCR 없음)
+    visual_line_by_line: NOT_PERFORMED
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
+- source_text_id: KOR-SUPP-2026-LIT-PALWON
+  title: 백석, 「팔원 - 서행시초3」
+  author: 백석
+  role: RAW_SCHOOL_SOURCE
+  source_origin: CONNECTED_DRIVE_RAW_SCHOOL_SOURCE
+  school_source_file_id: 1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+  school_source_location: scan p1 right ~ p2 (I. 문학 보충 2)
+  locked_text_drive_id: null
+  repo_path: quality/source/text/KOR_SUPP_2026_LIT_PALWON_V1.0.txt
+  sha256: 4ef78129dd14d43c423bf90c67fb8c5d3ae03f71ee50a21ca1c585901f8cc649
+  form: VERSE
+  lines: 16
+  text_fidelity: EXACT
+  verification:
+    method: DRIVE_OCR_PLUS_ARC_N01_N03_TRANSCRIPTION_CROSSCHECK
+    line_breaks: taken from the ARC N03 transcription; the scan OCR merges lines
+    user_confirmation: "user confirmed on 2026-09-25 that every reading in this registry text is correct ('원문 표기 다 맞고'); the conflicts below are resolved in favor of the registry text"
+    resolved_conflicts:
+    - 8행 어디메서 (N03) / 어디에서 (OCR)
+    - 9행 쌔하얗게 (N03) / 패하얗게 (OCR)
+    - 8행·16행 끝 마침표 (OCR 있음, N03 없음)
+    - 6행 자성(慈城) (N03) / 자성(城) (OCR 한자 누락)
+    - 행 구분 전체 (OCR은 행을 합쳐 읽음)
+    visual_line_by_line: NOT_PERFORMED
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
+- source_text_id: KOR-SUPP-2026-LIT-JINACHIM
+  title: 기형도, 「기억할 만한 지나침」
+  author: 기형도
+  role: RAW_SCHOOL_SOURCE
+  source_origin: CONNECTED_DRIVE_RAW_SCHOOL_SOURCE
+  school_source_file_id: 1xXrfar0n_zovZrkikfVFg_shQpI3iz2O
+  school_source_location: scan p2 (I. 문학 보충 3)
+  locked_text_drive_id: null
+  repo_path: quality/source/text/KOR_SUPP_2026_LIT_JINACHIM_V1.0.txt
+  sha256: 9fdd9015b6a5afcab210ce67a56d4f1830f9e1f7d5aa47cd37d5b371d044f1c0
+  form: VERSE
+  lines: 14
+  text_fidelity: EXACT
+  verification:
+    method: DRIVE_OCR_PLUS_ARC_N01_N03_TRANSCRIPTION_CROSSCHECK
+    line_breaks: taken from the ARC N03 transcription; the scan OCR merges lines
+    user_confirmation: "user confirmed on 2026-09-25 that every reading in this registry text is correct ('원문 표기 다 맞고'); the conflicts below are resolved in favor of the registry text"
+    resolved_conflicts:
+    - 10행 할까, (N03) / 할까. (OCR·N01)
+    - 2·4·8·14행 끝 마침표 (OCR 있음, N03 없음)
+    - 연 구분 위치 (11행 뒤, N03 기준)
+    visual_line_by_line: NOT_PERFORMED
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
+- source_text_id: KOR-TB-2026-U1-SOKMIINGOK-MODERN
+  title: 정철, 「속미인곡」 (교과서 현대어 풀이)
+  author: 정철
+  role: RAW_SCHOOL_SOURCE
+  source_origin: USER_PROVIDED_TEXTBOOK
+  school_source_file_id: 1r3EW5jS1ZzuHoknHn2YiiKO4EnevjMam
+  school_source_location: 교과서 1단원 01 옛 노래 감상하기 pp.15-16 현대어 풀이, 발췌(임 계신 곳 소식을 ~ 끝)
+  repo_path: quality/source/text/KOR_TB_2026_U1_SOKMIINGOK_MODERN_EXCERPT_V1.0.txt
+  sha256: c7e222c9eb05325a835525aebc35fe0933028469e99c20b4af61251a327411bb
+  form: VERSE
+  lines: 28
+  text_fidelity: EXACT
+  verification:
+    method: DRIVE_PDF_TEXT_LAYER_EXTRACTION
+    note: 현대어 풀이 lines are clean in the PDF text layer; the 고어 원문 layer drops arae-a characters, so the modern rendering is used
+    user_authorization: user authorized registering these transcriptions as source texts on 2026-09-25 ("권한 허용할테니까 알아서 해줘")
+    visual_line_by_line: NOT_PERFORMED (source file over the 10MB download limit)
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
+- source_text_id: KOR-TB-2026-U1-SURA
+  title: 백석, 「수라」
+  author: 백석
+  role: RAW_SCHOOL_SOURCE
+  source_origin: USER_PROVIDED_TEXTBOOK
+  school_source_file_id: 137wTl_ah-Wddfp0Rt4mXKwXh2YjmbOXw
+  school_source_location: 교과서 1단원 03 현대 시 감상하기 p.40
+  repo_path: quality/source/text/KOR_TB_2026_U1_SURA_V1.0.txt
+  sha256: 09aa9b0939bd87c18de8882429f6ea41d8f2899be78d630b6900386b7878c7fa
+  form: VERSE
+  lines: 12
+  text_fidelity: EXACT
+  verification:
+    method: VISUAL_TRANSCRIPTION_FROM_PAGE_IMAGE
+    note: wrapped continuation lines joined; spelling kept as printed (나린, 아모, 어니젠가, 싹기도, 가제, 무서우이, 받어)
+    user_authorization: user authorized registering these transcriptions as source texts on 2026-09-25 ("권한 허용할테니까 알아서 해줘")
+    visual_line_by_line: PERFORMED_ONCE
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
+- source_text_id: KOR-TB-2026-U1-AHOP-KYEOLLAE
+  title: 윤흥길, 「아홉 켤레의 구두로 남은 사내」
+  author: 윤흥길
+  role: RAW_SCHOOL_SOURCE
+  source_origin: USER_PROVIDED_TEXTBOOK
+  school_source_file_id: 137wTl_ah-Wddfp0Rt4mXKwXh2YjmbOXw
+  school_source_location: 교과서 1단원 04 현대 소설 감상하기 p.55 l.1 ~ p.56 l.11 발췌
+  repo_path: quality/source/text/KOR_TB_2026_U1_AHOP_KYEOLLAE_EXCERPT_V1.0.txt
+  sha256: 2c12ecdb9c348bcc8cb2fcf95b58f52e9c0764caba1c6bb8a924d020e7cb640d
+  paragraphs: 16
+  text_fidelity: EXACT
+  verification:
+    method: VISUAL_TRANSCRIPTION_FROM_PAGE_IMAGE
+    user_authorization: user authorized registering these transcriptions as source texts on 2026-09-25 ("권한 허용할테니까 알아서 해줘")
+    visual_line_by_line: PERFORMED_ONCE
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
+- source_text_id: KOR-TB-2026-U2-NEGOTIATION
+  title: 「우리 학교 아래로 고속 철도가 지나간다고?」
+  author: 교과서 제재
+  role: RAW_SCHOOL_SOURCE
+  source_origin: USER_PROVIDED_TEXTBOOK
+  school_source_file_id: 1wuoa58Zdj4--bj8OrCWWt6_DyAfEAUEa
+  school_source_location: 교과서 2단원 02 지혜롭게 협상하기 p.90 l.1 ~ p.92 l.17 발췌(조정하기)
+  repo_path: quality/source/text/KOR_TB_2026_U2_NEGOTIATION_EXCERPT_V1.0.txt
+  sha256: 9de637a845aacc7dcd1775f0c79aa38b8cfd94c57ba0fad41f9d81201d296bf2
+  paragraphs: 16
+  text_fidelity: EXACT
+  verification:
+    method: VISUAL_TRANSCRIPTION_FROM_PAGE_IMAGE
+    note: 'speaker labels printed in bold without a colon; rendered as "화자: " for the exam layout'
+    user_authorization: user authorized registering these transcriptions as source texts on 2026-09-25 ("권한 허용할테니까 알아서 해줘")
+    visual_line_by_line: PERFORMED_ONCE
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true

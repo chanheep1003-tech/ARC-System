@@ -1,0 +1,5 @@
+# Light dependencies for CI smoke, canaries and tooling/arc.py (no ML stack).
+# Full similarity stack: tooling/requirements.txt
+PyYAML>=6,<7
+PyMuPDF>=1.26,<2
+opencv-python-headless>=4.10,<5

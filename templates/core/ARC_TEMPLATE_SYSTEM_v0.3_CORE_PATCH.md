@@ -34,6 +34,10 @@ STATUS: ACTIVE PATCH
 9. N° LINK
 
 ## DESIGN
+- `templates/brand/ARC_BRAND_LOCKUP_SPEC_V1.0.md`의 ARC CORE lockup을 표지/브랜드 헤더에 적용
+- ARC master wordmark와 burgundy arc symbol은 N°/FINAL과 완전히 동일한 크기·기하 사용
+- CORE는 secondary label/divider만 warm-gray dark #8A877F 사용
+- divider 길이/위치, label baseline, 전체 lockup 비율은 N°/FINAL과 동일
 - 브랜드 Deep Navy / Warm Gray / Burgundy 유지
 - 개념 본문 폭은 읽기 편한 단일 컬럼 우선
 - 비교/도식은 2단 내부 배치 가능

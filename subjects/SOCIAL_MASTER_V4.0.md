@@ -153,3 +153,38 @@ HARD FAIL:
 
 ## 11. ARC HANDOFF
 공통 엔진 V4.0의 HANDOFF_META와 SECTION A~D를 따른다. C파트 요청이면 QC_STATUS에 C_X_MARK_FILTER를 반드시 유지한다. FINAL 요청도 PRODUCT_MODE=ARC_FINAL로 처리하며 별도 FINAL 프롬프트를 중복 사용하지 않는다.
+
+
+## 12. GOLD STANDARD ANCHORS
+필수 로드: `quality/gold/SOC_GOLD_ANCHORS_V1.0.md`
+현재 A/B/C 범위와 C_X_MARK_FILTER 적용 후에만 앵커를 비교한다.
+GOOD/BAD 앵커는 평균→개인 일반화, 자료 기능성, 공간적 분업 등 판단 구조를 보정하며 범위를 확장하지 않는다.
+
+
+## EXECUTABLE SOCIAL VISUAL / X-MARK GATE — V1.0
+필수 참조:
+- quality/visual/SOC_VISUAL_SPEC_V1.0.md
+- quality/visual/ARC_VISUAL_RENDERER_POLICY_V1.0.md
+- quality/visual/ARC_VISUAL_PASS_AB_V1.0.md
+- quality/ARC_VISUAL_TEMPLATE_SYSTEM_V1.1.md
+- quality/ARC_VISUAL_AUTHENTICITY_RUBRIC_V1.1.md
+
+사회 visual template:
+SOC-MAP / SOC-STAT / SOC-DATA / SOC-FLOW / SOC-CASEBOX / SOC-COMPARE / SOC-INSTITUTION.
+
+통계 자료는 metric, unit, denominator, reference year/time을 명시한다.
+권리구제/기관도는 actor → action/request → institution → power → remedy/effect를 directed edge로 명시한다.
+지도는 verified vector base 없이 행정경계를 임의 생성하지 않는다.
+
+C파트 입력 PDF는 실행 가능한 환경에서 `tooling/pdf_qc/xmark_detect.py`를 적용한다.
+검출 우선순위:
+1. PDF annotation/ink
+2. vector crossing
+3. OpenCV raster fallback
+
+AUTO_EXCLUDE는 즉시 USER_X_EXCLUSION에 편입한다.
+HUMAN_CHECK 영역은 포함으로 간주하지 않는다.
+도구 실행이 불가능하면 TOOLING_UNAVAILABLE을 기록하고 기존 시각 확인을 유지한다.
+C_X_MARK_FILTER는 어떤 경우에도 생략하지 않는다.
+
+ESSENTIAL social visual도 VISUAL_PASS_A/B + QUESTION_VISUAL_CROSSCHECK가 필수다.

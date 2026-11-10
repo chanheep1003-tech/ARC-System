@@ -1,0 +1,1536 @@
+batch_id: KOR-SEMIFINAL-20260925
+product_mode: ARC_FINAL
+subject: KOR
+generator: CLAUDE
+set_label: ARC FINAL · 세미파이널
+course: 공통국어2
+cover_subtitle: 2학기 중간고사 대비 · 선택형 22문항 · 서술형 4문항
+school_line: 동북고등학교 1학년 · 2026
+created_at: '2026-09-25T16:00:00+09:00'
+scope: 2026 동북고 1학년 2학기 중간 학교 보충자료 4편 (교과서 1단원은 원문 미확보로 제외)
+calibration: 2025-2 동북고 공통국어2 중간 (선택형 21·서답형 4, 고전시가→현대시 복합→비문학 배치, 조건형 서답형) — 구조·난이도 보정용, 문구 복제 금지
+sets:
+- id: S1
+  works:
+  - label: null
+    source_text_id: KOR-SUPP-2026-LIT-TANGUNGGA
+    marks: []
+    line_numbers: 5
+  notes:
+  - '* 안표(顔瓢): 공자의 제자 안회의 표주박. 청빈한 삶을 이르는 말.'
+  - '* 원헌(原憲): 공자의 제자로 몹시 가난하였다고 전하는 인물.'
+  - '* 장초(萇楚): 지각이 없어 근심을 알지 못하는 풀.'
+- id: S2
+  works:
+  - label: (가)
+    source_text_id: KOR-SUPP-2026-LIT-PALWON
+    line_numbers: 5
+    marks:
+    - find: 어느 한 사람도 눈을 씻는다
+      replace: ㉠어느 한 사람도 눈을 씻는다
+  - label: (나)
+    source_text_id: KOR-SUPP-2026-LIT-JINACHIM
+    marks: []
+    line_numbers: 5
+  notes:
+  - '* 내지(內地): 일제 강점기에 일본 본토를 이르던 말.'
+  - '* 내임을 내다: 배웅하다.'
+  - '* 아이보개: 아이를 돌보는 일.'
+  - '* 서기(書記): 관청에서 문서를 맡아 기록하던 사람.'
+- id: S3
+  works:
+  - label: null
+    source_text_id: KOR-SUPP-2026-NF-KANT-HEGEL
+    marks: []
+items:
+- item_id: SF-01
+  set: S1
+  format: MCQ
+  family: EXCEPT_INCORRECT
+  coverage: EXPRESSION_EFFECT
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: 윗글의 표현상 특징에 대한 설명으로 적절하지 않은 것은?
+  options:
+  - 3~4행에서 ‘~거나 못 ~거나’의 짜임을 되풀이하여 먹고 입는 일조차 해결하지 못하는 처지를 드러내고 있다.
+  - 5~6행에서 옛사람의 가난과 자신의 처지를 견주어 자신의 궁핍이 그보다 더함을 부각하고 있다.
+  - 25행에서 색채어를 활용하여 오랫동안 밥을 짓지 못한 살림살이의 모습을 시각적으로 드러내고 있다.
+  - 32~35행에서 가난 귀신의 말을 직접 옮겨 가난이 화자의 삶에 오래 뿌리내려 있음을 드러내고 있다.
+  - 41~42행에서 설의적 표현으로 가난을 받아들이면서도, 하늘에 대한 원망을 더 강하게 드러내고 있다.
+  answer: 5
+  second_best: 3
+  judgments:
+  - v: 'TRUE'
+    c: MEDIUM
+    axis: tg_expression
+    claim: parallel_structure
+    ev:
+    - L3
+    - L4
+    why: 삼십 일에 아홉 끼니, 십 년 동안 갓 하나를 ~거나 못 ~거나의 짜임으로 되풀이한다.
+  - v: 'TRUE'
+    c: MEDIUM
+    axis: tg_expression
+    claim: allusion_to_ancients
+    ev:
+    - L5
+    - L6
+    why: 안표·원헌의 가난도 자신만 못하다고 견준다.
+  - v: 'TRUE'
+    c: STRONG
+    axis: tg_expression
+    claim: color_word_rust
+    ev:
+    - L24
+    - L25
+    why: 솥 시루를 버려두어 붉은빛이 되었다는 것은 녹슨 모습으로, 오래 밥을 짓지 못했음을 시각적으로 드러낸다. 색채어가 낯설어 틀린 설명으로 오인하기 쉽다.
+  - v: 'TRUE'
+    c: STRONG
+    axis: tg_expression
+    claim: ghost_speech_quoted
+    ev:
+    - L32
+    - L33
+    - L34
+    - L35
+    why: 귀신의 항변을 직접 옮기며, 어려서 지금까지 함께했다는 말로 가난이 삶에 뿌리내렸음을 드러낸다.
+  - v: 'FALSE'
+    c: CORRECT
+    axis: tg_expression
+    claim: rhetorical_question_as_will
+    ev:
+    - L41
+    - L42
+    why: 설의적 표현으로 가난을 받아들이는 것은 맞지만, 하늘 만든 가난을 분수로 여길 뿐 원망을 더 강하게 표출하지 않는다. 앞부분이 맞아 고르기 쉽다.
+  reasoning_steps: 2
+  immediate_elimination: 1
+  points: 3.5
+  expected_time_class: STANDARD
+- item_id: SF-02
+  set: S1
+  format: MCQ
+  family: CONTENT_UNDERSTANDING
+  coverage: STRUCTURE_DEVELOPMENT
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: 윗글의 농사 장면(7~17행)을 이해한 내용으로 가장 적절한 것은?
+  options:
+  - 7행에서 뻐꾸기가 보채는 모습은 봄의 흥취를 드러내어, 뒤에 이어지는 궁핍한 농사 장면과 대조되는 분위기를 형성한다.
+  - 10~11행에서 올벼 씨를 쥐가 먹어 잃었지만 기장, 피, 조, 팥을 넉넉히 부쳐 그 손실을 메우고 있다.
+  - 13행에서 아이들에게 힘을 쓰라고 당부하는 것은 수확에 대한 확신에서 나온 말로, 12행의 걱정이 풀렸음을 보여 준다.
+  - 14~15행의 종들의 반응과 16~17행의 농사 결과를 이어 보면, 일꾼들이 일을 소홀히 하여 농사를 그르친 사정을 짐작할 수 있다.
+  - 14행에서 상전이 웃물을 먹고 건더기를 종에게 주는 것은 종을 부리기 위한 계산된 행동으로, 화자가 상전의 권위를 되찾았음을 보여 준다.
+  answer: 4
+  second_best: 1
+  judgments:
+  - v: 'FALSE'
+    c: STRONG
+    axis: tg_farming
+    claim: cuckoo_as_spring_joy
+    ev:
+    - L7
+    why: 뻐꾸기가 보챈다는 것은 농사철이 되었음을 재촉하는 것으로, 흥취가 아니라 농사를 시작해야 하는 처지를 드러낸다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: tg_farming
+    claim: other_seeds_plentiful
+    ev:
+    - L10
+    - L11
+    why: 기장 피 조 팥은 서너 되를 부쳤을 뿐이어서 손실을 메울 만큼 넉넉하지 않다. 곡식 이름이 여럿 나열되어 넉넉하다고 오독하기 쉽다.
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: tg_farming
+    claim: exhortation_from_confidence
+    ev:
+    - L12
+    - L13
+    why: 12행의 어이 살리라는 걱정 뒤에 나온 당부로, 확신이 아니라 절박함에서 나온 말이다.
+  - v: 'TRUE'
+    c: CORRECT
+    axis: tg_farming
+    claim: servants_neglect_to_crop_failure
+    ev:
+    - L14
+    - L15
+    - L16
+    - L17
+    why: 묽은 죽의 건더기를 받은 종들은 눈을 흘기고 코로 휘파람을 불며 불만을 드러내고, 이어 올벼는 한 발만 뜯고 조 팥은 묵혀 잡초만 무성해진다.
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: tg_farming
+    claim: master_regains_authority
+    ev:
+    - L14
+    - L15
+    why: 종들이 눈 위에 바늘 짓고 휘파람을 부는 것으로 보아 권위를 되찾은 것이 아니다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  points: 3.5
+  expected_time_class: STANDARD
+- item_id: SF-03
+  set: S1
+  format: MCQ
+  family: VIEW_APPLICATION
+  coverage: VIEW_APPLICATION
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: <보기>를 참고하여 윗글을 감상한 내용으로 가장 적절한 것은?
+  options:
+  - 18~19행에서 환곡과 장리, 부역과 세금을 걱정하는 것은 화자의 궁핍이 빚과 공적인 의무의 부담으로 이어져 있음을 보여 준다.
+  - 22~23행은 풍년이 들어도 형편이 나아지지 않는 현실을 보여 주며, 화자의 궁핍이 자연재해에서 비롯되었음을 드러낸다.
+  - 14~15행에서 종들이 불만을 드러내는 모습은 몰락한 사대부의 처지를 보여 주며, 화자가 이를 누르고 상전의 권위를 지켜 내는 과정이 드러난다.
+  - 5~6행에서 안표와 원헌을 끌어오는 것은 안빈낙도의 관념을 본받으려는 태도로, 화자가 궁핍 속에서도 도를 즐기고 있음을 보여 준다.
+  - 26~27행에서 제사와 접대를 걱정하는 것은 선비의 도리를 짐으로 여기는 것으로, 화자가 그 도리에서 벗어나려 함을 보여 준다.
+  answer: 1
+  second_best: 4
+  judgments:
+  - v: 'TRUE'
+    c: CORRECT
+    axis: tg_view
+    claim: poverty_tied_to_public_duty
+    ev:
+    - L18
+    - L19
+    why: 환곡 장리, 부역 세금을 무엇으로 장만하고 차려 낼지 걱정하는 것은 궁핍이 나라에 대한 의무와 얽혀 있음을 드러낸다.
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: tg_view
+    claim: poverty_from_disaster
+    ev:
+    - L22
+    - L23
+    why: 풍년이어도 배부르지 않다는 것은 궁핍이 자연재해 때문이 아님을 드러낸다.
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: tg_view
+    claim: authority_restored
+    ev:
+    - L14
+    - L15
+    why: 앞부분은 맞지만 화자가 종들의 불만을 누르는 과정은 없다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: tg_view
+    claim: ancients_as_enjoying_dao
+    ev:
+    - L5
+    - L6
+    why: 안표·원헌은 자신의 가난이 그들보다 심하다는 것을 드러내기 위한 비교 대상이며, 도를 즐기는 모습은 없다. <보기>의 안빈낙도를 끌어와 고르기 쉽다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: tg_view
+    claim: duty_as_burden_to_escape
+    ev:
+    - L26
+    - L27
+    why: 제사와 접대를 걱정하는 것은 도리를 지키려 하나 현실이 따르지 못하는 괴리를 드러낸다. 도리에서 벗어나려는 태도는 없다. <보기>의 괴리를 확대 해석하면 고른다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  points: 3.5
+  view:
+  - 조선 후기에는 향촌에 머물던 사대부가 경제적으로 몰락하면서, 이전 시가에서 관념적으로 노래되던 안빈낙도(安貧樂道)와는 달리 자신이 겪는 생활의 궁핍을 구체적으로 형상화한 가사가 창작되었다. 이러한 작품에서 화자는 가난을 벗어나려 애쓰는 모습과 함께, 선비로서 지켜야 할 도리와 현실 사이의 괴리를 드러내기도 한다.
+  expected_time_class: LONG
+- item_id: SF-04
+  set: S1
+  format: MCQ
+  family: MULTI_JUDGMENT
+  coverage: CONTENT_UNDERSTANDING
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 윗글의 29~42행에 대한 이해로 적절한 것만을 <보기>에서 있는 대로 고른 것은?
+  options:
+  - ㄱ, ㄴ
+  - ㄴ, ㄹ
+  - ㄱ, ㄴ, ㄹ
+  - ㄱ, ㄷ, ㄹ
+  - ㄴ, ㄷ, ㄹ
+  answer: 3
+  second_best: 1
+  judgments:
+  - v: 'FALSE'
+    c: STRONG
+    axis: tg_ghost
+    claim: only_g_n
+    ev:
+    - L41
+    why: ㄹ도 적절하다. 41행의 하늘 만든 가난이 ㄹ의 근거이다.
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: tg_ghost
+    claim: drops_g
+    ev:
+    - L33
+    why: ㄱ은 33~35행에 근거하여 적절하다.
+  - v: 'TRUE'
+    c: CORRECT
+    axis: tg_ghost
+    claim: g_n_r
+    ev:
+    - L33
+    - L35
+    - L37
+    - L38
+    - L39
+    - L41
+    why: 'ㄱ: 어려서 지금까지 함께했음을 들어 따진다. ㄴ: 무정한 세상과 달리 신의 있는 귀신. ㄹ: 네 말도 옳다고 인정한 뒤 하늘 만든 가난을 받아들인다.'
+  - v: 'FALSE'
+    c: STRONG
+    axis: tg_ghost
+    claim: includes_d
+    ev:
+    - L30
+    - L32
+    why: ㄷ은 전송과 협박의 순서가 뒤바뀌었다. 전송 뒤에 협박이 온다.
+  - v: 'FALSE'
+    c: WEAK
+    axis: tg_ghost
+    claim: includes_d_drops_g
+    ev:
+    - L30
+    - L33
+    why: ㄷ이 적절하지 않고 ㄱ이 빠졌다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  points: 3.9
+  view:
+  - ㄱ. 가난 귀신은 화자와 함께 지내 온 세월을 들어, 자신을 내보내려는 화자의 처사를 따지고 있다.
+  - ㄴ. 화자는 무정한 세상과 달리 가난 귀신만은 자신을 버리지 않았다는 점을 깨닫는다.
+  - ㄷ. 화자가 가난 귀신을 전송하려 한 것은 귀신의 협박을 듣고 난 뒤에 내린 결정이다.
+  - ㄹ. 가난 귀신의 말을 옳다고 인정한 뒤, 화자는 가난을 하늘이 만든 것으로 받아들인다.
+  expected_time_class: STANDARD
+- item_id: SF-05
+  set: S1
+  format: MCQ
+  family: EXCEPT_INCORRECT
+  coverage: SPEAKER_ATTITUDE
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 윗글에서 화자가 말을 건네는 대상에 주목하여 이해한 내용으로 적절하지 않은 것은?
+  options:
+  - 13행에서 아이들을 부르며 힘을 쓰라고 당부하는 말에는 궁핍 속에서도 농사를 이어 가려는 화자의 안간힘이 담겨 있다.
+  - 29~31행에서 가난 귀신을 ‘원수’라 부르며 좋은 날을 받아 전송하는 데에는 가난을 떨쳐 내려는 화자의 바람이 담겨 있다.
+  - 35행의 물음은 가난 귀신이 화자에게 되묻는 말로, 누구의 말을 듣고 자신을 내보내려 하느냐며 화자를 탓하고 있다.
+  - 38~39행에서 화자가 가난 귀신을 ‘네’라고 부르며 그 신의를 말하는 것은, 귀신을 원수로 여기던 앞의 태도가 달라졌음을 보여 준다.
+  - 40행은 화자가 가난 귀신에게 스스로 떠나 달라고 청하는 말로, 전송하려던 앞의 시도가 이어지고 있음을 보여 준다.
+  answer: 5
+  second_best: 4
+  judgments:
+  - v: 'TRUE'
+    c: MEDIUM
+    axis: tg_addressee
+    claim: exhort_children
+    ev:
+    - L12
+    - L13
+    why: 어이 살리라는 걱정 뒤에 아이들에게 힘을 쓰라고 당부한다.
+  - v: 'TRUE'
+    c: MEDIUM
+    axis: tg_addressee
+    claim: sendoff_wish
+    ev:
+    - L29
+    - L30
+    - L31
+    why: 원수라 부르며 길한 날 좋은 때에 전송한다.
+  - v: 'TRUE'
+    c: STRONG
+    axis: tg_addressee
+    claim: ghost_counter_question
+    ev:
+    - L35
+    why: 어디 가 뉘 말 듣고 가라 하느냐는 귀신의 되물음이다. 화자의 말로 오인하면 틀린 설명으로 고른다.
+  - v: 'TRUE'
+    c: STRONG
+    axis: tg_addressee
+    claim: ghost_perception_shift
+    ev:
+    - L29
+    - L38
+    - L39
+    why: 원수에서 신의 있는 존재로 인식이 바뀐다.
+  - v: 'FALSE'
+    c: CORRECT
+    axis: tg_addressee
+    claim: renewed_request_to_leave
+    ev:
+    - L37
+    - L40
+    - L41
+    why: 40행은 위협이나 잔꾀로 여읠 수 있겠느냐는 물음으로, 네 말이 옳다고 인정한 뒤 가난을 떨쳐 낼 수 없음을 받아들이는 말이다. 전송 시도가 이어지는 것이 아니다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  points: 3.9
+  expected_time_class: STANDARD
+- item_id: SF-06
+  set: S1
+  format: MCQ
+  family: VIEW_APPLICATION
+  coverage: SPEAKER_ATTITUDE
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: <보기>의 관점에서 윗글의 결말을 이해한 내용으로 가장 적절한 것은?
+  options:
+  - 41행에서 가난을 ‘하늘 만든’ 것으로 여기는 것은 가난을 자신의 탓이 아닌 것으로 돌려 괴로움 자체를 넘어선 것이므로 달관에 해당한다.
+  - 40행에서 위협과 잔꾀로는 가난을 떨칠 수 없다고 인정하는 것은 가난에 얽매이지 않게 된 화자의 여유를 보여 주므로 달관에 해당한다.
+  - 42행의 ‘빈천도 내 분수니’는 가난을 받아들이는 말이지만, ‘서러워해 무엇하리’라는 되물음에 서러움이 남아 있어 체념으로 볼 수 있다.
+  - 37~39행에서 가난 귀신의 신의를 인정하는 것은 괴로움이 사라졌음을 드러내므로, 결말은 체념이 아닌 달관으로 보아야 한다.
+  - 21행에서 근심 없는 장초를 부러워하는 것은 결말에서 화자가 도달한 달관의 경지를 미리 보여 준다.
+  answer: 3
+  second_best: 1
+  judgments:
+  - v: 'FALSE'
+    c: STRONG
+    axis: tg_resignation
+    claim: heaven_made_as_transcendence
+    ev:
+    - L41
+    why: 하늘 만든 가난이라는 인식은 어찌할 수 없음을 받아들이는 근거일 뿐, 괴로움을 넘어섰다는 근거가 없다. 뒤의 설마한들 어이하리가 체념을 드러낸다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: tg_resignation
+    claim: cannot_shake_as_leisure
+    ev:
+    - L40
+    why: 떨칠 수 없다는 인정은 여유가 아니라 무력함의 인정으로 체념에 가깝다.
+  - v: 'TRUE'
+    c: CORRECT
+    axis: tg_resignation
+    claim: acceptance_with_remaining_sorrow
+    ev:
+    - L42
+    why: 분수로 받아들이되 서러워해 무엇하리라는 되물음은 서러움이 있음을 전제하므로 체념에 해당한다.
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: tg_resignation
+    claim: fidelity_means_pain_gone
+    ev:
+    - L37
+    - L38
+    - L39
+    why: 귀신의 신의를 인정하는 것은 가난을 떨칠 수 없다는 인식이며 괴로움이 사라졌다는 근거가 없다.
+  - v: 'FALSE'
+    c: WEAK
+    axis: tg_resignation
+    claim: envy_foreshadows_transcendence
+    ev:
+    - L21
+    why: 장초를 부러워하나 어찌하리는 괴로움에서 벗어날 수 없음을 드러낸다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  points: 3.5
+  view:
+  - 가난을 다룬 시가에서 화자는 결말에서 가난을 받아들이기도 한다. 이러한 수용은 괴로움이 남아 있음에도 어찌할 수 없음을 받아들이는 체념과, 괴로움 자체를 넘어서 가난에 얽매이지 않는 달관으로 나누어 볼 수 있다.
+  expected_time_class: LONG
+- item_id: SF-CR1
+  set: S1
+  format: CR
+  family: CONSTRUCTED_RESPONSE
+  difficulty: D3
+  points: 5
+  stem: 윗글의 29~42행을 바탕으로, 화자의 태도가 바뀌는 과정을 <조건>에 맞게 서술하시오.
+  view:
+  - 화자가 떠나보내려 한 대상은 ( ㉠ )(이)며, 그 대상은 ( ㉡ )는 점을 들어 항변한다. 이를 들은 화자는 “( ㉢ )”라고 말하며 태도를 바꾼다.
+  conditions:
+  - 1. <보기>의 문장 형식에 맞추어 한 편의 글로 쓸 것.
+  - 2. ㉡은 33~35행의 시어를 활용하여 ‘~와 함께해 왔다’의 형태로 쓸 것.
+  - 3. ㉢은 화자가 가난 귀신의 말을 옳다고 인정하는 행을 윗글에서 찾아 그대로 쓸 것.
+  model_answer: 화자가 떠나보내려 한 대상은 가난 귀신이며, 그 대상은 어려서 지금까지 희로애락을 화자와 함께해 왔다는 점을 들어 항변한다. 이를 들은 화자는 “돌이켜 생각하니 네 말도 다 옳도다”라고 말하며 태도를 바꾼다.
+  rubric:
+  - ㉠ 가난 귀신 1점
+  - ㉡ 어려서(부터) 지금까지 희로애락을 (화자와) 함께해 왔다 2점 (희로애락과 어려서 지금까지 중 하나가 빠지면 1점)
+  - ㉢ 돌이켜 생각하니 네 말도 다 옳도다 1점 (한 글자라도 다르면 0점)
+  - <보기>의 문장 형식을 지킨 경우 1점
+  accepted_variants:
+  - ㉠ 가난 귀신, 가난
+  - ㉡ 어려서부터 지금까지 희로애락을 너와(화자와) 함께해 왔다 / 평생 희로애락을 함께해 왔다(1점)
+  ev:
+  - L29
+  - L33
+  - L34
+  - L37
+- item_id: SF-07
+  set: S2
+  format: MCQ
+  family: COMPARE_CONTRAST
+  coverage: COMPARE_CONTRAST
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: (가)와 (나)에 대한 설명으로 적절한 것은?
+  options:
+  - (가)와 (나) 모두 인물이 우는 모습을 목격한 것을 계기로 화자의 정서가 드러난다.
+  - (가)와 (나) 모두 목격한 장면을 시간이 흐른 뒤에 다시 떠올리는 방식으로 시상을 전개한다.
+  - (가)는 (나)와 달리 화자와 인물이 같은 공간에 있지 않아, 화자가 인물을 멀리서 바라본다.
+  - (나)는 (가)와 달리 인물의 외양을 단서로 인물이 살아온 삶을 구체적으로 짐작한다.
+  - (가)와 (나) 모두 인물이 처한 현실을 비판하는 화자의 목소리가 직접적으로 드러난다.
+  answer: 1
+  second_best: 4
+  judgments:
+  - v: 'TRUE'
+    c: CORRECT
+    axis: poems_common
+    claim: witness_crying_triggers_emotion
+    ev:
+    - W1.L11
+    - W1.L12
+    - W2.L7
+    - W2.L9
+    why: (가)는 우는 계집아이를 보고 눈을 씻고, (나)는 우는 서기를 보고 고통스러워한다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: poems_common
+    claim: both_recollection
+    ev:
+    - W2.L12
+    why: 회상 구조는 (나)에만 있다. (가)의 13~16행도 회상으로 오인하기 쉽지만 인물의 과거에 대한 짐작이다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: poems_common
+    claim: ga_separate_space
+    ev:
+    - W1.L3
+    - W1.L12
+    - W2.L6
+    why: (가)의 화자와 계집아이는 같은 차 안에 있고, 유리창 너머로 바라보는 것은 (나)이다. 두 작품의 특징을 뒤바꾼 함정이다.
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: poems_common
+    claim: na_infers_past
+    ev:
+    - W1.L5
+    - W1.L13
+    - W2.L6
+    why: 외양으로 삶을 짐작하는 것은 (가)이다.
+  - v: 'FALSE'
+    c: WEAK
+    axis: poems_common
+    claim: direct_criticism
+    ev:
+    - W1.L13
+    - W2.L14
+    why: 현실 비판이 직접적인 목소리로 드러나지 않는다.
+  reasoning_steps: 2
+  immediate_elimination: 1
+  points: 3.5
+  expected_time_class: STANDARD
+- item_id: SF-08
+  set: S2
+  format: MCQ
+  family: COMPARE_CONTRAST
+  coverage: EXPRESSION_EFFECT
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: (가)와 (나)에서 화자가 자신의 감정을 드러내는 방식을 비교한 내용으로 가장 적절한 것은?
+  options:
+  - ㉠의 ‘어느 한 사람’은 화자와 무관한 다른 승객이므로, (가)에는 인물에 대한 화자의 감정이 드러나지 않는다.
+  - (가)의 화자는 ㉠에서 자신을 제삼자처럼 가리켜 감정을 절제하고, (나)의 화자는 고통을 직접 말하되 다가가지는 않는다.
+  - (나)의 화자는 ‘고통스러웠다’고 밝힌 뒤 방 안으로 들어가 사내를 위로함으로써 자신의 감정을 해소한다.
+  - (가)와 (나)의 화자는 모두 인물에게 직접 말을 건네어, 인물에 대한 연민과 안타까움을 숨김없이 표현하고 있다.
+  - (가)는 인물의 울음을 되풀이하여 서술함으로써, (나)는 문장 끝에 느낌표를 씀으로써 화자의 감정을 직접 표출하고 있다.
+  answer: 2
+  second_best: 3
+  judgments:
+  - v: 'FALSE'
+    c: STRONG
+    axis: poems_emotion
+    claim: other_passenger
+    ev:
+    - W1.L12
+    why: 텅 비인 차 안의 어느 한 사람도는 화자 자신을 가리킨다. 문자 그대로 다른 승객으로 읽으면 고른다.
+  - v: 'TRUE'
+    c: CORRECT
+    axis: poems_emotion
+    claim: third_person_restraint_vs_direct
+    ev:
+    - W1.L12
+    - W2.L9
+    - W2.L11
+    why: (가)는 자신을 어느 한 사람으로 가리키고, (나)는 거의 고통스러웠다고 말하지만 창밖에서 떠나지 못할 뿐 다가가지 않는다.
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: poems_emotion
+    claim: entered_room
+    ev:
+    - W2.L11
+    why: 창밖에서 떠나지 못했을 뿐 방에 들어가지 않았다.
+  - v: 'FALSE'
+    c: WEAK
+    axis: poems_emotion
+    claim: speak_directly
+    ev:
+    - W1.L12
+    - W2.L10
+    why: 두 화자 모두 인물에게 말을 건네지 않는다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: poems_emotion
+    claim: repetition_and_exclamation
+    ev:
+    - W1.L11
+    - W2.L7
+    why: (나)의 느낌표는 화자의 감정을 드러내지만, (가)의 운다 느끼며 운다는 계집아이의 울음을 드러낼 뿐 화자의 감정을 직접 표출한 것이 아니다. 뒷부분이 맞아 고르기 쉽다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  points: 3.9
+  expected_time_class: STANDARD
+- item_id: SF-09
+  set: S2
+  format: MCQ
+  family: KEY_WORD_FUNCTION
+  coverage: KEY_WORD_IMAGE_OBJECT_FUNCTION
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: (가)의 시어와 시구에 대한 이해로 적절한 것은?
+  options:
+  - ‘옛말속같이 진진초록 새 저고리’는 계집아이가 넉넉한 집안에서 자랐음을 드러내어, 앞으로의 여정이 순탄할 것임을 암시한다.
+  - ‘새 저고리’와 ‘밭고랑처럼 몹시도 터진’ 손잔등의 대비는 13~16행에서 지난 생활을 짐작하는 단서가 된다.
+  - ‘자성은 예서 삼백오십 리 묘향산 백오십 리’는 거리를 수치로 제시하여, 계집아이가 곧 삼촌을 만나리라는 안도감을 드러낸다.
+  - ‘내임을 낸다’는 차 밖의 어른과 아이들이 계집아이를 배웅하는 모습으로, 이들이 이별을 몹시 슬퍼하고 있음을 보여 준다.
+  - ‘아이보개’는 계집아이가 삼촌 집에 가서 맡게 될 일로, 화자는 인물이 앞으로 겪을 고단한 삶을 걱정하고 있다.
+  answer: 2
+  second_best: 4
+  judgments:
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: palwon_words
+    claim: jacket_wealthy
+    ev:
+    - W1.L4
+    - W1.L5
+    why: 새 저고리는 떠나는 날 차려입은 옷일 뿐이며, 터진 손은 고된 노동을 드러낸다.
+  - v: 'TRUE'
+    c: CORRECT
+    axis: palwon_words
+    claim: jacket_vs_hands_clue
+    ev:
+    - W1.L4
+    - W1.L5
+    - W1.L13
+    - W1.L14
+    - W1.L15
+    why: 새 저고리와 대비되는 터진 손잔등이 밥 짓고 걸레 치던 지난 생활을 짐작하게 한다.
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: palwon_words
+    claim: distance_relief
+    ev:
+    - W1.L7
+    - W1.L8
+    why: 먼 거리와 어디메서라는 불확실함은 막막함을 드러낸다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: palwon_words
+    claim: seers_off_grieve
+    ev:
+    - W1.L10
+    - W1.L11
+    why: 배웅하는 모습은 맞지만, 우는 것은 계집아이이고 배웅하는 이들의 슬픔은 드러나지 않는다. 앞부분이 맞아 고르기 쉽다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: palwon_words
+    claim: babysitting_future
+    ev:
+    - W1.L13
+    - W1.L14
+    why: 아이보개는 주재소장 집에서 해 온 일이다. 삼촌 집과 연결하면 고른다.
+  reasoning_steps: 2
+  immediate_elimination: 1
+  points: 3.5
+  expected_time_class: STANDARD
+- item_id: SF-10
+  set: S2
+  format: MCQ
+  family: EXCEPT_INCORRECT
+  coverage: STRUCTURE_DEVELOPMENT
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: <보기>를 참고하여 (나)를 이해한 내용으로 적절하지 않은 것은?
+  options:
+  - 1연의 과거형 서술과 2연 2~3행의 현재형 서술은 목격한 때와 떠올리는 때를 구분하는 표지가 된다.
+  - 두 연을 여는 ‘그리고 나는 우연히’의 반복은 목격과 떠올림이 모두 의도하지 않은 일이었음을 드러낸다.
+  - 1연 7행의 느낌표는 관공서 안에서 혼자 우는 사내를 목격한 순간 화자가 받은 충격을 드러낸다.
+  - 2연의 ‘텅 빈 사무실’은 1연의 ‘그 춥고 큰 방’과 같은 곳으로, 화자가 그 관공서에 다시 와 있음을 보여 준다.
+  - 마지막 행의 판단은 사내를 떠올리는 현재 시점에서 내려진 것으로, 1연에는 드러나지 않았던 인식이다.
+  answer: 4
+  second_best: 1
+  judgments:
+  - v: 'TRUE'
+    c: MEDIUM
+    axis: jinachim_structure
+    claim: tense_marks_time
+    ev:
+    - W2.L2
+    - W2.L11
+    - W2.L13
+    - W2.L14
+    why: 1연은 과거형, 2연은 퍼붓는다, 생각하지 않는다의 현재형이다.
+  - v: 'TRUE'
+    c: STRONG
+    axis: jinachim_structure
+    claim: by_chance_repeated
+    ev:
+    - W2.L1
+    - W2.L12
+    why: 우연히의 반복은 두 경험 모두 의도하지 않았음을 드러낸다. 반복을 같은 날의 일로 오인하면 틀린 설명으로 고른다.
+  - v: 'TRUE'
+    c: MEDIUM
+    axis: jinachim_structure
+    claim: exclamation_shock
+    ev:
+    - W2.L7
+    why: 느낌표는 목격의 순간의 충격을 드러낸다.
+  - v: 'FALSE'
+    c: CORRECT
+    axis: jinachim_structure
+    claim: same_office
+    ev:
+    - W2.L7
+    - W2.L13
+    why: 텅 빈 사무실은 현재 화자가 있는 곳일 뿐, 사내가 울던 관공서와 같은 곳이라는 근거는 없다. 비슷한 처지를 짐작하게 할 뿐이다.
+  - v: 'TRUE'
+    c: STRONG
+    axis: jinachim_structure
+    claim: new_judgment_now
+    ev:
+    - W2.L14
+    why: <보기>의 새로운 판단에 해당한다. 1연에서 이미 내린 판단으로 오인하면 고른다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  points: 3.9
+  view:
+  - (나)는 과거의 한 장면을 목격한 1연과, 시간이 흐른 뒤 그 장면을 다시 떠올리는 2연으로 짜여 있다. 화자는 떠올리는 현재의 시점에서 과거의 장면에 새로운 판단을 더한다.
+  expected_time_class: STANDARD
+- item_id: SF-11
+  set: S2
+  format: MCQ
+  family: VIEW_APPLICATION
+  coverage: VIEW_APPLICATION
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: <보기>를 바탕으로 (가)와 (나)를 감상한 내용으로 가장 적절한 것은?
+  options:
+  - (가)의 화자는 계집아이와 자신을 같은 처지로 여겨, 비슷한 처지의 인물과 자신을 동일시하는 방식으로 공감을 드러낸다.
+  - (나)의 화자는 사내의 외양을 관찰하여 그가 어떤 일을 겪어 왔는지를 짐작하고, 이를 통해 그의 과거를 그려 낸다.
+  - (가)에서 계집아이가 일한 곳을 ‘내지인 주재소장 집’으로 밝힌 것은 인물의 개인사를 보여 줄 뿐, 현실에 대한 인식으로 확대되지는 않는다.
+  - (나)는 인물이 놓인 시공간을 묘사하지 않고 화자의 내면만을 서술하여 인물의 처지를 부각한다.
+  - (나)에서 화자가 지금 텅 빈 사무실에 있다는 점은 화자가 사내와 비슷한 자리에 있음을 짐작하게 한다.
+  answer: 5
+  second_best: 3
+  judgments:
+  - v: 'FALSE'
+    c: STRONG
+    axis: poems_view
+    claim: identification_ga
+    ev:
+    - W1.L12
+    - W1.L13
+    why: (가)의 화자는 계집아이의 지난 삶을 짐작하며 눈물을 흘릴 뿐, 자신과 같은 처지로 여기는 근거는 없다. <보기>의 동일시를 끌어와 고르기 쉽다.
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: poems_view
+    claim: na_infers_past
+    ev:
+    - W2.L6
+    - W2.L7
+    why: (나)의 화자는 사내의 과거를 짐작하지 않는다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: poems_view
+    claim: colonial_detail_personal_only
+    ev:
+    - W1.L10
+    - W1.L13
+    why: 내지인 주재소장 집은 식민지 현실 속에서 살아가는 인물임을 드러내어, 연민이 현실 인식으로 확대되는 근거가 된다.
+  - v: 'FALSE'
+    c: WEAK
+    axis: poems_view
+    claim: no_setting
+    ev:
+    - W2.L2
+    - W2.L5
+    why: 캄캄한 거리, 관공서, 춥고 큰 방 등 시공간 묘사가 있다.
+  - v: 'TRUE'
+    c: CORRECT
+    axis: poems_view
+    claim: speaker_now_like_clerk
+    ev:
+    - W2.L7
+    - W2.L13
+    why: 밤, 텅 빈 사무실, 창밖의 눈은 춥고 큰 방에 혼자 있던 사내의 자리와 겹쳐 공감의 근거가 된다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  points: 3.9
+  view:
+  - 시에서 화자는 특정 인물에 주목하여 감정과 인식을 드러낸다. 화자는 인물의 외양을 관찰하여 사연이나 과거를 짐작하기도 하고, 비슷한 처지의 인물과 자신을 동일시하여 공감을 드러내기도 한다. 인물이 특정 현실을 살아가는 존재로 그려지면 인물에 대한 감정은 그 현실에 대한 인식으로 확대되며, 인물이 놓인 시공간의 묘사는 인물의 처지를 부각한다.
+  expected_time_class: LONG
+- item_id: SF-12
+  set: S2
+  format: MCQ
+  family: KEY_WORD_FUNCTION
+  coverage: KEY_WORD_IMAGE_OBJECT_FUNCTION
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: (나)의 시구를 감상한 내용으로 알맞은 것은?
+  options:
+  - ‘움직이지 못하는 건물들’은 눈에 갇혀 고립된 화자의 처지를 드러내어, 화자가 그 자리를 떠나지 못한 까닭을 밝혀 준다.
+  - ‘침묵을 달아나지 못하게 하느라’는 화자가 사내에게 자신이 있음을 알리지 않으려는 모습으로, 사내의 울음에 대한 무관심을 드러낸다.
+  - ‘희고 거대한 서류 뭉치로 변해갔다’는 눈 덮인 건물을 서류 뭉치에 빗대어, 서기인 사내가 매여 있는 관공서의 세계를 떠올리게 한다.
+  - ‘어떻게 해야 할까’는 사내의 울음을 멈추게 할 방법을 알고 있으면서도 선뜻 나서지 못하는 화자의 망설임을 드러낸다.
+  - 마지막 행은 1연에서 사내를 어리석다고 여겼던 화자가 시간이 흐른 뒤 그 생각을 바꾸었음을 드러낸다.
+  answer: 3
+  second_best: 5
+  judgments:
+  - v: 'FALSE'
+    c: STRONG
+    axis: jinachim_words
+    claim: buildings_trap_speaker
+    ev:
+    - W2.L3
+    - W2.L11
+    why: 화자가 떠나지 못한 것은 사내가 울음을 그칠 때까지였기 때문이며, 건물이 화자를 가둔 것이 아니다.
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: jinachim_words
+    claim: silence_as_indifference
+    ev:
+    - W2.L9
+    why: 침묵을 지키느라 거의 고통스러웠다는 것은 무관심이 아니라 깊은 관심을 드러낸다.
+  - v: 'TRUE'
+    c: CORRECT
+    axis: jinachim_words
+    claim: document_bundle_bureaucracy
+    ev:
+    - W2.L4
+    - W2.L5
+    - W2.L7
+    why: 눈 덮인 건물을 서류 뭉치에 빗댄 표현은 관공서와 서기의 세계로 이어진다.
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: jinachim_words
+    claim: knows_how_but_hesitates
+    ev:
+    - W2.L10
+    why: 중지시킬 수 없었다고 했으므로 방법을 알고 있었다는 근거가 없다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: jinachim_words
+    claim: changed_mind_about_fool
+    ev:
+    - W2.L14
+    why: 1연에서 사내를 어리석다고 여긴 근거는 없다. 부정 표현을 생각의 변화로 읽으면 고른다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  points: 3.5
+  expected_time_class: STANDARD
+- item_id: SF-13
+  set: S2
+  format: MCQ
+  family: COMPARE_CONTRAST
+  coverage: KEY_WORD_IMAGE_OBJECT_FUNCTION
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: (가)의 추위와 (나)의 눈을 중심으로 두 작품을 이해한 내용으로 가장 적절한 것은?
+  options:
+  - (가)의 ‘쌔하얗게 얼은 자동차 유리창’은 계집아이와 배웅하는 사람들 사이의 단절을 드러내어, 이별의 슬픔이 크지 않음을 보여 준다.
+  - (가)의 ‘차디찬 아침’은 15행의 ‘이렇게 추운 아침’으로 이어져, 계집아이가 견뎌 왔을 지난날을 떠올리는 계기가 된다.
+  - (나)의 퍼붓는 눈은 사내의 모습을 가려 화자가 사내를 제대로 보지 못하게 하는 장애물로, 화자가 느끼는 무력감의 원인이 된다.
+  - (나)의 눈은 건물들을 ‘서류 뭉치’로 바꾸어 놓아, 화자가 관공서의 업무에 대한 반감을 드러내는 계기가 된다.
+  - (가)의 추위와 달리 (나)의 눈은 인물의 처지와 관련이 없고, 화자가 그곳을 지나게 된 계절을 알려 주는 구실만 한다.
+  answer: 2
+  second_best: 1
+  judgments:
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: cold_snow
+    claim: frozen_window_no_grief
+    ev:
+    - W1.L9
+    - W1.L11
+    why: 계집아이가 느끼며 우는 것으로 보아 이별의 슬픔이 작지 않다.
+  - v: 'TRUE'
+    c: CORRECT
+    axis: cold_snow
+    claim: cold_links_present_past
+    ev:
+    - W1.L1
+    - W1.L15
+    - W1.L16
+    why: 차디찬 아침과 이렇게 추운 아침이 이어지며, 화자는 찬물에 걸레를 쳤을 지난날을 짐작한다.
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: cold_snow
+    claim: snow_hides_man
+    ev:
+    - W2.L6
+    - W2.L7
+    why: 화자는 유리창 너머 사내가 우는 모습을 분명히 보았다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: cold_snow
+    claim: snow_bureaucracy_antipathy
+    ev:
+    - W2.L3
+    - W2.L4
+    why: 눈 덮인 건물을 서류 뭉치에 빗댄 것은 맞지만, 관공서 업무에 대한 반감은 드러나지 않는다. 앞부분이 맞아 고르기 쉽다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: cold_snow
+    claim: snow_only_season
+    ev:
+    - W2.L2
+    - W2.L8
+    - W2.L13
+    why: 눈은 사내와 화자를 둘러싼 고립의 분위기를 만들고 두 시점을 잇는다. (가)와의 대비 구도에 끌려 고르기 쉽다.
+  reasoning_steps: 2
+  immediate_elimination: 1
+  points: 3.5
+  expected_time_class: STANDARD
+- item_id: SF-14
+  set: S2
+  format: MCQ
+  family: STUDENT_RESPONSE_EVALUATION
+  coverage: VIEW_APPLICATION
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: <보기>에서 선생님의 질문에 대한 학생의 대답으로 적절한 것만을 고른 것은?
+  options:
+  - A, B
+  - A, C
+  - A, B, D
+  - A, C, D
+  - B, C, D
+  answer: 3
+  second_best: 2
+  judgments:
+  - v: 'FALSE'
+    c: STRONG
+    axis: gaze_meaning
+    claim: drops_d
+    ev:
+    - W2.L12
+    - W2.L14
+    why: D도 적절하다. 시간이 흐른 뒤 떠올려 판단을 내린다는 것은 바라봄의 경험이 오래 남았음을 보여 준다.
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: gaze_meaning
+    claim: includes_c_drops_b
+    ev:
+    - W1.L12
+    why: C는 적절하지 않다.
+  - v: 'TRUE'
+    c: CORRECT
+    axis: gaze_meaning
+    claim: a_b_d
+    ev:
+    - W1.L5
+    - W1.L13
+    - W1.L16
+    - W2.L11
+    - W2.L12
+    - W2.L14
+    why: 'A: 외양을 단서로 지난 삶을 짐작한다. B: 떠나지 못한 머묾이 응답이다. D: 떠올림과 판단으로 경험이 남았음을 드러낸다.'
+  - v: 'FALSE'
+    c: STRONG
+    axis: gaze_meaning
+    claim: includes_c
+    ev:
+    - W1.L12
+    why: 'C: 어느 한 사람으로 자신을 감추었지만 눈을 씻는 모습은 공감을 드러낸다. 자신을 감춘 것을 거리 두기로 읽으면 고른다.'
+  - v: 'FALSE'
+    c: WEAK
+    axis: gaze_meaning
+    claim: drops_a
+    ev:
+    - W1.L13
+    why: A가 빠지고 C가 들어갔다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  points: 3.5
+  view:
+  - '선생님: (가)와 (나)의 화자는 모두 고통받는 인물을 바라보기만 할 뿐 직접 돕지는 않아요. 이 바라봄에는 어떤 의미가 있을까요?'
+  - '학생 A: (가)의 화자는 바라봄에 그치지 않고, 관찰한 모습을 단서로 계집아이가 살아온 고단한 삶을 짐작하는 데까지 나아가요.'
+  - '학생 B: (나)의 화자는 사내의 울음을 멈추게 할 수 없었지만 그 자리를 떠나지 못했으니, 그 머묾은 타인의 고통에 대한 나름의 응답이에요.'
+  - '학생 C: (가)의 화자는 ‘어느 한 사람’으로 자신을 감추고 있으니, 계집아이의 슬픔에 공감하기보다는 거리를 두고 관찰하는 데 머물러요.'
+  - '학생 D: (나)의 화자가 시간이 흐른 뒤 사내를 떠올리고 판단을 내리는 것은, 바라봄의 경험이 화자의 내면에 오래 남아 있었음을 보여 줘요.'
+  expected_time_class: LONG
+- item_id: SF-15
+  set: S2
+  format: MCQ
+  family: CONTENT_UNDERSTANDING
+  coverage: STRUCTURE_DEVELOPMENT
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: (가)의 시상 전개 방식을 설명한 것으로 적절한 것은?
+  options:
+  - 1~12행은 화자가 보고 들은 것을, 13~16행은 화자가 짐작한 것을 서술하여 관찰에서 추측으로 나아간다.
+  - 1~5행에서 인물의 외양을 묘사한 뒤 6~8행에서 인물의 과거를 서술하여, 인물이 떠나게 된 까닭을 밝힌다.
+  - 9~12행에서 시선이 차 밖에서 차 안으로 옮겨 가며, 배웅하는 이들의 슬픔이 차 안의 인물에게 전해진다.
+  - 13~16행은 1행의 ‘차디찬 아침’을 되풀이하는 수미상관의 구성으로 처음 장면을 다시 보여 주며 마무리한다.
+  - 11~12행에서 인물의 울음과 화자의 눈물을 나란히 놓은 뒤, 화자가 인물에게 다가가 말을 건네는 장면으로 옮겨 간다.
+  answer: 1
+  second_best: 2
+  judgments:
+  - v: 'TRUE'
+    c: CORRECT
+    axis: palwon_structure
+    claim: observe_then_infer
+    ev:
+    - W1.L6
+    - W1.L8
+    - W1.L12
+    - W1.L16
+    why: 1~12행은 보고(외양, 울음) 들은(간다고, 산다고) 것이고, 13~16행은 쳤을 것이다로 끝나는 짐작이다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: palwon_structure
+    claim: lines_6_8_past
+    ev:
+    - W1.L6
+    - W1.L7
+    - W1.L8
+    why: 6~8행은 갈 곳과 삼촌에 대한 전언이지 과거가 아니며, 떠나는 까닭도 밝히지 않는다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: palwon_structure
+    claim: seers_off_grief_transferred
+    ev:
+    - W1.L10
+    - W1.L11
+    why: 차 밖에서 차 안으로 시선이 옮겨 가는 것은 맞지만, 배웅하는 이들의 슬픔은 드러나지 않는다.
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: palwon_structure
+    claim: bookend
+    ev:
+    - W1.L1
+    - W1.L15
+    why: 추운 아침이 다시 나오지만 처음 장면을 되풀이하는 것이 아니라 지난 생활을 짐작하는 데로 나아간다.
+  - v: 'FALSE'
+    c: WEAK
+    axis: palwon_structure
+    claim: approach_and_speak
+    ev:
+    - W1.L12
+    - W1.L13
+    why: 말을 건네는 장면은 없다.
+  reasoning_steps: 2
+  immediate_elimination: 1
+  points: 3.5
+  expected_time_class: STANDARD
+- item_id: SF-16
+  set: S2
+  format: MCQ
+  family: CONTENT_UNDERSTANDING
+  coverage: CONTENT_UNDERSTANDING
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: (가)에서 화자가 계집아이에 대해 알게 된 내용을 그 출처에 따라 이해한 것으로 가장 적절한 것은?
+  options:
+  - ‘삼촌이 산다고 한다’는 전해 들은 말이고, ‘어디메서’로 보아 사는 곳도 막연하다.
+  - 계집아이가 자성으로 간다는 것은 화자가 계집아이에게 직접 물어서 확인한 사실이다.
+  - 손잔등이 밭고랑처럼 터진 모습은 화자가 짐작한 것이고, 새 저고리는 전해 들은 것이다.
+  - 주재소장 집에서 몇 해 일했다는 것은 배웅하는 어른에게서 전해 들은 정보이다.
+  - 계집아이가 찬물에 걸레를 쳤다는 것은 화자가 차 안에서 직접 목격한 장면이다.
+  answer: 1
+  second_best: 2
+  judgments:
+  - v: 'TRUE'
+    c: CORRECT
+    axis: palwon_source_of_info
+    claim: uncle_hearsay_vague
+    ev:
+    - W1.L8
+    why: 산다고 한다는 전언이고 어디메서는 위치가 막연하다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: palwon_source_of_info
+    claim: asked_directly
+    ev:
+    - W1.L6
+    why: 간다고 하는데는 전해 들은 말이며, 직접 물었다는 근거가 없다.
+  - v: 'FALSE'
+    c: WEAK
+    axis: palwon_source_of_info
+    claim: hands_guessed
+    ev:
+    - W1.L4
+    - W1.L5
+    why: 손잔등과 저고리는 직접 본 것이다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: palwon_source_of_info
+    claim: work_hearsay
+    ev:
+    - W1.L13
+    - W1.L16
+    why: 13~16행 전체가 쳤을 것이다로 끝나는 화자의 짐작이다. 전언으로 오인하면 고른다.
+  - v: 'FALSE'
+    c: WEAK
+    axis: palwon_source_of_info
+    claim: witnessed_mopping
+    ev:
+    - W1.L15
+    - W1.L16
+    why: 쳤을 것이다는 짐작이다.
+  reasoning_steps: 2
+  immediate_elimination: 1
+  points: 3.5
+  expected_time_class: STANDARD
+- item_id: SF-CR2
+  set: S2
+  format: CR
+  family: CONSTRUCTED_RESPONSE
+  difficulty: D3
+  points: 5
+  stem: (나)에 나타난 화자의 행동과 정서·인식을 <보기>와 같이 정리할 때, ㉠~㉣에 들어갈 내용을 <조건>에 맞게 서술하시오.
+  view:
+  - '| 연 | 상황 | 화자의 행동 | 화자의 정서·인식 |'
+  - '| 1연 | 관공서에서 혼자 우는 사내를 봄 | ㉠ | ㉡ |'
+  - '| 2연 | 밤, 텅 빈 사무실 창밖으로 눈이 퍼부음 | ㉢ | ㉣ |'
+  conditions:
+  - 1. (나)의 시어를 활용하여 각각 문장의 형태로 서술할 것.
+  - 2. ㉠은 1연의 마지막 행을, ㉢은 2연의 첫 행을 활용할 것.
+  - 3. ㉡은 화자가 침묵을 지키며 느낀 감정을 나타내는 시어를 포함할 것.
+  - 4. ㉣은 2연의 마지막 행을 활용할 것.
+  model_answer: ㉠ 사내가 울음을 그칠 때까지 창밖에서 떠나지 못했다. ㉡ 침묵을 달아나지 못하게 하느라 거의 고통스러웠다. ㉢ 우연히 지금 그 사내를 떠올리게 되었다. ㉣ 그 사내를 어리석은 자라고 생각하지 않는다.
+  rubric:
+  - ㉠~㉣ 각 1점
+  - 문장 형태가 아닌 경우 해당 항목 0점
+  - 시어를 활용하지 않고 뜻만 바꾸어 쓴 경우 해당 항목 0점
+  - ㉡에 고통스럽다가 없는 경우 0점
+  - 네 항목 모두 문장 형태로 쓴 경우 1점 추가
+  accepted_variants:
+  - ㉠ 창밖에서 떠나지 못했다
+  - ㉡ 고통스러웠다 (중지시킬 수 없어 안타까웠다는 내용을 덧붙여도 인정)
+  - ㉢ 그를 떠올리게 되었다
+  - ㉣ 어리석은 자라고 생각하지 않는다
+  ev:
+  - W2.L9
+  - W2.L11
+  - W2.L12
+  - W2.L14
+- item_id: SF-17
+  set: S3
+  format: MCQ
+  family: EXCEPT_INCORRECT
+  coverage: EXPLICIT_CONTENT_ACCURACY
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: 윗글의 내용과 일치하지 않는 것은?
+  options:
+  - 칸트에 따르면 현상계에서 인간의 행위는 앞선 원인에 의해 필연적으로 발생하는 사건에 속한다.
+  - 헤겔에 따르면 가족 단계에서는 제도적 보장이 약하기 때문에 관계 속에서 자유가 실현되지 못한다.
+  - 칸트에 따르면 예지계는 이성에 의해 사유될 수 있을 뿐, 감각 경험을 통해 인식되지는 않는다.
+  - 헤겔에 따르면 시민 사회 단계에서는 각종 제도가 수립되지만 이해관계의 충돌로 인해 불안정하다.
+  - 헤겔에 따르면 법과 제도는 완성된 형태의 자유가 실현되기 위한 조건이다.
+  answer: 2
+  second_best: 3
+  judgments:
+  - v: 'TRUE'
+    c: MEDIUM
+    axis: kh_content
+    claim: phenomenal_necessity
+    ev:
+    - P1S3
+    - P1S4
+    why: 현상계의 모든 사건은 앞선 원인에 의해 필연적으로 발생하며, 인간은 그렇게 규정된 의지에 따라 행위한다.
+  - v: 'FALSE'
+    c: CORRECT
+    axis: kh_content
+    claim: family_no_freedom
+    ev:
+    - P3S3
+    why: 가족 단계에서도 사랑에 기초하여 관계 속에서 자유가 실현되며, 제도적 보장이 약할 뿐이다.
+  - v: 'TRUE'
+    c: STRONG
+    axis: kh_content
+    claim: noumenon_thought_only
+    ev:
+    - P1S2
+    why: 예지계는 이성에 의해 사유될 수 있을 뿐 경험적으로 인식되지 않는다. 표현이 바뀌어 틀린 진술로 오인하기 쉽다.
+  - v: 'TRUE'
+    c: STRONG
+    axis: kh_content
+    claim: civil_society_unstable
+    ev:
+    - P3S4
+    why: 제도가 수립되어 구체화되지만 충돌로 불안정하다. 제도 수립과 불안정을 모순으로 여기면 고른다.
+  - v: 'TRUE'
+    c: WEAK
+    axis: kh_content
+    claim: law_as_condition
+    ev:
+    - P3S6
+    why: 3문단의 진술과 일치한다.
+  reasoning_steps: 2
+  immediate_elimination: 1
+  points: 3.5
+  expected_time_class: STANDARD
+- item_id: SF-18
+  set: S3
+  format: MCQ
+  family: CASE_APPLICATION
+  coverage: APPLICATION_OR_CONDITION
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 윗글을 바탕으로 <보기>를 이해한 내용으로 적절하지 않은 것은?
+  options:
+  - 칸트에 따르면 갑이 부정행위를 하지 않은 것은 을과 결과가 같지만, 의지를 규정한 원인이 다르므로 타율적이다.
+  - 칸트에 따르면 을은 스스로 세운 준칙이 보편성을 갖추었음을 확인하고 그에 따라 행위하였으므로 자유를 의식할 수 있다.
+  - 헤겔에 따르면 병은 학교 규칙을 자신의 노력이 인정받기 위한 조건으로 여긴다는 점에서 구체적 자유에 가까운 태도를 보인다.
+  - 칸트에 따르면 병이 규칙을 지키는 까닭이 인정받고 싶은 바람에 있다면, 이는 이성이 원인이 된 행위라고 보기 어렵다.
+  - 헤겔에 따르면 을이 스스로 세운 원리에 따라 행위한 것은 제도를 구속으로 여겨 부정하는 추상적 자유에 해당한다.
+  answer: 5
+  second_best: 3
+  judgments:
+  - v: 'TRUE'
+    c: STRONG
+    axis: case_application
+    claim: same_result_different_cause
+    ev:
+    - P1S4
+    - P1S5
+    - P2S5
+    why: 칸트는 결과가 아니라 의지를 규정한 원인으로 판단한다. 결과가 같다는 말에 끌려 틀린 진술로 오인하기 쉽다.
+  - v: 'TRUE'
+    c: MEDIUM
+    axis: case_application
+    claim: eul_conscious_of_freedom
+    ev:
+    - P2S3
+    - P2S4
+    - P2S5
+    why: 을은 준칙의 보편성을 확인하고 도덕 법칙에 따라 행위하였다.
+  - v: 'TRUE'
+    c: MEDIUM
+    axis: case_application
+    claim: byeong_concrete
+    ev:
+    - P3S6
+    why: 규칙을 공정한 경쟁과 인정의 조건으로 여기는 것은 법과 제도를 자유 실현의 조건으로 보는 헤겔의 관점에 가깝다.
+  - v: 'TRUE'
+    c: STRONG
+    axis: case_application
+    claim: byeong_desire_heteronomy
+    ev:
+    - P1S4
+    - P2S5
+    why: 인정받고 싶은 바람은 이성이 아닌 것이므로 칸트에게는 타율적이다. 병을 헤겔 관점에서만 보면 틀린 진술로 오인하기 쉽다.
+  - v: 'FALSE'
+    c: CORRECT
+    axis: case_application
+    claim: eul_abstract_freedom
+    ev:
+    - P3S7
+    - P3S8
+    why: 을은 제도를 구속으로 간주하고 부정한 것이 아니다. 추상적 자유는 법과 제도를 부정하는 것이므로 을에게 적용할 수 없다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  points: 3.9
+  view:
+  - '갑: 시험에서 부정행위를 하면 벌을 받을까 두려워 부정행위를 하지 않는다.'
+  - '을: ‘누구든 시험에서 부정행위를 해서는 안 된다’는 원리를 스스로 세우고, 이 원리를 모든 이성적 존재자에게 적용해도 모순이 없음을 확인한 뒤 그에 따라 부정행위를 하지 않는다.'
+  - '병: 학교의 시험 규칙이 있어야 학생들 사이의 공정한 경쟁이 보장되고 그 안에서 자신의 노력도 인정받는다고 여기며 규칙을 지킨다.'
+  expected_time_class: LONG
+- item_id: SF-19
+  set: S3
+  format: MCQ
+  family: MULTI_JUDGMENT
+  coverage: KEY_CONCEPT_RELATION_OR_CONTRAST
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 윗글에 나타난 헤겔의 관점에서 추론한 내용으로 적절한 것만을 <보기>에서 있는 대로 고른 것은?
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ
+  - ㄴ, ㄹ
+  - ㄱ, ㄴ, ㄹ
+  - ㄴ, ㄷ, ㄹ
+  answer: 4
+  second_best: 1
+  judgments:
+  - v: 'FALSE'
+    c: STRONG
+    axis: hegel_inference
+    claim: drops_r
+    ev:
+    - P3S7
+    - P3S8
+    why: ㄹ도 적절하다. 가능성 표현이어서 빠뜨리기 쉽다.
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: hegel_inference
+    claim: includes_d
+    ev:
+    - P3S5
+    why: ㄷ은 적절하지 않다.
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: hegel_inference
+    claim: drops_g
+    ev:
+    - P3S3
+    why: ㄱ도 적절하다.
+  - v: 'TRUE'
+    c: CORRECT
+    axis: hegel_inference
+    claim: g_n_r
+    ev:
+    - P3S3
+    - P3S4
+    - P3S8
+    why: 'ㄱ: 정서에 기초하고 제도적 보장이 약하다. ㄴ: 제도가 있어도 충돌로 불안정하다. ㄹ: 추상적 자유는 공동체의 질서와 타인의 자유를 해칠 수 있다.'
+  - v: 'FALSE'
+    c: WEAK
+    axis: hegel_inference
+    claim: includes_d_drops_g
+    ev:
+    - P3S5
+    why: ㄷ이 들어가고 ㄱ이 빠졌다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  points: 3.9
+  view:
+  - ㄱ. 가족 단계의 자유는 제도보다 정서에 기대고 있으므로, 사랑이라는 정서가 약해지면 흔들릴 수 있다.
+  - ㄴ. 시민 사회 단계에서 수립된 제도만으로는 이해관계의 충돌을 안정적으로 조정하기 어렵다.
+  - ㄷ. 국가 단계에서 이해관계가 조정될 수 있게 되면, 시민 사회 단계에서 수립된 제도는 더 이상 필요하지 않게 된다.
+  - ㄹ. 개인이 법과 제도를 구속으로 여겨 부정할수록 공동체의 질서뿐 아니라 타인의 자유도 위협받을 수 있다.
+  expected_time_class: LONG
+- item_id: SF-20
+  set: S3
+  format: MCQ
+  family: CASE_APPLICATION
+  coverage: APPLICATION_OR_CONDITION
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: 칸트의 설명에 따라 윗글의 ‘굶주린 아이’ 사례를 분석할 때, 윗글의 내용과 어긋나는 것은?
+  options:
+  - ‘배고픔’은 현상계에서 의지를 규정하는 원인이 될 수 있는 감각적 욕구에 해당한다.
+  - ‘타인의 생존이 위협받을 때 이를 외면하면 안 된다’는 특정한 상황에서 세운 원리이므로 준칙에 머문다.
+  - 이 사례와 ‘배가 아파서 음식을 먹지 않는’ 사례는 모두 음식을 먹지 않는 행위이지만, 칸트는 두 행위를 달리 본다.
+  - 음식을 양보한 행위는 감각적 욕구가 아니라 이성이 원인이 되어 의지를 규정한 결과이다.
+  - 이 사례에서 인간이 따른 법칙은 외부에서 주어진 것이 아니라 이성을 통해 스스로에게 부과한 것이다.
+  answer: 2
+  second_best: 3
+  judgments:
+  - v: 'TRUE'
+    c: MEDIUM
+    axis: kant_case
+    claim: hunger_as_desire
+    ev:
+    - P1S4
+    - P2S6
+    why: 배고픔은 쾌를 추구하고 불쾌를 피하려는 감각적 욕구이다.
+  - v: 'FALSE'
+    c: CORRECT
+    axis: kant_case
+    claim: stays_maxim
+    ev:
+    - P2S3
+    - P2S4
+    - P2S6
+    why: 특정 상황에서 세운 준칙이라도 보편성을 갖추면 도덕 법칙이 되며, 글은 이 원리를 도덕 법칙이라고 하였다.
+  - v: 'TRUE'
+    c: STRONG
+    axis: kant_case
+    claim: same_act_different_cause
+    ev:
+    - P1S5
+    - P2S6
+    why: 결과는 비슷해도 원인이 욕구인지 이성인지에 따라 타율과 자유로 나뉜다. 결과가 같다는 말에 끌려 틀린 진술로 오인하기 쉽다.
+  - v: 'TRUE'
+    c: MEDIUM
+    axis: kant_case
+    claim: reason_caused
+    ev:
+    - P2S6
+    why: 이성이 원인이 되어 행위에 이른 것이다.
+  - v: 'TRUE'
+    c: STRONG
+    axis: kant_case
+    claim: self_legislation
+    ev:
+    - P2S2
+    why: 도덕 법칙을 스스로에게 부과하는 자기 입법 능력에 해당한다. 사례에 직접 서술되지 않아 틀린 진술로 오인하기 쉽다.
+  reasoning_steps: 2
+  immediate_elimination: 1
+  points: 3.5
+  expected_time_class: STANDARD
+- item_id: SF-21
+  set: S3
+  format: MCQ
+  family: VIEW_APPLICATION
+  coverage: APPLICATION_OR_CONDITION
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 윗글의 칸트가 헤겔의 구체적 자유에 대해 제기할 수 있는 물음으로 적절한 것은?
+  options:
+  - 법과 제도가 예지계에 속한다면 현상계에서 일어나는 인간의 행위를 규정할 수 없지 않은가?
+  - 가족 단계의 사랑이라는 정서가 도덕 법칙보다 더 보편적인 행위 원리가 되지 않는가?
+  - 국가의 법이 보편성을 갖추지 못했다면 그것은 준칙조차 될 수 없는 것이 아닌가?
+  - 법과 제도를 따르는 행위라도 그 원인이 처벌을 피하려는 욕구라면 자유라고 할 수 있는가?
+  - 개인이 선택할 수 있는 폭이 넓어질수록 인간은 자유를 더 분명하게 의식하게 되지 않는가?
+  answer: 4
+  second_best: 3
+  judgments:
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: kant_question_to_hegel
+    claim: law_in_noumenon
+    ev:
+    - P1S2
+    - P3S5
+    why: 글에서 법과 제도가 예지계에 속한다고 한 적이 없다.
+  - v: 'FALSE'
+    c: WEAK
+    axis: kant_question_to_hegel
+    claim: love_more_universal
+    ev:
+    - P2S4
+    - P3S3
+    why: 칸트는 감정이 아니라 이성에 따른 보편적 법칙을 중시한다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: kant_question_to_hegel
+    claim: state_law_not_maxim
+    ev:
+    - P2S3
+    - P2S4
+    why: 준칙은 개인이 특정 상황에서 세운 주관적 원리이다. 국가의 법과 준칙의 관계는 글에 없으며, 보편성 없이는 준칙조차 될 수 없다는 말은 개념을 뒤섞은 것이다.
+  - v: 'TRUE'
+    c: CORRECT
+    axis: kant_question_to_hegel
+    claim: law_following_from_fear
+    ev:
+    - P1S4
+    - P2S5
+    - P3S6
+    why: 칸트에게 욕구가 원인인 행위는 타율적이므로, 법과 제도를 따르더라도 원인이 두려움이라면 자유를 의식하는 경우가 아니다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: kant_question_to_hegel
+    claim: wider_choice_more_freedom
+    ev:
+    - P2S5
+    - P3S7
+    why: 선택의 폭을 자유로 보는 것은 칸트의 기준(이성이 원인)과도, 헤겔의 비판 대상과도 관련된 함정이다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  points: 4.0
+  expected_time_class: STANDARD
+- item_id: SF-22
+  set: S3
+  format: MCQ
+  family: ERROR_CORRECTION
+  judgment_semantics: ANSWER_CORRECTNESS  # circled references; v marks correct selection, not assertion truth
+  coverage: TEXT_OR_ARGUMENT_STRUCTURE
+  difficulty: D1
+  balance: CORE_EXAM_POINT
+  stem: 다음은 윗글을 읽은 학생이 쓴 요약이다. ⓐ~ⓔ 중 윗글의 내용과 일치하지 않는 것은?
+  options:
+  - ⓐ
+  - ⓑ
+  - ⓒ
+  - ⓓ
+  - ⓔ
+  answer: 3
+  second_best: 5
+  judgments:
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: kh_summary
+    claim: a_both_core
+    ev:
+    - P1S1
+    why: ⓐ는 1문단 첫 문장과 일치한다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: kh_summary
+    claim: b_self_legislation
+    ev:
+    - P2S2
+    why: ⓑ는 자기 입법 능력에 대한 설명과 일치한다.
+  - v: 'TRUE'
+    c: CORRECT
+    axis: kh_summary
+    claim: c_civil_society_most_concrete
+    ev:
+    - P3S4
+    - P3S5
+    why: 법적 보호와 이해관계의 조정으로 자유의 실현이 가장 구체화되는 것은 국가 단계이다. 시민 사회 단계는 제도가 수립되지만 불안정하다.
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: kh_summary
+    claim: d_abstract_critique
+    ev:
+    - P3S7
+    why: ⓓ는 일치한다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: kh_summary
+    claim: e_law_condition
+    ev:
+    - P3S6
+    why: ⓔ는 일치한다. 외적 강제라는 말이 떠올라 틀린 것으로 오인하기 쉽다.
+  reasoning_steps: 2
+  immediate_elimination: 1
+  points: 3.2
+  view:
+  - 칸트와 헤겔은 모두 ⓐ자유를 인간 존재를 규정하는 핵심 개념으로 보았다. 칸트는 ⓑ인간이 이성을 통해 도덕 법칙을 스스로에게 부과할 수 있는 존재라고 보았다. 한편 헤겔은 자유가 가족, 시민 사회, 국가라는 관계망 속에서 실현된다고 보았는데, ⓒ시민 사회 단계에서는 법적 보호와 이해관계의 조정이 가능해져 자유의 실현이 가장 구체화된다고 하였다. 또한 헤겔은
+    ⓓ자유를 개인의 선택 가능성으로만 이해하는 것을 추상적 자유라고 비판하였고, ⓔ법과 제도를 개인의 자유와 공동체의 질서가 조화를 이루기 위한 조건으로 보았다.
+  expected_time_class: STANDARD
+- item_id: SF-CR3
+  set: S3
+  format: CR
+  family: CONSTRUCTED_RESPONSE
+  difficulty: D4
+  points: 6
+  stem: 헤겔이 자유가 완성되려면 구체적 자유로 나아가야 한다고 본 이유를 <조건>에 맞게 서술하시오.
+  conditions:
+  - 1. 헤겔이 비판한 자유 이해를 윗글에서 찾아 ‘개인의 ( ) 가능성으로만’의 형태를 포함하여 쓸 것.
+  - 2. 그러한 자유 이해가 낳을 수 있는 문제를 윗글에 근거하여 쓸 것.
+  - 3. 헤겔이 법과 제도를 무엇으로 보았는지를 ‘외적 강제’와 ‘조건’이라는 말을 모두 사용하여 쓸 것.
+  - 4. 한 문장으로 쓸 것.
+  model_answer: 헤겔은 자유를 개인의 선택 가능성으로만 이해하는 추상적 자유가 법과 제도를 구속으로 여겨 공동체의 질서와 타인의 자유를 해칠 수 있다고 보았고, 법과 제도는 외적 강제가 아니라 자유가 실현되기 위한 조건이므로 자유가 완성되려면 구체적 자유로 나아가야 한다고 보았다.
+  rubric:
+  - 개인의 선택 가능성으로만 이해하는 자유(추상적 자유)를 비판했다는 내용 1점
+  - 추상적 자유가 현실적 제약을 고려하지 못해 공동체의 질서나 타인의 자유를 해칠 수 있다는 내용 2점 (공동체의 질서와 타인의 자유 중 하나만 쓰면 1점)
+  - 법과 제도는 외적 강제가 아니라 (자유 실현의) 조건이라는 내용 2점 (외적 강제와 조건 중 하나만 쓰면 1점)
+  - 한 문장으로 쓴 경우 1점
+  accepted_variants:
+  - 선택 가능성으로만 잘못 이해된 자유
+  - 법과 제도는 자유를 제한하는 외적 강제가 아니라 완성된 자유가 실현되기 위한 조건
+  - 파괴적 성향을 띨 수 있다
+  ev:
+  - P3S6
+  - P3S7
+  - P3S8
+  - P3S9
+- item_id: SF-CR4
+  set: S3
+  format: CR
+  family: CONSTRUCTED_RESPONSE
+  difficulty: D4
+  points: 4
+  stem: 윗글의 칸트의 관점에서 <보기>를 분석할 때, ⓐ~ⓕ에 들어갈 말을 <조건>에 맞게 쓰시오.
+  view:
+  - A는 ‘남의 물건을 주우면 주인에게 돌려주어야 한다’는 원리를 세우고, 이 원리를 모든 이성적 존재자에게 적용해도 모순이 없음을 확인해 두었다. 어느 날 A는 길에서 지갑을 주워 주인에게 돌려주었는데, 그렇게 한 것은 ‘돌려주지 않으면 나중에 들킬까 두렵다’는 생각 때문이었다.
+  - → A가 세운 원리는 특정한 상황에서 세운 주관적 행위 원리인 ( ⓐ )(이)며, ( ⓑ )을/를 갖추었으므로 ( ⓒ )이/가 된다. 그러나 A가 지갑을 돌려준 행위는 ( ⓓ )이/가 원인이 되어 의지가 규정된 것이므로, 칸트는 이를 ( ⓔ )인 행위로 보며 A는 이 행위에서 자유를 ( ⓕ ).
+  conditions:
+  - 1. ⓐ~ⓒ는 윗글에서 찾아 그대로 쓸 것.
+  - 2. ⓓ는 <보기>에서 찾아 쓸 것.
+  - 3. ⓔ는 ‘자율적’과 ‘타율적’ 중에서, ⓕ는 ‘의식할 수 있다’와 ‘의식할 수 없다’ 중에서 골라 쓸 것.
+  model_answer: ⓐ 준칙 ⓑ 보편성 ⓒ 도덕 법칙 ⓓ 돌려주지 않으면 나중에 들킬까 두렵다는 생각 ⓔ 타율적 ⓕ 의식할 수 없다
+  rubric:
+  - ⓐ~ⓒ 모두 맞으면 1점
+  - ⓓ 1점 (들킬까 두려운 마음 등 같은 뜻이면 인정)
+  - ⓔ 1점
+  - ⓕ 1점
+  accepted_variants:
+  - ⓓ 들킬까 두렵다는 생각 / 들킬까 두려운 마음
+  - ⓒ 보편적인 행위 법칙인 도덕 법칙
+  ev:
+  - P1S4
+  - P2S3
+  - P2S4
+  - P2S5

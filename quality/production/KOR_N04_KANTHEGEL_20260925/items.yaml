@@ -1,0 +1,633 @@
+batch_id: KOR-N04-KANTHEGEL-20260925
+product_mode: ARC_N
+subject: KOR
+generator: CLAUDE
+set_label: ARC N°04
+course: 공통국어2
+cover_subtitle: 2학기 중간고사 대비 · 보충자료 비문학 10문항
+school_line: 동북고등학교 1학년 · 2026
+created_at: '2026-09-25T15:00:00+09:00'
+scope: 2026 동북고 1학년 2학기 중간 보충자료 — 이행남, 「칸트의 도덕적 자율성으로부터 헤겔의 인륜적 자율성으로」
+passages:
+- id: P1
+  source_text_id: KOR-SUPP-2026-NF-KANT-HEGEL
+  marks:
+  - find: 파괴적 성향을 띨 수 있다고
+    replace: 파괴적 성향을 ⓐ띨 수 있다고
+items:
+- item_id: KOR-N04-001
+  difficulty: D2
+  family: EVIDENCE_SUPPORT
+  coverage: EXPLICIT_CONTENT_ACCURACY
+  core_exam_point: true
+  stem: 윗글을 읽고 답할 수 있는 질문으로 가장 적절한 것은?
+  options:
+  - 칸트는 예지계가 존재한다는 것을 어떤 경험을 근거로 확인하였는가?
+  - 헤겔은 가족 단계의 약한 제도적 보장을 보완할 구체적인 방법으로 무엇을 제시하였는가?
+  - 헤겔은 시민 사회에서 제도가 생겨나는 배경을 개인의 어떤 활동에서 찾았는가?
+  - 칸트는 보편성을 갖추지 못한 준칙에 따른 행위를 어떻게 평가하였는가?
+  - 헤겔은 추상적 자유가 공동체의 질서를 해친 사례로 무엇을 들었는가?
+  answer: 3
+  second_best: 4
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: answerability
+    claim: kant_noumenon_empirical_proof
+    ev:
+    - P1S2
+    why: 예지계는 경험적으로 인식되지 않는 영역으로만 제시되어, 경험적 확인 근거라는 전제 자체가 글과 어긋난다.
+  - v: false
+    c: STRONG
+    axis: answerability
+    claim: hegel_family_remedy
+    ev:
+    - P3S3
+    why: 가족 단계의 제도적 보장이 약하다는 진단만 있고 보완 방법은 제시되지 않는다.
+  - v: true
+    c: CORRECT
+    axis: answerability
+    claim: civil_society_institution_trigger
+    ev:
+    - P3S4
+    why: '''개인이 권리와 이익을 추구하면서 각종 제도가 수립되어''에서 개인의 활동(권리와 이익 추구)을 찾아 답할 수 있다. 지문 표현을 바꿔 물어 대응 관계를 확인해야 한다.'
+  - v: false
+    c: STRONG
+    axis: answerability
+    claim: kant_nonuniversal_maxim_evaluation
+    ev:
+    - P2S3
+    - P2S4
+    why: 보편성이 도덕 법칙의 조건이라는 설명만 있고, 보편성이 없는 준칙에 따른 행위의 평가는 서술되지 않는다.
+  - v: false
+    c: WEAK
+    axis: answerability
+    claim: hegel_historical_case
+    ev:
+    - P3S8
+    why: 파괴적 성향을 띨 수 있다는 판단만 있고 사례는 없다.
+  reasoning_steps: 1
+  immediate_elimination: 2
+  transfer: false
+  passage: P1
+  balance: CORE_EXAM_POINT
+- item_id: KOR-N04-002
+  difficulty: D1
+  family: EXCEPT_INCORRECT
+  coverage: TEXT_OR_ARGUMENT_STRUCTURE
+  core_exam_point: true
+  stem: 윗글의 2문단에 대한 설명으로 적절하지 않은 것은?
+  options:
+  - 1문단에서 구분한 두 영역 가운데 한쪽에 자유를 귀속시키며 시작한다.
+  - 핵심 용어의 뜻을 풀이한 뒤, 그것이 도덕 법칙이 되기 위한 조건을 밝힌다.
+  - ‘보편성’의 뜻을 ‘~이란 ~을 말한다’와 같은 방식으로 규정하고 있다.
+  - 문단 끝의 예시는 1문단의 예시와 짝을 이루어, 의지를 규정한 원인에 따라 행위가 달리 판단됨을 보여 준다.
+  - 칸트의 견해가 지닌 한계를 지적하여 헤겔의 견해로 넘어갈 근거를 마련한다.
+  answer: 5
+  second_best: 4
+  judgments:
+  - v: true
+    c: MEDIUM
+    axis: paragraph2_method
+    claim: attributes_freedom_to_noumenon
+    ev:
+    - P2S1
+    - P1S2
+    why: 2문단 첫 문장이 1문단의 현상계/예지계 가운데 예지계에 자유를 둔다.
+  - v: true
+    c: STRONG
+    axis: paragraph2_method
+    claim: define_maxim_then_condition
+    ev:
+    - P2S3
+    why: 준칙의 뜻을 풀이한 뒤 도덕 법칙이 되기 위한 조건(보편성)을 제시한다. '그것'의 지시 대상 확인이 필요해 틀린 선지로 오인되기 쉽다.
+  - v: true
+    c: MEDIUM
+    axis: paragraph2_method
+    claim: define_universality_formula
+    ev:
+    - P2S4
+    why: '''보편성이란 ~것을 말하며''로 규정한다.'
+  - v: 'TRUE'
+    c: STRONG
+    axis: paragraph2_method
+    claim: example_pairs_with_p1
+    ev:
+    - P1S5
+    - P2S6
+    why: 1문단 예시는 욕구가 원인이 된 타율적 행위, 2문단 예시는 이성이 원인이 되어 자유를 의식하는 행위로, 원인에 따라 판단이 달라진다. 문단 바깥을 언급해 틀린 선지로 오인되기 쉽다.
+  - v: false
+    c: CORRECT
+    axis: paragraph2_method
+    claim: critique_of_kant_transition
+    ev:
+    - P2S1
+    - P3S1
+    why: 2문단에는 칸트에 대한 평가나 한계 지적이 없고, 3문단은 '한편'으로 화제를 전환할 뿐이다.
+  reasoning_steps: 1
+  immediate_elimination: 1
+  transfer: false
+  passage: P1
+  balance: CORE_EXAM_POINT
+- item_id: KOR-N04-003
+  difficulty: D1
+  family: ERROR_CORRECTION
+  coverage: KEY_CONCEPT_RELATION_OR_CONTRAST
+  core_exam_point: true
+  stem: 다음은 윗글을 바탕으로 칸트와 헤겔의 견해를 정리한 표이다. ⓐ~ⓔ 중 윗글의 내용과 맞지 않아 수정이 필요한 것은?
+  table:
+    header:
+    - 구분
+    - 칸트
+    - 헤겔
+    rows:
+    - - 자유가 속하거나 실현되는 곳
+      - ⓐ 예지계
+      - ⓑ 가족, 시민 사회, 국가라는 관계망
+    - - 자유와 관련된 조건
+      - ⓒ 이성이 원인이 되어 도덕 법칙에 따라 의지를 규정함
+      - 개인의 의지가 사회적 관계와 제도 속에서 구현됨
+    - - 자유의 실현이 가장 구체화되는 단계
+      - ―
+      - ⓓ 시민 사회
+    - - 잘못된 자유 이해로 비판한 것
+      - ―
+      - ⓔ 자유를 개인의 선택 가능성으로만 이해하는 것
+  options:
+  - ⓐ
+  - ⓑ
+  - ⓒ
+  - ⓓ
+  - ⓔ
+  answer: 4
+  second_best: 2
+  judgments:
+  - v: true
+    c: WEAK
+    axis: comparison_table_cell
+    claim: kant_freedom_realm
+    ev:
+    - P2S1
+    why: 칸트는 자유가 예지계에 속한다고 보았다.
+  - v: true
+    c: STRONG
+    axis: comparison_table_cell
+    claim: hegel_relation_network
+    ev:
+    - P3S2
+    why: 자유는 가족, 시민 사회, 국가라는 관계망 속에서 실현된다. 세 단계가 모두 적혀 있어 오히려 의심을 부르기 쉽다.
+  - v: true
+    c: MEDIUM
+    axis: comparison_table_cell
+    claim: kant_condition_reason_cause
+    ev:
+    - P2S5
+    why: 도덕 법칙에 따라 이성이 원인이 되어 의지를 규정할 때 자유를 의식한다.
+  - v: false
+    c: CORRECT
+    axis: comparison_table_cell
+    claim: most_concrete_stage
+    ev:
+    - P3S5
+    - P3S4
+    why: 자유의 실현이 가장 구체화되는 것은 국가 단계이다. 시민 사회는 '보다 구체화'되지만 불안정하다.
+  - v: true
+    c: MEDIUM
+    axis: comparison_table_cell
+    claim: abstract_freedom_def
+    ev:
+    - P3S7
+    why: 선택 가능성으로만 이해된 자유를 추상적 자유라 비판한다.
+  reasoning_steps: 1
+  immediate_elimination: 2
+  transfer: false
+  passage: P1
+  balance: CORE_EXAM_POINT
+- item_id: KOR-N04-004
+  difficulty: D3
+  family: MULTI_JUDGMENT
+  coverage: KEY_CONCEPT_RELATION_OR_CONTRAST
+  core_exam_point: true
+  stem: 윗글의 ‘자기 입법 능력’에 대한 이해로 적절한 것만을 <보기>에서 있는 대로 고른 것은?
+  view:
+  - ㄱ. 이 능력으로 부과되는 법칙은 특정한 상황에서 세운 준칙 가운데 보편성을 갖춘 것이다.
+  - ㄴ. 이 능력은 감각 경험을 통해 인식되는 영역이 아니라 이성에 의해 사유되는 영역에서 발휘된다.
+  - ㄷ. 이 능력으로 부과한 법칙은 각자 스스로 세운 것이므로 사람마다 달라질 수 있다.
+  - ㄹ. 굶주린 아이의 예에서는 배고픔을 참는 것 자체가 이 능력으로 부과된 도덕 법칙에 해당한다.
+  options:
+  - ㄱ, ㄹ
+  - ㄱ, ㄴ
+  - ㄴ, ㄷ
+  - ㄱ, ㄴ, ㄹ
+  - ㄴ, ㄷ, ㄹ
+  answer: 2
+  second_best: 4
+  judgments:
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: selfleg_set
+    claim: set_a_d
+    ev:
+    - P2S3
+    - P2S6
+    why: 참인 ㄴ이 빠졌고, ㄹ은 거짓이다.
+  - v: 'TRUE'
+    c: CORRECT
+    axis: selfleg_set
+    claim: set_a_b
+    ev:
+    - P2S2
+    - P2S3
+    - P2S4
+    - P1S2
+    - P2S6
+    why: ㄱ(보편성이 확보된 준칙이 도덕 법칙), ㄴ(자기 입법은 예지계=이성에 의해 사유될 수 있을 뿐인 영역에서 이루어짐, 1·2문단 연결)은 참. ㄷ은 보편성과 모순, ㄹ은 법칙과 행위를 혼동.
+  - v: 'FALSE'
+    c: WEAK
+    axis: selfleg_set
+    claim: set_b_c
+    ev:
+    - P2S2
+    - P2S4
+    why: ㄷ은 도덕 법칙이 보편적 행위 법칙으로 모든 이성적 존재자에게 모순 없이 적용되어야 한다는 설명과 어긋난다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: selfleg_set
+    claim: set_a_b_d
+    ev:
+    - P2S6
+    - P2S5
+    why: 'ㄹ의 함정: 예에서 도덕 법칙은 ''타인의 생존이 위협받을 때 이를 외면하면 안 된다''이고, 배고픔을 참는 것은 그 법칙에 따른 행위의 일부이다. 법칙과 행위를 뒤섞은 선지이다.'
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: selfleg_set
+    claim: set_b_c_d
+    ev:
+    - P2S4
+    - P2S6
+    why: '''스스로 부과''를 개인별 기준으로 오해하고 ㄹ의 법칙/행위 혼동까지 놓치면 고른다.'
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: false
+  passage: P1
+  balance: CORE_EXAM_POINT
+- item_id: KOR-N04-005
+  difficulty: D2
+  family: INFERENCE
+  coverage: KEY_CONCEPT_RELATION_OR_CONTRAST
+  core_exam_point: true
+  stem: 윗글을 바탕으로, 칸트가 자유를 현상계가 아니라 예지계에 속하는 개념으로 본 까닭을 추론한 것으로 가장 적절한 것은?
+  options:
+  - 현상계의 행위는 모두 타율적이므로, 칸트는 인간이 도덕 법칙에 따라 행위하는 일이 실제로는 일어나지 않는다고 보았기 때문이다.
+  - 현상계에서는 의지가 늘 이성이 아닌 앞선 원인에 의해 규정되므로, 이성이 원인이 되어 의지를 규정하는 자유는 그 안에 자리할 수 없기 때문이다.
+  - 예지계는 이성에 의해 사유될 뿐 경험적으로 인식되지 않으므로, 자유가 실제로 있는지는 누구도 알 수 없다고 보았기 때문이다.
+  - 도덕 법칙은 모든 이성적 존재자에게 모순 없이 적용되어야 하므로, 사람마다 다른 감각 경험이 쌓이는 현상계에서는 만들어질 수 없기 때문이다.
+  - 현상계에서 의지는 이성이 아닌 것에 의해 규정되므로, 인간이 이성적 존재라는 사실 자체가 현상계에서는 인정되지 않기 때문이다.
+  answer: 2
+  second_best: 4
+  judgments:
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: noumenon_inference
+    claim: moral_action_never_happens
+    ev:
+    - P2S6
+    why: 현상계의 행위가 타율적이라는 앞부분은 맞지만, 굶주린 아이에게 음식을 양보하는 예시에서 도덕 법칙에 따른 행위와 자유의 의식이 실제로 제시된다.
+  - v: 'TRUE'
+    c: CORRECT
+    axis: noumenon_inference
+    claim: determinism_excludes_reason_caused_will
+    ev:
+    - P1S3
+    - P1S4
+    - P2S1
+    - P2S5
+    why: 현상계의 사건과 의지는 앞선 원인·이성 아닌 것에 의해 규정되는데, 자유는 이성이 원인이 되어 의지를 규정할 때 의식되므로 현상계에 속할 수 없다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: noumenon_inference
+    claim: freedom_unknowable
+    ev:
+    - P1S2
+    - P2S5
+    why: 예지계의 성격은 맞지만, 칸트는 도덕 법칙에 따라 행위할 때 자유를 의식할 수 있다고 하였으므로 누구도 알 수 없다는 판단은 글과 어긋난다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: noumenon_inference
+    claim: moral_law_blocked_by_varied_experience
+    ev:
+    - P2S2
+    - P2S4
+    - P1S3
+    why: 보편성 조건은 맞지만, 글은 감각 경험이 사람마다 달라서라는 이유를 제시하지 않으며, 질문은 도덕 법칙이 아니라 자유가 예지계에 속하는 까닭을 묻는다. 글에 없는 이유를 그럴듯하게 덧붙인 2순위 후보이다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: noumenon_inference
+    claim: rational_being_denied_in_phenomena
+    ev:
+    - P1S4
+    - P2S2
+    why: 앞부분은 참이지만, 인간이 이성적 존재라는 사실이 현상계에서 부정된다는 내용은 없다. 인간은 이성적 존재로서 예지계에서 자기 입법 능력을 지닌다고 할 뿐이다.
+  reasoning_steps: 3
+  immediate_elimination: 0
+  transfer: false
+  passage: P1
+  balance: CORE_EXAM_POINT
+- item_id: KOR-N04-006
+  difficulty: D2
+  family: STRUCTURE_RELATION
+  coverage: TEXT_OR_ARGUMENT_STRUCTURE
+  core_exam_point: true
+  stem: 윗글의 마지막 문장에서 ‘따라서’ 뒤에 제시된 헤겔의 결론을 직접 뒷받침하는 내용으로 가장 적절한 것은?
+  options:
+  - 가족 단계에서는 자유의 실현을 뒷받침할 제도적 보장이 약하다는 판단
+  - 시민 사회 단계에서는 개인 간의 이해관계가 충돌하여 자유의 실현이 불안정하다는 판단
+  - 개인의 선택 가능성으로 이해된 자유가 제도 속에서 점점 더 안정적인 형태로 실현된다는 판단
+  - 현실적 제약을 헤아리지 못하는 자유 이해가 공동체의 질서와 타인의 자유를 해칠 수 있다는 판단
+  - 추상적 자유는 법이나 제도를 구속으로 여기므로 개인의 선택 가능성을 지나치게 좁힌다는 판단
+  answer: 4
+  second_best: 5
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: therefore_premise
+    claim: family_weak_guarantee
+    ev:
+    - P3S3
+    why: 가족 단계의 한계는 구체적 자유 안의 단계 설명이지, 추상적 자유를 넘어 구체적 자유로 나아가야 한다는 결론의 직접 근거가 아니다.
+  - v: false
+    c: STRONG
+    axis: therefore_premise
+    claim: civil_society_instability
+    ev:
+    - P3S4
+    why: 시민 사회의 불안정은 단계 간 비교의 근거일 뿐 '따라서' 바로 앞의 추상적 자유 비판이 아니다. 불안정·해침이 비슷해 보여 2순위 후보가 된다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: therefore_premise
+    claim: choice_freedom_stabilizes
+    ev:
+    - P3S2
+    - P3S7
+    why: '''점점 더 안정적인 형태로 실현''은 구체적 자유에 대한 설명이며, 선택 가능성으로 이해된 자유는 헤겔이 비판한 추상적 자유이다. 두 설명을 섞은 함정이다.'
+  - v: true
+    c: CORRECT
+    axis: therefore_premise
+    claim: abstract_freedom_destructive
+    ev:
+    - P3S8
+    - P3S9
+    why: '''따라서'' 바로 앞 문장이 추상적 자유가 제도적 맥락 등 현실적 제약을 고려하지 못해 공동체의 질서와 타인의 자유를 해치는 파괴적 성향을 띨 수 있다고 한다.'
+  - v: 'FALSE'
+    c: STRONG
+    axis: therefore_premise
+    claim: abstract_freedom_narrows_choice
+    ev:
+    - P3S8
+    why: '''법이나 제도를 구속으로 간주''한다는 앞부분은 3문단과 같지만, 헤겔이 문제 삼은 것은 선택 가능성을 좁힌다는 점이 아니라 질서와 타인의 자유를 해치는 파괴적 성향이다.'
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  passage: P1
+  balance: CORE_EXAM_POINT
+- item_id: KOR-N04-007
+  difficulty: D3
+  family: MULTI_JUDGMENT
+  coverage: APPLICATION_OR_CONDITION
+  core_exam_point: true
+  stem: 윗글의 헤겔의 관점에서 칸트의 자유관에 대해 제기할 수 있는 물음으로 적절한 것만을 <보기>에서 있는 대로 고른 것은?
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ
+  - ㄴ, ㄹ
+  - ㄱ, ㄴ, ㄷ
+  - ㄱ, ㄷ, ㄹ
+  answer: 1
+  second_best: 4
+  judgments:
+  - v: 'TRUE'
+    c: CORRECT
+    axis: hegel_questions_set
+    claim: set_a_b
+    ev:
+    - P2S5
+    - P3S1
+    - P3S2
+    - P3S9
+    why: 'ㄱ: 헤겔은 자유가 가족·시민 사회·국가의 관계망 속에서 점점 더 안정적이고 지속 가능한 형태로 실현된다고 보므로, 개인의 이성적 자기 입법만으로 그것이 가능한지 물을 수 있다. ㄴ: 헤겔은 구체적 자유로 나아가야 자유가 완성된다고 본다. ㄷ은 법과 제도를 제한으로 전제해 헤겔과 어긋나고, ㄹ은 글에 없는 판정 역할을 국가에 부여한다.'
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: hegel_questions_set
+    claim: set_a_c
+    ev:
+    - P3S6
+    why: ㄷ은 법과 제도를 개인의 선택을 제한하는 것으로 전제하는데, 헤겔은 법과 제도를 외적 강제가 아니라 자유 실현의 조건으로 본다. 참인 ㄴ도 빠졌다.
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: hegel_questions_set
+    claim: set_b_d
+    ev:
+    - P3S5
+    - P3S6
+    - P2S4
+    why: 'ㄹ: 헤겔의 법과 제도는 법적 보호와 이해관계 조정을 가능하게 하는 조건이며, 준칙의 보편성을 판정한다는 내용은 글에 없다. 참인 ㄱ도 빠졌다.'
+  - v: 'FALSE'
+    c: STRONG
+    axis: hegel_questions_set
+    claim: set_a_b_c
+    ev:
+    - P3S6
+    - P3S7
+    why: 'ㄷ의 함정: ''자유의 조건''이라는 헤겔의 표현을 빌렸지만, 법과 제도를 선택의 제한으로 보는 것은 헤겔이 비판한 추상적 자유의 전제이다.'
+  - v: 'FALSE'
+    c: STRONG
+    axis: hegel_questions_set
+    claim: set_a_c_d
+    ev:
+    - P3S5
+    - P3S6
+    - P3S7
+    why: ㄷ과 ㄹ이 모두 헤겔의 어휘(조건, 국가의 법과 제도)를 써서 그럴듯하지만, 각각 추상적 자유의 전제와 글에 없는 판정 역할을 담고 있다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  passage: P1
+  balance: ADVANCED_DISCRIMINATION
+  view:
+  - ㄱ. 개인이 이성으로 스스로 세운 법칙이 사회적 관계와 제도로 뒷받침되지 않아도, 자유가 지속 가능한 형태로 실현될 수 있는가?
+  - ㄴ. 도덕 법칙에 따라 행위하는 개인이라도 가족, 시민 사회, 국가와 같은 관계망 밖에 머문다면 그의 자유가 완성되었다고 할 수 있는가?
+  - ㄷ. 법과 제도가 개인의 선택을 제한한다면 그것을 자유의 조건이라고 부를 수 있는가?
+  - ㄹ. 어떤 준칙이 보편성을 갖추었는지는 국가의 법과 제도가 판정해야 하지 않는가?
+- item_id: KOR-N04-008
+  difficulty: D3
+  family: CASE_APPLICATION
+  coverage: APPLICATION_OR_CONDITION
+  core_exam_point: false
+  stem: 윗글을 바탕으로 <보기>의 ⓐ~ⓒ를 평가한 내용으로 가장 적절한 것은?
+  view:
+  - 어떤 사상가는 ⓐ자유를, 타인에게 해를 끼치지 않는 한 개인이 원하는 것을 다른 사람이나 국가의 간섭 없이 선택하고 행할 수 있는 상태로 본다. 그에 따르면 ⓑ법과 제도는 개인의 선택을 제한하는 것이므로, ⓒ타인에 대한 피해를 막는 데 꼭 필요한 정도에 그쳐야 한다.
+  options:
+  - 칸트와 헤겔은 모두 ⓐ에 대해, 간섭이 없다는 점에서 자유가 성립하기 위한 조건은 갖추었다고 볼 것이다.
+  - 칸트는 ⓑ에 동의하여, 법과 제도의 간섭이 없는 상태에서만 이성이 스스로 의지를 규정할 수 있다고 볼 것이다.
+  - 헤겔은 ⓒ가 타인의 자유를 고려하고 있으므로, <보기>가 법과 제도를 자유 실현의 조건으로 삼는 구체적 자유에 이르렀다고 볼 것이다.
+  - 헤겔은 ⓒ처럼 법과 제도를 최소한으로 둘 때 시민 사회의 이해관계 충돌이 조정되어 자유가 가장 구체화된다고 볼 것이다.
+  - 칸트는 ⓐ의 자유가 욕구에서 비롯된 선택도 포함할 수 있어, 이성이 원인이 되어 의지를 규정하는 자유와 구별할 것이다.
+  answer: 5
+  second_best: 3
+  judgments:
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: view_segment_evaluation
+    claim: noninterference_condition_both
+    ev:
+    - P2S5
+    - P3S6
+    why: 두 사상가 모두 간섭의 부재를 자유의 조건으로 제시하지 않는다. 헤겔은 오히려 법과 제도를 자유의 조건으로 본다.
+  - v: 'FALSE'
+    c: MEDIUM
+    axis: view_segment_evaluation
+    claim: kant_agrees_law_limits
+    ev:
+    - P2S2
+    - P2S5
+    why: 글에서 칸트의 자유는 예지계에서 이성이 스스로 법칙을 부과하는 데 있으며, 법과 제도의 간섭 유무를 조건으로 삼는다는 내용은 없다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: view_segment_evaluation
+    claim: hegel_harm_clause_escapes_abstract
+    ev:
+    - P3S7
+    - P3S8
+    why: <보기>는 ⓑ에서 법과 제도를 개인의 선택을 제한하는 것으로 보므로, 법과 제도를 자유 실현의 조건으로 삼는 구체적 자유와 어긋난다. 타인의 자유 고려라는 표현이 함정이다.
+  - v: 'FALSE'
+    c: STRONG
+    axis: view_segment_evaluation
+    claim: minimal_law_most_concrete
+    ev:
+    - P3S4
+    - P3S5
+    why: 헤겔에 따르면 이해관계의 조정은 국가의 법과 제도로 가능해지며 그때 자유가 가장 구체화된다. 법과 제도를 최소한으로 두는 것은 이와 거리가 멀다.
+  - v: 'TRUE'
+    c: CORRECT
+    axis: view_segment_evaluation
+    claim: kant_distinguishes_choice_from_reason
+    ev:
+    - P1S4
+    - P1S5
+    - P2S5
+    why: 원하는 것을 선택하는 행위는 욕구가 원인일 수 있고, 칸트에게 그런 행위는 타율적이다. 자유는 이성이 원인이 되어 의지를 규정할 때 의식되므로 둘을 구별한다.
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  passage: P1
+  balance: ADVANCED_DISCRIMINATION
+- item_id: KOR-N04-009
+  difficulty: D1
+  family: EXCEPT_INCORRECT
+  coverage: EXPLICIT_CONTENT_ACCURACY
+  core_exam_point: true
+  stem: 윗글의 1문단에 대한 이해로 적절하지 않은 것은?
+  options:
+  - 1문단의 예시는 욕구가 원인인 행위도 결과가 몸에 이롭다면 타율적이지 않음을 보여 준다.
+  - 칸트는 무엇을 통해 인식되거나 사유될 수 있는지에 따라 현상계와 예지계를 구분하였다.
+  - 불쾌를 피하려는 욕구도 쾌를 추구하는 욕구와 마찬가지로 이성이 아닌 원인에 속한다.
+  - 현상계에서 행위할 때에도 의지가 없어지는 것은 아니며, 다만 의지를 규정하는 원인이 이성 밖에 있다.
+  - 칸트는 현상계의 어떤 사건이든 그것을 반드시 일으킨 앞선 원인이 있다고 보았다.
+  answer: 1
+  second_best: 3
+  judgments:
+  - v: 'FALSE'
+    c: CORRECT
+    axis: paragraph1_content
+    claim: result_based_heteronomy
+    ev:
+    - P1S5
+    why: 예시는 행위의 원인(고통을 피하려는 욕구)에 따라 타율적이라고 판단하며, 결과가 이로운지는 판단 기준이 아니다.
+  - v: true
+    c: STRONG
+    axis: paragraph1_content
+    claim: realms_by_mode_of_cognition
+    ev:
+    - P1S2
+    why: 감각 경험으로 인식되는 현상계와 이성에 의해 사유될 수 있을 뿐인 예지계로 나눈다. 구분 기준을 추상화해 표현해 틀린 선지로 오인되기 쉽다.
+  - v: true
+    c: STRONG
+    axis: paragraph1_content
+    claim: pain_avoidance_non_rational
+    ev:
+    - P1S4
+    why: '''쾌를 추구하고 불쾌를 피하고자 하는 감각적 욕구 등 이성이 아닌 것''이라고 명시한다. 고통 회피를 합리적 판단으로 보면 틀렸다고 오판한다.'
+  - v: 'TRUE'
+    c: MEDIUM
+    axis: paragraph1_content
+    claim: will_determined_non_rational
+    ev:
+    - P1S4
+    why: 현상계에서 의지는 이성이 아닌 것에 의해 규정되고 인간은 그 의지에 따라 행위한다(1문단 넷째 문장)는 내용을 풀어 쓴 참 진술이다.
+  - v: true
+    c: WEAK
+    axis: paragraph1_content
+    claim: phenomenal_necessity
+    ev:
+    - P1S3
+    why: '''현상계의 모든 사건은 앞선 원인에 의해 필연적으로 발생한다''를 풀어 쓴 참 진술이다.'
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  passage: P1
+  balance: CORE_EXAM_POINT
+- item_id: KOR-N04-010
+  difficulty: D3
+  family: VOCAB_IN_CONTEXT
+  coverage: EXPLICIT_CONTENT_ACCURACY
+  core_exam_point: true
+  stem: 문맥상 ⓐ와 의미가 가장 가까운 것은?
+  options:
+  - 그는 입가에 옅은 웃음을 띠고 인사를 건넸다.
+  - 그는 막중한 임무를 띠고 먼 나라로 떠났다.
+  - 이 지역의 방언은 몇 가지 독특한 특징을 띤다.
+  - 해 질 무렵 하늘이 점점 붉은빛을 띠기 시작했다.
+  - 그는 허리에 넓은 띠를 띠고 무대에 올랐다.
+  answer: 3
+  second_best: 4
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: vocab_ttida
+    claim: sense_show_expression
+    ev:
+    - P3S8
+    why: 감정이나 기운 따위를 나타내다의 뜻이다.
+  - v: false
+    c: MEDIUM
+    axis: vocab_ttida
+    claim: sense_carry_duty
+    ev:
+    - P3S8
+    why: 용무나 직책, 사명 따위를 지니다의 뜻이다.
+  - v: true
+    c: CORRECT
+    axis: vocab_ttida
+    claim: sense_have_property
+    ev:
+    - P3S8
+    why: ⓐ의 '(성향을) 띠다'와 같이 어떤 성질을 가지다의 뜻이다.
+  - v: false
+    c: STRONG
+    axis: vocab_ttida
+    claim: sense_have_color
+    ev:
+    - P3S8
+    why: 빛깔이나 색채 따위를 가지다의 뜻으로, '가지다'가 겹쳐 가장 헷갈린다.
+  - v: false
+    c: WEAK
+    axis: vocab_ttida
+    claim: sense_wear_belt
+    ev:
+    - P3S8
+    why: 띠나 끈 따위를 두르다의 뜻이다.
+  reasoning_steps: 1
+  immediate_elimination: 1
+  transfer: false
+  passage: P1
+  balance: CORE_EXAM_POINT

@@ -1,1 +1,6 @@
-data/
+tooling/.cache/
+tooling/**/__pycache__/
+tooling/**/*.pyc
+tooling/results/
+*.promptfoo.db
+runs/

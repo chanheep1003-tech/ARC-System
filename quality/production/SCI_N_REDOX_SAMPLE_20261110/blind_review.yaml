@@ -1,0 +1,110 @@
+review_id: SCI-N-SAMPLE-SYNTHETIC-BLIND
+reviewer: SYNTHETIC_FIXTURE — values derived from the author key for pipeline regression only; NOT an independent blind review
+rounds: 1
+synthetic: true
+excluded_inputs:
+- ANSWER_KEY
+- PASS_A
+- AUTHOR_INTENT
+- TARGET_DIFFICULTY
+items:
+- item_id: SCI-N-S01
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 4
+  - 1
+  second_best: 4
+  difficulty: D1
+  confidence: HIGH
+  flags: []
+- item_id: SCI-N-S02
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 4
+  - 1
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: SCI-N-S03
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 1
+  - 2
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: SCI-N-S04
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 5
+  - 1
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: SCI-N-S05
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 2
+  - 1
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: SCI-N-S06
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 4
+  - 1
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: SCI-N-S07
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 2
+  - 5
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: SCI-N-S08
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 4
+  - 5
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: SCI-N-S09
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 2
+  - 4
+  second_best: 2
+  difficulty: D4
+  confidence: HIGH
+  flags: []
+- item_id: SCI-N-S10
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 3
+  second_best: 2
+  difficulty: D1
+  confidence: HIGH
+  flags: []

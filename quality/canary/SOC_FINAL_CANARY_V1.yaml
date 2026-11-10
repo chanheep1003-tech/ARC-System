@@ -1,0 +1,321 @@
+fixture_id: SOC-FINAL-CANARY-V1
+source_mode: SYNTHETIC_PIPELINE_ONLY
+purpose: Deterministic SOC ARC_FINAL 10-item E2E plus difficulty, distractor, answer-length and PDF regression.
+governance:
+  DUP_HISTORY_ACCESS: UNAVAILABLE
+  DUPLICATE_GATE: NOT_CLAIMED_CANARY
+  FINAL_USER_APPROVAL: NOT_APPLICABLE_CANARY
+  DRIVE_SAVE: BLOCKED
+  SCOPE_EXCLUSION_INDEX: quality/source/SOC_C_XMARK_EXCLUSION_INDEX_2026_V1.0.yaml
+  C_X_MARK_FILTER: PASS_SYNTHETIC_EXCLUDED_REGIONS_NOT_USED
+  excluded_regions_not_used:
+  - power-separation confirmation figure
+  - Singer civil-disobedience block
+  - Thoreau civil-disobedience block
+content_bundle:
+  batch_id: SOC-FINAL-CANARY-001
+  generator: CLAUDE
+  product_mode: ARC_FINAL
+  subject: SOC
+  scope: registered scope signals; synthetic structural fixture only
+  item_count: 10
+  created_at: '2026-11-10T21:00:00+09:00'
+  qa_evidence_filename: ARC_QA_EVIDENCE_SOC_FINAL_CANARY_001.yaml
+  student_manuscript: '## QUESTION 1
+
+    Which statement keeps a limited claim about a right within its stated condition?
+
+    1) It extends the claim to every later case. 2) It preserves the limitation as stated. 3) It drops the condition from the claim. 4) It swaps the actor who holds the right. 5) It cites a date unrelated to the case.
+
+
+    ## QUESTION 2
+
+    Two rights conflict. What should decide between proposed arrangements?
+
+    1) The position of the option in the list. 2) The length of the sentence that states it. 3) Both claims weighed against the means. 4) The personal preference of the reader. 5) The number of nouns used in the claim.
+
+
+    ## QUESTION 3
+
+    Which review best avoids a half-true answer about a remedy?
+
+    1) Checking the infringed right alone. 2) Checking right and institution together. 3) Picking the phrase that sounds familiar. 4) Ignoring the procedure that follows. 5) Using a case from outside the range.
+
+
+    ## QUESTION 4
+
+    A choice names the right principle but applies it to the wrong case. How is it judged?
+
+    1) Fully correct because the name is right. 2) Correct whenever the sentence is long. 3) Correct if it was mentioned in class. 4) Half-true and therefore rejected. 5) Correct when it is placed first.
+
+
+    ## QUESTION 5
+
+    A group tendency is applied to one person without evidence. Which review is required?
+
+    1) Separate the average from the person. 2) Count the punctuation in the passage. 3) Prefer the broadest available claim. 4) Remove the condition from the source. 5) Choose the shortest answer offered.
+
+
+    ## QUESTION 6
+
+    Which evidence pattern supports a comparison of two regions?
+
+    1) One isolated figure for a single year. 2) The title of the chart without values. 3) Two indicators tied to one criterion. 4) A biography unrelated to either region. 5) A phrase repeated without any context.
+
+
+    ## QUESTION 7
+
+    A new case changes one condition of a restriction. What must the solver do?
+
+    1) Reapply the test to the new condition. 2) Reuse the earlier answer without change. 3) Ignore the new case as an exception. 4) Choose the longest option that remains. 5) Bring in a theory from outside the range.
+
+
+    ## QUESTION 8
+
+    Two maps agree on location but differ in scale. Which approach is strongest?
+
+    1) Treat the two maps as fully identical. 2) Compare only the colors of the legend. 3) Ignore the scale and read the labels. 4) Combine location with the scale gap. 5) Choose whichever map appears first.
+
+
+    ## QUESTION 9
+
+    A choice is true for the rate but overstates the level. What is the best judgment?
+
+    1) Accept it because half of it is true. 2) Reject it because the level claim fails. 3) Accept it if the wording is detailed. 4) Ignore the level and keep the rate. 5) Replace the level with background data.
+
+
+    ## QUESTION 10
+
+    Which final check best protects a difficult rights-restriction item?
+
+    1) Confirm one keyword in the correct option. 2) Confirm the answer is the longest option. 3) Confirm all options on purpose and means. 4) Confirm the positions are evenly spread. 5) Confirm the stem appears difficult enough.'
+  answer_key:
+    1: 2
+    2: 3
+    3: 2
+    4: 4
+    5: 1
+    6: 3
+    7: 1
+    8: 4
+    9: 2
+    10: 3
+  visual_asset_manifest: []
+  qc_status:
+    STATUS: PASS
+    SOURCE_MODE: SYNTHETIC_PIPELINE_ONLY
+    C_X_MARK_FILTER: PASS_SYNTHETIC_EXCLUDED_REGIONS_NOT_USED
+final_quality_profile:
+  product_mode: ARC_FINAL
+  item_count: 10
+  items:
+  - item_id: SOC-FINAL-CANARY-001
+    actual_difficulty: D2
+    reasoning_steps: 1
+    evidence_count: 1
+    strong_distractor_count: 1
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 2
+    second_best_option: 1
+    second_best_refutation: Option 1 omits a condition required by the stem.
+    option_lengths_chars:
+    - 41
+    - 38
+    - 38
+    - 39
+    - 38
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_STANDARD
+    expected_time_class: SHORT
+  - item_id: SOC-FINAL-CANARY-002
+    actual_difficulty: D3
+    reasoning_steps: 2
+    evidence_count: 1
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 3
+    second_best_option: 1
+    second_best_refutation: Option 1 omits a condition required by the stem.
+    option_lengths_chars:
+    - 39
+    - 42
+    - 38
+    - 38
+    - 38
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_STANDARD
+    expected_time_class: STANDARD
+  - item_id: SOC-FINAL-CANARY-003
+    actual_difficulty: D3
+    reasoning_steps: 2
+    evidence_count: 1
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 2
+    second_best_option: 1
+    second_best_refutation: Option 1 omits a condition required by the stem.
+    option_lengths_chars:
+    - 35
+    - 40
+    - 40
+    - 36
+    - 36
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_STANDARD
+    expected_time_class: STANDARD
+  - item_id: SOC-FINAL-CANARY-004
+    actual_difficulty: D3
+    reasoning_steps: 2
+    evidence_count: 1
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 4
+    second_best_option: 1
+    second_best_refutation: Option 1 omits a condition required by the stem.
+    option_lengths_chars:
+    - 40
+    - 38
+    - 37
+    - 33
+    - 32
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_STANDARD
+    expected_time_class: STANDARD
+  - item_id: SOC-FINAL-CANARY-005
+    actual_difficulty: D3
+    reasoning_steps: 2
+    evidence_count: 1
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 1
+    second_best_option: 3
+    second_best_refutation: Option 3 omits a condition required by the stem.
+    option_lengths_chars:
+    - 37
+    - 37
+    - 36
+    - 37
+    - 35
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_STANDARD
+    expected_time_class: STANDARD
+  - item_id: SOC-FINAL-CANARY-006
+    actual_difficulty: D3
+    reasoning_steps: 2
+    evidence_count: 1
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 3
+    second_best_option: 5
+    second_best_refutation: Option 5 omits a condition required by the stem.
+    option_lengths_chars:
+    - 38
+    - 38
+    - 37
+    - 39
+    - 38
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_UPPER
+    expected_time_class: STANDARD
+  - item_id: SOC-FINAL-CANARY-007
+    actual_difficulty: D4
+    reasoning_steps: 2
+    evidence_count: 2
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 1
+    second_best_option: 2
+    second_best_refutation: Option 2 omits a condition required by the stem.
+    option_lengths_chars:
+    - 38
+    - 40
+    - 36
+    - 39
+    - 41
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_UPPER
+    expected_time_class: STANDARD
+  - item_id: SOC-FINAL-CANARY-008
+    actual_difficulty: D4
+    reasoning_steps: 2
+    evidence_count: 2
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 4
+    second_best_option: 1
+    second_best_refutation: Option 1 omits a condition required by the stem.
+    option_lengths_chars:
+    - 38
+    - 38
+    - 37
+    - 36
+    - 35
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_UPPER
+    expected_time_class: LONG
+  - item_id: SOC-FINAL-CANARY-009
+    actual_difficulty: D4
+    reasoning_steps: 2
+    evidence_count: 2
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 2
+    second_best_option: 1
+    second_best_refutation: Option 1 omits a condition required by the stem.
+    option_lengths_chars:
+    - 37
+    - 40
+    - 37
+    - 35
+    - 39
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_UPPER
+    expected_time_class: STANDARD
+  - item_id: SOC-FINAL-CANARY-010
+    actual_difficulty: D5
+    reasoning_steps: 3
+    evidence_count: 2
+    strong_distractor_count: 2
+    effective_choice_count: 5
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 1
+    correct_option: 3
+    second_best_option: 1
+    second_best_refutation: Option 1 omits a condition required by the stem.
+    option_lengths_chars:
+    - 42
+    - 41
+    - 41
+    - 40
+    - 42
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: ABOVE_SCHOOL
+    expected_time_class: LONG

@@ -1,0 +1,67 @@
+fixture_id: KOR-N-CANARY-V1
+source_mode: SYNTHETIC_PIPELINE_ONLY
+purpose: Deterministic 10-item ARC_N QA, handoff, page-order, answer-key, and PDF regression.
+content_bundle:
+  batch_id: KOR-N-CANARY-001
+  generator: GPT
+  product_mode: ARC_N
+  subject: KOR
+  scope: supplementary material first + textbook unit 1 structural fixture
+  item_count: 10
+  created_at: 2026-09-21T12:00:00+09:00
+  qa_evidence_filename: ARC_QA_EVIDENCE_KOR_N_CANARY_001.yaml
+  student_manuscript: |-
+    ## QUESTION 1
+    Which statement best describes a claim supported by a passage?
+    1) It repeats a familiar opinion. 2) It matches one isolated word. 3) It is linked to visible evidence. 4) It adds an outside assumption. 5) It ignores limiting conditions.
+
+    ## QUESTION 2
+    What should a reader check first when an option seems too broad?
+    1) Font size. 2) Speaker and limiting condition. 3) Page number. 4) Option length. 5) Personal preference.
+
+    ## QUESTION 3
+    Which evidence use is strongest?
+    1) Naming the detail and its role. 2) Copying a sentence without explanation. 3) Guessing the writer's life. 4) Counting words only. 5) Selecting the longest option.
+
+    ## QUESTION 4
+    Two options share similar words. What is the best next action?
+    1) Choose the first. 2) Choose the shorter. 3) Ignore both. 4) Compare their propositions with all relevant details. 5) Use outside knowledge.
+
+    ## QUESTION 5
+    Which label means the passage does not provide enough support?
+    1) Contradicted. 2) Not established. 3) Fully proved. 4) Identical. 5) Irrelevant task.
+
+    ## QUESTION 6
+    What is the correct explanation order?
+    1) Evidence-reasoning-claim. 2) Reasoning-claim-evidence. 3) Claim-evidence-reasoning. 4) Claim-summary-title. 5) Title-opinion-guess.
+
+    ## QUESTION 7
+    Which revision improves precision?
+    1) Adding a broader claim. 2) Removing evidence. 3) Using more vague pronouns. 4) Hiding a reasoning step. 5) Naming both sides of a comparison.
+
+    ## QUESTION 8
+    What makes independent answer verification possible?
+    1) A visible evidence path. 2) A decorative border. 3) A longer title. 4) An unstated assumption. 5) A random option order alone.
+
+    ## QUESTION 9
+    Which option should be rejected?
+    1) One limited by the source. 2) One supported by two details. 3) One explaining a contrast. 4) One exceeding the passage scope. 5) One preserving the stated condition.
+
+    ## QUESTION 10
+    A complete response should finally do what?
+    1) Repeat every sentence. 2) Answer the task directly. 3) Introduce unrelated facts. 4) Remove the judgment. 5) Replace evidence with preference.
+  answer_key:
+    1: 3
+    2: 2
+    3: 1
+    4: 4
+    5: 2
+    6: 3
+    7: 5
+    8: 1
+    9: 4
+    10: 2
+  visual_asset_manifest: []
+  qc_status:
+    STATUS: PASS
+    SOURCE_MODE: SYNTHETIC_PIPELINE_ONLY

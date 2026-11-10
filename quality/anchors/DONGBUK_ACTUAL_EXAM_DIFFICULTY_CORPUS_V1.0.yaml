@@ -1,0 +1,305 @@
+corpus_id: DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0
+version: 1.0
+date: 2026-09-26
+status: ACTIVE_DEV
+school: 동북고등학교
+curriculum: 2022 개정 교육과정
+purpose: "ARC FINAL 난도 보정용 실제 학교시험 구조 난도 코퍼스"
+teacher_style_prediction: false
+question_wording_reuse: forbidden
+student_score_data_available: false
+
+method:
+  scale: [D1, D2, D3, D4, D5]
+  note: >
+    학생 정답률 기반 심리측정 난도가 아니라 실제 원안 PDF의 문항 구조를 기준으로 한 구조 난도이다.
+    교사 배점은 약한 신호로만 사용하고, 해결 단계, 자료/조건 부담, 복수판단, 적용/비교,
+    계산/모형 부담, 오답 구분 부담을 함께 본다.
+  confidence:
+    HIGH: "기존 blind item-level audit 또는 현재 범위와 직접 겹치는 실제 문항군"
+    MEDIUM_HIGH: "실제 원안 전체를 읽고 구조·배점·과업을 함께 감사"
+  future_recalibration: "실제 학생 정답률/사용자 풀이시간 확보 시 outcome calibration 추가"
+
+exams:
+  - exam_id: KOR_2025_2_MID
+    subject: KOR
+    drive_id: 1bNw6j5elzsIqWjaR3hG9dRmCEJtMoIK5
+    mcq_count: 21
+    constructed_count: 4
+    confidence: HIGH
+    basis: EXISTING_BLIND_ITEM_AUDIT
+    counts: {D1: 1, D2: 7, D3: 9, D4: 4, D5: 0}
+    shares: {D12: 0.381, D3: 0.429, D45: 0.190}
+    mean_level: 2.76
+    notes: "기존 KOR_DONGBUK_2025_2_MID anchor와 동일."
+
+  - exam_id: KOR_2025_2_FINAL
+    subject: KOR
+    drive_id: 16jv7Qh0qRQ7vP109SSLMgVLuSFhVC7rA
+    mcq_count: 21
+    constructed_count: 4
+    confidence: MEDIUM_HIGH
+    basis: FULL_ACTUAL_EXAM_STRUCTURAL_AUDIT
+    counts: {D1: 0, D2: 6, D3: 9, D4: 6, D5: 0}
+    shares: {D12: 0.286, D3: 0.429, D45: 0.286}
+    mean_level: 3.00
+    signatures:
+      - "협상 최소요구 적용"
+      - "중세국어 복수판단"
+      - "자료 적절성"
+      - "작품 비교 및 보기 적용"
+
+  - exam_id: KOR_2026_1_MID
+    subject: KOR
+    drive_id: 1hdeOhrryej_vG7fZa7NizV8a_5HJ3P9y
+    mcq_count: 20
+    constructed_count: 4
+    confidence: MEDIUM_HIGH
+    basis: FULL_ACTUAL_EXAM_STRUCTURAL_AUDIT
+    counts: {D1: 0, D2: 8, D3: 5, D4: 7, D5: 0}
+    shares: {D12: 0.400, D3: 0.250, D45: 0.350}
+    mean_level: 2.95
+    signatures:
+      - "문학 보기 적용/비교"
+      - "음운 자료 복수판단"
+      - "규칙 적용과 사례 분류"
+
+  - exam_id: KOR_2026_1_FINAL
+    subject: KOR
+    drive_id: 1ZZ4wwb7xzF6D2QGUHfg0i-A2myYWi76J
+    mcq_count: 24
+    constructed_count: 4
+    confidence: MEDIUM_HIGH
+    basis: FULL_ACTUAL_EXAM_STRUCTURAL_AUDIT
+    counts: {D1: 1, D2: 7, D3: 10, D4: 6, D5: 0}
+    shares: {D12: 0.333, D3: 0.417, D45: 0.250}
+    mean_level: 2.88
+    signatures:
+      - "논증 비판/재반박"
+      - "토론 근거 평가"
+      - "문학 보기 적용"
+      - "문법 복합 사례 분석"
+
+  - exam_id: SOC_2025_2_MID
+    subject: SOC
+    drive_id: 1Upry2vj1QvYm7D_6ANx0y-J-OkPLEb1Z
+    mcq_count: 24
+    constructed_count: 0
+    confidence: MEDIUM_HIGH
+    basis: FULL_ACTUAL_EXAM_STRUCTURAL_AUDIT
+    counts: {D1: 0, D2: 5, D3: 12, D4: 7, D5: 0}
+    shares: {D12: 0.208, D3: 0.500, D45: 0.292}
+    mean_level: 3.08
+    signatures:
+      - "사상가 있는 대로 고르기"
+      - "칸트/베카리아 형벌론 비교"
+      - "인구 그래프·피라미드·모형"
+      - "기본권 복수판단"
+
+  - exam_id: SOC_2025_2_FINAL
+    subject: SOC
+    drive_id: 1jNfzCL_FGP9nFdqmQOntzYs9MxfvUGt4
+    mcq_count: 22
+    constructed_count: 2
+    confidence: MEDIUM_HIGH
+    basis: FULL_ACTUAL_EXAM_STRUCTURAL_AUDIT
+    counts: {D1: 1, D2: 7, D3: 10, D4: 4, D5: 0}
+    shares: {D12: 0.364, D3: 0.455, D45: 0.182}
+    mean_level: 2.77
+    signatures:
+      - "평화/정의 사상가"
+      - "에너지 그래프·지도"
+      - "국제협약 비교"
+      - "직접지식과 자료해석 혼합"
+
+  - exam_id: SOC_2026_1_MID
+    subject: SOC
+    drive_id: 1xwcZpuFcjsjc-KtX22od6u_9YXCueECN
+    mcq_count: 24
+    constructed_count: 0
+    confidence: MEDIUM_HIGH
+    basis: FULL_ACTUAL_EXAM_STRUCTURAL_AUDIT
+    counts: {D1: 2, D2: 8, D3: 10, D4: 4, D5: 0}
+    shares: {D12: 0.417, D3: 0.417, D45: 0.167}
+    mean_level: 2.67
+    signatures:
+      - "기후 그래프/지역 추론"
+      - "문화권·문화변동 분류"
+      - "다수 ㄱㄴㄷ 복수판단"
+
+  - exam_id: SOC_2026_1_FINAL
+    subject: SOC
+    drive_id: 1Hx3IsjqYqXgY8ra87kZz8eKLFEFzwYDX
+    mcq_count: 22
+    constructed_count: 2
+    confidence: MEDIUM_HIGH
+    basis: FULL_ACTUAL_EXAM_STRUCTURAL_AUDIT
+    counts: {D1: 1, D2: 6, D3: 11, D4: 4, D5: 0}
+    shares: {D12: 0.318, D3: 0.500, D45: 0.182}
+    mean_level: 2.82
+    signatures:
+      - "행복 사상"
+      - "동서양 사고 비교"
+      - "환경윤리 분류"
+      - "문화 태도/다문화 자료 추론"
+
+  - exam_id: SCI_2025_2_MID
+    subject: SCI
+    drive_id: 1hq43RSKzn2kqDqMI7HsrrLyDSiHkR3cB
+    mcq_count: 24
+    constructed_count: 4
+    confidence: MEDIUM_HIGH
+    basis: FULL_ACTUAL_EXAM_STRUCTURAL_AUDIT
+    counts: {D1: 2, D2: 8, D3: 10, D4: 4, D5: 0}
+    shares: {D12: 0.417, D3: 0.417, D45: 0.167}
+    mean_level: 2.67
+    signatures:
+      - "전자기유도"
+      - "산화환원 실제 문항군"
+      - "생물다양성"
+      - "지질/기후 자료"
+
+  - exam_id: SCI_2025_2_FINAL
+    subject: SCI
+    drive_id: 1_N_CxoACXQl6NIbNBWYv_93TqawqLbBU
+    mcq_count: 24
+    constructed_count: 4
+    confidence: MEDIUM_HIGH
+    basis: FULL_ACTUAL_EXAM_STRUCTURAL_AUDIT
+    counts: {D1: 4, D2: 10, D3: 8, D4: 2, D5: 0}
+    shares: {D12: 0.583, D3: 0.333, D45: 0.083}
+    mean_level: 2.33
+    signatures:
+      - "산염기/중화 일부 상위 문항"
+      - "생태계/감염병"
+      - "태양에너지"
+      - "기본개념 비중 상대적으로 높음"
+
+  - exam_id: SCI_2026_1_MID
+    subject: SCI
+    drive_id: 1aHuZCNc3NBeiRWnSYq0c7pnNqrx0joSB
+    mcq_count: 24
+    constructed_count: 4
+    confidence: MEDIUM_HIGH
+    basis: FULL_ACTUAL_EXAM_STRUCTURAL_AUDIT
+    counts: {D1: 3, D2: 9, D3: 9, D4: 3, D5: 0}
+    shares: {D12: 0.500, D3: 0.375, D45: 0.125}
+    mean_level: 2.50
+    signatures:
+      - "주기율/원자가전자"
+      - "생명정보"
+      - "스펙트럼/초기우주"
+      - "표·모형 복수판단"
+
+  - exam_id: SCI_2026_1_FINAL
+    subject: SCI
+    drive_id: 18IpSnaChp1GOb4l6t7RttmO3UJUJ4kqR
+    mcq_count: 24
+    constructed_count: 4
+    confidence: MEDIUM_HIGH
+    basis: FULL_ACTUAL_EXAM_STRUCTURAL_AUDIT
+    counts: {D1: 2, D2: 8, D3: 9, D4: 5, D5: 0}
+    shares: {D12: 0.417, D3: 0.375, D45: 0.208}
+    mean_level: 2.71
+    signatures:
+      - "포물선/낙하 정량 추론"
+      - "화학결합 모형"
+      - "유전정보 자료"
+      - "지구시스템 그래프"
+
+  - exam_id: HIS_2025_2_MID
+    subject: HIS
+    drive_id: 1rYDMyrSub5Tqnnf9uNzWcQCa6AxDPVgl
+    mcq_count: 27
+    constructed_count: 0
+    confidence: MEDIUM_HIGH
+    basis: FULL_ACTUAL_EXAM_STRUCTURAL_AUDIT
+    counts: {D1: 1, D2: 11, D3: 11, D4: 4, D5: 0}
+    shares: {D12: 0.444, D3: 0.407, D45: 0.148}
+    mean_level: 2.67
+
+  - exam_id: HIS_2025_2_FINAL
+    subject: HIS
+    drive_id: 1Tgx0sa74CXLexodCaUYE4200gm4Zlr33
+    mcq_count: 25
+    constructed_count: 2
+    confidence: MEDIUM_HIGH
+    basis: FULL_ACTUAL_EXAM_STRUCTURAL_AUDIT
+    counts: {D1: 2, D2: 11, D3: 9, D4: 3, D5: 0}
+    shares: {D12: 0.520, D3: 0.360, D45: 0.120}
+    mean_level: 2.52
+
+  - exam_id: HIS_2026_1_MID
+    subject: HIS
+    drive_id: 1aEQf7Nq28LvKnJlgPxT-BgBNseOcZJVh
+    mcq_count: 27
+    constructed_count: 0
+    confidence: MEDIUM_HIGH
+    basis: FULL_ACTUAL_EXAM_STRUCTURAL_AUDIT
+    counts: {D1: 2, D2: 12, D3: 10, D4: 3, D5: 0}
+    shares: {D12: 0.519, D3: 0.370, D45: 0.111}
+    mean_level: 2.52
+
+  - exam_id: HIS_2026_1_FINAL
+    subject: HIS
+    drive_id: 1M7ghQxYUyDFwhoz_tCNSLT70mXQI0wWN
+    mcq_count: 25
+    constructed_count: 2
+    confidence: MEDIUM_HIGH
+    basis: FULL_ACTUAL_EXAM_STRUCTURAL_AUDIT
+    counts: {D1: 3, D2: 12, D3: 8, D4: 2, D5: 0}
+    shares: {D12: 0.600, D3: 0.320, D45: 0.080}
+    mean_level: 2.36
+
+scope_specific_anchors:
+  SCI_REDOX_2025_2_MID:
+    source_exam: SCI_2025_2_MID
+    source_items: [8, 9, 10, 11, 12]
+    confidence: HIGH
+    relevance: DIRECT_CURRENT_SCOPE
+    ratings:
+      8: D3
+      9: D2
+      10: D4
+      11: D3
+      12: D4
+    counts: {D1: 0, D2: 1, D3: 2, D4: 2, D5: 0}
+    shares: {D12: 0.200, D3: 0.400, D45: 0.400}
+    mean_level: 3.20
+    notes: >
+      실제 산화·환원 단원과 직접 겹치는 가장 높은 관련성의 앵커.
+      소표본이므로 FINAL 전체에 100% 복제하지 않고 SCI 전체 난도 코퍼스와 혼합한다.
+
+ensemble_summary:
+  KOR:
+    weighting: {KOR_2025_2_MID: 0.35, KOR_2025_2_FINAL: 0.35, KOR_2026_1_MID: 0.15, KOR_2026_1_FINAL: 0.15}
+    center: {D12: 0.343, D3: 0.400, D45: 0.257, mean_level: 2.89}
+    observed_mean_range: [2.76, 3.00]
+  SOC:
+    weighting: {SOC_2025_2_MID: 0.35, SOC_2025_2_FINAL: 0.35, SOC_2026_1_MID: 0.15, SOC_2026_1_FINAL: 0.15}
+    center: {D12: 0.310, D3: 0.472, D45: 0.218, mean_level: 2.87}
+    observed_mean_range: [2.67, 3.08]
+  SCI_ALL:
+    weighting: {SCI_2025_2_MID: 0.35, SCI_2025_2_FINAL: 0.35, SCI_2026_1_MID: 0.15, SCI_2026_1_FINAL: 0.15}
+    center: {D12: 0.488, D3: 0.375, D45: 0.138, mean_level: 2.53}
+    observed_mean_range: [2.33, 2.71]
+  SCI_REDOX:
+    weighting: {DIRECT_REDOX_2025_2_MID: 0.65, SCI_ALL_ENSEMBLE: 0.35}
+    center: {D12: 0.301, D3: 0.391, D45: 0.308, mean_level: 2.97}
+    rationale: "현재 범위 직접 문항군을 최우선으로 하되 5문항 소표본 편향을 SCI 전체 코퍼스로 완화."
+  HIS_DIAGNOSTIC:
+    weighting: {HIS_2025_2_MID: 0.35, HIS_2025_2_FINAL: 0.35, HIS_2026_1_MID: 0.15, HIS_2026_1_FINAL: 0.15}
+    center: {D12: 0.505, D3: 0.372, D45: 0.123, mean_level: 2.55}
+    active_final: false
+
+format_load:
+  KOR: {mcq_range: [20, 24], constructed_typical: 4}
+  SOC: {mcq_range: [22, 24], constructed_range: [0, 2]}
+  SCI: {mcq_typical: 24, constructed_typical: 4}
+  HIS: {mcq_range: [25, 27], constructed_range: [0, 2]}
+
+release_notes:
+  - "FINAL은 이 코퍼스의 문항 문구를 복제하지 않는다."
+  - "FINAL은 과목별 앵커를 사용한다. 전 과목 공통 고정 D4/D5 비율을 강제하지 않는다."
+  - "N°는 본 코퍼스와 난도분포를 일치시킬 의무가 없다."
+  - "정답률 데이터가 없는 구조 난도이므로 confidence와 tolerance를 항상 함께 사용한다."

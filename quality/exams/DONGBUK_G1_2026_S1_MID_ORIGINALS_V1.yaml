@@ -1,0 +1,77 @@
+# Dongbuk Grade 1 actual examination originals — metadata, not copyrighted exam content.
+version: "1.0"
+exam_id: DONGBUK_G1_2026_S1_MID
+school: 동북고등학교
+school_year: 2026
+grade: 1
+semester: 1
+exam_type: MIDTERM
+source_zip_file_id: 1-rwkpvattljgrr5caM-iRc_EAN-Q3T0K
+source_zip_url: https://drive.google.com/file/d/1-rwkpvattljgrr5caM-iRc_EAN-Q3T0K/view
+drive_folder_id: 1jC55w1xhEx5clnzdlPb7SJZniSFdcOzM
+drive_folder_url: https://drive.google.com/drive/folders/1jC55w1xhEx5clnzdlPb7SJZniSFdcOzM
+zip_preserved_in_original_inbox: true
+status: EXTRACTED_VERIFIED_HEADERS_AND_SHA256
+verification:
+  - "All seven PDFs' first pages explicitly identify Dongbuk High School and 2026 semester-1 midterm."
+  - "Number of selected and constructed-response questions transcribed from first-page header, not inferred by counting text extraction."
+  - "Both hashes are retained: sha256_original_zip_member from ZIP bytes; sha256_uploaded_pdf from the normalized PDF saved to Drive. Their bytes differ while rendered pages match."
+  - "This is an originality/provenance inventory. It does not certify every printed question's substantive correctness."
+  - "The exam originals are not included in the GitHub repository; only source metadata and citations."
+subjects:
+  - subject: KOR
+    official_subject: 공통국어1
+    file_id: 1Sh7VxadM72s6QUH0e0E55oVdjBpYmDzn
+    page_count_pdf: 7
+    mcq_count: 20
+    constructed_count: 4
+    sha256_uploaded_pdf: f40409ba3d141a1fdb2a977feb2ce43347ccddc3c8bdbe405a209ca084e75fd8
+    sha256_original_zip_member: 934faece3bba5ae2f117db8b7b99c7390a25f1114455bde590f33c856623f094
+  - subject: ENG
+    official_subject: 공통영어1
+    file_id: 1x2QfzvEMH3Fu7WD9WBis5G62j34d9ZC4
+    page_count_pdf: 9
+    mcq_count: 34
+    constructed_count: 4
+    sha256_uploaded_pdf: d55e526cc269f78a7bb58887175cac24e0de0c7280faf646eb863f421664ee3e
+    sha256_original_zip_member: 49c5d8d0b46c9a8867811828ba579e07e40c8727b716a41241a03d40724c1bc6
+  - subject: MATH
+    official_subject: 공통수학1
+    file_id: 1GWRZJ2ziwTG6mVUlKsGY3hyK8BM6Rkl5
+    page_count_pdf: 4
+    mcq_count: 17
+    constructed_count: 4
+    sha256_uploaded_pdf: 872e1b643f3fb6ae5a29867fed76871aea96dc5c5f1f312e441fa4400e2094a8
+    sha256_original_zip_member: 8c5cfaf3b26293055ec092ef5764e1852527476b96ab8665a227b8743de9c8f7
+  - subject: INFO
+    official_subject: 정보
+    file_id: 1JofMTOJ_DsHCb7QCq3KiCOANWCNqC3Xs
+    page_count_pdf: 4
+    mcq_count: 22
+    constructed_count: 0
+    sha256_uploaded_pdf: 1353a27752b35b6465c4d34dfb57676e24c2423c35c5a7c481d88dcde16d47dc
+    sha256_original_zip_member: a022df97caa75138f953ff0201c9092bb65a975957eff29e9703d78cdb03d99f
+  - subject: SCI
+    official_subject: 통합과학1
+    file_id: 1HreiYYCSks6muwxjElEKm1hfRIMMdioZ
+    page_count_pdf: 8
+    mcq_count: 24
+    constructed_count: 4
+    sha256_uploaded_pdf: 5fef100440503bb959044332bca2b5eb6bd91ff2ed0506f738a2cf2d5ebd4f6d
+    sha256_original_zip_member: ae292790eacd7164677778340f1e2f7d4f03242be3c603506a345edefd8fe1fb
+  - subject: SOC
+    official_subject: 통합사회1
+    file_id: 15jDS4mqCVGPwQQ3poSqYbeeAz6X3STAC
+    page_count_pdf: 7
+    mcq_count: 24
+    constructed_count: 0
+    sha256_uploaded_pdf: 50eacd6b20073872f6d618dadadaa1a83614da4fba1b015e72042709ef6d72e8
+    sha256_original_zip_member: 2b08cf16179b57ae4c4c28980218b93cb4d19444f092a95cfff621fc5c5609c7
+  - subject: HIST
+    official_subject: 한국사1
+    file_id: 1HeHt9nPWCilxmRFlgB-znOCRK-Z_Ybm3
+    page_count_pdf: 7
+    mcq_count: 27
+    constructed_count: 0
+    sha256_uploaded_pdf: 0f4a1e4981fa7a5219dd2886dcb3cd8f45d07e2fb9fa4aa9f809fc926b42324c
+    sha256_original_zip_member: 96968aa1f1a2f2d4373cd1725f3c85a6a9dab21892f3a424ce173ffa5067b1fa

@@ -1,0 +1,62 @@
+fixture_id: SCI-CORE-CANARY-V1
+source_mode: SYNTHETIC_SCOPE_REPRESENTATIVE_ONLY
+purpose: Science unit boundary, one-column CORE, typesetter, PDF preflight, and fault-injection regression.
+content_bundle:
+  batch_id: SCI-CANARY-001
+  generator: CLAUDE
+  product_mode: ARC_CORE
+  subject: SCI
+  scope: registered integrated-science scope signals; not a school-source transcription
+  item_count: 0
+  created_at: 2026-11-10T21:00:00+09:00
+  core_architecture_summary:
+    CENTRAL_QUESTION: How do conservation and change explain matter, life, and energy in the Earth system?
+    MAJOR_BOUNDARIES:
+      - PART 1 - Oxidation and reduction
+      - PART 2 - Evolution and biodiversity
+      - PART 3 - Earth environment and electromagnetic induction
+  student_manuscript: |-
+    # PART 1 - Oxidation and reduction
+
+    Oxidation and reduction are judged first by the movement of oxygen and then, more generally, by the movement of electrons. A substance that loses electrons is oxidized, and a substance that gains electrons is reduced. The two changes always occur together, so a correct explanation names both partners of the reaction.
+
+    When a metal is placed in a solution containing ions of another metal, the more reactive metal gives up electrons and enters the solution as an ion. The number of electrons lost must equal the number gained. Counting cations before and after the reaction therefore depends on the charge of each ion, not only on which metal is more reactive.
+
+    A mass change of a metal plate cannot be decided from reactivity alone. The canary checks the unit boundary and heading hierarchy; it does not replace the school worksheet or authorize factual release of any quantitative item.
+
+    # PART 2 - Evolution and biodiversity
+
+    Variation exists among individuals before the environment changes. Natural selection changes the proportion of traits in a population across generations; it does not change an individual during its lifetime. A graph of trait frequency should be read as a change in a group rather than as growth of one organism.
+
+    Biodiversity is described at the levels of genes, species, and ecosystems. Habitat fragmentation reduces connected area and increases edge conditions, while an ecological corridor restores movement between separated patches. These measures answer different problems and must not be treated as interchangeable.
+
+    The representative fixture keeps each concept linked to the evidence that supports it. It validates that tables or diagrams can later be attached while preserving the active CORE reading flow. No school diagram is reproduced in this synthetic manuscript.
+
+    # PART 3 - Earth environment and electromagnetic induction
+
+    The Earth keeps a nearly constant mean temperature when absorbed solar energy equals emitted energy. Albedo changes the absorbed share, and greenhouse gases change how energy leaves the surface. A heat-budget diagram must balance at every level before any conclusion is drawn from it.
+
+    Trade winds and upwelling connect the atmosphere and the ocean. A weakened trade wind reduces upwelling in the eastern Pacific and raises the sea-surface temperature there. A time series of temperature anomaly is read by its sign and duration, not by a single extreme value.
+
+    A current is induced in a coil only while the magnetic field through the coil is changing. A faster magnet, a stronger magnet, or more turns increases the size of the induced current, and reversing the motion reverses its direction. Production source-fidelity remains blocked until the school-source extraction and final scope review are complete.
+  visual_asset_manifest: []
+  qc_status:
+    CORE_QA_STATUS: PASS
+    SOURCE_MODE: SYNTHETIC_SCOPE_REPRESENTATIVE_ONLY
+fault_injection:
+  - id: STALE_PDF_MASTER
+    field: pdf_master
+    value: ARC_PDF_LAYOUT_MASTER_V2.1
+    expected_gate: SERIALIZER_BLOCK
+  - id: TWO_COLUMN
+    field: student_manuscript_suffix
+    value: "\n\nRender this body as two-column."
+    expected_gate: SERIALIZER_BLOCK
+  - id: SMALL_BODY
+    field: student_manuscript_suffix
+    value: "\n\nUse body 8.8pt."
+    expected_gate: SERIALIZER_BLOCK
+  - id: INTERNAL_ID
+    field: student_manuscript_suffix
+    value: "\n\n[ARC-SCI-OR-999]"
+    expected_gate: SERIALIZER_BLOCK

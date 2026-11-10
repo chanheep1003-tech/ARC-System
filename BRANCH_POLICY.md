@@ -20,3 +20,14 @@ dev 변경은 다음 조건을 만족한 뒤 main으로 옮긴다.
 - Drive의 교과서/기출/유료 문제집 PDF를 GitHub에 업로드하지 않는다.
 - 서로 다른 교사의 기출을 Teacher DNA로 병합하지 않는다.
 - main에서 실험성 수정을 바로 수행하지 않는다.
+
+## 현재 상태 (2026-11-10)
+- dev 전체(1.8.x, 실행 도구·CI·시험 설정 포함)를 1.9.0으로 main에 승격했다. 승격 전 main은 1.0.x에 머물러 dev보다 500커밋 이상 뒤처져 있었다.
+- 실제 생성은 main의 고정 커밋(`ruleset_commit`)을 기준으로 한다.
+- 버전 규칙: main은 `1.9.x` + `status: release`, dev에서 시험 중인 변경은 `1.9.x-dev` + `status: dev`. `tooling/validate_system.py`가 두 값의 일치를 검사한다.
+- 다음 승격도 위 승격 규칙 1~5와 `python tooling/arc.py ci` 전체 통과를 확인한 뒤 dev → main PR 한 번으로 수행한다. CI는 dev와 main 양쪽 PR·push에서 실행된다.
+- 승격은 규칙·도구의 승격이다. 시험 범위가 `PROVISIONAL_REMAINDER`인 동안에는 main에서도 검증본 출판이 차단된다.
+
+## 등록 파일 원칙
+- 규칙은 `SYSTEM_MANIFEST.yaml`이 선택한 파일에서만 효력이 있다. 대체된 이전 버전 파일(`*_V4.0`, `*_V1.0` 등)에 규칙을 덧붙이지 않는다.
+- 추적 파일을 고친 뒤에는 `python tooling/arc.py checksums`로 `CHECKSUMS.sha256`을 갱신한다. CI는 불일치를 실패로 처리한다.

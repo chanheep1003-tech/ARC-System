@@ -8,6 +8,11 @@ ROLE: ARC N°/FINAL 시각자료 제작 규격
 시각자료는 이미지 생성물이 아니라 시험지용 정보 조판물로 제작한다.
 가능하면 벡터·도형·차트·표 기반으로 만들고 생성형 일러스트 스타일은 지양한다.
 
+
+## REFERENCE-FIRST
+렌더링 전에 `ARC_VISUAL_REFERENCE_FIRST_V1.0`을 적용한다.
+가능한 경우 같은 ASSET_TYPE/TEMPLATE_ID의 실제 교과서·학교 자료·기출·사용자 제공 문제집 visual 2개 이상을 먼저 보고, 정보밀도·선굵기·라벨·여백·패널 문법을 추출한다. 원본 자체는 복제하지 않는다.
+
 ## GLOBAL STYLE
 - 흰 배경, 장식 최소, 흑백 우선
 - 선굵기·글꼴·라벨 체계 일관
@@ -81,6 +86,11 @@ BLACK_WHITE_MODE
 ESSENTIAL
 RENDER_NOTES
 SOURCE_FACT(optional)
+REFERENCE_ANCHOR_IDS(optional)
+REFERENCE_SOURCE_LEVELS(optional)
+OBSERVED_VISUAL_GRAMMAR(optional)
+COPY_RISK(optional)
+REFERENCE_GAP(optional)
 GENERATION_TRANSFORM(optional)
 
 ## TEMPLATE IDS

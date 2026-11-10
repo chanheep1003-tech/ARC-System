@@ -1,0 +1,33 @@
+version: KOR-N03-OVERDISCRIMINATION-20260924-V1
+status: ACTIVE-DEV
+source_set:
+  title: ARC_N03_공통국어2_보충자료4편_40Q_V1.0_DRAFT.pdf
+  source_kind: USER_UPLOADED_DRAFT
+  observed_by: USER_FEEDBACK_PLUS_MANUAL_SET_AUDIT
+failure_class:
+  error_code: ERR-KOR-006
+  label: CORE_EXAM_POINT_COVERAGE_GAP_AND_OVERDISCRIMINATION
+  severity: S1
+negative_sentinels:
+  - {item: 8, pattern: DELETE_SPAN_COUNTERFACTUAL}
+  - {item: 17, pattern: MICRO_WORD_DELETION_EFFECT}
+  - {item: 24, pattern: WORD_REPLACEMENT_COUNTERFACTUAL}
+  - {item: 28, pattern: MICRO_REFERENCE_CHAIN}
+positive_sentinels:
+  - {item: 1, pattern: CORE_EXPRESSION_EFFECT}
+  - {item: 11, pattern: CORE_REPETITION_EFFECT}
+  - {item: 22, pattern: EXPRESSION_PLUS_ATTITUDE}
+  - {item: 31, pattern: NONFICTION_STRUCTURE}
+  - {item: 32, pattern: STANDARD_CONCEPT_APPLICATION}
+required_gates:
+  - KOR_CORE_EXAM_POINT_COVERAGE
+  - KOR_DIFFICULTY_BALANCE
+  - KOR_RARE_TASK_BUDGET
+expected_future_profile:
+  foundation_core_min_per_10: 3
+  core_exam_point_min_per_10: 6
+  discrimination_only_max_per_10: 2
+  counterfactual_edit_max_per_10: 1
+  micro_reference_trace_max_per_10: 1
+  default_d4_d5_target: "20-30%"
+regression_status: PENDING_MODEL_CANARY

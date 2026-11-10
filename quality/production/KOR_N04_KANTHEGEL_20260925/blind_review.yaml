@@ -1,0 +1,120 @@
+review_id: KOR-N04-BLIND-V7
+reviewer: independent blind reviewer agent, fresh context, manuscript only (no key, no metadata)
+rounds: 7
+round_policy_exemption: LEGACY bundle reviewed before the one-round blind policy (2026-09-25); kept as a regression fixture
+rounds_history: 7 full blind rounds on successive revisions (v1-v7); every round matched all 10 keys; findings drove revisions
+difficulty_rule: reviewer range estimates resolved to the lower bound
+excluded_inputs:
+- ANSWER_KEY
+- PASS_A
+- AUTHOR_INTENT
+- TARGET_DIFFICULTY
+items:
+- item_id: KOR-N04-001
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 4
+  - 1
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-N04-002
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 2
+  - 4
+  second_best: 2
+  difficulty: D1
+  confidence: HIGH
+  flags:
+  - c
+- item_id: KOR-N04-003
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 2
+  - 3
+  second_best: 2
+  difficulty: D1
+  confidence: HIGH
+  flags:
+  - c
+- item_id: KOR-N04-004
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 4
+  - 3
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-N04-005
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 4
+  - 5
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-N04-006
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 5
+  - 2
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-N04-007
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 4
+  - 3
+  second_best: 4
+  difficulty: D3
+  confidence: MEDIUM
+  flags:
+  - d
+  flag_adjudication:
+    d: Reviewer marked 'd (minor)' but its own note says ㄹ is FALSE by the passage (the text gives the state no role in judging universality) and only a student importing outside knowledge might find ㄹ
+      Hegelian. That is not a distractor that is false only via outside knowledge, so it is recorded as a WARN, not a blocking flag.
+- item_id: KOR-N04-008
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 3
+  - 1
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags:
+  - c
+- item_id: KOR-N04-009
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 4
+  - 2
+  second_best: 4
+  difficulty: D1
+  confidence: HIGH
+  flags:
+  - c
+- item_id: KOR-N04-010
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 4
+  - 1
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []

@@ -1,0 +1,158 @@
+version: SOC-A-THOUGHTMAP-2026-V1.0
+status: ACTIVE
+subject: SOC
+course: 통합사회2-A
+school: 동북고등학교
+curriculum: 2022 개정 교육과정
+registered_at: "2026-09-24T23:00:00+09:00"
+authority: USER_PROVIDED_SCHOOL_ASSIGNED_READING
+source_priority: 3
+scope:
+  title: 생각의 지도
+  author: Richard E. Nisbett
+  test_pages: "156-233"
+  page_count: 78
+canonical_parent:
+  path: /Google Drive/N제 시스템/03_통합사회/학교자료/학교학습지/A파트
+  folder_id: 18RevOW6U-2CMI9pSzsz-2CpTiel88K_b
+raw_source:
+  source_id: SOC-A-THOUGHTMAP-RAW-2026
+  file_name: 생각의지도_p156-233_시험범위_원문스캔.pdf
+  drive_id: 1GxP1P7VhMi61PlDK_sSX7BW7bmQHKE9l
+  mime_type: application/pdf
+  byte_size: 34850127
+  page_count: 78
+  sha256: 312a98ddeb8d45592bbc6d3ba1ace06c8857667acf51372bd978be074be50ff8
+  source_origin: USER_OWNED_BOOK_PHOTO_SCAN
+  visual_review: PASS
+index:
+  markdown:
+    file_name: 생각의지도_p156-233_출제포인트_INDEX_V1.0.md
+    drive_id: 1PK3v00HL3O-n7BjdMutsg_FJDACklR-h
+    sha256: 34be655ebdadb3113fb9795cb289a489eddc463fa0a8493f66f7ee3cf8249ed0
+  google_doc:
+    title: ARC_생각의지도_p156-233_출제포인트_INDEX_V1.0
+    drive_id: 1FUys9UpMVxGXfVCd56qRUt7dlgloyncGD_qDoAzVXUg
+integrity_policy:
+  raw_source_required_for_answer_evidence: true
+  index_may_replace_raw_source: false
+  on_raw_source_unavailable: SOURCE_CHANGED_OR_UNREADABLE
+  external_psychology_expansion: forbidden
+  verbatim_long_reproduction: forbidden
+  generation_mode: NEW_CONTEXT_NEW_DATA_NEW_OPTIONS
+hard_guardrails:
+  - GROUP_MEAN_NOT_INDIVIDUAL
+  - CULTURAL_ESSENTIALISM_FORBIDDEN
+  - INNATE_INTELLIGENCE_OR_LOGIC_INFERENCE_FORBIDDEN
+  - CORRELATION_NOT_DETERMINISM
+  - MODERNIZATION_NOT_EQUAL_WESTERNIZATION
+  - MIDDLE_WAY_NOT_ALWAYS_CORRECT
+  - FORMAL_LOGIC_NOT_ALWAYS_SUFFICIENT_FOR_REALITY
+  - CONTEXTUAL_REASONING_NOT_LOGIC_DENIAL
+  - COMPLEXITY_NOT_EQUAL_SCIENCE
+  - NONVERBAL_IQ_NOT_AUTOMATICALLY_CULTURE_FREE
+  - BOTH_AND_NOT_UNCRITICAL_CONTRADICTION_ACCEPTANCE
+  - EITHER_OR_NOT_TOTAL_CONTEXT_BLINDNESS
+chapters:
+  - id: CH6
+    pages: "156-183"
+    theme: "형식 논리 vs 경험·맥락, Either/Or vs Both/And, 변증법, 모순 수용"
+    priority_axes:
+      - VALIDITY_VS_PLAUSIBILITY
+      - TYPICALITY
+      - DIALECTIC_CHANGE_CONTRADICTION_RELATIONSHIP
+      - CONFLICT_COMPROMISE
+      - CONTRADICTORY_EVIDENCE
+      - MIXED_EMOTION
+  - id: CH7
+    pages: "184-199"
+    theme: "생태·경제·사회구조와 사고방식의 기원"
+    priority_axes:
+      - SOCIAL_ECOLOGY_CAUSAL_CHAIN
+      - CHINA_GREECE_CONTRAST
+      - ATTENTION_METAPHYSICS_COGNITION
+      - FIELD_DEPENDENCE
+      - ANTI_ECOLOGICAL_DETERMINISM
+  - id: CH8
+    pages: "200-230"
+    theme: "의학·법·기업·과학·계약·인권·종교 적용과 상호 장단점"
+    priority_axes:
+      - INSTITUTION_APPLICATION
+      - ATTRIBUTION_ERROR
+      - SCIENCE_MODEL
+      - IQ_CULTURE_BIAS
+      - MODERNIZATION_VS_WESTERNIZATION
+      - BICULTURAL_PRIMING
+  - id: AFTERWORD
+    pages: "231-233"
+    theme: "옮긴이 후기"
+    priority: LOW
+top_priority_page_ranges:
+  S_PLUS:
+    - "165-168"
+    - "173-175"
+    - "189"
+    - "192-194"
+    - "215-216"
+    - "219-222"
+    - "228-230"
+  S:
+    - "159-164"
+    - "168-169"
+    - "181-183"
+    - "186-191"
+    - "198-199"
+    - "203-205"
+    - "206-208"
+    - "209-213"
+    - "216-218"
+    - "223"
+    - "225-226"
+concept_ids:
+  - SOC-A-TM-LOGIC_EXPERIENCE
+  - SOC-A-TM-TYPICALITY
+  - SOC-A-TM-VALIDITY_PLAUSIBILITY
+  - SOC-A-TM-EITHER_BOTH
+  - SOC-A-TM-DIALECTIC_CHANGE
+  - SOC-A-TM-DIALECTIC_CONTRADICTION
+  - SOC-A-TM-DIALECTIC_RELATIONSHIP
+  - SOC-A-TM-CONFLICT_COMPROMISE
+  - SOC-A-TM-CONTRADICTORY_EVIDENCE
+  - SOC-A-TM-MIXED_EMOTION
+  - SOC-A-TM-ORIGIN_SOCIAL_ECOLOGY
+  - SOC-A-TM-CAUSAL_CHAIN
+  - SOC-A-TM-FIELD_DEPENDENCE
+  - SOC-A-TM-INSTITUTION_APPLICATION
+  - SOC-A-TM-ATTRIBUTION
+  - SOC-A-TM-SCIENCE_MODEL
+  - SOC-A-TM-IQ_CULTURE_BIAS
+  - SOC-A-TM-MODERNIZATION
+  - SOC-A-TM-BICULTURAL_PRIMING
+  - SOC-A-TM-CONVERGENCE
+high_difficulty_forms:
+  - TM-01_SAME_LOGIC_DIFFERENT_TYPICALITY
+  - TM-02_VALIDITY_X_PLAUSIBILITY
+  - TM-03_DIALECTIC_THREE_PRINCIPLES
+  - TM-04_CONFLICT_RESOLUTION_COMPARE
+  - TM-05_CONTRADICTORY_RESEARCH_INTEGRATION
+  - TM-06_THREE_OPTION_COMPROMISE
+  - TM-07_POSITIVE_NEGATIVE_EMOTION_GRAPH
+  - TM-08_SOCIAL_ECOLOGY_CAUSAL_NETWORK
+  - TM-09_SYNTHETIC_CHINA_GREECE_CONDITIONS
+  - TM-10_FIELD_DEPENDENCE
+  - TM-11_INSTITUTION_CASES
+  - TM-12_COMPLEX_CAUSATION_INTERNATIONAL_CASE
+  - TM-13_HUMAN_RIGHTS_MODEL_COMPARE
+  - TM-14_ATTRIBUTION_BEFORE_AFTER_CONTEXT
+  - TM-15_SIMPLE_FALSIFIABLE_VS_COMPLEX
+  - TM-16_IQ_TEST_RANKING_REVERSAL
+  - TM-17_MODERNIZATION_VS_WESTERNIZATION
+  - TM-18_CULTURAL_PRIMING
+set_guidance:
+  a_part_25_items:
+    suggested_thoughtmap_items: 5
+    minimum_distinct_axes: 4
+    minimum_data_or_experiment_items: 2
+    require_ch7_or_ch8_application: true
+    require_average_to_individual_trap: true
+    direct_east_west_labeling_overuse: forbidden

@@ -1,0 +1,64 @@
+fixture_id: SOC-CORE-CANARY-V1
+source_mode: SYNTHETIC_SCOPE_REPRESENTATIVE_ONLY
+purpose: A/B/C boundary, one-column CORE, typesetter, PDF preflight, and fault-injection regression.
+content_bundle:
+  batch_id: SOC-CANARY-001
+  generator: GPT
+  product_mode: ARC_CORE
+  subject: SOC
+  scope: registered A/B/C midterm scope signals; not a school-source transcription
+  item_count: 0
+  created_at: 2026-09-23T04:00:00+09:00
+  core_architecture_summary:
+    CENTRAL_QUESTION: How do social principles guide judgments across justice, globalization, population, and rights?
+    MAJOR_BOUNDARIES:
+      - PART A - Justice and distribution
+      - PART B - Globalization and population
+      - PART C - Human rights and constitutional judgment
+  student_manuscript: |-
+    # PART A - Justice and distribution
+
+    A judgment about justice begins by separating equality, equity, and justified difference. Equal treatment applies the same rule, while an equity judgment asks whether relevant differences change what a fair allocation requires. A strong explanation names the distribution criterion and shows why it is relevant to the case.
+
+    Aristotle distinguishes broad justice from forms concerned with allocation and correction. A distribution question compares a criterion with shares, while corrective judgment asks how an imbalance should be restored. The labels matter only when their reasoning is applied consistently to a concrete situation.
+
+    Punishment theories also require careful attribution. A claim must distinguish the ground of punishment, the role of proportionality, and the treatment of persons. The canary checks the A-part page boundary and hierarchy; it does not replace the school worksheet or authorize factual release.
+
+    # PART B - Globalization and population
+
+    Globalization links production, information, capital, and culture across places, while localization emphasizes the particular conditions and strategies of a region. A map or corporate network should be read through connections, roles, and spatial division rather than through one highlighted location alone.
+
+    Population evidence requires comparison among structure, change, and movement. A population pyramid represents age and sex composition; a transition graph represents change over time; a migration map represents flows between places. These visuals support different conclusions and must not be treated as interchangeable.
+
+    The representative fixture keeps population subordinate to the broader B scope. It validates that tables or visuals can later be attached while preserving the active CORE reading flow. No school diagram is reproduced in this synthetic manuscript.
+
+    # PART C - Human rights and constitutional judgment
+
+    Human-rights reasoning identifies the right at issue, the actor imposing a restriction, the purpose of that restriction, and the means used. A constitutional judgment must not jump from a general value to a conclusion without checking the legal relationship and the competing interest.
+
+    Rights may conflict in concrete situations. A defensible response states both claims, tests necessity and proportionality where relevant, and explains why one arrangement protects the core of each right better than an alternative. Merely naming a right is not the same as applying it.
+
+    The C worksheet's verified visual exclusion index removes the power-separation confirmation figure and the Singer and Thoreau civil-disobedience blocks from production evidence. This synthetic canary does not reproduce or rely on those regions. Production source-fidelity remains blocked until the remaining school-source extraction and final scope review are complete.
+  visual_asset_manifest: []
+  qc_status:
+    CORE_QA_STATUS: PASS
+    SOURCE_MODE: SYNTHETIC_SCOPE_REPRESENTATIVE_ONLY
+    C_X_MARK_FILTER: PASS_SYNTHETIC_EXCLUDED_REGIONS_NOT_USED
+    SCOPE_EXCLUSION_INDEX: quality/source/SOC_C_XMARK_EXCLUSION_INDEX_2026_V1.0.yaml
+fault_injection:
+  - id: STALE_PDF_MASTER
+    field: pdf_master
+    value: ARC_PDF_LAYOUT_MASTER_V2.1
+    expected_gate: SERIALIZER_BLOCK
+  - id: TWO_COLUMN
+    field: student_manuscript_suffix
+    value: "\n\nRender this body as two-column."
+    expected_gate: SERIALIZER_BLOCK
+  - id: SMALL_BODY
+    field: student_manuscript_suffix
+    value: "\n\nUse body 8.8pt."
+    expected_gate: SERIALIZER_BLOCK
+  - id: INTERNAL_ID
+    field: student_manuscript_suffix
+    value: "\n\n[ARC-SOC-C-999]"
+    expected_gate: SERIALIZER_BLOCK

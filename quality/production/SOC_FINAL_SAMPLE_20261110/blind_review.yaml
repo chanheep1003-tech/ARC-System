@@ -1,0 +1,110 @@
+review_id: SOC-FINAL-SAMPLE-SYNTHETIC-BLIND
+reviewer: SYNTHETIC_FIXTURE — values derived from the author key for pipeline regression only; NOT an independent blind review
+rounds: 1
+synthetic: true
+excluded_inputs:
+- ANSWER_KEY
+- PASS_A
+- AUTHOR_INTENT
+- TARGET_DIFFICULTY
+items:
+- item_id: SOC-F-S01
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 3
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: SOC-F-S02
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 5
+  - 1
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: SOC-F-S03
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 5
+  - 1
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: SOC-F-S04
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 3
+  - 1
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: SOC-F-S09
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 1
+  - 3
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: SOC-F-S07
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 5
+  - 2
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: SOC-F-S08
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 4
+  - 3
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: SOC-F-S05
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 3
+  - 4
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: SOC-F-S06
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 2
+  - 1
+  second_best: 2
+  difficulty: D4
+  confidence: HIGH
+  flags: []
+- item_id: SOC-F-S10
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 5
+  - 2
+  second_best: 5
+  difficulty: D4
+  confidence: HIGH
+  flags: []

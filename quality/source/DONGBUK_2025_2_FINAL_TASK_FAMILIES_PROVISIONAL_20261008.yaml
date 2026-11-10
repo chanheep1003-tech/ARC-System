@@ -1,0 +1,27 @@
+# Dongbuk 2025 second-semester FINAL exam task-family profile (provisional)
+status: PROVISIONAL_STRUCTURAL_REVIEW
+basis: USER_DRIVE_ORIGINALS_2025_2_FINAL
+method: extracted readable text and pre-existing structural difficulty corpus; diagrams require visual audit
+copyright_policy: task patterns only; no copying question text or choices
+subjects:
+  KOR:
+    source_id: 16jv7Qh0qRQ7vP109SSLMgVLuSFhVC7rA
+    format: {mcq: 21, constructed: 4}
+    task_families: [negotiation stakeholder-interest extraction, agreement satisfying both minimum constraints, middle-korean multiple-feature judgments, spelling and spacing rule application, evidence-supported literature comparison, short-answer with explicit scoring conditions]
+    structural_difficulty: {D1: 0, D2: 6, D3: 9, D4: 6, D5: 0, mean: 3.00}
+  SOC:
+    source_id: 1jNfzCL_FGP9nFdqmQOntzYs9MxfvUGt4
+    format: {mcq: 22, constructed: 2}
+    task_families: [peace and justice thinker comparison, energy statistics graph and map inference, international-agreement comparison, concept plus source-based mixed questions]
+    structural_difficulty: {D1: 1, D2: 7, D3: 10, D4: 4, D5: 0, mean: 2.77}
+  SCI:
+    source_id: 1_N_CxoACXQl6NIbNBWYv_93TqawqLbBU
+    format: {mcq: 24, constructed: 4}
+    task_families: [acid-base neutralization quantitative graph and ion ratios, ecosystem and invasive-species reasoning, solar-energy transformations, infection and prevention, science ethics SSI application, evidence-constrained explanatory constructed response]
+    structural_difficulty: {D1: 4, D2: 10, D3: 8, D4: 2, D5: 0, mean: 2.33}
+comparison_to_2025_2_mid:
+  KOR: {mid: 2.76, final: 3.00, delta: 0.24}
+  SOC: {mid: 3.08, final: 2.77, delta: -0.31}
+  SCI: {mid: 2.67, final: 2.33, delta: -0.34}
+limitations: [structural not empirical difficulty, pre-existing item ratings not independently regraded, full diagram fidelity pending, 2026 midterm item-level comparison pending]
+release: REFERENCE_ONLY_NOT_FINAL_ANCHOR

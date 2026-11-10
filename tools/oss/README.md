@@ -4,6 +4,7 @@
 
 | 도구 | 종류 | ARC에서의 용도 | 상태 |
 |---|---|---|---|
+| ARC 도구 의존성 | pip + apt | `tooling/requirements-smoke.txt`(PyYAML·PyMuPDF·OpenCV) + 나눔 폰트. `tooling/arc.py`·카나리·PDF 검사의 필수 조건 | 자동 설치(--quick) |
 | microsoft/markitdown | CLI(pip) | 교과서·학습지·기출 PDF/DOCX/PPTX → Markdown 변환 후 범위 확인(`markitdown in.pdf -o out.md`) | 자동 설치(--quick) |
 | rtk-ai/rtk | CLI(Rust, OSS판) | 긴 명령 출력 압축으로 토큰 절감 | 자동 설치(--quick) |
 | obra/superpowers | 플러그인 | 계획·TDD·리뷰 워크플로 | 활성 |

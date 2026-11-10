@@ -1,0 +1,9 @@
+# Deprecated source list; no fixed external works are assigned to any future KOR items.
+version: "1.1"
+subject: KOR
+status: SUPERSEDED_FIXED_CANDIDATES_DISABLED
+superseded_by: "quality/korean/ARC_KOR_DYNAMIC_SOURCE_SELECTION_V1.0.yaml"
+fixed_candidate_pool: false
+candidates: []
+instructions: "At EACH item-generation run, search for sources selected from that exact item's skill, genre, difficulty, school style and licensing. Do not assign a title or song merely because it appeared in an earlier candidate list."
+historical_examples: "Previous candidates may be inspected in Git commit 064e9c2 for audit only; not an active roster."

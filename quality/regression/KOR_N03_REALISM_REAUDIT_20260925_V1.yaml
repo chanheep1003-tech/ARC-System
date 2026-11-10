@@ -1,0 +1,26 @@
+fixture_id: KOR-N03-REALISM-REAUDIT-20260925-V1
+date: 2026-09-25
+status: ACTIVE_REGRESSION_SENTINEL
+source:
+  drive_id: 1tcJIcMBuIwcC39Z6GPqp3-Jmgqxz-0ue
+  title: ARC_N03_공통국어2_보충자료4편_40Q_V1.0_DRAFT.pdf
+  role: USER_GENERATED_REGRESSION_ONLY
+observed:
+  item_count: 40
+  prior_issue: OVER_DISCRIMINATION_AND_CORE_EXAM_POINT_IMBALANCE
+  structural_text_signals:
+    most_appropriate_occurrences: 21
+    view_marker_occurrences: 25
+    compare_occurrences: 5
+    appreciation_occurrences: 1
+    student_occurrences: 23
+    meta_process_lexeme_occurrences: 14
+  note: "Occurrence counts are not item counts. They flag patterns for human/model re-audit rather than automatic failure."
+required_reaudit:
+  - KOR_EXAM_REALISM_GATE
+  - KOR_AI_STYLE_LEAK_GATE
+  - KOR_SCHOOL_TASK_FAMILY_GATE
+  - KOR_ATTRACTIVE_DISTRACTOR_GATE
+  - KOR_ANSWER_LENGTH_AUDIT
+  - KOR_CORE_EXAM_POINT_COVERAGE
+release_status: PENDING_FRESH_MODEL_SET_PASS
