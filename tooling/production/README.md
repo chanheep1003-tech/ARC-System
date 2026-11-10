@@ -52,3 +52,25 @@ the exact artifact.
 
 ## Exam context admission (2026-10-03)
 Normal production requires a current exam_context bound to the registered profile hash; pending scope is blocked before source loading and rendering. See tooling/exams/README.md. Archived bundles and synthetic canaries use --archived-replay explicitly; they remain release-blocked even when a diagnostic PDF is rendered. A failed normal Typesetter admission never renders a PDF.
+
+
+## SOC / SCI bundles (2026-11-10)
+SOC and SCI use this same pipeline and the same renderer as KOR. `subject: SOC|SCI` changes only what the content model allows; the page model, numbering, cover, ARC_N inline key and ARC_FINAL separate key PDF are identical.
+
+What a SOC/SCI `items.yaml` may contain in addition to the KOR fields:
+
+- **Standalone items**: omit `set`/`passage`. Items print in bundle order; a set's material prints once, before its first item.
+- **Material sets**: `sets: [{id, prompt, works: [{material: {origin, paragraphs, title?, source_ref?, table?}, figure?}]}]`. `origin` is `GENERATED`, `SCHOOL_SOURCE` or `PUBLIC_DATA`; the last two require `source_ref`. `prompt` replaces the default "다음 글을 읽고 물음에 답하시오." KOR bundles are refused (`MATERIAL_FORBIDDEN_FOR_SUBJECT`): Korean passages must stay registry-locked raw text.
+- **Figures**: `figure: {path, sha256, caption, width?}` on an item or a material work. `path` is inside the bundle directory; the bytes must match `sha256` or nothing is rendered. `caption` is the text description that goes to the blind solver in the manuscript. Render figures deterministically (`tooling/visual/arc_visual_render.py` or an equivalent script) and keep the PNG in the bundle.
+- **Tables / <보기>**: `table: {header, rows, weights?}` and `view: [...]`, as for KOR.
+- **Ion and formula notation**: write Unicode super/subscripts (`A²⁺`, `CO₂`); the renderer draws them as raised/lowered body-font glyphs.
+- **Evidence refs** (`ev`): `P#S#` for sentences of the item's material set, or item-local `STEM`, `VIEW`, `TABLE`, `FIGURE`, `OPTION1`–`OPTION5`, `SCOPE:<id>`. Every option needs at least one.
+- **Scope refs**: `scope_refs` on the bundle or the item states where the content sits in the confirmed range (worksheet/textbook location). Missing refs fail `SCOPE_REF_MISSING`.
+- **Task families**: the shared school families plus subject families (`DATA_INTERPRETATION`, `GRAPH_READING`, `EXPERIMENT_ANALYSIS`, `RIGHTS_CONFLICT`, …; see `SUBJECT_FAMILIES`).
+- **Balance**: SOC/SCI ARC_N enforce only the universal ADVANCED 20–30% target; no per-level band is registered for them.
+
+Report gate names carry the subject (`SCI_EXAM_REALISM_GATE`, `SOC_SCHOOL_TASK_FAMILY_GATE`, …); KOR keeps `KOR_*`.
+
+Fixtures `quality/production/SCI_N_REDOX_SAMPLE_20261110` and `SOC_FINAL_SAMPLE_20261110` are synthetic layout/gate regressions (`tooling/production/test_subject_production.py`). Their blind review is derived from the key and marked `synthetic`; they run only as archived replay and are not publishable content.
+
+ARC_CORE for all three subjects goes through the handoff → typesetter gateway → CORE layout path covered by the CORE canaries; this pipeline is ARC_N / ARC_FINAL only.

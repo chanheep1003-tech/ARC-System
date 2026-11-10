@@ -19,7 +19,7 @@ E2E canary coverage (synthetic content; validates the pipeline, not model-author
 | SOC | SOC_CORE | SOC_N | SOC_FINAL |
 | SCI | SCI_CORE | SCI_N | SCI_FINAL |
 
-The real-bundle production pipeline (`tooling/production/`) and renderer (`tooling/typeset/kor_renderer.py`) are still Korean-only; SOC/SCI production bundles go through the canary typesetting path until a subject renderer exists.
+The real-bundle production pipeline (`tooling/production/`) and renderer (`tooling/typeset/kor_renderer.py`) serve KOR, SOC and SCI with one page model. SOC/SCI add standalone items, bundle material sets and hash-bound figures; see `tooling/production/README.md`.
 
 ## Install full Python tooling (similarity stack)
 ```bash

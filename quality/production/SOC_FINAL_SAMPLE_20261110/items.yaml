@@ -1,0 +1,593 @@
+batch_id: SOC-FINAL-SAMPLE-20261110
+product_mode: ARC_FINAL
+subject: SOC
+generator: CLAUDE
+set_label: ARC FINAL SAMPLE
+course: 통합사회2
+cover_subtitle: 인권·세계화·인구 · 조판 회귀용 합성 10문항
+school_line: 동북고등학교 1학년 · 2026
+created_at: '2026-11-10T22:00:00+09:00'
+scope: 통합사회2 인권·세계화·인구 (합성 조판 회귀 픽스처, 출판 불가)
+fixture:
+  source_mode: SYNTHETIC_PIPELINE_REGRESSION
+  release: FORBIDDEN
+  blind_review: SYNTHETIC
+  SCOPE_EXCLUSION_INDEX: quality/source/SOC_C_XMARK_EXCLUSION_INDEX_2026_V1.0.yaml
+  C_X_MARK_FILTER: PASS_SYNTHETIC_EXCLUDED_REGIONS_NOT_USED
+scope_refs:
+- WORKSHEET:통합사회2 B·C 학습지 (합성 픽스처용 표기)
+sets:
+- id: C1
+  prompt: 다음 글을 읽고 물음에 답하시오.
+  works:
+  - label: null
+    material:
+      origin: GENERATED
+      paragraphs:
+      - A 시는 주민의 안전을 이유로 시내 모든 광장에서 야간 집회를 전면 금지하는 조례를 만들었다.
+      - 주민 갑은 이 조례가 집회의 자유를 지나치게 제한한다고 주장하였다.
+      - A 시는 범죄 예방이라는 목적이 정당하므로 문제가 없다고 반박하였다.
+items:
+- item_id: SOC-F-S01
+  stem: 인권에 대한 설명으로 옳은 것은?
+  options:
+  - 사람이면 누구나 태어날 때부터 가지는 권리이다.
+  - 국가가 법으로 정해야 비로소 생기는 권리이다.
+  - 일정한 나이가 되어야 누릴 수 있는 권리이다.
+  - 필요하면 다른 사람에게 넘겨줄 수 있는 권리이다.
+  - 공익을 위해서라면 본질까지 제한되는 권리이다.
+  answer: 1
+  second_best: 2
+  difficulty: D2
+  family: CONTENT_UNDERSTANDING
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
+  immediate_elimination: 2
+  transfer: false
+  judgments:
+  - axis: content
+    c: CORRECT
+    claim: innate_universal
+    ev:
+    - SCOPE:WORKSHEET-C-RIGHTS
+    v: true
+    why: 인권은 천부적이고 보편적인 권리이다.
+  - axis: content
+    c: STRONG
+    claim: created_by_law
+    ev:
+    - SCOPE:WORKSHEET-C-RIGHTS
+    v: false
+    why: 인권은 법으로 정하기 이전부터 가지는 권리이다.
+  - axis: content
+    c: WEAK
+    claim: age_condition
+    ev:
+    - SCOPE:WORKSHEET-C-RIGHTS
+    v: false
+    why: 나이와 관계없이 누구나 누린다.
+  - axis: content
+    c: MEDIUM
+    claim: transferable
+    ev:
+    - SCOPE:WORKSHEET-C-RIGHTS
+    v: false
+    why: 인권은 양도할 수 없다.
+  - axis: content
+    c: MEDIUM
+    claim: essence_limited
+    ev:
+    - SCOPE:WORKSHEET-C-RIGHTS
+    v: false
+    why: 본질적인 내용은 침해할 수 없다.
+  points: 10
+- item_id: SOC-F-S02
+  stem: 갑은 국가가 운영하는 시설의 잘못으로 손해를 입어 국가에 배상을 요구하였다. 갑이 행사한 기본권의 유형은?
+  options:
+  - 자유권
+  - 청구권
+  - 참정권
+  - 평등권
+  - 사회권
+  answer: 2
+  second_best: 5
+  difficulty: D2
+  family: PRINCIPLE_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
+  immediate_elimination: 2
+  transfer: false
+  judgments:
+  - axis: content
+    c: MEDIUM
+    claim: liberty
+    ev:
+    - STEM
+    v: false
+    why: 국가의 간섭을 받지 않을 권리가 아니라 국가에 요구하는 권리이다.
+  - axis: content
+    c: CORRECT
+    claim: claim_right
+    ev:
+    - STEM
+    v: true
+    why: 국가에 배상을 요구하는 것은 청구권에 해당한다.
+  - axis: content
+    c: WEAK
+    claim: political
+    ev:
+    - STEM
+    v: false
+    why: 정치 과정에 참여하는 권리가 아니다.
+  - axis: content
+    c: WEAK
+    claim: equality
+    ev:
+    - STEM
+    v: false
+    why: 차별받지 않을 권리를 주장하는 상황이 아니다.
+  - axis: content
+    c: STRONG
+    claim: social
+    ev:
+    - STEM
+    v: false
+    why: 인간다운 생활의 보장을 요구하는 것이 아니라 손해의 배상을 요구하는 것이다.
+  points: 10
+- item_id: SOC-F-S03
+  stem: 기본권 제한에 대한 설명으로 옳지 않은 것은?
+  options:
+  - 국가 안전 보장을 위해 제한할 수 있다.
+  - 질서 유지를 위해서도 제한할 수 있다.
+  - 제한할 때에는 법률에 근거해야 한다.
+  - 공공복리를 위해서는 본질도 제한할 수 있다.
+  - 제한은 필요한 경우에 한하여 가능하다.
+  answer: 4
+  second_best: 5
+  difficulty: D2
+  family: EXCEPT_INCORRECT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
+  immediate_elimination: 2
+  transfer: false
+  judgments:
+  - axis: content
+    c: WEAK
+    claim: national_security
+    ev:
+    - SCOPE:WORKSHEET-C-LIMIT
+    v: true
+    why: 제한 목적에 해당한다.
+  - axis: content
+    c: WEAK
+    claim: public_order
+    ev:
+    - SCOPE:WORKSHEET-C-LIMIT
+    v: true
+    why: 제한 목적에 해당한다.
+  - axis: content
+    c: MEDIUM
+    claim: by_statute
+    ev:
+    - SCOPE:WORKSHEET-C-LIMIT
+    v: true
+    why: 법률로써 제한해야 한다.
+  - axis: content
+    c: CORRECT
+    claim: essence_can_be_limited
+    ev:
+    - SCOPE:WORKSHEET-C-LIMIT
+    v: false
+    why: 어떤 목적으로도 본질적인 내용은 침해할 수 없으므로 틀린 진술이다.
+  - axis: content
+    c: STRONG
+    claim: only_when_necessary
+    ev:
+    - SCOPE:WORKSHEET-C-LIMIT
+    v: true
+    why: 필요한 경우에 한하여 제한할 수 있다.
+  points: 10
+- item_id: SOC-F-S04
+  stem: 권리 구제에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?
+  options:
+  - ㄱ
+  - ㄴ
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ
+  - ㄴ, ㄷ
+  answer: 4
+  second_best: 3
+  difficulty: D3
+  family: MULTI_JUDGMENT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  judgments:
+  - axis: content
+    c: STRONG
+    claim: only_a
+    ev:
+    - VIEW
+    v: false
+    why: ㄷ도 옳다.
+  - axis: content
+    c: WEAK
+    claim: only_b
+    ev:
+    - VIEW
+    v: false
+    why: 헌법 소원 심판은 헌법 재판소에 청구한다.
+  - axis: content
+    c: STRONG
+    claim: a_and_b
+    ev:
+    - VIEW
+    v: false
+    why: ㄴ이 틀리다. 청구 기관은 법원이 아니라 헌법 재판소이다.
+  - axis: content
+    c: CORRECT
+    claim: a_and_c
+    ev:
+    - VIEW
+    v: true
+    why: 국가 인권 위원회의 조사·권고와 행정 심판 청구는 모두 옳다.
+  - axis: content
+    c: MEDIUM
+    claim: b_and_c
+    ev:
+    - VIEW
+    v: false
+    why: ㄴ이 틀리다.
+  view:
+  - ㄱ. 국가 인권 위원회는 인권 침해를 조사하고 시정을 권고할 수 있다.
+  - ㄴ. 헌법 소원 심판은 법원에 청구한다.
+  - ㄷ. 행정 기관의 잘못된 처분으로 권리를 침해당하면 행정 심판을 청구할 수 있다.
+  points: 10
+- item_id: SOC-F-S09
+  stem: 다국적 기업이 본사는 선진국의 대도시에, 생산 공장은 개발 도상국에 두는 까닭으로 가장 적절한 것은?
+  options:
+  - 본사는 값싼 노동력이, 공장은 자본과 정보가 중요하기 때문이다.
+  - 본사는 자본과 정보가, 공장은 값싼 노동력이 중요하기 때문이다.
+  - 본사와 공장 모두 넓은 소비 시장에 가까워야 하기 때문이다.
+  - 본사와 공장 모두 원료가 나는 곳에 가까워야 하기 때문이다.
+  - 본사는 원료 산지에, 공장은 연구 시설에 가까워야 하기 때문이다.
+  answer: 2
+  second_best: 1
+  difficulty: D3
+  family: CAUSE_EFFECT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  judgments:
+  - axis: content
+    c: STRONG
+    claim: reversed_roles
+    ev:
+    - SCOPE:WORKSHEET-B-TNC
+    v: false
+    why: 본사와 공장의 입지 조건을 서로 바꾸어 진술하였다.
+  - axis: content
+    c: CORRECT
+    claim: hq_capital_factory_labor
+    ev:
+    - SCOPE:WORKSHEET-B-TNC
+    v: true
+    why: 기능에 따라 유리한 곳에 나누어 배치하는 공간적 분업이다.
+  - axis: content
+    c: STRONG
+    claim: both_market
+    ev:
+    - SCOPE:WORKSHEET-B-TNC
+    v: false
+    why: 생산 공장을 개발 도상국에 두는 주된 까닭은 생산비 절감이다.
+  - axis: content
+    c: MEDIUM
+    claim: both_raw_material
+    ev:
+    - SCOPE:WORKSHEET-B-TNC
+    v: false
+    why: 본사의 입지는 원료 산지와 관련이 적다.
+  - axis: content
+    c: WEAK
+    claim: hq_raw_factory_research
+    ev:
+    - SCOPE:WORKSHEET-B-TNC
+    v: false
+    why: 연구 시설은 주로 선진국에 둔다.
+  points: 10
+- item_id: SOC-F-S07
+  stem: 표는 갑국과 을국의 연령층별 인구 비율을 나타낸 것이다. 표에 대한 분석으로 옳은 것은?
+  options:
+  - 갑국은 을국보다 노년 인구 비율이 높다.
+  - 을국은 갑국보다 총인구가 더 많다.
+  - 갑국은 을국보다 유소년 부양 부담이 크다.
+  - 을국은 갑국보다 생산 연령 인구 비율이 낮다.
+  - 을국은 갑국보다 노년 인구가 4배 많다.
+  answer: 3
+  second_best: 5
+  difficulty: D3
+  family: DATA_INTERPRETATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 2
+  transfer: false
+  judgments:
+  - axis: content
+    c: WEAK
+    claim: gap_more_elderly_share
+    ev:
+    - TABLE
+    v: false
+    why: 노년 인구 비율은 갑국 5%, 을국 20%이다.
+  - axis: content
+    c: STRONG
+    claim: eul_larger_population
+    ev:
+    - TABLE
+    v: false
+    why: 비율만으로는 총인구를 비교할 수 없다.
+  - axis: content
+    c: CORRECT
+    claim: gap_higher_youth_burden
+    ev:
+    - TABLE
+    v: true
+    why: 생산 연령 인구에 대한 유소년 인구의 비가 갑국이 더 크다.
+  - axis: content
+    c: WEAK
+    claim: eul_lower_working_share
+    ev:
+    - TABLE
+    v: false
+    why: 생산 연령 인구 비율은 을국이 68%로 더 높다.
+  - axis: content
+    c: STRONG
+    claim: eul_four_times_elderly
+    ev:
+    - TABLE
+    v: false
+    why: 비율이 4배일 뿐 인구수는 총인구를 알아야 비교할 수 있다.
+  table:
+    header:
+    - 국가
+    - 유소년(%)
+    - 생산 연령(%)
+    - 노년(%)
+    rows:
+    - - 갑
+      - '40'
+      - '55'
+      - '5'
+    - - 을
+      - '12'
+      - '68'
+      - '20'
+    weights:
+    - 0.19
+    - 0.27
+    - 0.3
+    - 0.24
+  points: 10
+- item_id: SOC-F-S08
+  stem: 세계화에 따른 변화에 대한 설명으로 옳지 않은 것은?
+  options:
+  - 국가 간 상품과 자본의 이동이 활발해진다.
+  - 다국적 기업의 활동 범위가 넓어진다.
+  - 문화가 서로 비슷해지는 현상이 나타난다.
+  - 국가 간 빈부 격차가 커지기도 한다.
+  - 지역 간 상호 의존성이 이전보다 약해진다.
+  answer: 5
+  second_best: 4
+  difficulty: D3
+  family: EXCEPT_INCORRECT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  judgments:
+  - axis: content
+    c: WEAK
+    claim: goods_capital_flow
+    ev:
+    - SCOPE:WORKSHEET-B-GLOBAL
+    v: true
+    why: 세계화의 대표적 변화이다.
+  - axis: content
+    c: MEDIUM
+    claim: tnc_expands
+    ev:
+    - SCOPE:WORKSHEET-B-GLOBAL
+    v: true
+    why: 다국적 기업의 활동이 확대된다.
+  - axis: content
+    c: STRONG
+    claim: culture_homogenizes
+    ev:
+    - SCOPE:WORKSHEET-B-GLOBAL
+    v: true
+    why: 부정적으로 보이지만 실제 나타나는 현상이므로 옳은 진술이다.
+  - axis: content
+    c: STRONG
+    claim: gap_widens
+    ev:
+    - SCOPE:WORKSHEET-B-GLOBAL
+    v: true
+    why: 문제점이지만 실제 나타나는 변화이므로 옳은 진술이다.
+  - axis: content
+    c: CORRECT
+    claim: interdependence_weakens
+    ev:
+    - SCOPE:WORKSHEET-B-GLOBAL
+    v: false
+    why: 세계화로 상호 의존성은 강해지므로 틀린 진술이다.
+  points: 10
+- item_id: SOC-F-S05
+  stem: 윗글에 대한 설명으로 가장 적절한 것은?
+  options:
+  - 갑이 침해되었다고 보는 기본권은 참정권이다.
+  - A 시는 목적이 정당하면 문제가 없다고 본다.
+  - 갑은 범죄 예방이라는 목적이 부당하다고 본다.
+  - A 시는 집회의 자유를 기본권으로 보지 않는다.
+  - 조례는 일부 광장의 야간 집회만 금지한다.
+  answer: 2
+  second_best: 3
+  difficulty: D3
+  family: CASE_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  judgments:
+  - axis: content
+    c: MEDIUM
+    claim: right_is_political
+    ev:
+    - P2S1
+    v: false
+    why: 갑이 주장하는 것은 집회의 자유이다.
+  - axis: content
+    c: CORRECT
+    claim: city_purpose_only
+    ev:
+    - P3S1
+    v: true
+    why: A 시는 목적의 정당성만을 근거로 반박한다.
+  - axis: content
+    c: STRONG
+    claim: gap_denies_purpose
+    ev:
+    - P2S1
+    v: false
+    why: 갑은 목적이 아니라 제한의 정도가 지나치다고 주장한다.
+  - axis: content
+    c: STRONG
+    claim: city_denies_right
+    ev:
+    - P3S1
+    v: false
+    why: A 시는 기본권임을 부정하지 않고 제한이 정당하다고 주장한다.
+  - axis: content
+    c: WEAK
+    claim: partial_ban
+    ev:
+    - P1S1
+    v: false
+    why: 모든 광장에서 전면 금지한다.
+  set: C1
+  points: 10
+- item_id: SOC-F-S06
+  stem: 갑의 주장을 뒷받침하는 근거로 가장 적절한 것은?
+  options:
+  - 범죄 예방은 조례로 추구할 수 없는 목적이다.
+  - 집회의 자유는 어떤 경우에도 제한할 수 없다.
+  - 위험한 곳과 시간만 막아도 목적을 이룰 수 있다.
+  - 야간 집회는 주간 집회보다 참여 인원이 적다.
+  - 조례는 법률이 아니어서 주민에게 효력이 없다.
+  answer: 3
+  second_best: 2
+  difficulty: D4
+  family: PRINCIPLE_APPLICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  judgments:
+  - axis: content
+    c: STRONG
+    claim: purpose_illegitimate
+    ev:
+    - P2S1
+    - P3S1
+    v: false
+    why: 갑은 목적 자체를 문제 삼지 않는다.
+  - axis: content
+    c: STRONG
+    claim: absolute_right
+    ev:
+    - P2S1
+    v: false
+    why: 갑은 제한이 '지나치다'고 하였을 뿐 제한이 불가능하다고 하지 않았다.
+  - axis: content
+    c: CORRECT
+    claim: less_restrictive_means
+    ev:
+    - P1S1
+    - P2S1
+    v: true
+    why: 덜 제한하는 방법으로도 목적을 이룰 수 있다면 전면 금지는 지나친 제한이다.
+  - axis: content
+    c: WEAK
+    claim: fewer_participants
+    ev:
+    - P1S1
+    v: false
+    why: 참여 인원은 제한의 정도와 관련이 없다.
+  - axis: content
+    c: MEDIUM
+    claim: ordinance_invalid
+    ev:
+    - P1S1
+    v: false
+    why: 글의 쟁점은 조례의 효력이 아니라 제한의 정도이다.
+  set: C1
+  points: 10
+- item_id: SOC-F-S10
+  stem: 언론사가 공직 후보자의 재산 형성 과정을 보도하자, 후보자는 사생활이 침해되었다고 주장하였다. 이에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?
+  options:
+  - ㄴ
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ
+  - ㄴ, ㄷ
+  - ㄱ, ㄴ, ㄷ
+  answer: 3
+  second_best: 5
+  difficulty: D4
+  family: RIGHTS_CONFLICT
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  judgments:
+  - axis: content
+    c: WEAK
+    claim: only_b
+    ev:
+    - VIEW
+    v: false
+    why: 어느 한 기본권이 항상 우선하지는 않는다.
+  - axis: content
+    c: STRONG
+    claim: a_and_b
+    ev:
+    - VIEW
+    v: false
+    why: ㄴ이 틀리다.
+  - axis: content
+    c: CORRECT
+    claim: a_and_c
+    ev:
+    - VIEW
+    - STEM
+    v: true
+    why: 두 기본권이 충돌하며, 보도 내용의 공적 성격이 판단에 고려된다.
+  - axis: content
+    c: MEDIUM
+    claim: b_and_c
+    ev:
+    - VIEW
+    v: false
+    why: ㄴ이 틀리다.
+  - axis: content
+    c: STRONG
+    claim: all_three
+    ev:
+    - VIEW
+    v: false
+    why: ㄴ이 틀리다. 구체적 상황에 따라 조화롭게 해결해야 한다.
+  view:
+  - ㄱ. 언론사는 표현의 자유를, 후보자는 사생활의 비밀과 자유를 주장할 수 있다.
+  - ㄴ. 두 기본권이 충돌하면 사생활의 비밀과 자유가 항상 우선한다.
+  - ㄷ. 보도 내용이 공적 관심사인지가 판단에 고려될 수 있다.
+  points: 10

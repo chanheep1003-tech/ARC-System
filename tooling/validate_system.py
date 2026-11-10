@@ -455,6 +455,7 @@ def main() -> int:
         "sci_core_canary_fixture",
         "sci_n_canary_fixture",
         "sci_final_canary_fixture",
+        "subject_production_regression_test",
         "arc_cli",
         "local_ci_runner",
         "smoke_requirements",

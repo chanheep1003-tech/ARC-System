@@ -1,0 +1,584 @@
+batch_id: SCI-N-REDOX-SAMPLE-20261110
+product_mode: ARC_N
+subject: SCI
+generator: CLAUDE
+set_label: ARC N° SAMPLE
+course: 통합과학2
+cover_subtitle: 산화·환원 · 조판 회귀용 합성 10문항
+school_line: 동북고등학교 1학년 · 2026
+created_at: '2026-11-10T22:00:00+09:00'
+scope: 통합과학2 산화·환원 (합성 조판 회귀 픽스처, 출판 불가)
+fixture:
+  source_mode: SYNTHETIC_PIPELINE_REGRESSION
+  release: FORBIDDEN
+  blind_review: SYNTHETIC
+scope_refs:
+- TEXTBOOK:통합과학2 산화·환원 단원 (합성 픽스처용 표기)
+sets:
+- id: M1
+  prompt: 다음은 금속의 반응성에 대한 실험이다. 물음에 답하시오.
+  works:
+  - label: null
+    material:
+      origin: GENERATED
+      paragraphs:
+      - (가) 묽은 염산이 든 시험관 세 개에 크기가 같은 마그네슘, 아연, 구리 조각을 각각 넣는다.
+      - (나) 마그네슘과 아연을 넣은 시험관에서는 기체가 발생하였고, 마그네슘을 넣은 시험관에서 기체가 더 빠르게 발생하였다.
+      - (다) 구리를 넣은 시험관에서는 아무 변화가 없었다.
+items:
+- item_id: SCI-N-S01
+  stem: 산화·환원 반응에 대한 설명으로 옳은 것은?
+  options:
+  - 산소를 얻는 반응은 환원이다.
+  - 전자를 잃는 반응은 산화이다.
+  - 산화와 환원은 따로 일어난다.
+  - 전자를 얻은 물질은 산화된다.
+  - 산소를 잃는 반응은 산화이다.
+  answer: 2
+  second_best: 4
+  difficulty: D1
+  family: CONTENT_UNDERSTANDING
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
+  immediate_elimination: 2
+  transfer: false
+  judgments:
+  - axis: content
+    c: MEDIUM
+    claim: oxygen_gain_reduction
+    ev:
+    - SCOPE:TEXTBOOK-REDOX-DEF
+    v: false
+    why: 산소를 얻는 반응은 산화이다.
+  - axis: content
+    c: CORRECT
+    claim: electron_loss_oxidation
+    ev:
+    - SCOPE:TEXTBOOK-REDOX-DEF
+    v: true
+    why: 전자를 잃는 반응이 산화라는 정의와 일치한다.
+  - axis: content
+    c: WEAK
+    claim: redox_separate
+    ev:
+    - SCOPE:TEXTBOOK-REDOX-DEF
+    v: false
+    why: 산화와 환원은 항상 동시에 일어난다.
+  - axis: content
+    c: STRONG
+    claim: electron_gain_oxidized
+    ev:
+    - SCOPE:TEXTBOOK-REDOX-DEF
+    v: false
+    why: 전자를 얻은 물질은 환원된다.
+  - axis: content
+    c: MEDIUM
+    claim: oxygen_loss_oxidation
+    ev:
+    - SCOPE:TEXTBOOK-REDOX-DEF
+    v: false
+    why: 산소를 잃는 반응은 환원이다.
+- item_id: SCI-N-S02
+  stem: 산화 구리(Ⅱ)와 탄소가 반응하여 구리와 이산화 탄소가 생성된다. 이 반응에 대한 설명으로 옳지 않은 것은?
+  options:
+  - 산화 구리(Ⅱ)는 산소를 잃는다.
+  - 탄소는 산소를 얻어 산화된다.
+  - 산화 구리(Ⅱ)는 환원된다.
+  - 탄소는 산화 구리(Ⅱ)를 환원시킨다.
+  - 구리 이온은 반응에서 전자를 잃는다.
+  answer: 5
+  second_best: 4
+  difficulty: D2
+  family: EXCEPT_INCORRECT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
+  immediate_elimination: 2
+  transfer: false
+  judgments:
+  - axis: content
+    c: WEAK
+    claim: cuo_loses_oxygen
+    ev:
+    - STEM
+    v: true
+    why: 산화 구리(Ⅱ)가 구리가 되므로 산소를 잃는다.
+  - axis: content
+    c: WEAK
+    claim: carbon_oxidized
+    ev:
+    - STEM
+    v: true
+    why: 탄소가 이산화 탄소가 되므로 산소를 얻어 산화된다.
+  - axis: content
+    c: MEDIUM
+    claim: cuo_reduced
+    ev:
+    - STEM
+    v: true
+    why: 산소를 잃으므로 환원된다.
+  - axis: content
+    c: STRONG
+    claim: carbon_reduces_cuo
+    ev:
+    - STEM
+    v: true
+    why: 탄소가 산소를 가져가 산화 구리(Ⅱ)를 환원시킨다.
+  - axis: content
+    c: CORRECT
+    claim: copper_ion_loses_electron
+    ev:
+    - STEM
+    v: false
+    why: 구리 이온은 전자를 얻어 구리가 되므로 전자를 잃는다는 진술은 틀리다.
+- item_id: SCI-N-S03
+  stem: 표는 금속 A~C를 각 금속 이온이 들어 있는 수용액에 넣었을 때의 결과이다. 금속의 반응성을 옳게 비교한 것은?
+  options:
+  - A > B > C
+  - B > C > A
+  - C > A > B
+  - A > C > B
+  - C > B > A
+  answer: 4
+  second_best: 1
+  difficulty: D2
+  family: DATA_INTERPRETATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 2
+  transfer: false
+  judgments:
+  - axis: content
+    c: STRONG
+    claim: order_abc
+    ev:
+    - TABLE
+    v: false
+    why: C는 B 이온 수용액과 반응하므로 C가 B보다 반응성이 크다.
+  - axis: content
+    c: WEAK
+    claim: order_bca
+    ev:
+    - TABLE
+    v: false
+    why: B는 어느 수용액과도 반응하지 않아 반응성이 가장 작다.
+  - axis: content
+    c: MEDIUM
+    claim: order_cab
+    ev:
+    - TABLE
+    v: false
+    why: C는 A 이온 수용액과 반응하지 않으므로 A보다 반응성이 작다.
+  - axis: content
+    c: CORRECT
+    claim: order_acb
+    ev:
+    - TABLE
+    v: true
+    why: A는 B, C 이온과 모두 반응하고 C는 B 이온과만 반응하므로 A > C > B이다.
+  - axis: content
+    c: WEAK
+    claim: order_cba
+    ev:
+    - TABLE
+    v: false
+    why: A가 두 수용액 모두와 반응하므로 A가 가장 크다.
+  table:
+    header:
+    - 금속
+    - A 이온 수용액
+    - B 이온 수용액
+    - C 이온 수용액
+    rows:
+    - - A
+      - '-'
+      - 반응함
+      - 반응함
+    - - B
+      - 반응 안 함
+      - '-'
+      - 반응 안 함
+    - - C
+      - 반응 안 함
+      - 반응함
+      - '-'
+    weights:
+    - 0.16
+    - 0.28
+    - 0.28
+    - 0.28
+- item_id: SCI-N-S04
+  stem: 질산 은 수용액에 구리줄을 넣었더니 구리줄 표면에 은이 석출되었다. 이에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?
+  options:
+  - ㄱ
+  - ㄴ
+  - ㄱ, ㄷ
+  - ㄴ, ㄷ
+  - ㄱ, ㄴ, ㄷ
+  answer: 3
+  second_best: 5
+  difficulty: D3
+  family: MULTI_JUDGMENT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  judgments:
+  - axis: content
+    c: STRONG
+    claim: only_a
+    ev:
+    - VIEW
+    v: false
+    why: ㄷ도 옳다. 구리 이온이 생겨 수용액이 푸른색을 띤다.
+  - axis: content
+    c: WEAK
+    claim: only_b
+    ev:
+    - VIEW
+    v: false
+    why: 은 이온 2개가 구리 이온 1개로 바뀌므로 전체 양이온 수는 감소한다.
+  - axis: content
+    c: CORRECT
+    claim: a_and_c
+    ev:
+    - VIEW
+    v: true
+    why: 구리는 전자를 잃고 산화되며, 구리 이온 때문에 수용액이 푸른색을 띤다.
+  - axis: content
+    c: MEDIUM
+    claim: b_and_c
+    ev:
+    - VIEW
+    v: false
+    why: ㄴ이 틀리다. 양이온 수는 감소한다.
+  - axis: content
+    c: STRONG
+    claim: all_three
+    ev:
+    - VIEW
+    v: false
+    why: ㄴ이 틀리다. 은 이온 2개가 반응할 때 구리 이온은 1개만 생긴다.
+  view:
+  - ㄱ. 구리는 전자를 잃고 산화된다.
+  - ㄴ. 수용액 속 전체 양이온 수는 증가한다.
+  - ㄷ. 수용액은 점점 푸른색을 띤다.
+- item_id: SCI-N-S05
+  stem: 이 실험에 대한 설명으로 옳은 것은?
+  options:
+  - (나)에서 발생한 기체는 산소이다.
+  - (나)에서 금속은 전자를 얻는다.
+  - 구리는 수소보다 반응성이 크다.
+  - 마그네슘은 아연보다 반응성이 작다.
+  - (나)에서 수소 이온은 환원된다.
+  answer: 5
+  second_best: 2
+  difficulty: D2
+  family: EXPERIMENT_ANALYSIS
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 2
+  transfer: false
+  judgments:
+  - axis: content
+    c: MEDIUM
+    claim: gas_is_oxygen
+    ev:
+    - P2S1
+    v: false
+    why: 금속과 묽은 염산이 반응하면 수소 기체가 발생한다.
+  - axis: content
+    c: STRONG
+    claim: metal_gains_electron
+    ev:
+    - P2S1
+    v: false
+    why: 금속은 전자를 잃고 양이온이 된다.
+  - axis: content
+    c: MEDIUM
+    claim: copper_above_hydrogen
+    ev:
+    - P3S1
+    v: false
+    why: 구리는 반응하지 않으므로 수소보다 반응성이 작다.
+  - axis: content
+    c: WEAK
+    claim: mg_below_zn
+    ev:
+    - P2S1
+    v: false
+    why: 마그네슘에서 기체가 더 빠르게 발생하므로 반응성이 더 크다.
+  - axis: content
+    c: CORRECT
+    claim: hydrogen_ion_reduced
+    ev:
+    - P2S1
+    v: true
+    why: 수소 이온이 전자를 얻어 수소 기체가 되므로 환원된다.
+  set: M1
+- item_id: SCI-N-S06
+  stem: (가)에서 금속 조각의 크기를 같게 한 까닭으로 가장 적절한 것은?
+  options:
+  - 발생하는 기체의 종류를 같게 하기 위해서이다.
+  - 금속의 종류에 따른 차이만 비교하기 위해서이다.
+  - 묽은 염산의 농도가 변하지 않게 하기 위해서이다.
+  - 반응이 끝나는 시간을 모두 같게 하기 위해서이다.
+  - 넣어 준 금속이 모두 반응하게 하기 위해서이다.
+  answer: 2
+  second_best: 4
+  difficulty: D2
+  family: VARIABLE_CONTROL
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
+  immediate_elimination: 2
+  transfer: false
+  judgments:
+  - axis: content
+    c: WEAK
+    claim: same_gas_kind
+    ev:
+    - P1S1
+    v: false
+    why: 기체의 종류는 금속 조각의 크기와 관계없다.
+  - axis: content
+    c: CORRECT
+    claim: isolate_metal_kind
+    ev:
+    - P1S1
+    v: true
+    why: 금속의 종류 외의 조건을 같게 해야 반응성 차이만 비교할 수 있다.
+  - axis: content
+    c: MEDIUM
+    claim: keep_acid_concentration
+    ev:
+    - P1S1
+    v: false
+    why: 염산의 농도는 금속 조각의 크기로 통제하는 조건이 아니다.
+  - axis: content
+    c: STRONG
+    claim: same_end_time
+    ev:
+    - P1S1
+    - P2S1
+    v: false
+    why: 반응 빠르기가 다르므로 끝나는 시간은 같아지지 않는다.
+  - axis: content
+    c: MEDIUM
+    claim: all_metal_reacts
+    ev:
+    - P3S1
+    v: false
+    why: 구리는 크기와 관계없이 반응하지 않는다.
+  set: M1
+- item_id: SCI-N-S07
+  stem: 그림은 황산 구리(Ⅱ) 수용액에 아연판을 넣었을 때 수용액 속 구리 이온과 아연 이온의 수를 시간에 따라 나타낸 것이다. 이에 대한 설명으로 옳은 것은?
+  options:
+  - A는 아연 이온의 수를 나타낸다.
+  - 반응이 진행될수록 전체 양이온 수는 감소한다.
+  - t 이후에도 아연판의 질량은 계속 변한다.
+  - t까지 수용액의 푸른색은 점점 옅어진다.
+  - 아연은 전자를 얻어 아연 이온이 된다.
+  answer: 4
+  second_best: 2
+  difficulty: D3
+  family: GRAPH_READING
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  judgments:
+  - axis: content
+    c: MEDIUM
+    claim: a_is_zinc_ion
+    ev:
+    - FIGURE
+    v: false
+    why: A는 감소하므로 반응하여 없어지는 구리 이온이다.
+  - axis: content
+    c: STRONG
+    claim: total_cation_decreases
+    ev:
+    - FIGURE
+    v: false
+    why: 구리 이온 1개가 없어질 때 아연 이온 1개가 생기므로 전체 양이온 수는 일정하다.
+  - axis: content
+    c: MEDIUM
+    claim: mass_changes_after_t
+    ev:
+    - FIGURE
+    v: false
+    why: t 이후 이온 수가 변하지 않으므로 반응이 끝났다.
+  - axis: content
+    c: CORRECT
+    claim: blue_fades
+    ev:
+    - FIGURE
+    v: true
+    why: 푸른색을 띠는 구리 이온이 줄어들므로 색이 옅어진다.
+  - axis: content
+    c: STRONG
+    claim: zinc_gains_electron
+    ev:
+    - FIGURE
+    v: false
+    why: 아연은 전자를 잃고 아연 이온이 된다.
+  figure:
+    path: figures/ion_count.png
+    sha256: 4d20f1cd9bb72f27ce61fa6ba794193ff5c4973ee859fb583c2447134a824866
+    width: 0.82
+    caption: 시간에 따른 이온 수 변화 그래프. A는 N에서 0으로 감소하고 B는 0에서 N으로 증가하며, 시각 t 이후에는 두 값이 일정하다.
+- item_id: SCI-N-S08
+  stem: A²⁺ 6개가 들어 있는 수용액에 금속 B를 넣었더니 A²⁺이 모두 반응하여 B³⁺이 생성되었다. 생성된 B³⁺의 수는?
+  options:
+  - 2개
+  - 3개
+  - 4개
+  - 6개
+  - 9개
+  answer: 3
+  second_best: 4
+  difficulty: D3
+  family: QUANTITATIVE_REASONING
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  judgments:
+  - axis: content
+    c: WEAK
+    claim: count_2
+    ev:
+    - STEM
+    v: false
+    why: 전자 12개를 주려면 B 원자 4개가 필요하다.
+  - axis: content
+    c: MEDIUM
+    claim: count_3
+    ev:
+    - STEM
+    v: false
+    why: 전하의 크기 3을 그대로 답으로 본 것이다.
+  - axis: content
+    c: CORRECT
+    claim: count_4
+    ev:
+    - STEM
+    v: true
+    why: A²⁺ 6개가 전자 12개를 얻고, B 1개가 전자 3개를 잃으므로 B³⁺은 4개 생성된다.
+  - axis: content
+    c: STRONG
+    claim: count_6
+    ev:
+    - STEM
+    v: false
+    why: 이온이 1:1로 바뀐다고 본 것으로, 전하가 다른 점을 놓쳤다.
+  - axis: content
+    c: STRONG
+    claim: count_9
+    ev:
+    - STEM
+    v: false
+    why: 비를 거꾸로 적용한 것이다.
+- item_id: SCI-N-S09
+  stem: A⁺ 12개가 들어 있는 수용액에 금속 B를 넣어 반응시켰더니, A⁺이 6개 남았을 때 수용액 속 전체 양이온 수는 9개였다. 이에 대한 설명으로 옳은 것은? (단, 음이온은 반응하지 않는다.)
+  options:
+  - B 이온 1개의 전하는 +1이다.
+  - 이때까지 반응한 B 원자는 6개이다.
+  - A⁺이 모두 반응하면 양이온은 6개이다.
+  - 반응이 진행될수록 양이온 수는 증가한다.
+  - B는 전자를 얻어 양이온이 된다.
+  answer: 3
+  second_best: 2
+  difficulty: D4
+  family: BEFORE_AFTER_COMPARISON
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  judgments:
+  - axis: content
+    c: MEDIUM
+    claim: b_charge_1
+    ev:
+    - STEM
+    v: false
+    why: A⁺ 6개가 반응하여 B 이온 3개가 생겼으므로 B 이온의 전하는 +2이다.
+  - axis: content
+    c: STRONG
+    claim: b_atoms_6
+    ev:
+    - STEM
+    v: false
+    why: 전체 9개 중 A⁺이 6개이므로 B 이온은 3개이다.
+  - axis: content
+    c: CORRECT
+    claim: final_cations_6
+    ev:
+    - STEM
+    v: true
+    why: A⁺ 12개가 전자 12개를 얻으면 B²⁺ 6개가 생성된다.
+  - axis: content
+    c: STRONG
+    claim: cations_increase
+    ev:
+    - STEM
+    v: false
+    why: 12개에서 9개로 줄었으므로 감소한다.
+  - axis: content
+    c: WEAK
+    claim: b_gains_electron
+    ev:
+    - STEM
+    v: false
+    why: B는 전자를 잃고 양이온이 된다.
+- item_id: SCI-N-S10
+  stem: 산화·환원 반응의 예로 옳은 것은?
+  options:
+  - 철이 공기 중에서 녹슨다.
+  - 설탕이 물에 녹는다.
+  - 얼음이 녹아 물이 된다.
+  - 소금물에서 물이 증발한다.
+  - 드라이아이스가 승화한다.
+  answer: 1
+  second_best: 2
+  difficulty: D1
+  family: CASE_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
+  immediate_elimination: 3
+  transfer: false
+  judgments:
+  - axis: content
+    c: CORRECT
+    claim: iron_rusts
+    ev:
+    - SCOPE:TEXTBOOK-REDOX-LIFE
+    v: true
+    why: 철이 산소와 결합하여 산화되는 반응이다.
+  - axis: content
+    c: MEDIUM
+    claim: sugar_dissolves
+    ev:
+    - SCOPE:TEXTBOOK-REDOX-LIFE
+    v: false
+    why: 용해는 전자의 이동이 없는 변화이다.
+  - axis: content
+    c: WEAK
+    claim: ice_melts
+    ev:
+    - SCOPE:TEXTBOOK-REDOX-LIFE
+    v: false
+    why: 상태 변화이다.
+  - axis: content
+    c: WEAK
+    claim: water_evaporates
+    ev:
+    - SCOPE:TEXTBOOK-REDOX-LIFE
+    v: false
+    why: 상태 변화이다.
+  - axis: content
+    c: WEAK
+    claim: dry_ice_sublimes
+    ev:
+    - SCOPE:TEXTBOOK-REDOX-LIFE
+    v: false
+    why: 상태 변화이다.

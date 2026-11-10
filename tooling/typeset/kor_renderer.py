@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Korean production renderer for ARC_N / ARC_FINAL problem sets.
+"""Production renderer for ARC_N / ARC_FINAL problem sets (KOR, SOC, SCI share this one layout).
+
+Korean-language typesetting: registry passages (KOR), bundle material sets, standalone
+items, tables, <보기> boxes and hash-bound figures (SOC/SCI) all use the same page model.
 
 ARC_N:     cover, blank verso, two-column problem pages, blank separator, answer key.
 ARC_FINAL: cover, blank verso, two-column problem pages (no key); the answer key
@@ -58,6 +61,21 @@ def fonts() -> dict[str, fitz.Font]:
 
 _FONTS: dict[str, fitz.Font] | None = None
 
+# Unicode super/subscripts (ion charges, formulas: A²⁺, CO₂) are drawn as small raised/lowered
+# ordinary glyphs so they come from the body font instead of a wide CJK fallback.
+SUPERSCRIPTS = dict(zip("⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻", "0123456789+-"))
+SUBSCRIPTS = dict(zip("₀₁₂₃₄₅₆₇₈₉₊₋", "0123456789+-"))
+SCRIPT_SCALE = 0.62
+SCRIPT_SHIFT = {"^": -0.36, "_": 0.14}  # baseline shift as a share of the font size
+
+
+def base_key(key: str) -> str:
+    return key.rstrip("^_")
+
+
+def run_size(key: str, size: float) -> float:
+    return size * SCRIPT_SCALE if key[-1] in "^_" else size
+
 
 def runs(text: str, key: str) -> list[tuple[str, str]]:
     """Split text into (font key, run) so every glyph comes from a font that has it.
@@ -68,7 +86,11 @@ def runs(text: str, key: str) -> list[tuple[str, str]]:
     out: list[tuple[str, str]] = []
     for ch in text:
         k = key
-        if not ch.isspace() and not _FONTS[key].has_glyph(ord(ch)):
+        if ch in SUPERSCRIPTS:
+            ch, k = SUPERSCRIPTS[ch], key + "^"
+        elif ch in SUBSCRIPTS:
+            ch, k = SUBSCRIPTS[ch], key + "_"
+        elif not ch.isspace() and not _FONTS[key].has_glyph(ord(ch)):
             if "H" in _FONTS and _FONTS["H"].has_glyph(ord(ch)):
                 k = "H"
             else:
@@ -82,12 +104,14 @@ def runs(text: str, key: str) -> list[tuple[str, str]]:
 
 def put(page: fitz.Page, pos, text: str, fontname: str = "R", fontsize: float = SIZE, color=None) -> None:
     x, y = pos
-    for k, t in runs(text, fontname):
+    for rk, t in runs(text, fontname):
+        k, size = base_key(rk), run_size(rk, fontsize)
         if k not in {f[4] for f in page.get_fonts()}:  # embed only fonts a page actually uses (unused fonts are not subset)
             page.insert_font(fontname=k, fontfile=str(FONT_FILES.get(k) or fallback_file()))
         kw = {"color": color} if color is not None else {}
-        page.insert_text((x, y), t, fontname=k, fontsize=fontsize, **kw)
-        x += _FONTS[k].text_length(t, fontsize=fontsize)
+        dy = SCRIPT_SHIFT.get(rk[-1], 0.0) * fontsize
+        page.insert_text((x, y + dy), t, fontname=k, fontsize=size, **kw)
+        x += _FONTS[k].text_length(t, fontsize=size)
 
 
 class Layout:
@@ -95,7 +119,7 @@ class Layout:
         self.f = fonts()
 
     def width(self, text: str, key: str = "R", size: float = SIZE) -> float:
-        return sum(self.f[k].text_length(t, fontsize=size) for k, t in runs(text, key))
+        return sum(self.f[base_key(k)].text_length(t, fontsize=run_size(k, size)) for k, t in runs(text, key))
 
     def wrap(self, text: str, w: float, key: str = "R", size: float = SIZE, first: float = 0.0, rest: float = 0.0):
         """Greedy wrap on spaces (어절); char break only for tokens wider than the line."""
@@ -133,45 +157,52 @@ class Block:
             self.h += lh
 
 
-def build_blocks(L: Layout, bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[str, str], set_header) -> list[Block]:
+def set_blocks(L: Layout, bundle: dict[str, Any], src: dict[str, Any], labels: dict[str, str], set_header) -> list[Block]:
     blocks: list[Block] = []
-    for src in sources:
-        head = Block()
-        head.text(L.wrap(set_header(bundle, src["id"], labels), COL_W, "B"), key="B")
-        head.h += 6
-        blocks.append(head)
-        if src.get("lead"):  # e.g. [앞부분의 줄거리] printed before the passage
-            lb = Block()
-            for line in src["lead"]:
-                lb.text(L.wrap(line, COL_W, size=SIZE - 0.8, first=0, rest=0), size=SIZE - 0.8, lh=(SIZE - 0.8) * 1.55)
-            lb.h += 8
-            blocks.append(lb)
-        for w in src["works"]:
-            if w.get("label"):
-                lab = Block()
-                lab.text([(0, w["label"])], key="B")
-                blocks.append(lab)
-            if w["form"] == "VERSE":
-                every = w.get("line_numbers") or 0
-                num_w = L.width("00", size=SIZE - 2) + 6 if every else 0
-                n = 0
-                for unit in w["display"]:
-                    b = Block(splittable=True)
-                    if unit.strip():
-                        n += 1
-                        if every and n % every == 0:
-                            t = str(n)
-                            b.ops.append(("text", COL_W - L.width(t, size=SIZE - 2), SIZE, t, "R", SIZE - 2))
-                        b.text(L.wrap(unit, COL_W - num_w, first=0, rest=SIZE * 1.5))
-                    else:
-                        b.h += LH * 0.6
-                    blocks.append(b)
-            else:
-                for para in w["display"]:
-                    b = Block(splittable=True)
-                    b.text(L.wrap(para, COL_W, first=SIZE))
-                    b.h += 2
-                    blocks.append(b)
+    head = Block()
+    head.text(L.wrap(set_header(bundle, src["id"], labels), COL_W, "B"), key="B")
+    head.h += 6
+    blocks.append(head)
+    if src.get("lead"):  # e.g. [앞부분의 줄거리] printed before the passage
+        lb = Block()
+        for line in src["lead"]:
+            lb.text(L.wrap(line, COL_W, size=SIZE - 0.8, first=0, rest=0), size=SIZE - 0.8, lh=(SIZE - 0.8) * 1.55)
+        lb.h += 8
+        blocks.append(lb)
+    for w in src["works"]:
+        if w.get("label"):
+            lab = Block()
+            lab.text([(0, w["label"])], key="B")
+            blocks.append(lab)
+        if w["form"] == "VERSE":
+            every = w.get("line_numbers") or 0
+            num_w = L.width("00", size=SIZE - 2) + 6 if every else 0
+            n = 0
+            for unit in w["display"]:
+                b = Block(splittable=True)
+                if unit.strip():
+                    n += 1
+                    if every and n % every == 0:
+                        t = str(n)
+                        b.ops.append(("text", COL_W - L.width(t, size=SIZE - 2), SIZE, t, "R", SIZE - 2))
+                    b.text(L.wrap(unit, COL_W - num_w, first=0, rest=SIZE * 1.5))
+                else:
+                    b.h += LH * 0.6
+                blocks.append(b)
+        else:
+            for para in w["display"]:
+                b = Block(splittable=True)
+                b.text(L.wrap(para, COL_W, first=SIZE))
+                b.h += 2
+                blocks.append(b)
+        if w.get("table") or w.get("figure"):  # material sets (SOC/SCI): shared table / figure
+            mb = Block()
+            if w.get("table"):
+                table(L, mb, w["table"])
+            if w.get("figure"):
+                figure(L, mb, w["figure"])
+            blocks.append(mb)
+        if w.get("title"):
             src_b = Block()
             small = SIZE - 0.6
             for _, t in L.wrap(f"― {w['title']} ―", COL_W, size=small):
@@ -179,14 +210,33 @@ def build_blocks(L: Layout, bundle: dict[str, Any], sources: list[dict[str, Any]
                 src_b.h += LH
             src_b.h += 8
             blocks.append(src_b)
-        if src.get("notes"):
-            nb = Block()
-            for note in src["notes"]:
-                nb.text(L.wrap(note, COL_W, size=SIZE - 1.2, rest=SIZE), size=SIZE - 1.2, lh=(SIZE - 1.2) * 1.5)
-            nb.h += 10
-            blocks.append(nb)
-        for it in [x for x in bundle["items"] if x["set"] == src["id"]]:
+        else:
+            gap = Block()
+            gap.h = 8
+            blocks.append(gap)
+    if src.get("notes"):
+        nb = Block()
+        for note in src["notes"]:
+            nb.text(L.wrap(note, COL_W, size=SIZE - 1.2, rest=SIZE), size=SIZE - 1.2, lh=(SIZE - 1.2) * 1.5)
+        nb.h += 10
+        blocks.append(nb)
+    return blocks
+
+
+def build_blocks(L: Layout, bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[str, str], set_header) -> list[Block]:
+    """Bundle item order; a set's passage/material is printed once, before its first item."""
+    by_id = {s["id"]: s for s in sources}
+    blocks: list[Block] = []
+    seen: set[str] = set()
+    for it in bundle["items"]:
+        sid = it.get("set")
+        if sid is None:
             blocks.append(question_block(L, it, labels[it["item_id"]], bundle["product_mode"]))
+        elif sid not in seen:
+            seen.add(sid)
+            blocks += set_blocks(L, bundle, by_id[sid], labels, set_header)
+            for x in [x for x in bundle["items"] if x.get("set") == sid]:
+                blocks.append(question_block(L, x, labels[x["item_id"]], bundle["product_mode"]))
     return blocks
 
 
@@ -204,6 +254,8 @@ def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "AR
     stem[0] = (0, num + stem[0][1])
     b.text(stem, key="B")
     b.h += 4
+    if it.get("figure"):
+        figure(L, b, it["figure"])
     if it.get("table"):
         table(L, b, it["table"])
     if it.get("view"):
@@ -235,6 +287,19 @@ def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "AR
             b.h += 1.5
     b.h += 16
     return b
+
+
+def figure(L: Layout, b: Block, fig: dict[str, Any]) -> None:
+    """Place a hash-bound image at column width (or `width` share of it), keeping its aspect ratio."""
+    path = fig.get("abs_path") or fig["path"]
+    pix = fitz.Pixmap(str(path))
+    share = min(1.0, max(0.3, float(fig.get("width", 0.9))))
+    w = COL_W * share
+    h = w * pix.height / pix.width
+    x0 = (COL_W - w) / 2
+    b.h += 2
+    b.ops.append(("image", x0, b.h, x0 + w, b.h + h, str(path)))
+    b.h += h + 6
 
 
 def view(L: Layout, b: Block, lines: list[str], label: str = "<보 기>") -> None:
@@ -295,6 +360,9 @@ def paint(page: fitz.Page, ops, x: float, y: float) -> None:
         elif kind == "line":
             _, x0, y0, x1, y1, w = op
             page.draw_line((x + x0, y + y0), (x + x1, y + y1), color=(0.25, 0.25, 0.25), width=w)
+        elif kind == "image":
+            _, x0, y0, x1, y1, path = op
+            page.insert_image(fitz.Rect(x + x0, y + y0, x + x1, y + y1), filename=path, keep_proportion=True)
         elif kind == "label":
             labels.append(op)
     for _, lx, ly, t, lw in labels:  # knock the label out of the box border
@@ -381,7 +449,8 @@ def render(bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[s
     items = bundle["items"]
     L = Layout()
     doc = fitz.open()
-    titles = [w["title"] for src in sources for w in src["works"]]
+    # Cover lines: registry passage titles (KOR) or the bundle's own unit list (SOC/SCI material has no title).
+    titles = list(bundle.get("cover_lines") or [w["title"] for src in sources for w in src["works"] if w.get("title")])
     meta = dict(bundle, passage_titles=titles)
     brand = cover(doc, meta, logo)
     doc.new_page(width=A4_W, height=A4_H)  # blank verso

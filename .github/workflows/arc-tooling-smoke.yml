@@ -55,6 +55,7 @@ jobs:
           python -m py_compile tooling/typeset/kor_renderer.py
           python -m py_compile tooling/production/production_pipeline.py
           python -m py_compile tooling/production/test_production_pipeline.py
+          python -m py_compile tooling/production/test_subject_production.py
           python -m py_compile tooling/pdf_qc/autofix_controller.py
           python -m py_compile tooling/pdf_qc/test_autofix_controller.py
           python -m py_compile tooling/typeset/typesetter_gateway.py
@@ -216,6 +217,9 @@ jobs:
 
       - name: Run KOR semi-final bundle regression (sets, verse, constructed response, Hanja fallback)
         run: python tooling/production/test_semifinal_bundle.py
+
+      - name: Run SOC/SCI production regression (shared renderer: material sets, tables, figures, FINAL key split)
+        run: python tooling/production/test_subject_production.py
 
       - name: Upload canary evidence
         if: always()

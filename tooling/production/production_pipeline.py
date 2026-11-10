@@ -57,6 +57,16 @@ SCHOOL_FAMILIES = {
     "COMPARISON_MATRIX", "STUDENT_RESPONSE_EVALUATION", "CONDITION_CHANGE", "SEQUENCE_ORDER",
     "EXPRESSION_EFFECT", "SPEAKER_ATTITUDE", "KEY_WORD_FUNCTION", "CONTENT_UNDERSTANDING",
 }
+# Task families real SOC/SCI school exams use in addition to the shared ones above.
+SUBJECT_FAMILIES = {
+    "SOC": {"DATA_INTERPRETATION", "MAP_READING", "GRAPH_READING", "CLAIM_EVIDENCE_MATCH", "PRINCIPLE_APPLICATION",
+            "REMEDY_PROCEDURE", "RIGHTS_CONFLICT", "PERSPECTIVE_IDENTIFICATION", "CAUSE_EFFECT"},
+    "SCI": {"DATA_INTERPRETATION", "GRAPH_READING", "EXPERIMENT_ANALYSIS", "PARTICLE_MODEL", "QUANTITATIVE_REASONING",
+            "VARIABLE_CONTROL", "CAUSE_EFFECT", "PRINCIPLE_APPLICATION", "BEFORE_AFTER_COMPARISON"},
+}
+# Subjects that must print registry-locked raw school text; others may also use bundle-authored material.
+REGISTRY_ONLY_SUBJECTS = {"KOR"}
+ITEM_LOCAL_REF = re.compile(r"STEM|VIEW|TABLE|FIGURE|OPTION[1-5]|SCOPE:\S+")
 RARE_FAMILIES = {"COUNTERFACTUAL_DELETE_REPLACE", "MICRO_REFERENCE_TRACE", "META_READING_STRATEGY"}
 # Internal QA vocabulary that must never reach student text.
 LEAK_TERMS = ["판단축", "정답 후보", "추론 단계", "검토 절차", "매력적인 오답", "오답 선지", "2순위", "second-best",
@@ -67,14 +77,18 @@ PROFILES = {
     # (min, max) share of items per difficulty; KOR ARC_N subject balance.
     ("KOR", "ARC_N"): {"D1": (0.0, 0.10), "D2": (0.30, 0.40), "D3": (0.30, 0.40), "D4": (0.15, 0.25), "D5": (0.0, 0.05),
                        "D45": (0.15, 0.35), "ADVANCED": (0.20, 0.30)},
+    # SOC/SCI have no registered per-level bands; only the universal manifest target
+    # (arc_n_advanced_discrimination_target 20-30%) is enforced.
+    ("SOC", "ARC_N"): {"ADVANCED": (0.20, 0.30)},
+    ("SCI", "ARC_N"): {"ADVANCED": (0.20, 0.30)},
 }
 
 
 ITEM_GATE_CODES = {
     "UNIQUE_ANSWER": {"BLIND_ANSWER_MISMATCH", "BLIND_MULTIPLE_ANSWERS", "BLIND_NO_ANSWER", "BLIND_SECOND_BEST_IS_KEY", "ANSWER_OUT_OF_RANGE"},
     "FACTUAL_ACCURACY_REVIEW": {"BLIND_OUTSIDE_KNOWLEDGE", "BLIND_AI_STYLE"},
-    "SCOPE_EVIDENCE_TRACE": {"EVIDENCE_REF_OUT_OF_SOURCE"},
-    "ANSWER_EVIDENCE_TRACE": {"EVIDENCE_REF_OUT_OF_SOURCE"},
+    "SCOPE_EVIDENCE_TRACE": {"EVIDENCE_REF_OUT_OF_SOURCE", "SCOPE_REF_MISSING"},
+    "ANSWER_EVIDENCE_TRACE": {"EVIDENCE_REF_OUT_OF_SOURCE", "EVIDENCE_REF_MISSING"},
     "ALL_OPTION_AUDIT": {"OPTION_COUNT", "BLIND_REVIEW_MISSING"},
     "OPTION_SEMANTIC_DUPLICATION_REVIEW": {"OPTION_CLAIM_DUPLICATE"},
     "DIFFICULTY_MATCH": {"DIFFICULTY_MISMATCH", "FAKE_D4", "WEAK_DISTRACTOR_D3_PLUS", "OBVIOUS_KEY_D3_PLUS",
@@ -98,14 +112,50 @@ def sentences(paragraph: str) -> list[str]:
 
 
 def normalize(bundle: dict[str, Any]) -> dict[str, Any]:
-    """Accept legacy single-passage bundles (`passages`) and multi-work `sets`."""
+    """Accept legacy single-passage bundles (`passages`), multi-work `sets`, and bundles with no shared text."""
     if "sets" not in bundle:
         bundle["sets"] = [{"id": p["id"], "works": [{"label": None, "source_text_id": p["source_text_id"],
-                                                    "marks": p.get("marks", [])}]} for p in bundle["passages"]]
+                                                    "marks": p.get("marks", [])}]} for p in bundle.get("passages", [])]
+    bundle["subject"] = exam_gate.subject_code(bundle.get("subject", "KOR")) or str(bundle.get("subject", "KOR")).upper()
     for it in bundle["items"]:
-        it.setdefault("set", it.get("passage"))
+        it.setdefault("set", it.get("passage"))  # None = standalone item (no shared passage/material)
         it.setdefault("format", "MCQ")
     return bundle
+
+
+def school_families(subject: str) -> set[str]:
+    return SCHOOL_FAMILIES | SUBJECT_FAMILIES.get(subject, set())
+
+
+def reading_order(bundle: dict[str, Any]) -> list[tuple[str, Any]]:
+    """Print order: bundle item order; a set's material is emitted before its first item
+    and all items of that set follow it together."""
+    out: list[tuple[str, Any]] = []
+    seen: set[str] = set()
+    for it in bundle["items"]:
+        sid = it.get("set")
+        if sid is None:
+            out.append(("item", it))
+        elif sid not in seen:
+            seen.add(sid)
+            out.append(("set", sid))
+            out += [("item", x) for x in bundle["items"] if x.get("set") == sid]
+    return out
+
+
+def resolve_figure(owner: dict[str, Any], bundle_dir: Path, where: str) -> None:
+    """Bind a figure to its file and hash; a missing or altered image never reaches the page."""
+    fig = owner.get("figure")
+    if not fig:
+        return
+    path = (bundle_dir / str(fig.get("path", ""))).resolve()
+    if bundle_dir.resolve() not in path.parents or not path.is_file():
+        raise PipelineError(f"FIGURE_NOT_FOUND: {where}")
+    if hashlib.sha256(path.read_bytes()).hexdigest() != fig.get("sha256"):
+        raise PipelineError(f"FIGURE_CHECKSUM_MISMATCH: {where}")
+    if not str(fig.get("caption", "")).strip():
+        raise PipelineError(f"FIGURE_CAPTION_MISSING: {where}")
+    fig["abs_path"] = str(path)
 
 
 def mcq_items(bundle: dict[str, Any]) -> list[dict[str, Any]]:
@@ -116,12 +166,35 @@ def cr_items(bundle: dict[str, Any]) -> list[dict[str, Any]]:
     return [it for it in bundle["items"] if it["format"] == "CR"]
 
 
-def load_sources(sets: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def material_work(w: dict[str, Any], subject: str, where: str) -> dict[str, Any]:
+    """Bundle-authored stimulus (제시문·자료) for subjects that do not print registry-locked raw text."""
+    if subject in REGISTRY_ONLY_SUBJECTS:
+        raise PipelineError(f"MATERIAL_FORBIDDEN_FOR_SUBJECT: {subject} must use registered source_text_id ({where})")
+    mat = w["material"]
+    units = [str(x) for x in mat.get("paragraphs", []) if str(x).strip()]
+    if not units and not mat.get("table") and not w.get("figure"):
+        raise PipelineError(f"MATERIAL_EMPTY: {where}")
+    origin = str(mat.get("origin", "")).upper()
+    if origin not in {"GENERATED", "SCHOOL_SOURCE", "PUBLIC_DATA"}:
+        raise PipelineError(f"MATERIAL_ORIGIN_INVALID: {where}")
+    if origin != "GENERATED" and not str(mat.get("source_ref", "")).strip():
+        raise PipelineError(f"MATERIAL_SOURCE_REF_MISSING: {where}")
+    digest = hashlib.sha256("\n".join(units).encode("utf-8")).hexdigest()
+    return {"label": w.get("label"), "entry": None, "sha256": digest, "form": "PROSE", "units": units,
+            "display": list(units), "title": mat.get("title"), "line_numbers": 0, "material": True,
+            "origin": origin, "source_ref": mat.get("source_ref"), "table": mat.get("table"),
+            "figure": w.get("figure")}
+
+
+def load_sources(sets: list[dict[str, Any]], subject: str = "KOR") -> list[dict[str, Any]]:
     registry = {t["source_text_id"]: t for t in yaml.safe_load(SOURCE_REGISTRY.read_text(encoding="utf-8"))["texts"]}
     out = []
     for st in sets:
         works = []
         for w in st["works"]:
+            if "material" in w:
+                works.append(material_work(w, subject, f"set {st['id']}"))
+                continue
             entry = registry.get(w["source_text_id"])
             if entry is None:
                 raise PipelineError(f"SOURCE_NOT_REGISTERED: {w['source_text_id']}")
@@ -151,12 +224,17 @@ def load_sources(sets: list[dict[str, Any]]) -> list[dict[str, Any]]:
             every = int(w.get("line_numbers") or 0) if form == "VERSE" else 0
             works.append({"label": w.get("label"), "entry": entry, "sha256": digest, "form": form, "units": units,
                           "display": shown, "title": entry["title"], "line_numbers": every})
-        out.append({"id": st["id"], "works": works, "notes": st.get("notes", []), "lead": st.get("lead", [])})
+        out.append({"id": st["id"], "works": works, "notes": st.get("notes", []), "lead": st.get("lead", []),
+                    "prompt": st.get("prompt")})
     return out
 
 
-def ref_ok(ref: str, st: dict[str, Any]) -> bool:
+def ref_ok(ref: str, st: dict[str, Any] | None) -> bool:
     """Evidence refs: [W<n>.]P<p>S<s> for prose, [W<n>.]L<l> for verse (non-blank line number)."""
+    if ITEM_LOCAL_REF.fullmatch(ref):  # evidence inside the item itself or a declared scope source
+        return True
+    if st is None:
+        return False
     m = re.fullmatch(r"(?:W(\d+)\.)?(?:P(\d+)S(\d+)|L(\d+))", ref)
     if not m:
         return False
@@ -189,8 +267,17 @@ def set_header(bundle: dict[str, Any], set_id: str, labels: dict[str, str]) -> s
     own = [it for it in bundle["items"] if it["set"] == set_id]
     mq = [labels[it["item_id"]] for it in own if it["format"] == "MCQ"]
     cr = [labels[it["item_id"]].split()[-1] for it in own if it["format"] == "CR"]
+    prompt = next((s.get("prompt") for s in bundle.get("sets", []) if s["id"] == set_id), None) or "다음 글을 읽고 물음에 답하시오."
     if bundle["product_mode"] == "ARC_N" and not cr:
-        return f"[{mq[0]}~{mq[-1]}] 다음 글을 읽고 물음에 답하시오."
+        span = f"{mq[0]}~{mq[-1]}" if len(mq) > 1 else mq[0]
+        return f"[{span}] {prompt}"
+    if prompt != "다음 글을 읽고 물음에 답하시오.":
+        parts = []
+        if mq:
+            parts.append(f"선택형 {mq[0]}~{mq[-1]}번" if len(mq) > 1 else f"선택형 {mq[0]}번")
+        if cr:
+            parts.append(f"서술형 {cr[0]}~{cr[-1]}번" if len(cr) > 1 else f"서술형 {cr[0]}번")
+        return f"※ {prompt} ({', '.join(parts)})"
     parts = []
     if mq:
         parts.append(f"선택형 {mq[0]}~{mq[-1]}번" if len(mq) > 1 else f"선택형 {mq[0]}번")
@@ -214,38 +301,62 @@ def numbered_display(work: dict[str, Any]) -> list[str]:
     return out
 
 
+def table_lines(tbl: dict[str, Any]) -> list[str]:
+    return ["| " + " | ".join(tbl["header"]) + " |"] + ["| " + " | ".join(r) + " |" for r in tbl["rows"]]
+
+
+def figure_line(fig: dict[str, Any]) -> str:
+    return f"〔그림〕 {fig['caption']}"
+
+
 def manuscript(bundle: dict[str, Any], sources: list[dict[str, Any]]) -> str:
     labels = numbering(bundle)
+    by_id = {s["id"]: s for s in sources}
     lines: list[str] = []
-    for src in sources:
-        lines += [set_header(bundle, src["id"], labels), ""]
-        if src.get("lead"):
-            lines += src["lead"] + [""]
-        for w in src["works"]:
-            if w["label"]:
-                lines.append(w["label"])
-            lines += numbered_display(w) + ["", f"― {w['title']} ―", ""]
-        if src.get("notes"):
-            lines += src["notes"] + [""]
-        for it in [x for x in bundle["items"] if x["set"] == src["id"]]:
-            pts = f" ({it['points']}점)" if it.get("points") else ""
-            if it["format"] == "MCQ":
-                lines += [f"## QUESTION {labels[it['item_id']]}", it["stem"] + pts]
-            else:
-                lines += [f"## {labels[it['item_id']]}", it["stem"] + pts]
-            if it.get("table"):
-                lines.append("| " + " | ".join(it["table"]["header"]) + " |")
-                lines += ["| " + " | ".join(r) + " |" for r in it["table"]["rows"]]
-            if it.get("view"):
-                lines.append("<보 기>")
-                lines += it["view"]
-            if it["format"] == "MCQ":
-                lines += [f"{CIRC[i]} {o}" for i, o in enumerate(it["options"])]
-            else:
-                lines.append("<조 건>")
-                lines += it["conditions"]
-            lines.append("")
+    for kind, obj in reading_order(bundle):
+        if kind == "set":
+            src = by_id[obj]
+            lines += [set_header(bundle, src["id"], labels), ""]
+            if src.get("lead"):
+                lines += src["lead"] + [""]
+            for w in src["works"]:
+                if w["label"]:
+                    lines.append(w["label"])
+                lines += numbered_display(w)
+                if w.get("table"):
+                    lines += table_lines(w["table"])
+                if w.get("figure"):
+                    lines.append(figure_line(w["figure"]))
+                lines += ["", f"― {w['title']} ―", ""] if w.get("title") else [""]
+            if src.get("notes"):
+                lines += src["notes"] + [""]
+            continue
+        it = obj
+        pts = f" ({it['points']}점)" if it.get("points") else ""
+        if it["format"] == "MCQ":
+            lines += [f"## QUESTION {labels[it['item_id']]}", it["stem"] + pts]
+        else:
+            lines += [f"## {labels[it['item_id']]}", it["stem"] + pts]
+        if it.get("figure"):
+            lines.append(figure_line(it["figure"]))
+        if it.get("table"):
+            lines += table_lines(it["table"])
+        if it.get("view"):
+            lines.append("<보 기>")
+            lines += it["view"]
+        if it["format"] == "MCQ":
+            lines += [f"{CIRC[i]} {o}" for i, o in enumerate(it["options"])]
+        else:
+            lines.append("<조 건>")
+            lines += it["conditions"]
+        lines.append("")
     return "\n".join(lines).strip() + "\n"
+
+
+def item_scope_refs(bundle: dict[str, Any], it: dict[str, Any]) -> list[str]:
+    """Where the tested content sits in the confirmed range (school worksheet / textbook location)."""
+    refs = it.get("scope_refs") or bundle.get("scope_refs") or []
+    return [str(r) for r in refs if str(r).strip()]
 
 
 def strong_count(it: dict[str, Any], blind_item: dict[str, Any] | None) -> int:
@@ -264,6 +375,8 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
     n = len(items)
     blind_by_id = {b["item_id"]: b for b in blind["items"]}
     set_by_id = {s["id"]: s for s in sources}
+    registry_only = bundle["subject"] in REGISTRY_ONLY_SUBJECTS
+    families = school_families(bundle["subject"])
     findings: list[dict[str, Any]] = []
 
     def add(code, severity="FAIL", item=None, **extra):
@@ -291,8 +404,12 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
             add("OPTION_CLAIM_DUPLICATE", item=iid)
         for j in it["judgments"]:
             for ref in j["ev"]:
-                if not ref_ok(ref, set_by_id[it["set"]]):
+                if not ref_ok(ref, set_by_id.get(it["set"])):
                     add("EVIDENCE_REF_OUT_OF_SOURCE", item=iid, ref=ref)
+            if not registry_only and not j["ev"]:
+                add("EVIDENCE_REF_MISSING", item=iid, claim=j["claim"])
+        if not registry_only and not item_scope_refs(bundle, it):
+            add("SCOPE_REF_MISSING", item=iid)
         b = blind_by_id.get(iid)
         strong = strong_count(it, b)
         if b is None:
@@ -332,7 +449,7 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
             if not it.get(field):
                 add("CR_FIELD_MISSING", item=iid, field=field)
         for ref in it.get("ev", []):
-            if not ref_ok(ref, set_by_id[it["set"]]):
+            if not ref_ok(ref, set_by_id.get(it["set"])):
                 add("EVIDENCE_REF_OUT_OF_SOURCE", item=iid, ref=ref)
         b = blind_by_id.get(iid)
         if b is None:
@@ -384,7 +501,7 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
         add("EXCEPT_STEM_OVERUSE", count=except_count)
     if best_run > 2:
         add("STEM_SKELETON_RUN", run=best_run)
-    if len({f for f in fams if f in SCHOOL_FAMILIES}) < (5 if n >= 20 else 4):
+    if len({f for f in fams if f in families}) < (5 if n >= 20 else 4):
         add("TASK_FAMILY_DIVERSITY_LOW")
     if leak_hits:
         add("STUDENT_METADATA_LEAK", terms=leak_hits)
@@ -404,10 +521,10 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
                 add(f"BALANCE_{k}_OUT_OF_RANGE", "FAIL" if hard else "WARN", share=round(shares[k], 3), target=[lo, hi])
 
     realism = realism_gate.analyze({"product_mode": bundle["product_mode"], "item_count": n, "counts": {
-        "school_task_family_count": sum(f in SCHOOL_FAMILIES for f in fams),
+        "school_task_family_count": sum(f in families for f in fams),
         "unanchored_meta_task_count": 0,
         "rare_artificial_task_count": sum(f in RARE_FAMILIES for f in fams),
-        "distinct_school_task_families": len({f for f in fams if f in SCHOOL_FAMILIES}),
+        "distinct_school_task_families": len({f for f in fams if f in families}),
         "unfunctional_student_wrapper_count": 0,
         "ai_choice_pattern_count": len(ai_hits),
         "correct_length_cue_count": sum(1 for f in findings if f["code"] == "CORRECT_LENGTH_CUE"),
@@ -472,9 +589,14 @@ def qa_evidence(bundle, sources, blind, text, findings) -> dict[str, Any]:
     for it in mcq_items(bundle):
         b = blind_by_id.get(it["item_id"], {})
         a = int(it["answer"])
-        key_ev = [f"SRC:{it['set']}:{e}" for e in it["judgments"][a - 1]["ev"]]
+        origin = it["set"] if it["set"] is not None else it["item_id"]
+        key_ev = [f"SRC:{origin}:{e}" for e in it["judgments"][a - 1]["ev"]]
         codes = {f["code"] for f in hard if f.get("item_id") == it["item_id"]}
-        src = next(s for s in sources if s["id"] == it["set"])["works"][0]
+        first_work = next((s for s in sources if s["id"] == it["set"]), {"works": [None]})["works"][0]
+        if first_work and first_work.get("entry"):
+            scope_refs = [f"DRIVE:{first_work['entry']['school_source_file_id']}"]
+        else:
+            scope_refs = item_scope_refs(bundle, it)
         items.append({
             "item_id": it["item_id"], "target_difficulty": it["difficulty"],
             "stem_polarity": korean_stem_polarity(it),
@@ -483,14 +605,14 @@ def qa_evidence(bundle, sources, blind, text, findings) -> dict[str, Any]:
                 "answer": str(b.get("answer", "")), "blind": True, "reviewer": blind.get("reviewer"),
                 "excluded_inputs": blind.get("excluded_inputs", []), "confidence": b.get("confidence", "LOW"),
                 "answer_evidence": key_ev,
-                "scope_trace": {"status": "IN_SCOPE", "source_refs": [f"DRIVE:{src['entry']['school_source_file_id']}"]},
+                "scope_trace": {"status": "IN_SCOPE", "source_refs": scope_refs},
                 "option_judgments": [{
                     "option_id": str(i), "verdict": korean_judgment_truth(it, j),
                     "statement_truth": korean_judgment_truth(it, j),
                     "author_marked_verdict": j["v"],
                     "judgment_semantics": it.get("judgment_semantics", "STATEMENT_TRUTH"),
                     "claim_key": j["claim"], "axis": j["axis"], "competitiveness": "CORRECT" if i == a else j["c"],
-                    "evidence_refs": [f"SRC:{it['set']}:{e}" for e in j["ev"]], "note": j["why"]}
+                    "evidence_refs": [f"SRC:{origin}:{e}" for e in j["ev"]], "note": j["why"]}
                     for i, j in enumerate(it["judgments"], start=1)],
                 "second_best_option": str(b.get("second_best", it["second_best"])), "second_best_risk": "MEDIUM",
                 "reasoning_steps": it["reasoning_steps"], "evidence_count": len(it["judgments"][a - 1]["ev"]),
@@ -502,14 +624,17 @@ def qa_evidence(bundle, sources, blind, text, findings) -> dict[str, Any]:
     set_codes = {f["code"] for f in hard if "item_id" not in f}
     return {
         "schema_version": "ARC-QA-EVIDENCE-V1.0", "subject": bundle["subject"], "item_count": len(items),
-        "item_format": "MCQ5", "uses_source_text": True, "student_manuscript_sha256": serializer.sha256_text(text),
+        "item_format": "MCQ5", "uses_source_text": any(w.get("entry") for st in sources for w in st["works"]),
+        "student_manuscript_sha256": serializer.sha256_text(text),
+        "generated_material": [{"set_id": st["id"], "origin": w["origin"], "source_ref": w.get("source_ref"),
+                                "material_sha256": w["sha256"]} for st in sources for w in st["works"] if w.get("material")],
         "source_text_locks": [{
             "source_text_id": s["entry"]["source_text_id"], "source_origin": s["entry"]["source_origin"],
             "source_role": s["entry"]["role"], "text_fidelity": s["entry"]["text_fidelity"],
             "source_file_id": s["entry"]["school_source_file_id"], "source_location": s["entry"]["school_source_location"],
             "source_text_sha256": w["sha256"],
             "linked_item_ids": [it["item_id"] for it in mcq_items(bundle) if it["set"] == st["id"]] or [it["item_id"] for it in mcq_items(bundle)][:1],
-            **w["entry"]["locks"]} for st in sources for w in st["works"] for s in [w]],
+            **w["entry"]["locks"]} for st in sources for w in st["works"] if w.get("entry") for s in [w]],
         "items": items, "set_gates": {g: ("FAIL" if set_codes & SET_GATE_CODES.get(g, set()) else "PASS") for g in content_gate.SET_GATES},
         "content_lock": True,
     }
@@ -572,7 +697,12 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
     blind = yaml.safe_load((bundle_dir / "blind_review.yaml").read_text(encoding="utf-8"))
     product = bundle["product_mode"]
 
-    sources = load_sources(bundle["sets"])
+    for it in bundle["items"]:
+        resolve_figure(it, bundle_dir, f"item {it['item_id']}")
+    for st in bundle["sets"]:
+        for w in st["works"]:
+            resolve_figure(w, bundle_dir, f"set {st['id']}")
+    sources = load_sources(bundle["sets"], bundle["subject"])
     text = manuscript(bundle, sources)
     (out_dir / "student_manuscript.md").write_text(text, encoding="utf-8")
     metrics = measure(bundle, sources, blind, text)
@@ -653,13 +783,15 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
         final_result = final_gate.analyze(payload)
 
     hard = [f for f in findings if f["severity"] == "FAIL"]
+    gate_prefix = f"{bundle['subject']}_"
     gates = {
         "EXAM_SCOPE": exam_result["status"],
         "CONTENT_QA": qa_result["status"],
         "BLIND_INDEPENDENT_SOLVE": "FAIL" if any(f["code"].startswith("BLIND_") for f in hard) else "PASS",
-        "KOR_EXAM_REALISM_GATE": metrics["realism"]["KOR_EXAM_REALISM_GATE"],
-        "KOR_AI_STYLE_LEAK_GATE": metrics["realism"]["KOR_AI_STYLE_LEAK_GATE"] if not any(f["code"] in {"STUDENT_METADATA_LEAK", "AI_STYLE_PHRASE"} for f in hard) else "FAIL",
-        "KOR_SCHOOL_TASK_FAMILY_GATE": metrics["realism"]["KOR_SCHOOL_TASK_FAMILY_GATE"],
+        # Same three checks for every subject; KOR keeps its historical gate names.
+        f"{gate_prefix}EXAM_REALISM_GATE": metrics["realism"]["KOR_EXAM_REALISM_GATE"],
+        f"{gate_prefix}AI_STYLE_LEAK_GATE": metrics["realism"]["KOR_AI_STYLE_LEAK_GATE"] if not any(f["code"] in {"STUDENT_METADATA_LEAK", "AI_STYLE_PHRASE"} for f in hard) else "FAIL",
+        f"{gate_prefix}SCHOOL_TASK_FAMILY_GATE": metrics["realism"]["KOR_SCHOOL_TASK_FAMILY_GATE"],
         "ANSWER_LENGTH_AUDIT": "FAIL" if any(f["code"] in {"CORRECT_LENGTH_CUE", "LONGEST_OPTION_IS_KEY_RATE"} for f in hard) else "PASS",
         "OBVIOUS_ANSWER_GATE": "FAIL" if any(f["code"] in {"OBVIOUS_KEY_D3_PLUS", "FIRST_PASS_CANDIDATES_SHORT"} for f in hard) else "PASS",
         "ATTRACTIVE_DISTRACTOR_GATE": "FAIL" if any(f["code"] == "WEAK_DISTRACTOR_D3_PLUS" for f in hard) else "PASS",
