@@ -53,6 +53,19 @@ COVERAGE:
 
 같은 개념은 CORE/N°/FINAL에서 같은 CONCEPT_ID를 유지한다.
 
+### 3-1. 두 단계 ID 연결 규칙 (2026-11-10)
+이 장부의 ID와 CORE 내용 엔진의 ID는 서로 다른 단계이며 둘 다 유효하다. 형식을 섞어 쓰지 않는다.
+
+|단계|이름|형식|예|용도|
+|---|---|---|---|---|
+|상위|LEDGER_AXIS_ID (이 장부의 CONCEPT_ID)|`SUBJECT-UNIT-CONCEPT`|`SCI-OR-REACTIVITY`|범위 판정, 커버리지 집계, 과다·누락 판단|
+|하위|CORE_CONCEPT_ID (CORE 엔진의 CONCEPT_ID)|`ARC-{SUBJECT}-{UNIT}-{NNN}`|`ARC-SCI-OR-004`|CORE 개념 블록 1개, N°/FINAL 문항의 PRIMARY/SECONDARY 연결|
+
+- CORE 개념 메타데이터와 N°/FINAL 문항 청사진은 `LEDGER_AXIS_ID`를 정확히 1개 기록한다. CORE_CONCEPT_ID 여러 개가 LEDGER_AXIS_ID 하나에 속할 수 있다.
+- GENERATED_COUNT, RECENT_3SET_COUNT 등 커버리지 값은 LEDGER_AXIS_ID 단위로만 집계한다.
+- LEDGER_AXIS_ID가 X/BLOCKED이면 그 아래 CORE_CONCEPT_ID 전체가 출제 금지다.
+- 이 장부에 없는 축이 필요하면 CORE_CONCEPT_ID를 임의로 만들지 말고 먼저 이 장부에 축을 등록한다.
+
 ## 4. COVERAGE RECORD FIELDS
 각 세트 생성 후 아래 값을 갱신한다.
 

@@ -52,3 +52,19 @@ KOR_MID_001_005: {001: PENDING, 002: PENDING, 003: PENDING, 004: PENDING, 005: P
 REGRESSION_STATUS: PENDING
 RELEASE_READY: false
 ```
+
+## QA BENCH ENTRIES (moved 2026-11-10)
+아래 두 벤치는 폐기된 `quality/ARC_QA_BENCH_V1.0.md`에 추가되어 있던 것을 내용 변경 없이 옮긴 것이다.
+manifest-selected QA BENCH(`active.quality.qa_bench`)의 국어 벤치와 함께 실행한다.
+
+**KOR-B04 — D3/D4 선지·난도 위장 검사**
+- 요청: `학교 확정 중세국어 범위에서 D3 10문항 + D4 10문항, 5지선다`.
+- 검사: 보기 단순대조, 산술/극단표현 단서, 교과서 재진술, 독립 판단 단계, 오답 2개 이상 경쟁 가능성.
+- 고정 재현 항목: V2 #05(D3) / #07(D4); `quality/KOR_MIDDLE_KOREAN_V2_REGRESSION_V1.0.md`.
+
+**KOR-B05 — 형태소 분석·정답 유일성**
+- 요청: `중세국어 연철·조사·어미·높임법을 원문에 근거하여 출제하는 객관식 20문항`.
+- 검사: 원문/판본/표기, 형태소 분석 기록, 5지 진리표, 불확정/복수정답, PASS A/B 블라인드 재풀이.
+- 고정 재현 항목: V2 #20 — 출처와 전 선지 검수 전에는 HOLD; 문항 오류 확정 여부를 추정하지 않음.
+- 중세 국어 규칙 변경 후 dev→main 승격 시 KOR-B04와 KOR-B05를 모두 실제 실행해 HARD FAIL 0 및 품질 변화 기록을 확보한다. 정의만 추가한 단계는 PENDING.
+

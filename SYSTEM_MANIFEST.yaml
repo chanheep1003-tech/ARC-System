@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.8.46-dev
+  version: 1.8.47-dev
   status: dev
   initialized: 2026-09-18
   repository_visibility: private
@@ -179,6 +179,10 @@ runtime:
   arc_final_item_quality_profile: required
   arc_final_release_gate: required
   korean_norm_quality_policy: quality/korean/ARC_KOR_NORM_20261105_CORRECTION_POLICY.md
+  korean_middle_korean_policy: subjects/KOREAN_MIDDLE_KOREAN_QUALITY_RULES_V1.0.md
+  korean_middle_korean_regression: quality/KOR_MIDDLE_KOREAN_V2_REGRESSION_V1.0.md
+  korean_middle_korean_regression_status: DEFINED_NOT_EXECUTED
+  korean_middle_korean_activation: EXPLICIT_USER_SCOPE_ONLY
   korean_norm_static_gate: tooling/content_qa/korean_norm_regression_gate.py
   korean_norm_all_option_evidence_gate: required
   korean_norm_negative_stem_truth_pattern: FALSE_1_TRUE_4
@@ -368,6 +372,7 @@ active:
       path: quality/ARC_SCHOOL_DIFFICULTY_BENCH_V1.0.md
       drive_id: 1t0l6juVLzJxx9UMN5YwG1eRu4enAXpmX
     item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.5.md
+    false_difficulty_gate: quality/ARC_FALSE_DIFFICULTY_GATE_V1.0.md
     final_quality_gate: quality/ARC_FINAL_QUALITY_GATE_V1.1.md
     dongbuk_actual_exam_difficulty_corpus: quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
     final_difficulty_anchor_kor: quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
@@ -503,6 +508,13 @@ tooling:
   kor_final_canary_fixture: quality/canary/KOR_FINAL_CANARY_V1.yaml
   soc_core_canary_fixture: quality/canary/SOC_CORE_CANARY_V1.yaml
   soc_n_canary_fixture: quality/canary/SOC_N_CANARY_V1.yaml
+  soc_final_canary_fixture: quality/canary/SOC_FINAL_CANARY_V1.yaml
+  sci_core_canary_fixture: quality/canary/SCI_CORE_CANARY_V1.yaml
+  sci_n_canary_fixture: quality/canary/SCI_N_CANARY_V1.yaml
+  sci_final_canary_fixture: quality/canary/SCI_FINAL_CANARY_V1.yaml
+  arc_cli: tooling/arc.py
+  local_ci_runner: tooling/run_ci_local.py
+  smoke_requirements: tooling/requirements-smoke.txt
   content_qa_gate: tooling/content_qa/content_qa_gate.py
   final_quality_gate_exec: tooling/final/final_quality_gate.py
   final_quality_gate_smoke_test: tooling/final/test_final_quality_gate.py

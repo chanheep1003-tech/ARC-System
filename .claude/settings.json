@@ -1,0 +1,97 @@
+{
+  "extraKnownMarketplaces": {
+    "superpowers-dev": {
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers"
+      }
+    },
+    "impeccable": {
+      "source": {
+        "source": "github",
+        "repo": "pbakaus/impeccable"
+      }
+    },
+    "mattpocock": {
+      "source": {
+        "source": "github",
+        "repo": "mattpocock/skills"
+      }
+    },
+    "claude-toothlessdev": {
+      "source": {
+        "source": "github",
+        "repo": "toothlessdev/toothlessdev-agent"
+      }
+    },
+    "i-have-adhd": {
+      "source": {
+        "source": "github",
+        "repo": "ayghri/i-have-adhd"
+      }
+    },
+    "caveman": {
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      }
+    },
+    "thedotmack": {
+      "source": {
+        "source": "github",
+        "repo": "thedotmack/claude-mem"
+      }
+    },
+    "headroom-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "headroomlabs-ai/headroom"
+      }
+    },
+    "ruflo": {
+      "source": {
+        "source": "github",
+        "repo": "ruvnet/ruflo"
+      }
+    },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "superpowers@superpowers-dev": true,
+    "impeccable@impeccable": true,
+    "mattpocock-skills@mattpocock": true,
+    "workflow-parallel@claude-toothlessdev": true,
+    "daily-briefing@claude-toothlessdev": true,
+    "pr-review@claude-toothlessdev": true,
+    "adhd@claude-toothlessdev": true,
+    "i-have-adhd@i-have-adhd": true,
+    "caveman@caveman": false,
+    "claude-mem@thedotmack": false,
+    "headroom-skill@headroom-marketplace": true,
+    "ruflo-core@ruflo": true,
+    "ponytail@ponytail": true,
+    "headroom@headroom-marketplace": true
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/tools/oss/install.sh --quick >/dev/null 2>&1 || true"
+          }
+        ]
+      }
+    ]
+  },
+  "env": {
+    "HEADROOM_BEACON": "off",
+    "HEADROOM_TELEMETRY": "off",
+    "DO_NOT_TRACK": "1"
+  }
+}

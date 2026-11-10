@@ -92,6 +92,14 @@ def main() -> int:
         if isinstance(value, str):
             active_paths.add(value)
 
+    # Every runtime value that names a repository file must resolve, so a policy
+    # cannot be "registered" while pointing at nothing (or be edited in a file
+    # the manifest no longer selects).
+    repo_path = re.compile(r"^(?:engine|subjects|quality|ops|templates|tooling|skills|agents|mcp)/\S+\.\w+$")
+    for value in runtime.values():
+        if isinstance(value, str) and repo_path.match(value):
+            active_paths.add(value)
+
     for rel in sorted(active_paths):
         if not (ROOT / rel).is_file():
             errors.append(f"manifest target missing: {rel}")
@@ -296,7 +304,7 @@ def main() -> int:
         if gate.get("ambiguous_marks_default") != "HOLD":
             errors.append("ambiguous Social C marks must default to HOLD")
 
-        for fixture_key in ("soc_core_canary_fixture", "soc_n_canary_fixture"):
+        for fixture_key in ("soc_core_canary_fixture", "soc_n_canary_fixture", "soc_final_canary_fixture"):
             fixture_path = tooling.get(fixture_key)
             if not fixture_path or not (ROOT / fixture_path).is_file():
                 errors.append(f"Social fixture missing for X-mark isolation: {fixture_key}")
@@ -443,6 +451,13 @@ def main() -> int:
         "kor_final_canary_fixture",
         "soc_core_canary_fixture",
         "soc_n_canary_fixture",
+        "soc_final_canary_fixture",
+        "sci_core_canary_fixture",
+        "sci_n_canary_fixture",
+        "sci_final_canary_fixture",
+        "arc_cli",
+        "local_ci_runner",
+        "smoke_requirements",
         "xmark_detector",
         "xmark_detector_smoke_test",
     ):

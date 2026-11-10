@@ -1,0 +1,309 @@
+fixture_id: SCI-FINAL-CANARY-V1
+source_mode: SYNTHETIC_PIPELINE_ONLY
+purpose: Deterministic SCI ARC_FINAL 10-item E2E plus difficulty, distractor, answer-length and PDF regression.
+content_bundle:
+  batch_id: SCI-FINAL-CANARY-001
+  generator: CLAUDE
+  product_mode: ARC_FINAL
+  subject: SCI
+  scope: registered scope signals; synthetic structural fixture only
+  item_count: 10
+  created_at: '2026-11-10T21:00:00+09:00'
+  qa_evidence_filename: ARC_QA_EVIDENCE_SCI_FINAL_CANARY_001.yaml
+  student_manuscript: '## QUESTION 1
+
+    In a reaction where a metal loses electrons, how is the metal described?
+
+    1) It is reduced by the other ion. 2) It is oxidized in the reaction. 3) It stays neutral during the change. 4) It is unchanged by the solution. 5) It is only dissolved, not reacted.
+
+
+    ## QUESTION 2
+
+    Which check must come first in a quantitative redox item?
+
+    1) Electrons lost equal electrons gained. 2) The longest equation decides the count. 3) Plate color decides the change of mass. 4) Reactivity alone fixes the mass change. 5) Spectator ions are removed from totals.
+
+
+    ## QUESTION 3
+
+    What does natural selection change across generations?
+
+    1) The body of one organism during its life. 2) The climate that surrounds the habitat. 3) The proportion of traits in a population. 4) The number of chromosomes in each cell. 5) The measured age of every fossil layer.
+
+
+    ## QUESTION 4
+
+    Which measure reconnects separated habitat patches?
+
+    1) An ecological corridor between patches. 2) An introduced species in each patch. 3) A wider road through the forest edge. 4) A single large dam across the river. 5) A fossil record of earlier habitats.
+
+
+    ## QUESTION 5
+
+    An index fossil is most useful for deciding what?
+
+    1) The past climate of a wide region. 2) The geologic age of a rock layer. 3) The total mass of a sediment bed. 4) The former depth of an ocean basin. 5) The mineral color of a rock sample.
+
+
+    ## QUESTION 6
+
+    What condition describes radiative equilibrium of the Earth?
+
+    1) Absorbed energy equals emitted energy. 2) Surface albedo falls exactly to zero. 3) Greenhouse gases are entirely absent. 4) Ocean circulation stops transporting heat. 5) Sunlight arrives equally at all latitudes.
+
+
+    ## QUESTION 7
+
+    A weakened trade wind in the Pacific first reduces what?
+
+    1) The energy output of the Sun itself. 2) Upwelling in the eastern Pacific. 3) The tilt of the rotational axis. 4) The total mass of ocean water. 5) The number of climate zones.
+
+
+    ## QUESTION 8
+
+    When is a current induced in a coil?
+
+    1) While the magnet rests inside the coil. 2) Whenever a strong magnet exists nearby. 3) While the field through the coil changes. 4) While the coil is heated by a flame. 5) While the coil is cut into two parts.
+
+
+    ## QUESTION 9
+
+    Which change increases the size of the induced current?
+
+    1) Moving the same magnet more slowly. 2) Removing half the turns of the coil. 3) Replacing it with a weaker magnet. 4) Moving the same magnet faster. 5) Opening the circuit at one point.
+
+
+    ## QUESTION 10
+
+    Why is a data table not counted as a true visual asset?
+
+    1) Because a table always contains errors. 2) Because it lists values without a graph. 3) Because tables are forbidden in exams. 4) Because a table never states its units. 5) Because tables cannot be printed clearly.'
+  answer_key:
+    1: 2
+    2: 1
+    3: 3
+    4: 1
+    5: 2
+    6: 1
+    7: 2
+    8: 3
+    9: 4
+    10: 2
+  visual_asset_manifest: []
+  qc_status:
+    STATUS: PASS
+    SOURCE_MODE: SYNTHETIC_PIPELINE_ONLY
+final_quality_profile:
+  product_mode: ARC_FINAL
+  item_count: 10
+  items:
+  - item_id: SCI-FINAL-CANARY-001
+    actual_difficulty: D2
+    reasoning_steps: 1
+    evidence_count: 1
+    strong_distractor_count: 1
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 2
+    second_best_option: 1
+    second_best_refutation: Option 1 omits a condition required by the stem.
+    option_lengths_chars:
+    - 31
+    - 31
+    - 35
+    - 32
+    - 34
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_STANDARD
+    expected_time_class: SHORT
+  - item_id: SCI-FINAL-CANARY-002
+    actual_difficulty: D3
+    reasoning_steps: 2
+    evidence_count: 1
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 1
+    second_best_option: 2
+    second_best_refutation: Option 2 omits a condition required by the stem.
+    option_lengths_chars:
+    - 38
+    - 39
+    - 39
+    - 39
+    - 39
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_STANDARD
+    expected_time_class: STANDARD
+  - item_id: SCI-FINAL-CANARY-003
+    actual_difficulty: D3
+    reasoning_steps: 2
+    evidence_count: 1
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 3
+    second_best_option: 1
+    second_best_refutation: Option 1 omits a condition required by the stem.
+    option_lengths_chars:
+    - 41
+    - 39
+    - 41
+    - 39
+    - 39
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_STANDARD
+    expected_time_class: STANDARD
+  - item_id: SCI-FINAL-CANARY-004
+    actual_difficulty: D3
+    reasoning_steps: 2
+    evidence_count: 1
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 1
+    second_best_option: 2
+    second_best_refutation: Option 2 omits a condition required by the stem.
+    option_lengths_chars:
+    - 39
+    - 36
+    - 37
+    - 36
+    - 36
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_STANDARD
+    expected_time_class: STANDARD
+  - item_id: SCI-FINAL-CANARY-005
+    actual_difficulty: D3
+    reasoning_steps: 2
+    evidence_count: 1
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 2
+    second_best_option: 3
+    second_best_refutation: Option 3 omits a condition required by the stem.
+    option_lengths_chars:
+    - 34
+    - 33
+    - 33
+    - 35
+    - 35
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_STANDARD
+    expected_time_class: STANDARD
+  - item_id: SCI-FINAL-CANARY-006
+    actual_difficulty: D3
+    reasoning_steps: 2
+    evidence_count: 1
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 1
+    second_best_option: 5
+    second_best_refutation: Option 5 omits a condition required by the stem.
+    option_lengths_chars:
+    - 38
+    - 37
+    - 37
+    - 42
+    - 42
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_UPPER
+    expected_time_class: STANDARD
+  - item_id: SCI-FINAL-CANARY-007
+    actual_difficulty: D4
+    reasoning_steps: 2
+    evidence_count: 2
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 2
+    second_best_option: 3
+    second_best_refutation: Option 3 omits a condition required by the stem.
+    option_lengths_chars:
+    - 36
+    - 33
+    - 32
+    - 30
+    - 28
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_UPPER
+    expected_time_class: STANDARD
+  - item_id: SCI-FINAL-CANARY-008
+    actual_difficulty: D4
+    reasoning_steps: 2
+    evidence_count: 2
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 3
+    second_best_option: 1
+    second_best_refutation: Option 1 omits a condition required by the stem.
+    option_lengths_chars:
+    - 39
+    - 39
+    - 41
+    - 36
+    - 37
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_UPPER
+    expected_time_class: LONG
+  - item_id: SCI-FINAL-CANARY-009
+    actual_difficulty: D4
+    reasoning_steps: 2
+    evidence_count: 2
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 4
+    second_best_option: 1
+    second_best_refutation: Option 1 omits a condition required by the stem.
+    option_lengths_chars:
+    - 35
+    - 36
+    - 34
+    - 30
+    - 33
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_UPPER
+    expected_time_class: STANDARD
+  - item_id: SCI-FINAL-CANARY-010
+    actual_difficulty: D5
+    reasoning_steps: 3
+    evidence_count: 2
+    strong_distractor_count: 2
+    effective_choice_count: 5
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 1
+    correct_option: 2
+    second_best_option: 1
+    second_best_refutation: Option 1 omits a condition required by the stem.
+    option_lengths_chars:
+    - 39
+    - 40
+    - 38
+    - 39
+    - 41
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: ABOVE_SCHOOL
+    expected_time_class: LONG

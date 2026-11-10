@@ -2,6 +2,19 @@
 
 This runbook is the operational entry point for current production tasks. It replaces duplicated startup instructions in prompts; archived policy versions remain preserved. Current user scope and the pinned manifest decide the subject, file format, quantity and active rules. Do not inherit older 5-subject/Google-Docs defaults when the current request specifies a different job.
 
+## Quick start (shell hosts)
+
+```bash
+python tooling/arc.py doctor      # deps + Korean fonts
+python tooling/arc.py status      # KOR/SOC/SCI x CORE/N/FINAL readiness and blockers
+python tooling/arc.py start --subject SCI --product ARC_N --count 20 --scope "산화·환원"
+python tooling/arc.py log --run-id SCI-N-20261110-01 --product ARC_N --subject SCI --range "산화·환원" --items 20
+python tooling/arc.py checksums   # after any tracked-file edit
+python tooling/arc.py ci          # same steps as GitHub Actions
+```
+
+`start` fills batch_id, the pinned ruleset commit and the exam_context hash, runs `arc_workflow.py init`, and prints the manifest-selected files for that subject/product. It is a convenience wrapper around the contract below, not a second workflow. `scope` records a school-confirmed range supplied by the user (units, sources, evidence, optional FINAL anchor); it refuses to mark a range confirmed without evidence. Run directories under `runs/` are local and git-ignored; persist state beside the artifacts in Drive.
+
 ## One request, one state
 
 Run `python tooling/workflow/arc_workflow.py` with a local JSON request and one durable `state.json` per unique batch. Persist the same state beside actual artifacts through the authorized Drive connector; never overwrite another batch. One coordinator owns the state. Worker outputs are separate evidence files. The coordinator records their receipts and transitions in this state, not in competing status documents.
@@ -69,3 +82,6 @@ The active Korean-only version contract is `quality/korean/ARC_KOR_V1_V6_LEVEL_P
 
 ## KOR V6 spacing/particle decision gate (2026-11-06)
 Read `quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.0.md` with the parent V6 policy. The upgraded 100-question TARGET is 30 particle (including 보조사) vs dependent-noun, 20 noun vs ending/suffix, 15 auxiliary-predicate/spacing-permissible/unit-noun, 20 rare lexeme/compound/saisiot, 15 authentic unknown sentence synthesis. Direct spacing TARGET = 65/100. Apply school textbook print scope before selecting material. Rule 41 particle attachment and Rule 42 dependent noun spacing must be based on official lexicon/POS and context, not token spelling; especially ‘만큼’ may be adverbial-case particle or auxiliary particle. Confirm Article 47 optional spacing. No completed claim without key-blind proof and all-five-option QA.
+
+## Registered-file rule and Middle Korean routing (2026-11-10)
+Rules take effect only in manifest-selected files. The 2026-11-07 Middle Korean and false-difficulty patches had been appended to superseded files and were never loaded; they now live in `subjects/KOREAN_MIDDLE_KOREAN_QUALITY_RULES_V1.0.md` (`runtime.korean_middle_korean_policy`, explicit user scope only) and `quality/ARC_FALSE_DIFFICULTY_GATE_V1.0.md` (`active.quality.false_difficulty_gate`, all subjects). The regression suite remains DEFINED_NOT_EXECUTED until actually run.

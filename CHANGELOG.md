@@ -1,3 +1,15 @@
+## 1.8.47-dev — 2026-11-10
+- Operational audit for real use of KOR/SOC/SCI × ARC_CORE/ARC_N/ARC_FINAL.
+- Fixed: the 2026-11-07 Middle Korean module, false-difficulty gate and KOR-B04/B05 benches had been appended to superseded files (`KOREAN_MASTER_V4.0`, `ARC_ITEM_QUALITY_RUBRIC_V1.0`, `ARC_QA_BENCH_V1.0`) that the manifest no longer selects, so no generation path loaded them and strict checksums failed. The three superseded files are restored byte-for-byte; the rules moved unchanged into manifest-registered files (`runtime.korean_middle_korean_policy`, `active.quality.false_difficulty_gate`). Regression status stays DEFINED_NOT_EXECUTED.
+- Added E2E canaries for the four untested cells: SCI CORE, SCI N, SCI FINAL, SOC FINAL. All nine subject/product cells now have a pipeline canary in CI. Fixtures are synthetic and prove pipeline behavior only.
+- Added `tooling/arc.py` (doctor / status / start / scope / log / checksums / ci), `tooling/run_ci_local.py`, `tooling/requirements-smoke.txt`.
+- Validator: every runtime value naming a repository file must resolve; new canaries and CLI are required tooling entries.
+- Exam context: ARC_CORE enabled for KOR/SOC/SCI by user directive 2026-11-10. Scope remains PROVISIONAL_REMAINDER for all three subjects; no range, unit, source or anchor was invented.
+- Scope ledger: defined the two-level ID link (LEDGER_AXIS_ID / CORE_CONCEPT_ID) that previously conflicted.
+- Session tooling (`tools/oss`, `.claude/settings.json`) brought over from main; the session-start installer now installs the smoke dependencies and Nanum fonts.
+- README/BRANCH_POLICY state plainly that dev is the production ruleset until promotion.
+- Not done: no model-authored item was generated or judged; SOC/SCI still have no real-bundle production renderer.
+
 ## 1.8.41-dev — 2026-10-30
 - Added a single request/run-state CLI and canonical operational runbook. Chunk checkpoints, ownership, expected-version guards, stage gates, isolated-review handoffs, manuscript hash binding and verified storage receipts now share one state contract.
 - The CLI is an evidence ledger; external AI calls, Drive writes and semantic correctness are still host responsibilities. Draft storage and post-blind edits cannot silently become active bank items.

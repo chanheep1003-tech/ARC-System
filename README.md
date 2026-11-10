@@ -6,9 +6,18 @@ ARC CORE / N° / FINAL 제작을 위한 엔진·규칙 저장소.
 - GitHub: 엔진, 과목 MASTER, QA/난이도/시각자료 규칙, 조판 템플릿, MCP 정책
 - Google Drive: 교과서, 학습지, 학교 기출, 외부 참고자료, 검증문항은행, 생성 PDF
 
+## Quick start
+```bash
+python -m pip install -r tooling/requirements-smoke.txt && sudo apt-get install -y fonts-nanum
+python tooling/arc.py doctor     # 환경 점검
+python tooling/arc.py status     # 국어·사회·과학 × CORE/N/FINAL 준비 상태와 막힌 이유
+python tooling/arc.py start --subject KOR --product ARC_N --count 20 --scope "요청 범위"
+```
+운영 절차는 `ops/ARC_RUNBOOK.md`, 도구 설명은 `tooling/README.md`.
+
 ## Branches
-- `main`: RELEASE
-- `dev`: 개발/실험
+- `dev`: **현재 실사용 ruleset** (1.8.x). 실행 도구·CI·RUNBOOK·시험 설정이 모두 여기에 있다.
+- `main`: RELEASE 대상. 2026-11-10 현재 1.0.x에 머물러 있어 dev 승격 전까지 실제 생성에 사용하지 않는다. `BRANCH_POLICY.md` 참고.
 
 ## Start order
 1. `SYSTEM_MANIFEST.yaml`
@@ -61,7 +70,8 @@ Policy-only checks now have concrete runners under `tooling/`:
 
 Install:
 ```bash
-python -m pip install -r tooling/requirements.txt
+python -m pip install -r tooling/requirements-smoke.txt   # CLI·카나리·PDF 검사
+python -m pip install -r tooling/requirements.txt         # + 유사도(sentence-transformers, Qdrant)
 ```
 
 See `tooling/README.md`.

@@ -7,6 +7,7 @@ exams:
     inherit_midterm_scope: false
     active_subjects: [SCI, SOC, KOR]
     subject_focus_authorized_by: USER_DIRECTIVE:2026-10-03T13:49:08+09:00
+    core_product_authorized_by: USER_DIRECTIVE:2026-11-10 (KOR/SOC/SCI x ARC_CORE/ARC_N/ARC_FINAL all in production use)
     provisional_scope_policy:
       mode: CURRENT_SEMESTER_COURSE_MINUS_ACTUAL_MIDTERM
       applies_to_subjects: [SCI, SOC, KOR]
@@ -51,7 +52,7 @@ exams:
         source_ids: []
         excluded_unit_ids: []
         excluded_source_ids: []
-        products: [ARC_N, ARC_FINAL]
+        products: [ARC_CORE, ARC_N, ARC_FINAL]
         difficulty_anchor: null
       SOC:
         scope_status: PROVISIONAL_REMAINDER
@@ -60,7 +61,7 @@ exams:
         source_ids: []
         excluded_unit_ids: []
         excluded_source_ids: []
-        products: [ARC_N, ARC_FINAL]
+        products: [ARC_CORE, ARC_N, ARC_FINAL]
         difficulty_anchor: null
       SCI:
         scope_status: PROVISIONAL_REMAINDER
@@ -69,7 +70,7 @@ exams:
         source_ids: []
         excluded_unit_ids: []
         excluded_source_ids: []
-        products: [ARC_N, ARC_FINAL]
+        products: [ARC_CORE, ARC_N, ARC_FINAL]
         difficulty_anchor: null
       HIS:
         scope_status: DEFERRED_BY_USER
