@@ -16,8 +16,8 @@ python tooling/arc.py start --subject KOR --product ARC_N --count 20 --scope "�
 운영 절차는 `ops/ARC_RUNBOOK.md`, 도구 설명은 `tooling/README.md`.
 
 ## Branches
-- `dev`: **현재 실사용 ruleset** (1.8.x). 실행 도구·CI·RUNBOOK·시험 설정이 모두 여기에 있다.
-- `main`: RELEASE 대상. 2026-11-10 현재 1.0.x에 머물러 있어 dev 승격 전까지 실제 생성에 사용하지 않는다. `BRANCH_POLICY.md` 참고.
+- `main`: RELEASE. 실제 CORE / N° / FINAL 생성은 main의 고정 커밋(`ruleset_commit`)을 기준으로 한다. 2026-11-10에 dev 전체(1.8.x)를 1.9.0으로 승격했다.
+- `dev`: 다음 변경을 시험하는 브랜치. 검증 후 `BRANCH_POLICY.md`의 승격 규칙에 따라 main으로 올린다.
 
 ## Start order
 1. `SYSTEM_MANIFEST.yaml`

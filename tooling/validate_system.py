@@ -72,8 +72,13 @@ def main() -> int:
     errors: list[str] = []
 
     manifest = yaml.safe_load((ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8"))
-    if not re.fullmatch(r"1\.8(?:\.\d+)?-dev", str(manifest["system"]["version"])):
-        errors.append("system.version must be on the 1.8 dev line")
+    version = str(manifest["system"]["version"])
+    status = str(manifest["system"].get("status"))
+    # 1.8.x-dev was the pre-release line; 1.9.x is the first line promoted to main.
+    if not re.fullmatch(r"1\.8(?:\.\d+)?-dev|1\.9\.\d+(?:-dev)?", version):
+        errors.append("system.version must be 1.8.x-dev or 1.9.x[-dev]")
+    if version.endswith("-dev") != (status == "dev") or status not in {"dev", "release"}:
+        errors.append("system.status must be 'dev' for a -dev version and 'release' otherwise")
 
     active = manifest.get("active", {})
     runtime = manifest.get("runtime", {})

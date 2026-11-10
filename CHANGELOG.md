@@ -1,3 +1,10 @@
+## 1.9.0 — 2026-11-10 (release: dev promoted to main)
+- Promoted the whole dev line (1.8.x: engines, subject masters, QA stack, executable tooling, CI, exam contexts) to main. main had stayed at 1.0.x.
+- main's five commits that were not on dev (B&W ARC N/FINAL layout PRs, session tooling) were already present on dev in equivalent form; conflicts resolved to the dev side. The stray `ARC_1.8.4-dev_maintainer_reassign.patch` at the repository root is removed (its content has been on dev since 1.8.4).
+- SOC and SCI now use the same production pipeline and renderer as KOR for ARC_N / ARC_FINAL: standalone items, bundle material sets, tables, <보기>, hash-bound figures, ion/formula super- and subscripts. KOR still requires registry-locked raw text. Two synthetic fixtures (SCI ARC_N, SOC ARC_FINAL) and a regression with eight fault injections run in CI.
+- Version rule: `1.9.x` + `status: release` on main, `1.9.x-dev` + `status: dev` for work in progress; CI runs on dev and main.
+- Unchanged and still blocking publication: exam scope is PROVISIONAL_REMAINDER for KOR/SOC/SCI, and no final-exam difficulty anchor is registered. No model-authored production content was generated or judged in this release.
+
 ## 1.8.47-dev — 2026-11-10
 - Operational audit for real use of KOR/SOC/SCI × ARC_CORE/ARC_N/ARC_FINAL.
 - Fixed: the 2026-11-07 Middle Korean module, false-difficulty gate and KOR-B04/B05 benches had been appended to superseded files (`KOREAN_MASTER_V4.0`, `ARC_ITEM_QUALITY_RUBRIC_V1.0`, `ARC_QA_BENCH_V1.0`) that the manifest no longer selects, so no generation path loaded them and strict checksums failed. The three superseded files are restored byte-for-byte; the rules moved unchanged into manifest-registered files (`runtime.korean_middle_korean_policy`, `active.quality.false_difficulty_gate`). Regression status stays DEFINED_NOT_EXECUTED.
