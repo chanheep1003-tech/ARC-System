@@ -1,0 +1,578 @@
+reviewer: independent_subagent_manuscript_only
+rounds: 1
+excluded_inputs:
+- ANSWER_KEY
+- AUTHOR_INTENT
+- PASS_A
+- TARGET_DIFFICULTY
+post_blind_edits:
+- item_id: KOR-S4-012,KOR-S4-016,KOR-S4-038
+  change: 풀이자 D2·c 판정을 받아 라벨 D3→D2로 낮춤(문항 내용 불변)
+- item_id: KOR-S4-028
+  change: 규정 예시를 정답과 겹치지 않는 굽도리·무녀리·코끼리로 교체
+- item_id: KOR-S4-032
+  change: ⑤ '귤들'(복수 접미사로도 읽힐 수 있음)을 '맡길수밖에'로 교체
+- item_id: KOR-S4-050
+  change: ③ '첫 출근 날'(합성어 여부 애매)을 '첫 월급'으로 교체
+- item_id: KOR-S4-014
+  change: ㉠에 '주로'를 넣어 이형태 누락 시비 제거
+- item_id: KOR-S4-004
+  change: ㉡ 'ᄉᆞ랑ᄒᆞ다'(이동/축소 견해 갈림)를 '어엿브다'로 교체
+items:
+- item_id: KOR-S4-001
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 4
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: '''곶''은 8종성법 표기(''곳'')가 아니라 ''ㅈ'' 받침을 그대로 쓴 예외 표기이므로 ③이 틀림. ①의 ''나모+ᄋᆞᆫ→남ᄀᆞᆫ''은 ''ㄱ'' 덧생김 설명으로 무난.'
+- item_id: KOR-S4-002
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 5
+  - 4
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: '''이ᄅᆞᆯ''은 대명사 ''이''+''ᄅᆞᆯ''로 두음 법칙과 무관하므로 근거로 부적절. 나머지 짝은 모두 맞음.'
+- item_id: KOR-S4-003
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 3
+  - 1
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: '''ᄍᆞᆼ''의 ''ㅇ''은 동국정운식 이상적 한자음 표기로 현실 한자음이 아님. ㉢ ''에''는 ''중국과 달라''의 비교 부사격 조사로 맞음.'
+- item_id: KOR-S4-004
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 5
+  - 1
+  second_best: 5
+  difficulty: D3
+  confidence: MEDIUM
+  flags: []
+  note: 어리다·ᄉᆞ랑ᄒᆞ다·싁싁ᄒᆞ다=이동, 세수=확대, 얼굴=축소. 'ᄉᆞ랑ᄒᆞ다'를 축소로 보는 교재 설명도 있으나 선지 중 축소에 ㉡을 둔 선지가 없어 ②로 확정됨.
+- item_id: KOR-S4-005
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 3
+  - 2
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: '''나모뿐''은 자음으로 시작하는 보조사 앞이라 ''ㄱ''이 덧생기지 않음. ③ ''보ᄆᆡ''의 ''ᄋᆡ''는 ''봄에''를 뜻하는 특수 처소의 부사격 조사로 ''봄의''가 아님.'
+- item_id: KOR-S4-006
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 1
+  - 5
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 'ㄱ(ᄀᆞᄅᆞᆷ+이, 빛+이), ㄴ(새: 반모음 ㅣ로 끝남, 형태 없음), ㄹ(부텨+ㅣ) 옳음. ㄷ ''뫼히''는 ''ㅎ'' 종성 체언 ''뫼ㅎ''+''이''임.'
+- item_id: KOR-S4-007
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 2
+  - 1
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: '''귀''가 ''ㅣ''로 끝나 ''예''가 쓰임. ''世尊ㅅ''은 높임 유정 명사, ''萬里外ㅅ''은 무정 명사 조건이며 ''일이시나''는 끊어 적기.'
+- item_id: KOR-S4-008
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 4
+  - 5
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: A·B·C 적절. D '엇디'는 구개음화가 일어나기 전 형태.
+- item_id: KOR-S4-009
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 2
+  - 3
+  second_best: 2
+  difficulty: D4
+  confidence: HIGH
+  flags: []
+  note: ㄱ(먹+움 명사형), ㄷ(사ᄅᆞᆷ 파생명사/사롬 명사형), ㅁ(ᄡᅳ+움, ㅡ 탈락) 옳음. ㄴ '어름'과 ㄹ '여름'은 '-음' 파생 명사.
+- item_id: KOR-S4-010
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 5
+  - 4
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: '''니ᄅᆞ샤ᄃᆡ''는 모음으로 시작하는 어미 ''-오ᄃᆡ'' 앞에서 ''-샤-''가 쓰이고 ''오''가 탈락한 것으로 자료에 부합함. ⑤는 ㄴ의 높임 대상(六龍)이 생략된 주어라서 학생이 ''古聖이''를 주어로 오인해 헷갈릴 수 있음.'
+- item_id: KOR-S4-011
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 5
+  - 3
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: '''ᄠ''은 ㅂ계, ''ᄢ''은 ㅄ계로 학습 자료상 모두 어두 자음군. ''ᄯ, ᄭ''은 ㅅ계, ''ᄡ''은 합용 병서.'
+- item_id: KOR-S4-012
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 4
+  - 1
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags:
+  - c
+  note: 사ᄅᆞᆷ미·님믈·ᄆᆞᄋᆞᆷ미가 거듭 적기. 말ᄊᆞ미는 이어 적기, 손에는 끊어 적기라 판별이 쉬움.
+- item_id: KOR-S4-013
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 1
+  - 3
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: 남기·굼글·굼긔는 규칙에 맞음. '와' 앞은 '나모와', '도' 앞은 '나모도'여야 함.
+- item_id: KOR-S4-014
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 3
+  - 1
+  second_best: 1
+  difficulty: D3
+  confidence: MEDIUM
+  flags: []
+  note: '''이''의 ''ㅣ''는 중성 모음이며 ''ᄅᆞᆯ''은 음성 모음 뒤 형태가 아니므로 ㉡의 설명이 틀림. ㉠은 ''ㄹ'' 등 이형태를 생략했지만 고칠 대상으로 보기는 어려움.'
+- item_id: KOR-S4-015
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 5
+  - 2
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: '''내히''는 ''내ㅎ''+''이''. ''므른''은 원순 모음화 전 형태, ''-ㄹᄊᆡ''는 원인, ''바ᄅᆞ래''는 부사격 ''바다에''.'
+- item_id: KOR-S4-016
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 4
+  - 2
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags:
+  - c
+  note: '''더ᄫᅳ니''는 ''ㅸ''의 소실 예이지 ''ㅿ''의 예가 아님. 글자 모양만 보면 바로 찾을 수 있음.'
+- item_id: KOR-S4-017
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 1
+  - 5
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: 자료에 'ㅇ'을 받쳐 음절 짜임을 갖추었다고 명시. ㆆ은 입성 표시(이영보래), 동국정운식 한자음은 곧 폐지되어 오늘날 한자음의 바탕이 아님(⑤ 판단에 약간의 배경지식 필요).
+- item_id: KOR-S4-018
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 5
+  - 4
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: '''더ᄫᅳ니→더우니''는 ㅸ이 반모음 ''ㅜ''로 바뀐 결과. ⑤ ᄀᆞᅀᆞᆯ의 첫음절 ㆍ는 ''ㅏ''로 바뀜, ④ 겨ᅀᅳᆯ→겨울.'
+- item_id: KOR-S4-019
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 3
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: 나라=무정, 부텨=높임 유정, 거붑·사ᄅᆞᆷ·즘ᄉᆡᇰ=높이지 않는 유정 명사.
+- item_id: KOR-S4-020
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 3
+  - 5
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: '''罰아''는 의문사가 없고 ''ㄹ'' 뒤에서 ''가''의 ''ㄱ''이 탈락한 판정 의문. ③의 ''ᄒᆡ''는 반모음 ''ㅣ''로 끝나는데 선지는 ''ㅣ''로 끝난다고만 표현해 약간 느슨하나 자료 표현과 일치함.'
+- item_id: KOR-S4-021
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 2
+  - 5
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: 꽃잎·덮개·웃음은 발음과 표기가 달라 형태소 본모양을 밝혀 적음. 하늘·바다는 소리대로.
+- item_id: KOR-S4-022
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 1
+  - 2
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: ㄱ·ㄴ·ㄹ 옳음. 'ㅂ, ㄱ' 받침 뒤 된소리는 적지 않으므로 '법석', '깍두기'가 맞는 표기.
+- item_id: KOR-S4-023
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 4
+  - 2
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: '''올 것 같아서'', ''없는 데다가''로 고쳐야 함. 말대로·수밖에·한 지·만에·나만큼은 바름.'
+- item_id: KOR-S4-024
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 5
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 등굣길·뒷일·전셋집. 해님은 접미사 결합(합성어 아님), 개수는 한자어끼리, 위층은 거센소리라 덧나지 않음.
+- item_id: KOR-S4-025
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 4
+  - 1
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 출석률·실패율·선율 옳음. '남녀'가 바른 표기이고, 연+이율은 붙임 2에 따라 '연이율'로 적어야 함.
+- item_id: KOR-S4-026
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 5
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: ㄱ(엎어지다 원형 밝힘), ㄴ(쓰러지다 소리대로), ㄹ(드러나다 소리대로)은 맞고, ㄷ은 '접어들다'가 바른 표기라 틀림.
+- item_id: KOR-S4-027
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 4
+  - 2
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: A·C 적절. B는 '무덤'으로 소리대로 적고, D의 '거름'은 '걸-(걸다)+-음'에서 뜻이 멀어져 '거름'으로 적으므로 '걷-' 분석과 '걸음과 같이' 결론 모두 부적절.
+- item_id: KOR-S4-028
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 5
+  - 1
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags:
+  - c
+  note: 걸음/거름/노름/목걸이/목거리. 규정 예시에 거름·노름·목거리가 그대로 제시되어 답이 쉽게 드러남.
+  flag_adjudication:
+    c: 풀이자 지적대로 규정 예시에 정답 단어(거름·노름·목거리)가 그대로 있었다. 예시를 굽도리·무녀리·코끼리로 바꿨다(post_blind_edits). 재풀이는 하지 않았다.
+- item_id: KOR-S4-029
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 5
+  - 1
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: '''꼼꼼히''가 바른 표기. 번번이·틈틈이(첩어), 가까이, 따뜻이(ㅅ받침)는 맞음.'
+- item_id: KOR-S4-030
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 2
+  - 4
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 익숙지·정결타·깨끗지는 맞고, 섭섭지(×섭섭치), 무심치(×무심지)가 바른 형태.
+- item_id: KOR-S4-031
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 5
+  - 1
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: 선택의 '-든지'는 ②뿐. ①③⑤는 회상이므로 '-던지', ④는 '가든지 말든지'.
+- item_id: KOR-S4-032
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 3
+  - 5
+  second_best: 5
+  difficulty: D3
+  confidence: MEDIUM
+  flags: []
+  note: '''한 달간''의 ''-간''(기간)은 접미사로 붙여 씀. ①회의 중 ②부산 간 ③인사차 ⑤''귤 들''(열거 의존 명사)이 바름. ⑤는 ''귤들''을 복수 접미사로 볼 여지가 있어 학생 혼동 가능.'
+- item_id: KOR-S4-033
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 4
+  - 1
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: ㄱ '노력한 만큼', ㄹ '바대로'(체언 뒤 조사)가 틀림. ㄴ·ㄷ·ㅁ은 의존 명사 띄어쓰기로 바름.
+- item_id: KOR-S4-034
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 4
+  - 3
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: 마음을 '졸이다'가 바름. ①부쳤다 ②조렸더니 ③맞혔다 ④늘여(길이를 길게).
+- item_id: KOR-S4-035
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 4
+  - 5
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: '''초점''은 (3)의 여섯 단어에 없으므로 사이시옷을 적지 않음. 나머지 판단은 모두 적절.'
+- item_id: KOR-S4-036
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 4
+  - 5
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: 해돋이·굳이·닫히다 모두 제6항 적용. ④는 맏며느리가, ②③⑤는 잔디·느티나무·디디다가 해당 없음.
+- item_id: KOR-S4-037
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 2
+  - 1
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: ㄱ·ㄹ은 붙여 씀 허용. ㄴ(중간 조사), ㄷ(합성 용언 '뛰어나가다' 뒤), ㅁ('체를 한다')은 띄어야 함.
+- item_id: KOR-S4-038
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 2
+  - 3
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags:
+  - c
+  note: '''두 개''로 띄어야 함. 만 단위 띄어쓰기, ''제1과'', ''청군 대 백군''은 바름.'
+- item_id: KOR-S4-039
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 5
+  - 1
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: 돼라(되어라), 쐤더니(쐬었더니)는 바름. 봬요, 안 돼요, 된다가 바른 형태.
+- item_id: KOR-S4-040
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 4
+  - 2
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: '''-ㄹ걸''도 예사소리로 적으므로 ㉢의 답변이 틀림. 나머지 답변은 바름.'
+- item_id: KOR-S4-041
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 4
+  - 2
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 나룻배[나루빼]·뱃길[배낄]=Ⓐ, 툇마루·제삿날=Ⓑ, 깻잎[깬닙]=Ⓒ.
+- item_id: KOR-S4-042
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 4
+  - 1
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: '''은닉''은 첫머리가 아니므로 본음대로. ①남녀만 ②몇 년 ④신여성(붙임 2) ⑤여자.'
+- item_id: KOR-S4-043
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 3
+  - 1
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 퍼·도와·고와는 바름. ㄹ은 '걸어', ㅁ의 '이르다(닿다)'는 러 불규칙으로 '이르러'('일러'는 '이르다(말하다/빠르다)').
+- item_id: KOR-S4-044
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 5
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags:
+  - c
+  note: '''먹을 만큼''만 바름. ②너마저 ③아는 것 ④갈 수 ⑤학생이라면.'
+- item_id: KOR-S4-045
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 5
+  - 2
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: '''값지다''는 ''값''의 원형을 밝혀 적음. ⑤ ''굵다랗다''는 끝소리 [ㄱ]이 드러나므로 원형을 밝혀 적는 말이라 틀림.'
+- item_id: KOR-S4-046
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 5
+  - 1
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: ㄱ, ㄴ(성·이름 구분 위해 띄어 씀 허용), ㄷ(원칙), ㄹ(허용)이 바름. ㅁ '이 선생님', ㅂ '최치원'이 바름.
+- item_id: KOR-S4-047
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 4
+  - 5
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: ㉢ '일정 기간', ㉤ '주십시오'로 고쳐야 함. '일주일 내로'(의존 명사), '바랍니다'는 바름.
+- item_id: KOR-S4-048
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 4
+  - 2
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: ㄱ~ㄹ은 바르게 줄인 것이고 ㅁ은 '시원찮다'가 바름. ㄷ '편찮다'는 의미 변화가 있어도 형태는 규정에 맞음.
+- item_id: KOR-S4-049
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 4
+  - 1
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: '''하느라고''(원인) 바름. ④는 원인이므로 ''공부하느라고'', ①⑤는 자격 ''로서'', ②는 수단 ''로써''.'
+- item_id: KOR-S4-050
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 3
+  - 4
+  second_best: 3
+  difficulty: D3
+  confidence: MEDIUM
+  flags: []
+  note: '''맨손''은 한 단어이므로 붙여 씀. ③ ''첫 출근 날''은 ''출근날''의 합성어 여부가 사전에 따라 애매해 학생이 혼동할 수 있음.'

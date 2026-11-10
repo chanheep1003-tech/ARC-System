@@ -230,9 +230,10 @@ def ref_ok(ref: str, st: dict[str, Any], item: dict[str, Any] | None = None) -> 
     """Evidence refs: [W<n>.]P<p>S<s> for prose, [W<n>.]L<l> for verse (non-blank line number).
     Item-supplied material (D-24, short-material items as in school exams): V<n> = line n of the item's <보기>,
     R<n> = row n of the item's table. Students see both, so they count as evidence of that item only."""
-    sm = re.fullmatch(r"([VR])(\d+)", ref)
-    if sm and item is not None:
-        rows = (item.get("view") or []) if sm.group(1) == "V" else ((item.get("table") or {}).get("rows") or [])
+    sm = re.fullmatch(r"([VRO])(\d+)", ref)
+    if sm and item is not None:  # O<n> = option n itself, for items whose material is the option sentences
+        rows = {"V": item.get("view") or [], "R": (item.get("table") or {}).get("rows") or [],
+                "O": item.get("options") or []}[sm.group(1)]
         return 1 <= int(sm.group(2)) <= len(rows)
     m = re.fullmatch(r"(?:W(\d+)\.)?(?:P(\d+)S(\d+)|L(\d+))", ref)
     if not m:
@@ -570,7 +571,10 @@ def qa_evidence(bundle, sources, blind, text, findings) -> dict[str, Any]:
         a = int(it["answer"])
         key_ev = [f"SRC:{it['set']}:{e}" for e in it["judgments"][a - 1]["ev"]]
         codes = {f["code"] for f in hard if f.get("item_id") == it["item_id"]}
-        src = next(s for s in sources if s["id"] == it["set"])["works"][0]
+        works = next(s for s in sources if s["id"] == it["set"])["works"]
+        # Item-supplied material (no shared passage): the scope trace points at the item's own textbook scope refs.
+        scope_refs = ([f"DRIVE:{works[0]['entry']['school_source_file_id']}"] if works else
+                      [f"ITEM_SUPPLIED:{it['item_id']}"] + [f"SCOPE:{r}" for r in (it.get("provenance") or {}).get("school_scope_refs", [])])
         items.append({
             "item_id": it["item_id"], "target_difficulty": it["difficulty"],
             "stem_polarity": korean_stem_polarity(it),
@@ -579,7 +583,7 @@ def qa_evidence(bundle, sources, blind, text, findings) -> dict[str, Any]:
                 "answer": str(b.get("answer", "")), "blind": True, "reviewer": blind.get("reviewer"),
                 "excluded_inputs": blind.get("excluded_inputs", []), "confidence": b.get("confidence", "LOW"),
                 "answer_evidence": key_ev,
-                "scope_trace": {"status": "IN_SCOPE", "source_refs": [f"DRIVE:{src['entry']['school_source_file_id']}"]},
+                "scope_trace": {"status": "IN_SCOPE", "source_refs": scope_refs},
                 "option_judgments": [{
                     "option_id": str(i), "verdict": korean_judgment_truth(it, j),
                     "statement_truth": korean_judgment_truth(it, j),
@@ -599,7 +603,7 @@ def qa_evidence(bundle, sources, blind, text, findings) -> dict[str, Any]:
     set_codes = {f["code"] for f in hard if "item_id" not in f}
     return {
         "schema_version": "ARC-QA-EVIDENCE-V1.0", "subject": bundle["subject"], "item_count": len(items),
-        "item_format": "MCQ5", "uses_source_text": True, "student_manuscript_sha256": serializer.sha256_text(text),
+        "item_format": "MCQ5", "uses_source_text": any(st["works"] for st in sources), "student_manuscript_sha256": serializer.sha256_text(text),
         "source_text_locks": [{
             "source_text_id": s["entry"]["source_text_id"], "source_origin": s["entry"]["source_origin"],
             "source_role": s["entry"]["role"], "text_fidelity": s["entry"]["text_fidelity"],

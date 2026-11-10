@@ -414,13 +414,13 @@ items:
     axis: application
     claim: o2
     ev: *id004
-    why: 세수는 확대, 얼굴은 축소, 어리다·ᄉᆞ랑ᄒᆞ다·싁싁ᄒᆞ다는 이동이다.
+    why: 세수는 확대, 얼굴은 축소, 어리다·어엿브다·싁싁ᄒᆞ다는 이동이다.
   - v: false
     c: STRONG
     axis: application
     claim: o3
     ev: *id004
-    why: '''ᄉᆞ랑ᄒᆞ다''는 ''생각하다''에서 ''사랑하다''로 옮겨 간 이동이다.'
+    why: '''어엿브다''는 ''불쌍하다''에서 ''예쁘다''로 옮겨 간 이동이다.'
     mis: KM04
   - v: false
     c: MEDIUM
@@ -440,13 +440,13 @@ items:
   immediate_elimination: 1
   view:
   - '㉠ 어리다: ''어리석다'' → ''나이가 적다'''
-  - '㉡ ᄉᆞ랑ᄒᆞ다: ''생각하다'' → ''사랑하다'''
+  - '㉡ 어엿브다: ''불쌍하다'' → ''예쁘다'''
   - '㉢ 세수(洗手): ''손을 씻음'' → ''손이나 얼굴을 씻음'''
   - '㉣ 얼굴: ''형체'' → ''눈, 코, 입이 있는 머리의 앞면'''
   - '㉤ 싁싁ᄒᆞ다: ''엄하다'' → ''굳세고 위엄스럽다'''
   novel_examples:
-  - ᄉᆞ랑ᄒᆞ다
   - 싁싁ᄒᆞ다
+  - 세수
   source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
   provenance:
     mode: AI_ORIGINAL
@@ -1006,7 +1006,7 @@ items:
   family: CASE_APPLICATION
   template: K11
   coverage: DOUBLE_WRITING_JUNGCHEOL
-  difficulty: D3
+  difficulty: D2
   balance: CORE_EXAM_POINT
   stem: <보기>의 [자료]에 따를 때 ㉠~㉤ 중 '거듭 적기'에 해당하는 것만을 모두 고른 것은?
   options:
@@ -1210,7 +1210,7 @@ items:
   immediate_elimination: 1
   view:
   - '[탐구 보고서] 중세 국어의 목적격 조사는 앞말의 끝소리와 모음에 따라 형태가 달랐다.'
-  - ㉠ 앞말이 자음으로 끝나면 'ᄋᆞᆯ/을', 모음으로 끝나면 'ᄅᆞᆯ/를'이 쓰였다.
+  - ㉠ 앞말이 자음으로 끝나면 주로 'ᄋᆞᆯ/을', 모음으로 끝나면 주로 'ᄅᆞᆯ/를'이 쓰였다.
   - ㉡ '이ᄅᆞᆯ'은 앞말 '이'가 음성 모음으로 끝나 'ᄅᆞᆯ'이 쓰인 예이다.
   - ㉢ 'ᄇᆞᄅᆞᄆᆞᆯ'은 앞말의 모음이 양성이어서 'ᄋᆞᆯ'이 쓰인 예이다.
   - ㉣ '므를'은 앞말의 모음이 음성이어서 '을'이 쓰인 예이다.
@@ -1309,9 +1309,9 @@ items:
   family: COMPARISON_MATRIX
   template: K11
   coverage: CHANGE_TYPE_TABLE
-  difficulty: D3
+  difficulty: D2
   balance: CORE_EXAM_POINT
-  stem: <보기>는 중세 국어에서 현대 국어로의 변화를 정리한 표이다. ㉠~㉤ 중 변화 내용과 예가 바르게 짝지어지지 않은 것은?
+  stem: <보기>는 중세 국어에서 현대 국어로의 변화를 정리한 표이다. ㉠~㉤ 중 변화 내용과 예의 짝이 옳지 않은 것은?
   options:
   - ㉠
   - ㉡
@@ -2001,7 +2001,7 @@ items:
   coverage: DUEUM_RYUL_YUL
   difficulty: D4
   balance: ADVANCED_DISCRIMINATION
-  stem: <보기>의 규정을 적용한 결과로 옳은 것만을 있는 대로 고른 것은?
+  stem: <보기>의 규정을 적용한 결과로 옳은 것을 모두 고른 것은?
   options:
   - ㄱ, ㄴ
   - ㄱ, ㄴ, ㅁ
@@ -2271,7 +2271,7 @@ items:
   reasoning_steps: 5
   immediate_elimination: 1
   view:
-  - '[제19항] 어간에 ''-이''나 ''-음/-ㅁ''이 붙어서 명사로 된 것은 그 어간의 원형을 밝히어 적는다. 다만, 어간의 뜻과 멀어진 것은 원형을 밝히어 적지 아니한다. (예) 굽도리, 목거리(목병), 거름(비료), 노름(도박)'
+  - '[제19항] 어간에 ''-이''나 ''-음/-ㅁ''이 붙어서 명사로 된 것은 그 어간의 원형을 밝히어 적는다. 다만, 어간의 뜻과 멀어진 것은 원형을 밝히어 적지 아니한다. (예) 굽도리, 무녀리, 코끼리'
   - ㉠ 아기의 첫 (걸음/거름)을 영상으로 남겼다.
   - ㉡ 밭에 (걸음/거름)을 주었더니 배추가 잘 자랐다.
   - ㉢ 그는 (놀음/노름)에 빠져 재산을 잃었다.
@@ -2517,7 +2517,7 @@ items:
   - 서울과 부산간 고속 열차가 늘어났다.
   - 인사 차 들렀다가 차 한 잔 마시고 왔다.
   - 한 달간 모은 돈으로 동생에게 선물을 샀다.
-  - 사과, 배, 귤들을 바구니에 담았다.
+  - 그 일은 그에게 맡길수밖에 없었다.
   answer: 4
   second_best: 2
   judgments:
@@ -2525,46 +2525,50 @@ items:
     c: MEDIUM
     axis: application
     claim: o1
-    ev: &id032
-    - R1
+    ev:
+    - O1
     why: '''회의 중에는''으로 띄운다.'
     mis: KM01
   - v: false
     c: STRONG
     axis: application
     claim: o2
-    ev: *id032
+    ev:
+    - O2
     why: '''부산 간''의 ''간''은 의존 명사이다.'
     mis: KM15
   - v: false
     c: STRONG
     axis: application
     claim: o3
-    ev: *id032
+    ev:
+    - O3
     why: '''인사차''의 ''-차''는 접미사이다.'
     mis: KM15
   - v: true
     c: CORRECT
     axis: application
     claim: o4
-    ev: *id032
+    ev:
+    - O4
     why: 옳다. '-간'은 접미사이다.
   - v: false
     c: MEDIUM
     axis: application
     claim: o5
-    ev: *id032
-    why: '''귤 들''의 ''들''은 의존 명사이다.'
+    ev:
+    - O5
+    why: '''맡길 수밖에''로 띄어 쓴다.'
     mis: KM15
   reasoning_steps: 4
   immediate_elimination: 1
   novel_examples:
   - 한 달간
   - 인사차
-  - 귤 들
+  - 맡길 수밖에
   exception_rules:
   - '''-간(동안), -차(목적)''는 접미사'
-  - 나열 뒤 '들'은 의존 명사
+  - 의존 명사 '수' 뒤 '밖에'는 조사
   provenance:
     mode: AI_ORIGINAL
     school_scope_refs:
@@ -2592,7 +2596,7 @@ items:
     c: MEDIUM
     axis: application
     claim: o1
-    ev: &id033
+    ev: &id032
     - V1
     why: '''노력한 만큼''으로 띄운다.'
     mis: KM01
@@ -2600,27 +2604,27 @@ items:
     c: STRONG
     axis: application
     claim: o2
-    ev: *id033
+    ev: *id032
     why: '''바대로''로 붙여 써야 한다.'
     mis: KM15
   - v: true
     c: CORRECT
     axis: application
     claim: o3
-    ev: *id033
+    ev: *id032
     why: 옳다.
   - v: false
     c: STRONG
     axis: application
     claim: o4
-    ev: *id033
+    ev: *id032
     why: ㄹ은 틀리다.
     mis: KM15
   - v: false
     c: MEDIUM
     axis: application
     claim: o5
-    ev: *id033
+    ev: *id032
     why: ㄱ은 틀리다.
     mis: KM01
   reasoning_steps: 5
@@ -2669,36 +2673,40 @@ items:
     c: MEDIUM
     axis: application
     claim: o1
-    ev: &id034
-    - R1
+    ev:
+    - O1
     why: '''부쳤다''이다.'
     mis: KM15
   - v: false
     c: STRONG
     axis: application
     claim: o2
-    ev: *id034
+    ev:
+    - O2
     why: 양념이 배게 끓이는 것은 '조렸더니'이다.
     mis: KM15
   - v: false
     c: MEDIUM
     axis: application
     claim: o3
-    ev: *id034
+    ev:
+    - O3
     why: 목표에 닿게 하는 것은 '맞혔다'이다.
     mis: KM15
   - v: false
     c: STRONG
     axis: application
     claim: o4
-    ev: *id034
+    ev:
+    - O4
     why: 길이를 길게 하는 것은 '늘여'이다.
     mis: KM15
   - v: true
     c: CORRECT
     axis: application
     claim: o5
-    ev: *id034
+    ev:
+    - O5
     why: 옳다.
   reasoning_steps: 5
   immediate_elimination: 1
@@ -2734,35 +2742,35 @@ items:
     c: CORRECT
     axis: application
     claim: o1
-    ev: &id035
+    ev: &id033
     - V1
     why: '''초점''은 (3)의 여섯 단어에 들지 않으므로 ''초점''으로 적는다.'
   - v: true
     c: MEDIUM
     axis: application
     claim: o2
-    ev: *id035
+    ev: *id033
     why: 옳다.
     mis: KM13
   - v: true
     c: MEDIUM
     axis: application
     claim: o3
-    ev: *id035
+    ev: *id033
     why: 옳다.
     mis: KM07
   - v: true
     c: STRONG
     axis: application
     claim: o4
-    ev: *id035
+    ev: *id033
     why: 옳다.
     mis: KM09
   - v: true
     c: STRONG
     axis: application
     claim: o5
-    ev: *id035
+    ev: *id033
     why: 옳다.
     mis: KM09
   reasoning_steps: 5
@@ -2810,35 +2818,35 @@ items:
     c: CORRECT
     axis: application
     claim: o1
-    ev: &id036
+    ev: &id034
     - V1
     why: 옳다.
   - v: false
     c: STRONG
     axis: application
     claim: o2
-    ev: *id036
+    ev: *id034
     why: '''잔디''는 한 형태소 안이다.'
     mis: KM13
   - v: false
     c: STRONG
     axis: application
     claim: o3
-    ev: *id036
+    ev: *id034
     why: '''느티나무''는 형태소 안이라 해당하지 않는다.'
     mis: KM13
   - v: false
     c: MEDIUM
     axis: application
     claim: o4
-    ev: *id036
+    ev: *id034
     why: '''맏며느리''는 구개음화가 일어나지 않는다.'
     mis: KM07
   - v: false
     c: MEDIUM
     axis: application
     claim: o5
-    ev: *id036
+    ev: *id034
     why: '''디디다''는 해당하지 않는다.'
     mis: KM13
   reasoning_steps: 5
@@ -2878,7 +2886,7 @@ items:
     c: STRONG
     axis: application
     claim: o1
-    ev: &id037
+    ev: &id035
     - V1
     why: 중간에 조사가 들어가면 띄어 쓴다.
     mis: KM09
@@ -2886,28 +2894,28 @@ items:
     c: STRONG
     axis: application
     claim: o2
-    ev: *id037
+    ev: *id035
     why: 합성 용언 뒤 보조 용언은 띄어 쓴다.
     mis: KM09
   - v: false
     c: MEDIUM
     axis: application
     claim: o3
-    ev: *id037
+    ev: *id035
     why: ㄴ은 틀리다.
     mis: KM09
   - v: false
     c: MEDIUM
     axis: application
     claim: o4
-    ev: *id037
+    ev: *id035
     why: 조사 뒤 '한다'는 띄어 쓴다.
     mis: KM15
   - v: true
     c: CORRECT
     axis: application
     claim: o5
-    ev: *id037
+    ev: *id035
     why: 옳다.
   reasoning_steps: 5
   immediate_elimination: 1
@@ -2937,7 +2945,7 @@ items:
   family: EXCEPT_INCORRECT
   template: K6
   coverage: SPACING_NUMBERS_UNITS
-  difficulty: D3
+  difficulty: D2
   balance: CORE_EXAM_POINT
   stem: 다음 중 띄어쓰기가 바르지 않은 것은?
   options:
@@ -2953,35 +2961,39 @@ items:
     c: STRONG
     axis: application
     claim: o1
-    ev: &id038
-    - R1
+    ev:
+    - O1
     why: 아라비아 숫자와 단위는 붙여 쓸 수 있다.
     mis: KM09
   - v: true
     c: STRONG
     axis: application
     claim: o2
-    ev: *id038
+    ev:
+    - O2
     why: 만 단위로 띄어 쓴다.
     mis: KM09
   - v: true
     c: MEDIUM
     axis: application
     claim: o3
-    ev: *id038
+    ev:
+    - O3
     why: '''제-''는 접두사이다.'
     mis: KM15
   - v: false
     c: CORRECT
     axis: application
     claim: o4
-    ev: *id038
+    ev:
+    - O4
     why: '''두 개''로 띄어 쓴다.'
   - v: true
     c: MEDIUM
     axis: application
     claim: o5
-    ev: *id038
+    ev:
+    - O5
     why: 두 말을 이어 주는 '대'는 띄어 쓴다.
     mis: KM07
   reasoning_steps: 4
@@ -3018,7 +3030,7 @@ items:
     c: STRONG
     axis: application
     claim: o1
-    ev: &id039
+    ev: &id036
     - V1
     why: '''뵈어요''가 줄면 ''봬요''이다.'
     mis: KM14
@@ -3026,27 +3038,27 @@ items:
     c: CORRECT
     axis: application
     claim: o2
-    ev: *id039
+    ev: *id036
     why: 옳다.
   - v: false
     c: MEDIUM
     axis: application
     claim: o3
-    ev: *id039
+    ev: *id036
     why: ㄴ·ㄷ은 틀리다.
     mis: KM08
   - v: false
     c: MEDIUM
     axis: application
     claim: o4
-    ev: *id039
+    ev: *id036
     why: '''된다''로 써야 한다.'
     mis: KM08
   - v: false
     c: STRONG
     axis: application
     claim: o5
-    ev: *id039
+    ev: *id036
     why: '''안 돼요''로 써야 한다.'
     mis: KM14
   reasoning_steps: 5
@@ -3094,7 +3106,7 @@ items:
     c: STRONG
     axis: application
     claim: o1
-    ev: &id040
+    ev: &id037
     - V1
     why: 옳다.
     mis: KM14
@@ -3102,27 +3114,27 @@ items:
     c: MEDIUM
     axis: application
     claim: o2
-    ev: *id040
+    ev: *id037
     why: 옳다.
     mis: KM14
   - v: false
     c: CORRECT
     axis: application
     claim: o3
-    ev: *id040
+    ev: *id037
     why: 어미 '-ㄹ걸'은 된소리로 나더라도 예사소리로 적으므로 '알았을걸'이 맞다.
   - v: true
     c: STRONG
     axis: application
     claim: o4
-    ev: *id040
+    ev: *id037
     why: 옳다.
     mis: KM06
   - v: true
     c: MEDIUM
     axis: application
     claim: o5
-    ev: *id040
+    ev: *id037
     why: 옳다.
     mis: KM14
   reasoning_steps: 3
@@ -3169,7 +3181,7 @@ items:
     c: MEDIUM
     axis: application
     claim: o1
-    ev: &id041
+    ev: &id038
     - V1
     why: '''깻잎[깬닙]''은 Ⓒ, ''뱃길[배낄]''은 Ⓐ이다.'
     mis: KM07
@@ -3177,28 +3189,28 @@ items:
     c: STRONG
     axis: application
     claim: o2
-    ev: *id041
+    ev: *id038
     why: '''제삿날[제산날]''은 Ⓑ이다.'
     mis: KM07
   - v: false
     c: MEDIUM
     axis: application
     claim: o3
-    ev: *id041
+    ev: *id038
     why: '''나룻배[나루빼]''는 Ⓐ이다.'
     mis: KM07
   - v: false
     c: STRONG
     axis: application
     claim: o4
-    ev: *id041
+    ev: *id038
     why: '''제삿날''은 Ⓑ이다.'
     mis: KM07
   - v: true
     c: CORRECT
     axis: application
     claim: o5
-    ev: *id041
+    ev: *id038
     why: 옳다.
   reasoning_steps: 5
   immediate_elimination: 1
@@ -3245,7 +3257,7 @@ items:
     c: MEDIUM
     axis: application
     claim: o1
-    ev: &id042
+    ev: &id039
     - V1
     why: '''남녀''만 바르다.'
     mis: KM08
@@ -3253,27 +3265,27 @@ items:
     c: STRONG
     axis: application
     claim: o2
-    ev: *id042
+    ev: *id039
     why: 의존 명사 '년'은 본음대로 적는다.
     mis: KM09
   - v: true
     c: CORRECT
     axis: application
     claim: o3
-    ev: *id042
+    ev: *id039
     why: 옳다.
   - v: false
     c: STRONG
     axis: application
     claim: o4
-    ev: *id042
+    ev: *id039
     why: 접두사처럼 쓰이는 말 뒤에서는 두음 법칙을 따라 '신여성'으로 적는다.
     mis: KM09
   - v: false
     c: MEDIUM
     axis: application
     claim: o5
-    ev: *id042
+    ev: *id039
     why: 첫머리이므로 '여자'로 적는다.
     mis: KM08
   reasoning_steps: 4
@@ -3314,7 +3326,7 @@ items:
     c: MEDIUM
     axis: application
     claim: o1
-    ev: &id043
+    ev: &id040
     - V1
     why: ㄷ도 옳다.
     mis: KM12
@@ -3322,27 +3334,27 @@ items:
     c: CORRECT
     axis: application
     claim: o2
-    ev: *id043
+    ev: *id040
     why: 옳다.
   - v: false
     c: STRONG
     axis: application
     claim: o3
-    ev: *id043
+    ev: *id040
     why: '''이르다(도달하다)''는 ''이르러''가 된다.'
     mis: KM15
   - v: false
     c: STRONG
     axis: application
     claim: o4
-    ev: *id043
+    ev: *id040
     why: '''걷다(걸음)''는 ''걸어''가 된다.'
     mis: KM15
   - v: false
     c: MEDIUM
     axis: application
     claim: o5
-    ev: *id043
+    ev: *id040
     why: ㄹ·ㅁ은 틀리다.
     mis: KM15
   reasoning_steps: 5
@@ -3389,35 +3401,39 @@ items:
     c: CORRECT
     axis: application
     claim: o1
-    ev: &id044
-    - R1
+    ev:
+    - O1
     why: 옳다.
   - v: false
     c: STRONG
     axis: application
     claim: o2
-    ev: *id044
+    ev:
+    - O2
     why: '''너마저''는 조사라 붙인다.'
     mis: KM01
   - v: false
     c: STRONG
     axis: application
     claim: o3
-    ev: *id044
+    ev:
+    - O3
     why: '''아는 것이''로 띄운다.'
     mis: KM01
   - v: false
     c: MEDIUM
     axis: application
     claim: o4
-    ev: *id044
+    ev:
+    - O4
     why: '''갈 수''로 띄운다.'
     mis: KM01
   - v: false
     c: MEDIUM
     axis: application
     claim: o5
-    ev: *id044
+    ev:
+    - O5
     why: '''학생이라면''으로 붙인다.'
     mis: KM01
   reasoning_steps: 2
@@ -3449,7 +3465,7 @@ items:
     c: MEDIUM
     axis: application
     claim: o1
-    ev: &id045
+    ev: &id041
     - V1
     why: 원형을 밝혀 '덮개'로 적는다.
     mis: KM06
@@ -3457,27 +3473,27 @@ items:
     c: MEDIUM
     axis: application
     claim: o2
-    ev: *id045
+    ev: *id041
     why: '''넋두리''로 적는다.'
     mis: KM09
   - v: false
     c: STRONG
     axis: application
     claim: o3
-    ev: *id045
+    ev: *id041
     why: '''넙치''는 소리대로 적는 예이다.'
     mis: KM09
   - v: true
     c: CORRECT
     axis: application
     claim: o4
-    ev: *id045
+    ev: *id041
     why: 옳다.
   - v: false
     c: STRONG
     axis: application
     claim: o5
-    ev: *id045
+    ev: *id041
     why: 끝소리 [ㄱ]이 드러나므로 '굵다랗다'로 적는다.
     mis: KM09
   reasoning_steps: 4
@@ -3517,7 +3533,7 @@ items:
     c: MEDIUM
     axis: application
     claim: o1
-    ev: &id046
+    ev: &id042
     - V1
     why: ㅁ은 '이 선생님'으로 띄운다.
     mis: KM01
@@ -3525,27 +3541,27 @@ items:
     c: STRONG
     axis: application
     claim: o2
-    ev: *id046
+    ev: *id042
     why: ㅂ은 '최치원'으로 붙인다.
     mis: KM09
   - v: false
     c: MEDIUM
     axis: application
     claim: o3
-    ev: *id046
+    ev: *id042
     why: ㅂ은 틀리다.
     mis: KM09
   - v: true
     c: CORRECT
     axis: application
     claim: o4
-    ev: *id046
+    ev: *id042
     why: 옳다.
   - v: false
     c: STRONG
     axis: application
     claim: o5
-    ev: *id046
+    ev: *id042
     why: ㅁ은 틀리다.
     mis: KM01
   reasoning_steps: 5
@@ -3594,7 +3610,7 @@ items:
     c: STRONG
     axis: application
     claim: o1
-    ev: &id047
+    ev: &id043
     - V1
     why: '''일주일 내로''는 바르다.'
     mis: KM01
@@ -3602,27 +3618,27 @@ items:
     c: CORRECT
     axis: application
     claim: o2
-    ev: *id047
+    ev: *id043
     why: '''일정 기간'', ''주십시오''로 고친다.'
   - v: false
     c: STRONG
     axis: application
     claim: o3
-    ev: *id047
+    ev: *id043
     why: '''바랍니다''는 바르다.'
     mis: KM14
   - v: false
     c: MEDIUM
     axis: application
     claim: o4
-    ev: *id047
+    ev: *id043
     why: ㉠·㉡은 바르다.
     mis: KM14
   - v: false
     c: MEDIUM
     axis: application
     claim: o5
-    ev: *id047
+    ev: *id043
     why: ㉣은 바르다.
     mis: KM12
   reasoning_steps: 5
@@ -3661,7 +3677,7 @@ items:
     c: STRONG
     axis: application
     claim: o1
-    ev: &id048
+    ev: &id044
     - V1
     why: '''시원찮다''로 써야 한다.'
     mis: KM14
@@ -3669,28 +3685,28 @@ items:
     c: MEDIUM
     axis: application
     claim: o2
-    ev: *id048
+    ev: *id044
     why: ㄴ도 옳다.
     mis: KM12
   - v: false
     c: MEDIUM
     axis: application
     claim: o3
-    ev: *id048
+    ev: *id044
     why: ㅁ은 틀리다.
     mis: KM14
   - v: false
     c: STRONG
     axis: application
     claim: o4
-    ev: *id048
+    ev: *id044
     why: ㅁ은 틀리다.
     mis: KM14
   - v: true
     c: CORRECT
     axis: application
     claim: o5
-    ev: *id048
+    ev: *id044
     why: 옳다.
   reasoning_steps: 5
   immediate_elimination: 1
@@ -3737,7 +3753,7 @@ items:
     c: STRONG
     axis: application
     claim: o1
-    ev: &id049
+    ev: &id045
     - V1
     why: 자격이므로 '학생으로서'이다.
     mis: KM15
@@ -3745,27 +3761,27 @@ items:
     c: MEDIUM
     axis: application
     claim: o2
-    ev: *id049
+    ev: *id045
     why: 수단이므로 '대화로써'이다.
     mis: KM15
   - v: true
     c: CORRECT
     axis: application
     claim: o3
-    ev: *id049
+    ev: *id045
     why: 옳다.
   - v: false
     c: STRONG
     axis: application
     claim: o4
-    ev: *id049
+    ev: *id045
     why: 원인이므로 '공부하느라고'이다.
     mis: KM15
   - v: false
     c: MEDIUM
     axis: application
     claim: o5
-    ev: *id049
+    ev: *id045
     why: 자격이므로 '부모로서'이다.
     mis: KM15
   reasoning_steps: 5
@@ -3793,7 +3809,7 @@ items:
   options:
   - 맨 손으로 상자를 들었다.
   - 우리는 맨 뒤에 앉았다.
-  - 오늘이 첫 출근 날이다.
+  - 그는 첫 월급으로 선물을 샀다.
   - 올겨울 첫눈이 내렸다.
   - 새 학기가 시작되었다.
   answer: 1
@@ -3803,35 +3819,39 @@ items:
     c: CORRECT
     axis: application
     claim: o1
-    ev: &id050
-    - R1
+    ev:
+    - O1
     why: '''맨손''의 ''맨-''은 접두사라 붙여 쓴다.'
   - v: true
     c: STRONG
     axis: application
     claim: o2
-    ev: *id050
+    ev:
+    - O2
     why: 관형사 '맨'은 띄어 쓴다.
     mis: KM15
   - v: true
     c: MEDIUM
     axis: application
     claim: o3
-    ev: *id050
+    ev:
+    - O3
     why: 관형사 '첫'은 띄어 쓴다.
     mis: KM15
   - v: true
     c: STRONG
     axis: application
     claim: o4
-    ev: *id050
+    ev:
+    - O4
     why: '''첫눈''은 한 단어이다.'
     mis: KM13
   - v: true
     c: MEDIUM
     axis: application
     claim: o5
-    ev: *id050
+    ev:
+    - O5
     why: 관형사 '새'는 띄어 쓴다.
     mis: KM15
   reasoning_steps: 4

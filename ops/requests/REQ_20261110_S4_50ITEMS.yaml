@@ -1,0 +1,27 @@
+request_id: REQ_20261110_S4_50ITEMS
+date: 2026-11-10
+subject: KOR
+scope: 공통국어2 3단원 중세 국어 + 한글 맞춤법
+user_decisions:
+  stage: S4
+  item_count: 50
+  format: 선택형만
+  difficulty_targets: {D2: 0.10, D3: 0.40, D45: 0.50}
+  feasibility: D4+ 50%는 두 소단원 상한(약 20%)을 넘지만 사용자가 선택 → feasibility_acknowledged_by USER
+  source_mix: 낯선 용례 + 문헌 원문 혼합
+  split: 중세 20 / 맞춤법 30
+  request_text: "중세국어 한글 맞춤법 s4만들어줘 좀 새로보는걸로 50문항"
+bundle: quality/production/KOR_S4_MEDIEVAL_ORTHO_20261110
+result_v1: >
+  문항마다 짧은 자료(<보기>)만 두고 공유 지문을 없앴다(세트 50개, works 비움). 맞춤법은 규정 조항 요지+낯선 용례, 일기·안내문·온라인 게시판·사제 대화 틀;
+  중세 국어는 용비어천가·훈민정음 언해·월인천강지곡·두시언해(춘망·절구)·청산별곡·가시리 등 구절+현대어 풀이와 [자료] 규칙 제시.
+  라벨 D2 8 / D3 17 / D4 25 (D3→D2 3문항은 독립 풀이 판정 반영). 정답 위치 1~5 각 10.
+  독립 풀이(25문항씩 2명, 정답 비공개): 50/50 키 일치. 풀이 후 수정 6건(post_blind_edits): 28번 예시 단어 교체, 32·50번 애매 선지 교체, 14·4번 문구 수정, 12·16·38번 라벨 하향.
+  파이프라인 전 게이트 PASS(ITEM_STRUCTURE·DIFFICULTY_MEASUREMENT WARN, BRAND_ASSET_MISSING), PDF 18쪽.
+system_changes: >
+  (1) 세트에 공유 지문 없이 문항 자료만 쓰는 형식 허용: 머리말 생략, 근거 참조 V<n>(보기 줄)·R<n>(표 행)·O<n>(선지).
+  (2) 렌더러: 옛한글(조합형 자모)을 HarfBuzz 조판(insert_htmlbox + Noto Serif CJK)으로 그림. fonts-noto-cjk 설치 필요.
+  (3) PDF 점검: 쪽 번호 '10'처럼 단독 두 자리 숫자를 문항 번호로 세던 오류 수정.
+open_checks: >
+  중세 문헌 전사는 표준 언해본 기준 AI 입력이라 교사·원본 대조 전(source_verification: PENDING_TEACHER). 머굼·ᄆᆞᄋᆞᆷ미 등 일부 예는 규칙 설명용 구성 예.
+  '접어들다' 판단(15항 붙임1 예시 목록 근거), 동북고 학습 자료식 합용 병서 해석(ㅅ계=된소리)은 학교 관점을 따른 것. D4 25문항 표본 검토 필요.
