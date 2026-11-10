@@ -226,8 +226,14 @@ def load_sources(sets: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return out
 
 
-def ref_ok(ref: str, st: dict[str, Any]) -> bool:
-    """Evidence refs: [W<n>.]P<p>S<s> for prose, [W<n>.]L<l> for verse (non-blank line number)."""
+def ref_ok(ref: str, st: dict[str, Any], item: dict[str, Any] | None = None) -> bool:
+    """Evidence refs: [W<n>.]P<p>S<s> for prose, [W<n>.]L<l> for verse (non-blank line number).
+    Item-supplied material (D-24, short-material items as in school exams): V<n> = line n of the item's <보기>,
+    R<n> = row n of the item's table. Students see both, so they count as evidence of that item only."""
+    sm = re.fullmatch(r"([VR])(\d+)", ref)
+    if sm and item is not None:
+        rows = (item.get("view") or []) if sm.group(1) == "V" else ((item.get("table") or {}).get("rows") or [])
+        return 1 <= int(sm.group(2)) <= len(rows)
     m = re.fullmatch(r"(?:W(\d+)\.)?(?:P(\d+)S(\d+)|L(\d+))", ref)
     if not m:
         return False
@@ -258,6 +264,9 @@ def numbering(bundle: dict[str, Any]) -> dict[str, str]:
 
 def set_header(bundle: dict[str, Any], set_id: str, labels: dict[str, str]) -> str:
     own = [it for it in bundle["items"] if it["set"] == set_id]
+    st = next((s for s in bundle.get("sets", []) if s["id"] == set_id), {})
+    if not st.get("works"):
+        return ""  # item-supplied material only: no shared passage, so no "다음 글을 읽고" header
     mq = [labels[it["item_id"]] for it in own if it["format"] == "MCQ"]
     cr = [labels[it["item_id"]].split()[-1] for it in own if it["format"] == "CR"]
     if bundle["product_mode"] == "ARC_N" and not cr:
@@ -289,7 +298,8 @@ def manuscript(bundle: dict[str, Any], sources: list[dict[str, Any]]) -> str:
     labels = numbering(bundle)
     lines: list[str] = []
     for src in sources:
-        lines += [set_header(bundle, src["id"], labels), ""]
+        head = set_header(bundle, src["id"], labels)
+        lines += [head, ""] if head else []
         if src.get("lead"):
             lines += src["lead"] + [""]
         for w in src["works"]:
@@ -366,7 +376,7 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
             add("OPTION_CLAIM_DUPLICATE", item=iid)
         for j in it["judgments"]:
             for ref in j["ev"]:
-                if not ref_ok(ref, set_by_id[it["set"]]):
+                if not ref_ok(ref, set_by_id[it["set"]], it):
                     add("EVIDENCE_REF_OUT_OF_SOURCE", item=iid, ref=ref)
         b = blind_by_id.get(iid)
         strong = strong_count(it, b)
@@ -409,7 +419,7 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
             if not it.get(field):
                 add("CR_FIELD_MISSING", item=iid, field=field)
         for ref in it.get("ev", []):
-            if not ref_ok(ref, set_by_id[it["set"]]):
+            if not ref_ok(ref, set_by_id[it["set"]], it):
                 add("EVIDENCE_REF_OUT_OF_SOURCE", item=iid, ref=ref)
         b = blind_by_id.get(iid)
         if b is None:

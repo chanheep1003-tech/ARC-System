@@ -1,0 +1,3849 @@
+product_mode: ARC_N
+subject: KOR
+generator: CLAUDE
+set_label: ARC N°
+course: 공통국어2
+school_line: 동북고등학교 1학년 · 2026
+scope: '2026 동북고 1학년 2학기 기말 임시 범위(사용자 지정): 공통국어2 3단원 중세 국어 + 한글 맞춤법(교과서 pp.106-129)'
+exam_context:
+  exam_id: DONGBUK_2026_2_FINAL
+  profile_sha256: 1b94e00fb0c7d9e9c1e58e18fb8dc7d1c2b0455ccfcbc6e60033c557d49ca384
+  unit_ids:
+  - KOR-C2-U3-01-MEDIEVAL-KOREAN
+  - KOR-C2-U3-02-HANGEUL-ORTHOGRAPHY
+  source_ids:
+  - KOR-TB-2026-U3-MEDIEVAL-FEATURES
+  - KOR-TB-2026-U3-MEDIEVAL-ACTIVITIES
+  - KOR-TB-2026-U3-ORTHO-RULES
+  - KOR-TB-2026-U3-SAISIOT
+  - KOR-TB-2026-U3-SPACING
+batch_id: KOR-S4-MEDIEVAL-ORTHO-20261110-V1
+cover_subtitle: 3단원 국어의 어제와 오늘 · 중세 국어와 한글 맞춤법 S4 50문항
+created_at: '2026-11-10T12:00:00+09:00'
+request_spec:
+  decided_by: USER
+  stage: S4
+  item_count: 50
+  difficulty_targets:
+    D2: 0.1
+    D3: 0.4
+    D45: 0.5
+  difficulty_basis: KOR_COMBINED_V1
+  difficulty_basis_decided_by: USER
+  feasibility_acknowledged_by: USER
+source_composition:
+  policy_version: ARC-SOURCE-MIX-V1.0
+  profile: PAST_70_AI_30
+  mode: ORIGINAL_TRIAL
+  authorized_by: USER_20261110_REQ_S4_50ITEMS
+  shortage_reason: '사용자 지정(2026-11-10): 낯선 용례+문헌 원문 혼합, 새로 보는 문항. 범위 내 CONTENT_VERIFIED 기출 문항 원문은 복사하지 않음'
+scope_profile:
+  subunit_count: 2
+  note: 중세 국어 20 + 한글 맞춤법 30(띄어쓰기·사이시옷·준말 포함)
+design_rule: '2026-11-10 형식 조사(kor_research_20261110) 반영: 문항마다 짧은 자료(<보기>)만 제시, 규정 조항+낯선 용례, 문헌 원문+현대어 풀이, 일기·안내문·게시판·대화 틀; D-21~D-26'
+sets:
+- id: Q01
+  works: []
+- id: Q02
+  works: []
+- id: Q03
+  works: []
+- id: Q04
+  works: []
+- id: Q05
+  works: []
+- id: Q06
+  works: []
+- id: Q07
+  works: []
+- id: Q08
+  works: []
+- id: Q09
+  works: []
+- id: Q10
+  works: []
+- id: Q11
+  works: []
+- id: Q12
+  works: []
+- id: Q13
+  works: []
+- id: Q14
+  works: []
+- id: Q15
+  works: []
+- id: Q16
+  works: []
+- id: Q17
+  works: []
+- id: Q18
+  works: []
+- id: Q19
+  works: []
+- id: Q20
+  works: []
+- id: Q21
+  works: []
+- id: Q22
+  works: []
+- id: Q23
+  works: []
+- id: Q24
+  works: []
+- id: Q25
+  works: []
+- id: Q26
+  works: []
+- id: Q27
+  works: []
+- id: Q28
+  works: []
+- id: Q29
+  works: []
+- id: Q30
+  works: []
+- id: Q31
+  works: []
+- id: Q32
+  works: []
+- id: Q33
+  works: []
+- id: Q34
+  works: []
+- id: Q35
+  works: []
+- id: Q36
+  works: []
+- id: Q37
+  works: []
+- id: Q38
+  works: []
+- id: Q39
+  works: []
+- id: Q40
+  works: []
+- id: Q41
+  works: []
+- id: Q42
+  works: []
+- id: Q43
+  works: []
+- id: Q44
+  works: []
+- id: Q45
+  works: []
+- id: Q46
+  works: []
+- id: Q47
+  works: []
+- id: Q48
+  works: []
+- id: Q49
+  works: []
+- id: Q50
+  works: []
+items:
+- item_id: KOR-S4-001
+  set: Q01
+  format: MCQ
+  family: EXCEPT_INCORRECT
+  template: K1
+  coverage: YONGBI2_WORD_FEATURES
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: <보기>의 ㉠~㉤에 대한 설명으로 적절하지 않은 것은?
+  options:
+  - ㉠은 '나모'에 보조사 'ᄋᆞᆫ'이 결합하면서 'ㄱ'이 덧생긴 형태이다.
+  - ㉡은 체언 'ᄇᆞᄅᆞᆷ'에 부사격 조사 '애'가 결합하여 이어 적힌 형태이다.
+  - ㉢은 받침의 'ㅈ'을 'ㅅ'으로 바꾸어 적어 8종성법을 따른 예이다.
+  - ㉣은 'ㄷ'이 반모음 'ㅣ' 앞에서도 'ㅈ'으로 바뀌지 않은 형태이다.
+  - ㉤은 형태가 같은 현대어 '여름'과 달리 '열매'를 뜻한다.
+  answer: 3
+  second_best: 4
+  judgments:
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o1
+    ev: &id001
+    - V1
+    - V2
+    why: 나모+ᄋᆞᆫ→남ᄀᆞᆫ, 옳다.
+    mis: KM13
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o2
+    ev: *id001
+    why: ᄇᆞᄅᆞᆷ+애, 이어 적기, 옳다.
+    mis: KM13
+  - v: false
+    c: CORRECT
+    axis: application
+    claim: o3
+    ev: *id001
+    why: '''곶''은 ''ㅈ''을 그대로 적어 8종성법을 따르지 않은 예외이다.'
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o4
+    ev: *id001
+    why: '''됴코''는 구개음화가 일어나지 않은 형태, 옳다.'
+    mis: KM03
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id001
+    why: '''여름''은 열매, 옳다.'
+    mis: KM10
+  reasoning_steps: 2
+  immediate_elimination: 2
+  view:
+  - 불휘 기픈 ㉠남ᄀᆞᆫ ㉡ᄇᆞᄅᆞ매 아니 뮐ᄊᆡ ㉢곶 ㉣됴코 ㉤여름 하ᄂᆞ니
+  - '[현대어 풀이] 뿌리가 깊은 나무는 바람에 흔들리지 않으므로 꽃이 좋고 열매가 많으니'
+  - ― 「용비어천가」 제2장 ―
+  source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K1): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-002
+  set: Q02
+  format: MCQ
+  family: COMPARISON_MATRIX
+  template: K3
+  coverage: INQUIRY_TOPIC_EVIDENCE
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: <보기>의 자료를 탐구하기 위해 세운 탐구 주제와 근거 자료로 짝이 맞지 않는 것은?
+  options:
+  - 두음 법칙이 적용되지 않은 모습 ― '니르고져', '이ᄅᆞᆯ'
+  - 어두 자음군이 쓰인 모습 ― 'ᄠᅳ들', 'ᄡᅮ메'
+  - '''ㅎ''을 끝소리로 가진 체언이 쓰인 모습 ― ''내히'''
+  - 구개음화가 일어나지 않은 모습 ― '됴코', '펴디'
+  - 앞말의 받침을 뒤 음절 첫소리로 옮겨 적은 모습 ― '말ᄊᆞ미', 'ᄇᆞᄅᆞ매'
+  answer: 1
+  second_best: 3
+  judgments:
+  - v: false
+    c: CORRECT
+    axis: application
+    claim: o1
+    ev: &id002
+    - V1
+    - V2
+    - V3
+    - V4
+    why: '''이ᄅᆞᆯ''은 대명사 ''이''에 목적격 조사가 붙은 말로 두음 법칙과 관계가 없다.'
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id002
+    why: ᄠ·ᄡ 어두 자음군, 맞다.
+    mis: KM04
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id002
+    why: 내ㅎ+이, 맞다.
+    mis: KM13
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o4
+    ev: *id002
+    why: 됴코·펴디, 맞다.
+    mis: KM03
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id002
+    why: 이어 적기, 맞다.
+    mis: KM06
+  reasoning_steps: 3
+  immediate_elimination: 2
+  view:
+  - (가) 니르고져 호ᇙ 배 이셔도 ᄆᆞᄎᆞᆷ내 제 ᄠᅳ들 시러 펴디 몯ᄒᆞᇙ 노미 하니라 ― 『훈민정음 언해』
+  - (나) 내 이ᄅᆞᆯ 爲윙ᄒᆞ야 어엿비 너겨 … 날로 ᄡᅮ메 便安킈 ᄒᆞ고져 ᄒᆞᇙ ᄯᆞᄅᆞ미니라 ― 『훈민정음 언해』
+  - (다) 나랏 말ᄊᆞ미 中듕國귁에 달아 ― 『훈민정음 언해』
+  - (라) 불휘 기픈 남ᄀᆞᆫ ᄇᆞᄅᆞ매 아니 뮐ᄊᆡ 곶 됴코 … 내히 이러 바ᄅᆞ래 가ᄂᆞ니 ― 「용비어천가」
+  source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K3): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-003
+  set: Q03
+  format: MCQ
+  family: COMPARISON_MATRIX
+  template: K11
+  coverage: HUNMIN_PREFACE_TABLE
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: <보기>의 밑줄 친 어절을 분석한 표에서 ㉠~㉤ 중 설명이 옳지 않은 것은?
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 4
+  second_best: 5
+  judgments:
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o1
+    ev: &id003
+    - V1
+    - R1
+    - R2
+    - R3
+    - R4
+    - R5
+    why: '''나라''는 무정 명사이므로 ''ㅅ'' 설명은 옳다.'
+    mis: KM04
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o2
+    ev: *id003
+    why: 이어 적기, 옳다.
+    mis: KM13
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o3
+    ev: *id003
+    why: 비교 부사격 '에', 옳다.
+    mis: KM05
+  - v: false
+    c: CORRECT
+    axis: application
+    claim: o4
+    ev: *id003
+    why: '''ᄍᆞᆼ''의 ''ㅇ''은 소리 없는 글자를 받쳐 적은 동국정운식 표기로, 현실 한자음을 적은 것이 아니다.'
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o5
+    ev: *id003
+    why: 8종성법, 옳다.
+    mis: KM03
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - 나랏 말ᄊᆞ미 中듕國귁에 달아 文문字ᄍᆞᆼ와로 서르 ᄉᆞᄆᆞᆺ디 아니ᄒᆞᆯᄊᆡ
+  - '[현대어 풀이] 우리나라의 말이 중국과 달라 한자와는 서로 통하지 아니하므로'
+  - ― 『훈민정음 언해』 ―
+  table:
+    header:
+    - 구분
+    - 어절
+    - 분석
+    - 설명
+    rows:
+    - - ㉠
+      - 나랏
+      - 나라+ㅅ
+      - '''ㅅ''은 무정 명사 ''나라'' 뒤에 쓰인 관형격 조사이다.'
+    - - ㉡
+      - 말ᄊᆞ미
+      - 말ᄊᆞᆷ+이
+      - 앞말의 받침을 뒤 음절 첫소리로 옮겨 이어 적었다.
+    - - ㉢
+      - 中듕國귁에
+      - 中國+에
+      - '''에''는 비교의 대상을 나타내는 부사격 조사이다.'
+    - - ㉣
+      - 文문字ᄍᆞᆼ와로
+      - 文字+와로
+      - '''ᄍᆞᆼ''의 받침 ''ㅇ''은 당시 실제로 소리 나던 현실 한자음을 적은 것이다.'
+    - - ㉤
+      - ᄉᆞᄆᆞᆺ디
+      - ᄉᆞᄆᆞᆾ-+-디
+      - 받침 'ㅊ'을 'ㅅ'으로 적은 것은 8종성법에 따른 것이다.
+  novel_examples:
+  - ᄉᆞᄆᆞᆾ-
+  exception_rules:
+  - '동국정운식 한자음: 종성 없는 한자에 소리 없는 ''ㅇ''을 받쳐 적음'
+  source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K11): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-004
+  set: Q04
+  format: MCQ
+  family: MATCHING
+  template: K11
+  coverage: MEANING_CHANGE_CLASSIFY
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: <보기>의 ㉠~㉤을 의미 변화의 유형에 따라 바르게 묶은 것은?
+  options:
+  - 확대 ㉢ / 축소 ㉠, ㉣ / 이동 ㉡, ㉤
+  - 확대 ㉢ / 축소 ㉣ / 이동 ㉠, ㉡, ㉤
+  - 확대 ㉡, ㉢ / 축소 ㉣ / 이동 ㉠, ㉤
+  - 확대 ㉢, ㉤ / 축소 ㉣ / 이동 ㉠, ㉡
+  - 확대 ㉢ / 축소 ㉣, ㉤ / 이동 ㉠, ㉡
+  answer: 2
+  second_best: 3
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o1
+    ev: &id004
+    - V1
+    - V2
+    - V3
+    - V4
+    - V5
+    why: '''어리다''는 뜻이 좁아진 것이 아니라 옮겨 갔다.'
+    mis: KM04
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o2
+    ev: *id004
+    why: 세수는 확대, 얼굴은 축소, 어리다·ᄉᆞ랑ᄒᆞ다·싁싁ᄒᆞ다는 이동이다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id004
+    why: '''ᄉᆞ랑ᄒᆞ다''는 ''생각하다''에서 ''사랑하다''로 옮겨 간 이동이다.'
+    mis: KM04
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o4
+    ev: *id004
+    why: '''싁싁ᄒᆞ다''는 넓어진 것이 아니라 옮겨 갔다.'
+    mis: KM04
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id004
+    why: '''싁싁ᄒᆞ다''는 좁아진 것이 아니라 옮겨 갔다.'
+    mis: KM10
+  reasoning_steps: 4
+  immediate_elimination: 1
+  view:
+  - '㉠ 어리다: ''어리석다'' → ''나이가 적다'''
+  - '㉡ ᄉᆞ랑ᄒᆞ다: ''생각하다'' → ''사랑하다'''
+  - '㉢ 세수(洗手): ''손을 씻음'' → ''손이나 얼굴을 씻음'''
+  - '㉣ 얼굴: ''형체'' → ''눈, 코, 입이 있는 머리의 앞면'''
+  - '㉤ 싁싁ᄒᆞ다: ''엄하다'' → ''굳세고 위엄스럽다'''
+  novel_examples:
+  - ᄉᆞ랑ᄒᆞ다
+  - 싁싁ᄒᆞ다
+  source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K11): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-005
+  set: Q05
+  format: MCQ
+  family: SINGLE_BEST_STATEMENT
+  template: K2
+  coverage: DUSI_CHUNMANG_H_ENDING
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: <보기>에 대한 탐구 내용으로 가장 적절한 것은?
+  options:
+  - '''나라히''는 ''나라ㅎ''에 주격 조사가 결합하면서 ''ㅎ''이 드러나지 않은 형태이다.'
+  - ㉠의 'ㅋ'은 체언의 끝소리와 관계없이 조사 '과'가 '콰'로 바뀌어 쓰인 것이다.
+  - ㉡은 '봄'에 관형격 조사 'ᄋᆡ'가 결합하여 '봄의'라는 뜻을 나타낸다.
+  - ㉢은 'ㅂ, ㅍ' 뒤에서 'ㅡ'가 'ㅜ'로 바뀐 원순 모음화가 이미 일어난 형태이다.
+  - ㉣은 '나모'가 자음으로 시작하는 조사 앞에서 'ㄱ'이 덧생기지 않고 쓰인 형태이다.
+  answer: 5
+  second_best: 3
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o1
+    ev: &id005
+    - V1
+    - V2
+    - V3
+    why: '''나라히''는 ''ㅎ''이 뒤 음절 첫소리로 드러난 형태이다.'
+    mis: KM13
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id005
+    why: '''뫼ㅎ''의 ''ㅎ''과 ''과''의 ''ㄱ''이 어울려 ''ㅋ''이 되었다.'
+    mis: KM13
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id005
+    why: '''보ᄆᆡ''는 ''봄에''라는 뜻의 처소 부사격이다.'
+    mis: KM15
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o4
+    ev: *id005
+    why: '''플''은 원순 모음화가 일어나기 전의 형태이다.'
+    mis: KM03
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o5
+    ev: *id005
+    why: '''뿐'' 앞이므로 ''ㄱ''이 덧생기지 않았다. 옳다.'
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - 나라히 破亡ᄒᆞ니 ㉠뫼콰 ᄀᆞᄅᆞᆷ뿐 잇고 / 잣 안 ㉡보ᄆᆡ ㉢플와 ㉣나모뿐 기펫도다
+  - '[현대어 풀이] 나라가 망하니 산과 강만 있고, 성 안의 봄에 풀과 나무만 우거져 있도다.'
+  - '[자료] ''ㅎ''을 끝소리로 가진 체언은 단독으로 쓰이면 ''ㅎ''이 드러나지 않고, 모음으로 시작하는 조사 앞에서는 ''ㅎ''이 뒤 음절 첫소리로, ''ㄱ, ㄷ''으로 시작하는 조사 앞에서는 ''ㅋ, ㅌ''으로 나타난다.'
+  - ― 두보, 「춘망」, 『분류두공부시언해』 ―
+  novel_examples:
+  - 뫼콰
+  - 보ᄆᆡ
+  - 플와
+  morpheme_analysis: true
+  exception_rules:
+  - '''보ᄆᆡ''의 ''ᄋᆡ''는 관형격이 아니라 처소 부사격'
+  - ㄱ 덧생김 체언은 자음 조사 앞에서 원형 유지
+  supplied_concepts:
+  - ㅎ 종성 체언의 실현 조건
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#5
+  source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K2): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-006
+  set: Q06
+  format: MCQ
+  family: MULTI_JUDGMENT
+  template: K4
+  coverage: NOMINATIVE_RULE_NEW_TEXT
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: '[규칙]을 바탕으로 ㄱ~ㄹ에 대해 판단한 내용으로 옳은 것만을 있는 대로 고른 것은?'
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄴ, ㄹ
+  - ㄱ, ㄷ, ㄹ
+  - ㄴ, ㄷ
+  - ㄴ, ㄷ, ㄹ
+  answer: 2
+  second_best: 3
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o1
+    ev: &id006
+    - V1
+    - V2
+    - V3
+    why: ㄹ도 옳다.
+    mis: KM12
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o2
+    ev: *id006
+    why: ㄱ·ㄴ·ㄹ이 옳고, '뫼히'는 '뫼ㅎ+이'이므로 ㄷ은 틀리다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id006
+    why: ㄴ도 옳고 ㄷ은 틀리다.
+    mis: KM13
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o4
+    ev: *id006
+    why: ㄷ은 틀리고 ㄱ·ㄹ도 옳다.
+    mis: KM13
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o5
+    ev: *id006
+    why: ㄷ은 틀리다.
+    mis: KM14
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[규칙] 중세 국어의 주격 조사는 앞말이 자음으로 끝나면 ''이'', ''ㅣ'' 이외의 모음으로 끝나면 ''ㅣ'', ''ㅣ''나 반모음 ''ㅣ''로 끝나면 형태 없이 실현된다. ''ㅣ''가 결합하면 앞말과 한 음절로 합쳐 적는다.'
+  - (가) ᄀᆞᄅᆞ미 프르니 새 더욱 ᄒᆡ오 뫼히 퍼러ᄒᆞ니 곳 비치 블 븓ᄂᆞᆫ ᄃᆞᆺ도다 [강이 푸르니 새가 더욱 희고 산이 푸르니 꽃빛이 불붙는 듯하도다] ― 『분류두공부시언해』
+  - (나) 부톄 니ᄅᆞ샤ᄃᆡ [부처가 이르시되] ― 『석보상절』
+  - ㄱ. 'ᄀᆞᄅᆞ미'와 '비치'에는 모두 주격 조사 '이'가 쓰였다.
+  - ㄴ. '새'는 앞말이 반모음 'ㅣ'로 끝나 주격 조사가 형태 없이 실현되었다.
+  - ㄷ. '뫼히'는 '뫼'가 'ㅣ'로 끝나 주격 조사가 형태 없이 실현되고 'ㅎ'이 덧붙은 것이다.
+  - ㄹ. '부톄'는 '부텨'에 주격 조사 'ㅣ'가 결합하여 한 음절로 합쳐 적힌 것이다.
+  novel_examples:
+  - ᄀᆞᄅᆞ미
+  - 비치
+  - 뫼히
+  - 부톄
+  morpheme_analysis: true
+  exception_rules:
+  - '''뫼ㅎ''은 ㅎ 종성 체언이라 ''이'' 앞에서 ''ㅎ''이 드러남'
+  - '''새''의 ''ㅐ''는 반모음 ㅣ로 끝나는 이중 모음'
+  supplied_concepts:
+  - 주격 조사 실현 규칙
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#7
+  source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K4): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-007
+  set: Q07
+  format: MCQ
+  family: SINGLE_BEST_STATEMENT
+  template: K2
+  coverage: WORIN_GENITIVE_LOCATIVE
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: <보기>의 [자료]를 바탕으로 탐구한 내용으로 가장 적절한 것은?
+  options:
+  - '''世尊ㅅ''의 ''ㅅ''은 앞말이 무정 명사이기 때문에 쓰인 관형격 조사이다.'
+  - ㉠의 '에'와 ㉡의 '예'는 앞말의 모음이 양성인지 음성인지에 따라 구별된 것이다.
+  - '''萬里外ㅅ''의 ''ㅅ''은 앞말이 높임의 대상인 유정 명사이기 때문에 쓰인 것이다.'
+  - ㉡은 앞말 '귀'가 'ㅣ'로 끝나서 부사격 조사 '예'가 쓰인 것이다.
+  - '''일이시나''와 ''말이시나''는 소리 나는 대로 이어 적은 표기로, ''이리시나, 마리시나''와 같은 방식이다.'
+  answer: 4
+  second_best: 1
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o1
+    ev: &id007
+    - V1
+    - V2
+    - V4
+    why: '''世尊''은 높임의 대상인 유정 명사이다.'
+    mis: KM04
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o2
+    ev: *id007
+    why: '''예''는 ''ㅣ''로 끝나는 말 뒤에 쓰였다.'
+    mis: KM07
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id007
+    why: '''萬里外''는 무정 명사이다.'
+    mis: KM04
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o4
+    ev: *id007
+    why: 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id007
+    why: '''일이시나''는 받침을 옮기지 않은 끊어 적기이다.'
+    mis: KM06
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - 世尊ㅅ 일 ᄉᆞᆯᄫᅩ리니 萬里外ㅅ 일이시나 ㉠눈에 보논가 너기ᅀᆞᄫᆞ쇼셔
+  - 世尊ㅅ 말 ᄉᆞᆯᄫᅩ리니 千載上ㅅ 말이시나 ㉡귀예 듣논가 너기ᅀᆞᄫᆞ쇼셔
+  - '[현대어 풀이] 석가세존의 일을 아뢰리니, 만 리 밖의 일이시나 눈에 보는 것처럼 여기십시오. 석가세존의 말씀을 아뢰리니, 천 년 전의 말씀이시나 귀에 듣는 것처럼 여기십시오.'
+  - '[자료] 관형격 조사 ''ㅅ''은 무정 명사나 높임의 대상인 유정 명사 뒤에 쓰였다. 부사격 조사는 앞말의 모음에 따라 ''애/에''가 쓰였고, ''ㅣ''나 반모음 ''ㅣ''로 끝나는 말 뒤에는 ''예''가 쓰였다.'
+  - ― 「월인천강지곡」 기2 ―
+  novel_examples:
+  - 世尊ㅅ
+  - 萬里外ㅅ
+  - 귀예
+  morpheme_analysis: true
+  exception_rules:
+  - '관형격 ''ㅅ'': 무정 명사와 높임의 유정 명사 뒤'
+  - '''ㅣ'' 뒤 부사격 ''예'''
+  supplied_concepts:
+  - 관형격 ㅅ과 부사격 애/에/예의 조건
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#5
+  source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K2): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-008
+  set: Q08
+  format: MCQ
+  family: STUDENT_RESPONSE_EVALUATION
+  template: K2
+  coverage: GORYEO_SONG_FORMS
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: <보기>의 학생 A~D의 설명 중 적절한 것만을 고른 것은?
+  options:
+  - A, B, C
+  - A, D
+  - B, D
+  - A, B
+  - B, C, D
+  answer: 1
+  second_best: 5
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o1
+    ev: &id008
+    - V1
+    - V2
+    why: A·B·C는 옳고 '엇디'는 구개음화가 일어나기 전 형태라 D는 틀리다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id008
+    why: D가 틀리다.
+    mis: KM03
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o3
+    ev: *id008
+    why: D가 틀리다.
+    mis: KM03
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o4
+    ev: *id008
+    why: C도 옳다.
+    mis: KM12
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o5
+    ev: *id008
+    why: D가 틀리다.
+    mis: KM03
+  reasoning_steps: 4
+  immediate_elimination: 1
+  view:
+  - (가) 살어리 살어리랏다 靑山애 살어리랏다 / 멀위랑 ᄃᆞ래랑 먹고 靑山애 살어리랏다 ― 「청산별곡」
+  - (나) 가시리 가시리잇고 ᄇᆞ리고 가시리잇고 / 날러는 엇디 살라 ᄒᆞ고 ᄇᆞ리고 가시리잇고 ― 「가시리」
+  - '학생 A: (가)의 ''靑山애''를 보니, 앞말의 모음이 양성이어서 부사격 조사로 ''애''가 쓰였어.'
+  - '학생 B: (가)의 ''ᄃᆞ래''는 오늘날 ''다래''로 쓰여서, 첫음절의 ''ㆍ''가 ''ㅏ''로 바뀐 것을 확인할 수 있어.'
+  - '학생 C: (나)의 ''ᄇᆞ리고''는 오늘날 ''버리고''로 쓰여서, ''ㆍ''가 첫음절에서 ''ㅓ''로 바뀐 경우도 있음을 알 수 있어.'
+  - '학생 D: (나)의 ''엇디''는 ''ㄷ''이 ''ㅣ'' 앞에서 ''ㅈ''으로 바뀌는 구개음화가 일어난 뒤의 형태야.'
+  novel_examples:
+  - ᄃᆞ래
+  - ᄇᆞ리고
+  - 엇디
+  source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K2): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-009
+  set: Q09
+  format: MCQ
+  family: MULTI_JUDGMENT
+  template: K4
+  coverage: NOMINALIZER_VS_SUFFIX
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: '[자료]를 바탕으로 ㄱ~ㅁ을 판단한 것 중 옳은 것만을 있는 대로 고른 것은?'
+  options:
+  - ㄱ, ㄴ
+  - ㄷ, ㅁ
+  - ㄱ, ㄷ, ㄹ
+  - ㄴ, ㄷ, ㅁ
+  - ㄱ, ㄷ, ㅁ
+  answer: 5
+  second_best: 1
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o1
+    ev: &id009
+    - V1
+    why: '''어름''은 접미사가 붙은 명사이므로 ㄴ은 틀리다.'
+    mis: KM15
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o2
+    ev: *id009
+    why: ㄱ도 옳다.
+    mis: KM12
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id009
+    why: '''여름''은 ''열매''를 뜻하는 파생 명사라 ㄹ은 틀리다.'
+    mis: KM15
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o4
+    ev: *id009
+    why: ㄴ은 틀리다.
+    mis: KM15
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o5
+    ev: *id009
+    why: ㄱ·ㄷ·ㅁ이 옳다.
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[자료] 중세 국어에서 용언을 명사처럼 쓰이게 하는 명사형 어미는 ''-옴/-움''이고, 새 명사를 만드는 파생 접미사는 ''-ᄋᆞᆷ/-음''이다. 둘 다 앞말의 모음이 양성이면 ''-옴, -ᄋᆞᆷ'', 음성이면 ''-움, -음''이 쓰인다.'
+  - ㄱ. '머굼'(먹음)은 '먹-'에 명사형 어미 '-움'이 결합한 것이다.
+  - ㄴ. '어름'(얼음)은 '얼-'에 명사형 어미가 결합하여 '어는 것'이라는 뜻을 나타낸다.
+  - ㄷ. '사ᄅᆞᆷ'과 '사롬'은 모두 '살-'에서 온 말이지만, 앞의 것은 파생 명사이고 뒤의 것은 명사형이다.
+  - ㄹ. '여름 하ᄂᆞ니'의 '여름'은 '열-'에 '-움'이 결합한 명사형으로, '여는 것'을 뜻한다.
+  - ㅁ. 'ᄡᅮ메'의 'ᄡᅮᆷ'은 'ᄡᅳ-'에 명사형 어미 '-움'이 결합하면서 'ㅡ'가 탈락한 형태이다.
+  novel_examples:
+  - 머굼
+  - 사롬
+  - 어름
+  morpheme_analysis: true
+  exception_rules:
+  - '''어름·여름·사ᄅᆞᆷ''은 접미사 ''-음/-ᄋᆞᆷ''이 붙은 파생 명사'
+  - '''ᄡᅳ-+-움''에서 ''ㅡ'' 탈락'
+  supplied_concepts:
+  - 명사형 어미 -옴/-움과 파생 접미사 -ᄋᆞᆷ/-음의 구별
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#7
+  source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K4): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-010
+  set: Q10
+  format: MCQ
+  family: EXCEPT_INCORRECT
+  template: K4
+  coverage: SUBJECT_HONORIFIC_SI_SYA
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: <보기>의 [자료]를 바탕으로 ㄱ~ㄹ을 탐구한 내용으로 적절하지 않은 것은?
+  options:
+  - ㄱ의 'ᄂᆞᄅᆞ샤'에서는 모음으로 시작하는 어미 '-아' 앞이라 '-샤-'가 쓰이고 '-아'가 탈락하였다.
+  - ㄴ의 '同符ᄒᆞ시니'에서는 자음으로 시작하는 어미 '-니' 앞이라 '-시-'가 쓰였다.
+  - ㄷ의 '니ᄅᆞ샤ᄃᆡ'는 자음 어미 앞에 '-샤-'가 쓰여 [자료]에서 벗어난 예이다.
+  - ㄹ의 '안ᄌᆞ시니'는 받침을 뒤 음절 첫소리로 옮겨 적었으며, '부텨'를 높이고 있다.
+  - ㄱ~ㄹ에서 높임을 받는 대상은 모두 문장의 주어이다.
+  answer: 3
+  second_best: 1
+  judgments:
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o1
+    ev: &id010
+    - V1
+    why: 옳다.
+    mis: KM13
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o2
+    ev: *id010
+    why: 옳다.
+    mis: KM07
+  - v: false
+    c: CORRECT
+    axis: application
+    claim: o3
+    ev: *id010
+    why: '''니ᄅᆞ샤ᄃᆡ''는 ''-시-''가 모음 어미 ''-오ᄃᆡ'' 앞에서 ''-샤-''가 되고 ''오''가 탈락한 것이어서 [자료]에 맞는다.'
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o4
+    ev: *id010
+    why: 옳다.
+    mis: KM04
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o5
+    ev: *id010
+    why: 옳다. '古聖이'는 비교의 부사어이고 높임의 대상은 주어 '六龍'이다.
+    mis: KM05
+  reasoning_steps: 4
+  immediate_elimination: 1
+  view:
+  - '[자료] 중세 국어의 주체 높임 선어말 어미는 자음으로 시작하는 어미 앞에서 ''-시-'', 모음으로 시작하는 어미 앞에서 ''-샤-''로 실현되었고, ''-샤-'' 뒤에서 어미의 첫 모음은 탈락하였다.'
+  - ㄱ. 海東 六龍이 ᄂᆞᄅᆞ샤 [해동의 여섯 용이 나시어] ― 「용비어천가」
+  - ㄴ. 古聖이 同符ᄒᆞ시니 [옛 성인과 꼭 들어맞으시니] ― 「용비어천가」
+  - ㄷ. 王이 니ᄅᆞ샤ᄃᆡ [왕이 이르시되] ― 『석보상절』
+  - ㄹ. 부텨 안ᄌᆞ시니 [부처가 앉으시니] ― 「월인천강지곡」
+  novel_examples:
+  - 니ᄅᆞ샤ᄃᆡ
+  - 안ᄌᆞ시니
+  morpheme_analysis: true
+  exception_rules:
+  - '''-샤-'' 뒤 어미 첫 모음 탈락(-오ᄃᆡ→-ᄃᆡ)'
+  supplied_concepts:
+  - 주체 높임 -시-/-샤- 교체 규칙
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#7
+  source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K4): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-011
+  set: Q11
+  format: MCQ
+  family: SINGLE_BEST_STATEMENT
+  template: K2
+  coverage: COMPOUND_CLUSTER_VS_TENSE
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: <보기>의 [학습 자료]에 따라 (가)~(라)를 설명한 것으로 가장 적절한 것은?
+  options:
+  - (가)의 'ᄠᅳ들'과 (라)의 'ᄢᅴ'는 [학습 자료]에 따르면 첫머리의 자음을 모두 발음한 말이다.
+  - (나)의 'ᄯᆞᄅᆞ미니라'는 'ㅂ'계 합용 병서가 쓰여 어두 자음군이 실현된 예이다.
+  - (다)의 'ᄭᅮ믈'은 'ㅂ'계 합용 병서로 쓰였으므로 'ㅂ'과 'ㄱ'을 모두 발음하였다.
+  - (나)의 'ᄡᅮ메'의 'ᄡ'은 같은 자음을 나란히 쓴 각자 병서로, 된소리를 나타낸다.
+  - (라)의 'ᄢᅴ'는 'ㅅ'계 합용 병서이므로 [학습 자료]에 따르면 된소리를 적은 것이다.
+  answer: 1
+  second_best: 2
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o1
+    ev: &id011
+    - V1
+    why: 옳다. ㅳ은 'ㅂ'계, ㅴ은 'ㅄ'계라 어두 자음군이다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id011
+    why: '''ᄯ''은 ''ㅅ''계라 된소리 표기이다.'
+    mis: KM04
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o3
+    ev: *id011
+    why: '''ᄭ''은 ''ㅅ''계이다.'
+    mis: KM04
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o4
+    ev: *id011
+    why: '''ᄡ''은 서로 다른 자음을 쓴 합용 병서이다.'
+    mis: KM04
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o5
+    ev: *id011
+    why: '''ᄢ''은 ''ㅄ''계이다.'
+    mis: KM04
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[학습 자료] 합용 병서 가운데 ''ㅂ''계(ㅳ, ㅄ, ㅶ, ㅷ)와 ''ㅄ''계(ㅴ, ㅵ)는 각 자음을 모두 발음한 어두 자음군으로 보고, ''ㅅ''계(ㅺ, ㅼ, ㅽ)는 된소리를 적은 것으로 본다.'
+  - (가) 제 ᄠᅳ들 시러 펴디 몯ᄒᆞᇙ 노미 하니라 ― 『훈민정음 언해』
+  - (나) 날로 ᄡᅮ메 便安킈 ᄒᆞ고져 ᄒᆞᇙ ᄯᆞᄅᆞ미니라 ― 『훈민정음 언해』
+  - (다) ᄭᅮ믈 ᄭᅮ니 [꿈을 꾸니]
+  - (라) 그 ᄢᅴ [그때]
+  novel_examples:
+  - ᄭᅮ믈
+  - ᄢᅴ
+  morpheme_analysis: true
+  exception_rules:
+  - '''ㅅ''계 합용 병서는 어두 자음군이 아닌 된소리 표기'
+  - '''ᄢ''은 ''ㅄ''계로 어두 자음군'
+  supplied_concepts:
+  - 합용 병서의 계열과 발음
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#5
+  source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K2): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-012
+  set: Q12
+  format: MCQ
+  family: CASE_APPLICATION
+  template: K11
+  coverage: DOUBLE_WRITING_JUNGCHEOL
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: <보기>의 [자료]에 따를 때 ㉠~㉤ 중 '거듭 적기'에 해당하는 것만을 모두 고른 것은?
+  options:
+  - ㉠, ㉢
+  - ㉡, ㉣
+  - ㉠, ㉢, ㉤
+  - ㉠, ㉡, ㉤
+  - ㉢, ㉣, ㉤
+  answer: 3
+  second_best: 4
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o1
+    ev: &id012
+    - V1
+    why: ㉤도 거듭 적기이다.
+    mis: KM12
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o2
+    ev: *id012
+    why: ㉡은 이어 적기, ㉣은 끊어 적기이다.
+    mis: KM06
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o3
+    ev: *id012
+    why: 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o4
+    ev: *id012
+    why: ㉡은 이어 적기이다.
+    mis: KM13
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id012
+    why: ㉣은 끊어 적기이다.
+    mis: KM06
+  reasoning_steps: 3
+  immediate_elimination: 1
+  view:
+  - '[자료] 받침을 뒤 음절 첫소리로 옮겨 적는 ''이어 적기'', 받침을 앞말에 그대로 두는 ''끊어 적기'', 받침을 앞말에도 두고 뒤 음절 첫소리에도 한 번 더 적는 ''거듭 적기''가 있다. 거듭 적기는 이어 적기에서 끊어 적기로 바뀌어 가던 시기에 나타났다.'
+  - ㉠ 사ᄅᆞᆷ미 [사람이]
+  - ㉡ 말ᄊᆞ미 [말씀이]
+  - ㉢ 님믈 [임을]
+  - ㉣ 손에 [손에]
+  - ㉤ ᄆᆞᄋᆞᆷ미 [마음이]
+  novel_examples:
+  - 사ᄅᆞᆷ미
+  - 님믈
+  - ᄆᆞᄋᆞᆷ미
+  supplied_concepts:
+  - 거듭 적기
+  source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K11): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-013
+  set: Q13
+  format: MCQ
+  family: MULTI_JUDGMENT
+  template: K4
+  coverage: G_INSERTION_NOUNS
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: '[규칙]에 맞게 쓰인 것만을 <보기>의 ㄱ~ㅁ에서 있는 대로 고른 것은?'
+  options:
+  - ㄱ, ㄴ, ㄷ
+  - ㄱ, ㄹ
+  - ㄴ, ㄷ, ㅁ
+  - ㄷ, ㄹ, ㅁ
+  - ㄱ, ㄷ, ㅁ
+  answer: 5
+  second_best: 1
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o1
+    ev: &id013
+    - V1
+    why: '''와'' 앞에서는 ''나모와''로 쓴다.'
+    mis: KM09
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o2
+    ev: *id013
+    why: '''도'' 앞에서는 ''나모도''로 쓰고 ㄷ·ㅁ도 맞다.'
+    mis: KM14
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id013
+    why: ㄴ은 틀리다.
+    mis: KM09
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o4
+    ev: *id013
+    why: ㄹ은 틀리다.
+    mis: KM14
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o5
+    ev: *id013
+    why: 옳다.
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[규칙] ''나모, 구무'' 등은 모음으로 시작하는 조사 앞에서 ''ㄱ''이 덧생겨 ''남ㄱ, 굼ㄱ''의 형태가 되고, 자음으로 시작하는 조사 앞이나 단독으로 쓰일 때는 ''나모, 구무''로 쓰인다. 다만 ''와'' 앞에서는 ''나모와, 구무와''처럼 쓰인다.'
+  - ㄱ. 나모 + 이 → 남기
+  - ㄴ. 나모 + 와 → 남ᄀᆞ와
+  - ㄷ. 구무 + 을 → 굼글
+  - ㄹ. 나모 + 도 → 남ᄀᆞ도
+  - ㅁ. 구무 + 의 → 굼긔
+  novel_examples:
+  - 굼글
+  - 굼긔
+  - 남ᄀᆞ와
+  morpheme_analysis: true
+  exception_rules:
+  - '''와'' 앞에서는 ''ㄱ''이 덧생기지 않음'
+  - 자음 조사 앞에서는 원형
+  supplied_concepts:
+  - '''ㄱ'' 덧생김 체언의 곡용 규칙'
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#7
+  source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K4): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-014
+  set: Q14
+  format: MCQ
+  family: ERROR_CORRECTION
+  template: K2
+  coverage: ACCUSATIVE_VOWEL_HARMONY
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: <보기>의 탐구 보고서에서 ㉠~㉤ 중 고쳐야 할 것은?
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 2
+  second_best: 3
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o1
+    ev: &id014
+    - V1
+    why: 옳다.
+    mis: KM07
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o2
+    ev: *id014
+    why: '''이''는 중성 모음 ''ㅣ''로 끝나며, ''ᄅᆞᆯ''은 양성 모음 뒤 형태라 ''음성 모음으로 끝나''라는 설명이 틀리다.'
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id014
+    why: 옳다.
+    mis: KM13
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o4
+    ev: *id014
+    why: 옳다.
+    mis: KM07
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id014
+    why: 옳다.
+    mis: KM13
+  reasoning_steps: 3
+  immediate_elimination: 1
+  view:
+  - '[탐구 보고서] 중세 국어의 목적격 조사는 앞말의 끝소리와 모음에 따라 형태가 달랐다.'
+  - ㉠ 앞말이 자음으로 끝나면 'ᄋᆞᆯ/을', 모음으로 끝나면 'ᄅᆞᆯ/를'이 쓰였다.
+  - ㉡ '이ᄅᆞᆯ'은 앞말 '이'가 음성 모음으로 끝나 'ᄅᆞᆯ'이 쓰인 예이다.
+  - ㉢ 'ᄇᆞᄅᆞᄆᆞᆯ'은 앞말의 모음이 양성이어서 'ᄋᆞᆯ'이 쓰인 예이다.
+  - ㉣ '므를'은 앞말의 모음이 음성이어서 '을'이 쓰인 예이다.
+  - ㉤ '너를'은 앞말이 모음으로 끝나고 그 모음이 음성이어서 '를'이 쓰인 예이다.
+  novel_examples:
+  - ᄇᆞᄅᆞᄆᆞᆯ
+  - 므를
+  source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K2): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-015
+  set: Q15
+  format: MCQ
+  family: SINGLE_BEST_STATEMENT
+  template: K2
+  coverage: YONGBI2_SECOND_LINE
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: <보기>에 대한 설명으로 가장 적절한 것은?
+  options:
+  - ㉠은 'ㅁ' 뒤에서 'ㅡ'가 'ㅜ'로 바뀐 원순 모음화가 반영된 형태이다.
+  - ㉡과 ㉤에서 '애'가 쓰인 것은 앞말에 받침이 있기 때문이다.
+  - ㉢의 '-ㄹᄊᆡ'는 앞뒤 내용을 대조하는 연결 어미로, 현대어의 '-지만'에 해당한다.
+  - ㉣은 'ㅎ' 종성 체언에 주격 조사가 붙어 'ㅎ'이 뒤 음절 첫소리로 드러난 것이다.
+  - ㉤은 '바다'를 뜻하는 말에 관형격 조사가 결합한 것으로, 현대어의 '바다의'에 해당한다.
+  answer: 4
+  second_best: 2
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o1
+    ev: &id015
+    - V1
+    - V2
+    - V3
+    why: '''므른''은 원순 모음화가 일어나기 전 형태이다.'
+    mis: KM03
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id015
+    why: '''애''는 앞말의 모음이 양성이어서 쓰였다.'
+    mis: KM07
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o3
+    ev: *id015
+    why: '''-ㄹᄊᆡ''는 까닭을 나타낸다.'
+    mis: KM05
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o4
+    ev: *id015
+    why: 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o5
+    ev: *id015
+    why: '''바ᄅᆞ래''는 부사격 조사 ''애''가 결합한 ''바다에''이다.'
+    mis: KM15
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - ᄉᆡ미 기픈 ㉠므른 ㉡ᄀᆞᄆᆞ래 아니 ㉢그츨ᄊᆡ ㉣내히 이러 ㉤바ᄅᆞ래 가ᄂᆞ니
+  - '[현대어 풀이] 샘이 깊은 물은 가뭄에 그치지 않으므로 내가 이루어져 바다에 가느니'
+  - '[자료] 중세 국어의 부사격 조사는 앞말의 모음이 양성이면 ''애'', 음성이면 ''에'', ''ㅣ''나 반모음 ''ㅣ''로 끝나면 ''예''로 실현되었다.'
+  - ― 「용비어천가」 제2장 ―
+  novel_examples:
+  - ᄀᆞᄆᆞ래
+  - 바ᄅᆞ래
+  - 내히
+  morpheme_analysis: true
+  exception_rules:
+  - '''내ㅎ''은 ㅎ 종성 체언'
+  - 부사격 '애'는 모음 조화에 따른 선택
+  supplied_concepts:
+  - 부사격 조사 애/에/예의 교체
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#5
+  source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K2): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-016
+  set: Q16
+  format: MCQ
+  family: COMPARISON_MATRIX
+  template: K11
+  coverage: CHANGE_TYPE_TABLE
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: <보기>는 중세 국어에서 현대 국어로의 변화를 정리한 표이다. ㉠~㉤ 중 변화 내용과 예가 바르게 짝지어지지 않은 것은?
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 5
+  second_best: 3
+  judgments:
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o1
+    ev: &id016
+    - R1
+    - R2
+    - R3
+    - R4
+    - R5
+    why: 옳다.
+    mis: KM14
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o2
+    ev: *id016
+    why: 옳다.
+    mis: KM03
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id016
+    why: 옳다.
+    mis: KM03
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o4
+    ev: *id016
+    why: 옳다.
+    mis: KM09
+  - v: false
+    c: CORRECT
+    axis: application
+    claim: o5
+    ev: *id016
+    why: '''더ᄫᅳ니→더우니''는 ''ㅸ''의 변화이지 ''ㅿ''의 소실이 아니다.'
+  reasoning_steps: 4
+  immediate_elimination: 1
+  table:
+    header:
+    - 구분
+    - 변화 내용
+    - 중세 국어
+    - 현대 국어
+    rows:
+    - - ㉠
+      - '''ㆍ''의 소실'
+      - ᄀᆞᄅᆞ치다
+      - 가르치다
+    - - ㉡
+      - 구개음화
+      - 디다
+      - 지다
+    - - ㉢
+      - 원순 모음화
+      - 블
+      - 불
+    - - ㉣
+      - 두음 법칙
+      - 니르다
+      - 이르다
+    - - ㉤
+      - '''ㅿ''의 소실'
+      - 더ᄫᅳ니
+      - 더우니
+  novel_examples:
+  - ᄀᆞᄅᆞ치다
+  - 더ᄫᅳ니
+  source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K11): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-017
+  set: Q17
+  format: MCQ
+  family: SINGLE_BEST_STATEMENT
+  template: K4
+  coverage: DONGGUK_JEONGUN_READING
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: '[자료]를 바탕으로 ㄱ~ㄹ의 한자음 표기를 이해한 것으로 가장 적절한 것은?'
+  options:
+  - ㄴ의 '뿌ᇙ'에서 'ㆆ'은 'ㄹ' 받침을 된소리로 강하게 내도록 덧붙인 표기이다.
+  - ㄱ의 '솅, 엉, 졩'의 종성 'ㅇ'은 소리 없이 음절의 짜임을 갖추려고 적은 것이다.
+  - ㄷ의 '듕'은 당시 현실 한자음에서 이미 구개음화가 일어난 소리를 그대로 적은 것이다.
+  - ㄹ의 'ᅙᅡᆫ'은 현실 한자음 '안'을 그대로 적은 것으로, 『동국정운』과 관계가 없다.
+  - ㄱ~ㄹ의 한자음 표기 방식은 16세기 이후 더욱 널리 쓰여 오늘날 한자음의 바탕이 되었다.
+  answer: 2
+  second_best: 1
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o1
+    ev: &id017
+    - V1
+    why: '''ㆆ''은 입성임을 나타내려고 덧붙였다.'
+    mis: KM04
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o2
+    ev: *id017
+    why: 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id017
+    why: '''듕''은 구개음화 이전 형태이며 현실음을 그대로 적은 것도 아니다.'
+    mis: KM03
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o4
+    ev: *id017
+    why: '''ᅙᅡᆫ''도 동국정운식 표기이다.'
+    mis: KM05
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id017
+    why: 동국정운식 표기는 얼마 뒤 쓰이지 않게 되었다.
+    mis: KM10
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[자료] 15세기 문헌의 한자음은 『동국정운』에 따라 적었다. 이 한자음은 실제 쓰이던 음이 아니라 이상적인 음을 적은 것으로, 종성이 없는 한자에도 소리 없는 ''ㅇ''을 받쳐 적어 초성·중성·종성을 갖추게 하였고, 종성 ''ㄹ'' 뒤에는 ''ㆆ''을 함께 적어 입성임을 나타내었다.'
+  - ㄱ. 世솅宗종御엉製졩
+  - ㄴ. 佛뿌ᇙ
+  - ㄷ. 中듕國귁
+  - ㄹ. 便뼌安ᅙᅡᆫ
+  novel_examples:
+  - 佛뿌ᇙ
+  - 便뼌安ᅙᅡᆫ
+  morpheme_analysis: true
+  exception_rules:
+  - '''ㄹ'' 종성 뒤 ''ㆆ''(이영보래)'
+  - 종성 없는 한자에 소리 없는 'ㅇ'
+  supplied_concepts:
+  - 동국정운식 한자음 표기
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#7
+  source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K4): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-018
+  set: Q18
+  format: MCQ
+  family: SINGLE_BEST_STATEMENT
+  template: K2
+  coverage: LOST_LETTERS_BEO_ZH
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: '[자료]를 바탕으로 ㉠~㉤을 탐구한 내용으로 가장 적절한 것은?'
+  options:
+  - ㉠과 ㉡에서 'ㅸ'은 모두 'ㅂ'으로 되돌아가 현대어에서 'ㅂ'으로 적힌다.
+  - ㉢과 ㉣에서 'ㅿ'이 사라진 뒤 그 자리에 'ㅅ'이 들어가 현대어가 되었다.
+  - ㉡이 현대어에서 '더우니'로 바뀐 것은 'ㅸ'이 반모음으로 바뀐 결과로 설명할 수 있다.
+  - ㉤은 'ㅿ'이 사라진 뒤 첫음절의 'ㅕ'가 'ㅓ'로 바뀌어 현대어 '거울'이 되었다.
+  - ㉣의 첫음절 'ㆍ'는 현대어에서 'ㅡ'로 바뀌었다.
+  answer: 3
+  second_best: 1
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o1
+    ev: &id018
+    - V1
+    why: ㉡은 '더우니'로 'ㅂ'이 없다.
+    mis: KM08
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id018
+    why: '''ㅿ''은 사라졌을 뿐 ''ㅅ''으로 바뀌지 않았다(마음, 가을).'
+    mis: KM08
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o3
+    ev: *id018
+    why: 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o4
+    ev: *id018
+    why: '''겨ᅀᅳᆯ''은 ''겨울''이 되었다.'
+    mis: KM14
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id018
+    why: '''ᄀᆞᅀᆞᆯ''의 첫음절 ''ㆍ''는 ''ㅏ''가 되었다.'
+    mis: KM14
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[자료] ''ㅸ''은 15세기 중엽 이후 대부분 반모음 ''ㅗ/ㅜ''로 바뀌거나 사라졌고, ''ㅿ''은 16세기 무렵 대부분 소리를 잃었다.'
+  - ㉠ 수ᄫᅵ [쉽게]
+  - ㉡ 더ᄫᅳ니 [더우니]
+  - ㉢ ᄆᆞᅀᆞᆷ [마음]
+  - ㉣ ᄀᆞᅀᆞᆯ [가을]
+  - ㉤ 겨ᅀᅳᆯ [겨울]
+  novel_examples:
+  - 더ᄫᅳ니
+  - ᄀᆞᅀᆞᆯ
+  - 겨ᅀᅳᆯ
+  morpheme_analysis: true
+  exception_rules:
+  - '''ㅸ''은 반모음으로 바뀌거나 탈락'
+  - 첫음절 'ㆍ'는 'ㅏ'로
+  supplied_concepts:
+  - ㅸ·ㅿ의 소실 과정
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#5
+  source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K2): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-019
+  set: Q19
+  format: MCQ
+  family: MATCHING
+  template: K11
+  coverage: GENITIVE_CONDITIONS
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: '[자료]를 바탕으로 ㉠~㉤의 관형격 조사가 쓰인 조건을 바르게 짝지은 것은?'
+  options:
+  - '무정 명사: ㉠ / 높임의 유정 명사: ㉡ / 높이지 않는 유정 명사: ㉢, ㉣, ㉤'
+  - '무정 명사: ㉠, ㉢ / 높임의 유정 명사: ㉡ / 높이지 않는 유정 명사: ㉣, ㉤'
+  - '무정 명사: ㉠ / 높임의 유정 명사: ㉡, ㉣ / 높이지 않는 유정 명사: ㉢, ㉤'
+  - '무정 명사: ㉠, ㉡ / 높임의 유정 명사: 없음 / 높이지 않는 유정 명사: ㉢, ㉣, ㉤'
+  - '무정 명사: ㉠, ㉤ / 높임의 유정 명사: ㉡ / 높이지 않는 유정 명사: ㉢, ㉣'
+  answer: 1
+  second_best: 2
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o1
+    ev: &id019
+    - V1
+    why: 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id019
+    why: '''거북''은 유정 명사이다.'
+    mis: KM04
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id019
+    why: '''사람''은 높임의 대상이 아니다.'
+    mis: KM05
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o4
+    ev: *id019
+    why: '''부텨''는 높임의 유정 명사이다.'
+    mis: KM04
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id019
+    why: '''즘ᄉᆡᇰ''은 유정 명사이다.'
+    mis: KM04
+  reasoning_steps: 3
+  immediate_elimination: 1
+  view:
+  - '[자료] 중세 국어의 관형격 조사는 높이지 않는 유정 명사 뒤에는 ''ᄋᆡ/의''가, 무정 명사나 높임의 대상인 유정 명사 뒤에는 ''ㅅ''이 쓰였다.'
+  - ㉠ 나랏 말ᄊᆞ미 [나라의 말이]
+  - ㉡ 부텻 法 [부처의 법]
+  - ㉢ 거부븨 터럭 [거북의 털]
+  - ㉣ 사ᄅᆞᄆᆡ ᄠᅳᆮ [사람의 뜻]
+  - ㉤ 즘ᄉᆡᇰᄋᆡ 몸 [짐승의 몸]
+  novel_examples:
+  - 거부븨
+  - 즘ᄉᆡᇰᄋᆡ
+  - 부텻
+  supplied_concepts:
+  - 관형격 조사의 교체 조건
+  source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K11): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-020
+  set: Q20
+  format: MCQ
+  family: EXCEPT_INCORRECT
+  template: K4
+  coverage: QUESTION_GA_GO
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: <보기>의 [자료]를 바탕으로 ㉠~㉣을 이해한 내용으로 적절하지 않은 것은?
+  options:
+  - ㉠은 의문사가 없으므로 '가'로 끝났다.
+  - ㉡은 의문사 '므스'가 있으므로 '고'로 끝났다.
+  - ㉢은 의문사 '어느'가 있고 앞말이 'ㅣ'로 끝나 '고'의 'ㄱ'이 탈락한 '오'로 끝났다.
+  - ㉣의 '罰아'는 의문사가 있어 '고'가 바뀐 형태로, '賞가'와 의문문의 종류가 다르다.
+  - ㉣의 두 의문문은 모두 의문사가 없는 판정 의문문이다.
+  answer: 4
+  second_best: 3
+  judgments:
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o1
+    ev: &id020
+    - V1
+    why: 옳다.
+    mis: KM15
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o2
+    ev: *id020
+    why: 옳다.
+    mis: KM13
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id020
+    why: 옳다.
+    mis: KM09
+  - v: false
+    c: CORRECT
+    axis: application
+    claim: o4
+    ev: *id020
+    why: '''罰아''는 ''ㄹ'' 뒤에서 ''가''의 ''ㄱ''이 탈락한 것으로, 의문사가 없는 판정 의문문이다.'
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o5
+    ev: *id020
+    why: 옳다.
+    mis: KM07
+  reasoning_steps: 4
+  immediate_elimination: 1
+  view:
+  - '[자료] 중세 국어에서 체언으로 끝나는 의문문은 의문사가 없으면 ''가'', 의문사가 있으면 ''고''로 끝났다. 앞말이 ''ㅣ''나 ''ㄹ''로 끝날 때는 ''ㄱ''이 탈락하여 ''아, 오''로 나타나기도 하였다.'
+  - ㉠ 이 ᄯᆞ리 너희 죵가 [이 딸이 너희 종이냐?]
+  - ㉡ 얻논 藥이 므스것고 [구하는 약이 무엇이냐?]
+  - ㉢ 어느 나리 이 도라갈 ᄒᆡ오 [어느 날이 돌아갈 해인가?]
+  - ㉣ 이ᄂᆞᆫ 賞가 罰아 [이것은 상이냐, 벌이냐?]
+  novel_examples:
+  - 죵가
+  - 므스것고
+  - 罰아
+  morpheme_analysis: true
+  exception_rules:
+  - '''ㅣ, ㄹ'' 뒤 ''ㄱ'' 탈락(아/오)'
+  supplied_concepts:
+  - 의문 보조사 가/고의 구별
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#7
+  source_verification: 'PENDING_TEACHER: 중세 문헌 전사는 표준 언해본 기준 AI 입력, 교과서·원본 대조 전'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K4): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-021
+  set: Q21
+  format: MCQ
+  family: CASE_APPLICATION
+  template: K5
+  coverage: ART1_EOBEOP
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: <보기>의 ㄱ~ㅁ 중 '어법에 맞도록' 적는 원칙이 드러나는 것만을 고른 것은?
+  options:
+  - ㄱ, ㄷ
+  - ㄴ, ㄹ
+  - ㄱ, ㄴ, ㅁ
+  - ㄴ, ㄹ, ㅁ
+  - ㄷ, ㄹ, ㅁ
+  answer: 4
+  second_best: 2
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o1
+    ev: &id021
+    - V1
+    why: ㄱ·ㄷ은 소리대로 적었다.
+    mis: KM06
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id021
+    why: ㅁ도 원형을 밝혔다.
+    mis: KM12
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id021
+    why: ㄱ은 소리대로 적었다.
+    mis: KM06
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o4
+    ev: *id021
+    why: 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id021
+    why: ㄷ은 소리대로 적었다.
+    mis: KM06
+  reasoning_steps: 2
+  immediate_elimination: 2
+  view:
+  - '[제1항 요지] 표준어를 적을 때 소리 나는 대로 적는 것을 기본으로 하면서, 형태소의 본모양을 밝혀 어법에 맞게 적는 것도 함께 원칙으로 삼는다.'
+  - ㄱ. 하늘[하늘]
+  - ㄴ. 꽃잎[꼰닙]
+  - ㄷ. 바다[바다]
+  - ㄹ. 덮개[덥깨]
+  - ㅁ. 웃음[우슴]
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K5): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-022
+  set: Q22
+  format: MCQ
+  family: MULTI_JUDGMENT
+  template: K7
+  coverage: ART5_FORTIS
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: <보기>의 규정을 적용한 내용으로 옳은 것만을 있는 대로 고른 것은?
+  options:
+  - ㄱ, ㄴ
+  - ㄴ, ㄷ, ㄹ
+  - ㄱ, ㄹ, ㅁ
+  - ㄱ, ㄷ, ㅁ
+  - ㄱ, ㄴ, ㄹ
+  answer: 5
+  second_best: 2
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o1
+    ev: &id022
+    - V1
+    why: ㄹ도 옳다.
+    mis: KM12
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id022
+    why: '''법석''은 ''ㅂ'' 받침 뒤라 된소리로 적지 않으므로 ㄷ은 틀리다.'
+    mis: KM09
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id022
+    why: '''깍두기''로 적으므로 ㅁ은 틀리다.'
+    mis: KM14
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o4
+    ev: *id022
+    why: ㄷ·ㅁ이 틀리다.
+    mis: KM09
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o5
+    ev: *id022
+    why: 옳다.
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[제5항] 한 단어 안에서 뚜렷한 까닭 없이 나는 된소리는 다음 음절의 첫소리를 된소리로 적는다. 1. 두 모음 사이에서 나는 된소리 2. ''ㄴ, ㄹ, ㅁ, ㅇ'' 받침 뒤에서 나는 된소리 / 다만, ''ㄱ, ㅂ'' 받침 뒤에서 나는 된소리는, 같은 음절이나 비슷한 음절이 겹쳐 나는 경우가 아니면 된소리로 적지 아니한다.'
+  - ㄱ. '기쁘다'는 두 모음 사이에서 된소리가 나므로 '기쁘다'로 적는다.
+  - ㄴ. '움찔'은 'ㅁ' 받침 뒤에서 나는 된소리이므로 '움찔'로 적는다.
+  - ㄷ. '법석'은 'ㅂ' 받침 뒤에서 된소리가 나므로 '법썩'으로 적는다.
+  - ㄹ. '씁쓸하다'는 'ㅂ' 받침 뒤이지만 비슷한 음절이 겹쳐 나므로 된소리로 적는다.
+  - ㅁ. '깍두기'는 'ㄱ' 받침 뒤에서 된소리가 나므로 '깍뚜기'로 적는다.
+  novel_examples:
+  - 움찔
+  - 씁쓸하다
+  - 법석
+  morpheme_analysis: true
+  exception_rules:
+  - '''ㄱ, ㅂ'' 받침 뒤 된소리는 적지 않음'
+  - 같거나 비슷한 음절이 겹치면 적음
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#10
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K7): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-023
+  set: Q23
+  format: MCQ
+  family: ERROR_CORRECTION
+  template: K6
+  coverage: SPACING_DIARY
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: <보기>의 ㉠~㉥ 중 띄어쓰기를 바르게 고쳐야 할 것만을 고른 것은?
+  options:
+  - ㉠, ㉤
+  - ㉠, ㉢
+  - ㉡, ㉤
+  - ㉠, ㉣, ㉤
+  - ㉢, ㉣, ㉥
+  answer: 1
+  second_best: 4
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o1
+    ev: &id023
+    - V1
+    why: '''올 것 같아서'', ''없는 데다가''로 고친다.'
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id023
+    why: '''수밖에''는 바르다.'
+    mis: KM01
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o3
+    ev: *id023
+    why: '''말대로''는 조사라 바르다.'
+    mis: KM15
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o4
+    ev: *id023
+    why: '''지 십 분 만에''는 바르다.'
+    mis: KM01
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id023
+    why: 모두 바르다.
+    mis: KM15
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[일기] 오늘은 ㉠비가 올것같아서 우산을 챙겼다. 동생은 ㉡엄마 말대로 일찍 일어났지만, 나는 늦잠을 ㉢잘 수밖에 없었다. 학교에 ㉣도착한 지 십 분 만에 비가 쏟아졌다. 친구는 ㉤우산이 없는데다가 비옷도 없어서 ㉥나만큼 젖었다.'
+  novel_examples:
+  - 없는 데다가
+  - 올 것 같아서
+  exception_rules:
+  - '''수밖에''는 의존 명사 ''수''+조사 ''밖에''로 붙여 씀'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K6): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-024
+  set: Q24
+  format: MCQ
+  family: MULTI_JUDGMENT
+  template: K7
+  coverage: SAISIOT_FLOWCHART
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: <보기>의 판단 순서에 따를 때 사이시옷을 받치어 적는 것만을 있는 대로 고른 것은?
+  options:
+  - ㄱ, ㄴ, ㅁ
+  - ㄴ, ㄷ, ㅂ
+  - ㄴ, ㅁ, ㅂ
+  - ㄴ, ㄹ, ㅁ
+  - ㄷ, ㅁ, ㅂ
+  answer: 3
+  second_best: 1
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o1
+    ev: &id024
+    - V1
+    why: '''해님''은 파생어라 (가)에서 걸러진다.'
+    mis: KM13
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o2
+    ev: *id024
+    why: '''개수''는 한자어끼리의 결합이다.'
+    mis: KM09
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o3
+    ev: *id024
+    why: 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o4
+    ev: *id024
+    why: '''위층''은 거센소리라 해당하지 않는다.'
+    mis: KM07
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id024
+    why: '''개수''는 쓰지 않는다.'
+    mis: KM09
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '(가) 합성어인가? → 아니요: 쓰지 않음'
+  - '(나) 구성 요소 중 하나 이상이 고유어인가? → 아니요: 쓰지 않음(곳간, 셋방, 숫자, 찻간, 툇간, 횟수는 제외)'
+  - '(다) 앞말이 모음으로 끝나는가? → 아니요: 쓰지 않음'
+  - '(라) 뒷말의 첫소리가 된소리로 나거나 ''ㄴ'' 또는 ''ㄴㄴ'' 소리가 덧나는가? → 예: 씀 / 아니요: 쓰지 않음'
+  - ㄱ. 해+님[해님]  ㄴ. 등교+길[등교낄]  ㄷ. 개+수(個數)[개쑤]
+  - ㄹ. 위+층[위층]  ㅁ. 뒤+일[뒨닐]  ㅂ. 전세+집[전세찝]
+  novel_examples:
+  - 등굣길
+  - 전셋집
+  - 뒷일
+  morpheme_analysis: true
+  exception_rules:
+  - 파생어(해님)·한자어끼리(개수)는 제외
+  - 뒷말이 거센소리(위층)면 해당하지 않음
+  supplied_concepts:
+  - 사이시옷 판단 순서도
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#10
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K7): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-025
+  set: Q25
+  format: MCQ
+  family: MULTI_JUDGMENT
+  template: K7
+  coverage: DUEUM_RYUL_YUL
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: <보기>의 규정을 적용한 결과로 옳은 것만을 있는 대로 고른 것은?
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄴ, ㅁ
+  - ㄴ, ㄷ, ㅁ
+  - ㄱ, ㄹ, ㅁ
+  - ㄷ, ㄹ, ㅁ
+  answer: 2
+  second_best: 3
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o1
+    ev: &id025
+    - V1
+    why: ㅁ도 옳다.
+    mis: KM12
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o2
+    ev: *id025
+    why: 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id025
+    why: '''남녀''로 적으므로 ㄷ은 틀리다.'
+    mis: KM08
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o4
+    ev: *id025
+    why: '''연이율''로 적으므로 ㄹ은 틀리다.'
+    mis: KM09
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id025
+    why: ㄷ·ㄹ은 틀리다.
+    mis: KM08
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[제11항] 한자음 ''랴, 려, 례, 료, 류, 리''가 단어의 첫머리에 올 적에는 ''야, 여, 예, 요, 유, 이''로 적는다. 다만, 모음이나 ''ㄴ'' 받침 뒤에 이어지는 ''렬, 률''은 ''열, 율''로 적는다.'
+  - '[제10항 붙임 2] 접두사처럼 쓰이는 한자가 붙어서 된 말이나 합성어에서 뒷말의 첫소리가 ''ㄴ'' 소리로 나더라도 두음 법칙에 따라 적는다.'
+  - ㄱ. 출석+률 → 출석률
+  - ㄴ. 실패+률 → 실패율
+  - ㄷ. 남+녀 → 남여
+  - ㄹ. 연+이율(年利率) → 연리율
+  - ㅁ. 선+률(旋律) → 선율
+  novel_examples:
+  - 출석률
+  - 실패율
+  - 연이율
+  morpheme_analysis: true
+  exception_rules:
+  - '''ㄴ'' 이외 받침 뒤 ''률'' 유지'
+  - 단어 첫머리가 아니면 본음(남녀)
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#10
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K7): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-026
+  set: Q26
+  format: MCQ
+  family: MULTI_JUDGMENT
+  template: K7
+  coverage: ART15_ORIGINAL_MEANING
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: <보기>의 규정을 바탕으로 판단한 ㄱ~ㄹ 중 옳은 것만을 있는 대로 고른 것은?
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ
+  - ㄱ, ㄴ, ㄹ
+  - ㄴ, ㄷ, ㄹ
+  - ㄱ, ㄷ, ㄹ
+  answer: 3
+  second_best: 4
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o1
+    ev: &id026
+    - V1
+    why: ㄹ도 옳다.
+    mis: KM12
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id026
+    why: '''접어들다''는 원형을 밝혀 적는다.'
+    mis: KM14
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o3
+    ev: *id026
+    why: 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o4
+    ev: *id026
+    why: ㄷ은 틀리다.
+    mis: KM14
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id026
+    why: ㄷ은 틀리다.
+    mis: KM06
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[제15항 붙임 1] 두 개의 용언이 어울려 한 개의 용언이 될 적에, 앞말의 본뜻이 유지되고 있는 것은 그 원형을 밝히어 적고, 그 본뜻에서 멀어진 것은 밝히어 적지 아니한다.'
+  - (가) 넘어지다, 늘어나다, 흩어지다
+  - (나) 드러나다, 사라지다, 쓰러지다
+  - ㄱ. '엎어지다'는 '엎다'의 뜻이 남아 있으므로 (가)와 같은 방식으로 적는다.
+  - ㄴ. '쓰러지다'는 '쓸다'의 뜻이 남아 있지 않아 '쓸어지다'로 적지 않는다.
+  - ㄷ. '접어들다'는 '접다'의 뜻에서 멀어졌으므로 '저버들다'로 적어야 한다.
+  - ㄹ. '드러나다'는 '들다'의 본뜻에서 멀어진 말이므로 소리대로 적는다.
+  novel_examples:
+  - 엎어지다
+  - 접어들다
+  morpheme_analysis: true
+  exception_rules:
+  - 본뜻에서 멀어지면 소리대로(드러나다·사라지다·쓰러지다)
+  - 규정 예시에 든 '접어들다'는 원형 표기
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#10
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K7): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-027
+  set: Q27
+  format: MCQ
+  family: STUDENT_RESPONSE_EVALUATION
+  template: K8
+  coverage: ART19_SUFFIX_DIALOGUE
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: <보기>의 대화에서 학생의 이해가 적절한 것만을 고른 것은?
+  options:
+  - A, C
+  - A, B
+  - B, D
+  - A, C, D
+  - C, D
+  answer: 1
+  second_best: 4
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o1
+    ev: &id027
+    - V1
+    why: 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id027
+    why: '''무덤''은 ''-엄''이 붙어 소리대로 적는다.'
+    mis: KM14
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o3
+    ev: *id027
+    why: B·D는 틀리다.
+    mis: KM06
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o4
+    ev: *id027
+    why: '''거름''은 ''걷-''과 무관하며 소리대로 적는다.'
+    mis: KM09
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id027
+    why: D는 틀리고 A는 옳다.
+    mis: KM09
+  reasoning_steps: 4
+  immediate_elimination: 1
+  view:
+  - '선생님: 어간에 ''-이''나 ''-음''이 붙어서 명사가 된 것은 어간의 원형을 밝혀 적어요. 하지만 그 밖의 모음으로 시작하는 접미사가 붙거나, 어간의 뜻과 멀어진 경우에는 소리대로 적어요.'
+  - '학생 A: ''길이, 깊이''는 ''길-, 깊-''에 ''-이''가 붙었으니까 원형을 밝혀 적은 거네요.'
+  - '학생 B: ''무덤''은 ''묻-''에 ''-엄''이 붙은 말이니까 ''묻엄''으로 적어야 해요.'
+  - '학생 C: ''마중''은 ''맞-''에 ''-웅''이 붙은 말이라서 소리대로 적었겠네요.'
+  - '학생 D: ''거름(비료)''은 ''걷-''에 ''-음''이 붙은 말이라서 ''걸음''과 같이 적어야 해요.'
+  novel_examples:
+  - 마중
+  - 무덤
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K8): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-028
+  set: Q28
+  format: MCQ
+  family: CASE_APPLICATION
+  template: K7
+  coverage: ART19_HOMOPHONE_PAIRS
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: <보기>의 ㉠~㉤에서 괄호 안의 표기를 바르게 고른 것은?
+  options:
+  - ㉠ 걸음 ㉡ 걸음 ㉢ 노름 ㉣ 목걸이 ㉤ 목거리
+  - ㉠ 걸음 ㉡ 거름 ㉢ 노름 ㉣ 목걸이 ㉤ 목거리
+  - ㉠ 걸음 ㉡ 거름 ㉢ 놀음 ㉣ 목걸이 ㉤ 목걸이
+  - ㉠ 거름 ㉡ 걸음 ㉢ 노름 ㉣ 목거리 ㉤ 목걸이
+  - ㉠ 걸음 ㉡ 거름 ㉢ 노름 ㉣ 목거리 ㉤ 목걸이
+  answer: 2
+  second_best: 5
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o1
+    ev: &id028
+    - V1
+    why: 비료는 '거름'이다.
+    mis: KM15
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o2
+    ev: *id028
+    why: 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o3
+    ev: *id028
+    why: 도박은 '노름', 목병은 '목거리'이다.
+    mis: KM15
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o4
+    ev: *id028
+    why: ㉠은 '걸음', 장신구는 '목걸이'이다.
+    mis: KM08
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o5
+    ev: *id028
+    why: ㉣·㉤이 바뀌었다.
+    mis: KM15
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[제19항] 어간에 ''-이''나 ''-음/-ㅁ''이 붙어서 명사로 된 것은 그 어간의 원형을 밝히어 적는다. 다만, 어간의 뜻과 멀어진 것은 원형을 밝히어 적지 아니한다. (예) 굽도리, 목거리(목병), 거름(비료), 노름(도박)'
+  - ㉠ 아기의 첫 (걸음/거름)을 영상으로 남겼다.
+  - ㉡ 밭에 (걸음/거름)을 주었더니 배추가 잘 자랐다.
+  - ㉢ 그는 (놀음/노름)에 빠져 재산을 잃었다.
+  - ㉣ 그녀는 진주 (목걸이/목거리)를 선물받았다.
+  - ㉤ 감기에 (목걸이/목거리)까지 겹쳐 고생했다.
+  novel_examples:
+  - 목거리
+  - 노름
+  morpheme_analysis: true
+  exception_rules:
+  - 뜻이 멀어진 '거름·노름·목거리'는 소리대로
+  - '''걸음·목걸이''는 원형 표기'
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#10
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K7): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-029
+  set: Q29
+  format: MCQ
+  family: EXCEPT_INCORRECT
+  template: K8
+  coverage: ART51_I_HI
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: <보기>의 ㉠~㉤ 가운데 부사의 표기가 바르지 않은 것은?
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 4
+  second_best: 5
+  judgments:
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o1
+    ev: &id029
+    - V1
+    why: 바르다.
+    mis: KM06
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o2
+    ev: *id029
+    why: 바르다.
+    mis: KM06
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id029
+    why: 바르다.
+    mis: KM14
+  - v: false
+    c: CORRECT
+    axis: application
+    claim: o4
+    ev: *id029
+    why: '''꼼꼼히''로 적는다.'
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o5
+    ev: *id029
+    why: 바르다.
+    mis: KM14
+  reasoning_steps: 3
+  immediate_elimination: 1
+  view:
+  - '[제51항] 부사의 끝음절이 분명히 ''이''로만 나는 것은 ''-이''로 적고, ''히''로만 나거나 ''이''나 ''히''로 나는 것은 ''-히''로 적는다.'
+  - ㉠ 짐을 번번이 잊어버렸다.
+  - ㉡ 일을 틈틈이 해 두었다.
+  - ㉢ 가까이 다가가 보았다.
+  - ㉣ 서랍을 꼼꼼이 정리했다.
+  - ㉤ 날씨가 따뜻이 풀렸다.
+  novel_examples:
+  - 번번이
+  - 따뜻이
+  - 꼼꼼히
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K8): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-030
+  set: Q30
+  format: MCQ
+  family: MULTI_JUDGMENT
+  template: K4
+  coverage: ART40_CONTRACTION
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: <보기>의 규정에 따라 줄여 쓴 것으로 옳은 것만을 있는 대로 고른 것은?
+  options:
+  - ㄱ, ㄷ
+  - ㄱ, ㄴ, ㅁ
+  - ㄴ, ㄹ, ㅁ
+  - ㄱ, ㄷ, ㄹ
+  - ㄱ, ㄴ, ㄹ
+  answer: 5
+  second_best: 2
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o1
+    ev: &id030
+    - V1
+    why: '''섭섭지''로 적으므로 ㄷ은 틀리다.'
+    mis: KM07
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id030
+    why: '''무심치''로 적으므로 ㅁ은 틀리다.'
+    mis: KM07
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o3
+    ev: *id030
+    why: ㅁ은 틀리다.
+    mis: KM08
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o4
+    ev: *id030
+    why: ㄷ은 틀리다.
+    mis: KM14
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o5
+    ev: *id030
+    why: 옳다.
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[제40항] 어간의 끝음절 ''하''의 ''ㅏ''가 줄고 ''ㅎ''이 다음 음절의 첫소리와 어울려 거센소리로 될 적에는 거센소리로 적는다. (예) 간편하게 → 간편케, 흔하다 → 흔타'
+  - '[붙임 2] 어간의 끝음절 ''하''가 아주 줄 적에는 준 대로 적는다. (예) 거북하지 → 거북지, 생각하건대 → 생각건대'
+  - '[참고] ''하'' 앞의 받침 소리가 [ㄱ, ㄷ, ㅂ]이면 ''하''가 아주 줄고, 모음이나 ''ㄴ, ㄹ, ㅁ, ㅇ''이면 ''ㅎ''이 남아 거센소리가 된다.'
+  - ㄱ. 익숙하지 → 익숙지
+  - ㄴ. 정결하다 → 정결타
+  - ㄷ. 섭섭하지 → 섭섭치
+  - ㄹ. 깨끗하지 → 깨끗지
+  - ㅁ. 무심하지 → 무심지
+  novel_examples:
+  - 익숙지
+  - 정결타
+  - 무심치
+  morpheme_analysis: true
+  exception_rules:
+  - '''깨끗-''의 받침 ''ㅅ''은 [ㄷ]으로 소리 나 ''하''가 아주 줄어듦'
+  - 울림소리 뒤에서는 'ㅎ'이 남음
+  supplied_concepts:
+  - '''하''가 줄어드는 조건'
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#7
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K4): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-031
+  set: Q31
+  format: MCQ
+  family: CASE_APPLICATION
+  template: K5
+  coverage: ART56_DEON_DEUN
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: <보기>를 바르게 적용한 문장은?
+  options:
+  - 얼마나 놀랐든지 말이 나오지 않았다.
+  - 사과를 먹든지 배를 먹든지 마음대로 해라.
+  - 그때 얼마나 춥든지 손이 다 얼었다.
+  - 가던지 말던지 네가 정해라.
+  - 어제 본 영화가 얼마나 재미있든지 또 보고 싶다.
+  answer: 2
+  second_best: 1
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o1
+    ev: &id031
+    - V1
+    why: 지난 일이므로 '놀랐던지'이다.
+    mis: KM15
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o2
+    ev: *id031
+    why: 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o3
+    ev: *id031
+    why: '''춥던지''이다.'
+    mis: KM15
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o4
+    ev: *id031
+    why: 선택이므로 '가든지 말든지'이다.
+    mis: KM15
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o5
+    ev: *id031
+    why: '''재미있던지''이다.'
+    mis: KM15
+  reasoning_steps: 2
+  immediate_elimination: 2
+  view:
+  - '[제56항] 지난 일을 나타내는 어미는 ''-더라, -던''으로 적고, 물건이나 일의 내용을 가리지 아니하는 뜻을 나타내는 조사와 어미는 ''-든지''로 적는다.'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K5): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-032
+  set: Q32
+  format: MCQ
+  family: CASE_APPLICATION
+  template: K6
+  coverage: SPACING_SUFFIX_VS_DEPNOUN
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 다음 중 띄어쓰기가 바른 문장은?
+  options:
+  - 회의중에는 휴대 전화를 꺼 두세요.
+  - 서울과 부산간 고속 열차가 늘어났다.
+  - 인사 차 들렀다가 차 한 잔 마시고 왔다.
+  - 한 달간 모은 돈으로 동생에게 선물을 샀다.
+  - 사과, 배, 귤들을 바구니에 담았다.
+  answer: 4
+  second_best: 2
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o1
+    ev: &id032
+    - R1
+    why: '''회의 중에는''으로 띄운다.'
+    mis: KM01
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id032
+    why: '''부산 간''의 ''간''은 의존 명사이다.'
+    mis: KM15
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id032
+    why: '''인사차''의 ''-차''는 접미사이다.'
+    mis: KM15
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o4
+    ev: *id032
+    why: 옳다. '-간'은 접미사이다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id032
+    why: '''귤 들''의 ''들''은 의존 명사이다.'
+    mis: KM15
+  reasoning_steps: 4
+  immediate_elimination: 1
+  novel_examples:
+  - 한 달간
+  - 인사차
+  - 귤 들
+  exception_rules:
+  - '''-간(동안), -차(목적)''는 접미사'
+  - 나열 뒤 '들'은 의존 명사
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K6): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-033
+  set: Q33
+  format: MCQ
+  family: MULTI_JUDGMENT
+  template: K7
+  coverage: SPACING_SAME_FORM
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: <보기>의 [기준]에 따를 때 띄어쓰기가 바른 것만을 있는 대로 고른 것은?
+  options:
+  - ㄱ, ㄴ, ㄷ
+  - ㄷ, ㄹ, ㅁ
+  - ㄴ, ㄷ, ㅁ
+  - ㄴ, ㄹ, ㅁ
+  - ㄱ, ㄷ, ㅁ
+  answer: 3
+  second_best: 2
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o1
+    ev: &id033
+    - V1
+    why: '''노력한 만큼''으로 띄운다.'
+    mis: KM01
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id033
+    why: '''바대로''로 붙여 써야 한다.'
+    mis: KM15
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o3
+    ev: *id033
+    why: 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o4
+    ev: *id033
+    why: ㄹ은 틀리다.
+    mis: KM15
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id033
+    why: ㄱ은 틀리다.
+    mis: KM01
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[기준] 체언 바로 뒤에 붙어 문법적 관계나 뜻을 더하면 조사이므로 붙여 쓰고, 관형어의 꾸밈을 받으면 의존 명사이므로 띄어 쓴다. 어미의 일부이면 앞말에 붙여 쓴다.'
+  - ㄱ. 노력한만큼 결과가 나온다.
+  - ㄴ. 시험 범위가 넓은 데다 시간도 부족했다.
+  - ㄷ. 그가 떠난 지 벌써 일 년이 지났다.
+  - ㄹ. 들은 바 대로 행동했다.
+  - ㅁ. 형은 공부만 할 뿐 놀지 않는다.
+  novel_examples:
+  - 넓은 데다
+  - 들은 바대로
+  morpheme_analysis: true
+  exception_rules:
+  - 의존 명사 '바' 뒤의 '대로'는 조사라 붙여 씀
+  - 관형어 뒤 '뿐·만큼·지·데'는 의존 명사
+  supplied_concepts:
+  - 조사·의존 명사·어미 판별 기준
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#10
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K7): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-034
+  set: Q34
+  format: MCQ
+  family: CASE_APPLICATION
+  template: K8
+  coverage: ART57_DISTINCTION
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 다음 중 밑줄 친 말의 표기가 바른 문장은?
+  options:
+  - 편지를 우체국에서 붙였다.
+  - 생선을 간장에 졸였더니 짜다.
+  - 화살을 과녁에 맞췄다.
+  - 고무줄을 늘려 묶었다.
+  - 마음을 졸이며 기다렸다.
+  answer: 5
+  second_best: 2
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o1
+    ev: &id034
+    - R1
+    why: '''부쳤다''이다.'
+    mis: KM15
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id034
+    why: 양념이 배게 끓이는 것은 '조렸더니'이다.
+    mis: KM15
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o3
+    ev: *id034
+    why: 목표에 닿게 하는 것은 '맞혔다'이다.
+    mis: KM15
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o4
+    ev: *id034
+    why: 길이를 길게 하는 것은 '늘여'이다.
+    mis: KM15
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o5
+    ev: *id034
+    why: 옳다.
+  reasoning_steps: 5
+  immediate_elimination: 1
+  novel_examples:
+  - 조리다
+  - 늘이다
+  exception_rules:
+  - '''조리다/졸이다''처럼 소리가 같아도 뜻에 따라 구별'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K8): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-035
+  set: Q35
+  format: MCQ
+  family: EXCEPT_INCORRECT
+  template: K4
+  coverage: ART30_SAISIOT_REPORT
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: <보기>를 바탕으로 사이시옷 표기를 판단한 내용으로 적절하지 않은 것은?
+  options:
+  - '''초점(焦點)''은 [초쩜]으로 소리 나므로 (3)에 따라 ''촛점''으로 적는다.'
+  - '''아랫니''는 순우리말 합성어로, ''ㄴㄴ'' 소리가 덧나므로 사이시옷을 적는다.'
+  - '''장맛비''는 ''장마''와 ''비''가 결합한 순우리말 합성어로, 뒷말이 된소리로 나서 사이시옷을 적는다.'
+  - '''훗날''은 한자어 ''후(後)''와 순우리말 ''날''이 결합하여 ''ㄴ'' 소리가 덧나므로 사이시옷을 적는다.'
+  - '''피자집''은 외래어가 들어간 합성어이므로 [피자찝]으로 소리 나더라도 사이시옷을 적지 않는다.'
+  answer: 1
+  second_best: 5
+  judgments:
+  - v: false
+    c: CORRECT
+    axis: application
+    claim: o1
+    ev: &id035
+    - V1
+    why: '''초점''은 (3)의 여섯 단어에 들지 않으므로 ''초점''으로 적는다.'
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o2
+    ev: *id035
+    why: 옳다.
+    mis: KM13
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o3
+    ev: *id035
+    why: 옳다.
+    mis: KM07
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o4
+    ev: *id035
+    why: 옳다.
+    mis: KM09
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o5
+    ev: *id035
+    why: 옳다.
+    mis: KM09
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - (1) 순우리말로 된 합성어에서 앞말이 모음으로 끝나고 뒷말이 된소리로 나거나 'ㄴ, ㄴㄴ' 소리가 덧나면 사이시옷을 받치어 적는다.
+  - (2) 순우리말과 한자어로 된 합성어에서도 (1)과 같은 조건이면 받치어 적는다.
+  - (3) 두 음절로 된 한자어는 '곳간, 셋방, 숫자, 찻간, 툇간, 횟수'에만 받치어 적는다.
+  - (4) 외래어가 들어간 합성어에는 받치어 적지 않는다.
+  novel_examples:
+  - 초점
+  - 훗날
+  - 피자집
+  morpheme_analysis: true
+  exception_rules:
+  - 두 음절 한자어 여섯 개만 예외
+  - 외래어가 들어간 합성어 제외
+  supplied_concepts:
+  - 사이시옷 조건 요약
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#7
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K4): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-036
+  set: Q36
+  format: MCQ
+  family: CASE_APPLICATION
+  template: K8
+  coverage: ART6_PALATAL_SPELLING
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: <보기>의 규정에 따라 적은 단어로만 묶인 것은?
+  options:
+  - 해돋이, 굳이, 닫히다
+  - 해돋이, 잔디, 굳이
+  - 느티나무, 닫히다, 굳이
+  - 맏며느리, 해돋이, 밭이
+  - 디디다, 닫히다, 같이
+  answer: 1
+  second_best: 3
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o1
+    ev: &id036
+    - V1
+    why: 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id036
+    why: '''잔디''는 한 형태소 안이다.'
+    mis: KM13
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id036
+    why: '''느티나무''는 형태소 안이라 해당하지 않는다.'
+    mis: KM13
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o4
+    ev: *id036
+    why: '''맏며느리''는 구개음화가 일어나지 않는다.'
+    mis: KM07
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id036
+    why: '''디디다''는 해당하지 않는다.'
+    mis: KM13
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[제6항] ''ㄷ, ㅌ'' 받침 뒤에 종속적 관계를 가진 ''-이(-)''나 ''-히-''가 올 적에는, 그 ''ㄷ, ㅌ''이 ''ㅈ, ㅊ''으로 소리 나더라도 ''ㄷ, ㅌ''으로 적는다.'
+  novel_examples:
+  - 느티나무
+  - 디디다
+  - 닫히다
+  exception_rules:
+  - 형태소 내부의 'ㄷ, ㅌ'+'ㅣ'는 해당하지 않음
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K8): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-037
+  set: Q37
+  format: MCQ
+  family: MULTI_JUDGMENT
+  template: K7
+  coverage: ART47_AUX_VERB
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: <보기>의 ㄱ~ㅁ 가운데 띄어쓰기가 규정에 맞는 것만을 고른 것은?
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ, ㄹ
+  - ㄴ, ㄹ
+  - ㄹ, ㅁ
+  - ㄱ, ㄹ
+  answer: 5
+  second_best: 2
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o1
+    ev: &id037
+    - V1
+    why: 중간에 조사가 들어가면 띄어 쓴다.
+    mis: KM09
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id037
+    why: 합성 용언 뒤 보조 용언은 띄어 쓴다.
+    mis: KM09
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o3
+    ev: *id037
+    why: ㄴ은 틀리다.
+    mis: KM09
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o4
+    ev: *id037
+    why: 조사 뒤 '한다'는 띄어 쓴다.
+    mis: KM15
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o5
+    ev: *id037
+    why: 옳다.
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[제47항] 보조 용언은 띄어 씀을 원칙으로 하되, 경우에 따라 붙여 씀도 허용한다. 다만, 앞말에 조사가 붙거나 앞말이 합성 용언인 경우, 그리고 중간에 조사가 들어갈 적에는 그 뒤에 오는 보조 용언은 띄어 쓴다.'
+  - ㄱ. 그 책을 다 읽어보았다.
+  - ㄴ. 그 책을 읽어도보았다.
+  - ㄷ. 동생이 방에서 뛰어나가버렸다.
+  - ㄹ. 하늘을 보니 곧 비가 올듯하다.
+  - ㅁ. 그는 늘 잘난 체를한다.
+  novel_examples:
+  - 뛰어나가 버렸다
+  - 읽어도 보았다
+  morpheme_analysis: true
+  exception_rules:
+  - 합성 용언 뒤 보조 용언은 띄어 씀
+  - 중간에 조사가 들면 띄어 씀
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#10
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K7): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-038
+  set: Q38
+  format: MCQ
+  family: EXCEPT_INCORRECT
+  template: K6
+  coverage: SPACING_NUMBERS_UNITS
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 다음 중 띄어쓰기가 바르지 않은 것은?
+  options:
+  - 이 건물의 식당은 3층에 있다.
+  - 십이억 삼천사백오십육만 칠천팔백구십팔
+  - 오늘은 제1과부터 공부했다.
+  - 가게에서 사과 두개를 샀다.
+  - 청군 대 백군의 경기가 열렸다.
+  answer: 4
+  second_best: 1
+  judgments:
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o1
+    ev: &id038
+    - R1
+    why: 아라비아 숫자와 단위는 붙여 쓸 수 있다.
+    mis: KM09
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id038
+    why: 만 단위로 띄어 쓴다.
+    mis: KM09
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o3
+    ev: *id038
+    why: '''제-''는 접두사이다.'
+    mis: KM15
+  - v: false
+    c: CORRECT
+    axis: application
+    claim: o4
+    ev: *id038
+    why: '''두 개''로 띄어 쓴다.'
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id038
+    why: 두 말을 이어 주는 '대'는 띄어 쓴다.
+    mis: KM07
+  reasoning_steps: 4
+  immediate_elimination: 1
+  novel_examples:
+  - 십이억 삼천사백오십육만
+  exception_rules:
+  - 아라비아 숫자 뒤 단위는 붙여 쓰기 허용
+  - 수는 만 단위로 띄어 씀
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K6): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-039
+  set: Q39
+  format: MCQ
+  family: MULTI_JUDGMENT
+  template: K7
+  coverage: ART35_DOE_DWAE
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: <보기>의 ㄱ~ㅁ 중 준말을 바르게 쓴 문장만을 고른 것은?
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄹ
+  - ㄴ, ㄷ, ㄹ
+  - ㄹ, ㅁ
+  - ㄱ, ㄷ, ㄹ
+  answer: 2
+  second_best: 5
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o1
+    ev: &id039
+    - V1
+    why: '''뵈어요''가 줄면 ''봬요''이다.'
+    mis: KM14
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o2
+    ev: *id039
+    why: 옳다.
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o3
+    ev: *id039
+    why: ㄴ·ㄷ은 틀리다.
+    mis: KM08
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o4
+    ev: *id039
+    why: '''된다''로 써야 한다.'
+    mis: KM08
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o5
+    ev: *id039
+    why: '''안 돼요''로 써야 한다.'
+    mis: KM14
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[제35항 붙임 2] ''ㅚ'' 뒤에 ''-어, -었-''이 어울려 ''ㅙ, ㅙㅆ''으로 될 적에도 준 대로 적는다. (예) 되어 → 돼, 되었다 → 됐다'
+  - '[참고] ''되-'' 뒤에 ''-어''가 오지 않으면 ''돼''로 줄일 수 없다. (예) 되고, 되니, 된다'
+  - ㄱ. 이번에는 꼭 반장이 돼라.
+  - ㄴ. 내일 학교에서 뵈요.
+  - ㄷ. 그렇게 하면 안 되요.
+  - ㄹ. 바람을 쐤더니 머리가 맑아졌다.
+  - ㅁ. 그 일은 내일 하면 됀다.
+  novel_examples:
+  - 봬요
+  - 쐤더니
+  morpheme_analysis: true
+  exception_rules:
+  - '''되-''+''-어''일 때만 ''돼'''
+  - '''뵈-''+''-어요'' → ''봬요'''
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#10
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K7): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-040
+  set: Q40
+  format: MCQ
+  family: EXCEPT_INCORRECT
+  template: K8
+  coverage: ORTHO_QA_BOARD
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: <보기>의 온라인 상담 게시판 답변 ㉠~㉤ 중 적절하지 않은 것은?
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 3
+  second_best: 1
+  judgments:
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o1
+    ev: &id040
+    - V1
+    why: 옳다.
+    mis: KM14
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o2
+    ev: *id040
+    why: 옳다.
+    mis: KM14
+  - v: false
+    c: CORRECT
+    axis: application
+    claim: o3
+    ev: *id040
+    why: 어미 '-ㄹ걸'은 된소리로 나더라도 예사소리로 적으므로 '알았을걸'이 맞다.
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o4
+    ev: *id040
+    why: 옳다.
+    mis: KM06
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id040
+    why: 옳다.
+    mis: KM14
+  reasoning_steps: 3
+  immediate_elimination: 1
+  view:
+  - '[질문 1] ''내가 할께.''와 ''내가 할게.'' 중 무엇이 맞나요?'
+  - ㉠ [답변] 어미 '-ㄹ게'는 [께]로 소리 나더라도 예사소리로 적으므로 '할게'가 맞습니다.
+  - '[질문 2] ''웬지 기분이 좋다''라고 써도 되나요?'
+  - ㉡ [답변] '왜인지'가 줄어든 말이므로 '왠지'로 적어야 합니다.
+  - '[질문 3] ''그럴 줄 알았을껄.''은 맞는 표기인가요?'
+  - ㉢ [답변] 어미 '-ㄹ걸'은 된소리로 소리 나므로 '-ㄹ껄'로 적는 것이 맞습니다.
+  - '[질문 4] ''어떻해, 이제 늦었어.''라고 써도 되나요?'
+  - ㉣ [답변] '어떻게 해'가 줄어든 말이므로 '어떡해'로 적어야 합니다.
+  - '[질문 5] ''금새 끝났다''는 바른 표기인가요?'
+  - ㉤ [답변] '금시에'가 줄어든 말이므로 '금세'로 적어야 합니다.
+  novel_examples:
+  - 금세
+  - 어떡해
+  - 왠지
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K8): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-041
+  set: Q41
+  format: MCQ
+  family: MATCHING
+  template: K7
+  coverage: SAISIOT_THREE_TYPES_NEW
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: <보기>의 단어를 사이시옷이 들어가는 조건 Ⓐ~Ⓒ에 따라 분류한 것으로 가장 적절한 것은?
+  options:
+  - Ⓐ 나룻배, 깻잎 / Ⓑ 툇마루, 제삿날 / Ⓒ 뱃길
+  - Ⓐ 나룻배, 뱃길 / Ⓑ 툇마루 / Ⓒ 깻잎, 제삿날
+  - Ⓐ 뱃길 / Ⓑ 나룻배, 툇마루, 제삿날 / Ⓒ 깻잎
+  - Ⓐ 나룻배, 뱃길, 제삿날 / Ⓑ 툇마루 / Ⓒ 깻잎
+  - Ⓐ 나룻배, 뱃길 / Ⓑ 툇마루, 제삿날 / Ⓒ 깻잎
+  answer: 5
+  second_best: 2
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o1
+    ev: &id041
+    - V1
+    why: '''깻잎[깬닙]''은 Ⓒ, ''뱃길[배낄]''은 Ⓐ이다.'
+    mis: KM07
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id041
+    why: '''제삿날[제산날]''은 Ⓑ이다.'
+    mis: KM07
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o3
+    ev: *id041
+    why: '''나룻배[나루빼]''는 Ⓐ이다.'
+    mis: KM07
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o4
+    ev: *id041
+    why: '''제삿날''은 Ⓑ이다.'
+    mis: KM07
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o5
+    ev: *id041
+    why: 옳다.
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - Ⓐ 두 말이 합쳐지면서 뒤의 말 첫소리가 된소리로 바뀌어 소리 나는 경우
+  - Ⓑ 뒤의 말이 'ㄴ'이나 'ㅁ'으로 시작하여 그 앞에 [ㄴ] 소리가 하나 더해지는 경우
+  - Ⓒ 뒤의 말이 모음으로 시작하여 [ㄴㄴ] 소리가 더해지는 경우
+  - '[단어] 나룻배, 툇마루, 깻잎, 뱃길, 제삿날'
+  novel_examples:
+  - 툇마루
+  - 제삿날
+  - 나룻배
+  morpheme_analysis: true
+  exception_rules:
+  - 뒷말 첫소리가 'ㄴ, ㅁ'이면 'ㄴ' 하나, 모음이면 'ㄴㄴ'
+  - 한자어+고유어(툇마루·제삿날)도 해당
+  supplied_concepts:
+  - 사이시옷 소리 조건 Ⓐ~Ⓒ
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#10
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K7): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-042
+  set: Q42
+  format: MCQ
+  family: CASE_APPLICATION
+  template: K8
+  coverage: ART10_DUEUM_EXCEPTION
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: <보기>의 규정을 바르게 이해한 것은?
+  options:
+  - '''남+녀''는 ''남녀''와 ''남여''를 모두 쓸 수 있다.'
+  - '''몇 년''의 ''년''은 단어의 첫머리이므로 ''몇 연''으로 적는다.'
+  - '''은닉(隱匿)''은 단어의 첫머리가 아닌 자리이므로 ''닉''을 본음대로 적는다.'
+  - '''신+여성''은 ''여성''이 단어 첫머리가 아니므로 ''신녀성''으로 적는다.'
+  - '''녀자''는 한자 ''女''의 본음을 살려 적은 것이므로 바른 표기이다.'
+  answer: 3
+  second_best: 2
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o1
+    ev: &id042
+    - V1
+    why: '''남녀''만 바르다.'
+    mis: KM08
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id042
+    why: 의존 명사 '년'은 본음대로 적는다.
+    mis: KM09
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o3
+    ev: *id042
+    why: 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o4
+    ev: *id042
+    why: 접두사처럼 쓰이는 말 뒤에서는 두음 법칙을 따라 '신여성'으로 적는다.
+    mis: KM09
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id042
+    why: 첫머리이므로 '여자'로 적는다.
+    mis: KM08
+  reasoning_steps: 4
+  immediate_elimination: 1
+  view:
+  - '[제10항] 한자음 ''녀, 뇨, 뉴, 니''가 단어 첫머리에 올 적에는 ''여, 요, 유, 이''로 적는다. [붙임 1] 단어의 첫머리 이외의 경우에는 본음대로 적는다. 다만, 의존 명사 ''냥, 년'' 등은 그 본음대로 적는다.'
+  - '[붙임 2] 접두사처럼 쓰이는 한자가 붙어서 된 말이나 합성어에서는 뒷말에도 두음 법칙을 적용한다.'
+  novel_examples:
+  - 은닉
+  - 몇 년
+  exception_rules:
+  - 의존 명사 '년'은 본음
+  - 접두사처럼 쓰이는 말 뒤는 두음 법칙
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K8): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-043
+  set: Q43
+  format: MCQ
+  family: MULTI_JUDGMENT
+  template: K4
+  coverage: ART18_IRREGULAR
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: <보기>의 ㄱ~ㅁ 중 활용형을 바르게 적은 것만을 있는 대로 고른 것은?
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄴ, ㄷ
+  - ㄴ, ㄷ, ㅁ
+  - ㄱ, ㄷ, ㄹ
+  - ㄷ, ㄹ, ㅁ
+  answer: 2
+  second_best: 3
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o1
+    ev: &id043
+    - V1
+    why: ㄷ도 옳다.
+    mis: KM12
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o2
+    ev: *id043
+    why: 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id043
+    why: '''이르다(도달하다)''는 ''이르러''가 된다.'
+    mis: KM15
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o4
+    ev: *id043
+    why: '''걷다(걸음)''는 ''걸어''가 된다.'
+    mis: KM15
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id043
+    why: ㄹ·ㅁ은 틀리다.
+    mis: KM15
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[제18항] 용언의 어미가 바뀔 경우, 그 어간이나 어미가 원칙에 벗어나면 벗어나는 대로 적는다.'
+  - ㄱ. '푸다'에 '-어'가 결합하면 '퍼'로 적는다.
+  - ㄴ. '돕다'에 '-아'가 결합하면 '도와'로 적는다.
+  - ㄷ. '곱다'에 '-아'가 결합하면 '고와'로 적는다.
+  - ㄹ. '걷다(걸음을 옮기다)'에 '-어'가 결합하면 '걷어'로 적는다.
+  - ㅁ. '이르다(어떤 곳에 닿다)'에 '-어'가 결합하면 '일러'로 적는다.
+  novel_examples:
+  - 이르러
+  - 퍼
+  morpheme_analysis: true
+  exception_rules:
+  - '''이르다(到)''는 ''러'' 불규칙, ''이르다(言)''는 ''르'' 불규칙'
+  - '''걷다(步)''는 ''ㄷ'' 불규칙'
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#7
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K4): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-044
+  set: Q44
+  format: MCQ
+  family: CASE_APPLICATION
+  template: K6
+  coverage: SPACING_BASIC
+  difficulty: D2
+  balance: CORE_EXAM_POINT
+  stem: 다음 중 띄어쓰기가 바르게 된 것은?
+  options:
+  - 먹을 만큼 덜어서 먹어라.
+  - 너 마저 나를 믿지 않는구나.
+  - 아는것이 힘이다.
+  - 집에 갈수 없었다.
+  - 학생 이라면 공부해야지.
+  answer: 1
+  second_best: 2
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o1
+    ev: &id044
+    - R1
+    why: 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id044
+    why: '''너마저''는 조사라 붙인다.'
+    mis: KM01
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id044
+    why: '''아는 것이''로 띄운다.'
+    mis: KM01
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o4
+    ev: *id044
+    why: '''갈 수''로 띄운다.'
+    mis: KM01
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id044
+    why: '''학생이라면''으로 붙인다.'
+    mis: KM01
+  reasoning_steps: 2
+  immediate_elimination: 2
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K6): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-045
+  set: Q45
+  format: MCQ
+  family: SINGLE_BEST_STATEMENT
+  template: K8
+  coverage: ART21_CONSONANT_SUFFIX
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: <보기>의 규정을 이해한 내용으로 가장 적절한 것은?
+  options:
+  - '''덮개''는 ''덮-''에 자음 접미사가 붙었지만 소리대로 ''덥개''로 적는다.'
+  - '''넋두리''는 ''넋''의 뜻에서 멀어졌으므로 ''넉두리''로 적는다.'
+  - '''넙치''는 ''넓-''의 원형을 밝혀 ''넓치''로 적어야 한다.'
+  - '''값지다''는 명사 ''값''의 원형을 밝혀 적은 것이다.'
+  - '''굵다랗다''는 겹받침의 끝소리가 드러나지 않으므로 ''굴따랗다''로 적는다.'
+  answer: 4
+  second_best: 3
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o1
+    ev: &id045
+    - V1
+    why: 원형을 밝혀 '덮개'로 적는다.
+    mis: KM06
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o2
+    ev: *id045
+    why: '''넋두리''로 적는다.'
+    mis: KM09
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id045
+    why: '''넙치''는 소리대로 적는 예이다.'
+    mis: KM09
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o4
+    ev: *id045
+    why: 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o5
+    ev: *id045
+    why: 끝소리 [ㄱ]이 드러나므로 '굵다랗다'로 적는다.
+    mis: KM09
+  reasoning_steps: 4
+  immediate_elimination: 1
+  view:
+  - '[제21항] 명사나 용언의 어간 뒤에 자음으로 시작된 접미사가 붙어서 된 말은 그 명사나 어간의 원형을 밝히어 적는다. 다만, 겹받침의 끝소리가 드러나지 아니하거나 어원이 분명하지 아니하거나 본뜻에서 멀어진 것은 소리대로 적는다. (예) 할짝거리다, 넙치, 올무, 납작하다'
+  novel_examples:
+  - 넋두리
+  - 굵다랗다
+  exception_rules:
+  - 겹받침 끝소리가 드러나지 않으면 소리대로
+  - 어원이 불분명하면 소리대로(넙치)
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K8): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-046
+  set: Q46
+  format: MCQ
+  family: MULTI_JUDGMENT
+  template: K7
+  coverage: ART48_49_NAMES
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: <보기>의 규정에 맞게 띄어 쓴 것만을 있는 대로 고른 것은?
+  options:
+  - ㄱ, ㄷ, ㅁ
+  - ㄴ, ㄷ, ㅂ
+  - ㄱ, ㄹ, ㅂ
+  - ㄱ, ㄴ, ㄷ, ㄹ
+  - ㄱ, ㄷ, ㄹ, ㅁ
+  answer: 4
+  second_best: 2
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o1
+    ev: &id046
+    - V1
+    why: ㅁ은 '이 선생님'으로 띄운다.
+    mis: KM01
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id046
+    why: ㅂ은 '최치원'으로 붙인다.
+    mis: KM09
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o3
+    ev: *id046
+    why: ㅂ은 틀리다.
+    mis: KM09
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o4
+    ev: *id046
+    why: 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o5
+    ev: *id046
+    why: ㅁ은 틀리다.
+    mis: KM01
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[제48항] 성과 이름, 성과 호는 붙여 쓰고, 이에 덧붙는 호칭어, 관직명 등은 띄어 쓴다. 다만, 성과 이름을 분명히 구분할 필요가 있을 경우에는 띄어 쓸 수 있다.'
+  - '[제49항] 성명 이외의 고유 명사는 단어별로 띄어 씀을 원칙으로 하되, 단위별로 띄어 쓸 수 있다.'
+  - ㄱ. 김철수 씨가 발표했다.
+  - ㄴ. 남궁 억 선생
+  - ㄷ. 한국 대학교 사범 대학
+  - ㄹ. 한국대학교 사범대학
+  - ㅁ. 이선생님께 여쭈었다.
+  - ㅂ. 최 치원은 신라의 문장가이다.
+  novel_examples:
+  - 남궁 억
+  - 최치원
+  morpheme_analysis: true
+  exception_rules:
+  - 성과 이름 구분이 필요하면 띄어 쓰기 허용
+  - 고유 명사는 단위별 붙여 쓰기 허용
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#10
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K7): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-047
+  set: Q47
+  format: MCQ
+  family: ERROR_CORRECTION
+  template: K6
+  coverage: NOTICE_CORRECTION
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: <보기>의 안내문에서 고쳐 써야 할 것만을 고른 것은?
+  options:
+  - ㉠, ㉢
+  - ㉢, ㉤
+  - ㉡, ㉤
+  - ㉠, ㉡, ㉤
+  - ㉢, ㉣, ㉤
+  answer: 2
+  second_best: 3
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o1
+    ev: &id047
+    - V1
+    why: '''일주일 내로''는 바르다.'
+    mis: KM01
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o2
+    ev: *id047
+    why: '''일정 기간'', ''주십시오''로 고친다.'
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o3
+    ev: *id047
+    why: '''바랍니다''는 바르다.'
+    mis: KM14
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o4
+    ev: *id047
+    why: ㉠·㉡은 바르다.
+    mis: KM14
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id047
+    why: ㉣은 바르다.
+    mis: KM12
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[도서관 이용 안내] 대출한 책은 일주일 ㉠내로 반납하시기 ㉡바랍니다. 연체 시 ㉢일정기간 대출이 제한되오니 ㉣유의하시기 바랍니다. 반납이 늦어질 경우 ㉤미리 연락 주십시요.'
+  novel_examples:
+  - 주십시오
+  - 일정 기간
+  exception_rules:
+  - '''-오''로 끝나는 종결 어미는 ''-요''로 적지 않음'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K6): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-048
+  set: Q48
+  format: MCQ
+  family: MULTI_JUDGMENT
+  template: K7
+  coverage: ART39_JANH_CHANH
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  stem: <보기>의 규정에 맞게 줄여 쓴 것만을 있는 대로 고른 것은?
+  options:
+  - ㄱ, ㄴ, ㅁ
+  - ㄱ, ㄷ, ㄹ
+  - ㄴ, ㄷ, ㅁ
+  - ㄱ, ㄴ, ㄹ, ㅁ
+  - ㄱ, ㄴ, ㄷ, ㄹ
+  answer: 5
+  second_best: 4
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o1
+    ev: &id048
+    - V1
+    why: '''시원찮다''로 써야 한다.'
+    mis: KM14
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o2
+    ev: *id048
+    why: ㄴ도 옳다.
+    mis: KM12
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o3
+    ev: *id048
+    why: ㅁ은 틀리다.
+    mis: KM14
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o4
+    ev: *id048
+    why: ㅁ은 틀리다.
+    mis: KM14
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o5
+    ev: *id048
+    why: 옳다.
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[제39항] 어미 ''-지'' 뒤에 ''않-''이 어울려 ''-잖-''이 될 적과 ''-하지'' 뒤에 ''않-''이 어울려 ''-찮-''이 될 적에는 준 대로 적는다. (예) 그렇지 않은 → 그렇잖은, 만만하지 않다 → 만만찮다'
+  - ㄱ. 적지 않은 → 적잖은
+  - ㄴ. 변변하지 않다 → 변변찮다
+  - ㄷ. 편하지 않다 → 편찮다
+  - ㄹ. 달갑지 않다 → 달갑잖다
+  - ㅁ. 시원하지 않다 → 시원챦다
+  novel_examples:
+  - 달갑잖다
+  - 변변찮다
+  - 편찮다
+  morpheme_analysis: true
+  exception_rules:
+  - '''-지 않-''은 ''-잖-'''
+  - '''-하지 않-''은 ''-찮-''(ㅑ가 아닌 ㅏ)'
+  reference_exam_item: DONGBUK-KOR-2025-2-FINAL#10
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K7): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-049
+  set: Q49
+  format: MCQ
+  family: CASE_APPLICATION
+  template: K8
+  coverage: ART57_ROSEO_ROSSEO
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: <보기>를 바탕으로 할 때 바르게 쓴 문장은?
+  options:
+  - 학생으로써 학교 규칙을 지켜야 한다.
+  - 대화로서 갈등을 풀었다.
+  - 숙제를 하느라고 약속에 늦었다.
+  - 공부하노라고 밤을 새워서 피곤하다.
+  - 그는 부모로써 최선을 다했다.
+  answer: 3
+  second_best: 1
+  judgments:
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o1
+    ev: &id049
+    - V1
+    why: 자격이므로 '학생으로서'이다.
+    mis: KM15
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o2
+    ev: *id049
+    why: 수단이므로 '대화로써'이다.
+    mis: KM15
+  - v: true
+    c: CORRECT
+    axis: application
+    claim: o3
+    ev: *id049
+    why: 옳다.
+  - v: false
+    c: STRONG
+    axis: application
+    claim: o4
+    ev: *id049
+    why: 원인이므로 '공부하느라고'이다.
+    mis: KM15
+  - v: false
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id049
+    why: 자격이므로 '부모로서'이다.
+    mis: KM15
+  reasoning_steps: 5
+  immediate_elimination: 1
+  view:
+  - '[제57항 일부] ''-(으)로서''는 지위·신분·자격을 나타내고, ''-(으)로써''는 재료·수단·도구를 나타낸다. ''-노라고''는 자기 나름대로 한다는 뜻이고, ''-느라고''는 앞의 일이 뒤의 일의 원인이나 목적임을 나타낸다.'
+  novel_examples:
+  - 하노라고
+  exception_rules:
+  - '''-노라고''와 ''-느라고''의 구별'
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K8): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'
+- item_id: KOR-S4-050
+  set: Q50
+  format: MCQ
+  family: EXCEPT_INCORRECT
+  template: K6
+  coverage: SPACING_PREFIX_DETERMINER
+  difficulty: D3
+  balance: CORE_EXAM_POINT
+  stem: 다음 중 띄어쓰기가 바르지 않은 문장은?
+  options:
+  - 맨 손으로 상자를 들었다.
+  - 우리는 맨 뒤에 앉았다.
+  - 오늘이 첫 출근 날이다.
+  - 올겨울 첫눈이 내렸다.
+  - 새 학기가 시작되었다.
+  answer: 1
+  second_best: 2
+  judgments:
+  - v: false
+    c: CORRECT
+    axis: application
+    claim: o1
+    ev: &id050
+    - R1
+    why: '''맨손''의 ''맨-''은 접두사라 붙여 쓴다.'
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o2
+    ev: *id050
+    why: 관형사 '맨'은 띄어 쓴다.
+    mis: KM15
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o3
+    ev: *id050
+    why: 관형사 '첫'은 띄어 쓴다.
+    mis: KM15
+  - v: true
+    c: STRONG
+    axis: application
+    claim: o4
+    ev: *id050
+    why: '''첫눈''은 한 단어이다.'
+    mis: KM13
+  - v: true
+    c: MEDIUM
+    axis: application
+    claim: o5
+    ev: *id050
+    why: 관형사 '새'는 띄어 쓴다.
+    mis: KM15
+  reasoning_steps: 4
+  immediate_elimination: 1
+  novel_examples:
+  - 맨손
+  - 첫눈
+  exception_rules:
+  - 접두사 '맨-'과 관형사 '맨'의 구별
+  - 합성어 '첫눈'은 붙여 씀
+  provenance:
+    mode: AI_ORIGINAL
+    school_scope_refs:
+    - KOR-TB-2026-U3-P104-131
+    design_purpose: 'S4 문항 자료 적용(D-24/D-26, 템플릿 K6): 문항 안에 제시한 규정·문헌 자료를 낯선 용례에 적용'

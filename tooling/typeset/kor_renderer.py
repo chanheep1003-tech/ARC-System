@@ -44,6 +44,19 @@ class RenderError(RuntimeError):
     pass
 
 
+# Middle Korean (옛한글) is written as conjoining jamo (U+1100-11FF, A960-A97F, D7B0-D7FF) that only compose into
+# syllables through OpenType shaping. insert_text does not shape, so such clusters are drawn through MuPDF's HTML box
+# (HarfBuzz) with Noto Serif CJK, which carries the old-Hangul composition tables. One composed syllable = 1 em.
+OLD_HANGUL_FONT = Path("/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc")
+_JAMO = "\u1100-\u11ff\ua960-\ua97f\ud7b0-\ud7ff"
+OLD_CLUSTER = re.compile(f"(?:[\u1100-\u115f\ua960-\ua97f]+[\u1160-\u11a7\ud7b0-\ud7c6]+[\u11a8-\u11ff\ud7cb-\ud7fb]*"
+                         f"|[\uac00-\ud7a3][\u11a8-\u11ff\ud7cb-\ud7fb]+)")
+
+
+def old_hangul_syllables(t: str) -> int:
+    return len(OLD_CLUSTER.findall(t))
+
+
 def fallback_file() -> Path | None:
     return next((p for p in FALLBACK_FILES if p.is_file()), None)
 
@@ -76,6 +89,17 @@ def runs(text: str, key: str) -> list[tuple[str, str]]:
     if _FONTS is None:
         _FONTS = fonts()
     out: list[tuple[str, str]] = []
+    pos = 0
+    for m in OLD_CLUSTER.finditer(text):
+        if m.start() > pos:
+            out += runs(text[pos:m.start()], key) if OLD_CLUSTER.search(text[pos:m.start()]) is None else []
+        if out and out[-1][0] == "OH":
+            out[-1] = ("OH", out[-1][1] + m.group())
+        else:
+            out.append(("OH", m.group()))
+        pos = m.end()
+    if pos:
+        return out + (runs(text[pos:], key) if pos < len(text) else [])
     for ch in text:
         k = key
         if not ch.isspace() and not _FONTS[key].has_glyph(ord(ch)):
@@ -95,6 +119,14 @@ def runs(text: str, key: str) -> list[tuple[str, str]]:
 def put(page: fitz.Page, pos, text: str, fontname: str = "R", fontsize: float = SIZE, color=None) -> None:
     x, y = pos
     for k, t in runs(text, fontname):
+        if k == "OH":
+            w = old_hangul_syllables(t) * fontsize
+            page.insert_htmlbox(fitz.Rect(x, y - fontsize * 1.02, x + w + fontsize, y + fontsize * 0.6),
+                                f"<p>{t}</p>", archive=fitz.Archive(str(OLD_HANGUL_FONT.parent)),
+                                css=f"@font-face{{font-family:OH;src:url({OLD_HANGUL_FONT.name});}}"
+                                    f"p{{font-family:OH;font-size:{fontsize}pt;margin:0;line-height:1.2}}")
+            x += w
+            continue
         if k not in {f[4] for f in page.get_fonts()}:  # embed only fonts a page actually uses (unused fonts are not subset)
             page.insert_font(fontname=k, fontfile=str(FONT_FILES.get(k) or (symbol_file() if k == "S" else fallback_file())))
         kw = {"color": color} if color is not None else {}
@@ -107,7 +139,8 @@ class Layout:
         self.f = fonts()
 
     def width(self, text: str, key: str = "R", size: float = SIZE) -> float:
-        return sum(self.f[k].text_length(t, fontsize=size) for k, t in runs(text, key))
+        return sum(old_hangul_syllables(t) * size if k == "OH" else self.f[k].text_length(t, fontsize=size)
+                   for k, t in runs(text, key))
 
     def wrap(self, text: str, w: float, key: str = "R", size: float = SIZE, first: float = 0.0, rest: float = 0.0):
         """Greedy wrap on spaces (어절); char break only for tokens wider than the line."""
@@ -148,10 +181,12 @@ class Block:
 def build_blocks(L: Layout, bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[str, str], set_header) -> list[Block]:
     blocks: list[Block] = []
     for src in sources:
-        head = Block()
-        head.text(L.wrap(set_header(bundle, src["id"], labels), COL_W, "B"), key="B")
-        head.h += 6
-        blocks.append(head)
+        hdr = set_header(bundle, src["id"], labels)
+        if hdr:  # sets with item-supplied material only have no shared passage header
+            head = Block()
+            head.text(L.wrap(hdr, COL_W, "B"), key="B")
+            head.h += 6
+            blocks.append(head)
         if src.get("lead"):  # e.g. [앞부분의 줄거리] printed before the passage
             lb = Block()
             for line in src["lead"]:
