@@ -1,0 +1,323 @@
+batch_id: KOR-V6-DONGBUK-STYLE-SAMPLE-20261111
+product_mode: ARC_N
+subject: KOR
+generator: CLAUDE
+set_label: ARC N° V6 SAMPLE
+course: 공통국어2
+cover_subtitle: 한글 맞춤법 · 동북고 내신형 재설계 시범 6문항
+cover_lines:
+- 2025 2학기 기말 8~10번·서답형 2의 문항 작동 방식을 새 자료로 재현
+school_line: 동북고등학교 1학년 · 2026
+created_at: '2026-11-11T12:00:00+09:00'
+scope: 미래엔 공통국어2 3-(2) 한글 맞춤법 (재설계 시범, 기말 범위 미확정)
+scope_refs:
+- TEXTBOOK:미래엔 공통국어2 3-(2) 116~127쪽
+sets: []
+items:
+- item_id: KOR-V6S-001
+  stem: <보기>의 한글 맞춤법 총칙을 바탕으로 탐구한 내용으로 가장 적절한 것은?
+  view:
+  - ㉠표준어를 ㉡소리대로 적되, ㉢어법에 맞도록 함을 원칙으로 한다.
+  - '- 한글 맞춤법 제1항'
+  options:
+  - '''꽃이''를 [꼬치]로 적지 않고 ''꽃이''로 적는 것은 ㉡에 따른 것이다.'
+  - '''며칠''은 ''몇''과 ''일''로 형태를 밝힐 근거가 분명하지 않아 ㉡에 따라 적은 것이다.'
+  - '''늘어나다''와 ''드러나다''는 모두 ㉢에 따라 앞말의 원형을 밝혀 적은 것이다.'
+  - '''덮개''를 소리 나는 [덥깨]로 적지 않는 것은 표음주의를 따른 ㉡의 사례이다.'
+  - 표준어가 아닌 지역 방언도 ㉠에 포함되므로 맞춤법에 따라 적어야 한다.
+  answer: 2
+  second_best: 3
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: chongchik_kkot
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: 체언과 조사를 구별해 형태를 밝혀 적은 것이므로 ㉢(어법에 맞도록)에 따른 것이다.
+  - axis: orthography
+    c: CORRECT
+    claim: chongchik_myeochil
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: '''며칠''은 [며칠]로 소리 나고 ''몇+일''로 볼 근거가 없어 소리대로 적는다(제27항 붙임 2).'
+  - axis: orthography
+    c: STRONG
+    claim: chongchik_neureo
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''드러나다''는 ''들다''의 본뜻에서 멀어져 원형을 밝히지 않았으므로 ㉡에 따른 것이다.'
+  - axis: orthography
+    c: MEDIUM
+    claim: chongchik_deopgae
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: 어간 '덮-'의 형태를 밝혀 적은 것이므로 ㉢(형태주의)의 사례이다.
+  - axis: orthography
+    c: WEAK
+    claim: chongchik_dialect
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: 맞춤법은 표준어를 적는 규칙이므로 방언은 ㉠의 대상이 아니다.
+- item_id: KOR-V6S-002
+  stem: <보기>의 [A]에 들어갈 말로 적절한 것은?
+  view:
+  - '학생: 선생님, 조사와 의존 명사를 구별하는 게 아직 헷갈려요. 체험 학습 날 쓴 일기에서 띄어쓰기가 틀린 곳을 알려 주세요.'
+  - <학생이 쓴 일기> 버스가 ㉠떠난지 한참이 지나서야 도착했다. 친구는 ㉡나만큼 늦게 와서 둘이 웃고 말았다. 박물관은 이미 문을 닫아서 밖에서 ㉢구경할수밖에 없었다. 아쉬웠지만 건물 외벽을 ㉣구경할 뿐 다른 방법이 없었다. 점심은 ㉤먹을 만큼만 덜어서 남기지 않았다. 내일은 선생님 말씀과 상관없이 ㉥우리 대로 일정을 짜 보기로 했다.
+  - '선생님: 네가 쓴 일기에서 띄어쓰기가 틀린 곳은 [A]와 같단다.'
+  options:
+  - ㉠, ㉡, ㉣
+  - ㉠, ㉢, ㉥
+  - ㉡, ㉢, ㉤
+  - ㉡, ㉣, ㉥
+  - ㉢, ㉤, ㉥
+  answer: 2
+  second_best: 5
+  difficulty: D3
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: diary_abd
+    ev:
+    - VIEW
+    v: false
+    why: ㉡ '나만큼'은 체언 뒤 조사, ㉣ '구경할 뿐'은 관형사형 뒤 의존 명사로 모두 바르다.
+  - axis: orthography
+    c: CORRECT
+    claim: diary_ace
+    ev:
+    - VIEW
+    v: true
+    why: ㉠은 '떠난 지', ㉢은 '할 수밖에', ㉥은 '우리대로'로 고쳐야 한다.
+  - axis: orthography
+    c: WEAK
+    claim: diary_bce
+    ev:
+    - VIEW
+    v: false
+    why: ㉡, ㉤은 바르게 띄어 썼다.
+  - axis: orthography
+    c: MEDIUM
+    claim: diary_bdf
+    ev:
+    - VIEW
+    v: false
+    why: ㉡, ㉣은 바르다.
+  - axis: orthography
+    c: STRONG
+    claim: diary_cef
+    ev:
+    - VIEW
+    v: false
+    why: ㉤ '먹을 만큼만'은 의존 명사 '만큼'을 띄우고 보조사 '만'을 붙인 바른 표기이다.
+- item_id: KOR-V6S-003
+  stem: <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> 같은 형태의 말이라도 문장 속 기능에 따라 띄어쓰기가 달라진다. Ⓐ조사는 앞말에 붙여 쓰고, Ⓑ의존 명사는 앞말과 띄어 쓰며, Ⓒ어미의 일부인 경우에는 어간에 붙여 쓴다. 조사는 체언뿐 아니라 다른 조사 뒤에도 붙을 수 있다.
+  - <보기 2> ㉠규칙[대로] 처리한다.  ㉡그를 본[지] 오래다.  ㉢생각할[수록] 아쉽다.  ㉣여기에서[만큼은] 조용히 하자.  ㉤어디로 갈[지] 정하자.
+  options:
+  - Ⓐ ㉠, ㉣   Ⓑ ㉡, ㉤   Ⓒ ㉢
+  - Ⓐ ㉠, ㉣   Ⓑ ㉡   Ⓒ ㉢, ㉤
+  - Ⓐ ㉠   Ⓑ ㉡, ㉣   Ⓒ ㉢, ㉤
+  - Ⓐ ㉣   Ⓑ ㉠, ㉡   Ⓒ ㉢, ㉤
+  - Ⓐ ㉠, ㉢   Ⓑ ㉡   Ⓒ ㉣, ㉤
+  answer: 2
+  second_best: 1
+  difficulty: D4
+  family: COMPARISON_MATRIX
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: cls_e_noun
+    ev:
+    - VIEW
+    v: false
+    why: ㉤ '갈지'의 '지'는 막연한 의문을 나타내는 어미 '-ㄹ지'의 일부이므로 Ⓒ이다.
+  - axis: orthography
+    c: CORRECT
+    claim: cls_correct
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: ㉠ 체언 뒤 '대로', ㉣ 조사 뒤 '만큼'은 조사(Ⓐ), ㉡ '본 지'는 의존 명사(Ⓑ), ㉢ '-ㄹ수록', ㉤ '-ㄹ지'는 어미(Ⓒ)이다.
+  - axis: orthography
+    c: STRONG
+    claim: cls_d_noun
+    ev:
+    - VIEW
+    v: false
+    why: ㉣ '여기에서만큼은'의 '만큼'은 조사 '에서' 뒤에 붙은 조사이다.
+  - axis: orthography
+    c: MEDIUM
+    claim: cls_a_noun
+    ev:
+    - VIEW
+    v: false
+    why: ㉠의 앞말 '규칙'은 체언이므로 조사이다.
+  - axis: orthography
+    c: WEAK
+    claim: cls_c_particle
+    ev:
+    - VIEW
+    v: false
+    why: ㉢ '-ㄹ수록'은 어미이다.
+- item_id: KOR-V6S-004
+  stem: <보기>의 ㉠~㉤ 중 학생의 설명으로 적절하지 않은 것은?
+  view:
+  - '선생님: ''산 넘어 산''과 ''산 너머 마을''의 표기가 왜 다른지 설명해 볼까요?'
+  - '학생: ㉠''산 넘어 산''의 ''넘어''는 동사 ''넘다''의 어간 ''넘-''에 ''-어''가 붙은 말이에요. ㉡''산 너머 마을''의 ''너머''는 가로막은 것의 저쪽 공간을 뜻하는 명사예요. ㉢''넘어''처럼 어간과 어미를 구별해 적는 것은 어법에 맞도록 적는 원칙과 관련돼요. ㉣같은 원리로 ''드러나다''도 ''들다''의 원형을 밝혀 ''들어나다''로 적어야 해요. ㉤반면 ''넘어지다''는 ''넘다''의 뜻이 남아 있어서 원형을 밝혀 적어요.'
+  - '선생님: 대부분 잘 설명했는데, 한 군데는 다시 생각해 봐야겠네요.'
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 4
+  second_best: 3
+  difficulty: D3
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: neomeo_a
+    ev:
+    - VIEW
+    v: true
+    why: '''넘어''는 동사 ''넘다''의 어간에 어미 ''-어''가 결합한 활용형이라는 설명은 옳다.'
+  - axis: orthography
+    c: MEDIUM
+    claim: neomeo_b
+    ev:
+    - VIEW
+    v: true
+    why: '''너머''는 공간의 저쪽을 뜻하는 명사라는 설명은 옳다.'
+  - axis: orthography
+    c: STRONG
+    claim: neomeo_c
+    ev:
+    - VIEW
+    v: true
+    why: 어간과 어미를 구별해 적는 것은 '어법에 맞도록' 적는 원칙과 관련된다는 설명은 옳다.
+  - axis: orthography
+    c: CORRECT
+    claim: neomeo_d
+    ev:
+    - VIEW
+    v: false
+    why: '''드러나다''는 ''들다''의 본뜻에서 멀어졌으므로 원형을 밝히지 않는다. 원형을 밝혀 ''들어나다''로 적어야 한다는 설명은 틀렸다.'
+  - axis: orthography
+    c: MEDIUM
+    claim: neomeo_e
+    ev:
+    - VIEW
+    v: true
+    why: '''넘어지다''는 ''넘다''의 본뜻이 유지되어 원형을 밝혀 적는다는 설명은 옳다.'
+- item_id: KOR-V6S-005
+  stem: <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> 사이시옷은 합성어를 이루는 말 중 하나 이상이 순우리말이고 앞말이 모음으로 끝날 때, Ⓐ뒷말의 첫소리가 된소리로 나거나, Ⓑ뒷말의 첫소리 'ㄴ, ㅁ' 앞에서 'ㄴ' 소리가 덧나거나, Ⓒ뒷말의 첫소리 모음 앞에서 'ㄴㄴ' 소리가 덧날 때 받치어 적는다.
+  - <보기 2> ㉠ 나뭇잎   ㉡ 잇몸   ㉢ 귓병   ㉣ 냇물   ㉤ 훗일
+  options:
+  - Ⓐ ㉠, ㉢   Ⓑ ㉡, ㉣   Ⓒ ㉤
+  - Ⓐ ㉢   Ⓑ ㉡, ㉣   Ⓒ ㉠, ㉤
+  - Ⓐ ㉢, ㉣   Ⓑ ㉡   Ⓒ ㉠, ㉤
+  - Ⓐ ㉡, ㉢   Ⓑ ㉣   Ⓒ ㉠, ㉤
+  - Ⓐ ㉢   Ⓑ ㉠, ㉡   Ⓒ ㉣, ㉤
+  answer: 2
+  second_best: 3
+  difficulty: D4
+  family: COMPARISON_MATRIX
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: sai_a_namut
+    ev:
+    - VIEW
+    v: false
+    why: ㉠ '나뭇잎'은 [나문닙]처럼 모음 앞에서 'ㄴㄴ'이 덧나므로 Ⓒ이다.
+  - axis: orthography
+    c: CORRECT
+    claim: sai_correct
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: ㉢ 귓병[귀뼝]은 Ⓐ, ㉡ 잇몸[인몸]·㉣ 냇물[낸물]은 Ⓑ, ㉠ 나뭇잎[나문닙]·㉤ 훗일[훈닐]은 Ⓒ이다.
+  - axis: orthography
+    c: STRONG
+    claim: sai_d_naet
+    ev:
+    - VIEW
+    v: false
+    why: ㉣ '냇물'은 [낸물]로 'ㅁ' 앞에서 'ㄴ'이 덧나므로 Ⓑ이다.
+  - axis: orthography
+    c: MEDIUM
+    claim: sai_b_it
+    ev:
+    - VIEW
+    v: false
+    why: ㉡ '잇몸'은 [인몸]으로 Ⓑ이다.
+  - axis: orthography
+    c: WEAK
+    claim: sai_e_hut
+    ev:
+    - VIEW
+    v: false
+    why: ㉤ '훗일'은 [훈닐]로 'ㄴㄴ'이 덧나므로 Ⓒ이다.
+- item_id: KOR-V6S-006
+  format: CR
+  points: 5
+  stem: <보기>의 탐구 과정을 읽고, ㉠~㉣에 들어갈 말을 <조건>에 따라 서술하시오.
+  view:
+  - 'A: ''애쓴 만큼''과 ''형만큼''의 ''만큼''은 왜 띄어쓰기가 다를까?'
+  - 'B: ''애쓴 만큼''의 ''만큼''은 앞말이 ( ㉠ )이므로 ( ㉡ )로 보아 띄어 쓰고, ''형만큼''의 ''만큼''은 앞말이 ( ㉢ )이므로 ( ㉣ )로 보아 앞말에 붙여 써.'
+  conditions:
+  - 1. '㉠은 ~, ㉡은 ~, ㉢은 ~, ㉣은 ~이다.'의 완결된 문장으로 쓸 것.
+  - 2. ㉠, ㉢은 '관형사형'과 '체언' 중에서, ㉡, ㉣은 '조사'와 '의존 명사' 중에서 골라 쓸 것.
+  - 3. 문제에서 요구한 내용 외에 문법적 오개념은 내용당 1점씩 감점.
+  model_answer: ㉠은 관형사형, ㉡은 의존 명사, ㉢은 체언, ㉣은 조사이다.
+  rubric:
+  - ㉠, ㉡, ㉢, ㉣ 각 1점씩 4점
+  - 문장 형식 1점
+  ev:
+  - VIEW
+  difficulty: D2

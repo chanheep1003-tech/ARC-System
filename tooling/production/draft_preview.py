@@ -36,6 +36,10 @@ def explanations(bundle: dict, labels: dict[str, str]) -> str:
     lines = [f"# {bundle['set_label']} {bundle['course']} — 정답과 선지별 근거 (교사용)", "",
              f"범위: {bundle['scope']}", ""]
     for it in bundle["items"]:
+        if it.get("format") == "CR":
+            lines += [f"## {labels[it['item_id']]}  ({it.get('points', '')}점)", it["stem"],
+                      f"- 모범 답안: {it['model_answer']}"] + [f"- 채점 기준: {r}" for r in it.get("rubric", [])] + [""]
+            continue
         a = int(it["answer"])
         lines.append(f"## {labels[it['item_id']]}번  정답 {CIRC[a - 1]}  ({it['difficulty']}, {it['family']})")
         lines.append(it["stem"])
