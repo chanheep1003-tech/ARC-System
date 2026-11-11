@@ -3,6 +3,7 @@
 
     python tooling/arc.py doctor                 실행 환경 점검 (의존성·폰트)
     python tooling/arc.py status                 국어·사회·과학 × CORE/N/FINAL 준비 상태
+    python tooling/arc.py plan   --subject KOR --scope "한글 맞춤법"      제작 계획(버전·문항 수·난도·원형)
     python tooling/arc.py start  --subject SCI --product ARC_N --count 20 --scope "산화·환원"
     python tooling/arc.py scope  --subject SCI --status CONFIRMED_UNITS_ONLY --units ... --sources ... --evidence ...
     python tooling/arc.py log    --run-id ... --product ARC_N --subject SCI --range "..." --items 20
@@ -298,6 +299,135 @@ def cmd_start(args) -> int:
     return 0
 
 
+# ---------- plan ----------
+
+PLAN_DEFAULTS = ROOT / "ops" / "planning" / "ARC_PLAN_DEFAULTS_V1.yaml"
+GRAMMAR_WORDS = ("맞춤법", "띄어쓰기", "문법", "사이시옷", "표기")
+
+
+def apportion(total: int, shares: dict[str, float]) -> dict[str, int]:
+    """Largest-remainder split so the counts always add up to total."""
+    raw = {k: total * v for k, v in shares.items()}
+    out = {k: int(v) for k, v in raw.items()}
+    for k in sorted(raw, key=lambda k: raw[k] - out[k], reverse=True)[: total - sum(out.values())]:
+        out[k] += 1
+    return out
+
+
+def previous_kor_version(scope: str) -> str | None:
+    if not RUN_LOG_JSONL.is_file():
+        return None
+    found = None
+    for line in RUN_LOG_JSONL.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        rec = json.loads(line)
+        if rec.get("product") != "ARC_N" or rec.get("subject") != "KOR":
+            continue
+        text = f"{rec.get('run_id', '')} {rec.get('target_range', '')}"
+        if not any(word and word in text for word in scope.split()):
+            continue
+        match = re.search(r"V([1-4])(?!\d)", text)
+        if match:
+            found = f"V{match.group(1)}"
+    return found
+
+
+def build_plan(subject: str, product: str, scope: str, count: int | None, version: str | None) -> dict:
+    defaults = yaml.safe_load(PLAN_DEFAULTS.read_text(encoding="utf-8"))
+    manifest = load_manifest()
+    _, registry, exam_id = exam_registry(manifest)
+    entry = registry["exams"][exam_id]["subjects"][subject]
+    reasons = []
+    grammar = subject == "KOR" and any(w in scope for w in GRAMMAR_WORDS)
+    if count is None:
+        count = defaults["count_default"].get(subject, 20)
+        reasons.append(f"문항 수 미지정 → 기본 {count}")
+    profile, version_name = None, None
+    if subject == "KOR" and product == "ARC_N":
+        if version:
+            reasons.append(f"버전 지정 {version}")
+        elif grammar:
+            version = "V6"
+            reasons.append("맞춤법·띄어쓰기 요청 → V6")
+        else:
+            prev = previous_kor_version(scope)
+            version = "V1" if prev is None else f"V{min(4, int(prev[1]) + 1)}"
+            reasons.append("같은 범위 기록 없음 → V1" if prev is None else f"직전 {prev} → {version}")
+        if version not in defaults["kor_versions"]:
+            raise SystemExit(f"국어 ARC N° 버전은 {', '.join(defaults['kor_versions'])} 중 하나여야 합니다 (V5는 ARC FINAL).")
+        profile = defaults["kor_versions"][version]
+        version_name = profile["name"]
+    elif subject == "KOR":
+        version = "V5" if product == "ARC_FINAL" else None
+        profile = {"difficulty": None, "advanced": None}
+    else:
+        version = None
+        profile = defaults["other_subjects"][subject]
+    plan = {"subject": subject, "product": product, "scope": scope, "version": version, "version_name": version_name,
+            "count": count, "reasons": reasons, "exam_id": exam_id, "scope_status": entry.get("scope_status")}
+    if product == "ARC_N" and profile.get("difficulty"):
+        split = defaults["set_split"][subject]
+        per_unit = split["unit_selected"] + split["unit_constructed"]
+        units = max(1, round(count / per_unit))
+        constructed = units * split["unit_constructed"]
+        selected = count - constructed
+        diff = apportion(selected, profile["difficulty"])
+        lo, hi = defaults["hard_limits"]["advanced_share"]
+        # Keep the count inside the gate band even after rounding.
+        advanced = min(int(selected * hi + 1e-9), max(-(-selected * lo // 1).__int__(), round(selected * profile["advanced"])))
+        if not lo - 1e-9 <= advanced / selected <= hi + 1e-9:
+            raise SystemExit("계획의 심화 비율이 게이트 범위(20~30%)를 벗어납니다.")
+        plan.update({"units": units, "selected": selected, "constructed": constructed,
+                     "difficulty": {k: v for k, v in diff.items() if v}, "advanced": advanced, "core": selected - advanced})
+        if grammar:
+            library = yaml.safe_load((ROOT / defaults["archetype_library"]["KOR_GRAMMAR"]).read_text(encoding="utf-8"))
+            mcq_types = [k for k, v in library["archetypes"].items() if v["format"] == "MCQ"]
+            plan["archetype_library"] = defaults["archetype_library"]["KOR_GRAMMAR"]
+            plan["archetype_mix"] = apportion(selected, {k: 1 / len(mcq_types) for k in mcq_types})
+            plan["archetype_mix"]["C1_CONSTRUCTED_BLANK_SENTENCE"] = constructed
+    _, blockers = cell_status(subject, product, entry, manifest)
+    plan["blockers"] = blockers
+    plan["read_order"] = [path for _, path in files_to_load(manifest, subject, product)]
+    return plan
+
+
+def print_plan(plan: dict) -> None:
+    subject, product = plan["subject"], plan["product"]
+    title = f"{SUBJECT_KO[subject]} {PRODUCT_SHORT[product]}"
+    if plan.get("version"):
+        title += f" {plan['version']}" + (f" ({plan['version_name']})" if plan.get("version_name") else "")
+    print("ARC 제작 계획")
+    print(f"  제품      {title}")
+    print(f"  범위      {plan['scope']}")
+    if plan.get("units"):
+        print(f"  분량      총 {plan['count']}문항 = 선택형 {plan['selected']} + 서답형 {plan['constructed']}, 단원 세트 {plan['units']}개")
+        print("  난도      " + " / ".join(f"{k} {v}" for k, v in plan["difficulty"].items()) + "  (선택형 기준)")
+        print(f"  구성      핵심 {plan['core']} / 심화 {plan['advanced']}")
+    else:
+        print(f"  분량      {plan['count']}")
+    if plan.get("archetype_mix"):
+        print("  문항 원형 " + ", ".join(f"{k.split('_')[0]} {v}" for k, v in plan["archetype_mix"].items()))
+        print(f"            ({plan['archetype_library']})")
+    for reason in plan["reasons"]:
+        print(f"  기본값    {reason}")
+    print(f"  시험      {plan['exam_id']}  범위 상태 {plan['scope_status']}")
+    for blocker in plan["blockers"]:
+        print(f"  막힘      {blocker}")
+    print("  절차      계획 확인 → 자료 열람 → 단원 세트 1개 초안 → 자체 점검·조판 미리보기 → 독립 재풀이 → 다음 세트")
+
+
+def cmd_plan(args) -> int:
+    plan = build_plan(args.subject, args.product, args.scope, args.count, args.version)
+    print_plan(plan)
+    if args.save:
+        path = Path(args.save)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(yaml.safe_dump(plan, allow_unicode=True, sort_keys=False), encoding="utf-8")
+        print(f"\n저장: {path}")
+    return 0
+
+
 # ---------- scope ----------
 
 def cmd_scope(args) -> int:
@@ -467,6 +597,15 @@ def main(argv=None) -> int:
     p = sub.add_parser("status", help="과목×제품 준비 상태")
     p.add_argument("--json", action="store_true")
     p.set_defaults(func=cmd_status)
+
+    p = sub.add_parser("plan", help="요청을 제작 계획(버전·문항 수·난도·문항 원형)으로 바꿔 보여 준다")
+    p.add_argument("--subject", required=True, choices=sorted(SUBJECTS))
+    p.add_argument("--product", default="ARC_N", choices=PRODUCTS)
+    p.add_argument("--scope", required=True)
+    p.add_argument("--count", type=int)
+    p.add_argument("--version", help="국어 ARC N°: V1~V4, V6")
+    p.add_argument("--save", help="계획을 YAML로 저장할 경로")
+    p.set_defaults(func=cmd_plan)
 
     p = sub.add_parser("start", help="요청 1건을 request.json + state.json으로 시작")
     p.add_argument("--subject", required=True, choices=sorted(SUBJECTS))

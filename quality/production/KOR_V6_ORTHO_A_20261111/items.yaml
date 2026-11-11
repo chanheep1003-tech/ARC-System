@@ -19,7 +19,7 @@ scope_refs:
 v6:
   policy: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md
   set: A (1/2)
-  status: DRAFT_REVIEW_PENDING
+  status: SUPERSEDED_STYLE_REJECTED_BY_USER_20261111
   blind_review: NOT_RUN
 sets: []
 items:

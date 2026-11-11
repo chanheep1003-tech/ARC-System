@@ -29,6 +29,10 @@ pipeline = importlib.util.module_from_spec(spec)
 assert spec and spec.loader
 spec.loader.exec_module(pipeline)
 
+_spec = importlib.util.spec_from_file_location("arc_archetype_gate", ROOT / "tooling/korean/archetype_gate.py")
+archetype_gate = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(archetype_gate)
+
 CIRC = "①②③④⑤"
 
 
@@ -100,6 +104,7 @@ def run(bundle_dir: Path, out_dir: Path) -> dict:
         "author_selfcheck_failures": [{"code": c, "item_id": i} for c, i in selfcheck],
         "blind_missing_items": blind_missing,
         "author_side_failures": other_fail,
+        "archetype_gate": archetype_gate.analyze(raw),
         "content_qa_status": qa_result["status"],
         "content_qa_non_blind_failures": qa_other,
         "metrics": {k: v for k, v in metrics.items() if k not in {"findings", "realism", "length_rows"}},

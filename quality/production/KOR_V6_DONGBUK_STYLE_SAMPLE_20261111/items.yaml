@@ -12,9 +12,11 @@ created_at: '2026-11-11T12:00:00+09:00'
 scope: 미래엔 공통국어2 3-(2) 한글 맞춤법 (재설계 시범, 기말 범위 미확정)
 scope_refs:
 - TEXTBOOK:미래엔 공통국어2 3-(2) 116~127쪽
+archetype_library: quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml
 sets: []
 items:
 - item_id: KOR-V6S-001
+  archetype: A1_GENERAL_RULE_MAPPING
   stem: <보기>의 한글 맞춤법 총칙을 바탕으로 탐구한 내용으로 가장 적절한 것은?
   view:
   - ㉠표준어를 ㉡소리대로 적되, ㉢어법에 맞도록 함을 원칙으로 한다.
@@ -43,6 +45,7 @@ items:
     - OPTION1
     v: false
     why: 체언과 조사를 구별해 형태를 밝혀 적은 것이므로 ㉢(어법에 맞도록)에 따른 것이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: CORRECT
     claim: chongchik_myeochil
@@ -59,6 +62,7 @@ items:
     - OPTION3
     v: false
     why: '''드러나다''는 ''들다''의 본뜻에서 멀어져 원형을 밝히지 않았으므로 ㉡에 따른 것이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: MEDIUM
     claim: chongchik_deopgae
@@ -67,6 +71,7 @@ items:
     - OPTION4
     v: false
     why: 어간 '덮-'의 형태를 밝혀 적은 것이므로 ㉢(형태주의)의 사례이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: WEAK
     claim: chongchik_dialect
@@ -75,7 +80,9 @@ items:
     - OPTION5
     v: false
     why: 맞춤법은 표준어를 적는 규칙이므로 방언은 ㉠의 대상이 아니다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
 - item_id: KOR-V6S-002
+  archetype: A2_STUDENT_TEXT_ERRORS
   stem: <보기>의 [A]에 들어갈 말로 적절한 것은?
   view:
   - '학생: 선생님, 조사와 의존 명사를 구별하는 게 아직 헷갈려요. 체험 학습 날 쓴 일기에서 띄어쓰기가 틀린 곳을 알려 주세요.'
@@ -104,6 +111,7 @@ items:
     - VIEW
     v: false
     why: ㉡ '나만큼'은 체언 뒤 조사, ㉣ '구경할 뿐'은 관형사형 뒤 의존 명사로 모두 바르다.
+    trap: T6_PARTIAL_SET
   - axis: orthography
     c: CORRECT
     claim: diary_ace
@@ -118,6 +126,7 @@ items:
     - VIEW
     v: false
     why: ㉡, ㉤은 바르게 띄어 썼다.
+    trap: T6_PARTIAL_SET
   - axis: orthography
     c: MEDIUM
     claim: diary_bdf
@@ -125,6 +134,7 @@ items:
     - VIEW
     v: false
     why: ㉡, ㉣은 바르다.
+    trap: T6_PARTIAL_SET
   - axis: orthography
     c: STRONG
     claim: diary_cef
@@ -132,7 +142,9 @@ items:
     - VIEW
     v: false
     why: ㉤ '먹을 만큼만'은 의존 명사 '만큼'을 띄우고 보조사 '만'을 붙인 바른 표기이다.
+    trap: T6_PARTIAL_SET
 - item_id: KOR-V6S-003
+  archetype: A3_CONDITION_CLASSIFICATION
   stem: <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
   view:
   - <보기 1> 같은 형태의 말이라도 문장 속 기능에 따라 띄어쓰기가 달라진다. Ⓐ조사는 앞말에 붙여 쓰고, Ⓑ의존 명사는 앞말과 띄어 쓰며, Ⓒ어미의 일부인 경우에는 어간에 붙여 쓴다. 조사는 체언뿐 아니라 다른 조사 뒤에도 붙을 수 있다.
@@ -160,6 +172,7 @@ items:
     - VIEW
     v: false
     why: ㉤ '갈지'의 '지'는 막연한 의문을 나타내는 어미 '-ㄹ지'의 일부이므로 Ⓒ이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: CORRECT
     claim: cls_correct
@@ -175,6 +188,7 @@ items:
     - VIEW
     v: false
     why: ㉣ '여기에서만큼은'의 '만큼'은 조사 '에서' 뒤에 붙은 조사이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: MEDIUM
     claim: cls_a_noun
@@ -182,6 +196,7 @@ items:
     - VIEW
     v: false
     why: ㉠의 앞말 '규칙'은 체언이므로 조사이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: WEAK
     claim: cls_c_particle
@@ -189,7 +204,9 @@ items:
     - VIEW
     v: false
     why: ㉢ '-ㄹ수록'은 어미이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
 - item_id: KOR-V6S-004
+  archetype: A4_INQUIRY_DIALOGUE_CHECK
   stem: <보기>의 ㉠~㉤ 중 학생의 설명으로 적절하지 않은 것은?
   view:
   - '선생님: ''산 넘어 산''과 ''산 너머 마을''의 표기가 왜 다른지 설명해 볼까요?'
@@ -218,6 +235,7 @@ items:
     - VIEW
     v: true
     why: '''넘어''는 동사 ''넘다''의 어간에 어미 ''-어''가 결합한 활용형이라는 설명은 옳다.'
+    trap: T2_EXCEPTION_CONDITION
   - axis: orthography
     c: MEDIUM
     claim: neomeo_b
@@ -225,6 +243,7 @@ items:
     - VIEW
     v: true
     why: '''너머''는 공간의 저쪽을 뜻하는 명사라는 설명은 옳다.'
+    trap: T2_EXCEPTION_CONDITION
   - axis: orthography
     c: STRONG
     claim: neomeo_c
@@ -232,6 +251,7 @@ items:
     - VIEW
     v: true
     why: 어간과 어미를 구별해 적는 것은 '어법에 맞도록' 적는 원칙과 관련된다는 설명은 옳다.
+    trap: T2_EXCEPTION_CONDITION
   - axis: orthography
     c: CORRECT
     claim: neomeo_d
@@ -246,7 +266,9 @@ items:
     - VIEW
     v: true
     why: '''넘어지다''는 ''넘다''의 본뜻이 유지되어 원형을 밝혀 적는다는 설명은 옳다.'
+    trap: T2_EXCEPTION_CONDITION
 - item_id: KOR-V6S-005
+  archetype: A3_CONDITION_CLASSIFICATION
   stem: <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
   view:
   - <보기 1> 사이시옷은 합성어를 이루는 말 중 하나 이상이 순우리말이고 앞말이 모음으로 끝날 때, Ⓐ뒷말의 첫소리가 된소리로 나거나, Ⓑ뒷말의 첫소리 'ㄴ, ㅁ' 앞에서 'ㄴ' 소리가 덧나거나, Ⓒ뒷말의 첫소리 모음 앞에서 'ㄴㄴ' 소리가 덧날 때 받치어 적는다.
@@ -274,6 +296,7 @@ items:
     - VIEW
     v: false
     why: ㉠ '나뭇잎'은 [나문닙]처럼 모음 앞에서 'ㄴㄴ'이 덧나므로 Ⓒ이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: CORRECT
     claim: sai_correct
@@ -289,6 +312,7 @@ items:
     - VIEW
     v: false
     why: ㉣ '냇물'은 [낸물]로 'ㅁ' 앞에서 'ㄴ'이 덧나므로 Ⓑ이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: MEDIUM
     claim: sai_b_it
@@ -296,6 +320,7 @@ items:
     - VIEW
     v: false
     why: ㉡ '잇몸'은 [인몸]으로 Ⓑ이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: WEAK
     claim: sai_e_hut
@@ -303,7 +328,9 @@ items:
     - VIEW
     v: false
     why: ㉤ '훗일'은 [훈닐]로 'ㄴㄴ'이 덧나므로 Ⓒ이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
 - item_id: KOR-V6S-006
+  archetype: C1_CONSTRUCTED_BLANK_SENTENCE
   format: CR
   points: 5
   stem: <보기>의 탐구 과정을 읽고, ㉠~㉣에 들어갈 말을 <조건>에 따라 서술하시오.

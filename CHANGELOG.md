@@ -1,3 +1,11 @@
+## 1.9.1 — 2026-11-11
+- `ARC_MAP.md`: single entry map (where things live, product/version table, request → plan → production order).
+- Request planning: `ops/ARC_REQUEST_PLANNING_V1.0.md` + `ops/planning/ARC_PLAN_DEFAULTS_V1.yaml` + `arc.py plan`. A short request becomes a plan card (version, item count, unit sets, difficulty split, core/advanced, archetype mix); KOR ARC N° versions V1–V4 and V6 have explicit difficulty profiles.
+- School archetype generation: evidence ledger with D1/D2/D3 grades (`quality/school/`), KOR grammar archetype library (7 archetypes, 4 forbidden forms, 6 trap types) built from the 2025-2 final exam paper read on 2026-11-11, gate `tooling/korean/archetype_gate.py` with regression. External research is capped at D3 (hint only); teacher-style prediction stays disabled.
+- `tooling/production/draft_preview.py`: review drafts while scope is provisional (never releasable).
+- KOR V6 set A (50 items) is kept as a rejected-style record (SUPERSEDED); the 6-item Dongbuk-style sample is the archetype gate fixture. Neither has an independent blind review.
+- Session settings: claude-mem plugin enabled at the user's request.
+
 ## 1.9.0 — 2026-11-10 (release: dev promoted to main)
 - Promoted the whole dev line (1.8.x: engines, subject masters, QA stack, executable tooling, CI, exam contexts) to main. main had stayed at 1.0.x.
 - main's five commits that were not on dev (B&W ARC N/FINAL layout PRs, session tooling) were already present on dev in equivalent form; conflicts resolved to the dev side. The stray `ARC_1.8.4-dev_maintainer_reassign.patch` at the repository root is removed (its content has been on dev since 1.8.4).

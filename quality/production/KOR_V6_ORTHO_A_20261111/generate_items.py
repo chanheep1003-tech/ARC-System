@@ -439,7 +439,7 @@ bundle = {"batch_id": "KOR-V6-ORTHO-A-20261111", "product_mode": "ARC_N", "subje
           "scope": "미래엔 공통국어2 3-(2) 한글 맞춤법과 오늘날의 국어생활 (V6, 기말 범위 미확정)",
           "scope_refs": ["TEXTBOOK:미래엔 공통국어2 3-(2) 124~125쪽 및 한글 맞춤법 제15·30·40·41~45·48항"],
           "v6": {"policy": "quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md",
-                 "set": "A (1/2)", "status": "DRAFT_REVIEW_PENDING", "blind_review": "NOT_RUN"},
+                 "set": "A (1/2)", "status": "SUPERSEDED_STYLE_REJECTED_BY_USER_20261111", "blind_review": "NOT_RUN"},
           "sets": [], "items": items}
 out = Path("quality/production/KOR_V6_ORTHO_A_20261111")
 out.mkdir(parents=True, exist_ok=True)

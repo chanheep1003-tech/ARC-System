@@ -3,19 +3,26 @@ import yaml
 from pathlib import Path
 S, M, W = "STRONG", "MEDIUM", "WEAK"
 items = []
+DEFAULT_TRAP = {"A1_GENERAL_RULE_MAPPING": "T1_RIGHT_CONCEPT_WRONG_CASE", "A2_STUDENT_TEXT_ERRORS": "T6_PARTIAL_SET",
+                "A3_CONDITION_CLASSIFICATION": "T4_SAME_FORM_OTHER_FUNCTION", "A4_INQUIRY_DIALOGUE_CHECK": "T2_EXCEPTION_CONDITION"}
 
-def mcq(d, fam, steps, elim, stem, opts, ans, sb, judg, view, neg=False):
+def mcq(arch, d, fam, steps, elim, stem, opts, ans, sb, judg, view, neg=False):
     n = len(items) + 1
-    js = [{"axis": "orthography", "c": "CORRECT" if i == ans else c, "claim": cl, "ev": ev,
-           "v": (i != ans) if neg else (i == ans), "why": why} for i, (cl, c, ev, why) in enumerate(judg, 1)]
-    items.append({"item_id": f"KOR-V6S-{n:03d}", "stem": stem, "view": view, "options": opts, "answer": ans,
+    js = []
+    for i, (cl, c, ev, why, *trap) in enumerate(judg, 1):
+        j = {"axis": "orthography", "c": "CORRECT" if i == ans else c, "claim": cl, "ev": ev,
+             "v": (i != ans) if neg else (i == ans), "why": why}
+        if i != ans:
+            j["trap"] = trap[0] if trap else DEFAULT_TRAP[arch]
+        js.append(j)
+    items.append({"item_id": f"KOR-V6S-{n:03d}", "archetype": arch, "stem": stem, "view": view, "options": opts, "answer": ans,
                   "second_best": sb, "difficulty": d, "family": fam,
                   "balance": "ADVANCED_DISCRIMINATION" if d in ("D4", "D5") else "CORE_EXAM_POINT",
                   "reasoning_steps": steps, "immediate_elimination": elim, "transfer": True,
                   "stem_polarity": "NEGATIVE" if neg else "POSITIVE", "judgments": js})
 
 # 1. 총칙(소리대로/어법에 맞도록) — 기출 8번 유형
-mcq("D3", "VIEW_APPLICATION", 2, 1, "<보기>의 한글 맞춤법 총칙을 바탕으로 탐구한 내용으로 가장 적절한 것은?",
+mcq("A1_GENERAL_RULE_MAPPING", "D3", "VIEW_APPLICATION", 2, 1, "<보기>의 한글 맞춤법 총칙을 바탕으로 탐구한 내용으로 가장 적절한 것은?",
     ["'꽃이'를 [꼬치]로 적지 않고 '꽃이'로 적는 것은 ㉡에 따른 것이다.",
      "'며칠'은 '몇'과 '일'로 형태를 밝힐 근거가 분명하지 않아 ㉡에 따라 적은 것이다.",
      "'늘어나다'와 '드러나다'는 모두 ㉢에 따라 앞말의 원형을 밝혀 적은 것이다.",
@@ -30,7 +37,7 @@ mcq("D3", "VIEW_APPLICATION", 2, 1, "<보기>의 한글 맞춤법 총칙을 바�
     ["㉠표준어를 ㉡소리대로 적되, ㉢어법에 맞도록 함을 원칙으로 한다.", "- 한글 맞춤법 제1항"])
 
 # 2. 학생 일기 ㉠~㉥ 중 틀린 곳 3개 — 기출 9번 유형(새 문맥)
-mcq("D3", "STUDENT_RESPONSE_EVALUATION", 2, 1, "<보기>의 [A]에 들어갈 말로 적절한 것은?",
+mcq("A2_STUDENT_TEXT_ERRORS", "D3", "STUDENT_RESPONSE_EVALUATION", 2, 1, "<보기>의 [A]에 들어갈 말로 적절한 것은?",
     ["㉠, ㉡, ㉣", "㉠, ㉢, ㉥", "㉡, ㉢, ㉤", "㉡, ㉣, ㉥", "㉢, ㉤, ㉥"],
     2, 5,
     [("diary_abd", M, ["VIEW"], "㉡ '나만큼'은 체언 뒤 조사, ㉣ '구경할 뿐'은 관형사형 뒤 의존 명사로 모두 바르다."),
@@ -43,7 +50,7 @@ mcq("D3", "STUDENT_RESPONSE_EVALUATION", 2, 1, "<보기>의 [A]에 들어갈 말
      "선생님: 네가 쓴 일기에서 띄어쓰기가 틀린 곳은 [A]와 같단다."])
 
 # 3. <보기1> 설명 → <보기2> ㉠~㉤ 분류 — 기출 10번 유형(띄어쓰기로 전이)
-mcq("D4", "COMPARISON_MATRIX", 3, 1, "<보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?",
+mcq("A3_CONDITION_CLASSIFICATION", "D4", "COMPARISON_MATRIX", 3, 1, "<보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?",
     ["Ⓐ ㉠, ㉣   Ⓑ ㉡, ㉤   Ⓒ ㉢", "Ⓐ ㉠, ㉣   Ⓑ ㉡   Ⓒ ㉢, ㉤", "Ⓐ ㉠   Ⓑ ㉡, ㉣   Ⓒ ㉢, ㉤",
      "Ⓐ ㉣   Ⓑ ㉠, ㉡   Ⓒ ㉢, ㉤", "Ⓐ ㉠, ㉢   Ⓑ ㉡   Ⓒ ㉣, ㉤"],
     2, 1,
@@ -56,7 +63,7 @@ mcq("D4", "COMPARISON_MATRIX", 3, 1, "<보기 1>을 바탕으로 <보기 2>의 �
      "<보기 2> ㉠규칙[대로] 처리한다.  ㉡그를 본[지] 오래다.  ㉢생각할[수록] 아쉽다.  ㉣여기에서[만큼은] 조용히 하자.  ㉤어디로 갈[지] 정하자."])
 
 # 4. 교사-학생 탐구 대화, 학생 설명 중 적절하지 않은 것 — 제15항
-mcq("D3", "STUDENT_RESPONSE_EVALUATION", 2, 1, "<보기>의 ㉠~㉤ 중 학생의 설명으로 적절하지 않은 것은?",
+mcq("A4_INQUIRY_DIALOGUE_CHECK", "D3", "STUDENT_RESPONSE_EVALUATION", 2, 1, "<보기>의 ㉠~㉤ 중 학생의 설명으로 적절하지 않은 것은?",
     ["㉠", "㉡", "㉢", "㉣", "㉤"], 4, 3,
     [("neomeo_a", W, ["VIEW"], "'넘어'는 동사 '넘다'의 어간에 어미 '-어'가 결합한 활용형이라는 설명은 옳다."),
      ("neomeo_b", M, ["VIEW"], "'너머'는 공간의 저쪽을 뜻하는 명사라는 설명은 옳다."),
@@ -68,7 +75,7 @@ mcq("D3", "STUDENT_RESPONSE_EVALUATION", 2, 1, "<보기>의 ㉠~㉤ 중 학생�
      "선생님: 대부분 잘 설명했는데, 한 군데는 다시 생각해 봐야겠네요."], neg=True)
 
 # 5. 사이시옷 조건 표 분류 — 기출 10번 원리, 새 단어
-mcq("D4", "COMPARISON_MATRIX", 3, 1, "<보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?",
+mcq("A3_CONDITION_CLASSIFICATION", "D4", "COMPARISON_MATRIX", 3, 1, "<보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?",
     ["Ⓐ ㉠, ㉢   Ⓑ ㉡, ㉣   Ⓒ ㉤", "Ⓐ ㉢   Ⓑ ㉡, ㉣   Ⓒ ㉠, ㉤", "Ⓐ ㉢, ㉣   Ⓑ ㉡   Ⓒ ㉠, ㉤",
      "Ⓐ ㉡, ㉢   Ⓑ ㉣   Ⓒ ㉠, ㉤", "Ⓐ ㉢   Ⓑ ㉠, ㉡   Ⓒ ㉣, ㉤"],
     2, 3,
@@ -82,7 +89,7 @@ mcq("D4", "COMPARISON_MATRIX", 3, 1, "<보기 1>을 바탕으로 <보기 2>의 �
 
 # 6. 서답형 — 기출 서답형 2 유형(탐구 대화 + <조건>)
 items.append({
-    "item_id": "KOR-V6S-006", "format": "CR", "points": 5,
+    "item_id": "KOR-V6S-006", "archetype": "C1_CONSTRUCTED_BLANK_SENTENCE", "format": "CR", "points": 5,
     "stem": "<보기>의 탐구 과정을 읽고, ㉠~㉣에 들어갈 말을 <조건>에 따라 서술하시오.",
     "view": ["A: '애쓴 만큼'과 '형만큼'의 '만큼'은 왜 띄어쓰기가 다를까?",
              "B: '애쓴 만큼'의 '만큼'은 앞말이 ( ㉠ )이므로 ( ㉡ )로 보아 띄어 쓰고, '형만큼'의 '만큼'은 앞말이 ( ㉢ )이므로 ( ㉣ )로 보아 앞말에 붙여 써."],
@@ -99,6 +106,7 @@ bundle = {"batch_id": "KOR-V6-DONGBUK-STYLE-SAMPLE-20261111", "product_mode": "A
           "cover_lines": ["2025 2학기 기말 8~10번·서답형 2의 문항 작동 방식을 새 자료로 재현"],
           "school_line": "동북고등학교 1학년 · 2026", "created_at": "2026-11-11T12:00:00+09:00",
           "scope": "미래엔 공통국어2 3-(2) 한글 맞춤법 (재설계 시범, 기말 범위 미확정)",
-          "scope_refs": ["TEXTBOOK:미래엔 공통국어2 3-(2) 116~127쪽"], "sets": [], "items": items}
+          "scope_refs": ["TEXTBOOK:미래엔 공통국어2 3-(2) 116~127쪽"],
+          "archetype_library": "quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml", "sets": [], "items": items}
 Path(__file__).with_name("items.yaml").write_text(yaml.safe_dump(bundle, allow_unicode=True, sort_keys=False, width=1000), encoding="utf-8")
 print(len(items))

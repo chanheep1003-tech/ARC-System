@@ -13,7 +13,7 @@
 | toothlessdev-agent | 플러그인 4종 | daily-briefing, workflow-parallel, adhd, pr-review | 활성 |
 | ayghri/i-have-adhd | 플러그인 | 결론 먼저·번호 단계 응답 스타일 | 활성 |
 | JuliusBrussee/caveman | 플러그인 | 극단적 축약 응답 | **비활성**(문항 지문 품질 영향) |
-| thedotmack/claude-mem | 플러그인 | 세션 간 기억(상주 워커) | **비활성**(ARC 데이터 정책상 임의 기억 저장 방지) |
+| thedotmack/claude-mem | 플러그인 | 세션 간 기억(상주 워커) | 활성(2026-11-11 사용자 요청). 교과서·기출 원문을 기억에 저장하지 않는다 |
 | HKUDS/DeepTutor | 앱(Python+Node) | 학습 튜터/RAG 참고 | `--full` 설치 |
 | Orkas-AI/Orkas | 앱(Node) | 멀티 에이전트 지휘 | `--full` 설치 |
 | p-e-w/heretic | CLI(pip) | 모델 abliteration (**GPU 필요**, 이 클라우드엔 GPU 없음) | `--full` 설치만 |
