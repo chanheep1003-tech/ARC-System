@@ -1,3 +1,6 @@
+## 1.9.2 — 2026-11-12
+- Drive save rule (user directive): once a produced file passes the user's review once, saving it to Google Drive is mandatory; saving before that pass stays forbidden. `ops/ARC_DRIVE_SAVE_RULE_V1.0.md`, manifest keys, map, AGENTS and planning rule updated.
+
 ## 1.9.1 — 2026-11-11
 - `ARC_MAP.md`: single entry map (where things live, product/version table, request → plan → production order).
 - Request planning: `ops/ARC_REQUEST_PLANNING_V1.0.md` + `ops/planning/ARC_PLAN_DEFAULTS_V1.yaml` + `arc.py plan`. A short request becomes a plan card (version, item count, unit sets, difficulty split, core/advanced, archetype mix); KOR ARC N° versions V1–V4 and V6 have explicit difficulty profiles.

@@ -65,7 +65,7 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --version V3 --coun
 
 ```
 계획(plan) → 자료 열람(Drive) → 번들 작성(items.yaml) → 자체 점검 + 미리보기(draft_preview)
-→ 독립 재풀이(blind_review.yaml) → 생산 파이프라인(production_pipeline) → 사용자 승인 → 기록(log)
+→ 독립 재풀이(blind_review.yaml) → 생산 파이프라인(production_pipeline) → 사용자 검수 1회 통과 → Google Drive 저장 → 기록(log)
 ```
 
 | 단계 | 명령 |
@@ -103,6 +103,7 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --version V3 --coun
 
 ## 7. 반드시 지키는 것
 
+- **파일을 만들면 사용자에게 보여 주고, 검수를 1번 통과하면 반드시 Google Drive에 저장한다.** 통과 전에는 저장하지 않는다. (`ops/ARC_DRIVE_SAVE_RULE_V1.0.md`)
 - 범위는 추정으로 확정하지 않는다. 학교 공지나 사용자 지시가 근거다.
 - 규칙은 manifest가 고른 파일에만 넣는다. 지난 버전 파일에 덧붙이지 않는다.
 - 독립 재풀이를 하지 않은 문항을 검증 완료라고 하지 않는다.
