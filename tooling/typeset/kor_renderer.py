@@ -33,7 +33,8 @@ FONT_FILES = {
 }
 # Hanja (漢字) and other glyphs Nanum lacks fall back to a CJK font; first existing file wins.
 FALLBACK_FILES = [Path("/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc"),
-                  Path("/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc")]
+                  Path("/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc"),
+                  Path("/usr/share/fonts/truetype/arc-fallback/NotoSerifKR.ttf")]  # tooling/ci/install_fonts.sh
 SIZE = 9.8
 LH = SIZE * 1.62
 NAVY = (0.08, 0.16, 0.30)

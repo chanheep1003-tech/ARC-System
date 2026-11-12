@@ -41,7 +41,7 @@ jobs:
         run: python -m pip install -r tooling/requirements-smoke.txt
 
       - name: Install Korean fonts for production rendering
-        run: sudo apt-get update -q && sudo apt-get install -y -q fonts-nanum fonts-wqy-zenhei
+        run: bash tooling/ci/install_fonts.sh
 
       - name: Compile Python tooling
         run: |

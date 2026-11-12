@@ -41,7 +41,8 @@ def run_variant(tmp: Path, name: str, bundle: Path, items=None, blind=None):
 
 
 def page_text(page) -> str:
-    return page.get_text().replace("\u00a0", " ")
+    # Some Nanum builds map the circled-digit glyphs to the dingbat code points (U+2780..) on extraction.
+    return page.get_text().replace("\u00a0", " ").translate({0x2780 + i: 0x2460 + i for i in range(5)})
 
 
 def fail_codes(report) -> set[str]:

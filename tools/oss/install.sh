@@ -21,8 +21,7 @@ install_arc_tooling() {
   if [ -f /usr/share/fonts/truetype/nanum/NanumMyeongjo.ttf ]; then log "nanum fonts ok"
   elif command -v apt-get >/dev/null; then
     SUDO=""; [ "$(id -u)" -ne 0 ] && SUDO="sudo -n"
-    { $SUDO apt-get install -y -q fonts-nanum fonts-wqy-zenhei >/dev/null 2>&1 \
-      || { $SUDO apt-get update -q >/dev/null 2>&1 && $SUDO apt-get install -y -q fonts-nanum fonts-wqy-zenhei >/dev/null 2>&1; }; } \
+    bash "$REPO_ROOT/tooling/ci/install_fonts.sh" >/dev/null 2>&1 \
       && log "nanum fonts installed" || log "nanum fonts FAILED (PDF 조판·카나리 불가: apt-get install fonts-nanum)"
   else log "nanum fonts MISSING (no apt-get)"; fi
 }
