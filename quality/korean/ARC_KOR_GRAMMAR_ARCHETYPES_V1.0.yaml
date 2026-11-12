@@ -1,0 +1,76 @@
+# 국어 문법(한글 맞춤법) 문항 원형 라이브러리 — 생성은 원형을 먼저 고르고 범위 개념을 대입한다.
+library_id: ARC_KOR_GRAMMAR_ARCHETYPES_V1.0
+version: 1.0
+date: 2026-11-11
+status: ACTIVE
+applies_to: {subject: KOR, domain: GRAMMAR_ORTHOGRAPHY, products: [ARC_N, ARC_FINAL]}
+evidence_ledger: quality/school/ARC_SCHOOL_EVIDENCE_LEDGER_V1.0.yaml
+copy_policy: 원형은 문항의 작동 방식만 가져온다. 기출의 문장·선지·일기 내용은 쓰지 않는다.
+archetypes:
+  A1_GENERAL_RULE_MAPPING:
+    evidence: [KOR-F04]
+    format: MCQ
+    view: REQUIRED          # 규정 원문에 ㉠㉡㉢ 표시
+    stem: "<보기>의 … 을 바탕으로 탐구한 내용으로 가장 적절한 것은?"
+    options: 개념과 구체적 표기 사례를 결합한 설명 문장 5개
+  A2_STUDENT_TEXT_ERRORS:
+    evidence: [KOR-F02]
+    format: MCQ
+    view: REQUIRED          # 학생 질문 + 학생이 쓴 글(㉠~㉥, 쓴 그대로) + 교사 응답 [A]
+    stem: "<보기>의 [A]에 들어갈 말로 적절한 것은?"
+    options: 틀린 곳 세 개의 조합 5개
+    constraints: {marked_spots: 6, wrong_spots: 3, mask_spacing: false}
+  A3_CONDITION_CLASSIFICATION:
+    evidence: [KOR-F03]
+    format: MCQ
+    view: REQUIRED          # <보기 1> 조건 Ⓐ/Ⓑ/Ⓒ, <보기 2> ㉠~㉤
+    stem: "<보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?"
+    options: 분류표 5개
+  A4_INQUIRY_DIALOGUE_CHECK:
+    evidence: [KOR-F05, KOR-F01]
+    format: MCQ
+    view: REQUIRED          # 교사·학생 탐구 대화, 학생 설명 ㉠~㉤
+    stem: "<보기>의 ㉠~㉤ 중 … 설명으로 적절하지 않은 것은?"
+    options: ㉠~㉤
+  A5_EXAMPLE_MULTI_JUDGMENT:
+    evidence: [KOR-F07]
+    format: MCQ
+    view: REQUIRED          # 판단 문장 ㄱ~ㄹ(ㅁ), 예외 조건 포함
+    stem: "… 옳은 것만을 <보기>에서 있는 대로 고른 것은?"
+    options: 조합 5개
+  A6_RULE_CASE_EXPLANATION:
+    evidence: [KOR-F01, KOR-F04]
+    format: MCQ
+    view: REQUIRED          # 조항 원문 또는 자료 + 예문 ㉠~㉣
+    stem: "<보기>를 바탕으로 … 에 대해 탐구한 내용으로 적절하지 않은 것은?"
+    options: 예문별 '판단+근거' 설명 문장 5개
+  C1_CONSTRUCTED_BLANK_SENTENCE:
+    evidence: [KOR-F05]
+    format: CR
+    view: REQUIRED          # 탐구 대화 빈칸 ㉠~㉣
+    conditions_min: 3       # 문장 형식 지정 / 선택 어휘 지정 / 오개념 감점
+    points: 5
+    rubric: 빈칸당 1점 + 문장 형식 1점
+forbidden_forms:
+  - id: BARE_FIVE_SENTENCES
+    description: <보기> 없이 "다음 중 띄어쓰기가 바른 것은?" 뒤에 문장 5개를 나열
+  - id: SINGLE_WORD_OPTIONS
+    description: 단어 하나짜리 선지 5개(분류표·조합·㉠~㉤ 선택은 제외)
+  - id: MASKED_SPACING
+    description: "[ ]로 띄어쓰기를 가리는 표기"   # 예외: A3의 <보기 2>에서 대상 형태를 표시할 때
+  - id: D1_RECALL
+    description: 규정 문구나 단위 명사 띄어쓰기만 확인하는 D1 문항
+trap_taxonomy:            # 오답 선지는 반드시 아래 중 하나로 설계한다
+  T1_RIGHT_CONCEPT_WRONG_CASE: 개념 정의는 맞고 그 사례 적용이 틀림
+  T2_EXCEPTION_CONDITION: 기본 규칙의 예외·전제 조건을 비틂 (조사 뒤의 조사, 한 단어로 굳은 말, 원칙/허용 등)
+  T3_ONE_OF_TWO_WRONG: 한 선지의 두 판단 가운데 하나만 틀림
+  T4_SAME_FORM_OTHER_FUNCTION: 같은 형태를 다른 품사·기능으로 판정
+  T5_RULE_JURISDICTION: 맞는 표기에 다른 조항·원리를 근거로 댐
+  T6_PARTIAL_SET: 조합형에서 옳은 것 하나를 빼거나 틀린 것 하나를 더함
+set_design:
+  unit: {selected: [10, 12], constructed: [1, 2]}   # 시험의 문법 구간을 본뜬 단원 세트
+  archetype_repeat_max_in_unit: 2
+  view_anchor_rate_min: 0.9
+  constructed_ratio_min: 0.08
+  d1_max: 0
+  hints_D3: [KOR-H01, KOR-H02]

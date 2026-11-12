@@ -2,6 +2,9 @@
 
 This runbook is the operational entry point for current production tasks. It replaces duplicated startup instructions in prompts; archived policy versions remain preserved. Current user scope and the pinned manifest decide the subject, file format, quantity and active rules. Do not inherit older 5-subject/Google-Docs defaults when the current request specifies a different job.
 
+## Plan before production (2026-11-11)
+Every production request first becomes a plan card: `python tooling/arc.py plan --subject … --scope … [--version] [--count]`. Rules: `ops/ARC_REQUEST_PLANNING_V1.0.md`; map: `ARC_MAP.md`. Draft one unit set, show it, then continue. KOR grammar bundles declare `archetype_library` and must pass `tooling/korean/archetype_gate.py`.
+
 ## Quick start (shell hosts)
 
 ```bash

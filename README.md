@@ -6,6 +6,8 @@ ARC CORE / N° / FINAL 제작을 위한 엔진·규칙 저장소.
 - GitHub: 엔진, 과목 MASTER, QA/난이도/시각자료 규칙, 조판 템플릿, MCP 정책
 - Google Drive: 교과서, 학습지, 학교 기출, 외부 참고자료, 검증문항은행, 생성 PDF
 
+**처음이면 [`ARC_MAP.md`](ARC_MAP.md)부터 읽는다.** 저장소 지도, 제품·버전 표, 요청 → 계획 → 제작 순서가 한 장에 있다.
+
 ## Quick start
 ```bash
 python -m pip install -r tooling/requirements-smoke.txt && sudo apt-get install -y fonts-nanum

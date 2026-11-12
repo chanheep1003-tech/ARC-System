@@ -100,7 +100,7 @@ def main() -> int:
     # Every runtime value that names a repository file must resolve, so a policy
     # cannot be "registered" while pointing at nothing (or be edited in a file
     # the manifest no longer selects).
-    repo_path = re.compile(r"^(?:engine|subjects|quality|ops|templates|tooling|skills|agents|mcp)/\S+\.\w+$")
+    repo_path = re.compile(r"^(?:(?:engine|subjects|quality|ops|templates|tooling|skills|agents|mcp)/\S+\.\w+|ARC_MAP\.md)$")
     for value in runtime.values():
         if isinstance(value, str) and repo_path.match(value):
             active_paths.add(value)
@@ -462,6 +462,9 @@ def main() -> int:
         "sci_final_canary_fixture",
         "subject_production_regression_test",
         "arc_cli",
+        "draft_preview",
+        "korean_archetype_gate",
+        "korean_archetype_gate_smoke_test",
         "local_ci_runner",
         "smoke_requirements",
         "xmark_detector",

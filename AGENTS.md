@@ -1,4 +1,5 @@
 # ARC single entry point
+**Read `ARC_MAP.md` first.** It is the map of this repository: what lives where, the product/version table, and the rule that every production request starts with a plan card (`python tooling/arc.py plan …`) before any item is written. Build items from registered school archetypes (`quality/ARC_SCHOOL_ARCHETYPE_GATE_V1.0.md`), one unit set at a time.
 First command on any host with a shell: `python tooling/arc.py doctor && python tooling/arc.py status`. `status` prints the KOR/SOC/SCI × CORE/N/FINAL matrix with the exact blocker per cell. `python tooling/arc.py start --subject … --product … --count … --scope …` creates the request/state and lists the manifest-selected files to read, in order. After editing any tracked file run `python tooling/arc.py checksums`; before pushing run `python tooling/arc.py ci`.
 Start with ops/ARC_RUNBOOK.md. Use tooling/workflow/arc_workflow.py for one request and one resumable state when a local runtime is available; connector-only hosts follow the same JSON contract without claiming CLI execution.
 # ARC expert team entry point
