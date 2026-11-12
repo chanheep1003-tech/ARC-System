@@ -22,6 +22,7 @@
 | Graphify-Labs/graphify | CLI(pip `graphifyy`) | 저장소/문서 지식 그래프 생성 | 자동 설치(--quick) |
 | ruvnet/ruflo | 플러그인(+npx) | 멀티 에이전트 스웜. `ruflo-core`만 활성(나머지 50여개는 필요 시 추가) | 활성 |
 | DietrichGebert/ponytail | 플러그인 | 응답 레벨 조절 스킬 | 활성 |
+| addyosmani/agent-skills | 플러그인 | 스펙·컨텍스트 엔지니어링·제약 기반 개발·코드 리뷰 스킬 모음 | 활성 |
 
 활성/비활성은 `.claude/settings.json`의 `enabledPlugins`를 true/false로 바꾸면 된다.
 세션 시작 시 `--quick`이 자동 실행되며, 앱류는 `./tools/oss/install.sh --full` (기본 위치 `~/.arc-oss`, `ARC_OSS_HOME`으로 변경).

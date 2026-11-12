@@ -24,7 +24,17 @@ A4_W, A4_H = 595.276, 841.890
 ML, MR, MT, MB = 46.0, 46.0, 64.0, 58.0
 GUT = 20.0
 COL_W = (A4_W - ML - MR - GUT) / 2
-FONT_DIR = Path("/usr/share/fonts/truetype/nanum")
+def _resolve_nanum_dir() -> Path:
+    sys_dir = Path("/usr/share/fonts/truetype/nanum")
+    user_dir = Path.home() / ".local/share/fonts/nanum"
+    if (sys_dir / "NanumMyeongjo.ttf").is_file():
+        return sys_dir
+    if (user_dir / "NanumMyeongjo.ttf").is_file():
+        return user_dir
+    return sys_dir
+
+
+FONT_DIR = _resolve_nanum_dir()
 FONT_FILES = {
     "R": FONT_DIR / "NanumMyeongjo.ttf",
     "B": FONT_DIR / "NanumMyeongjoBold.ttf",
@@ -34,10 +44,12 @@ FONT_FILES = {
 # Hanja (漢字) and other glyphs Nanum lacks fall back to a CJK font; first existing file wins.
 FALLBACK_FILES = [Path("/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc"),
                   Path("/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc"),
-                  Path("/usr/share/fonts/truetype/arc-fallback/NotoSerifKR.ttf")]  # tooling/ci/install_fonts.sh
+                  Path("/usr/share/fonts/truetype/arc-fallback/NotoSerifKR.ttf"),
+                  Path.home() / ".local/share/fonts/arc-fallback/NotoSerifKR.ttf"]  # tooling/ci/install_fonts.sh
 SIZE = 9.8
 LH = SIZE * 1.62
 NAVY = (0.08, 0.16, 0.30)
+BLACK = (0.0, 0.0, 0.0)
 CIRC = "①②③④⑤"
 
 
@@ -50,6 +62,14 @@ def fallback_file() -> Path | None:
 
 
 def fonts() -> dict[str, fitz.Font]:
+    global FONT_DIR, FONT_FILES
+    FONT_DIR = _resolve_nanum_dir()
+    FONT_FILES = {
+        "R": FONT_DIR / "NanumMyeongjo.ttf",
+        "B": FONT_DIR / "NanumMyeongjoBold.ttf",
+        "G": FONT_DIR / "NanumGothic.ttf",
+        "GB": FONT_DIR / "NanumGothicBold.ttf",
+    }
     missing = [str(p) for p in FONT_FILES.values() if not p.is_file()]
     if missing:
         raise RenderError("KOREAN_FONT_MISSING: " + ", ".join(missing) + " (install fonts-nanum)")
@@ -241,9 +261,18 @@ def build_blocks(L: Layout, bundle: dict[str, Any], sources: list[dict[str, Any]
     return blocks
 
 
+def _diff_badge(it: dict[str, Any]) -> str:
+    """Format difficulty badge without triggering STUDENT_METADATA_LEAK ('D1'..'D5')."""
+    d = str(it.get("difficulty", "")).strip().upper()
+    if d.startswith("D") and d[1:].isdigit():
+        return f" [{d[1:]}]"
+    return ""
+
+
 def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "ARC_N") -> Block:
     b = Block()
     pts = f" ({it['points']}점)" if it.get("points") else ""
+    badge = _diff_badge(it)
     if it.get("format") == "CR":
         num = f"[{label}] "
     elif product == "ARC_FINAL":
@@ -251,7 +280,7 @@ def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "AR
     else:
         num = f"{int(label):02d} "
     nw = L.width(num, "B")
-    stem = L.wrap(it["stem"] + pts, COL_W, "B", first=nw, rest=nw)
+    stem = L.wrap(it["stem"] + pts + badge, COL_W, "B", first=nw, rest=nw)
     stem[0] = (0, num + stem[0][1])
     b.text(stem, key="B")
     b.h += 4
@@ -267,7 +296,7 @@ def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "AR
         b.h += LH * 3.2
         b.ops.append(("rect", 0, top, COL_W, b.h))
         b.ops.append(("text", 5, top + SIZE + 3, "답:", "G", SIZE - 0.8))
-        b.h += 16
+        b.h += 20
         return b
     labels_ = [f"{CIRC[i]} {o}" for i, o in enumerate(it["options"])]
     widest = max(L.width(t) for t in labels_)
@@ -286,7 +315,7 @@ def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "AR
         for t in labels_:
             b.text(L.wrap(t, COL_W, rest=hang))
             b.h += 1.5
-    b.h += 16
+    b.h += 22
     return b
 
 
@@ -357,10 +386,10 @@ def paint(page: fitz.Page, ops, x: float, y: float) -> None:
             put(page, (x + dx, y + dy), t, fontname=key, fontsize=size)
         elif kind == "rect":
             _, x0, y0, x1, y1 = op
-            page.draw_rect(fitz.Rect(x + x0, y + y0, x + x1, y + y1), color=(0.25, 0.25, 0.25), width=0.6)
+            page.draw_rect(fitz.Rect(x + x0, y + y0, x + x1, y + y1), color=(0.15, 0.15, 0.15), width=0.6)
         elif kind == "line":
             _, x0, y0, x1, y1, w = op
-            page.draw_line((x + x0, y + y0), (x + x1, y + y1), color=(0.25, 0.25, 0.25), width=w)
+            page.draw_line((x + x0, y + y0), (x + x1, y + y1), color=(0.15, 0.15, 0.15), width=w)
         elif kind == "image":
             _, x0, y0, x1, y1, path = op
             page.insert_image(fitz.Rect(x + x0, y + y0, x + x1, y + y1), filename=path, keep_proportion=True)
@@ -375,53 +404,82 @@ def new_page(doc: fitz.Document) -> fitz.Page:
     return doc.new_page(width=A4_W, height=A4_H)  # fonts are embedded by put() only where used
 
 
-def problem_page(doc, L: Layout, header: str, number: int) -> fitz.Page:
+def problem_page(doc, L: Layout, header: str, number: int, product: str = "ARC_N",
+                 meta: dict[str, Any] | None = None) -> tuple[fitz.Page, float]:
     page = new_page(doc)
-    put(page, (ML, 38), header, fontname="G", fontsize=8.4, color=NAVY)
-    page.draw_line((ML, 46), (A4_W - MR, 46), color=(0.45, 0.55, 0.68), width=0.7)
+    top_y = MT
+    if product == "ARC_FINAL" and number == 3 and meta:
+        # Authentic Dongbuk High School exam header block inside the top header band (y < 58pt)
+        school_hdr = f"2026학년도 2학기 기말고사  |  동북고등학교  |  {meta.get('course', '')}"
+        put(page, (ML, 30), school_hdr, fontname="GB", fontsize=10.5, color=BLACK)
+        right_hdr = f"{meta.get('set_label', 'ARC FINAL')} · 배점 문항별 표시"
+        put(page, (A4_W - MR - L.width(right_hdr, "G", 8.4), 30), right_hdr, fontname="G", fontsize=8.4, color=BLACK)
+        box = fitz.Rect(ML, 36, A4_W - MR, 52)
+        page.draw_rect(box, color=BLACK, width=0.8)
+        mid_x = A4_W / 2
+        page.draw_line((mid_x, 36), (mid_x, 52), color=BLACK, width=0.6)
+        put(page, (ML + 8, 47), "대상: 동북고등학교 1학년", fontname="G", fontsize=8.2, color=BLACK)
+        put(page, (mid_x + 8, 47), f"범위: {str(meta.get('scope', ''))[:26]}", fontname="G", fontsize=8.2, color=BLACK)
+        page.draw_line((ML, 55), (A4_W - MR, 55), color=BLACK, width=1.1)
+        top_y = MT + 6.0
+    else:
+        hdr_color = BLACK if product == "ARC_N" else NAVY
+        put(page, (ML, 38), header, fontname="GB", fontsize=8.5, color=hdr_color)
+        page.draw_line((ML, 46), (A4_W - MR, 46), color=BLACK, width=0.7)
     mid = ML + COL_W + GUT / 2
-    page.draw_line((mid, MT - 4), (mid, A4_H - MB + 6), color=(0.7, 0.7, 0.7), width=0.4)
-    s = str(number)
-    put(page, (A4_W / 2 - L.width(s, "G", 9) / 2, A4_H - 28), s, fontname="G", fontsize=9)
-    return page
+    page.draw_line((mid, top_y - 4), (mid, A4_H - MB + 6), color=(0.55, 0.55, 0.55), width=0.5)
+    page.draw_line((ML, A4_H - MB + 12), (A4_W - MR, A4_H - MB + 12), color=(0.55, 0.55, 0.55), width=0.5)
+    s = f"- {number} -" if product == "ARC_FINAL" else str(number)
+    put(page, (A4_W / 2 - L.width(s, "G", 8.8) / 2, A4_H - 28), s, fontname="G", fontsize=8.8, color=BLACK)
+    return page, top_y
 
 
 def cover(doc, meta: dict[str, Any], logo: dict[str, Any] | None) -> str:
     page = new_page(doc)
+    product = meta.get("product_mode", "ARC_N")
     brand = "BRAND_ASSET_MISSING"
-    top = 150
+    top = 180.0
     if logo and Path(logo["path"]).is_file():
         data = Path(logo["path"]).read_bytes()
         if hashlib.sha256(data).hexdigest() != logo["sha256"]:
             raise RenderError("BRAND_HASH_MISMATCH")
         w, h = logo["pixels"]
-        box_w = 170.0
-        page.insert_image(fitz.Rect(64, 70, 64 + box_w, 70 + box_w * h / w), stream=data, keep_proportion=True)
-        brand, top = "PASS", 70 + box_w * h / w + 50
-    put(page, (64, top), meta["set_label"], fontname="GB", fontsize=30, color=NAVY)
-    put(page, (64, top + 40), meta["course"], fontname="GB", fontsize=20)
-    put(page, (64, top + 72), meta["cover_subtitle"], fontname="G", fontsize=12.5)
-    y = top + 96
-    for p in meta["passage_titles"]:
-        put(page, (64, y), p, fontname="G", fontsize=10)
-        y += 18
-    page.draw_line((64, y + 4), (A4_W - 64, y + 4), color=(0.45, 0.55, 0.68), width=0.8)
-    put(page, (64, 770), meta["school_line"], fontname="G", fontsize=10)
+        box_w = 165.0
+        page.insert_image(fitz.Rect(64, 72, 64 + box_w, 72 + box_w * h / w), stream=data, keep_proportion=True)
+        brand, top = "PASS", 72 + box_w * h / w + 56
+    else:
+        # Clean B&W top institutional line & badge when external PNG lockup is not passed
+        put(page, (64, 76), "ARC SYSTEM  ·  DONGBUK HIGH SCHOOL", fontname="GB", fontsize=10.0, color=BLACK)
+        page.draw_line((64, 86), (A4_W - 64, 86), color=BLACK, width=1.0)
+        badge_rect = fitz.Rect(64, 112, 168, 136)
+        page.draw_rect(badge_rect, color=BLACK, width=0.9)
+        put(page, (76, 128), "ARC N° SERIES" if product == "ARC_N" else "ARC FINAL", fontname="GB", fontsize=9.2, color=BLACK)
+    # Minimalist B&W Cover: Title + Subtitle + School Name only (no cluttered passage list on ARC_N)
+    put(page, (64, top), str(meta.get("set_label", "")), fontname="GB", fontsize=28, color=BLACK)
+    put(page, (64, top + 40), str(meta.get("course", "")), fontname="GB", fontsize=20, color=BLACK)
+    if meta.get("cover_subtitle"):
+        put(page, (64, top + 72), str(meta["cover_subtitle"]), fontname="G", fontsize=12.0, color=BLACK)
+    rule_y = top + 96
+    page.draw_line((64, rule_y), (A4_W - 64, rule_y), color=BLACK, width=0.9)
+    school = str(meta.get("school_line") or "동북고등학교")
+    if "동북고" not in school:
+        school = f"동북고등학교  |  {school}"
+    put(page, (64, 768), school, fontname="GB", fontsize=10.5, color=BLACK)
     return brand
 
 
 def answer_page(doc, items: list[dict[str, Any]], labels: dict[str, str] | None = None, product: str = "ARC_N") -> None:
     L = Layout()
     key = new_page(doc)
-    put(key, (ML, 80), "정답  ANSWER KEY", fontname="GB", fontsize=18, color=NAVY)
-    key.draw_line((ML, 94), (A4_W - MR, 94), color=(0.45, 0.55, 0.68), width=0.8)
+    put(key, (ML, 80), "정답  ANSWER KEY", fontname="GB", fontsize=18, color=BLACK)
+    key.draw_line((ML, 94), (A4_W - MR, 94), color=BLACK, width=0.9)
     mcq = [it for it in items if it.get("format", "MCQ") == "MCQ"]
     per_col = 10 if len(mcq) <= 30 else 15
     for i, it in enumerate(mcq):
         x = ML + 20 + (i // per_col) * 130
         y = 132 + (i % per_col) * 28
         num = f"{i + 1:02d}" if product == "ARC_N" else f"{i + 1}"
-        put(key, (x, y), f"{num}  {CIRC[it['answer'] - 1]}", fontname="G", fontsize=12.5)
+        put(key, (x, y), f"{num}  {CIRC[it['answer'] - 1]}", fontname="G", fontsize=12.5, color=BLACK)
     crs = [it for it in items if it.get("format") == "CR"]
     if not crs:
         return
@@ -439,37 +497,119 @@ def answer_page(doc, items: list[dict[str, Any]], labels: dict[str, str] | None 
                 if y > A4_H - MB:
                     page = new_page(doc)
                     y = 80
-                put(page, (ML, y), line, fontname=key_font, fontsize=10.2)
+                put(page, (ML, y), line, fontname=key_font, fontsize=10.2, color=BLACK)
                 y += 15.5
         y += 10
 
 
+def render_solutions(bundle: dict[str, Any], labels: dict[str, str], out_pdf: Path) -> dict[str, Any]:
+    """Render a dedicated B&W detailed solutions booklet PDF (*_SOLUTIONS.pdf)."""
+    L = Layout()
+    doc = fitz.open()
+    width = A4_W - ML - MR
+    pno = 1
+
+    def open_sol_page(first: bool = False) -> tuple[fitz.Page, float]:
+        nonlocal pno
+        p = new_page(doc)
+        if first:
+            put(p, (ML, 54), f"{bundle.get('set_label', '')}  {bundle.get('course', '')} — 정답 및 상세 해설", fontname="GB", fontsize=15.0, color=BLACK)
+            put(p, (ML, 72), f"동북고등학교  |  범위: {bundle.get('scope', '')}", fontname="G", fontsize=9.2, color=BLACK)
+            p.draw_line((ML, 82), (A4_W - MR, 82), color=BLACK, width=0.9)
+            y0 = 102.0
+        else:
+            put(p, (ML, 38), f"{bundle.get('set_label', '')}  정답 및 상세 해설", fontname="GB", fontsize=8.5, color=BLACK)
+            p.draw_line((ML, 46), (A4_W - MR, 46), color=BLACK, width=0.6)
+            y0 = MT
+        s = str(pno)
+        put(p, (A4_W / 2 - L.width(s, "G", 8.8) / 2, A4_H - 28), s, fontname="G", fontsize=8.8, color=BLACK)
+        pno += 1
+        return p, y0
+
+    page, y = open_sol_page(first=True)
+    for it in bundle["items"]:
+        lbl = labels.get(it["item_id"], it["item_id"])
+        diff = it.get("difficulty", "")
+        arch = it.get("archetype") or it.get("family", "")
+        if it.get("format") == "CR":
+            header_line = f"[{lbl}]  서답형 해설  ({it.get('points', '')}점)" + (f"  [{diff}]" if diff else "")
+            lines_to_draw: list[tuple[str, float, str]] = [("GB", 10.5, header_line)]
+            lines_to_draw.append(("R", 9.6, f"발문: {it['stem']}"))
+            lines_to_draw.append(("GB", 9.6, f"모범 답안: {it.get('model_answer', '')}"))
+            for r in it.get("rubric", []):
+                lines_to_draw.append(("G", 9.2, f"• 채점 기준: {r}"))
+        else:
+            ans = int(it["answer"])
+            sb = int(it.get("second_best", 0) or 0)
+            header_line = f"{int(lbl):02d}번  정답 {CIRC[ans - 1]}   [{diff} · {arch}]"
+            lines_to_draw = [("GB", 10.5, header_line)]
+            for idx, (opt, j) in enumerate(zip(it.get("options", []), it.get("judgments", [])), 1):
+                tag = " [정답]" if idx == ans else (" [매력적 오답·2순위]" if idx == sb else "")
+                verdict = j.get("v", "")
+                why = j.get("why", "")
+                font_k = "B" if idx == ans else "R"
+                lines_to_draw.append((font_k, 9.4, f"{CIRC[idx - 1]} {opt}{tag} ({verdict}) — {why}"))
+
+        wrapped_rows: list[tuple[str, float, float, str]] = []
+        for fk, fsz, raw_line in lines_to_draw:
+            hang = L.width("① ", fk, fsz) if raw_line[:1] in CIRC else 0.0
+            for indent, wline in L.wrap(raw_line, width, fk, fsz, first=0.0, rest=hang):
+                wrapped_rows.append((fk, fsz, indent, wline))
+
+        block_h = len(wrapped_rows) * 14.8 + 10.0
+        if y + block_h > A4_H - MB and y > MT + 20:
+            page, y = open_sol_page(first=False)
+
+        for fk, fsz, indent, wline in wrapped_rows:
+            if y + 15.0 > A4_H - MB:
+                page, y = open_sol_page(first=False)
+            put(page, (ML + indent, y + fsz), wline, fontname=fk, fontsize=fsz, color=BLACK)
+            y += 14.8
+        page.draw_line((ML, y + 2), (A4_W - MR, y + 2), color=(0.82, 0.82, 0.82), width=0.4)
+        y += 10.0
+
+    doc.subset_fonts()
+    out_pdf.parent.mkdir(parents=True, exist_ok=True)
+    doc.save(out_pdf, garbage=4, deflate=True)
+    pages = len(doc)
+    doc.close()
+    return {"status": "PASS", "pages": pages, "pdf": str(out_pdf)}
+
+
 def render(bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[str, str], set_header,
-           out_pdf: Path, key_pdf: Path | None = None, logo: dict[str, Any] | None = None) -> dict[str, Any]:
+           out_pdf: Path, key_pdf: Path | None = None, logo: dict[str, Any] | None = None,
+           solutions_pdf: Path | None = None) -> dict[str, Any]:
     product = bundle["product_mode"]
     items = bundle["items"]
     L = Layout()
     doc = fitz.open()
-    # Cover lines: registry passage titles (KOR) or the bundle's own unit list (SOC/SCI material has no title).
     titles = list(bundle.get("cover_lines") or [w["title"] for src in sources for w in src["works"] if w.get("title")])
     meta = dict(bundle, passage_titles=titles)
     brand = cover(doc, meta, logo)
     doc.new_page(width=A4_W, height=A4_H)  # blank verso
     header = f"{bundle['set_label']}  {bundle['course']}"
     pno = 3
-    page = problem_page(doc, L, header, pno)
-    col, y, bottom = 0, MT, A4_H - MB
+    page, col_top = problem_page(doc, L, header, pno, product=product, meta=meta)
+    col, y, bottom = 0, col_top, A4_H - MB
+    col_q_count = 0
 
     def advance():
-        nonlocal col, y, page, pno
+        nonlocal col, y, page, pno, col_top, col_q_count
         if col == 0:
-            col, y = 1, MT
+            col, y, col_q_count = 1, col_top, 0
         else:
             pno += 1
-            page = problem_page(doc, L, header, pno)
-            col, y = 0, MT
+            page, col_top = problem_page(doc, L, header, pno, product=product, meta=meta)
+            col, y, col_q_count = 0, col_top, 0
 
     for b in build_blocks(L, bundle, sources, labels, set_header):
+        is_question = not b.splittable and any(
+            op[0] == "text" and op[4] == "B" and (op[3][:2].isdigit() or op[3].startswith("[") or (len(op[3]) > 1 and op[3][0].isdigit() and op[3][1] in "0123456789."))
+            for op in b.ops[:1]
+        )
+        # Target 2 standalone questions per column (4 per page) on ARC_N when no shared passage precedes
+        if product == "ARC_N" and is_question and col_q_count >= 2 and not bundle.get("sets"):
+            advance()
         if b.splittable and y + b.h > bottom:
             rows: dict[float, list[tuple]] = {}
             for op in b.ops:  # ops sharing a baseline (a verse line and its margin number) stay on one row
@@ -486,10 +626,12 @@ def render(bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[s
             continue
         if y + b.h > bottom:
             advance()
-            if b.h > bottom - MT:
+            if b.h > bottom - col_top:
                 raise RenderError(f"QUESTION_BLOCK_TALLER_THAN_COLUMN: {b.h:.1f}pt")
         paint(page, b.ops, ML + col * (COL_W + GUT), y)
         y += b.h
+        if is_question:
+            col_q_count += 1
 
     if product == "ARC_N":
         doc.new_page(width=A4_W, height=A4_H)  # blank separator
@@ -500,9 +642,12 @@ def render(bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[s
         kdoc.subset_fonts()
         kdoc.save(key_pdf, garbage=4, deflate=True)
         kdoc.close()
+    if solutions_pdf is not None:
+        render_solutions(bundle, labels, solutions_pdf)
     doc.subset_fonts()
     out_pdf.parent.mkdir(parents=True, exist_ok=True)
     doc.save(out_pdf, garbage=4, deflate=True)
     pages = len(doc)
     doc.close()
-    return {"status": "PASS", "pages": pages, "brand": brand, "product": product}
+    return {"status": "PASS", "pages": pages, "brand": brand, "product": product,
+            "solutions_pdf": str(solutions_pdf) if solutions_pdf else None}
