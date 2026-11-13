@@ -47,7 +47,7 @@ def analyze(bundle: dict, root: Path = ROOT) -> dict:
         if it.get("format", "MCQ") == "MCQ" and len(it.get("options", [])) != 5:
             fail("OPTION_COUNT", iid)
         if code == "ARC-ENG-GRM-02":
-            text = " ".join([it.get("stem", "")] + list(it.get("view", [])) + list(it.get("passage_lines", [])))
+            text = " ".join([it.get("stem", "")] + list(it.get("view", [])) + list(it.get("passage_lines", [])) + list(it.get("passage", [])))
             marks = set(UNDERLINE.findall(text))
             if len(marks) < 5:
                 fail("GRM02_UNDERLINES_SHORT", iid, marks=len(marks))

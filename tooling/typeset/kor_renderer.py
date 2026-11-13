@@ -68,10 +68,12 @@ SUPERSCRIPTS = dict(zip("⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻", "0123456789+-"))
 SUBSCRIPTS = dict(zip("₀₁₂₃₄₅₆₇₈₉₊₋", "0123456789+-"))
 SCRIPT_SCALE = 0.62
 SCRIPT_SHIFT = {"^": -0.36, "_": 0.14}  # baseline shift as a share of the font size
+# ⟦…⟧ marks an underlined span (English exam underlines: ①⟦word⟧). Markers take no width and are never printed.
+UL_OPEN, UL_CLOSE = "\u27e6", "\u27e7"
 
 
 def base_key(key: str) -> str:
-    return key.rstrip("^_")
+    return key.rstrip("^_~")
 
 
 def run_size(key: str, size: float) -> float:
@@ -85,15 +87,19 @@ def runs(text: str, key: str) -> list[tuple[str, str]]:
     if _FONTS is None:
         _FONTS = fonts()
     out: list[tuple[str, str]] = []
+    ul = ""
     for ch in text:
-        k = key
+        if ch in (UL_OPEN, UL_CLOSE):
+            ul = "~" if ch == UL_OPEN else ""
+            continue
+        k = key + ul
         if ch in SUPERSCRIPTS:
-            ch, k = SUPERSCRIPTS[ch], key + "^"
+            ch, k = SUPERSCRIPTS[ch], key + ul + "^"
         elif ch in SUBSCRIPTS:
-            ch, k = SUBSCRIPTS[ch], key + "_"
+            ch, k = SUBSCRIPTS[ch], key + ul + "_"
         elif not ch.isspace() and not _FONTS[key].has_glyph(ord(ch)):
             if "H" in _FONTS and _FONTS["H"].has_glyph(ord(ch)):
-                k = "H"
+                k = "H" + ul
             else:
                 raise RenderError(f"GLYPH_MISSING: U+{ord(ch):04X} {ch!r} (install fonts-noto-cjk or fonts-wqy-zenhei)")
         if out and out[-1][0] == k:
@@ -112,7 +118,10 @@ def put(page: fitz.Page, pos, text: str, fontname: str = "R", fontsize: float = 
         kw = {"color": color} if color is not None else {}
         dy = SCRIPT_SHIFT.get(rk[-1], 0.0) * fontsize
         page.insert_text((x, y + dy), t, fontname=k, fontsize=size, **kw)
-        x += _FONTS[k].text_length(t, fontsize=size)
+        adv = _FONTS[k].text_length(t, fontsize=size)
+        if "~" in rk:
+            page.draw_line((x, y + 1.6), (x + adv, y + 1.6), width=0.55)
+        x += adv
 
 
 class Layout:
@@ -143,7 +152,12 @@ class Layout:
             cur = word
         if cur:
             lines.append((indent, cur))
-        return [(i, t.replace("\u00a0", " ")) for i, t in lines]
+        out, carry = [], False  # an underline span that crosses a line break is closed and reopened
+        for i, t in lines:
+            t = (UL_OPEN if carry else "") + t.replace("\u00a0", " ")
+            carry = t.rfind(UL_OPEN) > t.rfind(UL_CLOSE)
+            out.append((i, t + (UL_CLOSE if carry else "")))
+        return out
 
 
 class Block:
@@ -255,12 +269,17 @@ def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "AR
     stem[0] = (0, num + stem[0][1])
     b.text(stem, key="B")
     b.h += 4
+    for para in it.get("passage", []):  # item-own passage (English variants: each item reworks the text)
+        b.text(L.wrap(para, COL_W, first=SIZE))
+        b.h += 2
+    if it.get("passage"):
+        b.h += 4
     if it.get("figure"):
         figure(L, b, it["figure"])
     if it.get("table"):
         table(L, b, it["table"])
     if it.get("view"):
-        view(L, b, it["view"])
+        view(L, b, it["view"], label=it.get("view_label", "<보 기>"))
     if it.get("format") == "CR":
         view(L, b, it["conditions"], label="<조 건>")
         top = b.h
@@ -269,7 +288,7 @@ def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "AR
         b.ops.append(("text", 5, top + SIZE + 3, "답:", "G", SIZE - 0.8))
         b.h += 16
         return b
-    labels_ = [f"{CIRC[i]} {o}" for i, o in enumerate(it["options"])]
+    labels_ = [o if o == CIRC[i] else f"{CIRC[i]} {o}" for i, o in enumerate(it["options"])]  # bare ①~⑤ for underline items
     widest = max(L.width(t) for t in labels_)
     if widest <= COL_W / 5 - 4:
         for i, t in enumerate(labels_):
@@ -314,8 +333,9 @@ def view(L: Layout, b: Block, lines: list[str], label: str = "<보 기>") -> Non
         b.h += 1
     b.h += pad - 2
     b.ops.append(("rect", 0, top + 4, COL_W, b.h))
-    lw = L.width(label, "B")
-    b.ops.append(("label", COL_W / 2 - lw / 2, top + 4, label, lw))
+    if label:  # an unlabelled box (English given sentence / summary) keeps its border closed
+        lw = L.width(label, "B")
+        b.ops.append(("label", COL_W / 2 - lw / 2, top + 4, label, lw))
     b.h += 6
 
 

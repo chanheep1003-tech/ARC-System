@@ -1,0 +1,1243 @@
+batch_id: ENG-N-NGICHUL-L1-20261113
+product_mode: ARC_N
+subject: ENG
+generator: CLAUDE
+set_label: ARC N° 영어
+course: 공통영어2
+cover_subtitle: N기출 고난도 독해 Level 1 · 3-4-1~3-6-4 · 지문당 5문항
+school_line: 동북고등학교 1학년 · 2026 2학기 기말
+created_at: '2026-11-13T21:00:00+09:00'
+scope: N기출 고난도 독해 Level 1 p78~91 (Mini 모의고사 04~06회, 28지문)
+scope_refs:
+- NGICHUL-L1-3-4-1~3-6-4
+workbook_profile: PASSAGE_5
+exam_context_id: DONGBUK_2026_2_FINAL
+sets: []
+items:
+- item_id: ENG-NG-3-4-1-1
+  set: null
+  eng_type: ARC-ENG-RDG-02
+  source_code: 3-4-1
+  scope_refs:
+  - NGICHUL-L1-3-4-1
+  stem: 밑줄 친 not 'give away the house'가 다음 글에서 의미하는 바로 가장 적절한 것은?
+  passage:
+  - 'For companies interested in delighting customers, exceptional value and service become part of the overall company culture. For example, year after year, Pazano ranks at or near the top of the hospitality industry in terms of customer satisfaction. The company''s passion for satisfying customers is summed up in its credo, which promises that its luxury hotels will deliver a truly memorable experience. Although a customer-centered firm seeks to deliver high customer satisfaction relative to competitors, it does not attempt to maximize customer satisfaction. A company can always increase customer satisfaction by lowering its price or increasing its services. But this may result in lower profits. Thus, the purpose of marketing is to generate customer value profitably. This requires a very delicate balance: the marketer must continue to generate more customer value and satisfaction but ⟦not ''give away the house''⟧.'
+  options:
+  - not sacrifice the firm's profits just to make customers happier
+  - not let competitors copy the firm's customer-centered culture
+  - not stop investing in luxurious facilities for loyal guests
+  - not let customer satisfaction fall below that of competitors
+  - not reveal the company's credo to the general public
+  answer: 1
+  second_best: 4
+  difficulty: D3
+  family: IMPLIED_MEANING
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: reading
+    c: CORRECT
+    claim: profit_kept
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: true
+    why: 가격 인하·서비스 확대로 만족도를 올리면 이익이 줄 수 있으므로, 이익을 내주지 않는다는 뜻이다.
+  - axis: reading
+    c: WEAK
+    claim: copy_culture
+    ev:
+    - PASSAGE
+    - OPTION2
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: false
+    why: 경쟁사의 모방은 글에서 다루지 않는다.
+  - axis: reading
+    c: MEDIUM
+    claim: luxury_invest
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: false
+    why: Pazano의 고급 호텔은 예시일 뿐, 시설 투자 중단과는 무관하다.
+  - axis: reading
+    c: STRONG
+    claim: relative_level
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: false
+    why: '''경쟁사 대비 높은 만족''은 추구하는 바이고, 밑줄은 그 만족을 ''이익을 버리면서까지'' 올리지 않는다는 것이다.'
+  - axis: reading
+    c: WEAK
+    claim: credo_secret
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: false
+    why: credo는 고객 만족 열정을 요약한 것이지 비밀이 아니다.
+- item_id: ENG-NG-3-4-1-2
+  set: null
+  eng_type: ARC-ENG-GRM-01
+  source_code: 3-4-1
+  scope_refs:
+  - NGICHUL-L1-3-4-1
+  stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
+  passage:
+  - 'For companies ①⟦interested⟧ in delighting customers, exceptional value and service ②⟦become⟧ part of the overall company culture. For example, year after year, Pazano ranks at or near the top of the hospitality industry in terms of customer satisfaction. The company''s passion for satisfying customers is summed up in its credo, which ③⟦promise⟧ that its luxury hotels will deliver a truly memorable experience. Although a customer-centered firm seeks to deliver high customer satisfaction relative to competitors, it does not attempt to maximize customer satisfaction. A company can always increase customer satisfaction by ④⟦lowering⟧ its price or increasing its services. But this may result in lower profits. Thus, the purpose of marketing is to generate customer value ⑤⟦profitably⟧. This requires a very delicate balance: the marketer must continue to generate more customer value and satisfaction but not ''give away the house''.'
+  options:
+  - ①
+  - ②
+  - ③
+  - ④
+  - ⑤
+  answer: 3
+  second_best: 2
+  difficulty: D3
+  family: GRAMMAR_ERROR
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  judgments:
+  - axis: reading
+    c: MEDIUM
+    claim: pp_postmodifier
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: true
+    why: companies를 뒤에서 꾸미는 과거분사(관심을 가진)이므로 맞다.
+  - axis: reading
+    c: STRONG
+    claim: plural_subject
+    ev:
+    - PASSAGE
+    - OPTION2
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: true
+    why: 주어가 value and service로 복수이므로 become이 맞다.
+  - axis: reading
+    c: CORRECT
+    claim: rel_agreement
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: false
+    why: 선행사 its credo가 단수이므로 promises로 고쳐야 한다.
+  - axis: reading
+    c: WEAK
+    claim: by_gerund
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: true
+    why: 전치사 by의 목적어 자리이므로 동명사 lowering이 맞다.
+  - axis: reading
+    c: MEDIUM
+    claim: adverb_mod
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: true
+    why: 동사 generate를 꾸미는 부사이므로 profitably가 맞다.
+- item_id: ENG-NG-3-4-1-3
+  set: null
+  eng_type: ARC-ENG-RDG-03
+  source_code: 3-4-1
+  scope_refs:
+  - NGICHUL-L1-3-4-1
+  stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
+  passage:
+  - 'For companies interested in delighting customers, ①⟦exceptional⟧ value and service become part of the overall company culture. For example, year after year, Pazano ranks at or near the top of the hospitality industry in terms of customer satisfaction. The company''s ②⟦passion⟧ for satisfying customers is summed up in its credo, which promises that its luxury hotels will deliver a truly memorable experience. Although a customer-centered firm seeks to deliver high customer satisfaction relative to competitors, it does not attempt to ③⟦maximize⟧ customer satisfaction. A company can always increase customer satisfaction by lowering its price or increasing its services. But this may result in ④⟦lower⟧ profits. Thus, the purpose of marketing is to generate customer value profitably. This requires a very ⑤⟦effortless⟧ balance: the marketer must continue to generate more customer value and satisfaction but not ''give away the house''.'
+  options:
+  - ①
+  - ②
+  - ③
+  - ④
+  - ⑤
+  answer: 5
+  second_best: 3
+  difficulty: D3
+  family: VOCAB_IN_CONTEXT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  judgments:
+  - axis: reading
+    c: WEAK
+    claim: exceptional_ok
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: true
+    why: 고객을 기쁘게 하려는 기업에서 '탁월한' 가치·서비스는 문맥에 맞다.
+  - axis: reading
+    c: WEAK
+    claim: passion_ok
+    ev:
+    - PASSAGE
+    - OPTION2
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: true
+    why: 고객 만족에 대한 '열정'이 credo에 요약된다는 흐름에 맞다.
+  - axis: reading
+    c: STRONG
+    claim: maximize_ok
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: true
+    why: 앞의 does not attempt와 함께 '극대화하려 하지는 않는다'는 핵심 대조를 이룬다.
+  - axis: reading
+    c: MEDIUM
+    claim: lower_ok
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: true
+    why: 가격 인하·서비스 확대가 '더 낮은' 이익을 낳을 수 있다는 흐름이다.
+  - axis: reading
+    c: CORRECT
+    claim: delicate_swap
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: false
+    why: 가치 창출과 이익 유지 사이의 '미묘한(delicate)' 균형이어야 하므로 effortless는 반대이다.
+- item_id: ENG-NG-3-4-1-4
+  set: null
+  eng_type: ARC-ENG-RDG-04
+  source_code: 3-4-1
+  scope_refs:
+  - NGICHUL-L1-3-4-1
+  stem: 다음 빈칸에 들어갈 말로 가장 적절한 것은?
+  passage:
+  - 'For companies interested in delighting customers, exceptional value and service become part of the overall company culture. For example, year after year, Pazano ranks at or near the top of the hospitality industry in terms of customer satisfaction. The company''s passion for satisfying customers is summed up in its credo, which promises that its luxury hotels will deliver a truly memorable experience. Although a customer-centered firm seeks to deliver high customer satisfaction relative to competitors, it does not attempt to maximize customer satisfaction. A company can always increase customer satisfaction by lowering its price or increasing its services. But this may result in lower profits. Thus, what marketing ultimately aims at is to ________________________. This requires a very delicate balance: the marketer must continue to generate more customer value and satisfaction but not ''give away the house''.'
+  options:
+  - maximize customer satisfaction regardless of the cost involved
+  - create value for customers while keeping the business profitable
+  - rank at the top of the industry in customer satisfaction
+  - lower prices so as to win customers away from competitors
+  - build a company culture centered on its employees' passion
+  answer: 2
+  second_best: 1
+  difficulty: D4
+  family: BLANK_INFERENCE
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: reading
+    c: STRONG
+    claim: maximize_trap
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: false
+    why: 글은 고객 만족을 극대화하려 하지 않는다고 했으므로 반대이다.
+  - axis: reading
+    c: CORRECT
+    claim: value_profit
+    ev:
+    - PASSAGE
+    - OPTION2
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: true
+    why: 원문 'generate customer value profitably'를 바꿔 쓴 것으로 바로 뒤 delicate balance와 이어진다.
+  - axis: reading
+    c: MEDIUM
+    claim: rank_top
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: false
+    why: Pazano의 순위는 예시일 뿐 마케팅의 목적이 아니다.
+  - axis: reading
+    c: STRONG
+    claim: lower_price
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: false
+    why: 가격 인하는 이익 감소로 이어질 수 있는 수단으로 제시되었다.
+  - axis: reading
+    c: WEAK
+    claim: employee_passion
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: false
+    why: 열정은 고객 만족에 대한 것이고 직원 중심 문화는 다루지 않는다.
+- item_id: ENG-NG-3-4-1-5
+  set: null
+  format: CR
+  eng_type: ARC-ENG-CRQ-01
+  source_code: 3-4-1
+  scope_refs:
+  - NGICHUL-L1-3-4-1
+  stem: 다음 글의 내용을 한 문장으로 요약하고자 한다. <조건>에 맞게 빈칸 (A), (B)에 들어갈 말을 쓰시오.
+  passage:
+  - 'For companies interested in delighting customers, exceptional value and service become part of the overall company culture. For example, year after year, Pazano ranks at or near the top of the hospitality industry in terms of customer satisfaction. The company''s passion for satisfying customers is summed up in its credo, which promises that its luxury hotels will deliver a truly memorable experience. Although a customer-centered firm seeks to deliver high customer satisfaction relative to competitors, it does not attempt to maximize customer satisfaction. A company can always increase customer satisfaction by lowering its price or increasing its services. But this may result in lower profits. Thus, the purpose of marketing is to generate customer value profitably. This requires a very delicate balance: the marketer must continue to generate more customer value and satisfaction but not ''give away the house''.'
+  - ''
+  - → A customer-centered firm seeks high customer satisfaction but avoids its (A)________, because the goal of marketing is the (B)________ creation of customer value.
+  conditions: &id001
+  - 본문에 있는 단어만을 사용하되 필요한 경우 어형을 변화시킬 것
+  - 요약문에 이미 언급된 단어는 사용하지 말 것
+  - 각 빈칸에 한 단어씩만 넣을 것
+  model_answer: (A) maximization  (B) profitable
+  rubric:
+  - '(A) maximize → maximization: 소유격 its 뒤 명사 자리 (2점)'
+  - '(B) profitably → profitable: 명사 creation을 꾸미는 형용사 자리 (2점)'
+  - 단어는 맞고 어형이 틀리면 해당 빈칸 1점
+  points: 4
+  difficulty: D4
+  family: SUMMARY_COMPLETION
+- item_id: ENG-NG-3-4-2-1
+  set: null
+  eng_type: ARC-ENG-RDG-01
+  source_code: 3-4-2
+  scope_refs:
+  - NGICHUL-L1-3-4-2
+  stem: 다음 글의 요지로 가장 적절한 것은?
+  passage:
+  - Post-traumatic stress syndrome became common knowledge but not the concept of post-traumatic growth, which is actually far more widespread. Most people who undergo trauma ultimately feel that the experience has made them stronger, wiser, more mature, more tolerant and understanding, or in some other way better people. The influential psychologist Martin Seligman has often lamented that so much attention is lavished on post-traumatic stress syndrome rather than post-traumatic growth because it causes people to mistakenly expect that bad events will have mainly negative effects. After being exposed to a terrifying event, at least 80 percent of people do not experience post-traumatic stress syndrome. Even though a single bad event is more powerful than a good event, over time people respond in so many constructive ways that they typically emerge more capable than ever of confronting life's challenges. Bad can make us stronger in the end.
+  options:
+  - Experts should pay more attention to post-traumatic stress syndrome.
+  - A single bad event usually has less impact on us than a good one.
+  - 외상을 겪은 사람 대부분은 전문적인 심리 치료를 받아야 한다.
+  - 외상 경험 뒤에는 부정적 영향보다 성장이 더 흔하게 나타난다.
+  - People who avoid terrifying events tend to become more mature.
+  answer: 4
+  second_best: 1
+  difficulty: D2
+  family: MAIN_IDEA
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: reading
+    c: STRONG
+    claim: more_attention_pts
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: false
+    why: Seligman은 PTSS에 관심이 쏠리는 것을 한탄했으므로 반대 진술이다.
+  - axis: reading
+    c: MEDIUM
+    claim: bad_weaker
+    ev:
+    - PASSAGE
+    - OPTION2
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: false
+    why: 글은 나쁜 사건 하나가 좋은 사건보다 더 강력하다고 했다.
+  - axis: reading
+    c: MEDIUM
+    claim: therapy_needed
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: false
+    why: 80% 이상이 PTSS를 겪지 않는다고 했으므로 맞지 않는다.
+  - axis: reading
+    c: CORRECT
+    claim: growth_common
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: true
+    why: 외상 후 성장이 훨씬 널리 퍼져 있고 결국 더 강해진다는 것이 요지이다.
+  - axis: reading
+    c: WEAK
+    claim: avoid_events
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: false
+    why: 끔찍한 사건을 피하는 사람에 대한 내용은 없다.
+- item_id: ENG-NG-3-4-2-2
+  set: null
+  eng_type: ARC-ENG-GRM-02
+  source_code: 3-4-2
+  scope_refs:
+  - NGICHUL-L1-3-4-2
+  stem: 다음 글의 밑줄 친 부분 중, 어법상 올바른 것끼리 짝지은 것은?
+  passage:
+  - Post-traumatic stress syndrome became common knowledge but not the concept of post-traumatic growth, (a)⟦which is actually far more widespread⟧. Most people who undergo trauma ultimately feel that (b)⟦the experience has made them stronger⟧, wiser, more mature, more tolerant and understanding, or in some other way better people. The influential psychologist Martin Seligman has often lamented that (c)⟦so much attention is lavishing on post-traumatic stress syndrome⟧ rather than post-traumatic growth because it causes people to mistakenly expect that bad events will have mainly negative effects. (d)⟦After exposing to a terrifying event⟧, at least 80 percent of people do not experience post-traumatic stress syndrome. Even though a single bad event is more powerful than a good event, over time people respond in so many constructive ways that (e)⟦they typically emerge more capably than ever⟧ of confronting life's challenges. (f)⟦Bad can make us stronger in the end.⟧
+  options:
+  - (a), (c), (f)
+  - (a), (b), (f)
+  - (b), (d), (e)
+  - (a), (b), (e)
+  - (c), (d), (f)
+  answer: 2
+  second_best: 4
+  difficulty: D4
+  family: GRAMMAR_CORRECT_SET
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: reading
+    c: STRONG
+    claim: set_acf
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: false
+    why: (c)는 attention이 '쏟아지는' 것이므로 수동 is lavished여야 한다.
+  - axis: reading
+    c: CORRECT
+    claim: set_abf
+    ev:
+    - PASSAGE
+    - OPTION2
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: true
+    why: (a) 선행사 the concept → is, (b) make+O+비교급 형용사, (f) make+O+형용사 보어로 모두 맞다.
+  - axis: reading
+    c: WEAK
+    claim: set_bde
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: false
+    why: (d)는 '노출되는' 것이므로 being exposed to, (e)는 emerge의 보어 형용사 capable이어야 한다.
+  - axis: reading
+    c: STRONG
+    claim: set_abe
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: false
+    why: (e) emerge 뒤는 주격 보어 형용사 자리이므로 capably는 틀리다.
+  - axis: reading
+    c: WEAK
+    claim: set_cdf
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: false
+    why: (c), (d) 모두 능동·수동 오류이다.
+  grm02_correct:
+  - a
+  - b
+  - f
+- item_id: ENG-NG-3-4-2-3
+  set: null
+  eng_type: ARC-ENG-VOC-03
+  source_code: 3-4-2
+  scope_refs:
+  - NGICHUL-L1-3-4-2
+  stem: 다음 밑줄 친 단어의 의미에 대한 설명으로 가장 적절한 것은?
+  passage:
+  - The influential psychologist Martin Seligman has often lamented that so much attention is ⟦lavished⟧ on post-traumatic stress syndrome rather than post-traumatic growth because it causes people to mistakenly expect that bad events will have mainly negative effects.
+  options:
+  - taken away slowly over a long period of time
+  - divided equally among several different people
+  - given generously or in very large amounts
+  - hidden carefully so that others cannot find it
+  - wasted on something that has no real value
+  answer: 3
+  second_best: 5
+  difficulty: D3
+  family: VOCAB_DEFINITION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: reading
+    c: WEAK
+    claim: taken_away
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: false
+    why: 반의 방향의 뜻풀이이다.
+  - axis: reading
+    c: MEDIUM
+    claim: divided
+    ev:
+    - PASSAGE
+    - OPTION2
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: false
+    why: '''나누다''는 lavish의 뜻이 아니다.'
+  - axis: reading
+    c: CORRECT
+    claim: given_generously
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: true
+    why: 'be lavished on: ~에 아낌없이(넘치도록) 쏟아지다.'
+  - axis: reading
+    c: WEAK
+    claim: hidden
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: false
+    why: 문맥(관심이 PTSS에 쏠림)과 반대이다.
+  - axis: reading
+    c: STRONG
+    claim: wasted
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: false
+    why: lavish의 '헤픈' 어감에 끌린 오답으로, 이 문장은 '많이 쏟아진다'는 뜻이다.
+- item_id: ENG-NG-3-4-2-4
+  set: null
+  eng_type: ARC-ENG-RDG-07
+  source_code: 3-4-2
+  scope_refs:
+  - NGICHUL-L1-3-4-2
+  stem: 글의 흐름으로 보아, 주어진 문장이 들어가기에 가장 적절한 곳은?
+  passage:
+  - Post-traumatic stress syndrome became common knowledge but not the concept of post-traumatic growth, which is actually far more widespread. ( ① ) Most people who undergo trauma ultimately feel that the experience has made them stronger, wiser, more mature, more tolerant and understanding, or in some other way better people. ( ② ) The influential psychologist Martin Seligman has often lamented that so much attention is lavished on post-traumatic stress syndrome rather than post-traumatic growth because it causes people to mistakenly expect that bad events will have mainly negative effects. ( ③ ) Even though a single bad event is more powerful than a good event, over time people respond in so many constructive ways that they typically emerge more capable than ever of confronting life's challenges. ( ④ ) Bad can make us stronger in the end. ( ⑤ )
+  options:
+  - ①
+  - ②
+  - ③
+  - ④
+  - ⑤
+  answer: 3
+  second_best: 2
+  difficulty: D4
+  family: SENTENCE_INSERTION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: reading
+    c: STRONG
+    claim: after_s1
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: false
+    why: ①의 앞 문장은 PTG로 끝나 it이 PTG를 가리키게 되어 'PTG를 겪지 않는다'는 모순이 된다.
+  - axis: reading
+    c: STRONG
+    claim: after_s2
+    ev:
+    - PASSAGE
+    - OPTION2
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: false
+    why: ②는 성장 사례 뒤라 it이 가리킬 PTSS가 없고 Seligman 문장으로 이어지는 흐름도 끊긴다.
+  - axis: reading
+    c: CORRECT
+    claim: after_s3
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: true
+    why: PTSS에 과도한 관심이 쏠려 나쁜 사건의 부정적 효과를 기대한다는 오해 뒤에, In fact로 반박 수치를 제시한다.
+  - axis: reading
+    c: MEDIUM
+    claim: after_s5
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: false
+    why: ④ 앞은 life's challenges로 끝나 it이 가리킬 대상이 맞지 않는다.
+  - axis: reading
+    c: WEAK
+    claim: after_s6
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: false
+    why: 결론 문장 뒤에 근거 수치가 올 수 없다.
+  view:
+  - In fact, at least 80 percent of people who are exposed to a terrifying event do not experience it.
+  view_label: ''
+- item_id: ENG-NG-3-4-2-5
+  set: null
+  format: CR
+  eng_type: ARC-ENG-CRQ-03
+  source_code: 3-4-2
+  scope_refs:
+  - NGICHUL-L1-3-4-2
+  stem: 다음 글의 빈칸에 들어갈 말을 <보기>의 어구를 모두 배열하여 완성하시오.
+  passage:
+  - Post-traumatic stress syndrome became common knowledge but not the concept of post-traumatic growth, which is actually far more widespread. Most people who undergo trauma ultimately feel that the experience has made them stronger, wiser, more mature, more tolerant and understanding, or in some other way better people. The influential psychologist Martin Seligman has often lamented that so much attention is lavished on post-traumatic stress syndrome rather than post-traumatic growth because it causes people to mistakenly expect that bad events will have mainly negative effects. After being exposed to a terrifying event, at least 80 percent of people do not experience post-traumatic stress syndrome. Even though a single bad event is more powerful than a good event, over time people ________________________________________ of confronting life's challenges. Bad can make us stronger in the end.
+  conditions:
+  - <보기>의 어구를 모두 한 번씩만 사용할 것
+  - 어구의 형태를 바꾸지 말 것
+  model_answer: respond in so many constructive ways that they typically emerge more capable than ever
+  rubric:
+  - so ~ that 구조(so many constructive ways that)와 emerge + 형용사 보어 어순이 모두 맞으면 5점
+  - so ~ that 구조는 맞으나 typically 위치 또는 more capable than ever 어순 오류 1개 3점
+  - 그 외 0점
+  points: 5
+  difficulty: D3
+  family: STRUCTURE_RELATION
+  view:
+  - typically / that / respond in / emerge / they / so many / constructive ways / more capable than ever
+  view_label: <보 기>
+- item_id: ENG-NG-3-4-3-1
+  set: null
+  eng_type: ARC-ENG-RDG-08
+  source_code: 3-4-3
+  scope_refs:
+  - NGICHUL-L1-3-4-3
+  stem: 다음 글의 내용과 일치하지 않는 것은?
+  passage:
+  - While moving is difficult for everyone, it is particularly stressful for children. They lose their sense of security and may feel disoriented when their routine is disrupted and all that is familiar is taken away. Young children, ages 3-6, are particularly affected by a move. Their understanding at this stage is quite literal, and it is difficult for them to imagine beforehand a new home and their new room. Young children may have worries such as "Will I still be me in the new place?" and "Will my toys and bed come with us?" It is important to establish a balance between validating children's past experiences and focusing on helping them adjust to the new place. Children need to have opportunities to share their backgrounds in a way that respects their past as an important part of who they are. This contributes to building a sense of community, which is essential for all children, especially those in transition.
+  options:
+  - 이사는 모든 사람에게 어렵지만 아이들에게 특히 스트레스가 된다.
+  - 일상이 깨지면 아이들은 안정감을 잃고 혼란을 느낄 수 있다.
+  - 3~6세 아이들은 새집과 새 방을 미리 상상하는 것을 어려워한다.
+  - 아이들의 과거 경험보다 새 환경 적응을 돕는 데 집중해야 한다.
+  - 자신의 배경을 나눌 기회는 공동체 의식 형성에 도움이 된다.
+  answer: 4
+  second_best: 3
+  difficulty: D3
+  family: CONTENT_UNDERSTANDING
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  judgments:
+  - axis: reading
+    c: WEAK
+    claim: stress_children
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: true
+    why: 1문장과 일치한다.
+  - axis: reading
+    c: MEDIUM
+    claim: lose_security
+    ev:
+    - PASSAGE
+    - OPTION2
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: true
+    why: 2문장과 일치한다.
+  - axis: reading
+    c: STRONG
+    claim: literal_age
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: true
+    why: 4문장(이해가 문자 그대로라 미리 상상하기 어렵다)과 일치한다.
+  - axis: reading
+    c: CORRECT
+    claim: balance_flip
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: false
+    why: 과거 경험 인정과 적응 지원 사이의 '균형'이 중요하다고 했으므로 일치하지 않는다.
+  - axis: reading
+    c: MEDIUM
+    claim: community
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: true
+    why: 마지막 문장과 일치한다.
+- item_id: ENG-NG-3-4-3-2
+  set: null
+  eng_type: ARC-ENG-GRM-01
+  source_code: 3-4-3
+  scope_refs:
+  - NGICHUL-L1-3-4-3
+  stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
+  passage:
+  - While moving is difficult for everyone, it is particularly stressful for children. They lose their sense of security and may feel ①⟦disoriented⟧ when their routine is disrupted and all that is familiar ②⟦is taken away⟧. Young children, ages 3-6, are particularly ③⟦affected⟧ by a move. Their understanding at this stage is quite literal, and it is difficult for them ④⟦to imagine⟧ beforehand a new home and their new room. Young children may have worries such as "Will I still be me in the new place?" and "Will my toys and bed come with us?" It is important to establish a balance between validating children's past experiences and focusing on helping them adjust to the new place. Children need to have opportunities to share their backgrounds in a way that respects their past as an important part of who they are. This contributes to building a sense of community, ⑤⟦what is essential⟧ for all children, especially those in transition.
+  options:
+  - ①
+  - ②
+  - ③
+  - ④
+  - ⑤
+  answer: 5
+  second_best: 2
+  difficulty: D3
+  family: GRAMMAR_ERROR
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  judgments:
+  - axis: reading
+    c: MEDIUM
+    claim: feel_pp
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: true
+    why: feel의 보어로 '혼란스러운' 상태를 나타내는 과거분사이다.
+  - axis: reading
+    c: STRONG
+    claim: all_that_singular
+    ev:
+    - PASSAGE
+    - OPTION2
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: true
+    why: all that is familiar(익숙한 모든 것)는 단수 취급하므로 is가 맞다.
+  - axis: reading
+    c: MEDIUM
+    claim: passive_affected
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: true
+    why: 아이들이 '영향을 받는' 것이므로 수동이 맞다.
+  - axis: reading
+    c: WEAK
+    claim: it_for_to
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: true
+    why: 가주어 it - 진주어 to부정사 구조이다.
+  - axis: reading
+    c: CORRECT
+    claim: what_vs_which
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: false
+    why: 앞 절의 a sense of community를 받는 계속적 용법이므로 which여야 한다. what은 선행사를 포함한다.
+- item_id: ENG-NG-3-4-3-3
+  set: null
+  eng_type: ARC-ENG-VOC-04
+  source_code: 3-4-3
+  scope_refs:
+  - NGICHUL-L1-3-4-3
+  stem: 주어진 문장에서 밑줄 친 단어와 가장 비슷한 뜻을 가진 단어를 고르시오.
+  passage:
+  - It is important to establish a balance between ⟦validating⟧ children's past experiences and focusing on helping them adjust to the new place.
+  options:
+  - evaluating
+  - acknowledging
+  - overlooking
+  - questioning
+  - abandoning
+  answer: 2
+  second_best: 1
+  difficulty: D3
+  family: VOCAB_SYNONYM
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: reading
+    c: STRONG
+    claim: evaluating
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: false
+    why: 철자(val-)가 비슷한 혼동어로, '평가하다'는 '인정하다'와 다르다.
+  - axis: reading
+    c: CORRECT
+    claim: acknowledging
+    ev:
+    - PASSAGE
+    - OPTION2
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: true
+    why: 'validate: (가치·타당성을) 인정하다 = acknowledge.'
+  - axis: reading
+    c: WEAK
+    claim: overlooking
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: false
+    why: 반의어(못 본 체하다)이다.
+  - axis: reading
+    c: MEDIUM
+    claim: questioning
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: false
+    why: 타당성을 의심한다는 뜻으로 반대 방향이다.
+  - axis: reading
+    c: WEAK
+    claim: abandoning
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: false
+    why: 과거를 버린다는 뜻이 되어 균형과 맞지 않는다.
+- item_id: ENG-NG-3-4-3-4
+  set: null
+  eng_type: ARC-ENG-RDG-05
+  source_code: 3-4-3
+  scope_refs:
+  - NGICHUL-L1-3-4-3
+  stem: 다음 글에서 전체 흐름과 관계 없는 문장은?
+  passage:
+  - While moving is difficult for everyone, it is particularly stressful for children. They lose their sense of security and may feel disoriented when their routine is disrupted and all that is familiar is taken away. Young children, ages 3-6, are particularly affected by a move. ① Their understanding at this stage is quite literal, and it is difficult for them to imagine beforehand a new home and their new room. ② Young children may have worries such as "Will I still be me in the new place?" and "Will my toys and bed come with us?" ③ It is important to establish a balance between validating children's past experiences and focusing on helping them adjust to the new place. ④ Many families find that a new place with a bigger yard gives their children more room to play outside. ⑤ Children need to have opportunities to share their backgrounds in a way that respects their past as an important part of who they are. This contributes to building a sense of community, which is essential for all children, especially those in transition.
+  options:
+  - ①
+  - ②
+  - ③
+  - ④
+  - ⑤
+  answer: 4
+  second_best: 2
+  difficulty: D3
+  family: IRRELEVANT_SENTENCE
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  judgments:
+  - axis: reading
+    c: WEAK
+    claim: literal
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: true
+    why: 어린아이의 문자 그대로의 이해를 설명한다.
+  - axis: reading
+    c: STRONG
+    claim: worries
+    ev:
+    - PASSAGE
+    - OPTION2
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: true
+    why: 그 이해에서 나오는 걱정의 예시로 이어진다.
+  - axis: reading
+    c: MEDIUM
+    claim: balance
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: true
+    why: 걱정에 대한 대응 원칙(균형)을 제시한다.
+  - axis: reading
+    c: CORRECT
+    claim: yard_drift
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: false
+    why: new place를 그대로 쓰지만 아이의 심리적 적응이 아니라 집의 물리적 장점으로 논점이 벗어난다.
+  - axis: reading
+    c: MEDIUM
+    claim: share_background
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: true
+    why: 균형의 한 축(과거 존중)을 구체화한다.
+- item_id: ENG-NG-3-4-3-5
+  set: null
+  format: CR
+  eng_type: ARC-ENG-CRQ-02
+  source_code: 3-4-3
+  scope_refs:
+  - NGICHUL-L1-3-4-3
+  stem: 다음 글의 빈칸 (A)~(C)에 주어진 철자로 시작하는 단어를 영영풀이에 맞게 쓰시오. (단, 빈칸의 문법 자리에 맞게 어형을 바꿀 것)
+  passage:
+  - While moving is difficult for everyone, it is particularly stressful for children. They lose their sense of security and may feel (A) d__________ when their routine is disrupted and all that is familiar is taken away. Young children, ages 3-6, are particularly affected by a move. Their understanding at this stage is quite literal, and it is difficult for them to imagine beforehand a new home and their new room. Young children may have worries such as "Will I still be me in the new place?" and "Will my toys and bed come with us?" It is important to establish a balance between (B) v__________ children's past experiences and focusing on helping them adjust to the new place. Children need to have opportunities to share their backgrounds in a way that respects their past as an important part of who they are. This contributes to building a sense of community, which is essential for all children, especially those in (C) t__________.
+  conditions:
+  - 영영풀이는 원형(기본형)을 기준으로 주어졌다
+  - 빈칸의 문법 자리에 맞게 어형을 바꾸어 쓸 것
+  model_answer: (A) disoriented  (B) validating  (C) transition
+  rubric:
+  - 각 2점
+  - (A) disorient, (B) validate처럼 원형 그대로 쓰면 해당 빈칸 1점
+  - 철자 오류는 0점
+  points: 6
+  difficulty: D3
+  family: VOCAB_DEFINITION
+  view:
+  - (A) to make someone lose their sense of direction or feel confused
+  - (B) to recognize or confirm that something is worthy, true, or important
+  - (C) the process of changing from one state, place, or condition to another
+  view_label: <영영풀이>
+- item_id: ENG-NG-3-4-4-1
+  set: null
+  eng_type: ARC-ENG-RDG-01
+  source_code: 3-4-4
+  scope_refs:
+  - NGICHUL-L1-3-4-4
+  stem: 다음 글의 제목으로 가장 적절한 것은?
+  passage:
+  - Our skin conducts electricity more or less efficiently, depending on our emotions. We know that when we're emotionally stimulated—stressed, sad, any intense emotion, really—our bodies sweat a tiny bit, so little we might not even notice. And when those tiny drops of sweat appear, our skin gets more electrically conductive. This change in sweat gland activity happens completely without your conscious mind having much say in the matter. If you feel emotionally intense, you're going to notice an increase in sweat gland activity. This is particularly useful from a scientific viewpoint, because it allows us to put an objective value on a subjective state of mind. We can actually measure your emotional state by tracking how your body subconsciously sweats, by running a bit of electricity through your skin. We can then turn the subjective, subconscious experience of emotional intensity into an objective number by figuring out how good your skin gets at transferring an electrical current.
+  options:
+  - How to Control Your Emotions by Reducing Sweat
+  - 'The Conscious Mind: Master of the Body''s Reactions'
+  - 'Skin as a Meter: Turning Feelings into Numbers'
+  - Why Electricity Is Harmful to Human Skin
+  - 'Subjective Feelings: Something Science Can Never Measure'
+  answer: 3
+  second_best: 1
+  difficulty: D3
+  family: MAIN_IDEA
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: reading
+    c: STRONG
+    claim: control_sweat
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-4-4
+    v: false
+    why: 땀을 줄여 감정을 조절하는 방법은 다루지 않는다(땀은 무의식적으로 나온다).
+  - axis: reading
+    c: MEDIUM
+    claim: conscious_master
+    ev:
+    - PASSAGE
+    - OPTION2
+    - SCOPE:NGICHUL-L1-3-4-4
+    v: false
+    why: 의식은 이 변화에 거의 관여하지 않는다고 했으므로 반대이다.
+  - axis: reading
+    c: CORRECT
+    claim: skin_numbers
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-4-4
+    v: true
+    why: 피부 전도도로 주관적 감정 상태를 객관적 수치로 바꾼다는 글 전체를 담는다.
+  - axis: reading
+    c: WEAK
+    claim: electric_harm
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-4
+    v: false
+    why: 전류의 해로움은 다루지 않는다.
+  - axis: reading
+    c: MEDIUM
+    claim: never_measure
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-4
+    v: false
+    why: 측정할 수 있다는 글의 주장과 반대이다.
+- item_id: ENG-NG-3-4-4-2
+  set: null
+  eng_type: ARC-ENG-GRM-01
+  source_code: 3-4-4
+  scope_refs:
+  - NGICHUL-L1-3-4-4
+  stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
+  passage:
+  - Our skin conducts electricity more or less ①⟦efficient⟧, depending on our emotions. We know that when we're emotionally stimulated—stressed, sad, any intense emotion, really—our bodies sweat a tiny bit, so little we might not even notice. And when those tiny drops of sweat appear, our skin gets more electrically ②⟦conductive⟧. This change in sweat gland activity happens completely without your conscious mind ③⟦having⟧ much say in the matter. If you feel emotionally intense, you're going to notice an increase in sweat gland activity. This is particularly useful from a scientific viewpoint, because it allows us ④⟦to put⟧ an objective value on a subjective state of mind. We can actually measure your emotional state by tracking how your body subconsciously sweats, by running a bit of electricity through your skin. We can then turn the subjective, subconscious experience of emotional intensity into an objective number by figuring out how good your skin gets at ⑤⟦transferring⟧ an electrical current.
+  options:
+  - ①
+  - ②
+  - ③
+  - ④
+  - ⑤
+  answer: 1
+  second_best: 3
+  difficulty: D3
+  family: GRAMMAR_ERROR
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  judgments:
+  - axis: reading
+    c: CORRECT
+    claim: adverb_verb
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-4-4
+    v: false
+    why: 동사 conducts를 꾸미므로 부사 efficiently여야 한다(more or less는 정도 표현).
+  - axis: reading
+    c: STRONG
+    claim: gets_adj
+    ev:
+    - PASSAGE
+    - OPTION2
+    - SCOPE:NGICHUL-L1-3-4-4
+    v: true
+    why: gets의 보어 형용사이고 electrically가 그것을 꾸민다.
+  - axis: reading
+    c: STRONG
+    claim: gerund_subject
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-4-4
+    v: true
+    why: 전치사 without의 목적어인 동명사 having, your conscious mind는 그 의미상 주어이다.
+  - axis: reading
+    c: WEAK
+    claim: allow_to
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-4
+    v: true
+    why: allow + O + to-v 구조이다.
+  - axis: reading
+    c: WEAK
+    claim: at_gerund
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-4
+    v: true
+    why: 전치사 at의 목적어인 동명사이다.
+- item_id: ENG-NG-3-4-4-3
+  set: null
+  eng_type: ARC-ENG-RDG-03
+  source_code: 3-4-4
+  scope_refs:
+  - NGICHUL-L1-3-4-4
+  stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
+  passage:
+  - Our skin conducts electricity more or less efficiently, depending on our emotions. We know that when we're emotionally stimulated—stressed, sad, any ①⟦intense⟧ emotion, really—our bodies sweat a tiny bit, so little we might not even notice. And when those tiny drops of sweat appear, our skin gets more electrically ②⟦conductive⟧. This change in sweat gland activity happens completely without your ③⟦conscious⟧ mind having much say in the matter. If you feel emotionally intense, you're going to notice an increase in sweat gland activity. This is particularly useful from a scientific viewpoint, because it allows us to put an ④⟦objective⟧ value on a subjective state of mind. We can actually measure your emotional state by tracking how your body ⑤⟦consciously⟧ sweats, by running a bit of electricity through your skin. We can then turn the subjective, subconscious experience of emotional intensity into an objective number by figuring out how good your skin gets at transferring an electrical current.
+  options:
+  - ①
+  - ②
+  - ③
+  - ④
+  - ⑤
+  answer: 5
+  second_best: 3
+  difficulty: D4
+  family: VOCAB_IN_CONTEXT
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  judgments:
+  - axis: reading
+    c: WEAK
+    claim: intense_ok
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-4-4
+    v: true
+    why: stressed, sad처럼 '강렬한' 감정의 예시와 맞다.
+  - axis: reading
+    c: MEDIUM
+    claim: conductive_ok
+    ev:
+    - PASSAGE
+    - OPTION2
+    - SCOPE:NGICHUL-L1-3-4-4
+    v: true
+    why: 땀이 나면 피부가 전기를 더 잘 통하게 된다.
+  - axis: reading
+    c: STRONG
+    claim: conscious_ok
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-4-4
+    v: true
+    why: 변화가 의식의 관여 '없이' 일어난다는 문장이므로 conscious가 맞다(without과 함께 읽어야 한다).
+  - axis: reading
+    c: STRONG
+    claim: objective_ok
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-4
+    v: true
+    why: 주관적 상태에 '객관적' 값을 매긴다는 대조이다.
+  - axis: reading
+    c: CORRECT
+    claim: subconscious_swap
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-4
+    v: false
+    why: 앞에서 땀샘 활동은 의식 없이 일어난다고 했으므로 몸이 '무의식적으로' 땀을 흘리는 것을 추적해야 한다.
+- item_id: ENG-NG-3-4-4-4
+  set: null
+  eng_type: ARC-ENG-RDG-09
+  source_code: 3-4-4
+  scope_refs:
+  - NGICHUL-L1-3-4-4
+  stem: 다음 글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?
+  passage:
+  - Our skin conducts electricity more or less efficiently, depending on our emotions. We know that when we're emotionally stimulated—stressed, sad, any intense emotion, really—our bodies sweat a tiny bit, so little we might not even notice. And when those tiny drops of sweat appear, our skin gets more electrically conductive. This change in sweat gland activity happens completely without your conscious mind having much say in the matter. If you feel emotionally intense, you're going to notice an increase in sweat gland activity. This is particularly useful from a scientific viewpoint, because it allows us to put an objective value on a subjective state of mind. We can actually measure your emotional state by tracking how your body subconsciously sweats, by running a bit of electricity through your skin. We can then turn the subjective, subconscious experience of emotional intensity into an objective number by figuring out how good your skin gets at transferring an electrical current.
+  options:
+  - deliberately …… subjective
+  - involuntarily …… collective
+  - gradually …… temporary
+  - involuntarily …… subjective
+  - deliberately …… shared
+  answer: 4
+  second_best: 1
+  difficulty: D3
+  family: SUMMARY_COMPLETION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: reading
+    c: STRONG
+    claim: deliberate_subj
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-4-4
+    v: false
+    why: (B)는 맞지만 땀샘 활동은 의식의 관여 없이 일어나므로 (A)가 틀리다.
+  - axis: reading
+    c: MEDIUM
+    claim: invol_collective
+    ev:
+    - PASSAGE
+    - OPTION2
+    - SCOPE:NGICHUL-L1-3-4-4
+    v: false
+    why: (A)는 맞지만 측정 대상은 한 개인의 주관적 상태이다.
+  - axis: reading
+    c: WEAK
+    claim: gradual_temp
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-4-4
+    v: false
+    why: 변화 속도나 일시성은 글의 논점이 아니다.
+  - axis: reading
+    c: CORRECT
+    claim: invol_subj
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-4
+    v: true
+    why: 의식과 무관하게(involuntarily) 일어나는 땀 변화로 주관적(subjective) 감정을 수치화한다.
+  - axis: reading
+    c: WEAK
+    claim: deliberate_shared
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-4
+    v: false
+    why: 두 빈칸 모두 글과 맞지 않는다.
+  view:
+  - Because sweat gland activity changes (A) ________ with our emotions, measuring how well our skin conducts electricity lets scientists express a (B) ________ feeling as an objective number.
+  view_label: ''
+- item_id: ENG-NG-3-4-4-5
+  set: null
+  format: CR
+  eng_type: ARC-ENG-CRQ-01
+  source_code: 3-4-4
+  scope_refs:
+  - NGICHUL-L1-3-4-4
+  stem: 다음 글의 내용을 한 문장으로 요약하고자 한다. <조건>에 맞게 빈칸 (A), (B)에 들어갈 말을 쓰시오.
+  passage:
+  - Our skin conducts electricity more or less efficiently, depending on our emotions. We know that when we're emotionally stimulated—stressed, sad, any intense emotion, really—our bodies sweat a tiny bit, so little we might not even notice. And when those tiny drops of sweat appear, our skin gets more electrically conductive. This change in sweat gland activity happens completely without your conscious mind having much say in the matter. If you feel emotionally intense, you're going to notice an increase in sweat gland activity. This is particularly useful from a scientific viewpoint, because it allows us to put an objective value on a subjective state of mind. We can actually measure your emotional state by tracking how your body subconsciously sweats, by running a bit of electricity through your skin. We can then turn the subjective, subconscious experience of emotional intensity into an objective number by figuring out how good your skin gets at transferring an electrical current.
+  - ''
+  - → Since emotional stimulation makes us sweat without our awareness and thus raises our skin's electrical (A)________, scientists can achieve the (B)________ of a subjective state as an objective number.
+  conditions: *id001
+  model_answer: (A) conductivity  (B) measurement
+  rubric:
+  - '(A) conducts/conductive → conductivity: 소유격 skin''s electrical 뒤 명사 자리 (2점)'
+  - '(B) measure → measurement: 관사 the 뒤 명사 자리 (2점)'
+  - 단어는 맞고 어형이 틀리면 해당 빈칸 1점
+  points: 4
+  difficulty: D4
+  family: SUMMARY_COMPLETION
+  accepted_variants:
+  - (A) conductance
