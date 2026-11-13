@@ -1,0 +1,309 @@
+fixture_id: ENG-FINAL-CANARY-V1
+source_mode: SYNTHETIC_PIPELINE_ONLY
+purpose: Deterministic ENG ARC_FINAL 10-item E2E plus difficulty, distractor, answer-length and PDF regression.
+content_bundle:
+  batch_id: ENG-FINAL-CANARY-001
+  generator: CLAUDE
+  product_mode: ARC_FINAL
+  subject: ENG
+  scope: registered scope signals; synthetic structural fixture only
+  item_count: 10
+  created_at: '2026-11-13T12:00:00+09:00'
+  qa_evidence_filename: ARC_QA_EVIDENCE_ENG_FINAL_CANARY_001.yaml
+  student_manuscript: '## QUESTION 1
+
+    Which phrase best completes a sentence about a reader lost in a novel?
+
+    1) absorbed in the story 2) distracted by the story 3) exhausted from the story 4) convinced of the story 5) frustrated at the story
+
+
+    ## QUESTION 2
+
+    Two sentences share one blank. What must the shared word satisfy?
+
+    1) The meaning of the first one only. 2) The meaning and form of both. 3) The spelling of a similar word. 4) The length of the longer sentence. 5) The position of the blank alone.
+
+
+    ## QUESTION 3
+
+    An underlined word is defined in English. Which definition fits?
+
+    1) The one built from its prefix alone. 2) The one for its opposite meaning. 3) The one that fits this context. 4) The one from another context. 5) The one with the longest wording.
+
+
+    ## QUESTION 4
+
+    A subject is separated from its verb by a long clause. What is checked?
+
+    1) The noun closest to the verb. 2) The tense of the relative clause. 3) The number of modifiers used. 4) The head noun of the subject. 5) The article before the verb.
+
+
+    ## QUESTION 5
+
+    Whole sentences are underlined for grammar. What must a solver do?
+
+    1) Find the error inside each one. 2) Trust the first underlined one. 3) Count the words in each one. 4) Skip the longest underlined one. 5) Compare only the final words.
+
+
+    ## QUESTION 6
+
+    A blank repeats the main idea in other words. Which choice is right?
+
+    1) The one copying a passage noun. 2) The one restating the main idea. 3) The one adding an outside fact. 4) The one reversing the conclusion. 5) The one naming a minor detail.
+
+
+    ## QUESTION 7
+
+    A sentence begins with However. Where does it most likely belong?
+
+    1) Before the main topic is introduced. 2) After a similar supporting idea. 3) After the idea it contrasts with. 4) At the very end of the passage. 5) Before any claim has been made.
+
+
+    ## QUESTION 8
+
+    One sentence shares a key word but breaks the flow. How is it found?
+
+    1) By its length in the paragraph. 2) By its position near the start. 3) By its use of a familiar noun. 4) By its drift from the argument. 5) By its number of long clauses.
+
+
+    ## QUESTION 9
+
+    A summary needs a noun but the passage has an adjective. What is done?
+
+    1) Change the word to a noun form. 2) Copy the adjective as it stands. 3) Choose a word from outside it. 4) Leave the summary blank empty. 5) Use the adjective twice instead.
+
+
+    ## QUESTION 10
+
+    Chunks must be arranged into one sentence. What decides the order?
+
+    1) The length of each given chunk. 2) The grammar linking the chunks. 3) The order they were listed in. 4) The first letter of each chunk. 5) The number of chunks provided.'
+  answer_key:
+    1: 1
+    2: 2
+    3: 3
+    4: 4
+    5: 1
+    6: 2
+    7: 3
+    8: 4
+    9: 1
+    10: 2
+  visual_asset_manifest: []
+  qc_status:
+    STATUS: PASS
+    SOURCE_MODE: SYNTHETIC_PIPELINE_ONLY
+final_quality_profile:
+  product_mode: ARC_FINAL
+  item_count: 10
+  items:
+  - item_id: ENG-FINAL-CANARY-001
+    actual_difficulty: D2
+    reasoning_steps: 1
+    evidence_count: 1
+    strong_distractor_count: 1
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 1
+    second_best_option: 2
+    second_best_refutation: Option 2 omits a condition required by the stem.
+    option_lengths_chars:
+    - 21
+    - 23
+    - 24
+    - 22
+    - 23
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_STANDARD
+    expected_time_class: SHORT
+  - item_id: ENG-FINAL-CANARY-002
+    actual_difficulty: D3
+    reasoning_steps: 2
+    evidence_count: 1
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 2
+    second_best_option: 3
+    second_best_refutation: Option 3 omits a condition required by the stem.
+    option_lengths_chars:
+    - 34
+    - 29
+    - 31
+    - 34
+    - 32
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_STANDARD
+    expected_time_class: STANDARD
+  - item_id: ENG-FINAL-CANARY-003
+    actual_difficulty: D3
+    reasoning_steps: 2
+    evidence_count: 1
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 3
+    second_best_option: 4
+    second_best_refutation: Option 4 omits a condition required by the stem.
+    option_lengths_chars:
+    - 36
+    - 33
+    - 31
+    - 29
+    - 33
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_STANDARD
+    expected_time_class: STANDARD
+  - item_id: ENG-FINAL-CANARY-004
+    actual_difficulty: D3
+    reasoning_steps: 2
+    evidence_count: 1
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 4
+    second_best_option: 5
+    second_best_refutation: Option 5 omits a condition required by the stem.
+    option_lengths_chars:
+    - 29
+    - 33
+    - 29
+    - 29
+    - 28
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_STANDARD
+    expected_time_class: STANDARD
+  - item_id: ENG-FINAL-CANARY-005
+    actual_difficulty: D3
+    reasoning_steps: 2
+    evidence_count: 1
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 1
+    second_best_option: 2
+    second_best_refutation: Option 2 omits a condition required by the stem.
+    option_lengths_chars:
+    - 31
+    - 31
+    - 28
+    - 32
+    - 29
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_STANDARD
+    expected_time_class: STANDARD
+  - item_id: ENG-FINAL-CANARY-006
+    actual_difficulty: D3
+    reasoning_steps: 2
+    evidence_count: 1
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 2
+    second_best_option: 3
+    second_best_refutation: Option 3 omits a condition required by the stem.
+    option_lengths_chars:
+    - 31
+    - 32
+    - 31
+    - 33
+    - 30
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_UPPER
+    expected_time_class: STANDARD
+  - item_id: ENG-FINAL-CANARY-007
+    actual_difficulty: D4
+    reasoning_steps: 2
+    evidence_count: 2
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 3
+    second_best_option: 4
+    second_best_refutation: Option 4 omits a condition required by the stem.
+    option_lengths_chars:
+    - 36
+    - 32
+    - 33
+    - 31
+    - 31
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_UPPER
+    expected_time_class: STANDARD
+  - item_id: ENG-FINAL-CANARY-008
+    actual_difficulty: D4
+    reasoning_steps: 2
+    evidence_count: 2
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 4
+    second_best_option: 5
+    second_best_refutation: Option 5 omits a condition required by the stem.
+    option_lengths_chars:
+    - 31
+    - 31
+    - 30
+    - 31
+    - 30
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_UPPER
+    expected_time_class: LONG
+  - item_id: ENG-FINAL-CANARY-009
+    actual_difficulty: D4
+    reasoning_steps: 2
+    evidence_count: 2
+    strong_distractor_count: 2
+    effective_choice_count: 4
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 2
+    correct_option: 1
+    second_best_option: 2
+    second_best_refutation: Option 2 omits a condition required by the stem.
+    option_lengths_chars:
+    - 31
+    - 32
+    - 30
+    - 30
+    - 32
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: SCHOOL_UPPER
+    expected_time_class: STANDARD
+  - item_id: ENG-FINAL-CANARY-010
+    actual_difficulty: D5
+    reasoning_steps: 3
+    evidence_count: 2
+    strong_distractor_count: 2
+    effective_choice_count: 5
+    first_pass_plausible_candidates: 3
+    immediate_elimination_count: 1
+    correct_option: 2
+    second_best_option: 3
+    second_best_refutation: Option 3 omits a condition required by the stem.
+    option_lengths_chars:
+    - 31
+    - 31
+    - 30
+    - 31
+    - 30
+    correct_detail_outlier: false
+    length_justified: false
+    school_relative: ABOVE_SCHOOL
+    expected_time_class: LONG

@@ -126,8 +126,8 @@ def main() -> int:
         exam = exams.get(runtime.get("active_exam_id")) if isinstance(exams, dict) else None
         if not isinstance(exam, dict) or exam.get("status") not in {"PREPARING", "ACTIVE"} or exam.get("inherit_midterm_scope") is not False:
             errors.append("active exam must exist, be preparing/active, and forbid inherited midterm scope")
-        elif not isinstance(exam.get("subjects"), dict) or set(exam["subjects"]) != {"KOR", "SOC", "SCI", "HIS", "AI"}:
-            errors.append("active exam must explicitly register all five subject configurations")
+        elif not isinstance(exam.get("subjects"), dict) or set(exam["subjects"]) != {"KOR", "ENG", "SOC", "SCI", "HIS", "AI"}:
+            errors.append("active exam must explicitly register all six subject configurations")
         else:
             selected = exam.get("active_subjects")
             if (not isinstance(selected, list) or not selected or
@@ -460,6 +460,11 @@ def main() -> int:
         "sci_core_canary_fixture",
         "sci_n_canary_fixture",
         "sci_final_canary_fixture",
+        "eng_core_canary_fixture",
+        "eng_n_canary_fixture",
+        "eng_final_canary_fixture",
+        "english_exam_type_gate_exec",
+        "english_exam_type_gate_smoke_test",
         "subject_production_regression_test",
         "arc_cli",
         "draft_preview",

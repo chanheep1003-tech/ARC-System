@@ -1,0 +1,103 @@
+# 학교 기말 범위 공지를 옮겨 적은 기록. 시험 설정(EXAM_CONTEXTS)의 범위 근거로 쓴다.
+notice_id: DONGBUK_2026_2_FINAL_SCOPE_NOTICE
+title: 2026학년도 1학년 2학기 기말고사 과목별 출제 내용
+school: 동북고등학교
+grade: 1
+source: 학교 공지 화면(리로스쿨, 2/3쪽) — 사용자 제공 캡처 2026-11-13
+transcribed_by: CLAUDE
+transcribed_on: '2026-11-13'
+storage_note: 캡처 원본은 저장소에 올리지 않는다. 아래는 표를 옮겨 적은 것이다.
+arrival_time: 08:05
+subjects:
+  KOR:
+    course: 공통국어2
+    type: 공통
+    scope:
+    - '교과서: 3단원, 4-1단원 (104쪽~149쪽)'
+    - 보충 프린트 전범위
+    selected:
+      items: 22
+      points: 80
+    essay:
+      items: 4
+      points: 20
+  ENG:
+    course: 공통영어2
+    type: 공통
+    scope:
+    - 공통영어2(교과서) Lesson 2
+    - 해커스보카 수능완성 1800+ (Day31~Day40)
+    - 2026 수능기출문제집 고난도독해 Level1 p78~p91 (총 28지문)
+    selected:
+      items: 34
+      points: 80
+    essay:
+      items: 4
+      points: 20
+  MATH:
+    course: 공통수학2
+    type: 공통
+    scope:
+    - 교과서 80p~139p (2-2 명제 ~ 3-2 유리함수와 무리함수)
+    selected:
+      items: 17
+      points: 78
+    short_answer:
+      items: 2
+      points: 10
+    essay:
+      items: 2
+      points: 12
+    arc_status: NOT_AN_ARC_SUBJECT
+  HIS:
+    course: 한국사2
+    type: 공통
+    scope:
+    - 교과서 p64~p147
+    selected:
+      items: 25
+      points: 90
+    essay:
+      items: 2
+      points: 10
+    arc_status: DEFERRED_BY_USER
+  SOC:
+    course: 통합사회2
+    type: 공통
+    scope:
+    - '통합사회A: 교과서 44~61쪽, 108~123쪽, 학습지 (객관식 7문제, 서술형 1문제 출제)'
+    - '통합사회B: 교과서 134~151쪽, 학습지 (객관식 7문제, 서술형 1문제 출제)'
+    - '통합사회C: 교과서 25~26쪽, 64~83쪽, 학습지 (객관식 8문제 출제)'
+    selected:
+      items: 22
+      points: 90
+    essay:
+      items: 2
+      points: 10
+  SCI:
+    course: 통합과학2
+    type: 공통
+    scope:
+    - 'A: 교과서 110~117쪽, 134~137쪽, 144~149쪽'
+    - 'B: 교과서 46~62쪽'
+    - 'C: 교과서 70~95쪽, 130~133쪽'
+    - 'D: 교과서 98~101쪽, 150~154쪽'
+    selected:
+      items: 24
+      points: 80
+    essay:
+      items: 4
+      points: 20
+  AI:
+    course: 인공지능 기초
+    type: 진로
+    scope:
+    - 교과서 P68~120P
+    - 교과서 P126~P159
+    selected:
+      items: 19
+      points: 82
+    essay:
+      items: 3
+      points: 18
+    arc_status: DEFERRED_BY_USER

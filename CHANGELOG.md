@@ -1,3 +1,8 @@
+## 1.9.3 — 2026-11-13
+- Final-exam scope confirmed from the school notice (user-provided capture): KOR, ENG, SOC, SCI set to CONFIRMED with unit/source IDs, exam structure and evidence `ops/exams/DONGBUK_2026_2_FINAL_SCOPE_NOTICE.yaml`. HIS/AI stay deferred. FINAL still needs a registered difficulty anchor per subject.
+- English added as an active subject (user directive): subject code ENG across the gates and CLI, `subjects/ENGLISH_MASTER_V1.0.md`, type library `quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml` (20 type codes, ARC FINAL 38-item blueprint, ARC N 50-item set, CORE module, quality gate) from the user-provided analysis of five exam papers (evidence grade D2, not re-verified against the papers by Claude), gate `tooling/english/exam_type_gate.py` with regression, ENG CORE/N/FINAL canaries, plan defaults.
+- No English content bundle was produced; the English production path is covered by synthetic canaries and a structural gate only.
+
 ## 1.9.2 — 2026-11-12
 - Drive save rule (user directive): once a produced file passes the user's review once, saving it to Google Drive is mandatory; saving before that pass stays forbidden. `ops/ARC_DRIVE_SAVE_RULE_V1.0.md`, manifest keys, map, AGENTS and planning rule updated.
 

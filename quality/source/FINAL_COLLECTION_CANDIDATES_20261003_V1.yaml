@@ -2,7 +2,7 @@ schema_version: ARC-SOURCE-COLLECTION-V1
 target_exam_id: DONGBUK_2026_2_FINAL
 updated_at: '2026-10-03'
 collection_scope:
-  active_subjects: [SCI, SOC, KOR]
+  active_subjects: [SCI, SOC, KOR, ENG]
   deferred_subjects: [HIS, AI]
   exam_registry_ref: ops/exams/EXAM_CONTEXTS_V1.yaml#exams.DONGBUK_2026_2_FINAL.provisional_scope_policy
   status: PROVISIONAL_REMAINDER

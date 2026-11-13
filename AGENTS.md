@@ -3,6 +3,7 @@
 First command on any host with a shell: `python tooling/arc.py doctor && python tooling/arc.py status`. `status` prints the KOR/SOC/SCI × CORE/N/FINAL matrix with the exact blocker per cell. `python tooling/arc.py start --subject … --product … --count … --scope …` creates the request/state and lists the manifest-selected files to read, in order. After editing any tracked file run `python tooling/arc.py checksums`; before pushing run `python tooling/arc.py ci`.
 Start with ops/ARC_RUNBOOK.md. Use tooling/workflow/arc_workflow.py for one request and one resumable state when a local runtime is available; connector-only hosts follow the same JSON contract without claiming CLI execution.
 After a produced file passes the user's review once, saving it to Google Drive is mandatory (`ops/ARC_DRIVE_SAVE_RULE_V1.0.md`); never save before that pass.
+Active subjects are KOR, ENG, SOC, SCI. The confirmed final-exam range is in `ops/exams/DONGBUK_2026_2_FINAL_SCOPE_NOTICE.yaml` and overrides the midterm SCOPE LOCK text left in subject masters. English items use only the type codes in `quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml`.
 # ARC expert team entry point
 Read SYSTEM_MANIFEST.yaml at one pinned commit, then agents/TEAM.md and the assigned role file. Resolve active subject/engine/QA paths from that manifest instead of guessing the newest filename. Current explicit user instructions take precedence.
 Production reads GitHub rules and Drive sources. Work on a maintenance branch for system changes. PR #6 is a separate unmerged candidate, not an active ruleset.

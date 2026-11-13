@@ -1,11 +1,13 @@
 # 요청에 빠진 값을 채우는 기본값. 사용자가 말한 값이 항상 우선한다.
 schema: ARC-PLAN-DEFAULTS-V1
 date: 2026-11-11
-count_default: {KOR: 50, SOC: 20, SCI: 20}
+count_default: {KOR: 50, ENG: 50, SOC: 20, SCI: 20}
+final_count_default: {ENG: 38}
 set_split:                # 한 번에 만드는 묶음. 묶음마다 초안→검토 후 다음 묶음으로 간다.
   KOR: {unit_selected: 11, unit_constructed: 1}
   SOC: {unit_selected: 18, unit_constructed: 2}
   SCI: {unit_selected: 18, unit_constructed: 2}
+  ENG: {unit_selected: 40, unit_constructed: 10}   # 어휘 15 + 어법 10 + 독해 15 + 서답형 10
 kor_versions:             # 국어 ARC N° 네 단계 + 특화. 근거: quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md
   V1: {name: 전범위 기본, goal: 시험범위 개념을 빠짐없이 다양한 유형으로, difficulty: {D2: 0.40, D3: 0.45, D4: 0.15, D5: 0.00}, advanced: 0.20, new_material: 교과서·학습지 예문 중심}
   V2: {name: 핵심 집중·복합, goal: 학교자료·기출로 중요도가 확인된 축에 비중, difficulty: {D2: 0.30, D3: 0.45, D4: 0.22, D5: 0.03}, advanced: 0.25, new_material: 학교자료 변형}
@@ -20,12 +22,14 @@ kor_version_choice:
 other_subjects:           # 사회·과학은 버전 사다리가 없다
   SOC: {difficulty: {D2: 0.30, D3: 0.45, D4: 0.22, D5: 0.03}, advanced: 0.25}
   SCI: {difficulty: {D2: 0.30, D3: 0.45, D4: 0.22, D5: 0.03}, advanced: 0.25}
+  ENG: {difficulty: {D2: 0.15, D3: 0.45, D4: 0.30, D5: 0.10}, advanced: 0.30}   # N°는 D3~D5 변형 중심
 hard_limits:              # 기존 게이트와 같은 값. 계획이 이 범위를 벗어나면 계획 단계에서 거부한다.
   advanced_share: [0.20, 0.30]
   d45_share_kor: [0.15, 0.35]
   d1_share_max: 0.10
 archetype_library:
   KOR_GRAMMAR: quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml
+  ENG: quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml
 ask_user_only_when:       # 이 경우가 아니면 묻지 않고 계획 카드를 보여 준 뒤 진행한다
   - 과목을 알 수 없다
   - 범위를 전혀 알 수 없다 (단원·작품·쪽수·"맞춤법" 같은 단서가 하나도 없음)

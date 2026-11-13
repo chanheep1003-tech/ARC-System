@@ -1,0 +1,93 @@
+# 동북고 공통영어 문항 유형 라이브러리 — 유형이 거의 고정이므로 생성은 이 유형 코드에서만 고른다.
+library_id: ARC_ENG_EXAM_TYPES_V1.0
+version: 1.0
+date: 2026-11-13
+status: ACTIVE
+applies_to: {subject: ENG, products: [ARC_N, ARC_FINAL, ARC_CORE]}
+evidence:
+  ledger: quality/school/ARC_SCHOOL_EVIDENCE_LEDGER_V1.0.yaml
+  finding_ids: [ENG-F01, ENG-F02, ENG-F03, ENG-F04, ENG-F05, ENG-F06]
+  basis: 사용자 제공 기출 전수 분석(정기고사 5회, 178문항, 2025-2 중간·기말, 2026-1 중간·기말, 2026-2 중간)
+  grade: D2
+  verification: Claude가 원안지를 직접 다시 대조하지 않았다. 대조 뒤 D1로 올린다.
+copy_policy: 유형·발문 양식·변형 원리만 쓴다. 기출 지문·선지는 쓰지 않는다. 예문은 새로 쓴다.
+exam_format_2026:        # 2026학년도 입학생 체제 = ARC FINAL 기본
+  minutes: 50
+  selected: {items: 34, points: 80}
+  constructed: {items: 4, points: 20}
+  notice_line: "※ 1번부터 10번까지의 단어 문제는 각 1점입니다."
+types:
+  ARC-ENG-VOC-01: {area: VOC, name: 단문 문맥·어법 1중 빈칸, stem: "다음 빈칸에 어법 및 문맥적으로 가장 적절한 단어를 고르시오.",
+    design: [범위 어휘를 본문과 다른 새 1~2문장(20~40단어)에 넣는다, 선지 5개의 품사·굴절형을 똑같이 맞춘다, 전치사 연어와 대조·인과 단서로만 풀리게 한다]}
+  ARC-ENG-VOC-02: {area: VOC, name: 2문장 공통 다의어·파생어 빈칸, stem: "다음 빈칸에 공통으로 들어갈 말로 가장 적절한 것은?",
+    design: [맥락이 다른 두 문장, 시제·수가 다르면 어미 힌트(-s, -ed)를 붙인다, 철자 유사 혼동어를 선지에 넣는다], variant: 영영풀이를 함께 제시(2025 체제)}
+  ARC-ENG-VOC-03: {area: VOC, name: 밑줄 어휘의 영영풀이 판별, stem: "다음 밑줄 친 단어의 의미에 대한 설명으로 가장 적절한 것은?",
+    design: [반의어 뜻풀이 오답, 어근·철자 표면 분해 오답(un+easy), 다의어의 다른 문맥 뜻 오답]}
+  ARC-ENG-VOC-04: {area: VOC, name: 밑줄 어휘 유의어 치환, stem: "주어진 문장에서 밑줄 친 단어와 가장 비슷한 뜻을 가진 단어를 고르시오.",
+    design: [문맥에서의 뜻으로 유의어를 고른다], variant: "부정형 — 바꾸어 쓸 수 없는 것은? (정답만 반의어 쌍)"}
+  ARC-ENG-VOC-05: {area: VOC, name: 단문 단락 2중 빈칸 (A)-(B), stem: "다음 글의 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?", design: [2~3문장 단락, 순서쌍 5개]}
+  ARC-ENG-VOC-06: {area: VOC, name: 다중 단문 (a)~(f) 어색한 어휘 짝짓기, stem: "다음 밑줄 친 부분 중, 문맥상 쓰임이 적절하지 않은 것끼리 짝지은 것은?", design: [독립 문장 6개, 3개에 반의어를 심는다], level: D4+}
+  ARC-ENG-GRM-01: {area: GRM, name: 밑줄 중 어법상 틀린 것, stem: "다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?",
+    design: [부교재·학평 수준 지문, 오류 1개],
+    target_points: [주어-동사 수일치(수식어로 핵 명사 은폐), 정동사 vs 준동사·분사의 태, 관계대명사 vs 관계부사·동격 that, 대명사 수일치(that/those, its/their), 형용사 vs 부사]}
+  ARC-ENG-GRM-02: {area: GRM, name: 교과서 본문 (a)~(g) 중 어법상 올바른 것끼리 짝짓기, stem: "다음 글의 밑줄 친 부분 중, 어법상 올바른 것끼리 짝지은 것은?",
+    signature: true,
+    design: [교과서 핵심 단락 1개, 단어가 아니라 절·문장 전체에 밑줄 (a)~(e) 또는 (a)~(g), 7개 중 3개만 원문 그대로 두고 4개에 미세 오류 1개씩, 오류 근거는 논란이 없어야 한다],
+    micro_errors: [수동 부정사를 능동으로, "every + 복수명사", "and + 관계대명사 중복", "전치사 뒤 if 명사절", "other + 단수명사"]}
+  ARC-ENG-RDG-01: {area: RDG, name: 대의 파악(주제·제목·요지·목적), design: [주제·제목은 영문 선지, 요지는 영문 문장 선지와 한글 선지를 섞되 절반 이상 영문]}
+  ARC-ENG-RDG-02: {area: RDG, name: 밑줄 어구 함축 의미 추론, design: [영문 선지, 비유 표현이 가리키는 문맥상 본질]}
+  ARC-ENG-RDG-03: {area: RDG, name: 문맥상 어휘 적절성, stem: "다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?",
+    design: [원문이 다른 유형이었으면 이 유형으로 바꿔 낸다, 반의어 치환, 밑줄 앞뒤에 not을 넣거나 빼서 원문 단어를 외운 학생이 틀리게 한다]}
+  ARC-ENG-RDG-04: {area: RDG, name: 빈칸 추론(단어·구·절), design: [원문 빈칸 문장을 동의어·유의 구문·이중 부정으로 바꿔 쓴다, 원문 그대로 뚫지 않는다]}
+  ARC-ENG-RDG-05: {area: RDG, name: 흐름과 관계없는 문장, design: [핵심 소재어를 그대로 쓰되 논점이 어긋나는 문장, 3번 또는 4번 위치]}
+  ARC-ENG-RDG-06: {area: RDG, name: 글의 순서 (A)-(B)-(C), design: [교과서 본문 지문을 우선 쓴다]}
+  ARC-ENG-RDG-07: {area: RDG, name: 주어진 문장 삽입, design: [역접 연결사·지시어·비교급이 든 문장을 뽑는다, 2~4문항 연속 배치]}
+  ARC-ENG-RDG-08: {area: RDG, name: 내용 일치·불일치와 다중 지칭 추론, design: [불일치는 한글 선지로 인과·수치·조건을 비튼다, 지칭 추론은 교과서 본문의 it/its (a)~(e)를 같은 대상끼리 묶는다]}
+  ARC-ENG-RDG-09: {area: RDG, name: 요약문 (A)-(B) 완성, design: [1문장 요약문 박스와 영단어 순서쌍, FINAL에서는 선택형 마지막 번호]}
+  ARC-ENG-CRQ-01: {area: CRQ, name: 본문 단어 활용 요약문 완성, primary: true,
+    conditions: ["본문에 있는 단어만을 사용하되 필요한 경우 어형을 변화시킬 것", "요약문에 이미 언급된 단어는 사용하지 말 것", "각 빈칸에 한 단어씩만 넣을 것"],
+    design: [요약문의 문법 자리가 본문 어형과 달라 품사·어형을 바꿔야만 성립하게 한다(objective → objectivity, isolating → isolation)],
+    rubric: 단어는 맞고 어형이 틀리면 그 빈칸 배점의 절반}
+  ARC-ENG-CRQ-02: {area: CRQ, name: 영영풀이 + 첫 철자 어휘,
+    design: [지문 빈칸에 첫 글자만 준다, 영영풀이는 원형 기준으로 준다, 빈칸의 문법 자리에 맞게 어형을 바꿔야 만점], rubric: 원형 그대로 쓰면 감점, variant: 글자 수 지정·사전 10개 매칭(2025 체제)}
+  ARC-ENG-CRQ-03: {area: CRQ, name: 조건부 영작,
+    patterns: {A: 어형 변화 없이 7~9개 어구 재배열(실험 결론·주제문), B: 우리말 해석 없이 제시어 6~10개를 어형 변화시켜 영작, C: 우리말 뜻 + 단어 수 고정(10~17단어) + 어형 변화(2025 체제)},
+    conditions: ["주어진 어구를 모두 한 번씩만 사용할 것", "필요한 경우 어형을 변화시킬 것"]}
+  ARC-ENG-CRQ-04: {area: CRQ, name: 우리말 서술·복합 지문 대조, design: [지문 (A)·(B)의 핵심어 추출, 공통 단어의 문맥상 뜻 대조를 우리말 20~50자로], variant: 글자 수 제한 40~120자(2025 체제)}
+arc_final_blueprint:      # 38문항 100점. 번호·유형·배점을 이 표대로 둔다.
+  - {items: [1, 2, 3, 4], types: [ARC-ENG-VOC-01, ARC-ENG-VOC-02], points_each: 1.0}
+  - {items: [5, 6], types: [ARC-ENG-VOC-03], points_each: 1.0}
+  - {items: [7, 8, 9, 10], types: [ARC-ENG-VOC-04, ARC-ENG-VOC-01], points_each: 1.0}
+  - {items: [11], types: [ARC-ENG-RDG-01], points: [2.5, 2.7]}
+  - {items: [12, 13, 14], types: [ARC-ENG-RDG-01, ARC-ENG-RDG-04], points: [2.6, 2.9]}
+  - {items: [15], types: [ARC-ENG-RDG-01, ARC-ENG-RDG-05], points: [2.6, 2.9]}
+  - {items: [16], types: [ARC-ENG-RDG-08], points: [2.8, 3.0]}
+  - {items: [17], types: [ARC-ENG-RDG-02], points: [3.0, 3.1]}
+  - {items: [18, 19, 20, 21], types: [ARC-ENG-GRM-01], points: [2.9, 3.2]}
+  - {items: [22], types: [ARC-ENG-RDG-04], points: [2.6, 2.8]}
+  - {items: [23], types: [ARC-ENG-GRM-02], points: [2.8, 3.0], fixed: true}
+  - {items: [24], types: [ARC-ENG-RDG-03], points: [2.7, 3.0]}
+  - {items: [25, 26, 27, 28], types: [ARC-ENG-RDG-04], points: [2.7, 3.1]}
+  - {items: [29], types: [ARC-ENG-RDG-06], points: [3.0, 3.1]}
+  - {items: [30], types: [ARC-ENG-RDG-05], points: [2.8, 3.2]}
+  - {items: [31, 32, 33], types: [ARC-ENG-RDG-07], points: [3.0, 3.2]}
+  - {items: [34], types: [ARC-ENG-RDG-09], points: [3.1, 3.3], fixed: true}
+  - {items: [C1], types: [ARC-ENG-CRQ-01], points_each: 6.0}
+  - {items: [C2], types: [ARC-ENG-CRQ-02, ARC-ENG-CRQ-03], points_each: 6.0}
+  - {items: [C3], types: [ARC-ENG-CRQ-03], points_each: 4.0}
+  - {items: [C4], types: [ARC-ENG-CRQ-03, ARC-ENG-CRQ-01], points_each: 4.0}
+arc_final_totals: {selected_items: 34, selected_points: 80.0, vocab_items: 10, vocab_points: 10.0, constructed_items: 4, constructed_points: 20.0}
+arc_n_set:                # 50문항 워크북 1세트
+  parts: {A_VOC: 15, B_GRM: 10, C_RDG: 15, D_CRQ: 10}
+  rules:
+    - 부교재·학평 원문과 다른 유형으로 바꿔 낸다(원문 주제 → 문맥 어휘·빈칸·삽입)
+    - B에는 ARC-ENG-GRM-02를 2문항 이상 넣는다
+    - D는 ARC-ENG-CRQ-01과 ARC-ENG-CRQ-03을 6:4로 둔다
+    - 2025 체제 변형(VOC-05, VOC-06, CRQ 글자 수·단어 수 고정)은 D4~D5 문항에 쓴다
+arc_core_module: [문장별 구문·어법 변형 포인트, 파생어·반의어·영영풀이 사전, 어형 변환 요약문, 서답형 영작 대상 문장]
+quality_gate:
+  - VOC 빈칸 선지 5개의 품사·굴절형이 같아 문맥과 연어로만 풀리는가
+  - GRM-02는 절·문장 전체에 밑줄을 쳤고 오류 근거가 분명한가
+  - RDG-03·RDG-04는 원문을 그대로 쓰지 않고 바꿔 썼는가
+  - CRQ-01은 어형을 바꿔야만 문법적으로 성립하는가
+  - 서답형마다 <조건>과 부분점수 기준이 해설에 있는가

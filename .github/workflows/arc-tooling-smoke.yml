@@ -207,6 +207,15 @@ jobs:
       - name: Run representative SCI FINAL E2E canary
         run: python tooling/canary/kor_final_canary.py --fixture quality/canary/SCI_FINAL_CANARY_V1.yaml --output-dir /tmp/arc-sci-final-canary --report /tmp/arc-sci-final-canary/canary-report.json
 
+      - name: Run ENG CORE/N/FINAL E2E canaries
+        run: |
+          python tooling/canary/nightly_canary.py --fixture quality/canary/ENG_CORE_CANARY_V1.yaml --output-dir /tmp/arc-eng-canary --report /tmp/arc-eng-canary/canary-report.json
+          python tooling/canary/kor_n_canary.py --fixture quality/canary/ENG_N_CANARY_V1.yaml --output-dir /tmp/arc-eng-n-canary --report /tmp/arc-eng-n-canary/canary-report.json
+          python tooling/canary/kor_final_canary.py --fixture quality/canary/ENG_FINAL_CANARY_V1.yaml --output-dir /tmp/arc-eng-final-canary --report /tmp/arc-eng-final-canary/canary-report.json
+
+      - name: Run ENG exam-type gate regression
+        run: python tooling/english/test_exam_type_gate.py
+
       - name: Run school archetype gate regression
         run: python tooling/korean/test_archetype_gate.py
 
@@ -215,6 +224,8 @@ jobs:
           python tooling/arc.py status
           python tooling/arc.py plan --subject KOR --scope "한글 맞춤법"
           python tooling/arc.py plan --subject SCI --scope "CI"
+          python tooling/arc.py plan --subject ENG --scope "CI"
+          python tooling/arc.py plan --subject ENG --product ARC_FINAL --scope "CI"
           python tooling/arc.py start --subject SCI --product ARC_N --count 20 --scope "CI dry run" --dry-run
           python tooling/arc.py checksums --check
 
@@ -242,6 +253,9 @@ jobs:
             /tmp/arc-sci-canary
             /tmp/arc-sci-n-canary
             /tmp/arc-sci-final-canary
+            /tmp/arc-eng-canary
+            /tmp/arc-eng-n-canary
+            /tmp/arc-eng-final-canary
           retention-days: 7
 
       - name: Validate active system graph and checksums

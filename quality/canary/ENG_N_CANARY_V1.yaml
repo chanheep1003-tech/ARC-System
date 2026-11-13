@@ -1,0 +1,102 @@
+fixture_id: ENG-N-CANARY-V1
+source_mode: SYNTHETIC_SCOPE_REPRESENTATIVE_ONLY
+purpose: Deterministic 10-item ENG ARC_N QA, handoff, page-order, answer-key, and PDF regression.
+governance:
+  DUP_HISTORY_ACCESS: UNAVAILABLE
+  DUPLICATE_GATE: NOT_CLAIMED_CANARY
+  FINAL_USER_APPROVAL: NOT_APPLICABLE_CANARY
+  DRIVE_SAVE: BLOCKED
+content_bundle:
+  batch_id: ENG-N-CANARY-001
+  generator: CLAUDE
+  product_mode: ARC_N
+  subject: ENG
+  scope: registered scope signals; synthetic structural fixture only
+  item_count: 10
+  created_at: '2026-11-13T12:00:00+09:00'
+  qa_evidence_filename: ARC_QA_EVIDENCE_ENG_N_CANARY_001.yaml
+  student_manuscript: '## QUESTION 1
+
+    Which phrase best completes a sentence about a reader lost in a novel?
+
+    1) absorbed in the story 2) distracted by the story 3) exhausted from the story 4) convinced of the story 5) frustrated at the story
+
+
+    ## QUESTION 2
+
+    Two sentences share one blank. What must the shared word satisfy?
+
+    1) The meaning of the first one only. 2) The meaning and form of both. 3) The spelling of a similar word. 4) The length of the longer sentence. 5) The position of the blank alone.
+
+
+    ## QUESTION 3
+
+    An underlined word is defined in English. Which definition fits?
+
+    1) The one built from its prefix alone. 2) The one for its opposite meaning. 3) The one that fits this context. 4) The one from another context. 5) The one with the longest wording.
+
+
+    ## QUESTION 4
+
+    A subject is separated from its verb by a long clause. What is checked?
+
+    1) The noun closest to the verb. 2) The tense of the relative clause. 3) The number of modifiers used. 4) The head noun of the subject. 5) The article before the verb.
+
+
+    ## QUESTION 5
+
+    Whole sentences are underlined for grammar. What must a solver do?
+
+    1) Find the error inside each one. 2) Trust the first underlined one. 3) Count the words in each one. 4) Skip the longest underlined one. 5) Compare only the final words.
+
+
+    ## QUESTION 6
+
+    A blank repeats the main idea in other words. Which choice is right?
+
+    1) The one copying a passage noun. 2) The one restating the main idea. 3) The one adding an outside fact. 4) The one reversing the conclusion. 5) The one naming a minor detail.
+
+
+    ## QUESTION 7
+
+    A sentence begins with However. Where does it most likely belong?
+
+    1) Before the main topic is introduced. 2) After a similar supporting idea. 3) After the idea it contrasts with. 4) At the very end of the passage. 5) Before any claim has been made.
+
+
+    ## QUESTION 8
+
+    One sentence shares a key word but breaks the flow. How is it found?
+
+    1) By its length in the paragraph. 2) By its position near the start. 3) By its use of a familiar noun. 4) By its drift from the argument. 5) By its number of long clauses.
+
+
+    ## QUESTION 9
+
+    A summary needs a noun but the passage has an adjective. What is done?
+
+    1) Change the word to a noun form. 2) Copy the adjective as it stands. 3) Choose a word from outside it. 4) Leave the summary blank empty. 5) Use the adjective twice instead.
+
+
+    ## QUESTION 10
+
+    Chunks must be arranged into one sentence. What decides the order?
+
+    1) The length of each given chunk. 2) The grammar linking the chunks. 3) The order they were listed in. 4) The first letter of each chunk. 5) The number of chunks provided.'
+  answer_key:
+    1: 1
+    2: 2
+    3: 3
+    4: 4
+    5: 1
+    6: 2
+    7: 3
+    8: 4
+    9: 1
+    10: 2
+  visual_asset_manifest: []
+  qc_status:
+    STATUS: PASS
+    SOURCE_MODE: SYNTHETIC_SCOPE_REPRESENTATIVE_ONLY
+    FINAL_USER_APPROVAL: NOT_APPLICABLE_CANARY
+    DRIVE_SAVE: BLOCKED
