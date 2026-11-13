@@ -17,7 +17,7 @@ from typing import Any
 import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
-SUBJECTS = {"KOR", "SOC", "SCI", "HIS", "AI"}
+SUBJECTS = {"KOR", "ENG", "SOC", "SCI", "HIS", "AI"}
 PRODUCTS = {"ARC_CORE", "ARC_N", "ARC_FINAL"}
 
 
@@ -36,7 +36,7 @@ def digest(profile: dict) -> str:
 
 def subject_code(value: Any) -> str:
     code = str(value).strip().upper().replace("-", "_")
-    return {"KOREAN": "KOR", "SOCIAL": "SOC", "SCIENCE": "SCI", "HISTORY": "HIS",
+    return {"KOREAN": "KOR", "ENGLISH": "ENG", "SOCIAL": "SOC", "SCIENCE": "SCI", "HISTORY": "HIS",
             "SCI_REDOX": "SCI", "SCIENCE_REDOX": "SCI", "REDOX": "SCI"}.get(code, code)
 
 

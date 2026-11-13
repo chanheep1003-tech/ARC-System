@@ -7,7 +7,7 @@
 
 ```bash
 python tooling/arc.py doctor    # 실행 환경(의존성·폰트)
-python tooling/arc.py status    # 국어·사회·과학 × CORE/N/FINAL 준비 상태와 막힌 이유
+python tooling/arc.py status    # 국어·영어·사회·과학 × CORE/N/FINAL 준비 상태와 막힌 이유
 ```
 
 ## 2. 요청을 받으면 — 먼저 계획, 그다음 제작
@@ -36,7 +36,7 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --version V3 --coun
 | ARC N° | 단원·유형별 문제집 | 2단, 정답은 맨 뒤 |
 | ARC FINAL | 실전 모의고사 | 2단, 정답 PDF 분리 |
 
-국어 ARC N°의 버전 (사회·과학에는 버전 사다리가 없다):
+국어 ARC N°의 버전 (영어·사회·과학에는 버전 사다리가 없다):
 
 | 버전 | 이름 | 목표 | 선택형 난도 D2/D3/D4/D5 |
 |---|---|---|---|
@@ -48,8 +48,20 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --version V3 --coun
 
 - V5는 ARC FINAL(실전 리허설)이다. N° 요청에 쓰지 않는다.
 - 버전을 말하지 않으면: 맞춤법·띄어쓰기 요청은 V6, 그 밖에는 같은 범위 기록이 없으면 V1, 있으면 다음 단계.
-- 기본 문항 수: 국어 50, 사회 20, 과학 20. 국어는 선택형 11 + 서답형 1짜리 단원 세트로 나눈다.
+- 기본 문항 수: 국어 50, 영어 50, 사회 20, 과학 20. 국어는 선택형 11 + 서답형 1짜리 단원 세트로 나눈다.
+- 영어 ARC N° 1세트 = 어휘 15 + 어법 10 + 독해 15 + 서답형 10. 영어 ARC FINAL = 실제 시험과 같은 38문항(선택형 34 + 서답형 4).
 - 모든 ARC N°: 핵심 70~80% / 심화 20~30%.
+
+## 3-1. 현재 시험 범위 (2026학년도 2학기 기말, 학교 공지 2026-11-13)
+
+| 과목 | 범위 | 구조 |
+|---|---|---|
+| 국어 (공통국어2) | 교과서 3단원, 4-1단원 (104~149쪽), 보충 프린트 전범위 | 선택형 22(80점) + 서술형 4(20점) |
+| 영어 (공통영어2) | 교과서 Lesson 2, 해커스보카 수능완성 1800+ Day31~40, 2026 수능기출문제집 고난도독해 Level1 p78~91(28지문) | 선택형 34(80점) + 서술형 4(20점) |
+| 사회 (통합사회2) | A: 44~61쪽, 108~123쪽, 학습지 / B: 134~151쪽, 학습지 / C: 25~26쪽, 64~83쪽, 학습지 | 선택형 22(90점) + 서술형 2(10점). A 7+1, B 7+1, C 8 |
+| 과학 (통합과학2) | A: 110~117, 134~137, 144~149쪽 / B: 46~62쪽 / C: 70~95, 130~133쪽 / D: 98~101, 150~154쪽 | 선택형 24(80점) + 서술형 4(20점) |
+
+과목 MASTER의 SCOPE LOCK에 남아 있는 중간고사 범위는 이 표로 대체된다. 한국사·AI는 보류, 수학은 ARC 과목이 아니다.
 
 ## 4. 동북고 문항처럼 만들기
 
@@ -59,13 +71,14 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --version V3 --coun
 - 국어 문법 원형: `quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml` — 원형 7종, 금지 형식 4종, 오답 함정 6종.
 - 게이트: `python tooling/korean/archetype_gate.py <번들>/items.yaml`
 - 규칙 원문: `quality/ARC_SCHOOL_ARCHETYPE_GATE_V1.0.md`
+- 영어 문항 유형: `quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml` — 유형 코드 20종과 FINAL 38문항 배치표. 영어는 유형이 거의 고정이라 이 코드에서만 고른다. 게이트: `python tooling/english/exam_type_gate.py <번들>/items.yaml`
 - 교사 개인 성향 예측은 하지 않는다(`teacher_style_prediction: disabled`).
 
 ## 5. 제작 흐름
 
 ```
 계획(plan) → 자료 열람(Drive) → 번들 작성(items.yaml) → 자체 점검 + 미리보기(draft_preview)
-→ 독립 재풀이(blind_review.yaml) → 생산 파이프라인(production_pipeline) → 사용자 승인 → 기록(log)
+→ 독립 재풀이(blind_review.yaml) → 생산 파이프라인(production_pipeline) → 사용자 검수 1회 통과 → Google Drive 저장 → 기록(log)
 ```
 
 | 단계 | 명령 |
@@ -89,11 +102,13 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --version V3 --coun
 | `ops/ARC_RUNBOOK.md` | 운영 절차 원문 |
 | `ops/ARC_REQUEST_PLANNING_V1.0.md`, `ops/planning/` | 요청 → 계획 규칙과 기본값 |
 | `ops/exams/EXAM_CONTEXTS_V1.yaml` | 현재 시험과 과목별 범위 상태 |
+| `ops/exams/DONGBUK_2026_2_FINAL_SCOPE_NOTICE.yaml` | 학교 기말 범위 공지를 옮겨 적은 기록 (범위 근거) |
 | `engine/` | 공통 생성 엔진, 국어 문항 엔진, CORE 엔진 |
 | `subjects/` | 과목 MASTER (범위·과목 규칙) |
 | `quality/` | 품질 규칙·게이트, 난도, 앵커, 카나리, 생산 번들(`quality/production/`) |
 | `quality/school/` | 학교 출제 근거 장부 |
 | `quality/korean/` | 국어 버전 정책, V6, 문법 원형 |
+| `quality/english/` | 영어 문항 유형 라이브러리 |
 | `templates/` | 조판 규칙과 HTML 마스터 |
 | `tooling/` | 실행 도구 (`arc.py`, 생산 파이프라인, 조판기, 게이트, 카나리) |
 | `tools/oss/` | 외부 오픈소스 도구 설치기와 목록 |
@@ -103,6 +118,7 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --version V3 --coun
 
 ## 7. 반드시 지키는 것
 
+- **파일을 만들면 사용자에게 보여 주고, 검수를 1번 통과하면 반드시 Google Drive에 저장한다.** 통과 전에는 저장하지 않는다. (`ops/ARC_DRIVE_SAVE_RULE_V1.0.md`)
 - 범위는 추정으로 확정하지 않는다. 학교 공지나 사용자 지시가 근거다.
 - 규칙은 manifest가 고른 파일에만 넣는다. 지난 버전 파일에 덧붙이지 않는다.
 - 독립 재풀이를 하지 않은 문항을 검증 완료라고 하지 않는다.

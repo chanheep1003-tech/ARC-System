@@ -49,7 +49,8 @@ def explanations(bundle: dict, labels: dict[str, str]) -> str:
         lines.append(it["stem"])
         for i, (opt, j) in enumerate(zip(it.get("options", []), it.get("judgments", [])), 1):
             mark = "정답" if i == a else ("2순위" if i == int(it["second_best"]) else "")
-            lines.append(f"- {CIRC[i - 1]} {opt} — {j['why']}" + (f" **[{mark}]**" if mark else ""))
+            shown = "" if opt == CIRC[i - 1] else f" {opt}"
+            lines.append(f"- {CIRC[i - 1]}{shown} — {j['why']}" + (f" **[{mark}]**" if mark else ""))
         lines.append("")
     return "\n".join(lines)
 

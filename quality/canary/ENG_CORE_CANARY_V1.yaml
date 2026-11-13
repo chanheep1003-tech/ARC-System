@@ -1,0 +1,72 @@
+fixture_id: ENG-CORE-CANARY-V1
+source_mode: SYNTHETIC_SCOPE_REPRESENTATIVE_ONLY
+purpose: English section boundary, one-column CORE, typesetter, PDF preflight, and fault-injection regression.
+content_bundle:
+  batch_id: ENG-CANARY-001
+  generator: CLAUDE
+  product_mode: ARC_CORE
+  subject: ENG
+  scope: registered English scope signals; not a textbook transcription
+  item_count: 0
+  created_at: '2026-11-13T12:00:00+09:00'
+  core_architecture_summary:
+    CENTRAL_QUESTION: How do words, sentence structure and passage logic work together in a school English exam?
+    MAJOR_BOUNDARIES:
+    - PART 1 - Vocabulary in new contexts
+    - PART 2 - Grammar inside whole sentences
+    - PART 3 - Reading logic and written responses
+  student_manuscript: '# PART 1 - Vocabulary in new contexts
+
+
+    A word learned in one passage must be recognised in a sentence the reader has never seen. The surrounding words decide the meaning: a preposition that follows, a contrast marked by although, or a result marked by so. A learner who only remembers the translation of a word cannot use these signals.
+
+
+    Many words carry more than one meaning, and a related word may look almost the same. The safest habit is to read the whole sentence, name the part of speech the blank requires, and then test each candidate against the context. Spelling that merely looks familiar is not evidence.
+
+
+    An English definition describes a meaning without translating it. Reading definitions trains the learner to separate the meaning that fits this context from a meaning that belongs to another one. The canary checks the section boundary and heading hierarchy; it does not replace the textbook or the word list.
+
+
+    # PART 2 - Grammar inside whole sentences
+
+
+    When a whole sentence is underlined, the reader must find the weak point without a pointer. The first check is the subject and its verb, because modifiers and relative clauses often stand between them and hide the head noun. The verb agrees with the head noun, not with the nearest one.
+
+
+    The second check is whether a verb form is acting as the main verb or as a participle, and whether the participle is active or passive. The third is the link word: a relative pronoun needs an incomplete clause after it, while a conjunction or a relative adverb is followed by a complete one.
+
+
+    Small words also carry rules. A determiner must match the number of its noun, and a preposition cannot take every kind of clause as its object. These points are short to state and easy to miss, so each sentence is read slowly once rather than quickly twice.
+
+
+    # PART 3 - Reading logic and written responses
+
+
+    A passage is built around one claim, and most exam tasks ask for that claim in a different form. A blank restates it in other words; a summary compresses it into one sentence; a title names it briefly. Recognising a paraphrase matters more than remembering the original wording.
+
+
+    Order and insertion tasks depend on signals between sentences. A contrast word needs the idea it argues against, a pronoun needs the noun it replaces, and a comparative needs the thing compared. A sentence that shares a key word but moves the argument elsewhere does not belong.
+
+
+    Written responses test accuracy of form. A word taken from the passage often has to change its part of speech to fit the summary, and given chunks must be joined by grammar rather than by guesswork. Production source-fidelity remains blocked until the confirmed range is read from the actual textbook and workbook.'
+  visual_asset_manifest: []
+  qc_status:
+    CORE_QA_STATUS: PASS
+    SOURCE_MODE: SYNTHETIC_SCOPE_REPRESENTATIVE_ONLY
+fault_injection:
+  - id: STALE_PDF_MASTER
+    field: pdf_master
+    value: ARC_PDF_LAYOUT_MASTER_V2.1
+    expected_gate: SERIALIZER_BLOCK
+  - id: TWO_COLUMN
+    field: student_manuscript_suffix
+    value: "\n\nRender this body as two-column."
+    expected_gate: SERIALIZER_BLOCK
+  - id: SMALL_BODY
+    field: student_manuscript_suffix
+    value: "\n\nUse body 8.8pt."
+    expected_gate: SERIALIZER_BLOCK
+  - id: INTERNAL_ID
+    field: student_manuscript_suffix
+    value: "\n\n[ARC-ENG-L2-999]"
+    expected_gate: SERIALIZER_BLOCK

@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.9.1
+  version: 1.9.3
   status: release
   initialized: 2026-09-18
   repository_visibility: private
@@ -26,7 +26,10 @@ runtime:
   unified_workflow_runner: tooling/workflow/arc_workflow.py
   unified_workflow_state_schema: ARC-RUN-V1
   active_exam_id: DONGBUK_2026_2_FINAL
-  active_subjects: [SCI, SOC, KOR]
+  active_subjects: [SCI, SOC, KOR, ENG]
+  exam_scope_notice: ops/exams/DONGBUK_2026_2_FINAL_SCOPE_NOTICE.yaml
+  english_exam_type_library: quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml
+  english_exam_type_gate: required
   exam_context_registry: ops/exams/EXAM_CONTEXTS_V1.yaml
   exam_context_policy: ops/ARC_EXAM_CONTEXT_POLICY_V1.0.md
   exam_scope_gate: required
@@ -271,6 +274,9 @@ runtime:
   problem_semantic_duplicate_target: 0
   problem_final_user_approval_before_drive_save: required
   problem_drive_save_before_user_approval: forbidden
+  drive_save_after_user_review_pass: required
+  user_review_passes_required_for_drive_save: 1
+  drive_save_policy: ops/ARC_DRIVE_SAVE_RULE_V1.0.md
   product_readiness_minimum_percent: 80
   product_readiness_aggregation: MIN_ACTIVE_SUBJECT_PRODUCT
   release_readiness_requires_n_percent: 80
@@ -279,6 +285,7 @@ runtime:
   selective_cross_model_review_only: true
   subject_priority:
     - KOR
+    - ENG
     - SOC
     - SCI
     - HIS
@@ -348,6 +355,10 @@ active:
     drive_mirror_status: pending_sync
 
   subjects:
+    english:
+      path: subjects/ENGLISH_MASTER_V1.0.md
+      drive_id: null
+      drive_mirror_status: pending_sync
     science:
       path: subjects/SCIENCE_MASTER_V4.0.md
       drive_id: 1GU5tPHHBrIcGVYA1znOp6MQw7TEciZLi
@@ -520,6 +531,9 @@ tooling:
   sci_core_canary_fixture: quality/canary/SCI_CORE_CANARY_V1.yaml
   sci_n_canary_fixture: quality/canary/SCI_N_CANARY_V1.yaml
   sci_final_canary_fixture: quality/canary/SCI_FINAL_CANARY_V1.yaml
+  eng_core_canary_fixture: quality/canary/ENG_CORE_CANARY_V1.yaml
+  eng_n_canary_fixture: quality/canary/ENG_N_CANARY_V1.yaml
+  eng_final_canary_fixture: quality/canary/ENG_FINAL_CANARY_V1.yaml
   arc_cli: tooling/arc.py
   draft_preview: tooling/production/draft_preview.py
   korean_archetype_gate: tooling/korean/archetype_gate.py
@@ -535,7 +549,9 @@ tooling:
   production_pipeline: tooling/production/production_pipeline.py
   production_pipeline_regression_test: tooling/production/test_production_pipeline.py
   korean_production_renderer: tooling/typeset/kor_renderer.py
-  production_renderer_subjects: [KOR, SOC, SCI]
+  production_renderer_subjects: [KOR, ENG, SOC, SCI]
+  english_exam_type_gate_exec: tooling/english/exam_type_gate.py
+  english_exam_type_gate_smoke_test: tooling/english/test_exam_type_gate.py
   subject_production_regression_test: tooling/production/test_subject_production.py
   production_sample_bundle_sci_n: quality/production/SCI_N_REDOX_SAMPLE_20261110
   production_sample_bundle_soc_final: quality/production/SOC_FINAL_SAMPLE_20261110

@@ -39,5 +39,8 @@ TOOL: python tooling/arc.py plan
 - 난도 합이 문항 수와 다름
 이 경우 문항을 쓰지 않고 계획을 고친다.
 
-## 5. 기록
+## 5. 저장
+사용자 검수를 1번 통과한 파일은 반드시 Google Drive에 저장한다 (`ops/ARC_DRIVE_SAVE_RULE_V1.0.md`). 통과 전에는 저장하지 않는다.
+
+## 6. 기록
 계획은 `python tooling/arc.py plan … --save runs/<batch>/plan.yaml`로 남기고, 제작이 끝나면 `arc.py log`로 RUN_LOG에 버전·문항 수·난도 분포를 기록한다. 다음 요청의 버전 선택은 이 기록을 본다.

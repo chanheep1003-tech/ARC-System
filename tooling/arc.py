@@ -37,8 +37,8 @@ RUN_LOG_CSV = ROOT / "ops" / "RUN_LOG.csv"
 EPHEMERAL = {"CHECKSUMS.sha256", "ops/RUN_LOG.csv", "ops/RUN_LOG.jsonl"}
 KST = dt.timezone(dt.timedelta(hours=9))
 
-SUBJECTS = {"KOR": "korean", "SOC": "social", "SCI": "science", "HIS": "history", "AI": "ai"}
-SUBJECT_KO = {"KOR": "국어", "SOC": "사회", "SCI": "과학", "HIS": "한국사", "AI": "AI"}
+SUBJECTS = {"KOR": "korean", "ENG": "english", "SOC": "social", "SCI": "science", "HIS": "history", "AI": "ai"}
+SUBJECT_KO = {"KOR": "국어", "ENG": "영어", "SOC": "사회", "SCI": "과학", "HIS": "한국사", "AI": "AI"}
 PRODUCTS = ("ARC_CORE", "ARC_N", "ARC_FINAL")
 PRODUCT_SHORT = {"ARC_CORE": "CORE", "ARC_N": "N", "ARC_FINAL": "FINAL"}
 CANARY_RUNNER = {
@@ -200,7 +200,7 @@ def files_to_load(manifest: dict, subject: str, product: str) -> list[tuple[str,
         ("문항 품질", quality["item_quality"]),
         ("가짜 난도 게이트", quality.get("false_difficulty_gate", "")),
         ("독립 재풀이", quality["universal_independent_solve"]),
-        ("GOLD 앵커", quality["gold_anchor_packs"][SUBJECTS[subject]]),
+        ("GOLD 앵커", quality["gold_anchor_packs"].get(SUBJECTS[subject], "")),
         ("시험 설정", runtime["exam_context_registry"]),
     ]
     if subject == "KOR":
@@ -209,6 +209,9 @@ def files_to_load(manifest: dict, subject: str, product: str) -> list[tuple[str,
                 ("국어 V1~V6 정책", runtime["korean_learning_level_policy"]),
                 ("국어 실전성 게이트", quality["korean_exam_realism_gate"]),
                 ("중세국어 모듈(해당 범위 요청 시에만)", runtime.get("korean_middle_korean_policy", ""))]
+    if subject == "ENG":
+        out += [("영어 문항 유형 라이브러리", runtime["english_exam_type_library"]),
+                ("범위 공지", runtime["exam_scope_notice"])]
     if subject == "SOC":
         out += [("사회 C X표시 제외 색인", quality["social_c_xmark_exclusion_index"]),
                 ("사회 학교자료 목록", quality["social_school_source_inventory"]),
@@ -340,6 +343,9 @@ def build_plan(subject: str, product: str, scope: str, count: int | None, versio
     entry = registry["exams"][exam_id]["subjects"][subject]
     reasons = []
     grammar = subject == "KOR" and any(w in scope for w in GRAMMAR_WORDS)
+    if count is None and product == "ARC_FINAL" and subject in defaults.get("final_count_default", {}):
+        count = defaults["final_count_default"][subject]
+        reasons.append(f"FINAL 문항 수 미지정 → 시험과 같은 {count}")
     if count is None:
         count = defaults["count_default"].get(subject, 20)
         reasons.append(f"문항 수 미지정 → 기본 {count}")
@@ -386,6 +392,16 @@ def build_plan(subject: str, product: str, scope: str, count: int | None, versio
             plan["archetype_library"] = defaults["archetype_library"]["KOR_GRAMMAR"]
             plan["archetype_mix"] = apportion(selected, {k: 1 / len(mcq_types) for k in mcq_types})
             plan["archetype_mix"]["C1_CONSTRUCTED_BLANK_SENTENCE"] = constructed
+    if subject == "ENG":
+        library = yaml.safe_load((ROOT / defaults["archetype_library"]["ENG"]).read_text(encoding="utf-8"))
+        plan["archetype_library"] = defaults["archetype_library"]["ENG"]
+        if product == "ARC_N" and plan.get("units"):
+            parts = library["arc_n_set"]["parts"]
+            plan["archetype_mix"] = {k: v * plan["units"] for k, v in parts.items()}
+        elif product == "ARC_FINAL":
+            totals = library["arc_final_totals"]
+            plan["final_blueprint"] = (f"선택형 {totals['selected_items']}({totals['selected_points']:g}점, 1~10번 단어 각 1점) + "
+                                       f"서답형 {totals['constructed_items']}({totals['constructed_points']:g}점), 23번 교과서 다중 어법·34번 요약문 고정")
     _, blockers = cell_status(subject, product, entry, manifest)
     plan["blockers"] = blockers
     plan["read_order"] = [path for _, path in files_to_load(manifest, subject, product)]
@@ -405,9 +421,11 @@ def print_plan(plan: dict) -> None:
         print("  난도      " + " / ".join(f"{k} {v}" for k, v in plan["difficulty"].items()) + "  (선택형 기준)")
         print(f"  구성      핵심 {plan['core']} / 심화 {plan['advanced']}")
     else:
-        print(f"  분량      {plan['count']}")
+        print(f"  분량      {plan['count']}문항")
+    if plan.get("final_blueprint"):
+        print(f"  배치      {plan['final_blueprint']}")
     if plan.get("archetype_mix"):
-        print("  문항 원형 " + ", ".join(f"{k.split('_')[0]} {v}" for k, v in plan["archetype_mix"].items()))
+        print("  문항 원형 " + ", ".join(f"{k if plan['subject'] == 'ENG' else k.split('_')[0]} {v}" for k, v in plan["archetype_mix"].items()))
         print(f"            ({plan['archetype_library']})")
     for reason in plan["reasons"]:
         print(f"  기본값    {reason}")

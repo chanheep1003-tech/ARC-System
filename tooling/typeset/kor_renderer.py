@@ -14,6 +14,7 @@ line by line. Content is rendered exactly as given; this module never edits it.
 from __future__ import annotations
 
 import hashlib
+import os
 import re
 from pathlib import Path
 from typing import Any
@@ -46,7 +47,7 @@ FALLBACK_FILES = [Path("/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc"
                   Path("/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc"),
                   Path("/usr/share/fonts/truetype/arc-fallback/NotoSerifKR.ttf"),
                   Path.home() / ".local/share/fonts/arc-fallback/NotoSerifKR.ttf"]  # tooling/ci/install_fonts.sh
-SIZE = 9.8
+SIZE = 9.8   # default body size; a bundle `layout` key overrides it per render (see render())
 LH = SIZE * 1.62
 NAVY = (0.08, 0.16, 0.30)
 BLACK = (0.0, 0.0, 0.0)
@@ -88,10 +89,12 @@ SUPERSCRIPTS = dict(zip("⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻", "0123456789+-"))
 SUBSCRIPTS = dict(zip("₀₁₂₃₄₅₆₇₈₉₊₋", "0123456789+-"))
 SCRIPT_SCALE = 0.62
 SCRIPT_SHIFT = {"^": -0.36, "_": 0.14}  # baseline shift as a share of the font size
+# ⟦…⟧ marks an underlined span (English exam underlines: ①⟦word⟧). Markers take no width and are never printed.
+UL_OPEN, UL_CLOSE = "\u27e6", "\u27e7"
 
 
 def base_key(key: str) -> str:
-    return key.rstrip("^_")
+    return key.rstrip("^_~")
 
 
 def run_size(key: str, size: float) -> float:
@@ -105,15 +108,19 @@ def runs(text: str, key: str) -> list[tuple[str, str]]:
     if _FONTS is None:
         _FONTS = fonts()
     out: list[tuple[str, str]] = []
+    ul = ""
     for ch in text:
-        k = key
+        if ch in (UL_OPEN, UL_CLOSE):
+            ul = "~" if ch == UL_OPEN else ""
+            continue
+        k = key + ul
         if ch in SUPERSCRIPTS:
-            ch, k = SUPERSCRIPTS[ch], key + "^"
+            ch, k = SUPERSCRIPTS[ch], key + ul + "^"
         elif ch in SUBSCRIPTS:
-            ch, k = SUBSCRIPTS[ch], key + "_"
+            ch, k = SUBSCRIPTS[ch], key + ul + "_"
         elif not ch.isspace() and not _FONTS[key].has_glyph(ord(ch)):
             if "H" in _FONTS and _FONTS["H"].has_glyph(ord(ch)):
-                k = "H"
+                k = "H" + ul
             else:
                 raise RenderError(f"GLYPH_MISSING: U+{ord(ch):04X} {ch!r} (install fonts-noto-cjk or fonts-wqy-zenhei)")
         if out and out[-1][0] == k:
@@ -123,7 +130,8 @@ def runs(text: str, key: str) -> list[tuple[str, str]]:
     return out
 
 
-def put(page: fitz.Page, pos, text: str, fontname: str = "R", fontsize: float = SIZE, color=None) -> None:
+def put(page: fitz.Page, pos, text: str, fontname: str = "R", fontsize: float | None = None, color=None) -> None:
+    fontsize = SIZE if fontsize is None else fontsize
     x, y = pos
     for rk, t in runs(text, fontname):
         k, size = base_key(rk), run_size(rk, fontsize)
@@ -132,17 +140,22 @@ def put(page: fitz.Page, pos, text: str, fontname: str = "R", fontsize: float = 
         kw = {"color": color} if color is not None else {}
         dy = SCRIPT_SHIFT.get(rk[-1], 0.0) * fontsize
         page.insert_text((x, y + dy), t, fontname=k, fontsize=size, **kw)
-        x += _FONTS[k].text_length(t, fontsize=size)
+        adv = _FONTS[k].text_length(t, fontsize=size)
+        if "~" in rk:
+            page.draw_line((x, y + 1.6), (x + adv, y + 1.6), width=0.55)
+        x += adv
 
 
 class Layout:
     def __init__(self) -> None:
         self.f = fonts()
 
-    def width(self, text: str, key: str = "R", size: float = SIZE) -> float:
+    def width(self, text: str, key: str = "R", size: float | None = None) -> float:
+        size = SIZE if size is None else size
         return sum(self.f[base_key(k)].text_length(t, fontsize=run_size(k, size)) for k, t in runs(text, key))
 
-    def wrap(self, text: str, w: float, key: str = "R", size: float = SIZE, first: float = 0.0, rest: float = 0.0):
+    def wrap(self, text: str, w: float, key: str = "R", size: float | None = None, first: float = 0.0, rest: float = 0.0):
+        size = SIZE if size is None else size
         """Greedy wrap on spaces (어절); char break only for tokens wider than the line."""
         lines, cur, indent = [], "", first
         text = re.sub(r"\( (\S{1,3}) \)", "(\u00a0\\1\u00a0)", text).replace("( )", "(\u00a0)")  # keep blanks on one line
@@ -163,7 +176,12 @@ class Layout:
             cur = word
         if cur:
             lines.append((indent, cur))
-        return [(i, t.replace("\u00a0", " ")) for i, t in lines]
+        out, carry = [], False  # an underline span that crosses a line break is closed and reopened
+        for i, t in lines:
+            t = (UL_OPEN if carry else "") + t.replace("\u00a0", " ")
+            carry = t.rfind(UL_OPEN) > t.rfind(UL_CLOSE)
+            out.append((i, t + (UL_CLOSE if carry else "")))
+        return out
 
 
 class Block:
@@ -172,7 +190,9 @@ class Block:
         self.h = 0.0
         self.splittable = splittable
 
-    def text(self, lines, key="R", size=SIZE, lh=LH, dx=0.0):
+    def text(self, lines, key="R", size=None, lh=None, dx=0.0):
+        size = SIZE if size is None else size
+        lh = LH if lh is None else lh
         for indent, t in lines:
             self.ops.append(("text", dx + indent, self.h + size, t, key, size))
             self.h += lh
@@ -280,16 +300,22 @@ def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "AR
     else:
         num = f"{int(label):02d} "
     nw = L.width(num, "B")
-    stem = L.wrap(it["stem"] + pts + badge, COL_W, "B", first=nw, rest=nw)
+    tag = f"[{it['source_label']}] " if it.get("source_label") else ""  # 어느 지문의 문제인지
+    stem = L.wrap(tag + it["stem"] + pts + badge, COL_W, "B", first=nw, rest=nw)
     stem[0] = (0, num + stem[0][1])
     b.text(stem, key="B")
     b.h += 4
+    for para in it.get("passage", []):  # item-own passage (English variants: each item reworks the text)
+        b.text(L.wrap(para, COL_W, first=SIZE))
+        b.h += 2
+    if it.get("passage"):
+        b.h += 4
     if it.get("figure"):
         figure(L, b, it["figure"])
     if it.get("table"):
         table(L, b, it["table"])
     if it.get("view"):
-        view(L, b, it["view"])
+        view(L, b, it["view"], label=it.get("view_label", "<보 기>"))
     if it.get("format") == "CR":
         view(L, b, it["conditions"], label="<조 건>")
         top = b.h
@@ -298,7 +324,7 @@ def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "AR
         b.ops.append(("text", 5, top + SIZE + 3, "답:", "G", SIZE - 0.8))
         b.h += 20
         return b
-    labels_ = [f"{CIRC[i]} {o}" for i, o in enumerate(it["options"])]
+    labels_ = [o if o == CIRC[i] else f"{CIRC[i]} {o}" for i, o in enumerate(it["options"])]  # bare ①~⑤ for underline items
     widest = max(L.width(t) for t in labels_)
     if widest <= COL_W / 5 - 4:
         for i, t in enumerate(labels_):
@@ -343,8 +369,9 @@ def view(L: Layout, b: Block, lines: list[str], label: str = "<보 기>") -> Non
         b.h += 1
     b.h += pad - 2
     b.ops.append(("rect", 0, top + 4, COL_W, b.h))
-    lw = L.width(label, "B")
-    b.ops.append(("label", COL_W / 2 - lw / 2, top + 4, label, lw))
+    if label:  # an unlabelled box (English given sentence / summary) keeps its border closed
+        lw = L.width(label, "B")
+        b.ops.append(("label", COL_W / 2 - lw / 2, top + 4, label, lw))
     b.h += 6
 
 
@@ -474,16 +501,22 @@ def answer_page(doc, items: list[dict[str, Any]], labels: dict[str, str] | None 
     put(key, (ML, 80), "정답  ANSWER KEY", fontname="GB", fontsize=18, color=BLACK)
     key.draw_line((ML, 94), (A4_W - MR, 94), color=BLACK, width=0.9)
     mcq = [it for it in items if it.get("format", "MCQ") == "MCQ"]
-    per_col = 10 if len(mcq) <= 30 else 15
+    per_col, col_w, row_h = (10 if len(mcq) <= 30 else 15), 130, 28
+    if len(mcq) > 60:  # long workbooks (e.g. 140-item passage sets): narrower columns, one page up to 7 x 27
+        col_w, row_h = 72, 24
+        cols = int((A4_W - ML - MR - 20) // col_w)
+        per_col = -(-len(mcq) // cols)
+        if per_col > 27:
+            raise RenderError(f"ANSWER_KEY_TOO_LONG: {len(mcq)} items")
     for i, it in enumerate(mcq):
-        x = ML + 20 + (i // per_col) * 130
-        y = 132 + (i % per_col) * 28
+        x = ML + 20 + (i // per_col) * col_w
+        y = 132 + (i % per_col) * row_h
         num = f"{i + 1:02d}" if product == "ARC_N" else f"{i + 1}"
         put(key, (x, y), f"{num}  {CIRC[it['answer'] - 1]}", fontname="G", fontsize=12.5, color=BLACK)
     crs = [it for it in items if it.get("format") == "CR"]
     if not crs:
         return
-    y = 132 + per_col * 28 + 20
+    y = 132 + per_col * row_h + 20
     page = key
     width = A4_W - ML - MR
     for it in crs:
@@ -579,6 +612,21 @@ def render_solutions(bundle: dict[str, Any], labels: dict[str, str], out_pdf: Pa
 def render(bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[str, str], set_header,
            out_pdf: Path, key_pdf: Path | None = None, logo: dict[str, Any] | None = None,
            solutions_pdf: Path | None = None) -> dict[str, Any]:
+    global SIZE, LH
+    saved = (SIZE, LH)
+    lay = bundle.get("layout") or {}
+    if lay.get("body_pt"):  # per-bundle body size / line height (English passage workbooks)
+        SIZE = float(lay["body_pt"])
+        LH = SIZE * float(lay.get("line_height_ratio", 1.62))
+    try:
+        return _render(bundle, sources, labels, set_header, out_pdf, key_pdf, logo, solutions_pdf)
+    finally:
+        SIZE, LH = saved
+
+
+def _render(bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[str, str], set_header,
+            out_pdf: Path, key_pdf: Path | None = None, logo: dict[str, Any] | None = None,
+            solutions_pdf: Path | None = None) -> dict[str, Any]:
     product = bundle["product_mode"]
     items = bundle["items"]
     L = Layout()

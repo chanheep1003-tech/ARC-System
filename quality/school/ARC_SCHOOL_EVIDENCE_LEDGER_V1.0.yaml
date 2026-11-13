@@ -26,6 +26,12 @@ sources:
     title: 동북고 내신 출제 DNA 리서치 (사용자 제공, 외부 수집)
     grade_cap: D3
     note: 출처가 학원 분석·지역 기사·영상 중심. 문항 수가 원안과 다름(21+3·8쪽 주장 vs 실제 21+4·7쪽).
+  ENG-ANALYSIS-20261113:
+    title: 동북고 1학년 공통영어1·2 기출 전수 분석 (사용자 제공)
+    covers: [2025-2 중간, 2025-2 기말, 2026-1 중간, 2026-1 기말, 2026-2 중간]
+    items_analyzed: 178
+    grade_cap: D2
+    note: 원안지 5종의 문항 번호·배점·발문·채점 기준을 옮긴 분석. Claude가 원안지를 직접 다시 대조하지는 않았다.
 findings:
   - id: KOR-F01
     grade: D1
@@ -62,6 +68,30 @@ findings:
     source: KOR-EXAM-2025-2-FINAL
     claim: '있는 대로 고른 것은?' 조합형과 '가장 적절한 것은?' 설명형이 섞이며, 같은 세부 유형이 반복되지 않는다.
     items: [4, 5, 6, 7, 8, 9, 10]
+  - id: ENG-F01
+    grade: D2
+    source: ENG-ANALYSIS-20261113
+    claim: 2026학년도 체제는 선택형 34 + 서답형 4 = 38문항, 50분으로 고정이다. 학교 공지의 기말 구조(34문항 80점 + 4문항 20점)와 일치한다.
+  - id: ENG-F02
+    grade: D2
+    source: ENG-ANALYSIS-20261113
+    claim: 선택형 1~10번은 단어 전용 구간이고 각 1점이다. 범위 어휘를 본문과 다른 새 단문에 넣는다.
+  - id: ENG-F03
+    grade: D2
+    source: ENG-ANALYSIS-20261113
+    claim: 교과서 본문의 문장 전체에 밑줄을 친 (a)~(g) 중 어법상 올바른 것끼리 짝짓는 문항이 2026학년도 세 시험에 모두 나왔다.
+  - id: ENG-F04
+    grade: D2
+    source: ENG-ANALYSIS-20261113
+    claim: 독해는 원문과 다른 유형으로 바꿔 내고 빈칸·어휘는 바꿔 쓴다. 문장 삽입은 2~4문항, 무관한 문장은 1문항, 선택형 마지막은 요약문이다.
+  - id: ENG-F05
+    grade: D2
+    source: ENG-ANALYSIS-20261113
+    claim: 서답형의 중심은 본문 단어를 어형 변화시켜 넣는 요약문이며, 어형이 틀리면 절반 감점이다. 영영풀이+첫 철자, 조건부 영작이 함께 나온다.
+  - id: ENG-F06
+    grade: D2
+    source: ENG-ANALYSIS-20261113
+    claim: 2025학년도 체제(32문항, 서답형 6)는 고배점 어휘·글자 수 지정·단어 수 고정 영작을 썼다. 현재 형식이 아니므로 고난도 변형용으로만 쓴다.
   - id: KOR-H01
     grade: D3
     source: AI-RESEARCH-20261111

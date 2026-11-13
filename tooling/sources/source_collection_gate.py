@@ -33,7 +33,7 @@ def analyze(ledger: dict) -> dict:
     if isinstance(collection_scope, dict) and "active_subjects" in collection_scope:
         selected = collection_scope["active_subjects"]
         if (not isinstance(selected, list) or not selected or
-            any(not isinstance(code, str) or code not in {"KOR", "SOC", "SCI", "HIS", "AI"} for code in selected) or
+            any(not isinstance(code, str) or code not in {"KOR", "ENG", "SOC", "SCI", "HIS", "AI"} for code in selected) or
             len(set(selected)) != len(selected)):
             findings.append({"code": "COLLECTION_ACTIVE_SUBJECTS_INVALID", "severity": "FAIL"})
             active_subjects = set()
@@ -86,7 +86,7 @@ def analyze(ledger: dict) -> dict:
             if row.get("role") != "RAW_SCHOOL_SOURCE":
                 fail("COLLECTION_REFERENCE_AS_SCHOOL_SOURCE")
             units = row.get("unit_ids")
-            if not isinstance(units, list) or not units or any(not isinstance(x, str) or not x.strip() for x in units) or row.get("subject") not in {"KOR", "SOC", "SCI", "HIS", "AI"}:
+            if not isinstance(units, list) or not units or any(not isinstance(x, str) or not x.strip() for x in units) or row.get("subject") not in {"KOR", "ENG", "SOC", "SCI", "HIS", "AI"}:
                 fail("COLLECTION_SCOPE_BINDING_MISSING")
             if not re.fullmatch(r"[0-9a-f]{64}", str(row.get("sha256", ""))) or not isinstance(row.get("content_verification_ref"), str) or not row["content_verification_ref"].strip():
                 fail("COLLECTION_SOURCE_INTEGRITY_MISSING")

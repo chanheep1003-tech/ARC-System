@@ -1,3 +1,21 @@
+## 1.9.5 — 2026-11-13
+- Typesetting rule (user directive): English passage workbooks print the passage in full and tune page use with body size/line height. The renderer now reads a per-bundle `layout: {body_pt, line_height_ratio}` (default for ENG passage workbooks 9.4pt / 1.38) and no longer depends on environment variables; KOR/SOC/SCI keep 9.8pt / 1.62.
+- Passage source label (user directive): every question in a passage workbook shows its source passage beside the number, e.g. `05 [3-4-1] …` (item field `source_label`). `exam_type_gate.py` fails PASSAGE_LAYOUT_MISSING / PASSAGE_SOURCE_LABEL_MISSING.
+- ENG N기출 140 bundle: v1.1 fixes (items 9/21/40/53/108), full-text passages, answer positions rebalanced. First round is closed as a draft; not released, not saved to Drive.
+
+## 1.9.4 — 2026-11-13
+- English passage workbook rules (user directives): word-part types (VOC-01~06: 영영풀이, 유의어 등) are only for items 1–10 / the ARC N vocab part, never in passage workbooks; each item's options use one language only; passage workbooks are MCQ-only unless constructed response is requested; grammar/context-word items print only the underlined excerpt. Recorded in `quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml` (`vocab_section_rule`, `option_language_rule`, `passage_workbook`) and enforced by `exam_type_gate.py` (VOC_TYPE_OUTSIDE_VOCAB_SECTION, OPTION_LANGUAGE_MIXED, PASSAGE_ITEM_COUNT, PASSAGE_WORKBOOK_CRQ).
+- Bundle `quality/production/ENG_N_NGICHUL_L1_20261113`: N기출 고난도 독해 Level 1 3-4-1~3-6-4, 28 passages × 5 = 140 MCQ, draft only (no independent blind review yet).
+- Renderer: ⟦…⟧ underlines, per-item passage, unlabelled boxes, bare ①~⑤ options, answer key up to 189 items on one page. PDF preflight reads 3-digit item numbers. ENG ARC_N advanced band 20–30%; ENG exempt from the single-best stem cap (stems fixed by the type library); "관계 없는" counts as a negative stem.
+
+## 1.9.3 — 2026-11-13
+- Final-exam scope confirmed from the school notice (user-provided capture): KOR, ENG, SOC, SCI set to CONFIRMED with unit/source IDs, exam structure and evidence `ops/exams/DONGBUK_2026_2_FINAL_SCOPE_NOTICE.yaml`. HIS/AI stay deferred. FINAL still needs a registered difficulty anchor per subject.
+- English added as an active subject (user directive): subject code ENG across the gates and CLI, `subjects/ENGLISH_MASTER_V1.0.md`, type library `quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml` (20 type codes, ARC FINAL 38-item blueprint, ARC N 50-item set, CORE module, quality gate) from the user-provided analysis of five exam papers (evidence grade D2, not re-verified against the papers by Claude), gate `tooling/english/exam_type_gate.py` with regression, ENG CORE/N/FINAL canaries, plan defaults.
+- No English content bundle was produced; the English production path is covered by synthetic canaries and a structural gate only.
+
+## 1.9.2 — 2026-11-12
+- Drive save rule (user directive): once a produced file passes the user's review once, saving it to Google Drive is mandatory; saving before that pass stays forbidden. `ops/ARC_DRIVE_SAVE_RULE_V1.0.md`, manifest keys, map, AGENTS and planning rule updated.
+
 ## 1.9.1 — 2026-11-11
 - `ARC_MAP.md`: single entry map (where things live, product/version table, request → plan → production order).
 - Request planning: `ops/ARC_REQUEST_PLANNING_V1.0.md` + `ops/planning/ARC_PLAN_DEFAULTS_V1.yaml` + `arc.py plan`. A short request becomes a plan card (version, item count, unit sets, difficulty split, core/advanced, archetype mix); KOR ARC N° versions V1–V4 and V6 have explicit difficulty profiles.

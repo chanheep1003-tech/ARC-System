@@ -61,12 +61,17 @@ SCHOOL_FAMILIES = {
 SUBJECT_FAMILIES = {
     "SOC": {"DATA_INTERPRETATION", "MAP_READING", "GRAPH_READING", "CLAIM_EVIDENCE_MATCH", "PRINCIPLE_APPLICATION",
             "REMEDY_PROCEDURE", "RIGHTS_CONFLICT", "PERSPECTIVE_IDENTIFICATION", "CAUSE_EFFECT"},
+    "ENG": {"VOCAB_IN_CONTEXT", "VOCAB_DEFINITION", "VOCAB_SYNONYM", "GRAMMAR_ERROR", "GRAMMAR_CORRECT_SET", "MAIN_IDEA",
+            "IMPLIED_MEANING", "BLANK_INFERENCE", "IRRELEVANT_SENTENCE", "SENTENCE_INSERTION", "SUMMARY_COMPLETION",
+            "REFERENCE_TRACKING"},
     "SCI": {"DATA_INTERPRETATION", "GRAPH_READING", "EXPERIMENT_ANALYSIS", "PARTICLE_MODEL", "QUANTITATIVE_REASONING",
             "VARIABLE_CONTROL", "CAUSE_EFFECT", "PRINCIPLE_APPLICATION", "BEFORE_AFTER_COMPARISON"},
 }
 # Subjects that must print registry-locked raw school text; others may also use bundle-authored material.
 REGISTRY_ONLY_SUBJECTS = {"KOR"}
-ITEM_LOCAL_REF = re.compile(r"STEM|VIEW|TABLE|FIGURE|OPTION[1-5]|SCOPE:\S+")
+# Subjects whose stems come from a registered fixed type library (quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml).
+FIXED_STEM_SUBJECTS = {"ENG"}
+ITEM_LOCAL_REF = re.compile(r"STEM|VIEW|PASSAGE|TABLE|FIGURE|OPTION[1-5]|SCOPE:\S+")
 RARE_FAMILIES = {"COUNTERFACTUAL_DELETE_REPLACE", "MICRO_REFERENCE_TRACE", "META_READING_STRATEGY"}
 # Internal QA vocabulary that must never reach student text.
 LEAK_TERMS = ["판단축", "정답 후보", "추론 단계", "검토 절차", "매력적인 오답", "오답 선지", "2순위", "second-best",
@@ -81,6 +86,7 @@ PROFILES = {
     # (arc_n_advanced_discrimination_target 20-30%) is enforced.
     ("SOC", "ARC_N"): {"ADVANCED": (0.20, 0.30)},
     ("SCI", "ARC_N"): {"ADVANCED": (0.20, 0.30)},
+    ("ENG", "ARC_N"): {"ADVANCED": (0.20, 0.30)},
 }
 
 
@@ -337,15 +343,16 @@ def manuscript(bundle: dict[str, Any], sources: list[dict[str, Any]]) -> str:
             lines += [f"## QUESTION {labels[it['item_id']]}", it["stem"] + pts]
         else:
             lines += [f"## {labels[it['item_id']]}", it["stem"] + pts]
+        lines += [str(x) for x in it.get("passage", [])]
         if it.get("figure"):
             lines.append(figure_line(it["figure"]))
         if it.get("table"):
             lines += table_lines(it["table"])
         if it.get("view"):
-            lines.append("<보 기>")
+            lines.append(it.get("view_label", "<보 기>"))
             lines += it["view"]
         if it["format"] == "MCQ":
-            lines += [f"{CIRC[i]} {o}" for i, o in enumerate(it["options"])]
+            lines += [o if o == CIRC[i] else f"{CIRC[i]} {o}" for i, o in enumerate(it["options"])]
         else:
             lines.append("<조 건>")
             lines += it["conditions"]
@@ -495,7 +502,8 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
         add("ANSWER_POSITION_BIAS", counts=dict(keys))
     if key_run >= 3:
         add("ANSWER_POSITION_RUN", run=key_run)
-    if single_best > max(1, round(n * 0.4)):
+    # ENG stems are fixed by the registered Dongbuk type library ("…가장 적절한 것은?" is the school form itself).
+    if single_best > max(1, round(n * 0.4)) and bundle["subject"] not in FIXED_STEM_SUBJECTS:
         add("SINGLE_BEST_STEM_OVERUSE", count=single_best)
     if except_count > max(1, round(n * 0.2)):
         add("EXCEPT_STEM_OVERUSE", count=except_count)
@@ -545,7 +553,7 @@ def korean_stem_polarity(item: dict[str, Any]) -> str:
     negative_markers = (
         "적절하지않은", "옳지않은", "바르지않은", "타당하지않은",
         "일치하지않는", "어긋나는", "맞지않는", "적절하지않는",
-        "틀린것은", "아닌것은", "잘못된", "부적절한", "위배되는",
+        "틀린것은", "아닌것은", "잘못된", "부적절한", "위배되는", "관계없는",
     )
     inferred_negative = (
         str(item.get("family", "")).upper() == "EXCEPT_INCORRECT"

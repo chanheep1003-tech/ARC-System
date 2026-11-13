@@ -18,7 +18,7 @@ import yaml
 
 
 ROOT = Path(__file__).resolve().parents[2]
-SUBJECTS = {"KOR", "SOC", "HIS", "SCI", "AI"}
+SUBJECTS = {"KOR", "ENG", "SOC", "SCI", "HIS", "AI"}
 VERDICTS = {"TRUE", "FALSE", "HALF_TRUE", "UNSUPPORTED"}
 COMPETITIVENESS = {"STRONG", "MEDIUM", "WEAK", "CORRECT"}
 DIFFICULTIES = {"D1", "D2", "D3", "D4", "D5"}
