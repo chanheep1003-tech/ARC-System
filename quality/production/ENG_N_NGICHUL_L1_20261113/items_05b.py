@@ -276,10 +276,10 @@ under(c, "GRM-01", "D4", (1, 5), [("called magma", "called"), ("move closer", "m
        ("plural_determine", S, "주어가 The type and amount(두 가지)이므로 복수동사 determine이어야 한다."),
        ("singular_depends", S, "주어 the size(단수)의 동사이다(of the crystals에 끌리지 않는다).")])
 
-under(c, "RDG-03", "D3", (5, 9), [("how rapidly", "rapidly"), ("cools slowly", "slowly"), ("generally large", "large"), ("enough time", "time"), ("will be small", "small")],
-      (2, "tiny"), 5,
+under(c, "RDG-03", "D3", (5, 9), [("how rapidly", "rapidly"), ("cools slowly", "slowly"), ("large enough to see with the unaided eye", "large enough to see with the unaided eye"), ("enough time", "time"), ("will be small", "small")],
+      (2, "so small that they cannot be seen with the unaided eye"), 5,
       [("rapidly_ok", W, "얼마나 '빨리' 식는지에 달려 있다."), ("slowly_ok", M, "'천천히' 식는 경우이다."),
-       ("large_swap", S, "맨눈으로 볼 수 있을 만큼 '큰' 결정이어야 다음 문장(더 큰 결정)과 이어진다."),
+       ("large_swap", S, "천천히 식으면 맨눈으로 볼 수 있을 만큼 큰 결정이 생기므로 '맨눈으로 볼 수 없을 만큼 작다'는 표현은 다음 문장(더 큰 결정)과 모순이다."),
        ("time_ok", M, "원자들이 모일 '시간'이 충분하다."), ("small_ok", S, "빨리 식으면 결정이 '작다'.")])
 
 mcq(c, "RDG-04", "D3", None,

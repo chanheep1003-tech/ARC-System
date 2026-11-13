@@ -6,3 +6,11 @@
 2. 빈칸(RDG-04) 문항 중 어색한 것이 있다. 원문 문장을 바꿔 쓴 빈칸이 부자연스러운 곳을 전수 점검해 고친다.
 3. 난이도가 쉽다. D3 78%였으므로 D4 이상 비중을 올리고 선지 간 변별을 높인다(매력적 오답을 STRONG으로).
 4. 내용 오류가 있다. 지적된 문항을 확인해 고치고, 다음 판 전에 독립 재풀이로 정답 유일성을 검증한다.
+
+## 반영 내역 (v1.1, 같은 날)
+- 조판: 본문 전문 그대로, 본문 8.6pt·행간 1.5 (`ARC_BODY_PT`, `ARC_LH_RATIO` 환경변수로 렌더러 조정), 54쪽 → 40쪽.
+- 21번: 원문 nor 구조는 그대로 두고 ⑤를 주어-동사 수일치(has→have)로 교체. 40번: 요약문을 "allowing even a(n) (B) mimic to avoid being attacked"로 수정.
+- 53번: 오답을 similar→duller로 교체(생생함 자체를 부정). 9번: 삽입문을 "do not develop post-traumatic stress syndrome"으로.
+- 108번: large enough to see → so small that they cannot be seen with the unaided eye로 명백한 모순 표현.
+- 정답 위치: 자유 순서 선지 문항을 회전시켜 81~93번 ③④ 쏠림 해소(①27 ②28 ③27 ④30 ⑤28).
+- 난이도 보정은 다음 차시.

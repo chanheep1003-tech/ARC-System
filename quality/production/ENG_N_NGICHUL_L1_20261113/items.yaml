@@ -92,7 +92,7 @@ items:
   - NGICHUL-L1-3-4-1
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - The company's passion for satisfying customers ①⟦is summed up⟧ in its credo, which ②⟦promise⟧ that its luxury hotels will deliver a truly memorable experience. Although a customer-centered firm seeks ③⟦to deliver⟧ high customer satisfaction relative to competitors, it does not attempt to maximize customer satisfaction. A company can always increase customer satisfaction by ④⟦lowering⟧ its price or increasing its services. But this may result in lower profits. Thus, the purpose of marketing is to generate customer value ⑤⟦profitably⟧.
+  - 'For companies interested in delighting customers, exceptional value and service become part of the overall company culture. For example, year after year, Pazano ranks at or near the top of the hospitality industry in terms of customer satisfaction. The company''s passion for satisfying customers ①⟦is summed up⟧ in its credo, which ②⟦promise⟧ that its luxury hotels will deliver a truly memorable experience. Although a customer-centered firm seeks ③⟦to deliver⟧ high customer satisfaction relative to competitors, it does not attempt to maximize customer satisfaction. A company can always increase customer satisfaction by ④⟦lowering⟧ its price or increasing its services. But this may result in lower profits. Thus, the purpose of marketing is to generate customer value ⑤⟦profitably⟧. This requires a very delicate balance: the marketer must continue to generate more customer value and satisfaction but not ''give away the house''.'
   options: &id001
   - ①
   - ②
@@ -162,7 +162,7 @@ items:
   - NGICHUL-L1-3-4-1
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - 'Although a customer-centered firm seeks to deliver high customer satisfaction relative to competitors, it does not attempt to ①⟦maximize⟧ customer satisfaction. A company can always ②⟦increase⟧ customer satisfaction by lowering its price or increasing its services. But this may result in ③⟦lower⟧ profits. Thus, the purpose of marketing is to generate customer value ④⟦profitably⟧. This requires a very ⑤⟦effortless⟧ balance: the marketer must continue to generate more customer value and satisfaction but not ''give away the house''.'
+  - 'For companies interested in delighting customers, exceptional value and service become part of the overall company culture. For example, year after year, Pazano ranks at or near the top of the hospitality industry in terms of customer satisfaction. The company''s passion for satisfying customers is summed up in its credo, which promises that its luxury hotels will deliver a truly memorable experience. Although a customer-centered firm seeks to deliver high customer satisfaction relative to competitors, it does not attempt to ①⟦maximize⟧ customer satisfaction. A company can always ②⟦increase⟧ customer satisfaction by lowering its price or increasing its services. But this may result in ③⟦lower⟧ profits. Thus, the purpose of marketing is to generate customer value ④⟦profitably⟧. This requires a very ⑤⟦effortless⟧ balance: the marketer must continue to generate more customer value and satisfaction but not ''give away the house''.'
   options: *id001
   answer: 5
   second_best: 1
@@ -229,13 +229,13 @@ items:
   passage:
   - 'For companies interested in delighting customers, exceptional value and service become part of the overall company culture. For example, year after year, Pazano ranks at or near the top of the hospitality industry in terms of customer satisfaction. The company''s passion for satisfying customers is summed up in its credo, which promises that its luxury hotels will deliver a truly memorable experience. Although a customer-centered firm seeks to deliver high customer satisfaction relative to competitors, it does not attempt to maximize customer satisfaction. A company can always increase customer satisfaction by lowering its price or increasing its services. But this may result in lower profits. Thus, what marketing ultimately aims at is to ________________________. This requires a very delicate balance: the marketer must continue to generate more customer value and satisfaction but not ''give away the house''.'
   options:
+  - build a company culture centered on its employees' passion
   - maximize customer satisfaction regardless of the cost involved
   - create value for customers while keeping the business profitable
   - rank at the top of the industry in customer satisfaction
   - lower prices so as to win customers away from competitors
-  - build a company culture centered on its employees' passion
-  answer: 2
-  second_best: 1
+  answer: 3
+  second_best: 2
   difficulty: D4
   family: BLANK_INFERENCE
   balance: ADVANCED_DISCRIMINATION
@@ -245,11 +245,20 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
+    c: WEAK
+    claim: employee_passion
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: false
+    why: 열정은 고객 만족에 대한 것이고 직원 중심 문화는 다루지 않는다.
+  - axis: reading
     c: STRONG
     claim: maximize_trap
     ev:
     - PASSAGE
-    - OPTION1
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-4-1
     v: false
     why: 글은 고객 만족을 극대화하려 하지 않는다고 했으므로 반대이다.
@@ -258,7 +267,7 @@ items:
     claim: value_profit
     ev:
     - PASSAGE
-    - OPTION2
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-4-1
     v: true
     why: 원문 'generate customer value profitably'를 바꿔 쓴 것으로 바로 뒤 delicate balance와 이어진다.
@@ -267,7 +276,7 @@ items:
     claim: rank_top
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION4
     - SCOPE:NGICHUL-L1-3-4-1
     v: false
     why: Pazano의 순위는 예시일 뿐 마케팅의 목적이 아니다.
@@ -276,19 +285,10 @@ items:
     claim: lower_price
     ev:
     - PASSAGE
-    - OPTION4
-    - SCOPE:NGICHUL-L1-3-4-1
-    v: false
-    why: 가격 인하는 이익 감소로 이어질 수 있는 수단으로 제시되었다.
-  - axis: reading
-    c: WEAK
-    claim: employee_passion
-    ev:
-    - PASSAGE
     - OPTION5
     - SCOPE:NGICHUL-L1-3-4-1
     v: false
-    why: 열정은 고객 만족에 대한 것이고 직원 중심 문화는 다루지 않는다.
+    why: 가격 인하는 이익 감소로 이어질 수 있는 수단으로 제시되었다.
 - item_id: ENG-NG-3-4-1-5
   set: null
   eng_type: ARC-ENG-RDG-09
@@ -299,13 +299,13 @@ items:
   passage:
   - 'For companies interested in delighting customers, exceptional value and service become part of the overall company culture. For example, year after year, Pazano ranks at or near the top of the hospitality industry in terms of customer satisfaction. The company''s passion for satisfying customers is summed up in its credo, which promises that its luxury hotels will deliver a truly memorable experience. Although a customer-centered firm seeks to deliver high customer satisfaction relative to competitors, it does not attempt to maximize customer satisfaction. A company can always increase customer satisfaction by lowering its price or increasing its services. But this may result in lower profits. Thus, the purpose of marketing is to generate customer value profitably. This requires a very delicate balance: the marketer must continue to generate more customer value and satisfaction but not ''give away the house''.'
   options:
+  - low …… cheaply
   - low …… profitably
   - high …… generously
   - high …… profitably
   - stable …… freely
-  - low …… cheaply
-  answer: 3
-  second_best: 2
+  answer: 4
+  second_best: 3
   difficulty: D3
   family: SUMMARY_COMPLETION
   balance: CORE_EXAM_POINT
@@ -315,11 +315,20 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
+    c: WEAK
+    claim: low_cheap
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-4-1
+    v: false
+    why: 두 빈칸 모두 글과 맞지 않는다.
+  - axis: reading
     c: MEDIUM
     claim: low_profit
     ev:
     - PASSAGE
-    - OPTION1
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-4-1
     v: false
     why: (B)는 맞지만 고객 중심 기업은 경쟁사보다 높은 만족을 추구한다.
@@ -328,7 +337,7 @@ items:
     claim: high_generous
     ev:
     - PASSAGE
-    - OPTION2
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-4-1
     v: false
     why: (A)는 맞지만 'give away the house' 하지 않는다는 결론과 반대이다.
@@ -337,22 +346,13 @@ items:
     claim: high_profit
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION4
     - SCOPE:NGICHUL-L1-3-4-1
     v: true
     why: 높은 만족은 유지하되 극대화하지 않고, 이익을 내며 가치를 창출한다.
   - axis: reading
     c: WEAK
     claim: stable_free
-    ev:
-    - PASSAGE
-    - OPTION4
-    - SCOPE:NGICHUL-L1-3-4-1
-    v: false
-    why: 두 빈칸 모두 글과 맞지 않는다.
-  - axis: reading
-    c: WEAK
-    claim: low_cheap
     ev:
     - PASSAGE
     - OPTION5
@@ -446,13 +446,13 @@ items:
   passage:
   - Post-traumatic stress syndrome became common knowledge but not the concept of post-traumatic growth, which is actually far more widespread. Most people who undergo trauma ultimately feel that the experience has made them stronger, wiser, more mature, more tolerant and understanding, or in some other way better people. The influential psychologist Martin Seligman has often lamented that so much attention is lavished on post-traumatic stress syndrome rather than post-traumatic growth because it causes people to mistakenly expect that bad events will have mainly negative effects. After being exposed to a terrifying event, at least 80 percent of people do not experience post-traumatic stress syndrome. Even though a single bad event is more powerful than a good event, over time people respond in so many constructive ways that they typically emerge more capable than ever of confronting life's challenges. Bad can make us stronger in the end.
   options:
-  - Experts should pay more attention to post-traumatic stress syndrome.
   - A single bad event usually has less impact on us than a good one.
   - Most people who experience trauma need professional treatment.
   - Growth after trauma is far more common than lasting harm.
   - Avoiding terrifying events is the key to becoming more mature.
-  answer: 4
-  second_best: 1
+  - Experts should pay more attention to post-traumatic stress syndrome.
+  answer: 3
+  second_best: 5
   difficulty: D2
   family: MAIN_IDEA
   balance: CORE_EXAM_POINT
@@ -462,20 +462,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: STRONG
-    claim: more_attention_pts
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-4-2
-    v: false
-    why: Seligman은 PTSS에 관심이 쏠리는 것을 한탄했으므로 반대 진술이다.
-  - axis: reading
     c: MEDIUM
     claim: bad_weaker
     ev:
     - PASSAGE
-    - OPTION2
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-4-2
     v: false
     why: 글은 나쁜 사건 하나가 좋은 사건보다 더 강력하다고 했다.
@@ -484,7 +475,7 @@ items:
     claim: therapy_needed
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-4-2
     v: false
     why: 80% 이상이 PTSS를 겪지 않는다고 했으므로 맞지 않는다.
@@ -493,7 +484,7 @@ items:
     claim: growth_common
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-4-2
     v: true
     why: 외상 후 성장이 훨씬 널리 퍼져 있고 결국 더 강해진다는 것이 요지이다.
@@ -502,10 +493,19 @@ items:
     claim: avoid_events
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION4
     - SCOPE:NGICHUL-L1-3-4-2
     v: false
     why: 끔찍한 사건을 피하는 것에 대한 내용은 없다.
+  - axis: reading
+    c: STRONG
+    claim: more_attention_pts
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: false
+    why: Seligman은 PTSS에 관심이 쏠리는 것을 한탄했으므로 반대 진술이다.
 - item_id: ENG-NG-3-4-2-3
   set: null
   eng_type: ARC-ENG-RDG-03
@@ -514,7 +514,7 @@ items:
   - NGICHUL-L1-3-4-2
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - Most people who undergo trauma ultimately feel that the experience has made them ①⟦stronger⟧, wiser, more mature, more tolerant and understanding, or in some other way better people. The influential psychologist Martin Seligman has often ②⟦lamented⟧ that so much attention is ③⟦lavished⟧ on post-traumatic stress syndrome rather than post-traumatic growth because it causes people to ④⟦correctly⟧ expect that bad events will have mainly negative effects. After being exposed to a ⑤⟦terrifying⟧ event, at least 80 percent of people do not experience post-traumatic stress syndrome.
+  - Post-traumatic stress syndrome became common knowledge but not the concept of post-traumatic growth, which is actually far more widespread. Most people who undergo trauma ultimately feel that the experience has made them ①⟦stronger⟧, wiser, more mature, more tolerant and understanding, or in some other way better people. The influential psychologist Martin Seligman has often ②⟦lamented⟧ that so much attention is ③⟦lavished⟧ on post-traumatic stress syndrome rather than post-traumatic growth because it causes people to ④⟦correctly⟧ expect that bad events will have mainly negative effects. After being exposed to a ⑤⟦terrifying⟧ event, at least 80 percent of people do not experience post-traumatic stress syndrome. Even though a single bad event is more powerful than a good event, over time people respond in so many constructive ways that they typically emerge more capable than ever of confronting life's challenges. Bad can make us stronger in the end.
   options: *id001
   answer: 4
   second_best: 5
@@ -637,7 +637,7 @@ items:
     v: false
     why: 결론 문장 뒤에 근거 수치가 올 수 없다.
   view:
-  - In fact, at least 80 percent of people who are exposed to a terrifying event do not experience it.
+  - In fact, at least 80 percent of people who are exposed to a terrifying event do not develop post-traumatic stress syndrome.
   view_label: ''
 - item_id: ENG-NG-3-4-2-5
   set: null
@@ -649,13 +649,13 @@ items:
   passage:
   - Post-traumatic stress syndrome became common knowledge but not the concept of post-traumatic growth, which is actually far more widespread. Most people who undergo trauma ultimately feel that the experience has made them stronger, wiser, more mature, more tolerant and understanding, or in some other way better people. The influential psychologist Martin Seligman has often lamented that so much attention is lavished on post-traumatic stress syndrome rather than post-traumatic growth because it causes people to mistakenly expect that bad events will have mainly negative effects. After being exposed to a terrifying event, at least 80 percent of people do not experience post-traumatic stress syndrome. Even though a single bad event is more powerful than a good event, over time people ________________________. Bad can make us stronger in the end.
   options:
-  - become so fearful of bad events that they avoid any challenge
   - respond so constructively that they end up better able to face hardships
   - forget their trauma completely and return to their former selves
   - remain stuck in the negative effects that the event produced
   - rely on experts in order to recover from the stress syndrome
-  answer: 2
-  second_best: 3
+  - become so fearful of bad events that they avoid any challenge
+  answer: 1
+  second_best: 2
   difficulty: D3
   family: BLANK_INFERENCE
   balance: CORE_EXAM_POINT
@@ -665,20 +665,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: MEDIUM
-    claim: fearful_avoid
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-4-2
-    v: false
-    why: 결국 더 강해진다는 마지막 문장과 반대이다.
-  - axis: reading
     c: CORRECT
     claim: constructive_capable
     ev:
     - PASSAGE
-    - OPTION2
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-4-2
     v: true
     why: 원문(건설적으로 반응해 삶의 도전에 맞설 능력이 더 커진다)을 바꿔 쓴 것이다.
@@ -687,7 +678,7 @@ items:
     claim: forget_return
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-4-2
     v: false
     why: 회복에 그치지 않고 이전보다 더 강해진다는 점에서 맞지 않는다.
@@ -696,7 +687,7 @@ items:
     claim: stuck_negative
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-4-2
     v: false
     why: Even though가 이끄는 앞 절의 내용(나쁜 사건이 더 강력함)과만 이어지는 오답이다.
@@ -705,10 +696,19 @@ items:
     claim: rely_experts
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION4
     - SCOPE:NGICHUL-L1-3-4-2
     v: false
     why: 전문가 의존은 언급되지 않는다.
+  - axis: reading
+    c: MEDIUM
+    claim: fearful_avoid
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-2
+    v: false
+    why: 결국 더 강해진다는 마지막 문장과 반대이다.
 - item_id: ENG-NG-3-4-3-1
   set: null
   eng_type: ARC-ENG-RDG-08
@@ -719,13 +719,13 @@ items:
   passage:
   - While moving is difficult for everyone, it is particularly stressful for children. They lose their sense of security and may feel disoriented when their routine is disrupted and all that is familiar is taken away. Young children, ages 3-6, are particularly affected by a move. Their understanding at this stage is quite literal, and it is difficult for them to imagine beforehand a new home and their new room. Young children may have worries such as "Will I still be me in the new place?" and "Will my toys and bed come with us?" It is important to establish a balance between validating children's past experiences and focusing on helping them adjust to the new place. Children need to have opportunities to share their backgrounds in a way that respects their past as an important part of who they are. This contributes to building a sense of community, which is essential for all children, especially those in transition.
   options:
+  - 자신의 배경을 나눌 기회는 공동체 의식 형성에 도움이 된다.
   - 이사는 모든 사람에게 어렵지만 아이들에게 특히 스트레스가 된다.
   - 일상이 깨지면 아이들은 안정감을 잃고 혼란을 느낄 수 있다.
   - 3~6세 아이들은 새집과 새 방을 미리 상상하는 것을 어려워한다.
   - 아이들의 과거 경험보다 새 환경 적응을 돕는 데 집중해야 한다.
-  - 자신의 배경을 나눌 기회는 공동체 의식 형성에 도움이 된다.
-  answer: 4
-  second_best: 3
+  answer: 5
+  second_best: 4
   difficulty: D3
   family: CONTENT_UNDERSTANDING
   balance: CORE_EXAM_POINT
@@ -735,11 +735,20 @@ items:
   stem_polarity: NEGATIVE
   judgments:
   - axis: reading
+    c: MEDIUM
+    claim: community
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: true
+    why: 마지막 문장과 일치한다.
+  - axis: reading
     c: WEAK
     claim: stress_children
     ev:
     - PASSAGE
-    - OPTION1
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-4-3
     v: true
     why: 1문장과 일치한다.
@@ -748,7 +757,7 @@ items:
     claim: lose_security
     ev:
     - PASSAGE
-    - OPTION2
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-4-3
     v: true
     why: 2문장과 일치한다.
@@ -757,7 +766,7 @@ items:
     claim: literal_age
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION4
     - SCOPE:NGICHUL-L1-3-4-3
     v: true
     why: 4문장(이해가 문자 그대로라 미리 상상하기 어렵다)과 일치한다.
@@ -766,19 +775,10 @@ items:
     claim: balance_flip
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION5
     - SCOPE:NGICHUL-L1-3-4-3
     v: false
     why: 과거 경험 인정과 적응 지원 사이의 '균형'이 중요하다고 했으므로 일치하지 않는다.
-  - axis: reading
-    c: MEDIUM
-    claim: community
-    ev:
-    - PASSAGE
-    - OPTION5
-    - SCOPE:NGICHUL-L1-3-4-3
-    v: true
-    why: 마지막 문장과 일치한다.
 - item_id: ENG-NG-3-4-3-2
   set: null
   eng_type: ARC-ENG-GRM-01
@@ -787,7 +787,7 @@ items:
   - NGICHUL-L1-3-4-3
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - They lose their sense of security and may feel ①⟦disoriented⟧ when their routine is disrupted and all that is familiar ②⟦is taken away⟧. Young children, ages 3-6, are particularly ③⟦affected⟧ by a move. Their understanding at this stage is quite literal, and it is difficult for them ④⟦to imagine⟧ beforehand a new home and their new room. Young children may have worries such as "Will I still be me in the new place?" and "Will my toys and bed come with us?" It is important to establish a balance between validating children's past experiences and focusing on helping them adjust to the new place. Children need to have opportunities to share their backgrounds in a way that respects their past as an important part of who they are. This contributes to building a sense of community, ⑤⟦what is essential⟧ for all children, especially those in transition.
+  - While moving is difficult for everyone, it is particularly stressful for children. They lose their sense of security and may feel ①⟦disoriented⟧ when their routine is disrupted and all that is familiar ②⟦is taken away⟧. Young children, ages 3-6, are particularly ③⟦affected⟧ by a move. Their understanding at this stage is quite literal, and it is difficult for them ④⟦to imagine⟧ beforehand a new home and their new room. Young children may have worries such as "Will I still be me in the new place?" and "Will my toys and bed come with us?" It is important to establish a balance between validating children's past experiences and focusing on helping them adjust to the new place. Children need to have opportunities to share their backgrounds in a way that respects their past as an important part of who they are. This contributes to building a sense of community, ⑤⟦what is essential⟧ for all children, especially those in transition.
   options: *id001
   answer: 5
   second_best: 2
@@ -852,7 +852,7 @@ items:
   - NGICHUL-L1-3-4-3
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - Their understanding at this stage is quite ①⟦literal⟧, and it is difficult for them to imagine beforehand a new home and their new room. Young children may have ②⟦worries⟧ such as "Will I still be me in the new place?" and "Will my toys and bed come with us?" It is important to establish a ③⟦balance⟧ between validating children's past experiences and focusing on helping them ④⟦object⟧ to the new place. Children need to have opportunities to share their backgrounds in a way that ⑤⟦respects⟧ their past as an important part of who they are.
+  - While moving is difficult for everyone, it is particularly stressful for children. They lose their sense of security and may feel disoriented when their routine is disrupted and all that is familiar is taken away. Young children, ages 3-6, are particularly affected by a move. Their understanding at this stage is quite ①⟦literal⟧, and it is difficult for them to imagine beforehand a new home and their new room. Young children may have ②⟦worries⟧ such as "Will I still be me in the new place?" and "Will my toys and bed come with us?" It is important to establish a ③⟦balance⟧ between validating children's past experiences and focusing on helping them ④⟦object⟧ to the new place. Children need to have opportunities to share their backgrounds in a way that ⑤⟦respects⟧ their past as an important part of who they are. This contributes to building a sense of community, which is essential for all children, especially those in transition.
   options: *id001
   answer: 4
   second_best: 3
@@ -984,13 +984,13 @@ items:
   passage:
   - While moving is difficult for everyone, it is particularly stressful for children. They lose their sense of security and may feel disoriented when their routine is disrupted and all that is familiar is taken away. Young children, ages 3-6, are particularly affected by a move. Their understanding at this stage is quite literal, and it is difficult for them to imagine beforehand a new home and their new room. Young children may have worries such as "Will I still be me in the new place?" and "Will my toys and bed come with us?" It is important to establish a balance between ________________________ and focusing on helping them adjust to the new place. Children need to have opportunities to share their backgrounds in a way that respects their past as an important part of who they are. This contributes to building a sense of community, which is essential for all children, especially those in transition.
   options:
+  - keeping children away from their new classmates
+  - acknowledging what children have been through before
   - making children forget their old homes quickly
   - teaching children how to pack their own belongings
   - choosing a house that looks like the old one
-  - keeping children away from their new classmates
-  - acknowledging what children have been through before
-  answer: 5
-  second_best: 1
+  answer: 2
+  second_best: 3
   difficulty: D3
   family: BLANK_INFERENCE
   balance: CORE_EXAM_POINT
@@ -1000,38 +1000,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: STRONG
-    claim: forget_old
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-4-3
-    v: false
-    why: 균형의 다른 한 축이 새 환경 적응이므로, 과거를 잊게 하는 것은 균형이 아니라 한쪽 치우침이다.
-  - axis: reading
-    c: WEAK
-    claim: pack_belongings
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-4-3
-    v: false
-    why: 짐 싸기는 다루지 않는다.
-  - axis: reading
-    c: MEDIUM
-    claim: same_house
-    ev:
-    - PASSAGE
-    - OPTION3
-    - SCOPE:NGICHUL-L1-3-4-3
-    v: false
-    why: 집의 외형은 논점이 아니다.
-  - axis: reading
     c: WEAK
     claim: away_classmates
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-4-3
     v: false
     why: 공동체 의식 형성과 반대이다.
@@ -1040,10 +1013,37 @@ items:
     claim: acknowledge_past
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-4-3
     v: true
     why: 뒤 문장(과거를 존중하며 배경을 나눌 기회)과 이어지는 '과거 경험 인정'이다.
+  - axis: reading
+    c: STRONG
+    claim: forget_old
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: false
+    why: 균형의 다른 한 축이 새 환경 적응이므로, 과거를 잊게 하는 것은 균형이 아니라 한쪽 치우침이다.
+  - axis: reading
+    c: WEAK
+    claim: pack_belongings
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: false
+    why: 짐 싸기는 다루지 않는다.
+  - axis: reading
+    c: MEDIUM
+    claim: same_house
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-3
+    v: false
+    why: 집의 외형은 논점이 아니다.
 - item_id: ENG-NG-3-4-4-1
   set: null
   eng_type: ARC-ENG-RDG-01
@@ -1122,7 +1122,7 @@ items:
   - NGICHUL-L1-3-4-4
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - And when those tiny drops of sweat appear, our skin gets more electrically ①⟦conductive⟧. This change in sweat gland activity happens completely without your conscious mind ②⟦has⟧ much say in the matter. If you feel emotionally intense, you're going to notice an increase in sweat gland activity. This is particularly useful from a scientific viewpoint, because it allows us ③⟦to put⟧ an objective value on a subjective state of mind. We can actually measure your emotional state by ④⟦tracking⟧ how your body subconsciously sweats, by running a bit of electricity through your skin. We can then turn the subjective, subconscious experience of emotional intensity into an objective number by figuring out how good your skin gets at ⑤⟦transferring⟧ an electrical current.
+  - Our skin conducts electricity more or less efficiently, depending on our emotions. We know that when we're emotionally stimulated—stressed, sad, any intense emotion, really—our bodies sweat a tiny bit, so little we might not even notice. And when those tiny drops of sweat appear, our skin gets more electrically ①⟦conductive⟧. This change in sweat gland activity happens completely without your conscious mind ②⟦has⟧ much say in the matter. If you feel emotionally intense, you're going to notice an increase in sweat gland activity. This is particularly useful from a scientific viewpoint, because it allows us ③⟦to put⟧ an objective value on a subjective state of mind. We can actually measure your emotional state by ④⟦tracking⟧ how your body subconsciously sweats, by running a bit of electricity through your skin. We can then turn the subjective, subconscious experience of emotional intensity into an objective number by figuring out how good your skin gets at ⑤⟦transferring⟧ an electrical current.
   options: *id001
   answer: 2
   second_best: 1
@@ -1187,7 +1187,7 @@ items:
   - NGICHUL-L1-3-4-4
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - We know that when we're emotionally stimulated—stressed, sad, any ①⟦intense⟧ emotion, really—our bodies sweat a tiny bit, so little we might not even notice. And when those tiny drops of sweat appear, our skin gets more electrically ②⟦conductive⟧. This change in sweat gland activity happens completely without your ③⟦conscious⟧ mind having much say in the matter. If you feel emotionally intense, you're going to notice an increase in sweat gland activity. This is particularly useful from a scientific viewpoint, because it allows us to put an ④⟦objective⟧ value on a subjective state of mind. We can actually measure your emotional state by tracking how your body ⑤⟦consciously⟧ sweats, by running a bit of electricity through your skin.
+  - Our skin conducts electricity more or less efficiently, depending on our emotions. We know that when we're emotionally stimulated—stressed, sad, any ①⟦intense⟧ emotion, really—our bodies sweat a tiny bit, so little we might not even notice. And when those tiny drops of sweat appear, our skin gets more electrically ②⟦conductive⟧. This change in sweat gland activity happens completely without your ③⟦conscious⟧ mind having much say in the matter. If you feel emotionally intense, you're going to notice an increase in sweat gland activity. This is particularly useful from a scientific viewpoint, because it allows us to put an ④⟦objective⟧ value on a subjective state of mind. We can actually measure your emotional state by tracking how your body ⑤⟦consciously⟧ sweats, by running a bit of electricity through your skin. We can then turn the subjective, subconscious experience of emotional intensity into an objective number by figuring out how good your skin gets at transferring an electrical current.
   options: *id001
   answer: 5
   second_best: 3
@@ -1399,7 +1399,7 @@ items:
   - NGICHUL-L1-3-4-5
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - Mass availability has ①⟦given⟧ individuals unheard-of control over their own sound-environment. However, it has also ②⟦confronted⟧ them with the simultaneous availability of countless genres of music, ③⟦in which⟧ they have to orient themselves. People start filtering out and ④⟦organizing⟧ their digital libraries like they used to do with their physical music collections. However, there is the difference that the choice lies in their own hands. Without being restricted to the limited collection of music-distributors, nor ⑤⟦guiding⟧ by the local radio program as a 'preselector' of the latest hits, the individual actively has to choose and determine his or her musical preferences.
+  - Due to technological innovations, music can now be experienced by more people, for more of the time than ever before. Mass availability has ①⟦given⟧ individuals unheard-of control over their own sound-environment. However, it has also ②⟦confronted⟧ them with the simultaneous availability of countless genres of music, ③⟦in which⟧ they have to orient themselves. People start filtering out and ④⟦organizing⟧ their digital libraries like they used to do with their physical music collections. However, there is the difference that the choice lies in their own hands. Without being restricted to the limited collection of music-distributors, nor being guided by the local radio program as a 'preselector' of the latest hits, the individual actively ⑤⟦have⟧ to choose and determine his or her musical preferences. The search for the right song is thus associated with considerable effort.
   options: *id001
   answer: 5
   second_best: 3
@@ -1449,13 +1449,13 @@ items:
     why: filtering out과 병렬인 동명사로 start의 목적어이다.
   - axis: reading
     c: CORRECT
-    claim: passive_guided
+    claim: subject_verb
     ev:
     - PASSAGE
     - OPTION5
     - SCOPE:NGICHUL-L1-3-4-5
     v: false
-    why: 개인이 라디오에 의해 '안내받는' 것이므로 Without being restricted와 짝을 이루는 수동 being guided여야 한다.
+    why: 주어 the individual(단수)이므로 has to choose가 맞다. 앞의 긴 수식어구에 끌려 복수로 쓰지 않는다.
 - item_id: ENG-NG-3-4-5-1
   set: null
   eng_type: ARC-ENG-RDG-01
@@ -1534,7 +1534,7 @@ items:
   - NGICHUL-L1-3-4-5
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - Mass availability has given individuals unheard-of ①⟦control⟧ over their own sound-environment. However, it has also confronted them with the simultaneous availability of ②⟦few⟧ genres of music, in which they have to orient themselves. People start filtering out and organizing their digital libraries like they used to do with their ③⟦physical⟧ music collections. However, there is the difference that the choice lies in their own hands. Without being ④⟦restricted⟧ to the limited collection of music-distributors, nor being guided by the local radio program as a 'preselector' of the latest hits, the individual actively has to choose and determine his or her musical preferences. The search for the right song is thus associated with ⑤⟦considerable⟧ effort.
+  - Due to technological innovations, music can now be experienced by more people, for more of the time than ever before. Mass availability has given individuals unheard-of ①⟦control⟧ over their own sound-environment. However, it has also confronted them with the simultaneous availability of ②⟦few⟧ genres of music, in which they have to orient themselves. People start filtering out and organizing their digital libraries like they used to do with their ③⟦physical⟧ music collections. However, there is the difference that the choice lies in their own hands. Without being ④⟦restricted⟧ to the limited collection of music-distributors, nor being guided by the local radio program as a 'preselector' of the latest hits, the individual actively has to choose and determine his or her musical preferences. The search for the right song is thus associated with ⑤⟦considerable⟧ effort.
   options: *id001
   answer: 2
   second_best: 5
@@ -1739,13 +1739,13 @@ items:
   passage:
   - The famous primatologist Frans de Waal, of Emory University, says humans downplay similarities between us and other animals as a way of maintaining our spot at the top of our imaginary ladder. Scientists, de Waal points out, can be some of the worst offenders—employing technical language to distance the other animals from us. They call "kissing" in chimps "mouth-to-mouth contact"; they call "friends" between primates "favorite affiliation partners"; they interpret evidence showing that crows and chimps can make tools as being somehow qualitatively different from the kind of toolmaking said to define humanity. If an animal can beat us at a cognitive task—like how certain bird species can remember the precise locations of thousands of seeds—they write it off as instinct, not intelligence. This and so many more tricks of language are what de Waal has termed ⟦"linguistic castration."⟧ The way we use our tongues to disempower animals, the way we invent words to maintain our spot at the top.
   options:
-  - teaching animals to understand basic human words
   - using language to deny animals the abilities we claim for ourselves
   - avoiding technical terms when describing animal behavior
   - admitting that some animals are smarter than humans
   - replacing scientific words with everyday expressions
-  answer: 2
-  second_best: 3
+  - teaching animals to understand basic human words
+  answer: 1
+  second_best: 2
   difficulty: D4
   family: IMPLIED_MEANING
   balance: ADVANCED_DISCRIMINATION
@@ -1755,20 +1755,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: WEAK
-    claim: teach_words
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-4-6
-    v: false
-    why: 동물에게 말을 가르치는 내용은 없다.
-  - axis: reading
     c: CORRECT
     claim: deny_abilities
     ev:
     - PASSAGE
-    - OPTION2
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-4-6
     v: true
     why: kissing을 mouth-to-mouth contact로 부르는 등 말로 동물의 능력을 깎아내려 인간의 우위를 지키는 것이다.
@@ -1777,7 +1768,7 @@ items:
     claim: avoid_technical
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-4-6
     v: false
     why: 과학자들은 오히려 전문 용어를 써서 동물과 거리를 둔다고 했으므로 반대이다.
@@ -1786,7 +1777,7 @@ items:
     claim: admit_smarter
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-4-6
     v: false
     why: 동물이 인간을 이겨도 본능으로 치부한다고 했으므로 반대이다.
@@ -1795,10 +1786,19 @@ items:
     claim: everyday_words
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION4
     - SCOPE:NGICHUL-L1-3-4-6
     v: false
     why: 일상어를 전문어로 바꾸는 것이 문제라고 했으므로 방향이 반대이다.
+  - axis: reading
+    c: WEAK
+    claim: teach_words
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-6
+    v: false
+    why: 동물에게 말을 가르치는 내용은 없다.
 - item_id: ENG-NG-3-4-6-2
   set: null
   eng_type: ARC-ENG-GRM-01
@@ -1807,7 +1807,7 @@ items:
   - NGICHUL-L1-3-4-6
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - The famous primatologist Frans de Waal, of Emory University, says humans ①⟦downplay⟧ similarities between us and other animals as a way of maintaining our spot at the top of our imaginary ladder. Scientists, de Waal points out, can be some of the worst offenders—②⟦employing⟧ technical language to distance the other animals from us. They call "kissing" in chimps "mouth-to-mouth contact"; they call "friends" between primates "favorite affiliation partners"; they interpret evidence ③⟦showing⟧ that crows and chimps can make tools as being somehow qualitatively different from the kind of toolmaking ④⟦saying⟧ to define humanity. If an animal can beat us at a cognitive task—like how certain bird species can remember the precise locations of thousands of seeds—they ⑤⟦write⟧ it off as instinct, not intelligence.
+  - The famous primatologist Frans de Waal, of Emory University, says humans ①⟦downplay⟧ similarities between us and other animals as a way of maintaining our spot at the top of our imaginary ladder. Scientists, de Waal points out, can be some of the worst offenders—②⟦employing⟧ technical language to distance the other animals from us. They call "kissing" in chimps "mouth-to-mouth contact"; they call "friends" between primates "favorite affiliation partners"; they interpret evidence ③⟦showing⟧ that crows and chimps can make tools as being somehow qualitatively different from the kind of toolmaking ④⟦saying⟧ to define humanity. If an animal can beat us at a cognitive task—like how certain bird species can remember the precise locations of thousands of seeds—they ⑤⟦write⟧ it off as instinct, not intelligence. This and so many more tricks of language are what de Waal has termed "linguistic castration." The way we use our tongues to disempower animals, the way we invent words to maintain our spot at the top.
   options: *id001
   answer: 4
   second_best: 3
@@ -2076,7 +2076,7 @@ items:
   - NGICHUL-L1-3-4-7
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - In the same way that opportunity ①⟦dried⟧ up for middle-income artisans as a consequence of the industrialization process, the age of automation has meant ②⟦diminishing⟧ opportunities for the American middle class. Like the victims of the early factories, many Americans have adjusted to the computerization of work by unwillingly ③⟦shifting⟧ into lower-paying jobs or have failed to adjust and ④⟦dropped⟧ out of the workforce completely. And similar to the victims of the factories, the losers to automation have primarily been men in the prime of life. Up until the 1980s, manufacturing jobs allowed ordinary working men ⑤⟦attaining⟧ a middle-class lifestyle without going to college. As employment opportunities in manufacturing receded, a path of upward mobility was closed to many citizens.
+  - Like in the early days of industrialization, workers today are no longer reaping the gains of progress. Worse, many have been left behind in the backwaters of progress. In the same way that opportunity ①⟦dried⟧ up for middle-income artisans as a consequence of the industrialization process, the age of automation has meant ②⟦diminishing⟧ opportunities for the American middle class. Like the victims of the early factories, many Americans have adjusted to the computerization of work by unwillingly ③⟦shifting⟧ into lower-paying jobs or have failed to adjust and ④⟦dropped⟧ out of the workforce completely. And similar to the victims of the factories, the losers to automation have primarily been men in the prime of life. Up until the 1980s, manufacturing jobs allowed ordinary working men ⑤⟦attaining⟧ a middle-class lifestyle without going to college. As employment opportunities in manufacturing receded, a path of upward mobility was closed to many citizens.
   options: *id001
   answer: 5
   second_best: 3
@@ -2211,7 +2211,7 @@ items:
   - NGICHUL-L1-3-4-7
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - Worse, many have been left behind in the ①⟦backwaters⟧ of progress. In the same way that opportunity dried up for middle-income artisans as a consequence of the industrialization process, the age of automation has meant ②⟦diminishing⟧ opportunities for the American middle class. Like the victims of the early factories, many Americans have adjusted to the computerization of work by ③⟦eagerly⟧ shifting into lower-paying jobs or have failed to adjust and dropped out of the workforce completely. And similar to the victims of the factories, the losers to automation have ④⟦primarily⟧ been men in the prime of life. Up until the 1980s, manufacturing jobs allowed ordinary working men to attain a middle-class lifestyle without going to college. As employment opportunities in manufacturing ⑤⟦receded⟧, a path of upward mobility was closed to many citizens.
+  - Like in the early days of industrialization, workers today are no longer reaping the gains of progress. Worse, many have been left behind in the ①⟦backwaters⟧ of progress. In the same way that opportunity dried up for middle-income artisans as a consequence of the industrialization process, the age of automation has meant ②⟦diminishing⟧ opportunities for the American middle class. Like the victims of the early factories, many Americans have adjusted to the computerization of work by ③⟦eagerly⟧ shifting into lower-paying jobs or have failed to adjust and dropped out of the workforce completely. And similar to the victims of the factories, the losers to automation have ④⟦primarily⟧ been men in the prime of life. Up until the 1980s, manufacturing jobs allowed ordinary working men to attain a middle-class lifestyle without going to college. As employment opportunities in manufacturing ⑤⟦receded⟧, a path of upward mobility was closed to many citizens.
   options: *id001
   answer: 3
   second_best: 5
@@ -2278,13 +2278,13 @@ items:
   passage:
   - Like in the early days of industrialization, workers today are no longer reaping the gains of progress. Worse, many have been left behind in the backwaters of progress. In the same way that opportunity dried up for middle-income artisans as a consequence of the industrialization process, the age of automation has meant diminishing opportunities for the American middle class. Like the victims of the early factories, many Americans have adjusted to the computerization of work by unwillingly shifting into lower-paying jobs or have failed to adjust and dropped out of the workforce completely. And similar to the victims of the factories, the losers to automation have primarily been men in the prime of life. Up until the 1980s, manufacturing jobs allowed ordinary working men to attain a middle-class lifestyle without going to college. As employment opportunities in manufacturing receded, ________________________ was closed to many citizens.
   options:
-  - the chance to avoid going to college
   - the door to automated factory work
   - a way of reducing their working hours
   - an opportunity to retire early
   - a route to a higher social position
-  answer: 5
-  second_best: 1
+  - the chance to avoid going to college
+  answer: 4
+  second_best: 5
   difficulty: D3
   family: BLANK_INFERENCE
   balance: CORE_EXAM_POINT
@@ -2294,20 +2294,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: STRONG
-    claim: avoid_college
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-4-7
-    v: false
-    why: 대학 없이 중산층이 될 수 있었다는 앞 문장의 표면만 가져온 오답이다.
-  - axis: reading
     c: MEDIUM
     claim: automated_work
     ev:
     - PASSAGE
-    - OPTION2
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-4-7
     v: false
     why: 자동화된 일자리로 가는 문이 아니라 상향 이동의 길이 닫혔다.
@@ -2316,7 +2307,7 @@ items:
     claim: reduce_hours
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-4-7
     v: false
     why: 근무 시간은 다루지 않는다.
@@ -2325,7 +2316,7 @@ items:
     claim: retire_early
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-4-7
     v: false
     why: 조기 은퇴는 다루지 않는다.
@@ -2334,10 +2325,19 @@ items:
     claim: upward_route
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION4
     - SCOPE:NGICHUL-L1-3-4-7
     v: true
     why: 원문 'a path of upward mobility'를 바꿔 쓴 것이다.
+  - axis: reading
+    c: STRONG
+    claim: avoid_college
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-7
+    v: false
+    why: 대학 없이 중산층이 될 수 있었다는 앞 문장의 표면만 가져온 오답이다.
 - item_id: ENG-NG-3-4-7-5
   set: null
   eng_type: ARC-ENG-RDG-05
@@ -2413,13 +2413,13 @@ items:
   passage:
   - Imagine yourself as a predator, perhaps a hawk. From on high, you spot what appears to be a tasty snake. If you hesitate for even a few seconds, your meal might be gone. Time is of the essence, and you must act quickly. But there's a twist—a major one. If you mistake a venomous coral snake for a non-venomous king snake, it will cost your life. In the tradeoff between a meal and your life, the choice is obvious. For a predator, natural selection has shaped this decision-making process to favor the conservative choice—long-term benefits of survival over short-term benefits of a single meal. Thus, there is no need for the king snake to be a perfect mimic of the coral snake's colors to win this round of the evolutionary arms race. The same logic applies when you're deciding whether or not to eat a wild mushroom. If you are not absolutely sure, don't let yourself fall prey to thoughts of tasty reward. The cost of your life would be too heavy a price to pay.
   options:
+  - 'Why Imperfect Mimics Survive: Predators Play It Safe'
+  - Speed Matters More Than Caution in the Wild
   - How Hawks Became the Fastest Hunters in the Sky
   - 'Coral Snakes and King Snakes: Natural Enemies'
   - 'Eating Wild Mushrooms: A Tasty but Safe Choice'
-  - 'Why Imperfect Mimics Survive: Predators Play It Safe'
-  - Speed Matters More Than Caution in the Wild
-  answer: 4
-  second_best: 5
+  answer: 1
+  second_best: 2
   difficulty: D3
   family: MAIN_IDEA
   balance: CORE_EXAM_POINT
@@ -2429,38 +2429,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: WEAK
-    claim: fast_hawk
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-4-8
-    v: false
-    why: 매는 상상 속 예시일 뿐이다.
-  - axis: reading
-    c: MEDIUM
-    claim: snake_enemies
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-4-8
-    v: false
-    why: 두 뱀의 관계가 아니라 포식자의 선택이 논점이다.
-  - axis: reading
-    c: MEDIUM
-    claim: mushroom_safe
-    ev:
-    - PASSAGE
-    - OPTION3
-    - SCOPE:NGICHUL-L1-3-4-8
-    v: false
-    why: 버섯은 같은 논리의 예시이고, 확실하지 않으면 먹지 말라고 했다.
-  - axis: reading
     c: CORRECT
     claim: imperfect_mimic
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-4-8
     v: true
     why: 포식자가 안전한 쪽을 택하므로 킹스네이크가 완벽히 흉내 내지 않아도 된다.
@@ -2469,10 +2442,37 @@ items:
     claim: speed_over_caution
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-4-8
     v: false
     why: 빨리 행동해야 한다는 앞부분만 보면 끌리지만, 결론은 생존을 위한 신중함이다.
+  - axis: reading
+    c: WEAK
+    claim: fast_hawk
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-4-8
+    v: false
+    why: 매는 상상 속 예시일 뿐이다.
+  - axis: reading
+    c: MEDIUM
+    claim: snake_enemies
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-8
+    v: false
+    why: 두 뱀의 관계가 아니라 포식자의 선택이 논점이다.
+  - axis: reading
+    c: MEDIUM
+    claim: mushroom_safe
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-8
+    v: false
+    why: 버섯은 같은 논리의 예시이고, 확실하지 않으면 먹지 말라고 했다.
 - item_id: ENG-NG-3-4-8-2
   set: null
   eng_type: ARC-ENG-GRM-01
@@ -2481,7 +2481,7 @@ items:
   - NGICHUL-L1-3-4-8
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - If you ①⟦hesitate⟧ for even a few seconds, your meal might be ②⟦gone⟧. Time is of the essence, and you must act quickly. But there's a twist—a major one. If you ③⟦mistake⟧ a venomous coral snake for a non-venomous king snake, it will cost your life. In the tradeoff between a meal and your life, the choice is obvious. For a predator, natural selection has shaped this decision-making process ④⟦to favor⟧ the conservative choice—long-term benefits of survival over short-term benefits of a single meal. Thus, there is no need for the king snake ⑤⟦being⟧ a perfect mimic of the coral snake's colors to win this round of the evolutionary arms race.
+  - Imagine yourself as a predator, perhaps a hawk. From on high, you spot what appears to be a tasty snake. If you ①⟦hesitate⟧ for even a few seconds, your meal might be ②⟦gone⟧. Time is of the essence, and you must act quickly. But there's a twist—a major one. If you ③⟦mistake⟧ a venomous coral snake for a non-venomous king snake, it will cost your life. In the tradeoff between a meal and your life, the choice is obvious. For a predator, natural selection has shaped this decision-making process ④⟦to favor⟧ the conservative choice—long-term benefits of survival over short-term benefits of a single meal. Thus, there is no need for the king snake ⑤⟦being⟧ a perfect mimic of the coral snake's colors to win this round of the evolutionary arms race. The same logic applies when you're deciding whether or not to eat a wild mushroom. If you are not absolutely sure, don't let yourself fall prey to thoughts of tasty reward. The cost of your life would be too heavy a price to pay.
   options: *id001
   answer: 5
   second_best: 2
@@ -2546,7 +2546,7 @@ items:
   - NGICHUL-L1-3-4-8
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - If you hesitate for even a few seconds, your meal might be gone. Time is of the essence, and you must act ①⟦quickly⟧. But there's a twist—a major one. If you mistake a ②⟦venomous⟧ coral snake for a non-venomous king snake, it will cost your life. In the tradeoff between a meal and your life, the choice is ③⟦obvious⟧. For a predator, natural selection has shaped this decision-making process to favor the ④⟦risky⟧ choice—long-term benefits of survival over short-term benefits of a single meal. Thus, there is no need for the king snake to be a ⑤⟦perfect⟧ mimic of the coral snake's colors to win this round of the evolutionary arms race.
+  - Imagine yourself as a predator, perhaps a hawk. From on high, you spot what appears to be a tasty snake. If you hesitate for even a few seconds, your meal might be gone. Time is of the essence, and you must act ①⟦quickly⟧. But there's a twist—a major one. If you mistake a ②⟦venomous⟧ coral snake for a non-venomous king snake, it will cost your life. In the tradeoff between a meal and your life, the choice is ③⟦obvious⟧. For a predator, natural selection has shaped this decision-making process to favor the ④⟦risky⟧ choice—long-term benefits of survival over short-term benefits of a single meal. Thus, there is no need for the king snake to be a ⑤⟦perfect⟧ mimic of the coral snake's colors to win this round of the evolutionary arms race. The same logic applies when you're deciding whether or not to eat a wild mushroom. If you are not absolutely sure, don't let yourself fall prey to thoughts of tasty reward. The cost of your life would be too heavy a price to pay.
   options: *id001
   answer: 4
   second_best: 5
@@ -2744,7 +2744,7 @@ items:
     v: false
     why: 두 빈칸 모두 글과 무관하다.
   view:
-  - Because a single mistake can cost its life, a predator tends to make (A) ________ choices, which allows even a(n) (B) ________ imitation to protect its prey.
+  - Because a single mistake can be fatal, a predator tends to make (A) ________ choices, allowing even a(n) (B) ________ mimic to avoid being attacked.
   view_label: ''
 - item_id: ENG-NG-3-4-9-2
   set: null
@@ -2754,7 +2754,7 @@ items:
   - NGICHUL-L1-3-4-9
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - This broad generalization, however, does not ①⟦mean⟧ that works of literature do not include direct statements. ②⟦Depending⟧ on when they were written and by whom, literary works may contain large amounts of direct telling and lesser amounts of suggestion and implication. But ③⟦whatever⟧ the proportion of a work's showing to telling, there is always something for readers to interpret. Thus we ask the question "What does the text suggest?" as a way to approach literary interpretation, as a way to begin thinking about a text's implications. ④⟦That⟧ a text implies is often of great interest to us. And our work of figuring out a text's implications ⑤⟦tests⟧ our analytical powers. In considering what a text suggests, we gain practice in making sense of texts.
+  - Literary works, by their nature, suggest rather than explain; they imply rather than state their claims boldly and directly. This broad generalization, however, does not ①⟦mean⟧ that works of literature do not include direct statements. ②⟦Depending⟧ on when they were written and by whom, literary works may contain large amounts of direct telling and lesser amounts of suggestion and implication. But ③⟦whatever⟧ the proportion of a work's showing to telling, there is always something for readers to interpret. Thus we ask the question "What does the text suggest?" as a way to approach literary interpretation, as a way to begin thinking about a text's implications. ④⟦That⟧ a text implies is often of great interest to us. And our work of figuring out a text's implications ⑤⟦tests⟧ our analytical powers. In considering what a text suggests, we gain practice in making sense of texts.
   options: *id001
   answer: 4
   second_best: 5
@@ -2889,7 +2889,7 @@ items:
   - NGICHUL-L1-3-4-9
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - Literary works, by their nature, suggest rather than explain; they ①⟦imply⟧ rather than state their claims boldly and directly. This broad generalization, however, does not mean that works of literature do not include ②⟦indirect⟧ statements. Depending on when they were written and by whom, literary works may contain large amounts of direct telling and ③⟦lesser⟧ amounts of suggestion and implication. But whatever the proportion of a work's showing to telling, there is ④⟦always⟧ something for readers to interpret. Thus we ask the question "What does the text suggest?" as a way to ⑤⟦approach⟧ literary interpretation, as a way to begin thinking about a text's implications.
+  - Literary works, by their nature, suggest rather than explain; they ①⟦imply⟧ rather than state their claims boldly and directly. This broad generalization, however, does not mean that works of literature do not include ②⟦indirect⟧ statements. Depending on when they were written and by whom, literary works may contain large amounts of direct telling and ③⟦lesser⟧ amounts of suggestion and implication. But whatever the proportion of a work's showing to telling, there is ④⟦always⟧ something for readers to interpret. Thus we ask the question "What does the text suggest?" as a way to ⑤⟦approach⟧ literary interpretation, as a way to begin thinking about a text's implications. What a text implies is often of great interest to us. And our work of figuring out a text's implications tests our analytical powers. In considering what a text suggests, we gain practice in making sense of texts.
   options: *id001
   answer: 2
   second_best: 4
@@ -2956,13 +2956,13 @@ items:
   passage:
   - Literary works, by their nature, suggest rather than explain; they imply rather than state their claims boldly and directly. This broad generalization, however, does not mean that works of literature do not include direct statements. Depending on when they were written and by whom, literary works may contain large amounts of direct telling and lesser amounts of suggestion and implication. But whatever the proportion of a work's showing to telling, ________________________. Thus we ask the question "What does the text suggest?" as a way to approach literary interpretation, as a way to begin thinking about a text's implications. What a text implies is often of great interest to us. And our work of figuring out a text's implications tests our analytical powers. In considering what a text suggests, we gain practice in making sense of texts.
   options:
-  - the writer's message is always stated directly
-  - the reader should focus on the direct statements
   - readers always find something left to interpret
   - older works contain more suggestion than newer ones
   - the text can be understood without any analysis
-  answer: 3
-  second_best: 2
+  - the writer's message is always stated directly
+  - the reader should focus on the direct statements
+  answer: 1
+  second_best: 5
   difficulty: D3
   family: BLANK_INFERENCE
   balance: CORE_EXAM_POINT
@@ -2972,29 +2972,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: MEDIUM
-    claim: stated_directly
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-4-9
-    v: false
-    why: But으로 앞의 '직접 진술이 많을 수 있다'를 뒤집어야 한다.
-  - axis: reading
-    c: STRONG
-    claim: focus_direct
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-4-9
-    v: false
-    why: 직접 진술을 언급한 앞 문장에 끌린 오답이다.
-  - axis: reading
     c: CORRECT
     claim: something_left
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-4-9
     v: true
     why: 원문을 바꿔 쓴 것으로 바로 뒤 'What does the text suggest?'와 이어진다.
@@ -3003,7 +2985,7 @@ items:
     claim: older_more
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-4-9
     v: false
     why: 시대별 비교는 하지 않는다.
@@ -3012,10 +2994,28 @@ items:
     claim: no_analysis
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-4-9
     v: false
     why: 분석력을 시험한다고 했으므로 반대이다.
+  - axis: reading
+    c: MEDIUM
+    claim: stated_directly
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-9
+    v: false
+    why: But으로 앞의 '직접 진술이 많을 수 있다'를 뒤집어야 한다.
+  - axis: reading
+    c: STRONG
+    claim: focus_direct
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-9
+    v: false
+    why: 직접 진술을 언급한 앞 문장에 끌린 오답이다.
 - item_id: ENG-NG-3-4-9-5
   set: null
   eng_type: ARC-ENG-RDG-07
@@ -3162,7 +3162,7 @@ items:
   - NGICHUL-L1-3-4-10
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - Our senses, however, are unreliable and often ①⟦mislead⟧ us. For example, if you stand in bare feet with one foot on carpet and the other on a tile floor, the tile ②⟦feels⟧ colder than the carpet ③⟦even though⟧ both are at the same temperature. The two objects feel different because tile transfers energy by heat at a higher rate than carpet ④⟦is⟧. Your skin "measures" the rate of energy transfer by heat rather than the actual temperature. ⑤⟦What⟧ we need is a reliable and reproducible method for measuring the relative hotness or coldness of objects rather than the rate of energy transfer.
+  - We often associate the concept of temperature with how hot or cold an object feels when we touch it. In this way, our senses provide us with a qualitative indication of temperature. Our senses, however, are unreliable and often ①⟦mislead⟧ us. For example, if you stand in bare feet with one foot on carpet and the other on a tile floor, the tile ②⟦feels⟧ colder than the carpet ③⟦even though⟧ both are at the same temperature. The two objects feel different because tile transfers energy by heat at a higher rate than carpet ④⟦is⟧. Your skin "measures" the rate of energy transfer by heat rather than the actual temperature. ⑤⟦What⟧ we need is a reliable and reproducible method for measuring the relative hotness or coldness of objects rather than the rate of energy transfer. Scientists have developed a variety of thermometers for making such quantitative measurements.
   options: *id001
   answer: 4
   second_best: 5
@@ -3227,7 +3227,7 @@ items:
   - NGICHUL-L1-3-4-10
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - In this way, our senses provide us with a ①⟦qualitative⟧ indication of temperature. Our senses, however, are ②⟦unreliable⟧ and often mislead us. For example, if you stand in bare feet with one foot on carpet and the other on a tile floor, the tile feels ③⟦warmer⟧ than the carpet even though both are at the same temperature. The two objects feel different because tile transfers energy by heat at a ④⟦higher⟧ rate than carpet does. Your skin "measures" the rate of energy transfer by heat rather than the ⑤⟦actual⟧ temperature. What we need is a reliable and reproducible method for measuring the relative hotness or coldness of objects rather than the rate of energy transfer.
+  - We often associate the concept of temperature with how hot or cold an object feels when we touch it. In this way, our senses provide us with a ①⟦qualitative⟧ indication of temperature. Our senses, however, are ②⟦unreliable⟧ and often mislead us. For example, if you stand in bare feet with one foot on carpet and the other on a tile floor, the tile feels ③⟦warmer⟧ than the carpet even though both are at the same temperature. The two objects feel different because tile transfers energy by heat at a ④⟦higher⟧ rate than carpet does. Your skin "measures" the rate of energy transfer by heat rather than the ⑤⟦actual⟧ temperature. What we need is a reliable and reproducible method for measuring the relative hotness or coldness of objects rather than the rate of energy transfer. Scientists have developed a variety of thermometers for making such quantitative measurements.
   options: *id001
   answer: 3
   second_best: 4
@@ -3294,13 +3294,13 @@ items:
   passage:
   - We often associate the concept of temperature with how hot or cold an object feels when we touch it. In this way, our senses provide us with a qualitative indication of temperature. Our senses, however, are unreliable and often mislead us. For example, if you stand in bare feet with one foot on carpet and the other on a tile floor, the tile feels colder than the carpet even though both are at the same temperature. The two objects feel different because tile transfers energy by heat at a higher rate than carpet does. Your skin "measures" ________________________ rather than the actual temperature. What we need is a reliable and reproducible method for measuring the relative hotness or coldness of objects rather than the rate of energy transfer. Scientists have developed a variety of thermometers for making such quantitative measurements.
   options:
-  - how fast energy is transferred by heat
   - how long an object has been touched
   - how much an object weighs
   - the color and texture of the surface
   - the average temperature of the room
-  answer: 1
-  second_best: 5
+  - how fast energy is transferred by heat
+  answer: 5
+  second_best: 4
   difficulty: D3
   family: BLANK_INFERENCE
   balance: CORE_EXAM_POINT
@@ -3310,20 +3310,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: CORRECT
-    claim: transfer_rate
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-4-10
-    v: true
-    why: 원문 'the rate of energy transfer by heat'를 바꿔 쓴 것이다.
-  - axis: reading
     c: MEDIUM
     claim: touch_time
     ev:
     - PASSAGE
-    - OPTION2
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-4-10
     v: false
     why: 접촉 시간은 다루지 않는다.
@@ -3332,7 +3323,7 @@ items:
     claim: weight
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-4-10
     v: false
     why: 무게는 무관하다.
@@ -3341,7 +3332,7 @@ items:
     claim: texture
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-4-10
     v: false
     why: 타일과 카펫의 재질 차이에 끌린 오답으로, 피부가 재는 것은 재질이 아니다.
@@ -3350,10 +3341,19 @@ items:
     claim: room_temp
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION4
     - SCOPE:NGICHUL-L1-3-4-10
     v: false
     why: 온도라는 표면어에 끌린 오답이다.
+  - axis: reading
+    c: CORRECT
+    claim: transfer_rate
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-10
+    v: true
+    why: 원문 'the rate of energy transfer by heat'를 바꿔 쓴 것이다.
 - item_id: ENG-NG-3-4-10-5
   set: null
   eng_type: ARC-ENG-RDG-06
@@ -3431,7 +3431,7 @@ items:
   - NGICHUL-L1-3-4-11
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - As a result, people with blindness at birth ①⟦develop⟧ an amazing ability to understand the world through the collection of experiences and memories that ②⟦come⟧ from these non-visual senses. The dreams of a person who ③⟦has been⟧ without sight since birth can be just as vivid and imaginative as ④⟦those⟧ of someone with normal vision. They are unique, however, because their dreams are ⑤⟦constructing⟧ from the non-visual experiences and memories they have collected.
+  - Humans born without sight are not able to collect visual experiences, so they understand the world entirely through their other senses. As a result, people with blindness at birth ①⟦develop⟧ an amazing ability to understand the world through the collection of experiences and memories that ②⟦come⟧ from these non-visual senses. The dreams of a person who ③⟦has been⟧ without sight since birth can be just as vivid and imaginative as ④⟦those⟧ of someone with normal vision. They are unique, however, because their dreams are ⑤⟦constructing⟧ from the non-visual experiences and memories they have collected. A person with normal vision will dream about a familiar friend using visual memories of shape, lighting, and colour. But, a blind person will associate the same friend with a unique combination of experiences from their non-visual senses that act to represent that friend. In other words, people blind at birth have similar overall dreaming experiences even though they do not dream in pictures.
   options: *id001
   answer: 5
   second_best: 4
@@ -3566,7 +3566,7 @@ items:
   - NGICHUL-L1-3-4-11
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - The dreams of a person who has been without sight since birth can be just as ①⟦vivid⟧ and imaginative as those of someone with normal vision. They are ②⟦unique⟧, however, because their dreams are constructed from the non-visual experiences and memories they have collected. A person with normal vision will dream about a ③⟦familiar⟧ friend using visual memories of shape, lighting, and colour. But, a blind person will ④⟦associate⟧ the same friend with a unique combination of experiences from their non-visual senses that act to represent that friend. In other words, people blind at birth have ⑤⟦different⟧ overall dreaming experiences even though they do not dream in pictures.
+  - Humans born without sight are not able to collect visual experiences, so they understand the world entirely through their other senses. As a result, people with blindness at birth develop an amazing ability to understand the world through the collection of experiences and memories that come from these non-visual senses. The dreams of a person who has been without sight since birth can be just as ①⟦vivid⟧ and imaginative as those of someone with normal vision. They are ②⟦unique⟧, however, because their dreams are constructed from the non-visual experiences and memories they have collected. A person with normal vision will dream about a ③⟦familiar⟧ friend using visual memories of shape, lighting, and colour. But, a blind person will ④⟦associate⟧ the same friend with a unique combination of experiences from their non-visual senses that act to represent that friend. In other words, people blind at birth have ⑤⟦duller⟧ overall dreaming experiences even though they do not dream in pictures.
   options: *id001
   answer: 5
   second_best: 2
@@ -3622,7 +3622,7 @@ items:
     - OPTION5
     - SCOPE:NGICHUL-L1-3-4-11
     v: false
-    why: even though they do not dream in pictures와 이어지려면 전체적인 꿈 경험은 '비슷해야' 한다.
+    why: 시각 장애인도 생생한 꿈을 꾼다는 글의 취지와 맞지 않는다. 전체적인 꿈 경험은 '비슷하다(similar)'여야 하므로 duller는 틀리다.
 - item_id: ENG-NG-3-4-11-4
   set: null
   eng_type: ARC-ENG-RDG-04
@@ -3633,13 +3633,13 @@ items:
   passage:
   - Humans born without sight are not able to collect visual experiences, so they understand the world entirely through their other senses. As a result, people with blindness at birth develop an amazing ability to understand the world through the collection of experiences and memories that come from these non-visual senses. The dreams of a person who has been without sight since birth can be just as vivid and imaginative as those of someone with normal vision. They are unique, however, because their dreams are constructed from the non-visual experiences and memories they have collected. A person with normal vision will dream about a familiar friend using visual memories of shape, lighting, and colour. But, a blind person will associate the same friend with a unique combination of experiences from their non-visual senses that act to represent that friend. In other words, people blind at birth ________________________ even though they do not dream in pictures.
   options:
-  - dream as richly as sighted people do
-  - hardly ever have dreams during their sleep
   - dream only about the people they have touched
   - cannot recognize their friends in their dreams
   - dream mainly about sounds rather than people
-  answer: 1
-  second_best: 3
+  - dream as richly as sighted people do
+  - hardly ever have dreams during their sleep
+  answer: 4
+  second_best: 1
   difficulty: D3
   family: BLANK_INFERENCE
   balance: CORE_EXAM_POINT
@@ -3649,29 +3649,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: CORRECT
-    claim: rich_dreams
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-4-11
-    v: true
-    why: 원문 'similar overall dreaming experiences'를 바꿔 쓴 것이다.
-  - axis: reading
-    c: MEDIUM
-    claim: rarely_dream
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-4-11
-    v: false
-    why: 꿈을 꾸지 않는다는 내용은 없다.
-  - axis: reading
     c: STRONG
     claim: only_touched
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-4-11
     v: false
     why: 촉각 등 비시각 감각을 쓴다는 점에 끌린 오답으로, '만지는 사람만' 꿈꾼다는 것은 과장이다.
@@ -3680,7 +3662,7 @@ items:
     claim: cannot_recognize
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-4-11
     v: false
     why: 같은 친구를 다른 감각으로 떠올린다고 했다.
@@ -3689,10 +3671,28 @@ items:
     claim: sounds_only
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-4-11
     v: false
     why: 소리만으로 꿈꾼다는 내용은 없다.
+  - axis: reading
+    c: CORRECT
+    claim: rich_dreams
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-11
+    v: true
+    why: 원문 'similar overall dreaming experiences'를 바꿔 쓴 것이다.
+  - axis: reading
+    c: MEDIUM
+    claim: rarely_dream
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-11
+    v: false
+    why: 꿈을 꾸지 않는다는 내용은 없다.
 - item_id: ENG-NG-3-4-11-5
   set: null
   eng_type: ARC-ENG-RDG-07
@@ -3771,13 +3771,13 @@ items:
   passage:
   - To make an aircraft fly is a constant struggle against physics. An airliner traveling six hundred miles per hour at thirty thousand feet is not something that happens naturally. It's not a fail-safe act, meaning the default is to crash—it's up to our ingenuity and decision-making to prevent it from happening. It's a unique environment that's highly unforgiving. Whereas a loss of power in a car typically results in a few hours on the side of a road, a loss of power in the air is often disastrous. Even in business, bet-the-company decisions are rare, and when encountered, only a fraction of the employees take part in them. Aviation, however, relies on everyone working at an optimum level just to keep the aircraft flying. It's an unstable system where even a single person forgetting to do their job, or doing it improperly, can lead to catastrophic results.
   options:
-  - Why Driving Is More Dangerous Than Flying
-  - 'Business Decisions: Lessons from the Cockpit'
   - How Physics Makes Flying Easy and Natural
   - The Role of Technology in Modern Airports
   - 'Flying: A System That Forgives No Mistakes'
-  answer: 5
-  second_best: 2
+  - Why Driving Is More Dangerous Than Flying
+  - 'Business Decisions: Lessons from the Cockpit'
+  answer: 3
+  second_best: 5
   difficulty: D3
   family: MAIN_IDEA
   balance: CORE_EXAM_POINT
@@ -3788,28 +3788,10 @@ items:
   judgments:
   - axis: reading
     c: MEDIUM
-    claim: driving_danger
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-4-12
-    v: false
-    why: 자동차와의 비교는 비행의 위험을 보여 주기 위한 것이고 운전이 더 위험하다는 것은 반대이다.
-  - axis: reading
-    c: STRONG
-    claim: business_lessons
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-4-12
-    v: false
-    why: 비즈니스는 대조 사례일 뿐 교훈의 출처가 아니다.
-  - axis: reading
-    c: MEDIUM
     claim: physics_easy
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-4-12
     v: false
     why: 비행은 물리 법칙과의 끊임없는 싸움이라고 했다.
@@ -3818,7 +3800,7 @@ items:
     claim: airports
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-4-12
     v: false
     why: 공항 기술은 다루지 않는다.
@@ -3827,10 +3809,28 @@ items:
     claim: forgives_none
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-4-12
     v: true
     why: 단 한 사람의 실수도 재앙이 되는, 용납 없는(unforgiving) 환경이라는 것이 글 전체이다.
+  - axis: reading
+    c: MEDIUM
+    claim: driving_danger
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-4-12
+    v: false
+    why: 자동차와의 비교는 비행의 위험을 보여 주기 위한 것이고 운전이 더 위험하다는 것은 반대이다.
+  - axis: reading
+    c: STRONG
+    claim: business_lessons
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-4-12
+    v: false
+    why: 비즈니스는 대조 사례일 뿐 교훈의 출처가 아니다.
 - item_id: ENG-NG-3-4-12-2
   set: null
   eng_type: ARC-ENG-GRM-01
@@ -3839,7 +3839,7 @@ items:
   - NGICHUL-L1-3-4-12
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - It's not a fail-safe act, ①⟦meant⟧ the default is to crash—it's up to our ingenuity and decision-making to prevent it from happening. It's a unique environment that's highly unforgiving. Whereas a loss of power in a car typically ②⟦results⟧ in a few hours on the side of a road, a loss of power in the air is often disastrous. Even in business, bet-the-company decisions are rare, and when ③⟦encountered⟧, only a fraction of the employees take part in them. Aviation, however, relies on everyone ④⟦working⟧ at an optimum level just to keep the aircraft flying. It's an unstable system where even a single person ⑤⟦forgetting⟧ to do their job, or doing it improperly, can lead to catastrophic results.
+  - To make an aircraft fly is a constant struggle against physics. An airliner traveling six hundred miles per hour at thirty thousand feet is not something that happens naturally. It's not a fail-safe act, ①⟦meant⟧ the default is to crash—it's up to our ingenuity and decision-making to prevent it from happening. It's a unique environment that's highly unforgiving. Whereas a loss of power in a car typically ②⟦results⟧ in a few hours on the side of a road, a loss of power in the air is often disastrous. Even in business, bet-the-company decisions are rare, and when ③⟦encountered⟧, only a fraction of the employees take part in them. Aviation, however, relies on everyone ④⟦working⟧ at an optimum level just to keep the aircraft flying. It's an unstable system where even a single person ⑤⟦forgetting⟧ to do their job, or doing it improperly, can lead to catastrophic results.
   options: *id001
   answer: 1
   second_best: 3
@@ -3904,7 +3904,7 @@ items:
   - NGICHUL-L1-3-4-12
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - To make an aircraft fly is a constant ①⟦struggle⟧ against physics. An airliner traveling six hundred miles per hour at thirty thousand feet is not something that happens ②⟦naturally⟧. It's not a fail-safe act, meaning the default is to ③⟦crash⟧—it's up to our ingenuity and decision-making to prevent it from happening. It's a unique environment that's highly ④⟦forgiving⟧. Whereas a loss of power in a car typically results in a few hours on the side of a road, a loss of power in the air is often ⑤⟦disastrous⟧.
+  - To make an aircraft fly is a constant ①⟦struggle⟧ against physics. An airliner traveling six hundred miles per hour at thirty thousand feet is not something that happens ②⟦naturally⟧. It's not a fail-safe act, meaning the default is to ③⟦crash⟧—it's up to our ingenuity and decision-making to prevent it from happening. It's a unique environment that's highly ④⟦forgiving⟧. Whereas a loss of power in a car typically results in a few hours on the side of a road, a loss of power in the air is often ⑤⟦disastrous⟧. Even in business, bet-the-company decisions are rare, and when encountered, only a fraction of the employees take part in them. Aviation, however, relies on everyone working at an optimum level just to keep the aircraft flying. It's an unstable system where even a single person forgetting to do their job, or doing it improperly, can lead to catastrophic results.
   options: *id001
   answer: 4
   second_best: 5
@@ -3971,13 +3971,13 @@ items:
   passage:
   - To make an aircraft fly is a constant struggle against physics. An airliner traveling six hundred miles per hour at thirty thousand feet is not something that happens naturally. It's not a fail-safe act, meaning the default is to crash—it's up to our ingenuity and decision-making to prevent it from happening. It's a unique environment that's highly unforgiving. Whereas a loss of power in a car typically results in a few hours on the side of a road, a loss of power in the air is often disastrous. Even in business, bet-the-company decisions are rare, and when encountered, only a fraction of the employees take part in them. Aviation, however, relies on ________________________ just to keep the aircraft flying. It's an unstable system where even a single person forgetting to do their job, or doing it improperly, can lead to catastrophic results.
   options:
+  - rules borrowed from the world of business
   - every single person doing their job at their best
   - a few experts making all the important decisions
   - machines that can correct any human error
   - the pilot's skill in flying through bad weather
-  - rules borrowed from the world of business
-  answer: 1
-  second_best: 2
+  answer: 2
+  second_best: 3
   difficulty: D3
   family: BLANK_INFERENCE
   balance: CORE_EXAM_POINT
@@ -3987,11 +3987,20 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
+    c: WEAK
+    claim: business_rules
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-4-12
+    v: false
+    why: 비즈니스는 대조 대상이다.
+  - axis: reading
     c: CORRECT
     claim: everyone_best
     ev:
     - PASSAGE
-    - OPTION1
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-4-12
     v: true
     why: 원문 'everyone working at an optimum level'을 바꿔 쓴 것이다.
@@ -4000,7 +4009,7 @@ items:
     claim: few_experts
     ev:
     - PASSAGE
-    - OPTION2
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-4-12
     v: false
     why: 비즈니스에서는 일부만 결정에 참여한다는 대조 문장에 끌린 오답이다.
@@ -4009,7 +4018,7 @@ items:
     claim: machines
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION4
     - SCOPE:NGICHUL-L1-3-4-12
     v: false
     why: 단 한 사람의 실수도 재앙이 된다고 했으므로 기계가 보완한다는 것은 맞지 않는다.
@@ -4018,19 +4027,10 @@ items:
     claim: pilot_weather
     ev:
     - PASSAGE
-    - OPTION4
-    - SCOPE:NGICHUL-L1-3-4-12
-    v: false
-    why: 조종사 한 명이 아니라 모두가 중요하다.
-  - axis: reading
-    c: WEAK
-    claim: business_rules
-    ev:
-    - PASSAGE
     - OPTION5
     - SCOPE:NGICHUL-L1-3-4-12
     v: false
-    why: 비즈니스는 대조 대상이다.
+    why: 조종사 한 명이 아니라 모두가 중요하다.
 - item_id: ENG-NG-3-4-12-5
   set: null
   eng_type: ARC-ENG-RDG-05
@@ -4174,7 +4174,7 @@ items:
   - NGICHUL-L1-3-5-1
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - 'And the most important thing to remember about natural selection ①⟦are⟧ that natural selection creates an illusion of intelligent design, or what Richard Dawkins calls design without a designer. Adaptations look as if they ②⟦were⟧ invented by a conscious agent for a particular purpose: hands for grasping; eyes for seeing. But they weren''t; Darwin stuck a pitchfork in that hypothesis. The design in nature ③⟦comes⟧ not from a designer but from the mindless accumulation of favorable accidents over vast periods of time. The only genuine intelligent design found in the biological world comes from us, in the shape of our dogs and cows and other organisms ④⟦which⟧ we''ve deliberately modified via selective breeding. Beyond that, the apparent intelligent design in nature is a forgery ⑤⟦perpetrated⟧ by natural selection.'
+  - 'The concept of natural selection is the single most important tool in our Darwinian toolkit. And the most important thing to remember about natural selection ①⟦are⟧ that natural selection creates an illusion of intelligent design, or what Richard Dawkins calls design without a designer. Adaptations look as if they ②⟦were⟧ invented by a conscious agent for a particular purpose: hands for grasping; eyes for seeing. But they weren''t; Darwin stuck a pitchfork in that hypothesis. The design in nature ③⟦comes⟧ not from a designer but from the mindless accumulation of favorable accidents over vast periods of time. The only genuine intelligent design found in the biological world comes from us, in the shape of our dogs and cows and other organisms ④⟦which⟧ we''ve deliberately modified via selective breeding. Beyond that, the apparent intelligent design in nature is a forgery ⑤⟦perpetrated⟧ by natural selection. Conscious intentions play no role.'
   options: *id001
   answer: 1
   second_best: 4
@@ -4239,7 +4239,7 @@ items:
   - NGICHUL-L1-3-5-1
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - 'Adaptations look as if they were invented by a ①⟦conscious⟧ agent for a particular purpose: hands for grasping; eyes for seeing. But they weren''t; Darwin stuck a pitchfork in that hypothesis. The design in nature comes not from a designer but from the ②⟦mindless⟧ accumulation of ③⟦favorable⟧ accidents over vast periods of time. The only genuine intelligent design found in the biological world comes from us, in the shape of our dogs and cows and other organisms which we''ve ④⟦deliberately⟧ modified via selective breeding. Beyond that, the apparent intelligent design in nature is a forgery perpetrated by natural selection. Conscious intentions play ⑤⟦a central⟧ role.'
+  - 'The concept of natural selection is the single most important tool in our Darwinian toolkit. And the most important thing to remember about natural selection is that natural selection creates an illusion of intelligent design, or what Richard Dawkins calls design without a designer. Adaptations look as if they were invented by a ①⟦conscious⟧ agent for a particular purpose: hands for grasping; eyes for seeing. But they weren''t; Darwin stuck a pitchfork in that hypothesis. The design in nature comes not from a designer but from the ②⟦mindless⟧ accumulation of ③⟦favorable⟧ accidents over vast periods of time. The only genuine intelligent design found in the biological world comes from us, in the shape of our dogs and cows and other organisms which we''ve ④⟦deliberately⟧ modified via selective breeding. Beyond that, the apparent intelligent design in nature is a forgery perpetrated by natural selection. Conscious intentions play ⑤⟦a central⟧ role.'
   options: *id001
   answer: 5
   second_best: 2
@@ -4306,13 +4306,13 @@ items:
   passage:
   - 'The concept of natural selection is the single most important tool in our Darwinian toolkit. And the most important thing to remember about natural selection is that natural selection creates an illusion of intelligent design, or what Richard Dawkins calls design without a designer. Adaptations look as if they were invented by a conscious agent for a particular purpose: hands for grasping; eyes for seeing. But they weren''t; Darwin stuck a pitchfork in that hypothesis. The design in nature comes not from a designer but from ________________________. The only genuine intelligent design found in the biological world comes from us, in the shape of our dogs and cows and other organisms which we''ve deliberately modified via selective breeding. Beyond that, the apparent intelligent design in nature is a forgery perpetrated by natural selection. Conscious intentions play no role.'
   options:
+  - the sudden changes caused by natural disasters
+  - the intelligence that animals show in their daily lives
   - the slow piling up of lucky accidents over a very long time
   - the careful plans of a conscious creator
   - the selective breeding carried out by humans
-  - the sudden changes caused by natural disasters
-  - the intelligence that animals show in their daily lives
-  answer: 1
-  second_best: 3
+  answer: 3
+  second_best: 5
   difficulty: D3
   family: BLANK_INFERENCE
   balance: CORE_EXAM_POINT
@@ -4322,38 +4322,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: CORRECT
-    claim: lucky_accidents
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-5-1
-    v: true
-    why: 원문을 바꿔 쓴 것이다.
-  - axis: reading
-    c: STRONG
-    claim: conscious_creator
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-5-1
-    v: false
-    why: not from a designer와 정면으로 어긋난다.
-  - axis: reading
-    c: STRONG
-    claim: selective_breeding
-    ev:
-    - PASSAGE
-    - OPTION3
-    - SCOPE:NGICHUL-L1-3-5-1
-    v: false
-    why: 인간의 의도적 설계로 자연의 설계와 대조된다.
-  - axis: reading
     c: MEDIUM
     claim: sudden_disasters
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-5-1
     v: false
     why: 아주 긴 시간에 걸친 축적과 반대된다.
@@ -4362,10 +4335,37 @@ items:
     claim: animal_intelligence
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-5-1
     v: false
     why: 동물의 지능은 다루지 않는다.
+  - axis: reading
+    c: CORRECT
+    claim: lucky_accidents
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-5-1
+    v: true
+    why: 원문을 바꿔 쓴 것이다.
+  - axis: reading
+    c: STRONG
+    claim: conscious_creator
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-5-1
+    v: false
+    why: not from a designer와 정면으로 어긋난다.
+  - axis: reading
+    c: STRONG
+    claim: selective_breeding
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-5-1
+    v: false
+    why: 인간의 의도적 설계로 자연의 설계와 대조된다.
 - item_id: ENG-NG-3-5-1-5
   set: null
   eng_type: ARC-ENG-RDG-06
@@ -4445,13 +4445,13 @@ items:
   passage:
   - Difficulties may arise for students when the beliefs of the home and school differ. When an individual's behaviour is interpreted from a cultural perspective that is different from that of the individual in question, misunderstandings and conflict can result. Malcolm and his colleagues described a number of ways in which this can happen for Aboriginal students in mainstream Australian classrooms. In Western Anglo culture, looking people in the eye when you speak to them is a mark of respect, and shows you are attending to them. However, in many other cultures, including some Aboriginal and Asian groups, this would be a mark of disrespect—particularly if shown by a younger person to someone in a position of authority. Without this understanding, teachers might assume that students from cultures that do not favour eye contact are not listening or are not interested. Similarly, teachers who insist on eye contact without explaining that it denotes respect in their culture risk some students and parents assuming that those teachers do not want to be respected.
   options:
+  - 교사는 눈을 맞추지 않는 학생을 수업에 관심이 없다고 오해할 수 있다.
+  - 교사가 눈 맞춤을 요구하면 학부모는 그 의미를 바로 이해하게 된다.
   - 가정과 학교의 신념이 다르면 학생에게 어려움이 생길 수 있다.
   - 서구 앵글로 문화에서 눈을 맞추는 것은 존중의 표시이다.
   - 일부 원주민·아시아 문화에서는 눈 맞춤이 무례함의 표시일 수 있다.
-  - 교사는 눈을 맞추지 않는 학생을 수업에 관심이 없다고 오해할 수 있다.
-  - 교사가 눈 맞춤을 요구하면 학부모는 그 의미를 바로 이해하게 된다.
-  answer: 5
-  second_best: 3
+  answer: 2
+  second_best: 5
   difficulty: D3
   family: CONTENT_UNDERSTANDING
   balance: CORE_EXAM_POINT
@@ -4461,38 +4461,11 @@ items:
   stem_polarity: NEGATIVE
   judgments:
   - axis: reading
-    c: WEAK
-    claim: home_school
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-5-2
-    v: true
-    why: 첫 문장과 일치한다.
-  - axis: reading
-    c: MEDIUM
-    claim: western_respect
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-5-2
-    v: true
-    why: 4문장과 일치한다.
-  - axis: reading
-    c: STRONG
-    claim: aboriginal_disrespect
-    ev:
-    - PASSAGE
-    - OPTION3
-    - SCOPE:NGICHUL-L1-3-5-2
-    v: true
-    why: 5문장과 일치한다.
-  - axis: reading
     c: STRONG
     claim: teacher_misread
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-5-2
     v: true
     why: 6문장과 일치한다.
@@ -4501,10 +4474,37 @@ items:
     claim: parents_understand
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-5-2
     v: false
     why: 설명 없이 눈 맞춤을 요구하면 학부모가 오히려 교사가 존중받기를 원하지 않는다고 오해할 수 있다고 했다.
+  - axis: reading
+    c: WEAK
+    claim: home_school
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-5-2
+    v: true
+    why: 첫 문장과 일치한다.
+  - axis: reading
+    c: MEDIUM
+    claim: western_respect
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-5-2
+    v: true
+    why: 4문장과 일치한다.
+  - axis: reading
+    c: STRONG
+    claim: aboriginal_disrespect
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-5-2
+    v: true
+    why: 5문장과 일치한다.
 - item_id: ENG-NG-3-5-2-2
   set: null
   eng_type: ARC-ENG-GRM-01
@@ -4513,7 +4513,7 @@ items:
   - NGICHUL-L1-3-5-2
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - When an individual's behaviour is ①⟦interpreting⟧ from a cultural perspective ②⟦that⟧ is different from that of the individual in question, misunderstandings and conflict can result. Malcolm and his colleagues described a number of ways in ③⟦which⟧ this can happen for Aboriginal students in mainstream Australian classrooms. In Western Anglo culture, looking people in the eye when you speak to them is a mark of respect, and shows you are ④⟦attending⟧ to them. However, in many other cultures, including some Aboriginal and Asian groups, this would be a mark of disrespect—particularly if shown by a younger person to someone in a position of authority. Without this understanding, teachers might assume that students from cultures that do not favour eye contact are not ⑤⟦listening⟧ or are not interested.
+  - Difficulties may arise for students when the beliefs of the home and school differ. When an individual's behaviour is ①⟦interpreting⟧ from a cultural perspective ②⟦that⟧ is different from that of the individual in question, misunderstandings and conflict can result. Malcolm and his colleagues described a number of ways in ③⟦which⟧ this can happen for Aboriginal students in mainstream Australian classrooms. In Western Anglo culture, looking people in the eye when you speak to them is a mark of respect, and shows you are ④⟦attending⟧ to them. However, in many other cultures, including some Aboriginal and Asian groups, this would be a mark of disrespect—particularly if shown by a younger person to someone in a position of authority. Without this understanding, teachers might assume that students from cultures that do not favour eye contact are not ⑤⟦listening⟧ or are not interested. Similarly, teachers who insist on eye contact without explaining that it denotes respect in their culture risk some students and parents assuming that those teachers do not want to be respected.
   options: *id001
   answer: 1
   second_best: 3
@@ -4578,7 +4578,7 @@ items:
   - NGICHUL-L1-3-5-2
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - In Western Anglo culture, looking people in the eye when you speak to them is a mark of ①⟦respect⟧, and shows you are attending to them. However, in many other cultures, including some Aboriginal and Asian groups, this would be a mark of ②⟦respect⟧—particularly if shown by a younger person to someone in a position of ③⟦authority⟧. Without this understanding, teachers might assume that students from cultures that do not ④⟦favour⟧ eye contact are not listening or are not interested. Similarly, teachers who insist on eye contact without explaining that it denotes respect in their culture risk some students and parents assuming that those teachers do not want to be ⑤⟦respected⟧.
+  - Difficulties may arise for students when the beliefs of the home and school differ. When an individual's behaviour is interpreted from a cultural perspective that is different from that of the individual in question, misunderstandings and conflict can result. Malcolm and his colleagues described a number of ways in which this can happen for Aboriginal students in mainstream Australian classrooms. In Western Anglo culture, looking people in the eye when you speak to them is a mark of ①⟦respect⟧, and shows you are attending to them. However, in many other cultures, including some Aboriginal and Asian groups, this would be a mark of ②⟦respect⟧—particularly if shown by a younger person to someone in a position of ③⟦authority⟧. Without this understanding, teachers might assume that students from cultures that do not ④⟦favour⟧ eye contact are not listening or are not interested. Similarly, teachers who insist on eye contact without explaining that it denotes respect in their culture risk some students and parents assuming that those teachers do not want to be ⑤⟦respected⟧.
   options: *id001
   answer: 2
   second_best: 4
@@ -4645,13 +4645,13 @@ items:
   passage:
   - Difficulties may arise for students when the beliefs of the home and school differ. When an individual's behaviour is interpreted from a cultural perspective that is different from that of the individual in question, misunderstandings and conflict can result. Malcolm and his colleagues described a number of ways in which this can happen for Aboriginal students in mainstream Australian classrooms. In Western Anglo culture, looking people in the eye when you speak to them is a mark of respect, and shows you are attending to them. However, in many other cultures, including some Aboriginal and Asian groups, this would be a mark of disrespect—particularly if shown by a younger person to someone in a position of authority. Without this understanding, teachers might assume that students from cultures that do not favour eye contact ________________________. Similarly, teachers who insist on eye contact without explaining that it denotes respect in their culture risk some students and parents assuming that those teachers do not want to be respected.
   options:
-  - are not paying attention to the lesson
-  - are showing respect to their teachers
   - need more time to answer the questions
   - prefer to work in groups with friends
   - come from families that value education
-  answer: 1
-  second_best: 2
+  - are not paying attention to the lesson
+  - are showing respect to their teachers
+  answer: 4
+  second_best: 5
   difficulty: D3
   family: BLANK_INFERENCE
   balance: CORE_EXAM_POINT
@@ -4661,29 +4661,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: CORRECT
-    claim: not_attentive
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-5-2
-    v: true
-    why: 원문 'are not listening or are not interested'를 바꿔 쓴 것이다.
-  - axis: reading
-    c: STRONG
-    claim: showing_respect
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-5-2
-    v: false
-    why: 학생들의 실제 의도이지만, 이 이해가 '없는' 교사의 오해를 묻는 빈칸이므로 맞지 않는다.
-  - axis: reading
     c: MEDIUM
     claim: more_time
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-5-2
     v: false
     why: 응답 시간은 다루지 않는다.
@@ -4692,7 +4674,7 @@ items:
     claim: group_work
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-5-2
     v: false
     why: 모둠 활동은 무관하다.
@@ -4701,10 +4683,28 @@ items:
     claim: value_education
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-5-2
     v: false
     why: 가정의 교육관은 무관하다.
+  - axis: reading
+    c: CORRECT
+    claim: not_attentive
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-5-2
+    v: true
+    why: 원문 'are not listening or are not interested'를 바꿔 쓴 것이다.
+  - axis: reading
+    c: STRONG
+    claim: showing_respect
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-5-2
+    v: false
+    why: 학생들의 실제 의도이지만, 이 이해가 '없는' 교사의 오해를 묻는 빈칸이므로 맞지 않는다.
 - item_id: ENG-NG-3-5-2-5
   set: null
   eng_type: ARC-ENG-RDG-09
@@ -4715,13 +4715,13 @@ items:
   passage:
   - Difficulties may arise for students when the beliefs of the home and school differ. When an individual's behaviour is interpreted from a cultural perspective that is different from that of the individual in question, misunderstandings and conflict can result. Malcolm and his colleagues described a number of ways in which this can happen for Aboriginal students in mainstream Australian classrooms. In Western Anglo culture, looking people in the eye when you speak to them is a mark of respect, and shows you are attending to them. However, in many other cultures, including some Aboriginal and Asian groups, this would be a mark of disrespect—particularly if shown by a younger person to someone in a position of authority. Without this understanding, teachers might assume that students from cultures that do not favour eye contact are not listening or are not interested. Similarly, teachers who insist on eye contact without explaining that it denotes respect in their culture risk some students and parents assuming that those teachers do not want to be respected.
   options:
-  - varies …… praise
-  - varies …… misinterpret
   - remains …… misinterpret
   - remains …… ignore
   - disappears …… correct
-  answer: 2
-  second_best: 3
+  - varies …… praise
+  - varies …… misinterpret
+  answer: 5
+  second_best: 1
   difficulty: D3
   family: SUMMARY_COMPLETION
   balance: CORE_EXAM_POINT
@@ -4731,29 +4731,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: MEDIUM
-    claim: varies_praise
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-5-2
-    v: false
-    why: (A)는 맞지만 이해가 없으면 칭찬이 아니라 오해한다.
-  - axis: reading
-    c: CORRECT
-    claim: varies_misinterpret
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-5-2
-    v: true
-    why: 눈 맞춤의 의미는 문화마다 달라서, 이를 모르면 학생의 행동을 오해한다.
-  - axis: reading
     c: STRONG
     claim: remains_misinterpret
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-5-2
     v: false
     why: (B)는 맞지만 의미가 같다면 오해가 생기지 않는다.
@@ -4762,7 +4744,7 @@ items:
     claim: remains_ignore
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-5-2
     v: false
     why: 두 빈칸 모두 맞지 않는다.
@@ -4771,10 +4753,28 @@ items:
     claim: disappears_correct
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-5-2
     v: false
     why: 두 빈칸 모두 맞지 않는다.
+  - axis: reading
+    c: MEDIUM
+    claim: varies_praise
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-5-2
+    v: false
+    why: (A)는 맞지만 이해가 없으면 칭찬이 아니라 오해한다.
+  - axis: reading
+    c: CORRECT
+    claim: varies_misinterpret
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-5-2
+    v: true
+    why: 눈 맞춤의 의미는 문화마다 달라서, 이를 모르면 학생의 행동을 오해한다.
   view:
   - Because the meaning of eye contact (A) ________ across cultures, teachers who fail to understand this may (B) ________ students' behaviour.
   view_label: ''
@@ -4786,7 +4786,7 @@ items:
   - NGICHUL-L1-3-5-3
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - It ①⟦is⟧ the fruit of a few intimate and reciprocal connections. It cannot be ②⟦won⟧ remotely or one-sidedly. If it is safety one seeks, one must definitively and immediately cease to strive to be known to people one doesn't know and concentrate instead on building up genuine bonds ③⟦that⟧ can survive one's errors and endure for life. Paradoxically and poignantly, it is most often the very anxious who ④⟦feel⟧ a particular longing for the embrace of fame; but it is especially they (given their fragility) who should be warned away from its ultimately always revengeful arms. ⑤⟦Be⟧ entirely forgotten by the world is no curse or sign of failure; it is the very basis for a contented and safe life in which one swaps the prospect of followers and mean-minded detractors for the deeper satisfaction of true friends.
+  - The search for publicity is, at heart, a quest for a shortcut to friendship. Yet real kindness is never available in a public sphere. It ①⟦is⟧ the fruit of a few intimate and reciprocal connections. It cannot be ②⟦won⟧ remotely or one-sidedly. If it is safety one seeks, one must definitively and immediately cease to strive to be known to people one doesn't know and concentrate instead on building up genuine bonds ③⟦that⟧ can survive one's errors and endure for life. Paradoxically and poignantly, it is most often the very anxious who ④⟦feel⟧ a particular longing for the embrace of fame; but it is especially they (given their fragility) who should be warned away from its ultimately always revengeful arms. ⑤⟦Be⟧ entirely forgotten by the world is no curse or sign of failure; it is the very basis for a contented and safe life in which one swaps the prospect of followers and mean-minded detractors for the deeper satisfaction of true friends.
   options: *id001
   answer: 5
   second_best: 4
@@ -4853,13 +4853,13 @@ items:
   passage:
   - The search for publicity is, at heart, a quest for a shortcut to friendship. Yet real kindness is never available in a public sphere. It is the fruit of a few intimate and reciprocal connections. It cannot be won remotely or one-sidedly. If it is safety one seeks, one must definitively and immediately cease to strive to be known to people one doesn't know and concentrate instead on building up genuine bonds that can survive one's errors and endure for life. Paradoxically and poignantly, it is most often the very anxious who feel a particular longing for the embrace of fame; but it is especially they (given their fragility) who should be warned away from its ultimately always revengeful arms. Being entirely forgotten by the world is no curse or sign of failure; it is the very basis for a contented and safe life in which one swaps the prospect of followers and mean-minded detractors for the deeper satisfaction of true friends.
   options:
-  - Becoming famous is the quickest way to make true friends.
-  - Anxious people need public attention to feel safe.
   - Being forgotten by the world is a sign of personal failure.
   - Kindness from the public can replace close friendships.
   - Real safety comes from a few close bonds, not from fame.
-  answer: 5
-  second_best: 2
+  - Becoming famous is the quickest way to make true friends.
+  - Anxious people need public attention to feel safe.
+  answer: 3
+  second_best: 5
   difficulty: D3
   family: MAIN_IDEA
   balance: CORE_EXAM_POINT
@@ -4870,28 +4870,10 @@ items:
   judgments:
   - axis: reading
     c: MEDIUM
-    claim: fame_shortcut
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-5-3
-    v: false
-    why: 유명세는 우정의 지름길을 찾는 것이지만 진짜 친절은 공적 영역에 없다고 했다.
-  - axis: reading
-    c: STRONG
-    claim: anxious_need
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-5-3
-    v: false
-    why: 불안한 사람일수록 명성을 갈망하지만 바로 그들이 경계해야 한다고 했다.
-  - axis: reading
-    c: MEDIUM
     claim: forgotten_failure
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-5-3
     v: false
     why: 잊히는 것은 저주나 실패가 아니라고 했다.
@@ -4900,7 +4882,7 @@ items:
     claim: public_kindness
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-5-3
     v: false
     why: 진짜 친절은 공적 영역에서 얻을 수 없다.
@@ -4909,10 +4891,28 @@ items:
     claim: bonds_not_fame
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-5-3
     v: true
     why: 모르는 이들에게 알려지려 하지 말고 진정한 유대를 쌓으라는 것이 요지이다.
+  - axis: reading
+    c: MEDIUM
+    claim: fame_shortcut
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-5-3
+    v: false
+    why: 유명세는 우정의 지름길을 찾는 것이지만 진짜 친절은 공적 영역에 없다고 했다.
+  - axis: reading
+    c: STRONG
+    claim: anxious_need
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-5-3
+    v: false
+    why: 불안한 사람일수록 명성을 갈망하지만 바로 그들이 경계해야 한다고 했다.
 - item_id: ENG-NG-3-5-3-3
   set: null
   eng_type: ARC-ENG-RDG-03
@@ -4921,7 +4921,7 @@ items:
   - NGICHUL-L1-3-5-3
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - The search for publicity is, at heart, a quest for a ①⟦detour⟧ to friendship. Yet real kindness is ②⟦never⟧ available in a public sphere. It is the fruit of a few ③⟦intimate⟧ and reciprocal connections. It cannot be won remotely or ④⟦one-sidedly⟧. If it is safety one seeks, one must definitively and immediately cease to strive to be known to people one doesn't know and concentrate instead on building up ⑤⟦genuine⟧ bonds that can survive one's errors and endure for life.
+  - The search for publicity is, at heart, a quest for a ①⟦detour⟧ to friendship. Yet real kindness is ②⟦never⟧ available in a public sphere. It is the fruit of a few ③⟦intimate⟧ and reciprocal connections. It cannot be won remotely or ④⟦one-sidedly⟧. If it is safety one seeks, one must definitively and immediately cease to strive to be known to people one doesn't know and concentrate instead on building up ⑤⟦genuine⟧ bonds that can survive one's errors and endure for life. Paradoxically and poignantly, it is most often the very anxious who feel a particular longing for the embrace of fame; but it is especially they (given their fragility) who should be warned away from its ultimately always revengeful arms. Being entirely forgotten by the world is no curse or sign of failure; it is the very basis for a contented and safe life in which one swaps the prospect of followers and mean-minded detractors for the deeper satisfaction of true friends.
   options: *id001
   answer: 1
   second_best: 3
@@ -4988,13 +4988,13 @@ items:
   passage:
   - The search for publicity is, at heart, a quest for a shortcut to friendship. Yet real kindness is never available in a public sphere. It is the fruit of a few intimate and reciprocal connections. It cannot be won remotely or one-sidedly. If it is safety one seeks, one must definitively and immediately cease to strive to be known to people one doesn't know and concentrate instead on building up genuine bonds that can survive one's errors and endure for life. Paradoxically and poignantly, it is most often the very anxious who feel a particular longing for the embrace of fame; but it is especially they (given their fragility) who should be warned away from its ultimately always revengeful arms. Being entirely forgotten by the world is ________________________; it is the very basis for a contented and safe life in which one swaps the prospect of followers and mean-minded detractors for the deeper satisfaction of true friends.
   options:
+  - a goal that only famous people can reach
   - nothing to be ashamed of or afraid of
   - the worst punishment a person can receive
   - a natural result of having few friends
   - the price anxious people pay for fame
-  - a goal that only famous people can reach
-  answer: 1
-  second_best: 3
+  answer: 2
+  second_best: 4
   difficulty: D3
   family: BLANK_INFERENCE
   balance: CORE_EXAM_POINT
@@ -5004,11 +5004,20 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
+    c: WEAK
+    claim: only_famous
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-5-3
+    v: false
+    why: 유명인은 잊힐 수 없다.
+  - axis: reading
     c: CORRECT
     claim: nothing_shameful
     ev:
     - PASSAGE
-    - OPTION1
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-5-3
     v: true
     why: 원문 'no curse or sign of failure'를 바꿔 쓴 것으로 뒤의 '만족스럽고 안전한 삶의 기초'와 이어진다.
@@ -5017,7 +5026,7 @@ items:
     claim: worst_punishment
     ev:
     - PASSAGE
-    - OPTION2
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-5-3
     v: false
     why: 세미콜론 뒤 긍정적 평가와 반대이다.
@@ -5026,7 +5035,7 @@ items:
     claim: few_friends
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION4
     - SCOPE:NGICHUL-L1-3-5-3
     v: false
     why: 잊힌 삶에서도 진짜 친구를 얻는다고 했으므로 친구가 적은 결과가 아니다.
@@ -5035,19 +5044,10 @@ items:
     claim: price_fame
     ev:
     - PASSAGE
-    - OPTION4
-    - SCOPE:NGICHUL-L1-3-5-3
-    v: false
-    why: 명성의 대가로 잊힌다는 내용은 없다.
-  - axis: reading
-    c: WEAK
-    claim: only_famous
-    ev:
-    - PASSAGE
     - OPTION5
     - SCOPE:NGICHUL-L1-3-5-3
     v: false
-    why: 유명인은 잊힐 수 없다.
+    why: 명성의 대가로 잊힌다는 내용은 없다.
 - item_id: ENG-NG-3-5-3-5
   set: null
   eng_type: ARC-ENG-RDG-05
@@ -5123,13 +5123,13 @@ items:
   passage:
   - When scientists make an important new discovery or experimentally prove some hypothesis, they do not, in general, keep that information to themselves so that they alone can consider its meaning and derive additional theories from it. Instead, they publish their results and make their data available for inspection. This makes it possible for other scientists to reconsider their data and possibly refute their conclusions. More important, though, it makes it possible for other scientists to use that data to construct new hypotheses and perform new experiments. The assumption is that society as a whole will end up knowing more if information is spread as widely as possible, rather than being limited to a few people. In a strict sense, every scientist depends on the work of other scientists.
   options:
-  - why scientists share their findings openly with others
-  - how scientists protect their data from being stolen
   - the reasons scientific conclusions are often wrong
   - the difficulty of testing a hypothesis by experiment
   - the competition among scientists for new discoveries
-  answer: 1
-  second_best: 3
+  - why scientists share their findings openly with others
+  - how scientists protect their data from being stolen
+  answer: 4
+  second_best: 1
   difficulty: D3
   family: MAIN_IDEA
   balance: CORE_EXAM_POINT
@@ -5139,29 +5139,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: CORRECT
-    claim: share_openly
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-5-4
-    v: true
-    why: 발견을 공개해 검증과 새 가설에 쓰이게 하는 이유가 주제이다.
-  - axis: reading
-    c: MEDIUM
-    claim: protect_data
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-5-4
-    v: false
-    why: 독점하지 않는다고 했으므로 반대이다.
-  - axis: reading
     c: STRONG
     claim: often_wrong
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-5-4
     v: false
     why: 다른 과학자가 결론을 반박할 수 있다는 언급에 끌린 오답이다.
@@ -5170,7 +5152,7 @@ items:
     claim: hard_testing
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-5-4
     v: false
     why: 실험의 어려움은 다루지 않는다.
@@ -5179,10 +5161,28 @@ items:
     claim: competition
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-5-4
     v: false
     why: 경쟁이 아니라 상호 의존을 말한다.
+  - axis: reading
+    c: CORRECT
+    claim: share_openly
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-5-4
+    v: true
+    why: 발견을 공개해 검증과 새 가설에 쓰이게 하는 이유가 주제이다.
+  - axis: reading
+    c: MEDIUM
+    claim: protect_data
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-5-4
+    v: false
+    why: 독점하지 않는다고 했으므로 반대이다.
 - item_id: ENG-NG-3-5-4-2
   set: null
   eng_type: ARC-ENG-GRM-01
@@ -5191,7 +5191,7 @@ items:
   - NGICHUL-L1-3-5-4
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - When scientists make an important new discovery or experimentally ①⟦prove⟧ some hypothesis, they do not, in general, ②⟦keep⟧ that information to themselves so that they alone can consider its meaning and ③⟦derive⟧ additional theories from it. Instead, they publish their results and make their data available for inspection. This makes it ④⟦possible⟧ for other scientists to reconsider their data and possibly refute their conclusions. More important, though, it makes it possible for other scientists to use that data to construct new hypotheses and perform new experiments. The assumption is that society as a whole will end up knowing more if information is spread as widely as possible, rather than being ⑤⟦limiting⟧ to a few people.
+  - When scientists make an important new discovery or experimentally ①⟦prove⟧ some hypothesis, they do not, in general, ②⟦keep⟧ that information to themselves so that they alone can consider its meaning and ③⟦derive⟧ additional theories from it. Instead, they publish their results and make their data available for inspection. This makes it ④⟦possible⟧ for other scientists to reconsider their data and possibly refute their conclusions. More important, though, it makes it possible for other scientists to use that data to construct new hypotheses and perform new experiments. The assumption is that society as a whole will end up knowing more if information is spread as widely as possible, rather than being ⑤⟦limiting⟧ to a few people. In a strict sense, every scientist depends on the work of other scientists.
   options: *id001
   answer: 5
   second_best: 2
@@ -5464,7 +5464,7 @@ items:
   - NGICHUL-L1-3-5-5
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - 'We believe that the quality of the decision ①⟦is⟧ directly related to the time and effort that ②⟦went⟧ into making it. That''s what we tell our children: "Haste makes waste." "Look before you leap." "Stop and think." "Don''t judge a book by its cover." We believe that we are always better off ③⟦gather⟧ as much information as possible and spending as much time as possible in careful consideration. But there are moments, particularly in time-driven, critical situations, ④⟦when⟧ haste does not make waste, when our snap judgments and first impressions can ⑤⟦offer⟧ better means of making sense of the world.'
+  - 'Most of us are suspicious of rapid cognition. We believe that the quality of the decision ①⟦is⟧ directly related to the time and effort that ②⟦went⟧ into making it. That''s what we tell our children: "Haste makes waste." "Look before you leap." "Stop and think." "Don''t judge a book by its cover." We believe that we are always better off ③⟦gather⟧ as much information as possible and spending as much time as possible in careful consideration. But there are moments, particularly in time-driven, critical situations, ④⟦when⟧ haste does not make waste, when our snap judgments and first impressions can ⑤⟦offer⟧ better means of making sense of the world. Survivors have somehow learned this lesson and have developed and sharpened their skill of rapid cognition.'
   options: *id001
   answer: 3
   second_best: 4
@@ -5531,13 +5531,13 @@ items:
   passage:
   - 'Most of us are suspicious of rapid cognition. We believe that the quality of the decision is directly related to the time and effort that went into making it. That''s what we tell our children: "Haste makes waste." "Look before you leap." "Stop and think." "Don''t judge a book by its cover." We believe that we are always better off gathering as much information as possible and spending as much time as possible in careful consideration. But there are moments, particularly in time-driven, critical situations, when haste does not make waste, when our snap judgments and first impressions can offer better means of making sense of the world. Survivors have somehow learned this lesson and have developed and sharpened their skill of rapid cognition.'
   options:
+  - Gathering information is a waste of time in most situations.
+  - First impressions are usually misleading and should be ignored.
   - Careful thinking always leads to better decisions than quick thinking.
   - Parents should teach their children to make judgments quickly.
   - In urgent, critical moments, quick judgments can work better than long thought.
-  - Gathering information is a waste of time in most situations.
-  - First impressions are usually misleading and should be ignored.
-  answer: 3
-  second_best: 4
+  answer: 5
+  second_best: 1
   difficulty: D3
   family: MAIN_IDEA
   balance: CORE_EXAM_POINT
@@ -5548,37 +5548,10 @@ items:
   judgments:
   - axis: reading
     c: STRONG
-    claim: careful_always
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-5-5
-    v: false
-    why: But 이전의 통념으로, 글은 이를 반박한다.
-  - axis: reading
-    c: MEDIUM
-    claim: teach_children
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-5-5
-    v: false
-    why: 아이들에게 하는 말은 통념의 예시일 뿐이다.
-  - axis: reading
-    c: CORRECT
-    claim: snap_better
-    ev:
-    - PASSAGE
-    - OPTION3
-    - SCOPE:NGICHUL-L1-3-5-5
-    v: true
-    why: 시간에 쫓기는 위급한 상황에서는 순간적 판단이 더 나을 수 있다는 것이 요지이다.
-  - axis: reading
-    c: STRONG
     claim: info_waste
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-5-5
     v: false
     why: '''특정 순간''의 이야기를 ''대부분의 상황''으로 과장한 오답이다.'
@@ -5587,10 +5560,37 @@ items:
     claim: impressions_wrong
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-5-5
     v: false
     why: 첫인상이 더 나은 수단일 수 있다고 했으므로 반대이다.
+  - axis: reading
+    c: STRONG
+    claim: careful_always
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-5-5
+    v: false
+    why: But 이전의 통념으로, 글은 이를 반박한다.
+  - axis: reading
+    c: MEDIUM
+    claim: teach_children
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-5-5
+    v: false
+    why: 아이들에게 하는 말은 통념의 예시일 뿐이다.
+  - axis: reading
+    c: CORRECT
+    claim: snap_better
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-5-5
+    v: true
+    why: 시간에 쫓기는 위급한 상황에서는 순간적 판단이 더 나을 수 있다는 것이 요지이다.
 - item_id: ENG-NG-3-5-5-3
   set: null
   eng_type: ARC-ENG-RDG-03
@@ -5666,13 +5666,13 @@ items:
   passage:
   - 'Most of us are suspicious of rapid cognition. We believe that the quality of the decision is directly related to the time and effort that went into making it. That''s what we tell our children: "Haste makes waste." "Look before you leap." "Stop and think." "Don''t judge a book by its cover." We believe that we are always better off gathering as much information as possible and spending as much time as possible in careful consideration. But there are moments, particularly in time-driven, critical situations, when haste does not make waste, when our snap judgments and first impressions ________________________. Survivors have somehow learned this lesson and have developed and sharpened their skill of rapid cognition.'
   options:
-  - lead us to make more careless mistakes
-  - should be checked against more information
   - can be a better way of understanding the world
   - are less useful than careful analysis
   - depend on how much time we have spent
-  answer: 3
-  second_best: 2
+  - lead us to make more careless mistakes
+  - should be checked against more information
+  answer: 1
+  second_best: 5
   difficulty: D4
   family: BLANK_INFERENCE
   balance: ADVANCED_DISCRIMINATION
@@ -5682,29 +5682,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: MEDIUM
-    claim: careless
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-5-5
-    v: false
-    why: haste does not make waste와 반대이다.
-  - axis: reading
-    c: STRONG
-    claim: check_more
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-5-5
-    v: false
-    why: But 이전의 통념(정보를 최대한 모은다)으로 되돌아간 오답이다.
-  - axis: reading
     c: CORRECT
     claim: better_way
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-5-5
     v: true
     why: 원문 'better means of making sense of the world'를 바꿔 쓴 것이다.
@@ -5713,7 +5695,7 @@ items:
     claim: less_useful
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-5-5
     v: false
     why: But 뒤의 반전을 놓친 오답이다.
@@ -5722,10 +5704,28 @@ items:
     claim: time_spent
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-5-5
     v: false
     why: 시간을 쏟을수록 좋다는 통념이다.
+  - axis: reading
+    c: MEDIUM
+    claim: careless
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-5-5
+    v: false
+    why: haste does not make waste와 반대이다.
+  - axis: reading
+    c: STRONG
+    claim: check_more
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-5-5
+    v: false
+    why: But 이전의 통념(정보를 최대한 모은다)으로 되돌아간 오답이다.
 - item_id: ENG-NG-3-5-5-5
   set: null
   eng_type: ARC-ENG-RDG-07
@@ -5804,13 +5804,13 @@ items:
   passage:
   - While social media attention is potentially an instrument to achieve ends like elite celebrity, some content creators desire ordinary fame as a social end in itself. Not unlike reality television stars, social media celebrities are often criticized for not having skills and talents associated with traditional, elite celebrity, such as acting or singing ability. This criticism highlights the fact that digital content creators face real barriers to crossing over to the sphere of elite celebrity. However, the criticism also misses the point that the phenomenon of ordinary celebrity reconstructs the meaning of fame. The elite celebrity is symbolized by the metaphor of the star, characterized by mystery and hierarchical distance and associated with naturalized qualities of talent and class. The ordinary celebrity attracts attention through regular and frequent interactions with other ordinary people. Achieving ordinary fame as a social media celebrity is like doing well at a game, because in this sphere, fame is nothing more nor less than relatively high scores on attention scales, the metrics of subscribers, followers, Likes, or clicks built into social media applications.
   options:
-  - why social media stars should learn to act or sing
-  - the barriers that keep ordinary people from becoming famous
   - the decline of traditional stars in the age of social media
   - how ordinary celebrity changes what it means to be famous
   - the reasons reality TV stars are criticized by the public
-  answer: 4
-  second_best: 2
+  - why social media stars should learn to act or sing
+  - the barriers that keep ordinary people from becoming famous
+  answer: 2
+  second_best: 5
   difficulty: D4
   family: MAIN_IDEA
   balance: ADVANCED_DISCRIMINATION
@@ -5821,28 +5821,10 @@ items:
   judgments:
   - axis: reading
     c: MEDIUM
-    claim: learn_skills
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-5-6
-    v: false
-    why: 기술 부족 비판은 언급되지만 배우라는 주장은 없다.
-  - axis: reading
-    c: STRONG
-    claim: barriers
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-5-6
-    v: false
-    why: 엘리트 영역으로 넘어가기 어렵다는 언급에 끌린 오답으로, 글은 그 비판이 요점을 놓친다고 했다.
-  - axis: reading
-    c: MEDIUM
     claim: star_decline
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-5-6
     v: false
     why: 전통 스타의 쇠퇴는 다루지 않는다.
@@ -5851,7 +5833,7 @@ items:
     claim: redefine_fame
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-5-6
     v: true
     why: 평범한 유명인 현상이 명성의 의미를 재구성한다는 것이 주제이다.
@@ -5860,10 +5842,28 @@ items:
     claim: reality_tv
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-5-6
     v: false
     why: 리얼리티 TV 스타는 비교 대상일 뿐이다.
+  - axis: reading
+    c: MEDIUM
+    claim: learn_skills
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-5-6
+    v: false
+    why: 기술 부족 비판은 언급되지만 배우라는 주장은 없다.
+  - axis: reading
+    c: STRONG
+    claim: barriers
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-5-6
+    v: false
+    why: 엘리트 영역으로 넘어가기 어렵다는 언급에 끌린 오답으로, 글은 그 비판이 요점을 놓친다고 했다.
 - item_id: ENG-NG-3-5-6-2
   set: null
   eng_type: ARC-ENG-GRM-01
@@ -5872,7 +5872,7 @@ items:
   - NGICHUL-L1-3-5-6
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - While social media attention is potentially an instrument to ①⟦achieve⟧ ends like elite celebrity, some content creators desire ordinary fame as a social end in itself. Not unlike reality television stars, social media celebrities are often criticized for not ②⟦having⟧ skills and talents ③⟦associating⟧ with traditional, elite celebrity, such as acting or singing ability. This criticism ④⟦highlights⟧ the fact that digital content creators face real barriers to crossing over to the sphere of elite celebrity. However, the criticism also ⑤⟦misses⟧ the point that the phenomenon of ordinary celebrity reconstructs the meaning of fame.
+  - While social media attention is potentially an instrument to ①⟦achieve⟧ ends like elite celebrity, some content creators desire ordinary fame as a social end in itself. Not unlike reality television stars, social media celebrities are often criticized for not ②⟦having⟧ skills and talents ③⟦associating⟧ with traditional, elite celebrity, such as acting or singing ability. This criticism ④⟦highlights⟧ the fact that digital content creators face real barriers to crossing over to the sphere of elite celebrity. However, the criticism also ⑤⟦misses⟧ the point that the phenomenon of ordinary celebrity reconstructs the meaning of fame. The elite celebrity is symbolized by the metaphor of the star, characterized by mystery and hierarchical distance and associated with naturalized qualities of talent and class. The ordinary celebrity attracts attention through regular and frequent interactions with other ordinary people. Achieving ordinary fame as a social media celebrity is like doing well at a game, because in this sphere, fame is nothing more nor less than relatively high scores on attention scales, the metrics of subscribers, followers, Likes, or clicks built into social media applications.
   options: *id001
   answer: 3
   second_best: 2
@@ -5937,7 +5937,7 @@ items:
   - NGICHUL-L1-3-5-6
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - Not unlike reality television stars, social media celebrities are often ①⟦criticized⟧ for not having skills and talents associated with traditional, elite celebrity, such as acting or singing ability. This criticism highlights the fact that digital content creators face real ②⟦barriers⟧ to crossing over to the sphere of elite celebrity. However, the criticism also misses the point that the phenomenon of ordinary celebrity ③⟦reconstructs⟧ the meaning of fame. The elite celebrity is symbolized by the metaphor of the star, characterized by mystery and hierarchical ④⟦closeness⟧ and associated with naturalized qualities of talent and class. The ordinary celebrity attracts attention through ⑤⟦regular⟧ and frequent interactions with other ordinary people.
+  - While social media attention is potentially an instrument to achieve ends like elite celebrity, some content creators desire ordinary fame as a social end in itself. Not unlike reality television stars, social media celebrities are often ①⟦criticized⟧ for not having skills and talents associated with traditional, elite celebrity, such as acting or singing ability. This criticism highlights the fact that digital content creators face real ②⟦barriers⟧ to crossing over to the sphere of elite celebrity. However, the criticism also misses the point that the phenomenon of ordinary celebrity ③⟦reconstructs⟧ the meaning of fame. The elite celebrity is symbolized by the metaphor of the star, characterized by mystery and hierarchical ④⟦closeness⟧ and associated with naturalized qualities of talent and class. The ordinary celebrity attracts attention through ⑤⟦regular⟧ and frequent interactions with other ordinary people. Achieving ordinary fame as a social media celebrity is like doing well at a game, because in this sphere, fame is nothing more nor less than relatively high scores on attention scales, the metrics of subscribers, followers, Likes, or clicks built into social media applications.
   options: *id001
   answer: 4
   second_best: 3
@@ -6004,13 +6004,13 @@ items:
   passage:
   - While social media attention is potentially an instrument to achieve ends like elite celebrity, some content creators desire ordinary fame as a social end in itself. Not unlike reality television stars, social media celebrities are often criticized for not having skills and talents associated with traditional, elite celebrity, such as acting or singing ability. This criticism highlights the fact that digital content creators face real barriers to crossing over to the sphere of elite celebrity. However, the criticism also misses the point that the phenomenon of ordinary celebrity reconstructs the meaning of fame. The elite celebrity is symbolized by the metaphor of the star, characterized by mystery and hierarchical distance and associated with naturalized qualities of talent and class. The ordinary celebrity attracts attention through regular and frequent interactions with other ordinary people. Achieving ordinary fame as a social media celebrity is like doing well at a game, because in this sphere, fame is nothing more nor less than ________________________, the metrics of subscribers, followers, Likes, or clicks built into social media applications.
   options:
+  - the approval of traditional celebrities
+  - a reward given only to hardworking creators
   - the talent to act or sing in front of others
   - a mysterious distance from ordinary fans
   - relatively high numbers on measures of attention
-  - the approval of traditional celebrities
-  - a reward given only to hardworking creators
-  answer: 3
-  second_best: 2
+  answer: 5
+  second_best: 4
   difficulty: D3
   family: BLANK_INFERENCE
   balance: CORE_EXAM_POINT
@@ -6020,38 +6020,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: STRONG
-    claim: talent
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-5-6
-    v: false
-    why: 엘리트 유명인의 특징으로 대조 대상이다.
-  - axis: reading
-    c: STRONG
-    claim: mystery
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-5-6
-    v: false
-    why: 별(star)의 신비감과 거리감은 엘리트 유명인의 특징이다.
-  - axis: reading
-    c: CORRECT
-    claim: attention_numbers
-    ev:
-    - PASSAGE
-    - OPTION3
-    - SCOPE:NGICHUL-L1-3-5-6
-    v: true
-    why: 구독자·팔로워·좋아요 같은 지표, 즉 관심 척도의 높은 수치이다.
-  - axis: reading
     c: WEAK
     claim: approval
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-5-6
     v: false
     why: 전통 스타의 인정은 무관하다.
@@ -6060,10 +6033,37 @@ items:
     claim: hardworking
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-5-6
     v: false
     why: 노력에 대한 보상이라는 말은 없다.
+  - axis: reading
+    c: STRONG
+    claim: talent
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-5-6
+    v: false
+    why: 엘리트 유명인의 특징으로 대조 대상이다.
+  - axis: reading
+    c: STRONG
+    claim: mystery
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-5-6
+    v: false
+    why: 별(star)의 신비감과 거리감은 엘리트 유명인의 특징이다.
+  - axis: reading
+    c: CORRECT
+    claim: attention_numbers
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-5-6
+    v: true
+    why: 구독자·팔로워·좋아요 같은 지표, 즉 관심 척도의 높은 수치이다.
 - item_id: ENG-NG-3-5-6-5
   set: null
   eng_type: ARC-ENG-RDG-09
@@ -6074,13 +6074,13 @@ items:
   passage:
   - While social media attention is potentially an instrument to achieve ends like elite celebrity, some content creators desire ordinary fame as a social end in itself. Not unlike reality television stars, social media celebrities are often criticized for not having skills and talents associated with traditional, elite celebrity, such as acting or singing ability. This criticism highlights the fact that digital content creators face real barriers to crossing over to the sphere of elite celebrity. However, the criticism also misses the point that the phenomenon of ordinary celebrity reconstructs the meaning of fame. The elite celebrity is symbolized by the metaphor of the star, characterized by mystery and hierarchical distance and associated with naturalized qualities of talent and class. The ordinary celebrity attracts attention through regular and frequent interactions with other ordinary people. Achieving ordinary fame as a social media celebrity is like doing well at a game, because in this sphere, fame is nothing more nor less than relatively high scores on attention scales, the metrics of subscribers, followers, Likes, or clicks built into social media applications.
   options:
+  - mystery …… interaction
+  - openness …… isolation
   - talent …… competition
   - mystery …… competition
   - openness …… interaction
-  - mystery …… interaction
-  - openness …… isolation
-  answer: 4
-  second_best: 2
+  answer: 1
+  second_best: 4
   difficulty: D3
   family: SUMMARY_COMPLETION
   balance: CORE_EXAM_POINT
@@ -6090,38 +6090,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: MEDIUM
-    claim: talent_comp
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-5-6
-    v: false
-    why: (A)는 일부 맞지만 평범한 유명인은 경쟁이 아니라 상호작용으로 관심을 얻는다.
-  - axis: reading
-    c: STRONG
-    claim: mystery_comp
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-5-6
-    v: false
-    why: (A)는 맞지만 (B)가 틀리다.
-  - axis: reading
-    c: STRONG
-    claim: open_interaction
-    ev:
-    - PASSAGE
-    - OPTION3
-    - SCOPE:NGICHUL-L1-3-5-6
-    v: false
-    why: (B)는 맞지만 엘리트 유명인은 신비감으로 상징된다.
-  - axis: reading
     c: CORRECT
     claim: mystery_interaction
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-5-6
     v: true
     why: 엘리트 유명인은 신비감과 거리감, 평범한 유명인은 잦은 상호작용이다.
@@ -6130,10 +6103,37 @@ items:
     claim: open_isolation
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-5-6
     v: false
     why: 두 빈칸 모두 반대이다.
+  - axis: reading
+    c: MEDIUM
+    claim: talent_comp
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-5-6
+    v: false
+    why: (A)는 일부 맞지만 평범한 유명인은 경쟁이 아니라 상호작용으로 관심을 얻는다.
+  - axis: reading
+    c: STRONG
+    claim: mystery_comp
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-5-6
+    v: false
+    why: (A)는 맞지만 (B)가 틀리다.
+  - axis: reading
+    c: STRONG
+    claim: open_interaction
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-5-6
+    v: false
+    why: (B)는 맞지만 엘리트 유명인은 신비감으로 상징된다.
   view:
   - Unlike elite celebrity, which depends on (A) ________ and distance, ordinary celebrity is gained through frequent (B) ________ with ordinary people.
   view_label: ''
@@ -6145,7 +6145,7 @@ items:
   - NGICHUL-L1-3-5-7
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - For many people, ability ①⟦refers⟧ to intellectual competence, so they want everything they do to reflect ②⟦how⟧ smart they are—③⟦writing⟧ a brilliant legal brief, getting the highest grade on a test, writing elegant computer code, saying something exceptionally wise or witty in a conversation. You could also define ability in terms of a particular skill or talent, such as how ④⟦good⟧ one plays the piano, learns a language, or serves a tennis ball. Some people focus on their ability to be attractive, entertaining, up on the latest trends, or to have the newest gadgets. ⑤⟦However⟧ ability may be defined, a problem occurs when it is the sole determinant of one's self-worth.
+  - For many people, ability ①⟦refers⟧ to intellectual competence, so they want everything they do to reflect ②⟦how⟧ smart they are—③⟦writing⟧ a brilliant legal brief, getting the highest grade on a test, writing elegant computer code, saying something exceptionally wise or witty in a conversation. You could also define ability in terms of a particular skill or talent, such as how ④⟦good⟧ one plays the piano, learns a language, or serves a tennis ball. Some people focus on their ability to be attractive, entertaining, up on the latest trends, or to have the newest gadgets. ⑤⟦However⟧ ability may be defined, a problem occurs when it is the sole determinant of one's self-worth. The performance becomes the only measure of the person; nothing else is taken into account. An outstanding performance means an outstanding person; an average performance means an average person. Period.
   options: *id001
   answer: 4
   second_best: 5
@@ -6280,7 +6280,7 @@ items:
   - NGICHUL-L1-3-5-7
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - Some people focus on their ability to be ①⟦attractive⟧, entertaining, up on the ②⟦latest⟧ trends, or to have the newest gadgets. However ability may be defined, a problem occurs when it is the ③⟦minor⟧ determinant of one's self-worth. The performance becomes the ④⟦only⟧ measure of the person; nothing else is taken into account. An outstanding performance means an outstanding person; an average performance means an ⑤⟦average⟧ person.
+  - For many people, ability refers to intellectual competence, so they want everything they do to reflect how smart they are—writing a brilliant legal brief, getting the highest grade on a test, writing elegant computer code, saying something exceptionally wise or witty in a conversation. You could also define ability in terms of a particular skill or talent, such as how well one plays the piano, learns a language, or serves a tennis ball. Some people focus on their ability to be ①⟦attractive⟧, entertaining, up on the ②⟦latest⟧ trends, or to have the newest gadgets. However ability may be defined, a problem occurs when it is the ③⟦minor⟧ determinant of one's self-worth. The performance becomes the ④⟦only⟧ measure of the person; nothing else is taken into account. An outstanding performance means an outstanding person; an average performance means an ⑤⟦average⟧ person. Period.
   options: *id001
   answer: 3
   second_best: 4
@@ -6347,13 +6347,13 @@ items:
   passage:
   - For many people, ability refers to intellectual competence, so they want everything they do to reflect how smart they are—writing a brilliant legal brief, getting the highest grade on a test, writing elegant computer code, saying something exceptionally wise or witty in a conversation. You could also define ability in terms of a particular skill or talent, such as how well one plays the piano, learns a language, or serves a tennis ball. Some people focus on their ability to be attractive, entertaining, up on the latest trends, or to have the newest gadgets. However ability may be defined, a problem occurs when it is ________________________. The performance becomes the only measure of the person; nothing else is taken into account. An outstanding performance means an outstanding person; an average performance means an average person. Period.
   options:
+  - defined in terms of intellectual competence alone
   - the only thing that decides how much a person is worth
   - too difficult for most people to develop
   - measured by teachers rather than by oneself
   - shared with others in conversation
-  - defined in terms of intellectual competence alone
-  answer: 1
-  second_best: 5
+  answer: 2
+  second_best: 1
   difficulty: D3
   family: BLANK_INFERENCE
   balance: CORE_EXAM_POINT
@@ -6363,11 +6363,20 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
+    c: STRONG
+    claim: intellectual_only
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-5-7
+    v: false
+    why: However ability may be defined(어떻게 정의되든)라고 했으므로 정의 방식이 문제가 아니다.
+  - axis: reading
     c: CORRECT
     claim: sole_worth
     ev:
     - PASSAGE
-    - OPTION1
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-5-7
     v: true
     why: 원문 'the sole determinant of one's self-worth'를 바꿔 쓴 것이다.
@@ -6376,7 +6385,7 @@ items:
     claim: too_difficult
     ev:
     - PASSAGE
-    - OPTION2
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-5-7
     v: false
     why: 능력 개발의 어려움은 다루지 않는다.
@@ -6385,7 +6394,7 @@ items:
     claim: teachers
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION4
     - SCOPE:NGICHUL-L1-3-5-7
     v: false
     why: 누가 재는지는 다루지 않는다.
@@ -6394,19 +6403,10 @@ items:
     claim: conversation
     ev:
     - PASSAGE
-    - OPTION4
-    - SCOPE:NGICHUL-L1-3-5-7
-    v: false
-    why: 대화는 예시일 뿐이다.
-  - axis: reading
-    c: STRONG
-    claim: intellectual_only
-    ev:
-    - PASSAGE
     - OPTION5
     - SCOPE:NGICHUL-L1-3-5-7
     v: false
-    why: However ability may be defined(어떻게 정의되든)라고 했으므로 정의 방식이 문제가 아니다.
+    why: 대화는 예시일 뿐이다.
 - item_id: ENG-NG-3-5-7-5
   set: null
   eng_type: ARC-ENG-RDG-07
@@ -6485,13 +6485,13 @@ items:
   passage:
   - When we are young, we see our parents as people who always know the answers. That's probably why as soon as we can think independently, around the ages of 4-5, we start asking a lot of questions. Parents try to answer these questions in a way that a young mind can comprehend. However, when it comes to learning lessons about money, our parents' answers to these questions get written into a money blueprint. Even worse, a passing comment about money in the kitchen or at the dinner table can have a lasting effect. For example, a common phrase used by parents in response to a child's request for something is "No, we can't afford that." Think for a moment about how a young mind might interpret that. The message could be interpreted as "we don't have enough money" or "there isn't enough money." These beliefs about money can lead to an entire life designed around making sure there is always enough money through an obsession around work. It could lead to someone feeling deprived and a propensity for overspending in adulthood to avoid the feeling of deprivation.
   options:
-  - Parents should give children money to teach them its value.
-  - Parents' casual words about money can shape children's lifelong beliefs.
   - Children ask many questions because their parents know everything.
   - Overspending in adulthood is mainly caused by a lack of income.
   - Children should always be told the truth about family finances.
-  answer: 2
-  second_best: 5
+  - Parents should give children money to teach them its value.
+  - Parents' casual words about money can shape children's lifelong beliefs.
+  answer: 5
+  second_best: 3
   difficulty: D3
   family: MAIN_IDEA
   balance: CORE_EXAM_POINT
@@ -6502,28 +6502,10 @@ items:
   judgments:
   - axis: reading
     c: MEDIUM
-    claim: give_money
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-5-8
-    v: false
-    why: 용돈 교육은 다루지 않는다.
-  - axis: reading
-    c: CORRECT
-    claim: casual_words
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-5-8
-    v: true
-    why: 부모의 무심한 말이 돈에 대한 청사진에 새겨져 평생의 신념이 된다는 것이 요지이다.
-  - axis: reading
-    c: MEDIUM
     claim: know_all
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-5-8
     v: false
     why: 아이들이 부모를 그렇게 '본다'는 것은 질문이 많은 이유일 뿐이다.
@@ -6532,7 +6514,7 @@ items:
     claim: income_lack
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-5-8
     v: false
     why: 과소비는 결핍감을 피하려는 신념 때문이라고 했다.
@@ -6541,10 +6523,28 @@ items:
     claim: tell_truth
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-5-8
     v: false
     why: We can't afford that의 해석을 다루지만 재정을 다 알려야 한다는 주장은 없다.
+  - axis: reading
+    c: MEDIUM
+    claim: give_money
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-5-8
+    v: false
+    why: 용돈 교육은 다루지 않는다.
+  - axis: reading
+    c: CORRECT
+    claim: casual_words
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-5-8
+    v: true
+    why: 부모의 무심한 말이 돈에 대한 청사진에 새겨져 평생의 신념이 된다는 것이 요지이다.
 - item_id: ENG-NG-3-5-8-2
   set: null
   eng_type: ARC-ENG-GRM-01
@@ -6553,7 +6553,7 @@ items:
   - NGICHUL-L1-3-5-8
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - That's probably why as ①⟦soon⟧ as we can think independently, around the ages of 4-5, we start asking a lot of questions. Parents try to answer these questions in a way ②⟦that⟧ a young mind can comprehend. However, when it comes to learning lessons about money, our parents' answers to these questions get ③⟦writing⟧ into a money blueprint. Even worse, a passing comment about money in the kitchen or at the dinner table can ④⟦have⟧ a lasting effect. For example, a common phrase ⑤⟦used⟧ by parents in response to a child's request for something is "No, we can't afford that."
+  - When we are young, we see our parents as people who always know the answers. That's probably why as ①⟦soon⟧ as we can think independently, around the ages of 4-5, we start asking a lot of questions. Parents try to answer these questions in a way ②⟦that⟧ a young mind can comprehend. However, when it comes to learning lessons about money, our parents' answers to these questions get ③⟦writing⟧ into a money blueprint. Even worse, a passing comment about money in the kitchen or at the dinner table can ④⟦have⟧ a lasting effect. For example, a common phrase ⑤⟦used⟧ by parents in response to a child's request for something is "No, we can't afford that." Think for a moment about how a young mind might interpret that. The message could be interpreted as "we don't have enough money" or "there isn't enough money." These beliefs about money can lead to an entire life designed around making sure there is always enough money through an obsession around work. It could lead to someone feeling deprived and a propensity for overspending in adulthood to avoid the feeling of deprivation.
   options: *id001
   answer: 3
   second_best: 5
@@ -6618,7 +6618,7 @@ items:
   - NGICHUL-L1-3-5-8
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - Even worse, a ①⟦passing⟧ comment about money in the kitchen or at the dinner table can have a ②⟦lasting⟧ effect. For example, a common phrase used by parents in response to a child's request for something is "No, we can't ③⟦afford⟧ that." Think for a moment about how a young mind might interpret that. The message could be interpreted as "we don't have enough money" or "there isn't enough money." These beliefs about money can lead to an entire life designed around making sure there is always enough money through an obsession around work. It could lead to someone feeling ④⟦satisfied⟧ and a propensity for overspending in adulthood to ⑤⟦avoid⟧ the feeling of deprivation.
+  - When we are young, we see our parents as people who always know the answers. That's probably why as soon as we can think independently, around the ages of 4-5, we start asking a lot of questions. Parents try to answer these questions in a way that a young mind can comprehend. However, when it comes to learning lessons about money, our parents' answers to these questions get written into a money blueprint. Even worse, a ①⟦passing⟧ comment about money in the kitchen or at the dinner table can have a ②⟦lasting⟧ effect. For example, a common phrase used by parents in response to a child's request for something is "No, we can't ③⟦afford⟧ that." Think for a moment about how a young mind might interpret that. The message could be interpreted as "we don't have enough money" or "there isn't enough money." These beliefs about money can lead to an entire life designed around making sure there is always enough money through an obsession around work. It could lead to someone feeling ④⟦satisfied⟧ and a propensity for overspending in adulthood to ⑤⟦avoid⟧ the feeling of deprivation.
   options: *id001
   answer: 4
   second_best: 2
@@ -6685,13 +6685,13 @@ items:
   passage:
   - When we are young, we see our parents as people who always know the answers. That's probably why as soon as we can think independently, around the ages of 4-5, we start asking a lot of questions. Parents try to answer these questions in a way that a young mind can comprehend. However, when it comes to learning lessons about money, our parents' answers to these questions ________________________. Even worse, a passing comment about money in the kitchen or at the dinner table can have a lasting effect. For example, a common phrase used by parents in response to a child's request for something is "No, we can't afford that." Think for a moment about how a young mind might interpret that. The message could be interpreted as "we don't have enough money" or "there isn't enough money." These beliefs about money can lead to an entire life designed around making sure there is always enough money through an obsession around work. It could lead to someone feeling deprived and a propensity for overspending in adulthood to avoid the feeling of deprivation.
   options:
-  - are soon forgotten as we grow up
   - shape our core beliefs about money
   - make us ask even more questions
   - are usually too hard for us to understand
   - teach us how to earn money on our own
-  answer: 2
-  second_best: 1
+  - are soon forgotten as we grow up
+  answer: 1
+  second_best: 5
   difficulty: D3
   family: BLANK_INFERENCE
   balance: CORE_EXAM_POINT
@@ -6701,20 +6701,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: STRONG
-    claim: forgotten
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-5-8
-    v: false
-    why: Even worse와 lasting effect로 이어지므로 잊힌다는 것은 반대이다.
-  - axis: reading
     c: CORRECT
     claim: blueprint_beliefs
     ev:
     - PASSAGE
-    - OPTION2
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-5-8
     v: true
     why: 원문 'get written into a money blueprint'를 바꿔 쓴 것이다.
@@ -6723,7 +6714,7 @@ items:
     claim: more_questions
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-5-8
     v: false
     why: 질문의 양은 논점이 아니다.
@@ -6732,7 +6723,7 @@ items:
     claim: too_hard
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-5-8
     v: false
     why: 부모는 어린아이가 이해할 수 있게 답한다고 했다.
@@ -6741,10 +6732,19 @@ items:
     claim: earn_money
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION4
     - SCOPE:NGICHUL-L1-3-5-8
     v: false
     why: 돈 버는 법은 다루지 않는다.
+  - axis: reading
+    c: STRONG
+    claim: forgotten
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-5-8
+    v: false
+    why: Even worse와 lasting effect로 이어지므로 잊힌다는 것은 반대이다.
 - item_id: ENG-NG-3-5-8-5
   set: null
   eng_type: ARC-ENG-RDG-05
@@ -6888,7 +6888,7 @@ items:
   - NGICHUL-L1-3-5-9
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - For good or bad, the shift fundamentally ①⟦changed⟧ consumers' perception of the shopping experience. Nowhere ②⟦was⟧ the shift more obvious than with book sales, ③⟦which⟧ is how online bookstores got their start. Physical bookstores simply could not stock as ④⟦many⟧ titles as a virtual bookstore could. There is only so much space available on a shelf. In addition to greater variety, online bookstores were also able to offer aggressive discounts thanks to their lower operating costs. The combination of lower prices and greater selection ⑤⟦leading⟧ to the slow, steady rise of online bookstores.
+  - Roughly twenty years ago, brick-and-mortar stores began to give way to electronic commerce. For good or bad, the shift fundamentally ①⟦changed⟧ consumers' perception of the shopping experience. Nowhere ②⟦was⟧ the shift more obvious than with book sales, ③⟦which⟧ is how online bookstores got their start. Physical bookstores simply could not stock as ④⟦many⟧ titles as a virtual bookstore could. There is only so much space available on a shelf. In addition to greater variety, online bookstores were also able to offer aggressive discounts thanks to their lower operating costs. The combination of lower prices and greater selection ⑤⟦leading⟧ to the slow, steady rise of online bookstores. Before long, the e-commerce book market naturally expanded to include additional categories, like CDs and DVDs. E-commerce soon snowballed into the enormous industry it is today, where you can buy everything from toilet paper to cars online.
   options: *id001
   answer: 5
   second_best: 2
@@ -6953,7 +6953,7 @@ items:
   - NGICHUL-L1-3-5-9
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - Nowhere was the shift more ①⟦obvious⟧ than with book sales, which is how online bookstores got their start. Physical bookstores simply could not stock as many titles as a virtual bookstore could. There is only so much ②⟦space⟧ available on a shelf. In addition to greater variety, online bookstores were also able to offer ③⟦aggressive⟧ discounts thanks to their lower operating costs. The combination of ④⟦higher⟧ prices and greater selection led to the slow, steady rise of online bookstores. Before long, the e-commerce book market naturally ⑤⟦expanded⟧ to include additional categories, like CDs and DVDs. E-commerce soon snowballed into the enormous industry it is today, where you can buy everything from toilet paper to cars online.
+  - Roughly twenty years ago, brick-and-mortar stores began to give way to electronic commerce. For good or bad, the shift fundamentally changed consumers' perception of the shopping experience. Nowhere was the shift more ①⟦obvious⟧ than with book sales, which is how online bookstores got their start. Physical bookstores simply could not stock as many titles as a virtual bookstore could. There is only so much ②⟦space⟧ available on a shelf. In addition to greater variety, online bookstores were also able to offer ③⟦aggressive⟧ discounts thanks to their lower operating costs. The combination of ④⟦higher⟧ prices and greater selection led to the slow, steady rise of online bookstores. Before long, the e-commerce book market naturally ⑤⟦expanded⟧ to include additional categories, like CDs and DVDs. E-commerce soon snowballed into the enormous industry it is today, where you can buy everything from toilet paper to cars online.
   options: *id001
   answer: 4
   second_best: 3
@@ -7227,7 +7227,7 @@ items:
   - NGICHUL-L1-3-5-10
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - For example, hot melted rock material, ①⟦called⟧ magma, cools when it reaches the Earth's surface, or even if it's trapped below the surface. As magma cools, its atoms lose heat energy, ②⟦move⟧ closer together, and begin to combine into compounds. During this process, atoms of the different compounds arrange ③⟦themselves⟧ into orderly, repeating patterns. The type and amount of elements present in a magma partly ④⟦determines⟧ which minerals will form. Also, the size of the crystals that form ⑤⟦depends⟧ partly on how rapidly the magma cools.
+  - Natural processes form minerals in many ways. For example, hot melted rock material, ①⟦called⟧ magma, cools when it reaches the Earth's surface, or even if it's trapped below the surface. As magma cools, its atoms lose heat energy, ②⟦move⟧ closer together, and begin to combine into compounds. During this process, atoms of the different compounds arrange ③⟦themselves⟧ into orderly, repeating patterns. The type and amount of elements present in a magma partly ④⟦determines⟧ which minerals will form. Also, the size of the crystals that form ⑤⟦depends⟧ partly on how rapidly the magma cools. When magma cools slowly, the crystals that form are generally large enough to see with the unaided eye. This is because the atoms have enough time to move together and form into larger crystals. When magma cools rapidly, the crystals that form will be small. In such cases, you can't easily see individual mineral crystals.
   options: *id001
   answer: 4
   second_best: 5
@@ -7292,7 +7292,7 @@ items:
   - NGICHUL-L1-3-5-10
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - Also, the size of the crystals that form depends partly on how ①⟦rapidly⟧ the magma cools. When magma cools ②⟦slowly⟧, the crystals that form are generally ③⟦tiny⟧ enough to see with the unaided eye. This is because the atoms have enough ④⟦time⟧ to move together and form into larger crystals. When magma cools rapidly, the crystals that form will be ⑤⟦small⟧. In such cases, you can't easily see individual mineral crystals.
+  - Natural processes form minerals in many ways. For example, hot melted rock material, called magma, cools when it reaches the Earth's surface, or even if it's trapped below the surface. As magma cools, its atoms lose heat energy, move closer together, and begin to combine into compounds. During this process, atoms of the different compounds arrange themselves into orderly, repeating patterns. The type and amount of elements present in a magma partly determine which minerals will form. Also, the size of the crystals that form depends partly on how ①⟦rapidly⟧ the magma cools. When magma cools ②⟦slowly⟧, the crystals that form are generally ③⟦so small that they cannot be seen with the unaided eye⟧. This is because the atoms have enough ④⟦time⟧ to move together and form into larger crystals. When magma cools rapidly, the crystals that form will be ⑤⟦small⟧. In such cases, you can't easily see individual mineral crystals.
   options: *id001
   answer: 3
   second_best: 5
@@ -7330,7 +7330,7 @@ items:
     - OPTION3
     - SCOPE:NGICHUL-L1-3-5-10
     v: false
-    why: 맨눈으로 볼 수 있을 만큼 '큰' 결정이어야 다음 문장(더 큰 결정)과 이어진다.
+    why: 천천히 식으면 맨눈으로 볼 수 있을 만큼 큰 결정이 생기므로 '맨눈으로 볼 수 없을 만큼 작다'는 표현은 다음 문장(더 큰 결정)과 모순이다.
   - axis: reading
     c: MEDIUM
     claim: time_ok
@@ -7359,13 +7359,13 @@ items:
   passage:
   - Natural processes form minerals in many ways. For example, hot melted rock material, called magma, cools when it reaches the Earth's surface, or even if it's trapped below the surface. As magma cools, its atoms lose heat energy, move closer together, and begin to combine into compounds. During this process, atoms of the different compounds arrange themselves into orderly, repeating patterns. The type and amount of elements present in a magma partly determine which minerals will form. Also, the size of the crystals that form depends partly on how rapidly the magma cools. When magma cools slowly, the crystals that form are generally large enough to see with the unaided eye. This is because the atoms ________________________ and form into larger crystals. When magma cools rapidly, the crystals that form will be small. In such cases, you can't easily see individual mineral crystals.
   options:
+  - stop moving as soon as they cool
+  - are given plenty of time to gather
   - lose all of their heat energy at once
   - are pushed apart by the hot magma
   - combine with atoms from the air
-  - stop moving as soon as they cool
-  - are given plenty of time to gather
-  answer: 5
-  second_best: 4
+  answer: 2
+  second_best: 1
   difficulty: D3
   family: BLANK_INFERENCE
   balance: CORE_EXAM_POINT
@@ -7375,38 +7375,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: MEDIUM
-    claim: lose_at_once
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-5-10
-    v: false
-    why: 한꺼번에 열을 잃는 것은 빨리 식는 경우이다.
-  - axis: reading
-    c: WEAK
-    claim: pushed_apart
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-5-10
-    v: false
-    why: 원자들은 가까워진다.
-  - axis: reading
-    c: WEAK
-    claim: air_atoms
-    ev:
-    - PASSAGE
-    - OPTION3
-    - SCOPE:NGICHUL-L1-3-5-10
-    v: false
-    why: 공기 중 원자는 언급되지 않는다.
-  - axis: reading
     c: STRONG
     claim: stop_moving
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-5-10
     v: false
     why: 식으면 움직임을 멈춘다는 것은 '천천히 모일 시간이 있다'는 설명과 반대이다.
@@ -7415,10 +7388,37 @@ items:
     claim: plenty_time
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-5-10
     v: true
     why: 원문 'have enough time to move together'를 바꿔 쓴 것이다.
+  - axis: reading
+    c: MEDIUM
+    claim: lose_at_once
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-5-10
+    v: false
+    why: 한꺼번에 열을 잃는 것은 빨리 식는 경우이다.
+  - axis: reading
+    c: WEAK
+    claim: pushed_apart
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-5-10
+    v: false
+    why: 원자들은 가까워진다.
+  - axis: reading
+    c: WEAK
+    claim: air_atoms
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-5-10
+    v: false
+    why: 공기 중 원자는 언급되지 않는다.
 - item_id: ENG-NG-3-5-10-5
   set: null
   eng_type: ARC-ENG-RDG-09
@@ -7429,13 +7429,13 @@ items:
   passage:
   - Natural processes form minerals in many ways. For example, hot melted rock material, called magma, cools when it reaches the Earth's surface, or even if it's trapped below the surface. As magma cools, its atoms lose heat energy, move closer together, and begin to combine into compounds. During this process, atoms of the different compounds arrange themselves into orderly, repeating patterns. The type and amount of elements present in a magma partly determine which minerals will form. Also, the size of the crystals that form depends partly on how rapidly the magma cools. When magma cools slowly, the crystals that form are generally large enough to see with the unaided eye. This is because the atoms have enough time to move together and form into larger crystals. When magma cools rapidly, the crystals that form will be small. In such cases, you can't easily see individual mineral crystals.
   options:
+  - location …… faster
   - speed …… faster
   - location …… slower
   - pressure …… faster
   - speed …… slower
-  - location …… faster
-  answer: 4
-  second_best: 1
+  answer: 5
+  second_best: 2
   difficulty: D4
   family: SUMMARY_COMPLETION
   balance: ADVANCED_DISCRIMINATION
@@ -7445,11 +7445,20 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
+    c: WEAK
+    claim: location_faster
+    ev:
+    - PASSAGE
+    - OPTION1
+    - SCOPE:NGICHUL-L1-3-5-10
+    v: false
+    why: 두 빈칸 모두 맞지 않는다.
+  - axis: reading
     c: STRONG
     claim: speed_faster
     ev:
     - PASSAGE
-    - OPTION1
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-5-10
     v: false
     why: (A)는 맞지만 빨리 식으면 결정이 작아진다.
@@ -7458,7 +7467,7 @@ items:
     claim: location_slower
     ev:
     - PASSAGE
-    - OPTION2
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-5-10
     v: false
     why: (B)는 맞지만 결정 크기를 좌우하는 것은 식는 속도이다(지표·지하 모두 식을 수 있다).
@@ -7467,7 +7476,7 @@ items:
     claim: pressure_faster
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION4
     - SCOPE:NGICHUL-L1-3-5-10
     v: false
     why: 압력은 언급되지 않는다.
@@ -7476,19 +7485,10 @@ items:
     claim: speed_slower
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION5
     - SCOPE:NGICHUL-L1-3-5-10
     v: true
     why: 결정 크기는 식는 속도에 달려 있고, 천천히 식을수록 결정이 커진다.
-  - axis: reading
-    c: WEAK
-    claim: location_faster
-    ev:
-    - PASSAGE
-    - OPTION5
-    - SCOPE:NGICHUL-L1-3-5-10
-    v: false
-    why: 두 빈칸 모두 맞지 않는다.
   view:
   - 'The size of the mineral crystals that form from magma depends on its cooling (A) ________: the (B) ________ it cools, the larger the crystals become.'
   view_label: ''
@@ -7500,7 +7500,7 @@ items:
   - NGICHUL-L1-3-5-11
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - It has always inspired people ①⟦wondering⟧ and to imagine. Since the dawn of civilization, our ancestors ②⟦created⟧ myths and told legendary stories about the night sky. Elements of those narratives became ③⟦embedded⟧ in the social and cultural identities of many generations. On a practical level, the night sky helped past generations ④⟦to keep⟧ track of time and create calendars—essential to developing societies as aids to farming and seasonal gathering. For many centuries, it also provided a useful navigation tool, ⑤⟦vital⟧ for commerce and for exploring new worlds.
+  - We are connected to the night sky in many ways. It has always inspired people ①⟦wondering⟧ and to imagine. Since the dawn of civilization, our ancestors ②⟦created⟧ myths and told legendary stories about the night sky. Elements of those narratives became ③⟦embedded⟧ in the social and cultural identities of many generations. On a practical level, the night sky helped past generations ④⟦to keep⟧ track of time and create calendars—essential to developing societies as aids to farming and seasonal gathering. For many centuries, it also provided a useful navigation tool, ⑤⟦vital⟧ for commerce and for exploring new worlds. Even in modern times, many people in remote areas of the planet observe the night sky for such practical purposes.
   options: *id001
   answer: 1
   second_best: 4
@@ -7635,7 +7635,7 @@ items:
   - NGICHUL-L1-3-5-11
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - Since the dawn of civilization, our ancestors created myths and told ①⟦legendary⟧ stories about the night sky. Elements of those narratives became ②⟦embedded⟧ in the social and cultural identities of many generations. On a practical level, the night sky helped past generations to keep track of time and create calendars—③⟦essential⟧ to developing societies as aids to farming and seasonal gathering. For many centuries, it also provided a ④⟦useless⟧ navigation tool, vital for commerce and for exploring new worlds. Even in modern times, many people in ⑤⟦remote⟧ areas of the planet observe the night sky for such practical purposes.
+  - We are connected to the night sky in many ways. It has always inspired people to wonder and to imagine. Since the dawn of civilization, our ancestors created myths and told ①⟦legendary⟧ stories about the night sky. Elements of those narratives became ②⟦embedded⟧ in the social and cultural identities of many generations. On a practical level, the night sky helped past generations to keep track of time and create calendars—③⟦essential⟧ to developing societies as aids to farming and seasonal gathering. For many centuries, it also provided a ④⟦useless⟧ navigation tool, vital for commerce and for exploring new worlds. Even in modern times, many people in ⑤⟦remote⟧ areas of the planet observe the night sky for such practical purposes.
   options: *id001
   answer: 4
   second_best: 2
@@ -7839,7 +7839,7 @@ items:
   - NGICHUL-L1-3-5-12
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - 'Here is an interesting experiment which was ①⟦conducting⟧ on a group of elementary students in the U.S. over thirty years ago. The teacher who ②⟦participated⟧ in the experiment told her students: "According to a recent study, children with blue eyes ③⟦have⟧ a higher learning aptitude than children with brown eyes." After telling her students this bit of uncertified information, she had the children ④⟦write⟧ the color of their eyes on a card and hang them around their necks. The children were ⑤⟦monitored⟧ for a week and the results were as follows. Learning motivation for children with brown eyes dropped, and the blue-eyed children became drastically better in class.'
+  - 'Here is an interesting experiment which was ①⟦conducting⟧ on a group of elementary students in the U.S. over thirty years ago. The teacher who ②⟦participated⟧ in the experiment told her students: "According to a recent study, children with blue eyes ③⟦have⟧ a higher learning aptitude than children with brown eyes." After telling her students this bit of uncertified information, she had the children ④⟦write⟧ the color of their eyes on a card and hang them around their necks. The children were ⑤⟦monitored⟧ for a week and the results were as follows. Learning motivation for children with brown eyes dropped, and the blue-eyed children became drastically better in class. Then, the teacher told the students, "There have been reports that the experimental results were wrong. In fact, brown-eyed children do better in class than blue-eyed children." What were the results? This time the children with brown eyes excelled in class, while the learning motivation for the children with blue eyes decreased.'
   options: *id001
   answer: 1
   second_best: 4
@@ -7974,7 +7974,7 @@ items:
   - NGICHUL-L1-3-5-12
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - After telling her students this bit of ①⟦uncertified⟧ information, she had the children write the color of their eyes on a card and hang them around their necks. The children were ②⟦monitored⟧ for a week and the results were as follows. Learning motivation for children with brown eyes ③⟦dropped⟧, and the blue-eyed children became drastically better in class. Then, the teacher told the students, "There have been reports that the experimental results were ④⟦wrong⟧. In fact, brown-eyed children do better in class than blue-eyed children." What were the results? This time the children with brown eyes excelled in class, while the learning motivation for the children with blue eyes ⑤⟦increased⟧.
+  - 'Here is an interesting experiment which was conducted on a group of elementary students in the U.S. over thirty years ago. The teacher who participated in the experiment told her students: "According to a recent study, children with blue eyes have a higher learning aptitude than children with brown eyes." After telling her students this bit of ①⟦uncertified⟧ information, she had the children write the color of their eyes on a card and hang them around their necks. The children were ②⟦monitored⟧ for a week and the results were as follows. Learning motivation for children with brown eyes ③⟦dropped⟧, and the blue-eyed children became drastically better in class. Then, the teacher told the students, "There have been reports that the experimental results were ④⟦wrong⟧. In fact, brown-eyed children do better in class than blue-eyed children." What were the results? This time the children with brown eyes excelled in class, while the learning motivation for the children with blue eyes ⑤⟦increased⟧.'
   options: *id001
   answer: 5
   second_best: 3
@@ -8041,13 +8041,13 @@ items:
   passage:
   - 'Here is an interesting experiment which was conducted on a group of elementary students in the U.S. over thirty years ago. The teacher who participated in the experiment told her students: "According to a recent study, children with blue eyes have a higher learning aptitude than children with brown eyes." After telling her students this bit of uncertified information, she had the children write the color of their eyes on a card and hang them around their necks. The children were monitored for a week and the results were as follows. Learning motivation for children with brown eyes dropped, and the blue-eyed children became drastically better in class. Then, the teacher told the students, "There have been reports that the experimental results were wrong. In fact, brown-eyed children do better in class than blue-eyed children." What were the results? This time ________________________, while the learning motivation for the children with blue eyes decreased.'
   options:
+  - the teacher stopped telling students about studies
+  - the children with brown eyes felt confused
   - the brown-eyed children did much better in class
   - all of the children lost interest in their lessons
   - the blue-eyed children refused to wear their cards
-  - the teacher stopped telling students about studies
-  - the children with brown eyes felt confused
-  answer: 1
-  second_best: 2
+  answer: 3
+  second_best: 4
   difficulty: D3
   family: BLANK_INFERENCE
   balance: CORE_EXAM_POINT
@@ -8057,38 +8057,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: CORRECT
-    claim: brown_better
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-5-12
-    v: true
-    why: 원문 'the children with brown eyes excelled in class'를 바꿔 쓴 것이다.
-  - axis: reading
-    c: STRONG
-    claim: all_lost
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-5-12
-    v: false
-    why: while 뒤에 파란 눈 아이들만 동기가 줄었다고 대조하므로 '모두'는 맞지 않는다.
-  - axis: reading
-    c: WEAK
-    claim: refuse_cards
-    ev:
-    - PASSAGE
-    - OPTION3
-    - SCOPE:NGICHUL-L1-3-5-12
-    v: false
-    why: 카드 거부는 언급되지 않는다.
-  - axis: reading
     c: MEDIUM
     claim: teacher_stop
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-5-12
     v: false
     why: 교사의 행동 변화는 다루지 않는다.
@@ -8097,10 +8070,37 @@ items:
     claim: confused
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-5-12
     v: false
     why: 혼란은 언급되지 않는다.
+  - axis: reading
+    c: CORRECT
+    claim: brown_better
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-5-12
+    v: true
+    why: 원문 'the children with brown eyes excelled in class'를 바꿔 쓴 것이다.
+  - axis: reading
+    c: STRONG
+    claim: all_lost
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-5-12
+    v: false
+    why: while 뒤에 파란 눈 아이들만 동기가 줄었다고 대조하므로 '모두'는 맞지 않는다.
+  - axis: reading
+    c: WEAK
+    claim: refuse_cards
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-5-12
+    v: false
+    why: 카드 거부는 언급되지 않는다.
 - item_id: ENG-NG-3-5-12-5
   set: null
   eng_type: ARC-ENG-RDG-07
@@ -8247,7 +8247,7 @@ items:
   - NGICHUL-L1-3-6-1
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - When customers return a broken product to a famous company, which ①⟦makes⟧ kitchen and bathroom fixtures, the company nearly always offers a replacement to ②⟦maintain⟧ good customer relations. Still, "there are times you've got to say 'no,'" explains the warranty expert of the company, such as when a product is undamaged or has been ③⟦abused⟧. Entrepreneur Lauren Thorp, who ④⟦owns⟧ an e-commerce company, says, "While the customer is 'always' right, sometimes you just have to fire a customer." When Thorp has tried everything to resolve a complaint and realizes that the customer will be dissatisfied no matter what, she returns her attention to the rest of her customers, who she says ⑤⟦is⟧ "the reason for my success."
+  - Is the customer always right? When customers return a broken product to a famous company, which ①⟦makes⟧ kitchen and bathroom fixtures, the company nearly always offers a replacement to ②⟦maintain⟧ good customer relations. Still, "there are times you've got to say 'no,'" explains the warranty expert of the company, such as when a product is undamaged or has been ③⟦abused⟧. Entrepreneur Lauren Thorp, who ④⟦owns⟧ an e-commerce company, says, "While the customer is 'always' right, sometimes you just have to fire a customer." When Thorp has tried everything to resolve a complaint and realizes that the customer will be dissatisfied no matter what, she returns her attention to the rest of her customers, who she says ⑤⟦is⟧ "the reason for my success."
   options: *id001
   answer: 5
   second_best: 3
@@ -8312,7 +8312,7 @@ items:
   - NGICHUL-L1-3-6-1
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - When customers return a ①⟦broken⟧ product to a famous company, which makes kitchen and bathroom fixtures, the company nearly always offers a ②⟦replacement⟧ to maintain good customer relations. Still, "there are times you've got to say 'no,'" explains the warranty expert of the company, such as when a product is ③⟦damaged⟧ or has been abused. Entrepreneur Lauren Thorp, who owns an e-commerce company, says, "While the customer is 'always' right, sometimes you just have to fire a customer." When Thorp has tried everything to resolve a complaint and realizes that the customer will be ④⟦dissatisfied⟧ no matter what, she returns her attention to the rest of her customers, who she says are "the reason for my ⑤⟦success⟧."
+  - Is the customer always right? When customers return a ①⟦broken⟧ product to a famous company, which makes kitchen and bathroom fixtures, the company nearly always offers a ②⟦replacement⟧ to maintain good customer relations. Still, "there are times you've got to say 'no,'" explains the warranty expert of the company, such as when a product is ③⟦damaged⟧ or has been abused. Entrepreneur Lauren Thorp, who owns an e-commerce company, says, "While the customer is 'always' right, sometimes you just have to fire a customer." When Thorp has tried everything to resolve a complaint and realizes that the customer will be ④⟦dissatisfied⟧ no matter what, she returns her attention to the rest of her customers, who she says are "the reason for my ⑤⟦success⟧."
   options: *id001
   answer: 3
   second_best: 4
@@ -8520,7 +8520,7 @@ items:
   - NGICHUL-L1-3-6-2
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - One important point related to the possibility of reproducing believable tactile sensations in virtual or machine-mediated environments ①⟦lie⟧ in the role of "pain." Certainly, a number of real interactions can never ②⟦be⟧ entirely believable without the presence of painful stimulation. However, one might wonder ③⟦whether⟧ reproducing such kinds of stimulation ④⟦would⟧ ever be of any use within virtual or mediated interactions. Shouldn't a "virtual" world be, in some sense, "better" without pain? Even if not immediately intuitive, there are a (admittedly small) number of situations in which the ability to deliver painful stimulation ⑤⟦comes⟧ in handy within mediated environments.
+  - One important point related to the possibility of reproducing believable tactile sensations in virtual or machine-mediated environments ①⟦lie⟧ in the role of "pain." Certainly, a number of real interactions can never ②⟦be⟧ entirely believable without the presence of painful stimulation. However, one might wonder ③⟦whether⟧ reproducing such kinds of stimulation ④⟦would⟧ ever be of any use within virtual or mediated interactions. Shouldn't a "virtual" world be, in some sense, "better" without pain? Even if not immediately intuitive, there are a (admittedly small) number of situations in which the ability to deliver painful stimulation ⑤⟦comes⟧ in handy within mediated environments. In fact, numerous attempts have been made over the course of the last few years to reproduce these aspects of our perception as well. This may occur in video games to increase the realism of the simulation or even more importantly in training programs for soldiers where pain is an occupational hazard and will need to be dealt with.
   options: *id001
   answer: 1
   second_best: 5
@@ -8585,7 +8585,7 @@ items:
   - NGICHUL-L1-3-6-2
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - Certainly, a number of real interactions can never be entirely ①⟦believable⟧ without the presence of painful stimulation. However, one might wonder whether reproducing such kinds of stimulation would ever be of any use within virtual or mediated interactions. Shouldn't a "virtual" world be, in some sense, "②⟦worse⟧" without pain? Even if not immediately intuitive, there are a (admittedly ③⟦small⟧) number of situations in which the ability to deliver painful stimulation comes in handy within mediated environments. In fact, numerous attempts have been made over the course of the last few years to reproduce these aspects of our perception as well. This may occur in video games to increase the ④⟦realism⟧ of the simulation or even more importantly in training programs for soldiers where pain is an occupational ⑤⟦hazard⟧ and will need to be dealt with.
+  - One important point related to the possibility of reproducing believable tactile sensations in virtual or machine-mediated environments lies in the role of "pain." Certainly, a number of real interactions can never be entirely ①⟦believable⟧ without the presence of painful stimulation. However, one might wonder whether reproducing such kinds of stimulation would ever be of any use within virtual or mediated interactions. Shouldn't a "virtual" world be, in some sense, "②⟦worse⟧" without pain? Even if not immediately intuitive, there are a (admittedly ③⟦small⟧) number of situations in which the ability to deliver painful stimulation comes in handy within mediated environments. In fact, numerous attempts have been made over the course of the last few years to reproduce these aspects of our perception as well. This may occur in video games to increase the ④⟦realism⟧ of the simulation or even more importantly in training programs for soldiers where pain is an occupational ⑤⟦hazard⟧ and will need to be dealt with.
   options: *id001
   answer: 2
   second_best: 4
@@ -8722,13 +8722,13 @@ items:
   passage:
   - One important point related to the possibility of reproducing believable tactile sensations in virtual or machine-mediated environments lies in the role of "pain." Certainly, a number of real interactions can never be entirely believable without the presence of painful stimulation. However, one might wonder whether reproducing such kinds of stimulation would ever be of any use within virtual or mediated interactions. Shouldn't a "virtual" world be, in some sense, "better" without pain? Even if not immediately intuitive, there are a (admittedly small) number of situations in which ________________________ within mediated environments. In fact, numerous attempts have been made over the course of the last few years to reproduce these aspects of our perception as well. This may occur in video games to increase the realism of the simulation or even more importantly in training programs for soldiers where pain is an occupational hazard and will need to be dealt with.
   options:
+  - soldiers prefer games without any pain
+  - users forget that they are in a game
   - pain must be removed for the safety of users
   - the ability to deliver pain turns out to be useful
   - touch cannot be reproduced at all
-  - soldiers prefer games without any pain
-  - users forget that they are in a game
-  answer: 2
-  second_best: 1
+  answer: 4
+  second_best: 3
   difficulty: D3
   family: BLANK_INFERENCE
   balance: CORE_EXAM_POINT
@@ -8738,38 +8738,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: STRONG
-    claim: remove_pain
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-6-2
-    v: false
-    why: Even if not immediately intuitive 뒤에는 직관과 반대인 '고통이 유용한' 상황이 와야 한다.
-  - axis: reading
-    c: CORRECT
-    claim: pain_useful
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-6-2
-    v: true
-    why: 원문 'comes in handy'를 바꿔 쓴 것이다.
-  - axis: reading
-    c: MEDIUM
-    claim: no_touch
-    ev:
-    - PASSAGE
-    - OPTION3
-    - SCOPE:NGICHUL-L1-3-6-2
-    v: false
-    why: 촉각 재현은 가능성을 전제로 한다.
-  - axis: reading
     c: WEAK
     claim: soldiers_prefer
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-6-2
     v: false
     why: 군인의 선호는 언급되지 않는다.
@@ -8778,10 +8751,37 @@ items:
     claim: forget_game
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-6-2
     v: false
     why: 무관하다.
+  - axis: reading
+    c: STRONG
+    claim: remove_pain
+    ev:
+    - PASSAGE
+    - OPTION3
+    - SCOPE:NGICHUL-L1-3-6-2
+    v: false
+    why: Even if not immediately intuitive 뒤에는 직관과 반대인 '고통이 유용한' 상황이 와야 한다.
+  - axis: reading
+    c: CORRECT
+    claim: pain_useful
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-6-2
+    v: true
+    why: 원문 'comes in handy'를 바꿔 쓴 것이다.
+  - axis: reading
+    c: MEDIUM
+    claim: no_touch
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-6-2
+    v: false
+    why: 촉각 재현은 가능성을 전제로 한다.
 - item_id: ENG-NG-3-6-2-5
   set: null
   eng_type: ARC-ENG-RDG-07
@@ -8860,13 +8860,13 @@ items:
   passage:
   - Knowledge—the output of human innovation—is unique among all resources. It's not a physical resource. It's an information resource. Where all physical resources are depleted by use, and are divided by sharing, knowledge is different. A wheel may break or wear out, but the idea of the wheel will keep on working. A wheel can only be used in one place and one time, but the design for a wheel can be shared with an infinite number of people, all of whom can benefit from it. Ideas aren't zero-sum. That means the world isn't zero-sum. One person or nation's gain doesn't have to be another's loss. By creating new ideas, we can enrich all of us on the planet, while impoverishing none. Knowledge plays by different rules than physical resources, rules that make it inherently abundant.
   options:
-  - 'Physical Resources: The Key to National Wealth'
-  - Why Wheels Break Faster Than Ideas Spread
   - Sharing Knowledge Means Losing Your Advantage
   - The Hidden Costs of Creating New Ideas
   - 'Knowledge: A Resource That Grows When Shared'
-  answer: 5
-  second_best: 3
+  - 'Physical Resources: The Key to National Wealth'
+  - Why Wheels Break Faster Than Ideas Spread
+  answer: 3
+  second_best: 1
   difficulty: D3
   family: MAIN_IDEA
   balance: CORE_EXAM_POINT
@@ -8876,29 +8876,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: MEDIUM
-    claim: physical_key
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-6-3
-    v: false
-    why: 물리적 자원과 대조되는 지식이 중심이다.
-  - axis: reading
-    c: MEDIUM
-    claim: wheels
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-6-3
-    v: false
-    why: 바퀴는 비유적 예시이다.
-  - axis: reading
     c: STRONG
     claim: lose_advantage
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-6-3
     v: false
     why: 한 사람의 이득이 다른 사람의 손실일 필요가 없다고 했으므로 반대이다.
@@ -8907,7 +8889,7 @@ items:
     claim: hidden_costs
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-6-3
     v: false
     why: 비용은 다루지 않는다.
@@ -8916,10 +8898,28 @@ items:
     claim: grows_shared
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-6-3
     v: true
     why: 공유해도 줄지 않고 모두를 이롭게 하는, 본질적으로 풍부한 자원이라는 것이 중심이다.
+  - axis: reading
+    c: MEDIUM
+    claim: physical_key
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-6-3
+    v: false
+    why: 물리적 자원과 대조되는 지식이 중심이다.
+  - axis: reading
+    c: MEDIUM
+    claim: wheels
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-6-3
+    v: false
+    why: 바퀴는 비유적 예시이다.
 - item_id: ENG-NG-3-6-3-2
   set: null
   eng_type: ARC-ENG-GRM-01
@@ -8928,7 +8928,7 @@ items:
   - NGICHUL-L1-3-6-3
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - Where all physical resources are ①⟦depleted⟧ by use, and are divided by sharing, knowledge is different. A wheel may break or wear out, but the idea of the wheel will keep on ②⟦to work⟧. A wheel can only be used in one place and one time, but the design for a wheel can be shared with an infinite number of people, all of ③⟦whom⟧ can benefit from it. Ideas aren't zero-sum. That means the world isn't zero-sum. One person or nation's gain doesn't ④⟦have⟧ to be another's loss. By creating new ideas, we can enrich all of us on the planet, while ⑤⟦impoverishing⟧ none.
+  - Knowledge—the output of human innovation—is unique among all resources. It's not a physical resource. It's an information resource. Where all physical resources are ①⟦depleted⟧ by use, and are divided by sharing, knowledge is different. A wheel may break or wear out, but the idea of the wheel will keep on ②⟦to work⟧. A wheel can only be used in one place and one time, but the design for a wheel can be shared with an infinite number of people, all of ③⟦whom⟧ can benefit from it. Ideas aren't zero-sum. That means the world isn't zero-sum. One person or nation's gain doesn't ④⟦have⟧ to be another's loss. By creating new ideas, we can enrich all of us on the planet, while ⑤⟦impoverishing⟧ none. Knowledge plays by different rules than physical resources, rules that make it inherently abundant.
   options: *id001
   answer: 2
   second_best: 3
@@ -8993,7 +8993,7 @@ items:
   - NGICHUL-L1-3-6-3
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - Where all physical resources are ①⟦depleted⟧ by use, and are divided by sharing, knowledge is different. A wheel may break or wear out, but the idea of the wheel will keep on working. A wheel can only be used in one place and one time, but the design for a wheel can be shared with an ②⟦infinite⟧ number of people, all of whom can benefit from it. Ideas aren't zero-sum. That means the world isn't zero-sum. One person or nation's gain doesn't have to be another's ③⟦loss⟧. By creating new ideas, we can ④⟦enrich⟧ all of us on the planet, while impoverishing none. Knowledge plays by different rules than physical resources, rules that make it inherently ⑤⟦scarce⟧.
+  - Knowledge—the output of human innovation—is unique among all resources. It's not a physical resource. It's an information resource. Where all physical resources are ①⟦depleted⟧ by use, and are divided by sharing, knowledge is different. A wheel may break or wear out, but the idea of the wheel will keep on working. A wheel can only be used in one place and one time, but the design for a wheel can be shared with an ②⟦infinite⟧ number of people, all of whom can benefit from it. Ideas aren't zero-sum. That means the world isn't zero-sum. One person or nation's gain doesn't have to be another's ③⟦loss⟧. By creating new ideas, we can ④⟦enrich⟧ all of us on the planet, while impoverishing none. Knowledge plays by different rules than physical resources, rules that make it inherently ⑤⟦scarce⟧.
   options: *id001
   answer: 5
   second_best: 1
@@ -9201,7 +9201,7 @@ items:
   - NGICHUL-L1-3-6-4
   stem: 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?
   passage:
-  - You hear again and again that some of the greatest composers were ①⟦misunderstood⟧ in their own day. Not everyone could ②⟦understand⟧ the compositions of Beethoven, Brahms, or Stravinsky in their day. The reason for this initial lack of acceptance ③⟦is⟧ unfamiliarity. The musical forms, or ideas ④⟦expressing⟧ within them, were completely new. And yet, this is exactly one of the things that makes them so ⑤⟦great⟧.
+  - You hear again and again that some of the greatest composers were ①⟦misunderstood⟧ in their own day. Not everyone could ②⟦understand⟧ the compositions of Beethoven, Brahms, or Stravinsky in their day. The reason for this initial lack of acceptance ③⟦is⟧ unfamiliarity. The musical forms, or ideas ④⟦expressing⟧ within them, were completely new. And yet, this is exactly one of the things that makes them so ⑤⟦great⟧. Effective composers have their own ideas. Have you ever seen the classic movie Amadeus? The composer Antonio Salieri is the "host" of this movie; he's depicted as one of the most famous non-great composers—he lived at the time of Mozart and was completely overshadowed by him. Now, Salieri wasn't a bad composer; in fact, he was a very good one. But he wasn't one of the world's great composers because his work wasn't original. What he wrote sounded just like what everyone else was composing at the time.
   options: *id001
   answer: 4
   second_best: 3
@@ -9268,13 +9268,13 @@ items:
   passage:
   - You hear again and again that some of the greatest composers were misunderstood in their own day. Not everyone could understand the compositions of Beethoven, Brahms, or Stravinsky in their day. The reason for this initial lack of acceptance is unfamiliarity. The musical forms, or ideas expressed within them, were completely new. And yet, this is exactly one of the things that makes them so great. Effective composers have their own ideas. Have you ever seen the classic movie Amadeus? The composer Antonio Salieri is the "host" of this movie; he's depicted as one of the most famous non-great composers—he lived at the time of Mozart and was completely overshadowed by him. Now, Salieri wasn't a bad composer; in fact, he was a very good one. But he wasn't one of the world's great composers because his work wasn't original. What he wrote sounded just like what everyone else was composing at the time.
   options:
-  - Salieri was a poor composer who simply copied Mozart's music.
-  - Music that sounds familiar is easier for people to remember.
   - Great composers were great largely because their works were original.
   - Most people today understand Beethoven's works perfectly.
   - Movies are the best way to learn about classical composers.
-  answer: 3
-  second_best: 1
+  - Salieri was a poor composer who simply copied Mozart's music.
+  - Music that sounds familiar is easier for people to remember.
+  answer: 1
+  second_best: 4
   difficulty: D3
   family: MAIN_IDEA
   balance: CORE_EXAM_POINT
@@ -9284,29 +9284,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: STRONG
-    claim: salieri_poor
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-6-4
-    v: false
-    why: Salieri는 아주 좋은 작곡가였다고 했다.
-  - axis: reading
-    c: MEDIUM
-    claim: familiar_easy
-    ev:
-    - PASSAGE
-    - OPTION2
-    - SCOPE:NGICHUL-L1-3-6-4
-    v: false
-    why: 익숙함은 비교적 주변적인 진술이다.
-  - axis: reading
     c: CORRECT
     claim: original_great
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-6-4
     v: true
     why: 당대에 이해받지 못한 생소함, 즉 독창성이 위대함의 조건이라는 것이 요지이다.
@@ -9315,7 +9297,7 @@ items:
     claim: understand_now
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-6-4
     v: false
     why: 오늘날의 이해는 다루지 않는다.
@@ -9324,10 +9306,28 @@ items:
     claim: movies
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-6-4
     v: false
     why: 영화는 예시를 끌어오는 도구일 뿐이다.
+  - axis: reading
+    c: STRONG
+    claim: salieri_poor
+    ev:
+    - PASSAGE
+    - OPTION4
+    - SCOPE:NGICHUL-L1-3-6-4
+    v: false
+    why: Salieri는 아주 좋은 작곡가였다고 했다.
+  - axis: reading
+    c: MEDIUM
+    claim: familiar_easy
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-6-4
+    v: false
+    why: 익숙함은 비교적 주변적인 진술이다.
 - item_id: ENG-NG-3-6-4-3
   set: null
   eng_type: ARC-ENG-RDG-03
@@ -9336,7 +9336,7 @@ items:
   - NGICHUL-L1-3-6-4
   stem: 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?
   passage:
-  - Effective composers have their ①⟦own⟧ ideas. Have you ever seen the classic movie Amadeus? The composer Antonio Salieri is the "host" of this movie; he's depicted as one of the most ②⟦famous⟧ non-great composers—he lived at the time of Mozart and was completely overshadowed by him. Now, Salieri wasn't a ③⟦bad⟧ composer; in fact, he was a very good one. But he wasn't one of the world's great composers because his work wasn't ④⟦popular⟧. What he wrote sounded just ⑤⟦like⟧ what everyone else was composing at the time.
+  - You hear again and again that some of the greatest composers were misunderstood in their own day. Not everyone could understand the compositions of Beethoven, Brahms, or Stravinsky in their day. The reason for this initial lack of acceptance is unfamiliarity. The musical forms, or ideas expressed within them, were completely new. And yet, this is exactly one of the things that makes them so great. Effective composers have their ①⟦own⟧ ideas. Have you ever seen the classic movie Amadeus? The composer Antonio Salieri is the "host" of this movie; he's depicted as one of the most ②⟦famous⟧ non-great composers—he lived at the time of Mozart and was completely overshadowed by him. Now, Salieri wasn't a ③⟦bad⟧ composer; in fact, he was a very good one. But he wasn't one of the world's great composers because his work wasn't ④⟦popular⟧. What he wrote sounded just ⑤⟦like⟧ what everyone else was composing at the time.
   options: *id001
   answer: 4
   second_best: 3
@@ -9403,13 +9403,13 @@ items:
   passage:
   - You hear again and again that some of the greatest composers were misunderstood in their own day. Not everyone could understand the compositions of Beethoven, Brahms, or Stravinsky in their day. The reason for this initial lack of acceptance is ________________________. The musical forms, or ideas expressed within them, were completely new. And yet, this is exactly one of the things that makes them so great. Effective composers have their own ideas. Have you ever seen the classic movie Amadeus? The composer Antonio Salieri is the "host" of this movie; he's depicted as one of the most famous non-great composers—he lived at the time of Mozart and was completely overshadowed by him. Now, Salieri wasn't a bad composer; in fact, he was a very good one. But he wasn't one of the world's great composers because his work wasn't original. What he wrote sounded just like what everyone else was composing at the time.
   options:
-  - that the composers did not have enough talent
   - that their works were too short to enjoy
   - that their music was too new for people to be used to
   - that people preferred to hear Salieri's music
   - that concerts were too expensive at the time
-  answer: 3
-  second_best: 1
+  - that the composers did not have enough talent
+  answer: 2
+  second_best: 5
   difficulty: D3
   family: BLANK_INFERENCE
   balance: CORE_EXAM_POINT
@@ -9419,20 +9419,11 @@ items:
   stem_polarity: POSITIVE
   judgments:
   - axis: reading
-    c: STRONG
-    claim: no_talent
-    ev:
-    - PASSAGE
-    - OPTION1
-    - SCOPE:NGICHUL-L1-3-6-4
-    v: false
-    why: 위대한 작곡가들이므로 재능 부족은 맞지 않는다.
-  - axis: reading
     c: WEAK
     claim: too_short
     ev:
     - PASSAGE
-    - OPTION2
+    - OPTION1
     - SCOPE:NGICHUL-L1-3-6-4
     v: false
     why: 곡의 길이는 무관하다.
@@ -9441,7 +9432,7 @@ items:
     claim: too_new
     ev:
     - PASSAGE
-    - OPTION3
+    - OPTION2
     - SCOPE:NGICHUL-L1-3-6-4
     v: true
     why: 원문 'unfamiliarity'를 바꿔 쓴 것으로 다음 문장(형식과 생각이 완전히 새로웠다)과 이어진다.
@@ -9450,7 +9441,7 @@ items:
     claim: salieri_pref
     ev:
     - PASSAGE
-    - OPTION4
+    - OPTION3
     - SCOPE:NGICHUL-L1-3-6-4
     v: false
     why: Salieri는 뒤에 나오는 대조 사례이다.
@@ -9459,10 +9450,19 @@ items:
     claim: expensive
     ev:
     - PASSAGE
-    - OPTION5
+    - OPTION4
     - SCOPE:NGICHUL-L1-3-6-4
     v: false
     why: 무관하다.
+  - axis: reading
+    c: STRONG
+    claim: no_talent
+    ev:
+    - PASSAGE
+    - OPTION5
+    - SCOPE:NGICHUL-L1-3-6-4
+    v: false
+    why: 위대한 작곡가들이므로 재능 부족은 맞지 않는다.
 - item_id: ENG-NG-3-6-4-5
   set: null
   eng_type: ARC-ENG-RDG-06

@@ -14,6 +14,7 @@ line by line. Content is rendered exactly as given; this module never edits it.
 from __future__ import annotations
 
 import hashlib
+import os
 import re
 from pathlib import Path
 from typing import Any
@@ -35,8 +36,8 @@ FONT_FILES = {
 FALLBACK_FILES = [Path("/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc"),
                   Path("/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc"),
                   Path("/usr/share/fonts/truetype/arc-fallback/NotoSerifKR.ttf")]  # tooling/ci/install_fonts.sh
-SIZE = 9.8
-LH = SIZE * 1.62
+SIZE = float(os.environ.get("ARC_BODY_PT", "9.8"))   # compact English passage workbooks use 8.4~8.8
+LH = SIZE * float(os.environ.get("ARC_LH_RATIO", "1.62"))
 NAVY = (0.08, 0.16, 0.30)
 CIRC = "①②③④⑤"
 

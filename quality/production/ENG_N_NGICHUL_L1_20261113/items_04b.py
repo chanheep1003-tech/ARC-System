@@ -153,8 +153,8 @@ mcq(c, "RDG-09", "D3", None, text(c),
      ("cautious_flawless", S, "(A)는 맞지만 완벽한 모방은 필요 없다고 했다."),
      ("cautious_imperfect", S, "실수 한 번이 목숨을 앗아 가므로 포식자는 신중하고, 그래서 불완전한 모방도 먹이를 지켜 준다."),
      ("hasty_flawless", W, "두 빈칸 모두 반대이다."), ("random_colorful", W, "두 빈칸 모두 글과 무관하다.")],
-    view=["Because a single mistake can cost its life, a predator tends to make (A) ________ choices, which allows "
-          "even a(n) (B) ________ imitation to protect its prey."])
+    view=["Because a single mistake can be fatal, a predator tends to make (A) ________ choices, allowing even a(n) "
+          "(B) ________ mimic to avoid being attacked."])
 
 # ───────── 3-4-9 문학 작품의 함축 ─────────
 c = "3-4-9"
@@ -219,7 +219,7 @@ mcq(c, "RDG-08", "D3", None, text(c),
      ("tile_colder", S, "예시와 일치한다."), ("qualitative", M, "2문장과 일치한다."),
      ("thermometer", M, "마지막 문장과 일치한다.")])
 
-under(c, "GRM-01", "D3", (2, 6), ["mislead", "feels", "even though", ("than carpet does", "does"), ("What we need", "What")],
+under(c, "GRM-01", "D3", (2, 6), ["mislead", ("the tile feels", "feels"), "even though", ("than carpet does", "does"), ("What we need", "What")],
       (3, "is"), 5,
       [("verb_mislead", W, "are와 and로 병렬된 동사이다."),
        ("singular_feels", M, "주어 the tile(단수)의 동사이다."),

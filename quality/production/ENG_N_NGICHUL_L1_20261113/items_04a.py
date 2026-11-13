@@ -107,7 +107,7 @@ mcq(c, "RDG-07", "D4", None,
      ("after_s3", S, "PTSS에 관심이 쏠려 나쁜 사건의 부정적 효과를 기대한다는 오해 뒤에, In fact로 반박 수치를 제시한다."),
      ("after_s5", M, "④ 앞은 life's challenges로 끝나 it이 가리킬 대상이 맞지 않는다."),
      ("after_s6", W, "결론 문장 뒤에 근거 수치가 올 수 없다.")], steps=3,
-    view=["In fact, at least 80 percent of people who are exposed to a terrifying event do not experience it."])
+    view=["In fact, at least 80 percent of people who are exposed to a terrifying event do not develop post-traumatic stress syndrome."])
 
 mcq(c, "RDG-04", "D3", None,
     edit(text(c), ("people respond in so many constructive ways that they typically emerge more capable than ever of "
@@ -243,13 +243,13 @@ mcq(c, "RDG-01", "D3", "다음 글의 주제로 가장 적절한 것은?", text(
      ("distributor_hits", M, "유통사의 제한된 목록에서 벗어났다는 언급뿐이다."),
      ("sound_quality", W, "음질은 다루지 않는다.")])
 
-under(c, "GRM-01", "D3", (1, 5), ["given", "confronted", "in which", "organizing", "being guided"],
-      (4, "guiding"), 3,
+under(c, "GRM-01", "D3", (1, 5), ["given", "confronted", "in which", "organizing", ("actively has to choose", "has")],
+      (4, "have"), 3,
       [("perfect_given", W, "has given + 간접목적어 + 직접목적어 구조이다."),
        ("perfect_confronted", M, "has also confronted them with ~: ~에 직면하게 하다."),
        ("prep_relative", S, "orient themselves in genres이므로 전치사 in + which가 맞다."),
        ("parallel_organizing", M, "filtering out과 병렬인 동명사로 start의 목적어이다."),
-       ("passive_guided", S, "개인이 라디오에 의해 '안내받는' 것이므로 Without being restricted와 짝을 이루는 수동 being guided여야 한다.")],
+       ("subject_verb", S, "주어 the individual(단수)이므로 has to choose가 맞다. 앞의 긴 수식어구에 끌려 복수로 쓰지 않는다.")],
       steps=2)
 
 under(c, "RDG-03", "D3", (1, 6), ["control", ("countless genres", "countless"), "physical", "restricted", "considerable"],

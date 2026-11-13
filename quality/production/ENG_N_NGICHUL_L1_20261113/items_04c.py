@@ -24,13 +24,13 @@ under(c, "GRM-01", "D3", (1, 3), [("develop an amazing", "develop"), ("that come
        ("pronoun_those", S, "앞의 The dreams(복수)를 받으므로 those가 맞다."),
        ("passive_constructed", S, "꿈이 경험과 기억으로 '구성되는' 것이므로 수동 are constructed여야 한다.")])
 
-under(c, "RDG-03", "D4", (2, 6), ["vivid", ("are unique", "unique"), "familiar", "associate", "similar"],
-      (4, "different"), 2,
+under(c, "RDG-03", "D4", (2, 6), ["vivid", ("are unique", "unique"), "familiar", "associate", ("have similar overall", "similar")],
+      (4, "duller"), 2,
       [("vivid_ok", M, "정상 시력인의 꿈만큼 '생생할' 수 있다."),
        ("unique_ok", S, "however로 '독특한' 점(비시각적 재료)을 대조한다."),
        ("familiar_ok", W, "'친숙한' 친구를 꿈꾸는 예시이다."),
        ("associate_ok", S, "같은 친구를 비시각적 감각 경험과 '연결한다'."),
-       ("similar_swap", S, "even though they do not dream in pictures와 이어지려면 전체적인 꿈 경험은 '비슷해야' 한다.")],
+       ("similar_swap", S, "시각 장애인도 생생한 꿈을 꾼다는 글의 취지와 맞지 않는다. 전체적인 꿈 경험은 '비슷하다(similar)'여야 하므로 duller는 틀리다.")],
       steps=3)
 
 mcq(c, "RDG-04", "D3", None,

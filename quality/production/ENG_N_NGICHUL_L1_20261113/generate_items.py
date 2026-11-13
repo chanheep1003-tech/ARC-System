@@ -38,6 +38,7 @@ STEM = {
 }
 ORDER_OPTS = ["(A) - (C) - (B)", "(B) - (A) - (C)", "(B) - (C) - (A)", "(C) - (A) - (B)", "(C) - (B) - (A)"]
 items: list[dict] = []
+FAILS: list[str] = []
 counter: dict[str, int] = {}
 
 
@@ -51,13 +52,14 @@ def sents(code: str) -> list[str]:
 
 def excerpt(code: str, a: int, b: int) -> str:
     """Sentences a..b (0-based, inclusive): grammar / context-word items print only the underlined part."""
-    return " ".join(sents(code)[a:b + 1])
+    return text(code)  # 사용자 지시: 본문은 전문 그대로 싣는다(글자 크기·간격으로 조판 조정)
 
 
 def edit(src: str, *pairs: tuple[str, str]) -> str:
     for find, repl in pairs:
         if src.count(find) != 1:
-            raise SystemExit(f"EDIT_NOT_UNIQUE: {find!r} x{src.count(find)}")
+            FAILS.append(f"{find!r} x{src.count(find)} in {src[:40]!r}")
+            continue
         src = src.replace(find, repl, 1)
     return src
 
@@ -159,7 +161,45 @@ def _no_triple_runs(seq):
     return out
 
 
+if FAILS:
+    raise SystemExit("EDIT_NOT_UNIQUE:\n" + "\n".join(FAILS))
 items = _no_triple_runs(items)
+
+
+FREE_ORDER = {"ARC-ENG-RDG-01", "ARC-ENG-RDG-02", "ARC-ENG-RDG-04", "ARC-ENG-RDG-08", "ARC-ENG-RDG-09"}
+
+
+def _rotate(it, shift):
+    n = 5
+    it["options"] = [it["options"][(j - shift) % n] for j in range(n)]
+    js = [None] * n
+    for j, x in enumerate(it["judgments"]):
+        k = (j + shift) % n
+        x["ev"] = [e if not e.startswith("OPTION") else f"OPTION{k + 1}" for e in x["ev"]]
+        js[k] = x
+    it["judgments"] = js
+    it["answer"] = (it["answer"] - 1 + shift) % n + 1
+    it["second_best"] = (it["second_best"] - 1 + shift) % n + 1
+
+
+def _balance_keys(seq):
+    from collections import Counter
+    total = Counter(i["answer"] for i in seq)
+    for k, it in enumerate(seq):
+        if it["eng_type"] not in FREE_ORDER:
+            continue
+        recent = [x["answer"] for x in seq[max(0, k - 6):k]]
+        if it["answer"] not in recent[-2:] and (len(recent) < 4 or it["answer"] not in recent[-4:]) \
+                and sum(1 for r in recent if r in (3, 4)) < 4:
+            continue
+        best = min(range(1, 6), key=lambda c: (c in recent[-2:], recent.count(c), total[c], c))
+        total[it["answer"]] -= 1
+        _rotate(it, best - it["answer"])
+        total[it["answer"]] += 1
+    return seq
+
+
+items = _balance_keys(items)
 
 bundle = {
     "batch_id": "ENG-N-NGICHUL-L1-20261113", "product_mode": "ARC_N", "subject": "ENG", "generator": "CLAUDE",
