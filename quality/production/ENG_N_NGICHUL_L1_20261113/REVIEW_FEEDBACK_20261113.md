@@ -14,3 +14,4 @@
 - 108번: large enough to see → so small that they cannot be seen with the unaided eye로 명백한 모순 표현.
 - 정답 위치: 자유 순서 선지 문항을 회전시켜 81~93번 ③④ 쏠림 해소(①27 ②28 ③27 ④30 ⑤28).
 - 난이도 보정은 다음 차시.
+- 조판 재조정: 본문 9.4pt·행간 1.38(42쪽). 실행 시 ARC_BODY_PT=9.4 ARC_LH_RATIO=1.38
