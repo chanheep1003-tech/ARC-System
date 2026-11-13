@@ -84,6 +84,18 @@ arc_n_set:                # 50문항 워크북 1세트
     - B에는 ARC-ENG-GRM-02를 2문항 이상 넣는다
     - D는 ARC-ENG-CRQ-01과 ARC-ENG-CRQ-03을 6:4로 둔다
     - 2025 체제 변형(VOC-05, VOC-06, CRQ 글자 수·단어 수 고정)은 D4~D5 문항에 쓴다
+vocab_section_rule:        # 사용자 지시 2026-11-13: 단어 파트는 1~10번 문항에만 둔다.
+  vocab_types: [ARC-ENG-VOC-01, ARC-ENG-VOC-02, ARC-ENG-VOC-03, ARC-ENG-VOC-04, ARC-ENG-VOC-05, ARC-ENG-VOC-06]
+  allowed_in: [ARC FINAL 1~10번(해커스보카 범위 어휘), ARC N 50문항 세트의 A_VOC 파트]
+  forbidden_in: [지문 변형 워크북(workbook_profile PASSAGE_5), ARC FINAL 11번 이후]
+  note: 지문 안의 문맥 어휘는 ARC-ENG-RDG-03(문맥상 낱말의 쓰임)으로만 묻는다. 영영풀이·유의어는 단어 파트 유형이다.
+option_language_rule: 한 문항의 선지 5개는 한 언어로만 쓴다(영문 5개 또는 한글 5개). 요지·주제도 섞지 않는다.
+passage_workbook:          # N기출·학평 지문 변형 워크북 (workbook_profile PASSAGE_5)
+  items_per_passage: 5
+  format: 선택형만 (사용자가 서술형을 요청할 때만 CRQ를 넣는다)
+  slots: {S1_대의: [RDG-01, RDG-02, RDG-08], S2_어법: [GRM-01, GRM-02], S3_문맥어휘·어법: [RDG-03, GRM-01],
+          S4_S5_구조추론: [RDG-04, RDG-05, RDG-06, RDG-07, RDG-09]}
+  passage_length: 어법·문맥 어휘 문항은 밑줄이 든 부분만 발췌해 싣는다(지문 전체가 필요한 대의·빈칸·순서·삽입·요약만 전문).
 arc_core_module: [문장별 구문·어법 변형 포인트, 파생어·반의어·영영풀이 사전, 어형 변환 요약문, 서답형 영작 대상 문장]
 quality_gate:
   - VOC 빈칸 선지 5개의 품사·굴절형이 같아 문맥과 연어로만 풀리는가

@@ -69,6 +69,8 @@ SUBJECT_FAMILIES = {
 }
 # Subjects that must print registry-locked raw school text; others may also use bundle-authored material.
 REGISTRY_ONLY_SUBJECTS = {"KOR"}
+# Subjects whose stems come from a registered fixed type library (quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml).
+FIXED_STEM_SUBJECTS = {"ENG"}
 ITEM_LOCAL_REF = re.compile(r"STEM|VIEW|PASSAGE|TABLE|FIGURE|OPTION[1-5]|SCOPE:\S+")
 RARE_FAMILIES = {"COUNTERFACTUAL_DELETE_REPLACE", "MICRO_REFERENCE_TRACE", "META_READING_STRATEGY"}
 # Internal QA vocabulary that must never reach student text.
@@ -500,7 +502,8 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
         add("ANSWER_POSITION_BIAS", counts=dict(keys))
     if key_run >= 3:
         add("ANSWER_POSITION_RUN", run=key_run)
-    if single_best > max(1, round(n * 0.4)):
+    # ENG stems are fixed by the registered Dongbuk type library ("…가장 적절한 것은?" is the school form itself).
+    if single_best > max(1, round(n * 0.4)) and bundle["subject"] not in FIXED_STEM_SUBJECTS:
         add("SINGLE_BEST_STEM_OVERUSE", count=single_best)
     if except_count > max(1, round(n * 0.2)):
         add("EXCEPT_STEM_OVERUSE", count=except_count)

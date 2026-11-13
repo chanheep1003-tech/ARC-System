@@ -20,6 +20,8 @@ import yaml
 ROOT = Path(__file__).resolve().parents[2]
 LIBRARY = "quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml"
 UNDERLINE = re.compile(r"\(([a-g])\)")
+HANGUL = re.compile(r"[가-힣]")
+LATIN = re.compile(r"[A-Za-z]{2,}")
 
 
 def analyze(bundle: dict, root: Path = ROOT) -> dict:
@@ -46,6 +48,12 @@ def analyze(bundle: dict, root: Path = ROOT) -> dict:
             fail("ENG_TYPE_FORMAT_MISMATCH", iid)
         if it.get("format", "MCQ") == "MCQ" and len(it.get("options", [])) != 5:
             fail("OPTION_COUNT", iid)
+        if it.get("format", "MCQ") == "MCQ":
+            langs = {("KO" if HANGUL.search(o) else "EN") for o in it.get("options", []) if LATIN.search(o) or HANGUL.search(o)}
+            if len(langs) > 1:
+                fail("OPTION_LANGUAGE_MIXED", iid)
+        if area == "VOC" and bundle.get("workbook_profile") == "PASSAGE_5":
+            fail("VOC_TYPE_OUTSIDE_VOCAB_SECTION", iid, eng_type=code)
         if code == "ARC-ENG-GRM-02":
             text = " ".join([it.get("stem", "")] + list(it.get("view", [])) + list(it.get("passage_lines", [])) + list(it.get("passage", [])))
             marks = set(UNDERLINE.findall(text))
@@ -85,6 +93,14 @@ def analyze(bundle: dict, root: Path = ROOT) -> dict:
                 fail("FINAL_POINT_TOTAL", selected=sel, constructed=con)
         if bundle.get("notice_line") != lib["exam_format_2026"]["notice_line"]:
             fail("FINAL_NOTICE_LINE_MISSING")
+    elif product == "ARC_N" and bundle.get("workbook_profile") == "PASSAGE_5":
+        per = lib["passage_workbook"]["items_per_passage"]
+        counts = Counter(i.get("source_code") for i in items)
+        for src, k in sorted(counts.items(), key=lambda x: str(x[0])):
+            if src is None or k != per:
+                fail("PASSAGE_ITEM_COUNT", source_code=src, expected=per, got=k)
+        if crq:
+            fail("PASSAGE_WORKBOOK_CRQ", items=len(crq))
     elif product == "ARC_N":
         parts = lib["arc_n_set"]["parts"]
         size = sum(parts.values())

@@ -88,7 +88,10 @@ def main() -> int:
     assert "OPTION_COUNT" in v(final, lambda b: b["items"][0].update(options=OPTS[:4]))
     assert "N_PART_COUNT" in v(nset, lambda b: b["items"][0].update(eng_type="ARC-ENG-RDG-01"))
     assert "N_GRM02_SHORT" in v(nset, lambda b: b["items"][23].update(eng_type="ARC-ENG-GRM-01", view=None))
-    print("ENG exam-type gate regression PASS (FINAL blueprint + N set ok, 13 faults blocked)")
+    mixed = ["An English option here", "Another English option", "한글 선지가 섞였다", "Fourth option text", "Fifth option text"]
+    assert "OPTION_LANGUAGE_MIXED" in v(nset, lambda b: b["items"][30].update(options=mixed))
+    assert "VOC_TYPE_OUTSIDE_VOCAB_SECTION" in v(nset, lambda b: b.update(workbook_profile="PASSAGE_5"))  # 단어 유형은 1~10번 전용
+    print("ENG exam-type gate regression PASS (FINAL blueprint + N set ok, 15 faults blocked)")
     return 0
 
 

@@ -436,16 +436,22 @@ def answer_page(doc, items: list[dict[str, Any]], labels: dict[str, str] | None 
     put(key, (ML, 80), "정답  ANSWER KEY", fontname="GB", fontsize=18, color=NAVY)
     key.draw_line((ML, 94), (A4_W - MR, 94), color=(0.45, 0.55, 0.68), width=0.8)
     mcq = [it for it in items if it.get("format", "MCQ") == "MCQ"]
-    per_col = 10 if len(mcq) <= 30 else 15
+    per_col, col_w, row_h = (10 if len(mcq) <= 30 else 15), 130, 28
+    if len(mcq) > 60:  # long workbooks (e.g. 140-item passage sets): narrower columns, one page up to 7 x 27
+        col_w, row_h = 72, 24
+        cols = int((A4_W - ML - MR - 20) // col_w)
+        per_col = -(-len(mcq) // cols)
+        if per_col > 27:
+            raise RenderError(f"ANSWER_KEY_TOO_LONG: {len(mcq)} items")
     for i, it in enumerate(mcq):
-        x = ML + 20 + (i // per_col) * 130
-        y = 132 + (i % per_col) * 28
+        x = ML + 20 + (i // per_col) * col_w
+        y = 132 + (i % per_col) * row_h
         num = f"{i + 1:02d}" if product == "ARC_N" else f"{i + 1}"
         put(key, (x, y), f"{num}  {CIRC[it['answer'] - 1]}", fontname="G", fontsize=12.5)
     crs = [it for it in items if it.get("format") == "CR"]
     if not crs:
         return
-    y = 132 + per_col * 28 + 20
+    y = 132 + per_col * row_h + 20
     page = key
     width = A4_W - ML - MR
     for it in crs:
