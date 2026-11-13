@@ -89,7 +89,7 @@ def mcq(code, t, d, stem, passage, opts, ans, sb, judg, steps=2, elim=1, view=No
     if d in ("D4", "D5"):
         steps = max(steps, 2)
     it = {"item_id": _id(code), "set": None, "eng_type": f"ARC-ENG-{t}", "source_code": code,
-          "scope_refs": [f"NGICHUL-L1-{code}"], "stem": stem, "passage": passage if isinstance(passage, list) else [passage],
+          "scope_refs": [f"NGICHUL-L1-{code}"], "source_label": code, "stem": stem, "passage": passage if isinstance(passage, list) else [passage],
           "options": opts, "answer": ans, "second_best": sb, "difficulty": d, "family": FAMILY[t],
           "balance": "ADVANCED_DISCRIMINATION" if d in ("D4", "D5") else "CORE_EXAM_POINT",
           "reasoning_steps": steps, "immediate_elimination": elim, "transfer": True,
@@ -210,6 +210,7 @@ bundle = {
     "scope": "N기출 고난도 독해 Level 1 p78~91 (Mini 모의고사 04~06회, 28지문)",
     "scope_refs": ["NGICHUL-L1-3-4-1~3-6-4"], "workbook_profile": "PASSAGE_5",
     "exam_context_id": "DONGBUK_2026_2_FINAL",
+    "layout": {"body_pt": 9.4, "line_height_ratio": 1.38},
     "sets": [], "items": items,
 }
 (HERE / "items.yaml").write_text(yaml.safe_dump(bundle, allow_unicode=True, sort_keys=False, width=4000), encoding="utf-8")

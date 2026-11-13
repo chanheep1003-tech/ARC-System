@@ -110,7 +110,8 @@ def runs(text: str, key: str) -> list[tuple[str, str]]:
     return out
 
 
-def put(page: fitz.Page, pos, text: str, fontname: str = "R", fontsize: float = SIZE, color=None) -> None:
+def put(page: fitz.Page, pos, text: str, fontname: str = "R", fontsize: float | None = None, color=None) -> None:
+    fontsize = SIZE if fontsize is None else fontsize
     x, y = pos
     for rk, t in runs(text, fontname):
         k, size = base_key(rk), run_size(rk, fontsize)
@@ -129,10 +130,12 @@ class Layout:
     def __init__(self) -> None:
         self.f = fonts()
 
-    def width(self, text: str, key: str = "R", size: float = SIZE) -> float:
+    def width(self, text: str, key: str = "R", size: float | None = None) -> float:
+        size = SIZE if size is None else size
         return sum(self.f[base_key(k)].text_length(t, fontsize=run_size(k, size)) for k, t in runs(text, key))
 
-    def wrap(self, text: str, w: float, key: str = "R", size: float = SIZE, first: float = 0.0, rest: float = 0.0):
+    def wrap(self, text: str, w: float, key: str = "R", size: float | None = None, first: float = 0.0, rest: float = 0.0):
+        size = SIZE if size is None else size
         """Greedy wrap on spaces (어절); char break only for tokens wider than the line."""
         lines, cur, indent = [], "", first
         text = re.sub(r"\( (\S{1,3}) \)", "(\u00a0\\1\u00a0)", text).replace("( )", "(\u00a0)")  # keep blanks on one line
@@ -167,7 +170,9 @@ class Block:
         self.h = 0.0
         self.splittable = splittable
 
-    def text(self, lines, key="R", size=SIZE, lh=LH, dx=0.0):
+    def text(self, lines, key="R", size=None, lh=None, dx=0.0):
+        size = SIZE if size is None else size
+        lh = LH if lh is None else lh
         for indent, t in lines:
             self.ops.append(("text", dx + indent, self.h + size, t, key, size))
             self.h += lh
@@ -266,7 +271,8 @@ def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "AR
     else:
         num = f"{int(label):02d} "
     nw = L.width(num, "B")
-    stem = L.wrap(it["stem"] + pts, COL_W, "B", first=nw, rest=nw)
+    tag = f"[{it['source_label']}] " if it.get("source_label") else ""  # 어느 지문의 문제인지
+    stem = L.wrap(tag + it["stem"] + pts, COL_W, "B", first=nw, rest=nw)
     stem[0] = (0, num + stem[0][1])
     b.text(stem, key="B")
     b.h += 4
@@ -473,6 +479,20 @@ def answer_page(doc, items: list[dict[str, Any]], labels: dict[str, str] | None 
 
 def render(bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[str, str], set_header,
            out_pdf: Path, key_pdf: Path | None = None, logo: dict[str, Any] | None = None) -> dict[str, Any]:
+    global SIZE, LH
+    saved = (SIZE, LH)
+    lay = bundle.get("layout") or {}
+    if lay.get("body_pt"):  # per-bundle body size / line height (English passage workbooks)
+        SIZE = float(lay["body_pt"])
+        LH = SIZE * float(lay.get("line_height_ratio", 1.62))
+    try:
+        return _render(bundle, sources, labels, set_header, out_pdf, key_pdf, logo)
+    finally:
+        SIZE, LH = saved
+
+
+def _render(bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[str, str], set_header,
+            out_pdf: Path, key_pdf: Path | None = None, logo: dict[str, Any] | None = None) -> dict[str, Any]:
     product = bundle["product_mode"]
     items = bundle["items"]
     L = Layout()

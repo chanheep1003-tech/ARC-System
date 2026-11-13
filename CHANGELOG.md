@@ -1,3 +1,8 @@
+## 1.9.5 — 2026-11-13
+- Typesetting rule (user directive): English passage workbooks print the passage in full and tune page use with body size/line height. The renderer now reads a per-bundle `layout: {body_pt, line_height_ratio}` (default for ENG passage workbooks 9.4pt / 1.38) and no longer depends on environment variables; KOR/SOC/SCI keep 9.8pt / 1.62.
+- Passage source label (user directive): every question in a passage workbook shows its source passage beside the number, e.g. `05 [3-4-1] …` (item field `source_label`). `exam_type_gate.py` fails PASSAGE_LAYOUT_MISSING / PASSAGE_SOURCE_LABEL_MISSING.
+- ENG N기출 140 bundle: v1.1 fixes (items 9/21/40/53/108), full-text passages, answer positions rebalanced. First round is closed as a draft; not released, not saved to Drive.
+
 ## 1.9.4 — 2026-11-13
 - English passage workbook rules (user directives): word-part types (VOC-01~06: 영영풀이, 유의어 등) are only for items 1–10 / the ARC N vocab part, never in passage workbooks; each item's options use one language only; passage workbooks are MCQ-only unless constructed response is requested; grammar/context-word items print only the underlined excerpt. Recorded in `quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml` (`vocab_section_rule`, `option_language_rule`, `passage_workbook`) and enforced by `exam_type_gate.py` (VOC_TYPE_OUTSIDE_VOCAB_SECTION, OPTION_LANGUAGE_MIXED, PASSAGE_ITEM_COUNT, PASSAGE_WORKBOOK_CRQ).
 - Bundle `quality/production/ENG_N_NGICHUL_L1_20261113`: N기출 고난도 독해 Level 1 3-4-1~3-6-4, 28 passages × 5 = 140 MCQ, draft only (no independent blind review yet).

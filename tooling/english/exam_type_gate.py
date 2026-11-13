@@ -101,6 +101,11 @@ def analyze(bundle: dict, root: Path = ROOT) -> dict:
                 fail("PASSAGE_ITEM_COUNT", source_code=src, expected=per, got=k)
         if crq:
             fail("PASSAGE_WORKBOOK_CRQ", items=len(crq))
+        if not (bundle.get("layout") or {}).get("body_pt"):
+            fail("PASSAGE_LAYOUT_MISSING")
+        for it in items:
+            if not it.get("source_label"):
+                fail("PASSAGE_SOURCE_LABEL_MISSING", it.get("item_id"))
     elif product == "ARC_N":
         parts = lib["arc_n_set"]["parts"]
         size = sum(parts.values())
