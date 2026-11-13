@@ -15,15 +15,16 @@ REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 install_arc_tooling() {
   if python3 -c 'import yaml, fitz, cv2' >/dev/null 2>&1; then log "arc tooling deps ok"
   else
-    python3 -m pip install -q -r "$REPO_ROOT/tooling/requirements-smoke.txt" >/dev/null 2>&1 \
+    (python3 -m pip install -q -r "$REPO_ROOT/tooling/requirements-smoke.txt" >/dev/null 2>&1 \
+      || python3 -m pip install -q --user --break-system-packages -r "$REPO_ROOT/tooling/requirements-smoke.txt" >/dev/null 2>&1) \
       && log "arc tooling deps installed" || log "arc tooling deps FAILED (python3 -m pip install -r tooling/requirements-smoke.txt)"
   fi
-  if [ -f /usr/share/fonts/truetype/nanum/NanumMyeongjo.ttf ]; then log "nanum fonts ok"
-  elif command -v apt-get >/dev/null; then
-    SUDO=""; [ "$(id -u)" -ne 0 ] && SUDO="sudo -n"
+  if [ -f /usr/share/fonts/truetype/nanum/NanumMyeongjo.ttf ] || [ -f "$HOME/.local/share/fonts/nanum/NanumMyeongjo.ttf" ]; then
+    log "nanum fonts ok"
+  else
     bash "$REPO_ROOT/tooling/ci/install_fonts.sh" >/dev/null 2>&1 \
       && log "nanum fonts installed" || log "nanum fonts FAILED (PDF 조판·카나리 불가: apt-get install fonts-nanum)"
-  else log "nanum fonts MISSING (no apt-get)"; fi
+  fi
 }
 install_markitdown() {
   command -v markitdown >/dev/null && { log "markitdown ok"; return; }
@@ -72,7 +73,10 @@ install_agency_agents() {
   clone msitarzewski/agency-agents agency-agents || return
   "$OSS_HOME/agency-agents/scripts/install.sh" --tool claude-code --no-interactive >/dev/null 2>&1 && log "agency-agents installed" || log "agency-agents FAILED"
 }
+install_agent_skills() {
+  clone addyosmani/agent-skills agent-skills && log "agent-skills ready: $OSS_HOME/agent-skills" || log "agent-skills FAILED"
+}
 
-install_arc_tooling; install_markitdown; install_rtk; install_graphify; install_agency_agents
+install_arc_tooling; install_markitdown; install_rtk; install_graphify; install_agency_agents; install_agent_skills
 if [ "$MODE" = "--full" ]; then install_heretic; install_headroom; install_deeptutor; install_orkas; fi
 log "done ($MODE)"

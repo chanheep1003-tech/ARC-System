@@ -77,7 +77,8 @@ def run(bundle_dir: Path, out_dir: Path) -> dict:
     labels = pipeline.numbering(bundle)
     pdf = out_dir / f"{bundle['batch_id']}_DRAFT_PREVIEW.pdf"
     key = out_dir / f"{bundle['batch_id']}_ANSWER_KEY_DRAFT_PREVIEW.pdf" if bundle["product_mode"] == "ARC_FINAL" else None
-    render = pipeline.renderer.render(bundle, sources, labels, pipeline.set_header, pdf, key_pdf=key)
+    sol_pdf = out_dir / f"{bundle['batch_id']}_SOLUTIONS_DRAFT_PREVIEW.pdf"
+    render = pipeline.renderer.render(bundle, sources, labels, pipeline.set_header, pdf, key_pdf=key, solutions_pdf=sol_pdf)
     pdf_qc = pipeline.pdf_gate.analyze_pdf(pdf, bundle["product_mode"],
                                            expected_item_count=len(pipeline.mcq_items(bundle)) if bundle["product_mode"] == "ARC_N" else None)
     (out_dir / f"{bundle['batch_id']}_EXPLANATIONS.md").write_text(explanations(bundle, labels), encoding="utf-8")
@@ -111,7 +112,7 @@ def run(bundle_dir: Path, out_dir: Path) -> dict:
         "metrics": {k: v for k, v in metrics.items() if k not in {"findings", "realism", "length_rows"}},
         "realism": metrics["realism"]["status"],
         "typeset": render["status"], "pages": render["pages"], "pdf_qc": pdf_qc["status"],
-        "pdf": str(pdf), "answer_key_pdf": str(key) if key else None,
+        "pdf": str(pdf), "answer_key_pdf": str(key) if key else None, "solutions_pdf": str(sol_pdf),
         "governance": {"FINAL_USER_APPROVAL": "PENDING", "DRIVE_SAVE": "BLOCKED", "RELEASE": "BLOCKED"},
     }
     (out_dir / "draft_preview_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -125,7 +126,7 @@ def main() -> int:
     args = ap.parse_args()
     report = run(args.bundle_dir, args.output_dir)
     print(json.dumps({k: report[k] for k in ("batch_id", "status", "exam_scope", "blind_review", "author_selfcheck_failures",
-                                               "content_qa_status", "realism", "typeset", "pages", "pdf_qc")},
+                                               "content_qa_status", "realism", "typeset", "pages", "pdf_qc", "solutions_pdf")},
                      ensure_ascii=False, indent=2))
     return 0
 

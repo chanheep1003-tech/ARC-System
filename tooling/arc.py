@@ -96,12 +96,12 @@ def cmd_doctor(_args) -> int:
         except Exception:
             print(f"[MISS] python: {package}")
             problems.append(f"python -m pip install -r tooling/requirements-smoke.txt")
-    fonts = [Path("/usr/share/fonts/truetype/nanum") / name for name in
-             ("NanumMyeongjo.ttf", "NanumMyeongjoBold.ttf", "NanumGothic.ttf", "NanumGothicBold.ttf")]
-    missing_fonts = [f.name for f in fonts if not f.is_file()]
+    font_dirs = [Path("/usr/share/fonts/truetype/nanum"), Path.home() / ".local/share/fonts/nanum"]
+    font_names = ("NanumMyeongjo.ttf", "NanumMyeongjoBold.ttf", "NanumGothic.ttf", "NanumGothicBold.ttf")
+    missing_fonts = [name for name in font_names if not any((d / name).is_file() for d in font_dirs)]
     if missing_fonts:
         print(f"[MISS] fonts: {', '.join(missing_fonts)}")
-        problems.append("sudo apt-get install -y fonts-nanum fonts-wqy-zenhei   (없으면 PDF 조판·카나리 실패)")
+        problems.append("bash tooling/ci/install_fonts.sh   (없으면 PDF 조판·카나리 실패)")
     else:
         print("[OK]   fonts: Nanum Myeongjo/Gothic")
     try:
@@ -595,6 +595,64 @@ def cmd_checksums(args) -> int:
     return 0
 
 
+# ---------- scaffold ----------
+
+def cmd_scaffold(args) -> int:
+    """Create a canonical bundle skeleton (items.yaml) so Gemini, Claude, and ChatGPT produce identical structure."""
+    now = dt.datetime.now(KST).strftime("%Y-%m-%d")
+    batch_id = args.batch_id or f"ARC-{args.actor}-{now.replace('-', '')}-{args.subject}-01"
+    out_dir = Path(args.out) if args.out else ROOT / "runs" / batch_id
+    out_dir.mkdir(parents=True, exist_ok=True)
+    course_map = {"KOR": "공통국어2", "SOC": "통합사회2", "SCI": "통합과학2", "HIS": "한국사2", "AI": "인공지능기초"}
+    set_label = "ARC FINAL" if args.product == "ARC_FINAL" else f"ARC N° {args.version or 'V1'}"
+    skel = {
+        "batch_id": batch_id,
+        "generator": args.actor,
+        "product_mode": args.product,
+        "subject": args.subject,
+        "course": course_map.get(args.subject, args.subject),
+        "set_label": set_label,
+        "cover_subtitle": f"{args.scope} 집중 훈련",
+        "school_line": "동북고등학교",
+        "scope": args.scope,
+        "created_at": now,
+        "scope_refs": [f"SCOPE:{args.subject}_CONFIRMED_UNIT"],
+        "archetype_library": "quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml" if args.subject == "KOR" else None,
+        "items": [
+            {
+                "item_id": f"{args.subject}-01",
+                "format": "MCQ",
+                "archetype": "KOR-G-RULE-MATCH" if args.subject == "KOR" else None,
+                "family": "VIEW_APPLICATION",
+                "balance": "CORE_EXAM_POINT",
+                "difficulty": "D3",
+                "reasoning_steps": 2,
+                "immediate_elimination": 1,
+                "stem": "<보기>를 바탕으로 탐구한 내용으로 가장 적절한 것은?",
+                "view": ["ㄱ. 첫 번째 탐구 조건이나 예문을 여기에 작성한다.", "ㄴ. 두 번째 탐구 조건이나 예문을 여기에 작성한다."],
+                "options": ["선지 1", "선지 2", "선지 3", "선지 4", "선지 5"],
+                "answer": 1,
+                "second_best": 2,
+                "judgments": [
+                    {"v": "TRUE", "c": "KEY", "axis": "핵심 판단축", "claim": "선지 1 핵심 명제", "ev": ["VIEW"], "why": "정답인 구체적 이유"},
+                    {"v": "FALSE", "c": "STRONG", "trap": "POS_CONFUSION", "axis": "핵심 판단축", "claim": "선지 2 핵심 명제", "ev": ["VIEW"], "why": "매력적 오답(2순위)인 구체적 이유"},
+                    {"v": "FALSE", "c": "PLAUSIBLE", "trap": "CLAUSE_MISMATCH", "axis": "보조 판단축", "claim": "선지 3 핵심 명제", "ev": ["VIEW"], "why": "오답인 구체적 이유"},
+                    {"v": "FALSE", "c": "PLAUSIBLE", "trap": "EXCEPTION_IGNORED", "axis": "보조 판단축", "claim": "선지 4 핵심 명제", "ev": ["VIEW"], "why": "오답인 구체적 이유"},
+                    {"v": "FALSE", "c": "WEAK", "trap": "SURFACE_FORM_BIAS", "axis": "기초 판단축", "claim": "선지 5 핵심 명제", "ev": ["VIEW"], "why": "오답인 구체적 이유"},
+                ],
+            }
+        ],
+    }
+    if skel["archetype_library"] is None:
+        skel.pop("archetype_library")
+        skel["items"][0].pop("archetype")
+    target = out_dir / "items.yaml"
+    target.write_text(yaml.safe_dump(skel, allow_unicode=True, sort_keys=False), encoding="utf-8")
+    print(f"표준 번들 스켈레톤 생성 완료: {target}")
+    print(f"다음 단계: {target} 작성 후 python tooling/production/draft_preview.py {out_dir} --output-dir {out_dir}/out")
+    return 0
+
+
 # ---------- ci ----------
 
 def cmd_ci(args) -> int:
@@ -624,6 +682,16 @@ def main(argv=None) -> int:
     p.add_argument("--version", help="국어 ARC N°: V1~V4, V6")
     p.add_argument("--save", help="계획을 YAML로 저장할 경로")
     p.set_defaults(func=cmd_plan)
+
+    p = sub.add_parser("scaffold", help="Gemini·Claude·ChatGPT 공통 items.yaml 표준 스켈레톤 생성")
+    p.add_argument("--subject", required=True, choices=sorted(SUBJECTS))
+    p.add_argument("--product", default="ARC_N", choices=PRODUCTS)
+    p.add_argument("--scope", required=True)
+    p.add_argument("--version", help="국어 ARC N° 버전 (예: V6)")
+    p.add_argument("--actor", default="CLAUDE", help="생성 모델 식별자 (GEMINI / CLAUDE / GPT)")
+    p.add_argument("--batch-id")
+    p.add_argument("--out", help="번들 생성 폴더 경로")
+    p.set_defaults(func=cmd_scaffold)
 
     p = sub.add_parser("start", help="요청 1건을 request.json + state.json으로 시작")
     p.add_argument("--subject", required=True, choices=sorted(SUBJECTS))

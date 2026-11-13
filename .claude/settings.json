@@ -59,6 +59,12 @@
         "source": "github",
         "repo": "DietrichGebert/ponytail"
       }
+    },
+    "addyosmani": {
+      "source": {
+        "source": "github",
+        "repo": "addyosmani/agent-skills"
+      }
     }
   },
   "enabledPlugins": {
@@ -75,7 +81,8 @@
     "headroom-skill@headroom-marketplace": true,
     "ruflo-core@ruflo": true,
     "ponytail@ponytail": true,
-    "headroom@headroom-marketplace": true
+    "headroom@headroom-marketplace": true,
+    "agent-skills@addyosmani": true
   },
   "hooks": {
     "SessionStart": [

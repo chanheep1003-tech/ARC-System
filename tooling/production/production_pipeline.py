@@ -755,16 +755,18 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
 
     pdf_path = out_dir / f"{bundle['batch_id']}_DRAFT.pdf"
     key_path = out_dir / f"{bundle['batch_id']}_ANSWER_KEY.pdf" if product == "ARC_FINAL" else None
+    sol_path = out_dir / f"{bundle['batch_id']}_SOLUTIONS.pdf"
     # Archived replay may render diagnostic drafts even when a content gate fails.
     # It always remains release-blocked by EXAM_SCOPE=ARCHIVED_REPLAY.
     if admission == "PASS" or archived_replay:
-        render = renderer.render(bundle, sources, numbering(bundle), set_header, pdf_path, key_pdf=key_path, logo=logo)
+        render = renderer.render(bundle, sources, numbering(bundle), set_header, pdf_path, key_pdf=key_path, logo=logo, solutions_pdf=sol_path)
         pdf_result = pdf_gate.analyze_pdf(pdf_path, product, expected_item_count=len(mcq_items(bundle)) if product == "ARC_N" else None)
     else:
         render = {"status": "BLOCKED", "brand": "NOT_RUN"}
         pdf_result = {"status": "NOT_RUN"}
         pdf_path = None
         key_path = None
+        sol_path = None
 
     final_result = None
     if product == "ARC_FINAL":
@@ -824,6 +826,7 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
         "findings": findings, "metrics": {k: v for k, v in metrics.items() if k not in {"findings", "realism", "length_rows"}},
         "final_quality": final_result, "exam_scope": exam_result,
         "pdf": str(pdf_path) if pdf_path else None, "answer_key_pdf": str(key_path) if key_path else None,
+        "solutions_pdf": str(sol_path) if sol_path else None,
         "governance": {"FINAL_USER_APPROVAL": "PENDING", "DRIVE_SAVE": "BLOCKED"},
     }
     report["source_composition"] = source_mix
