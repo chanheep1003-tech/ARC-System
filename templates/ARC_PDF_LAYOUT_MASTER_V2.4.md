@@ -1,5 +1,5 @@
-## USER CORRECTION — ACTUAL ARC_N PDF STYLE — 2026-11-07
-For ARC_N, templates/n/ARC_N_BW_LAYOUT_V1.0.md supersedes every conflicting cover, packing, typography and choice arrangement below. Use the actual uploaded SCI/KOR PDFs, not the previously inferred Academic B ZIP treatment. ARC_FINAL/CORE retain their product-specific layouts.
+## USER CORRECTION — CANVA DAHaz5b2kK0 PURE B&W GOTHIC STANDARD — 2026-11-14
+For ARC_N, `templates/n/ARC_N_BW_LAYOUT_V1.0.md` (V2.0) and `templates/gold/samples/ARC_N_ALL_IN_ONE_MASTER_SAMPLE_V1.0.pdf` supersede every conflicting cover, packing, typography, tag-bar, and choice arrangement below. Use the approved Pure B&W Modern Gothic editorial standard (Canva `DAHaz5b2kK0` + reduced `13.2pt`/`11.6pt` numbering), not legacy serif or tag-bar treatments. ARC_FINAL/CORE retain their product-specific layouts.
 
 # ARC SYSTEM — PDF 조판 MASTER V2.4
 # VERSION_DATE: 2026-09-19

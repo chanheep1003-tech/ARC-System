@@ -459,6 +459,7 @@ active:
     arc_final_html_master: templates/final/ARC_FINAL_master_v0.2.html
     arc_n_typeset_reference: templates/gold/ARC_N_TYPESET_REFERENCE_V1.1.md
     arc_n_layout_override: templates/n/ARC_N_BW_LAYOUT_V1.0.md
+    arc_n_master_sample: templates/gold/samples/ARC_N_ALL_IN_ONE_MASTER_SAMPLE_V1.0.pdf
 
 excluded_from_release:
   school_dna_seed:
@@ -512,6 +513,7 @@ tooling:
   production_pipeline: tooling/production/production_pipeline.py
   production_pipeline_regression_test: tooling/production/test_production_pipeline.py
   korean_production_renderer: tooling/typeset/kor_renderer.py
+  arc_n_master_sample_builder: tooling/typeset/build_arc_n_master_sample.py
   korean_source_text_registry: quality/source/KOR_SOURCE_TEXT_REGISTRY_2026_V1.0.yaml
   production_canary_bundle_kor_n04: quality/production/KOR_N04_KANTHEGEL_20260925
   xmark_detector: tooling/pdf_qc/xmark_detect.py
