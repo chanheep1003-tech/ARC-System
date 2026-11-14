@@ -463,14 +463,46 @@ def figure(L: Layout, b: Block, fig: dict[str, Any]) -> None:
     b.h += h + 6
 
 
+_VIEW_HEAD_RE = re.compile(
+    r"^(제\s*\d+\s*항(?:의\s*\d+)?(?:\s*\[붙임\s*\d*\])?|\[붙임\s*\d*\]|\S+\s*「[^」]+」)\s+(\S.*)$")
+_SENSE_SPLIT_RE = re.compile(r"\s+(?=[①②③④⑤⑥⑦⑧⑨])")
+VIEW_INDENT = 11.0
+
+
+def structure_view_lines(lines: list[str]) -> list[tuple[str, int, bool]]:
+    """Lay out clause / dictionary <보기> lines the way exam sheets do:
+    '제28항 …' and '걸 「준말」 …' put the heading on its own line and the body below it,
+    and each numbered sense (①, ②, …) starts its own indented line."""
+    out: list[tuple[str, int, bool]] = []
+    for raw in lines:
+        s = str(raw)
+        level = 1 if s[:1].isspace() and s.strip()[:1] in "①②③④⑤⑥⑦⑧⑨" else 0
+        s = s.strip()
+        m = _VIEW_HEAD_RE.match(s)
+        if m:
+            out.append((m.group(1), 0, True))
+            s, level = m.group(2), 1
+        parts = _SENSE_SPLIT_RE.split(s) if s[:1] in "①②③④⑤⑥⑦⑧⑨" or level else [s]
+        out.extend((p, level, False) for p in parts if p)
+    return out
+
+
 def view(L: Layout, b: Block, lines: list[str], label: str = "<보 기>") -> None:
     pad, top = 7.0, b.h
     b.h += pad + 3
-    for s in lines:
+    for s, level, head in structure_view_lines(lines):
         hang = L.width("ㄱ. ") if len(s) > 2 and s[1] == "." else 0.0
+        if s[:1] in "①②③④⑤⑥⑦⑧⑨":
+            hang = L.width("① ")
+        elif s.startswith("• "):
+            hang = L.width("• ")
+        elif re.match(r"^\([가-하]\) ", s):
+            hang = L.width("(가) ")
         if s.startswith("|") and s.endswith("|"):
             s = "  ".join(c.strip() for c in s.strip("|").split("|"))
-        b.text(L.wrap(s, COL_W - 2 * pad, rest=hang), dx=pad)
+        indent = VIEW_INDENT * level
+        key = "B" if head else "R"
+        b.text(L.wrap(s, COL_W - 2 * pad - indent, key, rest=hang), key=key, dx=pad + indent)
         b.h += 1
     b.h += pad - 2
     b.ops.append(("rect", 0, top + 4, COL_W, b.h))

@@ -7,7 +7,7 @@ Status: trial. Operational entry point: ops/ARC_RUNBOOK.md via AGENTS.md. The CL
 |Source analyst|agents/source-analyst.md|arc-source-ingest, arc-research-grounding, arc-fact-audit|
 |Subject author|agents/subject-author.md|arc-item-generator, arc-distractor-engine, arc-item-naturalness-audit|
 |Blind reviewer|agents/blind-reviewer.md|arc-item-qa, arc-fact-audit|
-|School examiner (동료 교사 검토)|agents/school-examiner.md|quality/ARC_EXAMINER_LENS_V1.1.md|
+|School examiner (동료 교사 검토)|agents/school-examiner.md|quality/ARC_EXAMINER_LENS_V1.2.md|
 |Editor/typesetter|agents/editor-typesetter.md|arc-set-editor, arc-typeset-qa; visual skills only as needed|
 |System maintainer|agents/system-maintainer.md|arc-skill-governance, arc-eval-regression|
 

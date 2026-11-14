@@ -110,6 +110,14 @@ def main() -> int:
         it["transfer_level"] = "APPLY"
     assert "TRANSFER_SHORT" in codes(gate.analyze(draft))
 
+    # V1.2 (2026-11-14 user review): one-cell grid capped at D3; new clauses/data need student support.
+    trial = load("KOR_N_MKV11_20261114")
+    trial["examiner_lens"] = "V1.2"
+    found = {(f["code"], f["item_id"]) for f in gate.analyze(trial)["findings"]}
+    assert ("GRID_ONE_CELL_D4", "KOR-MKV-03") in found, found
+    assert ("STUDENT_SUPPORT_MISSING", "KOR-MKV-09") in found, found
+    assert gate.analyze(load("KOR_N_MKV12_20261114"))["status"] == "PASS"
+
     print("examiner lens gate regression: PASS")
     return 0
 

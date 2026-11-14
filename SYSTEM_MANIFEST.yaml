@@ -392,7 +392,7 @@ active:
     item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.5.md
     false_difficulty_gate: quality/ARC_FALSE_DIFFICULTY_GATE_V1.0.md
     school_archetype_gate: quality/ARC_SCHOOL_ARCHETYPE_GATE_V1.0.md
-    examiner_lens: quality/ARC_EXAMINER_LENS_V1.1.md
+    examiner_lens: quality/ARC_EXAMINER_LENS_V1.2.md
     examiner_lens_gate: tooling/content_qa/examiner_lens_gate.py
     examiner_lens_role: agents/school-examiner.md
     final_quality_gate: quality/ARC_FINAL_QUALITY_GATE_V1.1.md

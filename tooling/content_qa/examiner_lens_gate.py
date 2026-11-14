@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ARC examiner-lens gate: school exam-sheet conventions + teacher receipts.
 
-Spec: quality/ARC_EXAMINER_LENS_V1.1.md (V1.0 bundles are still checked by the V1.0 rules)
+Spec: quality/ARC_EXAMINER_LENS_V1.2.md (V1.0 bundles are still checked by the V1.0 rules)
 - Always: NON_SCHOOL_MARKUP, META_LANGUAGE_LEAK, LONGEST_ANSWER_CUE, ANSWER_POSITION_SKEW.
 - When the bundle declares `examiner_lens: V1.0`: blueprint, teaching_anchor,
   distinct distractor_misconceptions per wrong option, appeal_check.
@@ -24,7 +24,9 @@ import yaml
 BRACKET_MARK = re.compile(r"(?<=[가-힣])\[[가-힣]{1,4}\]")
 META_TERMS = ("판단축", "근거 범위", "정답 후보", "추론 단계", "second-best", "distractor", "true kernel", "독해 전략")
 ERROR, WARN = "ERROR", "WARN"
-LENS_VERSIONS = {"V1.0", "V1.1"}
+LENS_VERSIONS = {"V1.0", "V1.1", "V1.2"}
+SUPPORT_KINDS = {"GUIDE", "EXAMPLE", "PLAIN"}
+CELL_SPLIT = re.compile(r"\s{2,}|\s+/\s+")
 TRANSFER_LEVELS = ("RECALL", "APPLY", "INFER", "EXTEND")
 NOVEL_KINDS = {"NEW_EXAMPLE", "NEW_PASSAGE", "NEW_DATA", "NEW_CLAUSE", "NEW_CASE"}
 # product -> (max RECALL share, min INFER+EXTEND share); checked on sets with >= MIX_MIN_ITEMS MCQs
@@ -47,11 +49,28 @@ def _text(item: dict, include_view: bool = True) -> str:
     return "\n".join(parts)
 
 
+def _as_list(value) -> list:
+    if value is None:
+        return []
+    return list(value) if isinstance(value, (list, tuple, set)) else [value]
+
+
+def _one_cell_grid(item: dict) -> bool:
+    """True when every wrong option differs from the key in exactly one cell (㉠~㉣ 짝짓기형)."""
+    cells = [[c.strip() for c in CELL_SPLIT.split(str(o).strip()) if c.strip() and c.strip() != "/"] for o in item["options"]]
+    key = cells[item["answer"] - 1]
+    if len(key) < 2 or any(len(c) != len(key) for c in cells):
+        return False
+    diffs = [sum(a != b for a, b in zip(c, key)) for i, c in enumerate(cells) if i != item["answer"] - 1]
+    return all(d == 1 for d in diffs)
+
+
 def analyze(bundle: dict) -> dict:
     items = _items(bundle)
     version = str(bundle.get("examiner_lens", "")) if isinstance(bundle, dict) else ""
     lens = version in LENS_VERSIONS
-    v11 = version == "V1.1"
+    v11 = version in {"V1.1", "V1.2"}
+    v12 = version == "V1.2"
     levels: list[str] = []
     findings: list[dict] = []
 
@@ -93,6 +112,12 @@ def analyze(bundle: dict) -> dict:
                 dupes = [v for v, c in collections.Counter(vals).items() if c > 1]
                 if dupes:
                     add("CLONE_DISTRACTORS", ERROR, iid, f"같은 오개념을 반복하는 오답: {dupes}")
+        if v12 and _mcq(it) and str(it.get("difficulty", "")) in {"D4", "D5"} and _one_cell_grid(it):
+            add("GRID_ONE_CELL_D4", ERROR, iid, "오답이 정답과 칸 하나씩만 다른 조합형은 최대 D3 (V1.2 §10)")
+        if v12 and str((it.get("novel_material") or {}).get("kind", "")).upper() in {"NEW_CLAUSE", "NEW_DATA"}:
+            support = {str(x).upper() for x in _as_list((it.get("novel_material") or {}).get("student_support"))}
+            if not support & SUPPORT_KINDS:
+                add("STUDENT_SUPPORT_MISSING", ERROR, iid, "처음 보는 조항·자료에는 GUIDE/EXAMPLE/PLAIN 안내가 필요하다 (V1.2 §11)")
         if v11:
             level = str(it.get("transfer_level", "")).upper()
             if level not in TRANSFER_LEVELS:
@@ -130,7 +155,7 @@ def analyze(bundle: dict) -> dict:
 
     errors = [f for f in findings if f["level"] == ERROR]
     status = "FAIL" if errors else ("WARN" if findings else "PASS")
-    return {"tool": "ARC_EXAMINER_LENS_GATE_V1.1", "lens_declared": version or None, "items": len(items),
+    return {"tool": "ARC_EXAMINER_LENS_GATE_V1.2", "lens_declared": version or None, "items": len(items),
             "mcq": n, "status": status, "findings": findings}
 
 
