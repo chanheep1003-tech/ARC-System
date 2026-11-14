@@ -392,6 +392,9 @@ active:
     item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.5.md
     false_difficulty_gate: quality/ARC_FALSE_DIFFICULTY_GATE_V1.0.md
     school_archetype_gate: quality/ARC_SCHOOL_ARCHETYPE_GATE_V1.0.md
+    examiner_lens: quality/ARC_EXAMINER_LENS_V1.0.md
+    examiner_lens_gate: tooling/content_qa/examiner_lens_gate.py
+    examiner_lens_role: agents/school-examiner.md
     final_quality_gate: quality/ARC_FINAL_QUALITY_GATE_V1.1.md
     dongbuk_actual_exam_difficulty_corpus: quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
     final_difficulty_anchor_kor: quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml

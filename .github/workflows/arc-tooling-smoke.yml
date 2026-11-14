@@ -222,6 +222,9 @@ jobs:
       - name: Run school archetype gate regression
         run: python tooling/korean/test_archetype_gate.py
 
+      - name: Run examiner lens gate regression
+        run: python tooling/content_qa/test_examiner_lens_gate.py
+
       - name: Smoke the ARC CLI (status matrix, plan, start dry-run, checksum check)
         run: |
           python tooling/arc.py status
