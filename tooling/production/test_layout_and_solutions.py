@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import importlib.util
+import subprocess
+import sys
 import tempfile
 from pathlib import Path
 
@@ -65,6 +67,26 @@ def main() -> int:
             assert "동북고등학교" in p3_txt and ("고사" in p3_txt or "시험" in p3_txt), (
                 "ARC_FINAL first problem page must render the Dongbuk High School exam header banner"
             )
+
+        # 4. ARC_CORE Pure B&W Open Editorial scaffold -> draft_preview -> PDF preflight PASS (ONE_COLUMN)
+        core_bundle = tmp / "sci_core_bundle"
+        proc = subprocess.run(
+            [sys.executable, str(ROOT / "tooling/arc.py"), "scaffold",
+             "--subject", "SCI", "--product", "ARC_CORE", "--scope", "산화와 환원 양적 관계",
+             "--actor", "CLAUDE", "--out", str(core_bundle)],
+            cwd=ROOT, check=True, capture_output=True, text=True,
+        )
+        assert (core_bundle / "core_content.yaml").is_file(), proc.stdout
+        core_out = tmp / "sci_core_out"
+        core_rep = draft_preview.run(core_bundle, core_out)
+        assert core_rep["product_mode"] == "ARC_CORE"
+        assert core_rep["pdf_qc"] == "PASS", f"ARC_CORE PDF preflight failed: {core_rep['pdf_qc_details']}"
+        with fitz.open(core_rep["pdf"]) as cdoc:
+            assert len(cdoc) >= 2
+            ctext = page_text(cdoc[0])
+            btext = page_text(cdoc[1])
+            assert "ARC CORE" in ctext and "동북고등학교" in ctext
+            assert "변별 포인트" in btext and "선지 점검" in btext
 
     print("LAYOUT AND SOLUTIONS TEST: PASS")
     return 0

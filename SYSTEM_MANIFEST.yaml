@@ -478,7 +478,8 @@ active:
     brand_asset_registry: templates/brand/ARC_BRAND_ASSET_REGISTRY_V1.0.md
     pdf_master: templates/ARC_PDF_LAYOUT_MASTER_V2.4.md
     core_patch: templates/core/ARC_TEMPLATE_SYSTEM_v0.8_CORE_PATCH.md
-    core_html_master: templates/core/ARC_CORE_master_v0.3.html
+    core_html_master: templates/core/ARC_CORE_master_v0.4.html
+    core_layout_override: templates/core/ARC_CORE_BW_OPEN_EDITORIAL_V1.0.md
     arc_n_html_master: templates/n/ARC_N_master_v0.2.html
     arc_final_html_master: templates/final/ARC_FINAL_master_v0.2.html
     arc_n_typeset_reference: templates/gold/ARC_N_TYPESET_REFERENCE_V1.1.md
@@ -550,6 +551,7 @@ tooling:
   production_pipeline: tooling/production/production_pipeline.py
   production_pipeline_regression_test: tooling/production/test_production_pipeline.py
   korean_production_renderer: tooling/typeset/kor_renderer.py
+  korean_core_renderer: tooling/typeset/core_renderer.py
   arc_n_master_sample_builder: tooling/typeset/build_arc_n_master_sample.py
   production_renderer_subjects: [KOR, ENG, SOC, SCI]
   english_exam_type_gate_exec: tooling/english/exam_type_gate.py

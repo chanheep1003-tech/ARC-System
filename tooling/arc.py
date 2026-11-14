@@ -221,7 +221,8 @@ def files_to_load(manifest: dict, subject: str, product: str) -> list[tuple[str,
                 ("CORE 편집 구조", active["core_editorial_architecture"]["path"]),
                 ("CORE 심화 엔진", active["core_depth_engine"]["path"]),
                 ("CORE QA 벤치", quality["core_qa_bench"]),
-                ("CORE 조판 패치", layout["core_patch"])]
+                ("CORE 조판 패치", layout["core_patch"]),
+                ("CORE 오픈 에디토리얼 규격", layout.get("core_layout_override", ""))]
     else:
         out += [("난도 엔진", quality["difficulty_engine"]),
                 ("세트 편집", quality["set_editorial"]),
@@ -598,12 +599,107 @@ def cmd_checksums(args) -> int:
 # ---------- scaffold ----------
 
 def cmd_scaffold(args) -> int:
-    """Create a canonical bundle skeleton (items.yaml) so Gemini, Claude, and ChatGPT produce identical structure."""
+    """Create a canonical bundle skeleton (items.yaml or core_content.yaml) so Gemini, Claude, and ChatGPT produce identical structure."""
     now = dt.datetime.now(KST).strftime("%Y-%m-%d")
     batch_id = args.batch_id or f"ARC-{args.actor}-{now.replace('-', '')}-{args.subject}-01"
     out_dir = Path(args.out) if args.out else ROOT / "runs" / batch_id
     out_dir.mkdir(parents=True, exist_ok=True)
-    course_map = {"KOR": "공통국어2", "SOC": "통합사회2", "SCI": "통합과학2", "HIS": "한국사2", "AI": "인공지능기초"}
+    course_map = {"KOR": "공통국어2", "ENG": "공통영어2", "SOC": "통합사회2", "SCI": "통합과학2", "HIS": "한국사2", "AI": "인공지능기초"}
+
+    if args.product == "ARC_CORE":
+        core_skel = {
+            "batch_id": batch_id,
+            "generator": args.actor,
+            "product_mode": "ARC_CORE",
+            "subject": args.subject,
+            "course": course_map.get(args.subject, args.subject),
+            "set_label": "ARC CORE",
+            "cover_subtitle": f"{args.scope} 심화·변별 단권화",
+            "school_line": "동북고등학교",
+            "scope": args.scope,
+            "created_at": now,
+            "units": [
+                {
+                    "unit_kicker": "UNIT 01",
+                    "title": f"{args.scope} — 핵심 원리와 변별 구조",
+                    "sections": [
+                        {
+                            "no": "01",
+                            "heading": "단원의 지배 원리를 한 줄 명제로 선언한다",
+                            "prose": (
+                                "여기에 교과서 기본 개념을 넘어서는 작동 원리, 조건 분기, 메커니즘을 9.9pt 오픈 1단 흐름에 맞춰 서술한다. "
+                                "단순 정의 반복이나 불릿 남발을 피하고, 개념 간 인과 관계와 조건 변화에 따른 결과 차이를 명확히 설명한다. "
+                                "학교 수업 프린트나 교과서 심화 탐구에 등장하는 예외 사례가 왜 성립하는지 전제 조건부터 논리적으로 연결해 둔다."
+                            ),
+                            "callouts": [
+                                {
+                                    "label": "핵심 공식 및 조건 요약",
+                                    "text": "• 조건 1: 핵심 관계식 또는 법칙과 변수 간 비례·반비례 관계\n• 조건 2: 적용 한계 및 예외 조건(언제 성립하고 언제 깨지는가)",
+                                }
+                            ],
+                            "tables": [
+                                {
+                                    "headers": ["비교 기준", "유형 A", "유형 B", "판별 포인트"],
+                                    "weights": [1.0, 1.3, 1.3, 1.4],
+                                    "rows": [
+                                        ["핵심 작동 원리", "유형 A의 작동 조건과 결과", "유형 B의 작동 조건과 결과", "선지에서의 결정적 차이"],
+                                        ["대표 사례·함정", "예외가 나타나는 대표 사례", "반대 방향으로 작용하는 사례", "함정 유형(원인·결과 전도)"],
+                                        ["고난도 조건 변화", "전제 조건 강화 시 결과 변화", "제3의 변인 개입 시 예외", "내신 1등급 변별 기준"],
+                                    ],
+                                }
+                            ],
+                            "contrasts": [
+                                {
+                                    "left_title": "기준 개념 A (정개념)",
+                                    "left_body": "• 적용 조건과 성립 근거를 명시한다.\n• 기출 선지에서 정문으로 인정되는 대표 케이스를 적는다.",
+                                    "right_title": "혼동 개념 B (비교·예외)",
+                                    "right_body": "• 표면 형태는 같으나 구조가 다른 케이스를 적는다.\n• 선지에서 가장 자주 바꾸어 내는 조건 경계를 짚는다.",
+                                }
+                            ],
+                        },
+                        {
+                            "no": "02",
+                            "heading": "상위권 변별을 가르는 조건 분기와 선지 판정 기준을 적용한다",
+                            "prose": (
+                                "내신 고난도 문항은 단일 개념의 암기 여부가 아니라 두 조건이 동시에 교차할 때 성립하는 예외와 "
+                                "단서 조항을 정확히 포착하는지 평가한다. 아래 변별 포인트와 선지 점검을 통해 함정 설계를 역추적하고, "
+                                "서답형 채점 기준에서 감점 요인이 되는 조건 누락을 사전에 차단한다."
+                            ),
+                            "discriminations": [
+                                {
+                                    "title": "변별 포인트 1  |  상위권 변별을 가르는 전제 조건 경계",
+                                    "body": "학교 자료나 기출에서 전제 조건을 미세하게 바꾸어 출제하는 포인트를 설명하고, 실전에서 3초 만에 판정하는 기준을 정리한다.",
+                                },
+                                {
+                                    "title": "변별 포인트 2  |  서술형 감점 방지 필수 인과 요소",
+                                    "body": "학교 채점 기준상 반드시 명시해야 하는 핵심 원인·매개 과정·결론 용어를 빠짐없이 나열한다.",
+                                },
+                            ],
+                            "option_checks": [
+                                {
+                                    "statement": "선지 점검 ①  “쟁점이 되는 복합 진술을 그대로 적는다.”  →  [적절 ○]",
+                                    "why": "이 진술이 참인 결정적 근거와 조건 충족 여부를 원리·원문에 근거해 구체적으로 설명한다.",
+                                },
+                                {
+                                    "statement": "선지 점검 ②  “전제 조건 하나를 누락하거나 전도한 오답 진술을 적는다.”  →  [부적절 ×]",
+                                    "why": "어느 단어 또는 조건이 원리·원문과 어긋나는지 문장 단위로 정확히 짚는다.",
+                                },
+                                {
+                                    "statement": "선지 점검 ③  “비슷해 보이는 두 개념의 적용 범위를 교묘히 섞은 오답 진술을 적는다.”  →  [부적절 ×]",
+                                    "why": "경계 조건이 달라지는 지점을 대비해 왜 틀렸는지 명확히 판별한다.",
+                                },
+                            ],
+                        },
+                    ],
+                }
+            ],
+        }
+        target = out_dir / "core_content.yaml"
+        target.write_text(yaml.safe_dump(core_skel, allow_unicode=True, sort_keys=False), encoding="utf-8")
+        print(f"표준 ARC CORE 번들 스켈레톤 생성 완료: {target}")
+        print(f"다음 단계: {target} 작성 후 python tooling/production/draft_preview.py {out_dir} --output-dir {out_dir}/out")
+        return 0
+
     set_label = "ARC FINAL" if args.product == "ARC_FINAL" else f"ARC N° {args.version or 'V1'}"
     skel = {
         "batch_id": batch_id,
@@ -683,7 +779,7 @@ def main(argv=None) -> int:
     p.add_argument("--save", help="계획을 YAML로 저장할 경로")
     p.set_defaults(func=cmd_plan)
 
-    p = sub.add_parser("scaffold", help="Gemini·Claude·ChatGPT 공통 items.yaml 표준 스켈레톤 생성")
+    p = sub.add_parser("scaffold", help="Gemini·Claude·ChatGPT 공통 items.yaml / core_content.yaml 표준 스켈레톤 생성")
     p.add_argument("--subject", required=True, choices=sorted(SUBJECTS))
     p.add_argument("--product", default="ARC_N", choices=PRODUCTS)
     p.add_argument("--scope", required=True)

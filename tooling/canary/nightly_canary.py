@@ -62,39 +62,45 @@ def typeset_core(manuscript: str, output: Path, profile: dict[str, Any] | None =
     doc = fitz.open()
     cover = doc.new_page(width=A4_W, height=A4_H)
     canary_fonts.embed(cover)
-    cover.draw_rect(fitz.Rect(50, 72, A4_W - 50, A4_H - 72), color=(0.12, 0.19, 0.32), width=1.2)
-    cover.insert_text((72, 150), "ARC CORE", fontsize=26, fontname=canary_fonts.BOLD_NAME, color=(0.08, 0.16, 0.30))
-    cover.insert_text((72, 192), f"{subject} CANARY", fontsize=16, fontname=canary_fonts.BOLD_NAME)
-    cover.insert_text((72, 232), "Pipeline validation edition", fontsize=11, fontname=canary_fonts.REGULAR_NAME)
-    cover.insert_text((72, 760), "Synthetic content fixture - not a study release", fontsize=9.9, fontname=canary_fonts.REGULAR_NAME)
+    cover.insert_text((64, 76), "ARC SYSTEM  ·  DONGBUK HIGH SCHOOL", fontsize=10, fontname=canary_fonts.BOLD_NAME, color=(0.0, 0.0, 0.0))
+    cover.draw_line((64, 86), (A4_W - 64, 86), color=(0.0, 0.0, 0.0), width=1.0)
+    cover.draw_rect(fitz.Rect(64, 112, 164, 136), color=(0.0, 0.0, 0.0), width=0.9)
+    cover.insert_text((78, 128), "ARC CORE", fontsize=9.4, fontname=canary_fonts.BOLD_NAME, color=(0.0, 0.0, 0.0))
+    cover.insert_text((64, 186), "ARC CORE", fontsize=28, fontname=canary_fonts.BOLD_NAME, color=(0.0, 0.0, 0.0))
+    cover.insert_text((64, 226), f"{subject} CANARY", fontsize=18, fontname=canary_fonts.BOLD_NAME, color=(0.0, 0.0, 0.0))
+    cover.insert_text((64, 258), "Pure B&W Open Editorial Pipeline Validation", fontsize=11, fontname=canary_fonts.REGULAR_NAME, color=(0.35, 0.35, 0.35))
+    cover.draw_line((64, 282), (A4_W - 64, 282), color=(0.0, 0.0, 0.0), width=0.9)
+    cover.insert_text((64, 768), "Synthetic content fixture - not a study release", fontsize=9.9, fontname=canary_fonts.REGULAR_NAME, color=(0.25, 0.25, 0.25))
 
     for page_number, (title, body) in enumerate(sections, start=2):
         page = doc.new_page(width=A4_W, height=A4_H)
         canary_fonts.embed(page)
-        page.insert_text((58, 38), f"ARC CORE / {subject} CANARY", fontsize=9.9, fontname=canary_fonts.REGULAR_NAME, color=(0.20, 0.25, 0.32))
-        page.draw_line((58, 50), (A4_W - 58, 50), color=(0.45, 0.55, 0.68), width=0.8)
+        page.insert_text((52, 38), f"ARC CORE  ·  {subject} CANARY", fontsize=9.0, fontname=canary_fonts.BOLD_NAME, color=(0.0, 0.0, 0.0))
+        page.draw_line((52, 46), (A4_W - 52, 46), color=(0.0, 0.0, 0.0), width=0.65)
         heading_remaining = page.insert_textbox(
-            fitz.Rect(58, 72, A4_W - 58, 124),
+            fitz.Rect(52, 68, A4_W - 52, 118),
             title,
-            fontsize=18,
+            fontsize=16.5,
             fontname=canary_fonts.BOLD_NAME,
-            lineheight=1.12,
-            color=(0.08, 0.16, 0.30),
+            lineheight=1.18,
+            color=(0.0, 0.0, 0.0),
         )
         if heading_remaining < 0:
             raise RuntimeError(f"heading overflow on {title}: {heading_remaining}")
+        page.draw_line((52, 118), (A4_W - 52, 118), color=(0.0, 0.0, 0.0), width=1.4)
         remaining = page.insert_textbox(
-            fitz.Rect(58, 132, A4_W - 58, 768),
+            fitz.Rect(52, 134, A4_W - 52, 768),
             dense_body(body),
             fontsize=body_size,
             fontname=canary_fonts.REGULAR_NAME,
-            lineheight=1.54,
-            color=(0.10, 0.12, 0.15),
+            lineheight=1.62,
+            color=(0.10, 0.10, 0.10),
             align=fitz.TEXT_ALIGN_LEFT,
         )
         if remaining < 0:
             raise RuntimeError(f"typeset overflow on {title}: {remaining}")
-        page.insert_text((A4_W - 76, 812), str(page_number), fontsize=9.9, fontname=canary_fonts.REGULAR_NAME)
+        page.draw_line((52, A4_H - 42), (A4_W - 52, A4_H - 42), color=(0.75, 0.75, 0.75), width=0.4)
+        page.insert_text((A4_W - 68, A4_H - 28), f"{page_number:02d}", fontsize=9.0, fontname=canary_fonts.BOLD_NAME, color=(0.0, 0.0, 0.0))
 
     output.parent.mkdir(parents=True, exist_ok=True)
     doc.save(output, garbage=4, deflate=True)

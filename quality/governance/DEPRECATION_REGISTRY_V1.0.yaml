@@ -60,12 +60,19 @@ rules:
 
   - id: CORE-HTML-V02
     deprecated: templates/core/ARC_CORE_master_v0.2.html
-    replacement: templates/core/ARC_CORE_master_v0.3.html
+    replacement: templates/core/ARC_CORE_master_v0.4.html
     forbidden_runtime_behavior:
       - core_page_overflow_hidden
       - core_body_below_print_floor
       - missing_product_namespace
       - missing_source_overflow_audit
+  - id: CORE-HTML-V03
+    deprecated: templates/core/ARC_CORE_master_v0.3.html
+    replacement: templates/core/ARC_CORE_master_v0.4.html
+    reason: "User redesign 2026-11-13: replace boxed navy/burgundy cards with Pure B&W open editorial single-column layout unified with ARC N° / ARC FINAL"
+    forbidden_runtime_behavior:
+      - closed_four_sided_card_box_clutter
+      - navy_burgundy_color_card_boxes
   - id: GOVERNANCE-CHATGPT-MAINTAINER
     deprecated:
       - ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md

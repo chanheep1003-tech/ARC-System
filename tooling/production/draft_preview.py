@@ -55,7 +55,44 @@ def explanations(bundle: dict, labels: dict[str, str]) -> str:
     return "\n".join(lines)
 
 
+_core_spec = importlib.util.spec_from_file_location("arc_core_renderer", ROOT / "tooling/typeset/core_renderer.py")
+core_renderer = importlib.util.module_from_spec(_core_spec)
+assert _core_spec and _core_spec.loader
+_core_spec.loader.exec_module(core_renderer)
+
+
+def run_core_preview(bundle_dir: Path, out_dir: Path) -> dict:
+    out_dir.mkdir(parents=True, exist_ok=True)
+    raw = yaml.safe_load((bundle_dir / "core_content.yaml").read_text(encoding="utf-8"))
+    batch_id = str(raw.get("batch_id") or bundle_dir.name)
+    pdf = out_dir / f"{batch_id}_DRAFT_PREVIEW.pdf"
+    render = core_renderer.render_core(raw, pdf)
+    pdf_qc = pipeline.pdf_gate.analyze_pdf(pdf, "ARC_CORE")
+    report = {
+        "tool": "ARC_DRAFT_PREVIEW_V1.0",
+        "batch_id": batch_id,
+        "product_mode": "ARC_CORE",
+        "status": "DRAFT_PREVIEW_NOT_RELEASABLE",
+        "exam_scope": {"status": "PENDING", "codes": []},
+        "blind_review": "NOT_APPLICABLE_FOR_CORE",
+        "author_selfcheck_failures": [],
+        "content_qa_status": "N/A",
+        "realism": "N/A",
+        "typeset": render["status"],
+        "pages": render["pages"],
+        "pdf_qc": pdf_qc["status"],
+        "pdf_qc_details": pdf_qc,
+        "pdf": str(pdf),
+        "solutions_pdf": None,
+        "governance": {"FINAL_USER_APPROVAL": "PENDING", "DRIVE_SAVE": "BLOCKED", "RELEASE": "BLOCKED"},
+    }
+    (out_dir / "draft_preview_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    return report
+
+
 def run(bundle_dir: Path, out_dir: Path) -> dict:
+    if (bundle_dir / "core_content.yaml").is_file() and not (bundle_dir / "items.yaml").is_file():
+        return run_core_preview(bundle_dir, out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     raw = yaml.safe_load((bundle_dir / "items.yaml").read_text(encoding="utf-8"))
     exam = pipeline.exam_gate.check_bundle(raw, ROOT / "SYSTEM_MANIFEST.yaml")
