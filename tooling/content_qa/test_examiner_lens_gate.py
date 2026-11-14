@@ -70,6 +70,46 @@ def main() -> int:
     longest = {"items": [lens_item(item_id=f"L-{i}", options=["가", "나나나나", "다", "라", "마"]) for i in range(10)]}
     assert "LONGEST_ANSWER_CUE" in codes(gate.analyze(longest))
 
+    # V1.1 discrimination lens: transfer levels, novel material, set mix.
+    def v11_item(i: int, level: str, novel: dict | None = None) -> dict:
+        item = lens_item(item_id=f"V-{i}", answer=(i % 5) + 1, transfer_level=level,
+                         distractor_misconceptions={k: f"m{k}" for k in range(1, 6) if k != (i % 5) + 1})
+        if novel:
+            item["novel_material"] = novel
+        return item
+
+    new = {"kind": "NEW_EXAMPLE", "source": "AUTHORED"}
+    clause = {"kind": "NEW_CLAUSE", "source": "한글 맞춤법 제57항"}
+    good_mix = ["RECALL", "RECALL", "APPLY", "APPLY", "APPLY", "INFER", "INFER", "EXTEND", "APPLY", "INFER"]
+    good = {"examiner_lens": "V1.1", "product_mode": "ARC_N",
+            "items": [v11_item(i, lv, clause if lv == "EXTEND" else (new if lv != "RECALL" else None))
+                      for i, lv in enumerate(good_mix)]}
+    assert gate.analyze(good)["status"] == "PASS", gate.analyze(good)
+
+    recall_heavy = copy.deepcopy(good)
+    for it in recall_heavy["items"][:8]:
+        it["transfer_level"] = "RECALL"
+    assert {"RECALL_OVERUSE", "TRANSFER_SHORT"} <= codes(gate.analyze(recall_heavy))
+
+    no_novel = copy.deepcopy(good)
+    no_novel["items"][5].pop("novel_material")
+    assert "NOVEL_MATERIAL_MISSING" in codes(gate.analyze(no_novel))
+
+    weak_extend = copy.deepcopy(good)
+    weak_extend["items"][7]["novel_material"] = new
+    assert "EXTEND_WITHOUT_NEW_CONDITION" in codes(gate.analyze(weak_extend))
+
+    unlabeled = copy.deepcopy(good)
+    unlabeled["items"][0].pop("transfer_level")
+    assert "MISSING_TRANSFER_LEVEL" in codes(gate.analyze(unlabeled))
+
+    # The 2026-11-14 draft set is all RECALL/APPLY: under V1.1 it must be flagged.
+    draft = load("KOR_N_MKO10_20261114")
+    draft["examiner_lens"] = "V1.1"
+    for it in draft["items"]:
+        it["transfer_level"] = "APPLY"
+    assert "TRANSFER_SHORT" in codes(gate.analyze(draft))
+
     print("examiner lens gate regression: PASS")
     return 0
 

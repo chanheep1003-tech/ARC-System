@@ -732,7 +732,7 @@ def cmd_scaffold(args) -> int:
         "created_at": now,
         "scope_refs": [f"SCOPE:{args.subject}_CONFIRMED_UNIT"],
         "archetype_library": "quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml" if args.subject == "KOR" else None,
-        "examiner_lens": "V1.0",  # quality/ARC_EXAMINER_LENS_V1.0.md — 출제 계획표 → 수업 근거 → 오개념별 오답 → 이의 제기 검토
+        "examiner_lens": "V1.1",  # quality/ARC_EXAMINER_LENS_V1.1.md — 출제 계획표 → 수업 근거 → 오개념별 오답 → 이의 제기 검토 → 새 자료로 변별
         "items": [
             {
                 "item_id": f"{args.subject}-01",
@@ -741,6 +741,8 @@ def cmd_scaffold(args) -> int:
                 "teaching_anchor": "교과서 p.000 학습활동 0 / 학습지 0번 (수업에서 다룬 곳)",
                 "distractor_misconceptions": {2: "학생 오개념 A", 3: "학생 오개념 B", 4: "학생 오개념 C", 5: "학생 오개념 D"},
                 "appeal_check": "PASS (교과서 밖 지식 불필요 · 복수정답 여지 없음 · 발문 뜻 하나)",
+                "transfer_level": "INFER",  # RECALL 확인 / APPLY 적용 / INFER 추론 / EXTEND 심화 — ARC_N은 RECALL ≤30%, INFER+EXTEND ≥30%
+                "novel_material": {"kind": "NEW_EXAMPLE", "source": "AUTHORED 또는 실제 출처", "note": "배운 개념은 그대로, 자료만 새로"},
                 "archetype": "KOR-G-RULE-MATCH" if args.subject == "KOR" else None,
                 "family": "VIEW_APPLICATION",
                 "balance": "CORE_EXAM_POINT",

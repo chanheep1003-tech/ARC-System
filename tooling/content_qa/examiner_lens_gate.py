@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """ARC examiner-lens gate: school exam-sheet conventions + teacher receipts.
 
-Spec: quality/ARC_EXAMINER_LENS_V1.0.md
+Spec: quality/ARC_EXAMINER_LENS_V1.1.md (V1.0 bundles are still checked by the V1.0 rules)
 - Always: NON_SCHOOL_MARKUP, META_LANGUAGE_LEAK, LONGEST_ANSWER_CUE, ANSWER_POSITION_SKEW.
 - When the bundle declares `examiner_lens: V1.0`: blueprint, teaching_anchor,
   distinct distractor_misconceptions per wrong option, appeal_check.
+- V1.1 adds the discrimination lens: transfer_level per item, novel_material for
+  INFER/EXTEND, and a RECALL / transfer mix per product.
 """
 from __future__ import annotations
 
@@ -22,6 +24,12 @@ import yaml
 BRACKET_MARK = re.compile(r"(?<=[가-힣])\[[가-힣]{1,4}\]")
 META_TERMS = ("판단축", "근거 범위", "정답 후보", "추론 단계", "second-best", "distractor", "true kernel", "독해 전략")
 ERROR, WARN = "ERROR", "WARN"
+LENS_VERSIONS = {"V1.0", "V1.1"}
+TRANSFER_LEVELS = ("RECALL", "APPLY", "INFER", "EXTEND")
+NOVEL_KINDS = {"NEW_EXAMPLE", "NEW_PASSAGE", "NEW_DATA", "NEW_CLAUSE", "NEW_CASE"}
+# product -> (max RECALL share, min INFER+EXTEND share); checked on sets with >= MIX_MIN_ITEMS MCQs
+TRANSFER_MIX = {"ARC_N": (0.30, 0.30), "ARC_FINAL": (0.25, 0.35)}
+MIX_MIN_ITEMS = 8
 
 
 def _items(bundle: dict) -> list[dict]:
@@ -41,7 +49,10 @@ def _text(item: dict, include_view: bool = True) -> str:
 
 def analyze(bundle: dict) -> dict:
     items = _items(bundle)
-    lens = isinstance(bundle, dict) and str(bundle.get("examiner_lens", "")) == "V1.0"
+    version = str(bundle.get("examiner_lens", "")) if isinstance(bundle, dict) else ""
+    lens = version in LENS_VERSIONS
+    v11 = version == "V1.1"
+    levels: list[str] = []
     findings: list[dict] = []
 
     def add(code: str, level: str, item_id: str | None, detail: str) -> None:
@@ -82,6 +93,19 @@ def analyze(bundle: dict) -> dict:
                 dupes = [v for v, c in collections.Counter(vals).items() if c > 1]
                 if dupes:
                     add("CLONE_DISTRACTORS", ERROR, iid, f"같은 오개념을 반복하는 오답: {dupes}")
+        if v11:
+            level = str(it.get("transfer_level", "")).upper()
+            if level not in TRANSFER_LEVELS:
+                add("MISSING_TRANSFER_LEVEL", ERROR, iid, f"transfer_level은 {'/'.join(TRANSFER_LEVELS)} 중 하나")
+                continue
+            if _mcq(it):
+                levels.append(level)
+            nm = it.get("novel_material") or {}
+            if level in ("INFER", "EXTEND"):
+                if str(nm.get("kind", "")).upper() not in NOVEL_KINDS or not str(nm.get("source", "")).strip():
+                    add("NOVEL_MATERIAL_MISSING", ERROR, iid, f"{level} 문항은 novel_material(kind·source)이 필요하다")
+                if level == "EXTEND" and str(nm.get("kind", "")).upper() not in {"NEW_CLAUSE", "NEW_DATA", "NEW_CASE"}:
+                    add("EXTEND_WITHOUT_NEW_CONDITION", ERROR, iid, "EXTEND는 새 조항·조건(NEW_CLAUSE/NEW_DATA/NEW_CASE)을 <보기>로 준다")
 
     n = len(mcq)
     if n >= 10 and longest_hits / n > 0.4:
@@ -93,9 +117,20 @@ def analyze(bundle: dict) -> dict:
         if min(shares.values()) < 0.6 / k or max(shares.values()) > 1.5 / k:
             add("ANSWER_POSITION_SKEW", WARN, None, f"정답 번호 비율 {shares}")
 
+    product = str(bundle.get("product_mode", "ARC_N")) if isinstance(bundle, dict) else "ARC_N"
+    if v11 and len(levels) >= MIX_MIN_ITEMS and product in TRANSFER_MIX:
+        max_recall, min_transfer = TRANSFER_MIX[product]
+        recall = levels.count("RECALL") / len(levels)
+        transfer = (levels.count("INFER") + levels.count("EXTEND")) / len(levels)
+        mix = {lv: levels.count(lv) for lv in TRANSFER_LEVELS}
+        if recall > max_recall:
+            add("RECALL_OVERUSE", ERROR, None, f"{product} RECALL {recall:.0%} > {max_recall:.0%} {mix}")
+        if transfer < min_transfer:
+            add("TRANSFER_SHORT", ERROR, None, f"{product} INFER+EXTEND {transfer:.0%} < {min_transfer:.0%} {mix}")
+
     errors = [f for f in findings if f["level"] == ERROR]
     status = "FAIL" if errors else ("WARN" if findings else "PASS")
-    return {"tool": "ARC_EXAMINER_LENS_GATE_V1.0", "lens_declared": lens, "items": len(items),
+    return {"tool": "ARC_EXAMINER_LENS_GATE_V1.1", "lens_declared": version or None, "items": len(items),
             "mcq": n, "status": status, "findings": findings}
 
 

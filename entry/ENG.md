@@ -4,3 +4,7 @@
 - ARC N° 1세트 = 어휘 15 + 어법 10 + 독해 15 + 서답형 10. ARC FINAL = 38문항(선택형 34 + 서답형 4).
 - 과목 MASTER: manifest `subjects` 항목의 ENG 경로.
 - 버전 사다리(V1–V6)는 국어 전용이다. 영어에는 없다.
+
+## 출제자 시선 (전 과목 공통)
+- `quality/ARC_EXAMINER_LENS_V1.1.md` — 내신 출제 순서(§1~§5) + 변별 4단계 RECALL/APPLY/INFER/EXTEND(§6~§7).
+- 이 과목의 새 자료 만드는 법: 같은 문서 §8 영어.
