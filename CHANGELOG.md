@@ -1,3 +1,11 @@
+## 1.9.6 — 2026-11-14
+- Home-repo layout: `AGENTS.md` is a pointer hub (`CLAUDE.md` imports it); subject-only rules live in `entry/KOR.md`, `entry/ENG.md`, `entry/SOC_SCI.md`; 91 superseded rule files moved to `archive/` with their original paths.
+- Examiner lens (user directives on awkward, AI-like items): `quality/ARC_EXAMINER_LENS_V1.2.md` for all subjects — school-setter order (blueprint → teaching anchor → one misconception per distractor → appeal check → blind peer-teacher review, `agents/school-examiner.md`), RECALL/APPLY/INFER/EXTEND levels with an ARC_N/ARC_FINAL mix, novel-material rules, a D3 cap for one-cell grids, required student support for new clauses/data, and `<보기>` layout. Gate `tooling/content_qa/examiner_lens_gate.py` with regression in CI; `arc.py scaffold` emits the fields. V1.0/V1.1 archived.
+- Renderer: Old Hangul composes on Linux (jamo runs drawn with HANDotum or Noto CJK, one cell per syllable); `<보기>` clause numbers and dictionary headwords sit on their own line with the body and ①② indented below. `install_fonts.sh` adds `fonts-noto-cjk`.
+- Trial bundles `KOR_N_MKO10`, `KOR_N_MKV11`, `KOR_N_MKV12` (3단원 중세국어 5 + 맞춤법 5): drafts, blind review pending, not saved to Drive.
+- Plugin: addyosmani/agent-skills registered under its real marketplace name `addy-agent-skills`.
+- Handoff: `ops/HANDOFF_20261114_EXAMINER_LENS.md`.
+
 ## 1.9.5 — 2026-11-13
 - Typesetting rule (user directive): English passage workbooks print the passage in full and tune page use with body size/line height. The renderer now reads a per-bundle `layout: {body_pt, line_height_ratio}` (default for ENG passage workbooks 9.4pt / 1.38) and no longer depends on environment variables; KOR/SOC/SCI keep 9.8pt / 1.62.
 - Passage source label (user directive): every question in a passage workbook shows its source passage beside the number, e.g. `05 [3-4-1] …` (item field `source_label`). `exam_type_gate.py` fails PASSAGE_LAYOUT_MISSING / PASSAGE_SOURCE_LABEL_MISSING.

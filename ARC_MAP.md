@@ -103,6 +103,8 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --version V3 --coun
 | `entry/` | 과목별 진입 파일 (`KOR.md`, `ENG.md`, `SOC_SCI.md`) — 맡은 과목 것만 읽는다 |
 | `archive/` | manifest가 고르지 않는 지난 버전 규칙 (원래 경로 유지, 비활성) |
 | `ops/ARC_RUNBOOK.md` | 운영 절차 원문 |
+| `ops/HANDOFF_20261114_EXAMINER_LENS.md` | 최근 인수인계: 홈 레포 정리, 출제자 시선 V1.0→V1.2, 시범 세트, 미확인 사항 |
+| `quality/ARC_EXAMINER_LENS_V1.2.md` | 출제자 시선(내신 출제 순서 + 변별 4단계 + 난도 상한·학생 안내·<보기> 조판), 전 과목 |
 | `ops/ARC_REQUEST_PLANNING_V1.0.md`, `ops/planning/` | 요청 → 계획 규칙과 기본값 |
 | `ops/exams/EXAM_CONTEXTS_V1.yaml` | 현재 시험과 과목별 범위 상태 |
 | `ops/exams/DONGBUK_2026_2_FINAL_SCOPE_NOTICE.yaml` | 학교 기말 범위 공지를 옮겨 적은 기록 (범위 근거) |

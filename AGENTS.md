@@ -31,6 +31,7 @@ python tooling/arc.py doctor && python tooling/arc.py status
 ## 다른 곳
 | 무엇 | 어디 |
 |---|---|
+| 최근 인수인계 (2026-11-14 출제자 시선 V1.2) | `ops/HANDOFF_20261114_EXAMINER_LENS.md` |
 | 운영 절차 | `ops/ARC_RUNBOOK.md` · 한 요청 = 한 상태: `tooling/workflow/arc_workflow.py` |
 | 프로젝트 스킬 | `skills/` (목록: `skills/SKILL_REGISTRY.yaml`) |
 | 외부 플러그인·도구 | `.claude/settings.json`, `tools/oss/README.md` |
