@@ -54,7 +54,7 @@ RELEASE_READY: false
 ```
 
 ## QA BENCH ENTRIES (moved 2026-11-10)
-아래 두 벤치는 폐기된 `quality/ARC_QA_BENCH_V1.0.md`에 추가되어 있던 것을 내용 변경 없이 옮긴 것이다.
+아래 두 벤치는 폐기된 `archive/quality/ARC_QA_BENCH_V1.0.md`에 추가되어 있던 것을 내용 변경 없이 옮긴 것이다.
 manifest-selected QA BENCH(`active.quality.qa_bench`)의 국어 벤치와 함께 실행한다.
 
 **KOR-B04 — D3/D4 선지·난도 위장 검사**

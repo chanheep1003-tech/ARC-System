@@ -1,7 +1,7 @@
 version: 1.1
 status: ACTIVE-DEV
 updated: 2026-09-20
-supersedes: ops/ARC_STORAGE_TARGETS_V1.0.yaml
+supersedes: archive/ops/ARC_STORAGE_TARGETS_V1.0.yaml
 
 # Central output target registry.
 # Do not ask the user for IDs already present here.

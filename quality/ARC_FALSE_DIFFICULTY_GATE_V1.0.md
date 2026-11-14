@@ -6,7 +6,7 @@ APPLIES_TO: ARC_N / ARC_FINAL, all subjects
 SUPPLEMENTS: manifest-selected item quality rubric (`active.quality.item_quality`)
 
 ## 0. WHY THIS FILE EXISTS
-이 게이트는 2026-11-07에 폐기된 `quality/ARC_ITEM_QUALITY_RUBRIC_V1.0.md`의 8절로 추가되어 실제 생성 경로에서 읽히지 않았다.
+이 게이트는 2026-11-07에 폐기된 `archive/quality/ARC_ITEM_QUALITY_RUBRIC_V1.0.md`의 8절로 추가되어 실제 생성 경로에서 읽히지 않았다.
 2026-11-10에 내용 변경 없이 이 파일로 옮기고 `SYSTEM_MANIFEST.yaml`의 `active.quality.false_difficulty_gate`로 등록했다.
 현행 문항 품질 루브릭과 함께 읽으며, 과목 특수 규칙이 더 엄격하면 그 규칙이 우선한다.
 

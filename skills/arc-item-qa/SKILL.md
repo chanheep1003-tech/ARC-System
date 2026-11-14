@@ -12,12 +12,12 @@ metadata:
 자동 QA의 점수 인플레이션과 형식상 PASS를 차단한다.
 
 ## 선행 규칙
-- quality/ARC_QA_BENCH_V1.2.md
-- quality/ARC_ITEM_QUALITY_RUBRIC_V1.1.md
+- archive/quality/ARC_QA_BENCH_V1.2.md
+- archive/quality/ARC_ITEM_QUALITY_RUBRIC_V1.1.md
 - 필요 시 quality/ARC_VISUAL_AUTHENTICITY_RUBRIC_V1.1.md
 - quality/ARC_SIMILARITY_GUARD_V1.1.md
 - quality/visual/ARC_VISUAL_PASS_AB_V1.0.md
-- 자동화 실행 시 ops/ARC_AUTOMATION_RUNTIME_V1.0.md
+- 자동화 실행 시 archive/ops/ARC_AUTOMATION_RUNTIME_V1.0.md
 - 해당 과목 `quality/gold/*_GOLD_ANCHORS_V1.0.md`
 - quality/ARC_SOURCE_LEDGER_V1.0.md
 

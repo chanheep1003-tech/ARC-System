@@ -69,7 +69,7 @@ Changing an existing anchor ID requires:
 Do not silently replace anchors to make a new engine look better.
 
 ## 8. ACTIVE PACKS
-- quality/gold/KOR_GOLD_ANCHORS_V1.0.md
+- archive/quality/gold/KOR_GOLD_ANCHORS_V1.0.md
 - quality/gold/SCI_GOLD_ANCHORS_V1.0.md
 - quality/gold/SOC_GOLD_ANCHORS_V1.0.md
 - quality/gold/HIS_GOLD_ANCHORS_V1.0.md

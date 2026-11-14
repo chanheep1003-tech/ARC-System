@@ -41,8 +41,8 @@ ARC CORE를 'AI 카드 모음'이 아니라 실제 내신 참고서처럼 보이
 
 ## EDITORIAL NATURALNESS
 필수 참조:
-quality/ARC_CORE_EDITORIAL_NATURALNESS_V1.1.md
-engine/core/ARC_CORE_DEPTH_ENGINE_V1.0.md
+archive/quality/ARC_CORE_EDITORIAL_NATURALNESS_V1.1.md
+archive/engine/core/ARC_CORE_DEPTH_ENGINE_V1.0.md
 
 금지:
 - 카드 UI 과다

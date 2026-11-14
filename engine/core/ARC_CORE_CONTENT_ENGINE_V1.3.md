@@ -315,7 +315,7 @@ evidence 없이 '이 단원은 어렵다'고 임의 승격하지 않는다.
 
 ### KOREAN
 기본 규칙:
-subjects/KOREAN_MASTER_V4.1.md의 SOURCE-BOUND ORIGINAL TEXT MODE를 그대로 적용한다.
+archive/subjects/KOREAN_MASTER_V4.1.md의 SOURCE-BOUND ORIGINAL TEXT MODE를 그대로 적용한다.
 
 국어 CORE는 작품을 '주제/정서/표현법' 카드 세트로 잘게 분해하는 방식을 기본으로 하지 않는다.
 작품 전체의 흐름과 학교 보충자료의 해석 구조를 우선한다.

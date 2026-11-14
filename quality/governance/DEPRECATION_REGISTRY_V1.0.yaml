@@ -29,21 +29,21 @@ rules:
     reason: "V4.5 makes blind independent re-solving, all-option evidence, scope trace and actual difficulty reconciliation mandatory"
   - id: PRE-UNIVERSAL-INDEPENDENT-SOLVE
     deprecated:
-      - ops/ARC_GENERATOR_CONTRACT_V1.7.md
-      - ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.5.md
-      - quality/ARC_QA_BENCH_V1.5.md
-      - quality/ARC_DIFFICULTY_ENGINE_V1.1.md
-      - quality/ARC_ITEM_QUALITY_RUBRIC_V1.3.md
-      - quality/ARC_KOREAN_ITEM_QA_V1.1.md
-      - subjects/KOREAN_MASTER_V4.1.md
+      - archive/ops/ARC_GENERATOR_CONTRACT_V1.7.md
+      - archive/ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.5.md
+      - archive/quality/ARC_QA_BENCH_V1.5.md
+      - archive/quality/ARC_DIFFICULTY_ENGINE_V1.1.md
+      - archive/quality/ARC_ITEM_QUALITY_RUBRIC_V1.3.md
+      - archive/quality/ARC_KOREAN_ITEM_QA_V1.1.md
+      - archive/subjects/KOREAN_MASTER_V4.1.md
     replacement:
-      - ops/ARC_GENERATOR_CONTRACT_V1.8.md
+      - archive/ops/ARC_GENERATOR_CONTRACT_V1.8.md
       - ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.6.md
       - quality/ARC_QA_BENCH_V1.6.md
-      - quality/ARC_DIFFICULTY_ENGINE_V1.2.md
-      - quality/ARC_ITEM_QUALITY_RUBRIC_V1.4.md
-      - quality/ARC_KOREAN_ITEM_QA_V1.2.md
-      - subjects/KOREAN_MASTER_V4.2.md
+      - archive/quality/ARC_DIFFICULTY_ENGINE_V1.2.md
+      - archive/quality/ARC_ITEM_QUALITY_RUBRIC_V1.4.md
+      - archive/quality/ARC_KOREAN_ITEM_QA_V1.2.md
+      - archive/subjects/KOREAN_MASTER_V4.2.md
     forbidden_runtime_behavior:
       - answer_only_pass_b
       - pass_b_with_answer_key_or_author_intent
@@ -75,9 +75,9 @@ rules:
       - navy_burgundy_color_card_boxes
   - id: GOVERNANCE-CHATGPT-MAINTAINER
     deprecated:
-      - ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md
-      - ops/ARC_CLAUDE_HANDOFF_V1.3.md
-      - ops/ARC_AUTOMATION_RUNTIME_V1.0.md
+      - archive/ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md
+      - archive/ops/ARC_CLAUDE_HANDOFF_V1.3.md
+      - archive/ops/ARC_AUTOMATION_RUNTIME_V1.0.md
     replacement:
       - ops/ARC_MULTI_MODEL_GOVERNANCE_V1.1.md
       - ops/ARC_CLAUDE_HANDOFF_V1.4.md
@@ -89,7 +89,7 @@ rules:
       - runtime_priority_policy_v1_0_reference
 
   - id: STORAGE-TARGETS-V10-PARTIAL
-    deprecated: ops/ARC_STORAGE_TARGETS_V1.0.yaml
+    deprecated: archive/ops/ARC_STORAGE_TARGETS_V1.0.yaml
     replacement: ops/ARC_STORAGE_TARGETS_V1.1.yaml
     reason: "V1.0 registered only KOR and SOC and had no ARC_CORE product target"
     forbidden_runtime_behavior:
@@ -105,11 +105,11 @@ rules:
 
   - id: KOR-PRE-ATTRACTIVE-DISTRACTOR-V12
     deprecated:
-      - engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.1.md
-      - quality/ARC_KOREAN_ITEM_QA_V1.2.md
+      - archive/engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.1.md
+      - archive/quality/ARC_KOREAN_ITEM_QA_V1.2.md
     replacement:
-      - engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.2.md
-      - quality/ARC_KOREAN_ITEM_QA_V1.3.md
+      - archive/engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.2.md
+      - archive/quality/ARC_KOREAN_ITEM_QA_V1.3.md
     reason: "User solve feedback on 2026-09-23 found obvious keys and weak distractors in ARC_N02; V1.2/V1.3 require source-grounded true kernels, adversarial distractor defense, first-pass candidate ranking, second-best proof and obvious-answer gates."
     forbidden_runtime_behavior:
       - d3_plus_without_two_strong_distractors
@@ -118,7 +118,7 @@ rules:
       - obvious_answer_content_lock
   - id: KOR-SUPPLEMENT-POINT-MAP-V10
     deprecated:
-      - quality/source/KOR_SUPPLEMENT_POINT_MAP_2026_V1.0.md
+      - archive/quality/source/KOR_SUPPLEMENT_POINT_MAP_2026_V1.0.md
     replacement:
       - quality/source/KOR_SUPPLEMENT_POINT_MAP_2026_V1.1.md
     reason: "Third user-provided detailed four-passage analysis added on 2026-09-23; V1.1 expands per-passage trap axes, cross-passage comparison boundaries, and school-source verification labels without changing raw-source authority."
@@ -129,13 +129,13 @@ rules:
   - id: N-FINAL-DONGBOOK-HARDENING-V1
     deprecated:
       - engine/common/COMMON_GENERATION_ENGINE_V4.5_ARC.md
-      - quality/ARC_DIFFICULTY_ENGINE_V1.2.md
-      - quality/ARC_ITEM_QUALITY_RUBRIC_V1.4.md
+      - archive/quality/ARC_DIFFICULTY_ENGINE_V1.2.md
+      - archive/quality/ARC_ITEM_QUALITY_RUBRIC_V1.4.md
     replacement:
       - engine/common/COMMON_GENERATION_ENGINE_V4.6_ARC.md
-      - quality/ARC_DIFFICULTY_ENGINE_V1.3.md
+      - archive/quality/ARC_DIFFICULTY_ENGINE_V1.3.md
       - quality/ARC_ITEM_QUALITY_RUBRIC_V1.5.md
-      - quality/ARC_FINAL_QUALITY_GATE_V1.0.md
+      - archive/quality/ARC_FINAL_QUALITY_GATE_V1.0.md
     reason: "2026-09-24 user feedback: N/FINAL were too easy for Dongbuk HS, attractive distractors were insufficient, and correct answers were often identifiable as the longest/most detailed option."
     forbidden_runtime_behavior:
       - d3_plus_without_two_strong_distractors
@@ -147,9 +147,9 @@ rules:
 
   - id: MIDTERM-SCOPE-PRIORITY-20260924
     deprecated:
-      - ops/ARC_RUNTIME_PRIORITY_POLICY_V1.1.md
+      - archive/ops/ARC_RUNTIME_PRIORITY_POLICY_V1.1.md
     replacement:
-      - ops/ARC_RUNTIME_PRIORITY_POLICY_V1.2.md
+      - archive/ops/ARC_RUNTIME_PRIORITY_POLICY_V1.2.md
     reason: "User narrowed the sprint: science is oxidation-reduction only, and Korean History is ARC_N only. Resources must not be spent on non-redox science or HIS FINAL before the 2026-09-25 deadline."
     forbidden_runtime_behavior:
       - science_non_redox_generation_in_current_sprint
@@ -159,13 +159,13 @@ rules:
       - history_final_canary_in_current_sprint
   - id: KOR-N-BALANCE-V13
     deprecated:
-      - engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.2.md
-      - quality/ARC_KOREAN_ITEM_QA_V1.3.md
-      - subjects/KOREAN_MASTER_V4.2.md
+      - archive/engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.2.md
+      - archive/quality/ARC_KOREAN_ITEM_QA_V1.3.md
+      - archive/subjects/KOREAN_MASTER_V4.2.md
     replacement:
-      - engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.3.md
-      - quality/ARC_KOREAN_ITEM_QA_V1.4.md
-      - subjects/KOREAN_MASTER_V4.3.md
+      - archive/engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.3.md
+      - archive/quality/ARC_KOREAN_ITEM_QA_V1.4.md
+      - archive/subjects/KOREAN_MASTER_V4.3.md
     reason: "2026-09-24 user review of ARC_N03 found discrimination-first overcorrection and missing core school-exam coverage."
     forbidden_runtime_behavior:
       - korean_arc_n_discrimination_before_core_coverage
@@ -176,10 +176,10 @@ rules:
   - id: ARC-N-UNIVERSAL-BALANCE-V10
     deprecated:
       - engine/common/COMMON_GENERATION_ENGINE_V4.6_ARC.md
-      - quality/ARC_DIFFICULTY_ENGINE_V1.3.md
+      - archive/quality/ARC_DIFFICULTY_ENGINE_V1.3.md
     replacement:
       - engine/common/COMMON_GENERATION_ENGINE_V4.7_ARC.md
-      - quality/ARC_DIFFICULTY_ENGINE_V1.4.md
+      - archive/quality/ARC_DIFFICULTY_ENGINE_V1.4.md
       - quality/ARC_N_BALANCE_GATE_V1.0.md
     reason: "2026-09-25 user directive: every ARC_N subject should default to 70-80% core school-exam points and 20-30% advanced discrimination, while preserving strong distractors and explicit high-difficulty overrides."
     forbidden_runtime_behavior:
@@ -191,14 +191,14 @@ rules:
 
   - id: KOR-EXAM-REALISM-20260925
     deprecated:
-      - ops/ARC_RUNTIME_PRIORITY_POLICY_V1.2.md
-      - subjects/KOREAN_MASTER_V4.3.md
-      - engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.3.md
-      - quality/ARC_KOREAN_ITEM_QA_V1.4.md
+      - archive/ops/ARC_RUNTIME_PRIORITY_POLICY_V1.2.md
+      - archive/subjects/KOREAN_MASTER_V4.3.md
+      - archive/engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.3.md
+      - archive/quality/ARC_KOREAN_ITEM_QA_V1.4.md
     replacement:
-      - ops/ARC_RUNTIME_PRIORITY_POLICY_V1.3.md
+      - archive/ops/ARC_RUNTIME_PRIORITY_POLICY_V1.3.md
       - subjects/KOREAN_MASTER_V4.4.md
-      - engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.4.md
+      - archive/engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.4.md
       - quality/ARC_KOREAN_ITEM_QA_V1.5.md
       - quality/ARC_KOREAN_EXAM_REALISM_GATE_V1.0.md
       - quality/source/KOR_DONGBOOK_EXAM_TYPE_PROFILE_2025_2026_V1.0.yaml
@@ -212,9 +212,9 @@ rules:
 
   - id: KOR-PRIORITY-FOCUS-20260925
     deprecated:
-      - ops/ARC_RUNTIME_PRIORITY_POLICY_V1.3.md
+      - archive/ops/ARC_RUNTIME_PRIORITY_POLICY_V1.3.md
     replacement:
-      - ops/ARC_RUNTIME_PRIORITY_POLICY_V1.4.md
+      - archive/ops/ARC_RUNTIME_PRIORITY_POLICY_V1.4.md
     reason: "User reprioritized the final sprint: Korean N/FINAL quality is absolute first, followed by Social, SCI redox, then History N. Korean must produce fresh meaningful quality results per run."
     forbidden_runtime_behavior:
       - leave_korean_quality_work_after_policy_only_change
@@ -223,8 +223,8 @@ rules:
 
   - id: FINAL-MULTI-EXAM-CALIBRATION-20260926
     deprecated:
-      - quality/ARC_DIFFICULTY_ENGINE_V1.4.md
-      - quality/ARC_FINAL_QUALITY_GATE_V1.0.md
+      - archive/quality/ARC_DIFFICULTY_ENGINE_V1.4.md
+      - archive/quality/ARC_FINAL_QUALITY_GATE_V1.0.md
       - quality/anchors/KOR_DONGBUK_2025_2_MID_DIFFICULTY_ANCHOR_V1.0.yaml
     replacement:
       - quality/ARC_DIFFICULTY_ENGINE_V1.5.md

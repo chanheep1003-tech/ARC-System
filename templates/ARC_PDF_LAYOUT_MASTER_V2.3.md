@@ -825,7 +825,7 @@ STEP 9 — AUTO FIX
 실패 항목 수정 후 재출력
 
 STEP 10 — HUMAN REVIEW PACKET
-`quality/ARC_HUMAN_REVIEW_GATE_V1.0.md`에 따라 짧은 검토 패킷을 만든다.
+`archive/quality/ARC_HUMAN_REVIEW_GATE_V1.0.md`에 따라 짧은 검토 패킷을 만든다.
 AI QA가 PASS한 뒤에만 사람에게 넘긴다.
 
 STEP 11 — HUMAN REVIEW GATE
@@ -1066,7 +1066,7 @@ CHANGELOG — FROM N제 PDF 조판 MASTER V1.3
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 22. EXECUTABLE PDF PREFLIGHT
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-FINAL/HUMAN_REVIEW 전 `quality/pdf/ARC_PDF_PREFLIGHT_V1.0.md`를 적용한다.
+FINAL/HUMAN_REVIEW 전 `archive/quality/pdf/ARC_PDF_PREFLIGHT_V1.0.md`를 적용한다.
 실행 가능한 host에서는 `tooling/pdf_qc/pdf_preflight.py`로 좌표 기반 1차 검사를 수행한다.
 
 필수 결과:
@@ -1112,9 +1112,9 @@ END ARC LOGO LOCKUP ACCEPTANCE
 24. LOCKED CONTENT BUNDLE GATE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Typesetting starts only from a bundle compliant with:
-`ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.1.md`
+`archive/ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.1.md`
 and
-`ops/ARC_TYPESETTER_CONTRACT_V1.1.md`.
+`archive/ops/ARC_TYPESETTER_CONTRACT_V1.1.md`.
 
 Required:
 CONTENT_QA_STATUS=PASS

@@ -99,6 +99,9 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --version V3 --coun
 |---|---|
 | `SYSTEM_MANIFEST.yaml` | 지금 유효한 규칙 파일 목록. 버전이 여러 개인 파일은 여기 적힌 것만 유효 |
 | `ARC_MAP.md` | 이 지도 |
+| `AGENTS.md` (`CLAUDE.md`는 이것을 불러옴) | 에이전트 진입점: 공통 규칙 + 포인터 |
+| `entry/` | 과목별 진입 파일 (`KOR.md`, `ENG.md`, `SOC_SCI.md`) — 맡은 과목 것만 읽는다 |
+| `archive/` | manifest가 고르지 않는 지난 버전 규칙 (원래 경로 유지, 비활성) |
 | `ops/ARC_RUNBOOK.md` | 운영 절차 원문 |
 | `ops/ARC_REQUEST_PLANNING_V1.0.md`, `ops/planning/` | 요청 → 계획 규칙과 기본값 |
 | `ops/exams/EXAM_CONTEXTS_V1.yaml` | 현재 시험과 과목별 범위 상태 |

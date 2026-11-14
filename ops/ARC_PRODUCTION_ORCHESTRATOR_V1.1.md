@@ -146,7 +146,7 @@ It must not derive a new answer distribution from its own content interpretation
 
 ## 8. STORAGE TARGET RESOLUTION
 Resolve target without asking in this order:
-1. ops/ARC_STORAGE_TARGETS_V1.0.yaml
+1. archive/ops/ARC_STORAGE_TARGETS_V1.0.yaml
 2. SYSTEM_MANIFEST runtime/product configuration
 3. locked CONTENT_BUNDLE / handoff metadata
 4. existing subject output registry

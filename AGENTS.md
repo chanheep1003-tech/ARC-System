@@ -1,23 +1,37 @@
-# ARC single entry point
-**Read `ARC_MAP.md` first.** It is the map of this repository: what lives where, the product/version table, and the rule that every production request starts with a plan card (`python tooling/arc.py plan …`) before any item is written. Build items from registered school archetypes (`quality/ARC_SCHOOL_ARCHETYPE_GATE_V1.0.md`), one unit set at a time.
-First command on any host with a shell: `python tooling/arc.py doctor && python tooling/arc.py status`. `status` prints the KOR/SOC/SCI × CORE/N/FINAL matrix with the exact blocker per cell. `python tooling/arc.py start --subject … --product … --count … --scope …` creates the request/state and lists the manifest-selected files to read, in order. After editing any tracked file run `python tooling/arc.py checksums`; before pushing run `python tooling/arc.py ci`.
-Start with ops/ARC_RUNBOOK.md. Use tooling/workflow/arc_workflow.py for one request and one resumable state when a local runtime is available; connector-only hosts follow the same JSON contract without claiming CLI execution.
-After a produced file passes the user's review once, saving it to Google Drive is mandatory (`ops/ARC_DRIVE_SAVE_RULE_V1.0.md`); never save before that pass.
-Active subjects are KOR, ENG, SOC, SCI. The confirmed final-exam range is in `ops/exams/DONGBUK_2026_2_FINAL_SCOPE_NOTICE.yaml` and overrides the midterm SCOPE LOCK text left in subject masters. English items use only the type codes in `quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml`.
-# ARC expert team entry point
-Read SYSTEM_MANIFEST.yaml at one pinned commit, then agents/TEAM.md and the assigned role file. Resolve active subject/engine/QA paths from that manifest instead of guessing the newest filename. Current explicit user instructions take precedence.
-Production reads GitHub rules and Drive sources. Work on a maintenance branch for system changes. PR #6 is a separate unmerged candidate, not an active ruleset.
-No file creates a running agent by itself. Actual delegation needs a supported host or API adapter. Otherwise use verified file handoffs and record WAITING_FOR_WORKER. Never claim a cross-provider call that did not happen.
+# ARC 홈 — 에이전트 진입점
 
-## KOR 2026-11-05 correction patch
-When reviewing KOR N° spelling/medieval corpora, additionally read quality/korean/ARC_KOR_NORM_20261105_CORRECTION_POLICY.md. A negative stem requires exactly one FALSE answer. Static PDF PASS does not confer content lock; preserve original source, pending patches and review receipts separately.
+항상 한국어로 답한다. 이 파일은 **길 안내만** 한다. 세부 규칙은 아래 포인터가 가리키는 파일에 있고, 유효한 버전은 `SYSTEM_MANIFEST.yaml`이 정한다.
 
+## 세션 시작
+```bash
+python tooling/arc.py doctor && python tooling/arc.py status
+```
 
-## KOR-only V1–V6 learning levels (corrected 2026-11-06)
-For subject=KOR ONLY, load quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md, verified exam inventory and quality/korean/ARC_KOR_DYNAMIC_SOURCE_SELECTION_V1.0.yaml (NO preselected source titles). Other subjects do not inherit this ladder. Korean V3 unseen materials vary by genre: literature compares a new literary text, nonfiction explains and compares new concepts, grammar uses authentic new examples (including song lyrics, poems and fiction when licensing allows). V1–V4=ARC_N, V5=ARC_FINAL, V6=ARC_N specialist. Unverified source text or licensing remains BLOCKED.
+## 먼저 읽기 (순서대로)
+1. `ARC_MAP.md` — 저장소 지도, 제품·버전 표, 제작 흐름
+2. `SYSTEM_MANIFEST.yaml` — 활성 규칙 경로 (한 커밋에 고정해서 읽는다; 최신 파일명을 추측하지 않는다)
+3. 맡은 과목의 진입 파일 **하나만**:
+   - 국어: `entry/KOR.md`
+   - 영어: `entry/ENG.md`
+   - 사회·과학: `entry/SOC_SCI.md`
+4. 팀 작업이면 `agents/TEAM.md`와 맡은 역할 파일
 
-## KOR V6 emergency specialist (2026-11-06)
-NEW KOR policy is `quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md`; treat old V1–V5 document as archived. For modern Korean orthography V6, read `quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md`. ARC N° V6 chooses unfamiliar lexemes/idioms/sentences per item after locking the target grammar rule; distinguishes POS vs dictionary fact vs formal rule, and requires key-blind independent solving, all-option truth audits, novelty/rights receipts. V5 remains ARC FINAL. This applies to KOR only; SCI/SOC unaffected. NEVER claim 100-question V6 produced from policy existence.
+## 항상 지키는 규칙
+- 제작 요청은 계획 카드부터: `python tooling/arc.py plan …` → 단원 세트 1개 → 사용자 검토 → 나머지.
+- 문항은 등록된 학교 원형으로 만든다 (`quality/ARC_SCHOOL_ARCHETYPE_GATE_V1.0.md`). 모든 과목에서 `active.quality.false_difficulty_gate`와 문항 품질 루브릭을 함께 적용한다.
+- 활성 과목: KOR, ENG, SOC, SCI. 기말 범위는 `ops/exams/DONGBUK_2026_2_FINAL_SCOPE_NOTICE.yaml`이 과목 MASTER의 중간고사 SCOPE LOCK보다 우선한다.
+- 사용자 검수를 1번 통과한 산출물은 반드시 Google Drive에 저장한다. 통과 전에는 저장하지 않는다 (`ops/ARC_DRIVE_SAVE_RULE_V1.0.md`).
+- 규칙은 manifest가 고른 파일에만 넣는다. 지난 버전은 `archive/`에 있으며 읽지도 고치지도 않는다. 새 규칙은 새 파일·새 버전으로 만들고 manifest를 갱신한다.
+- 파일을 고친 뒤 `python tooling/arc.py checksums`, 푸시 전 `python tooling/arc.py ci`.
+- 시스템 변경은 유지보수 브랜치에서 한다. PR #6은 활성 규칙이 아닌 별도 후보다.
+- 실제 위임은 지원되는 호스트나 API 어댑터가 있을 때만 일어난다. 없으면 검증된 파일 핸드오프를 쓰고 WAITING_FOR_WORKER로 기록한다. 일어나지 않은 모델 간 호출을 했다고 말하지 않는다.
+- 사용자의 현재 명시적 지시가 이 파일보다 우선한다.
 
-## KOR Middle Korean module + false-difficulty gate (registered 2026-11-10)
-Only when the user explicitly requests Middle Korean scope, load `runtime.korean_middle_korean_policy` and its regression file. For all subjects load `active.quality.false_difficulty_gate` together with the item quality rubric. Never patch a rule into a file the manifest no longer selects (e.g. `*_V4.0`, `*_V1.0` superseded versions): add a new registered file or a new version and update SYSTEM_MANIFEST.yaml.
+## 다른 곳
+| 무엇 | 어디 |
+|---|---|
+| 운영 절차 | `ops/ARC_RUNBOOK.md` · 한 요청 = 한 상태: `tooling/workflow/arc_workflow.py` |
+| 프로젝트 스킬 | `skills/` (목록: `skills/SKILL_REGISTRY.yaml`) |
+| 외부 플러그인·도구 | `.claude/settings.json`, `tools/oss/README.md` |
+| 지난 버전 규칙 | `archive/` (참고용, 비활성) |
+| 원본 자료·생성 PDF | Google Drive (저장소에 올리지 않음) |

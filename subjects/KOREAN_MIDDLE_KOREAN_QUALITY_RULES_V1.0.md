@@ -105,7 +105,7 @@ QC_STATUS: PASS|REVISE|HOLD|DISCARD
 - 교정 뒤 동일 자료/조건으로 이전 규칙 vs 새 규칙을 비교하며 결과표에 실제 판정을 남긴다.
 
 ## 9. MASTER ROUTING (moved 2026-11-10)
-이 절은 폐기된 `subjects/KOREAN_MASTER_V4.0.md` 13절에 있던 라우팅 규칙이다. 현행 국어 MASTER와 함께 적용한다.
+이 절은 폐기된 `archive/subjects/KOREAN_MASTER_V4.0.md` 13절에 있던 라우팅 규칙이다. 현행 국어 MASTER와 함께 적용한다.
 - 트리거: 사용자가 중세 국어/국어의 어제와 오늘/변화하는 국어의 모습을 명시하거나 해당 학교 학습지·교과서 범위를 직접 지정한 경우에만.
 - 국어 MASTER의 기본 SCOPE를 자동 확장하지 않는다. 명시적 요청 범위를 별도 SCOPE_LOCK으로 고정하고 해당 원문·학교자료의 실열람을 선행한다.
 - 강제 게이트: `KOR_MID_SOURCE_QA`, `KOR_MID_UNIQUE_ANSWER`, `KOR_MID_DISTRACTOR_QA`, `KOR_MID_DIFFICULTY_QA` 전부 PASS. 하나라도 FAIL/PENDING이면 BANK_PASS/학생용 배포/CONTENT_LOCK/TYPESET_HANDOFF 금지.

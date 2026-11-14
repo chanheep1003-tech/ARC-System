@@ -314,6 +314,6 @@ HARD FAIL:
 - 정답을 보기 전에 최소 3개 후보가 경쟁하는 D3+ 문항을 우선
 - 길이·절대어·문법 힌트로 쉽게 제거되는 선지 비중 최소화
 
-FINAL은 추가로 quality/ARC_FINAL_QUALITY_GATE_V1.0.md를 통과해야 한다.
+FINAL은 추가로 archive/quality/ARC_FINAL_QUALITY_GATE_V1.0.md를 통과해야 한다.
 
 END ARC ITEM QUALITY RUBRIC V1.5
