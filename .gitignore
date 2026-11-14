@@ -4,3 +4,4 @@ tooling/**/*.pyc
 tooling/results/
 *.promptfoo.db
 runs/
+__pycache__/
