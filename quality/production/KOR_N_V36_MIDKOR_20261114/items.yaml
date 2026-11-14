@@ -540,7 +540,7 @@ items:
   answer: 4
   second_best: 3
   difficulty: D3
-  family: STUDENT_RESPONSE_EVALUATION
+  family: EXCEPT_INCORRECT
   balance: CORE_EXAM_POINT
   reasoning_steps: 2
   immediate_elimination: 1
@@ -1020,7 +1020,7 @@ items:
   answer: 5
   second_best: 3
   difficulty: D3
-  family: STUDENT_RESPONSE_EVALUATION
+  family: EXCEPT_INCORRECT
   balance: CORE_EXAM_POINT
   reasoning_steps: 2
   immediate_elimination: 1
@@ -2177,7 +2177,7 @@ items:
   answer: 5
   second_best: 3
   difficulty: D3
-  family: STUDENT_RESPONSE_EVALUATION
+  family: EXCEPT_INCORRECT
   balance: CORE_EXAM_POINT
   reasoning_steps: 2
   immediate_elimination: 1

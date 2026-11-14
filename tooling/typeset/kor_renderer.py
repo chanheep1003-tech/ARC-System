@@ -75,6 +75,11 @@ BLACK = (0.0, 0.0, 0.0)
 CIRC = "①②③④⑤"
 
 
+import sys as _sys
+_sys.path.insert(0, str(Path(__file__).resolve().parent))
+import old_hangul  # noqa: E402
+
+
 class RenderError(RuntimeError):
     pass
 
@@ -93,6 +98,8 @@ def fonts() -> dict[str, fitz.Font]:
     fb = fallback_file()
     if fb:
         out["H"] = fitz.Font(fontfile=str(fb))
+    if old_hangul.font_path():
+        out["O"] = fitz.Font(fontfile=str(old_hangul.font_path()))
     return out
 
 
@@ -124,6 +131,7 @@ def runs(text: str, key: str) -> list[tuple[str, str]]:
         _FONTS = fonts()
     out: list[tuple[str, str]] = []
     ul = ""
+    text = old_hangul.encode(text)
     for ch in text:
         if ch in (UL_OPEN, UL_CLOSE):
             ul = "~" if ch == UL_OPEN else ""
@@ -133,6 +141,10 @@ def runs(text: str, key: str) -> list[tuple[str, str]]:
             ch, k = SUPERSCRIPTS[ch], key + ul + "^"
         elif ch in SUBSCRIPTS:
             ch, k = SUBSCRIPTS[ch], key + ul + "_"
+        elif old_hangul.is_old_char(ch):
+            if "O" not in _FONTS:
+                raise RenderError("OLD_HANGUL_FONT_NOT_PREPARED: call old_hangul.prepare(bundle) before rendering")
+            k = "O" + ul
         elif not ch.isspace() and not _FONTS[key].has_glyph(ord(ch)):
             if "H" in _FONTS and _FONTS["H"].has_glyph(ord(ch)):
                 k = "H" + ul
@@ -151,7 +163,7 @@ def put(page: fitz.Page, pos, text: str, fontname: str = "R", fontsize: float | 
     for rk, t in runs(text, fontname):
         k, size = base_key(rk), run_size(rk, fontsize)
         if k not in {f[4] for f in page.get_fonts()}:  # embed only fonts a page actually uses (unused fonts are not subset)
-            page.insert_font(fontname=k, fontfile=str(FONT_FILES.get(k) or fallback_file()))
+            page.insert_font(fontname=k, fontfile=str(old_hangul.font_path() if k == "O" else (FONT_FILES.get(k) or fallback_file())))
         kw = {"color": color} if color is not None else {}
         dy = SCRIPT_SHIFT.get(rk[-1], 0.0) * fontsize
         page.insert_text((x, y + dy), t, fontname=k, fontsize=size, **kw)
@@ -630,6 +642,9 @@ def answer_page(doc, items: list[dict[str, Any]], labels: dict[str, str] | None 
 
 def render_solutions(bundle: dict[str, Any], labels: dict[str, str], out_pdf: Path) -> dict[str, Any]:
     """Render a dedicated B&W 2-column Canva Modern Gothic solutions booklet PDF (*_SOLUTIONS.pdf)."""
+    global _FONTS
+    old_hangul.prepare(bundle)
+    _FONTS = None
     L = Layout()
     doc = fitz.open()
     sol_col_w = COL_W
@@ -736,7 +751,9 @@ def render_solutions(bundle: dict[str, Any], labels: dict[str, str], out_pdf: Pa
 def render(bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[str, str], set_header,
            out_pdf: Path, key_pdf: Path | None = None, logo: dict[str, Any] | None = None,
            solutions_pdf: Path | None = None) -> dict[str, Any]:
-    global SIZE, LH
+    global SIZE, LH, _FONTS
+    old_hangul.prepare([bundle, sources])
+    _FONTS = None
     saved = (SIZE, LH)
     lay = bundle.get("layout") or {}
     if lay.get("body_pt"):  # per-bundle body size / line height (English passage workbooks)

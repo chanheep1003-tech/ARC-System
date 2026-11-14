@@ -249,7 +249,7 @@ items:
   answer: 5
   second_best: 3
   difficulty: D3
-  family: STUDENT_RESPONSE_EVALUATION
+  family: EXCEPT_INCORRECT
   balance: CORE_EXAM_POINT
   reasoning_steps: 2
   immediate_elimination: 1
@@ -574,7 +574,7 @@ items:
 - item_id: KOR-OR-009
   archetype: A2_STUDENT_TEXT_ERRORS
   level: V3
-  stem: <보기>의 ㉠~㉥ 중 표기가 바르지 않은 것만을 모두 고른 것은?
+  stem: <보기>의 ㉠~㉥ 중 고쳐 써야 하는 것만을 모두 고른 것은?
   view:
   - <친구에게 보낸 메시지> 내일 수업 끝나고 ㉠연락할께. 지금 나가면 ㉡안 돼. 민수가 숙제를 벌써 다 ㉢했대. 회의는 ㉣금새 끝날 거야. 늦지 ㉤않게 와. 발표를 ㉥어떡해 해야 할지 아직 모르겠어.
   options:
@@ -858,7 +858,7 @@ items:
   answer: 4
   second_best: 3
   difficulty: D3
-  family: STUDENT_RESPONSE_EVALUATION
+  family: EXCEPT_INCORRECT
   balance: CORE_EXAM_POINT
   reasoning_steps: 2
   immediate_elimination: 1
@@ -1398,7 +1398,7 @@ items:
   answer: 5
   second_best: 3
   difficulty: D3
-  family: STUDENT_RESPONSE_EVALUATION
+  family: EXCEPT_INCORRECT
   balance: CORE_EXAM_POINT
   reasoning_steps: 2
   immediate_elimination: 1
@@ -1655,7 +1655,7 @@ items:
 - item_id: KOR-OR-025
   archetype: A2_STUDENT_TEXT_ERRORS
   level: V3
-  stem: <보기>의 ㉠~㉥ 중 표기가 바르지 않은 것만을 모두 고른 것은?
+  stem: <보기>의 ㉠~㉥ 중 고쳐 써야 하는 것만을 모두 고른 것은?
   view:
   - <봉사 활동 안내문> 식사 후에는 ㉠설겆이를 함께합니다. 식탁은 ㉡깨끗이 닦고, 쉬는 시간에는 ㉢틈틈히 물을 마십니다. 아침에는 ㉣일찍이 모여 준비하며, ㉤며칠 전부터 준비한 물품을 다시 확인합니다. 어르신이 손을 내미시면 ㉥덥썩 잡지 말고 먼저 인사를 드립니다.
   options:
@@ -1870,7 +1870,7 @@ items:
   answer: 5
   second_best: 3
   difficulty: D3
-  family: STUDENT_RESPONSE_EVALUATION
+  family: EXCEPT_INCORRECT
   balance: CORE_EXAM_POINT
   reasoning_steps: 2
   immediate_elimination: 1

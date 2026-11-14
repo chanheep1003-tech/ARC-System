@@ -78,7 +78,7 @@ class Bank:
         if sb is None:
             sb = next(i for i in range(1, 6) if i != ans and judg[i - 1].startswith("M:"))
         it = {"item_id": f"KOR-{self.prefix}-{n:03d}", "archetype": arch, "level": level, "stem": stem, "view": view,
-              "options": opts, "answer": ans, "second_best": sb, "difficulty": d, "family": fam,
+              "options": opts, "answer": ans, "second_best": sb, "difficulty": d, "family": "EXCEPT_INCORRECT" if neg else fam,
               "balance": "ADVANCED_DISCRIMINATION" if d in ("D4", "D5") else "CORE_EXAM_POINT",
               "reasoning_steps": 3 if d == "D4" else 2, "immediate_elimination": 0 if d == "D4" else 1,
               "transfer": level == "V3", "stem_polarity": "NEGATIVE" if neg else "POSITIVE", "judgments": js,
