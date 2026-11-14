@@ -16,10 +16,10 @@ python tooling/arc.py status    # 국어·영어·사회·과학 × CORE/N/FINAL
 
 ```bash
 python tooling/arc.py plan --subject KOR --scope "한글 맞춤법"            # 빠진 값은 기본값으로 채움
-python tooling/arc.py plan --subject KOR --scope "탄궁가" --version V3 --count 30
+python tooling/arc.py plan --subject KOR --scope "탄궁가" --level 심화 --count 30
 ```
 
-계획 카드에 들어가는 것: 제품·버전, 총 문항 수와 단원 세트 수, 선택형/서답형 수, 난도 분포, 핵심/심화 수, 문항 원형 배분, 범위 상태와 막힌 이유.
+계획 카드에 들어가는 것: 제품·단계, 총 문항 수와 단원 세트 수, 선택형/서답형 수, 난도 분포, 핵심/심화 수, 문항 원형 배분, 범위 상태와 막힌 이유.
 
 1. 사용자가 말한 값은 그대로 쓴다. 빠진 값만 `ops/planning/ARC_PLAN_DEFAULTS_V1.yaml`로 채운다.
 2. 계획 카드를 사용자에게 보여 준다. 기본값으로 채운 항목은 "기본값"이라고 표시한다.
@@ -28,7 +28,7 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --version V3 --coun
 
 규칙 원문: `ops/ARC_REQUEST_PLANNING_V1.0.md`
 
-## 3. 제품과 버전
+## 3. 제품과 단계
 
 | 제품 | 무엇 | 조판 |
 |---|---|---|
@@ -36,18 +36,18 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --version V3 --coun
 | ARC N° | 단원·유형별 문제집 | 2단, 정답은 맨 뒤 |
 | ARC FINAL | 실전 모의고사 | 2단, 정답 PDF 분리 |
 
-국어 ARC N°의 버전 (영어·사회·과학에는 버전 사다리가 없다):
+국어 ARC N°의 단계 (2026-11-14부터. 옛 V1–V6 버전 사다리는 폐지, `quality/korean/ARC_KOR_LEVEL_POLICY_V2.0.md`):
 
-| 버전 | 이름 | 목표 | 선택형 난도 D2/D3/D4/D5 |
+| 단계 | 성격 | 선택형 난도 D2/D3/D4/D5 | 심화 비율 |
 |---|---|---|---|
-| V1 | 전범위 기본 | 범위 개념을 빠짐없이, 다양한 유형으로 | 40 / 45 / 15 / 0 |
-| V2 | 핵심 집중·복합 | 학교자료·기출로 중요도가 확인된 축에 비중 | 30 / 45 / 22 / 3 |
-| V3 | 낯선 자료 전이 | 처음 보는 지문·예문에 범위 개념 적용 | 25 / 45 / 25 / 5 |
-| V4 | 최상위 변별 | 근거 다층 결합·반례·미세 조건 | 15 / 50 / 30 / 5 |
-| V6 | 맞춤법·띄어쓰기 특화 | 낯선 표현의 품사·규정 적용 | 25 / 45 / 25 / 5 |
+| 기본(L1) | 범위 개념을 빠짐없이 확인·적용 | 40 / 45 / 15 / 0 | 20% |
+| 표준(L2) | 내신 실전 수준 (기본값) | 25 / 45 / 25 / 5 | 25% |
+| 심화(L3) | 상위권 변별, 새 자료 추론·심화 비중 최대 | 15 / 50 / 30 / 5 | 30% |
 
-- V5는 ARC FINAL(실전 리허설)이다. N° 요청에 쓰지 않는다.
-- 버전을 말하지 않으면: 맞춤법·띄어쓰기 요청은 V6, 그 밖에는 같은 범위 기록이 없으면 V1, 있으면 다음 단계.
+- **어려운 문항일수록 추론·심화 (전 과목)**: D2 확인·적용 / D3 적용·추론·심화 / D4 추론·심화 / D5 심화. 단계를 올리면 추론·심화 비중이 자동으로 커진다 (`quality/ARC_EXAMINER_LENS_V1.3.md` §13).
+- 단계를 말하지 않으면 표준(L2), 같은 범위 기록이 있으면 한 단계 위. `--level 기본|표준|심화|L1|L2|L3` (옛 V1~V4·V6도 받아서 바꾼다).
+- ARC FINAL은 단계가 아니라 제품이다(옛 V5). 맞춤법·띄어쓰기는 범위에 있으면 어느 단계에서나 쓰는 주제 모듈이다(옛 V6).
+- 영어·사회·과학에는 단계가 없고 과목별 난도 분포 하나를 쓴다. 난도↔유형 연결은 같이 적용된다.
 - 기본 문항 수: 국어 50, 영어 50, 사회 20, 과학 20. 국어는 선택형 11 + 서답형 1짜리 단원 세트로 나눈다.
 - 영어 ARC N° 1세트 = 어휘 15 + 어법 10 + 독해 15 + 서답형 10. 영어 ARC FINAL = 실제 시험과 같은 38문항(선택형 34 + 서답형 4).
 - 모든 ARC N°: 핵심 70~80% / 심화 20~30%.
@@ -103,8 +103,8 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --version V3 --coun
 | `entry/` | 과목별 진입 파일 (`KOR.md`, `ENG.md`, `SOC_SCI.md`) — 맡은 과목 것만 읽는다 |
 | `archive/` | manifest가 고르지 않는 지난 버전 규칙 (원래 경로 유지, 비활성) |
 | `ops/ARC_RUNBOOK.md` | 운영 절차 원문 |
-| `ops/HANDOFF_20261114_EXAMINER_LENS.md` | 최근 인수인계: 홈 레포 정리, 출제자 시선 V1.0→V1.2, 시범 세트, 미확인 사항 |
-| `quality/ARC_EXAMINER_LENS_V1.2.md` | 출제자 시선(내신 출제 순서 + 변별 4단계 + 난도 상한·학생 안내·<보기> 조판), 전 과목 |
+| `ops/HANDOFF_20261114_EXAMINER_LENS.md` | 최근 인수인계: 홈 레포 정리, 출제자 시선 V1.0→V1.3, 국어 단계 통합, 시범 세트, 미확인 사항 |
+| `quality/ARC_EXAMINER_LENS_V1.3.md` | 출제자 시선(내신 출제 순서 + 변별 4단계 + 난도 상한·학생 안내·<보기> 조판 + 난도↔유형 연결), 전 과목 |
 | `ops/ARC_REQUEST_PLANNING_V1.0.md`, `ops/planning/` | 요청 → 계획 규칙과 기본값 |
 | `ops/exams/EXAM_CONTEXTS_V1.yaml` | 현재 시험과 과목별 범위 상태 |
 | `ops/exams/DONGBUK_2026_2_FINAL_SCOPE_NOTICE.yaml` | 학교 기말 범위 공지를 옮겨 적은 기록 (범위 근거) |
@@ -112,7 +112,7 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --version V3 --coun
 | `subjects/` | 과목 MASTER (범위·과목 규칙) |
 | `quality/` | 품질 규칙·게이트, 난도, 앵커, 카나리, 생산 번들(`quality/production/`) |
 | `quality/school/` | 학교 출제 근거 장부 |
-| `quality/korean/` | 국어 버전 정책, V6, 문법 원형 |
+| `quality/korean/` | 국어 단계 정책(기본·표준·심화), 맞춤법 주제 모듈, 문법 원형 |
 | `quality/english/` | 영어 문항 유형 라이브러리 |
 | `templates/` | 조판 규칙과 HTML 마스터 |
 | `tooling/` | 실행 도구 (`arc.py`, 생산 파이프라인, 조판기, 게이트, 카나리) |

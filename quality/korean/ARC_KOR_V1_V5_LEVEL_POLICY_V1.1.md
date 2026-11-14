@@ -62,4 +62,4 @@ V5는 실제 해당 시험범위의 동북고 기출을 확인해 '문항수·�
 
 
 ## ARCHIVED / SUPERSEDED AS ACTIVE POLICY — 2026-11-06
-For all NEW KOR item production, load `quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md` instead. V1–V5 historical definitions remain here as an audit reference, but the active six-version policy includes the new KOR-only V6 unfamiliar expression/orthography specialist. V6 is an ARC N° supplement; V5 remains ARC FINAL. Do not infer V6 production completion from the policy.
+For all NEW KOR item production, load `archive/quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md` instead. V1–V5 historical definitions remain here as an audit reference, but the active six-version policy includes the new KOR-only V6 unfamiliar expression/orthography specialist. V6 is an ARC N° supplement; V5 remains ARC FINAL. Do not infer V6 production completion from the policy.

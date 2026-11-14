@@ -118,6 +118,23 @@ def main() -> int:
     assert ("STUDENT_SUPPORT_MISSING", "KOR-MKV-09") in found, found
     assert gate.analyze(load("KOR_N_MKV12_20261114"))["status"] == "PASS"
 
+    # V1.3 (2026-11-14 user directive): harder items must be INFER/EXTEND; no fixed mix.
+    v13 = load("KOR_N_MKV12_20261114")
+    v13["examiner_lens"] = "V1.3"
+    found = {(f["code"], f["item_id"]) for f in gate.analyze(v13)["findings"]}
+    assert ("DIFFICULTY_TRANSFER_MISMATCH", "KOR-MKW-04") in found, found   # RECALL labelled D4
+    assert not any(c == "TRANSFER_SHORT" for c, _ in found)
+    basic = {"examiner_lens": "V1.3", "product_mode": "ARC_N",
+             "items": [v11_item(i, "RECALL" if i < 6 else "APPLY") for i in range(10)]}
+    for it in basic["items"]:
+        it["difficulty"] = "D2"
+    assert gate.analyze(basic)["status"] == "PASS", gate.analyze(basic)   # a basic set may be mostly RECALL
+    hard = copy.deepcopy(basic)
+    hard["items"][0]["difficulty"] = "D5"
+    hard["items"][0]["transfer_level"] = "INFER"
+    hard["items"][0]["novel_material"] = new
+    assert "DIFFICULTY_TRANSFER_MISMATCH" in codes(gate.analyze(hard))
+
     print("examiner lens gate regression: PASS")
     return 0
 

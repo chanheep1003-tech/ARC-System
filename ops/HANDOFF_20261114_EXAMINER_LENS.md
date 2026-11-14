@@ -1,4 +1,4 @@
-# 인수인계 — 2026-11-14 출제자 시선(Examiner Lens) 정비
+# 인수인계 — 2026-11-14 출제자 시선(Examiner Lens) 정비 + 국어 단계 통합
 
 이 문서는 2026-11-14 세션 하나에서 한 일을, 그 대화를 보지 못한 다음 에이전트가 그대로 이어받을 수 있게 정리한 것이다.
 브랜치: `claude/beautiful-gauss-ykl03y` (main에 아직 병합하지 않음). 로컬 CI 마지막 결과: **39 pass / 0 fail / 1 skipped**.
@@ -13,7 +13,7 @@ python tooling/arc.py doctor && python tooling/arc.py status
 ```
 
 1. `AGENTS.md` → `ARC_MAP.md` → `SYSTEM_MANIFEST.yaml` → 맡은 과목의 `entry/<과목>.md` 하나만 읽는다.
-2. 문항을 만들거나 검토한다면 `quality/ARC_EXAMINER_LENS_V1.2.md`를 처음부터 끝까지 읽는다(이 문서 §3이 요약).
+2. 문항을 만들거나 검토한다면 `quality/ARC_EXAMINER_LENS_V1.3.md`를 처음부터 끝까지 읽는다(이 문서 §3·§10이 요약). 국어는 `quality/korean/ARC_KOR_LEVEL_POLICY_V2.0.md`도.
 3. Middle Korean(중세 국어)은 사용자가 명시했을 때만 `subjects/KOREAN_MIDDLE_KOREAN_QUALITY_RULES_V1.0.md`를 읽는다.
 4. Old Hangul이 들어간 PDF를 만든다면 폰트를 먼저 확인한다(§6 참고): `fc-list | grep -i -E "hando|noto.*cjk"`.
 
@@ -31,7 +31,7 @@ python tooling/arc.py doctor && python tooling/arc.py status
 | `d456d6c` | V1.1 시범 세트 `KOR_N_MKV11_20261114`(확인 2 · 적용 4 · 추론 2 · 심화 2) |
 | `1c12503` | **출제자 시선 V1.2**: 난도 상한(칸 하나 차이 조합형은 최대 D3), 낯선 자료의 학생용 안내 필수, `<보기>` 조판 규약. 렌더러 `structure_view_lines`. 수정 세트 `KOR_N_MKV12_20261114` |
 
-활성 규칙은 **V1.2 하나**다. V1.0·V1.1은 `archive/quality/`에 있고 읽지도 고치지도 않는다.
+활성 규칙은 **V1.3 하나**다(§10 참고). V1.0·V1.1·V1.2는 `archive/quality/`에 있고 읽지도 고치지도 않는다.
 
 ---
 
@@ -53,7 +53,7 @@ quality/production/    ← 문항 번들(items.yaml)
 
 ---
 
-## 3. 출제자 시선 V1.2 요약 (`quality/ARC_EXAMINER_LENS_V1.2.md`)
+## 3. 출제자 시선 요약 (`quality/ARC_EXAMINER_LENS_V1.3.md` — V1.2까지의 내용, V1.3 변경은 §10)
 
 ### 3-1. 출제 순서 (모든 과목)
 1. **출제 계획표**(`blueprint`): 단원 × 내용 × 행동 영역 × 단계 × 난도 × 배점. 문장은 그다음.
@@ -71,7 +71,7 @@ quality/production/    ← 문항 번들(items.yaml)
 | INFER 추론 | 처음 보는 자료를 배운 개념으로 해석 |
 | EXTEND 심화 | 처음 보는 조항·조건을 `<보기>`로 주고 결합 판단 |
 
-배분(선택형 8문항 이상 세트): **ARC_N** RECALL ≤ 30%, INFER+EXTEND ≥ 30% / **ARC_FINAL** RECALL ≤ 25%, INFER+EXTEND ≥ 35%.
+~~고정 배분(ARC_N RECALL ≤ 30%, INFER+EXTEND ≥ 30%)~~ → **V1.3에서 폐지**, 난도↔유형 연결로 대체(§10).
 
 ### 3-3. 새 자료 규칙 (`novel_material`)
 - `kind`: NEW_EXAMPLE · NEW_PASSAGE · NEW_DATA · NEW_CLAUSE · NEW_CASE / `source`: 실제 출처 또는 AUTHORED.
@@ -95,9 +95,9 @@ quality/production/    ← 문항 번들(items.yaml)
 
 ```bash
 # 1) 계획 카드 (사용자 지정값은 그대로, 빠진 값만 기본값)
-python tooling/arc.py plan --subject KOR --scope "3단원 중세국어 + 한글 맞춤법" --count 10
+python tooling/arc.py plan --subject KOR --scope "3단원 중세국어 + 한글 맞춤법" --count 10 --level 표준   # 기본|표준|심화, 생략 시 표준
 
-# 2) 번들 뼈대 — examiner_lens: V1.2 필드가 기본으로 들어감
+# 2) 번들 뼈대 — examiner_lens: V1.3 필드가 기본으로 들어감
 python tooling/arc.py scaffold --subject KOR --product ARC_N --scope "…" --actor CLAUDE --out quality/production/<번들>
 
 # 3) 자료 열람(Drive) → items.yaml 작성 → 게이트
@@ -115,7 +115,7 @@ python tooling/production/draft_preview.py quality/production/<번들> --output-
 python tooling/arc.py checksums && python tooling/arc.py ci
 ```
 
-번들 필드 예시는 `quality/production/KOR_N_MKV12_20261114/items.yaml`을 본다(V1.2 필드를 모두 갖춘 유일한 번들).
+번들 필드 예시는 `quality/production/KOR_N_MKV12_20261114/items.yaml`을 본다(V1.2 필드를 모두 갖춘 번들). 단, V1.3으로 검사하면 4번(RECALL인데 D4)이 DIFFICULTY_TRANSFER_MISMATCH로 걸린다 — 새 세트는 이 점을 지켜 만든다.
 
 ---
 
@@ -180,3 +180,35 @@ python tooling/arc.py checksums && python tooling/arc.py ci
 2. `KOR_N_MKV12` 2·3번 중세 국어 원문을 판본과 대조해 `SOURCE_VERIFIED` 기록.
 3. 브랜치를 main에 병합할지 사용자에게 확인(PR 요청 시에만 생성).
 4. 사용자가 원하면 같은 V1.2 기준으로 다른 단원(4-1 문학 등)에 추론·심화 문항 시범 적용.
+
+---
+
+## 10. 추가 변경 (같은 날 후반): 국어 단계 통합 + 출제자 시선 V1.3
+
+사용자 지시: "국어 버전을 나누지 말고 통합해서 난이도로 나누자. 어려운 문제일수록 심화·추론 문제로." 그리고 (1) 난도↔유형 연결을 영어·사회·과학에도 적용, (2) 단계 이름은 기본/표준/심화와 L1~L3을 함께.
+
+**국어 V1–V6 사다리 폐지 → 기본(L1) · 표준(L2) · 심화(L3)** — `quality/korean/ARC_KOR_LEVEL_POLICY_V2.0.md`
+| 단계 | D2/D3/D4/D5 | 심화 비율 |
+|---|---|---|
+| 기본(L1) | 40/45/15/0 | 20% |
+| 표준(L2, 기본값) | 25/45/25/5 | 25% |
+| 심화(L3) | 15/50/30/5 | 30% |
+- 옛 이름은 이렇게 읽는다: V1→L1, V2·V3→L2, V4→L3, **V5→ARC FINAL(제품)**, **V6→맞춤법·띄어쓰기 주제 모듈**(범위에 있으면 어느 단계에서나). `korean_v6_*` manifest 키와 `ARC_KOR_V6_*` 파일 이름은 호환 때문에 그대로 두었다.
+- `arc.py plan --level 기본|표준|심화|L1|L2|L3` (옛 `--version V1~V4·V6`도 받아서 바꿈, V5는 오류로 ARC_FINAL 안내). 단계를 말하지 않으면 표준, 같은 범위 RUN_LOG가 있으면 한 단계 위.
+- 계획 기본값: `ops/planning/ARC_PLAN_DEFAULTS_V1.yaml`의 `kor_levels`, `kor_level_aliases`, `difficulty_transfer`.
+
+**출제자 시선 V1.3** — `quality/ARC_EXAMINER_LENS_V1.3.md` §13 (전 과목)
+| 난도 | 허용 유형 |
+|---|---|
+| D1 | RECALL |
+| D2 | RECALL · APPLY |
+| D3 | APPLY · INFER · EXTEND |
+| D4 | INFER · EXTEND |
+| D5 | EXTEND |
+- 게이트 `DIFFICULTY_TRANSFER_MISMATCH`. 고정 배분 규칙(RECALL ≤ 30% 등)은 V1.3에서 없앴다 — 기본 단계 세트가 확인 문항 위주인 것은 정상이고, 단계를 올리면 추론·심화가 자동으로 늘어난다.
+- 영어는 범위 지문의 변형(새 요약문·새 문장·새 문맥)이 새 자료로 인정되므로, 유형 코드를 지키면서 D4 문항을 변형 자료로 만든다.
+- 계획 카드에 `유형` 줄이 생겨 난도별 허용 유형을 보여 준다(전 과목).
+
+**바뀐 파일**: 위 두 정책(신규), 지난 버전 `archive/quality/ARC_EXAMINER_LENS_V1.2.md`, `archive/quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md`, manifest(`korean_levels`, `korean_final_product`, `korean_orthography_module`, `difficulty_transfer_rule`), `arc.py`(plan/scaffold), 계획 기본값, 게이트·회귀 테스트, `entry/*.md`, `ARC_MAP.md`, `AGENTS.md`, `agents/TEAM.md`, 런북·국어 문항 엔진(날짜 붙인 오버라이드 절 추가).
+
+**아직 없는 것**: 이 단계·V1.3 기준으로 새로 만든 문항 세트는 없다. 첫 시범은 사용자 확인 후.

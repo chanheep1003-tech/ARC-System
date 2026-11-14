@@ -1,3 +1,8 @@
+## 1.9.7 — 2026-11-14
+- KOR levels (user directive): the V1–V6 ladder is replaced by 기본(L1) / 표준(L2, default) / 심화(L3), which set only the difficulty mix. V5 stays ARC FINAL (a product); V6 becomes the orthography topic module usable at any level. Policy `quality/korean/ARC_KOR_LEVEL_POLICY_V2.0.md`; `arc.py plan --level` (old V-names accepted and mapped); plan defaults `kor_levels`, `kor_level_aliases`, `difficulty_transfer`; manifest `korean_levels`, `korean_final_product`, `korean_orthography_module`.
+- Examiner lens V1.3 (all subjects, user directive "harder items should be inference/extension"): D2 RECALL·APPLY, D3 APPLY·INFER·EXTEND, D4 INFER·EXTEND, D5 EXTEND; gate DIFFICULTY_TRANSFER_MISMATCH; the fixed RECALL/transfer mix is dropped for V1.3. Plan cards show the allowed types per difficulty.
+- V1.2 lens and the V1–V6 policy moved to `archive/`; runbook and Korean item engine get dated override notes; handoff §10.
+
 ## 1.9.6 — 2026-11-14
 - Home-repo layout: `AGENTS.md` is a pointer hub (`CLAUDE.md` imports it); subject-only rules live in `entry/KOR.md`, `entry/ENG.md`, `entry/SOC_SCI.md`; 91 superseded rule files moved to `archive/` with their original paths.
 - Examiner lens (user directives on awkward, AI-like items): `quality/ARC_EXAMINER_LENS_V1.2.md` for all subjects — school-setter order (blueprint → teaching anchor → one misconception per distractor → appeal check → blind peer-teacher review, `agents/school-examiner.md`), RECALL/APPLY/INFER/EXTEND levels with an ARC_N/ARC_FINAL mix, novel-material rules, a D3 cap for one-cell grids, required student support for new clauses/data, and `<보기>` layout. Gate `tooling/content_qa/examiner_lens_gate.py` with regression in CI; `arc.py scaffold` emits the fields. V1.0/V1.1 archived.

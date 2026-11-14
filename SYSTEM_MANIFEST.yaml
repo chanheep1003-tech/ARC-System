@@ -40,13 +40,14 @@ runtime:
     - ARC_N
     - ARC_FINAL
   # KOR-only; other subjects keep their own active engines and scopes
-  korean_learning_level_policy: quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md
-  korean_learning_level_v1: ARC_N_FULL_SCOPE
-  korean_learning_level_v2: ARC_N_PRIORITY_APPLICATION
-  korean_learning_level_v3: ARC_N_UNSEEN_TRANSFER
-  korean_learning_level_v4: ARC_N_ADVANCED_DISCRIMINATION
-  korean_learning_level_v5: ARC_FINAL_DONGBUK_SIMULATION
-  korean_learning_level_v6: ARC_N_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY
+  korean_learning_level_policy: quality/korean/ARC_KOR_LEVEL_POLICY_V2.0.md
+  korean_levels:            # V1–V6 사다리 폐지(2026-11-14). 단계는 난도 분포만 정한다
+    L1: ARC_N_BASIC          # 기본
+    L2: ARC_N_STANDARD       # 표준 (기본값)
+    L3: ARC_N_ADVANCED       # 심화
+  korean_final_product: ARC_FINAL_DONGBUK_SIMULATION   # 옛 V5
+  korean_orthography_module: ARC_N_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY   # 옛 V6. 아래 korean_v6_* 키는 이 모듈의 설정(이름은 호환용)
+  difficulty_transfer_rule: quality/ARC_EXAMINER_LENS_V1.3.md   # 전 과목: D4 추론·심화, D5 심화
   korean_v6_specialist_policy: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md
   korean_v6_spacing_pos_policy: quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.0.md
   korean_v6_spacing_min_questions_target: 65
@@ -392,7 +393,7 @@ active:
     item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.5.md
     false_difficulty_gate: quality/ARC_FALSE_DIFFICULTY_GATE_V1.0.md
     school_archetype_gate: quality/ARC_SCHOOL_ARCHETYPE_GATE_V1.0.md
-    examiner_lens: quality/ARC_EXAMINER_LENS_V1.2.md
+    examiner_lens: quality/ARC_EXAMINER_LENS_V1.3.md
     examiner_lens_gate: tooling/content_qa/examiner_lens_gate.py
     examiner_lens_role: agents/school-examiner.md
     final_quality_gate: quality/ARC_FINAL_QUALITY_GATE_V1.1.md

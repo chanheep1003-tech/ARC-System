@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """ARC examiner-lens gate: school exam-sheet conventions + teacher receipts.
 
-Spec: quality/ARC_EXAMINER_LENS_V1.2.md (V1.0 bundles are still checked by the V1.0 rules)
+Spec: quality/ARC_EXAMINER_LENS_V1.3.md (bundles declaring an older lens are checked by that version's rules)
 - Always: NON_SCHOOL_MARKUP, META_LANGUAGE_LEAK, LONGEST_ANSWER_CUE, ANSWER_POSITION_SKEW.
 - When the bundle declares `examiner_lens: V1.0`: blueprint, teaching_anchor,
   distinct distractor_misconceptions per wrong option, appeal_check.
 - V1.1 adds the discrimination lens: transfer_level per item, novel_material for
-  INFER/EXTEND, and a RECALL / transfer mix per product.
+  INFER/EXTEND, and a RECALL / transfer mix per product (V1.1-V1.2 only).
+- V1.2 adds the one-cell-grid D3 cap and student support for new clauses/data.
+- V1.3 replaces the fixed mix with a per-item difficulty -> transfer_level rule.
 """
 from __future__ import annotations
 
@@ -24,7 +26,10 @@ import yaml
 BRACKET_MARK = re.compile(r"(?<=[가-힣])\[[가-힣]{1,4}\]")
 META_TERMS = ("판단축", "근거 범위", "정답 후보", "추론 단계", "second-best", "distractor", "true kernel", "독해 전략")
 ERROR, WARN = "ERROR", "WARN"
-LENS_VERSIONS = {"V1.0", "V1.1", "V1.2"}
+LENS_VERSIONS = {"V1.0", "V1.1", "V1.2", "V1.3"}
+# V1.3 §13: harder items must be transfer items (전 과목).
+ALLOWED_TRANSFER = {"D1": {"RECALL"}, "D2": {"RECALL", "APPLY"}, "D3": {"APPLY", "INFER", "EXTEND"},
+                    "D4": {"INFER", "EXTEND"}, "D5": {"EXTEND"}}
 SUPPORT_KINDS = {"GUIDE", "EXAMPLE", "PLAIN"}
 CELL_SPLIT = re.compile(r"\s{2,}|\s+/\s+")
 TRANSFER_LEVELS = ("RECALL", "APPLY", "INFER", "EXTEND")
@@ -69,8 +74,9 @@ def analyze(bundle: dict) -> dict:
     items = _items(bundle)
     version = str(bundle.get("examiner_lens", "")) if isinstance(bundle, dict) else ""
     lens = version in LENS_VERSIONS
-    v11 = version in {"V1.1", "V1.2"}
-    v12 = version == "V1.2"
+    v11 = version in {"V1.1", "V1.2", "V1.3"}
+    v12 = version in {"V1.2", "V1.3"}
+    v13 = version == "V1.3"
     levels: list[str] = []
     findings: list[dict] = []
 
@@ -125,6 +131,10 @@ def analyze(bundle: dict) -> dict:
                 continue
             if _mcq(it):
                 levels.append(level)
+            diff = str(it.get("difficulty", "")).upper()
+            if v13 and diff in ALLOWED_TRANSFER and level not in ALLOWED_TRANSFER[diff]:
+                allowed = "/".join(sorted(ALLOWED_TRANSFER[diff]))
+                add("DIFFICULTY_TRANSFER_MISMATCH", ERROR, iid, f"{diff} 문항은 {allowed}만 가능 — 지금 {level} (V1.3 §13)")
             nm = it.get("novel_material") or {}
             if level in ("INFER", "EXTEND"):
                 if str(nm.get("kind", "")).upper() not in NOVEL_KINDS or not str(nm.get("source", "")).strip():
@@ -143,7 +153,7 @@ def analyze(bundle: dict) -> dict:
             add("ANSWER_POSITION_SKEW", WARN, None, f"정답 번호 비율 {shares}")
 
     product = str(bundle.get("product_mode", "ARC_N")) if isinstance(bundle, dict) else "ARC_N"
-    if v11 and len(levels) >= MIX_MIN_ITEMS and product in TRANSFER_MIX:
+    if v11 and not v13 and len(levels) >= MIX_MIN_ITEMS and product in TRANSFER_MIX:
         max_recall, min_transfer = TRANSFER_MIX[product]
         recall = levels.count("RECALL") / len(levels)
         transfer = (levels.count("INFER") + levels.count("EXTEND")) / len(levels)
@@ -155,7 +165,7 @@ def analyze(bundle: dict) -> dict:
 
     errors = [f for f in findings if f["level"] == ERROR]
     status = "FAIL" if errors else ("WARN" if findings else "PASS")
-    return {"tool": "ARC_EXAMINER_LENS_GATE_V1.2", "lens_declared": version or None, "items": len(items),
+    return {"tool": "ARC_EXAMINER_LENS_GATE_V1.3", "lens_declared": version or None, "items": len(items),
             "mcq": n, "status": status, "findings": findings}
 
 

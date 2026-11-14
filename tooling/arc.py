@@ -224,7 +224,7 @@ def files_to_load(manifest: dict, subject: str, product: str) -> list[tuple[str,
     if subject == "KOR":
         out += [("국어 문항 엔진", active["korean_item_engine"]["path"]),
                 ("국어 문항 QA", quality["korean_item_qa"]),
-                ("국어 V1~V6 정책", runtime["korean_learning_level_policy"]),
+                ("국어 난도 단계 정책(기본·표준·심화)", runtime["korean_learning_level_policy"]),
                 ("국어 실전성 게이트", quality["korean_exam_realism_gate"]),
                 ("중세국어 모듈(해당 범위 요청 시에만)", runtime.get("korean_middle_korean_policy", ""))]
     if subject == "ENG":
@@ -336,7 +336,7 @@ def apportion(total: int, shares: dict[str, float]) -> dict[str, int]:
     return out
 
 
-def previous_kor_version(scope: str) -> str | None:
+def previous_kor_level(scope: str) -> str | None:
     if not RUN_LOG_JSONL.is_file():
         return None
     found = None
@@ -349,9 +349,10 @@ def previous_kor_version(scope: str) -> str | None:
         text = f"{rec.get('run_id', '')} {rec.get('target_range', '')}"
         if not any(word and word in text for word in scope.split()):
             continue
-        match = re.search(r"V([1-4])(?!\d)", text)
+        match = re.search(r"(?<![A-Za-z])L([1-3])(?!\d)", text) or re.search(r"(?<![A-Za-z])V([1-4])(?!\d)", text)
         if match:
-            found = f"V{match.group(1)}"
+            tag = match.group(0)
+            found = tag if tag.startswith("L") else {"V1": "L1", "V2": "L2", "V3": "L2", "V4": "L3"}[tag]
     return found
 
 
@@ -370,26 +371,32 @@ def build_plan(subject: str, product: str, scope: str, count: int | None, versio
         reasons.append(f"문항 수 미지정 → 기본 {count}")
     profile, version_name = None, None
     if subject == "KOR" and product == "ARC_N":
+        levels, aliases = defaults["kor_levels"], defaults["kor_level_aliases"]
         if version:
-            reasons.append(f"버전 지정 {version}")
-        elif grammar:
-            version = "V6"
-            reasons.append("맞춤법·띄어쓰기 요청 → V6")
+            asked = version.strip().upper() if version.strip()[:1] in "LlVv" else version.strip()
+            if asked == "V5":
+                raise SystemExit("V5는 ARC FINAL입니다. --product ARC_FINAL로 요청하세요.")
+            level = asked if asked in levels else aliases.get(asked)
+            if level is None:
+                raise SystemExit(f"국어 단계는 기본/표준/심화 또는 L1~L3입니다 (받은 값: {version}).")
+            reasons.append(f"단계 지정 {version}" + (f" → {level}" if level != asked else ""))
         else:
-            prev = previous_kor_version(scope)
-            version = "V1" if prev is None else f"V{min(4, int(prev[1]) + 1)}"
-            reasons.append("같은 범위 기록 없음 → V1" if prev is None else f"직전 {prev} → {version}")
-        if version not in defaults["kor_versions"]:
-            raise SystemExit(f"국어 ARC N° 버전은 {', '.join(defaults['kor_versions'])} 중 하나여야 합니다 (V5는 ARC FINAL).")
-        profile = defaults["kor_versions"][version]
+            prev = previous_kor_level(scope)
+            level = "L2" if prev is None else f"L{min(3, int(prev[1]) + 1)}"
+            reasons.append("단계 미지정·같은 범위 기록 없음 → 표준(L2)" if prev is None else f"직전 {prev} → {level}")
+        if grammar:
+            reasons.append("맞춤법·띄어쓰기 범위 → 맞춤법 주제 모듈 + 문법 원형 함께 적용")
+        version = level
+        profile = levels[level]
         version_name = profile["name"]
     elif subject == "KOR":
-        version = "V5" if product == "ARC_FINAL" else None
+        version = None
         profile = {"difficulty": None, "advanced": None}
     else:
         version = None
         profile = defaults["other_subjects"][subject]
     plan = {"subject": subject, "product": product, "scope": scope, "version": version, "version_name": version_name,
+            "difficulty_transfer": defaults.get("difficulty_transfer"),
             "count": count, "reasons": reasons, "exam_id": exam_id, "scope_status": entry.get("scope_status")}
     if product == "ARC_N" and profile.get("difficulty"):
         split = defaults["set_split"][subject]
@@ -431,13 +438,17 @@ def print_plan(plan: dict) -> None:
     subject, product = plan["subject"], plan["product"]
     title = f"{SUBJECT_KO[subject]} {PRODUCT_SHORT[product]}"
     if plan.get("version"):
-        title += f" {plan['version']}" + (f" ({plan['version_name']})" if plan.get("version_name") else "")
+        title += (f" {plan['version_name']}({plan['version']})" if plan.get("version_name") else f" {plan['version']}")
     print("ARC 제작 계획")
     print(f"  제품      {title}")
     print(f"  범위      {plan['scope']}")
     if plan.get("units"):
         print(f"  분량      총 {plan['count']}문항 = 선택형 {plan['selected']} + 서답형 {plan['constructed']}, 단원 세트 {plan['units']}개")
         print("  난도      " + " / ".join(f"{k} {v}" for k, v in plan["difficulty"].items()) + "  (선택형 기준)")
+        if plan.get("difficulty_transfer"):
+            dt = plan["difficulty_transfer"]
+            print("  유형      " + " · ".join(f"{d} {'/'.join(dt[d])}" for d in plan["difficulty"] if d in dt)
+                  + "  (어려울수록 추론·심화, 출제자 시선 §13)")
         print(f"  구성      핵심 {plan['core']} / 심화 {plan['advanced']}")
     else:
         print(f"  분량      {plan['count']}문항")
@@ -718,7 +729,7 @@ def cmd_scaffold(args) -> int:
         print(f"다음 단계: {target} 작성 후 python tooling/production/draft_preview.py {out_dir} --output-dir {out_dir}/out")
         return 0
 
-    set_label = "ARC FINAL" if args.product == "ARC_FINAL" else f"ARC N° {args.version or 'V1'}"
+    set_label = "ARC FINAL" if args.product == "ARC_FINAL" else ("ARC N°" + (f" {args.level}" if getattr(args, "level", None) else ""))
     skel = {
         "batch_id": batch_id,
         "generator": args.actor,
@@ -732,7 +743,7 @@ def cmd_scaffold(args) -> int:
         "created_at": now,
         "scope_refs": [f"SCOPE:{args.subject}_CONFIRMED_UNIT"],
         "archetype_library": "quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml" if args.subject == "KOR" else None,
-        "examiner_lens": "V1.2",  # quality/ARC_EXAMINER_LENS_V1.2.md — 출제 계획표 → 수업 근거 → 오개념별 오답 → 이의 제기 검토 → 새 자료로 변별
+        "examiner_lens": "V1.3",  # quality/ARC_EXAMINER_LENS_V1.3.md — 출제 계획표 → 수업 근거 → 오개념별 오답 → 이의 제기 검토 → 새 자료로 변별
         "items": [
             {
                 "item_id": f"{args.subject}-01",
@@ -741,7 +752,7 @@ def cmd_scaffold(args) -> int:
                 "teaching_anchor": "교과서 p.000 학습활동 0 / 학습지 0번 (수업에서 다룬 곳)",
                 "distractor_misconceptions": {2: "학생 오개념 A", 3: "학생 오개념 B", 4: "학생 오개념 C", 5: "학생 오개념 D"},
                 "appeal_check": "PASS (교과서 밖 지식 불필요 · 복수정답 여지 없음 · 발문 뜻 하나)",
-                "transfer_level": "INFER",  # RECALL 확인 / APPLY 적용 / INFER 추론 / EXTEND 심화 — ARC_N은 RECALL ≤30%, INFER+EXTEND ≥30%
+                "transfer_level": "INFER",  # D2 RECALL·APPLY / D3 APPLY·INFER·EXTEND / D4 INFER·EXTEND / D5 EXTEND (출제자 시선 §13)
                 "novel_material": {"kind": "NEW_EXAMPLE", "source": "AUTHORED 또는 실제 출처", "note": "배운 개념은 그대로, 자료만 새로", "student_support": ["GUIDE"]},  # 새 조항·자료면 GUIDE/EXAMPLE/PLAIN 필수
                 "archetype": "KOR-G-RULE-MATCH" if args.subject == "KOR" else None,
                 "family": "VIEW_APPLICATION",
@@ -800,7 +811,7 @@ def main(argv=None) -> int:
     p.add_argument("--product", default="ARC_N", choices=PRODUCTS)
     p.add_argument("--scope", required=True)
     p.add_argument("--count", type=int)
-    p.add_argument("--version", help="국어 ARC N°: V1~V4, V6")
+    p.add_argument("--level", "--version", dest="version", help="국어 ARC N° 단계: 기본/표준/심화 또는 L1~L3 (옛 V1~V4·V6도 받아서 바꿈)")
     p.add_argument("--save", help="계획을 YAML로 저장할 경로")
     p.set_defaults(func=cmd_plan)
 
@@ -808,7 +819,7 @@ def main(argv=None) -> int:
     p.add_argument("--subject", required=True, choices=sorted(SUBJECTS))
     p.add_argument("--product", default="ARC_N", choices=PRODUCTS)
     p.add_argument("--scope", required=True)
-    p.add_argument("--version", help="국어 ARC N° 버전 (예: V6)")
+    p.add_argument("--level", "--version", dest="level", help="국어 ARC N° 단계 표시: 기본/표준/심화 또는 L1~L3")
     p.add_argument("--actor", default="CLAUDE", help="생성 모델 식별자 (GEMINI / CLAUDE / GPT)")
     p.add_argument("--batch-id")
     p.add_argument("--out", help="번들 생성 폴더 경로")
