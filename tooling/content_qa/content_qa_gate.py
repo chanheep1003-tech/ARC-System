@@ -197,6 +197,9 @@ def analyze_item(item: Any, item_format: str, subject: str = "") -> list[dict[st
         if not isinstance(value, int) or value < 0:
             findings.append(finding("DIFFICULTY_METRIC_INVALID", f"{field} must be a non-negative integer", item_id))
 
+    if actual == "D3" and isinstance(reasoning_steps, int) and isinstance(immediate, int):
+        if reasoning_steps < 1 or strong_distractors < 1 or immediate > 2:
+            findings.append(finding("D3_SHORT", "D3 requires >=1 step, >=1 strong distractor, and <=2 immediate eliminations", item_id))
     if actual == "D4" and isinstance(reasoning_steps, int) and isinstance(immediate, int):
         if reasoning_steps < 2 or strong_distractors < 2 or immediate > 2:
             findings.append(finding("D4_SHORT", "D4 requires >=2 steps, >=2 strong distractors, and <=2 immediate eliminations", item_id))

@@ -102,6 +102,18 @@ def run() -> None:
     result = mod.analyze(short)
     assert "D4_SHORT" in codes(result)
 
+    d3_weak = copy.deepcopy(good)
+    d3_weak["items"][0]["target_difficulty"] = "D3"
+    d3_weak["items"][0]["pass_b"]["actual_difficulty"] = "D3"
+    d3_weak["items"][0]["pass_b"]["reasoning_steps"] = 1
+    assert mod.analyze(d3_weak)["status"] == "PASS"
+    d3_weak["items"][0]["pass_b"]["immediate_elimination_count"] = 3
+    assert "D3_SHORT" in codes(mod.analyze(d3_weak))
+    d3_weak["items"][0]["pass_b"]["immediate_elimination_count"] = 1
+    d3_weak["items"][0]["pass_b"]["option_judgments"][0]["competitiveness"] = "MEDIUM"
+    d3_weak["items"][0]["pass_b"]["option_judgments"][1]["competitiveness"] = "MEDIUM"
+    assert "D3_SHORT" in codes(mod.analyze(d3_weak))
+
     korean = base_payload("KOR")
     korean["items"][0]["stem_polarity"] = "POSITIVE"
     korean["items"][0]["pass_b"]["option_judgments"][1]["verdict"] = "FALSE"

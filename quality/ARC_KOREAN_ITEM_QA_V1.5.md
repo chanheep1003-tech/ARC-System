@@ -107,6 +107,15 @@ D4/D5:
 
 Any item whose correct answer is obvious before evidence comparison must be REVISE regardless of nominal difficulty score.
 
+### 2-C. 영역별 D3/D4 최소 추론 연산 및 <보기>/선지 검증 게이트 — HARD RULE
+1. **STRAWMAN_DISTRACTOR_BAN**: 5지선다 문장형 선지의 전반부에 원문·자료에 없는 허구 행동/사건(`무장 투쟁`, `격렬한 대화` 등)을 날조한 선지는 `STRONG_DISTRACTOR`로 인정하지 않으며 2단 결합(`TRUE_KERNEL + LOCAL_DISTORTION`)으로 재작성한다.
+2. **VIEW_REMOVAL_NECESSITY_TEST**: `<보기>` 문항에서 `<보기>`를 제거해도 본문이나 상식만으로 정답이 유일하게 결정되면 `FAKE_D3_D4` / `SHALLOW_VIEW_BOX`로 FAIL 처리한다.
+3. **영역별 D3/D4 최소 인지 연산(서로 다른 단계 결합 필수)**:
+   - **문학**: `[표현·시어·이미지 확인] -> [화자 시선/관찰 vs 추측('-ㄴ 것이다' 등) 층위 구분] -> [정서·주제 기능 판별]`
+   - **독서**: `[개념 A·B 공통 전제 확인] -> [단계·조건 변화에 따른 분기 확인] -> [사례 (가)·(나) 교차 평가]`
+   - **문법(중세국어·맞춤법)**: `[어절 형태소 경계 분석(어간·체언 + 조사·어미·접사)] -> [음운 환경(모음조화·연철/분철·어두자음군·성조) 대조] -> [조항·원리 판별]`
+4. **D3/D4 공통 최소 요건**: D4/D5는 2단계 이상 실질 추론 + `STRONG` 오답 2개 이상 + 즉시 소거 2개 이하가 필수다(D3+는 `STRONG` 오답 및 1차 후보군 3개 이상 확보).
+
 ### Set-level
 20+ item set:
 - D3+ obvious-answer items = 0

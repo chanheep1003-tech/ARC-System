@@ -250,6 +250,18 @@ A STRONG_DISTRACTOR must satisfy all:
 4. EVIDENCE_REFUTABLE: the decisive flaw can be rejected with an exact source span / relation
 5. STYLE_PARITY: similar granularity, specificity and linguistic naturalness to the correct option
 
+### 7-1A. KOR_CHOICE_ARCHITECTURE_2PART & STRAWMAN BAN — HARD RULE
+모든 5지선다 문장형 선지(단답·기호 조합·분류표 제외)는 반드시 다음 2단 결합 구조를 따른다:
+- `[1부: 원문·자료(<보기>·표·도식)에서 실제로 확인되는 참인 표지/시어/개념/형태소 (TRUE_KERNEL)]`
+- `+ [2부: 이를 해석·적용·추론한 판단 (CLAIM)]`
+원문에 전혀 근거가 없는 허구 사건이나 과격한 행동(`격렬한 대화`, `무장 투쟁`, `상급 학교 진학`, `스스로 조롱` 등)을 1부부터 날조하는 `STRAWMAN_FABRICATION`은 전면 금지한다. 오답은 1부(관찰·시어·개념·형태소)가 참이어서 학생을 유인한 뒤, 2부(효과·추론·적용 조건·조항 연결)에서 정확히 반박되어야 한다.
+
+### 7-1B. KOR_OPTION_PROSE_SYMMETRY — HARD RULE
+한 문항 안의 5개 서술형 선지는 문체와 길이에서 정답 단서를 주지 않아야 한다:
+- 동일한 통사 골격과 일관된 종결 어미 계열(`~고 있다`/`~는다`, `~이군`, `~할 것이다`)을 유지한다.
+- 공백 제외 글자 수 기준 `최단 선지 / 중앙값 >= 0.72` (문장형 기준) 및 `정답 / 중앙값 <= 1.25`를 유지한다.
+- 한 선지만 장문의 모범 해설문으로 쓰고 나머지 4개를 단문 라벨로 두는 `PROSE_ASYMMETRY`는 REVISE.
+
 Preferred distortion classes:
 - FACT_TO_INFERENCE_UPGRADE
 - INFERENCE_TO_FACT_DOWNGRADE
@@ -516,6 +528,14 @@ AI-like generation 방지:
 - 오답은 실제 학생의 부분 이해를 반영하되 한두 근거 차이로 탈락하게 한다.
 - 한 문항 안에서 정답/오답의 정보밀도와 문체를 비슷하게 맞춘다.
 - 정답만 조심스럽고 복합적인 문장, 오답만 과격한 문장인 패턴을 금지한다.
+
+### 12-A. KOR_VIEW_BOX_3_MODES (<보기> 3대 설계 아키텍처) — HARD RULE
+`<보기>`가 단순 작품 요약·줄거리 안내에 머물러 `<보기>` 없이도 풀리는 `VIEW_INDEPENDENT_SOLVE`를 막기 위해, 국어 `<보기>` 문항은 반드시 아래 3대 모드 중 하나로 설계한다:
+- **Mode A (외재적 분석 개념 틀)**: 대비적 상관물, 관찰과 추론의 서술 층위 분리, 음운 환경 대립 등 작품/자료를 해석하는 명시적 개념 기준을 부여한다.
+- **Mode B (타 작품·낯선 용례 비교)**: 동일 갈래의 다른 작품이나 낯선 현대어/중세국어 용례를 제시해 공통 기준과 차이 조건을 판별하게 한다.
+- **Mode C (조건 변형·딜레마 사례 적용)**: 비문학 논지나 문법 규칙을 변형된 조건·구체 사례 `(가)`/`(나)`에 적용해 판단 분기를 묻는다.
+
+모든 `<보기>` 문항은 정답과 `STRONG` 오답의 판정 근거에 `VIEW` 근거와 `PASSAGE`/`TABLE`/`FIGURE` 근거가 동시에 결합(`CROSS_EVIDENCE_REQUIRED`)되어야 한다. `<보기>`를 가렸을 때 본문 1문장이나 상식만으로 정답이 확정되면 즉시 재설계한다.
 
 세트 생성 후 executable Korean Exam Realism Gate에 필요한 counts payload를 작성한다.
 KOR_EXAM_REALISM_GATE=PASS 전에는 CONTENT_LOCK 금지.

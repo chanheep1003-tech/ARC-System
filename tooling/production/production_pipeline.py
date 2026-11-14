@@ -75,7 +75,8 @@ ITEM_LOCAL_REF = re.compile(r"STEM|VIEW|PASSAGE|TABLE|FIGURE|OPTION[1-5]|SCOPE:\
 RARE_FAMILIES = {"COUNTERFACTUAL_DELETE_REPLACE", "MICRO_REFERENCE_TRACE", "META_READING_STRATEGY"}
 # Internal QA vocabulary that must never reach student text.
 LEAK_TERMS = ["판단축", "정답 후보", "추론 단계", "검토 절차", "매력적인 오답", "오답 선지", "2순위", "second-best",
-              "true kernel", "distractor", "reasoning axis", "evidence span", "QA", "난도", "D1", "D2", "D3", "D4", "D5"]
+              "true kernel", "distractor", "reasoning axis", "evidence span", "QA", "난도", "D1", "D2", "D3", "D4", "D5",
+              "진리값", "오답 유인", "표면 힌트", "소거법"]
 # Generic AI-exam phrasing the Korean realism gate forbids.
 AI_PHRASES = ["종합적으로 고려하면", "정확한 근거를 바탕으로", "판단 기준에 따라", "다각도로", "총체적으로"]
 PROFILES = {
@@ -528,13 +529,23 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
                 hard = k in {"D1", "D45", "ADVANCED"}
                 add(f"BALANCE_{k}_OUT_OF_RANGE", "FAIL" if hard else "WARN", share=round(shares[k], 3), target=[lo, hi])
 
+    item_realism = realism_gate.inspect_items_realism(items)
+    for hit in item_realism["strawman_items"]:
+        add("AI_STYLE_PHRASE", item=hit["item_id"], phrases=hit["markers"])
+    unanchored_meta_stems = sum(
+        1 for it in items
+        if any(re.search(rf"(?<![A-Za-z]){re.escape(t)}(?![A-Za-z0-9])", str(it.get("stem", ""))) for t in LEAK_TERMS)
+    )
+
     realism = realism_gate.analyze({"product_mode": bundle["product_mode"], "item_count": n, "counts": {
         "school_task_family_count": sum(f in families for f in fams),
-        "unanchored_meta_task_count": 0,
+        "unanchored_meta_task_count": unanchored_meta_stems,
         "rare_artificial_task_count": sum(f in RARE_FAMILIES for f in fams),
         "distinct_school_task_families": len({f for f in fams if f in families}),
         "unfunctional_student_wrapper_count": 0,
         "ai_choice_pattern_count": len(ai_hits),
+        "strawman_choice_count": item_realism["strawman_choice_count"],
+        "option_length_asymmetry_count": item_realism["option_length_asymmetry_count"],
         "correct_length_cue_count": sum(1 for f in findings if f["code"] == "CORRECT_LENGTH_CUE"),
         "same_stem_skeleton_max_run": best_run,
     }})
