@@ -25,7 +25,7 @@ if [ -n "$SUDO" ] || [ "$(id -u)" -eq 0 ]; then
   for attempt in 1 2 3; do
     have_nanum && have_cjk && break
     $SUDO apt-get update -q -o Acquire::Retries=3 >/dev/null 2>&1
-    $SUDO apt-get install -y -q -o Acquire::Retries=3 -o DPkg::Lock::Timeout=60 fonts-nanum fonts-wqy-zenhei >/dev/null 2>&1 && break
+    $SUDO apt-get install -y -q -o Acquire::Retries=3 -o DPkg::Lock::Timeout=60 fonts-nanum fonts-wqy-zenhei fonts-noto-cjk >/dev/null 2>&1 && break
     echo "apt attempt $attempt failed"; sleep $((attempt * 10))
   done
 fi

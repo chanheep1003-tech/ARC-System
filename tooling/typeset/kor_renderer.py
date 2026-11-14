@@ -29,6 +29,13 @@ COL_W = (A4_W - ML - MR - GUT) / 2
 _ACTIVE_SUBJECT: str | None = None
 _MIDDLE_KOREAN_RE = re.compile(r"[\u1100-\u11ff\u302e\u302f\u3165-\u318e\ua960-\ua97c\ud7b0-\ud7fb\ue000-\uf8ff]")
 _SHAPED_JAMO_RE = re.compile(r"[\u1100-\u11ff\u302e\u302f\ua960-\ua97c\ud7b0-\ud7fb]")
+# One Old Hangul syllable written with conjoining jamo (initial + medial + optional final).
+_JAMO_SYLLABLE_RE = re.compile(r"[\u1100-\u115f\ua960-\ua97c]+[\u1160-\u11a7\ud7b0-\ud7c6]+[\u11a8-\u11ff\ud7cb-\ud7fb]*")
+
+
+def _measure_text(t: str) -> str:
+    """Width proxy for shaped Old Hangul: a composed jamo syllable occupies one Hangul syllable cell."""
+    return _JAMO_SYLLABLE_RE.sub("가", t)
 _OPTIONAL_CENTERED_DOT: dict[str, Path] = {}
 
 
@@ -119,6 +126,23 @@ def fallback_file() -> Path | None:
     return next((p for p in FALLBACK_FILES if p.is_file()), None)
 
 
+# Old Hangul (옛한글) needs a font whose GSUB composes conjoining jamo (ljmo/vjmo/tjmo).
+# HANDotum and Noto/Source Han CJK do; NanumGothic does not and prints the jamo apart.
+_MK_SHAPING_FILES = {
+    "R": [Path("/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"),
+          Path("/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc")],
+    "B": [Path("/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc"),
+          Path("/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc")],
+}
+
+
+def _jamo_shaping_file(key: str, body: Path | None) -> Path | None:
+    if body is not None and body.name.upper().startswith("HAN"):
+        return body
+    weight = "B" if key in {"B", "GB", "CB"} else "R"
+    return next((p for p in _MK_SHAPING_FILES[weight] if p.is_file()), body)
+
+
 def fonts() -> dict[str, fitz.Font]:
     global FONT_FILES
     FONT_FILES = _resolve_font_files()
@@ -179,6 +203,8 @@ def runs(text: str, key: str) -> list[tuple[str, str]]:
             ck = "CB" if key in ("B", "GB") else "C"
             if ck in _FONTS and _FONTS[ck].has_glyph(0x318D):
                 k = ck + ul
+        elif _SHAPED_JAMO_RE.match(ch) and _jamo_shaping_file(key, None) is not None:
+            pass  # drawn by the jamo-shaping font in put(); splitting would break the syllable
         elif not ch.isspace() and not _FONTS[key].has_glyph(ord(ch)):
             if key in ("GB", "B") and "B" in _FONTS and _FONTS["B"].has_glyph(ord(ch)):
                 k = "B" + ul
@@ -211,13 +237,13 @@ def put(page: fitz.Page, pos, text: str, fontname: str = "R", fontsize: float | 
         fp = FONT_FILES.get(k) or _OPTIONAL_CENTERED_DOT.get(k) or fallback_file()
         dy = SCRIPT_SHIFT.get(rk[-1], 0.0) * fontsize
         if _SHAPED_JAMO_RE.search(t) and fp is not None:
-            _insert_shaped_run(page, x, y + dy, t, fp, size, color)
+            _insert_shaped_run(page, x, y + dy, t, _jamo_shaping_file(k, fp), size, color)
         else:
             if k not in {f[4] for f in page.get_fonts()}:  # embed only fonts a page actually uses (unused fonts are not subset)
                 page.insert_font(fontname=k, fontfile=str(fp))
             kw = {"color": color} if color is not None else {}
             page.insert_text((x, y + dy), t, fontname=k, fontsize=size, **kw)
-        adv = _FONTS[k].text_length(t, fontsize=size)
+        adv = _FONTS[k].text_length(_measure_text(t), fontsize=size)
         if "~" in rk:
             page.draw_line((x, y + 1.6), (x + adv, y + 1.6), width=0.55)
         x += adv
@@ -229,7 +255,7 @@ class Layout:
 
     def width(self, text: str, key: str = "R", size: float | None = None) -> float:
         size = SIZE if size is None else size
-        return sum(self.f[base_key(k)].text_length(t, fontsize=run_size(k, size)) for k, t in runs(text, key))
+        return sum(self.f[base_key(k)].text_length(_measure_text(t), fontsize=run_size(k, size)) for k, t in runs(text, key))
 
     def wrap(self, text: str, w: float, key: str = "R", size: float | None = None, first: float = 0.0, rest: float = 0.0):
         size = SIZE if size is None else size
