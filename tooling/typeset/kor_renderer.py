@@ -14,6 +14,7 @@ line by line. Content is rendered exactly as given; this module never edits it.
 from __future__ import annotations
 
 import hashlib
+import html
 import os
 import re
 from pathlib import Path
@@ -27,6 +28,8 @@ GUT = 20.0
 COL_W = (A4_W - ML - MR - GUT) / 2
 _ACTIVE_SUBJECT: str | None = None
 _MIDDLE_KOREAN_RE = re.compile(r"[\u1100-\u11ff\u302e\u302f\u3165-\u318e\ua960-\ua97c\ud7b0-\ud7fb\ue000-\uf8ff]")
+_SHAPED_JAMO_RE = re.compile(r"[\u1100-\u11ff\u302e\u302f\ua960-\ua97c\ud7b0-\ud7fb]")
+_OPTIONAL_CENTERED_DOT: dict[str, Path] = {}
 
 
 def _first_existing(candidates: list[Path]) -> Path:
@@ -76,6 +79,11 @@ def _resolve_font_files(subject: str | None = None) -> dict[str, Path]:
         Path("C:/Windows/Fonts/KoPub Dotum Bold.ttf"),
         *bold_candidates,
     ]
+    _OPTIONAL_CENTERED_DOT.clear()
+    for dot_key, dot_cands in (("C", santteut_reg), ("CB", santteut_bold)):
+        hit = next((p for p in dot_cands if p.is_file()), None)
+        if hit is not None:
+            _OPTIONAL_CENTERED_DOT[dot_key] = hit
     return {
         "R": _first_existing(reg_candidates),
         "B": _first_existing(bold_candidates),
@@ -118,6 +126,8 @@ def fonts() -> dict[str, fitz.Font]:
     if missing:
         raise RenderError("KOREAN_FONT_MISSING: " + ", ".join(missing) + " (install fonts-nanum or Korean Gothic fonts)")
     out = {k: fitz.Font(fontfile=str(v)) for k, v in FONT_FILES.items()}
+    for dk, dp in _OPTIONAL_CENTERED_DOT.items():
+        out[dk] = fitz.Font(fontfile=str(dp))
     fb = fallback_file()
     if fb:
         out["H"] = fitz.Font(fontfile=str(fb))
@@ -165,6 +175,10 @@ def runs(text: str, key: str) -> list[tuple[str, str]]:
             ch, k = SUPERSCRIPTS[ch], key + ul + "^"
         elif ch in SUBSCRIPTS:
             ch, k = SUBSCRIPTS[ch], key + ul + "_"
+        elif ch == "\u318d":
+            ck = "CB" if key in ("B", "GB") else "C"
+            if ck in _FONTS and _FONTS[ck].has_glyph(0x318D):
+                k = ck + ul
         elif not ch.isspace() and not _FONTS[key].has_glyph(ord(ch)):
             if key in ("GB", "B") and "B" in _FONTS and _FONTS["B"].has_glyph(ord(ch)):
                 k = "B" + ul
@@ -179,16 +193,30 @@ def runs(text: str, key: str) -> list[tuple[str, str]]:
     return out
 
 
+def _insert_shaped_run(page: fitz.Page, x: float, y: float, text: str, font_path: Path, size: float, color) -> None:
+    rgb = "rgb(0,0,0)" if color is None else f"rgb({int(round(color[0]*255))},{int(round(color[1]*255))},{int(round(color[2]*255))})"
+    css = (
+        f'@font-face{{font-family:ArcMK;src:url("{font_path.as_posix()}");}}'
+        f"body{{font-family:ArcMK;font-size:{size}pt;line-height:1;margin:0;padding:0;color:{rgb};white-space:pre;}}"
+    )
+    rect = fitz.Rect(x, y - 0.80 * size, x + 800.0, y + 0.60 * size)
+    page.insert_htmlbox(rect, f"<span>{html.escape(text)}</span>", css=css)
+
+
 def put(page: fitz.Page, pos, text: str, fontname: str = "R", fontsize: float | None = None, color=None) -> None:
     fontsize = SIZE if fontsize is None else fontsize
     x, y = pos
     for rk, t in runs(text, fontname):
         k, size = base_key(rk), run_size(rk, fontsize)
-        if k not in {f[4] for f in page.get_fonts()}:  # embed only fonts a page actually uses (unused fonts are not subset)
-            page.insert_font(fontname=k, fontfile=str(FONT_FILES.get(k) or fallback_file()))
-        kw = {"color": color} if color is not None else {}
+        fp = FONT_FILES.get(k) or _OPTIONAL_CENTERED_DOT.get(k) or fallback_file()
         dy = SCRIPT_SHIFT.get(rk[-1], 0.0) * fontsize
-        page.insert_text((x, y + dy), t, fontname=k, fontsize=size, **kw)
+        if _SHAPED_JAMO_RE.search(t) and fp is not None:
+            _insert_shaped_run(page, x, y + dy, t, fp, size, color)
+        else:
+            if k not in {f[4] for f in page.get_fonts()}:  # embed only fonts a page actually uses (unused fonts are not subset)
+                page.insert_font(fontname=k, fontfile=str(fp))
+            kw = {"color": color} if color is not None else {}
+            page.insert_text((x, y + dy), t, fontname=k, fontsize=size, **kw)
         adv = _FONTS[k].text_length(t, fontsize=size)
         if "~" in rk:
             page.draw_line((x, y + 1.6), (x + adv, y + 1.6), width=0.55)

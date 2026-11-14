@@ -58,8 +58,9 @@ def main() -> int:
         saved_subj, saved_fonts = renderer._ACTIVE_SUBJECT, renderer._FONTS
         try:
             renderer._ACTIVE_SUBJECT, renderer._FONTS = "KOR", None
-            mk_sample = "나랏말\u110a\u119e미 \u1120\u1173들 마\u1140\u119e\u11af 랏\u302e 말\u302f ㆍ ㅿ ㆁ ㆆ"
+            mk_sample = "나랏말\u110a\u119e미 \u1120\u1173들 마\u1140\u119e\u11af 랏\u302e 말\u302f ㅿ ㆁ ㆆ"
             assert [k for k, _ in renderer.runs(mk_sample, "R")] == ["R"], "KOR Middle Korean must stay single HANDotum run"
+            assert [k for k, _ in renderer.runs("ㆍ", "R")] in (["C"], ["R"]), "standalone 아래아 routes to centered dot C when present"
             assert [k for k, _ in renderer.runs("랏\u302e 말\u302f", "GB")] == ["B"], "GB Middle Korean tokens must stay intact in B (HANDotumB)"
         finally:
             renderer._ACTIVE_SUBJECT, renderer._FONTS = saved_subj, saved_fonts

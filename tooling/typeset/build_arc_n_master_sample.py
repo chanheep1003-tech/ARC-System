@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import html
 import os
 import re
 import shutil
@@ -63,12 +64,15 @@ class CanvaFontKit:
     """Modern Korean Gothic font kit matching Canva DAHaz5b2kK0 editorial tone."""
 
     _MK_RE = re.compile(r"[\u1100-\u11ff\u302e\u302f\u3165-\u318e\ua960-\ua97c\ud7b0-\ud7fb\ue000-\uf8ff]")
+    _SHAPED_JAMO_RE = re.compile(r"[\u1100-\u11ff\u302e\u302f\ua960-\ua97c\ud7b0-\ud7fb]")
 
     FONT_NAMES = {
         "B_R": "CanvaSansReg",
         "B_B": "CanvaSansBold",
         "G_B": "CanvaKoPubBold",
         "G_R": "CanvaDotumFallback",
+        "C_R": "CanvaDotCenteredReg",
+        "C_B": "CanvaDotCenteredBold",
     }
 
     def __init__(self, profile: str = "DEFAULT") -> None:
@@ -113,6 +117,14 @@ class CanvaFontKit:
                     break
             if key not in self.paths:
                 raise RuntimeError(f"REQUIRED_FONT_MISSING ({key}): tried {cands}")
+        # Optional centered standalone 아래아 (U+318D) font so it never sits bottom-left in HANDotum.
+        for ckey, fname in (("C_R", "HanSantteutDotum-Regular.ttf"), ("C_B", "HanSantteutDotum-Bold.ttf")):
+            for d in dirs:
+                p = d / fname
+                if p.is_file():
+                    self.paths[ckey] = p
+                    self.fonts[ckey] = fitz.Font(fontfile=str(p))
+                    break
 
     def register(self, page: fitz.Page) -> None:
         return  # Lazy-registered in put() so unused fallback fonts are not embedded whole
@@ -127,7 +139,11 @@ class CanvaFontKit:
         out: list[tuple[str, str]] = []
         for ch in text:
             use_k = key
-            if not ch.isspace() and not primary.has_glyph(ord(ch)):
+            if ch == "\u318d":
+                ck = "C_B" if key in ("B_B", "G_B") else "C_R"
+                if ck in self.fonts and self.fonts[ck].has_glyph(0x318D):
+                    use_k = ck
+            elif not ch.isspace() and not primary.has_glyph(ord(ch)):
                 for fk in fallback_order:
                     if self.fonts[fk].has_glyph(ord(ch)):
                         use_k = fk
@@ -152,14 +168,21 @@ class CanvaFontKit:
         color: tuple[float, float, float] = BLACK,
     ) -> float:
         existing = {f[4] for f in page.get_fonts()}
-        for rk, _ in self.runs(text, key):
-            fname = self.FONT_NAMES[rk]
-            if fname not in existing:
-                page.insert_font(fontname=fname, fontfile=str(self.paths[rk]))
-                existing.add(fname)
         cur_x = x
         for rk, rtxt in self.runs(text, key):
-            page.insert_text(fitz.Point(cur_x, y), rtxt, fontname=self.FONT_NAMES[rk], fontsize=fontsize, color=color)
+            if self._SHAPED_JAMO_RE.search(rtxt):
+                rgb = f"rgb({int(round(color[0]*255))},{int(round(color[1]*255))},{int(round(color[2]*255))})"
+                css = (
+                    f'@font-face{{font-family:CanvaMK;src:url("{self.paths[rk].as_posix()}");}}'
+                    f"body{{font-family:CanvaMK;font-size:{fontsize}pt;line-height:1;margin:0;padding:0;color:{rgb};white-space:pre;}}"
+                )
+                page.insert_htmlbox(fitz.Rect(cur_x, y - 0.80 * fontsize, cur_x + 800.0, y + 0.60 * fontsize), f"<span>{html.escape(rtxt)}</span>", css=css)
+            else:
+                fname = self.FONT_NAMES[rk]
+                if fname not in existing:
+                    page.insert_font(fontname=fname, fontfile=str(self.paths[rk]))
+                    existing.add(fname)
+                page.insert_text(fitz.Point(cur_x, y), rtxt, fontname=fname, fontsize=fontsize, color=color)
             cur_x += self.fonts[rk].text_length(rtxt, fontsize=fontsize)
         return cur_x
 
