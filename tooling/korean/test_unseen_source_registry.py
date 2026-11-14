@@ -20,7 +20,7 @@ def test_dynamic_source_policy() -> None:
     assert runtime["korean_dynamic_source_selection_policy"] == policy_path
     assert runtime["korean_unseen_sources_selected_per_item"] == "required"
     assert runtime["korean_fixed_candidate_pool"] == "forbidden"
-    assert runtime["korean_learning_level_policy"] == "quality/korean/ARC_KOR_LEVEL_POLICY_V2.0.md"
+    assert runtime["korean_learning_level_policy"] == "quality/korean/ARC_KOR_LEVEL_POLICY_V2.1.md"
     assert "learning_level_policy" not in runtime
     assert "korean_unseen_source_registry" not in runtime
     assert all(not k.startswith("learning_level_v") for k in runtime)
@@ -55,9 +55,9 @@ def test_dynamic_source_policy() -> None:
     assert "DEPRECATED AS UNIVERSAL" in older
     policy = (ROOT / runtime["korean_learning_level_policy"]).read_text(encoding="utf-8")
     assert "KOR ONLY" in policy
-    assert all(x in policy for x in ("문학", "비문학", "문법", "기본(L1)", "표준(L2)", "심화(L3)"))
+    assert all(x in policy for x in ("문학", "비문학", "문법", "기본(L1)", "표준(L2)", "심화(L3)", "최상위(L4)"))
     # 2026-11-14: V1–V6 ladder replaced by difficulty levels; FINAL is a product, orthography a topic module.
-    assert runtime["korean_levels"] == {"L1": "ARC_N_BASIC", "L2": "ARC_N_STANDARD", "L3": "ARC_N_ADVANCED"}
+    assert runtime["korean_levels"] == {"L1": "ARC_N_BASIC", "L2": "ARC_N_STANDARD", "L3": "ARC_N_ADVANCED", "L4": "ARC_N_TOP"}
     assert runtime["korean_final_product"] == "ARC_FINAL_DONGBUK_SIMULATION"
     assert runtime["korean_orthography_module"] == "ARC_N_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY"
     assert not any(k.startswith("korean_learning_level_v") for k in runtime)
@@ -141,7 +141,7 @@ def test_grade1_exam_inventory() -> None:
 def main() -> None:
     test_dynamic_source_policy()
     test_grade1_exam_inventory()
-    print("PASS: KOR levels L1-L3 + orthography module + per-item sources + 3 verified papers + 7-subject archive")
+    print("PASS: KOR levels L1-L4 + orthography module + per-item sources + 3 verified papers + 7-subject archive")
 
 if __name__ == "__main__":
     main()

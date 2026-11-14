@@ -40,11 +40,12 @@ runtime:
     - ARC_N
     - ARC_FINAL
   # KOR-only; other subjects keep their own active engines and scopes
-  korean_learning_level_policy: quality/korean/ARC_KOR_LEVEL_POLICY_V2.0.md
+  korean_learning_level_policy: quality/korean/ARC_KOR_LEVEL_POLICY_V2.1.md
   korean_levels:            # V1–V6 사다리 폐지(2026-11-14). 단계는 난도 분포만 정한다
     L1: ARC_N_BASIC          # 기본
     L2: ARC_N_STANDARD       # 표준 (기본값)
     L3: ARC_N_ADVANCED       # 심화
+    L4: ARC_N_TOP            # 최상위
   korean_final_product: ARC_FINAL_DONGBUK_SIMULATION   # 옛 V5
   korean_orthography_module: ARC_N_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY   # 옛 V6. 아래 korean_v6_* 키는 이 모듈의 설정(이름은 호환용)
   difficulty_transfer_rule: quality/ARC_EXAMINER_LENS_V1.3.md   # 전 과목: D4 추론·심화, D5 심화

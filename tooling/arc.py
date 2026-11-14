@@ -224,7 +224,7 @@ def files_to_load(manifest: dict, subject: str, product: str) -> list[tuple[str,
     if subject == "KOR":
         out += [("국어 문항 엔진", active["korean_item_engine"]["path"]),
                 ("국어 문항 QA", quality["korean_item_qa"]),
-                ("국어 난도 단계 정책(기본·표준·심화)", runtime["korean_learning_level_policy"]),
+                ("국어 난도 단계 정책(기본·표준·심화·최상위)", runtime["korean_learning_level_policy"]),
                 ("국어 실전성 게이트", quality["korean_exam_realism_gate"]),
                 ("중세국어 모듈(해당 범위 요청 시에만)", runtime.get("korean_middle_korean_policy", ""))]
     if subject == "ENG":
@@ -349,10 +349,10 @@ def previous_kor_level(scope: str) -> str | None:
         text = f"{rec.get('run_id', '')} {rec.get('target_range', '')}"
         if not any(word and word in text for word in scope.split()):
             continue
-        match = re.search(r"(?<![A-Za-z])L([1-3])(?!\d)", text) or re.search(r"(?<![A-Za-z])V([1-4])(?!\d)", text)
+        match = re.search(r"(?<![A-Za-z])L([1-4])(?!\d)", text) or re.search(r"(?<![A-Za-z])V([1-4])(?!\d)", text)
         if match:
             tag = match.group(0)
-            found = tag if tag.startswith("L") else {"V1": "L1", "V2": "L2", "V3": "L2", "V4": "L3"}[tag]
+            found = tag if tag.startswith("L") else {"V1": "L1", "V2": "L2", "V3": "L3", "V4": "L4"}[tag]
     return found
 
 
@@ -378,11 +378,11 @@ def build_plan(subject: str, product: str, scope: str, count: int | None, versio
                 raise SystemExit("V5는 ARC FINAL입니다. --product ARC_FINAL로 요청하세요.")
             level = asked if asked in levels else aliases.get(asked)
             if level is None:
-                raise SystemExit(f"국어 단계는 기본/표준/심화 또는 L1~L3입니다 (받은 값: {version}).")
+                raise SystemExit(f"국어 단계는 기본/표준/심화/최상위 또는 L1~L4입니다 (받은 값: {version}).")
             reasons.append(f"단계 지정 {version}" + (f" → {level}" if level != asked else ""))
         else:
             prev = previous_kor_level(scope)
-            level = "L2" if prev is None else f"L{min(3, int(prev[1]) + 1)}"
+            level = "L2" if prev is None else f"L{min(len(levels), int(prev[1]) + 1)}"
             reasons.append("단계 미지정·같은 범위 기록 없음 → 표준(L2)" if prev is None else f"직전 {prev} → {level}")
         if grammar:
             reasons.append("맞춤법·띄어쓰기 범위 → 맞춤법 주제 모듈 + 문법 원형 함께 적용")
@@ -811,7 +811,7 @@ def main(argv=None) -> int:
     p.add_argument("--product", default="ARC_N", choices=PRODUCTS)
     p.add_argument("--scope", required=True)
     p.add_argument("--count", type=int)
-    p.add_argument("--level", "--version", dest="version", help="국어 ARC N° 단계: 기본/표준/심화 또는 L1~L3 (옛 V1~V4·V6도 받아서 바꿈)")
+    p.add_argument("--level", "--version", dest="version", help="국어 ARC N° 단계: 기본/표준/심화/최상위 또는 L1~L4 (옛 V1~V4·V6도 받아서 바꿈)")
     p.add_argument("--save", help="계획을 YAML로 저장할 경로")
     p.set_defaults(func=cmd_plan)
 
@@ -819,7 +819,7 @@ def main(argv=None) -> int:
     p.add_argument("--subject", required=True, choices=sorted(SUBJECTS))
     p.add_argument("--product", default="ARC_N", choices=PRODUCTS)
     p.add_argument("--scope", required=True)
-    p.add_argument("--level", "--version", dest="level", help="국어 ARC N° 단계 표시: 기본/표준/심화 또는 L1~L3")
+    p.add_argument("--level", "--version", dest="level", help="국어 ARC N° 단계 표시: 기본/표준/심화/최상위 또는 L1~L4")
     p.add_argument("--actor", default="CLAUDE", help="생성 모델 식별자 (GEMINI / CLAUDE / GPT)")
     p.add_argument("--batch-id")
     p.add_argument("--out", help="번들 생성 폴더 경로")

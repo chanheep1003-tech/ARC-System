@@ -13,7 +13,7 @@ python tooling/arc.py doctor && python tooling/arc.py status
 ```
 
 1. `AGENTS.md` → `ARC_MAP.md` → `SYSTEM_MANIFEST.yaml` → 맡은 과목의 `entry/<과목>.md` 하나만 읽는다.
-2. 문항을 만들거나 검토한다면 `quality/ARC_EXAMINER_LENS_V1.3.md`를 처음부터 끝까지 읽는다(이 문서 §3·§10이 요약). 국어는 `quality/korean/ARC_KOR_LEVEL_POLICY_V2.0.md`도.
+2. 문항을 만들거나 검토한다면 `quality/ARC_EXAMINER_LENS_V1.3.md`를 처음부터 끝까지 읽는다(이 문서 §3·§10이 요약). 국어는 `quality/korean/ARC_KOR_LEVEL_POLICY_V2.1.md`(4단계)도.
 3. Middle Korean(중세 국어)은 사용자가 명시했을 때만 `subjects/KOREAN_MIDDLE_KOREAN_QUALITY_RULES_V1.0.md`를 읽는다.
 4. Old Hangul이 들어간 PDF를 만든다면 폰트를 먼저 확인한다(§6 참고): `fc-list | grep -i -E "hando|noto.*cjk"`.
 
@@ -95,7 +95,7 @@ quality/production/    ← 문항 번들(items.yaml)
 
 ```bash
 # 1) 계획 카드 (사용자 지정값은 그대로, 빠진 값만 기본값)
-python tooling/arc.py plan --subject KOR --scope "3단원 중세국어 + 한글 맞춤법" --count 10 --level 표준   # 기본|표준|심화, 생략 시 표준
+python tooling/arc.py plan --subject KOR --scope "3단원 중세국어 + 한글 맞춤법" --count 10 --level 표준   # 기본|표준|심화|최상위, 생략 시 표준
 
 # 2) 번들 뼈대 — examiner_lens: V1.3 필드가 기본으로 들어감
 python tooling/arc.py scaffold --subject KOR --product ARC_N --scope "…" --actor CLAUDE --out quality/production/<번들>
@@ -185,16 +185,19 @@ python tooling/arc.py checksums && python tooling/arc.py ci
 
 ## 10. 추가 변경 (같은 날 후반): 국어 단계 통합 + 출제자 시선 V1.3
 
-사용자 지시: "국어 버전을 나누지 말고 통합해서 난이도로 나누자. 어려운 문제일수록 심화·추론 문제로." 그리고 (1) 난도↔유형 연결을 영어·사회·과학에도 적용, (2) 단계 이름은 기본/표준/심화와 L1~L3을 함께.
+사용자 지시: "국어 버전을 나누지 말고 통합해서 난이도로 나누자. 어려운 문제일수록 심화·추론 문제로." 그리고 (1) 난도↔유형 연결을 영어·사회·과학에도 적용, (2) 단계 이름은 기본/표준/심화와 L1~L3을 함께 → 이후 "난이도 4개로" 지시로 최상위(L4) 추가.
 
-**국어 V1–V6 사다리 폐지 → 기본(L1) · 표준(L2) · 심화(L3)** — `quality/korean/ARC_KOR_LEVEL_POLICY_V2.0.md`
+**국어 V1–V6 사다리 폐지 → 기본(L1) · 표준(L2) · 심화(L3) · 최상위(L4)** — `quality/korean/ARC_KOR_LEVEL_POLICY_V2.1.md`
+(처음엔 3단계(V2.0)로 만들었다가 같은 날 사용자 지시 "난이도 4개로"로 4단계(V2.1). V2.0은 archive.)
 | 단계 | D2/D3/D4/D5 | 심화 비율 |
 |---|---|---|
 | 기본(L1) | 40/45/15/0 | 20% |
-| 표준(L2, 기본값) | 25/45/25/5 | 25% |
-| 심화(L3) | 15/50/30/5 | 30% |
-- 옛 이름은 이렇게 읽는다: V1→L1, V2·V3→L2, V4→L3, **V5→ARC FINAL(제품)**, **V6→맞춤법·띄어쓰기 주제 모듈**(범위에 있으면 어느 단계에서나). `korean_v6_*` manifest 키와 `ARC_KOR_V6_*` 파일 이름은 호환 때문에 그대로 두었다.
-- `arc.py plan --level 기본|표준|심화|L1|L2|L3` (옛 `--version V1~V4·V6`도 받아서 바꿈, V5는 오류로 ARC_FINAL 안내). 단계를 말하지 않으면 표준, 같은 범위 RUN_LOG가 있으면 한 단계 위.
+| 표준(L2, 기본값) | 30/45/22/3 | 25% |
+| 심화(L3) | 20/45/30/5 | 28% |
+| 최상위(L4) | 10/55/27/8 | 30% |
+- 생산 게이트 상한(D4+D5 ≤ 35%, 심화 20~30%) 때문에 L3·L4는 D4+D5 합이 같고, **D2를 줄이고 D5를 늘리는 것**으로 구별한다. 더 벌리려면 `production_pipeline.py`의 BALANCE 범위를 함께 바꿔야 한다(사용자 확인 필요).
+- 옛 이름은 이렇게 읽는다: V1→L1, V2→L2, V3→L3, V4→L4, **V5→ARC FINAL(제품)**, **V6→맞춤법·띄어쓰기 주제 모듈**(범위에 있으면 어느 단계에서나). `korean_v6_*` manifest 키와 `ARC_KOR_V6_*` 파일 이름은 호환 때문에 그대로 두었다.
+- `arc.py plan --level 기본|표준|심화|최상위|L1~L4` (옛 `--version V1~V4·V6`도 받아서 바꿈, V5는 오류로 ARC_FINAL 안내). 단계를 말하지 않으면 표준, 같은 범위 RUN_LOG가 있으면 한 단계 위(최대 L4).
 - 계획 기본값: `ops/planning/ARC_PLAN_DEFAULTS_V1.yaml`의 `kor_levels`, `kor_level_aliases`, `difficulty_transfer`.
 
 **출제자 시선 V1.3** — `quality/ARC_EXAMINER_LENS_V1.3.md` §13 (전 과목)
@@ -209,6 +212,6 @@ python tooling/arc.py checksums && python tooling/arc.py ci
 - 영어는 범위 지문의 변형(새 요약문·새 문장·새 문맥)이 새 자료로 인정되므로, 유형 코드를 지키면서 D4 문항을 변형 자료로 만든다.
 - 계획 카드에 `유형` 줄이 생겨 난도별 허용 유형을 보여 준다(전 과목).
 
-**바뀐 파일**: 위 두 정책(신규), 지난 버전 `archive/quality/ARC_EXAMINER_LENS_V1.2.md`, `archive/quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md`, manifest(`korean_levels`, `korean_final_product`, `korean_orthography_module`, `difficulty_transfer_rule`), `arc.py`(plan/scaffold), 계획 기본값, 게이트·회귀 테스트, `entry/*.md`, `ARC_MAP.md`, `AGENTS.md`, `agents/TEAM.md`, 런북·국어 문항 엔진(날짜 붙인 오버라이드 절 추가).
+**바뀐 파일**: 위 두 정책(신규), 지난 버전 `archive/quality/ARC_EXAMINER_LENS_V1.2.md`, `archive/quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md`, `archive/quality/korean/ARC_KOR_LEVEL_POLICY_V2.0.md`, manifest(`korean_levels`, `korean_final_product`, `korean_orthography_module`, `difficulty_transfer_rule`), `arc.py`(plan/scaffold), 계획 기본값, 게이트·회귀 테스트, `entry/*.md`, `ARC_MAP.md`, `AGENTS.md`, `agents/TEAM.md`, 런북·국어 문항 엔진(날짜 붙인 오버라이드 절 추가).
 
 **아직 없는 것**: 이 단계·V1.3 기준으로 새로 만든 문항 세트는 없다. 첫 시범은 사용자 확인 후.

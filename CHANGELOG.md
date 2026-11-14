@@ -1,3 +1,6 @@
+## 1.9.8 — 2026-11-14
+- KOR levels: four instead of three (user directive) — 기본(L1) 40/45/15/0, 표준(L2, default) 30/45/22/3, 심화(L3) 20/45/30/5, 최상위(L4) 10/55/27/8, all inside the production gate bands (D4+D5 ≤ 35%, advanced 20–30%). Policy `quality/korean/ARC_KOR_LEVEL_POLICY_V2.1.md` (V2.0 archived); `--level 최상위|L4`; old V1–V4 map one-to-one to L1–L4.
+
 ## 1.9.7 — 2026-11-14
 - KOR levels (user directive): the V1–V6 ladder is replaced by 기본(L1) / 표준(L2, default) / 심화(L3), which set only the difficulty mix. V5 stays ARC FINAL (a product); V6 becomes the orthography topic module usable at any level. Policy `quality/korean/ARC_KOR_LEVEL_POLICY_V2.0.md`; `arc.py plan --level` (old V-names accepted and mapped); plan defaults `kor_levels`, `kor_level_aliases`, `difficulty_transfer`; manifest `korean_levels`, `korean_final_product`, `korean_orthography_module`.
 - Examiner lens V1.3 (all subjects, user directive "harder items should be inference/extension"): D2 RECALL·APPLY, D3 APPLY·INFER·EXTEND, D4 INFER·EXTEND, D5 EXTEND; gate DIFFICULTY_TRANSFER_MISMATCH; the fixed RECALL/transfer mix is dropped for V1.3. Plan cards show the allowed types per difficulty.

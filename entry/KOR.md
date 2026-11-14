@@ -3,13 +3,13 @@
 경로는 항상 `SYSTEM_MANIFEST.yaml`에서 확인한다. 아래는 2026-11 기준 활성 경로다.
 
 ## 필수 로드
-- 난도 단계 정책: `quality/korean/ARC_KOR_LEVEL_POLICY_V2.0.md` (옛 V1–V6 버전 사다리는 2026-11-14 폐지, `archive/`)
+- 난도 단계 정책: `quality/korean/ARC_KOR_LEVEL_POLICY_V2.1.md` (옛 V1–V6 버전 사다리는 2026-11-14 폐지, `archive/`)
 - 동적 자료 선택: `quality/korean/ARC_KOR_DYNAMIC_SOURCE_SELECTION_V1.0.yaml` (미리 정한 작품 목록 없음)
 - 문법 원형: `quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml` → 게이트 `python tooling/korean/archetype_gate.py <번들>/items.yaml`
 - 과목 MASTER: manifest `subjects` 항목의 KOR 경로
 
 ## 단계 규칙 (국어 전용 단계, 난도↔유형 연결은 전 과목)
-- ARC N°는 **기본(L1) / 표준(L2) / 심화(L3)** 세 단계. 단계는 난도 분포만 정한다. 말하지 않으면 표준(L2). `python tooling/arc.py plan --subject KOR --scope "…" --level 심화`
+- ARC N°는 **기본(L1) / 표준(L2) / 심화(L3) / 최상위(L4)** 네 단계. 단계는 난도 분포만 정한다. 말하지 않으면 표준(L2). `python tooling/arc.py plan --subject KOR --scope "…" --level 심화` (`최상위`, `L1`~`L4`도 가능)
 - **어려운 문항일수록 추론·심화**: D2 확인·적용, D3 적용·추론·심화, D4 추론·심화, D5 심화 (출제자 시선 §13).
 - ARC FINAL은 단계가 아니라 제품(옛 V5).
 - 새 자료는 갈래마다 다르다: 문학은 새 작품 비교, 비문학은 새 개념 설명·비교, 문법은 실제 새 용례(허락되면 노래 가사·시·소설 포함).

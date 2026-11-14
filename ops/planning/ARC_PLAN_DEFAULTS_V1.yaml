@@ -8,14 +8,15 @@ set_split:                # 한 번에 만드는 묶음. 묶음마다 초안→�
   SOC: {unit_selected: 18, unit_constructed: 2}
   SCI: {unit_selected: 18, unit_constructed: 2}
   ENG: {unit_selected: 40, unit_constructed: 10}   # 어휘 15 + 어법 10 + 독해 15 + 서답형 10
-kor_levels:               # 국어 ARC N° 난도 단계. 근거: quality/korean/ARC_KOR_LEVEL_POLICY_V2.0.md (V1–V6 사다리 폐지 2026-11-14)
+kor_levels:               # 국어 ARC N° 난도 단계. 근거: quality/korean/ARC_KOR_LEVEL_POLICY_V2.1.md (V1–V6 사다리 폐지 2026-11-14)
   L1: {name: 기본, goal: 범위 개념을 빠짐없이 확인·적용, difficulty: {D2: 0.40, D3: 0.45, D4: 0.15, D5: 0.00}, advanced: 0.20}
-  L2: {name: 표준, goal: 내신 실전 수준, difficulty: {D2: 0.25, D3: 0.45, D4: 0.25, D5: 0.05}, advanced: 0.25}
-  L3: {name: 심화, goal: 상위권 변별 — 새 자료 추론·심화 비중 최대, difficulty: {D2: 0.15, D3: 0.50, D4: 0.30, D5: 0.05}, advanced: 0.30}
-kor_level_aliases: {기본: L1, 표준: L2, 심화: L3, V1: L1, V2: L2, V3: L2, V4: L3, V6: L2}
+  L2: {name: 표준, goal: 내신 실전 수준, difficulty: {D2: 0.30, D3: 0.45, D4: 0.22, D5: 0.03}, advanced: 0.25}
+  L3: {name: 심화, goal: 상위권 변별 — 새 자료 추론 비중 확대, difficulty: {D2: 0.20, D3: 0.45, D4: 0.30, D5: 0.05}, advanced: 0.28}
+  L4: {name: 최상위, goal: 최상위 변별 — D2 최소, D5(새 조건 + 예외·반례) 최대, difficulty: {D2: 0.10, D3: 0.55, D4: 0.27, D5: 0.08}, advanced: 0.30}
+kor_level_aliases: {기본: L1, 표준: L2, 심화: L3, 최상위: L4, V1: L1, V2: L2, V3: L3, V4: L4, V6: L2}
 kor_level_choice:
-  explicit: 사용자가 단계(기본/표준/심화 또는 L1~L3)를 말하면 그대로. 옛 버전 이름은 kor_level_aliases로 바꾼다
-  otherwise: 같은 범위의 RUN_LOG 기록이 없으면 표준(L2), 있으면 한 단계 위(최대 L3)
+  explicit: 사용자가 단계(기본/표준/심화/최상위 또는 L1~L4)를 말하면 그대로. 옛 버전 이름은 kor_level_aliases로 바꾼다
+  otherwise: 같은 범위의 RUN_LOG 기록이 없으면 표준(L2), 있으면 한 단계 위(최대 L4)
   final_request: ARC FINAL은 단계가 아니라 제품이다(옛 V5)
   orthography: 맞춤법·띄어쓰기 범위는 단계와 상관없이 맞춤법 주제 모듈과 문법 원형 라이브러리를 함께 쓴다
 difficulty_transfer:      # 전 과목. quality/ARC_EXAMINER_LENS_V1.3.md §13
@@ -24,7 +25,7 @@ difficulty_transfer:      # 전 과목. quality/ARC_EXAMINER_LENS_V1.3.md §13
   D3: [APPLY, INFER, EXTEND]
   D4: [INFER, EXTEND]
   D5: [EXTEND]
-other_subjects:           # 단계 3개는 국어 전용. 난도↔유형 연결(difficulty_transfer)은 전 과목
+other_subjects:           # 단계 4개는 국어 전용. 난도↔유형 연결(difficulty_transfer)은 전 과목
   SOC: {difficulty: {D2: 0.30, D3: 0.45, D4: 0.22, D5: 0.03}, advanced: 0.25}
   SCI: {difficulty: {D2: 0.30, D3: 0.45, D4: 0.22, D5: 0.03}, advanced: 0.25}
   ENG: {difficulty: {D2: 0.15, D3: 0.45, D4: 0.30, D5: 0.10}, advanced: 0.30}   # N°는 D3~D5 변형 중심
