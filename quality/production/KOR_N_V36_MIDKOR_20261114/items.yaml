@@ -1,0 +1,2630 @@
+batch_id: KOR-N-V36-MIDKOR-20261114
+product_mode: ARC_N
+subject: KOR
+generator: CLAUDE
+set_label: ARC N° V3·V6
+course: 공통국어2
+cover_subtitle: 중세 국어 · 15세기 문헌 자료 적용 40문항
+cover_lines:
+- 표기와 제자 원리·운용법
+- 조사와 어미·높임·의문·시간 표현
+- 소리와 의미의 변화, 15세기 문헌 자료(V3)
+school_line: 동북고등학교 1학년 · 2026
+created_at: '2026-11-14T12:00:00+09:00'
+scope: 공통국어2 중세 국어 (사용자 지정 범위, 2026-11-14)
+scope_refs:
+- USER_SCOPE:중세 국어 40문항 요청 2026-11-14
+- NOTICE:ops/exams/DONGBUK_2026_2_FINAL_SCOPE_NOTICE.yaml
+middle_korean:
+  policy: subjects/KOREAN_MIDDLE_KOREAN_QUALITY_RULES_V1.0.md
+  activation: EXPLICIT_USER_SCOPE
+  sources:
+  - 『훈민정음』 언해본 서문 (방점 생략)
+  - 「용비어천가」 제2장 (방점 생략)
+  - 「월인천강지곡」 기이 (방점 생략)
+  - 두보, 「춘망」, 『두시언해』 초간본 (방점 생략)
+  bangjeom: OMITTED_AND_DISCLOSED
+  source_verified: AUTHOR_RECALL_ONLY_PENDING_TEXT_CHECK
+  gates:
+    KOR_MID_SOURCE_QA: PENDING
+    KOR_MID_UNIQUE_ANSWER: PENDING
+    KOR_MID_DISTRACTOR_QA: PENDING
+    KOR_MID_DIFFICULTY_QA: PENDING
+versions:
+  mix:
+  - V3
+  - V6
+  difficulty_request: D3~D4 (user 2026-11-14)
+  external_text: allowed (user 2026-11-14)
+  v6_extension: user-requested for Middle Korean
+status:
+  content: AUTHOR_DRAFT_FOR_USER_REVIEW
+  blind_review: NOT_RUN
+  typeset: WAITING_USER_REVIEW
+archetype_library: quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml
+sets: []
+items:
+- item_id: KOR-MK-001
+  archetype: A1_GENERAL_RULE_MAPPING
+  level: V6
+  stem: <보기>의 ㉠~㉤에 대한 설명으로 적절한 것은?
+  view:
+  - 나랏 ㉠말ᄊᆞ미 ㉡中듀ᇰ國귁에 달아 ㉢文문字ᄍᆞᆼ와로 서르 ㉣ᄉᆞᄆᆞᆺ디 ㉤아니ᄒᆞᆯᄊᆡ
+  - '- 『훈민정음』 언해본 서문 (방점 생략)'
+  options:
+  - ㉠은 체언 '말ᄊᆞᆷ'에 주격 조사 '이'가 결합한 것을 이어 적었다.
+  - ㉡의 '에'는 앞말의 모음이 양성 모음이어서 선택된 부사격 조사이다.
+  - ㉢의 '와로'를 통해 '字ᄍᆞᆼ'이 실제로는 자음으로 끝나는 말이었음을 알 수 있다.
+  - ㉣의 받침 'ㅅ'은 8종성법에 어긋나는 표기이다.
+  - ㉤의 '-ㄹᄊᆡ'는 이유를 나타내는 종결 어미이다.
+  answer: 1
+  second_best: 2
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk01_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: '''말ᄊᆞᆷ+이''를 이어 적어 ''말ᄊᆞ미''가 되었다.'
+  - axis: middle_korean
+    c: STRONG
+    claim: mk01_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''귁''의 모음은 음성 모음이므로 ''에''가 쓰였다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: STRONG
+    claim: mk01_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''와''는 모음 뒤에 쓰이는 형태이므로 ''字ᄍᆞᆼ''의 ''ㅇ''은 소리 없는 형식적 종성이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk01_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''ㅅ''은 8종성(ㄱ, ㆁ, ㄷ, ㄴ, ㅂ, ㅁ, ㅅ, ㄹ)에 포함된다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: WEAK
+    claim: mk01_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''-ㄹᄊᆡ''는 이유를 나타내는 연결 어미이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  source_note: 『훈민정음』 언해본 서문 (방점 생략)
+- item_id: KOR-MK-002
+  archetype: A3_CONDITION_CLASSIFICATION
+  level: V6
+  stem: <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> 15세기 국어의 주격 조사는 Ⓐ자음으로 끝난 체언 뒤에서 '이', Ⓑ'ㅣ'나 반모음 'ㅣ' 이외의 모음으로 끝난 체언 뒤에서 'ㅣ', Ⓒ'ㅣ'나 반모음 'ㅣ'로 끝난 체언 뒤에서 'Ø(형태 없음)'으로 나타났다.
+  - <보기 2> ㉠ 사ᄅᆞ미(사ᄅᆞᆷ+주격 조사)  ㉡ 부톄(부텨+주격 조사)  ㉢ 내(나+주격 조사)  ㉣ 다리(다리+주격 조사)  ㉤ ᄇᆡ(ᄇᆡ[배]+주격 조사)
+  options:
+  - Ⓐ ㉠   Ⓑ ㉡, ㉢   Ⓒ ㉣, ㉤
+  - Ⓐ ㉠   Ⓑ ㉡, ㉢, ㉤   Ⓒ ㉣
+  - Ⓐ ㉠, ㉣   Ⓑ ㉡, ㉢   Ⓒ ㉤
+  - Ⓐ ㉠   Ⓑ ㉢   Ⓒ ㉡, ㉣, ㉤
+  - Ⓐ ㉠, ㉤   Ⓑ ㉡   Ⓒ ㉢, ㉣
+  answer: 1
+  second_best: 2
+  difficulty: D3
+  family: COMPARISON_MATRIX
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk02_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: ㉠ 자음 뒤 '이'(Ⓐ), ㉡ '부텨'·㉢ '나'는 'ㅣ' 이외의 모음 뒤 'ㅣ'(Ⓑ), ㉣ '다리'는 'ㅣ', ㉤ 'ᄇᆡ'는 반모음 'ㅣ'로 끝나 Ø(Ⓒ)이다.
+  - axis: middle_korean
+    c: STRONG
+    claim: mk02_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''ᄇᆡ''의 ''ㆎ''는 반모음 ''ㅣ''로 끝나므로 Ⓒ에 해당한다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk02_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''다리''는 ''ㅣ''로 끝나는 체언이므로 Ⓐ가 아니다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: STRONG
+    claim: mk02_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''부텨''는 ''ㅕ''로 끝나므로 주격 조사 ''ㅣ''가 결합한 Ⓑ이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: WEAK
+    claim: mk02_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''ᄇᆡ''는 자음으로 끝나지 않으므로 Ⓐ가 아니다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+- item_id: KOR-MK-003
+  archetype: A6_RULE_CASE_EXPLANATION
+  level: V6
+  stem: <보기>를 바탕으로 ㉠~㉣을 탐구한 내용으로 적절하지 않은 것은?
+  view:
+  - 15세기 국어의 관형격 조사 'ᄋᆞ/의'는 높임의 대상이 아닌 유정 명사 뒤에, 'ㅅ'은 무정 명사나 높임의 대상인 유정 명사 뒤에 쓰였다.
+  - ㉠ 나랏 말ᄊᆞᆷ  ㉡ 부텻 말  ㉢ 사ᄅᆞᄆᆞ ᄠᅳᆮ  ㉣ 世尊ㅅ 일
+  options:
+  - ㉠의 '나라'는 무정 명사이므로 'ㅅ'이 쓰였다.
+  - ㉡의 '부텨'는 높임의 대상인 유정 명사이므로 'ㅅ'이 쓰였다.
+  - ㉢에서 '의'가 아니라 'ᄋᆞ'가 쓰인 것은 앞말의 모음이 음성 모음이기 때문이다.
+  - ㉣의 '世尊'은 높임의 대상인 유정 명사이므로 'ㅅ'이 쓰였다.
+  - ㉢의 '사ᄅᆞᆷ'은 높임의 대상이 아닌 유정 명사이므로 'ᄋᆞ'가 쓰였다.
+  answer: 3
+  second_best: 5
+  difficulty: D3
+  family: EXCEPT_INCORRECT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  stem_polarity: NEGATIVE
+  judgments:
+  - axis: middle_korean
+    c: WEAK
+    claim: mk03_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 무정 명사 뒤의 'ㅅ'이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk03_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 높임의 대상인 유정 명사 뒤의 'ㅅ'이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk03_o5
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''사ᄅᆞᆷ''의 모음 ''ㆍ''는 양성 모음이므로 모음 조화에 따라 ''ᄋᆞ''가 쓰였다.'
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk03_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 높임의 대상인 유정 명사 뒤의 'ㅅ'이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: STRONG
+    claim: mk03_o3
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: 높임의 대상이 아닌 유정 명사 뒤의 'ᄋᆞ'이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+- item_id: KOR-MK-004
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  level: V3
+  stem: <보기>의 자료를 바탕으로 한 설명 중 옳은 것만을 있는 대로 고른 것은?
+  view:
+  - '[자료] 나라ㅎ+이 → 나라히 / 나라ㅎ+ᄋᆞᆯ → 나라ᄒᆞᆯ / 나라ㅎ+도 → 나라토 / 나라ㅎ+과 → 나라콰 / 나라ㅎ+ㅅ → 나랏'
+  - (가) 나라히 破亡ᄒᆞ니 뫼콰 ᄀᆞᄅᆞᆷᄲᅮᆫ 잇고 - 두보, 「춘망」, 『두시언해』 초간본 (방점 생략)
+  - ㄱ. 'ㅎ' 종성 체언은 단독으로 쓰이거나 관형격 조사 'ㅅ' 앞에서는 'ㅎ'이 드러나지 않는다.
+  - ㄴ. '나라콰'는 'ㅎ'과 조사 '과'의 'ㄱ'이 축약되어 거센소리가 된 것이다.
+  - ㄷ. 「용비어천가」의 '내히'는 '내'에 주격 조사 '히'가 결합한 것이다.
+  - ㄹ. (가)의 '뫼콰'를 통해 '뫼'도 'ㅎ' 종성 체언임을 알 수 있다.
+  - ㅁ. 현대 국어 '안팎', '머리카락'에는 'ㅎ' 종성 체언의 흔적이 남아 있다.
+  options:
+  - ㄱ, ㄴ, ㄷ
+  - ㄱ, ㄹ, ㅁ
+  - ㄴ, ㄷ, ㅁ
+  - ㄱ, ㄴ, ㄹ, ㅁ
+  - ㄴ, ㄷ, ㄹ, ㅁ
+  answer: 4
+  second_best: 3
+  difficulty: D4
+  family: MULTI_JUDGMENT
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 0
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: WEAK
+    claim: mk04_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㄷ은 틀렸다. '내ㅎ+이'이다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk04_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㄴ도 옳다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: STRONG
+    claim: mk04_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㄷ은 '히'라는 주격 조사가 따로 있는 것이 아니라 '내ㅎ+이'이므로 틀렸다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk04_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: ㄱ, ㄴ, ㄹ, ㅁ이 옳다. ㄷ의 '내히'는 '내ㅎ+이'이다.
+  - axis: middle_korean
+    c: STRONG
+    claim: mk04_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㄱ이 빠지고 틀린 ㄷ이 들어갔다.
+    trap: T6_PARTIAL_SET
+  source_note: 두보, 「춘망」, 『두시언해』 초간본 (방점 생략)
+- item_id: KOR-MK-005
+  archetype: A1_GENERAL_RULE_MAPPING
+  level: V6
+  stem: <보기>를 바탕으로 훈민정음 초성 글자의 제자 원리를 설명한 것으로 적절한 것은?
+  view:
+  - 초성 기본자 'ㄱ, ㄴ, ㅁ, ㅅ, ㅇ'은 발음 기관의 모양을 본떠 만들었고, 소리가 세어짐에 따라 획을 더하여 가획자를 만들었다. 'ㆁ, ㄹ, ㅿ'은 획을 더하였지만 소리가 세어지는 의미가 없는 이체자이다.
+  options:
+  - '''ㅋ''은 ''ㄱ''에, ''ㅌ''은 ''ㄷ''에 획을 더한 것으로 둘 다 가획의 원리가 적용되었다.'
+  - '''ㆁ''은 ''ㅇ''에 획을 더해 소리가 세어진 것을 나타낸 가획자이다.'
+  - '''ㅂ''은 ''ㅁ''에 획을 더한 것이고, ''ㅍ''은 ''ㅂ''에 획을 더한 이체자이다.'
+  - '''ㄹ''은 ''ㄴ''에 획을 더해 소리가 더 세어짐을 나타낸 가획자이다.'
+  - '''ㅿ''은 ''ㅅ''에 획을 더해 소리가 세어진 ''ㅈ''과 같은 원리로 만든 가획자이다.'
+  answer: 1
+  second_best: 2
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk05_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: '''ㄱ→ㅋ'', ''ㄴ→ㄷ→ㅌ''은 모두 소리의 세기에 따른 가획이다.'
+  - axis: middle_korean
+    c: STRONG
+    claim: mk05_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''ㆁ''은 이체자이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk05_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''ㅍ''은 ''ㅂ''에 획을 더한 가획자이다.'
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: middle_korean
+    c: STRONG
+    claim: mk05_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''ㄹ''은 이체자이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: WEAK
+    claim: mk05_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''ㅿ''은 이체자이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+- item_id: KOR-MK-006
+  archetype: A3_CONDITION_CLASSIFICATION
+  level: V6
+  stem: <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> 중성은 하늘·땅·사람을 본뜬 Ⓐ기본자 'ㆍ, ㅡ, ㅣ'를 만들고, 기본자를 한 번 합하여 Ⓑ초출자를, 초출자에 'ㆍ'를 하나 더 합하여 Ⓒ재출자를 만들었다.
+  - <보기 2> ㉠ ㅗ  ㉡ ㅑ  ㉢ ㅓ  ㉣ ㅠ  ㉤ ㅡ
+  options:
+  - Ⓐ ㉤   Ⓑ ㉠, ㉢   Ⓒ ㉡, ㉣
+  - Ⓐ ㉤   Ⓑ ㉠, ㉡   Ⓒ ㉢, ㉣
+  - Ⓐ ㉠, ㉤   Ⓑ ㉢   Ⓒ ㉡, ㉣
+  - Ⓐ ㉤   Ⓑ ㉠, ㉢, ㉣   Ⓒ ㉡
+  - Ⓐ ㉢, ㉤   Ⓑ ㉠   Ⓒ ㉡, ㉣
+  answer: 1
+  second_best: 2
+  difficulty: D3
+  family: COMPARISON_MATRIX
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk06_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: '''ㅡ''는 기본자, ''ㅗ·ㅓ''는 초출자, ''ㅑ·ㅠ''는 재출자이다.'
+  - axis: middle_korean
+    c: STRONG
+    claim: mk06_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''ㅑ''는 초출자 ''ㅏ''에 ''ㆍ''를 더한 재출자이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: WEAK
+    claim: mk06_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''ㅗ''는 기본자가 아니라 ''ㆍ''와 ''ㅡ''를 합한 초출자이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: STRONG
+    claim: mk06_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''ㅠ''는 ''ㅜ''에 ''ㆍ''를 더한 재출자이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk06_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''ㅓ''는 ''ㅣ''와 ''ㆍ''를 합한 초출자이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+- item_id: KOR-MK-007
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  level: V3
+  stem: <보기>의 자료를 바탕으로 한 설명 중 옳은 것만을 있는 대로 고른 것은?
+  view:
+  - '[자료] 나랏 말ᄊᆞ미 中듀ᇰ國귁에 달아 文문字ᄍᆞᆼ와로 서르 ᄉᆞᄆᆞᆺ디 아니ᄒᆞᆯᄊᆡ 이런 젼ᄎᆞ로 어린 百ᄇᆡᆨ姓셔ᇰ이 니르고져 호ᇙ 배 이셔도 ᄆᆞᄎᆞᆷ내 제 ᄠᅳ들 시러 펴디 몯ᄒᆞᇙ 노미 하니라 내 이ᄅᆞᆯ 爲윙ᄒᆞ야 어엿비 너겨 새로 스믈여듧 字ᄍᆞᆼᄅᆞᆯ ᄆᆡᇰᄀᆞ노니 사ᄅᆞᆷ마다 ᄒᆡᅇᅧ 수ᄫᅵ 니겨 날로 ᄡᅮ메 便뼌安ᅙᅡᆫ킈 ᄒᆞ고져 ᄒᆞᇙ ᄯᆞᄅᆞ미니라 - 『훈민정음』 언해본 서문 (방점 생략)'
+  - ㄱ. '수ᄫᅵ'의 'ㅸ'은 'ㅂ' 아래에 'ㅇ'을 이어 쓴 연서의 예이다.
+  - ㄴ. 'ᄡᅮ메'의 'ㅄ'은 서로 다른 자음을 나란히 쓴 합용 병서이다.
+  - ㄷ. 'ᄒᆡᅇᅧ'의 'ㆀ'은 같은 자음을 나란히 쓴 각자 병서이다.
+  - ㄹ. '스믈'의 'ㅡ'는 초성의 오른쪽에 붙여 쓰는 모음 글자이다.
+  - ㅁ. '字ᄍᆞᆼ'의 종성 'ㅇ'은 초성·중성·종성을 갖추어 음절을 이루게 한 표기이다.
+  options:
+  - ㄱ, ㄷ
+  - ㄴ, ㄹ
+  - ㄱ, ㄴ, ㄷ, ㅁ
+  - ㄱ, ㄷ, ㄹ, ㅁ
+  - ㄴ, ㄷ, ㄹ, ㅁ
+  answer: 3
+  second_best: 4
+  difficulty: D4
+  family: MULTI_JUDGMENT
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 0
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk07_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㄴ, ㅁ도 옳다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: WEAK
+    claim: mk07_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㄹ은 틀렸다. 'ㅡ'는 초성 아래에 붙여 쓴다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk07_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: ㄱ(연서), ㄴ(합용 병서), ㄷ(각자 병서), ㅁ(성음법에 따른 동국정운식 표기)이 옳다.
+  - axis: middle_korean
+    c: STRONG
+    claim: mk07_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㄹ이 틀렸다. 'ㆍ, ㅡ, ㅗ, ㅜ, ㅛ, ㅠ'는 초성 아래에 쓴다(부서).
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: STRONG
+    claim: mk07_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㄱ이 빠지고 틀린 ㄹ이 들어갔다.
+    trap: T6_PARTIAL_SET
+  source_note: 『훈민정음』 언해본 서문 (방점 생략)
+- item_id: KOR-MK-008
+  archetype: A4_INQUIRY_DIALOGUE_CHECK
+  level: V6
+  stem: <보기>의 ㉠~㉤ 중 바르게 고쳐야 할 학생의 설명은?
+  view:
+  - '[자료] 불휘 기픈 남ᄀᆞᆫ ᄇᆞᄅᆞ매 아니 뮐ᄊᆡ 곶 됴코 여름 하ᄂᆞ니 / ᄉᆡ미 기픈 므른 ᄀᆞᄆᆞ래 아니 그츨ᄊᆡ 내히 이러 바ᄅᆞ래 가ᄂᆞ니 - 「용비어천가」 제2장 (방점 생략)'
+  - '학생: ㉠''기픈''은 ''깊-''에 ''-은''이 결합한 것을 이어 적었어요. ㉡''곶''은 8종성법을 따르지 않은 표기로, 15세기 문헌에서 예외적인 경우예요. ㉢''됴코''는 ''둏-''과 ''-고''가 결합하며 ''ㅎ''과 ''ㄱ''이 축약된 거예요. ㉣''하ᄂᆞ니''의 ''하다''는 현대 국어와 같이 ''행하다''라는 뜻이에요. ㉤''ᄀᆞᄆᆞ래''의 ''애''는 앞말의 모음이 양성 모음이어서 선택된 부사격 조사예요.'
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 4
+  second_best: 3
+  difficulty: D3
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  stem_polarity: NEGATIVE
+  judgments:
+  - axis: middle_korean
+    c: WEAK
+    claim: mk08_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: '''깊-+-은''을 이어 적은 것이다.'
+    trap: T2_EXCEPTION_CONDITION
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk08_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 8종성법의 예외적 표기로 옳은 설명이다.
+    trap: T2_EXCEPTION_CONDITION
+  - axis: middle_korean
+    c: STRONG
+    claim: mk08_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: '''둏-+-고''에서 거센소리되기가 일어났다.'
+    trap: T2_EXCEPTION_CONDITION
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk08_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''하다''는 ''많다''라는 뜻의 형용사이다.'
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk08_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: '''ᄀᆞᄆᆞᆯ''의 ''ㆍ''는 양성 모음이므로 ''애''가 쓰였다.'
+    trap: T2_EXCEPTION_CONDITION
+  source_note: 「용비어천가」 제2장 (방점 생략)
+- item_id: KOR-MK-009
+  archetype: A1_GENERAL_RULE_MAPPING
+  level: V3
+  stem: <보기>를 바탕으로 ㉠을 설명한 것으로 가장 적절한 것은?
+  view:
+  - '''나모[나무]''는 모음으로 시작하는 조사 앞에서 ''낡''으로, 그 밖의 환경에서는 ''나모''로 나타났다.'
+  - 불휘 기픈 ㉠남ᄀᆞᆫ ᄇᆞᄅᆞ매 아니 뮐ᄊᆡ - 「용비어천가」 제2장 (방점 생략)
+  options:
+  - '''나모''에 목적격 조사가 결합하면 ''나모ᄅᆞᆯ''이 된다.'
+  - ㉠은 '나모'에 보조사 'ᄀᆞᆫ'이 결합한 형태이다.
+  - '''나모''에 보조사 ''도''가 결합하면 ''낡도''가 된다.'
+  - ㉠은 '낡'에 보조사 'ᄋᆞᆫ'이 결합한 것을 이어 적었다.
+  - '''나모''가 ''낡''으로 바뀌는 것은 조사의 첫소리가 자음일 때이다.'
+  answer: 4
+  second_best: 2
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: STRONG
+    claim: mk09_o4
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: 모음으로 시작하는 조사 'ᄋᆞᆯ' 앞이므로 '남ᄀᆞᆯ'이 된다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: STRONG
+    claim: mk09_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''ᄀᆞᆫ''이라는 보조사는 없으며 ''낡+ᄋᆞᆫ''을 이어 적은 것이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk09_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: 자음으로 시작하는 조사 앞이므로 '나모도'가 된다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk09_o1
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 모음으로 시작하는 'ᄋᆞᆫ' 앞에서 '낡'이 쓰이고 이어 적어 '남ᄀᆞᆫ'이 되었다.
+  - axis: middle_korean
+    c: WEAK
+    claim: mk09_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: 조사의 첫소리가 모음일 때 '낡'으로 바뀐다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  source_note: 「용비어천가」 제2장 (방점 생략)
+- item_id: KOR-MK-010
+  archetype: A2_STUDENT_TEXT_ERRORS
+  level: V6
+  stem: <보기>의 [A]에 들어갈 말로 적절한 것은?
+  view:
+  - '[자료] ... 제 ᄠᅳ들 시러 펴디 몯ᄒᆞᇙ 노미 하니라 내 이ᄅᆞᆯ 爲윙ᄒᆞ야 ... 字ᄍᆞᆼᄅᆞᆯ ᄆᆡᇰᄀᆞ노니 ... 날로 ᄡᅮ메 ... - 『훈민정음』 언해본 서문 (방점 생략)'
+  - <학생의 분석 노트> ㉠ 노미 = 놈 + 이(주격 조사)  ㉡ ᄠᅳ들 = ᄠᅳ + 들(복수 접미사)  ㉢ ᄆᆡᇰᄀᆞ노니 = ᄆᆡᇰᄀᆞᆯ- + -ᄂᆞ- + -니 (말하는 이를 나타내는 요소 없음)  ㉣ ᄡᅮ메 = ᄡᅳ- + -움 + 에  ㉤ 내 = 나 + ㅣ(주격 조사)  ㉥ 제 = 저 + ㅣ(주격 조사)
+  - '선생님: 분석이 잘못된 것은 [A]란다.'
+  options:
+  - ㉠, ㉢, ㉤
+  - ㉡, ㉢, ㉥
+  - ㉡, ㉣, ㉥
+  - ㉢, ㉣, ㉤
+  - ㉠, ㉡, ㉥
+  answer: 2
+  second_best: 3
+  difficulty: D4
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 0
+  transfer: false
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk10_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉠과 ㉤은 바른 분석이다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk10_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: ㉡은 'ᄠᅳᆮ+을', ㉢은 '-ᄂᆞ-'와 화자 표시 '-오-'가 결합한 '-노-'가 들어 있고, ㉥의 'ㅣ'는 뒤의 'ᄠᅳᆮ'을 꾸미는 관형격 조사이다.
+  - axis: middle_korean
+    c: STRONG
+    claim: mk10_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉣은 'ᄡᅳ-+-움+에'로 바른 분석이다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: WEAK
+    claim: mk10_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉣, ㉤은 바른 분석이다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: STRONG
+    claim: mk10_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉠은 바른 분석이고 ㉢이 잘못되었다.
+    trap: T6_PARTIAL_SET
+  source_note: 『훈민정음』 언해본 서문 (방점 생략)
+- item_id: KOR-MK-011
+  archetype: A6_RULE_CASE_EXPLANATION
+  level: V6
+  stem: <보기>를 바탕으로 ㉠~㉣을 탐구한 내용으로 적절하지 않은 것은?
+  view:
+  - 15세기 국어의 객체 높임 선어말 어미는 어간의 끝소리가 'ㄱ, ㅂ, ㅅ, ㅎ'이면 '-ᄉᆞᆸ-', 'ㄷ, ㅈ, ㅊ'이면 '-ᄌᆞᆸ-', 모음이나 'ㄴ, ㅁ'이면 '-ᅀᆞᆸ-'으로 나타났고, 뒤에 모음으로 시작하는 어미가 오면 'ㅂ'이 'ㅸ'으로 바뀌었다.
+  - ㉠ 막ᄉᆞᆸ거늘  ㉡ 듣ᄌᆞᄫᆞ니  ㉢ 보ᅀᆞᄫᆞ니  ㉣ 너기ᅀᆞᄫᆞ쇼셔
+  options:
+  - ㉠은 어간의 끝소리가 'ㄱ'이므로 '-ᄉᆞᆸ-'이 쓰였다.
+  - ㉡은 어간의 끝소리가 'ㄷ'이고 뒤에 모음 어미가 와서 '-ᄌᆞᄫᆞ-'로 나타났다.
+  - ㉢은 어간이 모음으로 끝나므로 '-ᅀᆞᆸ-'이 쓰였다.
+  - ㉣은 어간 '너기-'가 모음으로 끝나고 뒤에 모음 어미가 와서 '-ᅀᆞᄫᆞ-'로 나타났다.
+  - ㉠~㉣에서 높임을 받는 대상은 모두 문장의 주어이다.
+  answer: 5
+  second_best: 3
+  difficulty: D3
+  family: EXCEPT_INCORRECT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  stem_polarity: NEGATIVE
+  judgments:
+  - axis: middle_korean
+    c: WEAK
+    claim: mk11_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: '''막-''의 끝소리 ''ㄱ'' 뒤의 ''-ᄉᆞᆸ-''이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk11_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: '''듣-''의 ''ㄷ'' 뒤에서 ''-ᄌᆞᆸ-''이 모음 어미 앞에서 ''-ᄌᆞᄫᆞ-''가 되었다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: STRONG
+    claim: mk11_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: '''보-''의 모음 뒤에서 ''-ᅀᆞᆸ-''이 쓰였다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk11_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 모음 뒤의 '-ᅀᆞᆸ-'이 모음 어미 앞에서 '-ᅀᆞᄫᆞ-'가 되었다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk11_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: 객체 높임은 목적어나 부사어가 가리키는 대상을 높인다.
+- item_id: KOR-MK-012
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  level: V3
+  stem: <보기>의 ⓐ~ⓓ에 대한 설명 중 옳은 것만을 있는 대로 고른 것은?
+  view:
+  - ⓐ 이ᄂᆞᆫ 賞가 罰아  ⓑ 이 엇던 光明고  ⓒ 네 엇뎨 안다  ⓓ 얻논 藥이 므스것고
+  - ㄱ. ⓐ는 '예/아니요'의 대답을 요구하므로 '가/아'가 쓰였다.
+  - ㄴ. ⓑ와 ⓓ는 의문사가 있으므로 '고'가 쓰였다.
+  - ㄷ. ⓐ의 '罰아'는 'ㄹ' 뒤에서 '가'의 'ㄱ'이 탈락한 형태이다.
+  - ㄹ. ⓒ는 주어가 2인칭이므로 의문사의 유무와 관계없이 '-ㄴ다'가 쓰였다.
+  - ㅁ. ⓒ의 '안다'는 현대 국어 평서문의 '안다'와 같은 뜻으로 해석된다.
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄴ, ㄷ, ㄹ
+  - ㄱ, ㄷ, ㅁ
+  - ㄴ, ㄹ, ㅁ
+  - ㄴ, ㄷ, ㄹ, ㅁ
+  answer: 2
+  second_best: 4
+  difficulty: D4
+  family: MULTI_JUDGMENT
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 0
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk12_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㄷ, ㄹ도 옳다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk12_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: ㄱ(판정 의문 '가/아'), ㄴ(설명 의문 '고'), ㄷ('ㄹ' 뒤 'ㄱ' 탈락), ㄹ(2인칭 의문 '-ㄴ다')이 옳다.
+  - axis: middle_korean
+    c: WEAK
+    claim: mk12_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㅁ은 틀렸다. ⓒ는 '네가 어찌 아느냐'라는 의문문이다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: STRONG
+    claim: mk12_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㄱ, ㄷ이 빠지고 틀린 ㅁ이 들어갔다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: STRONG
+    claim: mk12_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㅁ이 틀렸으므로 이 조합은 옳지 않다.
+    trap: T6_PARTIAL_SET
+- item_id: KOR-MK-013
+  archetype: A3_CONDITION_CLASSIFICATION
+  level: V6
+  stem: <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> 15세기 국어의 시간 표현 선어말 어미로는 Ⓐ현재의 '-ᄂᆞ-', Ⓑ과거 회상의 '-더-', Ⓒ미래·추측의 '-리-' 등이 있었다.
+  - <보기 2> ㉠ 여름 하ᄂᆞ니  ㉡ 바ᄅᆞ래 가ᄂᆞ니  ㉢ 世尊ㅅ 일 ᄉᆞᆯᄫᅩ리니  ㉣ 그 말ᄊᆞᆷᄅᆞᆯ 니ᄅᆞ더니  ㉤ 내 이 일을 ᄒᆞ리라
+  - ※ ㉣, ㉤은 설명을 위해 구성한 예이다.
+  options:
+  - Ⓐ ㉠, ㉡   Ⓑ ㉣   Ⓒ ㉢, ㉤
+  - Ⓐ ㉠   Ⓑ ㉡, ㉣   Ⓒ ㉢, ㉤
+  - Ⓐ ㉠, ㉡, ㉣   Ⓑ ㉤   Ⓒ ㉢
+  - Ⓐ ㉡   Ⓑ ㉠, ㉣   Ⓒ ㉢, ㉤
+  - Ⓐ ㉠, ㉡   Ⓑ ㉢, ㉣   Ⓒ ㉤
+  answer: 1
+  second_best: 2
+  difficulty: D3
+  family: COMPARISON_MATRIX
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk13_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: ㉠·㉡은 '-ᄂᆞ-'(Ⓐ), ㉣은 '-더-'(Ⓑ), ㉢·㉤은 '-리-'(Ⓒ)이다.
+  - axis: middle_korean
+    c: STRONG
+    claim: mk13_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉡ '가ᄂᆞ니'에도 현재의 '-ᄂᆞ-'가 있으므로 Ⓐ이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: WEAK
+    claim: mk13_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉣은 '-더-'가 쓰인 과거 회상이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk13_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉠은 '-ᄂᆞ-'가 쓰인 현재이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: STRONG
+    claim: mk13_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉢ 'ᄉᆞᆯᄫᅩ리니'에는 '-리-'가 있으므로 Ⓒ이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+- item_id: KOR-MK-014
+  archetype: A1_GENERAL_RULE_MAPPING
+  level: V3
+  stem: <보기>를 바탕으로 ㉠~㉢을 분석한 내용으로 가장 적절한 것은?
+  view:
+  - 15세기 국어에서 선어말 어미 '-오-'는 주어가 말하는 이 자신일 때 서술어에 결합하기도 했다.
+  - (가) 내 ... 새로 스믈여듧 字ᄍᆞᆼᄅᆞᆯ ㉠ᄆᆡᇰᄀᆞ노니 - 『훈민정음』 언해본 서문 (방점 생략)
+  - (나) 世尊ㅅ 일 ㉡ᄉᆞᆯᄫᅩ리니 萬里外ㅅ 일이시나 눈에 ㉢보논가 너기ᅀᆞᄫᆞ쇼셔 - 「월인천강지곡」 기이 (방점 생략)
+  options:
+  - ㉡에는 '-오-'가 없으며 '-ᄫᅩ-'는 객체 높임 선어말 어미 자체의 형태이다.
+  - ㉠은 '-ᄂᆞ-'와 '-오-'가 결합하여 '-노-'로 나타난 것으로, 주어가 말하는 이인 '나'임을 보여 준다.
+  - ㉢의 '-논-'은 과거 회상을 나타내는 '-더-'가 변한 형태이다.
+  - ㉠에서 어간의 'ㄹ'이 탈락한 것은 '-오-'가 결합했기 때문이다.
+  - '''-오-''는 주어가 2인칭일 때만 쓰였으므로 ''네 엇뎨 안다''에도 나타난다.'
+  answer: 2
+  second_best: 1
+  difficulty: D4
+  family: VIEW_APPLICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 0
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: STRONG
+    claim: mk14_o2
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: '''ᄉᆞᆯᄫᅩ리니''는 ''ᄉᆞᆲ-+-오-+-리-+-니''로, ''-오-''가 들어 있다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk14_o1
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: '''ᄆᆡᇰᄀᆞᆯ-+-ᄂᆞ-+-오-+-니''에서 ''-ᄂᆞ-+-오-''가 ''-노-''로 나타났고, (가)의 주어는 ''내(나+ㅣ)''이다.'
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk14_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''-논-''은 ''-ᄂᆞ-+-오-+-ㄴ''으로 분석되며 ''-더-''와 관계없다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: STRONG
+    claim: mk14_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''ㄹ''은 ''ㄴ'' 앞에서 탈락한 것이다.'
+    trap: T5_RULE_JURISDICTION
+  - axis: middle_korean
+    c: WEAK
+    claim: mk14_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''-오-''는 1인칭 주어와 관련된다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  source_note: 『훈민정음』 언해본 서문 (방점 생략) / 「월인천강지곡」 기이 (방점 생략)
+- item_id: KOR-MK-015
+  archetype: A4_INQUIRY_DIALOGUE_CHECK
+  level: V6
+  stem: <보기>의 ㉠~㉤ 중 단어의 뜻을 잘못 설명한 것은?
+  view:
+  - '[자료] 나랏 말ᄊᆞ미 中듀ᇰ國귁에 달아 文문字ᄍᆞᆼ와로 서르 ᄉᆞᄆᆞᆺ디 아니ᄒᆞᆯᄊᆡ 이런 젼ᄎᆞ로 어린 百ᄇᆡᆨ姓셔ᇰ이 니르고져 호ᇙ 배 이셔도 ᄆᆞᄎᆞᆷ내 제 ᄠᅳ들 시러 펴디 몯ᄒᆞᇙ 노미 하니라 내 이ᄅᆞᆯ 爲윙ᄒᆞ야 어엿비 너겨 새로 스믈여듧 字ᄍᆞᆼᄅᆞᆯ ᄆᆡᇰᄀᆞ노니 사ᄅᆞᆷ마다 ᄒᆡᅇᅧ 수ᄫᅵ 니겨 날로 ᄡᅮ메 便뼌安ᅙᅡᆫ킈 ᄒᆞ고져 ᄒᆞᇙ ᄯᆞᄅᆞ미니라 / 불휘 기픈 남ᄀᆞᆫ ᄇᆞᄅᆞ매 아니 뮐ᄊᆡ 곶 됴코 여름 하ᄂᆞ니 / ᄉᆡ미 기픈 므른 ᄀᆞᄆᆞ래 아니 그츨ᄊᆡ 내히 이러 바ᄅᆞ래 가ᄂᆞ니'
+  - '학생: ㉠''어엿비''는 ''불쌍하게''라는 뜻으로 쓰였어요. ㉡''어린''은 ''어리석은''이라는 뜻이에요. ㉢''하니라''의 ''하다''는 ''많다''라는 뜻이에요. ㉣''노미''의 ''놈''은 낮추는 뜻 없이 ''사람''을 두루 이르던 말이에요. ㉤「용비어천가」의 ''여름''은 계절 ''여름''을 뜻하는 말이에요.'
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 5
+  second_best: 3
+  difficulty: D3
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  stem_polarity: NEGATIVE
+  judgments:
+  - axis: middle_korean
+    c: WEAK
+    claim: mk15_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: '''어엿브다''는 ''불쌍하다''의 뜻이었다.'
+    trap: T2_EXCEPTION_CONDITION
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk15_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: '''어리다''는 ''어리석다''의 뜻이었다.'
+    trap: T2_EXCEPTION_CONDITION
+  - axis: middle_korean
+    c: STRONG
+    claim: mk15_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: '''하다''는 ''많다''의 뜻이었다.'
+    trap: T2_EXCEPTION_CONDITION
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk15_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: '''놈''은 일반적인 사람을 가리키던 말이다.'
+    trap: T2_EXCEPTION_CONDITION
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk15_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''여름''은 ''열매''를 뜻하는 말이다(''곶 됴코 여름 하ᄂᆞ니'': 꽃이 좋고 열매가 많으니).'
+- item_id: KOR-MK-016
+  archetype: A6_RULE_CASE_EXPLANATION
+  level: V6
+  stem: <보기>를 바탕으로 국어의 소리 변화를 탐구한 내용으로 적절하지 않은 것은?
+  view:
+  - '- ''ㅸ''은 15세기 중엽 이후 반모음 [w]로 바뀌거나 탈락하였다.'
+  - '- ''ㅿ''은 16세기 후반에 소실되었다.'
+  - '- ''ㆍ''는 16세기에 둘째 음절 이하에서 주로 ''ㅡ''로, 18세기에 첫째 음절에서 주로 ''ㅏ''로 바뀌었다.'
+  options:
+  - '''수ᄫᅵ''가 ''수이''로 바뀐 것은 ''ㅸ''의 변화와 관련된다.'
+  - '''ᄆᆞᅀᆞᆷ''이 ''마음''이 되기까지는 ''ㅿ''의 소실과 ''ㆍ''의 변화가 모두 관여하였다.'
+  - '''사ᄅᆞᆷ''이 ''사람''이 된 것은 첫째 음절의 ''ㆍ''가 ''ㅏ''로 바뀐 결과이다.'
+  - '''ᄒᆞᆯᄊᆡ''의 첫째 음절 ''ㆍ''가 ''ㅏ''로 바뀐 것은 18세기 무렵의 변화와 관련된다.'
+  - '''ᄆᆞᅀᆞᆷ''의 둘째 음절 ''ㆍ''가 바뀐 것은 첫째 음절 ''ㆍ''가 바뀐 것보다 먼저였다.'
+  answer: 3
+  second_best: 5
+  difficulty: D4
+  family: EXCEPT_INCORRECT
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 0
+  transfer: false
+  stem_polarity: NEGATIVE
+  judgments:
+  - axis: middle_korean
+    c: WEAK
+    claim: mk16_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: '''ㅸ''이 [w]로 바뀐 뒤 ''ㅣ'' 앞에서 탈락하였다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk16_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: '''ㅿ'' 소실과 ''ㆍ''의 변화가 모두 관여하였다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk16_o5
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''사ᄅᆞᆷ''에서 ''ㆍ''는 둘째 음절에 있으므로 첫째 음절의 변화라는 설명은 틀렸다.'
+  - axis: middle_korean
+    c: STRONG
+    claim: mk16_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 첫째 음절 'ㆍ'의 'ㅏ' 변화는 18세기 무렵이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: STRONG
+    claim: mk16_o3
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: 둘째 음절의 변화(16세기)가 첫째 음절의 변화(18세기)보다 앞선다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+- item_id: KOR-MK-017
+  archetype: A3_CONDITION_CLASSIFICATION
+  level: V3
+  stem: <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> 체언과 조사의 결합을 적을 때 Ⓐ앞말의 받침을 뒷말의 첫소리로 옮겨 적은 것(이어 적기), Ⓑ앞말과 뒷말의 형태를 구별하여 적은 것(끊어 적기), Ⓒ앞말이 모음으로 끝나 두 방식이 구별되지 않는 것이 있다.
+  - <보기 2> (가) 世尊ㅅ 일 ᄉᆞᆯᄫᅩ리니 萬里外ㅅ 일이시나 눈에 보논가 너기ᅀᆞᄫᆞ쇼셔 / 世尊ㅅ 말 ᄉᆞᆯᄫᅩ리니 千載上ㅅ 말이시나 귀예 듣논가 너기ᅀᆞᄫᆞ쇼셔 - 「월인천강지곡」 기이 (방점 생략) (나) 불휘 기픈 남ᄀᆞᆫ ᄇᆞᄅᆞ매 아니 뮐ᄊᆡ 곶 됴코 여름 하ᄂᆞ니 / ᄉᆡ미 기픈 므른 ᄀᆞᄆᆞ래 아니 그츨ᄊᆡ 내히 이러 바ᄅᆞ래 가ᄂᆞ니 - 「용비어천가」 제2장 (방점 생략)
+  - ㉠ (가)의 '일이시나'  ㉡ (가)의 '눈에'  ㉢ (가)의 '귀예'  ㉣ (나)의 'ᄉᆡ미'  ㉤ (나)의 'ᄇᆞᄅᆞ매'
+  options:
+  - Ⓐ ㉢, ㉣, ㉤   Ⓑ ㉠, ㉡   Ⓒ 없음
+  - Ⓐ ㉣   Ⓑ ㉠, ㉡, ㉤   Ⓒ ㉢
+  - Ⓐ ㉠, ㉣, ㉤   Ⓑ ㉡   Ⓒ ㉢
+  - Ⓐ ㉣, ㉤   Ⓑ ㉠, ㉡   Ⓒ ㉢
+  - Ⓐ ㉤   Ⓑ ㉡   Ⓒ ㉠, ㉢, ㉣
+  answer: 4
+  second_best: 2
+  difficulty: D4
+  family: COMPARISON_MATRIX
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 0
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk17_o4
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: '''귀''는 모음으로 끝나므로 Ⓒ이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: STRONG
+    claim: mk17_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''ᄇᆞᄅᆞ매''는 ''ᄇᆞᄅᆞᆷ+애''를 이어 적은 것이므로 Ⓐ이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: STRONG
+    claim: mk17_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''일이시나''는 ''일''과 서술격 조사 ''이-''의 형태를 구별하여 적었으므로 Ⓑ이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk17_o1
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: ㉣ 'ᄉᆡᆷ+이', ㉤ 'ᄇᆞᄅᆞᆷ+애'는 Ⓐ, ㉠ '일+이-', ㉡ '눈+에'는 Ⓑ, ㉢ '귀+예'는 Ⓒ이다.
+  - axis: middle_korean
+    c: WEAK
+    claim: mk17_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''ᄉᆡ미''는 받침 ''ㅁ''을 옮겨 적은 Ⓐ이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  source_note: 「월인천강지곡」 기이 (방점 생략) / 「용비어천가」 제2장 (방점 생략)
+- item_id: KOR-MK-018
+  archetype: A1_GENERAL_RULE_MAPPING
+  level: V6
+  stem: <보기>를 바탕으로 방점에 대해 설명한 것으로 적절한 것은?
+  view:
+  - 15세기 국어는 소리의 높낮이를 방점으로 나타냈다. 평성은 가장 낮은 소리로 점을 찍지 않았고, 거성은 가장 높은 소리로 점을 하나 찍었으며, 상성은 처음이 낮고 나중이 높은 소리로 점을 둘 찍었다. 입성은 높낮이와 관계없이 빨리 끝나는 소리로, 점의 수는 평성·거성·상성과 같은 기준으로 찍었다.
+  - ※ 이 문제집의 중세 국어 자료는 방점을 생략하였다.
+  options:
+  - 방점은 소리의 길이만을 나타내기 위해 글자 오른쪽에 찍었다.
+  - 입성은 빨리 끝나는 소리이므로 언제나 점을 하나 찍었다.
+  - 거성은 가장 낮은 소리이므로 점을 찍지 않았다.
+  - 평성은 처음이 낮고 나중이 높은 소리여서 점을 둘 찍었다.
+  - 상성은 낮은 소리로 시작하여 높아지는 소리로, 글자 왼쪽에 점을 둘 찍었다.
+  answer: 5
+  second_best: 2
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: WEAK
+    claim: mk18_o5
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: 방점은 높낮이를 나타냈고 글자 왼쪽에 찍었다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: STRONG
+    claim: mk18_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: 입성은 높낮이에 따라 점의 수가 달라졌다.
+    trap: T2_EXCEPTION_CONDITION
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk18_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: 거성은 가장 높은 소리로 점 하나를 찍었다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk18_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: 평성은 낮은 소리로 점이 없다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk18_o1
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: 상성은 저고조로 글자 왼쪽에 점 둘을 찍었다.
+- item_id: KOR-MK-019
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  level: V3
+  stem: <보기>의 설명 중 옳은 것만을 있는 대로 고른 것은?
+  view:
+  - ㄱ. '이ᄅᆞᆯ'은 대명사 '이'에 목적격 조사 'ᄅᆞᆯ'이 결합한 것으로, 중성 모음 뒤에서 양성 모음 조사가 쓰였다.
+  - ㄴ. 'ᄠᅳ들'은 체언의 모음이 음성 모음 'ㅡ'이므로 '을'이 쓰였다.
+  - ㄷ. 'ᄇᆞᄅᆞ매'와 '바ᄅᆞ래'는 모두 양성 모음 뒤에서 '애'가 쓰였다.
+  - ㄹ. '中듀ᇰ國귁에'의 '에'는 앞말의 모음이 양성 모음이므로 쓰인 것이다.
+  - ㅁ. '귀예'의 '예'는 앞말이 'ㅣ'나 반모음 'ㅣ'로 끝날 때 쓰인 형태이다.
+  options:
+  - ㄱ, ㄴ, ㄷ
+  - ㄱ, ㄴ, ㄷ, ㅁ
+  - ㄱ, ㄷ, ㄹ
+  - ㄴ, ㄹ, ㅁ
+  - ㄴ, ㄷ, ㄹ, ㅁ
+  answer: 2
+  second_best: 3
+  difficulty: D4
+  family: MULTI_JUDGMENT
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 0
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk19_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㅁ도 옳다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk19_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: ㄱ, ㄴ, ㄷ, ㅁ이 옳고, ㄹ의 '귁'은 음성 모음이므로 '에'가 쓰였다.
+  - axis: middle_korean
+    c: STRONG
+    claim: mk19_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㄴ이 빠지고 틀린 ㄹ이 들어갔다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: WEAK
+    claim: mk19_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㄹ은 틀렸다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: STRONG
+    claim: mk19_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㄹ은 틀렸고 ㄱ이 빠졌다.
+    trap: T6_PARTIAL_SET
+- item_id: KOR-MK-020
+  archetype: A4_INQUIRY_DIALOGUE_CHECK
+  level: V3
+  stem: <보기>에서 선생님이 다시 생각해 보자고 한 학생의 설명은?
+  view:
+  - '[자료] (가) 世尊ㅅ 일 ᄉᆞᆯᄫᅩ리니 萬里外ㅅ 일이시나 눈에 보논가 너기ᅀᆞᄫᆞ쇼셔 / 世尊ㅅ 말 ᄉᆞᆯᄫᅩ리니 千載上ㅅ 말이시나 귀예 듣논가 너기ᅀᆞᄫᆞ쇼셔 - 「월인천강지곡」 기이 (방점 생략)  (나) [설명용 예] 王이 나가샤 / 臣下ㅣ ᄒᆞᄂᆞ니ᅌᅵ다'
+  - '학생: ㉠(나)의 ''나가샤''는 ''나가-''+''-시-''+''-아''에서 ''-시-''가 ''-샤-''로 바뀌고 ''-아''가 탈락한 거예요. ㉡''-시-''는 자음으로 시작하는 어미 앞에, ''-샤-''는 모음으로 시작하는 어미 앞에 쓰였어요. ㉢''ᄒᆞᄂᆞ니ᅌᅵ다''의 ''-ᅌᅵ-''는 듣는 사람을 높이는 상대 높임 선어말 어미예요. ㉣(가)의 ''-쇼셔''는 ᄒᆞ쇼셔체 명령형 어미예요. ㉤(가)의 ''일이시나''에 쓰인 ''-시-''는 ''世尊''을 높이는 객체 높임 선어말 어미예요.'
+  - '선생님: 한 가지만 다시 생각해 보자.'
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 5
+  second_best: 3
+  difficulty: D4
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 0
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: WEAK
+    claim: mk20_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: '''-시-''가 모음 어미 앞에서 ''-샤-''가 되고 어미 ''-아''가 탈락하였다.'
+    trap: T2_EXCEPTION_CONDITION
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk20_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: 주체 높임 선어말 어미의 이형태 조건으로 옳다.
+    trap: T2_EXCEPTION_CONDITION
+  - axis: middle_korean
+    c: STRONG
+    claim: mk20_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''-ᅌᅵ-''는 ᄒᆞ쇼셔체의 상대 높임 선어말 어미이다.'
+    trap: T2_EXCEPTION_CONDITION
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk20_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''-쇼셔''는 ᄒᆞ쇼셔체 명령형 어미이다.'
+    trap: T2_EXCEPTION_CONDITION
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk20_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: '''-시-''는 주어 ''(世尊ㅅ) 일''을 통해 世尊을 높이는 주체 높임 선어말 어미이다.'
+  source_note: 「월인천강지곡」 기이 (방점 생략)
+- item_id: KOR-MK-021
+  archetype: A1_GENERAL_RULE_MAPPING
+  level: V3
+  stem: <보기>에 대한 설명으로 적절한 것은?
+  view:
+  - 나라히 破亡ᄒᆞ니 뫼콰 ᄀᆞᄅᆞᆷᄲᅮᆫ 잇고 - 두보, 「춘망」, 『두시언해』 초간본 (방점 생략)
+  - (현대어 풀이) 나라가 망하니 산과 강만 남아 있고
+  options:
+  - '''나라히''는 ''ㅎ'' 종성 체언 ''나라ㅎ''에 주격 조사 ''이''가 결합한 것이다.'
+  - '''뫼콰''의 ''콰''는 모음으로 끝난 체언 뒤에 쓰이는 접속 조사의 기본 형태이다.'
+  - '''ᄀᆞᄅᆞᆷᄲᅮᆫ''의 ''ㅽ''은 같은 자음을 겹쳐 쓴 각자 병서이다.'
+  - '''잇고''의 ''ㅅ'' 받침은 8종성법에 어긋나는 표기이다.'
+  - 『두시언해』 초간본은 훈민정음 창제 이전의 국어를 보여 주는 자료이다.
+  answer: 1
+  second_best: 2
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk21_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: '''나라ㅎ+이''이다.'
+  - axis: middle_korean
+    c: STRONG
+    claim: mk21_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''뫼ㅎ+과''에서 ''ㅎ''과 ''ㄱ''이 축약된 것이며 ''콰''가 기본 형태인 것은 아니다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: STRONG
+    claim: mk21_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''ㅽ''은 서로 다른 자음을 나란히 쓴 합용 병서이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk21_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''ㅅ''은 8종성에 포함된다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: WEAK
+    claim: mk21_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: 『두시언해』 초간본은 1481년에 간행되었다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  source_note: 두보, 「춘망」, 『두시언해』 초간본 (방점 생략)
+- item_id: KOR-MK-022
+  archetype: A1_GENERAL_RULE_MAPPING
+  level: V6
+  stem: <보기>를 바탕으로 『훈민정음』 언해본의 한자음 표기를 설명한 것으로 가장 적절한 것은?
+  view:
+  - 『훈민정음』 언해본의 한자음은 『동국정운』의 규범을 따라 적었는데, 이는 당시 우리나라의 실제 한자음과 다른 이상적인 한자음이었다. 받침이 없는 한자에도 종성 자리에 'ㅇ'을 적어 초성·중성·종성을 갖추었다.
+  - '[자료] 中듀ᇰ國귁에 / 文문字ᄍᆞᆼ와로 / 百ᄇᆡᆨ姓셔ᇰ이 / 便뼌安ᅙᅡᆫ킈'
+  options:
+  - '''中듀ᇰ''의 ''ㆁ''은 받침이 없는 한자에 덧붙인 형식적인 종성이다.'
+  - '''字ᄍᆞᆼ''의 종성 ''ㅇ''은 실제 소리가 없으므로 뒤에 모음 뒤의 조사 형태 ''와''가 왔다.'
+  - 동국정운식 한자음은 당시 현실 한자음을 소리 나는 그대로 적은 것이다.
+  - '''便뼌''의 ''ㅃ''은 당시 현실 한자음의 된소리를 반영한 것이다.'
+  - 동국정운식 한자음 표기는 16세기 이후 더욱 널리 쓰였다.
+  answer: 2
+  second_best: 1
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: STRONG
+    claim: mk22_o2
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: '''ㆁ''은 실제 [ŋ] 소리를 나타내는 종성이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk22_o1
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 형식적 종성 'ㅇ' 뒤에 모음 뒤의 접속 조사 '와'가 쓰였다.
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk22_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: 현실음이 아닌 이상적 한자음이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: STRONG
+    claim: mk22_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: 동국정운식 표기는 현실음이 아닌 규범음이므로 된소리를 반영했다고 볼 수 없다.
+    trap: T5_RULE_JURISDICTION
+  - axis: middle_korean
+    c: WEAK
+    claim: mk22_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: 동국정운식 한자음 표기는 16세기에 들어 쓰이지 않게 되었다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+- item_id: KOR-MK-023
+  archetype: A3_CONDITION_CLASSIFICATION
+  level: V6
+  stem: <보기 1>을 바탕으로 <보기 2>의 밑줄 친 어미를 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> 어말 어미는 Ⓐ문장을 끝맺는 종결 어미, Ⓑ앞뒤 문장을 이어 주는 연결 어미, Ⓒ용언이 명사나 관형사처럼 쓰이게 하는 전성 어미로 나뉜다.
+  - <보기 2> ㉠ 아니ᄒᆞ<u>ㄹᄊᆡ</u>  ㉡ 노미 하<u>니라</u>  ㉢ 날로 ᄡᅮ<u>움</u>+에  ㉣ 니르고져 호<u>ㅭ</u> 배  ㉤ 便安킈 ᄒᆞ<u>고져</u>
+  options:
+  - Ⓐ ㉠, ㉡   Ⓑ ㉤   Ⓒ ㉢, ㉣
+  - Ⓐ ㉡, ㉤   Ⓑ ㉠   Ⓒ ㉢, ㉣
+  - Ⓐ ㉡   Ⓑ ㉠, ㉤   Ⓒ ㉢, ㉣
+  - Ⓐ ㉡   Ⓑ ㉠, ㉣, ㉤   Ⓒ ㉢
+  - Ⓐ ㉡   Ⓑ ㉤   Ⓒ ㉠, ㉢, ㉣
+  answer: 3
+  second_best: 2
+  difficulty: D3
+  family: COMPARISON_MATRIX
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk23_o3
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: '''-ㄹᄊᆡ''는 이유의 연결 어미이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: STRONG
+    claim: mk23_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''-고져''는 ''-고자''에 해당하는 연결 어미이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk23_o1
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: ㉡ '-니라'는 종결, ㉠ '-ㄹᄊᆡ'·㉤ '-고져'는 연결, ㉢ '-움'(명사형)·㉣ '-ㅭ'(관형사형)은 전성 어미이다.
+  - axis: middle_korean
+    c: STRONG
+    claim: mk23_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''호ᇙ 배''의 ''-ㅭ''은 뒤의 ''바''를 꾸미는 관형사형 전성 어미이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: WEAK
+    claim: mk23_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''-ㄹᄊᆡ''는 전성 어미가 아니다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  source_note: 『훈민정음』 언해본 서문 (방점 생략)
+- item_id: KOR-MK-024
+  archetype: A6_RULE_CASE_EXPLANATION
+  level: V6
+  stem: <보기>를 바탕으로 탐구한 내용으로 적절하지 않은 것은?
+  view:
+  - 15세기 국어의 어두 자음군(ㅄ, ㅳ, ㅽ 등)은 각 자음이 모두 발음되었을 것으로 추정되며, 그 흔적이 현대 국어 '좁쌀(조ㅎ+ᄡᆞᆯ)', '입때(이+ᄣᆡ)' 등에 남아 있다.
+  - '[자료] ᄠᅳ들 / ᄡᅮ메 / ᄯᆞᄅᆞ미니라'
+  options:
+  - '''ᄠᅳ들''의 ''ㅳ''은 서로 다른 자음을 나란히 쓴 합용 병서이다.'
+  - '''ᄡᅮ메''의 어간 ''ᄡᅳ-''는 현대 국어 ''쓰다''로 이어졌다.'
+  - '''좁쌀''의 ''ㅂ''은 ''ᄡᆞᆯ''의 어두 자음군에서 비롯된 흔적이다.'
+  - '''ᄯᆞᄅᆞ미니라''의 ''ㅼ''은 같은 자음을 나란히 쓴 각자 병서이다.'
+  - '''입때''의 ''ㅂ''은 ''때''의 옛 형태 ''ᄣᆡ''와 관련된다.'
+  answer: 4
+  second_best: 3
+  difficulty: D3
+  family: EXCEPT_INCORRECT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  stem_polarity: NEGATIVE
+  judgments:
+  - axis: middle_korean
+    c: WEAK
+    claim: mk24_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: '''ㅂ''과 ''ㄷ''을 나란히 쓴 합용 병서이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk24_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: '''ᄡᅳ다''가 ''쓰다''가 되었다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: STRONG
+    claim: mk24_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: '''ᄡᆞᆯ''의 ''ㅂ''이 앞말 받침으로 남았다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk24_o5
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''ㅼ''은 ''ㅅ''과 ''ㄷ''을 나란히 쓴 합용 병서이다.'
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk24_o4
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: '''ᄣᆡ''의 ''ㅂ''이 앞말 받침으로 남았다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+- item_id: KOR-MK-025
+  archetype: A1_GENERAL_RULE_MAPPING
+  level: V3
+  stem: <보기>의 원문과 현대어 풀이를 대조한 내용으로 적절한 것은?
+  view:
+  - 새로 스믈여듧 字ᄍᆞᆼᄅᆞᆯ ᄆᆡᇰᄀᆞ노니 사ᄅᆞᆷ마다 ᄒᆡᅇᅧ 수ᄫᅵ 니겨 날로 ᄡᅮ메 便뼌安ᅙᅡᆫ킈 ᄒᆞ고져 ᄒᆞᇙ ᄯᆞᄅᆞ미니라 - 『훈민정음』 언해본 서문 (방점 생략)
+  - (현대어 풀이) 새로 스물여덟 자를 만드니, 사람마다 하여금 쉽게 익혀 날마다 씀에 편안하게 하고자 할 따름이다.
+  options:
+  - '''ᄯᆞᄅᆞ미니라''는 ''ᄯᆞᄅᆞᆷ''에 목적격 조사가 결합한 것이다.'
+  - '''니겨''는 ''익혀''에 대응하며, 첫소리 ''ㄴ''은 두음 법칙에 따라 적은 것이다.'
+  - '''날로''는 ''날마다''에 대응하며 ''ㆍ''가 쓰인 ''ᄂᆞᆯ''에 조사 ''로''가 결합한 것이다.'
+  - '''便뼌安ᅙᅡᆫ킈''의 ''ㅋ''은 ''ㄱ''과 ''ㄱ''이 합쳐진 소리를 나타낸다.'
+  - '''ᄒᆡᅇᅧ''는 ''하여금''에 대응하며 시키는 뜻을 지닌다.'
+  answer: 5
+  second_best: 2
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: WEAK
+    claim: mk25_o5
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: '''ᄯᆞᄅᆞᆷ+이-(서술격 조사)+-니라''이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: STRONG
+    claim: mk25_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: 15세기 국어에는 두음 법칙이 없었으며, '니기다'의 'ㄴ'은 원래 소리이다.
+    trap: T5_RULE_JURISDICTION
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk25_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: 원문은 '날'에 '로'가 결합한 것이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: STRONG
+    claim: mk25_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''ᄒᆞ-''의 ''ㅎ''과 ''-긔''의 ''ㄱ''이 축약된 것이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk25_o1
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: '''ᄒᆡᅇᅧ''는 ''하여금''(시켜서)에 대응한다.'
+  source_note: 『훈민정음』 언해본 서문 (방점 생략)
+- item_id: KOR-MK-026
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  level: V6
+  stem: <보기>의 설명 중 옳은 것만을 있는 대로 고른 것은?
+  view:
+  - ㄱ. '날로 ᄡᅮ메'의 'ᄡᅮ메'는 'ᄡᅳ-'에 명사형 어미 '-움'이 결합한 뒤 조사 '에'가 붙은 것이다.
+  - ㄴ. 15세기 국어의 명사형 어미 '-옴/-움'은 모음 조화에 따라 선택되었다.
+  - ㄷ. '살다'의 명사형 '사롬'과 명사 '사ᄅᆞᆷ'은 형태가 같은 한 단어이다.
+  - ㄹ. 현대 국어의 명사형 어미 '-(으)ㅁ'은 '-옴/-움'에서 '-오/우-'가 사라진 형태와 관련된다.
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ
+  - ㄴ, ㄹ
+  - ㄱ, ㄴ, ㄹ
+  - ㄱ, ㄷ, ㄹ
+  answer: 4
+  second_best: 5
+  difficulty: D3
+  family: MULTI_JUDGMENT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk26_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㄹ도 옳다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: WEAK
+    claim: mk26_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㄷ은 틀렸다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk26_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㄱ도 옳다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk26_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: ㄱ, ㄴ, ㄹ이 옳다. ㄷ의 '사롬'(동사의 명사형)과 '사ᄅᆞᆷ'(명사)은 형태와 품사가 다르다.
+  - axis: middle_korean
+    c: STRONG
+    claim: mk26_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㄷ은 '사롬'과 '사ᄅᆞᆷ'의 형태가 다르므로 틀렸다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+- item_id: KOR-MK-027
+  archetype: A3_CONDITION_CLASSIFICATION
+  level: V6
+  stem: <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> 단어의 의미 변화에는 Ⓐ의미가 넓어진 확대, Ⓑ의미가 좁아진 축소, Ⓒ의미가 다른 의미로 바뀐 이동이 있다.
+  - '<보기 2> ㉠ 어엿브다: 불쌍하다 → 예쁘다  ㉡ 얼굴: 형체 → 안면  ㉢ 겨레: 친척 → 민족  ㉣ 어리다: 어리석다 → 나이가 적다  ㉤ 즁ᄉᆡᆼ(짐승): 살아 있는 모든 것 → 사람이 아닌 동물'
+  options:
+  - Ⓐ ㉢   Ⓑ ㉡, ㉤   Ⓒ ㉠, ㉣
+  - Ⓐ ㉢, ㉤   Ⓑ ㉡   Ⓒ ㉠, ㉣
+  - Ⓐ ㉡, ㉢   Ⓑ ㉤   Ⓒ ㉠, ㉣
+  - Ⓐ ㉢   Ⓑ ㉠, ㉡, ㉤   Ⓒ ㉣
+  - Ⓐ ㉣   Ⓑ ㉡, ㉤   Ⓒ ㉠, ㉢
+  answer: 1
+  second_best: 2
+  difficulty: D3
+  family: COMPARISON_MATRIX
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk27_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: ㉢은 확대, ㉡·㉤은 축소, ㉠·㉣은 이동이다.
+  - axis: middle_korean
+    c: STRONG
+    claim: mk27_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''짐승''은 생명체 전체에서 동물로 의미가 좁아졌으므로 축소이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk27_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''얼굴''은 몸 전체의 형체에서 안면으로 좁아졌으므로 축소이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: STRONG
+    claim: mk27_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''어엿브다''는 ''불쌍하다''에서 ''예쁘다''로 바뀐 이동이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: WEAK
+    claim: mk27_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''겨레''는 확대, ''어리다''는 이동이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+- item_id: KOR-MK-028
+  archetype: A1_GENERAL_RULE_MAPPING
+  level: V3
+  stem: <보기>의 ㉠~㉤에 대한 설명으로 가장 적절한 것은?
+  view:
+  - 世尊ㅅ 말 ㉠ᄉᆞᆯᄫᅩ리니 千載上ㅅ ㉡말이시나 ㉢귀예 ㉣듣논가 ㉤너기ᅀᆞᄫᆞ쇼셔 - 「월인천강지곡」 기이 (방점 생략)
+  options:
+  - ㉡은 체언과 조사를 이어 적은 표기이다.
+  - ㉠은 'ᄉᆞᆲ-'에 '-오-'와 '-리-'가 결합한 것으로, 이를 말하는 사람이 주체임을 드러낸다.
+  - ㉢의 '예'는 체언이 자음으로 끝날 때 쓰인 부사격 조사이다.
+  - ㉣에는 과거 회상을 나타내는 선어말 어미 '-더-'가 쓰였다.
+  - ㉤의 '-ᅀᆞᄫᆞ-'는 듣는 이를 높이는 상대 높임 선어말 어미이다.
+  answer: 2
+  second_best: 1
+  difficulty: D4
+  family: VIEW_APPLICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 0
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: STRONG
+    claim: mk28_o2
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: '''말이시나''는 ''말''과 ''이-''를 구별한 끊어 적기이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk28_o1
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: '''-오-''는 말하는 이가 주체임을 드러내며 ''-리-''는 의지·미래를 나타낸다.'
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk28_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''예''는 ''ㅣ''로 끝난 ''귀'' 뒤에서 쓰인 형태이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: WEAK
+    claim: mk28_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''듣논가''는 ''듣-+-ᄂᆞ-+-오-+-ㄴ가''로 ''-더-''가 없다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: STRONG
+    claim: mk28_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''-ᅀᆞᄫᆞ-''는 객체(世尊)를 높이는 선어말 어미이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  source_note: 「월인천강지곡」 기이 (방점 생략)
+- item_id: KOR-MK-029
+  archetype: A6_RULE_CASE_EXPLANATION
+  level: V6
+  stem: <보기>를 바탕으로 탐구한 내용으로 적절하지 않은 것은?
+  view:
+  - 『훈민정음』 해례의 종성해에는 'ㄱ, ㆁ, ㄷ, ㄴ, ㅂ, ㅁ, ㅅ, ㄹ'의 여덟 자만으로도 받침을 쓰기에 충분하다는 내용이 있다(8종성법).
+  - '[자료] 곶 됴코 / 깁고 / ᄉᆞᄆᆞᆺ디'
+  options:
+  - '''깊고''를 ''깁고''로 적은 것은 8종성법을 따른 표기이다.'
+  - 「용비어천가」의 '곶'은 8종성법을 따르지 않고 형태를 밝혀 적은 예이다.
+  - 현대 국어도 8종성법에 따라 받침을 소리 나는 대로 적는다.
+  - 8종성법은 음절 끝에서 실제 발음되는 소리를 중심으로 적는 표기 방식이다.
+  - '''ᄉᆞᄆᆞᆺ디''의 받침 ''ㅅ''은 8종성에 포함된다.'
+  answer: 3
+  second_best: 5
+  difficulty: D3
+  family: EXCEPT_INCORRECT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  stem_polarity: NEGATIVE
+  judgments:
+  - axis: middle_korean
+    c: WEAK
+    claim: mk29_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 음절 끝 'ㅍ'을 'ㅂ'으로 적은 8종성 표기이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk29_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: '''곶''은 8종성법의 예외로 형태를 밝힌 표기이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk29_o5
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: 현대 국어는 형태를 밝혀 적으며 받침 발음은 7개 대표음으로 소리 난다.
+  - axis: middle_korean
+    c: STRONG
+    claim: mk29_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 소리 나는 대로 적는 표음적 표기 방식이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: STRONG
+    claim: mk29_o3
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: '''ㅅ''은 8종성의 하나이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+- item_id: KOR-MK-030
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  level: V6
+  stem: 15세기 국어와 현대 국어를 비교한 <보기>의 설명 중 옳은 것만을 있는 대로 고른 것은?
+  view:
+  - ㄱ. 15세기에는 'ㆍ, ㅿ, ㆆ' 등 현대 국어에서 쓰이지 않는 글자가 쓰였다.
+  - ㄴ. 15세기에도 단어 첫머리의 'ㄴ'을 피하는 두음 법칙이 적용되었다.
+  - ㄷ. 15세기 국어의 주격 조사에는 '가'가 없었다.
+  - ㄹ. 15세기에는 소리의 높낮이를 방점으로 표기하였다.
+  - ㅁ. 15세기에는 끊어 적기가 일반적이었고, 근대 국어 이후 이어 적기로 바뀌었다.
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ, ㄹ
+  - ㄴ, ㄹ, ㅁ
+  - ㄱ, ㄷ, ㄹ, ㅁ
+  - ㄴ, ㄷ, ㄹ, ㅁ
+  answer: 2
+  second_best: 4
+  difficulty: D3
+  family: MULTI_JUDGMENT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: WEAK
+    claim: mk30_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㄴ은 틀렸다('니르다', '님' 등).
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk30_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: ㄱ, ㄷ, ㄹ이 옳다. ㄴ은 두음 법칙이 없었고, ㅁ은 15세기에 이어 적기가 일반적이었다.
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk30_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㄴ, ㅁ은 틀렸다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: STRONG
+    claim: mk30_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㅁ은 방향이 반대이다. 15세기에는 이어 적기가 일반적이었다.
+    trap: T2_EXCEPTION_CONDITION
+  - axis: middle_korean
+    c: STRONG
+    claim: mk30_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㄴ, ㅁ이 틀렸다.
+    trap: T6_PARTIAL_SET
+- item_id: KOR-MK-031
+  archetype: A2_STUDENT_TEXT_ERRORS
+  level: V6
+  stem: <보기>의 [A]에 들어갈 말로 적절한 것은?
+  view:
+  - '[자료] 불휘 기픈 남ᄀᆞᆫ ᄇᆞᄅᆞ매 아니 뮐ᄊᆡ 곶 됴코 여름 하ᄂᆞ니 / ᄉᆡ미 기픈 므른 ᄀᆞᄆᆞ래 아니 그츨ᄊᆡ 내히 이러 바ᄅᆞ래 가ᄂᆞ니 - 「용비어천가」 제2장 (방점 생략)'
+  - <학생의 현대어 풀이 노트> ㉠ 불휘 → 뿌리  ㉡ 남ᄀᆞᆫ → 나무는  ㉢ 여름 → 여름(계절)이  ㉣ 하ᄂᆞ니 → 행하니  ㉤ ᄉᆡ미 → 새가  ㉥ 바ᄅᆞ래 → 바다에
+  - '선생님: 풀이를 고쳐야 할 것은 [A]란다.'
+  options:
+  - ㉠, ㉢, ㉣
+  - ㉡, ㉣, ㉥
+  - ㉢, ㉣, ㉤
+  - ㉢, ㉤, ㉥
+  - ㉠, ㉡, ㉤
+  answer: 3
+  second_best: 4
+  difficulty: D3
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk31_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉠ '불휘'는 '뿌리'로 바르게 풀었다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: WEAK
+    claim: mk31_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉡, ㉥은 바르게 풀었다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk31_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: ㉢ '여름'은 '열매', ㉣ '하ᄂᆞ니'는 '많으니', ㉤ 'ᄉᆡ미'는 '샘이'로 고쳐야 한다.
+  - axis: middle_korean
+    c: STRONG
+    claim: mk31_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉥ '바ᄅᆞ래'는 '바다에'로 바르게 풀었다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: STRONG
+    claim: mk31_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉠, ㉡은 바르게 풀었다.
+    trap: T6_PARTIAL_SET
+  source_note: 「용비어천가」 제2장 (방점 생략)
+- item_id: KOR-MK-032
+  archetype: A4_INQUIRY_DIALOGUE_CHECK
+  level: V3
+  stem: <보기>의 ㉠~㉤ 중 학생의 설명으로 적절하지 않은 것은?
+  view:
+  - '[자료] 나랏 말ᄊᆞ미 中듀ᇰ國귁에 달아 文문字ᄍᆞᆼ와로 서르 ᄉᆞᄆᆞᆺ디 아니ᄒᆞᆯᄊᆡ 이런 젼ᄎᆞ로 어린 百ᄇᆡᆨ姓셔ᇰ이 니르고져 호ᇙ 배 이셔도 ᄆᆞᄎᆞᆷ내 제 ᄠᅳ들 시러 펴디 몯ᄒᆞᇙ 노미 하니라 내 이ᄅᆞᆯ 爲윙ᄒᆞ야 어엿비 너겨 새로 스믈여듧 字ᄍᆞᆼᄅᆞᆯ ᄆᆡᇰᄀᆞ노니 사ᄅᆞᆷ마다 ᄒᆡᅇᅧ 수ᄫᅵ 니겨 날로 ᄡᅮ메 便뼌安ᅙᅡᆫ킈 ᄒᆞ고져 ᄒᆞᇙ ᄯᆞᄅᆞ미니라 - 『훈민정음』 언해본 서문 (방점 생략)'
+  - '학생: ㉠중국과 말이 달라 한자로는 서로 통하지 않는다는 부분에서 자주 정신을 엿볼 수 있어요. ㉡백성을 불쌍히 여긴다는 부분에서 애민 정신이 드러나요. ㉢쉽게 익혀 날마다 편하게 쓰게 하려 한다는 부분에서 실용 정신이 드러나요. ㉣새로 만든 글자는 스물여덟 자였어요. ㉤''어린 百姓''은 나이가 어린 백성을 가리키므로, 아이들의 교육을 위해 글자를 만들었음을 알 수 있어요.'
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 5
+  second_best: 3
+  difficulty: D3
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  judgments:
+  - axis: middle_korean
+    c: WEAK
+    claim: mk32_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: '''中國에 달아 文字와로 서르 ᄉᆞᄆᆞᆺ디 아니ᄒᆞᆯᄊᆡ''에서 자주 정신이 드러난다.'
+    trap: T2_EXCEPTION_CONDITION
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk32_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: '''어엿비 너겨''에서 애민 정신이 드러난다.'
+    trap: T2_EXCEPTION_CONDITION
+  - axis: middle_korean
+    c: STRONG
+    claim: mk32_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: '''수ᄫᅵ 니겨 날로 ᄡᅮ메 便安킈''에서 실용 정신이 드러난다.'
+    trap: T2_EXCEPTION_CONDITION
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk32_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: '''스믈여듧 字''라고 하였다.'
+    trap: T2_EXCEPTION_CONDITION
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk32_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''어린''은 ''어리석은''이라는 뜻이므로 나이가 어리다는 설명은 틀렸다.'
+  source_note: 『훈민정음』 언해본 서문 (방점 생략)
+- item_id: KOR-MK-033
+  archetype: A1_GENERAL_RULE_MAPPING
+  level: V3
+  stem: <보기>를 바탕으로 '돌ㅎ'의 쓰임을 추론한 것으로 가장 적절한 것은?
+  view:
+  - '''돌[石]''은 15세기 국어에서 ''ㅎ'' 종성 체언 ''돌ㅎ''이었다. ''ㅎ'' 종성 체언은 단독으로 쓰일 때에는 ''ㅎ''이 드러나지 않고, 모음으로 시작하는 조사 앞에서는 ''ㅎ''이 뒤 음절의 첫소리로 이어 적히며, ''ㄱ, ㄷ''으로 시작하는 조사 앞에서는 거센소리로 축약되었다.'
+  options:
+  - '''돌ㅎ''의 ''ㅎ''은 현대 국어에서 ''돌''이 단독으로 쓰일 때에도 발음된다.'
+  - '''돌ㅎ''에 보조사 ''도''가 결합하면 ''ㅎ''이 탈락하여 ''돌도''가 된다.'
+  - '''돌ㅎ''에 목적격 조사가 결합하면 ''돌ᄅᆞᆯ''이 된다.'
+  - '''돌ㅎ''에 조사 ''과''가 결합하면 ''돌콰''가 된다.'
+  - '''돌ㅎ''은 15세기 문헌에서 단독으로 쓰일 때 ''돓''처럼 ''ㅎ''을 받침으로 적었다.'
+  answer: 4
+  second_best: 2
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: WEAK
+    claim: mk33_o4
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: 현대 국어에서는 'ㅎ'이 사라졌다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: STRONG
+    claim: mk33_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''ㄷ''으로 시작하는 조사 앞에서는 거센소리로 축약되어 ''돌토''가 된다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk33_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: 모음으로 시작하는 조사 앞에서 'ㅎ'이 이어져 '돌ᄒᆞᆯ'이 된다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk33_o1
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: '''ㅎ''과 ''과''의 ''ㄱ''이 축약되어 ''돌콰''가 된다.'
+  - axis: middle_korean
+    c: STRONG
+    claim: mk33_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: 단독으로 쓰일 때는 'ㅎ'이 드러나지 않는다.
+    trap: T2_EXCEPTION_CONDITION
+- item_id: KOR-MK-034
+  archetype: A3_CONDITION_CLASSIFICATION
+  level: V6
+  stem: <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> 15세기 국어의 높임 선어말 어미는 Ⓐ주체 높임 '-시-/-샤-', Ⓑ객체 높임 '-ᄉᆞᆸ-/-ᄌᆞᆸ-/-ᅀᆞᆸ-', Ⓒ상대 높임 '-ᅌᅵ-/-잇-'으로 나뉜다.
+  - <보기 2> ㉠ 나가샤  ㉡ 듣ᄌᆞᄫᆞ니  ㉢ ᄒᆞᄂᆞ니ᅌᅵ다  ㉣ 보ᅀᆞᄫᆞ니  ㉤ 일이시나
+  options:
+  - Ⓐ ㉠, ㉢   Ⓑ ㉡, ㉣   Ⓒ ㉤
+  - Ⓐ ㉠   Ⓑ ㉡, ㉣, ㉤   Ⓒ ㉢
+  - Ⓐ ㉠, ㉤   Ⓑ ㉡   Ⓒ ㉢, ㉣
+  - Ⓐ ㉤   Ⓑ ㉠, ㉡, ㉣   Ⓒ ㉢
+  - Ⓐ ㉠, ㉤   Ⓑ ㉡, ㉣   Ⓒ ㉢
+  answer: 5
+  second_best: 2
+  difficulty: D3
+  family: COMPARISON_MATRIX
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: STRONG
+    claim: mk34_o5
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: '''-ᅌᅵ-''만 상대 높임이고 ㉢이 주체 높임은 아니다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: STRONG
+    claim: mk34_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉤의 '-시-'는 주체 높임이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk34_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''보ᅀᆞᄫᆞ니''는 객체 높임이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: WEAK
+    claim: mk34_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''-샤-''는 주체 높임의 이형태이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk34_o1
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: ㉠·㉤은 주체, ㉡·㉣은 객체, ㉢은 상대 높임이다.
+- item_id: KOR-MK-035
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  level: V6
+  stem: <보기>의 ⓐ, ⓑ에 대한 설명 중 옳은 것만을 있는 대로 고른 것은?
+  view:
+  - ⓐ 내 이ᄅᆞᆯ 爲윙ᄒᆞ야  ⓑ 제 ᄠᅳ들 시러 펴디 몯ᄒᆞᇙ 노미 하니라 - 『훈민정음』 언해본 서문 (방점 생략)
+  - ㄱ. ⓐ의 '내'와 ⓑ의 '제'는 모두 대명사에 'ㅣ'가 결합한 형태이다.
+  - ㄴ. ⓐ의 '내'는 서술어 '爲ᄒᆞ야'의 주어이므로 'ㅣ'는 주격 조사이다.
+  - ㄷ. ⓑ의 '제'는 뒤의 체언 'ᄠᅳᆮ'을 꾸미므로 'ㅣ'는 관형격 조사이다.
+  - ㄹ. 형태가 같으므로 두 'ㅣ'는 문장에서의 기능도 같다.
+  options:
+  - ㄱ, ㄹ
+  - ㄴ, ㄷ
+  - ㄱ, ㄴ, ㄷ
+  - ㄱ, ㄷ, ㄹ
+  - ㄴ, ㄷ, ㄹ
+  answer: 3
+  second_best: 4
+  difficulty: D3
+  family: KEY_WORD_FUNCTION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: false
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: WEAK
+    claim: mk35_o1
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㄹ은 틀렸다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk35_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㄱ도 옳다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk35_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: ㄱ, ㄴ, ㄷ이 옳다. 형태가 같아도 문장 속 기능은 다르다.
+  - axis: middle_korean
+    c: STRONG
+    claim: mk35_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㄴ이 빠지고 틀린 ㄹ이 들어갔다.
+    trap: T6_PARTIAL_SET
+  - axis: middle_korean
+    c: STRONG
+    claim: mk35_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㄹ은 틀렸다.
+    trap: T6_PARTIAL_SET
+  source_note: 『훈민정음』 언해본 서문 (방점 생략)
+- item_id: KOR-MK-036
+  archetype: A6_RULE_CASE_EXPLANATION
+  level: V3
+  stem: <보기>를 바탕으로 15세기 국어와 현대 국어를 비교한 내용으로 적절하지 않은 것은?
+  view:
+  - '[자료] 나랏 말ᄊᆞ미 中듀ᇰ國귁에 달아 文문字ᄍᆞᆼ와로 서르 ᄉᆞᄆᆞᆺ디 아니ᄒᆞᆯᄊᆡ 이런 젼ᄎᆞ로 어린 百ᄇᆡᆨ姓셔ᇰ이 니르고져 호ᇙ 배 이셔도 ᄆᆞᄎᆞᆷ내 제 ᄠᅳ들 시러 펴디 몯ᄒᆞᇙ 노미 하니라 내 이ᄅᆞᆯ 爲윙ᄒᆞ야 어엿비 너겨 새로 스믈여듧 字ᄍᆞᆼᄅᆞᆯ ᄆᆡᇰᄀᆞ노니 사ᄅᆞᆷ마다 ᄒᆡᅇᅧ 수ᄫᅵ 니겨 날로 ᄡᅮ메 便뼌安ᅙᅡᆫ킈 ᄒᆞ고져 ᄒᆞᇙ ᄯᆞᄅᆞ미니라 - 『훈민정음』 언해본 서문 (방점 생략)'
+  - '[참고] 근대 국어 시기에는 ''ㅁ, ㅂ, ㅍ, ㅃ'' 뒤의 ''ㅡ''가 ''ㅜ''로 바뀌는 원순 모음화와 ''ㄷ, ㅌ''이 ''ㅣ'' 앞에서 ''ㅈ, ㅊ''으로 바뀌는 구개음화가 일어났다.'
+  options:
+  - '''노미''의 ''놈''은 현대 국어에서도 의미 변화 없이 ''사람''을 가리키는 중립적인 말로 쓰인다.'
+  - '''서르''는 현대 국어 ''서로''에 해당하며 모음이 바뀌었다.'
+  - '''스믈''이 ''스물''로 바뀐 것은 원순 모음화와 관련된다.'
+  - '''펴디''가 ''펴지''로 바뀐 것은 구개음화와 관련된다.'
+  - '''나랏''의 ''ㅅ''은 현대 국어의 관형격 조사 ''의''에 해당한다.'
+  answer: 1
+  second_best: 3
+  difficulty: D4
+  family: EXCEPT_INCORRECT
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 0
+  transfer: true
+  stem_polarity: NEGATIVE
+  judgments:
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk36_o5
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: '''놈''은 남자를 낮잡아 이르는 말로 의미가 바뀌었다.'
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk36_o2
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: '''서르''가 ''서로''로 바뀌었다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: STRONG
+    claim: mk36_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: '''ㅁ'' 뒤의 ''ㅡ''가 ''ㅜ''로 바뀐 원순 모음화이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: STRONG
+    claim: mk36_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: '''디''가 ''지''로 바뀐 구개음화이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: WEAK
+    claim: mk36_o1
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: 무정 명사 뒤의 관형격 조사 'ㅅ'이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+- item_id: KOR-MK-037
+  archetype: A1_GENERAL_RULE_MAPPING
+  level: V3
+  stem: <보기>의 ㉠, ㉡에 쓰인 'ㅅ'에 대한 설명으로 가장 적절한 것은?
+  view:
+  - 15세기 국어의 관형격 조사 'ㅅ'은 무정 명사나 높임의 대상인 유정 명사 뒤에 쓰였다.
+  - ㉠世尊ㅅ 일 ᄉᆞᆯᄫᅩ리니 ㉡萬里外ㅅ 일이시나 - 「월인천강지곡」 기이 (방점 생략)
+  options:
+  - ㉡의 'ㅅ'은 높임의 대상인 유정 명사 뒤에 쓰인 관형격 조사이다.
+  - ㉠의 'ㅅ'은 높임의 대상인 유정 명사 뒤에 쓰인 관형격 조사이다.
+  - ㉠의 'ㅅ'은 앞말과 뒷말이 결합해 합성어가 되었음을 나타내는 사이시옷이다.
+  - ㉡의 'ㅅ'은 뒤의 '일'을 주어로 만드는 주격 조사이다.
+  - ㉠과 ㉡의 'ㅅ'은 앞말이 모두 유정 명사이므로 같은 조건에서 쓰였다.
+  answer: 2
+  second_best: 1
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - axis: middle_korean
+    c: STRONG
+    claim: mk37_o2
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: '''萬里外''는 장소를 나타내는 무정 명사이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: CORRECT
+    claim: mk37_o1
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: '''世尊''은 높임의 대상인 유정 명사이다.'
+  - axis: middle_korean
+    c: MEDIUM
+    claim: mk37_o3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''世尊ㅅ 일''은 두 단어를 관형격 조사로 이은 구이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: WEAK
+    claim: mk37_o4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''ㅅ''은 관형격 조사이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: middle_korean
+    c: STRONG
+    claim: mk37_o5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉠은 높임의 대상인 유정 명사, ㉡은 무정 명사 뒤이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  source_note: 「월인천강지곡」 기이 (방점 생략)
+- item_id: KOR-MK-038
+  archetype: C1_CONSTRUCTED_BLANK_SENTENCE
+  format: CR
+  level: V6
+  points: 5
+  stem: <보기>의 ㉠, ㉡을 형태소로 분석하고, 주격 조사의 형태가 다른 이유를 <조건>에 따라 서술하시오.
+  view:
+  - ㉠ 부톄 니ᄅᆞ샤ᄃᆡ  ㉡ 사ᄅᆞ미 니르고져 호ᇙ 배
+  conditions:
+  - 1. ㉠, ㉡을 '체언+조사'의 형식으로 분석할 것.
+  - 2. 체언의 끝소리 조건을 들어 주격 조사의 형태가 다른 이유를 밝힐 것.
+  - 3. 두 문장 이내로 쓸 것.
+  model_answer: ㉠은 '부텨+ㅣ', ㉡은 '사ᄅᆞᆷ+이'로 분석된다. 주격 조사는 'ㅣ' 이외의 모음으로 끝난 체언 뒤에서는 'ㅣ', 자음으로 끝난 체언 뒤에서는 '이'로 나타나기 때문이다.
+  rubric:
+  - ㉠, ㉡ 분석 각 1점
+  - 끝소리 조건(모음/자음) 2점
+  - 문장 수 조건 1점
+  ev:
+  - VIEW
+  difficulty: D3
+- item_id: KOR-MK-039
+  archetype: C1_CONSTRUCTED_BLANK_SENTENCE
+  format: CR
+  level: V3
+  points: 5
+  stem: <보기>의 ⓐ, ⓑ에 쓰인 의문 보조사의 차이를 <조건>에 따라 서술하시오.
+  view:
+  - ⓐ 이ᄂᆞᆫ 賞가 罰아  ⓑ 이 엇던 光明고
+  conditions:
+  - 1. ⓐ, ⓑ 각각에 쓰인 의문 보조사를 밝힐 것.
+  - 2. 의문사의 유무 및 요구하는 대답의 종류와 관련지어 설명할 것.
+  - 3. 'ⓐ는 ~, ⓑ는 ~'의 형식으로 쓸 것.
+  model_answer: ⓐ는 의문사가 없이 '예/아니요'의 대답을 요구하는 판정 의문문이어서 '가(아)'가 쓰였고, ⓑ는 의문사 '엇던'이 있어 구체적인 설명을 요구하는 설명 의문문이어서 '고'가 쓰였다.
+  rubric:
+  - ⓐ 보조사와 판정 의문 2점
+  - ⓑ 보조사와 설명 의문 2점
+  - 형식 1점
+  ev:
+  - VIEW
+  difficulty: D4
+- item_id: KOR-MK-040
+  archetype: C1_CONSTRUCTED_BLANK_SENTENCE
+  format: CR
+  level: V6
+  points: 5
+  stem: <보기>의 ㉠, ㉡에서 'ㅎ' 종성 체언이 어떻게 나타나는지 <조건>에 따라 서술하시오.
+  view:
+  - ㉠ 나라ㅎ+과 → 나라콰  ㉡ 나라ㅎ+ㅅ → 나랏
+  conditions:
+  - 1. ㉠, ㉡에서 'ㅎ'에 일어난 변화를 각각 밝힐 것.
+  - 2. '축약', '탈락'이라는 말을 모두 사용할 것.
+  - 3. '㉠은 ~, ㉡은 ~'의 형식으로 쓸 것.
+  model_answer: ㉠은 'ㅎ'과 조사 '과'의 'ㄱ'이 축약되어 거센소리 'ㅋ'이 된 것이고, ㉡은 관형격 조사 'ㅅ' 앞에서 'ㅎ'이 탈락한 것이다.
+  rubric:
+  - ㉠ 축약 2점
+  - ㉡ 탈락 2점
+  - 형식 1점
+  ev:
+  - VIEW
+  difficulty: D3
