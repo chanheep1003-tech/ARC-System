@@ -41,5 +41,12 @@ Visual & binary ground truth:
 - **Constructed Response (`[서답형 N]`)**: Open `답:` label followed by gray horizontal writing rules (`16.5pt` spacing, no closed border box).
 - **Quick Answer Key (`p6`)**: 5-column Booktabs grid (`01~05` .. `21~25`) + borderless `#F1F1F1` CR model answer & rubric card with `3.0pt` solid black left accent bar.
 
-## 6. Verification Gate
+## 6. 별도 해설지 (`*_SOLUTIONS.pdf`) 2단 모던 고딕 표준
+- 마스터 해설 샘플: `templates/gold/samples/ARC_N_ALL_IN_ONE_SOLUTIONS_SAMPLE_V1.0.pdf` (`master_sample_p5_solutions.png`).
+- **2단 편집 레이아웃**: 문제지와 동일한 A4 2단 그리드(`COL_W`, `0.55pt` `#C2C2C2` 중앙 세로 구분선, `0.7pt` 상단 러닝 헤더, `0.55pt` `#B8B8B8` 하단 푸터선)를 사용한다. `ARC_N`과 `ARC_FINAL` 모두 문제/해설 타이포그래피와 2단 해설 구조를 공유하며, `ARC_FINAL`만 정답표를 별도 파일(`*_ANSWER_KEY.pdf`)로 분리한다.
+- **문항별 해설 블록**: `#F1F1F1` 소프트 그레이 헤더 바 + `2.8pt` 좌측 검정 강조선 + 검정 캡슐 문항 배지(`01`, `[서답형 1]`) + `정답 ①` 배지 + `[난이도 · 유형]` 메타 표기를 상단에 배치한다.
+- **선지별·채점기준 서술**: 핵심 풀이에 이어 ①~⑤ 각 선지별 정·오답 판별 근거를 내어쓰기(hanging indent)로 정리하며, 서답형 문항은 모범답안과 채점 기준(%)을 제시한다. 헤더에는 반드시 `"정답 및 상세 해설"` 문자열을 포함한다.
+
+## 7. Verification Gate
 - Every generated `ARC_N` PDF must pass `tooling/pdf_qc/pdf_preflight.py` (`product="ARC_N"`, `fail_count=0`, `light_body_ratio=0.0`, blank cover verso & answer separator, exact item & key count) and visual comparison against `ARC_N_ALL_IN_ONE_MASTER_SAMPLE_V1.0.pdf`.
+- Production renderer changes must also pass `test_layout_and_solutions.py` (`*_SOLUTIONS.pdf` + `ARC_CORE` + `ARC_FINAL`), `test_subject_production.py`, `test_production_pipeline.py`, and `test_semifinal_bundle.py`.

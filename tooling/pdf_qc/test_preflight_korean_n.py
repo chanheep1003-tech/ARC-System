@@ -16,7 +16,21 @@ assert spec and spec.loader
 spec.loader.exec_module(preflight)
 
 A4_W, A4_H = 595.276, 841.890
-FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+
+
+def _resolve_latin_font() -> str:
+    for candidate in (
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        "C:/Windows/Fonts/HANDotum.ttf",
+        "C:/Windows/Fonts/malgun.ttf",
+        "C:/Windows/Fonts/arial.ttf",
+    ):
+        if Path(candidate).is_file():
+            return candidate
+    return "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+
+
+FONT = _resolve_latin_font()
 CIRCLED = "①②③④⑤"
 
 

@@ -947,6 +947,170 @@ def render_subject_sample(fk: FontKit, spec: dict[str, Any], out_dir: Path, arti
     return pdf_path, saved_pngs
 
 
+MASTER_SOLUTIONS_ITEMS: list[dict[str, Any]] = [
+    {
+        "no": "01",
+        "col": 0,
+        "ans": "정답 ①",
+        "meta": "문학 · 과정과 태도의 대비 [핵심]",
+        "summary": "(가)는 여정의 목적지보다 걸어가는 과정을 강조하고, (나)는 바람·어둠 속에서 삶을 버티며 촛불을 켜겠다는 화자의 태도를 드러낸다.",
+        "options": [
+            "① [정답] (가)는 과정의 의미를 부각하고, (나)는 현실을 이겨 내려는 다짐을 제시한다.",
+            "② [오답] (가)는 삶의 유한함을 다루지만, (나)가 결과 중심의 효율성을 옹호한다는 진술은 어긋난다.",
+            "③ [오답] (나)의 화자는 지난날을 애도하는 데 머무르지 않고 앞으로 나아가려는 의지를 보인다.",
+            "④ [오답] 두 글 모두 현실 도피나 체념이 아닌 주체적 응전을 보여 준다.",
+            "⑤ [오답] 감각적 경험의 배제나 운명 순응은 두 글의 중심 정서와 배치된다.",
+        ],
+    },
+    {
+        "no": "02",
+        "col": 0,
+        "ans": "정답 ③",
+        "meta": "문학 · <보기> 감상 적용 [심화]",
+        "summary": "ㄱ은 두 작품의 핵심 정서 대응이 정확하고, ㄷ은 <보기>의 '현재에 충실한 삶의 태도'와 직접 연결된다.",
+        "options": [
+            "ㄱ [적절] (가)의 과정 중심 성찰과 (나)의 결의가 대비·대응을 이룬다.",
+            "ㄴ [오답] '바람'은 내적 갈등의 원인이 아니라 시련·외부 역경을 뜻한다.",
+            "ㄷ [적절] 결과에 매몰되지 않고 현재의 빛을 밝히려는 태도와 일치한다.",
+            "ㄹ [오답] '등불'은 타인의 희생이 아니라 화자 자신의 내면 의지를 뜻한다.",
+        ],
+    },
+    {
+        "no": "03",
+        "col": 0,
+        "ans": "정답 ③",
+        "meta": "비문학/문학 · 핵심 개념 연결 [표준]",
+        "summary": "(가)에서 여정의 본질로 강조한 핵심 개념은 '과정'(A)이며, (나)에서 화자가 어둠 속에서 택한 행동은 스스로를 '밝혀야 한다'(B)이다.",
+        "options": [
+            "A [과정] '목적지에 도달하는 순간보다 그 과정'에서 직접 확인된다.",
+            "B [밝혀야 한다] '등불 하나 / 내가 더 환히 밝혀야겠다'와 일치한다.",
+            "오답 [①·②·④·⑤] '결과·참고·기다림' 등은 본문의 대조를 뒤집었다.",
+        ],
+    },
+    {
+        "no": "04",
+        "col": 1,
+        "ans": "정답 ②",
+        "meta": "자료 해석 · 복합 표 분석 [핵심]",
+        "summary": "연구개발비 합계는 5,640억 원(평균 1,128억 원), 특허 출원 수 최다 기업은 C(110건, 매출 14,920억 원)이다.",
+        "options": [
+            "ㄱ [적절] 5개 기업 연구개발비 평균은 5,640 ÷ 5 = 1,128억 원이다.",
+            "ㄴ [오답] C의 매출액은 14,920억 원으로 15,000억 원을 넘지 않는다.",
+            "ㄷ [적절] 매출액 10,000억 원 미만은 D(7,860억 원)뿐이다.",
+            "ㄹ [오답] 특허/개발비 비율 최대는 C(110/1,560 ≈ 0.0705)이다.",
+        ],
+    },
+    {
+        "no": "05",
+        "col": 1,
+        "ans": "정답 ③",
+        "meta": "시각 자료 · 시계열 추이 판독 [표준]",
+        "summary": "2023년 매출 증가 기업 수와 5년간 단조 증가 여부(B·C)를 그래프의 표식으로 구분해 판정한다.",
+        "options": [
+            "ㄱ [적절] 2022년 대비 2023년 매출 증가 기업은 A·B·C·D 4개다.",
+            "ㄴ [오답] 5년 누적 증가 폭은 C가 최대가 맞지만 A와의 비교 수치 확인이 필요하다.",
+            "ㄷ [오답] A와 C 외에도 B가 전 구간 완만한 상승세를 유지한다.",
+        ],
+    },
+    {
+        "no": "06",
+        "col": 1,
+        "ans": "정답 ③",
+        "meta": "수식 추론 · 효율성 지수(E) 비교 [고난도]",
+        "summary": "효율성 지수 E = 특허 출원 수 / 연구개발비를 04번 표 자료에 대입해 최대·최소 격차와 변화율을 계산한다.",
+        "options": [
+            "ㄱ [오답] 최대 C(0.0705)와 최소 E(0.0643)의 차이는 약 0.0062로 0.02 미만이다.",
+            "ㄴ [적절] 전체 평균 E(≈0.0681)를 웃도는 기업은 C(0.0705)·A(0.0688) 등이다.",
+            "ㄷ [적절] B(0.0653)와 D(0.0658)의 백분율 차이는 기준치 범위 내다.",
+        ],
+    },
+    {
+        "no": "[서답형 1]",
+        "col": 1,
+        "ans": "예시 답안 · 10점",
+        "meta": "조판 원리 · 채점 기준",
+        "is_cr": True,
+        "summary": "모범답안: 2단 고정 레이아웃은 한 줄의 시선 이동 폭을 줄여 가독성을 높이고, 중앙 구분선이 좌·우열의 읽기 흐름을 명확히 분리한다.",
+        "options": [
+            "채점 기준 ① (5점): 시선 이동 폭 축소에 따른 가독성 향상 명시",
+            "채점 기준 ② (5점): 중앙 구분선의 열 분리 및 완결 문장 서술",
+        ],
+    },
+]
+
+
+def build_master_solutions_sample(
+    fk: FontKit,
+    out_dir: Path,
+    artifact_dir: Path | None = None,
+) -> tuple[Path, Path]:
+    """Generate canonical 2-column Canva Modern Gothic detailed solutions sample (PDF + 216dpi PNG)."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    pdf_path = out_dir / "ARC_N_ALL_IN_ONE_SOLUTIONS_SAMPLE_V1.0.pdf"
+    doc = fitz.open()
+    p = doc.new_page(width=A4_W, height=A4_H)
+    fk.register(p)
+
+    _draw_canva_chrome(
+        p,
+        fk,
+        header_left="ARC N° | 정답 및 상세 해설",
+        header_right="DETAILED SOLUTIONS · 01~06",
+        footer_left="ARC N° · Pure B&W 2단 해설 마스터 규격",
+        page_num=1,
+    )
+    p.draw_line(fitz.Point(297.638, 60.0), fitz.Point(297.638, 782.0), color=CANVA_GRID_GRAY, width=0.55)
+
+    col_ys = [60.0, 60.0]
+    for item in MASTER_SOLUTIONS_ITEMS:
+        ci = item["col"]
+        x0, x1 = COL_X[ci]
+        col_w = x1 - x0
+        y = col_ys[ci]
+
+        # Highlight strip + left black bar + black capsule pill
+        hdr_h = 20.0
+        p.draw_rect(fitz.Rect(x0, y, x1, y + hdr_h), color=None, fill=CANVA_BG_NOTICE)
+        p.draw_rect(fitz.Rect(x0, y, x0 + 2.8, y + hdr_h), color=BLACK, fill=BLACK)
+        pill_txt = item["no"]
+        pw = fk.width(pill_txt, "G_B", 8.2) + 12.0
+        p.draw_rect(fitz.Rect(x0 + 7.0, y + 3.0, x0 + 7.0 + pw, y + hdr_h - 3.0), color=BLACK, fill=BLACK)
+        fk.put(p, x0 + 13.0, y + 13.2, pill_txt, key="G_B", fontsize=8.2, color=WHITE)
+        fk.put(p, x0 + 7.0 + pw + 7.0, y + 13.2, item["ans"], key="G_B", fontsize=8.6, color=BLACK)
+        mw = fk.width(item["meta"], "B_R", 7.4)
+        fk.put(p, x1 - 6.0 - mw, y + 13.0, item["meta"], key="B_R", fontsize=7.4, color=MID_GRAY)
+        y += hdr_h + 11.0
+
+        # Core rationale
+        for ln in _wrap_word_safe(fk, item["summary"], "B_B" if item.get("is_cr") else "B_R", 8.0, col_w - 6.0):
+            fk.put(p, x0 + 3.0, y, ln, key="B_B" if item.get("is_cr") else "B_R", fontsize=8.0, color=BLACK if item.get("is_cr") else DARK)
+            y += 11.4
+        y += 2.0
+
+        # Option judgments / rubric bullets
+        for opt_line in item["options"]:
+            prefix_end = opt_line.find("] ")
+            hang = fk.width(opt_line[:2] + " ", "B_R", 7.7) if opt_line[:1] in CIRC else 10.0
+            for li, ln in enumerate(_wrap_word_safe(fk, opt_line, "B_R", 7.7, col_w - 8.0 - (hang if len(opt_line) > 20 else 0.0))):
+                fk.put(p, x0 + 5.0 + (hang if li > 0 else 0.0), y, ln, key="B_B" if "[정답]" in opt_line and prefix_end > 0 else "B_R", fontsize=7.7, color=DARK)
+                y += 10.8
+            y += 1.2
+
+        p.draw_line(fitz.Point(x0, y + 2.0), fitz.Point(x1, y + 2.0), color=RULE_GRAY, width=0.45)
+        col_ys[ci] = y + 11.0
+
+    doc.subset_fonts()
+    doc.save(str(pdf_path), garbage=2, deflate=True)
+    png_name = "master_sample_p5_solutions.png"
+    png_path = out_dir / png_name
+    doc[0].get_pixmap(dpi=216, alpha=False).save(str(png_path))
+    doc.close()
+    if artifact_dir is not None:
+        artifact_dir.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(png_path, artifact_dir / png_name)
+    return pdf_path, png_path
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--subject", default="MASTER", choices=["MASTER", "KOR", "SOC", "SCI", "ENG", "SUBJECTS", "ALL"])
@@ -988,6 +1152,9 @@ def main() -> None:
         print(f"GENERATED: {pdf_path}")
         for sp in saved_pngs:
             print(f"PNG: {sp}")
+        sol_pdf, sol_png = build_master_solutions_sample(canva_fk, out_dir, args.artifact_dir)
+        print(f"GENERATED[SOLUTIONS]: {sol_pdf}")
+        print(f"PNG[SOLUTIONS]: {sol_png}")
 
     targets = ["KOR", "SOC", "SCI", "ENG"] if args.subject in {"SUBJECTS", "ALL"} else ([args.subject] if args.subject in SUBJECT_SAMPLES else [])
     if targets:

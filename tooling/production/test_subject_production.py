@@ -72,13 +72,13 @@ def main() -> int:
         # --- SCI ARC_N: material set, table, view, figure, ion notation, inline answer key ---
         sci = run_variant(tmp, "sci", SCI)
         assert_clean(sci, "SCI", "ARC_N")
-        doc = fitz.open(sci["pdf"])
-        text = "\n".join(page_text(page) for page in doc)
-        assert len(doc) == 6, len(doc)                       # cover, verso, 2 problem pages, separator, key
-        assert sum(len(page.get_images(full=True)) for page in doc) == 1, "figure must be embedded exactly once"
-        assert "[5~6] 다음은 금속의 반응성에 대한 실험이다." in text
-        assert "A2+" in text and "B3+" in text, "ion charges must come from the body font"
-        assert "ANSWER KEY" in page_text(doc[-1]) and "03  ④" in page_text(doc[-1])
+        with fitz.open(sci["pdf"]) as doc:
+            text = "\n".join(page_text(page) for page in doc)
+            assert len(doc) == 6, len(doc)                       # cover, verso, 2 problem pages, separator, key
+            assert sum(len(page.get_images(full=True)) for page in doc) == 1, "figure must be embedded exactly once"
+            assert "[5~6] 다음은 금속의 반응성에 대한 실험이다." in text
+            assert "A2+" in text and "B3+" in text, "ion charges must come from the body font"
+            assert "ANSWER KEY" in page_text(doc[-1]) and "03  ④" in page_text(doc[-1])
         manuscript = (tmp / "sci/out/student_manuscript.md").read_text(encoding="utf-8")
         assert "〔그림〕" in manuscript and "| 금속 |" in manuscript
         qa = yaml.safe_load(next((tmp / "sci/out").glob("ARC_QA_EVIDENCE_*.yaml")).read_text(encoding="utf-8"))
@@ -91,10 +91,12 @@ def main() -> int:
         assert_clean(soc, "SOC", "ARC_FINAL")
         assert soc["gates"]["FINAL_DIFFICULTY"] == "PASS" and soc["gates"]["FINAL_ITEM_QUALITY"] == "PASS"
         assert soc["metrics"]["total_points"] == 100
-        problem = "\n".join(page_text(page) for page in fitz.open(soc["pdf"]))
+        with fitz.open(soc["pdf"]) as fdoc:
+            problem = "\n".join(page_text(page) for page in fdoc)
         assert "ANSWER KEY" not in problem, "FINAL problem sheet must not expose the key"
         assert "(선택형 8~9번)" in problem
-        assert "ANSWER KEY" in page_text(fitz.open(soc["answer_key_pdf"])[0])
+        with fitz.open(soc["answer_key_pdf"]) as kdoc:
+            assert "ANSWER KEY" in page_text(kdoc[0])
 
         # --- fault injection ---
         # 1. KOR must keep registry-locked raw text: bundle-authored material is refused.

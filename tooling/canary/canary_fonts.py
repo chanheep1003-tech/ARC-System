@@ -8,10 +8,25 @@ from __future__ import annotations
 from pathlib import Path
 
 
+def _first_existing(candidates: list[Path]) -> Path:
+    return next((p for p in candidates if p.is_file()), candidates[0])
+
+
 REGULAR_NAME = "ArcCanaryRegular"
 BOLD_NAME = "ArcCanaryBold"
-REGULAR_FILE = Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf")
-BOLD_FILE = Path("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf")
+REGULAR_FILE = _first_existing([
+    Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
+    Path("C:/Windows/Fonts/HANDotum.ttf"),
+    Path("C:/Windows/Fonts/malgun.ttf"),
+    Path("C:/Windows/Fonts/arial.ttf"),
+])
+BOLD_FILE = _first_existing([
+    Path("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"),
+    Path("C:/Windows/Fonts/HANDotumB.ttf"),
+    Path("C:/Windows/Fonts/malgunbd.ttf"),
+    Path("C:/Windows/Fonts/arialbd.ttf"),
+])
+ALLOWED_FONT_TOKENS = ("dejavu sans", "hcr dotum", "malgun gothic", "arial")
 
 
 def embed(page) -> None:
@@ -27,7 +42,7 @@ def assert_embedded_fonts(document) -> None:
         if not page.get_text().strip():
             continue
         for xref, _ext, _type, name, _alias, _encoding in page.get_fonts():
-            if "dejavu sans" not in name.lower():
+            if not any(tok in name.lower() for tok in ALLOWED_FONT_TOKENS):
                 raise RuntimeError(f"CANARY_NON_EMBEDDED_FONT page {number}: {name}")
             _font_name, extension, _kind, binary = document.extract_font(xref)
             if extension not in {"ttf", "otf"} or not binary:

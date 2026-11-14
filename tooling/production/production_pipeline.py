@@ -204,7 +204,7 @@ def load_sources(sets: list[dict[str, Any]], subject: str = "KOR") -> list[dict[
             entry = registry.get(w["source_text_id"])
             if entry is None:
                 raise PipelineError(f"SOURCE_NOT_REGISTERED: {w['source_text_id']}")
-            raw = (ROOT / entry["repo_path"]).read_bytes()
+            raw = (ROOT / entry["repo_path"]).read_bytes().replace(b"\r\n", b"\n")
             digest = hashlib.sha256(raw).hexdigest()
             if digest != entry["sha256"]:
                 raise PipelineError(f"SOURCE_CHECKSUM_MISMATCH: {w['source_text_id']}")

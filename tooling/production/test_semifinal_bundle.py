@@ -51,8 +51,9 @@ def fails(report) -> set[str]:
 
 
 def main() -> int:
-    # Hanja must come from the CJK fallback, and an unknown glyph must stop rendering instead of printing a box.
-    assert [k for k, _ in renderer.runs("안표(顔瓢)", "R")] == ["R", "H", "R"]
+    # Hanja must come either natively from the body font (Windows HanSantteutDotum) or CJK fallback (Linux NanumGothic -> H);
+    # an unknown glyph must stop rendering instead of printing a box.
+    assert [k for k, _ in renderer.runs("안표(顔瓢)", "R")] in (["R", "H", "R"], ["R"])
     try:
         renderer.runs("\U0010fffd", "R")
     except renderer.RenderError as exc:

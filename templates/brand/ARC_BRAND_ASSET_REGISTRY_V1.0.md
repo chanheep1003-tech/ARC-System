@@ -10,9 +10,10 @@ Canonical full-cover lockups are immutable Drive assets.
 | ARC N° | ARC_N_LOCKUP_MASTER.png | 12389-txbX5JzYuyj1cjbw7MUO7--f9JE | 565×380 | a61269f152a79343b91f37e75f987f0b5a82d53dc7d9d3a4d067c9830df3bde4 |
 | ARC FINAL | ARC_FINAL_LOCKUP_MASTER.png | 1q9WyXajXA6V13yOYhnPqBBdLkEUwcbcB | 580×380 | e1a5e62f125592f258dfc3fd7224155da5a6c9ef4f92dc164994dd1dcc832b9e |
 
-Repository copies (byte-identical, fetched from the Drive ID above and hash-checked on 2026-09-25) so the
-production pipeline and CI can render and verify covers offline:
-- ARC FINAL: templates/brand/assets/ARC_FINAL_LOCKUP_MASTER.png (SHA-256 e1a5e62f…832b9e)
+Repository copies (byte-identical / offline canonical lockups tracked in Git so the production pipeline, sample builder, and CI can render and verify covers offline):
+- ARC N° (Color / Source): `templates/brand/assets/ARC_N_LOCKUP_MASTER.png` (`565×380`, SHA-256 `a61269f152a79343b91f37e75f987f0b5a82d53dc7d9d3a4d067c9830df3bde4`)
+- ARC N° (Monochrome Pure B&W): `templates/brand/assets/ARC_N_LOCKUP_MASTER_BW.png` (`565×380`, SHA-256 `44a84afcf9014bf16f8214ebd18e189a9b7d622430f7fb3e6398cd6f992865cd`)
+- ARC FINAL: `templates/brand/assets/ARC_FINAL_LOCKUP_MASTER.png` (`580×380`, SHA-256 `e1a5e62f125592f258dfc3fd7224155da5a6c9ef4f92dc164994dd1dcc832b9e`)
 
 Hard rules:
 - use exact asset by Drive ID

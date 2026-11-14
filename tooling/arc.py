@@ -64,8 +64,18 @@ def tracked_files() -> list[str]:
     return sorted(p.strip().replace("\\", "/") for p in out.splitlines() if p.strip() and (ROOT / p.strip()).is_file())
 
 
+TEXT_SUFFIXES = {
+    ".md", ".yaml", ".yml", ".py", ".json", ".jsonl", ".csv",
+    ".txt", ".html", ".css", ".js", ".sh", ".xml", ".svg",
+}
+TEXT_NAMES = {".gitignore", ".gitattributes", "LICENSE", "Makefile"}
+
+
 def sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    data = path.read_bytes()
+    if path.suffix.lower() in TEXT_SUFFIXES or path.name in TEXT_NAMES:
+        data = data.replace(b"\r\n", b"\n")
+    return hashlib.sha256(data).hexdigest()
 
 
 def exam_registry(manifest: dict) -> tuple[Path, dict, str]:
@@ -97,13 +107,21 @@ def cmd_doctor(_args) -> int:
             print(f"[MISS] python: {package}")
             problems.append(f"python -m pip install -r tooling/requirements-smoke.txt")
     font_dirs = [Path("/usr/share/fonts/truetype/nanum"), Path.home() / ".local/share/fonts/nanum"]
-    font_names = ("NanumMyeongjo.ttf", "NanumMyeongjoBold.ttf", "NanumGothic.ttf", "NanumGothicBold.ttf")
-    missing_fonts = [name for name in font_names if not any((d / name).is_file() for d in font_dirs)]
-    if missing_fonts:
-        print(f"[MISS] fonts: {', '.join(missing_fonts)}")
-        problems.append("bash tooling/ci/install_fonts.sh   (없으면 PDF 조판·카나리 실패)")
-    else:
+    linux_names = ("NanumMyeongjo.ttf", "NanumMyeongjoBold.ttf", "NanumGothic.ttf", "NanumGothicBold.ttf")
+    linux_ok = not [n for n in linux_names if not any((d / n).is_file() for d in font_dirs)]
+    win_dirs = [
+        Path("C:/Windows/Fonts"),
+        Path("C:/Program Files/Hancom/Office 2022/HOffice120/Shared/Fonts/Truetype"),
+    ]
+    win_reg = any((d / "HanSantteutDotum-Regular.ttf").is_file() or (d / "malgun.ttf").is_file() for d in win_dirs)
+    win_bold = any((d / "HanSantteutDotum-Bold.ttf").is_file() or (d / "KoPub Dotum Bold.ttf").is_file() or (d / "malgunbd.ttf").is_file() for d in win_dirs)
+    if linux_ok:
         print("[OK]   fonts: Nanum Myeongjo/Gothic")
+    elif win_reg and win_bold:
+        print("[OK]   fonts: Windows Korean Gothic (Canva FontKit)")
+    else:
+        print("[MISS] fonts: Korean Regular/Bold Gothic or Nanum fonts")
+        problems.append("bash tooling/ci/install_fonts.sh   (없으면 PDF 조판·카나리 실패)")
     try:
         print(f"[OK]   git: {git('rev-parse', '--abbrev-ref', 'HEAD')} @ {git('rev-parse', '--short', 'HEAD')}")
     except Exception:
@@ -591,7 +609,7 @@ def cmd_checksums(args) -> int:
             return 1
         print(f"CHECKSUMS 일치 ({len(fresh)} files)")
         return 0
-    CHECKSUMS.write_text("".join(f"{fresh[p]}  {p}\n" for p in sorted(fresh)), encoding="utf-8")
+    CHECKSUMS.write_bytes("".join(f"{fresh[p]}  {p}\n" for p in sorted(fresh)).encode("utf-8"))
     print(f"CHECKSUMS.sha256 갱신: {len(fresh)} files (추가 {len(added)} / 삭제 {len(removed)} / 변경 {len(changed)})")
     return 0
 
