@@ -25,25 +25,53 @@ A4_W, A4_H = 595.276, 841.890
 ML, MR, MT, MB = 46.0, 46.0, 64.0, 58.0
 GUT = 20.0
 COL_W = (A4_W - ML - MR - GUT) / 2
+_ACTIVE_SUBJECT: str | None = None
+_MIDDLE_KOREAN_RE = re.compile(r"[\u1100-\u11ff\u302e\u302f\u3165-\u318e\ua960-\ua97c\ud7b0-\ud7fb\ue000-\uf8ff]")
+
+
 def _first_existing(candidates: list[Path]) -> Path:
     return next((p for p in candidates if p.is_file()), candidates[0])
 
 
-def _resolve_font_files() -> dict[str, Path]:
-    reg_candidates = [
+def _resolve_font_files(subject: str | None = None) -> dict[str, Path]:
+    subj = (subject if subject is not None else _ACTIVE_SUBJECT or "").upper()
+    hancom_reg = [
+        Path("C:/Windows/Fonts/HANDotum.ttf"),
+        Path("C:/Program Files/Hancom/Office 2022/HOffice120/Shared/Fonts/Truetype/HANDotum.ttf"),
+        Path("/usr/share/fonts/truetype/hancom/HANDotum.ttf"),
+        Path.home() / ".local/share/fonts/hancom/HANDotum.ttf",
+    ]
+    hancom_bold = [
+        Path("C:/Windows/Fonts/HANDotumB.ttf"),
+        Path("C:/Program Files/Hancom/Office 2022/HOffice120/Shared/Fonts/Truetype/HANDotumB.ttf"),
+        Path("/usr/share/fonts/truetype/hancom/HANDotumB.ttf"),
+        Path.home() / ".local/share/fonts/hancom/HANDotumB.ttf",
+    ]
+    santteut_reg = [
         Path("C:/Windows/Fonts/HanSantteutDotum-Regular.ttf"),
         Path("C:/Program Files/Hancom/Office 2022/HOffice120/Shared/Fonts/Truetype/HanSantteutDotum-Regular.ttf"),
+    ]
+    santteut_bold = [
+        Path("C:/Windows/Fonts/HanSantteutDotum-Bold.ttf"),
+        Path("C:/Program Files/Hancom/Office 2022/HOffice120/Shared/Fonts/Truetype/HanSantteutDotum-Bold.ttf"),
+    ]
+    linux_reg = [
         Path("/usr/share/fonts/truetype/nanum/NanumGothic.ttf"),
         Path.home() / ".local/share/fonts/nanum/NanumGothic.ttf",
         Path("C:/Windows/Fonts/malgun.ttf"),
     ]
-    bold_candidates = [
-        Path("C:/Windows/Fonts/HanSantteutDotum-Bold.ttf"),
-        Path("C:/Program Files/Hancom/Office 2022/HOffice120/Shared/Fonts/Truetype/HanSantteutDotum-Bold.ttf"),
+    linux_bold = [
         Path("/usr/share/fonts/truetype/nanum/NanumGothicBold.ttf"),
         Path.home() / ".local/share/fonts/nanum/NanumGothicBold.ttf",
         Path("C:/Windows/Fonts/malgunbd.ttf"),
     ]
+    # KOR uses HCR Dotum (HANDotum R/B) so modern Korean and Middle Korean (옛한글·방점) share one typeface.
+    if subj == "KOR":
+        reg_candidates = [*hancom_reg, *santteut_reg, *linux_reg]
+        bold_candidates = [*hancom_bold, *santteut_bold, *linux_bold]
+    else:
+        reg_candidates = [*santteut_reg, *linux_reg]
+        bold_candidates = [*santteut_bold, *linux_bold]
     gb_candidates = [
         Path("C:/Windows/Fonts/KoPub Dotum Bold.ttf"),
         *bold_candidates,
@@ -122,6 +150,10 @@ def runs(text: str, key: str) -> list[tuple[str, str]]:
     global _FONTS
     if _FONTS is None:
         _FONTS = fonts()
+    # Keep headings/tokens containing Middle Korean in one unified bold face (B) instead of mixing KoPub + HANDotum.
+    if key == "GB" and _MIDDLE_KOREAN_RE.search(text):
+        if all(c.isspace() or c in SUPERSCRIPTS or c in SUBSCRIPTS or c in (UL_OPEN, UL_CLOSE) or _FONTS["B"].has_glyph(ord(c)) for c in text):
+            key = "B"
     out: list[tuple[str, str]] = []
     ul = ""
     for ch in text:
@@ -134,7 +166,9 @@ def runs(text: str, key: str) -> list[tuple[str, str]]:
         elif ch in SUBSCRIPTS:
             ch, k = SUBSCRIPTS[ch], key + ul + "_"
         elif not ch.isspace() and not _FONTS[key].has_glyph(ord(ch)):
-            if "H" in _FONTS and _FONTS["H"].has_glyph(ord(ch)):
+            if key in ("GB", "B") and "B" in _FONTS and _FONTS["B"].has_glyph(ord(ch)):
+                k = "B" + ul
+            elif "H" in _FONTS and _FONTS["H"].has_glyph(ord(ch)):
                 k = "H" + ul
             else:
                 raise RenderError(f"GLYPH_MISSING: U+{ord(ch):04X} {ch!r} (install fonts-noto-cjk or fonts-wqy-zenhei)")
@@ -630,6 +664,21 @@ def answer_page(doc, items: list[dict[str, Any]], labels: dict[str, str] | None 
 
 def render_solutions(bundle: dict[str, Any], labels: dict[str, str], out_pdf: Path) -> dict[str, Any]:
     """Render a dedicated B&W 2-column Canva Modern Gothic solutions booklet PDF (*_SOLUTIONS.pdf)."""
+    global _ACTIVE_SUBJECT, _FONTS
+    saved_subj = _ACTIVE_SUBJECT
+    subj = (bundle.get("subject") or "").upper() or None
+    if subj != _ACTIVE_SUBJECT:
+        _ACTIVE_SUBJECT = subj
+        _FONTS = None
+    try:
+        return _render_solutions_inner(bundle, labels, out_pdf)
+    finally:
+        if _ACTIVE_SUBJECT != saved_subj:
+            _ACTIVE_SUBJECT = saved_subj
+            _FONTS = None
+
+
+def _render_solutions_inner(bundle: dict[str, Any], labels: dict[str, str], out_pdf: Path) -> dict[str, Any]:
     L = Layout()
     doc = fitz.open()
     sol_col_w = COL_W
@@ -736,8 +785,13 @@ def render_solutions(bundle: dict[str, Any], labels: dict[str, str], out_pdf: Pa
 def render(bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[str, str], set_header,
            out_pdf: Path, key_pdf: Path | None = None, logo: dict[str, Any] | None = None,
            solutions_pdf: Path | None = None) -> dict[str, Any]:
-    global SIZE, LH
+    global SIZE, LH, _ACTIVE_SUBJECT, _FONTS
     saved = (SIZE, LH)
+    saved_subj = _ACTIVE_SUBJECT
+    subj = (bundle.get("subject") or "").upper() or None
+    if subj != _ACTIVE_SUBJECT:
+        _ACTIVE_SUBJECT = subj
+        _FONTS = None
     lay = bundle.get("layout") or {}
     if lay.get("body_pt"):  # per-bundle body size / line height (English passage workbooks)
         SIZE = float(lay["body_pt"])
@@ -746,6 +800,9 @@ def render(bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[s
         return _render(bundle, sources, labels, set_header, out_pdf, key_pdf, logo, solutions_pdf)
     finally:
         SIZE, LH = saved
+        if _ACTIVE_SUBJECT != saved_subj:
+            _ACTIVE_SUBJECT = saved_subj
+            _FONTS = None
 
 
 def _render(bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[str, str], set_header,

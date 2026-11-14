@@ -14,6 +14,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import os
+import re
 import shutil
 import sys
 from pathlib import Path
@@ -61,6 +62,8 @@ def _logo_to_bw_png_bytes(logo_path: Path) -> bytes:
 class CanvaFontKit:
     """Modern Korean Gothic font kit matching Canva DAHaz5b2kK0 editorial tone."""
 
+    _MK_RE = re.compile(r"[\u1100-\u11ff\u302e\u302f\u3165-\u318e\ua960-\ua97c\ud7b0-\ud7fb\ue000-\uf8ff]")
+
     FONT_NAMES = {
         "B_R": "CanvaSansReg",
         "B_B": "CanvaSansBold",
@@ -68,20 +71,32 @@ class CanvaFontKit:
         "G_R": "CanvaDotumFallback",
     }
 
-    def __init__(self) -> None:
+    def __init__(self, profile: str = "DEFAULT") -> None:
+        self.profile = profile.upper()
         env_dir = os.environ.get("ARC_N_FONT_DIR")
         dirs = ([Path(env_dir)] if env_dir else []) + [
             ROOT / "templates" / "fonts",
             Path(r"C:\Windows\Fonts"),
+            Path(r"C:\Program Files\Hancom\Office 2022\HOffice120\Shared\Fonts\Truetype"),
             Path("/usr/share/fonts/truetype/nanum"),
+            Path.home() / ".local/share/fonts/nanum",
             Path("/usr/share/fonts"),
         ]
-        names = {
-            "B_R": ["HanSantteutDotum-Regular.ttf", "HANDotum.ttf", "NanumGothic.ttf"],
-            "B_B": ["HanSantteutDotum-Bold.ttf", "HANDotumB.ttf", "NanumGothicBold.ttf"],
-            "G_B": ["KoPub Dotum Bold.ttf", "KoPubDotumBold.ttf", "HANDotumB.ttf", "NanumGothicBold.ttf"],
-            "G_R": ["HANDotum.ttf", "malgun.ttf", "NanumGothic.ttf"],
-        }
+        # KOR unifies modern + Middle Korean (옛한글·방점) on HCR Dotum (HANDotum R/B).
+        if self.profile == "KOR":
+            names = {
+                "B_R": ["HANDotum.ttf", "HanSantteutDotum-Regular.ttf", "NanumGothic.ttf"],
+                "B_B": ["HANDotumB.ttf", "HanSantteutDotum-Bold.ttf", "NanumGothicBold.ttf"],
+                "G_B": ["KoPub Dotum Bold.ttf", "KoPubDotumBold.ttf", "HANDotumB.ttf", "NanumGothicBold.ttf"],
+                "G_R": ["HANDotum.ttf", "malgun.ttf", "NanumGothic.ttf"],
+            }
+        else:
+            names = {
+                "B_R": ["HanSantteutDotum-Regular.ttf", "HANDotum.ttf", "NanumGothic.ttf"],
+                "B_B": ["HanSantteutDotum-Bold.ttf", "HANDotumB.ttf", "NanumGothicBold.ttf"],
+                "G_B": ["KoPub Dotum Bold.ttf", "KoPubDotumBold.ttf", "HANDotumB.ttf", "NanumGothicBold.ttf"],
+                "G_R": ["HANDotum.ttf", "malgun.ttf", "NanumGothic.ttf"],
+            }
         self.paths: dict[str, Path] = {}
         self.fonts: dict[str, fitz.Font] = {}
         for key, cands in names.items():
@@ -103,6 +118,10 @@ class CanvaFontKit:
         return  # Lazy-registered in put() so unused fallback fonts are not embedded whole
 
     def runs(self, text: str, key: str) -> list[tuple[str, str]]:
+        # Keep headings/strings containing Middle Korean in one unified bold face (B_B) instead of splitting syllables across KoPub + HANDotum.
+        if key == "G_B" and self._MK_RE.search(text):
+            if all(c.isspace() or self.fonts["B_B"].has_glyph(ord(c)) for c in text):
+                key = "B_B"
         primary = self.fonts[key]
         fallback_order = [k for k in ("B_B" if key == "G_B" else "B_R", "G_R", "B_R") if k != key]
         out: list[tuple[str, str]] = []
@@ -1159,8 +1178,10 @@ def main() -> None:
     targets = ["KOR", "SOC", "SCI", "ENG"] if args.subject in {"SUBJECTS", "ALL"} else ([args.subject] if args.subject in SUBJECT_SAMPLES else [])
     if targets:
         subj_dir = args.out_dir / "subjects" if args.out_dir == ROOT / "templates" / "gold" / "samples" else args.out_dir
+        kor_fk = CanvaFontKit(profile="KOR") if "KOR" in targets else None
         for code in targets:
-            pdf_path, pngs = render_subject_sample(canva_fk, SUBJECT_SAMPLES[code], subj_dir, args.artifact_dir)
+            fk = kor_fk if code == "KOR" and kor_fk is not None else canva_fk
+            pdf_path, pngs = render_subject_sample(fk, SUBJECT_SAMPLES[code], subj_dir, args.artifact_dir)
             print(f"GENERATED[{code}]: {pdf_path}")
             for sp in pngs:
                 print(f"PNG[{code}]: {sp}")

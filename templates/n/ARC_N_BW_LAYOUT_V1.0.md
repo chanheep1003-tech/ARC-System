@@ -16,7 +16,9 @@ Visual & binary ground truth:
 
 ## 3. Unified Modern Gothic Typography (`CanvaFontKit`)
 - Header, Question Numbers, `<보기>`/`<조건>` box headers, badge labels: **KoPub Dotum Bold** (`G_B`).
-- Body (stems, passages, tables, choices, rubrics): **HanSantteutDotum Regular / Bold** (`B_R` / `B_B`); **HANDotum** (`G_R`) fallback only for missing Unicode/superscript/subscript/symbol/Hanja glyphs (lazy-embedded and subsetted).
+- Body (stems, passages, tables, choices, rubrics):
+  - **SOC / SCI / ENG / Master**: **HanSantteutDotum Regular / Bold** (`B_R` / `B_B`); **HANDotum** (`G_R`) fallback only for missing glyphs (lazy-embedded and subsetted).
+  - **KOR (국어 — 현대국어·중세국어 단일 서체 표준)**: **함초롬돋움 Regular / Bold (`HANDotum.ttf` / `HANDotumB.ttf`)** (`B_R` / `B_B`, `R` / `B`). 현대국어·한자와 중세국어(옛한글 자모 조합 `나랏말ᄊᆞ미`·어두자음군 `ᄠᅳ들`/`ᄡᅳ메`·옛자모 `ㆍ`/`ㅿ`/`ㆁ`/`ㆆ`·방점 `〮`/`〯`·PUA)를 위화감이나 서체 혼용 없이 단일 고딕 패밀리로 조판한다. 제목·문항번호(`G_B`)에 옛한글·방점이 포함되면 해당 어절을 자동으로 `HANDotumB` (`B_B`)로 승격해 방점과 음절 분리를 방지한다(방점 `U+302E`/`U+302F`는 유니코드 결합 순서에 따라 해당 음절 **뒤**에 배치한다).
 - Never use `NotoSansKR-VF` (variable font registers as Thin weight and fails light-body preflight).
 - Fixed Type Scale:
   - Running header: `8.4pt` Bold (`#1F1F1F`) + `0.7pt` black bottom rule (`y=46.5`).

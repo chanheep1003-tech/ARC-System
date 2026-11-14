@@ -113,8 +113,8 @@ def cmd_doctor(_args) -> int:
         Path("C:/Windows/Fonts"),
         Path("C:/Program Files/Hancom/Office 2022/HOffice120/Shared/Fonts/Truetype"),
     ]
-    win_reg = any((d / "HanSantteutDotum-Regular.ttf").is_file() or (d / "malgun.ttf").is_file() for d in win_dirs)
-    win_bold = any((d / "HanSantteutDotum-Bold.ttf").is_file() or (d / "KoPub Dotum Bold.ttf").is_file() or (d / "malgunbd.ttf").is_file() for d in win_dirs)
+    win_reg = any((d / "HANDotum.ttf").is_file() or (d / "HanSantteutDotum-Regular.ttf").is_file() or (d / "malgun.ttf").is_file() for d in win_dirs)
+    win_bold = any((d / "HANDotumB.ttf").is_file() or (d / "HanSantteutDotum-Bold.ttf").is_file() or (d / "KoPub Dotum Bold.ttf").is_file() or (d / "malgunbd.ttf").is_file() for d in win_dirs)
     if linux_ok:
         print("[OK]   fonts: Nanum Myeongjo/Gothic")
     elif win_reg and win_bold:

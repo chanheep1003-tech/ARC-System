@@ -51,9 +51,18 @@ def fails(report) -> set[str]:
 
 
 def main() -> int:
-    # Hanja must come either natively from the body font (Windows HanSantteutDotum) or CJK fallback (Linux NanumGothic -> H);
+    # Hanja must come either natively from the body font (Windows HanSantteutDotum/HANDotum) or CJK fallback (Linux NanumGothic -> H);
     # an unknown glyph must stop rendering instead of printing a box.
     assert [k for k, _ in renderer.runs("안표(顔瓢)", "R")] in (["R", "H", "R"], ["R"])
+    if renderer._resolve_font_files("KOR")["R"].name == "HANDotum.ttf":
+        saved_subj, saved_fonts = renderer._ACTIVE_SUBJECT, renderer._FONTS
+        try:
+            renderer._ACTIVE_SUBJECT, renderer._FONTS = "KOR", None
+            mk_sample = "나랏말\u110a\u119e미 \u1120\u1173들 마\u1140\u119e\u11af 랏\u302e 말\u302f ㆍ ㅿ ㆁ ㆆ"
+            assert [k for k, _ in renderer.runs(mk_sample, "R")] == ["R"], "KOR Middle Korean must stay single HANDotum run"
+            assert [k for k, _ in renderer.runs("랏\u302e 말\u302f", "GB")] == ["B"], "GB Middle Korean tokens must stay intact in B (HANDotumB)"
+        finally:
+            renderer._ACTIVE_SUBJECT, renderer._FONTS = saved_subj, saved_fonts
     try:
         renderer.runs("\U0010fffd", "R")
     except renderer.RenderError as exc:
