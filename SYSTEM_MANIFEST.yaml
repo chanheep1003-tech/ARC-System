@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.9.3
+  version: 1.9.4
   status: release
   initialized: 2026-09-18
   repository_visibility: private
@@ -483,6 +483,7 @@ active:
     arc_final_html_master: templates/final/ARC_FINAL_master_v0.2.html
     arc_n_typeset_reference: templates/gold/ARC_N_TYPESET_REFERENCE_V1.1.md
     arc_n_layout_override: templates/n/ARC_N_BW_LAYOUT_V1.0.md
+    arc_n_master_sample: templates/gold/samples/ARC_N_ALL_IN_ONE_MASTER_SAMPLE_V1.0.pdf
 
 excluded_from_release:
   school_dna_seed:
@@ -549,6 +550,7 @@ tooling:
   production_pipeline: tooling/production/production_pipeline.py
   production_pipeline_regression_test: tooling/production/test_production_pipeline.py
   korean_production_renderer: tooling/typeset/kor_renderer.py
+  arc_n_master_sample_builder: tooling/typeset/build_arc_n_master_sample.py
   production_renderer_subjects: [KOR, ENG, SOC, SCI]
   english_exam_type_gate_exec: tooling/english/exam_type_gate.py
   english_exam_type_gate_smoke_test: tooling/english/test_exam_type_gate.py
