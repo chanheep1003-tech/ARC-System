@@ -44,6 +44,7 @@ handoff_gate = _load("arc_handoff_preflight", "tooling/handoff/handoff_preflight
 content_gate = _load("arc_content_qa_gate", "tooling/content_qa/content_qa_gate.py")
 realism_gate = _load("arc_korean_realism", "tooling/korean/korean_exam_realism_gate.py")
 final_gate = _load("arc_final_quality_gate", "tooling/final/final_quality_gate.py")
+lens_gate = _load("arc_examiner_lens_gate", "tooling/content_qa/examiner_lens_gate.py")
 typesetter = _load("arc_typesetter_gateway", "tooling/typeset/typesetter_gateway.py")
 pdf_gate = _load("arc_pdf_preflight", "tooling/pdf_qc/pdf_preflight.py")
 renderer = _load("arc_kor_renderer", "tooling/typeset/kor_renderer.py")
@@ -670,7 +671,19 @@ def final_profile(bundle, blind) -> dict[str, Any]:
             "school_relative": it.get("school_relative", "SCHOOL_UPPER" if d in {"D4", "D5"} else "SCHOOL_STANDARD"),
             "expected_time_class": it.get("expected_time_class", "LONG" if steps >= 3 else ("SHORT" if d in {"D1", "D2"} else "STANDARD")),
         })
-    return {"product_mode": "ARC_FINAL", "item_count": len(rows), "items": rows}
+    observed: dict[str, Any] = {"selected": len(mcq_items(bundle)), "essay": len(cr_items(bundle)),
+                                "selected_points": round(sum(float(it.get("points", 0) or 0) for it in mcq_items(bundle)), 2),
+                                "essay_points": round(sum(float(it.get("points", 0) or 0) for it in cr_items(bundle)), 2),
+                                "by_part": {}}
+    for it in bundle["items"]:
+        if it.get("part"):
+            slot = observed["by_part"].setdefault(str(it["part"]), {"selected": 0, "essay": 0})
+            slot["selected" if it["format"] == "MCQ" else "essay"] += 1
+    payload = {"product_mode": "ARC_FINAL", "item_count": len(rows), "items": rows, "structure_observed": observed}
+    if bundle.get("final_gate"):
+        payload["final_gate"] = bundle["final_gate"]
+        payload["final_edition"] = bundle.get("final_edition", "STANDARD")
+    return payload
 
 
 def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, archived_replay: bool = False,
@@ -790,8 +803,22 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
             payload["difficulty_anchor_required"] = True
             if anchor_rel:
                 payload["difficulty_anchor"] = yaml.safe_load((ROOT / anchor_rel).read_text(encoding="utf-8"))
+        if str(bundle.get("final_gate", "")).upper() == "V1.2" and not archived_replay:
+            try:
+                _, registry = exam_gate.load_registry(manifest_path)
+                entry = registry["exams"][exam_result["exam_id"]]["subjects"][bundle["subject"]]
+                if isinstance(entry.get("exam_structure"), dict):
+                    payload["exam_structure"] = entry["exam_structure"]
+            except Exception:  # missing structure is reported by the gate as FINAL_STRUCTURE_MISSING
+                pass
         final_result = final_gate.analyze(payload)
 
+    lens_result = None
+    if bundle.get("examiner_lens"):
+        lens_result = lens_gate.analyze(bundle)
+        for f in lens_result["findings"]:
+            if f["level"] == "ERROR":
+                findings.append({"severity": "FAIL", "code": f"LENS_{f['code']}", "message": f["detail"], "item_id": f.get("item_id")})
     hard = [f for f in findings if f["severity"] == "FAIL"]
     gate_prefix = f"{bundle['subject']}_"
     gates = {
@@ -815,9 +842,13 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
         "TYPESET": render["status"], "BRAND": render["brand"],
         "PDF_QC": pdf_result["status"],
     }
+    if lens_result:
+        gates["EXAMINER_LENS"] = "FAIL" if any(f["code"].startswith("LENS_") for f in hard) else "PASS"
     if final_result:
         gates["FINAL_DIFFICULTY"] = final_result["FINAL_DIFFICULTY"]
         gates["FINAL_ITEM_QUALITY"] = final_result["FINAL_ITEM_QUALITY"]
+        if final_result.get("FINAL_STRUCTURE", "").startswith(("PASS", "FAIL")):
+            gates["FINAL_STRUCTURE"] = final_result["FINAL_STRUCTURE"]
     blocking = [k for k, v in gates.items() if k != "BRAND" and v not in {"PASS", "WARN", "NOT_APPLICABLE"}]
     report = {
         "tool": "ARC_PRODUCTION_PIPELINE_V1.1", "batch_id": bundle["batch_id"], "product": product,

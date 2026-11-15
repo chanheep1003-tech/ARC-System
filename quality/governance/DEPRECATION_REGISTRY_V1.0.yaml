@@ -228,7 +228,7 @@ rules:
       - quality/anchors/KOR_DONGBUK_2025_2_MID_DIFFICULTY_ANCHOR_V1.0.yaml
     replacement:
       - quality/ARC_DIFFICULTY_ENGINE_V1.5.md
-      - quality/ARC_FINAL_QUALITY_GATE_V1.1.md
+      - archive/quality/ARC_FINAL_QUALITY_GATE_V1.1.md
       - quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
       - quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
       - quality/anchors/SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml

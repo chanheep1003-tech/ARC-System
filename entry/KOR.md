@@ -32,3 +32,7 @@
 ## 출제자 시선 (전 과목 공통)
 - `quality/ARC_EXAMINER_LENS_V1.3.md` — 내신 출제 순서(§1~§5) + 변별 4단계(§6~§7) + 난도↔유형 연결(§13).
 - 이 과목의 새 자료 만드는 법: 같은 문서 §8 국어.
+
+## ARC FINAL (실전 모의고사)
+- `quality/ARC_FINAL_QUALITY_GATE_V1.2.md` — 학교 수준(STANDARD, 기본) / 심화판(ADVANCED, 평균 3.0~3.5). 국어 22+4문항(80/20점), 학교 수준 평균 2.89 ± 0.20.
+- `arc.py plan --product ARC_FINAL --edition 학교수준|심화판`, `arc.py scaffold --product ARC_FINAL`(final_gate·final_edition·points·part 필드 포함).

@@ -34,15 +34,12 @@ exams:
       - subjects/SOCIAL_MASTER_V4.1.md
       - subjects/SCIENCE_MASTER_V4.0.md
       final_difficulty_policy:
-        reference: DONGBUK_2026_2_MID_STRUCTURAL_CALIBRATION
-        target: CHALLENGING_FINAL_3_0_TO_3_5
-        target_mean_min: 3.0
-        target_mean_center: 3.25
-        target_mean_max: 3.5
-        target_mean_basis: STRUCTURAL_CALIBRATION_D1_TO_D5
-        adjustment: USER_REQUESTED_2026_10_08
-        release_gate: REQUIRE_MEAN_AND_SUBJECT_SPECIFIC_DISTRIBUTION_AND_TIME_LOAD
-        previous_midterm_anchor: REFERENCE_ONLY_NOT_CURRENT_FINAL_OVERRIDE
+        rule: quality/ARC_FINAL_QUALITY_GATE_V1.2.md
+        editions:                       # 사용자 결정 2026-11-15: 학교 수준 + 심화판
+          STANDARD: SUBJECT_SCHOOL_ANCHOR   # 기본. 과목별 동북고 실제 시험 앙상블 anchor ± tolerance
+          ADVANCED: MEAN_3_0_TO_3_5         # 심화판. 평균 3.0~3.5, D4+D5가 anchor보다 5%p 이상, 후반부 변별 +1
+        default_edition: STANDARD
+        history: "2026-10-08 사용자 요청(평균 3.0~3.5 '어려운 기말')은 심화판(ADVANCED)으로 보존"
         applies_to: ARC_FINAL_ONLY
         preserve_arc_n_learning_ladder: true
         require_subject_specific_verified_final_anchor: true
@@ -75,7 +72,12 @@ exams:
           selected_points: 80
           essay: 4
           essay_points: 20
-        difficulty_anchor: null
+        difficulty_anchor:
+          subject: KOR
+          path: quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+          sha256: c59100576960761e17f79111874e70c3172b8614e3c66443db2d4856bcdba29a
+          unit_ids: [KOR-U3, KOR-U4-1, KOR-SUPP-PRINT]
+          registered: 2026-11-15
       ENG:
         scope_status: CONFIRMED
         scope_evidence_refs:
@@ -97,7 +99,12 @@ exams:
           essay: 4
           essay_points: 20
           passages_in_reading_book: 28
-        difficulty_anchor: null
+        difficulty_anchor:
+          subject: ENG
+          path: quality/anchors/ENG_DONGBUK_PROVISIONAL_DIFFICULTY_ANCHOR_V1.0.yaml
+          sha256: 5280b6720c68b44daf934dcd8a151b8144397d80478c4fb061cd20dac7d49723
+          unit_ids: [ENG-L2, ENG-VOCA-D31-40, ENG-READING-L1-P78-91]
+          registered: 2026-11-15
       SOC:
         scope_status: CONFIRMED
         scope_evidence_refs:
@@ -133,7 +140,12 @@ exams:
             C:
               selected: 8
               essay: 0
-        difficulty_anchor: null
+        difficulty_anchor:
+          subject: SOC
+          path: quality/anchors/SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+          sha256: 6fb08096f3223cf3d396531b33253db6d7bd5d7b43d835190e6d1a115be891d5
+          unit_ids: [SOC-A, SOC-B, SOC-C]
+          registered: 2026-11-15
       SCI:
         scope_status: CONFIRMED
         scope_evidence_refs:
@@ -160,7 +172,12 @@ exams:
           selected_points: 80
           essay: 4
           essay_points: 20
-        difficulty_anchor: null
+        difficulty_anchor:
+          subject: SCI
+          path: quality/anchors/SCI_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+          sha256: 7278999d77497a2ada954f0f3234bc3ccdc3c2b546445dd9ccd27768d6100eef
+          unit_ids: [SCI-A, SCI-B, SCI-C, SCI-D]
+          registered: 2026-11-15
       HIS:
         scope_status: DEFERRED_BY_USER
         scope_evidence_refs: []

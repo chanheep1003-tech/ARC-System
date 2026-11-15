@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Deterministic ARC FINAL difficulty / item-quality profile gate V1.1."""
+"""Deterministic ARC FINAL difficulty / item-quality profile gate.
+
+V1.1 rules apply to every payload. A payload that declares ``final_gate: V1.2``
+(quality/ARC_FINAL_QUALITY_GATE_V1.2.md) additionally gets:
+- two editions: STANDARD (school level, subject anchor tolerance) and ADVANCED
+  (심화판: mean 3.0-3.5, harder than the anchor, still the school's structure);
+- the school's exam structure (item counts, points, per-part allocation).
+"""
 from __future__ import annotations
 
 import argparse
@@ -12,6 +19,26 @@ from typing import Any
 import yaml
 
 DIFFICULTIES = {"D1", "D2", "D3", "D4", "D5"}
+EDITIONS = {"STANDARD", "ADVANCED"}
+ADVANCED_MEAN = (3.0, 3.5)
+ADVANCED_D45_MARGIN = 0.05   # ADVANCED D4+D5 share must exceed the school anchor by at least this much
+
+
+def check_structure(want: dict[str, Any], got: dict[str, Any]) -> list[dict[str, Any]]:
+    """Compare the school's exam structure with what the bundle actually contains."""
+    out: list[dict[str, Any]] = []
+    for key in ("selected", "essay"):
+        if key in want and int(got.get(key, -1)) != int(want[key]):
+            out.append(fail("FINAL_STRUCTURE_MISMATCH", f"{key} items {got.get(key)} != school {want[key]}"))
+    for key in ("selected_points", "essay_points"):
+        if key in want and abs(float(got.get(key, -1)) - float(want[key])) > 0.05:
+            out.append(fail("FINAL_POINTS_MISMATCH", f"{key} {got.get(key)} != school {want[key]}"))
+    for part, need in (want.get("by_part") or {}).items():
+        have = (got.get("by_part") or {}).get(part, {})
+        for key in ("selected", "essay"):
+            if int(have.get(key, 0)) != int(need.get(key, 0)):
+                out.append(fail("FINAL_PART_ALLOCATION_MISMATCH", f"part {part} {key} {have.get(key, 0)} != school {need.get(key, 0)}"))
+    return out
 TIME_CLASSES = {"SHORT", "STANDARD", "LONG"}
 
 
@@ -140,6 +167,16 @@ def analyze(data: dict[str, Any]) -> dict[str, Any]:
 
     anchor = data.get("difficulty_anchor")
     anchor_required = data.get("difficulty_anchor_required") is True
+    v12 = str(data.get("final_gate", "")).upper() == "V1.2"
+    edition = str(data.get("final_edition", "STANDARD")).upper()
+    if v12 and edition not in EDITIONS:
+        findings.append(fail("FINAL_EDITION_INVALID", "final_edition must be STANDARD or ADVANCED"))
+        edition = "STANDARD"
+    advanced = v12 and edition == "ADVANCED"
+    if v12 and isinstance(data.get("exam_structure"), dict):
+        findings.extend(check_structure(data["exam_structure"], data.get("structure_observed") or {}))
+    elif v12:
+        findings.append(fail("FINAL_STRUCTURE_MISSING", "V1.2 FINAL needs the school's exam_structure from the exam context"))
     mean_level = sum(int(k[1]) * v for k, v in difficulty_counts.items()) / n
     anchor_view = None
     if item_count >= 10 and isinstance(anchor, dict):
@@ -154,20 +191,26 @@ def analyze(data: dict[str, Any]) -> dict[str, Any]:
                 ))
         prof, tol = anchor["profile"], anchor["tolerance"]
         d3_rate = difficulty_counts["D3"] / n
-        for name, got in (("D12", d12_rate), ("D3", d3_rate), ("D45", d45_rate)):
+        if advanced:
+            lo, hi = ADVANCED_MEAN
+            if not lo - 1e-9 <= mean_level <= hi + 1e-9:
+                findings.append(fail("FINAL_ADVANCED_MEAN_OUT_OF_RANGE", f"심화판 mean {mean_level:.2f} not in {lo}-{hi}"))
+            if d45_rate < float(prof["shares"]["D45"]) + ADVANCED_D45_MARGIN - 1e-9:
+                findings.append(fail("FINAL_ADVANCED_NOT_HARDER", f"심화판 D4+D5 {d45_rate:.2f} < anchor {float(prof['shares']['D45']):.2f} + {ADVANCED_D45_MARGIN}"))
+        for name, got in ((() if advanced else (("D12", d12_rate), ("D3", d3_rate), ("D45", d45_rate)))):
             want = float(prof["shares"][name])
             if abs(got - want) > float(tol["share"]):
                 easier = (name == "D45" and got < want) or (name == "D12" and got > want)
                 code = "FINAL_SCHOOL_ANCHOR_EASIER" if easier else "FINAL_SCHOOL_ANCHOR_SHARE_OFF"
                 findings.append(fail(code, f"{name} share {got:.2f} vs anchor {want:.2f} (±{float(tol['share']):.2f})"))
-        if abs(mean_level - float(prof["mean_level"])) > float(tol["mean_level"]):
+        if not advanced and abs(mean_level - float(prof["mean_level"])) > float(tol["mean_level"]):
             code = "FINAL_SCHOOL_ANCHOR_EASIER" if mean_level < float(prof["mean_level"]) else "FINAL_SCHOOL_ANCHOR_HARDER"
             findings.append(fail(code, f"mean level {mean_level:.2f} vs anchor {float(prof['mean_level']):.2f} (±{float(tol['mean_level']):.2f})"))
         if longest_rate > 0.30:
             findings.append(fail("LONGEST_OPTION_IS_KEY_RATE", f"rate {longest_rate:.2f} exceeds 0.30"))
         late_start = math.floor(item_count * 0.70)
         late_d4_plus = sum(1 for item in items[late_start:] if isinstance(item, dict) and str(item.get("actual_difficulty", "")).upper() in {"D4", "D5"})
-        late_required = int(tol.get("late_section_d45_min", 1))
+        late_required = int(tol.get("late_section_d45_min", 1)) + (1 if advanced else 0)
         if late_d4_plus < late_required:
             findings.append(fail("LATE_SECTION_DISCRIMINATION_SHORT", f"late D4+ {late_d4_plus} < {late_required}"))
         anchor_view = {
@@ -180,6 +223,7 @@ def analyze(data: dict[str, Any]) -> dict[str, Any]:
             "anchor_mean_level": prof["mean_level"],
             "D3_RATE": round(d3_rate, 4),
             "MEAN_LEVEL": round(mean_level, 2),
+            "EDITION": edition if v12 else "STANDARD(V1.1)",
         }
     elif item_count >= 10 and anchor_required:
         findings.append(fail("FINAL_SCHOOL_ANCHOR_MISSING", "FINAL requires a subject-specific Dongbuk multi-exam difficulty anchor"))
@@ -206,7 +250,7 @@ def analyze(data: dict[str, Any]) -> dict[str, Any]:
 
     status = "FAIL" if findings else "PASS"
     return {
-        "tool": "ARC_FINAL_QUALITY_GATE_V1.1_EXEC",
+        "tool": "ARC_FINAL_QUALITY_GATE_V1.2_EXEC" if v12 else "ARC_FINAL_QUALITY_GATE_V1.1_EXEC",
         "status": status,
         "item_count": item_count,
         "fail_count": len(findings),
@@ -222,8 +266,9 @@ def analyze(data: dict[str, Any]) -> dict[str, Any]:
             "LONGEST_OPTION_IS_KEY_RATE": round(longest_rate, 4),
             "MAX_CONSECUTIVE_LONG_ITEMS": max_long_run,
         },
-        "FINAL_DIFFICULTY": "PASS" if not any(f["code"] in {"FINAL_SCHOOL_ANCHOR_EASIER", "FINAL_SCHOOL_ANCHOR_HARDER", "FINAL_SCHOOL_ANCHOR_SHARE_OFF", "FINAL_SCHOOL_ANCHOR_MISSING", "FINAL_ANCHOR_PROVENANCE_INVALID", "FINAL_TOO_EASY_DISTRIBUTION", "FINAL_HIGH_DIFFICULTY_FLOOR_MISSED", "LATE_SECTION_DISCRIMINATION_SHORT", "FAKE_D4", "FAKE_D5", "D5_EVIDENCE_SHORT"} for f in findings) else "FAIL",
+        "FINAL_DIFFICULTY": "PASS" if not any(f["code"] in {"FINAL_SCHOOL_ANCHOR_EASIER", "FINAL_SCHOOL_ANCHOR_HARDER", "FINAL_SCHOOL_ANCHOR_SHARE_OFF", "FINAL_SCHOOL_ANCHOR_MISSING", "FINAL_ANCHOR_PROVENANCE_INVALID", "FINAL_TOO_EASY_DISTRIBUTION", "FINAL_HIGH_DIFFICULTY_FLOOR_MISSED", "LATE_SECTION_DISCRIMINATION_SHORT", "FAKE_D4", "FAKE_D5", "D5_EVIDENCE_SHORT", "FINAL_ADVANCED_MEAN_OUT_OF_RANGE", "FINAL_ADVANCED_NOT_HARDER"} for f in findings) else "FAIL",
         "FINAL_ITEM_QUALITY": "PASS" if not any(f["code"] in {"WEAK_DISTRACTOR_HARD_FAIL", "OBVIOUS_KEY_HARD_FAIL", "EFFECTIVE_CHOICE_COUNT_LOW", "CORRECT_OPTION_LENGTH_BIAS", "CORRECT_DETAIL_OUTLIER", "LONGEST_OPTION_IS_KEY_RATE", "SECOND_BEST_INVALID", "SECOND_BEST_REFUTATION_MISSING"} for f in findings) else "FAIL",
+        "FINAL_STRUCTURE": ("PASS" if not any(f["code"].startswith(("FINAL_STRUCTURE", "FINAL_POINTS", "FINAL_PART")) for f in findings) else "FAIL") if v12 else "NOT_CHECKED(V1.1)",
         "FINAL_RELEASE": "PASS" if status == "PASS" else "BLOCKED",
         "findings": findings,
     }

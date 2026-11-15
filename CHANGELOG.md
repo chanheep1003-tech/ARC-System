@@ -1,3 +1,8 @@
+## 1.9.9 — 2026-11-15
+- ARC FINAL gate V1.2 (user directive before mock exams): editions STANDARD (school level, subject anchor) and ADVANCED (심화판, mean 3.0–3.5, harder than the anchor); the school's exam structure (item counts, points, SOC A 7+1 / B 7+1 / C 8) is enforced for bundles declaring `final_gate: V1.2`; the examiner lens now runs inside the production pipeline and draft_preview for bundles declaring it.
+- FINAL unblocked for all four subjects: difficulty anchors registered in the DONGBUK_2026_2_FINAL context (KOR, SOC existing; new SCI ensemble anchor for the A–D scope; new provisional ENG anchor, confidence LOW). The conflicting 3.0–3.5 target in the exam context became the ADVANCED edition.
+- `arc.py plan --product ARC_FINAL --edition` shows edition, school structure and target difficulty; `scaffold --product ARC_FINAL` emits final_gate/final_edition/points/part. Handoff §11.
+
 ## 1.9.8 — 2026-11-14
 - KOR levels: four instead of three (user directive) — 기본(L1) 40/45/15/0, 표준(L2, default) 30/45/22/3, 심화(L3) 20/45/30/5, 최상위(L4) 10/55/27/8, all inside the production gate bands (D4+D5 ≤ 35%, advanced 20–30%). Policy `quality/korean/ARC_KOR_LEVEL_POLICY_V2.1.md` (V2.0 archived); `--level 최상위|L4`; old V1–V4 map one-to-one to L1–L4.
 

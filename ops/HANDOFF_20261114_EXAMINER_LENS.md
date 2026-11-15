@@ -215,3 +215,37 @@ python tooling/arc.py checksums && python tooling/arc.py ci
 **바뀐 파일**: 위 두 정책(신규), 지난 버전 `archive/quality/ARC_EXAMINER_LENS_V1.2.md`, `archive/quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md`, `archive/quality/korean/ARC_KOR_LEVEL_POLICY_V2.0.md`, manifest(`korean_levels`, `korean_final_product`, `korean_orthography_module`, `difficulty_transfer_rule`), `arc.py`(plan/scaffold), 계획 기본값, 게이트·회귀 테스트, `entry/*.md`, `ARC_MAP.md`, `AGENTS.md`, `agents/TEAM.md`, 런북·국어 문항 엔진(날짜 붙인 오버라이드 절 추가).
 
 **아직 없는 것**: 이 단계·V1.3 기준으로 새로 만든 문항 세트는 없다. 첫 시범은 사용자 확인 후.
+
+---
+
+## 11. 추가 변경 (2026-11-15): ARC FINAL 출제 규칙 V1.2
+
+사용자: "ARC FINAL 출제 규칙도 손봐야 할 것 같다. 곧 실전모의고사 시험지 봐야 해서." 결정: 난도는 **학교 수준 + 심화판**, 과목 순서는 **국어 → 영어 → 사회 → 과학**.
+
+**발견한 문제와 조치**
+| 문제 | 조치 |
+|---|---|
+| 네 과목 FINAL 모두 BLOCKED("기말 난도 anchor 미등록") — 시험 설정의 `difficulty_anchor`가 전부 null | 국어·사회는 기존 4회 앙상블 anchor를, 과학은 새 `SCI_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0`(통합과학 4회 앙상블)을, 영어는 새 **잠정** `ENG_DONGBUK_PROVISIONAL_DIFFICULTY_ANCHOR_V1.0`(LOW)을 경로·sha256·단원과 함께 등록 → `arc.py status`에서 4과목 FINAL READY |
+| 난도 목표 충돌: 시험 설정 "평균 3.0~3.5" vs FINAL 게이트 "학교 수준 2.89" | 두 판으로 분리: STANDARD(학교 수준, 기본) / ADVANCED(심화판, 3.0~3.5) |
+| 학교 시험 구조(문항 수·배점·영역)를 검사하지 않음 | `exam_structure`와 번들의 MCQ/CR 수·배점 합·`part`별 수를 대조(FINAL_STRUCTURE/POINTS/PART_ALLOCATION_MISMATCH) |
+| 출제자 시선 게이트가 생산 파이프라인·draft_preview에 연결되지 않았음(이전 세션에서 빠뜨림) | `examiner_lens`를 선언한 번들(N°·FINAL 모두)에서 자동 실행, 게이트 이름 EXAMINER_LENS, 실패 코드 `LENS_*` |
+| 과학 anchor가 중간고사 범위(산화·환원) 전용 | 기말용 SCI 앙상블 anchor로 교체(산화·환원 anchor는 그 범위 FINAL에만) |
+
+**V1.2 적용 범위**: 번들에 `final_gate: V1.2`가 있을 때만(새 FINAL 뼈대가 기본으로 적음). 옛 FINAL 예시·카나리는 V1.1 규칙만 받아 CI가 그대로 통과한다.
+
+**과목별 FINAL 기준 (학교 수준 판)**
+| 과목 | 구조 | 평균 난도 | 기준 신뢰도 |
+|---|---|---|---|
+| 국어 | 22+4 (80/20) | 2.89 ± 0.20 | HIGH |
+| 영어 | 34+4 (80/20, 1~10번 1점) | 2.85 ± 0.30 | **LOW(잠정)** |
+| 사회 | 22+2 (90/10), A 7+1 · B 7+1 · C 8 | 2.87 ± 0.22 | MEDIUM_HIGH |
+| 과학 | 24+4 (80/20), A~D | 2.53 ± 0.22 | MEDIUM |
+심화판: 평균 3.0~3.5, D4+D5 ≥ 기준 + 5%p, 후반부 D4+ 한 개 더.
+
+**아직 없는 것 / 주의**
+- V1.2 기준으로 만든 FINAL 시험지는 아직 없다. 다음 작업은 국어 FINAL부터(사용자 순서).
+- 영어 난도 기준은 추정치다. 영어 기출 원안을 받으면 문항별 난도를 매겨 교체하고, 그 전까지 영어 FINAL은 "잠정 기준"이라고 알린다.
+- 과학은 공지에 영역별 문항 수가 없어 `part`는 기록만 하고 배분은 범위 쪽수 비율로 계획한다(게이트는 사회처럼 영역별 수가 있을 때만 검사).
+- anchor 파일을 고치면 `ops/exams/EXAM_CONTEXTS_V1.yaml`의 sha256도 갱신해야 한다.
+- 국어 ARC N° 생산 게이트의 D2~D5 개별 범위(경고)는 옛 사다리 기준이라 L3·L4에서 WARN이 날 수 있다(차단은 D1·D45·ADVANCED만). 필요하면 단계별로 정리.
+

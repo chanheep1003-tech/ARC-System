@@ -134,6 +134,10 @@ def run(bundle_dir: Path, out_dir: Path) -> dict:
 
     blind_missing = sum(1 for f in findings if f["code"] == "BLIND_REVIEW_MISSING")
     other_fail = [f for f in findings if f["severity"] == "FAIL" and f["code"] != "BLIND_REVIEW_MISSING"]
+    lens = pipeline.lens_gate.analyze(raw) if raw.get("examiner_lens") else None
+    if lens:
+        other_fail += [{"severity": "FAIL", "code": f"LENS_{f['code']}", "item_id": f.get("item_id"), "message": f["detail"]}
+                       for f in lens["findings"] if f["level"] == "ERROR"]
     qa_other = [f for f in qa_result.get("findings", []) if f.get("severity") == "FAIL"
                 and "BLIND" not in f.get("code", "") and "PASS_B" not in f.get("code", "")]
     report = {
@@ -144,6 +148,8 @@ def run(bundle_dir: Path, out_dir: Path) -> dict:
         "blind_missing_items": blind_missing,
         "author_side_failures": other_fail,
         "archetype_gate": archetype_gate.analyze(raw),
+        "examiner_lens": {"status": lens["status"], "version": lens["lens_declared"],
+                          "findings": lens["findings"]} if lens else {"status": "NOT_DECLARED"},
         "content_qa_status": qa_result["status"],
         "content_qa_non_blind_failures": qa_other,
         "metrics": {k: v for k, v in metrics.items() if k not in {"findings", "realism", "length_rows"}},

@@ -20,6 +20,7 @@ python tooling/arc.py doctor && python tooling/arc.py status
 - 제작 요청은 계획 카드부터: `python tooling/arc.py plan …` → 단원 세트 1개 → 사용자 검토 → 나머지.
 - 문항은 **내신 출제자 순서**로 만든다: 출제 계획표 → 수업 근거 → 학생 오개념별 오답 → 이의 제기 검토 → 동료 교사 검토. 변별 문항은 배운 개념에 **새 보기·예문·조항·자료**를 주어 추론·심화하게 하고, **어려운 문항일수록 추론·심화로** 낸다(D4 추론·심화, D5 심화) (`quality/ARC_EXAMINER_LENS_V1.3.md`, 게이트 `python tooling/content_qa/examiner_lens_gate.py <번들>/items.yaml`).
 - 문항은 등록된 학교 원형으로 만든다 (`quality/ARC_SCHOOL_ARCHETYPE_GATE_V1.0.md`). 모든 과목에서 `active.quality.false_difficulty_gate`와 문항 품질 루브릭을 함께 적용한다.
+- ARC FINAL(실전 모의고사)은 학교 수준(기본)·심화판 두 판이고, 학교 공지의 문항 수·배점·영역 배분을 그대로 지킨다 (`quality/ARC_FINAL_QUALITY_GATE_V1.2.md`).
 - 활성 과목: KOR, ENG, SOC, SCI. 기말 범위는 `ops/exams/DONGBUK_2026_2_FINAL_SCOPE_NOTICE.yaml`이 과목 MASTER의 중간고사 SCOPE LOCK보다 우선한다.
 - 사용자 검수를 1번 통과한 산출물은 반드시 Google Drive에 저장한다. 통과 전에는 저장하지 않는다 (`ops/ARC_DRIVE_SAVE_RULE_V1.0.md`).
 - 규칙은 manifest가 고른 파일에만 넣는다. 지난 버전은 `archive/`에 있으며 읽지도 고치지도 않는다. 새 규칙은 새 파일·새 버전으로 만들고 manifest를 갱신한다.

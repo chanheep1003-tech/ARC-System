@@ -1,0 +1,24 @@
+anchor_id: SCI_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0
+version: 1.0
+date: 2026-11-15
+subject: SCI
+school: 동북고등학교
+mode: MULTI_EXAM_ENSEMBLE
+source_exam_count: 4
+corpus: quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
+corpus_key: ensemble_summary.SCI_ALL
+profile:
+  shares: {D12: 0.488, D3: 0.375, D45: 0.138}
+  mean_level: 2.53
+tolerance:
+  share: 0.12
+  mean_level: 0.22
+  late_section_d45_min: 1
+format_reference:
+  mcq_typical: 24
+  constructed_typical: 4
+confidence: MEDIUM
+notes:
+  - "2025-2 중간·기말(각 0.35), 2026-1 중간·기말(각 0.15) 통합과학 실제 4회 앙상블(코퍼스 SCI_ALL). 관측 평균 2.33~2.71."
+  - "2026-2 기말 범위(A~D)를 직접 다룬 기출은 아니다. 산화·환원 전용 anchor(SCI_REDOX_*)는 중간고사 범위용이라 이번 기말에 쓰지 않는다."
+  - "동북고 통합과학은 국어·사회보다 D1·D2 비중이 높다. 학교 수준(STANDARD) FINAL은 이 분포를 따른다. 더 어렵게는 심화판(ADVANCED)."

@@ -356,7 +356,12 @@ def previous_kor_level(scope: str) -> str | None:
     return found
 
 
-def build_plan(subject: str, product: str, scope: str, count: int | None, version: str | None) -> dict:
+FINAL_EDITIONS = {"STANDARD": "STANDARD", "학교": "STANDARD", "학교수준": "STANDARD", "표준": "STANDARD",
+                  "ADVANCED": "ADVANCED", "심화": "ADVANCED", "심화판": "ADVANCED"}
+
+
+def build_plan(subject: str, product: str, scope: str, count: int | None, version: str | None,
+               edition: str | None = None) -> dict:
     defaults = yaml.safe_load(PLAN_DEFAULTS.read_text(encoding="utf-8"))
     manifest = load_manifest()
     _, registry, exam_id = exam_registry(manifest)
@@ -428,6 +433,24 @@ def build_plan(subject: str, product: str, scope: str, count: int | None, versio
             totals = library["arc_final_totals"]
             plan["final_blueprint"] = (f"선택형 {totals['selected_items']}({totals['selected_points']:g}점, 1~10번 단어 각 1점) + "
                                        f"서답형 {totals['constructed_items']}({totals['constructed_points']:g}점), 23번 교과서 다중 어법·34번 요약문 고정")
+    if product == "ARC_FINAL":
+        ed = FINAL_EDITIONS.get(str(edition or "STANDARD").strip().upper(), FINAL_EDITIONS.get(str(edition or "").strip()))
+        if ed is None:
+            raise SystemExit("FINAL 판은 학교수준(STANDARD) 또는 심화판(ADVANCED)입니다.")
+        plan["final_edition"] = ed
+        reasons.append("FINAL 판 미지정 → 학교 수준(STANDARD)" if not edition else f"FINAL 판 지정 → {ed}")
+        if isinstance(entry.get("exam_structure"), dict):
+            plan["exam_structure"] = entry["exam_structure"]
+        anchor_ref = entry.get("difficulty_anchor")
+        if isinstance(anchor_ref, dict) and anchor_ref.get("path"):
+            anchor = yaml.safe_load((ROOT / anchor_ref["path"]).read_text(encoding="utf-8"))
+            prof = anchor["profile"]
+            plan["final_target"] = {
+                "anchor": anchor["anchor_id"], "confidence": anchor.get("confidence"),
+                "mean": f"{prof['mean_level']} ± {anchor['tolerance']['mean_level']}" if ed == "STANDARD" else "3.0~3.5",
+                "shares": prof["shares"] if ed == "STANDARD" else {"D45_min": round(prof["shares"]["D45"] + 0.05, 3)},
+                "late_d45_min": anchor["tolerance"].get("late_section_d45_min", 1) + (1 if ed == "ADVANCED" else 0),
+                "provisional": str(anchor.get("mode", "")).startswith("PROVISIONAL")}
     _, blockers = cell_status(subject, product, entry, manifest)
     plan["blockers"] = blockers
     plan["read_order"] = [path for _, path in files_to_load(manifest, subject, product)]
@@ -454,6 +477,20 @@ def print_plan(plan: dict) -> None:
         print(f"  분량      {plan['count']}문항")
     if plan.get("final_blueprint"):
         print(f"  배치      {plan['final_blueprint']}")
+    if plan.get("final_edition"):
+        name = "학교 수준(STANDARD)" if plan["final_edition"] == "STANDARD" else "심화판(ADVANCED)"
+        print(f"  FINAL 판  {name}")
+    if plan.get("exam_structure"):
+        st = plan["exam_structure"]
+        line = f"선택형 {st.get('selected')}({st.get('selected_points')}점) + 서술형 {st.get('essay')}({st.get('essay_points')}점)"
+        if st.get("by_part"):
+            line += "  /  " + ", ".join(f"{k} {v.get('selected', 0)}+{v.get('essay', 0)}" for k, v in st["by_part"].items())
+        print(f"  시험 구조  {line}  (학교 공지와 같아야 함)")
+    if plan.get("final_target"):
+        t = plan["final_target"]
+        print(f"  목표 난도  평균 {t['mean']}  |  {t['shares']}  |  후반부 D4+ ≥ {t['late_d45_min']}  [{t['anchor']}, 신뢰도 {t['confidence']}]")
+        if t.get("provisional"):
+            print("  ⚠ 잠정 기준: 실제 기출 난도 측정값이 아니다. 기출 원안을 받으면 다시 보정한다.")
     if plan.get("archetype_mix"):
         print("  문항 원형 " + ", ".join(f"{k if plan['subject'] == 'ENG' else k.split('_')[0]} {v}" for k, v in plan["archetype_mix"].items()))
         print(f"            ({plan['archetype_library']})")
@@ -466,7 +503,7 @@ def print_plan(plan: dict) -> None:
 
 
 def cmd_plan(args) -> int:
-    plan = build_plan(args.subject, args.product, args.scope, args.count, args.version)
+    plan = build_plan(args.subject, args.product, args.scope, args.count, args.version, getattr(args, "edition", None))
     print_plan(plan)
     if args.save:
         path = Path(args.save)
@@ -775,6 +812,17 @@ def cmd_scaffold(args) -> int:
             }
         ],
     }
+    if args.product == "ARC_FINAL":
+        # quality/ARC_FINAL_QUALITY_GATE_V1.2.md — school structure + edition; examiner lens applies to FINAL too.
+        ed = FINAL_EDITIONS.get(str(getattr(args, "edition", None) or "STANDARD").strip().upper(),
+                                FINAL_EDITIONS.get(str(getattr(args, "edition", None) or "").strip(), "STANDARD"))
+        skel["final_gate"] = "V1.2"
+        skel["final_edition"] = ed
+        skel["set_label"] = "ARC FINAL" + (" 심화판" if ed == "ADVANCED" else "")
+        skel["items"][0]["points"] = 3.5
+        skel["items"][0]["expected_time_class"] = "STANDARD"
+        if args.subject in {"SOC", "SCI"}:
+            skel["items"][0]["part"] = "A"   # 학교 공지의 영역(A/B/C…) — 사회는 영역별 문항 수가 정해져 있다
     if skel["archetype_library"] is None:
         skel.pop("archetype_library")
         skel["items"][0].pop("archetype")
@@ -812,6 +860,7 @@ def main(argv=None) -> int:
     p.add_argument("--scope", required=True)
     p.add_argument("--count", type=int)
     p.add_argument("--level", "--version", dest="version", help="국어 ARC N° 단계: 기본/표준/심화/최상위 또는 L1~L4 (옛 V1~V4·V6도 받아서 바꿈)")
+    p.add_argument("--edition", help="ARC FINAL 판: 학교수준(STANDARD, 기본) / 심화판(ADVANCED)")
     p.add_argument("--save", help="계획을 YAML로 저장할 경로")
     p.set_defaults(func=cmd_plan)
 
@@ -820,6 +869,7 @@ def main(argv=None) -> int:
     p.add_argument("--product", default="ARC_N", choices=PRODUCTS)
     p.add_argument("--scope", required=True)
     p.add_argument("--level", "--version", dest="level", help="국어 ARC N° 단계 표시: 기본/표준/심화/최상위 또는 L1~L4")
+    p.add_argument("--edition", help="ARC FINAL 판: 학교수준(STANDARD, 기본) / 심화판(ADVANCED)")
     p.add_argument("--actor", default="CLAUDE", help="생성 모델 식별자 (GEMINI / CLAUDE / GPT)")
     p.add_argument("--batch-id")
     p.add_argument("--out", help="번들 생성 폴더 경로")

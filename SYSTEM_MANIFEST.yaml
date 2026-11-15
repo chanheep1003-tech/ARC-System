@@ -183,7 +183,9 @@ runtime:
   arc_final_actual_exam_corpus_required: true
   arc_final_difficulty_anchor_kor: quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
   arc_final_difficulty_anchor_soc: quality/anchors/SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
-  arc_final_difficulty_anchor_sci: quality/anchors/SCI_REDOX_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+  arc_final_difficulty_anchor_sci: quality/anchors/SCI_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml   # 2026-11-15: 기말 A~D 범위용(통합과학 4회 앙상블)
+  arc_final_difficulty_anchor_eng: quality/anchors/ENG_DONGBUK_PROVISIONAL_DIFFICULTY_ANCHOR_V1.0.yaml   # 잠정(LOW). 영어 기출 측정 후 교체
+  arc_final_editions: [STANDARD, ADVANCED]   # 학교 수준(기본) / 심화판 — quality/ARC_FINAL_QUALITY_GATE_V1.2.md §11
   arc_final_difficulty_anchor_sci_redox: quality/anchors/SCI_REDOX_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
   blind_review_rounds: 1                             # user directive 2026-09-25: one blind solve per bundle, all pipelines
   blind_review_after_round: author_fixes_recorded_as_post_blind_edits_no_rerun
@@ -397,11 +399,13 @@ active:
     examiner_lens: quality/ARC_EXAMINER_LENS_V1.3.md
     examiner_lens_gate: tooling/content_qa/examiner_lens_gate.py
     examiner_lens_role: agents/school-examiner.md
-    final_quality_gate: quality/ARC_FINAL_QUALITY_GATE_V1.1.md
+    final_quality_gate: quality/ARC_FINAL_QUALITY_GATE_V1.2.md
     dongbuk_actual_exam_difficulty_corpus: quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
     final_difficulty_anchor_kor: quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
     final_difficulty_anchor_soc: quality/anchors/SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
     final_difficulty_anchor_sci_redox: quality/anchors/SCI_REDOX_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+    final_difficulty_anchor_sci: quality/anchors/SCI_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+    final_difficulty_anchor_eng: quality/anchors/ENG_DONGBUK_PROVISIONAL_DIFFICULTY_ANCHOR_V1.0.yaml
     history_difficulty_diagnostic: quality/anchors/HIS_DONGBUK_MULTI_EXAM_DIFFICULTY_DIAGNOSTIC_V1.0.yaml
     korean_item_qa: quality/ARC_KOREAN_ITEM_QA_V1.5.md
     korean_exam_realism_gate: quality/ARC_KOREAN_EXAM_REALISM_GATE_V1.0.md

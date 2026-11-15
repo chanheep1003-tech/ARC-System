@@ -1,0 +1,26 @@
+anchor_id: ENG_DONGBUK_PROVISIONAL_DIFFICULTY_ANCHOR_V1.0
+version: 1.0
+date: 2026-11-15
+subject: ENG
+school: 동북고등학교
+mode: PROVISIONAL_BLUEPRINT
+source_exam_count: 0
+corpus: null
+blueprint: quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml
+profile:
+  shares: {D12: 0.35, D3: 0.41, D45: 0.24}
+  mean_level: 2.85
+tolerance:
+  share: 0.15
+  mean_level: 0.30
+  late_section_d45_min: 2
+format_reference:
+  mcq: 34
+  constructed: 4
+  vocab_items_1pt: 10
+confidence: LOW
+status: PROVISIONAL — 실제 영어 기출의 문항별 난도 측정값이 아니다
+notes:
+  - "영어는 난도 코퍼스가 없다. 이 값은 FINAL 38문항 배치표(quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml)의 구조 — 1~10번 1점 어휘(대부분 D2), 11~34번 2.5~3.3점 독해·어법, 서답형 4 — 와 다른 과목 동북고 앙상블(평균 2.87~2.89)에 맞춘 추정치다."
+  - "허용 오차를 다른 과목보다 넓게(share 0.15, mean 0.30) 둔다."
+  - "실제 영어 기출 원안을 받아 문항별 난도를 매기면 MULTI_EXAM_ENSEMBLE anchor로 교체한다. 그 전까지 영어 FINAL은 '잠정 기준'이라고 사용자에게 알린다."

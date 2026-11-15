@@ -78,4 +78,40 @@ easy={"product_mode":"ARC_FINAL","item_count":10,"items":[item(i+1,"D2") for i i
 codes={x["code"] for x in mod.analyze(easy)["findings"]}
 assert "FINAL_TOO_EASY_DISTRIBUTION" in codes
 assert "FINAL_HIGH_DIFFICULTY_FLOOR_MISSED" in codes
+# --- V1.2 (2026-11-15): editions + school exam structure ---
+import yaml
+kor_anchor = yaml.safe_load((ROOT / "quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml").read_text(encoding="utf-8"))
+structure = {"selected": 10, "selected_points": 80, "essay": 0, "essay_points": 0,
+             "by_part": {"A": {"selected": 6, "essay": 0}, "B": {"selected": 4, "essay": 0}}}
+observed = {"selected": 10, "selected_points": 80.0, "essay": 0, "essay_points": 0.0,
+            "by_part": {"A": {"selected": 6, "essay": 0}, "B": {"selected": 4, "essay": 0}}}
+
+def v12(diffs, edition="STANDARD", obs=None):
+    return {"product_mode": "ARC_FINAL", "item_count": len(diffs), "items": [item(i + 1, d) for i, d in enumerate(diffs)],
+            "final_gate": "V1.2", "final_edition": edition, "difficulty_anchor_required": True,
+            "difficulty_anchor": kor_anchor, "exam_structure": structure, "structure_observed": obs or observed}
+
+def codes_of(payload):
+    return {x["code"] for x in mod.analyze(payload)["findings"]}
+
+school = ["D2", "D2", "D2", "D2", "D3", "D3", "D3", "D4", "D4", "D4"]          # mean 2.9, close to KOR 2.89
+hard = ["D2", "D3", "D3", "D3", "D3", "D4", "D4", "D4", "D5", "D4"]             # mean 3.5
+assert mod.analyze(v12(school))["status"] == "PASS", mod.analyze(v12(school))
+assert mod.analyze(v12(school))["FINAL_STRUCTURE"] == "PASS"
+assert mod.analyze(v12(hard, "ADVANCED"))["status"] == "PASS", mod.analyze(v12(hard, "ADVANCED"))
+assert "FINAL_SCHOOL_ANCHOR_HARDER" in codes_of(v12(hard))                       # 학교 수준 판에서는 너무 어려움
+assert "FINAL_ADVANCED_MEAN_OUT_OF_RANGE" in codes_of(v12(school, "ADVANCED"))   # 심화판인데 학교 수준
+assert "FINAL_EDITION_INVALID" in codes_of(v12(school, "EASY"))
+short = dict(observed, selected=9)
+assert "FINAL_STRUCTURE_MISMATCH" in codes_of(v12(school, obs=short))
+points = dict(observed, selected_points=78.0)
+assert "FINAL_POINTS_MISMATCH" in codes_of(v12(school, obs=points))
+parts = dict(observed, by_part={"A": {"selected": 7, "essay": 0}, "B": {"selected": 3, "essay": 0}})
+assert "FINAL_PART_ALLOCATION_MISMATCH" in codes_of(v12(school, obs=parts))
+no_structure = v12(school)
+no_structure.pop("exam_structure")
+assert "FINAL_STRUCTURE_MISSING" in codes_of(no_structure)
+# Payloads without final_gate keep V1.1 behaviour (old canaries/fixtures).
+assert mod.analyze(good)["FINAL_STRUCTURE"] == "NOT_CHECKED(V1.1)"
+
 print("ARC FINAL QUALITY GATE SMOKE: PASS")
