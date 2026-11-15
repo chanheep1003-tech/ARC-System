@@ -1,3 +1,7 @@
+## 1.9.10 — 2026-11-15
+- Subject style prompts (user directive: make items as close as possible to real Dongbuk exams): `quality/style/ARC_STYLE_PROMPT_{KOR,ENG,SOC,SCI}_V1.0.md` from the Drive exam-analysis documents — structure and numbering, standard stems, per-type transformation recipes and real traps, material presentation, constructed-response conditions and scoring, school-level vs advanced difficulty, forbidden patterns, self-check. Wired into manifest `active.quality.style_prompts`, the plan read order, the FINAL scaffold and FINAL gate §16.
+- ENG FINAL anchor replaced: points-proxy ensemble of the three 2026-format exams (D12 0.471 / D3 0.309 / D45 0.221, mean 2.75 ± 0.22, MEDIUM_LOW); the provisional estimate is archived. Handoff §12.
+
 ## 1.9.9 — 2026-11-15
 - ARC FINAL gate V1.2 (user directive before mock exams): editions STANDARD (school level, subject anchor) and ADVANCED (심화판, mean 3.0–3.5, harder than the anchor); the school's exam structure (item counts, points, SOC A 7+1 / B 7+1 / C 8) is enforced for bundles declaring `final_gate: V1.2`; the examiner lens now runs inside the production pipeline and draft_preview for bundles declaring it.
 - FINAL unblocked for all four subjects: difficulty anchors registered in the DONGBUK_2026_2_FINAL context (KOR, SOC existing; new SCI ensemble anchor for the A–D scope; new provisional ENG anchor, confidence LOW). The conflicting 3.0–3.5 target in the exam context became the ADVANCED edition.

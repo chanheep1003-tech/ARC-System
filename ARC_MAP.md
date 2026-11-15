@@ -48,7 +48,7 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --level 심화 --co
 - **어려운 문항일수록 추론·심화 (전 과목)**: D2 확인·적용 / D3 적용·추론·심화 / D4 추론·심화 / D5 심화. 단계를 올리면 추론·심화 비중이 자동으로 커진다 (`quality/ARC_EXAMINER_LENS_V1.3.md` §13).
 - 단계를 말하지 않으면 표준(L2), 같은 범위 기록이 있으면 한 단계 위. `--level 기본|표준|심화|최상위|L1~L4` (옛 V1~V4·V6도 받아서 바꾼다).
 - ARC FINAL은 단계가 아니라 제품이다(옛 V5). 맞춤법·띄어쓰기는 범위에 있으면 어느 단계에서나 쓰는 주제 모듈이다(옛 V6).
-- **ARC FINAL (2026-11-15, `quality/ARC_FINAL_QUALITY_GATE_V1.2.md`)**: 두 판 — 학교 수준(STANDARD, 기본: 과목별 동북고 실제 시험 난도 ± 허용 오차) / 심화판(ADVANCED: 평균 3.0~3.5). 두 판 모두 학교 공지 구조(문항 수·배점·사회 A 7+1 / B 7+1 / C 8)를 그대로 지킨다. `python tooling/arc.py plan --subject KOR --product ARC_FINAL --scope "…" --edition 학교수준|심화판` — 계획 카드에 시험 구조와 목표 난도가 나온다. 영어 난도 기준은 잠정(LOW).
+- **ARC FINAL (2026-11-15, `quality/ARC_FINAL_QUALITY_GATE_V1.2.md`)**: 두 판 — 학교 수준(STANDARD, 기본: 과목별 동북고 실제 시험 난도 ± 허용 오차) / 심화판(ADVANCED: 평균 3.0~3.5). 두 판 모두 학교 공지 구조(문항 수·배점·사회 A 7+1 / B 7+1 / C 8)를 그대로 지킨다. `python tooling/arc.py plan --subject KOR --product ARC_FINAL --scope "…" --edition 학교수준|심화판` — 계획 카드에 시험 구조와 목표 난도가 나온다. 영어 난도 기준은 학교 배점 기반(MEDIUM_LOW).
 - 영어·사회·과학에는 단계가 없고 과목별 난도 분포 하나를 쓴다. 난도↔유형 연결은 같이 적용된다.
 - 기본 문항 수: 국어 50, 영어 50, 사회 20, 과학 20. 국어는 선택형 11 + 서답형 1짜리 단원 세트로 나눈다.
 - 영어 ARC N° 1세트 = 어휘 15 + 어법 10 + 독해 15 + 서답형 10. 영어 ARC FINAL = 실제 시험과 같은 38문항(선택형 34 + 서답형 4).
@@ -106,6 +106,7 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --level 심화 --co
 | `archive/` | manifest가 고르지 않는 지난 버전 규칙 (원래 경로 유지, 비활성) |
 | `ops/ARC_RUNBOOK.md` | 운영 절차 원문 |
 | `ops/HANDOFF_20261114_EXAMINER_LENS.md` | 최근 인수인계: 홈 레포 정리, 출제자 시선 V1.0→V1.3, 국어 단계 통합, 시범 세트, 미확인 사항 |
+| `quality/style/` | 과목별 출제 스타일 프롬프트(국어·영어·사회·과학) — 동북고 기출 구조·발문·변형·채점 규칙 |
 | `quality/ARC_EXAMINER_LENS_V1.3.md` | 출제자 시선(내신 출제 순서 + 변별 4단계 + 난도 상한·학생 안내·<보기> 조판 + 난도↔유형 연결), 전 과목 |
 | `ops/ARC_REQUEST_PLANNING_V1.0.md`, `ops/planning/` | 요청 → 계획 규칙과 기본값 |
 | `ops/exams/EXAM_CONTEXTS_V1.yaml` | 현재 시험과 과목별 범위 상태 |

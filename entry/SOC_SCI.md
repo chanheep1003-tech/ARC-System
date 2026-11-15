@@ -11,3 +11,4 @@
 ## ARC FINAL (실전 모의고사)
 - `quality/ARC_FINAL_QUALITY_GATE_V1.2.md` — 학교 수준(STANDARD, 기본) / 심화판(ADVANCED, 평균 3.0~3.5). 사회 22+2문항(90/10점, A 7+1 · B 7+1 · C 8, 문항마다 part), 학교 수준 2.87 ± 0.22 / 과학 24+4문항(80/20점, A~D part), 학교 수준 2.53 ± 0.22.
 - `arc.py plan --product ARC_FINAL --edition 학교수준|심화판`, `arc.py scaffold --product ARC_FINAL`(final_gate·final_edition·points·part 필드 포함).
+- **출제 스타일 프롬프트**(N°·FINAL 출제 전 먼저 읽기): 사회 `quality/style/ARC_STYLE_PROMPT_SOC_V1.0.md`, 과학 `quality/style/ARC_STYLE_PROMPT_SCI_V1.0.md`.

@@ -251,10 +251,13 @@ def files_to_load(manifest: dict, subject: str, product: str) -> list[tuple[str,
                 ("N 레이아웃", layout["arc_n_layout_override"])]
     if product == "ARC_FINAL":
         anchor_key = {"KOR": "final_difficulty_anchor_kor", "SOC": "final_difficulty_anchor_soc",
-                      "SCI": "final_difficulty_anchor_sci_redox"}.get(subject)
+                      "SCI": "final_difficulty_anchor_sci", "ENG": "final_difficulty_anchor_eng"}.get(subject)
         out += [("FINAL 품질 게이트", quality["final_quality_gate"])]
         if anchor_key:
             out += [("FINAL 난도 앵커", quality[anchor_key])]
+    if product in {"ARC_N", "ARC_FINAL"} and quality.get("style_prompts", {}).get(subject):
+        # 동북고 과목별 출제 스타일 — 실제 시험지처럼 만들기 위한 구조·발문·변형·채점 규칙
+        out += [("출제 스타일 프롬프트", quality["style_prompts"][subject])]
     out += [("조판 계약", runtime["typesetter_contract"]), ("PDF 조판 MASTER", layout["pdf_master"])]
     return [(label, path) for label, path in out if path]
 
@@ -817,6 +820,7 @@ def cmd_scaffold(args) -> int:
         ed = FINAL_EDITIONS.get(str(getattr(args, "edition", None) or "STANDARD").strip().upper(),
                                 FINAL_EDITIONS.get(str(getattr(args, "edition", None) or "").strip(), "STANDARD"))
         skel["final_gate"] = "V1.2"
+        skel["style_prompt"] = f"quality/style/ARC_STYLE_PROMPT_{args.subject}_V1.0.md"   # 먼저 읽고 그대로 따른다
         skel["final_edition"] = ed
         skel["set_label"] = "ARC FINAL" + (" 심화판" if ed == "ADVANCED" else "")
         skel["items"][0]["points"] = 3.5

@@ -1,0 +1,36 @@
+anchor_id: ENG_DONGBUK_POINTS_PROXY_DIFFICULTY_ANCHOR_V1.0
+version: 1.0
+date: 2026-11-15
+subject: ENG
+school: 동북고등학교
+mode: MULTI_EXAM_ENSEMBLE
+source_exam_count: 3
+corpus: quality/style/ARC_STYLE_PROMPT_ENG_V1.0.md
+difficulty_basis: SCHOOL_POINTS_PROXY
+supersedes: archive/quality/anchors/ENG_DONGBUK_PROVISIONAL_DIFFICULTY_ANCHOR_V1.0.yaml
+source_exams:
+  ENG_2026_1_MID:   {weight: 0.30, drive_id: 1Mydsv7OrSWPS-h5rCmZRI-y1bGd06LNy, shares: {D12: 0.500, D3: 0.324, D45: 0.176}, mean: 2.68}
+  ENG_2026_1_FINAL: {weight: 0.30, drive_id: 1FtS_A_BITY1SnnMgf93s7udb_qguP6M1, shares: {D12: 0.441, D3: 0.353, D45: 0.206}, mean: 2.76}
+  ENG_2026_2_MID:   {weight: 0.40, drive_id: 1WGxAdkredthDZ5ZfSeEWAWUyL4pSA_SX, shares: {D12: 0.471, D3: 0.265, D45: 0.265}, mean: 2.79}
+points_to_difficulty:          # 학교가 매긴 문항 배점을 구조 난도 대리 지표로 쓴다
+  vocab_1_to_10_1pt: D2
+  "<=2.7": D2
+  "2.8-3.0": D3
+  ">=3.1": D4
+profile:
+  shares: {D12: 0.471, D3: 0.309, D45: 0.221}
+  mean_level: 2.75
+tolerance:
+  share: 0.12
+  mean_level: 0.22
+  late_section_d45_min: 2
+format_reference:
+  mcq: 34
+  constructed: 4
+  vocab_items_1pt: 10
+confidence: MEDIUM_LOW
+notes:
+  - "2026 체제(선택 34 + 서답 4) 실제 시험 3회의 11~34번 문항별 배점(각 시험 합 70.0점 — 분석 문서의 '24문항 = 70점'과 일치)을 난도 대리 지표로 변환한 앙상블."
+  - "배점 출처: Drive 분석 문서 1UcAJb9enO1n-Tld-zP4cql1xbYFRLTeRKqoDDa26h10 §3(5개 시험 178문항 전수 매핑). Claude가 원안지를 문항별로 다시 대조하지는 않았다(evidence D2)."
+  - "배점 = 난도는 아니다. 학생 정답률이 없으므로 교사가 매긴 가중치를 쓴 근사다. 정답률·문항 분석 자료를 받으면 교체한다."
+  - "2025 체제(선택 26 + 서답 6) 2회는 배점 구조가 달라(어휘 2~3점) 제외."

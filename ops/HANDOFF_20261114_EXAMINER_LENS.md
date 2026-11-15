@@ -225,7 +225,7 @@ python tooling/arc.py checksums && python tooling/arc.py ci
 **발견한 문제와 조치**
 | 문제 | 조치 |
 |---|---|
-| 네 과목 FINAL 모두 BLOCKED("기말 난도 anchor 미등록") — 시험 설정의 `difficulty_anchor`가 전부 null | 국어·사회는 기존 4회 앙상블 anchor를, 과학은 새 `SCI_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0`(통합과학 4회 앙상블)을, 영어는 새 **잠정** `ENG_DONGBUK_PROVISIONAL_DIFFICULTY_ANCHOR_V1.0`(LOW)을 경로·sha256·단원과 함께 등록 → `arc.py status`에서 4과목 FINAL READY |
+| 네 과목 FINAL 모두 BLOCKED("기말 난도 anchor 미등록") — 시험 설정의 `difficulty_anchor`가 전부 null | 국어·사회는 기존 4회 앙상블 anchor를, 과학은 새 `SCI_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0`(통합과학 4회 앙상블)을, 영어는 새 **잠정** `ENG_DONGBUK_POINTS_PROXY_DIFFICULTY_ANCHOR_V1.0`(LOW)을 경로·sha256·단원과 함께 등록 → `arc.py status`에서 4과목 FINAL READY |
 | 난도 목표 충돌: 시험 설정 "평균 3.0~3.5" vs FINAL 게이트 "학교 수준 2.89" | 두 판으로 분리: STANDARD(학교 수준, 기본) / ADVANCED(심화판, 3.0~3.5) |
 | 학교 시험 구조(문항 수·배점·영역)를 검사하지 않음 | `exam_structure`와 번들의 MCQ/CR 수·배점 합·`part`별 수를 대조(FINAL_STRUCTURE/POINTS/PART_ALLOCATION_MISMATCH) |
 | 출제자 시선 게이트가 생산 파이프라인·draft_preview에 연결되지 않았음(이전 세션에서 빠뜨림) | `examiner_lens`를 선언한 번들(N°·FINAL 모두)에서 자동 실행, 게이트 이름 EXAMINER_LENS, 실패 코드 `LENS_*` |
@@ -237,7 +237,7 @@ python tooling/arc.py checksums && python tooling/arc.py ci
 | 과목 | 구조 | 평균 난도 | 기준 신뢰도 |
 |---|---|---|---|
 | 국어 | 22+4 (80/20) | 2.89 ± 0.20 | HIGH |
-| 영어 | 34+4 (80/20, 1~10번 1점) | 2.85 ± 0.30 | **LOW(잠정)** |
+| 영어 | 34+4 (80/20, 1~10번 1점) | 2.75 ± 0.22 | MEDIUM_LOW (학교 배점 기반, §12) |
 | 사회 | 22+2 (90/10), A 7+1 · B 7+1 · C 8 | 2.87 ± 0.22 | MEDIUM_HIGH |
 | 과학 | 24+4 (80/20), A~D | 2.53 ± 0.22 | MEDIUM |
 심화판: 평균 3.0~3.5, D4+D5 ≥ 기준 + 5%p, 후반부 D4+ 한 개 더.
@@ -248,4 +248,31 @@ python tooling/arc.py checksums && python tooling/arc.py ci
 - 과학은 공지에 영역별 문항 수가 없어 `part`는 기록만 하고 배분은 범위 쪽수 비율로 계획한다(게이트는 사회처럼 영역별 수가 있을 때만 검사).
 - anchor 파일을 고치면 `ops/exams/EXAM_CONTEXTS_V1.yaml`의 sha256도 갱신해야 한다.
 - 국어 ARC N° 생산 게이트의 D2~D5 개별 범위(경고)는 옛 사다리 기준이라 L3·L4에서 WARN이 날 수 있다(차단은 D1·D45·ADVANCED만). 필요하면 단계별로 정리.
+
+---
+
+## 12. 추가 변경 (2026-11-15): 과목별 출제 스타일 프롬프트 + 영어 난도 기준 교체
+
+사용자: "구글 드라이브에서 영어 기출 찾아보고, 과목별로 출제 스타일 파악해서 최대한 비슷하게 만들도록 자세한 규칙 프롬프트를 짜 줘." (토큰 사용 확인 후 4과목 모두 진행)
+
+**읽은 자료 (Drive)**
+| 과목 | 문서 | 읽은 범위 |
+|---|---|---|
+| 영어 | `1UcAJb9enO1n-Tld-zP4cql1xbYFRLTeRKqoDDa26h10` 기출유형 전수분석(5회 178문항) | 전문 |
+| 국어 | `1HAASDxaTo4fZjZ3TRdZPzdCKEN7PjdPHCvXT9fKc2wU` 국어 마스터 분석 | §1~2.1, §3.1, §4~5 (평가원 색인·JSONL 규격 등은 건너뜀) |
+| 사회 | `1cSeujZHipLurrC0MdFLUBGSRSHSQru6UyVwMiPL2d6s` 사회 마스터 분석 | §1.2~2 (사탐 420문항 색인·PDF 링크는 건너뜀) |
+| 과학 | `13tui_96UxiOyDJYxhpA7iM8_Cat82LdKQSTx6efaEzY` 과학 마스터 분석 | §1.2~2.3 (197문항 색인·PDF 링크는 건너뜀) |
+영어 원안지 5개(2025-2 중간 `14HMNd8F…`, 2025-2 기말 `1GiG3QBh…`, 2026-1 중간 `1Mydsv7O…`, 2026-1 기말 `1FtS_A_B…`, 2026-2 중간 `1WGxAdkr…`)는 위치만 확인했고 직접 읽지는 않았다(분석 문서로 대체).
+
+**만든 것**
+- `quality/style/ARC_STYLE_PROMPT_{KOR,ENG,SOC,SCI}_V1.0.md` — 역할 선언, 이번 범위·구조, 번호별 배치, 표준 발문, 유형별 변형 공식과 실제 함정, 자료 제시, 서술형 조건·채점, 난도(학교 수준/심화판), 금지 목록, 자체 점검.
+- 연결: manifest `active.quality.style_prompts`, `arc.py plan` 읽기 순서(N°·FINAL), FINAL 뼈대 `style_prompt`, FINAL 규칙 §16, AGENTS·ARC_MAP·entry.
+- 영어 난도 기준 교체: `ENG_DONGBUK_POINTS_PROXY_DIFFICULTY_ANCHOR_V1.0` — 2026 체제 3회의 11~34번 문항별 배점(각 70.0점으로 합이 맞음)을 배점 → 난도(≤2.7 D2, 2.8~3.0 D3, ≥3.1 D4, 1~10번 D2)로 바꾼 앙상블: 쉬움 47% / 보통 31% / 어려움 22%, 평균 2.75 ± 0.22. 이전 추정 anchor는 archive. 시험 설정 sha256 갱신.
+
+**주의 (프롬프트 안에도 적음)**
+- 근거는 분석 문서(evidence D2). 원안지와 다르면 원안지가 이긴다.
+- 과학: 분석 문서는 기말 단원을 "작년과 같다"고 예측하지만 공지 쪽수(C 70~95쪽 안의 82~91쪽 등)와 어긋날 수 있다 → 단원은 공지 쪽수 + 교과서 목차로 확정.
+- 국어: 분석 문서의 "여름 = 열리다의 명사형"은 오류 — 선생님 프린트 기준 '여름'은 파생 명사(열매). 프롬프트에 정정해 두었다.
+- 국어 4-1단원 작품·내용, 사회 각 쪽 범위의 주제, 과학 A~D의 단원은 교과서·학습지로 확인해야 한다(추측 금지).
+- 사회·영어 프롬프트의 일부 발문 예는 ARC가 쓴 것(표시함). 원안지 형식을 확인해 맞춘다.
 

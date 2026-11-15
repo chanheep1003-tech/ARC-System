@@ -45,7 +45,7 @@ quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
 - SOC → SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0
 - SCI → SCI_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0 (2026-2 기말 A~D 범위. 산화·환원 전용 anchor는 중간고사 범위용)
 - SCI-REDOX → SCI_REDOX_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0 (산화·환원 범위 FINAL에만)
-- ENG → ENG_DONGBUK_PROVISIONAL_DIFFICULTY_ANCHOR_V1.0 (잠정, 신뢰도 LOW — §14)
+- ENG → ENG_DONGBUK_POINTS_PROXY_DIFFICULTY_ANCHOR_V1.0 (잠정, 신뢰도 LOW — §14)
 - HIS → 현재 FINAL 비활성
 
 FINAL은 다음 네 값이 subject anchor tolerance 내에 있어야 한다.
@@ -269,10 +269,10 @@ END ARC FINAL QUALITY GATE V1.1
 | 과목 | anchor | 근거 | 학교 수준 평균 | 신뢰도 |
 |---|---|---|---|---|
 | 국어 | KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0 | 실제 시험 4회 앙상블 | 2.89 ± 0.20 | HIGH |
-| 영어 | ENG_DONGBUK_PROVISIONAL_DIFFICULTY_ANCHOR_V1.0 | **추정**(배치표 구조 + 타 과목 앙상블). 실제 기출 측정값 아님 | 2.85 ± 0.30 | LOW |
+| 영어 | ENG_DONGBUK_POINTS_PROXY_DIFFICULTY_ANCHOR_V1.0 | 2026 체제 실제 시험 3회의 **문항별 학교 배점**을 난도 대리 지표로 변환(2026-11-15 교체, 이전 추정치는 archive) | 2.75 ± 0.22 | MEDIUM_LOW |
 | 사회 | SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0 | 실제 시험 4회 앙상블 | 2.87 ± 0.22 | MEDIUM_HIGH |
 | 과학 | SCI_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0 | 통합과학 실제 4회 앙상블(SCI_ALL). 이번 A~D 범위 직접 기출은 아님 | 2.53 ± 0.22 | MEDIUM |
-- 영어 FINAL은 잠정 기준임을 사용자에게 알린다. 영어 기출 원안이 오면 문항별 난도를 매겨 MULTI_EXAM_ENSEMBLE로 바꾼다.
+- 영어 기준은 정답률이 아니라 교사 배점에 근거한 근사다. 문항 분석·정답률 자료가 오면 교체한다.
 - anchor 파일을 고치면 시험 설정의 sha256도 갱신해야 한다(FINAL_ANCHOR_CHECKSUM_MISMATCH).
 
 ## 15. 실전 모의고사 제작 순서 (과목 순서: 국어 → 영어 → 사회 → 과학, 사용자 지정)
@@ -283,3 +283,14 @@ python tooling/arc.py scaffold --subject KOR --product ARC_FINAL --scope "기말
 python tooling/production/draft_preview.py quality/production/<번들> --output-dir <scratch>
 # 동료 교사 블라인드 검토(별도 컨텍스트) → production_pipeline → 사용자 검수 1회 → 통과 시 Drive 저장
 ```
+
+## 16. 과목별 출제 스타일 프롬프트 (2026-11-15) — FINAL 출제 전 반드시 읽는다
+"실제 동북고 시험지와 최대한 비슷하게"를 위한 과목별 규칙. 번호별 배치, 표준 발문, 유형별 변형 공식, 오답 함정, 자료 제시 방식, 서술형 조건·채점, 난도(학교 수준/심화판), 금지 목록, 자체 점검을 담았다.
+| 과목 | 파일 | 근거 |
+|---|---|---|
+| 국어 | `quality/style/ARC_STYLE_PROMPT_KOR_V1.0.md` | 동북고 5개 학기 분석 + 선생님 기말 보충자료1 |
+| 영어 | `quality/style/ARC_STYLE_PROMPT_ENG_V1.0.md` | 동북고 5개 정기고사 178문항 전수 분석 |
+| 사회 | `quality/style/ARC_STYLE_PROMPT_SOC_V1.0.md` | 동북고 통합사회 5개 학기 분석 |
+| 과학 | `quality/style/ARC_STYLE_PROMPT_SCI_V1.0.md` | 동북고 통합과학 5개 학기 분석 |
+- manifest `active.quality.style_prompts`, `arc.py plan`의 읽기 순서, FINAL 뼈대의 `style_prompt` 필드에 연결.
+- 근거는 Drive 분석 문서(evidence D2). 원안지 문항별 재대조 전이므로, 원안지와 다르면 **원안지가 이긴다**.

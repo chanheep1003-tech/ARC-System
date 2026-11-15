@@ -36,3 +36,4 @@
 ## ARC FINAL (실전 모의고사)
 - `quality/ARC_FINAL_QUALITY_GATE_V1.2.md` — 학교 수준(STANDARD, 기본) / 심화판(ADVANCED, 평균 3.0~3.5). 국어 22+4문항(80/20점), 학교 수준 평균 2.89 ± 0.20.
 - `arc.py plan --product ARC_FINAL --edition 학교수준|심화판`, `arc.py scaffold --product ARC_FINAL`(final_gate·final_edition·points·part 필드 포함).
+- **출제 스타일 프롬프트**(N°·FINAL 출제 전 먼저 읽기): `quality/style/ARC_STYLE_PROMPT_KOR_V1.0.md`.

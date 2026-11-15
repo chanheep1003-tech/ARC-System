@@ -10,5 +10,6 @@
 - 이 과목의 새 자료 만드는 법: 같은 문서 §8 영어.
 
 ## ARC FINAL (실전 모의고사)
-- `quality/ARC_FINAL_QUALITY_GATE_V1.2.md` — 학교 수준(STANDARD, 기본) / 심화판(ADVANCED, 평균 3.0~3.5). 영어 34+4문항(80/20점, 1~10번 어휘 각 1점, 번호·유형은 arc_final_blueprint), 난도 기준은 잠정(LOW) 2.85 ± 0.30.
+- `quality/ARC_FINAL_QUALITY_GATE_V1.2.md` — 학교 수준(STANDARD, 기본) / 심화판(ADVANCED, 평균 3.0~3.5). 영어 34+4문항(80/20점, 1~10번 어휘 각 1점, 번호·유형은 arc_final_blueprint), 난도 기준은 학교 배점 기반 2.75 ± 0.22(MEDIUM_LOW).
 - `arc.py plan --product ARC_FINAL --edition 학교수준|심화판`, `arc.py scaffold --product ARC_FINAL`(final_gate·final_edition·points·part 필드 포함).
+- **출제 스타일 프롬프트**(N°·FINAL 출제 전 먼저 읽기): `quality/style/ARC_STYLE_PROMPT_ENG_V1.0.md`.
