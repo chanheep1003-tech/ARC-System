@@ -1,3 +1,9 @@
+## Unreleased — 2026-11-16
+- Run ledger (`tooling/workflow/arc_workflow.py`) is now an explicit state machine: one `TRANSITIONS` table replaces the stage checks spread through `advance()`/`revise`. New `machine` command prints the table as JSON; `status` and `handoff` report `allowed_events`.
+- Fix: saving a draft copy (`record --stage publish` with `mode: draft`) used to move the batch to `publish/DONE`, which made blind review and verified publication impossible afterwards. It now appends to `draft_publications` and keeps the batch open.
+- Fix: an explicit `block` was silently cleared by the next `record`. Manual holds are now status `ON_HOLD` and need `unblock --reason ...`; gate failures stay `BLOCKED` and remain retryable. `revise` no longer fakes a `source` stage internally.
+- Regression tests 11 → 17. Existing CLI arguments and state.json fields are unchanged; old states stay readable.
+
 ## 1.9.5 — 2026-11-13
 - Typesetting rule (user directive): English passage workbooks print the passage in full and tune page use with body size/line height. The renderer now reads a per-bundle `layout: {body_pt, line_height_ratio}` (default for ENG passage workbooks 9.4pt / 1.38) and no longer depends on environment variables; KOR/SOC/SCI keep 9.8pt / 1.62.
 - Passage source label (user directive): every question in a passage workbook shows its source passage beside the number, e.g. `05 [3-4-1] …` (item field `source_label`). `exam_type_gate.py` fails PASSAGE_LAYOUT_MISSING / PASSAGE_SOURCE_LABEL_MISSING.

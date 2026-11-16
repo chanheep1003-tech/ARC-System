@@ -4,7 +4,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from arc_workflow import advance, counts, create, handoff, main, read
+from arc_workflow import TRANSITIONS, STAGES, advance, allowed_events, counts, create, handoff, machine, main, read
 
 REQUEST = {'batch_id': 'trial', 'subject': 'SCI', 'scope': 'neutralization',
            'product': 'ARC_N', 'count': 1, 'ruleset_commit': 'a' * 40}
@@ -113,6 +113,53 @@ class WorkflowTests(unittest.TestCase):
             payload.write_text(json.dumps(SOURCE)); args[args.index('1')] = '2'
             with contextlib.redirect_stdout(io.StringIO()): self.assertEqual(main(args), 0)
             self.assertEqual(read(state)['status'], 'READY')
+
+    def test_draft_publication_keeps_run_open_for_review(self):
+        s = advance(draft(), 'publish', dict(PUBLISH, mode='draft'))
+        self.assertEqual((s['stage'], s['status']), ('draft', 'READY'))
+        self.assertEqual(len(s['draft_publications']), 1)
+        s = advance(advance(s, 'review', REVIEW), 'publish', PUBLISH)
+        self.assertEqual(s['status'], 'DONE')
+        self.assertEqual(counts(s)['active'], 1)
+
+    def test_partial_draft_publication_records_progress_without_finishing(self):
+        s = advance(advance(create(dict(REQUEST, count=3), 'GPT'), 'source', SOURCE), 'draft', DRAFT)
+        s = advance(s, 'publish', dict(PUBLISH, mode='draft'))
+        self.assertEqual(s['draft_publications'][0]['drafted'], 1)
+        self.assertEqual(s['status'], 'READY')
+        self.assertEqual(handoff(s)['to_stage'], 'draft')
+
+    def test_done_is_terminal(self):
+        s = advance(advance(draft(), 'review', REVIEW), 'publish', PUBLISH)
+        self.assertEqual(allowed_events(s), [])
+        with self.assertRaises(ValueError): advance(s, 'publish', dict(PUBLISH, mode='draft'))
+
+    def test_allowed_events_follow_guards(self):
+        self.assertEqual(allowed_events(create(REQUEST, 'GPT')), ['source'])
+        self.assertEqual(sorted(allowed_events(draft())), ['publish_draft', 'review'])
+        failed = json.loads(json.dumps(REVIEW)); failed['items'][0]['quality_pass'] = False
+        self.assertNotIn('publish', allowed_events(advance(draft(), 'review', failed)))
+
+    def test_transition_table_is_closed_over_stages(self):
+        for (src, _), dst in TRANSITIONS.items():
+            self.assertIn(src, STAGES); self.assertIn(dst, STAGES)
+        self.assertEqual(len(machine()['transitions']), len(TRANSITIONS))
+
+    def test_manual_hold_is_not_bypassed_by_record(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            state = Path(tmp)/'state.json'; payload = Path(tmp)/'input.json'
+            state.write_text(json.dumps(create(REQUEST, 'GPT')))
+            payload.write_text(json.dumps(SOURCE))
+            def call(*args):
+                with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                    return main(list(args) + ['--state', str(state), '--actor', 'GPT'])
+            self.assertEqual(call('block', '--expected-version', '1', '--reason', 'wait for Drive scope'), 0)
+            self.assertEqual(read(state)['status'], 'ON_HOLD')
+            self.assertEqual(call('record', '--expected-version', '2', '--stage', 'source', '--input', str(payload)), 2)
+            self.assertEqual(read(state)['stage'], 'request')
+            self.assertEqual(call('unblock', '--expected-version', '2', '--reason', 'scope confirmed'), 0)
+            self.assertEqual(call('record', '--expected-version', '3', '--stage', 'source', '--input', str(payload)), 0)
+            self.assertEqual(read(state)['stage'], 'source')
 
 if __name__ == '__main__':
     unittest.main()
