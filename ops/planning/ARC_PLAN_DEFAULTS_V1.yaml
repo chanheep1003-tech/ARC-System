@@ -1,12 +1,13 @@
 # 요청에 빠진 값을 채우는 기본값. 사용자가 말한 값이 항상 우선한다.
 schema: ARC-PLAN-DEFAULTS-V1
 date: 2026-11-11
-count_default: {KOR: 50, ENG: 50, SOC: 20, SCI: 20}
+count_default: {KOR: 50, ENG: 50, SOC: 20, SCI: 20, HIS: 20}
 final_count_default: {ENG: 38}
 set_split:                # 한 번에 만드는 묶음. 묶음마다 초안→검토 후 다음 묶음으로 간다.
   KOR: {unit_selected: 11, unit_constructed: 1}
   SOC: {unit_selected: 18, unit_constructed: 2}
   SCI: {unit_selected: 18, unit_constructed: 2}
+  HIS: {unit_selected: 18, unit_constructed: 2}
   ENG: {unit_selected: 40, unit_constructed: 10}   # 어휘 15 + 어법 10 + 독해 15 + 서답형 10
 kor_versions:             # 국어 ARC N° 네 단계 + 특화. 근거: quality/korean/ARC_KOR_V1_V6_LEVEL_POLICY_V1.2.md
   V1: {name: 전범위 기본, goal: 시험범위 개념을 빠짐없이 다양한 유형으로, difficulty: {D2: 0.40, D3: 0.45, D4: 0.15, D5: 0.00}, advanced: 0.20, new_material: 교과서·학습지 예문 중심}
@@ -19,9 +20,10 @@ kor_version_choice:
   orthography_or_spacing_request: V6
   otherwise: 같은 범위의 RUN_LOG 기록이 없으면 V1, 있으면 마지막 버전의 다음 단계(V4 다음은 V4 유지)
   final_request: V5는 ARC_FINAL이다. ARC N° 요청에 V5를 쓰지 않는다.
-other_subjects:           # 사회·과학은 버전 사다리가 없다
+other_subjects:           # 사회·과학·한국사는 버전 사다리가 없다
   SOC: {difficulty: {D2: 0.30, D3: 0.45, D4: 0.22, D5: 0.03}, advanced: 0.25}
   SCI: {difficulty: {D2: 0.30, D3: 0.45, D4: 0.22, D5: 0.03}, advanced: 0.25}
+  HIS: {difficulty: {D2: 0.30, D3: 0.45, D4: 0.22, D5: 0.03}, advanced: 0.25}   # 사회와 같은 값. 진단 프로필(D12 50% / D3 37% / D45 12%)보다 한 단계 위
   ENG: {difficulty: {D2: 0.15, D3: 0.45, D4: 0.30, D5: 0.10}, advanced: 0.30}   # N°는 D3~D5 변형 중심
 hard_limits:              # 기존 게이트와 같은 값. 계획이 이 범위를 벗어나면 계획 단계에서 거부한다.
   advanced_share: [0.20, 0.30]

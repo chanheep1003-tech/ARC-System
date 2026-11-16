@@ -1,0 +1,102 @@
+fixture_id: HIS-N-CANARY-V1
+source_mode: SYNTHETIC_SCOPE_REPRESENTATIVE_ONLY
+purpose: Deterministic 10-item HIS ARC_N QA, handoff, page-order, answer-key, and PDF regression. Method-only items; no historical fact claims.
+governance:
+  DUP_HISTORY_ACCESS: UNAVAILABLE
+  DUPLICATE_GATE: NOT_CLAIMED_CANARY
+  FINAL_USER_APPROVAL: NOT_APPLICABLE_CANARY
+  DRIVE_SAVE: BLOCKED
+content_bundle:
+  batch_id: HIS-N-CANARY-001
+  generator: CLAUDE
+  product_mode: ARC_N
+  subject: HIS
+  scope: registered final scope signal (textbook p64~147); synthetic structural fixture only
+  item_count: 10
+  created_at: '2026-11-16T12:00:00+09:00'
+  qa_evidence_filename: ARC_QA_EVIDENCE_HIS_N_CANARY_001.yaml
+  student_manuscript: '## QUESTION 1
+
+    When dating an organization named in a source, what should be checked first?
+
+    1) The number of sentences in the whole source 2) The time clues and activity in the source 3) The first person named among the options 4) The order of page numbers in the textbook 5) How often one word repeats in the source
+
+
+    ## QUESTION 2
+
+    Two events overlap in time. How should a timeline item treat them?
+
+    1) Keep the overlap and mark the relation 2) Order them by their starting years alone 3) Order them by their end years alone 4) Put the better-known event in front 5) Delete one of the two events entirely
+
+
+    ## QUESTION 3
+
+    Which of these may never serve as answer evidence in a source item?
+
+    1) A statement made by a person in the source 2) A time clue stated inside the source 3) Required knowledge from outside the range 4) An organization name written in the source 5) A location shown on the map in the item
+
+
+    ## QUESTION 4
+
+    In an item on founding and division, which distractor is strongest?
+
+    1) Right period, different leading group 2) A claim with no link at all to the source 3) A claim that ends far too briefly to judge 4) A claim placed first in the option list 5) A claim that contains one spelling error
+
+
+    ## QUESTION 5
+
+    What judgment is needed to compare a policy''s goal with its result?
+
+    1) Pick by memorized policy names only 2) Check goal and actual result apart 3) Pick the option written at greatest length 4) Guess the stated goal from the result 5) Mix in a policy from a different unit
+
+
+    ## QUESTION 6
+
+    Which counts as a hard failure in a historical map item?
+
+    1) Reading the legend before anything else 2) Checking each place name one at a time 3) Reading the scale together with the map 4) Drawing a boundary or name wrongly 5) Checking the map title before the items
+
+
+    ## QUESTION 7
+
+    What is the last step when reviewing a multi-statement item?
+
+    1) Recheck only one of the statements 2) Recheck only the easiest statements 3) Recheck the truth of every statement 4) Check where the key number is placed 5) Compare the letter count of statements
+
+
+    ## QUESTION 8
+
+    What must be kept when a source is rewritten in modern language?
+
+    1) The meaning, with the origin checked 2) A shorter text even if meaning shifts 3) Changed names to raise the difficulty 4) Removed time clues to raise difficulty 5) The long original copied word for word
+
+
+    ## QUESTION 9
+
+    How is an option judged when only half of it is true?
+
+    1) Accepted because half of it is true 2) Rejected because one part is false 3) Accepted whenever the wording is long 4) Accepted if a teacher once said it 5) Accepted when it appears first in line
+
+
+    ## QUESTION 10
+
+    When may an event outside the final range support a distractor?
+
+    1) When students are assumed to know it 2) When the options look far too easy 3) When in-range evidence refutes it 4) Whenever the key needs to be hidden 5) When it once appeared on an old exam'
+  answer_key:
+    1: 2
+    2: 1
+    3: 3
+    4: 1
+    5: 2
+    6: 4
+    7: 3
+    8: 1
+    9: 2
+    10: 3
+  visual_asset_manifest: []
+  qc_status:
+    STATUS: PASS
+    SOURCE_MODE: SYNTHETIC_SCOPE_REPRESENTATIVE_ONLY
+    FINAL_USER_APPROVAL: NOT_APPLICABLE_CANARY
+    DRIVE_SAVE: BLOCKED

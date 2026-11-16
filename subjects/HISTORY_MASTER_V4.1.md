@@ -1,0 +1,76 @@
+# 00_ACTIVE_한국사2_동북고_MASTER_V4.1
+# BASE: manifest-selected common generation engine
+# PRODUCT_MODE: ARC_CORE / ARC_N / ARC_FINAL
+# ACTIVATED: 2026-11-16 (USER_DIRECTIVE: 한국사를 다른 과목과 똑같이 세팅)
+# SUPERSEDES: subjects/HISTORY_MASTER_V4.0.md (중간고사 SCOPE LOCK p10~63)
+
+## 0. DRIVE FIRST
+ROOT: `/Google Drive/N제 시스템/05_한국사`
+우선순위: 학교자료/교과서 → 2025 동북고 기출 → 사료·지도·연표 색인 → 공식자료/교육청/EBS → 오류사례·금지패턴 → 기타.
+
+## 1. SCOPE LOCK — 2026학년도 2학기 기말 (학교 공지 2026-11-13)
+- 한국사2 교과서 p64~p147
+- 시험 구조: 선택형 25문항(90점) + 서술형 2문항(10점)
+근거: `ops/exams/DONGBUK_2026_2_FINAL_SCOPE_NOTICE.yaml`. 범위 밖 시대·사건을 정답 근거로 쓰지 않는다.
+- 공지에는 쪽수만 있다. 64~147쪽이 어느 대단원·소단원인지는 Drive의 교과서 목차를 열어 확인한 뒤 계획 카드에 적는다. 추정으로 단원명을 붙이지 않는다.
+- 교과서 출판사(미래엔)는 V4.0의 내부 기록(D2)이다. 실제 교과서 표지로 다시 확인한다.
+- 학습지·프린트는 공지에 없다. 사용자가 범위에 넣으라고 하기 전에는 정답 근거로 쓰지 않는다.
+- 중간고사 범위(p10~63)는 이번 시험 범위가 아니다.
+
+## 1-1. 제품
+- ARC CORE: 1단 개념서. 64~147쪽의 시기 구분·사건·단체·정책을 연표와 함께 정리.
+- ARC N°: 기본 20문항(선택형 18 + 서술형 2) 단원 세트. 핵심 70~80% / 심화 20~30%. 국어 같은 버전 사다리는 없다.
+- ARC FINAL: 실제 시험과 같은 25 + 2 구조. 기말 난도 anchor가 등록되기 전까지는 BLOCKED. 현재 등록된 것은 진단용 `quality/anchors/HIS_DONGBUK_MULTI_EXAM_DIFFICULTY_DIAGNOSTIC_V1.0.yaml`뿐이며 FINAL 출판 근거가 아니다.
+
+## 2. ITEM DNA
+- 사료 인물/단체/사건 추론
+- 사건 선후관계
+- 지도/지역
+- 단체 결성·분화·통합
+- 정책/운동 목표와 결과
+- ㄱㄴㄷ/복수판단
+- 2개 옳은 것/2개 틀린 것
+- 왕/시대/운동 교차
+
+## 3. STRUCTURE ROTATION
+사료형 / 연표형 / 지도형 / 단체관계 / 정책비교 / 인물 / 원인-결과 / 복수선택 / 시기추론 / 문장완성.
+20문항이면 최소 7종 구조 사용.
+
+## 4. FACT SAFETY
+날짜/연도/단체 명칭/인물/기관/조약은 독립 검증한다.
+사료는 출처를 확인하고 현대어 변형 시 의미를 바꾸지 않는다.
+비슷한 단체의 결성 시기·인물·목표를 의도적으로 섞은 오답은 전체적으로 명확히 거짓이어야 한다.
+
+## 5. TIMELINE SAFETY
+선후관계 문항은 내부 CHRONOLOGY_LEDGER:
+EVENT / START / END / RELATION / OVERLAP.
+기간이 겹치는 사건은 단순 앞뒤로만 배열하지 않는다.
+
+## 6. VISUAL
+지도/연표/조직도/사료박스를 TRUE_VISUAL 후보로 사용.
+역사지도의 경계/지역/명칭 오류는 HARD FAIL.
+
+## 7. VERIFICATION
+공통 PASS A/B +
+- chronology 재검산
+- 단체/인물 factual check
+- 지도 위치 확인
+- 2개 정답형에서 정확히 요구 개수만 참인지 확인
+
+## 8. OUTPUT
+A QUESTION_MANUSCRIPT
+B ANSWER_KEY
+C LAYOUT_ASSET_MANIFEST
+D QC_STATUS
+추가 QC: CHRONOLOGY_CHECK / HISTORICAL_FACT_CHECK / MAP_CHECK.
+
+## 9. HARD FAIL
+연대오류 / 인물·단체 오류 / 사료왜곡 / 지도오류 / 범위 밖 역사 필수지식 / 복수정답 / placeholder / 저작권 장문복제 / 해설 출력.
+
+## 10. ARC HANDOFF
+manifest-selected 공통 엔진의 HANDOFF_META와 SECTION A~D를 따른다. FINAL은 PRODUCT_MODE=ARC_FINAL로 처리하고 별도 FINAL 프롬프트를 사용하지 않는다.
+
+## 11. GOLD STANDARD ANCHORS
+필수 로드: `quality/gold/HIS_GOLD_ANCHORS_V1.0.md`
+사료/연표/단체 관계 문항은 GOOD 앵커의 '자료→식별→관계 판단' 구조를 기준으로 한다.
+단일 사실 회상형은 BAD 앵커와 비교해 PREMIUM을 금지한다.

@@ -26,7 +26,7 @@ runtime:
   unified_workflow_runner: tooling/workflow/arc_workflow.py
   unified_workflow_state_schema: ARC-RUN-V1
   active_exam_id: DONGBUK_2026_2_FINAL
-  active_subjects: [SCI, SOC, KOR, ENG]
+  active_subjects: [SCI, SOC, KOR, ENG, HIS]
   exam_scope_notice: ops/exams/DONGBUK_2026_2_FINAL_SCOPE_NOTICE.yaml
   english_exam_type_library: quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml
   english_exam_type_gate: required
@@ -371,8 +371,11 @@ active:
       drive_id: null
       drive_mirror_status: pending_sync
     history:
-      path: subjects/HISTORY_MASTER_V4.0.md
-      drive_id: 1RDjtvz1FBr9ght3RzMg4YjU_ty1nlpvU
+      path: subjects/HISTORY_MASTER_V4.1.md
+      drive_id: null
+      drive_mirror_status: pending_sync
+      archived: subjects/HISTORY_MASTER_V4.0.md
+      archived_drive_id: 1RDjtvz1FBr9ght3RzMg4YjU_ty1nlpvU
     ai:
       path: subjects/AI_MASTER_V4.0.md
       drive_id: 13wb_7mSGYu7vxDOjgJ3zW9Cel7BeHYfP
@@ -537,6 +540,9 @@ tooling:
   eng_core_canary_fixture: quality/canary/ENG_CORE_CANARY_V1.yaml
   eng_n_canary_fixture: quality/canary/ENG_N_CANARY_V1.yaml
   eng_final_canary_fixture: quality/canary/ENG_FINAL_CANARY_V1.yaml
+  his_core_canary_fixture: quality/canary/HIS_CORE_CANARY_V1.yaml
+  his_n_canary_fixture: quality/canary/HIS_N_CANARY_V1.yaml
+  his_final_canary_fixture: quality/canary/HIS_FINAL_CANARY_V1.yaml
   arc_cli: tooling/arc.py
   draft_preview: tooling/production/draft_preview.py
   korean_archetype_gate: tooling/korean/archetype_gate.py
@@ -554,7 +560,7 @@ tooling:
   korean_production_renderer: tooling/typeset/kor_renderer.py
   korean_core_renderer: tooling/typeset/core_renderer.py
   arc_n_master_sample_builder: tooling/typeset/build_arc_n_master_sample.py
-  production_renderer_subjects: [KOR, ENG, SOC, SCI]
+  production_renderer_subjects: [KOR, ENG, SOC, SCI, HIS]
   english_exam_type_gate_exec: tooling/english/exam_type_gate.py
   english_exam_type_gate_smoke_test: tooling/english/test_exam_type_gate.py
   subject_production_regression_test: tooling/production/test_subject_production.py

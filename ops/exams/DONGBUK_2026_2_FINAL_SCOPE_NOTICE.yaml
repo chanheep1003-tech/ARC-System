@@ -60,7 +60,7 @@ subjects:
     essay:
       items: 2
       points: 10
-    arc_status: DEFERRED_BY_USER
+    arc_status: ACTIVE  # 2026-11-16 USER_DIRECTIVE: 한국사를 다른 과목과 똑같이 세팅
   SOC:
     course: 통합사회2
     type: 공통

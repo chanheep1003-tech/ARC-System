@@ -1,6 +1,6 @@
 # HIS GOLD ANCHORS V1.0
 SUBJECT: 한국사2
-SCOPE: HISTORY_MASTER_V4.0
+SCOPE: HISTORY_MASTER_V4.0 (written for the midterm range p10~63; reuse the item structure only, not the content, for the final range)
 ANCHOR_POLICY: ARC_GOLD_ANCHOR_POLICY_V1.0
 FACT_NOTE: 핵심 사실은 교과서/학교자료 우선, 국사편찬위원회 우리역사넷으로 교차확인.
 

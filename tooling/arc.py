@@ -230,6 +230,9 @@ def files_to_load(manifest: dict, subject: str, product: str) -> list[tuple[str,
     if subject == "ENG":
         out += [("영어 문항 유형 라이브러리", runtime["english_exam_type_library"]),
                 ("범위 공지", runtime["exam_scope_notice"])]
+    if subject == "HIS":
+        out += [("범위 공지", runtime["exam_scope_notice"]),
+                ("한국사 난도 진단(참고용, FINAL anchor 아님)", quality.get("history_difficulty_diagnostic", ""))]
     if subject == "SOC":
         out += [("사회 C X표시 제외 색인", quality["social_c_xmark_exclusion_index"]),
                 ("사회 학교자료 목록", quality["social_school_source_inventory"]),

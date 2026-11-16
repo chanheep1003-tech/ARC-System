@@ -2,8 +2,8 @@ schema_version: ARC-SOURCE-COLLECTION-V1
 target_exam_id: DONGBUK_2026_2_FINAL
 updated_at: '2026-10-03'
 collection_scope:
-  active_subjects: [SCI, SOC, KOR, ENG]
-  deferred_subjects: [HIS, AI]
+  active_subjects: [SCI, SOC, KOR, ENG, HIS]
+  deferred_subjects: [AI]
   exam_registry_ref: ops/exams/EXAM_CONTEXTS_V1.yaml#exams.DONGBUK_2026_2_FINAL.provisional_scope_policy
   status: PROVISIONAL_REMAINDER
   target: 과학·사회·국어의 이번 학기 전체 학습 내용 중 실제 중간고사에 포함되지 않은 나머지 전부

@@ -1,0 +1,84 @@
+fixture_id: HIS-CORE-CANARY-V1
+source_mode: SYNTHETIC_SCOPE_REPRESENTATIVE_ONLY
+purpose: Three-part one-column CORE, typesetter, PDF preflight, and fault-injection regression for HIS. Method-only text; no historical fact claims.
+content_bundle:
+  batch_id: HIS-CANARY-001
+  generator: CLAUDE
+  product_mode: ARC_CORE
+  subject: HIS
+  scope: registered final scope signal (textbook p64~147); not a school-source transcription
+  item_count: 0
+  created_at: '2026-11-16T12:00:00+09:00'
+  core_architecture_summary:
+    CENTRAL_QUESTION: In what order should sources, timelines, organizations, and maps be judged so that only in-scope evidence decides the answer?
+    MAJOR_BOUNDARIES:
+    - PART A - Reading a historical source
+    - PART B - Timelines and sequence
+    - PART C - Organizations, policies, and maps
+  student_manuscript: '# PART A - Reading a historical source
+
+
+    A source item is not a memory check. The reader narrows the period and the actor by using clues inside the source itself. First mark who is speaking, what situation the speaker assumes, and which expressions point to a time. Only then connect those clues to an event or organization inside the registered range.
+
+
+    When a source carries several clues, write down the range each clue points to. One clue may indicate a broad period and another a narrow one. The overlap between them is the candidate answer; if the ranges do not overlap, reread the source and check whether a clue was misread.
+
+
+    A modern-language rewrite of a source must not change its meaning. If shortening a sentence or replacing a word removes the time clue or the actor, the rewrite is no longer the same source. A source whose origin cannot be confirmed is never used as answer evidence. This canary checks the A-part page boundary and heading hierarchy; it does not transcribe the school textbook and does not authorize factual release.
+
+
+    # PART B - Timelines and sequence
+
+
+    Sequence is not decided by comparing start dates alone. For every event record its start, its end, its relation to the others, and any overlap. Forcing two overlapping events into a simple before-and-after order gives an item a wrong key.
+
+
+    A timeline is easier to read when it is split into lanes instead of one line. Political, economic, and social-movement lanes show at a glance which events ran together and which followed one another. Before judging, decide whether the item asks about cause and effect or only about order.
+
+
+    A cause-and-effect item needs in-range evidence that the earlier event actually led to the later one. Being earlier in time does not make an event a cause. A causal statement without that evidence is treated as a distractor, however plausible it sounds.
+
+
+    Distractors in a sequence item are built so that a single misplaced step makes the whole arrangement false. A half-correct arrangement is never left looking like the key.
+
+
+    # PART C - Organizations, policies, and maps
+
+
+    When organizations of a similar period are compared, separate their founding period, leading group, goals, and later changes into columns. Policies are checked twice: once for the stated goal and once for the actual result. The most dangerous case is two things with the same name and different content.
+
+
+    A policy comparison table holds columns for the acting body, the target, the goal, and the result. Two policies with the same goal are still different when the target or the method differs. Check each option for columns that have been swapped between the two policies.
+
+
+    A historical map is read from the legend, the scale, and the place names first. A map with a wrong boundary or place name invalidates the whole item. This canary contains no map; real maps are drawn only from verified originals.'
+  visual_asset_manifest: []
+  qc_status:
+    CORE_QA_STATUS: PASS
+    SOURCE_MODE: SYNTHETIC_SCOPE_REPRESENTATIVE_ONLY
+fault_injection:
+- id: STALE_PDF_MASTER
+  field: pdf_master
+  value: ARC_PDF_LAYOUT_MASTER_V2.1
+  expected_gate: SERIALIZER_BLOCK
+- id: TWO_COLUMN
+  field: student_manuscript_suffix
+  value: '
+
+
+    Render this body as two-column.'
+  expected_gate: SERIALIZER_BLOCK
+- id: SMALL_BODY
+  field: student_manuscript_suffix
+  value: '
+
+
+    Use body 8.8pt.'
+  expected_gate: SERIALIZER_BLOCK
+- id: INTERNAL_ID
+  field: student_manuscript_suffix
+  value: '
+
+
+    [ARC-HIS-C-999]'
+  expected_gate: SERIALIZER_BLOCK
