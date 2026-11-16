@@ -1,0 +1,43 @@
+anchor_id: HIS_DONGBUK_FINAL_DIFFICULTY_ANCHOR_V1.0
+version: 1.0
+date: '2026-11-16'
+subject: HIS
+school: 동북고등학교
+mode: MULTI_EXAM_ENSEMBLE
+source_exam_count: 4
+corpus: quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
+approved_by: USER_DIRECTIVE:2026-11-16 (한국사 FINAL 평균 난도 3.0으로 확정)
+school_baseline:
+  source: quality/anchors/HIS_DONGBUK_MULTI_EXAM_DIFFICULTY_DIAGNOSTIC_V1.0.yaml
+  shares: {D12: 0.505, D3: 0.372, D45: 0.123}
+  mean_level: 2.55
+  closest_exam: HIS_2025_2_FINAL   # 같은 한국사2·2학기 기말·25+2 구성, mean 2.52
+  observed_mean_range: [2.36, 2.67]
+  d5_observed: 0
+uplift:
+  policy: ops/exams/EXAM_CONTEXTS_V1.yaml#exams.DONGBUK_2026_2_FINAL.provisional_scope_policy.final_difficulty_policy
+  policy_band: [3.0, 3.5]
+  chosen: 3.0
+  rationale: >
+    학교 평균 2.55에서 정책 하한 3.0까지 +0.45. 중심값 3.25는 학교 대비 +0.70으로
+    한국사에서는 범위 밖 지식·지엽 암기·겹치는 사건의 억지 배열 같은 가짜 난도 위험이 커서 쓰지 않는다.
+profile:
+  shares: {D12: 0.28, D3: 0.44, D45: 0.28}
+  mean_level: 3.00
+tolerance:
+  share: 0.12
+  mean_level: 0.20
+  late_section_d45_min: 2
+reference_layout_mcq_25: {D1: 0, D2: 7, D3: 11, D4: 6, D5: 1}   # mean 3.04
+constructed: 서술형 2문항은 D3~D4
+format_reference:
+  mcq: 25
+  mcq_points: 90
+  constructed: 2
+  constructed_points: 10
+confidence: MEDIUM_HIGH
+content_rule: subjects/HISTORY_MASTER_V4.1.md §1-2 (교과서 안에서만 출제, 잘 안 보는 교과서 내용으로 변별 허용)
+notes:
+  - "난도는 사료 식별+시기+단체 연결, 복수 사건 선후, 인물·단체·계열 교차, 지도·연표 결합으로 올린다."
+  - "잘 안 보는 교과서 내용을 묻는다는 사실만으로 D4/D5가 되지 않는다. 라벨은 false_difficulty_gate의 추론 단계 기준을 따른다."
+  - "구조 난도이며 학생 정답률 자료는 없다."

@@ -2,7 +2,7 @@
 schema: ARC-PLAN-DEFAULTS-V1
 date: 2026-11-11
 count_default: {KOR: 50, ENG: 50, SOC: 20, SCI: 20, HIS: 20}
-final_count_default: {ENG: 38}
+final_count_default: {ENG: 38, HIS: 27}   # 실제 시험 문항 수 (HIS 선택형 25 + 서술형 2)
 set_split:                # 한 번에 만드는 묶음. 묶음마다 초안→검토 후 다음 묶음으로 간다.
   KOR: {unit_selected: 11, unit_constructed: 1}
   SOC: {unit_selected: 18, unit_constructed: 2}

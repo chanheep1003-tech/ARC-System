@@ -254,7 +254,8 @@ def files_to_load(manifest: dict, subject: str, product: str) -> list[tuple[str,
                 ("N 레이아웃", layout["arc_n_layout_override"])]
     if product == "ARC_FINAL":
         anchor_key = {"KOR": "final_difficulty_anchor_kor", "SOC": "final_difficulty_anchor_soc",
-                      "SCI": "final_difficulty_anchor_sci_redox"}.get(subject)
+                      "SCI": "final_difficulty_anchor_sci_redox",
+                      "HIS": "final_difficulty_anchor_his"}.get(subject)
         out += [("FINAL 품질 게이트", quality["final_quality_gate"])]
         if anchor_key:
             out += [("FINAL 난도 앵커", quality[anchor_key])]
@@ -424,6 +425,16 @@ def build_plan(subject: str, product: str, scope: str, count: int | None, versio
             totals = library["arc_final_totals"]
             plan["final_blueprint"] = (f"선택형 {totals['selected_items']}({totals['selected_points']:g}점, 1~10번 단어 각 1점) + "
                                        f"서답형 {totals['constructed_items']}({totals['constructed_points']:g}점), 23번 교과서 다중 어법·34번 요약문 고정")
+    anchor_ref = entry.get("difficulty_anchor")
+    if product == "ARC_FINAL" and isinstance(anchor_ref, dict) and (ROOT / anchor_ref.get("path", "")).is_file():
+        anchor = yaml.safe_load((ROOT / anchor_ref["path"]).read_text(encoding="utf-8"))
+        prof = anchor.get("profile", {})
+        line = f"평균 {prof.get('mean_level')} (±{anchor.get('tolerance', {}).get('mean_level')})"
+        layout = next((v for k, v in anchor.items() if k.startswith("reference_layout")), None)
+        if isinstance(layout, dict):
+            line += "  선택형 " + " / ".join(f"{k} {v}" for k, v in layout.items() if v)
+        plan["final_difficulty"] = line
+        plan["final_anchor"] = anchor_ref["path"]
     _, blockers = cell_status(subject, product, entry, manifest)
     plan["blockers"] = blockers
     plan["read_order"] = [path for _, path in files_to_load(manifest, subject, product)]
@@ -444,6 +455,8 @@ def print_plan(plan: dict) -> None:
         print(f"  구성      핵심 {plan['core']} / 심화 {plan['advanced']}")
     else:
         print(f"  분량      {plan['count']}문항")
+    if plan.get("final_difficulty"):
+        print(f"  FINAL 난도 {plan['final_difficulty']}  ({plan['final_anchor']})")
     if plan.get("final_blueprint"):
         print(f"  배치      {plan['final_blueprint']}")
     if plan.get("archetype_mix"):

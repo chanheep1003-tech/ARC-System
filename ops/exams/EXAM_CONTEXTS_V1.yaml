@@ -176,7 +176,12 @@ exams:
         - ARC_CORE
         - ARC_N
         - ARC_FINAL
-        difficulty_anchor: null
+        difficulty_anchor:
+          subject: HIS
+          unit_ids:
+          - HIS-P64-147
+          path: quality/anchors/HIS_DONGBUK_FINAL_DIFFICULTY_ANCHOR_V1.0.yaml
+          sha256: 288c6cda4b39f9ae5337592ab712194c8a9b42066ae787888da039ba62bd5d10
         exam_structure:
           selected: 25
           selected_points: 90

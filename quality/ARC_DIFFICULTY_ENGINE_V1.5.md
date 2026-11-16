@@ -600,7 +600,7 @@ ACTIVE SUBJECT ANCHORS:
 - KOR: quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
 - SOC: quality/anchors/SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
 - SCI-REDOX: quality/anchors/SCI_REDOX_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
-- HIS: FINAL 비활성. diagnostic profile만 존재.
+- HIS: quality/anchors/HIS_DONGBUK_FINAL_DIFFICULTY_ANCHOR_V1.0.yaml (2026-11-16 사용자 확정, 평균 3.0. 학교 진단 프로필 2.55에서 정책 하한으로 상향)
 
 FINAL은 한 시험 하나를 복제하지 않는다.
 여러 실제 시험의 난도 분포와 변동폭을 앙상블하여 학교 난도대를 재현한다.

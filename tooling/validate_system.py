@@ -584,6 +584,7 @@ def main() -> int:
         "final_difficulty_anchor_kor",
         "final_difficulty_anchor_soc",
         "final_difficulty_anchor_sci_redox",
+        "final_difficulty_anchor_his",
     )
     for key in anchor_keys:
         rel = active["quality"].get(key)

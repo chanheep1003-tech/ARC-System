@@ -13,4 +13,4 @@ tolerance:
   mean_level: 0.25
 active_final: false
 notes:
-  - "현재 스프린트에서 한국사 FINAL은 비활성. N° 난도 참고용 진단 프로필만 유지."
+  - "학교 난도 진단 기록. 2026-11-16부터 FINAL 기준은 quality/anchors/HIS_DONGBUK_FINAL_DIFFICULTY_ANCHOR_V1.0.yaml(평균 3.0)이다."
