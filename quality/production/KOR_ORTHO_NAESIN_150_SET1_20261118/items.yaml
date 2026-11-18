@@ -305,10 +305,10 @@ items:
   - '''어깨''는 ㉯에 따라, ''잔뜩''도 ㉯에 따라 된소리로 적는다.'
   answer: 3
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -787,10 +787,10 @@ items:
   - '''요소(尿素)''의 ''요''는 ㉡에, ''결뉴(結紐)''의 ''뉴''도 ㉡에 따라 적은 것이다.'
   answer: 4
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -854,10 +854,10 @@ items:
   - Ⓐ ㉠   Ⓑ ㉡, ㉣, ㉤   Ⓒ ㉢
   answer: 5
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1345,10 +1345,10 @@ items:
   - '"안녕히 가시오."는 ㉡에, "오늘은 바쁘오."는 ㉠에 따른 표기이다.'
   answer: 3
   second_best: 2
-  difficulty: D4
+  difficulty: D2
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1478,10 +1478,10 @@ items:
   - Ⓐ ㉠, ㉣   Ⓑ ㉡, ㉤   Ⓒ ㉢
   answer: 5
   second_best: 1
-  difficulty: D4
+  difficulty: D2
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2312,10 +2312,10 @@ items:
   - '''급히''는 ㉡에, ''깨끗이''는 ㉠에 따라 적은 것이다.'
   answer: 1
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -3080,10 +3080,10 @@ items:
   - '[국쑤]와 [물뼝]은 모두 받침 뒤에서 규칙적으로 나는 된소리이므로 같은 조항에 따라 예사소리로 적는다.'
   answer: 3
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE

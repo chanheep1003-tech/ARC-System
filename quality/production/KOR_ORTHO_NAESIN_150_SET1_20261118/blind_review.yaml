@@ -432,3 +432,81 @@ items:
   your_answer: ㉠은 'ㄹㄹ', ㉡은 'ㅡ', ㉢은 잠가이다.
   flags: []
   difficulty: D2
+- item_id: KOR-ON1-005
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 2
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 훨씬(ㄹ 받침 ㉯)·거꾸로(㉮) 모두 참. 몹시는 ㅂ 받침이라 ㉰이므로 ①은 거짓.
+- item_id: KOR-ON1-012
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 2
+  - 1
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 남존여비·공염불·신여성은 붙임 2(합성어·접두사처럼 쓰이는 한자) 예시어.
+- item_id: KOR-ON1-013
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 3
+  - 4
+  second_best: 3
+  difficulty: D3
+  confidence: MEDIUM
+  flags: []
+  note: ㉢ 실낙원을 Ⓒ(합성어, 뒷말 낙원)로 보는 것이 전제. 해당 분류가 보기 1의 Ⓒ 정의로 충분히 도출되는지 확인 권장.
+- item_id: KOR-ON1-020
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 2
+  - 4
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: ④는 연결형을 "이오"로 적어 ㉡에 따른 표기가 아님.
+- item_id: KOR-ON1-022
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 1
+  - 4
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: ㅡ 탈락(치르다·따르다)과 ㄹㄹ(기르다) 구분이 핵심. 난도는 낮은 편.
+- item_id: KOR-ON1-034
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 4
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 일찍이는 부사+이(㉡), 반드시는 하다 불가(㉢).
+- item_id: KOR-ON1-045
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 2
+  - 1
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: ③ 물병은 제27항 합성어 원형 표기, 국수는 ㄱ 받침 뒤 예사소리 표기.
+rounds_history: R1 전 50문항; R2 수정 7문항 재검수(2026-11-18)
