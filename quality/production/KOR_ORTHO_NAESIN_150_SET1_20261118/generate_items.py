@@ -671,6 +671,11 @@ for r in raw:
     if k > others[-1] and k / (sum(others) / 4) >= 1.25:
         print("LENGTH_CUE", r["topic"], r["opts"][r["ans"] - 1][:30])
 
+# 사용자 지시(2026-11-18): 문항마다 관련 조항 번호를 발문 앞에 표시
+for r in raw:
+    if r.get("topic") and not r["stem"].startswith("["):
+        r["stem"] = f"[{r['topic']}] " + r["stem"]
+
 n = 0
 for r in raw:
     n += 1
