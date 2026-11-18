@@ -315,10 +315,10 @@ items:
   - '"그가 올 듯도 하다"는 중간에 조사가 들어갔으므로 붙여 쓸 수 없다.'
   answer: 2
   second_best: 4
-  difficulty: D4
+  difficulty: D3
   family: CASE_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE

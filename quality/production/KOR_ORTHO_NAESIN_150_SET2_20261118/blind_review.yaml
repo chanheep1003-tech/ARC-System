@@ -485,3 +485,10 @@ items:
   your_answer: 졸이고 → 조리고(양념이 배어들게 바짝 끓이다), 저렸다 → 절였다(소금에 절게 하다).
   flags: []
   difficulty: D3
+- item_id: KOR-ON2-047
+  meets_rubric: true
+  your_answer: ㉠ 흔타, ㉡ 넉넉지 않다. '흔하다'는 앞 음절 받침 ㄴ이 울림소리라 '하'의 'ㅏ'만 줄고 'ㅎ'이 뒤의 'ㄷ'과 합쳐
+    거센소리 'ㅌ'이 된다. '넉넉하지 않다'는 앞 음절 받침 ㄱ이 안울림소리라 '하'가 통째로 줄어 '넉넉지 않다'가 된다.
+  flags: []
+  difficulty: D3
+rounds_history: R1 전 50문항; R2 수정 문항 재검수(2026-11-18)

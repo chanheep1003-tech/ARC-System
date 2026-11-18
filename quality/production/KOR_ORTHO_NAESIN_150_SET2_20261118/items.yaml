@@ -3182,7 +3182,7 @@ items:
   - 조건 3 충족 1점
   ev:
   - VIEW
-  difficulty: D4
+  difficulty: D3
   topic: 제40항
 - item_id: KOR-ON2-048
   archetype: C1_CONSTRUCTED_BLANK_SENTENCE
