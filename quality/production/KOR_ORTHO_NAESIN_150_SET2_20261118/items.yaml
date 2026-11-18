@@ -108,10 +108,10 @@ items:
   - ㉤은 [실쯩]으로 소리 나므로 된소리를 살려 '실쯩'으로 적어야 한다.
   answer: 5
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: CASE_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -175,10 +175,10 @@ items:
   - Ⓐ ㉠, ㉢   Ⓑ ㉣   Ⓒ ㉡, ㉤
   answer: 3
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -247,10 +247,10 @@ items:
   - ㉤
   answer: 4
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: EXCEPT_INCORRECT
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -313,10 +313,10 @@ items:
   - '''무자위''는 ''물''과 관계가 없는 말이므로 소리대로 적은 것이다.'
   answer: 3
   second_best: 1
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -384,10 +384,10 @@ items:
   - ㉤은 한자어끼리 결합한 말이므로 사이시옷 없이 '세방'으로 적는다.
   answer: 1
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -451,10 +451,10 @@ items:
   - Ⓐ ㉠, ㉡   Ⓑ ㉣   Ⓒ ㉢, ㉤
   answer: 4
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -524,10 +524,10 @@ items:
   - ㉠, ㉤, ㉥
   answer: 3
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: ERROR_CORRECTION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -665,10 +665,10 @@ items:
   - ㄱ, ㄴ, ㄷ, ㄹ
   answer: 2
   second_best: 3
-  difficulty: D4
+  difficulty: D3
   family: MULTI_JUDGMENT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -732,10 +732,10 @@ items:
   - '''횟가루''는 <보기>의 ''횟수''와 같이 예외 여섯 단어 중 하나이다.'
   answer: 3
   second_best: 1
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -945,10 +945,10 @@ items:
   - ㄱ, ㄷ, ㄹ
   answer: 5
   second_best: 3
-  difficulty: D4
+  difficulty: D3
   family: MULTI_JUDGMENT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1016,10 +1016,10 @@ items:
   - '''나무꾼''은 (1)~(4)를 모두 충족하므로 ''나뭇꾼''으로 적는다.'
   answer: 2
   second_best: 3
-  difficulty: D4
+  difficulty: D3
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1149,10 +1149,10 @@ items:
   - '"회장으로 뽑히게 됬다"는 ''했다''가 자연스러우므로 ''됬다''가 바르다.'
   answer: 5
   second_best: 2
-  difficulty: D3
+  difficulty: D2
   family: CASE_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -1216,10 +1216,10 @@ items:
   - '"오늘 할머니를 봽고 왔다."의 ''봽고''는 ''뵈었고''가 준 대로 적은 것이다.'
   answer: 4
   second_best: 1
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1289,10 +1289,10 @@ items:
   - ㉡, ㉤, ㉥
   answer: 4
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: ERROR_CORRECTION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1356,10 +1356,10 @@ items:
   - Ⓐ ㉤   Ⓑ ㉠, ㉡, ㉣   Ⓒ ㉢
   answer: 2
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1422,10 +1422,10 @@ items:
   - '''무심하고''는 ''하'' 앞 받침이 ''ㅁ''이므로 ''하''가 통째로 줄어 ''무심고''가 된다.'
   answer: 4
   second_best: 1
-  difficulty: D4
+  difficulty: D2
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1567,10 +1567,10 @@ items:
   - ㉤
   answer: 5
   second_best: 2
-  difficulty: D3
+  difficulty: D2
   family: EXCEPT_INCORRECT
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -1908,10 +1908,10 @@ items:
   - ㉤은 어간 '사-'만 쓴 것이므로 '사아'로 적어야 한다.
   answer: 2
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1975,10 +1975,10 @@ items:
   - Ⓐ ㉡, ㉤   Ⓑ ㉠, ㉣   Ⓒ ㉢
   answer: 5
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2188,10 +2188,10 @@ items:
   - ㉠, ㉡, ㉤
   answer: 5
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: ERROR_CORRECTION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2255,10 +2255,10 @@ items:
   - Ⓐ ㉢, ㉣, ㉤   Ⓑ ㉠   Ⓒ ㉡
   answer: 1
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: COMPARISON_MATRIX
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2394,10 +2394,10 @@ items:
   - '''이따가''는 ''있다''의 어간에 ''-다가''가 붙은 말이므로 원형을 밝혀 적은 것이다.'
   answer: 3
   second_best: 1
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2463,10 +2463,10 @@ items:
   - ㄴ, ㄷ, ㄹ
   answer: 4
   second_best: 3
-  difficulty: D4
+  difficulty: D3
   family: MULTI_JUDGMENT
   balance: CORE_EXAM_POINT
-  reasoning_steps: 3
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2604,10 +2604,10 @@ items:
   - '"무엇을 하던 상관없다."는 지난 일을 나타내므로 바르게 적었다.'
   answer: 2
   second_best: 1
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2746,10 +2746,10 @@ items:
   - ㉤
   answer: 4
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: EXCEPT_INCORRECT
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -2814,10 +2814,10 @@ items:
   - '"대전을 걷혀 부산에 도착했다."는 들렀다는 뜻이므로 바르게 적었다.'
   answer: 1
   second_best: 2
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -3017,10 +3017,10 @@ items:
   - 두 말은 뜻이 같으므로 어느 것으로 적어도 된다.
   answer: 1
   second_best: 2
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -3160,7 +3160,7 @@ items:
   - 문장 형식 1점
   ev:
   - VIEW
-  difficulty: D3
+  difficulty: D2
   topic: 제30항
 - item_id: KOR-ON2-047
   archetype: C1_CONSTRUCTED_BLANK_SENTENCE
@@ -3171,7 +3171,7 @@ items:
   - ㉠ 흔하다
   - ㉡ 넉넉하지 않다
   conditions:
-  - 1. ㉠, ㉡의 준말을 먼저 쓸 것.
+  - 1. ㉠, ㉡의 준말을 먼저 쓸 것. 단, ㉡은 '-지 않다'의 짜임을 유지하여 '하'만 줄일 것.
   - 2. '하' 앞 음절의 받침 소리와 관련지어 설명할 것.
   - 3. 세 문장 이내로 쓸 것.
   model_answer: ㉠은 '흔타', ㉡은 '넉넉지 않다'로 줄여 쓴다. ㉠은 '하' 앞의 받침이 'ㄴ'이어서 '하'의 'ㅏ'만 줄고 'ㅎ'이 뒤 음절과 어울려 거센소리가 되지만, ㉡은 '하' 앞의 받침이 'ㄱ'이어서 '하'가 통째로 줄어든다.
@@ -3204,7 +3204,7 @@ items:
   - 조건 3 충족 1점
   ev:
   - VIEW
-  difficulty: D3
+  difficulty: D2
   topic: 제35항
 - item_id: KOR-ON2-049
   archetype: C1_CONSTRUCTED_BLANK_SENTENCE
@@ -3247,5 +3247,5 @@ items:
   - 조건 1·3 충족 1점
   ev:
   - VIEW
-  difficulty: D4
+  difficulty: D3
   topic: 제57항

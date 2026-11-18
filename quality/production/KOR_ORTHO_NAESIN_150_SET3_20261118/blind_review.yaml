@@ -1,0 +1,454 @@
+review_id: KOR-ON3-BLIND-R1
+reviewer: independent blind reviewer agent (Sonnet), fresh context, student manuscript
+  only
+rounds: 1
+excluded_inputs:
+- ANSWER_KEY
+- PASS_A
+- AUTHOR_INTENT
+- TARGET_DIFFICULTY
+items:
+- item_id: KOR-ON3-001
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 1
+  - 3
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-002
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 4
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-003
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 5
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-004
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 3
+  - 5
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 오는데도의 데는 어미 -ㄴ데+보조사 도
+- item_id: KOR-ON3-007
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 4
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-008
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 3
+  - 1
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-009
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 4
+  - 1
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-010
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 2
+  - 3
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-011
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 5
+  - 1
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-012
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 4
+  - 5
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-013
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 3
+  - 1
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: '''바와 같이''의 같이는 부사로 띄어 씀'
+- item_id: KOR-ON3-014
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 3
+  - 5
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-015
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 5
+  second_best: 2
+  difficulty: D3
+  confidence: MEDIUM
+  flags: []
+- item_id: KOR-ON3-016
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 1
+  - 3
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-017
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 4
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags:
+  - c
+- item_id: KOR-ON3-018
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 3
+  - 2
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-019
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 5
+  - 1
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-020
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 3
+  - 2
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags:
+  - c
+- item_id: KOR-ON3-021
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 3
+  - 2
+  second_best: 3
+  difficulty: D3
+  confidence: MEDIUM
+  flags: []
+  note: ㉢ '사진촬영'은 표제어 아님으로 판단(틀림). 이를 틀리지 않다고 보면 정답 없음
+- item_id: KOR-ON3-022
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 4
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: ㄷ '더먹을것'은 단음절 연속이 아님('먹을' 2음절)
+- item_id: KOR-ON3-023
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 2
+  - 1
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags:
+  - c
+- item_id: KOR-ON3-024
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 2
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-026
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 5
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: ⑤ '공사 중' 의존 명사(접미사 아님)로 판단
+- item_id: KOR-ON3-028
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 1
+  - 3
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-029
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 1
+  - 3
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags:
+  - c
+  note: '''아니다''는 형용사'
+- item_id: KOR-ON3-030
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 1
+  - 3
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-031
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 1
+  - 4
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-032
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 4
+  second_best: 1
+  difficulty: D4
+  confidence: MEDIUM
+  flags: []
+  note: ㉡ '깎아 먹었다'는 본용언으로 봄
+- item_id: KOR-ON3-033
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 3
+  - 4
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-034
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 3
+  - 1
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-035
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 5
+  - 2
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 원칙은 '모르는 척하다'(척하다 붙여 씀). '척 하다'로 띄어 쓰는 것이 원칙이라는 ①이 거짓
+- item_id: KOR-ON3-037
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 4
+  - 2
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-038
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 4
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-039
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 3
+  second_best: 2
+  difficulty: D4
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-040
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 4
+  - 1
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags:
+  - c
+- item_id: KOR-ON3-041
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 1
+  - 2
+  second_best: 1
+  difficulty: D3
+  confidence: MEDIUM
+  flags: []
+  note: ㉥ '할머니댁'은 '할머니 댁'(댁은 명사)으로 판단. ㉢㉤은 확실
+- item_id: KOR-ON3-042
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 3
+  - 4
+  second_best: 3
+  difficulty: D3
+  confidence: MEDIUM
+  flags: []
+  note: '''총예산''은 표제어이므로 붙여 씀'
+- item_id: KOR-ON3-043
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 5
+  - 2
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: ② '안됐다'가 바른 표기이므로 '안 됐다'는 틀림
+- item_id: KOR-ON3-044
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 1
+  - 4
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-045
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 5
+  - 3
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-046
+  meets_rubric: true
+  your_answer: ㉠은 의존 명사, ㉡은 접미사, ㉢은 한 단어이다.
+  flags: []
+  difficulty: D2
+- item_id: KOR-ON3-047
+  meets_rubric: true
+  your_answer: ㉠은 앞말 '읽어' 뒤 보조 용언 앞에 조사 '도'가 들어갔기 때문이고, ㉡은 앞말 '떠내려가'가 합성 용언이기 때문이다.
+  flags: []
+  difficulty: D2
+- item_id: KOR-ON3-048
+  meets_rubric: true
+  your_answer: 이십삼억 사천오백육만 칠천 원 (만 단위로 띄어 쓰고 단위 명사 '원'은 띄어 쓰기 때문)
+  flags: []
+  difficulty: D3
+- item_id: KOR-ON3-049
+  meets_rubric: true
+  your_answer: '㉡ 네가 좋아할 걸 골라서 샀어. (이유: ''걸''은 의존 명사 ''것''에 조사 ''을''이 결합하여 줄어든 말이므로
+    띄어 쓴다.)'
+  flags: []
+  difficulty: D3
+- item_id: KOR-ON3-050
+  meets_rubric: true
+  your_answer: '㉠ 이순신 장군, ㉡ 김민지 씨, ㉢ 바름. (제48항: 성과 이름은 붙여 쓰고 덧붙는 호칭어는 띄어 쓰며, 성과 이름을
+    구분할 필요가 있으면 띄어 쓸 수 있다.)'
+  flags: []
+  difficulty: D3
+  note: ㉢ '선우진' 붙임도 바르므로 '바름'은 허용 근거 필요; 모범답 확정에는 조건 명시 필요

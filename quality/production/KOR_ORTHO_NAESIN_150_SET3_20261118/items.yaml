@@ -35,10 +35,10 @@ items:
   - '"집에서처럼"은 조사가 둘 이상 이어졌으므로 마지막 조사는 띄어 쓴다.'
   answer: 2
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -102,10 +102,10 @@ items:
   - Ⓐ ㉤   Ⓑ ㉠, ㉡, ㉣   Ⓒ ㉢
   answer: 1
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -175,10 +175,10 @@ items:
   - ㉠, ㉤, ㉥
   answer: 3
   second_best: 1
-  difficulty: D3
+  difficulty: D2
   family: ERROR_CORRECTION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -308,7 +308,7 @@ items:
   - 다만, 앞말에 조사가 붙거나 앞말이 합성 용언인 경우, 그리고 중간에 조사가 들어갈 적에는 그 뒤에 오는 보조 용언은 띄어 쓴다.
   - ※ 붙여 쓰기가 허용되는 것은 '-아/-어' 뒤에 연결되는 보조 용언과, 의존 명사에 '-하다'나 '-싶다'가 붙어서 된 보조 용언이다.
   options:
-  - '"불빛이 점점 희미해져 간다"는 ''희미해져간다''로 붙여 쓸 수도 있다.'
+  - '""날이 점점 밝아 온다"는 ''밝아온다''로 붙여 쓸 수도 있다.'
   - '"나도 그 일을 하고 싶다"는 보조 용언이므로 ''하고싶다''로 붙여 쓸 수 있다.'
   - '"편지를 다시 읽어 보았다"는 ''읽어보았다''로 붙여 쓸 수도 있다.'
   - '"종이배가 떠내려가 버렸다"는 앞말이 합성 용언이므로 붙여 쓸 수 없다.'
@@ -372,10 +372,11 @@ items:
   archetype: A5_EXAMPLE_MULTI_JUDGMENT
   stem: '[제43항] 단위를 나타내는 명사의 띄어쓰기에 대한 판단으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?'
   view:
+  - '제43항 단위를 나타내는 명사는 띄어 쓴다. 다만, 순서를 나타내는 경우나 숫자와 어울리어 쓰이는 경우에는 붙여 쓸 수 있다. (예: 두시 삼십분 오초, 제일과, 삼학년, 10개)'
   - ㄱ. "연필 두 자루"의 '자루'는 단위를 나타내는 명사이므로 앞말과 띄어 쓴다.
   - ㄴ. "제삼 장"은 순서를 나타내므로 '제삼장'으로 붙여 쓸 수 있다.
   - ㄷ. "10개"는 아라비아 숫자와 어울려 쓰였으므로 붙여 쓸 수 있다.
-  - ㄹ. "두 시 삼십 분"은 단위 명사가 연속되므로 붙여 쓸 수 없다.
+  - ㄹ. "두 시 삼십 분"은 한글로 적은 수 뒤의 단위 명사이므로 어떤 경우에도 붙여 쓸 수 없다.
   options:
   - ㄱ, ㄹ
   - ㄱ, ㄴ, ㄷ
@@ -451,10 +452,10 @@ items:
   - '''백이십오만''은 ''만'' 앞에서 띄어 ''백이십오 만''으로 쓴다.'
   answer: 3
   second_best: 4
-  difficulty: D4
+  difficulty: D3
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -658,10 +659,10 @@ items:
   - '''박지원 선생''의 ''선생''은 관직명이 아니므로 성명에 붙여 쓴다.'
   answer: 4
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -725,10 +726,10 @@ items:
   - 고유 명사는 단어별로 띄어 쓰는 것이 원칙이고, 단위별로 붙이는 것은 허용이다.
   answer: 2
   second_best: 5
-  difficulty: D3
+  difficulty: D2
   family: CASE_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -797,10 +798,10 @@ items:
   - ㉤
   answer: 3
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: EXCEPT_INCORRECT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -934,10 +935,10 @@ items:
   - ㄴ, ㄷ, ㄹ
   answer: 4
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: MULTI_JUDGMENT
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1007,10 +1008,10 @@ items:
   - ㉢, ㉤, ㉥
   answer: 1
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: ERROR_CORRECTION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1074,10 +1075,10 @@ items:
   - Ⓐ ㉣   Ⓑ ㉠, ㉡, ㉤   Ⓒ ㉢
   answer: 4
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1142,10 +1143,10 @@ items:
   - '"사업차 출장을 갔다"의 ''-차''는 접미사이므로 붙여 쓴다.'
   answer: 1
   second_best: 4
-  difficulty: D3
+  difficulty: D2
   family: CASE_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -1210,10 +1211,10 @@ items:
   - '"회의에서 결정한 바에 따르면"의 ''바''는 배경을 제시하는 어미이므로 붙여 쓴다.'
   answer: 4
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1349,10 +1350,10 @@ items:
   - '"날씨가 추워 졌다"처럼 ''지다''는 보조 용언이므로 띄어 쓰는 것이 원칙이다.'
   answer: 5
   second_best: 3
-  difficulty: D4
+  difficulty: D2
   family: CASE_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -1492,10 +1493,10 @@ items:
   - ㄴ, ㄷ, ㄹ
   answer: 3
   second_best: 4
-  difficulty: D4
+  difficulty: D3
   family: MULTI_JUDGMENT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1559,10 +1560,10 @@ items:
   - '"아는 이를 만났다"의 ''이''는 사람을 뜻하는 의존 명사이므로 띄어 쓴다.'
   answer: 5
   second_best: 2
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1626,10 +1627,10 @@ items:
   - Ⓐ ㉠, ㉤   Ⓑ ㉣   Ⓒ ㉡, ㉢
   answer: 3
   second_best: 2
-  difficulty: D3
+  difficulty: D2
   family: COMPARISON_MATRIX
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1683,6 +1684,7 @@ items:
   archetype: A4_INQUIRY_DIALOGUE_CHECK
   stem: '[제43항] <보기>의 ㉠~㉤ 중 고쳐야 할 학생의 설명은?'
   view:
+  - '제43항 단위를 나타내는 명사는 띄어 쓴다. 다만, 순서를 나타내는 경우나 숫자와 어울리어 쓰이는 경우에는 붙여 쓸 수 있다. (예: 두시 삼십분 오초)'
   - <회의록> 제2차 회의는 오후 세시 십분에 시작했다. 참석자는 열두 명이었다. 회비는 한 사람당 오천 원으로 정했다. 다음 회의는 12월 3일에 연다.
   - '선생님: 회의록의 단위 명사 띄어쓰기를 설명해 볼까요?'
   - '학생: ㉠''제2차''는 순서를 나타내므로 붙여 쓸 수 있어요.'
@@ -1768,10 +1770,10 @@ items:
   - '"공사중"처럼 명사 뒤의 ''중''은 접미사이므로 붙여 쓴다.'
   answer: 3
   second_best: 1
-  difficulty: D4
+  difficulty: D2
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1829,7 +1831,7 @@ items:
   - ㉠오랫만에 친구들이 모두 모였다.
   - 우리는 ㉡김치찌개를 맛있게 먹었다.
   - 식당 ㉢뒷편에서 단체 사진을 찍었다.
-  - 돌아오는 길에는 ㉣할 수 없이 버스를 탔다.
+  - 돌아오는 길에는 버스를 ㉣탈 수밖에 없었다.
   - 집에 ㉤가는데 갑자기 비가 왔다.
   - 오늘처럼 ㉥즐거운날이 또 올까?
   - '선생님: 고쳐야 할 표기는 [A]란다.'
@@ -1981,10 +1983,10 @@ items:
   - '"칼로써 연필을 깎았다"의 ''로써''는 도구를 나타내는 조사이므로 붙여 쓴다.'
   answer: 4
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: CASE_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -2049,10 +2051,10 @@ items:
   - '"그가 언제 왔는지 모르겠다"의 ''-는지''는 어미이므로 붙여 쓴다.'
   answer: 5
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2118,10 +2120,10 @@ items:
   - ㄱ, ㄴ, ㄷ
   answer: 5
   second_best: 4
-  difficulty: D3
+  difficulty: D2
   family: MULTI_JUDGMENT
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2257,10 +2259,10 @@ items:
   - ㉤
   answer: 5
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: EXCEPT_INCORRECT
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -2601,10 +2603,10 @@ items:
   - '"이틀간"의 ''간''은 관계를 나타내는 말이므로 ''이틀 간''으로 띄어 쓴다.'
   answer: 3
   second_best: 1
-  difficulty: D4
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 3
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2735,10 +2737,10 @@ items:
   - '"둘째 아들"의 ''둘째''는 앞말에 ''-째''가 붙은 말이므로 붙여 쓴다.'
   answer: 2
   second_best: 4
-  difficulty: D3
+  difficulty: D2
   family: CASE_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -3084,10 +3086,10 @@ items:
   - ㄱ, ㄴ, ㄷ, ㄹ
   answer: 2
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: MULTI_JUDGMENT
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -3158,7 +3160,7 @@ items:
   - 문장 형식 1점
   ev:
   - VIEW
-  difficulty: D3
+  difficulty: D2
   topic: 제42항
 - item_id: KOR-ON3-047
   archetype: C1_CONSTRUCTED_BLANK_SENTENCE
@@ -3178,7 +3180,7 @@ items:
   - 조건 1 충족 1점
   ev:
   - VIEW
-  difficulty: D3
+  difficulty: D2
   topic: 제47항
 - item_id: KOR-ON3-048
   archetype: C1_CONSTRUCTED_BLANK_SENTENCE
@@ -3198,7 +3200,7 @@ items:
   - 근거(만 단위·단위 명사) 2점
   ev:
   - VIEW
-  difficulty: D4
+  difficulty: D3
   topic: 제43·44항
 - item_id: KOR-ON3-049
   archetype: C1_CONSTRUCTED_BLANK_SENTENCE
@@ -3219,7 +3221,7 @@ items:
   - 조건 3 충족 1점
   ev:
   - VIEW
-  difficulty: D4
+  difficulty: D3
   topic: 제42항
 - item_id: KOR-ON3-050
   archetype: C1_CONSTRUCTED_BLANK_SENTENCE
@@ -3235,7 +3237,7 @@ items:
   rubric:
   - ㉠ 1점
   - ㉡ 1점
-  - ㉢ 1점
+  - ㉢ '바름' 1점(성과 이름을 구분하기 위해 띄어 쓴 표기로 인정하며, '선우진'으로 고쳐 쓴 답도 인정)
   - 근거 2점
   ev:
   - VIEW
