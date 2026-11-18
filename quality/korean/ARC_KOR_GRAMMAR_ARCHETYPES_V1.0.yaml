@@ -60,6 +60,9 @@ forbidden_forms:
     description: "[ ]로 띄어쓰기를 가리는 표기"   # 예외: A3의 <보기 2>에서 대상 형태를 표시할 때
   - id: D1_RECALL
     description: 규정 문구나 단위 명사 띄어쓰기만 확인하는 D1 문항
+layout_rules:            # 사용자 지시 2026-11-18
+  marked_sentence_paragraphs: ㉠·㉡ 등 표지가 붙은 학생 글 문장, 탐구 대화의 학생 설명, ㄱ~ㄹ 판단 문장은 view 항목을 나누어 한 단락씩 조판한다.
+  difficulty_focus: L2~L4(D2~D4) 범위에서 D3·D4 중심, 기본·흔한 문항 축소. 새 <보기> 조항·예문·생활 지문·사전 자료·비교 자료 추론형 우선.
 trap_taxonomy:            # 오답 선지는 반드시 아래 중 하나로 설계한다
   T1_RIGHT_CONCEPT_WRONG_CASE: 개념 정의는 맞고 그 사례 적용이 틀림
   T2_EXCEPTION_CONDITION: 기본 규칙의 예외·전제 조건을 비틂 (조사 뒤의 조사, 한 단어로 굳은 말, 원칙/허용 등)
