@@ -34,10 +34,10 @@ items:
   - '''나비''처럼 한 형태소로 된 말은 소리와 표기가 같으므로 ㉢만 적용된 것이다.'
   answer: 4
   second_best: 1
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -77,7 +77,7 @@ items:
     - VIEW
     - OPTION4
     v: true
-    why: '''믿-''+''-음''은 원형을 밝혀 ㉢, ''고름''은 ''곯다''의 본뜻에서 멀어져 소리대로(㉡) 적는다(제19항 다만).'
+    why: '''믿-''+''-음''은 원형을 밝혀 ㉢, ''고름''은 ''곪다''의 본뜻에서 멀어져 소리대로(㉡) 적는다(제19항 다만).'
   - axis: orthography
     c: WEAK
     claim: KOR-ON1-001-5
@@ -101,10 +101,10 @@ items:
   - ㉠과 ㉡은 모두 실제 발음과 표기가 일치하지 않는다.
   answer: 4
   second_best: 3
-  difficulty: D4
+  difficulty: D3
   family: CASE_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -168,10 +168,10 @@ items:
   - 소리대로 적는 원칙만으로도 '값'의 표기를 하나로 정할 수 있다.
   answer: 1
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -298,17 +298,17 @@ items:
   - ㉯ 'ㄴ, ㄹ, ㅁ, ㅇ' 받침 뒤에서 나는 된소리
   - ㉰ 다만, 'ㄱ, ㅂ' 받침 뒤에서 나는 된소리는, 같은 음절이나 비슷한 음절이 겹쳐 나는 경우가 아니면 된소리로 적지 아니한다.
   options:
-  - '''깍두기''는 ''ㄱ'' 받침 뒤에서 된소리가 나므로 ㉯에 따라 ''깍뚜기''로 적는다.'
-  - '''씁쓸하다''는 ''ㅂ'' 받침 뒤의 된소리이므로 ㉰에 따라 ''씁슬하다''로 적는다.'
-  - '''거꾸로''의 ''꾸''는 두 모음 사이에서 나는 된소리이므로 ㉮에 따라 적는다.'
-  - '''몹시''는 ''ㅂ'' 받침 뒤이지만 비슷한 음절이 겹치므로 ''몹씨''로 적는다.'
-  - '''산뜻하다''는 ''ㄴ'' 받침 뒤의 된소리이므로 ㉰에 따라 된소리로 적지 않는다.'
+  - '''깍두기''는 ㉰에 따라 예사소리로 적고, ''몹시''는 ㉯에 따라 예사소리로 적는다.'
+  - '''씁쓸하다''는 ㉰의 예외 조건에 따라 된소리로 적고, ''딱지''도 같은 조건에 따라 ''딱찌''로 적는다.'
+  - '''거꾸로''는 ㉮에 따라, ''훨씬''은 ㉯에 따라 된소리로 적는다.'
+  - '''산뜻하다''는 ㉯에 따라 된소리로 적고, ''갑자기''는 ㉮에 따라 된소리로 적지 않는다.'
+  - '''어깨''는 ㉯에 따라, ''잔뜩''도 ㉯에 따라 된소리로 적는다.'
   answer: 3
   second_best: 1
-  difficulty: D3
+  difficulty: D4
   family: VIEW_APPLICATION
-  balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -321,8 +321,8 @@ items:
     - VIEW
     - OPTION1
     v: false
-    why: '''ㄱ'' 받침 뒤는 ㉰의 대상이므로 ''깍두기''로 적는다.'
-    trap: T5_RULE_JURISDICTION
+    why: '''몹시''는 ''ㅂ'' 받침 뒤이므로 ㉯가 아니라 ㉰에 따라 예사소리로 적는다.'
+    trap: T3_ONE_OF_TWO_WRONG
   - axis: orthography
     c: STRONG
     claim: KOR-ON1-005-2
@@ -330,8 +330,8 @@ items:
     - VIEW
     - OPTION2
     v: false
-    why: '''씁쓸''은 비슷한 음절이 겹쳐 나는 경우이므로 된소리로 적는다.'
-    trap: T2_EXCEPTION_CONDITION
+    why: '''딱지''는 음절이 겹치지 않으므로 ㉰에 따라 예사소리로 적는다.'
+    trap: T3_ONE_OF_TWO_WRONG
   - axis: orthography
     c: CORRECT
     claim: KOR-ON1-005-3
@@ -339,25 +339,25 @@ items:
     - VIEW
     - OPTION3
     v: true
-    why: '''거''는 받침이 없어 두 모음 사이의 된소리(㉮)이다.'
+    why: '''거꾸로''는 두 모음 사이(㉮), ''훨씬''은 ''ㄹ'' 받침 뒤(㉯)의 된소리이다.'
   - axis: orthography
-    c: MEDIUM
+    c: STRONG
     claim: KOR-ON1-005-4
     ev:
     - VIEW
     - OPTION4
     v: false
-    why: '''몹시''는 음절이 겹치지 않으므로 된소리로 적지 않는다.'
-    trap: T2_EXCEPTION_CONDITION
+    why: '''갑자기''는 ''ㅂ'' 받침 뒤이므로 ㉮가 아니라 ㉰에 따른다.'
+    trap: T3_ONE_OF_TWO_WRONG
   - axis: orthography
-    c: WEAK
+    c: MEDIUM
     claim: KOR-ON1-005-5
     ev:
     - VIEW
     - OPTION5
     v: false
-    why: '''ㄴ'' 받침 뒤는 ㉯에 따라 된소리로 적는다.'
-    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+    why: '''어깨''는 두 모음 사이이므로 ㉮에 따른다.'
+    trap: T3_ONE_OF_TWO_WRONG
 - item_id: KOR-ON1-006
   archetype: A5_EXAMPLE_MULTI_JUDGMENT
   stem: '[제5항] <보기 1>을 바탕으로 <보기 2>에 대해 판단한 내용으로 옳은 것만을 있는 대로 고른 것은?'
@@ -511,10 +511,10 @@ items:
   - ㉤은 부사이므로 받침이 'ㄷ' 소리로 나더라도 무조건 'ㅅ'으로 적는다.
   answer: 5
   second_best: 3
-  difficulty: D4
+  difficulty: D2
   family: CASE_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -583,10 +583,10 @@ items:
   - ㉣, ㉤, ㉥
   answer: 1
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: ERROR_CORRECTION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -780,17 +780,17 @@ items:
   - '[붙임 1] ㉡단어의 첫머리 이외의 경우에는 본음대로 적는다.'
   - '[붙임 2] ㉢접두사처럼 쓰이는 한자가 붙어서 된 말이나 합성어에서, 뒷말의 첫소리가 ''ㄴ'' 소리로 나더라도 두음 법칙에 따라 적는다.'
   options:
-  - '''신여성''은 ''여성''이 단어의 첫머리가 아니므로 ㉡에 따라 ''신녀성''으로 적는다.'
-  - '''공염불''은 ''염불''이 합성어의 뒷말이므로 ㉡에 따라 ''공념불''로 적는다.'
-  - '''은닉''의 ''닉''은 ''ㄴ'' 받침 뒤이므로 두음 법칙을 적용해 ''은익''으로 적는다.'
-  - '''남녀''는 ''녀''가 단어의 첫머리에 오지 않으므로 ㉡에 따라 본음대로 적는다.'
-  - '''여자''와 ''남존여비''의 ''여''는 모두 ㉠에 따라 적은 것이다.'
+  - '''공염불''의 ''염''은 ㉢에, ''은닉''의 ''닉''은 ㉠에 따라 적은 것이다.'
+  - '''여자''의 ''여''는 ㉠에, ''남존여비''의 ''여''는 ㉡에 따라 적은 것이다.'
+  - '''연세(年歲)''의 ''연''은 ㉠에, ''당뇨(糖尿)''의 ''뇨''는 ㉢에 따라 적은 것이다.'
+  - '''남녀''의 ''녀''는 ㉡에, ''신여성''의 ''여''는 ㉢에 따라 적은 것이다.'
+  - '''요소(尿素)''의 ''요''는 ㉡에, ''결뉴(結紐)''의 ''뉴''도 ㉡에 따라 적은 것이다.'
   answer: 4
   second_best: 1
-  difficulty: D3
+  difficulty: D4
   family: VIEW_APPLICATION
-  balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -803,26 +803,26 @@ items:
     - VIEW
     - OPTION1
     v: false
-    why: 접두사처럼 쓰이는 '신-' 뒤이므로 ㉢에 따라 '신여성'으로 적는다.
-    trap: T2_EXCEPTION_CONDITION
+    why: '''은닉''의 ''닉''은 첫머리가 아니므로 ㉡에 따라 본음대로 적은 것이다.'
+    trap: T3_ONE_OF_TWO_WRONG
   - axis: orthography
-    c: MEDIUM
+    c: STRONG
     claim: KOR-ON1-012-2
     ev:
     - VIEW
     - OPTION2
     v: false
-    why: '''공-''이 붙은 말이므로 ㉢에 따라 ''공염불''로 적는다.'
-    trap: T2_EXCEPTION_CONDITION
+    why: '''남존여비''는 ㉢에 따라 두음 법칙을 적용한 것이다.'
+    trap: T3_ONE_OF_TWO_WRONG
   - axis: orthography
-    c: MEDIUM
+    c: STRONG
     claim: KOR-ON1-012-3
     ev:
     - VIEW
     - OPTION3
     v: false
-    why: 첫머리가 아니므로 ㉡에 따라 본음 '은닉'으로 적는다.
-    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+    why: '''당뇨''의 ''뇨''는 첫머리가 아니어서 ㉡에 따른 것이다.'
+    trap: T3_ONE_OF_TWO_WRONG
   - axis: orthography
     c: CORRECT
     claim: KOR-ON1-012-4
@@ -832,26 +832,26 @@ items:
     v: true
     why: '정답 근거: 해설 참고.'
   - axis: orthography
-    c: STRONG
+    c: MEDIUM
     claim: KOR-ON1-012-5
     ev:
     - VIEW
     - OPTION5
     v: false
-    why: '''남존여비''의 ''여''는 ㉢에 따른 것이다.'
-    trap: T5_RULE_JURISDICTION
+    why: '''요소''의 ''요''는 첫머리이므로 ㉠에 따른 것이다.'
+    trap: T3_ONE_OF_TWO_WRONG
 - item_id: KOR-ON1-013
   archetype: A3_CONDITION_CLASSIFICATION
   stem: '[제11·12항] <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤에서 밑줄 대신 따옴표로 표시한 음절을 분류한 것으로 가장 적절한 것은?'
   view:
   - <보기 1> 한자음 '라, 래, 로, 뢰, 루, 르'와 '랴, 려, 례, 료, 류, 리'는 Ⓐ단어의 첫머리에 올 적에는 두음 법칙에 따라 적고, Ⓑ단어의 첫머리 이외의 경우에는 본음대로 적는다. 다만 Ⓒ접두사처럼 쓰이는 한자가 붙어서 된 말이나 합성어에서는 뒷말에 두음 법칙을 적용하여 적는다.
-  - <보기 2> ㉠ '노'인(老人)   ㉡ 연'로'(年老)   ㉢ 상'노'인(上老人)   ㉣ 협'력'(協力)   ㉤ '내'일(來日)
+  - <보기 2> ㉠ '노'인(老人)   ㉡ 연'로'(年老)   ㉢ 실'낙'원(失樂園)   ㉣ 협'력'(協力)   ㉤ 왕'래'(往來)
   options:
-  - Ⓐ ㉠, ㉡, ㉤   Ⓑ ㉣   Ⓒ ㉢
-  - Ⓐ ㉠, ㉢, ㉤   Ⓑ ㉡, ㉣   Ⓒ 없음
-  - Ⓐ ㉠   Ⓑ ㉡, ㉣   Ⓒ ㉢, ㉤
-  - Ⓐ ㉤   Ⓑ ㉠, ㉣   Ⓒ ㉡, ㉢
+  - Ⓐ ㉠, ㉡   Ⓑ ㉣, ㉤   Ⓒ ㉢
+  - Ⓐ ㉠, ㉢   Ⓑ ㉡, ㉣, ㉤   Ⓒ 없음
+  - Ⓐ ㉠   Ⓑ ㉡, ㉢, ㉣   Ⓒ ㉤
   - Ⓐ ㉠, ㉤   Ⓑ ㉡, ㉣   Ⓒ ㉢
+  - Ⓐ ㉠   Ⓑ ㉡, ㉣, ㉤   Ⓒ ㉢
   answer: 5
   second_best: 1
   difficulty: D4
@@ -888,16 +888,16 @@ items:
     - VIEW
     - OPTION3
     v: false
-    why: ㉤ '내일'의 '내'는 첫머리이므로 Ⓐ이다.
+    why: ㉢ '실낙원'은 Ⓒ, ㉤ '왕래'는 Ⓑ이다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
-    c: WEAK
+    c: STRONG
     claim: KOR-ON1-013-4
     ev:
     - VIEW
     - OPTION4
     v: false
-    why: ㉠은 첫머리이므로 Ⓐ이다.
+    why: ㉤ '왕래'의 '래'는 첫머리가 아니므로 Ⓑ이다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: CORRECT
@@ -906,7 +906,7 @@ items:
     - VIEW
     - OPTION5
     v: true
-    why: ㉠·㉤은 첫머리(Ⓐ), ㉡·㉣은 첫머리 이외(Ⓑ), ㉢은 접두사처럼 쓰이는 '상-' 뒤(Ⓒ)이다.
+    why: ㉠은 첫머리(Ⓐ), ㉡·㉣·㉤은 첫머리 이외(Ⓑ), ㉢은 접두사처럼 쓰이는 '실-' 뒤(Ⓒ)이다.
 - item_id: KOR-ON1-014
   archetype: A2_STUDENT_TEXT_ERRORS
   stem: '[제10~12항] <보기>의 [A]에 들어갈 말로 적절한 것은?'
@@ -927,10 +927,10 @@ items:
   - ㉠, ㉣, ㉥
   answer: 2
   second_best: 4
-  difficulty: D4
+  difficulty: D3
   family: ERROR_CORRECTION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -998,10 +998,10 @@ items:
   - ㉤
   answer: 1
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: EXCEPT_INCORRECT
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -1069,10 +1069,10 @@ items:
   - ㉤
   answer: 4
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: EXCEPT_INCORRECT
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -1138,10 +1138,10 @@ items:
   - 북한에서도 '력'이 단어 첫머리에 오면 '역'으로 바꾸어 적는다.
   answer: 5
   second_best: 2
-  difficulty: D4
+  difficulty: D2
   family: CASE_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -1207,10 +1207,10 @@ items:
   - ㄴ, ㄷ, ㄹ
   answer: 4
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: MULTI_JUDGMENT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1278,10 +1278,10 @@ items:
   - ㉤
   answer: 4
   second_best: 2
-  difficulty: D3
+  difficulty: D2
   family: EXCEPT_INCORRECT
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -1335,43 +1335,43 @@ items:
   archetype: A1_GENERAL_RULE_MAPPING
   stem: '[제15항] <보기>의 한글 맞춤법 조항을 바탕으로 탐구한 내용으로 가장 적절한 것은?'
   view:
-  - '제15항 [붙임 2] ㉠종결형에서 사용되는 어미 ''-오''는 ''요''로 소리 나는 경우가 있더라도 그 원형을 밝혀 ''오''로 적는다. (예: 이것은 책이오.)'
-  - '[붙임 3] ㉡연결형에서 사용되는 ''이요''는 ''이요''로 적는다. (예: 이것은 책이요, 저것은 붓이요, 또 저것은 먹이다.)'
+  - 제15항 [붙임 2] ㉠종결형에서 사용되는 어미 '-오'는 '요'로 소리 나는 경우가 있더라도 그 원형을 밝혀 '오'로 적는다.
+  - '[붙임 3] ㉡연결형에서 사용되는 ''이요''는 ''이요''로 적는다.'
   options:
-  - '"이것은 연필이오, 저것은 지우개이다."는 ''이오''로 적은 것이 바르다.'
-  - '"이리 오시요."는 ''요''로 소리 나므로 ㉠과 달리 ''요''로 적는 것이 바르다.'
-  - '"여기가 우리 집이오."의 ''이오''는 문장을 끝내는 형태이므로 ㉠에 따라 적었다.'
-  - '"당신이 바로 범인이오?"는 의문문이므로 ''이요''로 적어야 한다.'
-  - '"사과요, 배요."처럼 나열할 때에도 체언 뒤에서는 언제나 ㉠에 따라 ''오''로 적는다.'
+  - '"어서 오시요."는 ㉠에, "사과요, 배요."는 ㉡에 따른 표기이다.'
+  - '"당신이 범인이오?"는 ㉡에, "이것은 책이요, 저것은 공책이다."도 ㉡에 따른 표기이다.'
+  - '"여기가 우리 집이오."는 ㉠에, "이것은 펜이요, 저것은 자이다."는 ㉡에 따른 표기이다.'
+  - '"그것은 내 잘못이오."는 ㉠에, "이것은 연필이오, 저것은 지우개다."는 ㉡에 따른 표기이다.'
+  - '"안녕히 가시오."는 ㉡에, "오늘은 바쁘오."는 ㉠에 따른 표기이다.'
   answer: 3
-  second_best: 1
-  difficulty: D3
+  second_best: 2
+  difficulty: D4
   family: VIEW_APPLICATION
-  balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
   topic: 제15항
   judgments:
   - axis: orthography
-    c: STRONG
+    c: MEDIUM
     claim: KOR-ON1-020-1
     ev:
     - VIEW
     - OPTION1
     v: false
-    why: 연결형이므로 ㉡에 따라 '이요'로 적어야 한다.
+    why: '''오시요''는 ''오시오''로 적어야 하므로 ㉠에 따른 표기가 아니다.'
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
-    c: MEDIUM
+    c: STRONG
     claim: KOR-ON1-020-2
     ev:
     - VIEW
     - OPTION2
     v: false
-    why: 종결형 어미이므로 '오시오'로 적는다.
-    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+    why: 의문문이라도 종결형이므로 '범인이오?'는 ㉠에 따른다.
+    trap: T3_ONE_OF_TWO_WRONG
   - axis: orthography
     c: CORRECT
     claim: KOR-ON1-020-3
@@ -1387,17 +1387,17 @@ items:
     - VIEW
     - OPTION4
     v: false
-    why: 의문문이라도 종결형이므로 '-오'로 적는다.
-    trap: T2_EXCEPTION_CONDITION
+    why: 연결형은 '연필이요'로 적어야 한다.
+    trap: T3_ONE_OF_TWO_WRONG
   - axis: orthography
-    c: WEAK
+    c: STRONG
     claim: KOR-ON1-020-5
     ev:
     - VIEW
     - OPTION5
     v: false
-    why: 나열하는 연결형은 ㉠의 대상이 아니다.
-    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+    why: '''가시오''는 종결형이므로 ㉡이 아니라 ㉠에 따른다.'
+    trap: T3_ONE_OF_TWO_WRONG
 - item_id: KOR-ON1-021
   archetype: A6_RULE_CASE_EXPLANATION
   stem: '[제18항] <보기>를 바탕으로 탐구한 내용으로 적절하지 않은 것은?'
@@ -1411,10 +1411,10 @@ items:
   - '''흐르다''가 ''흘러''로 바뀌는 것은 어간 끝음절 ''르''의 ''ㅡ''가 탈락하고 ''ㄹ''이 덧붙은 것이다.'
   answer: 2
   second_best: 4
-  difficulty: D3
+  difficulty: D2
   family: CASE_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -1469,19 +1469,19 @@ items:
   stem: '[제18항] <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?'
   view:
   - <보기 1> 용언이 활용할 때 표기가 바뀌는 경우는 Ⓐ어간의 끝 받침이 바뀌거나 탈락하는 경우, Ⓑ어간의 끝 모음 'ㅡ'만 탈락하는 경우, Ⓒ어간의 끝음절 '르'가 'ㄹㄹ'의 형태로 바뀌는 경우로 나눌 수 있다.
-  - <보기 2> ㉠ 도와(돕다)   ㉡ 담가(담그다)   ㉢ 길러(기르다)   ㉣ 걸어(걷다[步])   ㉤ 따라(따르다)
+  - <보기 2> ㉠ 물어(묻다[問])   ㉡ 치러(치르다)   ㉢ 길러(기르다)   ㉣ 이어(잇다)   ㉤ 따라(따르다)
   options:
   - Ⓐ ㉠, ㉣   Ⓑ ㉡   Ⓒ ㉢, ㉤
-  - Ⓐ ㉠   Ⓑ ㉡, ㉣   Ⓒ ㉢, ㉤
+  - Ⓐ ㉠   Ⓑ ㉣, ㉤   Ⓒ ㉡, ㉢
   - Ⓐ ㉣   Ⓑ ㉠, ㉡   Ⓒ ㉢, ㉤
-  - Ⓐ ㉠, ㉢   Ⓑ ㉡, ㉤   Ⓒ ㉣
+  - Ⓐ ㉠, ㉣   Ⓑ ㉤   Ⓒ ㉡, ㉢
   - Ⓐ ㉠, ㉣   Ⓑ ㉡, ㉤   Ⓒ ㉢
   answer: 5
   second_best: 1
-  difficulty: D3
+  difficulty: D4
   family: COMPARISON_MATRIX
-  balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1494,16 +1494,16 @@ items:
     - VIEW
     - OPTION1
     v: false
-    why: ㉤ '따라'는 '르'로 끝나지만 'ㅡ'만 탈락하므로 Ⓑ이다.
+    why: ㉡ '치러', ㉤ '따라'는 '르'로 끝나지만 'ㅡ'만 탈락하므로 Ⓑ이다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
-    c: MEDIUM
+    c: STRONG
     claim: KOR-ON1-022-2
     ev:
     - VIEW
     - OPTION2
     v: false
-    why: ㉣ '걸어'는 받침 'ㄷ'이 'ㄹ'로 바뀐 Ⓐ이다.
+    why: ㉣ '이어'는 받침 'ㅅ'이 탈락한 Ⓐ이다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: MEDIUM
@@ -1512,16 +1512,16 @@ items:
     - VIEW
     - OPTION3
     v: false
-    why: ㉠ '도와'는 받침 'ㅂ'이 바뀐 Ⓐ이다.
+    why: ㉠ '물어'는 받침 'ㄷ'이 'ㄹ'로 바뀐 Ⓐ이다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
-    c: WEAK
+    c: STRONG
     claim: KOR-ON1-022-4
     ev:
     - VIEW
     - OPTION4
     v: false
-    why: ㉢ '길러'는 Ⓒ, ㉣은 Ⓐ이다.
+    why: ㉡ '치러'는 Ⓑ, ㉣ '이어'는 Ⓐ이다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: CORRECT
@@ -1530,7 +1530,7 @@ items:
     - VIEW
     - OPTION5
     v: true
-    why: '정답 근거: 해설 참고.'
+    why: ㉠ 물어(ㄷ→ㄹ)·㉣ 이어(ㅅ 탈락)는 Ⓐ, ㉡ 치러·㉤ 따라는 Ⓑ, ㉢ 길러는 Ⓒ이다.
 - item_id: KOR-ON1-023
   archetype: A5_EXAMPLE_MULTI_JUDGMENT
   stem: '[제18항] 용언의 활용형 표기에 대한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?'
@@ -1620,10 +1620,10 @@ items:
   - ㉢, ㉤, ㉥
   answer: 2
   second_best: 5
-  difficulty: D3
+  difficulty: D2
   family: ERROR_CORRECTION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1678,7 +1678,7 @@ items:
   stem: '[제19항] <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?'
   view:
   - <보기 1> Ⓐ어간에 '-이'나 '-음/-ㅁ'이 붙어서 명사로 된 것은 그 어간의 원형을 밝혀 적는다. 다만 Ⓑ그 본뜻에서 멀어진 것은 원형을 밝혀 적지 않는다. 또 Ⓒ어간에 '-이'나 '-음' 이외의 모음으로 시작된 접미사가 붙어서 다른 품사로 바뀐 것은 그 어간의 원형을 밝혀 적지 않는다.
-  - <보기 2> ㉠ 미닫이   ㉡ 거름(비료)   ㉢ 마개   ㉣ 만듦   ㉤ 주검
+  - <보기 2> ㉠ 미닫이(미-+닫-+-이)   ㉡ 거름(걸-+-음, 비료의 뜻)   ㉢ 마개(막-+-애)   ㉣ 만듦(만들-+-ㅁ)   ㉤ 주검(죽-+-엄)
   options:
   - Ⓐ ㉠, ㉣   Ⓑ ㉡   Ⓒ ㉢, ㉤
   - Ⓐ ㉠   Ⓑ ㉡, ㉤   Ⓒ ㉢, ㉣
@@ -1757,10 +1757,10 @@ items:
   - '''발걸음''과 ''거름(비료)''도 같은 원리로 표기가 구별된다.'
   answer: 2
   second_best: 5
-  difficulty: D3
+  difficulty: D2
   family: CASE_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -1815,6 +1815,7 @@ items:
   stem: '[제19항] <보기>의 한글 맞춤법 조항을 바탕으로 탐구한 내용으로 가장 적절한 것은?'
   view:
   - 제19항 어간에 '-이'나 '-히'가 붙어서 부사로 된 것은 그 어간의 원형을 밝히어 적는다.
+  - ※ <보기>의 '밝히, 익히, 많이, 굳이, 실없이'는 모두 부사이다.
   options:
   - '''밝히''는 어간 ''밝-''에 ''-히''가 붙은 부사로 원형을 밝혀 적었다.'
   - '''익히''는 동사 ''익히다''의 어간이 그대로 부사로 쓰인 것이므로 원형과 관계없다.'
@@ -2031,10 +2032,10 @@ items:
   - '''말끔하다''는 ''맑-''의 끝소리 ''ㄱ''이 드러나지 않아 ㉠에 따라 소리대로 적었다.'
   answer: 3
   second_best: 4
-  difficulty: D4
+  difficulty: D3
   family: CASE_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -2102,10 +2103,10 @@ items:
   - '''올무''는 ''옭다''와의 관련이 분명하지 않다고 보아 소리대로 적었다.'
   answer: 1
   second_best: 3
-  difficulty: D4
+  difficulty: D3
   family: CASE_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -2304,11 +2305,11 @@ items:
   - 제25항 ㉠'-하다'가 붙는 어근에 '-히'나 '-이'가 붙어서 부사가 되거나, ㉡부사에 '-이'가 붙어서 뜻을 더하는 경우에는 그 어근이나 부사의 원형을 밝히어 적는다.
   - '[붙임] ㉢''-하다''가 붙지 않는 경우에는 소리대로 적는다.'
   options:
-  - '''반드시(꼭)''는 ''-하다''가 붙는 어근이 없으므로 ㉢에 따라 소리대로 적었다.'
-  - '''반듯이''는 ''반듯하다''가 없으므로 ㉢에 따라 적은 것이다.'
-  - '''일찍이''는 ''-하다''가 붙는 어근에 ''-이''가 붙은 것이므로 ㉠에 해당한다.'
-  - '''슬며시''는 부사 ''슬몃''에 ''-이''가 붙은 말이므로 ㉡에 따라 원형을 밝혀야 한다.'
-  - '''꾸준히''는 ''꾸준하다''의 어근에 ''-히''가 붙은 말이므로 ㉡에 해당한다.'
+  - '''반드시(꼭)''는 ㉢에, ''일찍이''는 ㉡에 따라 적은 것이다.'
+  - '''반듯이''는 ㉢에, ''곰곰이''는 ㉡에 따라 적은 것이다.'
+  - '''꾸준히''는 ㉠에, ''슬며시''는 ㉡에 따라 적은 것이다.'
+  - '''갑자기''는 ㉢에, ''더욱이''는 ㉠에 따라 적은 것이다.'
+  - '''급히''는 ㉡에, ''깨끗이''는 ㉠에 따라 적은 것이다.'
   answer: 1
   second_best: 2
   difficulty: D4
@@ -2335,8 +2336,8 @@ items:
     - VIEW
     - OPTION2
     v: false
-    why: '''반듯하다''가 있으므로 ㉠에 따라 원형을 밝힌 말이다.'
-    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+    why: '''반듯이''는 ''반듯하다''가 있으므로 ㉠에 따른다.'
+    trap: T3_ONE_OF_TWO_WRONG
   - axis: orthography
     c: STRONG
     claim: KOR-ON1-034-3
@@ -2344,26 +2345,26 @@ items:
     - VIEW
     - OPTION3
     v: false
-    why: 부사 '일찍'에 '-이'가 붙은 ㉡의 사례이다.
-    trap: T5_RULE_JURISDICTION
+    why: '''슬며시''는 ㉢에 따라 소리대로 적는다.'
+    trap: T3_ONE_OF_TWO_WRONG
   - axis: orthography
-    c: MEDIUM
+    c: STRONG
     claim: KOR-ON1-034-4
     ev:
     - VIEW
     - OPTION4
     v: false
-    why: '''슬며시''는 ㉢에 따라 소리대로 적는 말이다.'
-    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+    why: '''더욱이''는 부사 ''더욱''에 ''-이''가 붙은 ㉡의 사례이다.'
+    trap: T3_ONE_OF_TWO_WRONG
   - axis: orthography
-    c: WEAK
+    c: MEDIUM
     claim: KOR-ON1-034-5
     ev:
     - VIEW
     - OPTION5
     v: false
-    why: ㉠에 해당한다.
-    trap: T5_RULE_JURISDICTION
+    why: '''급히''는 ''급하다''의 어근에 ''-히''가 붙은 ㉠의 사례이다.'
+    trap: T3_ONE_OF_TWO_WRONG
 - item_id: KOR-ON1-035
   archetype: A2_STUDENT_TEXT_ERRORS
   stem: '[제25·51항] <보기>의 [A]에 들어갈 말로 적절한 것은?'
@@ -2384,10 +2385,10 @@ items:
   - ㉠, ㉣, ㉥
   answer: 3
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: ERROR_CORRECTION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2592,10 +2593,10 @@ items:
   - ㉡, ㉢, ㉣
   answer: 1
   second_best: 4
-  difficulty: D4
+  difficulty: D3
   family: ERROR_CORRECTION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2664,10 +2665,10 @@ items:
   - ㉢, ㉤, ㉥
   answer: 4
   second_best: 2
-  difficulty: D3
+  difficulty: D2
   family: ERROR_CORRECTION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2808,10 +2809,10 @@ items:
   - ㉡, ㉣, ㉤
   answer: 5
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: ERROR_CORRECTION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 3
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -3072,11 +3073,11 @@ items:
   view:
   - '[발음 자료] 어깨[어깨]   국수[국쑤]   갑자기[갑짜기]   산뜻하다[산뜨타다]   물병[물뼝]'
   options:
-  - '[갑짜기]를 ''갑자기''로 적는 것은 ''ㅂ'' 받침 뒤 된소리가 규칙적으로 나기 때문인데, ''법석''도 같은 이유로 ''법썩''으로 적는다.'
-  - '[어깨]를 ''어깨''로 적는 것은 ''ㄴ, ㄹ, ㅁ, ㅇ'' 받침 뒤에서 나는 된소리이기 때문이다.'
-  - '''물병''을 [물뼝]으로 발음하더라도 ''물병''으로 적는 것은 두 단어가 결합한 말에서 각 단어의 원형을 밝혀 적기 때문이다.'
-  - '[산뜨타다]의 된소리는 ''ㄴ'' 받침 뒤에서 규칙적으로 일어나는 된소리되기이므로 된소리로 적지 않는다.'
-  - '[국쑤]를 ''국수''로 적는 것과 [물뼝]을 ''물병''으로 적는 것은 같은 조항에 근거한다.'
+  - '[갑짜기]를 ''갑자기''로 적는 것은 ''ㅂ'' 받침 뒤의 된소리이기 때문이고, [어깨]를 ''어깨''로 적는 것은 ''ㄴ, ㄹ, ㅁ, ㅇ'' 받침 뒤의 된소리이기 때문이다.'
+  - '[산뜨타다]를 ''산뜻하다''로 적는 것은 ''ㄴ'' 받침 뒤의 된소리이기 때문이고, [국쑤]를 ''국수''로 적는 것도 같은 이유에서이다.'
+  - '[물뼝]을 ''물병''으로 적는 것은 합성어에서 각 단어의 원형을 밝히기 때문이고, [국쑤]를 ''국수''로 적는 것은 ''ㄱ'' 받침 뒤의 된소리이기 때문이다.'
+  - '[어깨]는 두 모음 사이에서 나는 된소리이고, [물뼝]도 두 모음 사이에서 나는 된소리이므로 된소리로 적지 않는다.'
+  - '[국쑤]와 [물뼝]은 모두 받침 뒤에서 규칙적으로 나는 된소리이므로 같은 조항에 따라 예사소리로 적는다.'
   answer: 3
   second_best: 1
   difficulty: D4
@@ -3095,17 +3096,17 @@ items:
     - VIEW
     - OPTION1
     v: false
-    why: 같은 이유로 '법석'도 된소리로 적지 않는다.
-    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+    why: '''어깨''는 두 모음 사이의 된소리이다.'
+    trap: T3_ONE_OF_TWO_WRONG
   - axis: orthography
-    c: MEDIUM
+    c: STRONG
     claim: KOR-ON1-045-2
     ev:
     - VIEW
     - OPTION2
     v: false
-    why: '''어깨''는 두 모음 사이에서 나는 된소리이다.'
-    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+    why: '''국수''는 ''ㄴ'' 받침이 아니라 ''ㄱ'' 받침 뒤이며 된소리로 적지 않는다.'
+    trap: T3_ONE_OF_TWO_WRONG
   - axis: orthography
     c: CORRECT
     claim: KOR-ON1-045-3
@@ -3115,13 +3116,13 @@ items:
     v: true
     why: '정답 근거: 해설 참고.'
   - axis: orthography
-    c: STRONG
+    c: MEDIUM
     claim: KOR-ON1-045-4
     ev:
     - VIEW
     - OPTION4
     v: false
-    why: '''ㄴ'' 받침 뒤 된소리는 까닭 없이 나는 것이므로 된소리로 적는다(제5항).'
+    why: '''물병''의 ''물''은 ''ㄹ'' 받침으로 끝나며, 합성어의 원형을 밝혀 적는 것이다.'
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: STRONG
@@ -3130,7 +3131,7 @@ items:
     - VIEW
     - OPTION5
     v: false
-    why: '''국수''는 제5항 다만, ''물병''은 합성어의 원형을 밝히는 제27항에 근거한다.'
+    why: '''국수''는 제5항 다만, ''물병''은 합성어 원형 표기(제27항)로 근거 조항이 다르다.'
     trap: T5_RULE_JURISDICTION
 - item_id: KOR-ON1-046
   archetype: C1_CONSTRUCTED_BLANK_SENTENCE
@@ -3176,7 +3177,7 @@ items:
   - 조건 1·3 충족 1점
   ev:
   - VIEW
-  difficulty: D4
+  difficulty: D3
   topic: 제10항
 - item_id: KOR-ON1-048
   archetype: C1_CONSTRUCTED_BLANK_SENTENCE
@@ -3208,19 +3209,19 @@ items:
   stem: '[제19항] <보기>의 ㉠과 ㉡의 표기 차이를 <조건>에 따라 서술하시오.'
   view:
   - ㉠ 강물이 꽁꽁 얼어 얼음이 되었다.
-  - ㉡ 상처가 덧나 고름이 생겼다.
+  - ㉡ 상처가 곪아 고름이 생겼다.
   conditions:
   - 1. ㉠, ㉡을 이루는 어간을 각각 밝힐 것.
   - 2. '본뜻'이라는 말을 반드시 포함할 것.
   - 3. 두 문장 이내로 쓸 것.
-  model_answer: ㉠ '얼음'은 어간 '얼-'에 '-음'이 붙은 말로 본뜻이 유지되어 원형을 밝혀 적었다. ㉡ '고름'은 '곯-'에 '-음'이 붙은 말이지만 본뜻에서 멀어져 원형을 밝히지 않고 소리대로 적었다.
+  model_answer: ㉠ '얼음'은 어간 '얼-'에 '-음'이 붙은 말로 본뜻이 유지되어 원형을 밝혀 적었다. ㉡ '고름'은 '곪-'에 '-음'이 붙은 말이지만 본뜻에서 멀어져 원형을 밝히지 않고 소리대로 적었다.
   rubric:
   - ㉠ 어간 '얼-' + 원형 밝힘 2점
-  - ㉡ 어간 '곯-' + 본뜻에서 멀어져 소리대로 적음 2점
+  - ㉡ 어간 '곪-' + 본뜻에서 멀어져 소리대로 적음 2점
   - 조건 2·3 충족 1점
   ev:
   - VIEW
-  difficulty: D4
+  difficulty: D3
   topic: 제19항
 - item_id: KOR-ON1-050
   archetype: C1_CONSTRUCTED_BLANK_SENTENCE
@@ -3243,5 +3244,5 @@ items:
   - 문장 형식 1점
   ev:
   - VIEW
-  difficulty: D3
+  difficulty: D2
   topic: 제18항
