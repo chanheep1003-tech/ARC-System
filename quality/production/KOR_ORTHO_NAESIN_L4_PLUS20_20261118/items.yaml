@@ -111,10 +111,10 @@ items:
   - ㉠, ㉤, ㉥
   answer: 1
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: ERROR_CORRECTION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -178,10 +178,10 @@ items:
   - Ⓐ ㉠, ㉡, ㉤   Ⓑ ㉣   Ⓒ ㉢
   answer: 2
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -319,10 +319,10 @@ items:
   - ㉤
   answer: 4
   second_best: 2
-  difficulty: D4
+  difficulty: D2
   family: EXCEPT_INCORRECT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -449,7 +449,7 @@ items:
   - 영화관 ㉡앞에서부터 줄이 길었다.
   - 표를 ㉢사고나서 팝콘을 샀다.
   - 영화는 ㉣생각했던것보다 재미있었다.
-  - 끝나고 집에 ㉤가는 데 비가 오기 시작했다.
+  - 영화관 밖으로 ㉤나왔는 데 비가 오고 있었다.
   - ㉥내일모레 또 보기로 했다.
   - '선생님: 띄어쓰기가 틀린 곳은 [A]란다.'
   options:
@@ -460,10 +460,10 @@ items:
   - ㉡, ㉣, ㉤
   answer: 2
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: ERROR_CORRECTION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -485,7 +485,7 @@ items:
     - VIEW
     - OPTION2
     v: true
-    why: ㉢ '사고 나서'('-고' 뒤 보조 용언은 붙여 쓸 수 없음), ㉣ '생각했던 것보다'(의존 명사), ㉤ '가는데'(상황을 제시하는 어미)로 고쳐야 한다.
+    why: ㉢ '사고 나서'('-고' 뒤 보조 용언은 붙여 쓸 수 없음), ㉣ '생각했던 것보다'(의존 명사), ㉤ '나왔는데'(뒤 내용의 배경을 제시하는 어미)로 고쳐야 한다.
   - axis: orthography
     c: WEAK
     claim: KOR-ON4-007-3
@@ -530,10 +530,10 @@ items:
   - ㄱ, ㄴ, ㄷ, ㅁ
   answer: 1
   second_best: 3
-  difficulty: D4
+  difficulty: D3
   family: MULTI_JUDGMENT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -597,10 +597,10 @@ items:
   - Ⓐ ㉡   Ⓑ ㉠, ㉣   Ⓒ ㉢, ㉤
   answer: 5
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -666,10 +666,10 @@ items:
   - '''꾀어''는 ''꽤''로 줄여 적을 수 있다.'
   answer: 4
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: CASE_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -732,10 +732,10 @@ items:
   - '"나는 학생으로서 말한다"는 바르고, "갈등을 대화로서 해결했다"도 바르게 쓴 것이다.'
   answer: 3
   second_best: 1
-  difficulty: D4
+  difficulty: D2
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -805,10 +805,10 @@ items:
   - ㉠, ㉣, ㉤
   answer: 2
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: ERROR_CORRECTION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -931,7 +931,7 @@ items:
   archetype: A3_CONDITION_CLASSIFICATION
   stem: '[제30항] <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?'
   view:
-  - <보기 1> 합성어는 Ⓐ뒷말의 첫소리가 된소리로 나서 사이시옷을 적는 것, Ⓑ'ㄴ'이나 'ㄴㄴ' 소리가 덧나서 사이시옷을 적는 것, Ⓒ사이시옷 조건을 갖추지 못해 사이시옷을 적지 않는 것으로 나눌 수 있다.
+  - <보기 1> 합성어는 Ⓐ뒷말의 첫소리가 된소리로 나서 사이시옷을 적는 것, Ⓑ'ㄴ'이나 'ㄴㄴ' 소리가 덧나서 사이시옷을 적는 것, Ⓒ사이시옷 조건을 갖추지 못해 사이시옷을 적지 않는 것으로 나눌 수 있다. 사이시옷은 순우리말이 들어간 합성어에만 적으며, 외래어가 들어간 말, 파생어, 한자어끼리의 결합(예외 여섯 단어 제외)에는 적지 않는다.
   - <보기 2> ㉠ 해님   ㉡ 툇마루   ㉢ 핑크빛   ㉣ 텃세   ㉤ 개수(個數)
   options:
   - Ⓐ ㉣   Ⓑ ㉡   Ⓒ ㉠, ㉢, ㉤
@@ -941,10 +941,10 @@ items:
   - Ⓐ ㉣, ㉤   Ⓑ ㉡   Ⓒ ㉠, ㉢
   answer: 1
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1075,10 +1075,10 @@ items:
   - '''박동식 박사''의 ''박사''는 덧붙는 호칭어이므로 띄어 쓴다.'
   answer: 1
   second_best: 4
-  difficulty: D3
+  difficulty: D2
   family: CASE_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -1148,10 +1148,10 @@ items:
   - ㉢, ㉣, ㉤
   answer: 5
   second_best: 1
-  difficulty: D4
+  difficulty: D2
   family: ERROR_CORRECTION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1285,10 +1285,10 @@ items:
   - ㉤
   answer: 5
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: EXCEPT_INCORRECT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -1354,10 +1354,10 @@ items:
   - ㄴ, ㄷ, ㄹ
   answer: 4
   second_best: 3
-  difficulty: D4
+  difficulty: D3
   family: MULTI_JUDGMENT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
