@@ -38,10 +38,10 @@ items:
   - '''며칠''은 ''몇''과 ''일''의 원형을 밝혀 적은 것으로 어법에 맞도록 적은 사례이다.'
   answer: 4
   second_best: 1
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -108,10 +108,10 @@ items:
   - 5개
   answer: 4
   second_best: 3
-  difficulty: D4
+  difficulty: D3
   family: MULTI_JUDGMENT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -183,10 +183,10 @@ items:
   - Ⓐ ㉤   Ⓑ ㉠, ㉢   Ⓒ ㉡, ㉣
   answer: 5
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -217,7 +217,7 @@ items:
     - VIEW
     - OPTION3
     v: false
-    why: ㉣ '이'는 뒷말 '이해'의 첫머리로 Ⓒ이다. [몰리해]라는 발음과 관계없이 두음 법칙을 적용한다.
+    why: ㉣ '이'는 뒷말 '이해'의 첫머리로 Ⓒ이다. [모리해]라는 발음과 관계없이 두음 법칙을 적용한다.
     trap: T2_EXCEPTION_CONDITION
   - axis: orthography
     c: MEDIUM
@@ -253,10 +253,10 @@ items:
   - '''칼로리양''은 외래어 ''칼로리'' 뒤이므로 ''양''으로 적는다.'
   answer: 3
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: CASE_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -326,10 +326,10 @@ items:
   - ㉤
   answer: 5
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: EXCEPT_INCORRECT
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -401,10 +401,10 @@ items:
   - ㉡, ㉣, ㉥
   answer: 1
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: ERROR_CORRECTION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -470,10 +470,10 @@ items:
   - '''희망''은 자음을 첫소리로 가진 음절이므로 [히망]에 따라 ''히망''으로 적는다.'
   answer: 4
   second_best: 1
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -535,7 +535,7 @@ items:
   - ㄱ. '신여성'과 '남존여비'의 '여'는 모두 뒷말의 첫머리에 두음 법칙을 적용한 것이다.
   - ㄴ. '고랭지'는 '고-'가 접두사처럼 쓰였으므로 두음 법칙을 적용해 '고냉지'로 적는다.
   - ㄷ. '연이율'의 '율'은 'ㄴ' 받침 뒤에 오므로 '률'을 '율'로 적은 것이다.
-  - ㄹ. '몰이해'는 [몰리해]로 발음되더라도 '이해'의 첫머리에 두음 법칙을 적용해 적는다.
+  - ㄹ. '몰이해'는 [모리해]로 발음되더라도 '이해'의 첫머리에 두음 법칙을 적용해 적는다.
   options:
   - ㄱ, ㄴ
   - ㄱ, ㄹ
@@ -544,10 +544,10 @@ items:
   - ㄴ, ㄷ, ㄹ
   answer: 2
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: MULTI_JUDGMENT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -613,10 +613,10 @@ items:
   - '''눅눅하다''는 같은 음절이 겹쳐 나므로 같은 글자로 적고, ''씁쓸하다''는 비슷한 음절이 겹쳐 된소리로 적는다.'
   answer: 5
   second_best: 1
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -688,10 +688,10 @@ items:
   - Ⓐ ㉠, ㉢, ㉣   Ⓑ ㉡, ㉤   Ⓒ 없음
   answer: 2
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -763,10 +763,10 @@ items:
   - ㉤
   answer: 3
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: EXCEPT_INCORRECT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -835,10 +835,10 @@ items:
   - ㄴ, ㄷ, ㄹ
   answer: 3
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: MULTI_JUDGMENT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -903,10 +903,10 @@ items:
   - '"빨리 오시요."는 ''요''로 소리 나므로 ''요''로 적고, "이것은 책이요."도 문장을 끝내므로 바른 표기이다.'
   answer: 1
   second_best: 2
-  difficulty: D4
+  difficulty: D2
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -972,10 +972,10 @@ items:
   - '''좋다''는 ''ㅎ''이 줄지 않으므로 ''-아''가 붙어도 ''좋아''로 적는다.'
   answer: 2
   second_best: 5
-  difficulty: D3
+  difficulty: D2
   family: CASE_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -1047,10 +1047,10 @@ items:
   - Ⓐ ㉡, ㉣   Ⓑ ㉤   Ⓒ ㉠, ㉢
   answer: 4
   second_best: 1
-  difficulty: D4
+  difficulty: D2
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1116,10 +1116,10 @@ items:
   - '''간니(젖니가 빠진 뒤 새로 난 이)''는 원형을 밝혀 ''간이''로 적어야 한다.'
   answer: 1
   second_best: 2
-  difficulty: D4
+  difficulty: D2
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1267,10 +1267,10 @@ items:
   - Ⓐ ㉡, ㉤   Ⓑ ㉢   Ⓒ ㉠, ㉣
   answer: 5
   second_best: 1
-  difficulty: D4
+  difficulty: D2
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1335,10 +1335,10 @@ items:
   - '''거름''은 ''걸다''의 뜻에서 멀어진 말이어서 원형을 밝히지 않았다.'
   answer: 3
   second_best: 2
-  difficulty: D3
+  difficulty: D2
   family: CASE_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -1411,10 +1411,10 @@ items:
   - Ⓐ ㉢, ㉤   Ⓑ ㉠   Ⓒ ㉡, ㉣
   answer: 5
   second_best: 1
-  difficulty: D4
+  difficulty: D2
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1484,10 +1484,10 @@ items:
   - ㄱ, ㄴ, ㅁ
   answer: 5
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: MULTI_JUDGMENT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1560,10 +1560,10 @@ items:
   - ㉠, ㉤, ㉥
   answer: 2
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: ERROR_CORRECTION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1627,10 +1627,10 @@ items:
   - '''윗사람''은 ''아랫사람''과 대립하여 ''윗-''으로 적고, ''웃어른''도 같은 이유로 ''윗어른''으로 적는다.'
   answer: 4
   second_best: 1
-  difficulty: D4
+  difficulty: D2
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1701,10 +1701,10 @@ items:
   - 5개
   answer: 4
   second_best: 3
-  difficulty: D4
+  difficulty: D3
   family: MULTI_JUDGMENT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1771,10 +1771,10 @@ items:
   - '''보이어''는 ''뵈어''와 ''보여'' 두 가지로 줄여 적을 수 있다.'
   answer: 2
   second_best: 5
-  difficulty: D3
+  difficulty: D2
   family: CASE_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -1844,10 +1844,10 @@ items:
   - ㄱ, ㄴ, ㄷ, ㄹ
   answer: 1
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: MULTI_JUDGMENT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1917,10 +1917,10 @@ items:
   - ㉤
   answer: 2
   second_best: 3
-  difficulty: D4
+  difficulty: D2
   family: EXCEPT_INCORRECT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -2060,10 +2060,10 @@ items:
   - '''찻잔''은 ''차''를 고유어로 보아 순우리말과 한자어로 된 합성어로서 된소리가 나는 경우이다.'
   answer: 2
   second_best: 3
-  difficulty: D4
+  difficulty: D3
   family: CASE_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -2128,10 +2128,10 @@ items:
   - '"설움이 북받혀 울었다"는 바르게 쓴 문장이다.'
   answer: 3
   second_best: 1
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2204,10 +2204,10 @@ items:
   - Ⓐ ㉠, ㉢   Ⓑ ㉣   Ⓒ ㉡, ㉤
   answer: 1
   second_best: 2
-  difficulty: D3
+  difficulty: D2
   family: COMPARISON_MATRIX
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2278,10 +2278,10 @@ items:
   - ㉤
   answer: 4
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: EXCEPT_INCORRECT
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -2354,10 +2354,10 @@ items:
   - ㉡, ㉣, ㉥
   answer: 3
   second_best: 2
-  difficulty: D3
+  difficulty: D2
   family: ERROR_CORRECTION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2421,10 +2421,10 @@ items:
   - '''결단코''와 ''한사코''는 같은 원리로 소리대로 적는다.'
   answer: 1
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: CASE_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -2496,10 +2496,10 @@ items:
   - Ⓐ ㉠, ㉢, ㉣   Ⓑ ㉡   Ⓒ ㉤
   answer: 3
   second_best: 1
-  difficulty: D4
+  difficulty: D2
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2572,10 +2572,10 @@ items:
   - ㉣, ㉤, ㉥
   answer: 3
   second_best: 2
-  difficulty: D3
+  difficulty: D2
   family: ERROR_CORRECTION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2641,10 +2641,10 @@ items:
   - '"그만큼 노력했다"의 ''만큼''은 대명사 ''그'' 뒤의 조사이므로 ''그 만큼''으로 띄어 쓴다.'
   answer: 1
   second_best: 2
-  difficulty: D4
+  difficulty: D2
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2926,10 +2926,10 @@ items:
   - ㉤
   answer: 1
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: EXCEPT_INCORRECT
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -3075,10 +3075,10 @@ items:
   - ㄷ, ㄹ, ㅁ
   answer: 1
   second_best: 2
-  difficulty: D3
+  difficulty: D2
   family: MULTI_JUDGMENT
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -3150,10 +3150,10 @@ items:
   - ㉡, ㉢, ㉥
   answer: 5
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: ERROR_CORRECTION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -3219,10 +3219,10 @@ items:
   - '"비도 올뿐더러 바람도 분다"의 ''-ㄹ뿐더러''는 어미이고, "비가 올 뿐 아니라"의 ''뿐''은 의존 명사이다.'
   answer: 5
   second_best: 1
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -3317,7 +3317,7 @@ items:
   - 조건 3 충족 1점
   ev:
   - VIEW
-  difficulty: D4
+  difficulty: D2
   topic: 제40항
 - item_id: KOR-OV2-048
   archetype: C1_CONSTRUCTED_BLANK_SENTENCE
@@ -3340,7 +3340,7 @@ items:
   - 형식 1점
   ev:
   - VIEW
-  difficulty: D3
+  difficulty: D2
   topic: 제57항
 - item_id: KOR-OV2-049
   archetype: C1_CONSTRUCTED_BLANK_SENTENCE
@@ -3364,7 +3364,7 @@ items:
   - 조건 3 충족 1점
   ev:
   - VIEW
-  difficulty: D3
+  difficulty: D2
   topic: 제42항
 - item_id: KOR-OV2-050
   archetype: C1_CONSTRUCTED_BLANK_SENTENCE
@@ -3388,5 +3388,5 @@ items:
   - 조건 3 충족 1점
   ev:
   - VIEW
-  difficulty: D4
+  difficulty: D3
   topic: 제47항

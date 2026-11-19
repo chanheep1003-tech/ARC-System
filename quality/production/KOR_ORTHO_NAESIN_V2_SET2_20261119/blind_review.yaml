@@ -1,0 +1,501 @@
+review_id: KOR-OV2-BLIND-R1
+reviewer: independent blind reviewer agent (Sonnet), fresh context, student manuscript
+  only
+rounds: 1
+excluded_inputs:
+- ANSWER_KEY
+- PASS_A
+- AUTHOR_INTENT
+- TARGET_DIFFICULTY
+items:
+- item_id: KOR-OV2-001
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 1
+  - 2
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-002
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 3
+  - 5
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-003
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 2
+  - 1
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-004
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 4
+  - 1
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-005
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 1
+  - 3
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-006
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 3
+  - 4
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-007
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 1
+  - 3
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-008
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 4
+  - 1
+  second_best: 4
+  difficulty: D3
+  confidence: MEDIUM
+  flags: []
+  note: ㄹ의 [몰리해]는 표준 발음 [모리해]와 다르나 "발음되더라도" 가정이라 판단에는 영향 없음; ㄷ은 연이율의 율이 ㄴ 받침이 아니라
+    모음 이 뒤라 근거 오류.
+- item_id: KOR-OV2-009
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 1
+  - 3
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-010
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 3
+  - 1
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-011
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 5
+  - 2
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-012
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 4
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-013
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 4
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-014
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 5
+  - 3
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-015
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 1
+  - 3
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-016
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 3
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-017
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 2
+  - 3
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-018
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 2
+  - 3
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-019
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 5
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-020
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 4
+  - 2
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-021
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 1
+  - 3
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-022
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 1
+  - 4
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-023
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 1
+  - 2
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-024
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 3
+  - 5
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-025
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 5
+  - 1
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-026
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 4
+  - 2
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-027
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 5
+  - 1
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-028
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 2
+  - 4
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-029
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 5
+  - 1
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-030
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 2
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-031
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 3
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-032
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 1
+  - 2
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-033
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 2
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-034
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 3
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags:
+  - c
+- item_id: KOR-OV2-035
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 4
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-036
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 2
+  - 5
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-037
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 3
+  - 5
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-038
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 3
+  - 1
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-039
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 1
+  - 5
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-040
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 4
+  - 3
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-041
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 5
+  - 3
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-042
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 3
+  - 1
+  second_best: 3
+  difficulty: D4
+  confidence: LOW
+  flags:
+  - b
+  - d
+  note: '틀린 곳이 ㉡(잘난 체: 의존 명사, 보기 밖 지식), ㉣(먹고 싶은), ㉤(던져도 보았다), ㉥(들어 하셨다)의 4곳이라 3개짜리
+    선지로 정확히 일치하는 것이 없음; ㉡은 보기 자료만으로 판단 불가.'
+  flag_adjudication:
+    b: '작성자 판정: ''잘난체했다''는 의존 명사 ''체''에 ''-하다''가 붙은 보조 용언 ''체하다''로, <보기>의 해설 자료에 따라
+      붙여 쓰기가 허용된다. 틀린 곳은 ㉣㉤㉥ 셋이며 정답 ②가 유일하다.'
+    d: '작성자 판정: 의존 명사+''-하다'' 보조 용언 허용 규정이 [참고 조항]과 [해설 자료]에 제시되어 있다.'
+- item_id: KOR-OV2-043
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 4
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-044
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 2
+  - 4
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-045
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 1
+  - 3
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+- item_id: KOR-OV2-046
+  meets_rubric: true
+  your_answer: ㉠ 시쳇말과 ㉡ 인사말은 모두 한자어와 순우리말로 된 합성어인데, ㉠은 [시첸말]로 'ㅁ' 앞에서 'ㄴ' 소리가 덧나므로
+    사이시옷을 받치어 적고, ㉡은 [인사말]로 소리 변화가 없어 사이시옷을 적지 않는다.
+  flags: []
+  difficulty: D3
+- item_id: KOR-OV2-047
+  meets_rubric: true
+  your_answer: ㉠ 서슴지, ㉡ 섭섭지. ㉠은 기본형이 '서슴다'라 '하'가 줄어든 것이 아니라 어간 '서슴-'에 '-지'가 붙은 것이므로
+    '서슴지'이고, ㉡은 '하' 앞 받침 소리가 [ㅂ]이라 '하'가 아주 줄어 '섭섭지'로 적는다.
+  flags: []
+  difficulty: D2
+- item_id: KOR-OV2-048
+  meets_rubric: true
+  your_answer: ㉠의 '조렸다'를 '졸였다'로 고친다. 마음을 태우며 초조해한다는 뜻이므로 '졸이다'이다. ㉡의 '앉혔다'를 '안쳤다'로
+    고친다. 밥 재료를 솥에 넣고 불 위에 올린다는 뜻이므로 '안치다'이다.
+  flags: []
+  difficulty: D2
+- item_id: KOR-OV2-049
+  meets_rubric: true
+  your_answer: ㉠ 띄어 씀('들은 바와'), ㉡ 붙여 씀('확인한바'). ㉡은 '-니까, -는데'로 바꾸어도 뜻이 통하는 연결 어미이고,
+    ㉠은 그렇게 바꿀 수 없고 '것'의 뜻이므로 의존 명사이다.
+  flags: []
+  difficulty: D2
+- item_id: KOR-OV2-050
+  meets_rubric: true
+  your_answer: ㉠ 붙여 쓸 수 있음('나가버렸다'), ㉡ 붙여 쓸 수 없음. ㉠ 본용언 활용형 '나가'는 두 음절이라 붙여 쓸 수 있고,
+    ㉡ 합성어 '떠내려가'는 네 음절이라 띄어 쓴다.
+  flags: []
+  difficulty: D3
