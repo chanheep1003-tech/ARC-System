@@ -9,36 +9,16 @@ excluded_inputs:
 - TARGET_DIFFICULTY
 items:
 - item_id: KOR-ON3-001
-  answer: 2
+  answer: 5
   first_pass_top3:
-  - 2
+  - 5
   - 1
   - 3
   second_best: 1
-  difficulty: D2
-  confidence: HIGH
-  flags: []
-- item_id: KOR-ON3-002
-  answer: 1
-  first_pass_top3:
-  - 1
-  - 2
-  - 4
-  second_best: 2
   difficulty: D3
   confidence: HIGH
   flags: []
-- item_id: KOR-ON3-003
-  answer: 3
-  first_pass_top3:
-  - 3
-  - 1
-  - 5
-  second_best: 1
-  difficulty: D2
-  confidence: HIGH
-  flags: []
-- item_id: KOR-ON3-004
+- item_id: KOR-ON3-002
   answer: 1
   first_pass_top3:
   - 1
@@ -49,23 +29,65 @@ items:
   confidence: HIGH
   flags: []
   note: 오는데도의 데는 어미 -ㄴ데+보조사 도
-- item_id: KOR-ON3-007
+- item_id: KOR-ON3-003
   answer: 3
   first_pass_top3:
   - 3
-  - 1
   - 4
+  - 5
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: '''-고 싶다''는 ''-아/-어'' 뒤도 의존 명사+싶다도 아니라 붙여 쓰기 허용 대상 아님'
+- item_id: KOR-ON3-004
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 5
+  - 1
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: ㄹ은 '두시 삼십분' 예시와 모순되어 거짓
+- item_id: KOR-ON3-005
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 1
+  - 3
   second_best: 1
   difficulty: D3
   confidence: HIGH
   flags: []
-- item_id: KOR-ON3-008
-  answer: 5
+- item_id: KOR-ON3-006
+  answer: 3
   first_pass_top3:
-  - 5
   - 3
+  - 4
   - 1
-  second_best: 3
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-007
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 4
+  - 1
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+- item_id: KOR-ON3-008
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 4
+  - 5
+  second_best: 4
   difficulty: D3
   confidence: HIGH
   flags: []
@@ -79,58 +101,8 @@ items:
   difficulty: D3
   confidence: HIGH
   flags: []
-- item_id: KOR-ON3-010
-  answer: 4
-  first_pass_top3:
-  - 4
-  - 2
-  - 3
-  second_best: 2
-  difficulty: D2
-  confidence: HIGH
-  flags: []
-- item_id: KOR-ON3-011
-  answer: 2
-  first_pass_top3:
-  - 2
-  - 5
-  - 1
-  second_best: 5
-  difficulty: D2
-  confidence: HIGH
-  flags: []
-- item_id: KOR-ON3-012
-  answer: 3
-  first_pass_top3:
-  - 3
-  - 4
-  - 5
-  second_best: 4
-  difficulty: D3
-  confidence: HIGH
-  flags: []
-- item_id: KOR-ON3-013
-  answer: 4
-  first_pass_top3:
-  - 4
-  - 3
-  - 1
-  second_best: 3
-  difficulty: D3
-  confidence: HIGH
-  flags: []
   note: '''바와 같이''의 같이는 부사로 띄어 씀'
-- item_id: KOR-ON3-014
-  answer: 4
-  first_pass_top3:
-  - 4
-  - 3
-  - 5
-  second_best: 3
-  difficulty: D2
-  confidence: HIGH
-  flags: []
-- item_id: KOR-ON3-015
+- item_id: KOR-ON3-010
   answer: 1
   first_pass_top3:
   - 1
@@ -140,28 +112,17 @@ items:
   difficulty: D3
   confidence: MEDIUM
   flags: []
-- item_id: KOR-ON3-016
-  answer: 4
+- item_id: KOR-ON3-011
+  answer: 3
   first_pass_top3:
-  - 4
-  - 1
   - 3
+  - 1
+  - 4
   second_best: 1
   difficulty: D3
   confidence: HIGH
   flags: []
-- item_id: KOR-ON3-017
-  answer: 1
-  first_pass_top3:
-  - 1
-  - 2
-  - 4
-  second_best: 4
-  difficulty: D2
-  confidence: HIGH
-  flags:
-  - c
-- item_id: KOR-ON3-018
+- item_id: KOR-ON3-012
   answer: 4
   first_pass_top3:
   - 4
@@ -171,7 +132,7 @@ items:
   difficulty: D3
   confidence: HIGH
   flags: []
-- item_id: KOR-ON3-019
+- item_id: KOR-ON3-013
   answer: 4
   first_pass_top3:
   - 4
@@ -181,18 +142,7 @@ items:
   difficulty: D3
   confidence: HIGH
   flags: []
-- item_id: KOR-ON3-020
-  answer: 5
-  first_pass_top3:
-  - 5
-  - 3
-  - 2
-  second_best: 3
-  difficulty: D2
-  confidence: HIGH
-  flags:
-  - c
-- item_id: KOR-ON3-021
+- item_id: KOR-ON3-014
   answer: 1
   first_pass_top3:
   - 1
@@ -203,7 +153,7 @@ items:
   confidence: MEDIUM
   flags: []
   note: ㉢ '사진촬영'은 표제어 아님으로 판단(틀림). 이를 틀리지 않다고 보면 정답 없음
-- item_id: KOR-ON3-022
+- item_id: KOR-ON3-015
   answer: 3
   first_pass_top3:
   - 3
@@ -214,39 +164,50 @@ items:
   confidence: HIGH
   flags: []
   note: ㄷ '더먹을것'은 단음절 연속이 아님('먹을' 2음절)
-- item_id: KOR-ON3-023
-  answer: 5
+- item_id: KOR-ON3-016
+  answer: 4
   first_pass_top3:
-  - 5
-  - 2
-  - 1
-  second_best: 2
-  difficulty: D2
-  confidence: HIGH
-  flags:
-  - c
-- item_id: KOR-ON3-024
-  answer: 3
-  first_pass_top3:
-  - 3
+  - 4
   - 1
   - 2
   second_best: 1
   difficulty: D2
   confidence: HIGH
   flags: []
-- item_id: KOR-ON3-026
-  answer: 3
+- item_id: KOR-ON3-017
+  answer: 4
   first_pass_top3:
-  - 3
+  - 4
+  - 2
   - 1
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 원칙은 '오천 원' 띄어 쓰기, 붙여 쓰기는 허용
+- item_id: KOR-ON3-018
+  answer: 5
+  first_pass_top3:
   - 5
-  second_best: 5
+  - 1
+  - 4
+  second_best: 4
   difficulty: D2
   confidence: HIGH
   flags: []
   note: ⑤ '공사 중' 의존 명사(접미사 아님)로 판단
-- item_id: KOR-ON3-028
+- item_id: KOR-ON3-019
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 4
+  - 1
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 오랫만에→오랜만에, 뒷편→뒤편, 즐거운날→즐거운 날; 가는데는 연결어미로 맞음
+- item_id: KOR-ON3-020
   answer: 2
   first_pass_top3:
   - 2
@@ -256,29 +217,17 @@ items:
   difficulty: D3
   confidence: HIGH
   flags: []
-- item_id: KOR-ON3-029
+- item_id: KOR-ON3-021
   answer: 4
   first_pass_top3:
   - 4
   - 1
   - 3
-  second_best: 3
-  difficulty: D2
-  confidence: HIGH
-  flags:
-  - c
-  note: '''아니다''는 형용사'
-- item_id: KOR-ON3-030
-  answer: 5
-  first_pass_top3:
-  - 5
-  - 1
-  - 3
   second_best: 1
   difficulty: D3
   confidence: HIGH
   flags: []
-- item_id: KOR-ON3-031
+- item_id: KOR-ON3-022
   answer: 5
   first_pass_top3:
   - 5
@@ -288,18 +237,18 @@ items:
   difficulty: D2
   confidence: HIGH
   flags: []
-- item_id: KOR-ON3-032
-  answer: 3
+- item_id: KOR-ON3-023
+  answer: 4
   first_pass_top3:
-  - 3
-  - 1
   - 4
+  - 1
+  - 3
   second_best: 1
   difficulty: D4
   confidence: MEDIUM
   flags: []
   note: ㉡ '깎아 먹었다'는 본용언으로 봄
-- item_id: KOR-ON3-033
+- item_id: KOR-ON3-024
   answer: 5
   first_pass_top3:
   - 5
@@ -309,7 +258,7 @@ items:
   difficulty: D2
   confidence: HIGH
   flags: []
-- item_id: KOR-ON3-034
+- item_id: KOR-ON3-025
   answer: 2
   first_pass_top3:
   - 2
@@ -319,18 +268,29 @@ items:
   difficulty: D3
   confidence: HIGH
   flags: []
-- item_id: KOR-ON3-035
-  answer: 1
+- item_id: KOR-ON3-026
+  answer: 5
   first_pass_top3:
-  - 1
   - 5
-  - 2
-  second_best: 5
+  - 4
+  - 1
+  second_best: 4
   difficulty: D3
   confidence: HIGH
   flags: []
   note: 원칙은 '모르는 척하다'(척하다 붙여 씀). '척 하다'로 띄어 쓰는 것이 원칙이라는 ①이 거짓
-- item_id: KOR-ON3-037
+- item_id: KOR-ON3-027
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 2
+  - 1
+  second_best: 2
+  difficulty: D4
+  confidence: MEDIUM
+  flags: []
+  note: ㉣ 모른척하다는 의존 명사+하다 붙여 쓰기 허용이라 옳음; ㉢은 '미안해하다' 한 단어로 보는 판단에 의존
+- item_id: KOR-ON3-028
   answer: 1
   first_pass_top3:
   - 1
@@ -340,17 +300,17 @@ items:
   difficulty: D3
   confidence: HIGH
   flags: []
-- item_id: KOR-ON3-038
-  answer: 3
+- item_id: KOR-ON3-029
+  answer: 2
   first_pass_top3:
-  - 3
+  - 2
   - 1
   - 4
   second_best: 1
   difficulty: D2
   confidence: HIGH
   flags: []
-- item_id: KOR-ON3-039
+- item_id: KOR-ON3-030
   answer: 1
   first_pass_top3:
   - 1
@@ -360,18 +320,7 @@ items:
   difficulty: D4
   confidence: HIGH
   flags: []
-- item_id: KOR-ON3-040
-  answer: 2
-  first_pass_top3:
-  - 2
-  - 4
-  - 1
-  second_best: 4
-  difficulty: D2
-  confidence: HIGH
-  flags:
-  - c
-- item_id: KOR-ON3-041
+- item_id: KOR-ON3-031
   answer: 4
   first_pass_top3:
   - 4
@@ -382,7 +331,7 @@ items:
   confidence: MEDIUM
   flags: []
   note: ㉥ '할머니댁'은 '할머니 댁'(댁은 명사)으로 판단. ㉢㉤은 확실
-- item_id: KOR-ON3-042
+- item_id: KOR-ON3-032
   answer: 5
   first_pass_top3:
   - 5
@@ -393,7 +342,7 @@ items:
   confidence: MEDIUM
   flags: []
   note: '''총예산''은 표제어이므로 붙여 씀'
-- item_id: KOR-ON3-043
+- item_id: KOR-ON3-033
   answer: 1
   first_pass_top3:
   - 1
@@ -404,17 +353,17 @@ items:
   confidence: HIGH
   flags: []
   note: ② '안됐다'가 바른 표기이므로 '안 됐다'는 틀림
-- item_id: KOR-ON3-044
-  answer: 5
+- item_id: KOR-ON3-034
+  answer: 3
   first_pass_top3:
-  - 5
+  - 3
   - 1
-  - 4
+  - 5
   second_best: 1
   difficulty: D3
   confidence: HIGH
   flags: []
-- item_id: KOR-ON3-045
+- item_id: KOR-ON3-035
   answer: 2
   first_pass_top3:
   - 2
@@ -424,6 +373,83 @@ items:
   difficulty: D2
   confidence: HIGH
   flags: []
+- item_id: KOR-ON3-036
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 5
+  - 1
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: ㉣ '-는지'는 어미라 붙여 써야 함
+- item_id: KOR-ON3-037
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 4
+  second_best: 2
+  difficulty: D4
+  confidence: HIGH
+  flags: []
+  note: ①은 올듯하다도 허용이라 오답, ②덤벼들다는 합성 용언, ④올성싶다 허용, ⑤조사 낀 경우 불가
+- item_id: KOR-ON3-038
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 1
+  - 4
+  second_best: 4
+  difficulty: D3
+  confidence: MEDIUM
+  flags: []
+  note: ㉢㉣ 확실. ㉤ '가는 데'는 의존 명사 해석도 가능해 문맥상 연결 어미 '-는데'로 읽어야 함(모호성 약간)
+- item_id: KOR-ON3-039
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 5
+  - 2
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: ㄷ 내지, ㄹ 등등은 띄어 씀; ㄱㄴㅁ 옳음(제46항 단음절 붙여 쓰기)
+- item_id: KOR-ON3-040
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 4
+  - 3
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: ㉡만 조사, ㉠㉣ 의존 명사, ㉢㉤ 어미
+- item_id: KOR-ON3-041
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 4
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: 서울대공원처럼 단위별 붙여 쓰기도 허용
+- item_id: KOR-ON3-042
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 3
+  - 2
+  second_best: 3
+  difficulty: D3
+  confidence: MEDIUM
+  flags: []
+  note: -ㄴ바는 연결 어미라 붙여 씀; ㉤의 설명이 틀림
 - item_id: KOR-ON3-046
   meets_rubric: true
   your_answer: ㉠은 의존 명사, ㉡은 접미사, ㉢은 한 단어이다.
@@ -452,59 +478,5 @@ items:
   flags: []
   difficulty: D3
   note: ㉢ '선우진' 붙임도 바르므로 '바름'은 허용 근거 필요; 모범답 확정에는 조건 명시 필요
-- item_id: KOR-ON3-005
-  answer: 2
-  first_pass_top3:
-  - 2
-  - 4
-  - 5
-  second_best: 4
-  difficulty: D3
-  confidence: HIGH
-  flags: []
-  note: '''-고 싶다''는 ''-아/-어'' 뒤도 의존 명사+싶다도 아니라 붙여 쓰기 허용 대상 아님'
-- item_id: KOR-ON3-006
-  answer: 2
-  first_pass_top3:
-  - 2
-  - 5
-  - 1
-  second_best: 5
-  difficulty: D3
-  confidence: HIGH
-  flags: []
-  note: ㄹ은 '두시 삼십분' 예시와 모순되어 거짓
-- item_id: KOR-ON3-025
-  answer: 4
-  first_pass_top3:
-  - 4
-  - 2
-  - 1
-  second_best: 2
-  difficulty: D3
-  confidence: HIGH
-  flags: []
-  note: 원칙은 '오천 원' 띄어 쓰기, 붙여 쓰기는 허용
-- item_id: KOR-ON3-027
-  answer: 5
-  first_pass_top3:
-  - 5
-  - 4
-  - 1
-  second_best: 4
-  difficulty: D3
-  confidence: HIGH
-  flags: []
-  note: 오랫만에→오랜만에, 뒷편→뒤편, 즐거운날→즐거운 날; 가는데는 연결어미로 맞음
-- item_id: KOR-ON3-036
-  answer: 3
-  first_pass_top3:
-  - 3
-  - 2
-  - 1
-  second_best: 2
-  difficulty: D4
-  confidence: MEDIUM
-  flags: []
-  note: ㉣ 모른척하다는 의존 명사+하다 붙여 쓰기 허용이라 옳음; ㉢은 '미안해하다' 한 단어로 보는 판단에 의존
-rounds_history: R1 전 50문항; R2 수정 문항 재검수(2026-11-18)
+rounds_history: R1 전 문항; R2 수정 문항 재검수; 2026-11-19 L4 교체분은 L4 심화 20제 블라인드(R1) 결과를 내용
+  지문(fingerprint)으로 옮겨 붙임, 신규 문항은 별도 재검수

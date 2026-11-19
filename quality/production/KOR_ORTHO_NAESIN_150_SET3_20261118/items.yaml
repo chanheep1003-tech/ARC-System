@@ -22,86 +22,19 @@ archetype_library: quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml
 sets: []
 items:
 - item_id: KOR-ON3-001
-  archetype: A1_GENERAL_RULE_MAPPING
-  stem: '[제41항] <보기>의 한글 맞춤법 조항을 바탕으로 탐구한 내용으로 가장 적절한 것은?'
-  view:
-  - 제41항 조사는 그 앞말에 붙여 쓴다.
-  - '[해설] ㉠조사가 둘 이상 겹쳐지거나, ㉡조사가 어미 뒤에 붙는 경우에도 그 앞말에 붙여 쓴다.'
-  options:
-  - '"떠나면서까지도"의 ''까지도''는 의존 명사이므로 ''떠나면서 까지도''로 띄어 쓴다.'
-  - '"운동장에서부터"의 ''에서부터''는 조사가 겹친 것이므로 ㉠에 따라 붙여 쓴다.'
-  - '"칭찬은커녕"의 ''커녕''은 부사이므로 ''칭찬은 커녕''으로 띄어 쓴다.'
-  - '"웃고만 있었다"의 ''만''은 어미 뒤에 왔으므로 의존 명사로 보아 띄어 쓴다.'
-  - '"집에서처럼"은 조사가 둘 이상 이어졌으므로 마지막 조사는 띄어 쓴다.'
-  answer: 2
-  second_best: 3
-  difficulty: D2
-  family: VIEW_APPLICATION
-  balance: CORE_EXAM_POINT
-  reasoning_steps: 1
-  immediate_elimination: 1
-  transfer: true
-  stem_polarity: POSITIVE
-  topic: 제41항
-  judgments:
-  - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-001-1
-    ev:
-    - VIEW
-    - OPTION1
-    v: false
-    why: '''까지'', ''도''는 모두 조사이며 어미 ''-면서'' 뒤에 붙는다(㉡).'
-    trap: T1_RIGHT_CONCEPT_WRONG_CASE
-  - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-001-2
-    ev:
-    - VIEW
-    - OPTION2
-    v: true
-    why: '정답 근거: 해설 참고.'
-  - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-001-3
-    ev:
-    - VIEW
-    - OPTION3
-    v: false
-    why: '''은커녕''은 조사이므로 앞말에 붙여 쓴다.'
-    trap: T4_SAME_FORM_OTHER_FUNCTION
-  - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-001-4
-    ev:
-    - VIEW
-    - OPTION4
-    v: false
-    why: 어미 뒤에 붙은 보조사 '만'이므로 ㉡에 따라 붙여 쓴다.
-    trap: T4_SAME_FORM_OTHER_FUNCTION
-  - axis: orthography
-    c: WEAK
-    claim: KOR-ON3-001-5
-    ev:
-    - VIEW
-    - OPTION5
-    v: false
-    why: 조사가 겹쳐도 모두 앞말에 붙여 쓴다(㉠).
-    trap: T1_RIGHT_CONCEPT_WRONG_CASE
-- item_id: KOR-ON3-002
   archetype: A3_CONDITION_CLASSIFICATION
   stem: '[제41·42·47항] <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤에 쓰인 ''만''을 분류한 것으로 가장 적절한 것은?'
   view:
   - <보기 1> '만'은 Ⓐ앞말이 가리키는 대상을 한정하거나 강조하는 보조사로 쓰이면 앞말에 붙여 쓰고, Ⓑ시간의 경과나 횟수를 나타내는 의존 명사로 쓰이면 앞말과 띄어 쓴다. 또 Ⓒ'-을 만하다' 꼴로 쓰이면 보조 용언 '만하다'의 일부이다.
   - <보기 2> ㉠ 동생은 하루 종일 게임[만] 했다.   ㉡ 이사 온 지 일주일[만]에 친구를 사귀었다.   ㉢ 그 영화는 한번 볼[만]하다.   ㉣ 세 번[만]에 시험에 합격했다.   ㉤ 집에 가서 쉬고[만] 싶었다.
   options:
-  - Ⓐ ㉠, ㉤   Ⓑ ㉡, ㉣   Ⓒ ㉢
   - Ⓐ ㉠   Ⓑ ㉡, ㉣, ㉤   Ⓒ ㉢
   - Ⓐ ㉠, ㉣   Ⓑ ㉡   Ⓒ ㉢, ㉤
   - Ⓐ ㉠, ㉤   Ⓑ ㉡   Ⓒ ㉢, ㉣
   - Ⓐ ㉤   Ⓑ ㉠, ㉡, ㉣   Ⓒ ㉢
-  answer: 1
-  second_best: 2
+  - Ⓐ ㉠, ㉤   Ⓑ ㉡, ㉣   Ⓒ ㉢
+  answer: 5
+  second_best: 1
   difficulty: D3
   family: COMPARISON_MATRIX
   balance: CORE_EXAM_POINT
@@ -112,123 +45,50 @@ items:
   topic: 제41·42·47항
   judgments:
   - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-002-1
+    c: STRONG
+    claim: KOR-ON3-001-1
     ev:
     - VIEW
     - OPTION1
-    v: true
-    why: ㉠·㉤은 한정·강조의 보조사(Ⓐ), ㉡·㉣은 시간 경과·횟수의 의존 명사(Ⓑ), ㉢은 '만하다'의 일부(Ⓒ)이다.
-  - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-002-2
-    ev:
-    - VIEW
-    - OPTION2
     v: false
     why: ㉤ '쉬고만'의 '만'은 어미 '-고' 뒤에 붙은 보조사이다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-002-3
+    claim: KOR-ON3-001-2
     ev:
     - VIEW
-    - OPTION3
+    - OPTION2
     v: false
     why: ㉣ '세 번 만에'는 횟수를 나타내는 의존 명사이다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-002-4
+    claim: KOR-ON3-001-3
     ev:
     - VIEW
-    - OPTION4
+    - OPTION3
     v: false
     why: ㉣은 Ⓑ이다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: WEAK
-    claim: KOR-ON3-002-5
-    ev:
-    - VIEW
-    - OPTION5
-    v: false
-    why: ㉠은 Ⓐ이다.
-    trap: T4_SAME_FORM_OTHER_FUNCTION
-- item_id: KOR-ON3-003
-  archetype: A2_STUDENT_TEXT_ERRORS
-  stem: '[제41·42항] <보기>의 [A]에 들어갈 말로 적절한 것은?'
-  view:
-  - '학생: 제가 SNS에 올린 글이에요. 띄어쓰기가 틀린 곳을 알려 주세요.'
-  - 중학교를 ㉠졸업한지 벌써 일 년이 지났다.
-  - 오늘은 친구들과 ㉡학교 앞에서부터 걸었다.
-  - 우리는 ㉢아는대로 길을 찾아갔다.
-  - 맛집은 ㉣소문만큼 맛있었다.
-  - 너무 배불러서 더는 ㉤먹을수가 없었다.
-  - 하늘에는 ㉥구름처럼 하얀 연기가 피어올랐다.
-  - '선생님: 띄어쓰기가 틀린 곳은 [A]란다.'
-  options:
-  - ㉠, ㉡, ㉣
-  - ㉡, ㉢, ㉥
-  - ㉠, ㉢, ㉤
-  - ㉢, ㉣, ㉤
-  - ㉠, ㉤, ㉥
-  answer: 3
-  second_best: 1
-  difficulty: D2
-  family: ERROR_CORRECTION
-  balance: CORE_EXAM_POINT
-  reasoning_steps: 1
-  immediate_elimination: 1
-  transfer: true
-  stem_polarity: POSITIVE
-  topic: 제41·42항
-  judgments:
-  - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-003-1
-    ev:
-    - VIEW
-    - OPTION1
-    v: false
-    why: ㉡ '앞에서부터'는 조사가 겹친 것으로 붙여 쓴 바른 표기이다.
-    trap: T6_PARTIAL_SET
-  - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-003-2
-    ev:
-    - VIEW
-    - OPTION2
-    v: false
-    why: ㉥ '구름처럼'은 바르다.
-    trap: T6_PARTIAL_SET
-  - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-003-3
-    ev:
-    - VIEW
-    - OPTION3
-    v: true
-    why: ㉠ '졸업한 지', ㉢ '아는 대로', ㉤ '먹을 수가'로 고쳐야 한다.
-  - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-003-4
+    claim: KOR-ON3-001-4
     ev:
     - VIEW
     - OPTION4
     v: false
-    why: ㉣ '소문만큼'은 체언 뒤의 조사로 바르다.
+    why: ㉠은 Ⓐ이다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
-    c: WEAK
-    claim: KOR-ON3-003-5
+    c: CORRECT
+    claim: KOR-ON3-001-5
     ev:
     - VIEW
     - OPTION5
-    v: false
-    why: ㉥은 바르다.
-    trap: T6_PARTIAL_SET
-- item_id: KOR-ON3-004
+    v: true
+    why: ㉠·㉤은 한정·강조의 보조사(Ⓐ), ㉡·㉣은 시간 경과·횟수의 의존 명사(Ⓑ), ㉢은 '만하다'의 일부(Ⓒ)이다.
+- item_id: KOR-ON3-002
   archetype: A4_INQUIRY_DIALOGUE_CHECK
   stem: '[제42항] <보기>의 ㉠~㉤ 중 고쳐야 할 학생의 설명은?'
   view:
@@ -258,7 +118,7 @@ items:
   judgments:
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-004-1
+    claim: KOR-ON3-002-1
     ev:
     - VIEW
     - OPTION1
@@ -266,7 +126,7 @@ items:
     why: '''오는데도''는 어미 ''-는데''에 조사 ''도''가 붙은 말로, 붙여 쓴 것이 바르다.'
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-004-2
+    claim: KOR-ON3-002-2
     ev:
     - VIEW
     - OPTION2
@@ -275,7 +135,7 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-004-3
+    claim: KOR-ON3-002-3
     ev:
     - VIEW
     - OPTION3
@@ -284,7 +144,7 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-004-4
+    claim: KOR-ON3-002-4
     ev:
     - VIEW
     - OPTION4
@@ -293,14 +153,14 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-004-5
+    claim: KOR-ON3-002-5
     ev:
     - VIEW
     - OPTION5
     v: true
     why: 보기의 조항·자료에 비추어 바른 설명이다.
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
-- item_id: KOR-ON3-005
+- item_id: KOR-ON3-003
   archetype: A6_RULE_CASE_EXPLANATION
   stem: '[제47항] <보기>를 바탕으로 탐구한 내용으로 적절하지 않은 것은?'
   view:
@@ -309,11 +169,11 @@ items:
   - ※ 붙여 쓰기가 허용되는 것은 '-아/-어' 뒤에 연결되는 보조 용언과, 의존 명사에 '-하다'나 '-싶다'가 붙어서 된 보조 용언이다.
   options:
   - '""날이 점점 밝아 온다"는 ''밝아온다''로 붙여 쓸 수도 있다.'
-  - '"나도 그 일을 하고 싶다"는 보조 용언이므로 ''하고싶다''로 붙여 쓸 수 있다.'
   - '"편지를 다시 읽어 보았다"는 ''읽어보았다''로 붙여 쓸 수도 있다.'
+  - '"나도 그 일을 하고 싶다"는 보조 용언이므로 ''하고싶다''로 붙여 쓸 수 있다.'
   - '"종이배가 떠내려가 버렸다"는 앞말이 합성 용언이므로 붙여 쓸 수 없다.'
   - '"그가 올 듯도 하다"는 중간에 조사가 들어갔으므로 붙여 쓸 수 없다.'
-  answer: 2
+  answer: 3
   second_best: 4
   difficulty: D3
   family: CASE_APPLICATION
@@ -326,7 +186,7 @@ items:
   judgments:
   - axis: orthography
     c: WEAK
-    claim: KOR-ON3-005-1
+    claim: KOR-ON3-003-1
     ev:
     - VIEW
     - OPTION1
@@ -334,25 +194,25 @@ items:
     why: 보기의 조항·자료에 비추어 바른 설명이다.
     trap: T5_RULE_JURISDICTION
   - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-005-2
+    c: MEDIUM
+    claim: KOR-ON3-003-2
     ev:
     - VIEW
     - OPTION2
-    v: false
-    why: '''-고'' 뒤의 보조 용언 ''싶다''는 붙여 쓰기 허용 대상이 아니다.'
-  - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-005-3
-    ev:
-    - VIEW
-    - OPTION3
     v: true
     why: 보기의 조항·자료에 비추어 바른 설명이다.
     trap: T5_RULE_JURISDICTION
   - axis: orthography
+    c: CORRECT
+    claim: KOR-ON3-003-3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''-고'' 뒤의 보조 용언 ''싶다''는 붙여 쓰기 허용 대상이 아니다.'
+  - axis: orthography
     c: STRONG
-    claim: KOR-ON3-005-4
+    claim: KOR-ON3-003-4
     ev:
     - VIEW
     - OPTION4
@@ -361,14 +221,14 @@ items:
     trap: T5_RULE_JURISDICTION
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-005-5
+    claim: KOR-ON3-003-5
     ev:
     - VIEW
     - OPTION5
     v: true
     why: 보기의 조항·자료에 비추어 바른 설명이다.
     trap: T5_RULE_JURISDICTION
-- item_id: KOR-ON3-006
+- item_id: KOR-ON3-004
   archetype: A5_EXAMPLE_MULTI_JUDGMENT
   stem: '[제43항] 단위를 나타내는 명사의 띄어쓰기에 대한 판단으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?'
   view:
@@ -396,7 +256,7 @@ items:
   judgments:
   - axis: orthography
     c: WEAK
-    claim: KOR-ON3-006-1
+    claim: KOR-ON3-004-1
     ev:
     - VIEW
     - OPTION1
@@ -405,7 +265,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-006-2
+    claim: KOR-ON3-004-2
     ev:
     - VIEW
     - OPTION2
@@ -413,7 +273,7 @@ items:
     why: '정답 근거: 해설 참고.'
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-006-3
+    claim: KOR-ON3-004-3
     ev:
     - VIEW
     - OPTION3
@@ -422,7 +282,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-006-4
+    claim: KOR-ON3-004-4
     ev:
     - VIEW
     - OPTION4
@@ -431,14 +291,14 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-006-5
+    claim: KOR-ON3-004-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: ㄹ은 옳지 않다.
     trap: T6_PARTIAL_SET
-- item_id: KOR-ON3-007
+- item_id: KOR-ON3-005
   archetype: A1_GENERAL_RULE_MAPPING
   stem: '[제44항] <보기>의 한글 맞춤법 조항을 바탕으로 탐구한 내용으로 가장 적절한 것은?'
   view:
@@ -447,11 +307,11 @@ items:
   options:
   - '''15,300''을 한글로 적으면 ''일만 오천 삼백''으로 띄어 쓴다.'
   - 아라비아 숫자와 한글을 섞어 적을 때에는 만 단위로 띄어 쓰지 않는다.
-  - '''345,670,201''은 ''삼억 사천오백육십칠만 이백일''로 적는다.'
   - '''칠천팔백구십팔''은 천 단위로 끊어 ''칠천 팔백구십팔''로 띄어 쓴다.'
+  - '''345,670,201''은 ''삼억 사천오백육십칠만 이백일''로 적는다.'
   - '''백이십오만''은 ''만'' 앞에서 띄어 ''백이십오 만''으로 쓴다.'
-  answer: 3
-  second_best: 4
+  answer: 4
+  second_best: 3
   difficulty: D3
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
@@ -463,7 +323,7 @@ items:
   judgments:
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-007-1
+    claim: KOR-ON3-005-1
     ev:
     - VIEW
     - OPTION1
@@ -472,7 +332,7 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-007-2
+    claim: KOR-ON3-005-2
     ev:
     - VIEW
     - OPTION2
@@ -480,32 +340,32 @@ items:
     why: <보기>의 '12억 3456만 7898'처럼 섞어 적어도 만 단위로 띄어 쓴다.
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-007-3
+    c: STRONG
+    claim: KOR-ON3-005-3
     ev:
     - VIEW
     - OPTION3
-    v: true
-    why: 3억 4567만 0201이므로 '삼억 사천오백육십칠만 이백일'이다.
-  - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-007-4
-    ev:
-    - VIEW
-    - OPTION4
     v: false
     why: 천 단위로 띄어 쓰지 않는다.
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
+    c: CORRECT
+    claim: KOR-ON3-005-4
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 3억 4567만 0201이므로 '삼억 사천오백육십칠만 이백일'이다.
+  - axis: orthography
     c: STRONG
-    claim: KOR-ON3-007-5
+    claim: KOR-ON3-005-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: '''만''까지가 한 단위이므로 ''만'' 뒤에서 띄어 쓴다.'
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
-- item_id: KOR-ON3-008
+- item_id: KOR-ON3-006
   archetype: A3_CONDITION_CLASSIFICATION
   stem: '[제42·45항] <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?'
   view:
@@ -514,10 +374,10 @@ items:
   options:
   - Ⓐ ㉠   Ⓑ ㉡, ㉣   Ⓒ ㉢, ㉤
   - Ⓐ ㉠, ㉡, ㉣   Ⓑ 없음   Ⓒ ㉢, ㉤
+  - Ⓐ ㉠, ㉣   Ⓑ ㉡   Ⓒ ㉢, ㉤
   - Ⓐ ㉠, ㉣   Ⓑ ㉡, ㉤   Ⓒ ㉢
   - Ⓐ ㉣   Ⓑ ㉠, ㉡   Ⓒ ㉢, ㉤
-  - Ⓐ ㉠, ㉣   Ⓑ ㉡   Ⓒ ㉢, ㉤
-  answer: 5
+  answer: 3
   second_best: 1
   difficulty: D3
   family: COMPARISON_MATRIX
@@ -530,7 +390,7 @@ items:
   judgments:
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-008-1
+    claim: KOR-ON3-006-1
     ev:
     - VIEW
     - OPTION1
@@ -539,7 +399,7 @@ items:
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-008-2
+    claim: KOR-ON3-006-2
     ev:
     - VIEW
     - OPTION2
@@ -547,32 +407,32 @@ items:
     why: ㉡의 '들'은 열거 구조의 의존 명사이므로 띄어 쓴다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-008-3
+    c: CORRECT
+    claim: KOR-ON3-006-3
     ev:
     - VIEW
     - OPTION3
+    v: true
+    why: ㉠·㉣은 복수 접미사(Ⓐ), ㉡은 열거의 의존 명사(Ⓑ), ㉢·㉤은 열거에 쓰이는 말(Ⓒ)이다.
+  - axis: orthography
+    c: MEDIUM
+    claim: KOR-ON3-006-4
+    ev:
+    - VIEW
+    - OPTION4
     v: false
     why: ㉤ '등지'는 Ⓒ이다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: WEAK
-    claim: KOR-ON3-008-4
-    ev:
-    - VIEW
-    - OPTION4
-    v: false
-    why: ㉠은 Ⓐ이다.
-    trap: T4_SAME_FORM_OTHER_FUNCTION
-  - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-008-5
+    claim: KOR-ON3-006-5
     ev:
     - VIEW
     - OPTION5
-    v: true
-    why: ㉠·㉣은 복수 접미사(Ⓐ), ㉡은 열거의 의존 명사(Ⓑ), ㉢·㉤은 열거에 쓰이는 말(Ⓒ)이다.
-- item_id: KOR-ON3-009
+    v: false
+    why: ㉠은 Ⓐ이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+- item_id: KOR-ON3-007
   archetype: A2_STUDENT_TEXT_ERRORS
   stem: '[제43·45항] <보기>의 [A]에 들어갈 말로 적절한 것은?'
   view:
@@ -603,7 +463,7 @@ items:
   judgments:
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-009-1
+    claim: KOR-ON3-007-1
     ev:
     - VIEW
     - OPTION1
@@ -612,7 +472,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-009-2
+    claim: KOR-ON3-007-2
     ev:
     - VIEW
     - OPTION2
@@ -620,7 +480,7 @@ items:
     why: ㉢ '다섯 명', ㉣ '삼십만 원', ㉤ '교장 및'으로 고쳐야 한다.
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-009-3
+    claim: KOR-ON3-007-3
     ev:
     - VIEW
     - OPTION3
@@ -629,7 +489,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-009-4
+    claim: KOR-ON3-007-4
     ev:
     - VIEW
     - OPTION4
@@ -638,148 +498,14 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: WEAK
-    claim: KOR-ON3-009-5
+    claim: KOR-ON3-007-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: ㉠, ㉡은 바르다.
     trap: T6_PARTIAL_SET
-- item_id: KOR-ON3-010
-  archetype: A1_GENERAL_RULE_MAPPING
-  stem: '[제48항] <보기>의 한글 맞춤법 조항을 바탕으로 탐구한 내용으로 가장 적절한 것은?'
-  view:
-  - 제48항 성과 이름, 성과 호 등은 붙여 쓰고, 이에 덧붙는 호칭어, 관직명 등은 띄어 쓴다.
-  - 다만, 성과 이름, 성과 호를 분명히 구분할 필요가 있을 경우에는 띄어 쓸 수 있다.
-  options:
-  - '''홍길동씨''처럼 호칭어 ''씨''는 성명에 붙여 쓴다.'
-  - 호와 성명은 하나의 이름이므로 '율곡이이'처럼 붙여 쓴다.
-  - '''김 씨''처럼 성만 쓰인 경우에는 항상 ''김씨''로 붙여 써야 한다.'
-  - '''남궁 민''처럼 성과 이름을 구분할 필요가 있으면 띄어 쓸 수 있다.'
-  - '''박지원 선생''의 ''선생''은 관직명이 아니므로 성명에 붙여 쓴다.'
-  answer: 4
-  second_best: 3
-  difficulty: D2
-  family: VIEW_APPLICATION
-  balance: CORE_EXAM_POINT
-  reasoning_steps: 1
-  immediate_elimination: 1
-  transfer: true
-  stem_polarity: POSITIVE
-  topic: 제48항
-  judgments:
-  - axis: orthography
-    c: WEAK
-    claim: KOR-ON3-010-1
-    ev:
-    - VIEW
-    - OPTION1
-    v: false
-    why: 호칭어 '씨'는 띄어 쓴다.
-    trap: T1_RIGHT_CONCEPT_WRONG_CASE
-  - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-010-2
-    ev:
-    - VIEW
-    - OPTION2
-    v: false
-    why: 호와 성명은 각각 띄어 '율곡 이이'로 쓴다.
-    trap: T1_RIGHT_CONCEPT_WRONG_CASE
-  - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-010-3
-    ev:
-    - VIEW
-    - OPTION3
-    v: false
-    why: 그 사람을 높여 부르는 호칭어 '씨'는 성 뒤에서도 띄어 '김 씨'로 쓴다.
-    trap: T4_SAME_FORM_OTHER_FUNCTION
-  - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-010-4
-    ev:
-    - VIEW
-    - OPTION4
-    v: true
-    why: '정답 근거: 해설 참고.'
-  - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-010-5
-    ev:
-    - VIEW
-    - OPTION5
-    v: false
-    why: 덧붙는 호칭어이므로 띄어 쓴다.
-    trap: T1_RIGHT_CONCEPT_WRONG_CASE
-- item_id: KOR-ON3-011
-  archetype: A6_RULE_CASE_EXPLANATION
-  stem: '[제49·50항] <보기>를 바탕으로 탐구한 내용으로 적절하지 않은 것은?'
-  view:
-  - 제49항 성명 이외의 고유 명사는 단어별로 띄어 씀을 원칙으로 하되, 단위별로 띄어 쓸 수 있다.
-  - 제50항 전문 용어는 단어별로 띄어 씀을 원칙으로 하되, 붙여 쓸 수 있다.
-  options:
-  - '"한국 중학교"는 ''한국중학교''로 붙여 쓸 수 있다.'
-  - '''대한고등학교체육관''처럼 학교 이름 뒤의 ''체육관''까지 붙여 써야 한다.'
-  - '"서울 대학교 사범 대학"은 ''서울대학교 사범대학''으로 쓸 수 있다.'
-  - '"만성 골수성 백혈병"은 ''만성골수성백혈병''으로 붙여 쓸 수 있다.'
-  - 고유 명사는 단어별로 띄어 쓰는 것이 원칙이고, 단위별로 붙이는 것은 허용이다.
-  answer: 2
-  second_best: 5
-  difficulty: D2
-  family: CASE_APPLICATION
-  balance: CORE_EXAM_POINT
-  reasoning_steps: 1
-  immediate_elimination: 1
-  transfer: true
-  stem_polarity: NEGATIVE
-  topic: 제49·50항
-  judgments:
-  - axis: orthography
-    c: WEAK
-    claim: KOR-ON3-011-1
-    ev:
-    - VIEW
-    - OPTION1
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-  - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-011-2
-    ev:
-    - VIEW
-    - OPTION2
-    v: false
-    why: '''체육관''은 고유 명사의 일부가 아니므로 ''대한고등학교 체육관''으로 띄어 쓴다.'
-  - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-011-3
-    ev:
-    - VIEW
-    - OPTION3
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-  - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-011-4
-    ev:
-    - VIEW
-    - OPTION4
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-  - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-011-5
-    ev:
-    - VIEW
-    - OPTION5
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-- item_id: KOR-ON3-012
+- item_id: KOR-ON3-008
   archetype: A4_INQUIRY_DIALOGUE_CHECK
   stem: '[제47항] <보기>의 ㉠~㉤ 중 고쳐야 할 학생의 설명은?'
   view:
@@ -809,7 +535,7 @@ items:
   judgments:
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-012-1
+    claim: KOR-ON3-008-1
     ev:
     - VIEW
     - OPTION1
@@ -818,7 +544,7 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-012-2
+    claim: KOR-ON3-008-2
     ev:
     - VIEW
     - OPTION2
@@ -827,7 +553,7 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-012-3
+    claim: KOR-ON3-008-3
     ev:
     - VIEW
     - OPTION3
@@ -835,7 +561,7 @@ items:
     why: '''-고'' 뒤의 보조 용언은 붙여 쓰기 허용 대상이 아니므로 ''보고 싶었다''로만 쓴다.'
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-012-4
+    claim: KOR-ON3-008-4
     ev:
     - VIEW
     - OPTION4
@@ -844,14 +570,14 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-012-5
+    claim: KOR-ON3-008-5
     ev:
     - VIEW
     - OPTION5
     v: true
     why: 보기의 조항·자료에 비추어 바른 설명이다.
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
-- item_id: KOR-ON3-013
+- item_id: KOR-ON3-009
   archetype: A1_GENERAL_RULE_MAPPING
   stem: '[제41항] <보기>의 사전 자료를 바탕으로 탐구한 내용으로 가장 적절한 것은?'
   view:
@@ -860,11 +586,11 @@ items:
   - 같이² 「조사」 ① 앞말이 보이는 전형적인 어떤 특징처럼. 예) 얼음장같이 차갑다. ② '때'를 나타내는 일부 명사 뒤에 붙어 그때를 강조하는 격 조사. 예) 새벽같이 떠나다.
   options:
   - '"동생과 같이 숙제를 했다"의 ''같이''는 조사이므로 ''동생과같이''로 붙여 쓴다.'
+  - '"눈같이 흰 옷"의 ''같이''는 조사이므로 앞말에 붙여 쓴다.'
   - '"매일같이 운동한다"의 ''같이''는 부사이므로 ''매일 같이''로 띄어 쓴다.'
   - '"말씀하신 바와 같이"의 ''같이''는 앞말이 조사 ''와''이므로 붙여 쓴다.'
-  - '"눈같이 흰 옷"의 ''같이''는 조사이므로 앞말에 붙여 쓴다.'
   - '''같이''는 품사와 관계없이 언제나 앞말과 띄어 쓴다.'
-  answer: 4
+  answer: 2
   second_best: 1
   difficulty: D3
   family: VIEW_APPLICATION
@@ -877,7 +603,7 @@ items:
   judgments:
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-013-1
+    claim: KOR-ON3-009-1
     ev:
     - VIEW
     - OPTION1
@@ -885,110 +611,41 @@ items:
     why: '''함께''의 뜻인 부사이므로 띄어 쓴다.'
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-013-2
+    c: CORRECT
+    claim: KOR-ON3-009-2
     ev:
     - VIEW
     - OPTION2
+    v: true
+    why: '정답 근거: 해설 참고.'
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-009-3
+    ev:
+    - VIEW
+    - OPTION3
     v: false
     why: '''때''를 나타내는 명사 뒤에 붙어 강조하는 조사이므로 ''매일같이''로 붙여 쓴다.'
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-013-3
+    claim: KOR-ON3-009-4
     ev:
     - VIEW
-    - OPTION3
+    - OPTION4
     v: false
     why: '''-와 같이''의 ''같이''는 부사이므로 띄어 쓴다.'
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-013-4
-    ev:
-    - VIEW
-    - OPTION4
-    v: true
-    why: '정답 근거: 해설 참고.'
-  - axis: orthography
     c: WEAK
-    claim: KOR-ON3-013-5
+    claim: KOR-ON3-009-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: 조사일 때는 붙여 쓴다.
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
-- item_id: KOR-ON3-014
-  archetype: A5_EXAMPLE_MULTI_JUDGMENT
-  stem: '[제41항] 조사의 띄어쓰기에 대한 판단으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?'
-  view:
-  - ㄱ. "남은 돈이 천 원밖에 없다"의 '밖에'는 조사이므로 앞말에 붙여 쓴다.
-  - ㄴ. "창문 밖에 눈이 내린다"의 '밖에'도 조사이므로 '창문밖에'로 붙여 쓴다.
-  - ㄷ. "인사는커녕 눈길도 주지 않았다"의 '는커녕'은 조사이므로 앞말에 붙여 쓴다.
-  - ㄹ. "너마저 나를 떠나는구나"의 '마저'는 조사이므로 앞말에 붙여 쓴다.
-  options:
-  - ㄱ, ㄴ
-  - ㄴ, ㄹ
-  - ㄱ, ㄴ, ㄷ
-  - ㄱ, ㄷ, ㄹ
-  - ㄴ, ㄷ, ㄹ
-  answer: 4
-  second_best: 3
-  difficulty: D2
-  family: MULTI_JUDGMENT
-  balance: CORE_EXAM_POINT
-  reasoning_steps: 1
-  immediate_elimination: 1
-  transfer: true
-  stem_polarity: POSITIVE
-  topic: 제41항
-  judgments:
-  - axis: orthography
-    c: WEAK
-    claim: KOR-ON3-014-1
-    ev:
-    - VIEW
-    - OPTION1
-    v: false
-    why: ㄴ은 옳지 않다.
-    trap: T6_PARTIAL_SET
-  - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-014-2
-    ev:
-    - VIEW
-    - OPTION2
-    v: false
-    why: ㄴ은 옳지 않다. '밖'은 명사이고 '에'가 조사이다.
-    trap: T6_PARTIAL_SET
-  - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-014-3
-    ev:
-    - VIEW
-    - OPTION3
-    v: false
-    why: ㄴ은 옳지 않고 ㄹ이 빠졌다.
-    trap: T6_PARTIAL_SET
-  - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-014-4
-    ev:
-    - VIEW
-    - OPTION4
-    v: true
-    why: '정답 근거: 해설 참고.'
-  - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-014-5
-    ev:
-    - VIEW
-    - OPTION5
-    v: false
-    why: ㄱ이 빠지고 ㄴ이 포함되었다.
-    trap: T6_PARTIAL_SET
-- item_id: KOR-ON3-015
+- item_id: KOR-ON3-010
   archetype: A2_STUDENT_TEXT_ERRORS
   stem: '[제42·43항] <보기>의 [A]에 들어갈 말로 적절한 것은?'
   view:
@@ -1019,7 +676,7 @@ items:
   judgments:
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-015-1
+    claim: KOR-ON3-010-1
     ev:
     - VIEW
     - OPTION1
@@ -1027,7 +684,7 @@ items:
     why: ㉡ '먹을 걸'(것을), ㉤ '세 번', ㉥ '수 있을'로 고쳐야 한다.
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-015-2
+    claim: KOR-ON3-010-2
     ev:
     - VIEW
     - OPTION2
@@ -1036,7 +693,7 @@ items:
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-015-3
+    claim: KOR-ON3-010-3
     ev:
     - VIEW
     - OPTION3
@@ -1045,7 +702,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-015-4
+    claim: KOR-ON3-010-4
     ev:
     - VIEW
     - OPTION4
@@ -1054,14 +711,14 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-015-5
+    claim: KOR-ON3-010-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: ㉢은 바르다.
     trap: T6_PARTIAL_SET
-- item_id: KOR-ON3-016
+- item_id: KOR-ON3-011
   archetype: A3_CONDITION_CLASSIFICATION
   stem: '[제42항] <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤에 쓰인 ''간''을 분류한 것으로 가장 적절한 것은?'
   view:
@@ -1070,10 +727,10 @@ items:
   options:
   - Ⓐ ㉠   Ⓑ ㉡, ㉤   Ⓒ ㉢, ㉣
   - Ⓐ ㉠, ㉢, ㉣   Ⓑ ㉡, ㉤   Ⓒ 없음
-  - Ⓐ ㉠, ㉣   Ⓑ ㉡   Ⓒ ㉢, ㉤
   - Ⓐ ㉠, ㉣   Ⓑ ㉡, ㉤   Ⓒ ㉢
+  - Ⓐ ㉠, ㉣   Ⓑ ㉡   Ⓒ ㉢, ㉤
   - Ⓐ ㉣   Ⓑ ㉠, ㉡, ㉤   Ⓒ ㉢
-  answer: 4
+  answer: 3
   second_best: 1
   difficulty: D3
   family: COMPARISON_MATRIX
@@ -1086,7 +743,7 @@ items:
   judgments:
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-016-1
+    claim: KOR-ON3-011-1
     ev:
     - VIEW
     - OPTION1
@@ -1095,7 +752,7 @@ items:
     trap: T2_EXCEPTION_CONDITION
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-016-2
+    claim: KOR-ON3-011-2
     ev:
     - VIEW
     - OPTION2
@@ -1103,100 +760,32 @@ items:
     why: ㉢ '부부간'은 한 단어로 굳어진 말이다.
     trap: T2_EXCEPTION_CONDITION
   - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-016-3
+    c: CORRECT
+    claim: KOR-ON3-011-3
     ev:
     - VIEW
     - OPTION3
+    v: true
+    why: ㉠·㉣은 관계의 의존 명사(Ⓐ), ㉡·㉤은 기간의 접미사(Ⓑ), ㉢ '부부간'은 한 단어(Ⓒ)이다.
+  - axis: orthography
+    c: MEDIUM
+    claim: KOR-ON3-011-4
+    ev:
+    - VIEW
+    - OPTION4
     v: false
     why: ㉤ '이틀간'은 기간의 접미사이다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-016-4
-    ev:
-    - VIEW
-    - OPTION4
-    v: true
-    why: ㉠·㉣은 관계의 의존 명사(Ⓐ), ㉡·㉤은 기간의 접미사(Ⓑ), ㉢ '부부간'은 한 단어(Ⓒ)이다.
-  - axis: orthography
     c: WEAK
-    claim: KOR-ON3-016-5
+    claim: KOR-ON3-011-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: ㉠은 Ⓐ이다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
-- item_id: KOR-ON3-017
-  archetype: A6_RULE_CASE_EXPLANATION
-  stem: '[제42항] <보기>를 바탕으로 탐구한 내용으로 적절하지 않은 것은?'
-  view:
-  - '[사전 자료]'
-  - 차(次)¹ 「의존 명사」 ① (주로 '-던 차에' 꼴로 쓰여) 어떤 일을 하던 기회나 순간. ② (수 뒤에 쓰여) 주기나 경과의 해당 시기를 나타내는 말. 예) 입사 3년 차.
-  - -차(次) 「접미사」 '목적'의 뜻을 더하는 접미사. 예) 연구차, 인사차.
-  options:
-  - '''-던'' 뒤에 오는 ''차''는 어미의 일부이므로 "잠이 들려던차에"처럼 붙여 쓴다.'
-  - '"친구를 만나러 가던 차에 비가 왔다"의 ''차''는 의존 명사이므로 띄어 쓴다.'
-  - '"인사차 들렀다"의 ''-차''는 목적의 뜻을 더하는 접미사이므로 붙여 쓴다.'
-  - '"입사 3년 차"의 ''차''는 의존 명사이므로 띄어 쓴다.'
-  - '"사업차 출장을 갔다"의 ''-차''는 접미사이므로 붙여 쓴다.'
-  answer: 1
-  second_best: 4
-  difficulty: D2
-  family: CASE_APPLICATION
-  balance: CORE_EXAM_POINT
-  reasoning_steps: 1
-  immediate_elimination: 1
-  transfer: true
-  stem_polarity: NEGATIVE
-  topic: 제42항
-  judgments:
-  - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-017-1
-    ev:
-    - VIEW
-    - OPTION1
-    v: false
-    why: '''-던 차에''의 ''차''는 의존 명사이므로 ''들려던 차에''로 띄어 쓴다.'
-  - axis: orthography
-    c: WEAK
-    claim: KOR-ON3-017-2
-    ev:
-    - VIEW
-    - OPTION2
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-  - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-017-3
-    ev:
-    - VIEW
-    - OPTION3
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-  - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-017-4
-    ev:
-    - VIEW
-    - OPTION4
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-  - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-017-5
-    ev:
-    - VIEW
-    - OPTION5
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-- item_id: KOR-ON3-018
+- item_id: KOR-ON3-012
   archetype: A1_GENERAL_RULE_MAPPING
   stem: '[제42항] <보기>의 사전 자료를 바탕으로 탐구한 내용으로 가장 적절한 것은?'
   view:
@@ -1222,7 +811,7 @@ items:
   judgments:
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-018-1
+    claim: KOR-ON3-012-1
     ev:
     - VIEW
     - OPTION1
@@ -1231,7 +820,7 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-018-2
+    claim: KOR-ON3-012-2
     ev:
     - VIEW
     - OPTION2
@@ -1240,7 +829,7 @@ items:
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: WEAK
-    claim: KOR-ON3-018-3
+    claim: KOR-ON3-012-3
     ev:
     - VIEW
     - OPTION3
@@ -1249,7 +838,7 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-018-4
+    claim: KOR-ON3-012-4
     ev:
     - VIEW
     - OPTION4
@@ -1257,14 +846,14 @@ items:
     why: '정답 근거: 해설 참고.'
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-018-5
+    claim: KOR-ON3-012-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: '''바에''는 의존 명사 ''바''에 조사 ''에''가 붙은 것이므로 띄어 쓴다.'
     trap: T4_SAME_FORM_OTHER_FUNCTION
-- item_id: KOR-ON3-019
+- item_id: KOR-ON3-013
   archetype: A4_INQUIRY_DIALOGUE_CHECK
   stem: '[제42·47항] <보기>의 ㉠~㉤ 중 고쳐야 할 학생의 설명은?'
   view:
@@ -1294,7 +883,7 @@ items:
   judgments:
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-019-1
+    claim: KOR-ON3-013-1
     ev:
     - VIEW
     - OPTION1
@@ -1303,7 +892,7 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-019-2
+    claim: KOR-ON3-013-2
     ev:
     - VIEW
     - OPTION2
@@ -1312,7 +901,7 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-019-3
+    claim: KOR-ON3-013-3
     ev:
     - VIEW
     - OPTION3
@@ -1321,7 +910,7 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-019-4
+    claim: KOR-ON3-013-4
     ev:
     - VIEW
     - OPTION4
@@ -1329,81 +918,14 @@ items:
     why: '''듯하다''는 한 단어인 보조 용언이므로 ''맑을 듯하다''가 원칙이고 ''맑을듯하다''로 붙여 쓸 수도 있다.'
   - axis: orthography
     c: WEAK
-    claim: KOR-ON3-019-5
+    claim: KOR-ON3-013-5
     ev:
     - VIEW
     - OPTION5
     v: true
     why: 보기의 조항·자료에 비추어 바른 설명이다.
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
-- item_id: KOR-ON3-020
-  archetype: A6_RULE_CASE_EXPLANATION
-  stem: '[제47항] <보기>를 바탕으로 탐구한 내용으로 적절하지 않은 것은?'
-  view:
-  - '[해설] ''-아/-어지다''와 ''-아/-어하다''는 앞말에 붙여 쓴다. 다만 ''-어하다''가 구(句)에 결합하는 경우에는 띄어 쓴다.'
-  - (예) 이루어지다, 슬퍼하다 / 먹고 싶어 하다, 마음에 들어 하다
-  options:
-  - '"꿈이 이루어졌다"는 ''-어지다''가 붙은 말이므로 붙여 쓴다.'
-  - '"동생이 어둠을 무서워한다"는 ''-어하다''가 붙은 말이므로 붙여 쓴다.'
-  - '"집에 가고 싶어 하다"는 ''-어하다''가 구에 결합하였으므로 ''싶어 하다''로 띄어 쓴다.'
-  - '"책상 위가 깨끗해졌다"는 ''-어지다''가 결합하였으므로 붙여 쓴다.'
-  - '"날씨가 추워 졌다"처럼 ''지다''는 보조 용언이므로 띄어 쓰는 것이 원칙이다.'
-  answer: 5
-  second_best: 3
-  difficulty: D2
-  family: CASE_APPLICATION
-  balance: CORE_EXAM_POINT
-  reasoning_steps: 1
-  immediate_elimination: 1
-  transfer: true
-  stem_polarity: NEGATIVE
-  topic: 제47항
-  judgments:
-  - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-020-1
-    ev:
-    - VIEW
-    - OPTION1
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-  - axis: orthography
-    c: WEAK
-    claim: KOR-ON3-020-2
-    ev:
-    - VIEW
-    - OPTION2
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-  - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-020-3
-    ev:
-    - VIEW
-    - OPTION3
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-  - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-020-4
-    ev:
-    - VIEW
-    - OPTION4
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-  - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-020-5
-    ev:
-    - VIEW
-    - OPTION5
-    v: false
-    why: '''-어지다''는 앞말에 붙여 쓰므로 ''추워졌다''가 바르다.'
-- item_id: KOR-ON3-021
+- item_id: KOR-ON3-014
   archetype: A2_STUDENT_TEXT_ERRORS
   stem: '[제2·41·43항] <보기>의 [A]에 들어갈 말로 적절한 것은?'
   view:
@@ -1434,7 +956,7 @@ items:
   judgments:
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-021-1
+    claim: KOR-ON3-014-1
     ev:
     - VIEW
     - OPTION1
@@ -1442,7 +964,7 @@ items:
     why: ㉢ '사진 촬영', ㉤ '안내에 따라', ㉥ '안 됩니다'로 고쳐야 한다.
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-021-2
+    claim: KOR-ON3-014-2
     ev:
     - VIEW
     - OPTION2
@@ -1451,7 +973,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-021-3
+    claim: KOR-ON3-014-3
     ev:
     - VIEW
     - OPTION3
@@ -1460,7 +982,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-021-4
+    claim: KOR-ON3-014-4
     ev:
     - VIEW
     - OPTION4
@@ -1469,14 +991,14 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-021-5
+    claim: KOR-ON3-014-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: ㉣은 바르다.
     trap: T6_PARTIAL_SET
-- item_id: KOR-ON3-022
+- item_id: KOR-ON3-015
   archetype: A5_EXAMPLE_MULTI_JUDGMENT
   stem: '[제46항] 단음절 단어의 띄어쓰기에 대한 판단으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?'
   view:
@@ -1504,7 +1026,7 @@ items:
   judgments:
   - axis: orthography
     c: WEAK
-    claim: KOR-ON3-022-1
+    claim: KOR-ON3-015-1
     ev:
     - VIEW
     - OPTION1
@@ -1513,7 +1035,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-022-2
+    claim: KOR-ON3-015-2
     ev:
     - VIEW
     - OPTION2
@@ -1522,7 +1044,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-022-3
+    claim: KOR-ON3-015-3
     ev:
     - VIEW
     - OPTION3
@@ -1530,7 +1052,7 @@ items:
     why: '정답 근거: 해설 참고.'
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-022-4
+    claim: KOR-ON3-015-4
     ev:
     - VIEW
     - OPTION4
@@ -1539,81 +1061,14 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-022-5
+    claim: KOR-ON3-015-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: ㄷ은 옳지 않다.
     trap: T6_PARTIAL_SET
-- item_id: KOR-ON3-023
-  archetype: A1_GENERAL_RULE_MAPPING
-  stem: '[제2·42항] <보기>의 한글 맞춤법 조항을 바탕으로 탐구한 내용으로 가장 적절한 것은?'
-  view:
-  - 제2항 문장의 각 단어는 띄어 씀을 원칙으로 한다.
-  - 제42항 의존 명사는 띄어 쓴다.
-  options:
-  - '"나도 할 수 있다"의 ''수''는 조사이므로 앞말에 붙여 쓴다.'
-  - '"먹을 것"의 ''것''은 홀로 쓰이지 못하므로 단어가 아니어서 앞말에 붙여 쓴다.'
-  - 의존 명사는 단어로 인정되지 않으므로 제2항의 적용 대상이 아니다.
-  - '''그것''도 ''그''와 ''것''이 결합한 말이므로 ''그 것''으로 띄어 써야 한다.'
-  - '"아는 이를 만났다"의 ''이''는 사람을 뜻하는 의존 명사이므로 띄어 쓴다.'
-  answer: 5
-  second_best: 2
-  difficulty: D2
-  family: VIEW_APPLICATION
-  balance: CORE_EXAM_POINT
-  reasoning_steps: 1
-  immediate_elimination: 1
-  transfer: true
-  stem_polarity: POSITIVE
-  topic: 제2·42항
-  judgments:
-  - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-023-1
-    ev:
-    - VIEW
-    - OPTION1
-    v: false
-    why: '''수''는 의존 명사이다.'
-    trap: T1_RIGHT_CONCEPT_WRONG_CASE
-  - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-023-2
-    ev:
-    - VIEW
-    - OPTION2
-    v: false
-    why: 의존 명사도 단어이므로 띄어 쓴다.
-    trap: T1_RIGHT_CONCEPT_WRONG_CASE
-  - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-023-3
-    ev:
-    - VIEW
-    - OPTION3
-    v: false
-    why: 의존 명사도 단어이므로 제2항에 따라 띄어 쓴다.
-    trap: T1_RIGHT_CONCEPT_WRONG_CASE
-  - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-023-4
-    ev:
-    - VIEW
-    - OPTION4
-    v: false
-    why: '''그것''은 한 단어인 대명사이다.'
-    trap: T1_RIGHT_CONCEPT_WRONG_CASE
-  - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-023-5
-    ev:
-    - VIEW
-    - OPTION5
-    v: true
-    why: '정답 근거: 해설 참고.'
-- item_id: KOR-ON3-024
+- item_id: KOR-ON3-016
   archetype: A3_CONDITION_CLASSIFICATION
   stem: '[제41·42항] <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?'
   view:
@@ -1622,10 +1077,10 @@ items:
   options:
   - Ⓐ ㉠   Ⓑ ㉡, ㉣   Ⓒ ㉢, ㉤
   - Ⓐ ㉠, ㉢, ㉤   Ⓑ ㉡, ㉣   Ⓒ 없음
-  - Ⓐ ㉠, ㉤   Ⓑ ㉡, ㉣   Ⓒ ㉢
   - Ⓐ ㉤   Ⓑ ㉠, ㉡, ㉣   Ⓒ ㉢
+  - Ⓐ ㉠, ㉤   Ⓑ ㉡, ㉣   Ⓒ ㉢
   - Ⓐ ㉠, ㉤   Ⓑ ㉣   Ⓒ ㉡, ㉢
-  answer: 3
+  answer: 4
   second_best: 2
   difficulty: D2
   family: COMPARISON_MATRIX
@@ -1638,7 +1093,7 @@ items:
   judgments:
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-024-1
+    claim: KOR-ON3-016-1
     ev:
     - VIEW
     - OPTION1
@@ -1647,7 +1102,7 @@ items:
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-024-2
+    claim: KOR-ON3-016-2
     ev:
     - VIEW
     - OPTION2
@@ -1655,32 +1110,32 @@ items:
     why: ㉢ '그대로'는 한 단어이다.
     trap: T2_EXCEPTION_CONDITION
   - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-024-3
+    c: STRONG
+    claim: KOR-ON3-016-3
     ev:
     - VIEW
     - OPTION3
-    v: true
-    why: ㉠·㉤은 체언 뒤 조사(Ⓐ), ㉡·㉣은 관형사형 뒤 의존 명사(Ⓑ), ㉢ '그대로'는 한 단어인 부사(Ⓒ)이다.
-  - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-024-4
-    ev:
-    - VIEW
-    - OPTION4
     v: false
     why: ㉠ '약속대로'는 체언 뒤의 조사이다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
+    c: CORRECT
+    claim: KOR-ON3-016-4
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: ㉠·㉤은 체언 뒤 조사(Ⓐ), ㉡·㉣은 관형사형 뒤 의존 명사(Ⓑ), ㉢ '그대로'는 한 단어인 부사(Ⓒ)이다.
+  - axis: orthography
     c: WEAK
-    claim: KOR-ON3-024-5
+    claim: KOR-ON3-016-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: ㉡은 Ⓑ이다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
-- item_id: KOR-ON3-025
+- item_id: KOR-ON3-017
   archetype: A4_INQUIRY_DIALOGUE_CHECK
   stem: '[제43항] <보기>의 ㉠~㉤ 중 고쳐야 할 학생의 설명은?'
   view:
@@ -1711,7 +1166,7 @@ items:
   judgments:
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-025-1
+    claim: KOR-ON3-017-1
     ev:
     - VIEW
     - OPTION1
@@ -1720,7 +1175,7 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-025-2
+    claim: KOR-ON3-017-2
     ev:
     - VIEW
     - OPTION2
@@ -1729,7 +1184,7 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: WEAK
-    claim: KOR-ON3-025-3
+    claim: KOR-ON3-017-3
     ev:
     - VIEW
     - OPTION3
@@ -1738,7 +1193,7 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-025-4
+    claim: KOR-ON3-017-4
     ev:
     - VIEW
     - OPTION4
@@ -1746,14 +1201,14 @@ items:
     why: 단위 명사는 띄어 쓰는 것이 원칙이며, 붙여 쓰기는 순서를 나타내거나 아라비아 숫자와 어울릴 때 허용된다.
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-025-5
+    claim: KOR-ON3-017-5
     ev:
     - VIEW
     - OPTION5
     v: true
     why: 보기의 조항·자료에 비추어 바른 설명이다.
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
-- item_id: KOR-ON3-026
+- item_id: KOR-ON3-018
   archetype: A1_GENERAL_RULE_MAPPING
   stem: '[제42항] <보기>의 사전 자료를 바탕으로 탐구한 내용으로 가장 적절한 것은?'
   view:
@@ -1765,10 +1220,10 @@ items:
   options:
   - '''그중''은 ''그''와 ''중''이 결합한 구이므로 ''그 중''으로 띄어 써야 한다.'
   - '"한밤 중에 깼다"처럼 ''중''은 의존 명사이므로 언제나 띄어 써야 한다.'
-  - '"수업 중에는 휴대 전화를 끈다"의 ''중''은 의존 명사이므로 띄어 쓴다.'
   - '"무의식 중에 말했다"처럼 ''무의식''과 ''중''은 띄어 써야 한다.'
   - '"공사중"처럼 명사 뒤의 ''중''은 접미사이므로 붙여 쓴다.'
-  answer: 3
+  - '"수업 중에는 휴대 전화를 끈다"의 ''중''은 의존 명사이므로 띄어 쓴다.'
+  answer: 5
   second_best: 1
   difficulty: D2
   family: VIEW_APPLICATION
@@ -1781,7 +1236,7 @@ items:
   judgments:
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-026-1
+    claim: KOR-ON3-018-1
     ev:
     - VIEW
     - OPTION1
@@ -1790,7 +1245,7 @@ items:
     trap: T2_EXCEPTION_CONDITION
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-026-2
+    claim: KOR-ON3-018-2
     ev:
     - VIEW
     - OPTION2
@@ -1798,32 +1253,32 @@ items:
     why: '''한밤중''은 한 단어이다.'
     trap: T2_EXCEPTION_CONDITION
   - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-026-3
+    c: MEDIUM
+    claim: KOR-ON3-018-3
     ev:
     - VIEW
     - OPTION3
-    v: true
-    why: '정답 근거: 해설 참고.'
-  - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-026-4
-    ev:
-    - VIEW
-    - OPTION4
     v: false
     why: '''무의식중''은 한 단어이다.'
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-026-5
+    claim: KOR-ON3-018-4
     ev:
     - VIEW
-    - OPTION5
+    - OPTION4
     v: false
     why: '''공사 중''의 ''중''은 의존 명사이므로 띄어 쓴다.'
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
-- item_id: KOR-ON3-027
+  - axis: orthography
+    c: CORRECT
+    claim: KOR-ON3-018-5
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: '정답 근거: 해설 참고.'
+- item_id: KOR-ON3-019
   archetype: A2_STUDENT_TEXT_ERRORS
   stem: '[종합] <보기>의 [A]에 들어갈 말로 적절한 것은?'
   view:
@@ -1854,7 +1309,7 @@ items:
   judgments:
   - axis: orthography
     c: WEAK
-    claim: KOR-ON3-027-1
+    claim: KOR-ON3-019-1
     ev:
     - VIEW
     - OPTION1
@@ -1863,7 +1318,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-027-2
+    claim: KOR-ON3-019-2
     ev:
     - VIEW
     - OPTION2
@@ -1872,7 +1327,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-027-3
+    claim: KOR-ON3-019-3
     ev:
     - VIEW
     - OPTION3
@@ -1881,7 +1336,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-027-4
+    claim: KOR-ON3-019-4
     ev:
     - VIEW
     - OPTION4
@@ -1890,13 +1345,13 @@ items:
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-027-5
+    claim: KOR-ON3-019-5
     ev:
     - VIEW
     - OPTION5
     v: true
     why: ㉠ '오랜만에', ㉢ '뒤편'(거센소리 앞 사이시옷 없음), ㉥ '즐거운 날'로 고쳐야 한다.
-- item_id: KOR-ON3-028
+- item_id: KOR-ON3-020
   archetype: A2_STUDENT_TEXT_ERRORS
   stem: '[종합] <보기>의 [A]에 들어갈 말로 적절한 것은?'
   view:
@@ -1927,7 +1382,7 @@ items:
   judgments:
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-028-1
+    claim: KOR-ON3-020-1
     ev:
     - VIEW
     - OPTION1
@@ -1936,7 +1391,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-028-2
+    claim: KOR-ON3-020-2
     ev:
     - VIEW
     - OPTION2
@@ -1944,7 +1399,7 @@ items:
     why: ㉡ '금요일까지', ㉢ '간간이', ㉣ '공지된 대로'로 고쳐야 한다.
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-028-3
+    claim: KOR-ON3-020-3
     ev:
     - VIEW
     - OPTION3
@@ -1953,7 +1408,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-028-4
+    claim: KOR-ON3-020-4
     ev:
     - VIEW
     - OPTION4
@@ -1962,81 +1417,14 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-028-5
+    claim: KOR-ON3-020-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: ㉠은 바르다.
     trap: T6_PARTIAL_SET
-- item_id: KOR-ON3-029
-  archetype: A6_RULE_CASE_EXPLANATION
-  stem: '[제41항] <보기>를 바탕으로 탐구한 내용으로 적절하지 않은 것은?'
-  view:
-  - 제41항 조사는 그 앞말에 붙여 쓴다.
-  - '[해설] 서술격 조사 ''이다''도 조사이므로 앞말에 붙여 쓴다.'
-  options:
-  - '"그것은 내 책이다"의 ''이다''는 조사이므로 붙여 쓴다.'
-  - '"우리는 모두 친구입니다"의 ''입니다''도 앞말에 붙여 쓴다.'
-  - '"학생으로서 할 일"의 ''으로서''는 자격을 나타내는 조사이므로 붙여 쓴다.'
-  - '"그건 책이 아니다"의 ''아니다''도 ''이다''처럼 조사이므로 앞말에 붙여 쓴다.'
-  - '"칼로써 연필을 깎았다"의 ''로써''는 도구를 나타내는 조사이므로 붙여 쓴다.'
-  answer: 4
-  second_best: 3
-  difficulty: D2
-  family: CASE_APPLICATION
-  balance: CORE_EXAM_POINT
-  reasoning_steps: 1
-  immediate_elimination: 1
-  transfer: true
-  stem_polarity: NEGATIVE
-  topic: 제41항
-  judgments:
-  - axis: orthography
-    c: WEAK
-    claim: KOR-ON3-029-1
-    ev:
-    - VIEW
-    - OPTION1
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-  - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-029-2
-    ev:
-    - VIEW
-    - OPTION2
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-  - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-029-3
-    ev:
-    - VIEW
-    - OPTION3
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-  - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-029-4
-    ev:
-    - VIEW
-    - OPTION4
-    v: false
-    why: '''아니다''는 형용사이므로 띄어 쓴다.'
-  - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-029-5
-    ev:
-    - VIEW
-    - OPTION5
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-- item_id: KOR-ON3-030
+- item_id: KOR-ON3-021
   archetype: A1_GENERAL_RULE_MAPPING
   stem: '[제42항] <보기>의 사전 자료를 바탕으로 탐구한 내용으로 가장 적절한 것은?'
   view:
@@ -2047,9 +1435,9 @@ items:
   - '"이 학교에 다닌지 삼 년이 되었다"는 ''-ㄴ지''가 어미이므로 바르게 쓴 것이다.'
   - '"얼마나 기뻤던 지 눈물이 났다"의 ''지''는 의존 명사이므로 띄어 쓴다.'
   - '"밥을 먹은 지가 오래다"에서 ''지'' 뒤에 조사가 붙은 것으로 보아 ''지''는 어미이다.'
-  - '"할지 말지 고민이다"의 ''지''는 시간의 경과를 나타내므로 띄어 쓴다.'
   - '"그가 언제 왔는지 모르겠다"의 ''-는지''는 어미이므로 붙여 쓴다.'
-  answer: 5
+  - '"할지 말지 고민이다"의 ''지''는 시간의 경과를 나타내므로 띄어 쓴다.'
+  answer: 4
   second_best: 1
   difficulty: D3
   family: VIEW_APPLICATION
@@ -2062,7 +1450,7 @@ items:
   judgments:
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-030-1
+    claim: KOR-ON3-021-1
     ev:
     - VIEW
     - OPTION1
@@ -2071,7 +1459,7 @@ items:
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-030-2
+    claim: KOR-ON3-021-2
     ev:
     - VIEW
     - OPTION2
@@ -2080,7 +1468,7 @@ items:
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-030-3
+    claim: KOR-ON3-021-3
     ev:
     - VIEW
     - OPTION3
@@ -2088,23 +1476,23 @@ items:
     why: 조사가 붙을 수 있다는 것은 '지'가 명사라는 근거이다.
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
-    c: WEAK
-    claim: KOR-ON3-030-4
+    c: CORRECT
+    claim: KOR-ON3-021-4
     ev:
     - VIEW
     - OPTION4
-    v: false
-    why: 의문을 나타내는 어미 '-ㄹ지'이므로 붙여 쓴다.
-    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+    v: true
+    why: '정답 근거: 해설 참고.'
   - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-030-5
+    c: WEAK
+    claim: KOR-ON3-021-5
     ev:
     - VIEW
     - OPTION5
-    v: true
-    why: '정답 근거: 해설 참고.'
-- item_id: KOR-ON3-031
+    v: false
+    why: 의문을 나타내는 어미 '-ㄹ지'이므로 붙여 쓴다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+- item_id: KOR-ON3-022
   archetype: A5_EXAMPLE_MULTI_JUDGMENT
   stem: '[제41항] 조사와 부사의 띄어쓰기에 대한 판단으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?'
   view:
@@ -2131,7 +1519,7 @@ items:
   judgments:
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-031-1
+    claim: KOR-ON3-022-1
     ev:
     - VIEW
     - OPTION1
@@ -2140,7 +1528,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: WEAK
-    claim: KOR-ON3-031-2
+    claim: KOR-ON3-022-2
     ev:
     - VIEW
     - OPTION2
@@ -2149,7 +1537,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-031-3
+    claim: KOR-ON3-022-3
     ev:
     - VIEW
     - OPTION3
@@ -2158,7 +1546,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-031-4
+    claim: KOR-ON3-022-4
     ev:
     - VIEW
     - OPTION4
@@ -2167,13 +1555,13 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-031-5
+    claim: KOR-ON3-022-5
     ev:
     - VIEW
     - OPTION5
     v: true
     why: '정답 근거: 해설 참고.'
-- item_id: KOR-ON3-032
+- item_id: KOR-ON3-023
   archetype: A3_CONDITION_CLASSIFICATION
   stem: '[제47항] <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?'
   view:
@@ -2182,14 +1570,14 @@ items:
   options:
   - Ⓐ ㉠, ㉡, ㉤   Ⓑ ㉢, ㉣   Ⓒ 없음
   - Ⓐ ㉠   Ⓑ ㉢, ㉣   Ⓒ ㉡, ㉤
-  - Ⓐ ㉠, ㉤   Ⓑ ㉢, ㉣   Ⓒ ㉡
   - Ⓐ ㉠, ㉢, ㉤   Ⓑ ㉣   Ⓒ ㉡
+  - Ⓐ ㉠, ㉤   Ⓑ ㉢, ㉣   Ⓒ ㉡
   - Ⓐ ㉤   Ⓑ ㉠, ㉣   Ⓒ ㉡, ㉢
-  answer: 3
+  answer: 4
   second_best: 1
   difficulty: D4
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
+  balance: CORE_EXAM_POINT
   reasoning_steps: 3
   immediate_elimination: 1
   transfer: true
@@ -2198,7 +1586,7 @@ items:
   judgments:
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-032-1
+    claim: KOR-ON3-023-1
     ev:
     - VIEW
     - OPTION1
@@ -2207,7 +1595,7 @@ items:
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-032-2
+    claim: KOR-ON3-023-2
     ev:
     - VIEW
     - OPTION2
@@ -2215,32 +1603,32 @@ items:
     why: ㉤ '법하다'는 의존 명사에 '-하다'가 붙은 보조 용언으로 붙여 쓰기가 허용된다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-032-3
+    c: STRONG
+    claim: KOR-ON3-023-3
     ev:
     - VIEW
     - OPTION3
-    v: true
-    why: ㉠·㉤은 허용(Ⓐ), ㉢은 앞말이 합성 용언, ㉣은 중간에 조사가 들어가 Ⓑ, ㉡ '먹다'는 본용언(Ⓒ)이다.
-  - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-032-4
-    ev:
-    - VIEW
-    - OPTION4
     v: false
     why: ㉢ '흘러내리다'는 합성 용언이므로 뒤 보조 용언은 띄어 쓴다.
     trap: T2_EXCEPTION_CONDITION
   - axis: orthography
+    c: CORRECT
+    claim: KOR-ON3-023-4
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: ㉠·㉤은 허용(Ⓐ), ㉢은 앞말이 합성 용언, ㉣은 중간에 조사가 들어가 Ⓑ, ㉡ '먹다'는 본용언(Ⓒ)이다.
+  - axis: orthography
     c: WEAK
-    claim: KOR-ON3-032-5
+    claim: KOR-ON3-023-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: ㉠은 Ⓐ이다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
-- item_id: KOR-ON3-033
+- item_id: KOR-ON3-024
   archetype: A4_INQUIRY_DIALOGUE_CHECK
   stem: '[제48항] <보기>의 ㉠~㉤ 중 고쳐야 할 학생의 설명은?'
   view:
@@ -2270,7 +1658,7 @@ items:
   judgments:
   - axis: orthography
     c: WEAK
-    claim: KOR-ON3-033-1
+    claim: KOR-ON3-024-1
     ev:
     - VIEW
     - OPTION1
@@ -2279,7 +1667,7 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-033-2
+    claim: KOR-ON3-024-2
     ev:
     - VIEW
     - OPTION2
@@ -2288,7 +1676,7 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-033-3
+    claim: KOR-ON3-024-3
     ev:
     - VIEW
     - OPTION3
@@ -2297,7 +1685,7 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-033-4
+    claim: KOR-ON3-024-4
     ev:
     - VIEW
     - OPTION4
@@ -2306,13 +1694,13 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-033-5
+    claim: KOR-ON3-024-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: 관직명은 성 뒤에서도 띄어 쓴다.
-- item_id: KOR-ON3-034
+- item_id: KOR-ON3-025
   archetype: A1_GENERAL_RULE_MAPPING
   stem: '[제41·42항] <보기>의 사전 자료를 바탕으로 탐구한 내용으로 가장 적절한 것은?'
   view:
@@ -2338,7 +1726,7 @@ items:
   judgments:
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-034-1
+    claim: KOR-ON3-025-1
     ev:
     - VIEW
     - OPTION1
@@ -2347,7 +1735,7 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-034-2
+    claim: KOR-ON3-025-2
     ev:
     - VIEW
     - OPTION2
@@ -2355,7 +1743,7 @@ items:
     why: '정답 근거: 해설 참고.'
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-034-3
+    claim: KOR-ON3-025-3
     ev:
     - VIEW
     - OPTION3
@@ -2364,7 +1752,7 @@ items:
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-034-4
+    claim: KOR-ON3-025-4
     ev:
     - VIEW
     - OPTION4
@@ -2373,27 +1761,27 @@ items:
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: WEAK
-    claim: KOR-ON3-034-5
+    claim: KOR-ON3-025-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: 체언 뒤에서는 조사이다.
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
-- item_id: KOR-ON3-035
+- item_id: KOR-ON3-026
   archetype: A6_RULE_CASE_EXPLANATION
   stem: '[제47항] <보기>를 바탕으로 탐구한 내용으로 적절하지 않은 것은?'
   view:
   - 제47항 (붙여 씀을 허용하는 예) 비가 올 듯하다/올듯하다, 그 일은 할 만하다/할만하다, 일이 될 법하다/될법하다, 비가 올 성싶다/올성싶다, 잘 아는 척한다/아는척한다
   - (띄어 쓰는 예) 잘난 체를 한다.
   options:
-  - '"모르는 척하다"는 ''모르는 척 하다''로 띄어 쓰는 것이 원칙이다.'
   - '"그 책은 읽을 만하다"는 ''읽을만하다''로 붙여 쓸 수도 있다.'
   - '"곧 눈이 올 성싶다"는 ''올성싶다''로 붙여 쓸 수도 있다.'
   - '"그런 일이 있을 법하다"는 ''있을법하다''로 붙여 쓸 수도 있다.'
   - '"잘난 체를 한다"는 ''체'' 뒤에 조사가 들어갔으므로 붙여 쓸 수 없다.'
-  answer: 1
-  second_best: 5
+  - '"모르는 척하다"는 ''모르는 척 하다''로 띄어 쓰는 것이 원칙이다.'
+  answer: 5
+  second_best: 4
   difficulty: D3
   family: CASE_APPLICATION
   balance: CORE_EXAM_POINT
@@ -2404,16 +1792,17 @@ items:
   topic: 제47항
   judgments:
   - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-035-1
+    c: WEAK
+    claim: KOR-ON3-026-1
     ev:
     - VIEW
     - OPTION1
-    v: false
-    why: '''척하다''는 한 단어인 보조 용언이므로 ''모르는 척하다''가 원칙이다.'
+    v: true
+    why: 보기의 조항·자료에 비추어 바른 설명이다.
+    trap: T5_RULE_JURISDICTION
   - axis: orthography
-    c: WEAK
-    claim: KOR-ON3-035-2
+    c: MEDIUM
+    claim: KOR-ON3-026-2
     ev:
     - VIEW
     - OPTION2
@@ -2422,7 +1811,7 @@ items:
     trap: T5_RULE_JURISDICTION
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-035-3
+    claim: KOR-ON3-026-3
     ev:
     - VIEW
     - OPTION3
@@ -2430,8 +1819,8 @@ items:
     why: 보기의 조항·자료에 비추어 바른 설명이다.
     trap: T5_RULE_JURISDICTION
   - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-035-4
+    c: STRONG
+    claim: KOR-ON3-026-4
     ev:
     - VIEW
     - OPTION4
@@ -2439,15 +1828,14 @@ items:
     why: 보기의 조항·자료에 비추어 바른 설명이다.
     trap: T5_RULE_JURISDICTION
   - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-035-5
+    c: CORRECT
+    claim: KOR-ON3-026-5
     ev:
     - VIEW
     - OPTION5
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-- item_id: KOR-ON3-036
+    v: false
+    why: '''척하다''는 한 단어인 보조 용언이므로 ''모르는 척하다''가 원칙이다.'
+- item_id: KOR-ON3-027
   archetype: A2_STUDENT_TEXT_ERRORS
   stem: '[제47항] <보기>의 [A]에 들어갈 말로 적절한 것은?'
   view:
@@ -2469,7 +1857,7 @@ items:
   second_best: 1
   difficulty: D4
   family: ERROR_CORRECTION
-  balance: ADVANCED_DISCRIMINATION
+  balance: CORE_EXAM_POINT
   reasoning_steps: 3
   immediate_elimination: 1
   transfer: true
@@ -2478,7 +1866,7 @@ items:
   judgments:
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-036-1
+    claim: KOR-ON3-027-1
     ev:
     - VIEW
     - OPTION1
@@ -2487,7 +1875,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-036-2
+    claim: KOR-ON3-027-2
     ev:
     - VIEW
     - OPTION2
@@ -2496,7 +1884,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-036-3
+    claim: KOR-ON3-027-3
     ev:
     - VIEW
     - OPTION3
@@ -2504,7 +1892,7 @@ items:
     why: ㉢ '미안해하는', ㉤ '뛰어나가 보시더니', ㉥ '화해하고 싶어졌다'로 고쳐야 한다.
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-036-4
+    claim: KOR-ON3-027-4
     ev:
     - VIEW
     - OPTION4
@@ -2513,14 +1901,14 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-036-5
+    claim: KOR-ON3-027-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: ㉡, ㉣은 허용되는 표기이다.
     trap: T6_PARTIAL_SET
-- item_id: KOR-ON3-037
+- item_id: KOR-ON3-028
   archetype: A5_EXAMPLE_MULTI_JUDGMENT
   stem: '[제43·44항] 단위 명사와 수의 띄어쓰기에 대한 판단으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?'
   view:
@@ -2547,7 +1935,7 @@ items:
   judgments:
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-037-1
+    claim: KOR-ON3-028-1
     ev:
     - VIEW
     - OPTION1
@@ -2555,7 +1943,7 @@ items:
     why: '정답 근거: 해설 참고.'
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-037-2
+    claim: KOR-ON3-028-2
     ev:
     - VIEW
     - OPTION2
@@ -2564,7 +1952,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: WEAK
-    claim: KOR-ON3-037-3
+    claim: KOR-ON3-028-3
     ev:
     - VIEW
     - OPTION3
@@ -2573,7 +1961,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-037-4
+    claim: KOR-ON3-028-4
     ev:
     - VIEW
     - OPTION4
@@ -2582,14 +1970,14 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-037-5
+    claim: KOR-ON3-028-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: ㄷ, ㄹ은 옳지 않다.
     trap: T6_PARTIAL_SET
-- item_id: KOR-ON3-038
+- item_id: KOR-ON3-029
   archetype: A1_GENERAL_RULE_MAPPING
   stem: '[제41·42항] <보기>의 해설을 바탕으로 탐구한 내용으로 가장 적절한 것은?'
   view:
@@ -2597,11 +1985,11 @@ items:
   - '(예) -쯤: 열 명쯤 / -씩: 하나씩 / -짜리: 백 원짜리 / -님: 사장님'
   options:
   - '"하나씩"의 ''-씩''은 의존 명사이므로 ''하나 씩''으로 띄어 쓴다.'
-  - '"사장님"의 ''-님''은 높임의 뜻을 더하는 의존 명사이므로 띄어 쓴다.'
   - '"열 명쯤"의 ''-쯤''은 접미사이므로 ''명쯤''으로 붙여 쓴다.'
+  - '"사장님"의 ''-님''은 높임의 뜻을 더하는 의존 명사이므로 띄어 쓴다.'
   - '"백 원짜리"의 ''짜리''는 의존 명사이므로 ''백 원 짜리''로 띄어 쓴다.'
   - '"이틀간"의 ''간''은 관계를 나타내는 말이므로 ''이틀 간''으로 띄어 쓴다.'
-  answer: 3
+  answer: 2
   second_best: 1
   difficulty: D2
   family: VIEW_APPLICATION
@@ -2614,7 +2002,7 @@ items:
   judgments:
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-038-1
+    claim: KOR-ON3-029-1
     ev:
     - VIEW
     - OPTION1
@@ -2622,25 +2010,25 @@ items:
     why: '''-씩''은 접미사이다.'
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-038-2
+    c: CORRECT
+    claim: KOR-ON3-029-2
     ev:
     - VIEW
     - OPTION2
+    v: true
+    why: '정답 근거: 해설 참고.'
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-029-3
+    ev:
+    - VIEW
+    - OPTION3
     v: false
     why: 직위 뒤의 '-님'은 접미사이다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-038-3
-    ev:
-    - VIEW
-    - OPTION3
-    v: true
-    why: '정답 근거: 해설 참고.'
-  - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-038-4
+    claim: KOR-ON3-029-4
     ev:
     - VIEW
     - OPTION4
@@ -2649,14 +2037,14 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-038-5
+    claim: KOR-ON3-029-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: 기간을 나타내는 접미사 '-간'이다.
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
-- item_id: KOR-ON3-039
+- item_id: KOR-ON3-030
   archetype: A3_CONDITION_CLASSIFICATION
   stem: '[제42항] <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?'
   view:
@@ -2681,7 +2069,7 @@ items:
   judgments:
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-039-1
+    claim: KOR-ON3-030-1
     ev:
     - VIEW
     - OPTION1
@@ -2689,7 +2077,7 @@ items:
     why: ㉠ '-ㄹ걸', ㉢ '-ㄴ바', ㉤ '-는데'는 어미(Ⓐ), ㉣ '바'는 의존 명사(Ⓑ), ㉡ '걸'은 '것을'의 준말(Ⓒ)이다.
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-039-2
+    claim: KOR-ON3-030-2
     ev:
     - VIEW
     - OPTION2
@@ -2698,7 +2086,7 @@ items:
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-039-3
+    claim: KOR-ON3-030-3
     ev:
     - VIEW
     - OPTION3
@@ -2707,7 +2095,7 @@ items:
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-039-4
+    claim: KOR-ON3-030-4
     ev:
     - VIEW
     - OPTION4
@@ -2716,81 +2104,14 @@ items:
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: WEAK
-    claim: KOR-ON3-039-5
+    claim: KOR-ON3-030-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: ㉠, ㉢은 Ⓐ이다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
-- item_id: KOR-ON3-040
-  archetype: A6_RULE_CASE_EXPLANATION
-  stem: '[제41·43항] <보기>를 바탕으로 탐구한 내용으로 적절하지 않은 것은?'
-  view:
-  - '[해설] 접미사 ''-째''는 ''차례''나 ''그대로'', ''동안''의 뜻을 더하며 앞말에 붙여 쓴다.'
-  - (예) 둘째, 사흘째, 그릇째 / 세 번째(단위 명사 '번' + '-째')
-  options:
-  - '"사흘째 비가 내린다"의 ''-째''는 접미사이므로 붙여 쓴다.'
-  - '''째''는 수 뒤에서 의존 명사로 쓰이므로 "두 째 아들"처럼 띄어 쓴다.'
-  - '"그릇째 들고 마셨다"의 ''-째''도 접미사이므로 붙여 쓴다.'
-  - '"세 번째"는 ''번''이 단위 명사이므로 ''세''와 띄어 쓰고 ''-째''는 ''번''에 붙여 쓴다.'
-  - '"둘째 아들"의 ''둘째''는 앞말에 ''-째''가 붙은 말이므로 붙여 쓴다.'
-  answer: 2
-  second_best: 4
-  difficulty: D2
-  family: CASE_APPLICATION
-  balance: CORE_EXAM_POINT
-  reasoning_steps: 1
-  immediate_elimination: 1
-  transfer: true
-  stem_polarity: NEGATIVE
-  topic: 제41·43항
-  judgments:
-  - axis: orthography
-    c: WEAK
-    claim: KOR-ON3-040-1
-    ev:
-    - VIEW
-    - OPTION1
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-  - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-040-2
-    ev:
-    - VIEW
-    - OPTION2
-    v: false
-    why: '''-째''는 접미사이므로 ''둘째 아들''로 쓴다.'
-  - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-040-3
-    ev:
-    - VIEW
-    - OPTION3
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-  - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-040-4
-    ev:
-    - VIEW
-    - OPTION4
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-  - axis: orthography
-    c: MEDIUM
-    claim: KOR-ON3-040-5
-    ev:
-    - VIEW
-    - OPTION5
-    v: true
-    why: 보기의 조항·자료에 비추어 바른 설명이다.
-    trap: T5_RULE_JURISDICTION
-- item_id: KOR-ON3-041
+- item_id: KOR-ON3-031
   archetype: A2_STUDENT_TEXT_ERRORS
   stem: '[종합] <보기>의 [A]에 들어갈 말로 적절한 것은?'
   view:
@@ -2821,7 +2142,7 @@ items:
   judgments:
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-041-1
+    claim: KOR-ON3-031-1
     ev:
     - VIEW
     - OPTION1
@@ -2830,7 +2151,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-041-2
+    claim: KOR-ON3-031-2
     ev:
     - VIEW
     - OPTION2
@@ -2839,7 +2160,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-041-3
+    claim: KOR-ON3-031-3
     ev:
     - VIEW
     - OPTION3
@@ -2848,7 +2169,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-041-4
+    claim: KOR-ON3-031-4
     ev:
     - VIEW
     - OPTION4
@@ -2856,14 +2177,14 @@ items:
     why: ㉢ '셀 수 없이', ㉤ '열한 시까지', ㉥ '할머니 댁'으로 고쳐야 한다.
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-041-5
+    claim: KOR-ON3-031-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: ㉡은 바르다.
     trap: T6_PARTIAL_SET
-- item_id: KOR-ON3-042
+- item_id: KOR-ON3-032
   archetype: A4_INQUIRY_DIALOGUE_CHECK
   stem: '[제43·44항] <보기>의 ㉠~㉤ 중 고쳐야 할 학생의 설명은?'
   view:
@@ -2893,7 +2214,7 @@ items:
   judgments:
   - axis: orthography
     c: WEAK
-    claim: KOR-ON3-042-1
+    claim: KOR-ON3-032-1
     ev:
     - VIEW
     - OPTION1
@@ -2902,7 +2223,7 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-042-2
+    claim: KOR-ON3-032-2
     ev:
     - VIEW
     - OPTION2
@@ -2911,7 +2232,7 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-042-3
+    claim: KOR-ON3-032-3
     ev:
     - VIEW
     - OPTION3
@@ -2920,7 +2241,7 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-042-4
+    claim: KOR-ON3-032-4
     ev:
     - VIEW
     - OPTION4
@@ -2929,13 +2250,13 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-042-5
+    claim: KOR-ON3-032-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: '''총-''은 ''전체를 합한''의 뜻을 더하는 접두사이므로 ''총예산''으로 붙여 쓴다.'
-- item_id: KOR-ON3-043
+- item_id: KOR-ON3-033
   archetype: A1_GENERAL_RULE_MAPPING
   stem: '[제2항] <보기>의 사전 자료를 바탕으로 탐구한 내용으로 가장 적절한 것은?'
   view:
@@ -2961,7 +2282,7 @@ items:
   judgments:
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-043-1
+    claim: KOR-ON3-033-1
     ev:
     - VIEW
     - OPTION1
@@ -2969,7 +2290,7 @@ items:
     why: '정답 근거: 해설 참고.'
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-043-2
+    claim: KOR-ON3-033-2
     ev:
     - VIEW
     - OPTION2
@@ -2978,7 +2299,7 @@ items:
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-043-3
+    claim: KOR-ON3-033-3
     ev:
     - VIEW
     - OPTION3
@@ -2987,7 +2308,7 @@ items:
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-043-4
+    claim: KOR-ON3-033-4
     ev:
     - VIEW
     - OPTION4
@@ -2996,14 +2317,14 @@ items:
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-043-5
+    claim: KOR-ON3-033-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: 부정의 부사 '안'과 '되다'가 결합한 것이다.
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
-- item_id: KOR-ON3-044
+- item_id: KOR-ON3-034
   archetype: A3_CONDITION_CLASSIFICATION
   stem: '[제47항] <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?'
   view:
@@ -3012,10 +2333,10 @@ items:
   options:
   - Ⓐ ㉠, ㉢   Ⓑ ㉡, ㉣   Ⓒ ㉤
   - Ⓐ ㉠, ㉤   Ⓑ ㉡, ㉣   Ⓒ ㉢
+  - Ⓐ ㉠   Ⓑ ㉡, ㉣   Ⓒ ㉢, ㉤
   - Ⓐ ㉠   Ⓑ ㉡   Ⓒ ㉢, ㉣, ㉤
   - Ⓐ ㉠, ㉣   Ⓑ ㉡   Ⓒ ㉢, ㉤
-  - Ⓐ ㉠   Ⓑ ㉡, ㉣   Ⓒ ㉢, ㉤
-  answer: 5
+  answer: 3
   second_best: 1
   difficulty: D3
   family: COMPARISON_MATRIX
@@ -3028,7 +2349,7 @@ items:
   judgments:
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-044-1
+    claim: KOR-ON3-034-1
     ev:
     - VIEW
     - OPTION1
@@ -3037,7 +2358,7 @@ items:
     trap: T2_EXCEPTION_CONDITION
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-044-2
+    claim: KOR-ON3-034-2
     ev:
     - VIEW
     - OPTION2
@@ -3045,32 +2366,32 @@ items:
     why: ㉤ '-지 않다'는 Ⓒ이다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
-    c: STRONG
-    claim: KOR-ON3-044-3
+    c: CORRECT
+    claim: KOR-ON3-034-3
     ev:
     - VIEW
     - OPTION3
+    v: true
+    why: ㉠은 Ⓐ, ㉡ '성싶다'·㉣ '만하다'는 Ⓑ, ㉢ '-고 싶다'·㉤ '-지 않다'는 Ⓒ이다.
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-034-4
+    ev:
+    - VIEW
+    - OPTION4
     v: false
     why: ㉣ '만하다'는 의존 명사에 '-하다'가 붙은 Ⓑ이다.
     trap: T4_SAME_FORM_OTHER_FUNCTION
   - axis: orthography
     c: WEAK
-    claim: KOR-ON3-044-4
-    ev:
-    - VIEW
-    - OPTION4
-    v: false
-    why: ㉣은 Ⓑ이다.
-    trap: T4_SAME_FORM_OTHER_FUNCTION
-  - axis: orthography
-    c: CORRECT
-    claim: KOR-ON3-044-5
+    claim: KOR-ON3-034-5
     ev:
     - VIEW
     - OPTION5
-    v: true
-    why: ㉠은 Ⓐ, ㉡ '성싶다'·㉣ '만하다'는 Ⓑ, ㉢ '-고 싶다'·㉤ '-지 않다'는 Ⓒ이다.
-- item_id: KOR-ON3-045
+    v: false
+    why: ㉣은 Ⓑ이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+- item_id: KOR-ON3-035
   archetype: A5_EXAMPLE_MULTI_JUDGMENT
   stem: '[제41·42·45항] 띄어쓰기에 대한 판단으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?'
   view:
@@ -3097,7 +2418,7 @@ items:
   judgments:
   - axis: orthography
     c: WEAK
-    claim: KOR-ON3-045-1
+    claim: KOR-ON3-035-1
     ev:
     - VIEW
     - OPTION1
@@ -3106,7 +2427,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: CORRECT
-    claim: KOR-ON3-045-2
+    claim: KOR-ON3-035-2
     ev:
     - VIEW
     - OPTION2
@@ -3114,7 +2435,7 @@ items:
     why: '정답 근거: 해설 참고.'
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-045-3
+    claim: KOR-ON3-035-3
     ev:
     - VIEW
     - OPTION3
@@ -3123,7 +2444,7 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: MEDIUM
-    claim: KOR-ON3-045-4
+    claim: KOR-ON3-035-4
     ev:
     - VIEW
     - OPTION4
@@ -3132,13 +2453,710 @@ items:
     trap: T6_PARTIAL_SET
   - axis: orthography
     c: STRONG
-    claim: KOR-ON3-045-5
+    claim: KOR-ON3-035-5
     ev:
     - VIEW
     - OPTION5
     v: false
     why: ㄷ은 옳지 않다.
     trap: T6_PARTIAL_SET
+- item_id: KOR-ON3-036
+  archetype: A4_INQUIRY_DIALOGUE_CHECK
+  stem: '[제41·42항] <보기>의 ㉠~㉤ 중 고쳐야 할 학생의 설명은?'
+  view:
+  - '선생님: 앞말과 붙여 쓰는 말과 띄어 쓰는 말을 구별해 설명해 볼까요?'
+  - '학생: ㉠''집에서처럼''은 조사 ''에서''와 ''처럼''이 이어진 것이라 붙여 써요.'
+  - ㉡'떠난 지 사흘 만에'의 '만'은 시간의 경과를 나타내는 의존 명사라 띄어 써요.
+  - ㉢'너만큼은'의 '만큼'은 체언 뒤에 붙은 조사라서 붙여 써요.
+  - ㉣'얼마나 슬펐는지 몰라'의 '지'는 의존 명사이므로 '슬펐는 지'로 띄어 써야 해요.
+  - ㉤'공부하는데 친구가 왔다'의 '-는데'는 어미라서 붙여 써요.
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 4
+  second_best: 2
+  difficulty: D2
+  family: EXCEPT_INCORRECT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  topic: 제41·42항
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: KOR-ON3-036-1
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 보기의 조항·자료에 비추어 바른 설명이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-036-2
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 보기의 조항·자료에 비추어 바른 설명이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: MEDIUM
+    claim: KOR-ON3-036-3
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 보기의 조항·자료에 비추어 바른 설명이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: CORRECT
+    claim: KOR-ON3-036-4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''-는지''는 막연한 의문을 나타내는 어미이므로 ''슬펐는지''로 붙여 쓴다.'
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-036-5
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: 보기의 조항·자료에 비추어 바른 설명이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+- item_id: KOR-ON3-037
+  archetype: A1_GENERAL_RULE_MAPPING
+  stem: '[제47항] <보기>의 한글 맞춤법 조항을 바탕으로 탐구한 내용으로 가장 적절한 것은?'
+  view:
+  - 제47항 보조 용언은 띄어 씀을 원칙으로 하되, 경우에 따라 붙여 씀도 허용한다.
+  - 다만, 앞말에 조사가 붙거나 앞말이 합성 용언인 경우, 그리고 중간에 조사가 들어갈 적에는 그 뒤에 오는 보조 용언은 띄어 쓴다.
+  - ※ 붙여 쓰기가 허용되는 것은 '-아/-어' 뒤에 연결되는 보조 용언과, 의존 명사에 '-하다'나 '-싶다'가 붙어서 된 보조 용언이다.
+  options:
+  - '''불이 꺼져 간다''는 ''꺼져간다''로 붙여 쓸 수 있고, ''책을 읽어도 보았다''는 ''읽어도보았다''로 붙여 쓸 수 없다.'
+  - '''아는 척하다''는 ''아는척하다''로 붙여 쓸 수 있고, ''비가 올 듯하다''는 ''올듯하다''로 붙여 쓸 수 없다.'
+  - '''그릇을 깨뜨려 버렸다''는 ''깨뜨려버렸다''로 붙여 쓸 수 있고, ''덤벼들어 보아라''도 ''덤벼들어보아라''로 붙여 쓸 수 있다.'
+  - '''책을 읽고 싶다''는 ''읽고싶다''로 붙여 쓸 수 없고, ''비가 올 성싶다''도 ''올성싶다''로 붙여 쓸 수 없다.'
+  - '''책을 읽어는 보았다''는 ''읽어는보았다''로 붙여 쓸 수 있고, ''잘난 체하다''는 ''잘난체하다''로 붙여 쓸 수 있다.'
+  answer: 1
+  second_best: 2
+  difficulty: D4
+  family: VIEW_APPLICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  topic: 제47항
+  judgments:
+  - axis: orthography
+    c: CORRECT
+    claim: KOR-ON3-037-1
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: '정답 근거: 해설 참고.'
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-037-2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''듯하다''는 의존 명사에 ''-하다''가 붙은 보조 용언이므로 ''올듯하다''로 붙여 쓸 수 있다.'
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-037-3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''덤벼들다''는 합성 용언이므로 뒤의 보조 용언을 붙여 쓸 수 없다.'
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-037-4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''성싶다''는 의존 명사에 ''-싶다''가 붙은 보조 용언이므로 ''올성싶다''로 붙여 쓸 수 있다.'
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: MEDIUM
+    claim: KOR-ON3-037-5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: 앞말에 조사 '는'이 붙었으므로 붙여 쓸 수 없다.
+    trap: T3_ONE_OF_TWO_WRONG
+- item_id: KOR-ON3-038
+  archetype: A2_STUDENT_TEXT_ERRORS
+  stem: '[제41·42·47항] <보기>의 [A]에 들어갈 말로 적절한 것은?'
+  view:
+  - '학생: 영화 본 날 SNS에 올릴 글이에요. 띄어쓰기를 점검해 주세요.'
+  - 오늘은 ㉠친구와 함께 영화를 봤다.
+  - 영화관 ㉡앞에서부터 줄이 길었다.
+  - 표를 ㉢사고나서 팝콘을 샀다.
+  - 영화는 ㉣생각했던것보다 재미있었다.
+  - 영화관 밖으로 ㉤나왔는 데 비가 오고 있었다.
+  - ㉥내일모레 또 보기로 했다.
+  - '선생님: 띄어쓰기가 틀린 곳은 [A]란다.'
+  options:
+  - ㉡, ㉢, ㉣
+  - ㉢, ㉣, ㉤
+  - ㉠, ㉢, ㉥
+  - ㉢, ㉤, ㉥
+  - ㉡, ㉣, ㉤
+  answer: 2
+  second_best: 1
+  difficulty: D3
+  family: ERROR_CORRECTION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  topic: 제41·42·47항
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-038-1
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉡ '앞에서부터'는 조사가 이어진 것으로 붙여 쓴 것이 바르다.
+    trap: T2_EXCEPTION_CONDITION
+  - axis: orthography
+    c: CORRECT
+    claim: KOR-ON3-038-2
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: ㉢ '사고 나서'('-고' 뒤 보조 용언은 붙여 쓸 수 없음), ㉣ '생각했던 것보다'(의존 명사), ㉤ '나왔는데'(뒤 내용의 배경을 제시하는 어미)로 고쳐야 한다.
+  - axis: orthography
+    c: WEAK
+    claim: KOR-ON3-038-3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉠, ㉥은 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-038-4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉥ '내일모레'는 한 단어로 붙여 쓴다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-038-5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉡은 바르다.
+    trap: T6_PARTIAL_SET
+- item_id: KOR-ON3-039
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  stem: '[제44~46항] 수와 열거하는 말의 띄어쓰기에 대한 판단으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?'
+  view:
+  - ㄱ. '십이억 삼천사백오십육만 칠천팔백구십팔'은 '만' 단위로 띄어 쓴 것이다.
+  - ㄴ. '국장 겸 과장'의 '겸'은 두 말을 이어 주므로 띄어 쓴다.
+  - ㄷ. '열 내지 스물'의 '내지'는 앞말에 붙여 쓴다.
+  - ㄹ. '사과, 배, 귤 등등'의 '등등'은 앞말에 붙여 쓴다.
+  - ㅁ. '좀 더 큰 것'은 단음절로 된 단어가 연이어 나타나므로 '좀더 큰것'으로 붙여 쓸 수 있다.
+  options:
+  - ㄱ, ㄴ, ㅁ
+  - ㄱ, ㄴ
+  - ㄱ, ㅁ
+  - ㄴ, ㄷ, ㄹ
+  - ㄱ, ㄴ, ㄷ, ㅁ
+  answer: 1
+  second_best: 3
+  difficulty: D3
+  family: MULTI_JUDGMENT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  topic: 제44~46항
+  judgments:
+  - axis: orthography
+    c: CORRECT
+    claim: KOR-ON3-039-1
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: '정답 근거: 해설 참고.'
+  - axis: orthography
+    c: MEDIUM
+    claim: KOR-ON3-039-2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㅁ도 옳다(제46항).
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-039-3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㄴ도 옳다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: KOR-ON3-039-4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㄷ, ㄹ은 옳지 않다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-039-5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㄷ은 옳지 않다. '내지'도 띄어 쓴다(제45항).
+    trap: T6_PARTIAL_SET
+- item_id: KOR-ON3-040
+  archetype: A3_CONDITION_CLASSIFICATION
+  stem: '[제41·42항] <보기 1>을 바탕으로 <보기 2>의 [ ] 표시 부분을 분류한 것으로 가장 적절한 것은?'
+  view:
+  - <보기 1> Ⓐ조사는 앞말에 붙여 쓴다. Ⓑ의존 명사는 앞말과 띄어 쓴다. Ⓒ어미의 일부는 어간에 붙여 쓴다.
+  - <보기 2> ㉠ 본 [대로] 말해라.   ㉡ 너[대로] 해 봐.   ㉢ 비가 올[지] 모르겠다.   ㉣ 이곳에 온 [지] 일 년이 되었다.   ㉤ 그때 미리 갈[걸] 그랬다.
+  options:
+  - Ⓐ ㉠, ㉡   Ⓑ ㉣   Ⓒ ㉢, ㉤
+  - Ⓐ ㉡   Ⓑ ㉠, ㉣   Ⓒ ㉢, ㉤
+  - Ⓐ ㉡   Ⓑ ㉠, ㉣, ㉤   Ⓒ ㉢
+  - Ⓐ ㉡, ㉤   Ⓑ ㉠, ㉣   Ⓒ ㉢
+  - Ⓐ ㉡   Ⓑ ㉠, ㉢, ㉣   Ⓒ ㉤
+  answer: 2
+  second_best: 1
+  difficulty: D3
+  family: COMPARISON_MATRIX
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  topic: 제41·42항
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-040-1
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉠ '본 대로'의 '대로'는 관형사형 뒤의 의존 명사이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: KOR-ON3-040-2
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: ㉡은 조사, ㉠ 관형사형 뒤 '대로'와 ㉣ 시간 경과의 '지'는 의존 명사, ㉢ '-ㄹ지'와 ㉤ 후회의 '-ㄹ걸'은 어미이다.
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-040-3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉤ 후회를 나타내는 '-ㄹ걸'은 어미이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: KOR-ON3-040-4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉤은 조사가 아니라 어미이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-040-5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉢ '-ㄹ지'는 어미이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+- item_id: KOR-ON3-041
+  archetype: A6_RULE_CASE_EXPLANATION
+  stem: '[제48~50항] <보기>를 바탕으로 탐구한 내용으로 적절하지 않은 것은?'
+  view:
+  - 제48항 성과 이름, 성과 호 등은 붙여 쓰고, 이에 덧붙는 호칭어, 관직명 등은 띄어 쓴다. 다만, 성과 이름, 성과 호를 분명히 구분할 필요가 있을 경우에는 띄어 쓸 수 있다.
+  - 제49항 성명 이외의 고유 명사는 단어별로 띄어 씀을 원칙으로 하되, 단위별로 띄어 쓸 수 있다.
+  - 제50항 전문 용어는 단어별로 띄어 씀을 원칙으로 하되, 붙여 쓸 수 있다.
+  options:
+  - '''서울 대공원''처럼 고유 명사는 단어별로 띄어 쓰는 것만 허용된다.'
+  - '''대한 중학교''는 원칙에 따른 표기이고, ''대한중학교''는 허용되는 표기이다.'
+  - '''만성 골수성 백혈병''은 원칙이고, ''만성골수성백혈병''도 허용된다.'
+  - '''남궁억''은 성과 이름을 구분할 필요가 있으면 ''남궁 억''으로 띄어 쓸 수 있다.'
+  - '''박동식 박사''의 ''박사''는 덧붙는 호칭어이므로 띄어 쓴다.'
+  answer: 1
+  second_best: 4
+  difficulty: D2
+  family: CASE_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  topic: 제48~50항
+  judgments:
+  - axis: orthography
+    c: CORRECT
+    claim: KOR-ON3-041-1
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: 제49항에 따라 단위별로 띄어 쓴 '서울대공원'도 허용된다.
+  - axis: orthography
+    c: MEDIUM
+    claim: KOR-ON3-041-2
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 보기의 조항·자료에 비추어 바른 설명이다.
+    trap: T5_RULE_JURISDICTION
+  - axis: orthography
+    c: MEDIUM
+    claim: KOR-ON3-041-3
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 보기의 조항·자료에 비추어 바른 설명이다.
+    trap: T5_RULE_JURISDICTION
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-041-4
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 보기의 조항·자료에 비추어 바른 설명이다.
+    trap: T5_RULE_JURISDICTION
+  - axis: orthography
+    c: WEAK
+    claim: KOR-ON3-041-5
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: 보기의 조항·자료에 비추어 바른 설명이다.
+    trap: T5_RULE_JURISDICTION
+- item_id: KOR-ON3-042
+  archetype: A4_INQUIRY_DIALOGUE_CHECK
+  stem: '[제42항] <보기>의 ㉠~㉤ 중 고쳐야 할 학생의 설명은?'
+  view:
+  - '선생님: ''-ㄹ걸''과 ''-ㄴ바''처럼 형태가 같은 말을 구별해 볼까요?'
+  - '학생: ㉠"내가 먼저 사과할걸."의 ''-ㄹ걸''은 후회를 나타내는 종결 어미라서 붙여 써요.'
+  - ㉡"그가 벌써 왔을걸."의 '-ㄹ걸'은 추측을 나타내는 종결 어미라서 붙여 써요.
+  - ㉢"네가 좋아할 걸 골랐어."의 '걸'은 '것을'이 줄어든 말이라서 띄어 써요.
+  - ㉣"내가 들은 바와 같다."의 '바'는 의존 명사라서 띄어 써요.
+  - ㉤"조사한바 사실과 달랐다."의 '-ㄴ바'는 의존 명사 '바'가 쓰인 것이라 '조사한 바'로 띄어 써야 해요.
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 5
+  second_best: 2
+  difficulty: D3
+  family: EXCEPT_INCORRECT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  topic: 제42항
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: KOR-ON3-042-1
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 보기의 조항·자료에 비추어 바른 설명이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-042-2
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 보기의 조항·자료에 비추어 바른 설명이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-042-3
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 보기의 조항·자료에 비추어 바른 설명이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: MEDIUM
+    claim: KOR-ON3-042-4
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 보기의 조항·자료에 비추어 바른 설명이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: CORRECT
+    claim: KOR-ON3-042-5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: 앞 절의 내용을 제시하며 뒤 절과 이어 주는 '-ㄴ바'는 어미이므로 '조사한바'로 붙여 쓴다.
+- item_id: KOR-ON3-043
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  stem: '[제2·41·42항] 같은 형태가 쓰인 말의 띄어쓰기에 대한 판단으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?'
+  view:
+  - ㄱ. '시험 삼아 해 보다'의 뜻으로 쓰인 "한번 해 보자"의 '한번'은 한 단어이므로 붙여 쓴다.
+  - ㄴ. '형제간'의 '간'은 관계를 나타내는 의존 명사이므로 '형제 간'으로 띄어 쓴다.
+  - ㄷ. '이틀간'의 '-간'은 기간을 나타내는 접미사이므로 붙여 쓴다.
+  - ㄹ. '서울과 부산 간'의 '간'도 접미사이므로 '부산간'으로 붙여 쓴다.
+  - ㅁ. "인사차 들렀다"의 '-차'는 목적을 나타내는 접미사이므로 붙여 쓴다.
+  options:
+  - ㄱ, ㄷ
+  - ㄷ, ㅁ
+  - ㄱ, ㄷ, ㅁ
+  - ㄱ, ㄴ, ㄹ
+  - ㄴ, ㄷ, ㄹ, ㅁ
+  answer: 3
+  second_best: 2
+  difficulty: D3
+  family: MULTI_JUDGMENT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  topic: 제2·41·42항
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: KOR-ON3-043-1
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㅁ도 옳다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-043-2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㄱ도 옳다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: KOR-ON3-043-3
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: '정답 근거: 해설 참고.'
+  - axis: orthography
+    c: WEAK
+    claim: KOR-ON3-043-4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㄴ, ㄹ은 옳지 않다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-043-5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㄴ은 '형제간'이 한 단어이고, ㄹ은 거리를 나타내는 의존 명사 '간'이므로 띄어 써야 한다.
+    trap: T6_PARTIAL_SET
+- item_id: KOR-ON3-044
+  archetype: A2_STUDENT_TEXT_ERRORS
+  stem: '[제47항] <보기>의 [A]에 들어갈 말로 적절한 것은?'
+  view:
+  - '학생: 비 오는 날 쓴 일기예요. 보조 용언의 띄어쓰기를 점검해 주세요.'
+  - 하늘을 보니 비가 ㉠올듯하다.
+  - 현관에 우산을 ㉡챙겨두었다.
+  - 식탁 위 과자는 동생이 ㉢먹어치웠나 보다.
+  - 나는 아까운 마음에 결국 ㉣울고말았다.
+  - 개울에 ㉤떠내려가버린 공도 찾지 못했다.
+  - 동생은 내 말을 ㉥들은척도 하지 않았다.
+  - '선생님: 띄어쓰기가 틀린 곳은 [A]란다.'
+  options:
+  - ㉠, ㉡, ㉣
+  - ㉡, ㉢, ㉤
+  - ㉣, ㉤, ㉥
+  - ㉠, ㉤, ㉥
+  - ㉢, ㉣, ㉥
+  answer: 3
+  second_best: 1
+  difficulty: D4
+  family: ERROR_CORRECTION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  topic: 제47항
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-044-1
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉠ '올듯하다'는 의존 명사에 '-하다'가 붙은 보조 용언으로 붙여 쓰기가 허용된다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-044-2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉡, ㉢은 '-어' 뒤 보조 용언으로 붙여 쓰기가 허용된다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: KOR-ON3-044-3
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: '정답 근거: 해설 참고.'
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-044-4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉠은 허용되는 표기이다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-044-5
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉢은 허용되는 표기이다.
+    trap: T6_PARTIAL_SET
+- item_id: KOR-ON3-045
+  archetype: A1_GENERAL_RULE_MAPPING
+  stem: '[제41·42항] 같은 형태의 말이 쓰인 문장 짝에 대한 판단으로 가장 적절한 것은?'
+  view:
+  - '[참고] 조사는 앞말에 붙여 쓰고, 의존 명사는 앞말과 띄어 쓴다. 접미사는 앞말에 붙여 쓴다.'
+  options:
+  - '"집채만 한 파도"의 ''만''은 조사이고, "십 년 만에"의 ''만''도 조사이다.'
+  - '"먹을 만큼"의 ''만큼''은 조사이고, "나만큼"의 ''만큼''은 의존 명사이다.'
+  - '"아는 대로"의 ''대로''는 의존 명사이고, "법대로"의 ''대로''도 의존 명사이다.'
+  - '"학생들"의 ''-들''은 접미사이고, "사과, 배, 감 들"의 ''들''도 접미사이다.'
+  - '"너뿐이야"의 ''뿐''은 조사이고, "웃을 뿐이었다"의 ''뿐''은 의존 명사이다.'
+  answer: 5
+  second_best: 1
+  difficulty: D4
+  family: VIEW_APPLICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  topic: 제41·42항
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-045-1
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: 시간의 경과를 나타내는 '만'은 의존 명사이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: MEDIUM
+    claim: KOR-ON3-045-2
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: 관형사형 뒤 '만큼'은 의존 명사, 체언 뒤 '만큼'은 조사이다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-045-3
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: 체언 뒤의 '대로'는 조사이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: STRONG
+    claim: KOR-ON3-045-4
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: 열거한 사물을 가리키는 '들'은 의존 명사이므로 띄어 쓴다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: CORRECT
+    claim: KOR-ON3-045-5
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: '정답 근거: 해설 참고.'
 - item_id: KOR-ON3-046
   archetype: C1_CONSTRUCTED_BLANK_SENTENCE
   format: CR
