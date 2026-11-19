@@ -41,18 +41,6 @@ items:
   confidence: HIGH
   flags: []
   note: ''
-- item_id: KOR-OV1-004
-  answer: 2
-  first_pass_top3:
-  - 2
-  - 4
-  - 3
-  second_best: 4
-  difficulty: D3
-  confidence: LOW
-  flags:
-  - b
-  note: ①~⑤ 모두 참으로 보임(혜택 ㅖ, 게시판 본음 ㅔ, 무늬/희다 ㅢ, 의의 의); 적절하지 않은 선지 없음, 임의로 ② 선택
 - item_id: KOR-OV1-005
   answer: 3
   first_pass_top3:
@@ -120,18 +108,6 @@ items:
   confidence: HIGH
   flags: []
   note: ''
-- item_id: KOR-OV1-011
-  answer: 5
-  first_pass_top3:
-  - 5
-  - 2
-  - 4
-  second_best: 4
-  difficulty: D3
-  confidence: MEDIUM
-  flags:
-  - d
-  note: ⑤의 돌다 뜻과 드러나다가 들다에서 멀어졌다는 근거는 사전 자료에 없어 규정 예시(돌아가다/드러나다) 지식 필요
 - item_id: KOR-OV1-012
   answer: 5
   first_pass_top3:
@@ -537,3 +513,30 @@ items:
   flags: []
   difficulty: D3
   note: ㉠을 횟수 읽기로 볼 여지가 있어 약간 모호
+- item_id: KOR-OV1-004
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 5
+  - 1
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: 게시판의 한자 揭 본음은 '게'(계 아님) -> 2번 서술 오류. 나머지 참. 보기 조항 대조만으로 풀려 다소 쉬움.
+- item_id: KOR-OV1-011
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 1
+  - 2
+  second_best: 1
+  difficulty: D3
+  confidence: MEDIUM
+  flags:
+  - d
+  note: 1-4는 쓰러지다/흩어지다/벌어지다/들어가다가 모두 15항 붙임1 원형 표기 또는 소리대로 오류. 5는 돌아가다(원형)/드러나다(소리대로)
+    모두 맞음. 돌아가다 사전 뜻풀이와 원형 판단 연결이 다소 약함.
+  flag_adjudication:
+    d: '작성자 판정: 판단에 필요한 ''들다·드러나다·돌다·돌아가다'' 등의 사전 뜻풀이를 <보기>에 제시하여 뜻 비교로 본뜻 유지 여부를
+      판단할 수 있다(2026-11-19).'
