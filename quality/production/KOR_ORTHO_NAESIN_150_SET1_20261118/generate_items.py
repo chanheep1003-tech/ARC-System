@@ -42,7 +42,7 @@ mcq("A1_GENERAL_RULE_MAPPING", "D3", "<보기>의 한글 맞춤법 조항을 바
         (W, "소리와 표기가 같으면 ㉡(소리대로)이 그대로 적용된 것이다.")], topic="제1항")
 
 mcq("A6_RULE_CASE_EXPLANATION", "D4", "<보기>를 바탕으로 ㉠~㉣의 표기에 대해 탐구한 내용으로 적절하지 않은 것은?",
-    ["한글 맞춤법은 표준어를 소리대로 적되, 어법에 맞도록 함을 원칙으로 한다.",
+    ["제1항 한글 맞춤법은 표준어를 소리대로 적되, 어법에 맞도록 함을 원칙으로 한다.",
      "㉠ 읽고[일꼬]    ㉡ 굳이[구지]    ㉢ 마중    ㉣ 깨끗이[깨끄시]"],
     ["㉠은 [일꼬]로 소리 나지만 어간 '읽-'과 어미 '-고'를 구별해 어법에 맞도록 적었다.",
      "㉡은 구개음화로 [구지]로 소리 나지만 어간 '굳-'의 형태를 밝혀 적었다.",
@@ -713,7 +713,7 @@ mcq("A2_STUDENT_TEXT_ERRORS", "D4", "<보기>에서 고쳐야 할 표기를 모�
     fixed=True, topic="제21항")
 
 mcq("A6_RULE_CASE_EXPLANATION", "D4", "표기와 그 근거를 짝지은 것으로 적절하지 않은 것은?",
-    ["한글 맞춤법은 표준어를 소리대로 적되, 어법에 맞도록 함을 원칙으로 한다."],
+    ["제1항 한글 맞춤법은 표준어를 소리대로 적되, 어법에 맞도록 함을 원칙으로 한다."],
     ["'꽃이'를 [꼬치]로 적지 않는 것은 체언과 조사를 구별하는 원칙 때문이다.",
      "'먹어'를 [머거]로 적지 않는 것은 어간과 어미를 구별하는 원칙 때문이다.",
      "'웃음'을 [우슴]으로 적지 않는 것은 어간에 '-음'이 붙은 명사의 원형을 밝히는 원칙 때문이다.",
@@ -734,9 +734,14 @@ def _arts(topic):
         nums += list(range(int(a), int(b) + 1)) if b else [int(a)]
     return [n for n in nums if n in _RT]
 for _r in raw:
-    if any(_re3.search(r"제\d+항", v) for v in _r["view"]):
-        continue
-    _ns = _arts(_r.get("topic", ""))[:2]
+    if any(_re3.search(r"제\d+항", v) for v in _r["view"]) or any(v.startswith("<보기 1>") for v in _r["view"]):
+        continue  # 조항 원문 또는 조건 진술(<보기 1>)이 이미 있음
+    _ns, _tot = [], 0
+    _cap = (1080 - 20 * len(_r["view"]) - sum(len(v) for v in _r["view"]) - sum(len(o) for o in _r.get("opts", [])))
+    for _n in _arts(_r.get("topic", "")):
+        if _ns and _tot + len(_RT[_n]) > _cap:
+            break
+        _ns.append(_n); _tot += len(_RT[_n])
     if _ns:
         _r["view"] = ["[참고 조항]"] + [_RT[n] for n in _ns] + list(_r["view"])
 

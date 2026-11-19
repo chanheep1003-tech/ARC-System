@@ -716,9 +716,14 @@ def _arts(topic):
         nums += list(range(int(a), int(b) + 1)) if b else [int(a)]
     return [n for n in nums if n in _RT]
 for _r in raw:
-    if any(_re3.search(r"제\d+항", v) for v in _r["view"]):
-        continue
-    _ns = _arts(_r.get("topic", ""))[:2]
+    if any(_re3.search(r"제\d+항", v) for v in _r["view"]) or any(v.startswith("<보기 1>") for v in _r["view"]):
+        continue  # 조항 원문 또는 조건 진술(<보기 1>)이 이미 있음
+    _ns, _tot = [], 0
+    _cap = (1080 - 20 * len(_r["view"]) - sum(len(v) for v in _r["view"]) - sum(len(o) for o in _r.get("opts", [])))
+    for _n in _arts(_r.get("topic", "")):
+        if _ns and _tot + len(_RT[_n]) > _cap:
+            break
+        _ns.append(_n); _tot += len(_RT[_n])
     if _ns:
         _r["view"] = ["[참고 조항]"] + [_RT[n] for n in _ns] + list(_r["view"])
 
