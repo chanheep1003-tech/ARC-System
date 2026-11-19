@@ -74,3 +74,25 @@ Report gate names carry the subject (`SCI_EXAM_REALISM_GATE`, `SOC_SCHOOL_TASK_F
 Fixtures `quality/production/SCI_N_REDOX_SAMPLE_20261110` and `SOC_FINAL_SAMPLE_20261110` are synthetic layout/gate regressions (`tooling/production/test_subject_production.py`). Their blind review is derived from the key and marked `synthetic`; they run only as archived replay and are not publishable content.
 
 ARC_CORE for all three subjects goes through the handoff → typesetter gateway → CORE layout path covered by the CORE canaries; this pipeline is ARC_N / ARC_FINAL only.
+
+## Per-request plan (2026-11-19)
+
+ARC N° difficulty, item count and constructed-response count vary per request.
+Put the plan card into the bundle so the pipeline judges against it:
+
+```bash
+python tooling/arc.py plan --subject SCI --scope "B 46~62쪽" --count 24 \
+  --difficulty D2=0.2,D3=0.45,D4=0.3,D5=0.05 --advanced 0.35 --constructed 4 --save plan.yaml
+```
+
+```yaml
+plan:            # copied from plan.yaml (counts or shares are both accepted)
+  selected: 20
+  difficulty: {D2: 4, D3: 9, D4: 6, D5: 1}
+  advanced: 7
+learning_level: V4   # KOR only; used when `plan` is absent
+```
+
+Acceptance: each D-level share = plan ± max(10%p, 1 item); advanced share = plan ± max(5%p, 1 item).
+Bundles without `plan`/`learning_level` keep the legacy default band.
+ARC FINAL ignores `plan` difficulty and is judged against the Dongbuk anchor (same or slightly harder).

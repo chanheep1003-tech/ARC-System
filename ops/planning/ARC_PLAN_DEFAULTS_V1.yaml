@@ -1,4 +1,7 @@
 # 요청에 빠진 값을 채우는 기본값. 사용자가 말한 값이 항상 우선한다.
+# 2026-11-19 사용자 지시: ARC N°의 난도·문항 수·서답형 수는 요청마다 다르다.
+#   arc.py plan --count/--difficulty/--advanced/--constructed 로 요청값을 넣고, 이 파일은 빈 값만 채운다.
+#   생산 파이프라인은 번들의 plan: 값을 기준으로 판정한다 (tooling/production/README.md).
 schema: ARC-PLAN-DEFAULTS-V1
 date: 2026-11-11
 count_default: {KOR: 50, ENG: 50, SOC: 20, SCI: 20}
@@ -23,7 +26,7 @@ other_subjects:           # 사회·과학은 버전 사다리가 없다
   SOC: {difficulty: {D2: 0.30, D3: 0.45, D4: 0.22, D5: 0.03}, advanced: 0.25}
   SCI: {difficulty: {D2: 0.30, D3: 0.45, D4: 0.22, D5: 0.03}, advanced: 0.25}
   ENG: {difficulty: {D2: 0.15, D3: 0.45, D4: 0.30, D5: 0.10}, advanced: 0.30}   # N°는 D3~D5 변형 중심
-hard_limits:              # 기존 게이트와 같은 값. 계획이 이 범위를 벗어나면 계획 단계에서 거부한다.
+hard_limits:              # 기본값으로 채울 때만 적용. 사용자가 이번 요청 값을 말하면 그 값을 쓴다.
   advanced_share: [0.20, 0.30]
   d45_share_kor: [0.15, 0.35]
   d1_share_max: 0.10

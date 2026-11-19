@@ -110,6 +110,57 @@ SET_GATE_CODES = {
 }
 
 
+PLAN_DEFAULTS_PATH = ROOT / "ops/planning/ARC_PLAN_DEFAULTS_V1.yaml"
+
+
+def _bands_from_targets(difficulty: dict[str, Any], advanced: Any, n: int) -> dict[str, tuple[float, float]]:
+    """Per-request plan -> acceptance bands. Small sets get at least one item of slack."""
+    share_tol = max(0.10, 1.0 / max(1, n))
+    bands: dict[str, tuple[float, float]] = {}
+    for level in ("D1", "D2", "D3", "D4", "D5"):
+        if level in difficulty:
+            t = float(difficulty[level])
+            bands[level] = (max(0.0, t - share_tol), min(1.0, t + share_tol))
+    if {"D4", "D5"} <= set(difficulty):
+        t = float(difficulty["D4"]) + float(difficulty["D5"])
+        bands["D45"] = (max(0.0, t - share_tol), min(1.0, t + share_tol))
+    if advanced is not None:
+        a = float(advanced)
+        tol = max(0.05, 1.0 / max(1, n))
+        bands["ADVANCED"] = (max(0.0, a - tol), min(1.0, a + tol))
+    return bands
+
+
+def resolve_balance_profile(bundle: dict[str, Any], n: int) -> dict[str, tuple[float, float]] | None:
+    """ARC N difficulty/count vary per request (user directive 2026-11-19).
+
+    Priority: bundle `plan` (from `arc.py plan`) > KOR `learning_level` defaults > legacy PROFILES.
+    ARC_FINAL is judged against the school anchor, not here.
+    """
+    if bundle.get("product_mode") != "ARC_N":
+        return PROFILES.get((bundle.get("subject"), bundle.get("product_mode")))
+    plan = bundle.get("plan") if isinstance(bundle.get("plan"), dict) else None
+    if plan and (isinstance(plan.get("difficulty"), dict) or plan.get("advanced") is not None):
+        # `arc.py plan --save` stores item counts; hand-written plans may store shares.
+        diff = {k: float(v) for k, v in (plan.get("difficulty") or {}).items()}
+        total = sum(diff.values())
+        if total > 1.5:
+            diff = {k: v / total for k, v in diff.items()}
+            for level in ("D1", "D2", "D3", "D4", "D5"):
+                diff.setdefault(level, 0.0)
+        advanced = plan.get("advanced")
+        if advanced is not None and float(advanced) > 1:
+            advanced = float(advanced) / max(1.0, float(plan.get("selected") or total or n))
+        return _bands_from_targets(diff, advanced, n)
+    level = str(bundle.get("learning_level") or "").upper()
+    if bundle.get("subject") == "KOR" and level and PLAN_DEFAULTS_PATH.is_file():
+        versions = yaml.safe_load(PLAN_DEFAULTS_PATH.read_text(encoding="utf-8")).get("kor_versions", {})
+        if level in versions:
+            v = versions[level]
+            return _bands_from_targets(v.get("difficulty") or {}, v.get("advanced"), n)
+    return PROFILES.get((bundle.get("subject"), bundle.get("product_mode")))
+
+
 class PipelineError(RuntimeError):
     pass
 
@@ -517,7 +568,7 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
     if ai_hits:
         add("AI_STYLE_PHRASE", phrases=ai_hits)
 
-    profile = PROFILES.get((bundle["subject"], bundle["product_mode"]))
+    profile = resolve_balance_profile(bundle, n)
     balance = None
     if profile:
         shares = {d: diff.get(d, 0) / n for d in ("D1", "D2", "D3", "D4", "D5")}

@@ -15,6 +15,12 @@ DIFFICULTIES = {"D1", "D2", "D3", "D4", "D5"}
 TIME_CLASSES = {"SHORT", "STANDARD", "LONG"}
 
 
+HARDER_SHARE_MARGIN = 0.08
+HARDER_MEAN_MARGIN = 0.25
+FIXED_D12_MAX = 0.35
+FIXED_D45_MIN = 0.22
+
+
 def load_payload(path: Path) -> dict[str, Any]:
     text = path.read_text(encoding="utf-8")
     data = json.loads(text) if path.suffix.lower() == ".json" else yaml.safe_load(text)
@@ -154,15 +160,27 @@ def analyze(data: dict[str, Any]) -> dict[str, Any]:
                 ))
         prof, tol = anchor["profile"], anchor["tolerance"]
         d3_rate = difficulty_counts["D3"] / n
-        for name, got in (("D12", d12_rate), ("D3", d3_rate), ("D45", d45_rate)):
-            want = float(prof["shares"][name])
-            if abs(got - want) > float(tol["share"]):
-                easier = (name == "D45" and got < want) or (name == "D12" and got > want)
-                code = "FINAL_SCHOOL_ANCHOR_EASIER" if easier else "FINAL_SCHOOL_ANCHOR_SHARE_OFF"
-                findings.append(fail(code, f"{name} share {got:.2f} vs anchor {want:.2f} (±{float(tol['share']):.2f})"))
-        if abs(mean_level - float(prof["mean_level"])) > float(tol["mean_level"]):
-            code = "FINAL_SCHOOL_ANCHOR_EASIER" if mean_level < float(prof["mean_level"]) else "FINAL_SCHOOL_ANCHOR_HARDER"
-            findings.append(fail(code, f"mean level {mean_level:.2f} vs anchor {float(prof['mean_level']):.2f} (±{float(tol['mean_level']):.2f})"))
+        # Policy (user directive 2026-11-19): FINAL must match the Dongbuk anchor
+        # or be slightly harder. The easier side keeps the anchor tolerance; the
+        # harder side gets an extra allowance (anchor-overridable).
+        share_tol = float(tol["share"])
+        mean_tol = float(tol["mean_level"])
+        harder_share = float(tol.get("harder_share_margin", HARDER_SHARE_MARGIN))
+        harder_mean = float(tol.get("harder_mean_margin", HARDER_MEAN_MARGIN))
+        want12, want3, want45 = (float(prof["shares"][k]) for k in ("D12", "D3", "D45"))
+        if d45_rate < want45 - share_tol or d12_rate > want12 + share_tol:
+            findings.append(fail("FINAL_SCHOOL_ANCHOR_EASIER",
+                                 f"D12 {d12_rate:.2f}/D45 {d45_rate:.2f} vs anchor {want12:.2f}/{want45:.2f} (easier side ±{share_tol:.2f})"))
+        if d45_rate > want45 + share_tol + harder_share or d12_rate < want12 - share_tol - harder_share:
+            findings.append(fail("FINAL_SCHOOL_ANCHOR_HARDER",
+                                 f"D12 {d12_rate:.2f}/D45 {d45_rate:.2f} vs anchor {want12:.2f}/{want45:.2f} (harder side +{share_tol + harder_share:.2f})"))
+        if abs(d3_rate - want3) > share_tol + harder_share:
+            findings.append(fail("FINAL_SCHOOL_ANCHOR_SHARE_OFF", f"D3 share {d3_rate:.2f} vs anchor {want3:.2f} (±{share_tol + harder_share:.2f})"))
+        want_mean = float(prof["mean_level"])
+        if mean_level < want_mean - mean_tol:
+            findings.append(fail("FINAL_SCHOOL_ANCHOR_EASIER", f"mean level {mean_level:.2f} vs anchor {want_mean:.2f} (-{mean_tol:.2f})"))
+        elif mean_level > want_mean + mean_tol + harder_mean:
+            findings.append(fail("FINAL_SCHOOL_ANCHOR_HARDER", f"mean level {mean_level:.2f} vs anchor {want_mean:.2f} (+{mean_tol + harder_mean:.2f})"))
         if longest_rate > 0.30:
             findings.append(fail("LONGEST_OPTION_IS_KEY_RATE", f"rate {longest_rate:.2f} exceeds 0.30"))
         late_start = math.floor(item_count * 0.70)
@@ -185,10 +203,12 @@ def analyze(data: dict[str, Any]) -> dict[str, Any]:
         findings.append(fail("FINAL_SCHOOL_ANCHOR_MISSING", "FINAL requires a subject-specific Dongbuk multi-exam difficulty anchor"))
         late_d4_plus = None
     elif item_count >= 10:
-        if d12_rate > 0.25:
-            findings.append(fail("FINAL_TOO_EASY_DISTRIBUTION", f"D1+D2 rate {d12_rate:.2f} exceeds 0.25"))
-        if d45_rate < 0.30:
-            findings.append(fail("FINAL_HIGH_DIFFICULTY_FLOOR_MISSED", f"D4+D5 rate {d45_rate:.2f} below 0.30"))
+        # Anchor-less reference floor = easiest registered Dongbuk ensemble (SOC/KOR):
+        # D1+D2 <= 0.35 and D4+D5 >= 0.22. Production FINAL normally requires an anchor.
+        if d12_rate > FIXED_D12_MAX:
+            findings.append(fail("FINAL_TOO_EASY_DISTRIBUTION", f"D1+D2 rate {d12_rate:.2f} exceeds {FIXED_D12_MAX:.2f}"))
+        if d45_rate < FIXED_D45_MIN:
+            findings.append(fail("FINAL_HIGH_DIFFICULTY_FLOOR_MISSED", f"D4+D5 rate {d45_rate:.2f} below {FIXED_D45_MIN:.2f}"))
         if longest_rate > 0.30:
             findings.append(fail("LONGEST_OPTION_IS_KEY_RATE", f"rate {longest_rate:.2f} exceeds 0.30"))
 
@@ -206,7 +226,7 @@ def analyze(data: dict[str, Any]) -> dict[str, Any]:
 
     status = "FAIL" if findings else "PASS"
     return {
-        "tool": "ARC_FINAL_QUALITY_GATE_V1.1_EXEC",
+        "tool": "ARC_FINAL_QUALITY_GATE_V1.2_EXEC",
         "status": status,
         "item_count": item_count,
         "fail_count": len(findings),

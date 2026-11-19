@@ -52,6 +52,20 @@ anchored["difficulty_anchor"] = multi_anchor
 assert mod.analyze(anchored)["status"] == "PASS"
 assert mod.analyze(anchored)["difficulty_profile"]["MODE"] == "SCHOOL_MULTI_EXAM_ANCHOR"
 
+
+# 2026-11-19 policy: FINAL = Dongbuk anchor or slightly harder.
+kor_like = {**multi_anchor, "profile": {"shares": {"D12": 0.343, "D3": 0.400, "D45": 0.257}, "mean_level": 2.89},
+            "tolerance": {"share": 0.12, "mean_level": 0.20, "late_section_d45_min": 1}}
+def set_of(levels):
+    return {"product_mode": "ARC_FINAL", "item_count": len(levels), "difficulty_anchor_required": True,
+            "difficulty_anchor": kor_like, "items": [item(i + 1, d) for i, d in enumerate(levels)]}
+slightly_harder = set_of(["D2","D2","D3","D3","D3","D3","D4","D3","D4","D4"])  # D12 .2 / D45 .3 / mean 3.1
+assert not {"FINAL_SCHOOL_ANCHOR_EASIER", "FINAL_SCHOOL_ANCHOR_HARDER"} & {x["code"] for x in mod.analyze(slightly_harder)["findings"]}, mod.analyze(slightly_harder)
+too_easy = set_of(["D1","D2","D2","D2","D2","D3","D3","D3","D3","D4"])  # D12 .5
+assert "FINAL_SCHOOL_ANCHOR_EASIER" in {x["code"] for x in mod.analyze(too_easy)["findings"]}
+way_harder = set_of(["D3","D4","D4","D4","D4","D4","D5","D4","D5","D5"])
+assert "FINAL_SCHOOL_ANCHOR_HARDER" in {x["code"] for x in mod.analyze(way_harder)["findings"]}
+
 missing = dict(good)
 missing["difficulty_anchor_required"] = True
 assert "FINAL_SCHOOL_ANCHOR_MISSING" in {x["code"] for x in mod.analyze(missing)["findings"]}

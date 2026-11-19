@@ -355,7 +355,25 @@ def previous_kor_version(scope: str) -> str | None:
     return found
 
 
-def build_plan(subject: str, product: str, scope: str, count: int | None, version: str | None) -> dict:
+def parse_shares(text: str | None) -> dict[str, float] | None:
+    """'D2=0.3,D3=0.45' or 'D2=6,D3=9' -> shares summing to 1."""
+    if not text:
+        return None
+    raw = {}
+    for part in text.split(","):
+        key, _, value = part.partition("=")
+        key = key.strip().upper()
+        if key not in {"D1", "D2", "D3", "D4", "D5"}:
+            raise SystemExit(f"난도 키는 D1~D5만 씁니다: {key}")
+        raw[key] = float(value)
+    total = sum(raw.values())
+    if total <= 0:
+        raise SystemExit("난도 분포 합이 0입니다.")
+    return {k: v / total for k, v in raw.items()}
+
+
+def build_plan(subject: str, product: str, scope: str, count: int | None, version: str | None,
+               difficulty: str | None = None, advanced: float | None = None, constructed: int | None = None) -> dict:
     defaults = yaml.safe_load(PLAN_DEFAULTS.read_text(encoding="utf-8"))
     manifest = load_manifest()
     _, registry, exam_id = exam_registry(manifest)
@@ -389,20 +407,38 @@ def build_plan(subject: str, product: str, scope: str, count: int | None, versio
     else:
         version = None
         profile = defaults["other_subjects"][subject]
+    # ARC N difficulty/count/constructed vary per request (user directive 2026-11-19):
+    # explicit request values replace the defaults; defaults only fill gaps.
+    user_diff = parse_shares(difficulty)
+    if user_diff or advanced is not None:
+        profile = dict(profile or {})
+        if user_diff:
+            profile["difficulty"] = user_diff
+            reasons.append("난도 분포 사용자 지정")
+        if advanced is not None:
+            profile["advanced"] = advanced if advanced <= 1 else advanced / 100
+            reasons.append(f"심화 비율 사용자 지정 {profile['advanced']:.0%}")
     plan = {"subject": subject, "product": product, "scope": scope, "version": version, "version_name": version_name,
             "count": count, "reasons": reasons, "exam_id": exam_id, "scope_status": entry.get("scope_status")}
     if product == "ARC_N" and profile.get("difficulty"):
         split = defaults["set_split"][subject]
         per_unit = split["unit_selected"] + split["unit_constructed"]
         units = max(1, round(count / per_unit))
-        constructed = units * split["unit_constructed"]
+        if constructed is None:
+            constructed = units * split["unit_constructed"]
+        else:
+            reasons.append(f"서답형 수 사용자 지정 {constructed}")
         selected = count - constructed
+        if selected <= 0:
+            raise SystemExit("서답형 수가 총 문항 수 이상입니다.")
         diff = apportion(selected, profile["difficulty"])
-        lo, hi = defaults["hard_limits"]["advanced_share"]
-        # Keep the count inside the gate band even after rounding.
-        advanced = min(int(selected * hi + 1e-9), max(-(-selected * lo // 1).__int__(), round(selected * profile["advanced"])))
-        if not lo - 1e-9 <= advanced / selected <= hi + 1e-9:
-            raise SystemExit("계획의 심화 비율이 게이트 범위(20~30%)를 벗어납니다.")
+        if advanced is None:
+            lo, hi = defaults["hard_limits"]["advanced_share"]
+            # Default plans stay inside the default band even after rounding.
+            advanced_n = min(int(selected * hi + 1e-9), max(-(-selected * lo // 1).__int__(), round(selected * profile["advanced"])))
+        else:
+            advanced_n = round(selected * profile["advanced"])
+        advanced = advanced_n
         plan.update({"units": units, "selected": selected, "constructed": constructed,
                      "difficulty": {k: v for k, v in diff.items() if v}, "advanced": advanced, "core": selected - advanced})
         if grammar:
@@ -447,7 +483,8 @@ def print_plan(plan: dict) -> None:
         print("  문항 원형 " + ", ".join(f"{k if plan['subject'] == 'ENG' else k.split('_')[0]} {v}" for k, v in plan["archetype_mix"].items()))
         print(f"            ({plan['archetype_library']})")
     for reason in plan["reasons"]:
-        print(f"  기본값    {reason}")
+        label = "요청값  " if ("사용자 지정" in reason or reason.startswith("버전 지정")) else "기본값  "
+        print(f"  {label}  {reason}")
     print(f"  시험      {plan['exam_id']}  범위 상태 {plan['scope_status']}")
     for blocker in plan["blockers"]:
         print(f"  막힘      {blocker}")
@@ -455,7 +492,8 @@ def print_plan(plan: dict) -> None:
 
 
 def cmd_plan(args) -> int:
-    plan = build_plan(args.subject, args.product, args.scope, args.count, args.version)
+    plan = build_plan(args.subject, args.product, args.scope, args.count, args.version,
+                      difficulty=args.difficulty, advanced=args.advanced, constructed=args.constructed)
     print_plan(plan)
     if args.save:
         path = Path(args.save)
@@ -794,7 +832,10 @@ def main(argv=None) -> int:
     p.add_argument("--scope", required=True)
     p.add_argument("--count", type=int)
     p.add_argument("--version", help="국어 ARC N°: V1~V4, V6")
-    p.add_argument("--save", help="계획을 YAML로 저장할 경로")
+    p.add_argument("--difficulty", help="이번 요청 난도 분포. 예: D2=0.3,D3=0.45,D4=0.2,D5=0.05 또는 D2=6,D3=9,D4=4,D5=1")
+    p.add_argument("--advanced", type=float, help="이번 요청 심화 비율 (0.35 또는 35)")
+    p.add_argument("--constructed", type=int, help="이번 요청 서답형 문항 수")
+    p.add_argument("--save", help="계획을 YAML로 저장할 경로 (번들 items.yaml의 plan: 으로 옮긴다)")
     p.set_defaults(func=cmd_plan)
 
     p = sub.add_parser("scaffold", help="Gemini·Claude·ChatGPT 공통 items.yaml / core_content.yaml 표준 스켈레톤 생성")

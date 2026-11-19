@@ -177,6 +177,8 @@ runtime:
   arc_n_advanced_discrimination_target: "20-30%"
   arc_final_quality_gate: required
   arc_final_difficulty_mode: SCHOOL_MULTI_EXAM_ANCHOR
+  arc_final_difficulty_direction: ANCHOR_OR_SLIGHTLY_HARDER   # user directive 2026-11-19
+  arc_n_difficulty_mode: PER_REQUEST_PLAN                      # user directive 2026-11-19: N° difficulty/count vary per request
   arc_final_multi_exam_anchor_required: true
   arc_final_actual_exam_corpus_required: true
   arc_final_difficulty_anchor_kor: quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
@@ -325,10 +327,10 @@ runtime:
 
 active:
   common_generation_engine:
-    path: engine/common/COMMON_GENERATION_ENGINE_V4.8_ARC.md
-    version: 4.8
-    drive_id: 1rbdUAfqMZJZDF-XOdTguMCSSgBr3AB4J
-    drive_mirror_status: byte_verified
+    path: engine/common/COMMON_GENERATION_ENGINE_V4.9_ARC.md
+    version: 4.9
+    drive_id: null
+    drive_mirror_status: pending_sync
 
   korean_item_engine:
     path: engine/korean/ARC_KOREAN_ITEM_ENGINE_V1.5.md
@@ -382,17 +384,17 @@ active:
     scope_ledger: quality/ARC_SCOPE_LEDGER_V1.0.md
     qa_bench: quality/ARC_QA_BENCH_V1.6.md
     error_database: quality/ARC_ERROR_DATABASE_V1.0.md
-    difficulty_engine: quality/ARC_DIFFICULTY_ENGINE_V1.5.md
+    difficulty_engine: quality/ARC_DIFFICULTY_ENGINE_V1.6.md
     n_balance_gate: quality/ARC_N_BALANCE_GATE_V1.0.md
     difficulty_anchors: quality/ARC_DIFFICULTY_ANCHORS_V1.0.md
     school_reference_profile: quality/ARC_SCHOOL_REFERENCE_PROFILE_V1.0.md
     school_difficulty_bench:
       path: quality/ARC_SCHOOL_DIFFICULTY_BENCH_V1.0.md
       drive_id: 1t0l6juVLzJxx9UMN5YwG1eRu4enAXpmX
-    item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.5.md
+    item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.6.md
     false_difficulty_gate: quality/ARC_FALSE_DIFFICULTY_GATE_V1.0.md
     school_archetype_gate: quality/ARC_SCHOOL_ARCHETYPE_GATE_V1.0.md
-    final_quality_gate: quality/ARC_FINAL_QUALITY_GATE_V1.1.md
+    final_quality_gate: quality/ARC_FINAL_QUALITY_GATE_V1.2.md
     dongbuk_actual_exam_difficulty_corpus: quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
     final_difficulty_anchor_kor: quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
     final_difficulty_anchor_soc: quality/anchors/SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml

@@ -4,7 +4,7 @@ DATE: 2026-10-03
 MODE: PAST_EXAM_70_AI_ORIGINAL_30
 APPLIES_TO: ARC N° / ARC FINAL, 전 과목
 STATUS: ACTIVE-DEVELOPMENT / RELEASE_BENCH_PENDING
-BASE_REFERENCE: COMMON_GENERATION_ENGINE_V4.8_ARC.md
+BASE_REFERENCE: manifest-selected common generation engine (V4.9 as of 2026-11-19)
 BASE_SOURCE: GitHub SYSTEM_MANIFEST.yaml active.common_generation_engine / Drive canonical manifest
 
 이 문서는 사용자의 2026-10-03 지시를 출제 규칙으로 정리한 패치다. 기존 엔진의 창작 중심 역할·원형 사용 규칙과 충돌하는 부분은 이 문서로 대체한다. 기존 정답·범위·독립 재풀이·난도·조판 계약은 유지한다. GitHub 개발 manifest 및 Drive의 활성 엔진 선택에 함께 적용한다.
@@ -115,7 +115,7 @@ PASS B: 정답표·PASS A·출제 의도·목표 난도를 가린 별도 컨텍�
 
 ## 9. 실행 계약과 적용 상태
 
-공통 엔진 V4.8 및 SYSTEM_MANIFEST의 generation_source_policy를 함께 읽는다. tooling/sources/generation_source_gate.py가 전체 문항 수, 70/30 배분, 원형 출처·문항·위치·정답표·핵심 보존·변형 기록, 동일 원형 중복을 검사한다. production_pipeline의 현행 문항 제작 경로에서 범위 승인 후 자료 로딩·조판 전에 실행하며, 실패하면 출력 제작을 차단한다.
+manifest가 고른 공통 엔진 및 SYSTEM_MANIFEST의 generation_source_policy를 함께 읽는다. tooling/sources/generation_source_gate.py가 전체 문항 수, 70/30 배분, 원형 출처·문항·위치·정답표·핵심 보존·변형 기록, 동일 원형 중복을 검사한다. production_pipeline의 현행 문항 제작 경로에서 범위 승인 후 자료 로딩·조판 전에 실행하며, 실패하면 출력 제작을 차단한다.
 
 source_composition.policy_version = ARC-SOURCE-MIX-V1.0
 각 문항의 provenance.mode = SELECT_ORIGINAL | PRESERVE_CORE | VERIFIED_VARIANT | AI_ORIGINAL

@@ -147,6 +147,16 @@ def main() -> int:
         with fitz.open(r["pdf"]) as doc:
             assert not any("ANSWER KEY" in page.get_text() for page in doc), "FINAL problem sheet exposes the key"
 
+    # ARC N difficulty is per-request (2026-11-19): plan > KOR learning_level > legacy band.
+    rb = pipeline.resolve_balance_profile
+    v4 = rb({"product_mode": "ARC_N", "subject": "KOR", "learning_level": "V4"}, 20)
+    assert v4["D3"][0] <= 0.50 <= v4["D3"][1] and v4["D4"][0] <= 0.30 <= v4["D4"][1], v4
+    counts_plan = rb({"product_mode": "ARC_N", "subject": "SCI",
+                      "plan": {"selected": 20, "difficulty": {"D2": 4, "D3": 9, "D4": 6, "D5": 1}, "advanced": 7}}, 20)
+    assert counts_plan["ADVANCED"][0] <= 0.35 <= counts_plan["ADVANCED"][1], counts_plan
+    assert counts_plan["D1"] == (0.0, 0.1), counts_plan
+    assert rb({"product_mode": "ARC_N", "subject": "KOR"}, 20) == pipeline.PROFILES[("KOR", "ARC_N")]
+
     print("ARC PRODUCTION PIPELINE REGRESSION: PASS")
     return 0
 
