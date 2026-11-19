@@ -1,6 +1,6 @@
 # SCI GOLD ANCHORS V1.0
 SUBJECT: 통합과학2
-SCOPE: SCIENCE_MASTER_V4.0
+SCOPE: manifest-selected SCIENCE_MASTER (V4.1 as of 2026-11-19; anchors are structural, not scope)
 ANCHOR_POLICY: ARC_GOLD_ANCHOR_POLICY_V1.0
 NOTE: 수치·자료는 ARC 생성 데이터이며 실제 교과서 도표를 복제하지 않음.
 

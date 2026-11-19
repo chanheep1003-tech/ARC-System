@@ -50,8 +50,10 @@ runtime:
   korean_v6_specialist_policy: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.1.md
   korean_school_hybrid_format: quality/korean/ARC_KOR_SCHOOL_HYBRID_FORMAT_V1.0.md
   korean_v6_spacing_pos_policy: quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.0.md
-  korean_v6_spacing_min_questions_target: PER_REQUEST_PLAN   # was 65; counts vary per request (2026-11-19)
-  korean_v6_particle_vs_dependent_noun_target: 30
+  korean_v6_spacing_min_questions_target: PER_REQUEST_PLAN   # was 65 of 100; counts vary per request (2026-11-19)
+  korean_v6_spacing_share_default: 0.65                       # share of the requested V6 count when the user gives no mix
+  korean_v6_particle_vs_dependent_noun_target: PER_REQUEST_PLAN   # was 30 of 100
+  korean_v6_particle_vs_dependent_noun_share_default: 0.30
   korean_v6_particle_subtype_validation: required
   korean_v6_orthography_permissible_forms_gate: required
   korean_v6_no_fixed_lexeme_bank: required
@@ -364,14 +366,15 @@ active:
       drive_id: null
       drive_mirror_status: pending_sync
     science:
-      path: subjects/SCIENCE_MASTER_V4.0.md
-      drive_id: 1GU5tPHHBrIcGVYA1znOp6MQw7TEciZLi
+      path: subjects/SCIENCE_MASTER_V4.1.md
+      drive_id: null
+      drive_mirror_status: pending_sync
     social:
-      path: subjects/SOCIAL_MASTER_V4.1.md
+      path: subjects/SOCIAL_MASTER_V4.2.md
       drive_id: null
       drive_mirror_status: pending_sync
     korean:
-      path: subjects/KOREAN_MASTER_V4.4.md
+      path: subjects/KOREAN_MASTER_V4.5.md
       drive_id: null
       drive_mirror_status: pending_sync
     history:

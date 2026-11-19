@@ -675,7 +675,7 @@ def main() -> int:
         ],
     )
 
-    science = (ROOT / "subjects/SCIENCE_MASTER_V4.0.md").read_text(encoding="utf-8")
+    science = (ROOT / manifest["active"]["subjects"]["science"]["path"]).read_text(encoding="utf-8")
     if "ARC_N 학생 PDF에는 넣지 않는다" in science:
         errors.append("Science MASTER still forbids the mandatory ARC_N answer section")
 
