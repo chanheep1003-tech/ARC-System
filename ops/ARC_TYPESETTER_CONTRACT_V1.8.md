@@ -1,7 +1,7 @@
 # ARC TYPESETTER CONTRACT V1.8
 DATE: 2026-11-19
 STATUS: ACTIVE
-SUPERSEDES: ops/ARC_TYPESETTER_CONTRACT_V1.7.md (archived)
+SUPERSEDES: archive/ops/ARC_TYPESETTER_CONTRACT_V1.7.md (archived)
 CHANGE: FINAL 물리 순서(표지 뒤 백지 유지, 사용자 지시 2026-11-19), FINAL 정답지 PDF 검증, 서술형 답안란 높이,
         단일 렌더러 권위(tooling/typeset/kor_renderer.py), HTML 마스터는 참조 전용
 ROLE: dedicated low-context ARC layout/PDF production

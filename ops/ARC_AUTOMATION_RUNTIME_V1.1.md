@@ -11,7 +11,7 @@ Do not call Drive metadata move/update_file in scheduled QA because background s
 For the first subject, create the actual RAW shell at root/default, write its staging header, re-read it, and use that as the persistence preflight.
 If create/write/read succeeds, set DRIVE_PREFLIGHT_STATUS=PASS and continue.
 
-Before loading KOR sources or generating any RAW items, read `ops/ARC_DRIVE_WRITE_ADAPTER_V1.1.md` and perform its one-time write preflight.
+Before loading KOR sources or generating any RAW items, read `archive/ops/ARC_DRIVE_WRITE_ADAPTER_V1.1.md` and perform its one-time write preflight.
 Default scheduled path:
 root create → staging-header write → non-empty readback → chunked content append.
 
@@ -33,7 +33,7 @@ Per subject:
 Then release that subject context and continue.
 
 ## 4. SUBJECT CHECKPOINT ORDER
-Default priority follows `ops/ARC_RUNTIME_PRIORITY_POLICY_V1.1.md`:
+Default priority follows `archive/ops/ARC_RUNTIME_PRIORITY_POLICY_V1.1.md`:
 1. KOR
 2. SOC
 3. HIS
@@ -103,7 +103,7 @@ Executable tooling:
 - connector-only scheduled host: do not fake execution. Record TOOLING_UNAVAILABLE and apply policy fallback. Essential accuracy gates remain mandatory.
 
 ## 10. RUNTIME BUDGET
-Follow `ops/ARC_RUNTIME_PRIORITY_POLICY_V1.1.md`.
+Follow `archive/ops/ARC_RUNTIME_PRIORITY_POLICY_V1.1.md`.
 
 Stage priority:
 P0 Scope/Accuracy/Unique Answer

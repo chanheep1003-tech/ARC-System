@@ -108,6 +108,12 @@ def main() -> int:
     for rel in sorted(active_paths):
         if not (ROOT / rel).is_file():
             errors.append(f"manifest target missing: {rel}")
+    # archive/ holds superseded rules only (2026-11-19); the manifest may never select one.
+    manifest_text = (ROOT / "SYSTEM_MANIFEST.yaml").read_text(encoding="utf-8")
+    for hit in sorted(set(re.findall(r"(?<![\w/])archive/\S+\.\w+", manifest_text))):
+        errors.append(f"manifest selects an archived file: {hit}")
+    if not (ROOT / "archive/README.md").is_file():
+        errors.append("archive/README.md missing")
 
     for key in ("exam_scope_gate", "exam_scope_smoke_test", "source_collection_gate", "source_collection_smoke_test", "generation_source_gate", "generation_source_smoke_test"):
         rel = tooling.get(key)

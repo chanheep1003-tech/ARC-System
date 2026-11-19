@@ -6,7 +6,7 @@ source_mode: gold_anchor_reference
 
 packs:
   KOR:
-    source: quality/gold/KOR_GOLD_ANCHORS_V1.0.md
+    source: archive/quality/gold/KOR_GOLD_ANCHORS_V1.0.md
     cases:
       - {fixture_id: KOR-RG-001, anchor_id: KOR-G-001, class: GOOD, expected_decision: BANK_A, expected_item_min: 92, expected_item_max: 95, expected_hard_fail: false, forbidden_decisions: [REVISE, DISCARD]}
       - {fixture_id: KOR-RG-002, anchor_id: KOR-G-002, class: GOOD, expected_decision: BANK_A, expected_item_min: 93, expected_item_max: 96, expected_hard_fail: false, forbidden_decisions: [REVISE, DISCARD]}

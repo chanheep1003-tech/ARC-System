@@ -34,7 +34,7 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --version V3 --coun
 |---|---|---|
 | ARC CORE | 개념서 | 1단 |
 | ARC N° | 단원·유형별 문제집 | 2단, 정답은 맨 뒤 |
-| ARC FINAL | 실전 모의고사 | 2단, 정답 PDF 분리 |
+| ARC FINAL | 실전 모의고사 | 2단, 표지 뒤 백지, 문항별 배점, 정답 PDF 분리 (`templates/final/ARC_FINAL_EXAM_LAYOUT_V1.0.md`) |
 
 국어 ARC N°의 버전 (영어·사회·과학에는 버전 사다리가 없다):
 
@@ -115,6 +115,7 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --version V3 --coun
 | `tooling/` | 실행 도구 (`arc.py`, 생산 파이프라인, 조판기, 게이트, 카나리) |
 | `tools/oss/` | 외부 오픈소스 도구 설치기와 목록 |
 | `ops/RUN_LOG.jsonl` | 실행 기록 |
+| `archive/` | 폐기된 구버전 규칙 (원래 경로 그대로 보관, 제작에 쓰지 않음). 사유는 `quality/governance/DEPRECATION_REGISTRY_V1.1.yaml` |
 
 원본 자료(교과서·학습지·기출·생성 PDF)는 Google Drive에 있고 저장소에는 올리지 않는다.
 

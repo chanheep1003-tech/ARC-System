@@ -11,7 +11,7 @@ metadata:
 좋은 문항 여러 개를 단순히 이어 붙이지 않고 **한 회차 문제집/시험지로서 자연스러운 세트**를 만든다.
 
 ## 기준
-`quality/ARC_SET_EDITORIAL_ENGINE_V1.0.md`와 `ARC_SIMILARITY_GUARD_V1.0.md`를 따른다.
+`archive/quality/ARC_SET_EDITORIAL_ENGINE_V1.0.md`와 `ARC_SIMILARITY_GUARD_V1.0.md`를 따른다.
 
 ## 편집 축
 - 시험범위 커버리지

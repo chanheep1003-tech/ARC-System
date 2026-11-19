@@ -2,7 +2,7 @@
 VERSION: 1.3
 DATE: 2026-11-19
 STATUS: ACTIVE
-SUPERSEDES: quality/pdf/ARC_PDF_PREFLIGHT_V1.2.md (archived)
+SUPERSEDES: archive/quality/pdf/ARC_PDF_PREFLIGHT_V1.2.md (archived)
 CHANGE: 코드에 이미 있던 ARC_N 검사를 문서화하고, ARC_FINAL 검사·N° 표지 누출·양면 홀짝 보고를 추가
 
 ## PURPOSE

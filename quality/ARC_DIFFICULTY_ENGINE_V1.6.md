@@ -1,7 +1,7 @@
 # ARC_DIFFICULTY_ENGINE_V1.6
 VERSION: 1.6
 DATE: 2026-11-19
-SUPERSEDES: quality/ARC_DIFFICULTY_ENGINE_V1.5.md (archived)
+SUPERSEDES: archive/quality/ARC_DIFFICULTY_ENGINE_V1.5.md (archived)
 CHANGE: ARC_N 분포는 요청별 계획값 기준, ARC_FINAL은 동북고 앵커와 같거나 살짝 더 어렵게, 경고 임계값 단일화
 ROLE: 문항 난이도 추정·비교·보정 엔진
 STATUS: ACTIVE

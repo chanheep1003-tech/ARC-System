@@ -1,6 +1,6 @@
 # 00_ACTIVE_통합사회2_동북고_MASTER_V4.2
 # VERSION_DATE: 2026-11-19
-# SUPERSEDES: subjects/SOCIAL_MASTER_V4.1.md (archived)
+# SUPERSEDES: archive/subjects/SOCIAL_MASTER_V4.1.md (archived)
 # CHANGE: 기말 범위(A 44~61·108~123 / B 134~151 / C 25~26·64~83 + 학습지)로 SCOPE LOCK 교체, 중간고사 OUT_OF_SCOPE 표지 폐지,
 #         FINAL 구조 A 7+1 / B 7+1 / C 8, N° 수량·난도 요청별, 서답형·배점·인쇄 무결성
 # BASE: manifest-selected common generation engine

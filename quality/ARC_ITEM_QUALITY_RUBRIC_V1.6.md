@@ -1,7 +1,7 @@
 # ARC_ITEM_QUALITY_RUBRIC_V1.6
 VERSION: 1.6
 DATE: 2026-11-19
-SUPERSEDES: quality/ARC_ITEM_QUALITY_RUBRIC_V1.5.md (archived)
+SUPERSEDES: archive/quality/ARC_ITEM_QUALITY_RUBRIC_V1.5.md (archived)
 CHANGE: 고난도 비율 감사 임계값을 난도 엔진 V1.6과 통일, 인쇄 시험지 무결성 HARD FAIL(무힌트 보기·세트 내 답 유출·선지 문자 오류) 추가
 ROLE: 문항 자체의 교육적·평가적 품질 검수
 STATUS: ACTIVE

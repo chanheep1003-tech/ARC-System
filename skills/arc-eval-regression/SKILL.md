@@ -13,7 +13,7 @@ metadata:
 ## 활성 기준
 - quality/regression/ARC_REGRESSION_POLICY_V1.0.md
 - quality/regression/REGRESSION_FIXTURES_V1.0.yaml
-- quality/ARC_QA_BENCH_V1.2.md
+- archive/quality/ARC_QA_BENCH_V1.2.md
 
 ## Frozen Dataset
 V1.0은 과목별 GOLD GOOD 3 + BAD 3을 참조한다.

@@ -1,3 +1,12 @@
+## 1.9.5+audit — 2026-11-19 (system-wide rule & typesetting audit)
+- User directives: ARC N° difficulty/item count/constructed count vary per request; ARC FINAL = Dongbuk exams or slightly harder; FINAL keeps the blank cover verso; superseded versions move to `archive/`.
+- Difficulty: engine V4.9, difficulty engine V1.6, item rubric V1.6, FINAL gate V1.2. `final_quality_gate.py` asymmetric tolerance (easier side = anchor tol, harder side + 0.08 share / +0.25 mean). `production_pipeline.resolve_balance_profile` (bundle `plan` > KOR `learning_level` > legacy band); `arc.py plan --difficulty/--advanced/--constructed`.
+- Print-exam integrity (2026-11 orthography set review): `content_qa_gate.lint_bundle_text` + `PRINT_INTEGRITY_GATE` — no-hint `<보기>`, self-identical corrections, unintended spacing, headword typos, cross-item answer leak/example reuse. Policies: ARC_VIEW_EVIDENCE_POLICY_V1.0, ARC_SET_CROSS_ITEM_LEAK_GATE_V1.0, ARC_KOR_SCHOOL_HYBRID_FORMAT_V1.0, V6 policy V1.1.
+- Subject masters bound to the final scope: KOREAN V4.5, SOCIAL V4.2 (midterm OUT_OF_SCOPE tag removed; FINAL A 7+1 / B 7+1 / C 8), SCIENCE V4.1 (A–D pages, essay rules).
+- Pipeline: FINAL_STRUCTURE_GATE / POINTS_GATE from `exam_structure`; ARCHETYPE_GATE and ENG_EXAM_TYPE_GATE wired; FINAL profile computes detail outlier and BELOW_SCHOOL.
+- Typesetting: FINAL layout spec V1.0, typesetter contract V1.8, preflight V1.3 (FINAL checks, N tag leak, duplex parity INFO), layout master V2.5, N layout V1.1; renderer stops printing points/difficulty on ARC_N (approved N master), sizes essay answer areas, takes `exam_title` from the bundle, fits the scope line with an ellipsis.
+- Hygiene: CHECKSUMS no longer lists the untracked CLAUDE.md; 125 superseded files moved to `archive/`; DEPRECATION_REGISTRY V1.1; validator forbids manifest → archive.
+
 ## 1.9.5 — 2026-11-13
 - Typesetting rule (user directive): English passage workbooks print the passage in full and tune page use with body size/line height. The renderer now reads a per-bundle `layout: {body_pt, line_height_ratio}` (default for ENG passage workbooks 9.4pt / 1.38) and no longer depends on environment variables; KOR/SOC/SCI keep 9.8pt / 1.62.
 - Passage source label (user directive): every question in a passage workbook shows its source passage beside the number, e.g. `05 [3-4-1] …` (item field `source_label`). `exam_type_gate.py` fails PASSAGE_LAYOUT_MISSING / PASSAGE_SOURCE_LABEL_MISSING.

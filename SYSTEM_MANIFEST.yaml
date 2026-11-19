@@ -387,7 +387,7 @@ active:
       drive_id: 13wb_7mSGYu7vxDOjgJ3zW9Cel7BeHYfP
 
   quality:
-    deprecation_registry: quality/governance/DEPRECATION_REGISTRY_V1.0.yaml
+    deprecation_registry: quality/governance/DEPRECATION_REGISTRY_V1.1.yaml
     scope_ledger: quality/ARC_SCOPE_LEDGER_V1.0.md
     qa_bench: quality/ARC_QA_BENCH_V1.6.md
     error_database: quality/ARC_ERROR_DATABASE_V1.0.md

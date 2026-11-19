@@ -1,5 +1,5 @@
 # ARC N° Fixed Master Layout Specification V2.1 (file V1.1) (Canva Editorial Pure B&W Gothic Standard)
-FILE_VERSION: V1.1 · DATE: 2026-11-19 · SUPERSEDES: templates/n/ARC_N_BW_LAYOUT_V1.0.md (archived)
+FILE_VERSION: V1.1 · DATE: 2026-11-19 · SUPERSEDES: archive/templates/n/ARC_N_BW_LAYOUT_V1.0.md (archived)
 CHANGE: tag/points ban made executable, constructed-response answer-area sizing, duplex parity note, production-renderer divergence register
 Date: 2026-11-14. Approved user master (`Canva DAHaz5b2kK0` + reduced item numbering) supersedes all prior Serif/tag-bar/9.1pt specs for `ARC_N`.
 Visual & binary ground truth:

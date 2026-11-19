@@ -2,7 +2,7 @@
 VERSION: 1.2
 DATE: 2026-11-19
 STATUS: ACTIVE
-SUPERSEDES: quality/ARC_FINAL_QUALITY_GATE_V1.1.md (archived)
+SUPERSEDES: archive/quality/ARC_FINAL_QUALITY_GATE_V1.1.md (archived)
 CHANGE: 난도 = 동북고 앵커와 같거나 살짝 더 어렵게(비대칭 허용폭), 시험 구조·배점·서답형 게이트, 인쇄 무결성 게이트
 VALIDATION_MARKER: DONGBUK_MULTI_EXAM_FINAL_CALIBRATION_20260926
 ROLE: ARC FINAL 전용 난이도·문항질·세트실전성 승인 게이트

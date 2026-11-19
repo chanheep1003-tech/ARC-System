@@ -1,6 +1,6 @@
 # 00_ACTIVE_공통국어2_동북고_MASTER_V4.5
 # VERSION_DATE: 2026-11-19
-# SUPERSEDES: subjects/KOREAN_MASTER_V4.4.md (archived)
+# SUPERSEDES: archive/subjects/KOREAN_MASTER_V4.4.md (archived)
 # CHANGE: 기말 범위 참조로 SCOPE LOCK 교체, 난도는 요청별 계획(N°)·동북고 앵커 이상(FINAL), 서답형·배점 필수화, 인쇄 무결성
 # BASE: manifest-selected common generation engine
 # MODE: CONTENT GENERATION ONLY

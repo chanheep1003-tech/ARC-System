@@ -11,7 +11,7 @@ For ARC_N, `templates/n/ARC_N_BW_LAYOUT_V1.1.md` (V2.1) and `templates/gold/samp
 
 # ARC SYSTEM — PDF 조판 MASTER V2.5
 # VERSION_DATE: 2026-11-19 (body inherited from V2.4 dated 2026-09-19)
-# SUPERSEDES: templates/ARC_PDF_LAYOUT_MASTER_V2.4.md (archived)
+# SUPERSEDES: archive/templates/ARC_PDF_LAYOUT_MASTER_V2.4.md (archived)
 # PATCH: PRODUCT ISOLATION + SEMANTIC PAGINATION + TYPOGRAPHY TOKENS + RENDER-FIRST QC
 # BASE: N제_PDF_조판_MASTER_V1.3 + ARC Template System v0.2
 # ROLE: CONTENT GENERATION 금지 / LAYOUT · VISUAL · PAGINATION · PDF QC ONLY
@@ -935,7 +935,7 @@ STEP 9 — AUTO FIX
 실패 항목 수정 후 재출력
 
 STEP 10 — HUMAN REVIEW PACKET
-`quality/ARC_HUMAN_REVIEW_GATE_V1.0.md`에 따라 짧은 검토 패킷을 만든다.
+`archive/quality/ARC_HUMAN_REVIEW_GATE_V1.0.md`에 따라 짧은 검토 패킷을 만든다.
 AI QA가 PASS한 뒤에만 사람에게 넘긴다.
 
 STEP 11 — HUMAN REVIEW GATE
@@ -1235,9 +1235,9 @@ END ARC LOGO LOCKUP ACCEPTANCE
 24. LOCKED CONTENT BUNDLE GATE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Typesetting starts only from a bundle compliant with:
-`ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.1.md`
+`archive/ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.1.md`
 and
-`ops/ARC_TYPESETTER_CONTRACT_V1.1.md`.
+`archive/ops/ARC_TYPESETTER_CONTRACT_V1.1.md`.
 
 Required:
 CONTENT_QA_STATUS=PASS

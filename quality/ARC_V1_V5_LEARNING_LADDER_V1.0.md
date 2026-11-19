@@ -5,7 +5,7 @@ STATUS: SUPERSEDED_BY_KOR_ONLY_POLICY
 이 문서의 과거 'V1~V5 구분'은 사용자 지시에 따라 **국어(KOR) 과목 한정**임이 확정되었다. 따라서 다른 과목 SCI, SOC, HIST 등에 범용 적용하지 않는다.
 
 국어에서만 다음 파일을 로드한다:
-- quality/korean/ARC_KOR_V1_V5_LEVEL_POLICY_V1.1.md (권위 출제 단계 계약)
+- archive/quality/korean/ARC_KOR_V1_V5_LEVEL_POLICY_V1.1.md (권위 출제 단계 계약)
 - quality/korean/ARC_KOR_DONGBUK_UNSEEN_ANALYSIS_V1.0.md (기출 확인·유형 구분)
 - quality/korean/ARC_KOR_UNSEEN_CANDIDATES_V1.0.yaml (외부 자료 후보·라이선스 상태)
 - quality/korean/ARC_KOR_ORTHOGRAPHY_V123_TEXTBOOK_REBUILD_SPEC_20261105.md (현재 맞춤법 V1~V3 배분)

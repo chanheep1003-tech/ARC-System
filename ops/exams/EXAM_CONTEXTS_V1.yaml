@@ -30,9 +30,9 @@ exams:
       midterm_baseline_status: RECONCILIATION_REQUIRED
       midterm_baseline_refs:
       - quality/ARC_SCOPE_LEDGER_V1.0.md
-      - subjects/KOREAN_MASTER_V4.4.md
-      - subjects/SOCIAL_MASTER_V4.1.md
-      - subjects/SCIENCE_MASTER_V4.0.md
+      - archive/subjects/KOREAN_MASTER_V4.4.md
+      - archive/subjects/SOCIAL_MASTER_V4.1.md
+      - archive/subjects/SCIENCE_MASTER_V4.0.md
       final_difficulty_policy:
         reference: DONGBUK_2026_2_MID_STRUCTURAL_CALIBRATION
         target: CHALLENGING_FINAL_3_0_TO_3_5

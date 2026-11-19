@@ -100,7 +100,7 @@ jobs:
               'quality/regression/REGRESSION_FIXTURES_V1.0.yaml',
               'quality/similarity/SIMILARITY_THRESHOLDS_V1.0.yaml',
               'tooling/promptfoo/promptfooconfig.yaml',
-              'quality/governance/DEPRECATION_REGISTRY_V1.0.yaml',
+              'quality/governance/DEPRECATION_REGISTRY_V1.1.yaml',
               'quality/semantic/ARC_QA_EVIDENCE_SCHEMA_V1.0.yaml',
               'quality/canary/KOR_CORE_CANARY_V1.yaml',
               'quality/canary/KOR_N_CANARY_V1.yaml',

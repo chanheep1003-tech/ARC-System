@@ -1,6 +1,6 @@
 # 00_ACTIVE_통합과학2_동북고_MASTER_V4.1
 # VERSION_DATE: 2026-11-19
-# SUPERSEDES: subjects/SCIENCE_MASTER_V4.0.md (archived)
+# SUPERSEDES: archive/subjects/SCIENCE_MASTER_V4.0.md (archived)
 # CHANGE: 기말 범위(A~D 파트 쪽수)로 SCOPE LOCK 교체, 서술형 규칙 신설, N° 수량·난도 요청별, FINAL 앵커 정책, 인쇄 무결성
 # BASE: manifest-selected common generation engine
 # PRODUCT_MODE: ARC_N / ARC_FINAL inherited

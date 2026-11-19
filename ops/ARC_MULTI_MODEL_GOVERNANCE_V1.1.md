@@ -1,7 +1,7 @@
 # ARC MULTI-MODEL GOVERNANCE V1.1
 VERSION: 1.1
 DATE: 2026-09-20
-SUPERSEDES: ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md
+SUPERSEDES: archive/ops/ARC_MULTI_MODEL_GOVERNANCE_V1.0.md
 STATUS: ACTIVE-DEV
 
 ## 0. ROLES
@@ -128,7 +128,7 @@ Generator and Typesetter SHOULD run as separate chats/projects/sessions to preve
 The Generator does not need the full PDF master.
 The Typesetter does not need subject textbooks, worksheets, GOLD anchors, or generation QA by default.
 
-The transfer object is governed by `ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.0.md`.
+The transfer object is governed by `archive/ops/ARC_CONTENT_BUNDLE_CONTRACT_V1.0.md`.
 
 ## 6. PRODUCT OWNERSHIP
 
