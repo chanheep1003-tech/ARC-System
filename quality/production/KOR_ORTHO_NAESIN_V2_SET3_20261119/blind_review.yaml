@@ -358,19 +358,6 @@ items:
   difficulty: D3
   confidence: HIGH
   flags: []
-- item_id: KOR-OV3-036
-  answer: 1
-  first_pass_top3:
-  - 1
-  - 5
-  - 3
-  second_best: 5
-  difficulty: D3
-  confidence: MEDIUM
-  flags:
-  - a
-  note: 5번 중 "더 못 가"->"더못 가", "좀더 큰것"은 제46항 예(좀더 큰것)에 부합해 참일 수 있음; 1번(제7항, 2시간)도 참
-    -> 정답 복수 가능
 - item_id: KOR-OV3-037
   answer: 2
   first_pass_top3:
@@ -473,14 +460,6 @@ items:
     어간 '굵-'의 겹받침 끝소리 'ㄱ'이 [국따라타]에서 드러나 원형을 밝혀 적는다.
   flags: []
   difficulty: D3
-- item_id: KOR-OV3-048
-  meets_rubric: false
-  your_answer: 공통 어간을 보기 자료만으로 확정하기 어려움(걸음은 걷-, 거름은 걸-로 추정되어 '공통 어간' 조건과 충돌). 억지로
-    쓰면 '걸-'에 '-음'이 붙은 ㉠은 어간의 본뜻이 살아 있어 원형을 밝히고 ㉡은 본뜻에서 멀어져 소리대로 적었다.
-  flags:
-  - d
-  - b
-  difficulty: D4
 - item_id: KOR-OV3-049
   meets_rubric: true
   your_answer: ㉠ '만만찮다', ㉡ '적잖은'. ㉠은 '만만하지 않-'에서 '-하지 않-'이, ㉡은 '적지 않-'에서 '-지 않-'이

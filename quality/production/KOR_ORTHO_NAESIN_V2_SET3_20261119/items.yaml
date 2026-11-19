@@ -35,10 +35,10 @@ items:
   - '''부리나케''를 ''불이나케''로 적지 않는 것은 소리대로 적은 것이고, ''얼음''을 ''어름''으로 적지 않는 것도 소리대로 적은 것이다.'
   answer: 2
   second_best: 1
-  difficulty: D4
+  difficulty: D2
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -187,10 +187,10 @@ items:
   - 5개
   answer: 3
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: MULTI_JUDGMENT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -256,10 +256,10 @@ items:
   - '''연몌''는 [연메]로 소리 날 수 있으므로 ''연메''로 적는 것이 원칙이다.'
   answer: 2
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -331,10 +331,10 @@ items:
   - ㉠, ㉡, ㉣
   answer: 2
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: ERROR_CORRECTION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -404,10 +404,10 @@ items:
   - ㉤
   answer: 4
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: EXCEPT_INCORRECT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -472,10 +472,10 @@ items:
   - '''국련''은 준말에서 본음으로 소리 나므로 본음대로 ''련''으로 적는다.'
   answer: 2
   second_best: 5
-  difficulty: D3
+  difficulty: D2
   family: CASE_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -540,10 +540,10 @@ items:
   - '''딱딱하다'', ''꼿꼿하다''는 같은 음절이 겹쳐 나는 부분을 같은 글자로 적은 것이다.'
   answer: 5
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -617,10 +617,10 @@ items:
   - ㉡, ㉢, ㉣
   answer: 5
   second_best: 1
-  difficulty: D3
+  difficulty: D2
   family: ERROR_CORRECTION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -841,10 +841,10 @@ items:
   - ㄴ, ㄷ, ㅁ
   answer: 5
   second_best: 2
-  difficulty: D4
+  difficulty: D2
   family: MULTI_JUDGMENT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -907,10 +907,10 @@ items:
   - '''(손을) 잡다''는 ''잡아''로, ''(마음이) 곱다''도 규칙 활용하여 ''곱아''로 적는다.'
   answer: 4
   second_best: 1
-  difficulty: D4
+  difficulty: D2
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1124,10 +1124,10 @@ items:
   - ㉠, ㉡, ㉥
   answer: 1
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: ERROR_CORRECTION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1202,10 +1202,10 @@ items:
   - Ⓐ ㉠, ㉡, ㉣   Ⓑ ㉤   Ⓒ ㉢
   answer: 4
   second_best: 1
-  difficulty: D3
+  difficulty: D2
   family: COMPARISON_MATRIX
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1271,10 +1271,10 @@ items:
   - '''가만히''는 ''-하다''가 붙지 않는 말이므로 소리대로 적은 것이다.'
   answer: 1
   second_best: 2
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1412,10 +1412,10 @@ items:
   - '''꿀꿀이''는 원형을 밝히고, ''귀뚜라미''는 소리대로 적는다.'
   answer: 5
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1481,10 +1481,10 @@ items:
   - '''혼잣말''과 ''인사말''은 뒷말이 같으므로 둘 다 사이시옷을 적거나 둘 다 적지 않아야 한다.'
   answer: 4
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1554,10 +1554,10 @@ items:
   - ㉢, ㉤, ㉥
   answer: 4
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: ERROR_CORRECTION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1632,10 +1632,10 @@ items:
   - Ⓐ 없음   Ⓑ ㉢, ㉣   Ⓒ ㉠, ㉡, ㉤
   answer: 3
   second_best: 1
-  difficulty: D3
+  difficulty: D2
   family: COMPARISON_MATRIX
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1705,10 +1705,10 @@ items:
   - ㄱ, ㄴ, ㄹ, ㅁ
   answer: 2
   second_best: 4
-  difficulty: D4
+  difficulty: D3
   family: MULTI_JUDGMENT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1774,10 +1774,10 @@ items:
   - '''않도록''을 ''않토록''으로, ''그렇지''를 ''그렇치''로 적지 않는다.'
   answer: 5
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1851,10 +1851,10 @@ items:
   - ㉠, ㉤, ㉥
   answer: 1
   second_best: 2
-  difficulty: D3
+  difficulty: D2
   family: ERROR_CORRECTION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -1919,10 +1919,10 @@ items:
   - “며칠을 주리다”는 제대로 먹지 못했다는 뜻이므로 '주리다'로 적는다.
   answer: 3
   second_best: 4
-  difficulty: D3
+  difficulty: D2
   family: CASE_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -1988,10 +1988,10 @@ items:
   - “걷잡아서 한 시간쯤 걸린다”와 “걷잡을 수 없는 불길”은 모두 바르게 쓴 것이다.
   answer: 4
   second_best: 1
-  difficulty: D4
+  difficulty: D2
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2065,10 +2065,10 @@ items:
   - Ⓐ ㉤   Ⓑ ㉠, ㉢   Ⓒ ㉡, ㉣
   answer: 5
   second_best: 1
-  difficulty: D3
+  difficulty: D2
   family: COMPARISON_MATRIX
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2138,10 +2138,10 @@ items:
   - ㉤
   answer: 5
   second_best: 2
-  difficulty: D4
+  difficulty: D2
   family: EXCEPT_INCORRECT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -2211,10 +2211,10 @@ items:
   - ㄷ, ㄹ, ㅁ
   answer: 4
   second_best: 3
-  difficulty: D4
+  difficulty: D3
   family: MULTI_JUDGMENT
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2358,10 +2358,10 @@ items:
   - Ⓐ 없음   Ⓑ ㉡, ㉣, ㉤   Ⓒ ㉠, ㉢
   answer: 2
   second_best: 1
-  difficulty: D4
+  difficulty: D2
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2434,10 +2434,10 @@ items:
   - ㉢, ㉣, ㉥
   answer: 3
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: ERROR_CORRECTION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2574,7 +2574,7 @@ items:
   - '''물 한병''은 단음절어가 이어져 허용되고, ''물한 병''도 같은 이유로 허용된다.'
   - '''삼십육만 오천''은 만 단위로 띄어 쓴 것이고, ''삼십육 만 오천''도 허용된다.'
   - '''열 살''은 단위 명사이므로 띄어 쓰고, ''열살''도 순서를 나타내므로 허용된다.'
-  - '''더 못 가''는 ''더못 가''로 붙여 쓸 수 있고, ''좀더 큰것''도 허용된다.'
+  - '''좀 더 큰 것''은 단음절어가 이어지므로 네 단어를 모두 붙인 ''좀더큰것''도 허용된다.'
   answer: 1
   second_best: 2
   difficulty: D4
@@ -2628,7 +2628,7 @@ items:
     - VIEW
     - OPTION5
     v: false
-    why: '''더''와 ''못''은 각각 ''가다''를 꾸며 한 덩이로 묶이지 않는다.'
+    why: 세 개 이상의 단음절어를 한꺼번에 붙여 쓰지는 않는다. '좀더 큰것'처럼 의미 단위로 둘씩 묶어야 한다.
     trap: T1_RIGHT_CONCEPT_WRONG_CASE
 - item_id: KOR-OV3-037
   archetype: A4_INQUIRY_DIALOGUE_CHECK
@@ -2649,10 +2649,10 @@ items:
   - ㉤
   answer: 2
   second_best: 4
-  difficulty: D3
+  difficulty: D2
   family: EXCEPT_INCORRECT
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -2719,10 +2719,10 @@ items:
   - '''만국 음성 기호''는 원칙이고 ''만국음성기호''도 허용되는 표기이다.'
   answer: 1
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: CASE_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -2796,10 +2796,10 @@ items:
   - ㉢, ㉤, ㉥
   answer: 5
   second_best: 1
-  difficulty: D4
+  difficulty: D2
   family: ERROR_CORRECTION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2939,10 +2939,10 @@ items:
   - “새벽같이 일어났다”의 '같이'는 '함께'의 뜻이므로 '새벽 같이'로 띄어 쓴다.
   answer: 3
   second_best: 1
-  difficulty: D3
+  difficulty: D2
   family: VIEW_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -3017,10 +3017,10 @@ items:
   - Ⓐ 없음   Ⓑ ㉠, ㉡, ㉤   Ⓒ ㉢, ㉣
   answer: 1
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -3089,10 +3089,10 @@ items:
   - ㉤
   answer: 1
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: EXCEPT_INCORRECT
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -3158,10 +3158,10 @@ items:
   - “1446년 10월 9일”은 숫자와 어울려 쓰여 붙여 쓴 것이다.
   answer: 2
   second_best: 3
-  difficulty: D3
+  difficulty: D2
   family: CASE_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -3227,10 +3227,10 @@ items:
   - '''몹시''는 ''ㅂ'' 받침 뒤이지만 비슷한 음절이 겹쳐 나므로 된소리를 표기에 반영하지 않았다.'
   answer: 5
   second_best: 1
-  difficulty: D4
+  difficulty: D2
   family: CASE_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -3303,7 +3303,7 @@ items:
   - 조건 1·3 1점
   ev:
   - VIEW
-  difficulty: D4
+  difficulty: D3
   topic: 제10~12항
 - item_id: KOR-OV3-047
   archetype: C1_CONSTRUCTED_BLANK_SENTENCE
@@ -3325,7 +3325,7 @@ items:
   - 조건 2·3 1점
   ev:
   - VIEW
-  difficulty: D4
+  difficulty: D3
   topic: 제21항
 - item_id: KOR-OV3-048
   archetype: C1_CONSTRUCTED_BLANK_SENTENCE
@@ -3335,16 +3335,16 @@ items:
   view:
   - '[참고 조항]'
   - 제19항 어간에 '-이'나 '-음/-ㅁ'이 붙어서 명사로 된 것과 '-이'나 '-히'가 붙어서 부사로 된 것은 그 어간의 원형을 밝히어 적는다. 다만, 어간에 '-이'나 '-음'이 붙어서 명사로 바뀐 것이라도 그 어간의 뜻과 멀어진 것은 원형을 밝히어 적지 아니한다. [붙임] 어간에 '-이'나 '-음' 이외의 모음으로 시작된 접미사가 붙어서 다른 품사로 바뀐 것은 그 어간의 원형을 밝히어 적지 아니한다.
-  - '[뜻 자료] 걸음: 두 발을 번갈아 옮겨 놓는 동작 / 거름: 식물이 잘 자라도록 땅에 주는 영양 물질'
+  - '[뜻 자료] 걸음: ''걷다(步)''의 어간 ''걷-''(모음 앞에서 ''걸-'')에 ''-음''이 붙은 말. 두 발을 번갈아 옮겨 놓는 동작. / 거름: ''(땅이) 걸다(기름지다)''의 어간 ''걸-''에 ''-음''이 붙은 말. 식물이 잘 자라도록 땅에 주는 영양 물질.'
   - ㉠ 발걸음이 가볍다.
   - ㉡ 밭에 거름을 주었다.
   conditions:
-  - 1. 두 말이 공통으로 관련된 어간을 밝힐 것.
+  - 1. 두 말의 어간을 각각 밝힐 것.
   - 2. '본뜻'이라는 말을 포함할 것.
   - 3. 두 문장 이내로 쓸 것.
-  model_answer: ㉠ '걸음'과 ㉡ '거름'은 모두 어간 '걷-/걸-'과 관련되지만, ㉠은 걷는다는 본뜻이 유지되어 원형을 밝혀 적고, ㉡은 본뜻에서 멀어져 소리대로 적는다.
+  model_answer: ㉠ '걸음'은 '걷-(걸-)'에 '-음'이 붙어 걷는다는 본뜻이 유지되므로 원형을 밝혀 적는다. ㉡ '거름'은 '(땅이) 걸다'의 '걸-'에 '-음'이 붙었지만 비료라는 뜻으로 본뜻에서 멀어졌으므로 소리대로 적는다.
   rubric:
-  - 공통 어간 1점
+  - 두 어간('걷-/걸-', '걸다'의 '걸-') 1점
   - ㉠ 본뜻 유지·원형 2점
   - ㉡ 본뜻에서 멀어짐·소리대로 1점
   - 조건 3 1점
@@ -3374,7 +3374,7 @@ items:
   - 조건 3 1점
   ev:
   - VIEW
-  difficulty: D3
+  difficulty: D2
   topic: 제39항
 - item_id: KOR-OV3-050
   archetype: C1_CONSTRUCTED_BLANK_SENTENCE
@@ -3399,5 +3399,5 @@ items:
   - 조건 3 1점
   ev:
   - VIEW
-  difficulty: D4
+  difficulty: D2
   topic: 제41·42항
