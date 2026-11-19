@@ -266,6 +266,7 @@ class Block:
         self.ops: list[tuple] = []
         self.h = 0.0
         self.splittable = splittable
+        self.gap = 0.0
 
     def text(self, lines, key="R", size=None, lh=None, dx=0.0):
         size = SIZE if size is None else size
@@ -344,17 +345,18 @@ def set_blocks(L: Layout, bundle: dict[str, Any], src: dict[str, Any], labels: d
 def build_blocks(L: Layout, bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[str, str], set_header) -> list[Block]:
     """Bundle item order; a set's passage/material is printed once, before its first item."""
     by_id = {s["id"]: s for s in sources}
+    dense = bool((bundle.get("layout") or {}).get("dense"))
     blocks: list[Block] = []
     seen: set[str] = set()
     for it in bundle["items"]:
         sid = it.get("set")
         if sid is None:
-            blocks.append(question_block(L, it, labels[it["item_id"]], bundle["product_mode"]))
+            blocks.append(question_block(L, it, labels[it["item_id"]], bundle["product_mode"], dense))
         elif sid not in seen:
             seen.add(sid)
             blocks += set_blocks(L, bundle, by_id[sid], labels, set_header)
             for x in [x for x in bundle["items"] if x.get("set") == sid]:
-                blocks.append(question_block(L, x, labels[x["item_id"]], bundle["product_mode"]))
+                blocks.append(question_block(L, x, labels[x["item_id"]], bundle["product_mode"], dense))
     return blocks
 
 
@@ -366,8 +368,9 @@ def _diff_badge(it: dict[str, Any]) -> str:
     return ""
 
 
-def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "ARC_N") -> Block:
+def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "ARC_N", dense: bool = False) -> Block:
     b = Block()
+    GAP = 16 if dense else 22  # dense: tighter gap, and the gap after the last block of a column is not counted
     pts = f" ({it['points']}점)" if it.get("points") else ""
     badge = _diff_badge(it)
     if it.get("format") == "CR":
@@ -401,7 +404,8 @@ def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "AR
         for k in (1.1, 2.1, 3.1):
             ry = top + LH * k
             b.ops.append(("line", 0, ry, COL_W, ry, 0.45))
-        b.h += 20
+        b.h += 20 if not dense else GAP
+        b.gap = GAP if dense else 0
         return b
     labels_ = [o if o == CIRC[i] else f"{CIRC[i]} {o}" for i, o in enumerate(it["options"])]  # bare ①~⑤ for underline items
     widest = max(L.width(t) for t in labels_)
@@ -420,7 +424,8 @@ def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "AR
         for t in labels_:
             b.text(L.wrap(t, COL_W, rest=hang))
             b.h += 1.5
-    b.h += 22
+    b.h += GAP
+    b.gap = GAP if dense else 0
     return b
 
 
@@ -865,7 +870,8 @@ def _render(bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[
             for op in b.ops[:1]
         )
         # Target 2 standalone questions per column (4 per page) on ARC_N when no shared passage precedes
-        if product == "ARC_N" and is_question and col_q_count >= 2 and not bundle.get("sets"):
+        dense = bool((bundle.get("layout") or {}).get("dense"))  # dense: fill every column to the bottom (items pre-packed by pack_bundle.py)
+        if product == "ARC_N" and is_question and col_q_count >= 2 and not bundle.get("sets") and not dense:
             advance()
         if b.splittable and y + b.h > bottom:
             rows: dict[float, list[tuple]] = {}
@@ -881,9 +887,9 @@ def _render(bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[
                 y += LH
             y += 2
             continue
-        if y + b.h > bottom:
+        if y + b.h - getattr(b, "gap", 0) > bottom:
             advance()
-            if b.h > bottom - col_top:
+            if b.h - getattr(b, "gap", 0) > bottom - col_top:
                 raise RenderError(f"QUESTION_BLOCK_TALLER_THAN_COLUMN: {b.h:.1f}pt")
         paint(page, b.ops, ML + col * (COL_W + GUT), y)
         y += b.h

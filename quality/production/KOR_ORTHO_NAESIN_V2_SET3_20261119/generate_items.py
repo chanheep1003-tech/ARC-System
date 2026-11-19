@@ -691,7 +691,11 @@ for r in raw:
 
 # 독립 블라인드 검수의 실측 난도를 표기 난도로 채택(하한 원칙)
 _bp = Path(__file__).with_name("blind_review.yaml")
-BLIND = {b["item_id"]: b for b in yaml.safe_load(_bp.read_text(encoding="utf-8"))["items"]} if _bp.is_file() else {}
+_bl = yaml.safe_load(_bp.read_text(encoding="utf-8"))["items"] if _bp.is_file() else []
+BLIND_FP = {b["fp"]: b for b in _bl if "fp" in b}  # 내용 지문(fingerprint)으로 연결 — 문항 순서를 바꿔도 검수 기록이 따라간다
+import re as _re5
+def _fp5(r):
+    return _re5.sub(r"^\[[^\]]*\] ", "", r["stem"]) + "#" + "|".join(r["view"]) + "#" + "|".join(sorted(r.get("opts", [])))
 # 사용자 지시(2026-11-19): 조항 번호는 문제지에 표시하지 않고 해설(정답 선지 근거)에만 둔다
 for r in raw:
     if r.get("cr"):
@@ -705,8 +709,9 @@ n = 0
 for r in raw:
     n += 1
     iid = f"KOR-OV3-{n:03d}"
-    if iid in BLIND and BLIND[iid].get("difficulty"):
-        r["d"] = BLIND[iid]["difficulty"]
+    _bb = BLIND_FP.get(_fp5(r))
+    if _bb and _bb.get("difficulty"):
+        r["d"] = _bb["difficulty"]
         if r["d"] != "D4":
             adv_ids.discard(id(r))
     if r.get("cr"):
@@ -740,9 +745,13 @@ bundle = {"batch_id": "KOR-ORTHO-NAESIN-V2-SET3-20261119", "product_mode": "ARC_
           "scope": "미래엔 공통국어2 3-(2) 한글 맞춤법과 오늘날의 국어생활 (2026-2 기말 범위)",
           "scope_refs": ["TEXTBOOK:미래엔 공통국어2 3-(2) 한글 맞춤법", "NOTICE:DONGBUK_2026_2_FINAL_SCOPE_NOTICE",
                          "DESIGN:quality/korean/ARC_KOR_ORTHOGRAPHY_DISCRIMINATION_ANALYSIS_20261119.md"],
-          "layout": {"marked_sentence_paragraphs": True},
+          "layout": {"marked_sentence_paragraphs": True, "body_pt": 9.8, "line_height_ratio": 1.5},
           "archetype_library": "quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml", "sets": [], "items": items}
 Path(__file__).with_name("items.yaml").write_text(yaml.safe_dump(bundle, allow_unicode=True, sort_keys=False, width=1000), encoding="utf-8")
+import subprocess as _sp, sys as _sys
+_ROOT = Path(__file__).resolve().parents[3]
+_sp.run([_sys.executable, str(_ROOT / "tooling/production/pack_bundle.py"), "pack", str(Path(__file__).parent)], check=True)  # 여백 최소화 배열(사용자 지시 2026-11-19)
+items = yaml.safe_load(Path(__file__).with_name("items.yaml").read_text(encoding="utf-8"))["items"]
 from collections import Counter
 print(len(items), "MCQ answers:", sorted(Counter(i["answer"] for i in items if "answer" in i).items()),
       "difficulty:", sorted(Counter(i["difficulty"] for i in items).items()))
