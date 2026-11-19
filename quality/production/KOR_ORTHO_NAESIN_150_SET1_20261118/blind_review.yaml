@@ -506,5 +506,17 @@ items:
   flags:
   - c
   note: 마나요의 올바른 표기는 많아요(만아요 아님). ①이 노골적으로 잘못된 서술이라 다소 뻔함.
+- item_id: KOR-ON1-041
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 5
+  - 4
+  second_best: 5
+  difficulty: D3
+  confidence: high
+  flags: []
+  note: '①: 닫히다 제6항, 돗자리 제7항 모두 참. ②걷잡다는 ㄷ 유지(거두어 잡다), ③밭이랑은 합성어라 [반니랑], ④덧니는 [던니]로
+    ㅅ 표기, ⑤같이는 제6항 예시이고 사뭇은 제7항 대상이나 앞절이 거짓.'
 rounds_history: R1 전 문항; R2 수정 문항 재검수; 2026-11-19 L4 교체분은 L4 심화 20제 블라인드(R1) 결과를 내용
   지문(fingerprint)으로 옮겨 붙임, 신규 문항은 별도 재검수

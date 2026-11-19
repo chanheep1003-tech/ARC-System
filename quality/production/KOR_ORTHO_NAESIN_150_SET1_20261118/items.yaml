@@ -2800,10 +2800,10 @@ items:
   - '''같이''는 [가치]로 소리 나지만 제6항과 관계가 없고, ''사뭇''은 제7항에 따라 적는다.'
   answer: 1
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE

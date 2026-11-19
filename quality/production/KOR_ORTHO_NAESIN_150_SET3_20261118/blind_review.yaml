@@ -500,5 +500,17 @@ items:
   confidence: HIGH
   flags: []
   note: ①~④는 모두 짝이 뒤바뀐 서술. 정답 ⑤ 외에 참인 선지 없음.
+- item_id: KOR-ON3-044
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 5
+  - 1
+  second_best: 4
+  difficulty: D3
+  confidence: high
+  flags: []
+  note: ㉣ -고 뒤 보조용언은 띄어 씀, ㉤ 떠내려가다는 합성 용언이라 띄어 씀, ㉥ 조사 도가 들어가므로 들은 척도로 띄어 씀. 나머지 ㉠㉡㉢은
+    허용 범위.
 rounds_history: R1 전 문항; R2 수정 문항 재검수; 2026-11-19 L4 교체분은 L4 심화 20제 블라인드(R1) 결과를 내용
   지문(fingerprint)으로 옮겨 붙임, 신규 문항은 별도 재검수

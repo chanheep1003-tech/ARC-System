@@ -3039,10 +3039,10 @@ items:
   - ㉢, ㉣, ㉥
   answer: 3
   second_best: 1
-  difficulty: D4
+  difficulty: D3
   family: ERROR_CORRECTION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
