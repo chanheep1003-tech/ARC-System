@@ -157,6 +157,26 @@ def main() -> int:
     assert counts_plan["D1"] == (0.0, 0.1), counts_plan
     assert rb({"product_mode": "ARC_N", "subject": "KOR"}, 20) == pipeline.PROFILES[("KOR", "ARC_N")]
 
+    # FINAL mirrors the school notice structure (2026-11-19).
+    fsf = pipeline.final_structure_findings
+    def fake(sel, cr, pts=4, cr_pts=5, part=None):
+        items = [{"item_id": f"M{i}", "format": "MCQ", "points": pts, **({"part": part(i)} if part else {})} for i in range(sel)]
+        items += [{"item_id": f"C{i}", "format": "CR", "points": cr_pts, **({"part": "A"} if part else {})} for i in range(cr)]
+        return {"items": items}
+    kor = {"selected": 22, "selected_points": 80, "essay": 4, "essay_points": 20}
+    ok = fake(22, 4, pts=80 / 22)
+    assert not fsf(ok, kor), fsf(ok, kor)
+    assert {f["code"] for f in fsf(fake(20, 4, pts=4), kor)} >= {"FINAL_STRUCTURE_MISMATCH"}
+    assert "FINAL_POINTS_SUM_MISMATCH" in {f["code"] for f in fsf(fake(22, 4, pts=3), kor)}
+    nopts = fake(22, 4); nopts["items"][0].pop("points")
+    assert "FINAL_POINTS_MISSING" in {f["code"] for f in fsf(nopts, kor)}
+    soc = {"selected": 22, "selected_points": 90, "essay": 2, "essay_points": 10,
+           "by_part": {"A": {"selected": 7, "essay": 1}, "B": {"selected": 7, "essay": 1}, "C": {"selected": 8, "essay": 0}}}
+    skew = fake(22, 2, pts=90 / 22, cr_pts=5, part=lambda i: "A" if i < 10 else ("B" if i < 16 else "C"))
+    assert "FINAL_STRUCTURE_MISMATCH" in {f["code"] for f in fsf(skew, soc)}
+    assert pipeline.detail_outlier({"options": ["가" * 10, "나" * 10, "다" * 11, "라" * 10, "마" * 20]}, 5)
+    assert not pipeline.detail_outlier({"options": ["가" * 10, "나" * 10, "다" * 11, "라" * 10, "마" * 12]}, 5)
+
     print("ARC PRODUCTION PIPELINE REGRESSION: PASS")
     return 0
 

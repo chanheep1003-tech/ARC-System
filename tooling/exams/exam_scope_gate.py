@@ -192,7 +192,8 @@ def analyze(bundle: dict, manifest: dict, registry: dict, *, root: Path = ROOT,
                 fail("FINAL_ANCHOR_PATH_INVALID", "Anchor must be a readable file inside the repository.")
     return {"status": "FAIL" if findings else "PASS", "exam_id": exam_id,
             "profile_sha256": digest(profile), "release_allowed": not findings,
-            "findings": findings, "anchor_path": anchor_path}
+            "findings": findings, "anchor_path": anchor_path,
+            "exam_structure": entry.get("exam_structure") if isinstance(entry.get("exam_structure"), dict) else None}
 
 
 def check_bundle(bundle: dict, manifest_path: Path = ROOT / "SYSTEM_MANIFEST.yaml", *, archived_replay=False) -> dict:

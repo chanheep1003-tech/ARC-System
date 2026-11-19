@@ -47,6 +47,8 @@ final_gate = _load("arc_final_quality_gate", "tooling/final/final_quality_gate.p
 typesetter = _load("arc_typesetter_gateway", "tooling/typeset/typesetter_gateway.py")
 pdf_gate = _load("arc_pdf_preflight", "tooling/pdf_qc/pdf_preflight.py")
 renderer = _load("arc_kor_renderer", "tooling/typeset/kor_renderer.py")
+archetype_gate = _load("arc_archetype_gate", "tooling/korean/archetype_gate.py")
+eng_type_gate = _load("arc_eng_exam_type_gate", "tooling/english/exam_type_gate.py")
 exam_gate = _load("arc_exam_scope_gate", "tooling/exams/exam_scope_gate.py")
 source_mix_gate = _load("arc_generation_source_mix", "tooling/sources/generation_source_gate.py")
 
@@ -509,6 +511,8 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
         for field in ("stem", "conditions", "model_answer", "rubric", "points"):
             if not it.get(field):
                 add("CR_FIELD_MISSING", item=iid, field=field)
+        if not it.get("accepted_variants"):
+            add("CR_ACCEPTED_VARIANTS_MISSING", "WARN", item=iid)
         for ref in it.get("ev", []):
             if not ref_ok(ref, set_by_id.get(it["set"])):
                 add("EVIDENCE_REF_OUT_OF_SOURCE", item=iid, ref=ref)
@@ -712,6 +716,50 @@ def qa_evidence(bundle, sources, blind, text, findings) -> dict[str, Any]:
     }
 
 
+def final_structure_findings(bundle: dict[str, Any], structure: dict[str, Any] | None) -> list[dict[str, Any]]:
+    """ARC FINAL mirrors the school notice: item counts, points per section, optional per-part counts."""
+    if not isinstance(structure, dict):
+        return [{"code": "FINAL_STRUCTURE_UNREGISTERED", "severity": "FAIL",
+                 "message": "exam_structure is missing from the exam context"}]
+    out: list[dict[str, Any]] = []
+    mcq, cr = mcq_items(bundle), cr_items(bundle)
+    want_sel, want_cr = structure.get("selected"), structure.get("essay")
+    if want_sel is not None and len(mcq) != int(want_sel) or want_cr is not None and len(cr) != int(want_cr):
+        out.append({"code": "FINAL_STRUCTURE_MISMATCH", "severity": "FAIL",
+                    "actual": {"selected": len(mcq), "essay": len(cr)}, "expected": {"selected": want_sel, "essay": want_cr}})
+    missing = [it["item_id"] for it in bundle["items"] if not it.get("points")]
+    if missing:
+        out.append({"code": "FINAL_POINTS_MISSING", "severity": "FAIL", "items": missing})
+    else:
+        for group, key in ((mcq, "selected_points"), (cr, "essay_points")):
+            want = structure.get(key)
+            got = round(sum(float(it["points"]) for it in group), 2)
+            if want is not None and abs(got - float(want)) > 0.01:
+                out.append({"code": "FINAL_POINTS_SUM_MISMATCH", "severity": "FAIL", "section": key, "actual": got, "expected": want})
+    parts = structure.get("by_part") or structure.get("parts")
+    if isinstance(parts, dict):
+        for part, spec in parts.items():
+            got_sel = sum(1 for it in mcq if str(it.get("part", "")).upper() == str(part).upper())
+            got_cr = sum(1 for it in cr if str(it.get("part", "")).upper() == str(part).upper())
+            if got_sel != int(spec.get("selected", 0)) or got_cr != int(spec.get("essay", 0)):
+                out.append({"code": "FINAL_STRUCTURE_MISMATCH", "severity": "FAIL", "part": part,
+                            "actual": {"selected": got_sel, "essay": got_cr}, "expected": spec})
+    return out
+
+
+def detail_outlier(item: dict[str, Any], answer: int) -> bool:
+    """Key is the unique longest option and >= 1.5x the median distractor length (answer-cue risk)."""
+    if item.get("length_justified"):
+        return False
+    lengths = [len(str(o).replace(" ", "")) for o in item.get("options", [])]
+    if len(lengths) != 5 or not 1 <= answer <= 5:
+        return False
+    key = lengths[answer - 1]
+    others = sorted(lengths[:answer - 1] + lengths[answer:])
+    median = (others[1] + others[2]) / 2
+    return key > max(others) and median > 0 and key >= 1.5 * median
+
+
 def final_profile(bundle, blind) -> dict[str, Any]:
     blind_by_id = {b["item_id"]: b for b in blind["items"]}
     rows = []
@@ -730,8 +778,10 @@ def final_profile(bundle, blind) -> dict[str, Any]:
             "immediate_elimination_count": it["immediate_elimination"], "correct_option": a, "second_best_option": sb,
             "second_best_refutation": it["judgments"][sb - 1]["why"],
             "option_lengths_chars": [len(o.replace(" ", "")) for o in it["options"]],
-            "correct_detail_outlier": False, "length_justified": bool(it.get("length_justified")),
-            "school_relative": it.get("school_relative", "SCHOOL_UPPER" if d in {"D4", "D5"} else "SCHOOL_STANDARD"),
+            "correct_detail_outlier": detail_outlier(it, a), "length_justified": bool(it.get("length_justified")),
+            # Declared value wins; otherwise a D1 direct-recall item counts as below Dongbuk level.
+            "school_relative": b.get("school_relative") or it.get("school_relative") or (
+                "BELOW_SCHOOL" if d == "D1" else "SCHOOL_UPPER" if d in {"D4", "D5"} else "SCHOOL_STANDARD"),
             "expected_time_class": it.get("expected_time_class", "LONG" if steps >= 3 else ("SHORT" if d in {"D1", "D2"} else "STANDARD")),
         })
     return {"product_mode": "ARC_FINAL", "item_count": len(rows), "items": rows}
@@ -781,6 +831,15 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
     findings = metrics["findings"]
     # Print-exam integrity: no-hint view, cross-item leak, option text lint (2026-11-19).
     findings.extend(content_gate.lint_bundle_text(bundle))
+    # Registered school archetypes (KOR grammar) and English type codes are required gates (manifest).
+    archetype_result = archetype_gate.analyze(raw_bundle)
+    if archetype_result["status"] == "NOT_APPLICABLE" and bundle.get("subject") == "KOR" and (
+            raw_bundle.get("v6") or any(content_gate.is_normative(it, raw_bundle) for it in raw_bundle.get("items", []))):
+        archetype_result = {"status": "FAIL", "findings": [{"code": "ARCHETYPE_LIBRARY_UNDECLARED", "severity": "FAIL"}]}
+    eng_result = eng_type_gate.analyze(raw_bundle)
+    for res, gate in ((archetype_result, "ARCHETYPE_GATE"), (eng_result, "ENG_EXAM_TYPE_GATE")):
+        for f in res.get("findings", []):
+            findings.append({**f, "severity": f.get("severity", "FAIL"), "gate": gate})
     required_rounds = manifest["runtime"].get("blind_review_rounds")
     if required_rounds is not None:
         rounds = blind.get("rounds")
@@ -857,6 +916,8 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
             if anchor_rel:
                 payload["difficulty_anchor"] = yaml.safe_load((ROOT / anchor_rel).read_text(encoding="utf-8"))
         final_result = final_gate.analyze(payload)
+        if not archived_replay:
+            findings.extend(final_structure_findings(bundle, exam_result.get("exam_structure")))
 
     hard = [f for f in findings if f["severity"] == "FAIL"]
     gate_prefix = f"{bundle['subject']}_"
@@ -872,9 +933,12 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
         "OBVIOUS_ANSWER_GATE": "FAIL" if any(f["code"] in {"OBVIOUS_KEY_D3_PLUS", "FIRST_PASS_CANDIDATES_SHORT"} for f in hard) else "PASS",
         "ATTRACTIVE_DISTRACTOR_GATE": "FAIL" if any(f["code"] == "WEAK_DISTRACTOR_D3_PLUS" for f in hard) else "PASS",
         "CONSTRUCTED_RESPONSE_GATE": "FAIL" if any(f["code"].startswith("CR_") or (f.get("item_id") in {c["item_id"] for c in cr_items(bundle)}) for f in hard) else ("PASS" if cr_items(bundle) else "NOT_APPLICABLE"),
-        "POINTS_GATE": "FAIL" if any(f["code"] == "POINT_TOTAL_NOT_100" for f in hard) else "PASS",
+        "POINTS_GATE": "FAIL" if any(f["code"] in {"POINT_TOTAL_NOT_100", "FINAL_POINTS_MISSING", "FINAL_POINTS_SUM_MISMATCH"} for f in hard) else "PASS",
+        "FINAL_STRUCTURE_GATE": ("FAIL" if any(f["code"] in {"FINAL_STRUCTURE_MISMATCH", "FINAL_STRUCTURE_UNREGISTERED"} for f in hard) else "PASS") if product == "ARC_FINAL" else "NOT_APPLICABLE",
         "STEM_FORM_GATE": "FAIL" if any(f["code"] in {"SINGLE_BEST_STEM_OVERUSE", "EXCEPT_STEM_OVERUSE", "STEM_SKELETON_RUN"} for f in hard) else "PASS",
         "ANSWER_POSITION_GATE": "FAIL" if any(f["code"].startswith("ANSWER_POSITION") for f in hard) else "PASS",
+        "ARCHETYPE_GATE": archetype_result["status"],
+        "ENG_EXAM_TYPE_GATE": eng_result["status"],
         "PRINT_INTEGRITY_GATE": "FAIL" if any(f["code"] in PRINT_INTEGRITY_CODES for f in hard) else "PASS",
         "DIFFICULTY_BALANCE_GATE": "FAIL" if any(f["code"].startswith("BALANCE_") or f["code"] == "DIFFICULTY_MISMATCH" for f in hard) else "PASS",
         "HANDOFF": handoff_result["status"],
