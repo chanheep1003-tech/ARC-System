@@ -144,6 +144,7 @@ def run(bundle_dir: Path, out_dir: Path) -> dict:
         "blind_missing_items": blind_missing,
         "author_side_failures": other_fail,
         "archetype_gate": archetype_gate.analyze(raw),
+        "print_integrity": pipeline.content_gate.lint_bundle_text(raw),
         "content_qa_status": qa_result["status"],
         "content_qa_non_blind_failures": qa_other,
         "metrics": {k: v for k, v in metrics.items() if k not in {"findings", "realism", "length_rows"}},

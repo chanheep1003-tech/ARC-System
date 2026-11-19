@@ -63,4 +63,4 @@ V1은 **전체 범위·다양한 유형의 개념 습득**, V2는 **중요 포�
 - 100문항 작성만으로 검증 완료로 간주하지 않는다.
 
 ## V6 별도 트랙
-이 V1~V3 재출제 명세와 무관하게 현대 맞춤법 특화 V6를 `quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md`에 추가한다. V6는 낯선 단어·속담·짧은 문장에서 품사와 조항 적용을 추론하는 별도 ARC N° 제품이며 본 파일의 V1~V3 300문항과 혼동하지 않는다.
+이 V1~V3 재출제 명세와 무관하게 현대 맞춤법 특화 V6를 `quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.1.md`에 추가한다. V6는 낯선 단어·속담·짧은 문장에서 품사와 조항 적용을 추론하는 별도 ARC N° 제품이며 본 파일의 V1~V3 300문항과 혼동하지 않는다.

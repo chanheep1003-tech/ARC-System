@@ -101,6 +101,8 @@ ITEM_GATE_CODES = {
     "DIFFICULTY_MATCH": {"DIFFICULTY_MISMATCH", "FAKE_D4", "WEAK_DISTRACTOR_D3_PLUS", "OBVIOUS_KEY_D3_PLUS",
                          "FIRST_PASS_CANDIDATES_SHORT", "CORRECT_LENGTH_CUE"},
 }
+PRINT_INTEGRITY_CODES = {"VIEW_SOLUTION_LABEL", "VIEW_SOLUTION_FORMULA", "OPTION_SELF_IDENTICAL_CORRECTION",
+                         "UNINTENDED_SPACING_ERROR", "HEADWORD_MISSING", "CROSS_ITEM_ANSWER_LEAK", "CROSS_ITEM_EXAMPLE_REUSE"}
 SET_GATE_CODES = {
     "STRUCTURE": {"TASK_FAMILY_DIVERSITY_LOW", "SINGLE_BEST_STEM_OVERUSE", "EXCEPT_STEM_OVERUSE", "STEM_SKELETON_RUN"},
     "STRUCTURE_BIAS": {"ANSWER_POSITION_BIAS", "ANSWER_POSITION_RUN", "LONGEST_OPTION_IS_KEY_RATE"},
@@ -777,6 +779,8 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
     (out_dir / "student_manuscript.md").write_text(text, encoding="utf-8")
     metrics = measure(bundle, sources, blind, text)
     findings = metrics["findings"]
+    # Print-exam integrity: no-hint view, cross-item leak, option text lint (2026-11-19).
+    findings.extend(content_gate.lint_bundle_text(bundle))
     required_rounds = manifest["runtime"].get("blind_review_rounds")
     if required_rounds is not None:
         rounds = blind.get("rounds")
@@ -871,6 +875,7 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
         "POINTS_GATE": "FAIL" if any(f["code"] == "POINT_TOTAL_NOT_100" for f in hard) else "PASS",
         "STEM_FORM_GATE": "FAIL" if any(f["code"] in {"SINGLE_BEST_STEM_OVERUSE", "EXCEPT_STEM_OVERUSE", "STEM_SKELETON_RUN"} for f in hard) else "PASS",
         "ANSWER_POSITION_GATE": "FAIL" if any(f["code"].startswith("ANSWER_POSITION") for f in hard) else "PASS",
+        "PRINT_INTEGRITY_GATE": "FAIL" if any(f["code"] in PRINT_INTEGRITY_CODES for f in hard) else "PASS",
         "DIFFICULTY_BALANCE_GATE": "FAIL" if any(f["code"].startswith("BALANCE_") or f["code"] == "DIFFICULTY_MISMATCH" for f in hard) else "PASS",
         "HANDOFF": handoff_result["status"],
         "TYPESETTER_ADMISSION": admission,

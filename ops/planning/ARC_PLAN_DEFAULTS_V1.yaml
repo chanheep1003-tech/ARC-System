@@ -16,7 +16,7 @@ kor_versions:             # 국어 ARC N° 네 단계 + 특화. 근거: quality/
   V2: {name: 핵심 집중·복합, goal: 학교자료·기출로 중요도가 확인된 축에 비중, difficulty: {D2: 0.30, D3: 0.45, D4: 0.22, D5: 0.03}, advanced: 0.25, new_material: 학교자료 변형}
   V3: {name: 낯선 자료 전이, goal: 처음 보는 지문·예문에 범위 개념 적용, difficulty: {D2: 0.25, D3: 0.45, D4: 0.25, D5: 0.05}, advanced: 0.30, new_material: 문항마다 새 자료}
   V4: {name: 최상위 변별, goal: 근거 다층 결합·반례·미세 조건, difficulty: {D2: 0.15, D3: 0.50, D4: 0.30, D5: 0.05}, advanced: 0.30, new_material: 필요 시}
-  V6: {name: 맞춤법·띄어쓰기 특화, goal: 낯선 표현의 품사·규정 적용, difficulty: {D2: 0.25, D3: 0.45, D4: 0.25, D5: 0.05}, advanced: 0.30, new_material: 문항마다 새 예문, policy: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md}
+  V6: {name: 맞춤법·띄어쓰기 특화, goal: 낯선 표현의 품사·규정 적용, difficulty: {D2: 0.25, D3: 0.45, D4: 0.25, D5: 0.05}, advanced: 0.30, new_material: 문항마다 새 예문, policy: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.1.md}
 kor_version_choice:
   explicit: 사용자가 버전을 말하면 그대로
   orthography_or_spacing_request: V6

@@ -164,6 +164,60 @@ def run() -> None:
     result = mod.analyze(incomplete)
     assert {"CONFIDENCE_INVALID", "TRANSFER_FLAG_INVALID"} <= codes(result)
 
+
+    # --- Print-exam integrity lint: regressions from the 2026-11 orthography set review ---
+    def lint_codes(bundle):
+        return {(f["code"], f["severity"]) for f in mod.lint_bundle_text(bundle)}
+
+    def j(why):
+        return {"axis": "orthography", "why": why}
+
+    # B-1 no-hint view: a derived decision formula may not sit in <보기>.
+    hinted = {"items": [{"item_id": "H1", "stem": "<보기>를 바탕으로 적절하지 않은 것은?",
+                         "view": ["[해설 자료] '하' 앞 받침이 [ㄱ, ㄷ, ㅂ]이면 '하'가 통째로 탈락한다."],
+                         "options": ["a", "b", "c", "d", "e"], "judgments": [j("")] * 5}]}
+    assert ("VIEW_SOLUTION_LABEL", "FAIL") in lint_codes(hinted)
+    unlabeled = copy.deepcopy(hinted)
+    unlabeled["items"][0]["view"] = ["'하' 앞 받침이 ㄱ, ㄷ, ㅂ이면 '하'가 통째로 탈락한다."]
+    assert ("VIEW_SOLUTION_FORMULA", "FAIL") in lint_codes(unlabeled)
+    official = copy.deepcopy(hinted)
+    official["items"][0]["view"] = ["제40항 [붙임 2] 어간의 끝음절 '하'가 아주 줄 적에는 준 대로 적는다.",
+                                    "[발음 자료] 깨끗하지 않다[깨끄타지 안타]", "[사전 뜻풀이] 생각하건대: 생각하다의 활용형"]
+    assert not lint_codes(official), lint_codes(official)
+
+    # B-4 self-identical correction and unintended spacing outside the target.
+    selfsame = copy.deepcopy(official)
+    selfsame["items"][0]["options"][0] = "'똑똑하다'를 '똑똑하다'로 적지 않는 것은 어간이 바뀌기 때문이다."
+    assert ("OPTION_SELF_IDENTICAL_CORRECTION", "FAIL") in lint_codes(selfsame)
+    stray = copy.deepcopy(official)
+    stray["items"][0]["options"][1] = "아직 할게 남아 있다는 뜻이다."
+    assert ("UNINTENDED_SPACING_ERROR", "FAIL") in lint_codes(stray)
+    declared = copy.deepcopy(stray)
+    declared["items"][0]["judgments"][1] = j("'할 게'로 띄어 써야 하므로 틀린 표기이다.")
+    assert ("UNINTENDED_SPACING_ERROR", "FAIL") not in lint_codes(declared)
+
+    # Core-headword typo: plan says 곗날, the option printed 옛날.
+    typo = copy.deepcopy(official)
+    typo["items"][0]["headwords"] = ["곗날"]
+    typo["items"][0]["options"][2] = "옛날은 사이시옷을 적는다."
+    found = [f for f in mod.lint_bundle_text(typo) if f["code"] == "HEADWORD_MISSING"]
+    assert found and "옛날" in found[0]["message"], found
+
+    # B-3 cross-item leak: the constructed-response answer printed in an earlier MCQ.
+    leak = {"v6": {"area": "A"}, "items": [
+        {"item_id": "M1", "stem": "바른 표기는?", "options": ["깨끗이 닦았다.", "꼼꼼이 보았다.", "일일히 셌다.", "번번히 졌다.", "솔직이 말했다."],
+         "judgments": [j("")] * 5},
+        {"item_id": "C1", "format": "CR", "stem": "다음 문장의 밑줄 친 말을 바르게 고쳐 쓰시오. 방을 깨끗히 치웠다.",
+         "answer_targets": ["깨끗이"], "model_answer": "'깨끗이'", "conditions": ["한 단어로 쓸 것."]},
+    ]}
+    found = {f["code"] for f in mod.lint_bundle_text(leak) if f["severity"] == "FAIL"}
+    assert "CROSS_ITEM_ANSWER_LEAK" in found, found
+    reuse = copy.deepcopy(leak)
+    reuse["items"][1]["answer_targets"] = ["정갈히"]
+    reuse["items"][1]["stem"] = "‘방을 깨끗이 닦았다.’를 활용하여 부사 파생 규정을 서술하시오."
+    assert "CROSS_ITEM_EXAMPLE_REUSE" in {f["code"] for f in mod.lint_bundle_text(reuse)}
+
+    print("ARC PRINT-EXAM INTEGRITY LINT: PASS")
     print("ARC CONTENT QA GATE SMOKE: PASS")
 
 

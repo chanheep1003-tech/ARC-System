@@ -242,6 +242,197 @@ def analyze_korean_source_locks(data: dict[str, Any], item_ids: set[str]) -> lis
     return findings
 
 
+# ---------------------------------------------------------------------------
+# Print-exam integrity lint (2026-11-19). Runs on the authored bundle text
+# (items.yaml), not on QA evidence. Static PASS never replaces human review.
+#   quality/ARC_VIEW_EVIDENCE_POLICY_V1.0.md
+#   quality/ARC_SET_CROSS_ITEM_LEAK_GATE_V1.0.md
+# ---------------------------------------------------------------------------
+NORMATIVE_AXES = {"orthography", "spacing", "grammar", "pronunciation", "morphology", "phonology", "norm",
+                  "word_formation", "standard_pronunciation", "loanword", "romanization"}
+# Labels a normative <보기> may carry: official clause text or objective data only.
+VIEW_ALLOWED_LABEL = re.compile(
+    r"^\s*(?:\[(?:조항 원문|규정 원문|한글 맞춤법|표준어 규정|표준 발음법|외래어 표기법|로마자 표기법|발음 자료|사전 뜻풀이|"
+    r"사전 자료|짜임 자료|형태소 자료|자료|예문|학생의 글|탐구 대화|대화)\]|제\s*\d+\s*항|<?(?:한글 맞춤법|표준 발음법|표준어 규정)|"
+    r"[㉠-㉯ⓐ-ⓩⒶ-Ⓩㄱ-ㅎ]\s*[.:)]?\s|\(?[가-하]\)\s)")
+VIEW_FORBIDDEN_LABEL = re.compile(r"\[(?:해설 ?자료|해설|풀이|풀이 ?자료|판별 ?기준|판단 ?기준|힌트|정리|요령|공식|팁)\]")
+# A derived decision rule: condition + orthographic outcome.
+VIEW_FORMULA = re.compile(
+    r"(?:이면|라면|일 ?때|인 ?경우|하면|으면|는 경우)[^.。\n]{0,40}?"
+    r"(?:탈락|줄어|줄여|붙여 ?(?:쓴|적)|띄어 ?(?:쓴|적)|(?:으로|로) ?적|소리 ?(?:나|난)|된소리|거센소리|사이시옷)")
+QUOTED_PAIR = re.compile(r"[‘'“\"]([^‘’'“”\"]{1,30})[’'”\"]\s*(?:을|를)\s*[‘'“\"]([^‘’'“”\"]{1,30})[’'”\"]\s*(?:으로|로)")
+ARROW_PAIR = re.compile(r"([가-힣A-Za-z]{1,20})\s*(?:→|->|⇒)\s*([가-힣A-Za-z]{1,20})")
+DUP_WORD = re.compile(r"(?<![가-힣])([가-힣]{2,})\s+\1(?![가-힣])")
+HANGUL = re.compile(r"[가-힣]")
+
+
+def _final_jong(ch: str) -> int:
+    code = ord(ch) - 0xAC00
+    return code % 28 if 0 <= code < 11172 else -1
+
+
+def spacing_anomalies(text: str) -> list[str]:
+    """High-precision unintended-spacing patterns (dependent nouns written attached)."""
+    hits: list[str] = []
+    for m in re.finditer(r"([가-힣])(게|수|것)(\s*)(남|있|없|많|아니|뭐|같)", text):
+        pre, noun, gap, nxt = m.groups()
+        jong = _final_jong(pre)
+        if noun in {"게", "수"} and jong == 8:          # ㄹ-final: 할게 남아 / 할수 있다
+            hits.append(m.group(0))
+        elif noun == "것" and jong in {4, 8}:           # ㄴ/ㄹ-final: 한것 같다 / 할것 없다
+            hits.append(m.group(0))
+    for m in re.finditer(r"([가-힣])(수)(있|없)", text):   # 할수있다
+        if _final_jong(m.group(1)) == 8 and m.group(0) not in hits:
+            hits.append(m.group(0))
+    return hits
+
+
+def _norm(text: str) -> str:
+    return re.sub(r"[^가-힣A-Za-z0-9]", "", str(text))
+
+
+def _texts(value: Any) -> list[str]:
+    if value is None:
+        return []
+    if isinstance(value, str):
+        return [value]
+    if isinstance(value, (list, tuple)):
+        out: list[str] = []
+        for v in value:
+            out.extend(_texts(v))
+        return out
+    if isinstance(value, dict):
+        out = []
+        for v in value.values():
+            out.extend(_texts(v))
+        return out
+    return [str(value)]
+
+
+def is_normative(item: dict[str, Any], bundle: dict[str, Any]) -> bool:
+    if item.get("normative") is not None:
+        return bool(item["normative"])
+    if bundle.get("v6") or item.get("v6_area") or str(item.get("domain", "")).upper() in {"GRAMMAR", "NORM"}:
+        return True
+    axes = {str(j.get("axis", "")).casefold() for j in item.get("judgments") or [] if isinstance(j, dict)}
+    return bool(axes & NORMATIVE_AXES)
+
+
+def _edit1(a: str, b: str) -> bool:
+    return len(a) == len(b) and sum(x != y for x, y in zip(a, b)) == 1
+
+
+def lint_bundle_text(bundle: dict[str, Any]) -> list[dict[str, Any]]:
+    """Static print-exam integrity lint over an items.yaml bundle.
+
+    Returns findings with severity FAIL/WARN and codes:
+      VIEW_SOLUTION_LABEL, VIEW_SOLUTION_FORMULA (no-hint view, normative items)
+      OPTION_SELF_IDENTICAL_CORRECTION, UNINTENDED_SPACING_ERROR, DUPLICATE_WORD, WHITESPACE_ANOMALY
+      HEADWORD_MISSING (declared `headwords` absent; near-miss spelling reported)
+      CROSS_ITEM_ANSWER_LEAK, CROSS_ITEM_EXAMPLE_REUSE (set-level)
+    """
+    findings: list[dict[str, Any]] = []
+    items = [it for it in bundle.get("items") or [] if isinstance(it, dict)]
+
+    def add(code: str, severity: str, message: str, item_id: str | None = None, **extra: Any) -> None:
+        findings.append({"code": code, "severity": severity, "message": message, **({"item_id": item_id} if item_id else {}), **extra})
+
+    for it in items:
+        iid = str(it.get("item_id", ""))
+        normative = is_normative(it, bundle)
+        options = [str(o) for o in it.get("options") or []]
+        authored = {"stem": _texts(it.get("stem")), "view": _texts(it.get("view")), "options": options,
+                    "conditions": _texts(it.get("conditions")), "model_answer": _texts(it.get("model_answer"))}
+
+        # 1. No-hint view (normative items only; literature views may carry interpretive context).
+        if normative:
+            for line in authored["view"]:
+                for raw in str(line).splitlines():
+                    if VIEW_FORBIDDEN_LABEL.search(raw):
+                        add("VIEW_SOLUTION_LABEL", "FAIL", f"<보기>에 해설·판별 공식 자료 표지: {raw[:40]}", iid)
+                    elif VIEW_FORMULA.search(raw) and not VIEW_ALLOWED_LABEL.match(raw):
+                        # A view that restates official clauses must cite them (`view_clause_refs`);
+                        # the reviewer then confirms the wording is clause text, not a derived shortcut.
+                        sev = "WARN" if it.get("view_clause_refs") else "FAIL"
+                        add("VIEW_SOLUTION_FORMULA", sev, f"<보기>에 조항 원문이 아닌 판별 공식 의심: {raw[:50]}", iid)
+
+        # 2. Self-identical corrections anywhere in student text.
+        for field, texts in authored.items():
+            for text in texts:
+                for a, b in QUOTED_PAIR.findall(text) + ARROW_PAIR.findall(text):
+                    if a.strip() == b.strip():
+                        add("OPTION_SELF_IDENTICAL_CORRECTION", "FAIL", f"{field}: '{a}'를 '{b}'로 — 고치기 전후가 같음", iid)
+
+        # 3. Unintended spacing errors. In normative items a deliberate error is acknowledged when
+        #    (a) it sits right after a target mark (㉠, ⓐ, [ ...) in the view/options, or
+        #    (b) a judgment names the fragment or its corrected form, or (c) `intended_errors` lists it.
+        judgments = [j for j in it.get("judgments") or [] if isinstance(j, dict)]
+        declared = [str(x) for x in it.get("intended_errors") or []]
+        judgment_text = _norm(" ".join(_texts([j.get("why") for j in judgments] + [j.get("claim") for j in judgments])))
+        for field, texts in authored.items():
+            for idx, text in enumerate(texts):
+                for hit in spacing_anomalies(text):
+                    core = _norm(hit[:2])
+                    pos = text.find(hit)
+                    near_mark = pos >= 0 and re.search(r"[㉠-㉯ⓐ-ⓩⒶ-Ⓩ\[][^㉠-㉯ⓐ-ⓩⒶ-Ⓩ\[\]]{0,14}$", text[max(0, pos - 15):pos + 1]) is not None
+                    acknowledged = normative and field in {"options", "view"} and (
+                        near_mark or core in judgment_text
+                        or any(_norm(hit) in _norm(d) or _norm(d) in _norm(hit) for d in declared))
+                    if not acknowledged:
+                        loc = f"{field}[{idx + 1}]" if field == "options" else field
+                        add("UNINTENDED_SPACING_ERROR", "FAIL", f"{loc}: 의도하지 않은 붙여쓰기 의심 '{hit}'", iid)
+                for m in DUP_WORD.finditer(text):
+                    add("DUPLICATE_WORD", "WARN", f"{field}: 같은 단어 연속 '{m.group(0)}'", iid)
+                if re.search(r"[가-힣]  +[가-힣]|\s+[.,?!](?!\.)", text):
+                    add("WHITESPACE_ANOMALY", "WARN", f"{field}: 이중 공백 또는 문장부호 앞 공백", iid)
+
+        # 4. Declared headwords must appear; report near-miss spellings (곗날 → 옛날).
+        student = " ".join(t for texts in authored.values() for t in texts)
+        tokens = set(re.findall(r"[가-힣]+", student))
+        for hw in it.get("headwords") or []:
+            hw = str(hw).strip()
+            if hw and hw not in student:
+                near = sorted(t for t in tokens if any(_edit1(hw, t[i:i + len(hw)]) for i in range(0, max(1, len(t) - len(hw) + 1))))
+                add("HEADWORD_MISSING", "FAIL", f"계획 표제어 '{hw}'가 학생 텍스트에 없음" + (f" (유사 표기: {', '.join(near[:3])})" if near else ""), iid)
+
+    # 5. Set-level cross-item leak: a constructed-response answer printed in another item.
+    def student_text(it: dict[str, Any]) -> str:
+        return " ".join(_texts(it.get("stem")) + _texts(it.get("view")) + [str(o) for o in it.get("options") or []])
+
+    for cr in items:
+        if str(cr.get("format", "")).upper() not in {"CR", "CONSTRUCTED", "SHORT_ANSWER"}:
+            continue
+        explicit = [str(x) for x in cr.get("answer_targets") or []]
+        auto: list[str] = []
+        for text in _texts(cr.get("model_answer")):
+            auto += re.findall(r"[‘'“\"]([^‘’'“”\"]{2,40})[’'”\"]", text)
+        for text in _texts(cr.get("accepted_variants")):
+            auto += [re.sub(r"^[ⓐ-ⓩ㉠-㉯A-Za-z0-9.)\s]+", "", part).strip() for part in re.split(r"[/,]", text)]
+        targets = [(t, True) for t in explicit if _norm(t)] + [(t, False) for t in auto if len(_norm(t)) >= 3]
+        normative = is_normative(cr, bundle) or bool(bundle.get("v6"))
+        for other in items:
+            if other is cr:
+                continue
+            other_text = _norm(student_text(other))
+            for target, is_explicit in targets:
+                if _norm(target) and _norm(target) in other_text:
+                    sev = "FAIL" if (normative or is_explicit) else "WARN"
+                    add("CROSS_ITEM_ANSWER_LEAK", sev, f"서답형 {cr.get('item_id')}의 답 '{target}'이 {other.get('item_id')}에 그대로 실림", str(cr.get("item_id")),
+                        leaked_in=other.get("item_id"))
+        if normative:
+            cr_text = _norm(" ".join(_texts(cr.get("stem")) + _texts(cr.get("view")) + _texts(cr.get("conditions"))))
+            for other in items:
+                if other is cr or str(other.get("format", "")).upper() in {"CR", "CONSTRUCTED", "SHORT_ANSWER"}:
+                    continue
+                for option in [str(o) for o in other.get("options") or []] + _texts(other.get("view")):
+                    o = _norm(re.sub(r"[\[\]]", "", option))
+                    if len(o) >= 6 and any(o[i:i + 6] in cr_text for i in range(0, len(o) - 5)):
+                        add("CROSS_ITEM_EXAMPLE_REUSE", "FAIL", f"서답형 {cr.get('item_id')}가 {other.get('item_id')}의 예문을 다시 씀: {option[:30]}",
+                            str(cr.get("item_id")), reused_from=other.get("item_id"))
+                        break
+    return findings
+
+
 def analyze(data: dict[str, Any]) -> dict[str, Any]:
     findings: list[dict[str, Any]] = []
     subject = str(data.get("subject", "")).upper()

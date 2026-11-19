@@ -47,9 +47,10 @@ runtime:
   korean_learning_level_v4: ARC_N_ADVANCED_DISCRIMINATION
   korean_learning_level_v5: ARC_FINAL_DONGBUK_SIMULATION
   korean_learning_level_v6: ARC_N_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY
-  korean_v6_specialist_policy: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md
+  korean_v6_specialist_policy: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.1.md
+  korean_school_hybrid_format: quality/korean/ARC_KOR_SCHOOL_HYBRID_FORMAT_V1.0.md
   korean_v6_spacing_pos_policy: quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.0.md
-  korean_v6_spacing_min_questions_target: 65
+  korean_v6_spacing_min_questions_target: PER_REQUEST_PLAN   # was 65; counts vary per request (2026-11-19)
   korean_v6_particle_vs_dependent_noun_target: 30
   korean_v6_particle_subtype_validation: required
   korean_v6_orthography_permissible_forms_gate: required
@@ -170,6 +171,7 @@ runtime:
   d4_d5_minimum_gate: required
   universal_distractor_competitiveness_gate: required
   universal_answer_length_bias_gate: required
+  print_integrity_gate: required          # no-hint view, cross-item leak, option text lint (2026-11-19)
   arc_n_dongbook_difficulty_floor: reference_only_not_release_gate
   arc_n_school_difficulty_match: not_required
   arc_n_balance_gate: required
@@ -393,6 +395,8 @@ active:
       drive_id: 1t0l6juVLzJxx9UMN5YwG1eRu4enAXpmX
     item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.6.md
     false_difficulty_gate: quality/ARC_FALSE_DIFFICULTY_GATE_V1.0.md
+    view_evidence_policy: quality/ARC_VIEW_EVIDENCE_POLICY_V1.0.md
+    set_cross_item_leak_gate: quality/ARC_SET_CROSS_ITEM_LEAK_GATE_V1.0.md
     school_archetype_gate: quality/ARC_SCHOOL_ARCHETYPE_GATE_V1.0.md
     final_quality_gate: quality/ARC_FINAL_QUALITY_GATE_V1.2.md
     dongbuk_actual_exam_difficulty_corpus: quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
