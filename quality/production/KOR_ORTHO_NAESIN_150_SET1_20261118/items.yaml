@@ -2797,7 +2797,7 @@ items:
   - '''굳이''는 제6항에 따라 적고, ''걷잡다''도 ''ㄷ''으로 적을 근거가 없어 ''것잡다''로 적는다.'
   - '''밭이랑''은 [바치랑]으로 소리 나므로 제6항의 대상이고, ''얼핏''은 제7항의 대상이다.'
   - '''핥이다''는 [할치다]로 소리 나도 원형을 밝혀 적고, ''덧니''는 ''ㄷ''으로 적을 근거가 있어 ''덛니''로 적는다.'
-  - '''끝이''는 조사가 결합한 말이라 제6항과 관계가 없고, ''사뭇''은 제7항에 따라 적는다.'
+  - '''같이''는 [가치]로 소리 나지만 제6항과 관계가 없고, ''사뭇''은 제7항에 따라 적는다.'
   answer: 1
   second_best: 2
   difficulty: D4
@@ -2851,7 +2851,7 @@ items:
     - VIEW
     - OPTION5
     v: false
-    why: '''끝이''는 체언에 조사 ''이''가 결합해 [끄치]로 소리 나는 제6항의 사례이다.'
+    why: '''같이''는 ''ㅌ'' 받침 뒤에 ''-이''가 와 [가치]로 소리 나는 제6항의 사례이다.'
     trap: T3_ONE_OF_TWO_WRONG
 - item_id: KOR-ON1-042
   archetype: A3_CONDITION_CLASSIFICATION
@@ -2867,10 +2867,10 @@ items:
   - Ⓐ ㉠, ㉢, ㉣   Ⓑ ㉡, ㉤   Ⓒ 없음
   answer: 1
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: COMPARISON_MATRIX
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -2938,10 +2938,10 @@ items:
   - ㉤
   answer: 3
   second_best: 4
-  difficulty: D3
+  difficulty: D2
   family: EXCEPT_INCORRECT
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE
@@ -3005,10 +3005,10 @@ items:
   - '''늘어나다''는 원형을 밝혀 적고, ''이르다(至)''는 ''일러''로 활용한 대로 적는다.'
   answer: 1
   second_best: 2
-  difficulty: D4
+  difficulty: D3
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
@@ -3072,10 +3072,10 @@ items:
   - 학습자의 오류는 '소리대로'만 따르고 '어법에 맞도록'을 고려하지 않은 데서 생겼다.
   answer: 1
   second_best: 4
-  difficulty: D3
+  difficulty: D2
   family: CASE_APPLICATION
   balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: NEGATIVE

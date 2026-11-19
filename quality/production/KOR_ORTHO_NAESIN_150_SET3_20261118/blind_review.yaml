@@ -478,5 +478,27 @@ items:
   flags: []
   difficulty: D3
   note: ㉢ '선우진' 붙임도 바르므로 '바름'은 허용 근거 필요; 모범답 확정에는 조건 명시 필요
+- item_id: KOR-ON3-043
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 1
+  - 2
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: ㄴ 형제간은 붙여 씀(접미사성), ㄹ 서울과 부산 간은 의존 명사로 띄어 씀이므로 거짓.
+- item_id: KOR-ON3-045
+  answer: 5
+  first_pass_top3:
+  - 5
+  - 2
+  - 3
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: ①~④는 모두 짝이 뒤바뀐 서술. 정답 ⑤ 외에 참인 선지 없음.
 rounds_history: R1 전 문항; R2 수정 문항 재검수; 2026-11-19 L4 교체분은 L4 심화 20제 블라인드(R1) 결과를 내용
   지문(fingerprint)으로 옮겨 붙임, 신규 문항은 별도 재검수
