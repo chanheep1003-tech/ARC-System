@@ -266,6 +266,21 @@ mcq("A5_EXAMPLE_MULTI_JUDGMENT", "D4", "사이시옷과 준말 표기에 대한 
     4, [(M, "ㄷ도 옳다."), (W, "ㄹ은 옳지 않다."), (S, "ㄹ은 옳지 않다. '되라'는 간접 인용 등에 쓰이는 형태로 '돼라'로 줄지 않는다."), (S, ""),
         (S, "ㄱ도 옳고 ㄹ은 옳지 않다.")], fixed=True, topic="제30·35항")
 
+# ───────────── 조항 제시: <보기>에 조항 원문이 없으면 [참고 조항]을 붙인다 (사용자 지시 2026-11-19) ─────────────
+import re as _re3, yaml as _y3
+_RT = _y3.safe_load((Path(__file__).resolve().parents[2] / "korean/ARC_KOR_ORTHOGRAPHY_RULE_TEXTS_V1.0.yaml").read_text(encoding="utf-8"))["rules"]
+def _arts(topic):
+    nums = []
+    for a, b in _re3.findall(r"(\d+)(?:~(\d+))?", topic or ""):
+        nums += list(range(int(a), int(b) + 1)) if b else [int(a)]
+    return [n for n in nums if n in _RT]
+for _r in raw:
+    if any(_re3.search(r"제\d+항", v) for v in _r["view"]):
+        continue
+    _ns = _arts(_r.get("topic", ""))[:2]
+    if _ns:
+        _r["view"] = ["[참고 조항]"] + [_RT[n] for n in _ns] + list(_r["view"])
+
 # ───────────── 조판: Ⓐ·Ⓑ·Ⓒ 조건과 ㉠~㉤ 나열을 단락으로 분리 (사용자 지시 2026-11-19) ─────────────
 import re as _re2
 _CONN = ("다만,", "다만", "또", "또한", "한편", "그리고")

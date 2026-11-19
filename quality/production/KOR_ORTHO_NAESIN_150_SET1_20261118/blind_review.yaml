@@ -406,5 +406,100 @@ items:
   your_answer: ㉠은 'ㄹㄹ', ㉡은 'ㅡ', ㉢은 잠가이다.
   flags: []
   difficulty: D2
+- item_id: KOR-ON1-037
+  answer: 4
+  first_pass_top3:
+  - 4
+  - 2
+  - 3
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 제6항(밭이/굳이 구개음화 미반영 표기), 제17항 형식형태소(조사 이)/실질형태소(이랑) 대비 4번 적절. 1 사이시옷 무관, 2
+    제6항상 'ㄷ' 유지, 3 '구치다' 허용 없음, 5 제14항상 '끝' 고정.
+- item_id: KOR-ON1-038
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 3
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 신년+도, 고랭+지는 뒷말 첫머리 아님(본음), 몰+이해, 열+역학은 제10항 붙임2/제11항 붙임 접두사처럼 쓰이는 한자·합성어,
+    연도는 첫머리 두음. 신년도·고랭지는 표준국어대사전 표제어와 일치. 단 '신(新)이 접두사처럼 쓰이는 한자'로 보면 신년이 신+년이 될 수
+    있어 의미 단위 안내(보기1)가 결정적.
+- item_id: KOR-ON1-040
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 2
+  - 5
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 깨끗이(ㅅ 받침), 꼼꼼히, 틈틈이(첩어 명사), 끔찍이(사전 표제어 '끔찍이'), 가벼이(ㅂ불규칙). ㄴ·ㄷ·ㅁ 고침이 적절, ㄱ·ㄹ
+    고침은 오히려 오류.
+- item_id: KOR-ON1-041
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 3
+  - 2
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: '제18항 러 불규칙: 푸르러, 이르러(至), (빛깔) 누르러. 2 ''단추를 누르다''는 눌러, 3 치르다는 치러, 4 벗어, 5
+    얻어(규칙). 정답 1.'
+- item_id: KOR-ON1-042
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 4
+  - 5
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 지그시(눈을 지그시 감다)는 지긋이와 별개 부사(사전 별도 표제어)이므로 고쳐서는 안 됨. 반듯이/반드시, 지긋이, 곰곰이(제51항
+    부사 뒤), 가까이(ㅂ불규칙) 설명은 적절.
+- item_id: KOR-ON1-043
+  answer: 2
+  first_pass_top3:
+  - 2
+  - 1
+  - 3
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags:
+  - c
+  note: 서비스는 모음으로 끝나므로 제11항 붙임4에 따라 '서비스율'이며 '서비스률'은 오류. 자료에 조건이 제시돼 비교적 뻔함.
+- item_id: KOR-ON1-044
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 3
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  note: 널따랗다, 얄팍하다, 넓적하다, 굵다랗다, 늙수그레하다는 모두 표준어. 짤막하다가 맞으므로 '짧막한'(㉤)만 고쳐야 함.
+- item_id: KOR-ON1-045
+  answer: 3
+  first_pass_top3:
+  - 3
+  - 4
+  - 1
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: 굳이는 어간 '굳-'+부사화 접미사 '-이'(제6항 구개음화 미반영)이며 체언+조사가 아님. 나머지 1,2,4,5는 근거 적절.
 rounds_history: R1 전 문항; R2 수정 문항 재검수; 2026-11-19 L4 교체분은 L4 심화 20제 블라인드(R1) 결과를 내용
   지문(fingerprint)으로 옮겨 붙임, 신규 문항은 별도 재검수
