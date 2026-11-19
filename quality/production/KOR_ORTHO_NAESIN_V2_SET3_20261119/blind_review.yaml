@@ -472,3 +472,21 @@ items:
     '것'+조사 '을'이 줄어든 말이므로 제42항에 따라 앞말과 띄어 쓴다.
   flags: []
   difficulty: D2
+- item_id: KOR-OV3-036
+  answer: 1
+  first_pass_top3:
+  - 1
+  - 2
+  - 4
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  note: 1 제43항 단서 둘 다 성립. 2 물한 병 불가(의미 묶임 아님, 물 한병도 세 단음절). 3 만 단위 띄어쓰기라 삼십육 만 오천
+    불가. 4 열살은 순서도 숫자 어울림도 아님. 5 해설상 세 개 이상 불가.
+- item_id: KOR-OV3-048
+  meets_rubric: true
+  your_answer: ㉠ '걸음'은 어간 '걷-'(걸-)에 '-음'이 붙은 말로 어간의 본뜻이 살아 있어 원형을 밝혀 적는다. ㉡ '거름'은
+    '걸다'의 어간 '걸-'에 '-음'이 붙었으나 어간의 본뜻에서 멀어져 원형을 밝히지 않고 소리 나는 대로 적는다.
+  flags: []
+  difficulty: D3

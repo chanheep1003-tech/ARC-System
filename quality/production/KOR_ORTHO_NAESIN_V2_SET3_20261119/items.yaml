@@ -2577,10 +2577,10 @@ items:
   - '''좀 더 큰 것''은 단음절어가 이어지므로 네 단어를 모두 붙인 ''좀더큰것''도 허용된다.'
   answer: 1
   second_best: 2
-  difficulty: D4
+  difficulty: D2
   family: VIEW_APPLICATION
-  balance: ADVANCED_DISCRIMINATION
-  reasoning_steps: 3
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 1
   immediate_elimination: 1
   transfer: true
   stem_polarity: POSITIVE
