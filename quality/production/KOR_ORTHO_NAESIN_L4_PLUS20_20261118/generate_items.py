@@ -266,6 +266,39 @@ mcq("A5_EXAMPLE_MULTI_JUDGMENT", "D4", "사이시옷과 준말 표기에 대한 
     4, [(M, "ㄷ도 옳다."), (W, "ㄹ은 옳지 않다."), (S, "ㄹ은 옳지 않다. '되라'는 간접 인용 등에 쓰이는 형태로 '돼라'로 줄지 않는다."), (S, ""),
         (S, "ㄱ도 옳고 ㄹ은 옳지 않다.")], fixed=True, topic="제30·35항")
 
+# ───────────── 조판: Ⓐ·Ⓑ·Ⓒ 조건과 ㉠~㉤ 나열을 단락으로 분리 (사용자 지시 2026-11-19) ─────────────
+import re as _re2
+_CONN = ("다만,", "다만", "또", "또한", "한편", "그리고")
+def _split_view(lines):
+    out = []
+    for ln in lines:
+        marks = _re2.findall(r"[ⒶⒷⒸⒹ]", ln)
+        circ = _re2.findall(r"(?:^|\s{2,})[㉠㉡㉢㉣㉤㉥]\s", ln)
+        if len(marks) >= 2:
+            head = _re2.match(r"^(<보기 ?\d?>)\s*", ln)
+            if head:
+                out.append(head.group(1)); ln = ln[head.end():]
+            parts = _re2.split(r"(?=[ⒶⒷⒸⒹ])", ln)
+            parts = [p.strip() for p in parts if p.strip()]
+            for i in range(len(parts) - 1):
+                for c in _CONN:
+                    if parts[i].endswith(" " + c) or parts[i] == c:
+                        parts[i] = parts[i][: -len(c)].rstrip()
+                        parts[i + 1] = c + " " + parts[i + 1]
+                        break
+            out += [p for p in parts if p]
+        elif len(circ) >= 2:
+            head = _re2.match(r"^(<보기 ?\d?>)\s*", ln)
+            if head:
+                out.append(head.group(1)); ln = ln[head.end():]
+            parts = [p.strip() for p in _re2.split(r"\s{2,}(?=[㉠㉡㉢㉣㉤㉥]\s)", ln) if p.strip()]
+            out += parts
+        else:
+            out.append(ln)
+    return out
+for _r in raw:
+    _r["view"] = _split_view(_r["view"])
+
 # ───────────── 조립: 발문 연속 방지 → 선지 재배열로 정답 위치 균형 ─────────────
 import re as _re
 def _end(r):
