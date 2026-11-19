@@ -16,6 +16,7 @@ from __future__ import annotations
 import hashlib
 import html
 import os
+import math
 import re
 from pathlib import Path
 from typing import Any
@@ -366,10 +367,24 @@ def _diff_badge(it: dict[str, Any]) -> str:
     return ""
 
 
+def answer_lines(it: dict[str, Any]) -> int:
+    """Writing lines for a constructed-response item: explicit `answer_lines`, else sized from the
+    model answer (≈ 1.4x its length, Korean glyph ≈ 1 em) with 1 spare line, clamped to 3..10."""
+    if it.get("answer_lines"):
+        return max(1, int(it["answer_lines"]))
+    chars = len(str(it.get("model_answer", "")).replace(" ", ""))
+    per_line = max(10, int(COL_W / SIZE))
+    return max(3, min(10, math.ceil(chars * 1.4 / per_line) + 1))
+
+
 def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "ARC_N") -> Block:
     b = Block()
-    pts = f" ({it['points']}점)" if it.get("points") else ""
-    badge = _diff_badge(it)
+    # ARC_N: no point values or difficulty tags in student questions (approved N master 2026-11-14,
+    #        templates/n/ARC_N_BW_LAYOUT_V1.1.md; the gold sample prints neither).
+    # ARC_FINAL: points + difficulty badge beside the stem (approved unified layout spec 2026-11-12 §2.3).
+    final = product == "ARC_FINAL"
+    pts = f" ({it['points']}점)" if final and it.get("points") else ""
+    badge = _diff_badge(it) if final else ""
     if it.get("format") == "CR":
         num = f"[{label}] "
     elif product == "ARC_FINAL":
@@ -396,10 +411,11 @@ def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "AR
     if it.get("format") == "CR":
         view(L, b, it["conditions"], label="<조 건>")
         top = b.h
-        b.h += LH * 3.2
+        n_lines = answer_lines(it)
+        b.h += LH * (n_lines + 0.2)
         b.ops.append(("text", 2, top + SIZE + 2, "답:", "GB", SIZE - 0.6))
-        for k in (1.1, 2.1, 3.1):
-            ry = top + LH * k
+        for k in range(n_lines):
+            ry = top + LH * (k + 1.1)
             b.ops.append(("line", 0, ry, COL_W, ry, 0.45))
         b.h += 20
         return b
@@ -523,7 +539,8 @@ def problem_page(doc, L: Layout, header: str, number: int, product: str = "ARC_N
     top_y = MT
     if product == "ARC_FINAL" and number == 3 and meta:
         # Authentic Dongbuk High School exam header block inside the top header band (y < 58pt)
-        school_hdr = f"2026학년도 2학기 기말고사  |  동북고등학교  |  {meta.get('course', '')}"
+        # Exam title comes from the bundle (`exam_title`); never hard-code a term into another exam's sheet.
+        school_hdr = f"{meta.get('exam_title') or '2026학년도 2학기 기말고사'}  |  동북고등학교  |  {meta.get('course', '')}"
         put(page, (ML, 30), school_hdr, fontname="GB", fontsize=10.5, color=BLACK)
         right_hdr = f"{meta.get('set_label', 'ARC FINAL')} · 배점 문항별 표시"
         put(page, (A4_W - MR - L.width(right_hdr, "G", 8.4), 30), right_hdr, fontname="G", fontsize=8.4, color=BLACK)
@@ -532,7 +549,13 @@ def problem_page(doc, L: Layout, header: str, number: int, product: str = "ARC_N
         mid_x = A4_W / 2
         page.draw_line((mid_x, 36), (mid_x, 52), color=BLACK, width=0.6)
         put(page, (ML + 8, 47), "대상: 동북고등학교 1학년", fontname="G", fontsize=8.2, color=BLACK)
-        put(page, (mid_x + 8, 47), f"범위: {str(meta.get('scope', ''))[:26]}", fontname="G", fontsize=8.2, color=BLACK)
+        scope_txt, scope_pt = f"범위: {meta.get('scope', '')}", 8.2
+        room = A4_W - MR - mid_x - 14
+        while L.width(scope_txt, "G", scope_pt) > room and scope_pt > 6.8:
+            scope_pt -= 0.2
+        while L.width(scope_txt, "G", scope_pt) > room and len(scope_txt) > 6:
+            scope_txt = scope_txt[:-2].rstrip() + "…"  # ellipsis instead of a silent mid-word cut
+        put(page, (mid_x + 8, 47), scope_txt, fontname="G", fontsize=scope_pt, color=BLACK)
         page.draw_line((ML, 55), (A4_W - MR, 55), color=BLACK, width=1.1)
         top_y = MT + 6.0
     else:
@@ -602,7 +625,7 @@ def cover(doc, meta: dict[str, Any], logo: dict[str, Any] | None) -> str:
     notices = (
         "문항을 순서대로 풀고 OMR 또는 답안 표기란에 정답을 정확히 기입하십시오.",
         "서답형 문항은 <조건>을 확인한 뒤 핵심 근거를 빠짐없이 서술하십시오.",
-        "풀이 후 뒷면의 빠른 정답표 및 별도 해설지로 오답을 점검하십시오.",
+        ("풀이 후 권말 빠른 정답표 및 별도 해설지로 오답을 점검하십시오." if product == "ARC_N" else "정답표와 해설은 별도 파일로 제공됩니다. 시험지에는 정답을 싣지 않습니다."),
     )
     for ni, note in enumerate(notices):
         ny = cy + 48 + ni * 22

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import importlib.util
+import re
 import subprocess
 import sys
 import tempfile
@@ -56,13 +57,16 @@ def main() -> int:
             # Cover should not print the bulleted cover_lines list on ARC_N
             assert "산화·환원 반응의 산소·전자 이동 정의" not in cover_txt, "ARC_N cover must stay minimalist (title + school + logo only)"
             prob_txt = "\n".join(page_text(p) for p in ndoc[2:-2])
-            assert "[3]" in prob_txt or "[4]" in prob_txt, "Question stems must display difficulty badge"
+            # Approved N master (2026-11-14): no difficulty tags or point values inside student questions.
+            assert not re.search(r"\[[1-5]\](?:\s|$)|\(\d+(?:\.\d+)?점\)", prob_txt), "ARC_N stems must not show difficulty/points"
 
         # 3. ARC_FINAL first problem page has authentic Dongbuk High School exam banner
         soc_out = tmp / "soc_final"
         soc_rep = pipeline.run(SOC, soc_out, archived_replay=True)
         assert soc_rep.get("solutions_pdf") and Path(soc_rep["solutions_pdf"]).is_file()
         with fitz.open(soc_rep["pdf"]) as fdoc:
+            final_txt = "\n".join(page_text(p) for p in fdoc[2:])
+            assert re.search(r"\(\d+(?:\.\d+)?점\)", final_txt), "ARC_FINAL stems must print points"
             p3_txt = page_text(fdoc[2])
             assert "동북고등학교" in p3_txt and ("고사" in p3_txt or "시험" in p3_txt), (
                 "ARC_FINAL first problem page must render the Dongbuk High School exam header banner"

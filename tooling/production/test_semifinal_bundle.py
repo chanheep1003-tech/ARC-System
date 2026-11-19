@@ -86,6 +86,15 @@ def main() -> int:
         assert "FINAL_SCHOOL_ANCHOR_EASIER" in {f["code"] for f in base["final_quality"]["findings"]}
         assert base["final_quality"]["difficulty_profile"]["MODE"] == "SCHOOL_MULTI_EXAM_ANCHOR"
         assert base["governance"] == {"FINAL_USER_APPROVAL": "PENDING", "DRIVE_SAVE": "BLOCKED"}
+        # Preflight V1.3 FINAL checks on the real render: blank verso, numbering, points, separate key.
+        pre = pipeline.pdf_gate.analyze_pdf(base["pdf"], "ARC_FINAL", expected_item_count=22, expected_cr_count=4,
+                                            answer_key_pdf=base["answer_key_pdf"])
+        final_fails = {f["type"] for p in pre["pages"] for f in p["flags"] if f["type"].startswith("FINAL_")}
+        assert not final_fails, final_fails
+        wrong = pipeline.pdf_gate.analyze_pdf(base["pdf"], "ARC_FINAL", expected_item_count=23, expected_cr_count=5,
+                                              answer_key_pdf=base["answer_key_pdf"])
+        assert {"FINAL_QUESTION_COUNT_MISMATCH", "FINAL_CR_COUNT_MISMATCH", "FINAL_ANSWER_KEY_COUNT_MISMATCH"} <= {
+            f["type"] for p in wrong["pages"] for f in p["flags"]}
 
         with fitz.open(base["pdf"]) as doc:
             text = "".join(page.get_text() for page in doc).replace("\xa0", " ")

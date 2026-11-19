@@ -53,7 +53,7 @@ PRODUCT_PROFILES: dict[str, dict[str, Any]] = {
         "body_size_floor": 9.0,
         "body_weight": 400,
         "major_boundary_page_break": False,
-        "cover_verso_blank": False,
+        "cover_verso_blank": True,  # user directive 2026-11-19 (typesetter contract V1.8)
         "answer_separator_blank": False,
         "answer_key_mode": "SEPARATE_ARTIFACT_ONLY",
     },

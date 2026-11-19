@@ -16,7 +16,7 @@ with tempfile.TemporaryDirectory() as td:
     assert result["status"] == "CANARY_PASS", result
     assert result["stages"]["final_quality_gate"] == "PASS", result
     assert result["final_quality"]["FINAL_RELEASE"] == "PASS", result
-    assert result["typeset"]["page_count"] == 4, result
+    assert result["typeset"]["page_count"] == 5, result  # cover + blank verso + 3 problem pages
     assert result["typeset"]["question_count"] == 10, result
     assert result["typeset"]["answer_count"] == 10, result
     assert result["render_plan"]["product"] == "ARC_FINAL", result

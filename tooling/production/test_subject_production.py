@@ -60,7 +60,8 @@ def assert_clean(report, subject: str, product: str) -> None:
                  "TYPESETTER_ADMISSION", "TYPESET"):
         assert report["gates"][gate] == "PASS", (gate, report["gates"][gate])
     # ARC_FINAL has a blank cover verso, which preflight reports as a WARN for KOR as well.
-    assert report["gates"]["PDF_QC"] == ("PASS" if product == "ARC_N" else "WARN"), report["gates"]["PDF_QC"]
+    # FINAL cover verso is a registered blank (2026-11-19), so FINAL no longer WARNs on EMPTY_PAGE.
+    assert report["gates"]["PDF_QC"] == "PASS", report["gates"]["PDF_QC"]
     assert not any(k.startswith("KOR_") for k in report["gates"]), "KOR gate names leaked into another subject"
     assert report["product"] == product
 

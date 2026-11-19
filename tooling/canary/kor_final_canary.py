@@ -105,6 +105,7 @@ def typeset_final(manuscript: str, answers: dict[int, int], output: Path, answer
     cover.insert_text((72, 150), "ARC FINAL", fontsize=27, fontname=canary_fonts.BOLD_NAME, color=(0.48, 0.18, 0.21))
     cover.insert_text((72, 194), f"{subject} CANARY / 10 ITEMS", fontsize=16, fontname=canary_fonts.BOLD_NAME)
     cover.insert_text((72, 760), "Synthetic pipeline fixture - not a study release", fontsize=9.9, fontname=canary_fonts.REGULAR_NAME)
+    doc.new_page(width=A4_W, height=A4_H)  # FINAL keeps a completely blank cover verso (user directive 2026-11-19)
 
     groups = [questions[:4], questions[4:7], questions[7:]]
     for page_no, group in enumerate(groups, start=1):
@@ -118,7 +119,8 @@ def typeset_final(manuscript: str, answers: dict[int, int], output: Path, answer
             x0 = 44 + col * 258
             y0 = 72 + row * 330
             width = 236
-            page.insert_text((x0, y0), f"QUESTION {number}", fontsize=10.8, fontname=canary_fonts.BOLD_NAME)
+            # Exam-style numbering and points, as the production FINAL renderer prints them.
+            page.insert_text((x0, y0), f"{number}. (10 pts)", fontsize=10.8, fontname=canary_fonts.BOLD_NAME)
             display = re.sub(r"[ \t]+(?=[1-5]\))", "\n", text)
             remaining = page.insert_textbox(fitz.Rect(x0, y0 + 18, x0 + width, y0 + 292), display, fontsize=9.3, fontname=canary_fonts.REGULAR_NAME, lineheight=1.30)
             if remaining < 0:
@@ -131,7 +133,7 @@ def typeset_final(manuscript: str, answers: dict[int, int], output: Path, answer
     with fitz.open(output) as saved:
         canary_fonts.assert_embedded_fonts(saved)
     answer_output.write_text("\n".join(f"{n}. {a}" for n, a in sorted(answers.items())) + "\n", encoding="utf-8")
-    return {"status": "PASS", "page_count": 4, "question_count": len(questions), "answer_count": len(answers), "answer_artifact": str(answer_output)}
+    return {"status": "PASS", "page_count": 5, "question_count": len(questions), "answer_count": len(answers), "answer_artifact": str(answer_output)}
 
 def run(fixture_path: Path, output_dir: Path) -> dict[str, Any]:
     fixture = yaml.safe_load(fixture_path.read_text(encoding="utf-8"))
@@ -163,7 +165,8 @@ def run(fixture_path: Path, output_dir: Path) -> dict[str, Any]:
     pdf_path = output_dir / f"{subject}_FINAL_CANARY_V1.pdf"
     answer_path = output_dir / f"{subject}_FINAL_CANARY_V1_ANSWER.txt"
     typeset_result = typeset_final(manuscript, answers, pdf_path, answer_path, render_plan["profile"], subject)
-    pdf_result = pdf_gate.analyze_pdf(pdf_path, "ARC_FINAL", render_dir=output_dir / "render", dpi=144, expected_item_count=10)
+    pdf_result = pdf_gate.analyze_pdf(pdf_path, "ARC_FINAL", render_dir=output_dir / "render", dpi=144, expected_item_count=10,
+                                     require_points=False)  # synthetic Latin-font fixture cannot render "점"; production always checks points
 
     fault_results = []
     mutations = [

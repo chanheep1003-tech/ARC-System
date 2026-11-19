@@ -76,7 +76,7 @@ def run() -> None:
         assert plans["ARC_N"]["profile"]["cover_verso_blank"] is True
         assert plans["ARC_N"]["profile"]["answer_separator_blank"] is True
         assert plans["ARC_FINAL"]["profile"]["answer_key_mode"] == "SEPARATE_ARTIFACT_ONLY"
-        assert plans["ARC_FINAL"]["profile"]["cover_verso_blank"] is False
+        assert plans["ARC_FINAL"]["profile"]["cover_verso_blank"] is True  # user directive 2026-11-19
 
         n_handoff = make_handoff("ARC_N", temp)
         n_metadata, _ = gateway.handoff_gate.parse_handoff(n_handoff)

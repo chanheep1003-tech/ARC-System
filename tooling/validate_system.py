@@ -399,7 +399,7 @@ def main() -> int:
     require_markers(
         errors,
         pdf_preflight_policy,
-        ["ARC PDF PREFLIGHT V1.2", "CORE_TWO_COLUMN_FLOW", "vertical interval union", "BOUNDED AUTO-FIX CONNECTION"],
+        ["ARC PDF PREFLIGHT V1.3", "CORE_TWO_COLUMN_FLOW", "vertical interval union", "BOUNDED AUTO-FIX CONNECTION"],
     )
     require_markers(
         errors,

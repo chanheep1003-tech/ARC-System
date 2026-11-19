@@ -35,6 +35,12 @@ KOR_QUESTION_MARKER_RE = re.compile(r"(?m)^[\s\u00a0]*(\d{2,3})[\s\u00a0]+(?=\S)
 # PDF font CMaps can extract circled digits as equivalent dingbat digits.
 # Accept only the five supported answer values, preserving completeness checks.
 ANSWER_LINE_RE = re.compile(r"(?m)^[\s\u00a0]*(\d{1,3})[\s\u00a0]*\.?[\s\u00a0]*(?:[1-5]|[①②③④⑤➀➁➂➃➄❶❷❸❹❺➊➋➌➍➎])[\s\u00a0]*$")
+# ARC_N student questions carry no point values or difficulty tags (approved N master 2026-11-14).
+N_TAG_RE = re.compile(r"\(\d+(?:\.\d+)?\s*점\)|(?<=[?.)])[\s\u00a0]*\[[1-5]\](?=[\s\u00a0]|$)", re.M)
+CIRCLED_KEY_LINE_RE = re.compile(r"(?m)^[\s\u00a0]*\d{1,3}[\s\u00a0]+[①②③④⑤][\s\u00a0]*$")
+FINAL_QUESTION_RE = re.compile(r"(?m)^[\s\u00a0]*(\d{1,2})\.[\s\u00a0]+(?=\S)")
+CR_MARKER_RE = re.compile(r"\[(?:서술형|서답형)\s*(\d{1,2})\]")
+POINTS_RE = re.compile(r"\((\d+(?:\.\d+)?)\s*점\)")
 MAJOR_PART_RE = re.compile(r"(?:[ABC]\s*파트|파트\s*[ABC]|\bPART\s*[ABC]\b)", re.I)
 
 
@@ -481,6 +487,9 @@ def analyze_pdf(
     render_dir: str | Path | None = None,
     dpi: int = 300,
     expected_item_count: int | None = None,
+    expected_cr_count: int | None = None,
+    answer_key_pdf: str | Path | None = None,
+    require_points: bool = True,
 ) -> dict:
     doc = fitz.open(pdf_path)
     page_texts = [page.get_text("text") for page in doc]
@@ -562,6 +571,56 @@ def analyze_pdf(
         fail_count = sum(1 for p in pages for f in p["flags"] if f["severity"] == "FAIL")
         warn_count = sum(1 for p in pages for f in p["flags"] if f["severity"] == "WARN")
         status = "FAIL" if fail_count else ("WARN" if warn_count else "PASS")
+    if product in {"ARC_N", "ARC_FINAL"}:
+        if product == "ARC_N":
+            for index in range(2, len(doc)):
+                if ANSWER_HEADING_RE.search(page_texts[index]):
+                    break
+                for m in N_TAG_RE.finditer(page_texts[index]):
+                    pages[index]["flags"].append({"severity": "FAIL", "type": "ARC_N_STUDENT_TAG_LEAK", "text": m.group(0).strip()})
+        if product == "ARC_N" and len(doc) > 3:
+            answer_start = next((i for i, t in enumerate(page_texts) if i >= 2 and ANSWER_HEADING_RE.search(t)), None)
+            # Duplex: physical page n is a recto when n is odd. A key on a verso shares a sheet with the separator.
+            if answer_start is not None and (answer_start + 1) % 2 == 0:
+                pages[answer_start]["flags"].append({"severity": "INFO", "type": "ARC_N_ANSWER_KEY_ON_VERSO",
+                                                     "physical_page": answer_start + 1})
+    if product == "ARC_FINAL":
+        final_blank = len(doc) >= 2 and not page_texts[1].strip() and not doc[1].get_images(full=True) and not doc[1].get_drawings()
+        if not final_blank:
+            pages[0]["flags"].append({"severity": "FAIL", "type": "FINAL_COVER_VERSO_NOT_BLANK"})
+        else:
+            pages[1]["flags"] = [f for f in pages[1]["flags"] if f["type"] != "EMPTY_PAGE"]
+        problem_text = "\n".join(page_texts[2:])
+        # Only circled-digit key lines count here: bare "15" passage line numbers look like "1 5".
+        if ANSWER_HEADING_RE.search(problem_text) or CIRCLED_KEY_LINE_RE.search(problem_text):
+            pages[-1]["flags"].append({"severity": "FAIL", "type": "FINAL_ANSWER_ON_PROBLEM_SHEET"})
+        question_ids = {int(n) for n in FINAL_QUESTION_RE.findall(problem_text)}
+        cr_ids = {int(n) for n in CR_MARKER_RE.findall(problem_text)}
+        if expected_item_count is not None and not set(range(1, expected_item_count + 1)) <= question_ids:
+            pages[-1]["flags"].append({"severity": "FAIL", "type": "FINAL_QUESTION_COUNT_MISMATCH",
+                                       "missing": sorted(set(range(1, expected_item_count + 1)) - question_ids)})
+        if expected_cr_count is not None and cr_ids != set(range(1, expected_cr_count + 1)):
+            pages[-1]["flags"].append({"severity": "FAIL", "type": "FINAL_CR_COUNT_MISMATCH",
+                                       "actual": sorted(cr_ids), "expected": expected_cr_count})
+        total_items = (expected_item_count or 0) + (expected_cr_count or 0)
+        if require_points and total_items and len(POINTS_RE.findall(problem_text)) < total_items:
+            pages[-1]["flags"].append({"severity": "FAIL", "type": "FINAL_POINTS_NOT_PRINTED",
+                                       "printed": len(POINTS_RE.findall(problem_text)), "expected": total_items})
+        if answer_key_pdf is not None:
+            key_path = Path(answer_key_pdf)
+            if not key_path.is_file():
+                pages[-1]["flags"].append({"severity": "FAIL", "type": "FINAL_ANSWER_KEY_PDF_MISSING"})
+            else:
+                with fitz.open(key_path) as key_doc:
+                    key_text = "\n".join(pg.get_text("text") for pg in key_doc)
+                key_ids = {int(n) for n in ANSWER_LINE_RE.findall(key_text)}
+                key_cr = {int(n) for n in CR_MARKER_RE.findall(key_text)}
+                if expected_item_count is not None and key_ids != set(range(1, expected_item_count + 1)):
+                    pages[-1]["flags"].append({"severity": "FAIL", "type": "FINAL_ANSWER_KEY_COUNT_MISMATCH",
+                                               "actual": len(key_ids), "expected": expected_item_count})
+                if expected_cr_count is not None and key_cr != set(range(1, expected_cr_count + 1)):
+                    pages[-1]["flags"].append({"severity": "FAIL", "type": "FINAL_ANSWER_KEY_CR_MISSING",
+                                               "actual": sorted(key_cr), "expected": expected_cr_count})
     fail_count = sum(1 for p in pages for f in p["flags"] if f["severity"] == "FAIL")
     warn_count = sum(1 for p in pages for f in p["flags"] if f["severity"] == "WARN")
     status = "FAIL" if fail_count else ("WARN" if warn_count else "PASS")
@@ -574,7 +633,7 @@ def analyze_pdf(
             fail_count += 1
 
     return {
-        "tool": "ARC_PDF_PREFLIGHT_V1.2",
+        "tool": "ARC_PDF_PREFLIGHT_V1.3",
         "pdf": str(pdf_path),
         "product": product,
         "status": status,
@@ -590,6 +649,8 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("pdf")
     ap.add_argument("--product", required=True, choices=["ARC_CORE", "ARC_N", "ARC_FINAL"])
+    ap.add_argument("--expected-cr-count", type=int, help="ARC_FINAL: number of constructed-response items")
+    ap.add_argument("--answer-key-pdf", help="ARC_FINAL: separate answer-key PDF to verify")
     ap.add_argument("--margin-pt", type=float, default=18.0)
     ap.add_argument("--overlap-threshold", type=float, default=0.30)
     ap.add_argument("--report", default=None)
@@ -606,6 +667,8 @@ def main() -> None:
         render_dir=args.render_dir,
         dpi=args.dpi,
         expected_item_count=args.expected_item_count,
+        expected_cr_count=args.expected_cr_count,
+        answer_key_pdf=args.answer_key_pdf,
     )
     output = json.dumps(result, ensure_ascii=False, indent=2)
     if args.report:

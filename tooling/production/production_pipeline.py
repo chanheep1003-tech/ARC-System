@@ -885,7 +885,10 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
     # It always remains release-blocked by EXAM_SCOPE=ARCHIVED_REPLAY.
     if admission == "PASS" or archived_replay:
         render = renderer.render(bundle, sources, numbering(bundle), set_header, pdf_path, key_pdf=key_path, logo=logo, solutions_pdf=sol_path)
-        pdf_result = pdf_gate.analyze_pdf(pdf_path, product, expected_item_count=len(mcq_items(bundle)) if product == "ARC_N" else None)
+        pdf_result = pdf_gate.analyze_pdf(
+            pdf_path, product, expected_item_count=len(mcq_items(bundle)),
+            expected_cr_count=len(cr_items(bundle)) if product == "ARC_FINAL" else None,
+            answer_key_pdf=key_path if product == "ARC_FINAL" else None)
     else:
         render = {"status": "BLOCKED", "brand": "NOT_RUN"}
         pdf_result = {"status": "NOT_RUN"}
