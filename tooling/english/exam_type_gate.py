@@ -107,7 +107,8 @@ def vocab_source_findings(items: list[dict], lib: dict, root: Path) -> list[dict
                 add("FAIL", "VOCAB_SOURCE_INVALID", iid, word=word, source=source)
     if book is None and total:
         add("WARN", "VOCAB_BOOK_LIST_PENDING", list=rule.get("word_list"))
-    if total and in_book / total < 0.80:
+    share_min = 0.50  # user directive 2026-11-20 (was 0.80)
+    if total and in_book / total < share_min:
         add("WARN", "VOCAB_BOOK_SHARE_LOW", share=round(in_book / total, 2))
     return out
 

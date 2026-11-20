@@ -117,7 +117,7 @@ vocab_source_rule:         # 사용자 지시 2026-11-20 (ARC N·ARC FINAL 공�
     vocab_targets:            # 위 자리의 단어마다 한 줄
       - {word: eradicate, source: HACKERS, day: 37, level: G2}
       - {word: eradication, source: SIMILAR, similar_to: eradicate, relation: WORD_FAMILY, level: G2}
-  share_target: 단어장 수록 단어 80% 이상 (그 아래면 WARN, 최대한 단어장 단어로 바꾼다)
+  share_target: 단어장 수록 단어 50% 이상 (그 아래면 WARN, 최대한 단어장 단어로 바꾼다)   # 사용자 지시 2026-11-20: 80% → 50%
 option_language_rule: 한 문항의 선지 5개는 한 언어로만 쓴다(영문 5개 또는 한글 5개). 요지·주제도 섞지 않는다.
 passage_workbook:          # N기출·학평 지문 변형 워크북 (workbook_profile PASSAGE_5)
   items_per_passage: 5

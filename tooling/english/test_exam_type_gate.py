@@ -89,6 +89,14 @@ def main() -> int:
     assert "VOCAB_SIMILAR_LINK_MISSING" in {f["code"] for f in gate.vocab_source_findings([unlinked], LIB, ROOT)}
     linked = copy.deepcopy(voc); linked["vocab_targets"][0] = {"word": "a", "source": "SIMILAR", "similar_to": "b", "relation": "SYNONYM", "level": "G1"}
     assert not {f["code"] for f in gate.vocab_source_findings([linked], LIB, ROOT) if f["severity"] == "FAIL"}
+    # Book-word share warning threshold = 50% (user directive 2026-11-20).
+    half = copy.deepcopy(voc)
+    for k in range(2):
+        half["vocab_targets"][k] = {"word": "abc"[k], "source": "SIMILAR", "similar_to": "x", "relation": "SYNONYM", "level": "G2"}
+    assert "VOCAB_BOOK_SHARE_LOW" not in {f["code"] for f in gate.vocab_source_findings([half], LIB, ROOT)}   # 3/5 = 60%
+    low = copy.deepcopy(half)
+    low["vocab_targets"][2] = {"word": "c", "source": "SIMILAR", "similar_to": "x", "relation": "SYNONYM", "level": "G2"}
+    assert "VOCAB_BOOK_SHARE_LOW" in {f["code"] for f in gate.vocab_source_findings([low], LIB, ROOT)}       # 2/5 = 40%
     # Word level G1~G2 (2026-11-20).
     hard = copy.deepcopy(voc); hard["vocab_targets"][1]["level"] = "G3"
     assert "VOCAB_LEVEL_OUT_OF_RANGE" in {f["code"] for f in gate.vocab_source_findings([hard], LIB, ROOT)}
