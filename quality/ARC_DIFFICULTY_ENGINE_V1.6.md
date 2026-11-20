@@ -571,13 +571,16 @@ ARC_FINAL은 모의고사이므로 난도 조절이 핵심이다.
 FINAL은 과목별 실제 동북고 시험 난도 코퍼스에 맞춘다.
 
 SOURCE:
-quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
+quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.1.yaml
 
 ACTIVE SUBJECT ANCHORS:
-- KOR: quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
-- SOC: quality/anchors/SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
-- SCI-REDOX: quality/anchors/SCI_REDOX_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+- KOR: quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.1.yaml
+- SOC: quality/anchors/SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.1.yaml
+- SCI (기말 전 범위): quality/anchors/SCI_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+- ENG: quality/anchors/ENG_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+- SCI-REDOX (산화·환원 단원 전용): quality/anchors/SCI_REDOX_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
 - HIS: FINAL 비활성. diagnostic profile만 존재.
+(2026-11-20 갱신: 2026-2 중간고사 4과목과 영어 2회분을 원안에서 문항별로 판정해 코퍼스 V1.1에 추가했다.)
 
 FINAL은 한 시험 하나를 복제하지 않는다.
 여러 실제 시험의 난도 분포와 변동폭을 앙상블하여 학교 난도대를 재현한다.

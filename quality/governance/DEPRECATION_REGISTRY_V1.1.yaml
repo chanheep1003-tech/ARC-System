@@ -233,9 +233,9 @@ rules:
     replacement:
       - archive/quality/ARC_DIFFICULTY_ENGINE_V1.5.md
       - archive/quality/ARC_FINAL_QUALITY_GATE_V1.1.md
-      - quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
-      - quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
-      - quality/anchors/SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+      - archive/quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
+      - archive/quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+      - archive/quality/anchors/SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
       - quality/anchors/SCI_REDOX_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
     reason: "2026-09-26 user directive: ARC_N may differ from Dongbuk exam difficulty because it is a basic-to-advanced practice product, while ARC_FINAL must match actual Dongbuk exam difficulty as a mock exam. Single-exam KOR calibration was replaced by subject-specific multi-exam ensembles."
     forbidden_runtime_behavior:
@@ -302,3 +302,20 @@ rules:
 
   - id: SWEEP-20261119-ARCHIVE-UNREGISTERED-OLD-VERSIONS
     resolution: "All remaining superseded versions (generator contract V1.0~V1.8, typesetter V1.0~V1.6, content bundle V1.0~V1.5, QA bench V1.0~V1.5, CORE engines, handoff, drive adapter, publisher, orchestrator, human review, visual, bank, gold, pdf preflight, templates) moved to archive/ with their original relative paths. See archive/README.md."
+
+  - id: FINAL-ANCHORS-20261120-ACTUAL-EXAM-AUDIT
+    deprecated:
+      - archive/quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
+      - archive/quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+      - archive/quality/anchors/SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+    replacement:
+      - quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.1.yaml
+      - quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.1.yaml
+      - quality/anchors/SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.1.yaml
+      - quality/anchors/SCI_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+      - quality/anchors/ENG_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+    reason: "2026-11-20: 2026-2 중간고사(국어·사회·과학·영어)와 영어 2025-2 기말·2026-1 기말 원안을 문항별로 판정해 코퍼스에 추가하고, 기말 대비 과목별 앵커를 새로 등록했다. 영어·과학(전 범위) 앵커는 처음 등록."
+    forbidden_runtime_behavior:
+      - final_anchor_without_current_semester_midterm
+      - sci_final_calibrated_by_redox_only_anchor
+      - eng_final_without_anchor

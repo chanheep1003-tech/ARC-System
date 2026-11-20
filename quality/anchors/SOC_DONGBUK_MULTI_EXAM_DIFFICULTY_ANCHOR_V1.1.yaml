@@ -1,0 +1,43 @@
+anchor_id: SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.1
+version: 1.1
+subject: SOC
+school: 동북고등학교
+exam_target: DONGBUK_2026_2_FINAL
+mode: MULTI_EXAM_ENSEMBLE
+source_exam_count: 5
+source_exams:
+  SOC_2026_2_MID: 0.3
+  SOC_2025_2_FINAL: 0.3
+  SOC_2025_2_MID: 0.2
+  SOC_2026_1_MID: 0.1
+  SOC_2026_1_FINAL: 0.1
+corpus: quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.1.yaml
+profile:
+  shares:
+    D12: 0.324
+    D3: 0.466
+    D45: 0.21
+  mean_level: 2.85
+tolerance:
+  share: 0.12
+  mean_level: 0.22
+  late_section_d45_min: 2
+  harder_share_margin: 0.08
+  harder_mean_margin: 0.25
+slightly_harder_target:
+  mean_level:
+  - 2.9
+  - 3.05
+  note: '사용자 지시(2026-11-19): 동북고 기출과 같거나 살짝 더 어렵게. 이 범위를 목표로 계획한다.'
+observed_mean_range:
+- 2.67
+- 3.08
+format_reference:
+  selected: 22
+  essay: 2
+confidence: MEDIUM_HIGH_STRUCTURAL
+notes:
+- 구조 난도(문항 구조·조건·오답 구분 부담) 기준이며 학생 정답률 기반이 아니다.
+- 앵커는 난도 곡선만 정한다. 범위와 문항 원형은 학교 공지·과목 마스터를 따른다.
+- 기출 문항 문구·선지를 복제하지 않는다.
+supersedes: archive/quality/anchors/SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml

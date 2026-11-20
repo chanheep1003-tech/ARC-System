@@ -179,7 +179,7 @@ class ScopeTests(unittest.TestCase):
             source_ids=sorted(gate.actual_source_ids(bundle))
             p['subjects']['KOR']['source_ids']=source_ids
             p['subjects']['KOR']['scope_status']='CONFIRMED'
-            raw_anchor=(ROOT/'quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml').read_bytes()
+            raw_anchor=(ROOT/'quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.1.yaml').read_bytes()
             (root/'test_anchor.yaml').write_bytes(raw_anchor)
             p['subjects']['KOR']['difficulty_anchor']={'subject':'KOR','unit_ids':['U2'],
                 'path':'test_anchor.yaml','sha256':hashlib.sha256(raw_anchor).hexdigest()}

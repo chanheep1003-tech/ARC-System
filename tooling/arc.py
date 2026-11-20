@@ -251,7 +251,7 @@ def files_to_load(manifest: dict, subject: str, product: str) -> list[tuple[str,
                 ("N 레이아웃", layout["arc_n_layout_override"])]
     if product == "ARC_FINAL":
         anchor_key = {"KOR": "final_difficulty_anchor_kor", "SOC": "final_difficulty_anchor_soc",
-                      "SCI": "final_difficulty_anchor_sci_redox"}.get(subject)
+                      "SCI": "final_difficulty_anchor_sci", "ENG": "final_difficulty_anchor_eng"}.get(subject)
         out += [("FINAL 품질 게이트", quality["final_quality_gate"])]
         if anchor_key:
             out += [("FINAL 난도 앵커", quality[anchor_key])]

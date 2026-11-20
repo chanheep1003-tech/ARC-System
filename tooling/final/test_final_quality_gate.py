@@ -38,7 +38,7 @@ multi_anchor = {
     "anchor_id": "TEST_MULTI_EXAM",
     "mode": "MULTI_EXAM_ENSEMBLE",
     "source_exam_count": 4,
-    "corpus": "quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml",
+    "corpus": "quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.1.yaml",
     "confidence": "HIGH",
     "profile": {
         "shares": {"D12": 0.10, "D3": 0.50, "D45": 0.40},
@@ -65,6 +65,28 @@ too_easy = set_of(["D1","D2","D2","D2","D2","D3","D3","D3","D3","D4"])  # D12 .5
 assert "FINAL_SCHOOL_ANCHOR_EASIER" in {x["code"] for x in mod.analyze(too_easy)["findings"]}
 way_harder = set_of(["D3","D4","D4","D4","D4","D4","D5","D4","D5","D5"])
 assert "FINAL_SCHOOL_ANCHOR_HARDER" in {x["code"] for x in mod.analyze(way_harder)["findings"]}
+
+# 2026-11-20 registered subject anchors: anchor-like or slightly harder passes; easier fails.
+import yaml as _yaml
+from pathlib import Path as _Path
+_root = _Path(__file__).resolve().parents[2]
+for _rel, _n in (("KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.1", 22), ("SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.1", 22),
+                 ("SCI_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0", 24), ("ENG_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0", 34)):
+    _anchor = _yaml.safe_load((_root / "quality/anchors" / f"{_rel}.yaml").read_text(encoding="utf-8"))
+    _sh = _anchor["profile"]["shares"]
+    def _levels(d12, d45, n=_n):
+        lo, hi = round(d12 * n), round(d45 * n)
+        mid = n - lo - hi
+        seq = ["D2"] * lo + ["D3"] * mid + ["D4"] * hi
+        return seq  # D4s land in the late section by construction
+    def _set(levels):
+        return {"product_mode": "ARC_FINAL", "item_count": len(levels), "difficulty_anchor_required": True,
+                "difficulty_anchor": _anchor, "items": [item(i + 1, d) for i, d in enumerate(levels)]}
+    _codes = lambda payload: {x["code"] for x in mod.analyze(payload)["findings"]}
+    harder = _levels(_sh["D12"] - 0.05, _sh["D45"] + 0.05)
+    assert not {"FINAL_SCHOOL_ANCHOR_EASIER", "FINAL_SCHOOL_ANCHOR_HARDER", "FINAL_SCHOOL_ANCHOR_SHARE_OFF"} & _codes(_set(harder)), (_rel, mod.analyze(_set(harder))["findings"])
+    easier = _levels(_sh["D12"] + 0.25, max(0.0, _sh["D45"] - 0.12))
+    assert "FINAL_SCHOOL_ANCHOR_EASIER" in _codes(_set(easier)), _rel
 
 missing = dict(good)
 missing["difficulty_anchor_required"] = True

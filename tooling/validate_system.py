@@ -577,7 +577,7 @@ def main() -> int:
         [
             "N° / FINAL DIFFICULTY DECOUPLING",
             "ARC_N은 동북고 실제 시험의 난도 분포와 일치할 의무가 없다.",
-            "DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml",
+            "DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.1.yaml",
             "DIRECT-SCOPE PRIORITY",
             "NO TEACHER-STYLE PREDICTION",
         ],
@@ -587,6 +587,8 @@ def main() -> int:
         "final_difficulty_anchor_kor",
         "final_difficulty_anchor_soc",
         "final_difficulty_anchor_sci_redox",
+        "final_difficulty_anchor_sci",
+        "final_difficulty_anchor_eng",
     )
     for key in anchor_keys:
         rel = active["quality"].get(key)
@@ -624,6 +626,9 @@ def main() -> int:
             "SOC_2025_2_MID", "SOC_2025_2_FINAL", "SOC_2026_1_MID", "SOC_2026_1_FINAL",
             "SCI_2025_2_MID", "SCI_2025_2_FINAL", "SCI_2026_1_MID", "SCI_2026_1_FINAL",
             "HIS_2025_2_MID", "HIS_2025_2_FINAL", "HIS_2026_1_MID", "HIS_2026_1_FINAL",
+            # 2026-11-20 actual-exam audit: current-semester midterms and English
+            "KOR_2026_2_MID", "SOC_2026_2_MID", "SCI_2026_2_MID",
+            "ENG_2026_2_MID", "ENG_2025_2_FINAL", "ENG_2026_1_FINAL",
         }
         missing_exam_ids = sorted(required_ids - ids)
         if missing_exam_ids:

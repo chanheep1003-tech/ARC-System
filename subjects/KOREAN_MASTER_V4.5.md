@@ -69,7 +69,7 @@ ARC_N 난도·문항 수 (V4.5):
 - 계획이 어떤 분포든 CORE_EXAM_POINT_COVERAGE(지문당 최소 6)는 유지한다.
 
 ARC_FINAL 난도:
-- 동북고 국어 다회차 앵커(`quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml`)와 같거나 살짝 더 어렵게.
+- 동북고 국어 다회차 앵커(`quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.1.yaml`)와 같거나 살짝 더 어렵게.
 
 서답형:
 - ARC_FINAL: 학교 구조 그대로 4문항(합계 20점). 선택형 22문항 배점 합계 80점.

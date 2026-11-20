@@ -48,6 +48,7 @@ exams:
         require_subject_specific_verified_final_anchor: true
         approval_status: PENDING
         drive_save: BLOCKED
+        superseded_by: "USER_DIRECTIVE 2026-11-19: FINAL = Dongbuk anchor or slightly harder (quality/ARC_FINAL_QUALITY_GATE_V1.2.md §2E·2F); the 3.0~3.5 fixed target is no longer applied"
       production_priority_is_scope_evidence: false
       on_school_scope_announcement: REPLACE_WITH_CONFIRMED_SCOPE
       note: 학교 공지(2026-11-13 제공)로 과목별 확정 범위로 교체됨. 임시 기준은 기록으로만 남긴다.
@@ -75,7 +76,14 @@ exams:
           selected_points: 80
           essay: 4
           essay_points: 20
-        difficulty_anchor: null
+        difficulty_anchor:
+          subject: KOR
+          unit_ids:
+          - KOR-U3
+          - KOR-U4-1
+          - KOR-SUPP-PRINT
+          path: quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.1.yaml
+          sha256: 95f72157c57b465a73feb869cc89ee31a17d5608cee183e32dee1622d88fd00b
       ENG:
         scope_status: CONFIRMED
         scope_evidence_refs:
@@ -97,7 +105,14 @@ exams:
           essay: 4
           essay_points: 20
           passages_in_reading_book: 28
-        difficulty_anchor: null
+        difficulty_anchor:
+          subject: ENG
+          unit_ids:
+          - ENG-L2
+          - ENG-VOCA-D31-40
+          - ENG-READING-L1-P78-91
+          path: quality/anchors/ENG_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+          sha256: 9c8f5949f0028f622e992c7cc9daa5090b22cbd9e31ab23e9a343da972e9fabe
       SOC:
         scope_status: CONFIRMED
         scope_evidence_refs:
@@ -133,7 +148,14 @@ exams:
             C:
               selected: 8
               essay: 0
-        difficulty_anchor: null
+        difficulty_anchor:
+          subject: SOC
+          unit_ids:
+          - SOC-A
+          - SOC-B
+          - SOC-C
+          path: quality/anchors/SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.1.yaml
+          sha256: da5ea4ff230e053d87fecbf52d43c8170fa0a284cdb148e729ae3014324acf32
       SCI:
         scope_status: CONFIRMED
         scope_evidence_refs:
@@ -160,7 +182,15 @@ exams:
           selected_points: 80
           essay: 4
           essay_points: 20
-        difficulty_anchor: null
+        difficulty_anchor:
+          subject: SCI
+          unit_ids:
+          - SCI-A
+          - SCI-B
+          - SCI-C
+          - SCI-D
+          path: quality/anchors/SCI_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
+          sha256: 2db4458874eb6c33722d6938cb177268127cbe148c22cd8797a9eb8a8a0bd1fe
       HIS:
         scope_status: DEFERRED_BY_USER
         scope_evidence_refs: []

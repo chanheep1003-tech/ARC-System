@@ -1,3 +1,9 @@
+## 1.9.5+anchors — 2026-11-20 (actual-exam difficulty audit, FINAL anchors registered)
+- Read the original Dongbuk exam PDFs on Drive and rated every multiple-choice item (structural D1–D5): 2026-2 midterm KOR (22), SOC (24), SCI (24), ENG (34), plus ENG 2025-2 final (26) and 2026-1 final (34). Corpus V1.1 keeps all 16 earlier exams and adds these 6 with item-level ratings.
+- New FINAL anchors registered in `ops/exams/EXAM_CONTEXTS_V1.yaml` (sha256-pinned): KOR V1.1 (mean 2.95), SOC V1.1 (2.85), SCI all-units V1.0 (2.46), ENG V1.0 (2.49, first English anchor). Each carries the "slightly harder" target band. All four subjects' FINAL cells are now READY.
+- The Drive "2026-2 midterm analysis report" document disagrees with the originals (item counts, textbook) and was not used.
+- Old corpus V1.0 and KOR/SOC anchors V1.0 moved to `archive/`; registry, manifest, validator, masters and docs updated; regression tests pin anchor-like/slightly-harder PASS and easier FAIL per subject.
+
 ## 1.9.5+audit — 2026-11-19 (system-wide rule & typesetting audit)
 - User directives: ARC N° difficulty/item count/constructed count vary per request; ARC FINAL = Dongbuk exams or slightly harder; FINAL keeps the blank cover verso; superseded versions move to `archive/`.
 - Difficulty: engine V4.9, difficulty engine V1.6, item rubric V1.6, FINAL gate V1.2. `final_quality_gate.py` asymmetric tolerance (easier side = anchor tol, harder side + 0.08 share / +0.25 mean). `production_pipeline.resolve_balance_profile` (bundle `plan` > KOR `learning_level` > legacy band); `arc.py plan --difficulty/--advanced/--constructed`.

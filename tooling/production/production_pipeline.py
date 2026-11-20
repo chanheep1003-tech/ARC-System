@@ -908,6 +908,7 @@ def run(bundle_dir: Path, out_dir: Path, logo: dict[str, Any] | None = None, *, 
             "redox": "sci_redox",
             "sci_redox": "sci_redox",
             "history": "his",
+            "english": "eng",
         }
         subject_key = subject_alias.get(raw_subject, raw_subject)
         runtime = manifest["runtime"]

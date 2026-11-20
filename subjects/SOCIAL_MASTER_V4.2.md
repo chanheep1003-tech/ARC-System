@@ -119,7 +119,7 @@ GENERATION_IDEA를 출처의 직접 주장처럼 쓰면 HARD FAIL.
 | C | 8 | 0 |
 | 합계 | 22 (90점) | 2 (10점) |
 - 파트별 문항 수가 다르면 `FINAL_STRUCTURE_MISMATCH`. 문항마다 `part: A/B/C`와 `points`를 적는다.
-- 난도: 사회 다회차 앵커(`quality/anchors/SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml`)와 같거나 살짝 더 어렵게.
+- 난도: 사회 다회차 앵커(`quality/anchors/SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.1.yaml`)와 같거나 살짝 더 어렵게.
 
 ### 5-2. ARC_N (요청별)
 - 문항 수·난도·서답형 수는 계획 카드가 정한다. 사용자가 말하지 않으면 `ARC_PLAN_DEFAULTS_V1.yaml` 기본값.

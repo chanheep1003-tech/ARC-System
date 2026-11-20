@@ -40,12 +40,14 @@ ARC FINAL에는 전 과목 공통 고정 난도곡선을 강제하지 않는다.
 FINAL = 실제 동북고 해당 과목 시험 난도대의 모의고사
 
 실제 기출 코퍼스:
-quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
+quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.1.yaml
 
 과목별 ACTIVE anchor:
-- KOR → KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0
-- SOC → SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0
-- SCI-REDOX → SCI_REDOX_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0
+- KOR → KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.1
+- SOC → SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.1
+- SCI (기말 전 범위) → SCI_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0
+- ENG → ENG_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0
+- SCI-REDOX (단원 전용) → SCI_REDOX_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0
 - HIS → 현재 FINAL 비활성
 
 FINAL은 다음 네 값이 subject anchor tolerance 내에 있어야 한다.
@@ -120,13 +122,14 @@ FINAL은 더 어려울수록 좋은 제품이 아니다. 기준은 실제 동북
 - 목표점: 앵커 평균 난도 +0.05~+0.20
 - 실행: `tooling/final/final_quality_gate.py` (`FINAL_SCHOOL_ANCHOR_EASIER` / `FINAL_SCHOOL_ANCHOR_HARDER` / `FINAL_SCHOOL_ANCHOR_SHARE_OFF`)
 
-### 2F. 앵커 현황 (2026-11-19)
-| 과목 | 앵커 | 기말 범위와의 관계 |
-|---|---|---|
-| KOR | `KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0` | 다회차 앙상블, 범위 독립 난도 곡선으로 사용 가능 |
-| SOC | `SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0` | 다회차 앙상블, 사용 가능 |
-| SCI | `SCI_REDOX_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0` | 산화·환원 직접범위 가중 65% — 기말 A~D 범위에는 직접범위 앵커가 아님. 기말 범위 앵커 등록 전 BLOCKED |
-| ENG | 없음 | 등록 전 BLOCKED |
+### 2F. 앵커 현황 (2026-11-20 갱신)
+| 과목 | 앵커 | 중심 (D1+D2 / D3 / D4+D5, 평균) | '살짝 더 어렵게' 목표 평균 | 근거 시험 (가중치) |
+|---|---|---|---|---|
+| KOR | `KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.1` | 0.290 / 0.458 / 0.252, 2.95 | 3.00~3.15 | 2026-2 중간 .30, 2025-2 기말 .30, 2025-2 중간 .20, 2026-1 중간·기말 각 .10 |
+| SOC | `SOC_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.1` | 0.324 / 0.466 / 0.210, 2.85 | 2.90~3.05 | 같은 가중 구조 |
+| SCI | `SCI_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0` (기말 전 범위) | 0.535 / 0.329 / 0.136, 2.46 | 2.51~2.66 | 2025-2 기말 .40, 2026-2 중간 .35, 2026-1 기말 .15, 2026-1 중간 .10 |
+| ENG | `ENG_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0` | 0.536 / 0.371 / 0.093, 2.49 | 2.54~2.69 | 2026-2 중간 .45, 2025-2 기말 .30, 2026-1 기말 .25 |
+`SCI_REDOX_…`는 산화·환원 단원 전용으로 남는다. 네 과목 모두 `ops/exams/EXAM_CONTEXTS_V1.yaml`의 기말 설정에 sha256과 함께 등록되어 FINAL 생산이 가능하다.
 앵커는 실제 동북고 시험 문항의 독립 난도 판정으로만 만든다. 추정 앵커로 BLOCKED를 풀지 않는다.
 
 ## 2G. EXAM STRUCTURE + POINTS (V1.2)

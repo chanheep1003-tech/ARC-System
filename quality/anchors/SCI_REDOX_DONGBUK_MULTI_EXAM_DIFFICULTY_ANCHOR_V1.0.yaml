@@ -9,7 +9,7 @@ direct_scope_source:
   item_ids: [8, 9, 10, 11, 12]
   weight: 0.65
 broader_science_ensemble_weight: 0.35
-corpus: quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
+corpus: quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.1.yaml
 profile:
   shares: {D12: 0.301, D3: 0.391, D45: 0.308}
   mean_level: 2.97
