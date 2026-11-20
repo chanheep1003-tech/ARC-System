@@ -32,6 +32,7 @@ runtime:
   english_exam_type_gate: required
   english_vocab_word_list: quality/english/ENG_HACKERS_VOCA_1800_WORDLIST_V1.0.yaml   # user list pending (2026-11-20)
   english_vocab_source_rule: HACKERS_BOOK_FIRST_SIMILAR_ONLY_OUTSIDE   # ARC_N + ARC_FINAL
+  english_vocab_level: G1_G2   # user directive 2026-11-20: 고1~고2 수준
   exam_context_registry: ops/exams/EXAM_CONTEXTS_V1.yaml
   exam_context_policy: ops/ARC_EXAM_CONTEXT_POLICY_V1.0.md
   exam_scope_gate: required

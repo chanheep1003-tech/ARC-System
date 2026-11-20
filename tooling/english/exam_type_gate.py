@@ -28,6 +28,16 @@ SIMILAR_RELATIONS = {"SYNONYM", "WORD_FAMILY", "CONFUSABLE_FORM"}
 SINGLE_WORD_OPTION_TYPES = {"ARC-ENG-VOC-01", "ARC-ENG-VOC-02", "ARC-ENG-VOC-04"}
 
 
+def load_word_levels(lib: dict, root: Path) -> dict[str, str]:
+    """word -> registered level (G1/G2/G3) from the user's list, when given."""
+    rel = (lib.get("vocab_source_rule") or {}).get("word_list")
+    if not rel or not (root / rel).is_file():
+        return {}
+    data = yaml.safe_load((root / rel).read_text(encoding="utf-8")) or {}
+    return {str(e.get("word", "")).strip().lower(): str(e.get("level")).upper()
+            for e in data.get("entries") or [] if isinstance(e, dict) and e.get("level")}
+
+
 def load_word_list(lib: dict, root: Path) -> set[str] | None:
     """Hackers 1800+ headwords, or None while the user's list is still pending."""
     rel = (lib.get("vocab_source_rule") or {}).get("word_list")
@@ -47,6 +57,8 @@ def vocab_source_findings(items: list[dict], lib: dict, root: Path) -> list[dict
     if not targets_for:
         return []
     book = load_word_list(lib, root)
+    registered_levels = load_word_levels(lib, root)
+    allowed_levels = set((rule.get("word_level") or {}).get("allowed") or ["G1", "G2"])
     out: list[dict] = []
     total = in_book = 0
 
@@ -72,6 +84,12 @@ def vocab_source_findings(items: list[dict], lib: dict, root: Path) -> list[dict
             word = str(r.get("word", "")).strip().lower()
             source = str(r.get("source", "")).upper()
             total += 1
+            # Word level G1~G2 (user directive 2026-11-20); the registered list wins over the item's own label.
+            level = registered_levels.get(word) or str(r.get("level", "")).upper()
+            if not level:
+                add("FAIL", "VOCAB_LEVEL_MISSING", iid, word=word)
+            elif level not in allowed_levels:
+                add("FAIL", "VOCAB_LEVEL_OUT_OF_RANGE", iid, word=word, level=level, allowed=sorted(allowed_levels))
             if source == "HACKERS":
                 if book is not None and word not in book:
                     add("FAIL", "VOCAB_NOT_IN_BOOK", iid, word=word)

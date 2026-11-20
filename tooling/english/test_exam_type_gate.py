@@ -24,7 +24,7 @@ def item(code: str, n: int, points: float | None = None) -> dict:
         if code == "ARC-ENG-GRM-02":
             it.update(view=["(a) x (b) x (c) x (d) x (e) x (f) x (g) x"], grm02_correct=["a", "c", "f"])
     if code in LIB["vocab_source_rule"]["applies_to"]:
-        it["vocab_targets"] = [{"word": w, "source": "HACKERS"} for w in (OPTS if "options" in it else ["word"])]
+        it["vocab_targets"] = [{"word": w, "source": "HACKERS", "level": "G2"} for w in (OPTS if "options" in it else ["word"])]
     if points is not None:
         it["points"] = points
     return it
@@ -87,20 +87,28 @@ def main() -> int:
     assert "VOCAB_OPTION_SOURCE_MISSING" in {f["code"] for f in gate.vocab_source_findings([partial], LIB, ROOT)}
     unlinked = copy.deepcopy(voc); unlinked["vocab_targets"][0] = {"word": "a", "source": "SIMILAR"}
     assert "VOCAB_SIMILAR_LINK_MISSING" in {f["code"] for f in gate.vocab_source_findings([unlinked], LIB, ROOT)}
-    linked = copy.deepcopy(voc); linked["vocab_targets"][0] = {"word": "a", "source": "SIMILAR", "similar_to": "b", "relation": "SYNONYM"}
+    linked = copy.deepcopy(voc); linked["vocab_targets"][0] = {"word": "a", "source": "SIMILAR", "similar_to": "b", "relation": "SYNONYM", "level": "G1"}
     assert not {f["code"] for f in gate.vocab_source_findings([linked], LIB, ROOT) if f["severity"] == "FAIL"}
+    # Word level G1~G2 (2026-11-20).
+    hard = copy.deepcopy(voc); hard["vocab_targets"][1]["level"] = "G3"
+    assert "VOCAB_LEVEL_OUT_OF_RANGE" in {f["code"] for f in gate.vocab_source_findings([hard], LIB, ROOT)}
+    nolevel = copy.deepcopy(voc); nolevel["vocab_targets"][2].pop("level")
+    assert "VOCAB_LEVEL_MISSING" in {f["code"] for f in gate.vocab_source_findings([nolevel], LIB, ROOT)}
     # With a registered word list, membership is enforced.
     import tempfile
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
         rel = LIB["vocab_source_rule"]["word_list"]
         (root / rel).parent.mkdir(parents=True)
-        (root / rel).write_text(yaml.safe_dump({"entries": [{"word": w, "day": 31} for w in ["a", "b", "c", "d"]]}), encoding="utf-8")
+        (root / rel).write_text(yaml.safe_dump({"entries": [{"word": w, "day": 31} for w in ["a", "b", "c"]] + [{"word": "d", "day": 31, "level": "G3"}]}), encoding="utf-8")
         got = {f["code"] for f in gate.vocab_source_findings([voc], LIB, root)}
         assert "VOCAB_NOT_IN_BOOK" in got and "VOCAB_BOOK_LIST_PENDING" not in got, got     # "e" is not in the book
-        ok = copy.deepcopy(voc); ok["vocab_targets"][4] = {"word": "e", "source": "SIMILAR", "similar_to": "d", "relation": "CONFUSABLE_FORM"}
+        assert "VOCAB_LEVEL_OUT_OF_RANGE" in got, got   # the list marks "d" as G3, overriding the item's G2
+        ok = copy.deepcopy(voc); ok["vocab_targets"][3] = {"word": "d", "source": "SIMILAR", "similar_to": "c", "relation": "SYNONYM", "level": "G2"}
+        ok["vocab_targets"][3]["word"] = "dd"; ok["options"] = ["a", "b", "c", "dd", "e"]
+        ok["vocab_targets"][4] = {"word": "e", "source": "SIMILAR", "similar_to": "c", "relation": "CONFUSABLE_FORM", "level": "G2"}
         assert not {f["code"] for f in gate.vocab_source_findings([ok], LIB, root) if f["severity"] == "FAIL"}
-        far = copy.deepcopy(voc); far["vocab_targets"][4] = {"word": "e", "source": "SIMILAR", "similar_to": "zzz", "relation": "SYNONYM"}
+        far = copy.deepcopy(voc); far["vocab_targets"][4] = {"word": "e", "source": "SIMILAR", "similar_to": "zzz", "relation": "SYNONYM", "level": "G2"}
         assert "VOCAB_SIMILAR_NOT_IN_BOOK" in {f["code"] for f in gate.vocab_source_findings([far], LIB, root)}
 
     assert "ENG_TYPE_UNREGISTERED" in v(final, lambda b: b["items"][0].update(eng_type="FREE_FORM"))

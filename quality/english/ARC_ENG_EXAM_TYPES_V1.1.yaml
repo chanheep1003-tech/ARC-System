@@ -3,7 +3,7 @@ library_id: ARC_ENG_EXAM_TYPES_V1.1
 version: 1.1
 date: 2026-11-20
 supersedes: archive/quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml
-change_v1_1: 어휘 출처 규칙(vocab_source_rule) 추가 — 해커스보카 전체 1800+ 우선, 단어장에 없는 단어는 비슷한 단어가 단어장에 있을 때만
+change_v1_1: 어휘 출처 규칙(vocab_source_rule)과 단어 수준 고1~고2(word_level) 추가 — 해커스보카 전체 1800+ 우선, 단어장에 없는 단어는 비슷한 단어가 단어장에 있을 때만
 status: ACTIVE
 applies_to: {subject: ENG, products: [ARC_N, ARC_FINAL, ARC_CORE]}
 evidence:
@@ -107,10 +107,16 @@ vocab_source_rule:         # 사용자 지시 2026-11-20 (ARC N·ARC FINAL 공�
     ARC-ENG-CRQ-02: 써야 할 단어
     ARC-ENG-RDG-03: 원문 단어를 바꿔 넣은 단어
   not_applied: 교과서·부교재·학평 지문 본문의 단어, 새로 쓴 예문의 일반 단어
+  word_level:               # 사용자 지시 2026-11-20: 단어 수준은 고1~고2 정도
+    allowed: [G1, G2]         # G1 = 고1 수준, G2 = 고2 수준
+    above_level: 단어장에 있어도 고3·수능 고난도·대학 수준(G3+) 단어는 출제 단어로 쓰지 않는다
+    basis: 고1·고2 교과서와 고1·고2 전국연합학력평가에서 쓰이는 수준. 단어 목록에 level이 적히면 그 값을 따른다
+    example_sentences: 새로 쓰는 예문·선지 문장의 일반 단어도 고1~고2 수준으로 쓴다(낯선 단어로 문장을 어렵게 만들지 않는다)
+    review: 독립 재풀이 검수자가 수준을 다시 확인한다
   item_field: |
     vocab_targets:            # 위 자리의 단어마다 한 줄
-      - {word: eradicate, source: HACKERS, day: 37}
-      - {word: eradication, source: SIMILAR, similar_to: eradicate, relation: WORD_FAMILY}
+      - {word: eradicate, source: HACKERS, day: 37, level: G2}
+      - {word: eradication, source: SIMILAR, similar_to: eradicate, relation: WORD_FAMILY, level: G2}
   share_target: 단어장 수록 단어 80% 이상 (그 아래면 WARN, 최대한 단어장 단어로 바꾼다)
 option_language_rule: 한 문항의 선지 5개는 한 언어로만 쓴다(영문 5개 또는 한글 5개). 요지·주제도 섞지 않는다.
 passage_workbook:          # N기출·학평 지문 변형 워크북 (workbook_profile PASSAGE_5)
