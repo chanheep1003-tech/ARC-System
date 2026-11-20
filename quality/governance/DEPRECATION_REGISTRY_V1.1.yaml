@@ -319,3 +319,17 @@ rules:
       - final_anchor_without_current_semester_midterm
       - sci_final_calibrated_by_redox_only_anchor
       - eng_final_without_anchor
+
+  - id: ENG-VOCAB-SOURCE-20261120
+    deprecated:
+      - archive/quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml
+      - archive/subjects/ENGLISH_MASTER_V1.0.md
+    replacement:
+      - quality/english/ARC_ENG_EXAM_TYPES_V1.1.yaml
+      - subjects/ENGLISH_MASTER_V1.1.md
+      - quality/english/ENG_HACKERS_VOCA_1800_WORDLIST_V1.0.yaml
+    reason: "2026-11-20 사용자 지시: ARC N·ARC FINAL 영어 출제 어휘는 최대한 해커스보카 1800+ 전체에서 고르고(시험범위 Day31~40 한정 아님), 단어장에 없는 단어는 비슷한 단어가 단어장에 있을 때만 쓴다."
+    forbidden_runtime_behavior:
+      - eng_vocab_limited_to_day31_40_only
+      - eng_vocab_without_source_record
+      - eng_vocab_outside_book_without_similar_book_word

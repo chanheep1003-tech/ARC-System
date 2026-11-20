@@ -32,7 +32,7 @@ hard_limits:              # 기본값으로 채울 때만 적용. 사용자가 �
   d1_share_max: 0.10
 archetype_library:
   KOR_GRAMMAR: quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml
-  ENG: quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml
+  ENG: quality/english/ARC_ENG_EXAM_TYPES_V1.1.yaml
 ask_user_only_when:       # 이 경우가 아니면 묻지 않고 계획 카드를 보여 준 뒤 진행한다
   - 과목을 알 수 없다
   - 범위를 전혀 알 수 없다 (단원·작품·쪽수·"맞춤법" 같은 단서가 하나도 없음)

@@ -71,7 +71,7 @@ SUBJECT_FAMILIES = {
 }
 # Subjects that must print registry-locked raw school text; others may also use bundle-authored material.
 REGISTRY_ONLY_SUBJECTS = {"KOR"}
-# Subjects whose stems come from a registered fixed type library (quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml).
+# Subjects whose stems come from a registered fixed type library (quality/english/ARC_ENG_EXAM_TYPES_V1.1.yaml).
 FIXED_STEM_SUBJECTS = {"ENG"}
 ITEM_LOCAL_REF = re.compile(r"STEM|VIEW|PASSAGE|TABLE|FIGURE|OPTION[1-5]|SCOPE:\S+")
 RARE_FAMILIES = {"COUNTERFACTUAL_DELETE_REPLACE", "MICRO_REFERENCE_TRACE", "META_READING_STRATEGY"}

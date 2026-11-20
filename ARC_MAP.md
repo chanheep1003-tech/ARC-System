@@ -73,7 +73,7 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --version V3 --coun
 - 국어 문법 원형: `quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml` — 원형 7종, 금지 형식 4종, 오답 함정 6종.
 - 게이트: `python tooling/korean/archetype_gate.py <번들>/items.yaml`
 - 규칙 원문: `quality/ARC_SCHOOL_ARCHETYPE_GATE_V1.0.md`
-- 영어 문항 유형: `quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml` — 유형 코드 20종과 FINAL 38문항 배치표. 영어는 유형이 거의 고정이라 이 코드에서만 고른다. 게이트: `python tooling/english/exam_type_gate.py <번들>/items.yaml`
+- 영어 문항 유형: `quality/english/ARC_ENG_EXAM_TYPES_V1.1.yaml` — 유형 코드 20종과 FINAL 38문항 배치표. 출제 어휘는 해커스보카 1800+ 전체에서 최대한 고르고, 단어장에 없는 단어는 비슷한 단어가 단어장에 있을 때만 쓴다(`vocab_source_rule`, 단어 목록 `quality/english/ENG_HACKERS_VOCA_1800_WORDLIST_V1.0.yaml`). 영어는 유형이 거의 고정이라 이 코드에서만 고른다. 게이트: `python tooling/english/exam_type_gate.py <번들>/items.yaml`
 - 교사 개인 성향 예측은 하지 않는다(`teacher_style_prediction: disabled`).
 
 ## 5. 제작 흐름

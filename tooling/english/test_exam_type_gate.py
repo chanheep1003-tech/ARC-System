@@ -23,6 +23,8 @@ def item(code: str, n: int, points: float | None = None) -> dict:
         it = {"item_id": f"Q{n}", "eng_type": code, "stem": "s", "options": OPTS}
         if code == "ARC-ENG-GRM-02":
             it.update(view=["(a) x (b) x (c) x (d) x (e) x (f) x (g) x"], grm02_correct=["a", "c", "f"])
+    if code in LIB["vocab_source_rule"]["applies_to"]:
+        it["vocab_targets"] = [{"word": w, "source": "HACKERS"} for w in (OPTS if "options" in it else ["word"])]
     if points is not None:
         it["points"] = points
     return it
@@ -74,6 +76,32 @@ def main() -> int:
         b = copy.deepcopy(base)
         mutate(b)
         return codes(b)
+
+
+    # vocab_source_rule (2026-11-20): every writer-chosen word carries its Hackers source.
+    voc = item("ARC-ENG-VOC-01", 99)
+    assert not gate.vocab_source_findings([voc], LIB, ROOT) or all(f["severity"] == "WARN" for f in gate.vocab_source_findings([voc], LIB, ROOT))
+    bare = dict(voc); bare.pop("vocab_targets")
+    assert "VOCAB_SOURCE_MISSING" in {f["code"] for f in gate.vocab_source_findings([bare], LIB, ROOT)}
+    partial = copy.deepcopy(voc); partial["vocab_targets"] = partial["vocab_targets"][:3]
+    assert "VOCAB_OPTION_SOURCE_MISSING" in {f["code"] for f in gate.vocab_source_findings([partial], LIB, ROOT)}
+    unlinked = copy.deepcopy(voc); unlinked["vocab_targets"][0] = {"word": "a", "source": "SIMILAR"}
+    assert "VOCAB_SIMILAR_LINK_MISSING" in {f["code"] for f in gate.vocab_source_findings([unlinked], LIB, ROOT)}
+    linked = copy.deepcopy(voc); linked["vocab_targets"][0] = {"word": "a", "source": "SIMILAR", "similar_to": "b", "relation": "SYNONYM"}
+    assert not {f["code"] for f in gate.vocab_source_findings([linked], LIB, ROOT) if f["severity"] == "FAIL"}
+    # With a registered word list, membership is enforced.
+    import tempfile
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        rel = LIB["vocab_source_rule"]["word_list"]
+        (root / rel).parent.mkdir(parents=True)
+        (root / rel).write_text(yaml.safe_dump({"entries": [{"word": w, "day": 31} for w in ["a", "b", "c", "d"]]}), encoding="utf-8")
+        got = {f["code"] for f in gate.vocab_source_findings([voc], LIB, root)}
+        assert "VOCAB_NOT_IN_BOOK" in got and "VOCAB_BOOK_LIST_PENDING" not in got, got     # "e" is not in the book
+        ok = copy.deepcopy(voc); ok["vocab_targets"][4] = {"word": "e", "source": "SIMILAR", "similar_to": "d", "relation": "CONFUSABLE_FORM"}
+        assert not {f["code"] for f in gate.vocab_source_findings([ok], LIB, root) if f["severity"] == "FAIL"}
+        far = copy.deepcopy(voc); far["vocab_targets"][4] = {"word": "e", "source": "SIMILAR", "similar_to": "zzz", "relation": "SYNONYM"}
+        assert "VOCAB_SIMILAR_NOT_IN_BOOK" in {f["code"] for f in gate.vocab_source_findings([far], LIB, root)}
 
     assert "ENG_TYPE_UNREGISTERED" in v(final, lambda b: b["items"][0].update(eng_type="FREE_FORM"))
     assert "FINAL_POSITION_TYPE" in v(final, lambda b: b["items"][22].update(eng_type="ARC-ENG-RDG-04"))     # 23번은 GRM-02

@@ -1,3 +1,8 @@
+## 1.9.5+eng-vocab — 2026-11-20 (English vocabulary source rule)
+- User directive: ARC N° and ARC FINAL English items draw writer-chosen words from the whole Hackers 보카 수능완성 1800+ book, not only the exam-range Day31–40. A word not in the book is allowed only when a similar book word exists (SYNONYM / WORD_FAMILY / CONFUSABLE_FORM).
+- `ARC_ENG_EXAM_TYPES_V1.1` (`vocab_source_rule`), `ENGLISH_MASTER_V1.1`, word-list slot `ENG_HACKERS_VOCA_1800_WORDLIST_V1.0` (PENDING_USER_LIST).
+- `exam_type_gate.py`: VOCAB_SOURCE_MISSING / VOCAB_OPTION_SOURCE_MISSING / VOCAB_SIMILAR_LINK_MISSING fail now; VOCAB_NOT_IN_BOOK / VOCAB_SIMILAR_NOT_IN_BOOK once the list is registered; WARN when the list is pending or book words fall under 80%.
+
 ## 1.9.5+anchors — 2026-11-20 (actual-exam difficulty audit, FINAL anchors registered)
 - Read the original Dongbuk exam PDFs on Drive and rated every multiple-choice item (structural D1–D5): 2026-2 midterm KOR (22), SOC (24), SCI (24), ENG (34), plus ENG 2025-2 final (26) and 2026-1 final (34). Corpus V1.1 keeps all 16 earlier exams and adds these 6 with item-level ratings.
 - New FINAL anchors registered in `ops/exams/EXAM_CONTEXTS_V1.yaml` (sha256-pinned): KOR V1.1 (mean 2.95), SOC V1.1 (2.85), SCI all-units V1.0 (2.46), ENG V1.0 (2.49, first English anchor). Each carries the "slightly harder" target band. All four subjects' FINAL cells are now READY.
