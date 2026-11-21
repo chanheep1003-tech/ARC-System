@@ -70,7 +70,7 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --version V3 --coun
 문항은 "개념 → 문항"이 아니라 **"확인된 시험 원형 → 개념 대입 → 함정 설계"** 순서로 만든다.
 
 - 근거 장부: `quality/school/ARC_SCHOOL_EVIDENCE_LEDGER_V1.0.yaml` — 규칙마다 D1(원안 직접 확인)/D2(내부 기록)/D3(외부 추정). 차단 게이트는 D1·D2로만 만든다.
-- 국어 문법 원형: `quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml` — 원형 7종, 금지 형식 4종, 오답 함정 6종.
+- 국어 문법 원형: `quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.1.yaml` — 원형 8종(실제 기출 CORE 5종 + LIMITED 3종), 금지 형식 6종, 오답 함정 6종. 표제어는 흔한 말만, 발음은 소리로 정해지는 규정에서만 (V1.1, 2026-11-21).
 - 게이트: `python tooling/korean/archetype_gate.py <번들>/items.yaml`
 - 규칙 원문: `quality/ARC_SCHOOL_ARCHETYPE_GATE_V1.0.md`
 - 영어 문항 유형: `quality/english/ARC_ENG_EXAM_TYPES_V1.1.yaml` — 유형 코드 20종과 FINAL 38문항 배치표. 출제 어휘는 해커스보카 1800+ 전체에서 최대한 고르고, 단어장에 없는 단어는 비슷한 단어가 단어장에 있을 때만 쓴다. 단어 수준은 고1~고2(`vocab_source_rule.word_level`, 단어 목록 `quality/english/ENG_HACKERS_VOCA_1800_WORDLIST_V1.0.yaml`). 영어는 유형이 거의 고정이라 이 코드에서만 고른다. 게이트: `python tooling/english/exam_type_gate.py <번들>/items.yaml`

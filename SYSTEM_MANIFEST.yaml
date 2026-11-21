@@ -21,8 +21,10 @@ runtime:
   request_planning_defaults: ops/planning/ARC_PLAN_DEFAULTS_V1.yaml
   request_planning_gate: required
   school_evidence_ledger: quality/school/ARC_SCHOOL_EVIDENCE_LEDGER_V1.0.yaml
-  korean_grammar_archetype_library: quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml
+  korean_grammar_archetype_library: quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.1.yaml
   korean_grammar_archetype_gate: required
+  korean_orthography_lexicon: COMMON_ONLY                     # 2026-11-21 user review: 흔한 말만
+  korean_orthography_pronunciation: SOUND_DEFINED_RULES_ONLY  # 총칙·된소리·사이시옷·며칠·-오/요·-이/-히; 표준 발음 자체는 묻지 않음
   unified_workflow_runner: tooling/workflow/arc_workflow.py
   unified_workflow_state_schema: ARC-RUN-V1
   active_exam_id: DONGBUK_2026_2_FINAL
@@ -50,7 +52,7 @@ runtime:
   korean_learning_level_v4: ARC_N_ADVANCED_DISCRIMINATION
   korean_learning_level_v5: ARC_FINAL_DONGBUK_SIMULATION
   korean_learning_level_v6: ARC_N_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY
-  korean_v6_specialist_policy: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.1.md
+  korean_v6_specialist_policy: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.2.md
   korean_school_hybrid_format: quality/korean/ARC_KOR_SCHOOL_HYBRID_FORMAT_V1.0.md
   korean_v6_spacing_pos_policy: quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.0.md
   korean_v6_spacing_min_questions_target: PER_REQUEST_PLAN   # was 65 of 100; counts vary per request (2026-11-19)

@@ -333,3 +333,17 @@ rules:
       - eng_vocab_limited_to_day31_40_only
       - eng_vocab_without_source_record
       - eng_vocab_outside_book_without_similar_book_word
+
+  - id: KOR-ORTHO-COMMON-WORDS-20261121
+    deprecated:
+      - archive/quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml
+      - archive/quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.1.md
+    replacement:
+      - quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.1.yaml
+      - quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.2.md
+    reason: "2026-11-21 사용자 검토: 맞춤법 문항에 발음이 섞이고 어색함. 실제 기출(학교 2025-2 기말, 고1 학평 2023-09·2025-10, 수능)은 흔한 말만 쓰고 발음은 소리로 정해지는 규정의 원리 설명에만 쓴다. V6가 공통국어1 음운·표준 발음 문항을 근거로 삼고 낯선 낱말을 쓰게 한 것이 원인."
+    forbidden_runtime_behavior:
+      - orthography_item_with_rare_lexeme
+      - pronunciation_material_in_non_sound_rule_item
+      - orthography_item_testing_standard_pronunciation
+      - limited_archetypes_over_one_per_unit

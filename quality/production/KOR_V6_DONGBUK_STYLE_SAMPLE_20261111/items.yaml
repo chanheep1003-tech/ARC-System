@@ -12,7 +12,7 @@ created_at: '2026-11-11T12:00:00+09:00'
 scope: 미래엔 공통국어2 3-(2) 한글 맞춤법 (재설계 시범, 기말 범위 미확정)
 scope_refs:
 - TEXTBOOK:미래엔 공통국어2 3-(2) 116~127쪽
-archetype_library: quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml
+archetype_library: archive/quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml   # historic sample, judged by the library it was built with
 sets: []
 items:
 - item_id: KOR-V6S-001

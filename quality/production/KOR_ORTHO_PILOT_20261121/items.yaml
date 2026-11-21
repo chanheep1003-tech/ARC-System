@@ -1,0 +1,165 @@
+batch_id: KOR-ORTHO-PILOT-20261121
+product_mode: ARC_N
+subject: KOR
+generator: CLAUDE
+set_label: ARC N° 맞춤법 시범
+course: 공통국어2
+cover_subtitle: 한글 맞춤법 · 실제 기출형 재설계 시범 4문항
+cover_lines:
+- 원형 V1.1 시범 — 흔한 말만, 발음은 소리로 정해지는 규정에서만
+school_line: 동북고등학교 1학년 · 2026
+created_at: '2026-11-21T12:00:00+09:00'
+scope: 미래엔 공통국어2 3-(2) 한글 맞춤법
+scope_refs:
+- TEXTBOOK:미래엔 공통국어2 3-(2) 116~127쪽
+archetype_library: quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.1.yaml
+review_status: PENDING_USER_REVIEW   # 사용자 검수 전. Drive 저장 금지
+sets: []   # 1~2번은 같은 설명문을 공유 (KOR-OP-002 passage: SHARED). 렌더러의 지문 세트(works) 형식은 조판 단계에서 붙인다
+items:
+- item_id: KOR-OP-001
+  archetype: A7_EXPLANATION_PASSAGE_APPLY
+  format: MCQ
+  lexicon: COMMON
+  sound_to_spelling: true
+  rule_axis: GENERAL_RULE_1
+  headwords: [드러났다, 늘어나자, 마개, 넓이, 밭이]
+  passage:
+  - 한글 맞춤법 제1항은 '한글 맞춤법은 표준어를 소리대로 적되, 어법에 맞도록 함을 원칙으로 한다.'이다. 소리대로 적는다는 것은 표준어의 발음대로 적는다는 뜻이다. 그러나 같은 말도 뒤에 오는 말에 따라 소리가 달라지므로, 소리대로만 적으면 읽는 사람이 뜻을 바로 알아보기 어렵다. 예를 들어 '꽃이', '꽃만'을 소리대로 적으면 '꼬치', '꼰만'이 되어 '꽃'이라는 말이 잘 드러나지 않는다. 그래서 체언과 조사, 용언의 어간과 어미를 구별하여 형태소의 본모양을 밝혀 적는다. 이것이 어법에 맞도록 적는다는 뜻이다.
+  - 어근에 접미사가 붙어 새말이 될 때는 두 가지 경우로 나뉜다. '-이', '-음'처럼 여러 어근에 두루 붙고 붙은 뒤에도 어근의 뜻이 살아 있으면 '길이', '울음'처럼 어근의 본모양을 밝혀 적는다. 그러나 일부 어근에만 붙는 접미사가 결합한 '무덤(묻-+-엄)'은 소리대로 적는다. 또 두 용언이 이어져 한 단어가 될 때, 앞말의 본뜻이 살아 있으면 '돌아가다'처럼 앞말의 본모양을 밝혀 적고, 앞말이 본뜻에서 멀어졌으면 '사라지다'처럼 소리대로 적는다.
+  - '[A] 한편, 띄어쓰기도 뜻을 정확히 전하는 데 중요하다. ''만''은 ''빵만 먹었다''처럼 다른 것을 제외하고 어떤 것을 한정할 때는 조사이므로 앞말에 붙여 쓰지만, ''십 분 만에''처럼 앞에서 말한 동안이 지났음을 나타낼 때는 의존 명사이므로 띄어 쓴다. ''대로''도 ''법대로''처럼 체언 뒤에 붙으면 조사이므로 붙여 쓰지만, ''들은 대로''처럼 용언의 관형사형 뒤에 오면 의존 명사이므로 띄어 쓴다.'
+  stem: 윗글을 바탕으로 <보기>의 ⓐ~ⓔ를 이해한 내용으로 적절하지 않은 것은?
+  view:
+  - ∘ 장마로 강물이 ⓑ늘어나자 ⓔ밭이 물에 잠기고, 흙에 묻혀 있던 돌이 ⓐ드러났다.
+  - ∘ 병 ⓒ마개를 꼭 닫은 뒤 상자의 ⓓ넓이를 재어 보았다.
+  options:
+  - 'ⓐ: 앞말이 ''들다''의 본뜻에서 멀어졌으므로 소리대로 적은 것이겠군.'
+  - 'ⓑ: 앞말에 ''늘다''의 뜻이 살아 있으므로 어간 ''늘-''의 본모양을 밝혀 적은 것이겠군.'
+  - 'ⓒ: 일부 어근에만 붙는 접미사 ''-애''가 결합하였으므로 어근 ''막-''을 밝혀 적지 않고 소리대로 적은 것이겠군.'
+  - 'ⓓ: 여러 어근에 두루 붙는 접미사 ''-이''가 결합하였으므로 어근 ''넓-''의 본모양을 밝혀 적은 것이겠군.'
+  - 'ⓔ: 조사 ''이''가 붙을 때 달라지는 소리를 그대로 반영하여 적은 것이겠군.'
+  answer: 5
+  second_best: 1
+  difficulty: D3
+  family: PASSAGE_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 0
+  transfer: true
+  stem_polarity: NEGATIVE
+  judgments:
+  - {axis: orthography, c: CORRECT_STATEMENT, claim: deureonada, ev: [PASSAGE, VIEW, OPTION1], v: true, trap: T4_SAME_FORM_OTHER_FUNCTION,
+     why: "'드러나다'는 '들다'의 뜻이 남아 있지 않아 소리대로 적는다(제15항 [붙임 1]). '돌아가다'와 달리 앞말의 본모양을 밝히지 않는다."}
+  - {axis: orthography, c: CORRECT_STATEMENT, claim: neureonada, ev: [PASSAGE, VIEW, OPTION2], v: true, trap: T5_RULE_JURISDICTION,
+     why: "'늘어나다'는 '늘다'의 뜻이 살아 있어 '늘-'을 밝혀 적는다(제15항 [붙임 1])."}
+  - {axis: orthography, c: CORRECT_STATEMENT, claim: magae, ev: [PASSAGE, VIEW, OPTION3], v: true, trap: T2_EXCEPTION_CONDITION,
+     why: "'마개'는 '막-'에 '-애'가 붙은 말로, '-애'는 일부 어근에만 붙으므로 소리대로 적는다(제19항 [붙임])."}
+  - {axis: orthography, c: CORRECT_STATEMENT, claim: neolbi, ev: [PASSAGE, VIEW, OPTION4], v: true, trap: T1_RIGHT_CONCEPT_WRONG_CASE,
+     why: "'넓이'는 '넓-'에 명사를 만드는 '-이'가 붙은 말로 어간의 원형을 밝혀 적는다(제19항)."}
+  - {axis: orthography, c: CORRECT, claim: bat_i, ev: [PASSAGE, VIEW, OPTION5], v: false,
+     why: "'밭이'는 소리로는 'ㅊ'으로 나지만 체언 '밭'과 조사 '이'를 구별해 본모양을 밝혀 적은 것이다. 소리를 그대로 반영한 것이 아니다."}
+  intended_errors: []
+
+- item_id: KOR-OP-002
+  archetype: A7_EXPLANATION_PASSAGE_APPLY
+  format: MCQ
+  lexicon: COMMON
+  headwords: [게임만, 삼 년 만에, 말씀하신대로, 약속대로, 나대로]
+  passage: SHARED:KOR-OP-001
+  stem: '[A]를 참고할 때, 밑줄 친 부분의 띄어쓰기가 적절하지 않은 것은?'
+  options:
+  - 동생은 하루 종일 <u>게임만</u> 했다.
+  - 친구를 <u>삼 년 만에</u> 다시 만났다.
+  - 선생님께서 <u>말씀하신대로</u> 순서를 지켰다.
+  - <u>약속대로</u> 우리는 일찍 도착했다.
+  - 너는 너대로 나는 <u>나대로</u> 준비하자.
+  answer: 3
+  second_best: 5
+  difficulty: D2
+  family: PASSAGE_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  judgments:
+  - {axis: spacing, c: CORRECT_STATEMENT, claim: man_particle, ev: [PASSAGE, OPTION1], v: true, trap: T4_SAME_FORM_OTHER_FUNCTION,
+     why: "다른 것을 빼고 '게임'으로 한정하는 조사 '만'이므로 붙여 쓴다(제41항)."}
+  - {axis: spacing, c: CORRECT_STATEMENT, claim: man_noun, ev: [PASSAGE, OPTION2], v: true, trap: T4_SAME_FORM_OTHER_FUNCTION,
+     why: "'삼 년'이라는 동안이 지났음을 나타내는 의존 명사 '만'이므로 띄어 쓴다(제42항)."}
+  - {axis: spacing, c: CORRECT, claim: daero_noun_error, ev: [PASSAGE, OPTION3], v: false,
+     why: "용언의 관형사형 '말씀하신' 뒤의 '대로'는 의존 명사이므로 '말씀하신 대로'로 띄어 써야 한다(제42항)."}
+  - {axis: spacing, c: CORRECT_STATEMENT, claim: daero_particle, ev: [PASSAGE, OPTION4], v: true, trap: T2_EXCEPTION_CONDITION,
+     why: "체언 '약속' 뒤의 '대로'는 조사이므로 붙여 쓴다(제41항)."}
+  - {axis: spacing, c: CORRECT_STATEMENT, claim: daero_pronoun, ev: [PASSAGE, OPTION5], v: true, trap: T1_RIGHT_CONCEPT_WRONG_CASE,
+     why: "대명사 '나'도 체언이므로 그 뒤의 '대로'는 조사이고 붙여 쓴다(제41항)."}
+  intended_errors: [말씀하신대로]
+
+- item_id: KOR-OP-003
+  archetype: A3_CONDITION_CLASSIFICATION
+  format: MCQ
+  lexicon: COMMON
+  sound_to_spelling: true
+  rule_axis: SAI_SIOT_30
+  view_clause_refs: [제30항]
+  headwords: [냇가, 콧날, 나뭇잎, 빗소리, 잇몸]
+  stem: <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 소리 내어 읽어 보고 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> 사이시옷은 순우리말이 들어 있는 합성어에서 앞말이 모음으로 끝나고 다음 중 하나에 해당할 때 받치어 적는다.
+  - Ⓐ 뒷말의 첫소리가 된소리로 나는 것
+  - Ⓑ 뒷말의 첫소리 'ㄴ, ㅁ' 앞에서 'ㄴ' 소리가 덧나는 것
+  - Ⓒ 뒷말의 첫소리 모음 앞에서 'ㄴㄴ' 소리가 덧나는 것
+  - <보기 2> ㉠ 냇가  ㉡ 콧날  ㉢ 나뭇잎  ㉣ 빗소리  ㉤ 잇몸
+  options:
+  - 'Ⓐ ㉠, ㉣ / Ⓑ ㉡, ㉤ / Ⓒ ㉢'
+  - 'Ⓐ ㉠ / Ⓑ ㉡, ㉣, ㉤ / Ⓒ ㉢'
+  - 'Ⓐ ㉠, ㉣ / Ⓑ ㉡ / Ⓒ ㉢, ㉤'
+  - 'Ⓐ ㉠, ㉤ / Ⓑ ㉡, ㉣ / Ⓒ ㉢'
+  - 'Ⓐ ㉣ / Ⓑ ㉡, ㉤ / Ⓒ ㉠, ㉢'
+  answer: 1
+  second_best: 3
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 0
+  transfer: true
+  stem_polarity: POSITIVE
+  judgments:
+  - {axis: orthography, c: CORRECT, claim: saisiot_table, ev: [VIEW, OPTION1], v: true,
+     why: "냇가(내+가)·빗소리(비+소리)는 뒷말 첫소리가 된소리로 나고(Ⓐ), 콧날(코+날)·잇몸(이+몸)은 'ㄴ' 소리가 덧나며(Ⓑ), 나뭇잎(나무+잎)은 'ㄴㄴ' 소리가 덧난다(Ⓒ). 제30항 1·2."}
+  - {axis: orthography, c: STRONG, claim: bitsori_as_n, ev: [VIEW, OPTION2], v: false, trap: T1_RIGHT_CONCEPT_WRONG_CASE,
+     why: "빗소리는 'ㄴ' 소리가 덧나는 말이 아니라 뒷말 '소리'가 된소리로 나는 말이다."}
+  - {axis: orthography, c: STRONG, claim: itmom_as_nn, ev: [VIEW, OPTION3], v: false, trap: T2_EXCEPTION_CONDITION,
+     why: "잇몸의 뒷말 '몸'은 모음으로 시작하지 않으므로 'ㄴㄴ'이 아니라 'ㄴ' 소리가 덧나는 Ⓑ이다."}
+  - {axis: orthography, c: MEDIUM, claim: swap_itmom_chatjan, ev: [VIEW, OPTION4], v: false, trap: T3_ONE_OF_TWO_WRONG,
+     why: "㉤ 잇몸은 Ⓑ, ㉣ 빗소리는 Ⓐ이므로 두 낱말의 자리가 바뀌었다."}
+  - {axis: orthography, c: MEDIUM, claim: naetga_as_nn, ev: [VIEW, OPTION5], v: false, trap: T6_PARTIAL_SET,
+     why: "냇가의 뒷말 '가'는 된소리로 나므로 Ⓐ에 들어가야 한다."}
+  intended_errors: []
+
+- item_id: KOR-OP-004
+  archetype: C1_CONSTRUCTED_BLANK_SENTENCE
+  format: CR
+  points: 5
+  lexicon: COMMON
+  headwords: [금세, 요새]
+  answer_targets: [금세]
+  stem: <보기>의 대화를 읽고, <조건>에 따라 서술하시오.
+  view:
+  - '민지: 하늘이 맑아졌네. 비가 ( ㉠ ) 그쳤어.'
+  - '준호: 내가 메시지에 ''금새''라고 썼는데, ''요새''처럼 ''새''로 쓰는 게 맞지 않아?'
+  - '민지: 두 말은 어떤 말이 줄어든 것인지가 달라서 표기도 달라.'
+  conditions:
+  - 1. ㉠에 들어갈 말을 바른 표기로 쓸 것.
+  - 2. ㉠의 말과 '요새'가 각각 어떤 말이 줄어든 것인지 밝힐 것.
+  - 3. 1, 2를 바탕으로 두 말의 표기가 다른 이유를 한 문장으로 쓸 것.
+  model_answer: "㉠은 '금세'이다. '금세'는 '금시에'가 줄어든 말이라 '세'로 적고, '요새'는 '요사이'가 줄어든 말이라 '새'로 적는다."
+  accepted_variants:
+  - "'금세'는 '금시에'의 준말이고 '요새'는 '요사이'의 준말이므로 표기가 다르다."
+  rubric:
+  - "㉠ 바른 표기 '금세' 1점"
+  - '''금시에''·''요사이''를 각각 밝힘 각 1점, 2점'
+  - "줄어든 본말에 따라 표기가 달라진다는 이유를 한 문장으로 씀 2점 (본말 언급 없이 '원래 그렇게 쓴다'만 쓰면 0점)"
+  ev:
+  - VIEW
+  difficulty: D3

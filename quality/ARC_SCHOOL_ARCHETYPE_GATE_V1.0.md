@@ -4,7 +4,7 @@ DATE: 2026-11-11
 STATUS: ACTIVE
 ROLE: 문항을 확인된 학교 시험 원형에서 만들게 하는 생성 규칙이자 게이트
 LEDGER: quality/school/ARC_SCHOOL_EVIDENCE_LEDGER_V1.0.yaml
-KOR_GRAMMAR_LIBRARY: quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml
+KOR_GRAMMAR_LIBRARY: quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.1.yaml
 TOOL: tooling/korean/archetype_gate.py
 
 ## 0. 왜 필요한가
@@ -31,12 +31,18 @@ TOOL: tooling/korean/archetype_gate.py
 | VIEW_MISSING / VIEW_ANCHOR_RATE_LOW | 원형이 요구하는 <보기>가 없음 / <보기> 기반 문항 90% 미만 |
 | TRAP_UNCLASSIFIED | 오답 선지에 함정 유형이 없음 |
 | D1_RECALL_FORBIDDEN | D1 문항 |
-| MASKED_SPACING | [ ]로 띄어쓰기를 가림 (분류 원형의 <보기 2> 제외) |
+| MASKED_SPACING | [ ]로 띄어쓰기를 가림 (분류 원형의 <보기 2>, 소리→표기 문항 제외) |
 | SINGLE_WORD_OPTIONS | 단어 하나짜리 선지 |
 | STUDENT_TEXT_SPOT_COUNT | 학생 글 원형의 표시가 6곳이 아님 |
 | CR_CONDITIONS_SHORT / CR_RUBRIC_MISSING | 서답형 <조건> 3개 미만 / 모범답·채점 기준 없음 |
 | CONSTRUCTED_RATIO_LOW | 서답형 비율 8% 미만 |
 | ARCHETYPE_OVERUSE | 한 원형이 단원 세트당 2회 초과 |
+| LIMITED_ARCHETYPE_OVERUSE | (V1.1 라이브러리) A4·A5·A6 합계가 단원 세트당 1개 초과 |
+| PASSAGE_MISSING | (V1.1) 설명문 적용 원형 A7에 설명문(`passage`)이 없음 |
+| LEXICON_NOT_COMMON | (V1.1) 문항에 `lexicon: COMMON`이 없음 — 표제어는 흔한 말만 |
+| PRONUNCIATION_MATERIAL_FORBIDDEN | (V1.1) 소리→표기 문항이 아닌데 `[발음 자료]`·`[ ]` 발음 표기가 있음 |
+| SOUND_TO_SPELLING_RULE_INVALID | (V1.1) `sound_to_spelling: true`인데 `rule_axis`가 소리로 정해지는 규정이 아님 |
+| PRONUNCIATION_AXIS_FORBIDDEN | (V1.1) 맞춤법 문항의 선지가 표준 발음의 정오를 판단함 |
 
 이 게이트는 형식을 본다. 정답의 사실성은 독립 재풀이와 전 선지 근거 검수가 맡는다.
 

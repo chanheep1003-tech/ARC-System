@@ -12,7 +12,8 @@ ROOT = Path(__file__).resolve().parents[2]
 spec = importlib.util.spec_from_file_location("arc_archetype_gate", ROOT / "tooling/korean/archetype_gate.py")
 gate = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(gate)
-LIB = "quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml"
+LIB = "quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.1.yaml"
+LIB_V10 = "archive/quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml"
 
 
 def load(name: str) -> dict:
@@ -25,6 +26,7 @@ def codes(report: dict) -> set[str]:
 
 def main() -> int:
     sample = load("KOR_V6_DONGBUK_STYLE_SAMPLE_20261111")
+    assert sample["archetype_library"].startswith(LIB_V10)
     assert gate.analyze(sample)["status"] == "PASS"
 
     # Bundles that predate the library are not judged by it.
@@ -48,7 +50,32 @@ def main() -> int:
     assert "CONSTRUCTED_RATIO_LOW" in variant(lambda b: b["items"].pop())
     assert "SINGLE_WORD_OPTIONS" in variant(lambda b: b["items"][0].update(options=["머릿말", "햇볕", "윗층", "갯수", "인삿말"]))
     assert "ARCHETYPE_UNREGISTERED" in variant(lambda b: b["items"][0].update(archetype="BARE_FIVE_SENTENCES"))
-    print("archetype gate regression PASS (sample ok, flat set + 9 faults blocked)")
+    # V1.1 (2026-11-21): the old sample is no longer good enough under the new library.
+    old = copy.deepcopy(sample)
+    old["archetype_library"] = LIB
+    old_codes = codes(gate.analyze(old))
+    assert {"LEXICON_NOT_COMMON", "MASKED_SPACING"} <= old_codes   # [꼬치] in a non-sound item option
+
+    pilot = load("KOR_ORTHO_PILOT_20261121")
+    assert pilot["archetype_library"] == LIB
+    assert gate.analyze(pilot)["status"] == "PASS"
+
+    def pvariant(mutate) -> set[str]:
+        bundle = copy.deepcopy(pilot)
+        mutate(bundle)
+        return codes(gate.analyze(bundle))
+
+    assert "LEXICON_NOT_COMMON" in pvariant(lambda b: b["items"][0].pop("lexicon"))
+    assert "PASSAGE_MISSING" in pvariant(lambda b: b["items"][1].pop("passage"))
+    assert "SOUND_TO_SPELLING_RULE_INVALID" in pvariant(lambda b: b["items"][0].update(rule_axis="SPACING_42"))
+    assert "PRONUNCIATION_MATERIAL_FORBIDDEN" in pvariant(
+        lambda b: b["items"][1]["options"].__setitem__(0, "동생은 깨끗하지 않다[깨끄타지 안타]고 말했다."))
+    assert "PRONUNCIATION_MATERIAL_FORBIDDEN" in pvariant(lambda b: b["items"][1].update(view=["[발음 자료] 대로[대로]"]))
+    assert "PRONUNCIATION_AXIS_FORBIDDEN" in pvariant(lambda b: b["items"][2]["judgments"][1].update(axis="pronunciation"))
+    limited = {"A4_INQUIRY_DIALOGUE_CHECK", "A5_EXAMPLE_MULTI_JUDGMENT"}
+    assert "LIMITED_ARCHETYPE_OVERUSE" in pvariant(
+        lambda b: [it.update(archetype=a) for it, a in zip(b["items"][:2], sorted(limited))])
+    print("archetype gate regression PASS (V1.0 sample ok, flat set + 9 faults blocked; V1.1 pilot ok + 8 faults blocked)")
     return 0
 
 

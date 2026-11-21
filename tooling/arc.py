@@ -769,7 +769,7 @@ def cmd_scaffold(args) -> int:
         "scope": args.scope,
         "created_at": now,
         "scope_refs": [f"SCOPE:{args.subject}_CONFIRMED_UNIT"],
-        "archetype_library": "quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml" if args.subject == "KOR" else None,
+        "archetype_library": "quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.1.yaml" if args.subject == "KOR" else None,
         "items": [
             {
                 "item_id": f"{args.subject}-01",

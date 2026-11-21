@@ -19,7 +19,11 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
-COMBO = re.compile(r"^[ㄱ-ㅎ㉠-㉯ⒶⒷⒸ,\s]+$")
+COMBO = re.compile(r"^[ㄱ-ㅎ㉠-㉯ⒶⒷⒸⓐ-ⓔ,\s]+$")
+BRACKET = re.compile(r"\[([가-힣][가-힣 ]*)\]")
+# Bracketed labels that are material headings, not pronunciation or masked spacing.
+LABELS = {"학생의 글", "예문", "탐구 대화", "자료", "조건", "붙임", "붙임 1", "붙임 2", "붙임 3", "다만",
+          "현대어 풀이", "사전 뜻풀이", "짜임 자료", "학생", "선생님", "질문", "답변"}
 
 
 def analyze(bundle: dict, root: Path = ROOT) -> dict:
@@ -28,6 +32,9 @@ def analyze(bundle: dict, root: Path = ROOT) -> dict:
         return {"status": "NOT_APPLICABLE", "findings": []}
     library = yaml.safe_load((root / rel).read_text(encoding="utf-8"))
     types, traps, design = library["archetypes"], set(library["trap_taxonomy"]), library["set_design"]
+    lexicon = library.get("lexicon_policy")          # V1.1+
+    pron = library.get("pronunciation_policy")       # V1.1+
+    limited = set(library.get("tiers", {}).get("LIMITED", []))
     findings: list[dict] = []
 
     def fail(code: str, item: str | None = None, **extra):
@@ -48,15 +55,29 @@ def analyze(bundle: dict, root: Path = ROOT) -> dict:
         used[arch] += 1
         if spec["format"] != kind:
             fail("ARCHETYPE_FORMAT_MISMATCH", iid)
-        if it.get("view"):
+        if it.get("view") or it.get("passage"):
             view_count += 1
-        elif spec.get("view") == "REQUIRED":
+        if not it.get("view") and spec.get("view") == "REQUIRED":
             fail("VIEW_MISSING", iid)
+        if spec.get("passage") == "REQUIRED" and not it.get("passage"):
+            fail("PASSAGE_MISSING", iid)
+        if lexicon and it.get(lexicon["item_field"]) not in lexicon["allowed"]:
+            fail("LEXICON_NOT_COMMON", iid, value=it.get(lexicon["item_field"]))
         if it.get("difficulty") == "D1":
             fail("D1_RECALL_FORBIDDEN", iid)
-        text = " ".join([it.get("stem", "")] + list(it.get("view", [])))
-        if arch != "A3_CONDITION_CLASSIFICATION" and re.search(r"\[[가-힣]{1,4}\]", text.replace("[A]", "")):
+        # V1.0 libraries only scanned stem and view; V1.1 (pronunciation_policy) also scans options.
+        text = " ".join([it.get("stem", "")] + list(it.get("view", [])) + (list(it.get("options", [])) if pron else []))
+        sound = bool(it.get("sound_to_spelling"))
+        bracketed = [b for b in BRACKET.findall(text) if b not in LABELS]
+        if arch != "A3_CONDITION_CLASSIFICATION" and not sound and any(len(b) <= 4 for b in bracketed):
             fail("MASKED_SPACING", iid)
+        if pron:
+            if sound and it.get("rule_axis") not in pron["sound_to_spelling_rules"]:
+                fail("SOUND_TO_SPELLING_RULE_INVALID", iid, rule_axis=it.get("rule_axis"))
+            if not sound and ("[발음 자료]" in text or any(len(b) > 4 for b in bracketed)):
+                fail("PRONUNCIATION_MATERIAL_FORBIDDEN", iid)
+            if any(j.get("axis") == "pronunciation" for j in it.get("judgments", [])):
+                fail("PRONUNCIATION_AXIS_FORBIDDEN", iid)
         if kind == "CR":
             constructed += 1
             if len(it.get("conditions", [])) < spec.get("conditions_min", 3):
@@ -87,7 +108,11 @@ def analyze(bundle: dict, root: Path = ROOT) -> dict:
         over = [a for a, n in used.items() if n > design["archetype_repeat_max_in_unit"] * units]
         if over:
             fail("ARCHETYPE_OVERUSE", archetypes=over)
-    return {"tool": "ARC_KOR_ARCHETYPE_GATE_V1.0", "status": "FAIL" if findings else "PASS",
+        if limited:
+            n_limited = sum(n for a, n in used.items() if a in limited)
+            if n_limited > design.get("limited_archetype_max_in_unit", 1) * units:
+                fail("LIMITED_ARCHETYPE_OVERUSE", count=n_limited, units=units)
+    return {"tool": "ARC_KOR_ARCHETYPE_GATE_V1.1", "library": library.get("library_id"), "status": "FAIL" if findings else "PASS",
             "archetypes": dict(used), "view_anchor_rate": round(view_count / total, 2) if total else None,
             "constructed": constructed, "findings": findings}
 

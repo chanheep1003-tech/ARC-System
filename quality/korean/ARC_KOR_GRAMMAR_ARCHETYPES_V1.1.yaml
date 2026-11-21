@@ -1,0 +1,163 @@
+# 국어 문법(한글 맞춤법) 문항 원형 라이브러리 V1.1 — 원형을 먼저 고르고 범위 개념을 대입한다.
+# V1.1 변경 (2026-11-21 사용자 검토 "맞춤법인데 발음이 들어가 있고 어색하다"):
+#   1) 표제어는 학생이 일상에서 쓰는 흔한 말만 (lexicon_policy)
+#   2) 발음은 소리로 정해지는 규정에서만, 원리 설명용으로만 (pronunciation_policy)
+#   3) 실제 기출에서 확인한 원형(CORE)을 중심으로, 나머지(LIMITED)는 단원 세트당 1개 이하
+#   4) 고1 학평형 'A7 설명문 적용' 원형 추가
+library_id: ARC_KOR_GRAMMAR_ARCHETYPES_V1.1
+version: 1.1
+date: 2026-11-21
+status: ACTIVE
+supersedes: archive/quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml
+applies_to: {subject: KOR, domain: GRAMMAR_ORTHOGRAPHY, products: [ARC_N, ARC_FINAL]}
+evidence_ledger: quality/school/ARC_SCHOOL_EVIDENCE_LEDGER_V1.0.yaml
+copy_policy: 원형은 문항의 작동 방식만 가져온다. 기출의 문장·선지·일기·설명문은 쓰지 않는다.
+
+# 학교 밖 근거: 원본 시험지를 직접 읽어 확인한 것만 적는다 (근거 등급 D1_EXTERNAL).
+external_evidence:
+  EXT-G1-2023-09-Q11:
+    exam: 2023년 9월 고1 전국연합학력평가(인천) 국어 11번
+    shape: "[11~12] 맞춤법 원리 설명문 → <보기> 문장 속 ⓐ~ⓔ를 그 원리로 설명. 선지 'ⓒ: 접미사 ‘-웅’이 일부 어근에만 결합해서 소리대로 적은 것이겠군'"
+    words: [쓰러진, 작은, 마중, 끝, 믿음]
+    pronunciation: "설명문 안에서만 한글로('잎이'→'이피', '잎만'→'임만'). 선지에 발음 표기 없음"
+  EXT-G1-2023-09-Q12:
+    exam: 2023년 9월 고1 전국연합학력평가(인천) 국어 12번
+    shape: "같은 설명문의 띄어쓰기 단락([A]: '지' 어미/시간 경과, '한번'/'한 번')을 참고해 일상 문장 5개의 밑줄 판단"
+    words: [한번, 지, 할 지, 한 번, 부지런한지]
+    pronunciation: none
+  EXT-G1-2025-10-Q9:
+    exam: 2025년 10월 고1 전국연합학력평가(경기) 국어 9번
+    shape: "총칙 제1항을 설명하는 수업 장면 <보기> → ㉠(소리대로)/㉡(본모양 밝힘)에 해당하는 단어 짝짓기"
+    words: [덮개, 많이, 얼음, 화살, 개구리, 오뚝이, 이파리, 우스개, 어렴풋이, 끄트머리]
+    pronunciation: "'발음 형태대로 적는다'는 개념 설명뿐, 발음 표기 없음"
+  EXT-CSAT-SET:
+    exam: 수능·평가원 맞춤법 10문항 (Drive ARC_한글맞춤법_기출및규범_70제 Part 1)
+    shape: "조항 원문 또는 선생님 설명 <보기> → 적용(제5·27항, 제19·25항, '되어요/돼요/되요'), 준말 빈칸 짝짓기, 문장 속 밑줄 표기 판단"
+    pronunciation: "'[ ]' 발음 표기는 소리→표기를 직접 묻는 문항(2016 9월 '[아니요]', 2015 6월 '드러서다')에만 등장"
+  EXT-G1-TOPIC-FREQUENCY:
+    source: Drive 한글맞춤법_문제은행_자동선별 (고1 학평 34문항 목록, 원문 미수록)
+    counts: {총칙·형태: 24, 띄어쓰기: 5, 사이시옷: 3, 문장 부호: 2}
+
+lexicon_policy:              # 사용자 지시 2026-11-21 (1번)
+  rule: COMMON_ONLY
+  meaning: >-
+    표제어와 예문 낱말은 고1 학생이 일상·교과서에서 쓰는 흔한 말이다(기출 예: 닭, 노래, 얼음, 덮개, 마중, 믿음,
+    바닷물, 깻잎, 촛불, 며칠, 먹을 수, 한 번). 낯섦은 '처음 보는 문장·맥락'에서 나오고 낯선 낱말에서 나오지 않는다.
+  item_field: lexicon        # 모든 문항 필수, 값은 allowed 중 하나
+  allowed: [COMMON]
+  forbidden_examples: [사전에서 찾아봐야 뜻을 아는 말, 방언·고어, 전문어, 잘 쓰지 않는 관용구, 표준국어대사전 등재 여부가 논란인 말]
+  common_idiom_ok: "누구나 아는 속담·관용구(예: 산 넘어 산)는 COMMON으로 본다"
+
+pronunciation_policy:        # 사용자 지시 2026-11-21 (4번)
+  principle: 맞춤법 문항은 '어떻게 적는가'를 묻는다. 발음은 규정 자체가 소리로 정해지는 곳에서 원리를 설명할 때만 쓴다.
+  sound_to_spelling_rules:   # item.sound_to_spelling: true 일 때 item.rule_axis 는 이 중 하나
+    GENERAL_RULE_1: 총칙 제1항 '소리대로 적되 어법에 맞도록'
+    TENSE_5: 제5항 된소리 표기
+    SAI_SIOT_30: 제30항 사이시옷
+    ENDING_O_15: 제15항 [붙임] 어미 '-오'와 조사 '요'
+    MYEOCHIL_27: 제27항 [붙임 2] 어원이 분명하지 않은 말(며칠)
+    SUFFIX_I_HI_51: 제51항 부사 끝음절 '-이/-히'
+  allowed_forms:
+    - 설명문·<보기> 안에서 한글로 짧게 쓴 소리 ('잎이'를 소리대로 적으면 '이피')
+    - 학생이 스스로 소리 내어 판단하게 하는 발문 (예: 사잇소리가 나는지)
+    - "[ ] 발음 표기: sound_to_spelling 문항에서만, 판단 대상 1~2개에만"
+  forbidden:
+    - 표준 발음 자체의 정오를 묻는 선지 (judgments.axis = pronunciation)
+    - sound_to_spelling 이 아닌 문항의 '[발음 자료]' 블록이나 '[ ]' 발음 표기
+    - 띄어쓰기·품사 판단 문항에 발음 근거를 섞는 것
+
+tiers:
+  CORE: [A1_GENERAL_RULE_MAPPING, A2_STUDENT_TEXT_ERRORS, A3_CONDITION_CLASSIFICATION, A7_EXPLANATION_PASSAGE_APPLY, C1_CONSTRUCTED_BLANK_SENTENCE]
+  LIMITED: [A4_INQUIRY_DIALOGUE_CHECK, A5_EXAMPLE_MULTI_JUDGMENT, A6_RULE_CASE_EXPLANATION]
+
+archetypes:
+  A1_GENERAL_RULE_MAPPING:
+    tier: CORE
+    evidence: [KOR-F04, EXT-G1-2025-10-Q9, EXT-CSAT-SET]
+    format: MCQ
+    view: REQUIRED          # 총칙 원문(㉠㉡ 표시) 또는 총칙을 설명하는 수업 장면
+    stem: "<보기>의 ㉠과 ㉡에 해당하는 단어를 바르게 짝지은 것은? / <보기>를 바탕으로 탐구한 내용으로 가장 적절한 것은?"
+    options: 짝지은 흔한 단어 쌍 5개, 또는 '단어 + 적은 원리' 설명 문장 5개
+  A2_STUDENT_TEXT_ERRORS:
+    tier: CORE
+    evidence: [KOR-F02]
+    format: MCQ
+    view: REQUIRED          # 학생 질문 + 학생이 쓴 글(㉠~㉥, 쓴 그대로) + 교사 응답 [A]
+    stem: "<보기>의 [A]에 들어갈 말로 적절한 것은?"
+    options: 틀린 곳 세 개의 조합 5개
+    constraints: {marked_spots: 6, wrong_spots: 3, mask_spacing: false}
+  A3_CONDITION_CLASSIFICATION:
+    tier: CORE
+    evidence: [KOR-F03]
+    format: MCQ
+    view: REQUIRED          # <보기 1> 조건 Ⓐ/Ⓑ/Ⓒ, <보기 2> ㉠~㉤ (흔한 합성어)
+    stem: "<보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?"
+    options: 분류표 5개
+  A7_EXPLANATION_PASSAGE_APPLY:
+    tier: CORE
+    evidence: [EXT-G1-2023-09-Q11, EXT-G1-2023-09-Q12]
+    format: MCQ
+    view: OPTIONAL          # 적용 대상 문장(ⓐ~ⓔ)을 <보기>로 줄 때 사용
+    passage: REQUIRED       # 교과서 수준의 원리 설명문 8~15문장, 흔한 예 2~3개 포함, 한 문항 세트(2문항)에 공유
+    stem: "<보기>의 ⓐ~ⓔ를 윗글을 바탕으로 이해한 내용으로 적절하지 않은 것은? / [A]를 참고할 때, 밑줄 친 부분의 띄어쓰기가 적절하지 않은 것은?"
+    options: "'ⓐ: (원리)해서 (소리대로/본모양을 밝혀) 적은 것이겠군' 형식의 원리 진술 5개, 또는 밑줄 친 일상 문장 5개"
+    passage_rules:
+      - 설명문은 원리와 이유를 말하고, 특정 선지의 답을 그대로 적지 않는다 (ARC_VIEW_EVIDENCE_POLICY 의 정답 노출 금지)
+      - 설명문에 든 예와 선지·<보기>의 판단 대상 낱말은 겹치지 않는다
+  A4_INQUIRY_DIALOGUE_CHECK:
+    tier: LIMITED
+    evidence: [KOR-F05, KOR-F01]
+    format: MCQ
+    view: REQUIRED          # 교사·학생 탐구 대화, 학생 설명 ㉠~㉤
+    stem: "<보기>의 ㉠~㉤ 중 … 설명으로 적절하지 않은 것은?"
+    options: ㉠~㉤
+  A5_EXAMPLE_MULTI_JUDGMENT:
+    tier: LIMITED
+    evidence: [KOR-F07]
+    format: MCQ
+    view: REQUIRED          # 판단 문장 ㄱ~ㄹ(ㅁ), 예외 조건 포함
+    stem: "… 옳은 것만을 <보기>에서 있는 대로 고른 것은?"
+    options: 조합 5개
+  A6_RULE_CASE_EXPLANATION:
+    tier: LIMITED
+    evidence: [KOR-F01, KOR-F04]
+    format: MCQ
+    view: REQUIRED          # 조항 원문 또는 자료 + 예문 ㉠~㉣
+    stem: "<보기>를 바탕으로 … 에 대해 탐구한 내용으로 적절하지 않은 것은?"
+    options: 예문별 '판단+근거' 설명 문장 5개
+  C1_CONSTRUCTED_BLANK_SENTENCE:
+    tier: CORE
+    evidence: [KOR-F05]
+    format: CR
+    view: REQUIRED          # 탐구 대화 빈칸 ㉠~㉣ 또는 바른 표기와 그 이유 쓰기(며칠형)
+    conditions_min: 3       # 문장 형식 지정 / 선택 어휘 지정 / 오개념 감점
+    points: 5
+    rubric: 빈칸당 1점 + 문장 형식 1점
+forbidden_forms:
+  - id: BARE_FIVE_SENTENCES
+    description: <보기>·설명문 없이 "다음 중 띄어쓰기가 바른 것은?" 뒤에 문장 5개를 나열
+  - id: SINGLE_WORD_OPTIONS
+    description: 단어 하나짜리 선지 5개(분류표·조합·짝짓기·㉠~㉤ 선택은 제외)
+  - id: MASKED_SPACING
+    description: "[ ]로 띄어쓰기를 가리는 표기"   # 예외: A3의 <보기 2>, sound_to_spelling 문항의 발음 표기
+  - id: D1_RECALL
+    description: 규정 문구나 단위 명사 띄어쓰기만 확인하는 D1 문항
+  - id: RARE_LEXEME
+    description: 뜻을 몰라서 틀리게 되는 낯선 낱말을 표제어로 씀 (lexicon_policy)
+  - id: PRONUNCIATION_IN_ORTHOGRAPHY
+    description: 맞춤법 문항에서 표준 발음을 묻거나, 소리로 정해지지 않는 규정에 발음 자료를 붙임 (pronunciation_policy)
+trap_taxonomy:            # 오답 선지는 반드시 아래 중 하나로 설계한다
+  T1_RIGHT_CONCEPT_WRONG_CASE: 개념 정의는 맞고 그 사례 적용이 틀림
+  T2_EXCEPTION_CONDITION: 기본 규칙의 예외·전제 조건을 비틂 (조사 뒤의 조사, 한 단어로 굳은 말, 원칙/허용 등)
+  T3_ONE_OF_TWO_WRONG: 한 선지의 두 판단 가운데 하나만 틀림
+  T4_SAME_FORM_OTHER_FUNCTION: 같은 형태를 다른 품사·기능으로 판정
+  T5_RULE_JURISDICTION: 맞는 표기에 다른 조항·원리를 근거로 댐
+  T6_PARTIAL_SET: 조합형에서 옳은 것 하나를 빼거나 틀린 것 하나를 더함
+set_design:
+  unit: {selected: [10, 12], constructed: [1, 2]}   # 시험의 문법 구간을 본뜬 단원 세트
+  archetype_repeat_max_in_unit: 2
+  limited_archetype_max_in_unit: 1                  # V1.1: A4·A5·A6 합계
+  view_anchor_rate_min: 0.9                         # <보기> 또는 설명문(passage)이 있는 문항 비율
+  constructed_ratio_min: 0.08
+  d1_max: 0
+  hints_D3: [KOR-H01, KOR-H02]

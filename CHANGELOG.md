@@ -1,3 +1,10 @@
+## 1.9.5+kor-ortho — 2026-11-21 (Korean orthography items rebuilt on real exams)
+- User review: orthography items "mix in pronunciation and feel awkward". Re-read the real items: Dongbuk 2025-2 final 8·9·10 + 서답형 2, 고1 학평 2023-09 Q11·12 and 2025-10 Q9 (original papers), 수능·평가원 10 items (Drive 70제). All use common words; pronunciation only appears in sound-defined rules, as a short explanation.
+- `ARC_KOR_GRAMMAR_ARCHETYPES_V1.1`: `lexicon_policy` (COMMON only), `pronunciation_policy` (sound-to-spelling rules: 총칙, 된소리, 사이시옷, '-오/요', 며칠, '-이/-히'; never test standard pronunciation), CORE/LIMITED tiers (A4·A5·A6 ≤ 1 per unit), new 고1 학평 archetype A7 explanation-passage → apply, `external_evidence`.
+- `ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.2`: §0 (common words, unfamiliarity comes from new sentences not rare words; pronunciation limit; archetype tiers); 2026-1 midterm 음운/표준 발음 items removed from evidence.
+- `archetype_gate.py` V1.1: LEXICON_NOT_COMMON, PASSAGE_MISSING, PRONUNCIATION_MATERIAL_FORBIDDEN, SOUND_TO_SPELLING_RULE_INVALID, PRONUNCIATION_AXIS_FORBIDDEN, LIMITED_ARCHETYPE_OVERUSE (V1.0 libraries keep their old behaviour).
+- Pilot bundle `quality/production/KOR_ORTHO_PILOT_20261121` (4 items: A7×2, A3, C1), PENDING_USER_REVIEW. Old V1.0 + V6 V1.1 moved to `archive/` (registry KOR-ORTHO-COMMON-WORDS-20261121).
+
 ## 1.9.5+eng-vocab — 2026-11-20 (English vocabulary source rule)
 - User directive: ARC N° and ARC FINAL English items draw writer-chosen words from the whole Hackers 보카 수능완성 1800+ book, not only the exam-range Day31–40. A word not in the book is allowed only when a similar book word exists (SYNONYM / WORD_FAMILY / CONFUSABLE_FORM).
 - `ARC_ENG_EXAM_TYPES_V1.1` (`vocab_source_rule`), `ENGLISH_MASTER_V1.1`, word-list slot `ENG_HACKERS_VOCA_1800_WORDLIST_V1.0` (PENDING_USER_LIST).

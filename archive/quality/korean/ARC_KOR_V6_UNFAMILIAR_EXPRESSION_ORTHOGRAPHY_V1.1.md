@@ -3,7 +3,7 @@ VERSION: V1.1
 DATE: 2026-11-19
 SUPERSEDES: archive/quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md (archived)
 CHANGE: 무힌트 `<보기>` 원칙과 정합화(§5), 인쇄 무결성 메타데이터(headwords/intended_errors/answer_targets) 필수화(§5A), 문항 수는 요청별 계획
-STATUS: ACTIVE_DEV_SPEC / CONTENT_NOT_RELEASED
+STATUS: ARCHIVED (superseded by quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.2.md, 2026-11-21)
 SCOPE: KOR ONLY / 2022 개정 공통국어2 「한글 맞춤법과 오늘날의 국어생활」
 PRODUCT: ARC N° / 독립 특화형 (V5 ARC FINAL의 후속 난도 단계가 아님)
 MODE: UNFAMILIAR_EXPRESSION_GRAMMAR_TRANSFER
