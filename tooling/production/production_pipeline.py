@@ -71,6 +71,9 @@ SUBJECT_FAMILIES = {
 }
 # Subjects that must print registry-locked raw school text; others may also use bundle-authored material.
 REGISTRY_ONLY_SUBJECTS = {"KOR"}
+# Writer-authored material kinds a registry-only subject may still print (no school raw text involved).
+# GRAMMAR_EXPLANATION: 고1 학평형 맞춤법 설명문 세트 (quality/korean/ARC_KOR_SCHOOL_HYBRID_FORMAT_V1.1.md F1+F2).
+AUTHORED_MATERIAL_KINDS = {"KOR": {"GRAMMAR_EXPLANATION"}}
 # Subjects whose stems come from a registered fixed type library (quality/english/ARC_ENG_EXAM_TYPES_V1.1.yaml).
 FIXED_STEM_SUBJECTS = {"ENG"}
 ITEM_LOCAL_REF = re.compile(r"STEM|VIEW|PASSAGE|TABLE|FIGURE|OPTION[1-5]|SCOPE:\S+")
@@ -230,9 +233,11 @@ def cr_items(bundle: dict[str, Any]) -> list[dict[str, Any]]:
 
 def material_work(w: dict[str, Any], subject: str, where: str) -> dict[str, Any]:
     """Bundle-authored stimulus (제시문·자료) for subjects that do not print registry-locked raw text."""
-    if subject in REGISTRY_ONLY_SUBJECTS:
-        raise PipelineError(f"MATERIAL_FORBIDDEN_FOR_SUBJECT: {subject} must use registered source_text_id ({where})")
     mat = w["material"]
+    if subject in REGISTRY_ONLY_SUBJECTS and mat.get("kind") not in AUTHORED_MATERIAL_KINDS.get(subject, set()):
+        raise PipelineError(f"MATERIAL_FORBIDDEN_FOR_SUBJECT: {subject} must use registered source_text_id ({where})")
+    if mat.get("kind") in AUTHORED_MATERIAL_KINDS.get(subject, set()) and str(mat.get("origin", "")).upper() != "GENERATED":
+        raise PipelineError(f"MATERIAL_ORIGIN_INVALID: {mat.get('kind')} must be GENERATED ({where})")
     units = [str(x) for x in mat.get("paragraphs", []) if str(x).strip()]
     if not units and not mat.get("table") and not w.get("figure"):
         raise PipelineError(f"MATERIAL_EMPTY: {where}")
@@ -243,7 +248,7 @@ def material_work(w: dict[str, Any], subject: str, where: str) -> dict[str, Any]
         raise PipelineError(f"MATERIAL_SOURCE_REF_MISSING: {where}")
     digest = hashlib.sha256("\n".join(units).encode("utf-8")).hexdigest()
     return {"label": w.get("label"), "entry": None, "sha256": digest, "form": "PROSE", "units": units,
-            "display": list(units), "title": mat.get("title"), "line_numbers": 0, "material": True,
+            "display": list(units), "title": mat.get("title"), "line_numbers": 0, "material": True, "kind": mat.get("kind"),
             "origin": origin, "source_ref": mat.get("source_ref"), "table": mat.get("table"),
             "figure": w.get("figure")}
 

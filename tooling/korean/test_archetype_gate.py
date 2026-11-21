@@ -66,7 +66,8 @@ def main() -> int:
         return codes(gate.analyze(bundle))
 
     assert "LEXICON_NOT_COMMON" in pvariant(lambda b: b["items"][0].pop("lexicon"))
-    assert "PASSAGE_MISSING" in pvariant(lambda b: b["items"][1].pop("passage"))
+    assert "PASSAGE_MISSING" in pvariant(lambda b: b["items"][1].pop("set"))
+    assert "PASSAGE_MISSING" in pvariant(lambda b: b.update(sets=[]))
     assert "SOUND_TO_SPELLING_RULE_INVALID" in pvariant(lambda b: b["items"][0].update(rule_axis="SPACING_42"))
     assert "PRONUNCIATION_MATERIAL_FORBIDDEN" in pvariant(
         lambda b: b["items"][1]["options"].__setitem__(0, "동생은 깨끗하지 않다[깨끄타지 안타]고 말했다."))

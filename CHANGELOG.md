@@ -1,3 +1,9 @@
+## 1.9.5+kor-ortho-typeset — 2026-11-21 (renderer supports the approved orthography format)
+- Pipeline: KOR may print writer-authored material only with `kind: GRAMMAR_EXPLANATION` (origin GENERATED); literature/nonfiction still come from the source registry. The shared explanation passage prints once under the set header, items follow.
+- Renderer: '<보기 1>'/'<보기 2>' lines print as separate labelled boxes; `<u>…</u>` underlines; '∘' falls back to '◦' when the face lacks it; circled marks (㉠, ⓐ, Ⓐ) stay on the line with the word they mark.
+- Archetype gate: an A7 item satisfies PASSAGE via `set` pointing at a material set. Pilot bundle migrated to `sets` (format V1.1 §4 updated).
+- New regression `tooling/typeset/test_kor_grammar_set.py` in CI.
+
 ## 1.9.5+kor-ortho-format — 2026-11-21 (orthography format = approved pilot)
 - User passed the 4-item pilot and asked to make the rules "like this". `ARC_KOR_SCHOOL_HYBRID_FORMAT_V1.1`: four standard forms copied from the pilot (F1 explanation passage → morphology principles, F2 same passage [A] → spacing, F3 condition classification, F4 correct spelling + reason CR), default unit F1+F2+F3+F4, column/article composite correction dropped from the default mix.
 - Pilot marked USER_REVIEW_PASSED_20261121 and registered as `runtime.korean_orthography_gold_exemplar`; V6 policy §0-5, KOREAN_MASTER §14, ARC_MAP point to it. V1.0 format archived (registry KOR-ORTHO-FORMAT-GOLD-20261121).

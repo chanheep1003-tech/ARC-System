@@ -55,7 +55,7 @@ V1.1은 사용자가 통과시킨 시범 4문항(골드 예시)을 기준 형식
 | 필드 | 쓰는 곳 |
 |---|---|
 | `archetype`, `lexicon: COMMON`, `headwords` | 모든 문항 |
-| `passage` (F2는 `SHARED:<F1 id>`) | F1·F2 |
+| `set: <세트 id>` + 번들 `sets[].works[].material` (`kind: GRAMMAR_EXPLANATION`, `origin: GENERATED`, `paragraphs`) | F1·F2 (설명문은 한 번만 인쇄) |
 | `sound_to_spelling`, `rule_axis` | 소리로 정해지는 규정의 문항 |
 | `view_clause_refs` | F3 |
 | `intended_errors` | F2 등 일부러 오류를 넣은 선지 |
@@ -65,6 +65,7 @@ V1.1은 사용자가 통과시킨 시범 4문항(골드 예시)을 기준 형식
 ## 5. 검수
 - 원형 게이트(`archetype_gate.py`) PASS, `PRINT_INTEGRITY_GATE` PASS.
 - 정답을 모르는 검수자의 독립 재풀이와 전 선지 진위표. 판단 근거는 조항 원문·국립국어원 해설과 대조해 `why`에 적는다.
-- 조판: 렌더러는 아직 공유 설명문 세트(F1+F2)를 지원하지 않는다. 조판할 때 번들 `sets`에 지문 세트(works)를 붙인다.
+- 조판: 렌더러가 공유 설명문 세트를 지원한다(2026-11-21). 설명문은 세트 머리 `[a~b] 다음 글을 읽고 물음에 답하시오.` 아래 한 번 인쇄되고, F1·F2가 이어진다. `<보기 1>`·`<보기 2>`로 시작하는 줄은 상자 두 개로, `<u>…</u>`는 밑줄로, `∘`는 글머리 기호로 인쇄된다. 회귀 테스트 `tooling/typeset/test_kor_grammar_set.py`.
+- 국어의 직접 쓴 자료는 `GRAMMAR_EXPLANATION`만 허용한다. 문학·비문학 지문은 여전히 원문 등록부(`source_text_id`)에서만 가져온다.
 
 END ARC_KOR_SCHOOL_HYBRID_FORMAT_V1.1

@@ -35,6 +35,9 @@ def analyze(bundle: dict, root: Path = ROOT) -> dict:
     lexicon = library.get("lexicon_policy")          # V1.1+
     pron = library.get("pronunciation_policy")       # V1.1+
     limited = set(library.get("tiers", {}).get("LIMITED", []))
+    # Shared explanation passages live in bundle `sets` (works[].material); items point at them with `set`.
+    material_sets = {st.get("id") for st in bundle.get("sets", []) or []
+                     if any(w.get("material", {}).get("paragraphs") for w in st.get("works", []))}
     findings: list[dict] = []
 
     def fail(code: str, item: str | None = None, **extra):
@@ -55,11 +58,11 @@ def analyze(bundle: dict, root: Path = ROOT) -> dict:
         used[arch] += 1
         if spec["format"] != kind:
             fail("ARCHETYPE_FORMAT_MISMATCH", iid)
-        if it.get("view") or it.get("passage"):
+        if it.get("view") or it.get("passage") or it.get("set") in material_sets:
             view_count += 1
         if not it.get("view") and spec.get("view") == "REQUIRED":
             fail("VIEW_MISSING", iid)
-        if spec.get("passage") == "REQUIRED" and not it.get("passage"):
+        if spec.get("passage") == "REQUIRED" and not it.get("passage") and it.get("set") not in material_sets:
             fail("PASSAGE_MISSING", iid)
         if lexicon and it.get(lexicon["item_field"]) not in lexicon["allowed"]:
             fail("LEXICON_NOT_COMMON", iid, value=it.get(lexicon["item_field"]))

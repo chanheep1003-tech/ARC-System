@@ -155,6 +155,11 @@ def run_size(key: str, size: float) -> float:
     return size * SCRIPT_SCALE if key[-1] in "^_" else size
 
 
+# Visually identical stand-ins for symbols the installed faces lack (exam-paper bullets).
+# '∘' (U+2218 RING OPERATOR) is how Korean exam papers mark <보기> lines; the faces carry '◦' (U+25E6).
+GLYPH_ALIASES = {"\u2218": "\u25e6"}
+
+
 def runs(text: str, key: str) -> list[tuple[str, str]]:
     """Split text into (font key, run) so every glyph comes from a font that has it.
     A glyph missing from both the Korean font and the CJK fallback is a hard error, never a tofu box."""
@@ -167,11 +172,15 @@ def runs(text: str, key: str) -> list[tuple[str, str]]:
             key = "B"
     out: list[tuple[str, str]] = []
     ul = ""
+    # Bundles may also write HTML-style <u>…</u> for underlines (Korean spacing items); same markers.
+    text = text.replace("<u>", UL_OPEN).replace("</u>", UL_CLOSE)
     for ch in text:
         if ch in (UL_OPEN, UL_CLOSE):
             ul = "~" if ch == UL_OPEN else ""
             continue
         k = key + ul
+        if ch in GLYPH_ALIASES and not _FONTS[key].has_glyph(ord(ch)):
+            ch = GLYPH_ALIASES[ch]
         if ch in SUPERSCRIPTS:
             ch, k = SUPERSCRIPTS[ch], key + ul + "^"
         elif ch in SUBSCRIPTS:
@@ -237,6 +246,8 @@ class Layout:
         """Greedy wrap on spaces (어절); char break only for tokens wider than the line."""
         lines, cur, indent = [], "", first
         text = re.sub(r"\( (\S{1,3}) \)", "(\u00a0\\1\u00a0)", text).replace("( )", "(\u00a0)")  # keep blanks on one line
+        text = text.replace("<u>", UL_OPEN).replace("</u>", UL_CLOSE)  # HTML-style underline → span markers
+        text = re.sub(r"([㉠-㉯ⓐ-ⓩⒶ-Ⓩ]) (?=\S)", "\\1\u00a0", text)  # keep a mark with the word it marks
         for word in text.split(" "):
             trial = word if not cur else cur + " " + word
             if self.width(trial, key, size) <= w - indent:
@@ -407,7 +418,8 @@ def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "AR
     if it.get("table"):
         table(L, b, it["table"])
     if it.get("view"):
-        view(L, b, it["view"], label=it.get("view_label", "<보 기>"))
+        for vlabel, vlines in split_views(it["view"], it.get("view_label", "<보 기>")):
+            view(L, b, vlines, label=vlabel)
     if it.get("format") == "CR":
         view(L, b, it["conditions"], label="<조 건>")
         top = b.h
@@ -451,6 +463,24 @@ def figure(L: Layout, b: Block, fig: dict[str, Any]) -> None:
     b.h += 2
     b.ops.append(("image", x0, b.h, x0 + w, b.h + h, str(path)))
     b.h += h + 6
+
+
+VIEW_SPLIT_RE = re.compile(r"^<\s*보\s*기\s*(\d)\s*>\s*")
+
+
+def split_views(lines: list[str], default_label: str) -> list[tuple[str, list[str]]]:
+    """A view whose lines start with '<보기 1>', '<보기 2>' … prints as separate labelled boxes (school exam style)."""
+    groups: list[tuple[str, list[str]]] = []
+    for line in lines:
+        m = VIEW_SPLIT_RE.match(line)
+        if m:
+            groups.append((f"<보기 {m.group(1)}>", []))
+            line = line[m.end():]
+        elif not groups:
+            groups.append((default_label, []))
+        if line.strip():
+            groups[-1][1].append(line)
+    return groups
 
 
 def view(L: Layout, b: Block, lines: list[str], label: str = "<보 기>") -> None:

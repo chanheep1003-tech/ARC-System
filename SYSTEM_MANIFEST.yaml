@@ -563,6 +563,7 @@ tooling:
   draft_preview: tooling/production/draft_preview.py
   korean_archetype_gate: tooling/korean/archetype_gate.py
   korean_archetype_gate_smoke_test: tooling/korean/test_archetype_gate.py
+  korean_grammar_set_typeset_test: tooling/typeset/test_kor_grammar_set.py
   local_ci_runner: tooling/run_ci_local.py
   smoke_requirements: tooling/requirements-smoke.txt
   content_qa_gate: tooling/content_qa/content_qa_gate.py

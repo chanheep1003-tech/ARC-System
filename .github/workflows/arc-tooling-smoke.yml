@@ -222,6 +222,9 @@ jobs:
       - name: Run school archetype gate regression
         run: python tooling/korean/test_archetype_gate.py
 
+      - name: Run KOR grammar set typesetting regression (shared explanation passage, split views)
+        run: python tooling/typeset/test_kor_grammar_set.py
+
       - name: Smoke the ARC CLI (status matrix, plan, start dry-run, checksum check)
         run: |
           python tooling/arc.py status
