@@ -1,3 +1,7 @@
+## 1.9.5+kor-ortho-format — 2026-11-21 (orthography format = approved pilot)
+- User passed the 4-item pilot and asked to make the rules "like this". `ARC_KOR_SCHOOL_HYBRID_FORMAT_V1.1`: four standard forms copied from the pilot (F1 explanation passage → morphology principles, F2 same passage [A] → spacing, F3 condition classification, F4 correct spelling + reason CR), default unit F1+F2+F3+F4, column/article composite correction dropped from the default mix.
+- Pilot marked USER_REVIEW_PASSED_20261121 and registered as `runtime.korean_orthography_gold_exemplar`; V6 policy §0-5, KOREAN_MASTER §14, ARC_MAP point to it. V1.0 format archived (registry KOR-ORTHO-FORMAT-GOLD-20261121).
+
 ## 1.9.5+kor-ortho — 2026-11-21 (Korean orthography items rebuilt on real exams)
 - User review: orthography items "mix in pronunciation and feel awkward". Re-read the real items: Dongbuk 2025-2 final 8·9·10 + 서답형 2, 고1 학평 2023-09 Q11·12 and 2025-10 Q9 (original papers), 수능·평가원 10 items (Drive 70제). All use common words; pronunciation only appears in sound-defined rules, as a short explanation.
 - `ARC_KOR_GRAMMAR_ARCHETYPES_V1.1`: `lexicon_policy` (COMMON only), `pronunciation_policy` (sound-to-spelling rules: 총칙, 된소리, 사이시옷, '-오/요', 며칠, '-이/-히'; never test standard pronunciation), CORE/LIMITED tiers (A4·A5·A6 ≤ 1 per unit), new 고1 학평 archetype A7 explanation-passage → apply, `external_evidence`.

@@ -53,7 +53,8 @@ runtime:
   korean_learning_level_v5: ARC_FINAL_DONGBUK_SIMULATION
   korean_learning_level_v6: ARC_N_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY
   korean_v6_specialist_policy: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.2.md
-  korean_school_hybrid_format: quality/korean/ARC_KOR_SCHOOL_HYBRID_FORMAT_V1.0.md
+  korean_school_hybrid_format: quality/korean/ARC_KOR_SCHOOL_HYBRID_FORMAT_V1.1.md
+  korean_orthography_gold_exemplar: quality/production/KOR_ORTHO_PILOT_20261121/items.yaml   # user review passed 2026-11-21
   korean_v6_spacing_pos_policy: quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.0.md
   korean_v6_spacing_min_questions_target: PER_REQUEST_PLAN   # was 65 of 100; counts vary per request (2026-11-19)
   korean_v6_spacing_share_default: 0.65                       # share of the requested V6 count when the user gives no mix

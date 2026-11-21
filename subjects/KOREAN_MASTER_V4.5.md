@@ -241,7 +241,7 @@ FINAL 요청도 별도 FINAL 프롬프트를 쓰지 않고 PRODUCT_MODE=ARC_FINA
 
 ## 14. PRINT-EXAM INTEGRITY — V4.5
 - 문법·맞춤법 `<보기>`: 조항 원문과 사실 자료만 (`quality/ARC_VIEW_EVIDENCE_POLICY_V1.0.md`)
-- 형식: `quality/korean/ARC_KOR_SCHOOL_HYBRID_FORMAT_V1.0.md` (무힌트 조항 적용 + 실전 텍스트 복합 교정 + 조건부 서답형)
+- 형식: `quality/korean/ARC_KOR_SCHOOL_HYBRID_FORMAT_V1.1.md` (V1.1: 사용자 통과 시범 세트 기준 — 설명문 세트 2문항 + 조건 분류 + 서답형, 흔한 말만, 발음은 소리로 정해지는 규정에서만)
 - 선택형 표제어·예문을 서답형에서 다시 쓰지 않는다 (`quality/ARC_SET_CROSS_ITEM_LEAK_GATE_V1.0.md`)
 - 문항마다 `headwords`, 의도한 오류 선지는 `intended_errors`
 - 생산 파이프라인 `PRINT_INTEGRITY_GATE` FAIL이면 CONTENT_LOCK 금지

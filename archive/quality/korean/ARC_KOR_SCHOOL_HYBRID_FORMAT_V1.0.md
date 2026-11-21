@@ -1,7 +1,7 @@
 # ARC 국어 — 내신 실전 하이브리드 형식 (맞춤법·띄어쓰기·표준 발음)
 VERSION: 1.0
 DATE: 2026-11-19
-STATUS: ACTIVE
+STATUS: ARCHIVED (superseded by quality/korean/ARC_KOR_SCHOOL_HYBRID_FORMAT_V1.1.md, 2026-11-21)
 SCOPE: KOR ONLY · ARC N°(V6 포함) / ARC FINAL의 문법 구간
 ORIGIN: 2026-11 한글 맞춤법 실전 세트 비교. 3-DAY PACK(무힌트 조항 적용 + 실전 텍스트 복합 교정)과 내신형 V2(선택형 + 조건부 서답형, 채점 기준 포함)의 장점을 합친다.
 

@@ -13,7 +13,7 @@ scope: 미래엔 공통국어2 3-(2) 한글 맞춤법
 scope_refs:
 - TEXTBOOK:미래엔 공통국어2 3-(2) 116~127쪽
 archetype_library: quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.1.yaml
-review_status: PENDING_USER_REVIEW   # 사용자 검수 전. Drive 저장 금지
+review_status: USER_REVIEW_PASSED_20261121   # 사용자 검수 1회 통과 → 출제 형식 골드 예시 (ARC_KOR_SCHOOL_HYBRID_FORMAT_V1.1). 독립 재풀이 전
 sets: []   # 1~2번은 같은 설명문을 공유 (KOR-OP-002 passage: SHARED). 렌더러의 지문 세트(works) 형식은 조판 단계에서 붙인다
 items:
 - item_id: KOR-OP-001

@@ -347,3 +347,13 @@ rules:
       - pronunciation_material_in_non_sound_rule_item
       - orthography_item_testing_standard_pronunciation
       - limited_archetypes_over_one_per_unit
+
+  - id: KOR-ORTHO-FORMAT-GOLD-20261121
+    deprecated:
+      - archive/quality/korean/ARC_KOR_SCHOOL_HYBRID_FORMAT_V1.0.md
+    replacement:
+      - quality/korean/ARC_KOR_SCHOOL_HYBRID_FORMAT_V1.1.md
+    reason: "2026-11-21 사용자가 시범 4문항(quality/production/KOR_ORTHO_PILOT_20261121)을 통과시키고 '이것처럼 출제 규칙 바꿔줘'라고 지시. V1.0의 조항 적용 40% + 칼럼·기사 복합 교정 40% 배합을 시범 세트 기준 4형식(설명문 형태·설명문 띄어쓰기·조건 분류·바른 표기 서답형)으로 바꿈."
+    forbidden_runtime_behavior:
+      - orthography_default_mix_column_composite_correction
+      - orthography_item_not_modeled_on_gold_exemplar

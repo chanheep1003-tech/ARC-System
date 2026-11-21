@@ -21,6 +21,7 @@ EXTERNAL_SOURCE_POLICY: quality/korean/ARC_KOR_DYNAMIC_SOURCE_SELECTION_V1.0.yam
 2. **맞춤법 문항은 '어떻게 적는가'를 묻는다.** 선지는 "ⓐ: 앞말이 본뜻에서 멀어져 소리대로 적은 것이겠군"처럼 표기와 그 원리를 진술한다. 표준 발음의 정오를 묻지 않는다(`PRONUNCIATION_AXIS_FORBIDDEN`).
 3. **발음은 소리로 정해지는 규정에서만, 원리 설명용으로만 쓴다.** 해당 규정은 총칙 제1항, 제5항 된소리, 제30항 사이시옷, 제15항 [붙임] '-오'/'요', 며칠(제27항 [붙임 2]), 제51항 '-이/-히'다. 이때 문항에 `sound_to_spelling: true`와 `rule_axis`를 적는다. 그 밖의 문항(띄어쓰기·품사·준말 등)에는 `[발음 자료]`나 `[ ]` 발음 표기를 넣지 않는다(`PRONUNCIATION_MATERIAL_FORBIDDEN`). 허용되는 문항에서도 학생이 흔한 단어를 스스로 소리 내 보고 판단하게 하는 것이 기본이고, 발음 표기는 판단 대상 1~2개에만 쓴다.
 4. **원형은 실제 기출 중심이다.** A1 총칙, A2 학생 글, A3 조건 분류, A7 설명문 적용(고1 학평형), C1 서답형을 기본으로 한다. A4·A5·A6은 단원 세트당 합계 1개 이하다(`LIMITED_ARCHETYPE_OVERUSE`).
+5. **형식은 사용자 통과 골드 예시를 따른다.** `quality/korean/ARC_KOR_SCHOOL_HYBRID_FORMAT_V1.1.md`의 4형식(설명문 형태·설명문 띄어쓰기·조건 분류·바른 표기 서답형)과 `quality/production/KOR_ORTHO_PILOT_20261121/items.yaml`.
 
 ## 1. V1~V6의 역할과 V6의 차별점
 - V1 전범위 개념 훈련, V2 학교 핵심 집중/복합, V3 새로운 **지문** 독해·적용, V4 최상위권 근거 결합, V5 학교 시험형 ARC FINAL.
@@ -76,7 +77,7 @@ EXTERNAL_SOURCE_POLICY: quality/korean/ARC_KOR_DYNAMIC_SOURCE_SELECTION_V1.0.yam
 - 기존 V3 외부지문 목록을 V6 재료 고정 목록으로 재사용.
 
 ## 5A. 인쇄 무결성 (V1.1부터)
-- 형식: `quality/korean/ARC_KOR_SCHOOL_HYBRID_FORMAT_V1.0.md`
+- 형식: `quality/korean/ARC_KOR_SCHOOL_HYBRID_FORMAT_V1.1.md`
 - 모든 문항 `headwords`·`lexicon`, 의도한 오류가 있는 선지 `intended_errors`, 서답형 `answer_targets` 필수. 소리→표기 문항은 `sound_to_spelling`·`rule_axis`
 - 선택형·서답형 표제어/예문 중복 금지 (`quality/ARC_SET_CROSS_ITEM_LEAK_GATE_V1.0.md`)
 - 정적 검사: 생산 파이프라인 `PRINT_INTEGRITY_GATE`, 원형 게이트 `tooling/korean/archetype_gate.py` (V1.1)
