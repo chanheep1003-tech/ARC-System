@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 190" width="220" height="190">
+  <line x1="16.0" y1="162.0" x2="199.0" y2="162.0" stroke="#111" stroke-width="1.5"/><polygon points="206.0,162.0 198.0,158.5 198.0,165.5" fill="#111"/>
+  <line x1="34.0" y1="178.0" x2="34.0" y2="21.0" stroke="#111" stroke-width="1.5"/><polygon points="34.0,14.0 30.5,22.0 37.5,22.0" fill="#111"/>
+  <polyline points="59.3,22.9 62.4,38.0 65.5,50.1 68.5,60.1 71.6,68.4 74.7,75.5 77.8,81.6 80.9,86.9 83.9,91.5 87.0,95.6 90.1,99.3 93.2,102.5 96.3,105.5 99.3,108.1 102.4,110.6 105.5,112.8 108.6,114.8 111.7,116.7 114.7,118.4 117.8,120.0 120.9,121.5 124.0,122.9 127.1,124.2 130.1,125.4 133.2,126.5 136.3,127.6 139.4,128.6 142.5,129.5 145.5,130.4 148.6,131.3 151.7,132.1 154.8,132.9 157.9,133.6 160.9,134.3 164.0,134.9 167.1,135.6 170.2,136.2 173.3,136.7 176.3,137.3 179.4,137.8 182.5,138.3 185.6,138.8 188.7,139.2 191.7,139.7" fill="none" stroke="#111" stroke-width="1.5"/>
+  <line x1="34.0" y1="42.0" x2="166.0" y2="162.0" stroke="#111" stroke-width="1.2"/>
+  <circle cx="78.0" cy="82.0" r="2.4" fill="#111"/>
+  <circle cx="122.0" cy="122.0" r="2.4" fill="#111"/>
+  <circle cx="166.0" cy="162.0" r="2.4" fill="#111"/>
+  <circle cx="34.0" cy="42.0" r="2.4" fill="#111"/>
+  <text x="206" y="175" font-family="Times New Roman, serif" font-style="italic" font-size="12" text-anchor="end">x</text>
+  <text x="40" y="20" font-family="Times New Roman, serif" font-style="italic" font-size="12">y</text>
+  <text x="22" y="175" font-family="Times New Roman, serif" font-size="11">O</text>
+  <text x="84.0" y="79.0" font-family="Times New Roman, serif" font-size="11">A</text>
+  <text x="128.0" y="118.0" font-family="Times New Roman, serif" font-size="11">B</text>
+  <text x="166.0" y="176.0" font-family="Times New Roman, serif" font-size="11" text-anchor="middle">C</text>
+  <text x="22.0" y="46.0" font-family="Times New Roman, serif" font-size="11">D</text>
+  <text x="156" y="122" font-family="Times New Roman, serif" font-style="italic" font-size="11">y = 8/x</text>
+</svg>

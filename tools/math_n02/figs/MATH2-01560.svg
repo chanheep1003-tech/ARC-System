@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 200" width="230" height="200">
+  <polygon points="165.3,63.4 81.0,152.9 149.0,152.9" fill="#e2e2e2" stroke="#111" stroke-width="1.2"/>
+  <polygon points="149.0,152.9 183.0,94.0 149.0,35.1 81.0,35.1 47.0,94.0 81.0,152.9" fill="none" stroke="#111" stroke-width="1.6"/>
+  <circle cx="165.3" cy="63.4" r="2.6" fill="#111"/>
+  <line x1="167.7" y1="140.6" x2="179.2" y2="120.7" stroke="#111" stroke-width="0.95"/><polygon points="181.7,116.3 181.1,121.8 177.2,119.5" fill="#111"/>
+  <line x1="181.7" y1="71.7" x2="170.2" y2="51.8" stroke="#111" stroke-width="0.95"/><polygon points="167.7,47.4 172.1,50.6 168.2,52.9" fill="#111"/>
+  <line x1="129.0" y1="25.1" x2="106.0" y2="25.1" stroke="#111" stroke-width="0.95"/><polygon points="101.0,25.1 106.0,22.9 106.0,27.4" fill="#111"/>
+  <line x1="62.3" y1="47.4" x2="50.8" y2="67.3" stroke="#111" stroke-width="0.95"/><polygon points="48.3,71.7 48.9,66.2 52.8,68.5" fill="#111"/>
+  <line x1="48.3" y1="116.3" x2="59.8" y2="136.2" stroke="#111" stroke-width="0.95"/><polygon points="62.3,140.6 57.9,137.4 61.8,135.1" fill="#111"/>
+  <path d="M 81.0,155.9 Q 115.0,176.9 149.0,155.9" fill="none" stroke="#555" stroke-width="1.0" stroke-dasharray="2.5,2.5"/>
+  <rect x="108" y="162.9" width="14" height="14" fill="#fff"/>
+  <text x="115" y="173.9" font-family="Times New Roman, serif" font-size="12" text-anchor="middle">1</text>
+  <text x="154.0" y="164.9" font-family="Times New Roman, serif" font-size="13">A</text>
+  <text x="191.0" y="99.0" font-family="Times New Roman, serif" font-size="13">B</text>
+  <text x="153.0" y="29.1" font-family="Times New Roman, serif" font-size="13">C</text>
+  <text x="69.0" y="29.1" font-family="Times New Roman, serif" font-size="13">D</text>
+  <text x="31.0" y="99.0" font-family="Times New Roman, serif" font-size="13">E</text>
+  <text x="69.0" y="164.9" font-family="Times New Roman, serif" font-size="13">F</text>
+  <text x="152.3" y="61.4" font-family="Times New Roman, serif" font-size="13">P</text>
+</svg>
