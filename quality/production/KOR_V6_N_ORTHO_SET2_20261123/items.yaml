@@ -1,0 +1,849 @@
+batch_id: KOR-V6-N-ORTHO-SET2-20261123
+product_mode: ARC_N
+subject: KOR
+generator: CLAUDE
+set_label: ARC N° V6 · 세트 2/4
+course: 공통국어2
+cover_subtitle: 한글 맞춤법 50문항(객관식) · 세트 2 — 접미사·어미 vs 의존 명사 / 단위·수·열거·호칭
+cover_lines:
+- 제43~46·48항, 접미사(-간·-차·-들·-째·-씩·-여)
+- 어미(-ㄹ걸·-듯·-ㄹ뿐더러)
+school_line: 동북고등학교 1학년 · 2026
+created_at: '2026-11-23T14:00:00+09:00'
+scope: 미래엔 공통국어2 3단원 한글 맞춤법 (2026 2학기 기말 범위, 학교 공지 2026-11-13)
+scope_refs:
+- TEXTBOOK:미래엔 공통국어2 3-(2) 한글 맞춤법과 오늘날의 국어생활, 한글 맞춤법 제42~46·48항
+archetype_library: quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml
+v6:
+  policy: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md
+  set: 2 (2/4)
+  difficulty_band: D3~D5 (사용자 지시 2026-11-23)
+  user_override: 전 50문항 객관식(서답형 0) — 사용자 지시 2026-11-23
+  blind_review: NOT_RUN
+sets: []
+items:
+- item_id: KOR-V6N2-001
+  archetype: A1_GENERAL_RULE_MAPPING
+  stem: <보기>를 바탕으로 단위 명사의 띄어쓰기를 탐구한 내용으로 가장 적절한 것은?
+  view:
+  - 제43항 단위를 나타내는 명사는 ㉠띄어 쓴다. 다만, ㉡순서를 나타내는 경우나 숫자와 어울리어 쓰이는 경우에는 붙여 쓸 수 있다.
+  - '- 한글 맞춤법'
+  options:
+  - '''차 한 대''의 ''대''는 단위를 나타내는 명사이므로 ㉡에 따라 ''한대''로 붙여 쓸 수 있다.'
+  - '''제삼 장''을 ''제삼장''으로 붙여 쓸 수 있는 것은 순서를 나타내는 경우이므로 ㉡에 근거한다.'
+  - '''3미터''로 붙여 쓰는 것은 ''미터''가 단위를 나타내는 명사가 아니기 때문이다.'
+  - '''열 살''은 나이의 차례를 나타내므로 ㉡에 따라 ''열살''로 붙여 쓸 수 있다.'
+  - '''두 시 삼십 분''을 ''두시 삼십분''으로 붙여 쓰는 것은 ㉠에 따른 표기이다.'
+  answer: 2
+  second_best: 1
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: s2_1_handae
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: '''한''은 아라비아 숫자가 아닌 수 관형사이고 순서도 아니므로 ''한 대''로 띄어 써야 한다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: CORRECT
+    claim: s2_1_key
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: '''제-''는 접두사이고 ''장''은 순서를 나타내는 단위이므로 붙여 쓰는 것이 허용된다(제43항 다만).'
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_1_meter
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''미터''는 단위 명사이다. ''3미터''는 숫자와 어울려 붙여 쓰는 것이 허용된 경우이다.'
+    trap: T5_RULE_JURISDICTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_1_age
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''열 살''은 나이의 양을 나타낼 뿐 순서가 아니고 한글 수이므로 띄어 써야 한다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: WEAK
+    claim: s2_1_time
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: 붙여 쓰는 것은 ㉡(허용)에 따른 것이다. ㉠은 띄어 쓰는 원칙이다.
+    trap: T5_RULE_JURISDICTION
+- item_id: KOR-V6N2-002
+  archetype: A2_STUDENT_TEXT_ERRORS
+  stem: <보기>의 [A]에 들어갈 내용으로 알맞은 것은?
+  view:
+  - '학생: 체험 활동 안내문을 썼어요. 띄어쓰기를 확인해 주세요.'
+  - <학생이 쓴 안내문> 이번 체험 활동은 ㉠이틀간 진행됩니다. 인솔은 ㉡김 민준씨가 맡아 주시고, 신청자는 모두 ㉢십여 명입니다. 인솔자는 이 일을 맡은 지 ㉣3년 차인 분입니다. 이동은 ㉤버스 두대로 하며, 점심 도시락은 ㉥한 사람 씩 나누어 드립니다.
+  - '선생님: 고쳐야 할 곳은 [A]란다.'
+  options:
+  - ㉠, ㉣, ㉥
+  - ㉠, ㉡, ㉤
+  - ㉡, ㉢, ㉥
+  - ㉢, ㉣, ㉤
+  - ㉡, ㉤, ㉥
+  answer: 5
+  second_best: 2
+  difficulty: D3
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: s2_2_adf
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉠, ㉣은 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s2_2_abe
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉠ '이틀간'의 '-간'은 '동안'의 뜻을 더하는 접미사이므로 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_2_bcf
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉢ '십여 명'의 '-여'는 접미사이므로 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s2_2_cde
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉣ '3년 차'의 '차'는 주기·경과의 해당 시기를 나타내는 의존 명사이므로 띄어 쓴 것이 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: s2_2_key
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: ㉡ '김민준 씨', ㉤ '버스 두 대', ㉥ '한 사람씩'으로 고쳐야 한다.
+- item_id: KOR-V6N2-003
+  archetype: A3_CONDITION_CLASSIFICATION
+  stem: <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> Ⓐ접미사는 앞말에 붙여 쓴다. Ⓑ의존 명사는 앞말과 띄어 쓴다. Ⓒ어미는 어간에 붙여 쓴다. '간(間)'은 '동안'의 뜻이면 접미사, '관계·사이'의 뜻이면 의존 명사이고, '차(次)'는 '목적'의 뜻이면 접미사, '어떤 일을 하던 기회나 순간'의 뜻이면 의존 명사이다.
+  - <보기 2> ㉠부모와 자식[간]에도 예의가 필요하다.  ㉡한 달[간] 해외에 머물렀다.  ㉢인사[차] 선생님 댁에 들렀다.  ㉣막 나가려던[차]에 전화가 왔다.  ㉤이럴 줄 알았으면 일찍 올[걸] 그랬다.
+  options:
+  - Ⓐ ㉡, ㉢   Ⓑ ㉠, ㉣   Ⓒ ㉤
+  - Ⓐ ㉢   Ⓑ ㉠, ㉡, ㉣   Ⓒ ㉤
+  - Ⓐ ㉡   Ⓑ ㉠, ㉢, ㉣   Ⓒ ㉤
+  - Ⓐ ㉠, ㉡, ㉢   Ⓑ ㉣   Ⓒ ㉤
+  - Ⓐ ㉡, ㉢   Ⓑ ㉠   Ⓒ ㉣, ㉤
+  answer: 1
+  second_best: 2
+  difficulty: D3
+  family: COMPARISON_MATRIX
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: CORRECT
+    claim: s2_3_key
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: ㉡ '-간'(동안)·㉢ '-차'(목적)는 접미사 Ⓐ, ㉠ '간'(관계)·㉣ '차'(순간)는 의존 명사 Ⓑ, ㉤ '-ㄹ걸'(후회)은 어미 Ⓒ.
+  - axis: orthography
+    c: STRONG
+    claim: s2_3_gan
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉡의 '간'은 '동안'의 뜻이므로 접미사이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: s2_3_cha
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉢의 '차'는 '목적'의 뜻이므로 접미사이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_3_gan_rel
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉠의 '간'은 '관계'의 뜻이므로 의존 명사이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: WEAK
+    claim: s2_3_cha_end
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉣ '나가려던 차에'의 '차'는 관형사형 뒤 의존 명사이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+- item_id: KOR-V6N2-004
+  archetype: A4_INQUIRY_DIALOGUE_CHECK
+  stem: <보기>의 ㉠~㉤ 중 학생의 설명이 옳지 않은 것은?
+  view:
+  - '선생님: 수를 적는 법과 두 말을 이어 주거나 열거하는 말의 띄어쓰기를 정리해 볼까요?'
+  - '학생 1: ㉠''12억 3456만 7898''처럼 수는 ''만'' 단위로 띄어 써요.'
+  - '학생 2: ㉡''국장 겸 과장''의 ''겸''은 두 말을 이어 주는 말이므로 앞뒤를 띄어 써요.'
+  - '학생 3: ㉢''청군 대 백군''의 ''대''는 앞말에 붙는 접미사이므로 ''청군대 백군''으로 써야 해요.'
+  - '학생 4: ㉣''사과, 배, 귤 등이 있다''의 ''등''은 열거하는 말이므로 앞말과 띄어 써요.'
+  - '학생 5: ㉤''부산, 광주 등지''의 ''등지''도 열거할 때 쓰이는 말이므로 띄어 써요.'
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 3
+  second_best: 4
+  difficulty: D3
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: s2_4_man
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 제44항에 맞는 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_4_gyeom
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 제45항에 맞는 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: CORRECT
+    claim: s2_4_dae
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''대''는 두 말을 이어 주는 말이므로 제45항에 따라 ''청군 대 백군''으로 띄어 쓴다.'
+  - axis: orthography
+    c: STRONG
+    claim: s2_4_deung
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 제45항에 맞는 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_4_deungji
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: 제45항 용례 '부산, 광주 등지'에 맞는 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+- item_id: KOR-V6N2-005
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  stem: 제48항을 바탕으로 한 <보기>의 판단 중 옳은 것만을 있는 대로 고른 것은?
+  view:
+  - 제48항 성과 이름, 성과 호 등은 붙여 쓰고, 이에 덧붙는 호칭어, 관직명 등은 띄어 쓴다. 다만, 성과 이름, 성과 호를 분명히 구분할 필요가 있을 경우에는 띄어 쓸 수 있다.
+  - ㄱ. '채영신 씨'의 '씨'는 이름 뒤에 덧붙는 호칭어이므로 띄어 쓴다.
+  - ㄴ. '그는 김씨 가문 출신이다'의 '-씨'는 '그 성씨의 가문'이라는 뜻을 더하는 접미사이므로 붙여 쓴다.
+  - ㄷ. '남궁억'은 성과 이름을 분명히 구분할 필요가 있을 때 '남궁 억'으로 띄어 쓸 수 있다.
+  - ㄹ. '충무공 이순신 장군'의 '충무공'은 호에 해당하므로 '충무공이순신'처럼 이름에 붙여 써야 한다.
+  - ㅁ. '최치원 선생'의 '선생'은 관직명이 아니므로 '최치원선생'으로 붙여 쓴다.
+  options:
+  - ㄱ, ㄷ, ㅁ
+  - ㄱ, ㄴ
+  - ㄴ, ㄹ
+  - ㄱ, ㄴ, ㄷ
+  - ㄱ, ㄷ, ㄹ
+  answer: 4
+  second_best: 2
+  difficulty: D4
+  family: MULTI_JUDGMENT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_5_ace
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㅁ은 틀렸다. 호칭어 '선생'은 띄어 쓴다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s2_5_ab
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㄷ도 옳으므로 옳은 것 하나를 뺀 조합이다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: s2_5_bd
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㄹ은 틀렸다. 제48항 용례대로 '충무공 이순신 장군'으로 띄어 쓴다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: s2_5_key
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: ㄱ(호칭어 띄움), ㄴ(성씨·가문의 뜻을 더하는 접미사 '-씨'), ㄷ(제48항 다만)이 옳다.
+  - axis: orthography
+    c: STRONG
+    claim: s2_5_acd
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㄹ은 틀렸다. 성과 호를 붙여 쓰는 것은 '서화담'처럼 성 뒤에 호가 올 때이다.
+    trap: T6_PARTIAL_SET
+- item_id: KOR-V6N2-006
+  archetype: A6_RULE_CASE_EXPLANATION
+  stem: <보기>를 바탕으로 ㉠~㉣을 탐구한 내용으로 적절하지 않은 것은?
+  view:
+  - '''들''이 셀 수 있는 명사 뒤에서 복수의 뜻을 더하면 접미사이므로 붙여 쓰고, 두 개 이상의 사물을 열거한 뒤 ''그런 따위''의 뜻을 나타내면 의존 명사이므로 띄어 쓴다.'
+  - ㉠ 학생들이 운동장에 모였다.   ㉡ 시장에서 사과, 배, 감 들을 샀다.
+  - ㉢ 아이들이 마당에서 논다.   ㉣ 책상, 걸상 들이 교실에 놓여 있다.
+  options:
+  - ㉠의 '-들'은 셀 수 있는 명사 '학생' 뒤에서 복수의 뜻을 더하므로 붙여 썼다.
+  - ㉡의 '들'은 바로 앞의 '감'에만 복수의 뜻을 더하므로 '감들'로 붙여 써야 한다.
+  - ㉢의 '-들'은 ㉠과 같은 기능을 하므로 앞말에 붙여 썼다.
+  - ㉣의 '들'은 '책상, 걸상'을 열거한 뒤 그런 따위의 뜻을 나타내므로 띄어 썼다.
+  - ㉡과 ㉣은 앞에 열거 구조가 있다는 점이 '들'의 기능을 판단하는 공통 단서가 된다.
+  answer: 2
+  second_best: 5
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: s2_6_a
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: s2_6_key
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉡의 '들'은 '사과, 배, 감'을 열거한 뒤 그런 따위를 뜻하는 의존 명사이므로 띄어 쓴다.
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_6_c
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_6_d
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: s2_6_e
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: 옳은 설명이다. 열거 구조가 의존 명사 '들'을 가려내는 단서이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+- item_id: KOR-V6N2-007
+  archetype: A1_GENERAL_RULE_MAPPING
+  stem: <보기>의 ㉠, ㉡에 대한 탐구 내용으로 가장 적절한 것은?
+  view:
+  - 제45항 두 말을 이어 주거나 열거할 적에 쓰이는 말들은 ㉠띄어 쓴다.
+  - 제46항 단음절로 된 단어가 연이어 나타날 적에는 ㉡붙여 쓸 수 있다.
+  - '- 한글 맞춤법'
+  options:
+  - '''한 잎 두 잎''을 ''한잎 두잎''으로 붙여 쓰는 것은 ㉠의 적용을 받은 것이다.'
+  - '''이사장 및 이사들''의 ''및''은 단음절이므로 ㉡에 따라 반드시 ''이사장및''으로 붙여 쓴다.'
+  - '''좀 더 큰 것''은 ㉡에 따라 ''좀더 큰것''으로 쓸 수 있으므로, 띄어 쓴 원래 표기는 틀린 것이다.'
+  - '''사과, 배 등속''의 ''등속''은 열거하는 말이 아니므로 앞말에 붙여 쓴다.'
+  - '''열 내지 스물''에서 ''내지''를 앞뒤 말과 띄어 쓰는 것은 ㉠에 따른 것이다.'
+  answer: 5
+  second_best: 3
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: s2_7_hanip
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: '''한잎 두잎''은 ㉡(제46항)에 따른 허용 표기이다.'
+    trap: T5_RULE_JURISDICTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_7_mit
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''및''은 제45항의 적용을 받는 말로 띄어 쓴다. 제46항은 단음절 ''단어''가 연이을 때의 허용 규정이다.'
+    trap: T5_RULE_JURISDICTION
+  - axis: orthography
+    c: STRONG
+    claim: s2_7_jomdeo
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: 제46항은 허용 규정이므로 원칙대로 띄어 쓴 '좀 더 큰 것'도 바른 표기이다.
+    trap: T2_EXCEPTION_CONDITION
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_7_deungsok
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''등속''은 제45항 용례에 있는 열거의 말이므로 띄어 쓴다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: CORRECT
+    claim: s2_7_key
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: '''내지''는 두 말을 이어 주는 말이므로 제45항에 따라 띄어 쓴다.'
+- item_id: KOR-V6N2-008
+  archetype: A2_STUDENT_TEXT_ERRORS
+  stem: <보기>의 [A]에 들어갈 말로 알맞은 것은?
+  view:
+  - '학생: 친구에게 보낸 문자인데, 어미와 의존 명사를 구별해서 썼는지 봐 주세요.'
+  - <학생이 보낸 문자> 어제 약속을 잊어서 미안해. 미리 ㉠연락할걸 그랬어. 대신 네가 ㉡좋아할 걸 사 왔어. 하늘을 보니 비가 ㉢올듯 말듯 하네. 새로 생긴 카페는 음료가 ㉣맛있을 뿐더러 조용하대. 숙제를 다 ㉤했는지 다시 확인해 줘. 나는 집에 ㉥도착한지 얼마 안 됐어.
+  - '선생님: 고쳐야 할 곳은 [A]야.'
+  options:
+  - ㉡, ㉣, ㉥
+  - ㉠, ㉢, ㉣
+  - ㉢, ㉣, ㉥
+  - ㉡, ㉢, ㉥
+  - ㉠, ㉡, ㉣
+  answer: 3
+  second_best: 2
+  difficulty: D4
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_8_bdf
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉡ '좋아할 걸'은 '좋아할 것을'이 줄어든 말이므로 띄어 쓴 것이 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s2_8_acd
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉠ '연락할걸'은 후회를 나타내는 종결 어미 '-ㄹ걸'이므로 붙여 쓴 것이 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: s2_8_key
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: ㉢ '올 듯 말 듯'(의존 명사), ㉣ '맛있을뿐더러'(어미 '-ㄹ뿐더러'), ㉥ '도착한 지'(의존 명사)로 고쳐야 한다.
+  - axis: orthography
+    c: STRONG
+    claim: s2_8_bcf
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉡은 의존 명사 '것'에 조사 '을'이 결합해 줄어든 '걸'이므로 띄어 쓴다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: s2_8_abd
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉠, ㉡은 모두 바르다.
+    trap: T6_PARTIAL_SET
+- item_id: KOR-V6N2-009
+  archetype: A3_CONDITION_CLASSIFICATION
+  stem: <보기 1>의 기준에 따라 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> Ⓐ띄어 써야만 하는 것  Ⓑ띄어 쓰는 것이 원칙이지만 붙여 쓰는 것도 허용되는 것  Ⓒ붙여 써야만 하는 것 (단위 명사는 순서를 나타내거나 아라비아 숫자와 어울릴 때 붙여 쓸 수 있고, 접미사는 앞말에 붙여 쓴다.)
+  - <보기 2> 띄어쓰기를 따질 자리를 '+'로 표시함.  ㉠사과 한+개  ㉡제일+과  ㉢10+개  ㉣그릇+째  ㉤학생+들
+  options:
+  - Ⓐ ㉠, ㉣   Ⓑ ㉡, ㉢   Ⓒ ㉤
+  - Ⓐ ㉠, ㉡   Ⓑ ㉢   Ⓒ ㉣, ㉤
+  - Ⓐ ㉠   Ⓑ ㉢   Ⓒ ㉡, ㉣, ㉤
+  - Ⓐ ㉠   Ⓑ ㉡, ㉢   Ⓒ ㉣, ㉤
+  - Ⓐ ㉠, ㉢   Ⓑ ㉡   Ⓒ ㉣, ㉤
+  answer: 4
+  second_best: 2
+  difficulty: D3
+  family: COMPARISON_MATRIX
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_9_jjae
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉣ '그릇째'의 '-째'는 '그대로, 전부'의 뜻을 더하는 접미사이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: s2_9_ilgwa
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉡ '제일 과'는 순서를 나타내므로 붙여 쓸 수 있다(Ⓑ).
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_9_ilgwa_c
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉡은 붙여 쓰는 것이 허용일 뿐 의무가 아니다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: s2_9_key
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: ㉠ 한글 수+단위(순서 아님) Ⓐ, ㉡ 순서·㉢ 숫자와 어울림 Ⓑ, ㉣ '-째'·㉤ '-들' 접미사 Ⓒ.
+  - axis: orthography
+    c: WEAK
+    claim: s2_9_10gae
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉢은 아라비아 숫자와 어울려 붙여 쓸 수 있다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+- item_id: KOR-V6N2-010
+  archetype: A4_INQUIRY_DIALOGUE_CHECK
+  stem: <보기>의 ㉠~㉤ 중 잘못된 판단이 담긴 학생의 설명은?
+  view:
+  - '선생님: 한 문장 안에서 두 가지를 비교해 설명해 보세요.'
+  - '학생 1: ㉠''잠이 든 듯 조용하다''의 ''듯''은 관형사형 뒤의 의존 명사이고, ''물 쓰듯 돈을 쓴다''의 ''-듯''은 어간 뒤의 어미라서 붙여 써요.'
+  - '학생 2: ㉡''입사 3년 차''의 ''차''는 의존 명사라서 띄어 쓰고, ''연구차 출장을 갔다''의 ''-차''는 목적의 뜻을 더하는 접미사라서 붙여 써요.'
+  - '학생 3: ㉢''십여 명''의 ''-여''는 그 수를 넘음을 뜻하는 접미사라서 붙여 쓰고, ''한 시간여''의 ''-여''도 같은 이유로 붙여 써요.'
+  - '학생 4: ㉣''사흘째''의 ''-째''는 접미사라서 붙여 쓰고, ''두 번째''는 ''번''이 의존 명사라서 ''두''와 띄우되 ''-째''는 ''번''에 붙여 써요.'
+  - '학생 5: ㉤''그가 올 듯도 하다''는 ''듯'' 뒤에 조사 ''도''가 붙었으니 ''듯''이 어미임을 알 수 있고, 그래서 ''올듯도''로 붙여 써요.'
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 5
+  second_best: 1
+  difficulty: D4
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: s2_10_deut
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_10_cha
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: STRONG
+    claim: s2_10_yeo
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: STRONG
+    claim: s2_10_jjae
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: CORRECT
+    claim: s2_10_key
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: 조사가 붙을 수 있다는 것은 '듯'이 체언(의존 명사)이라는 단서이다. '올 듯도 하다'로 띄어 쓴다.
+- item_id: KOR-V6N2-011
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  stem: <보기>의 ㄱ~ㅁ 중 띄어쓰기가 바른 문장만을 있는 대로 고른 것은?
+  view:
+  - ㄱ. 공부를 시작한 지 두 시간쯤 지났다.
+  - ㄴ. 그는 일 년 간 외국에서 지냈다.
+  - ㄷ. 버스 정류장에서 오 분 가량 기다렸다.
+  - ㄹ. 우리 반 학생은 서른 명 남짓이다.
+  - ㅁ. 할머니 댁에서 과일을 상자 째 사 왔다.
+  options:
+  - ㄱ, ㄹ
+  - ㄱ, ㄴ, ㄹ
+  - ㄴ, ㄷ
+  - ㄷ, ㄹ, ㅁ
+  - ㄱ, ㄷ, ㅁ
+  answer: 1
+  second_best: 2
+  difficulty: D3
+  family: MULTI_JUDGMENT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: CORRECT
+    claim: s2_11_key
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: ㄱ('-쯤' 접미사, '시작한 지' 의존 명사)과 ㄹ('남짓'은 명사로 띄어 씀)만 바르다.
+  - axis: orthography
+    c: STRONG
+    claim: s2_11_abd
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㄴ은 '일 년간'으로 써야 한다. '동안'의 뜻인 '-간'은 접미사이다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: s2_11_bc
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㄴ, ㄷ은 모두 틀렸다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_11_cde
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㄷ은 '오 분가량'('-가량' 접미사), ㅁ은 '상자째'('-째' 접미사)로 써야 한다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: s2_11_ace
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㄷ, ㅁ은 틀렸다.
+    trap: T6_PARTIAL_SET
+- item_id: KOR-V6N2-012
+  archetype: A6_RULE_CASE_EXPLANATION
+  stem: <보기>를 바탕으로 ㉠~㉣과 관련하여 탐구한 내용으로 적절하지 않은 것은?
+  view:
+  - 제43항 단위를 나타내는 명사는 띄어 쓴다. 다만, 순서를 나타내는 경우나 숫자와 어울리어 쓰이는 경우에는 붙여 쓸 수 있다.
+  - 제44항 수를 적을 적에는 '만(萬)' 단위로 띄어 쓴다.
+  - ㉠ 성금 삼천오백만 원이 모였다.   ㉡ 1446년 10월 9일에 훈민정음이 반포되었다.
+  - ㉢ 올해 예산은 이십칠억 사천만 원이다.   ㉣ 우리는 2026 년 봄에 입학했다.
+  options:
+  - ㉠은 '만' 단위로 적은 수 뒤에 단위 명사 '원'을 띄어 썼으므로 원칙에 맞는다.
+  - ㉡은 아라비아 숫자와 어울려 쓰인 단위 명사를 붙여 쓴 것으로 허용된 표기이다.
+  - ㉢을 '이십칠억사천만 원'으로 쓰면 제44항에 어긋난다.
+  - ㉣은 숫자와 어울린 단위 명사를 붙여 쓰지 않았으므로 '2026년'으로 고쳐야만 한다.
+  - '''12억 3456만''처럼 아라비아 숫자로 수를 적을 때에도 ''만'' 단위로 띄어 쓴다.'
+  answer: 4
+  second_best: 2
+  difficulty: D5
+  family: VIEW_APPLICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 4
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_12_a
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: s2_12_b
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 옳은 설명이다. 원칙은 띄어 쓰는 것이고 붙여 쓰는 것이 허용된다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: s2_12_c
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 옳은 설명이다. '억'과 '만' 사이를 띄어야 한다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: s2_12_key
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: 제43항의 붙여 쓰기는 허용이므로 원칙대로 띄어 쓴 '2026 년'도 틀린 표기가 아니다.
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_12_e
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: 제44항 용례 '12억 3456만 7898'에 맞는 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION

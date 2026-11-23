@@ -1,0 +1,846 @@
+batch_id: KOR-V6-N-ORTHO-SET3-20261123
+product_mode: ARC_N
+subject: KOR
+generator: CLAUDE
+set_label: ARC N° V6 · 세트 3/4
+course: 공통국어2
+cover_subtitle: 한글 맞춤법 50문항(객관식) · 세트 3 — 형태 밝혀 적기 / 된소리 / 사이시옷 / 준말 / 구별 표기
+cover_lines:
+- 제5·15·19·30·35·39·40·57항
+school_line: 동북고등학교 1학년 · 2026
+created_at: '2026-11-23T14:00:00+09:00'
+scope: 미래엔 공통국어2 3단원 한글 맞춤법 (2026 2학기 기말 범위, 학교 공지 2026-11-13)
+scope_refs:
+- TEXTBOOK:미래엔 공통국어2 3-(2) 한글 맞춤법과 오늘날의 국어생활, 한글 맞춤법 제5·15·19·30·35·39·40·57항
+archetype_library: quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml
+v6:
+  policy: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md
+  set: 3 (3/4)
+  difficulty_band: D3~D5 (사용자 지시 2026-11-23)
+  user_override: 전 50문항 객관식(서답형 0) — 사용자 지시 2026-11-23
+  blind_review: NOT_RUN
+sets: []
+items:
+- item_id: KOR-V6N3-001
+  archetype: A1_GENERAL_RULE_MAPPING
+  stem: <보기>의 ㉠, ㉡을 바탕으로 탐구한 내용으로 가장 적절한 것은?
+  view:
+  - 제15항 [붙임 1] 두 개의 용언이 어울려 한 개의 용언이 될 적에, ㉠앞말의 본뜻이 유지되고 있는 것은 그 원형을 밝히어 적고, ㉡그 본뜻에서 멀어진 것은 밝히어 적지 아니한다.
+  - '- 한글 맞춤법'
+  options:
+  - '''사라지다''는 ''살다''의 본뜻이 유지되므로 ㉠에 따라 원형을 밝혀 적었다.'
+  - '''늘어나다''는 ''늘다''의 본뜻이 유지되므로 ㉡에 따라 소리대로 적었다.'
+  - '''흩어지다''는 ''흩다''의 뜻이 살아 있으므로 ㉠에 따라 ''흩-''의 형태를 밝혀 적었다.'
+  - '''쓰러지다''는 ''쓸다''의 본뜻이 유지되므로 ''쓸어지다''로 적어야 한다.'
+  - '''드러나다''는 ㉡에 따라 적은 것이므로 ''들어나다''와 함께 둘 다 바른 표기이다.'
+  answer: 3
+  second_best: 2
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_1_sara
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: '''사라지다''는 ''살다''의 본뜻에서 멀어져 ㉡에 따라 소리대로 적은 것이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: STRONG
+    claim: s3_1_neureo
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''늘어나다''는 ㉠에 따라 원형을 밝혀 적은 것이다.'
+    trap: T5_RULE_JURISDICTION
+  - axis: orthography
+    c: CORRECT
+    claim: s3_1_key
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: '''흩어지다''는 ''흩다''의 뜻이 유지되므로 원형을 밝혀 적는다(제15항 붙임 1 용례).'
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_1_sseureo
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''쓰러지다''는 본뜻에서 멀어진 말이므로 소리대로 적는다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: WEAK
+    claim: s3_1_deureo
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''들다''의 본뜻에서 멀어졌으므로 ''드러나다''만 바른 표기이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+- item_id: KOR-V6N3-002
+  archetype: A2_STUDENT_TEXT_ERRORS
+  stem: <보기>의 [A]에 들어갈 내용으로 알맞은 것은?
+  view:
+  - '학생: 아침 풍경을 쓴 글인데 사이시옷을 바르게 썼는지 궁금해요.'
+  - <학생이 쓴 글> ㉠나뭇잎 사이로 ㉡햇님이 얼굴을 내밀었다. ㉢등굣길에 친구와 지난 시험 문제의 ㉣갯수를 세어 보다가, 어제 동아리 ㉤뒷풀이에서 있었던 일을 이야기했다. 오후에는 ㉥장맛비가 쏟아졌다.
+  - '선생님: 사이시옷을 잘못 쓴 곳은 [A]란다.'
+  options:
+  - ㉡, ㉣, ㉤
+  - ㉠, ㉡, ㉣
+  - ㉡, ㉢, ㉥
+  - ㉢, ㉣, ㉤
+  - ㉠, ㉤, ㉥
+  answer: 1
+  second_best: 3
+  difficulty: D3
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: CORRECT
+    claim: s3_2_key
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: ㉡ '해님'(접미사 '-님'이 붙은 파생어), ㉣ '개수'(한자어끼리), ㉤ '뒤풀이'(뒷말이 거센소리)로 고쳐야 한다.
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_2_abd
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉠ '나뭇잎'은 순우리말 합성어에서 'ㄴㄴ' 소리가 덧나므로 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s3_2_bcf
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉢ '등굣길'은 한자어 '등교'와 순우리말 '길'의 합성어로 된소리가 나므로 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s3_2_cde
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉢은 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: s3_2_aef
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉠, ㉥은 바르다.
+    trap: T6_PARTIAL_SET
+- item_id: KOR-V6N3-003
+  archetype: A3_CONDITION_CLASSIFICATION
+  stem: <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> 사이시옷이 들어갈 듯 보이지만 적지 않는 이유는 다음과 같다. Ⓐ합성어가 아니다. Ⓑ한자어로만 이루어진 말이다. Ⓒ뒷말의 첫소리가 이미 된소리나 거센소리이다.
+  - <보기 2> ㉠해님  ㉡초점(焦點)  ㉢위쪽  ㉣대가(代價)  ㉤뒤편
+  options:
+  - Ⓐ ㉤   Ⓑ ㉡, ㉣   Ⓒ ㉠, ㉢
+  - Ⓐ ㉠, ㉢   Ⓑ ㉡, ㉣   Ⓒ ㉤
+  - Ⓐ ㉠   Ⓑ ㉡   Ⓒ ㉢, ㉣, ㉤
+  - Ⓐ ㉠, ㉣   Ⓑ ㉡   Ⓒ ㉢, ㉤
+  - Ⓐ ㉠   Ⓑ ㉡, ㉣   Ⓒ ㉢, ㉤
+  answer: 5
+  second_best: 2
+  difficulty: D3
+  family: COMPARISON_MATRIX
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: s3_3_swap
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉠과 ㉤의 이유를 서로 바꾸었다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: s3_3_wijjok
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉢ '위쪽'은 합성어이며 뒷말 첫소리가 된소리여서 적지 않는다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_3_daega
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉣ '대가'는 [대까]로 소리 나도 한자어끼리이므로 Ⓑ이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_3_daega2
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉣은 합성어 여부가 아니라 한자어로만 이루어졌다는 점이 이유이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: s3_3_key
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: ㉠ 파생어 Ⓐ, ㉡·㉣ 한자어끼리 Ⓑ, ㉢ '쪽'(된소리)·㉤ '편'(거센소리) Ⓒ.
+- item_id: KOR-V6N3-004
+  archetype: A4_INQUIRY_DIALOGUE_CHECK
+  stem: <보기>의 ㉠~㉤ 중 학생의 설명이 옳지 않은 것은?
+  view:
+  - '선생님: 말이 줄어들 때의 표기를 설명해 볼까요?'
+  - '학생 1: ㉠''되어''가 줄면 ''돼''가 되므로 ''그러면 안 돼.''처럼 적어요.'
+  - '학생 2: ㉡''되고''는 ''되어''로 바꿀 수 없으니 ''돼고''로 적지 않아요.'
+  - '학생 3: ㉢''뵈어요''가 줄면 ''봬요''가 되므로 ''내일 봬요.''로 적어요.'
+  - '학생 4: ㉣''만만하지 않다''는 ''-지 않-''이 ''-잖-''으로 줄어 ''만만잖다''로 적어요.'
+  - '학생 5: ㉤''그렇지 않은''은 ''-지 않-''이 줄어 ''그렇잖은''으로 적어요.'
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 4
+  second_best: 3
+  difficulty: D3
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: s3_4_dwae
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_4_doego
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: STRONG
+    claim: s3_4_bwae
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 옳은 설명이다(제35항 붙임 2).
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: CORRECT
+    claim: s3_4_key
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''-하지'' 뒤에 ''않-''이 어울리면 ''-찮-''이 되므로 ''만만찮다''로 적는다(제39항).'
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_4_geureot
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: 옳은 설명이다(제39항 용례 '그렇잖은').
+    trap: T3_ONE_OF_TWO_WRONG
+- item_id: KOR-V6N3-005
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  stem: <보기>의 탐구 내용 중 옳은 것만을 있는 대로 고른 것은?
+  view:
+  - 어간의 끝음절 '하'의 'ㅏ'가 줄고 'ㅎ'이 다음 음절의 첫소리와 어울려 거센소리로 될 적에는 거센소리로 적는다. 다만, '하' 앞의 받침 소리가 [ㄱ, ㄷ, ㅂ]이면 '하'가 아주 줄어든 대로 적는다.
+  - ㄱ. '간편하게'는 '간편케'로 줄여 적을 수 있다.
+  - ㄴ. '생각하건대'는 '하'가 아주 줄어 '생각건대'로 적는다.
+  - ㄷ. '넉넉하지'는 'ㅎ'이 남아 '넉넉치'로 적는다.
+  - ㄹ. '흔하다'는 '흔타'로 줄여 적을 수 있다.
+  - ㅁ. '깨끗하지 않다'는 '깨끗치 않다'로 줄여 적는다.
+  options:
+  - ㄱ, ㄹ
+  - ㄱ, ㄴ, ㄹ
+  - ㄱ, ㄷ, ㄹ
+  - ㄴ, ㄷ, ㅁ
+  - ㄴ, ㄹ, ㅁ
+  answer: 2
+  second_best: 1
+  difficulty: D4
+  family: MULTI_JUDGMENT
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: s3_5_ad
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㄴ도 옳으므로 옳은 것 하나를 뺀 조합이다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: s3_5_key
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: ㄱ·ㄹ은 'ㅎ'이 남아 거센소리가 되고, ㄴ은 받침 [ㄱ] 뒤에서 '하'가 아주 준다.
+  - axis: orthography
+    c: STRONG
+    claim: s3_5_acd
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㄷ은 받침 [ㄱ] 뒤이므로 '넉넉지'로 적어야 한다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: s3_5_bce
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㄷ, ㅁ은 틀렸다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_5_bde
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㅁ은 받침 [ㄷ](깨끗) 뒤이므로 '깨끗지 않다'로 적어야 한다.
+    trap: T6_PARTIAL_SET
+- item_id: KOR-V6N3-006
+  archetype: A6_RULE_CASE_EXPLANATION
+  stem: <보기>를 바탕으로 ㉠~㉣을 탐구한 내용으로 적절하지 않은 것은?
+  view:
+  - '''-든지''는 물건이나 일의 내용을 가리지 않는 뜻을, ''-던지''는 지난 일을 나타내는 뜻을 지닌다. ''(으)로서''는 지위·신분·자격을, ''(으)로써''는 재료·수단·도구를 나타낸다.'
+  - ㉠ 사과든지 배든지 마음대로 먹어라.   ㉡ 얼마나 울었던지 눈이 부었다.
+  - ㉢ 그는 교사로서 책임을 다했다.   ㉣ 우리는 대화로써 갈등을 풀었다.
+  options:
+  - ㉡은 과거에 운 일을 회상하며 그 결과를 말하므로 '-던지'가 쓰였다.
+  - ㉠의 '-든지'는 어느 것을 골라도 상관없다는 뜻이므로 바르게 적었다.
+  - ㉢의 '로서'는 '교사'라는 자격을 나타내므로 바르게 적었다.
+  - ㉣의 '로써'는 갈등을 푼 수단을 나타내므로 바르게 적었다.
+  - ㉡의 '-던지'는 선택의 뜻이므로 '-든지'로 고쳐야 한다.
+  answer: 5
+  second_best: 4
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: s3_6_e
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_6_a
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_6_c
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: s3_6_d
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: s3_6_key
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉡은 지난 일을 나타내므로 '-던지'가 바르다. 선택의 뜻이 아니다.
+- item_id: KOR-V6N3-007
+  archetype: A1_GENERAL_RULE_MAPPING
+  stem: <보기>를 바탕으로 된소리 표기를 탐구한 내용으로 가장 적절한 것은?
+  view:
+  - 제5항 한 단어 안에서 뚜렷한 까닭 없이 나는 된소리는 다음 음절의 첫소리를 된소리로 적는다.
+  - ㉠두 모음 사이에서 나는 된소리, 'ㄴ, ㄹ, ㅁ, ㅇ' 받침 뒤에서 나는 된소리
+  - 다만, ㉡'ㄱ, ㅂ' 받침 뒤에서 나는 된소리는, 같은 음절이나 비슷한 음절이 겹쳐 나는 경우가 아니면 된소리로 적지 아니한다.
+  options:
+  - '''잔뜩''은 ''ㄴ'' 받침 뒤에서 뚜렷한 까닭 없이 된소리가 나므로 ㉠에 따라 ''뜩''으로 적었다.'
+  - '''깍두기''는 ''ㄱ'' 받침 뒤에서 된소리가 나므로 ㉠에 따라 ''깍뚜기''로 적어야 한다.'
+  - '''몹시''는 ''ㅂ'' 받침 뒤이지만 된소리가 뚜렷하게 나므로 ''몹씨''로 적어야 한다.'
+  - '''똑딱''은 ''ㄱ'' 받침 뒤에서 된소리가 나므로 ㉡에 따라 ''똑닥''으로 적어야 한다.'
+  - '''어깨''는 ''ㄱ, ㅂ'' 받침 뒤가 아니므로 ㉡에 따라 된소리로 적었다.'
+  answer: 1
+  second_best: 4
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: CORRECT
+    claim: s3_7_key
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: '''잔뜩''은 ''ㄴ'' 받침 뒤 된소리이므로 ㉠에 따라 된소리로 적는다.'
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_7_kkak
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''ㄱ'' 받침 뒤의 된소리는 ㉡에 따라 된소리로 적지 않으므로 ''깍두기''가 바르다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_7_mop
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''ㅂ'' 받침 뒤이므로 ㉡에 따라 ''몹시''로 적는다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: STRONG
+    claim: s3_7_ttok
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''똑딱''은 비슷한 음절이 겹쳐 나는 경우이므로 ㉡의 예외로 된소리로 적는다.'
+    trap: T2_EXCEPTION_CONDITION
+  - axis: orthography
+    c: WEAK
+    claim: s3_7_eokkae
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''어깨''는 두 모음 사이의 된소리로 ㉠에 따른 것이다.'
+    trap: T5_RULE_JURISDICTION
+- item_id: KOR-V6N3-008
+  archetype: A2_STUDENT_TEXT_ERRORS
+  stem: <보기>의 [A]에 들어갈 말로 알맞은 것은?
+  view:
+  - '학생: 소리가 비슷한 말을 구별해서 썼는지 확인해 주세요.'
+  - <학생이 쓴 글> 산 ㉠너머 마을까지 걸어갔다. 가는 길에 우체국에서 할머니께 편지를 ㉡붙였다. 친구가 ㉢이따가 다시 만나자고 했다. 나는 ㉣학생으로써 할 일을 다하겠다고 다짐했다. 그날은 얼마나 ㉤춥든지 손이 꽁꽁 얼었다. 저녁에는 동생이 낸 퀴즈의 정답을 ㉥맞혔다.
+  - '선생님: 고쳐야 할 곳은 [A]야.'
+  options:
+  - ㉡, ㉣, ㉥
+  - ㉠, ㉡, ㉣
+  - ㉡, ㉣, ㉤
+  - ㉢, ㉤, ㉥
+  - ㉠, ㉢, ㉤
+  answer: 3
+  second_best: 1
+  difficulty: D4
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: s3_8_bdf
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉥ '맞혔다'는 정답을 골라낸다는 뜻이므로 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s3_8_abd
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉠ '너머'는 가로막은 공간의 저쪽을 뜻하는 명사로 바르게 쓰였다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: s3_8_key
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: ㉡ '부쳤다'(편지를 보냄), ㉣ '학생으로서'(자격), ㉤ '춥던지'(지난 일)로 고쳐야 한다.
+  - axis: orthography
+    c: WEAK
+    claim: s3_8_cef
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉢ '이따가'(조금 지난 뒤에)와 ㉥은 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_8_ace
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉠, ㉢은 바르다.
+    trap: T6_PARTIAL_SET
+- item_id: KOR-V6N3-009
+  archetype: A3_CONDITION_CLASSIFICATION
+  stem: <보기 1>의 기준에 따라 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> 사이시옷을 적는 합성어를 구성 요소에 따라 나누면 Ⓐ순우리말+순우리말, Ⓑ순우리말+한자어, Ⓒ한자어+순우리말로 나눌 수 있다.
+  - <보기 2> ㉠바닷가  ㉡귓병(-病)  ㉢전셋집(傳貰-)  ㉣나뭇가지  ㉤횟가루(灰-)
+  options:
+  - Ⓐ ㉠, ㉣   Ⓑ ㉡, ㉢   Ⓒ ㉤
+  - Ⓐ ㉠, ㉣   Ⓑ ㉡   Ⓒ ㉢, ㉤
+  - Ⓐ ㉠   Ⓑ ㉡, ㉣   Ⓒ ㉢, ㉤
+  - Ⓐ ㉠, ㉡, ㉣   Ⓑ ㉤   Ⓒ ㉢
+  - Ⓐ ㉣   Ⓑ ㉡, ㉤   Ⓒ ㉠, ㉢
+  answer: 2
+  second_best: 1
+  difficulty: D3
+  family: COMPARISON_MATRIX
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: s3_9_jeonse
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉢은 한자어 '전세'가 앞에 오므로 Ⓒ이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: s3_9_key
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: ㉠·㉣ 순우리말끼리 Ⓐ, ㉡ '귀+病' Ⓑ, ㉢ '傳貰+집'·㉤ '灰+가루' Ⓒ.
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_9_namu
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉣ '나무'와 '가지'는 모두 순우리말이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_9_gwi
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉡의 '병'은 한자어이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: WEAK
+    claim: s3_9_bada
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉠ '바다+가'는 순우리말끼리의 합성어이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+- item_id: KOR-V6N3-010
+  archetype: A4_INQUIRY_DIALOGUE_CHECK
+  stem: <보기>의 ㉠~㉤ 중 잘못된 판단이 담긴 학생의 설명은?
+  view:
+  - '선생님: 어간에 ''-이''나 ''-음''이 붙어 명사가 된 말은 원형을 밝혀 적되, 어간의 뜻과 멀어진 것은 밝혀 적지 않아요. 예문으로 설명해 보세요.'
+  - '학생 1: ㉠''믿음''은 ''믿-''에 ''-음''이 붙은 명사이고 뜻도 유지되므로 원형을 밝혀 적어요.'
+  - '학생 2: ㉡비료를 뜻하는 ''거름''은 ''걸다''의 뜻과 멀어졌으므로 원형을 밝히지 않고 적어요.'
+  - '학생 3: ㉢도박을 뜻하는 ''노름''은 ''놀다''에서 왔지만 뜻이 멀어져 ''놀음''으로 적지 않아요.'
+  - '학생 4: ㉣목에 거는 장신구 ''목걸이''와 목병을 뜻하는 ''목거리''는 뜻이 같으므로 어느 쪽으로 적어도 돼요.'
+  - '학생 5: ㉤부사 ''굳이''는 ''굳-''에 ''-이''가 붙은 말이므로 원형을 밝혀 적어요.'
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 4
+  second_best: 2
+  difficulty: D4
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: s3_10_mideum
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: STRONG
+    claim: s3_10_georeum
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 옳은 설명이다(제19항 다만).
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: STRONG
+    claim: s3_10_noreum
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: CORRECT
+    claim: s3_10_key
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''목걸이''는 원형을 밝힌 장신구, ''목거리''는 뜻이 멀어진 ''목병''으로 서로 다른 말이다.'
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_10_guji
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+- item_id: KOR-V6N3-011
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  stem: <보기>의 ㄱ~ㅁ 중 표기가 바른 문장만을 있는 대로 고른 것은?
+  view:
+  - ㄱ. 오랫만에 친구를 만났다.
+  - ㄴ. 우리는 저녁을 먹고 문을 잠궜다.
+  - ㄷ. 며칠 동안 비가 계속 내렸다.
+  - ㄹ. 그 일은 생각보다 금새 끝났다.
+  - ㅁ. 할머니께 택배로 김치를 부쳤다.
+  options:
+  - ㄴ, ㄷ
+  - ㄱ, ㄷ, ㅁ
+  - ㄷ, ㅁ
+  - ㄷ, ㄹ, ㅁ
+  - ㄱ, ㄹ
+  answer: 3
+  second_best: 2
+  difficulty: D3
+  family: MULTI_JUDGMENT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_11_bc
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㄴ은 '잠그다'의 'ㅡ'가 탈락해 '잠갔다'로 써야 한다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s3_11_acd
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㄱ은 '오래간만'의 준말이므로 '오랜만에'로 써야 한다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: s3_11_key
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: ㄷ '며칠', ㅁ '부쳤다'만 바르다.
+  - axis: orthography
+    c: STRONG
+    claim: s3_11_cde
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㄹ은 '금시에'가 줄어든 말이므로 '금세'로 써야 한다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: s3_11_ad
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㄱ, ㄹ은 모두 틀렸다.
+    trap: T6_PARTIAL_SET
+- item_id: KOR-V6N3-012
+  archetype: A6_RULE_CASE_EXPLANATION
+  stem: <보기>를 바탕으로 ㉠~㉤을 탐구한 내용으로 적절하지 않은 것은?
+  view:
+  - 제30항 사이시옷은 순우리말로 된 합성어나 순우리말과 한자어로 된 합성어로서 앞말이 모음으로 끝난 경우, 뒷말의 첫소리가 된소리로 나거나, 'ㄴ' 또는 'ㄴㄴ' 소리가 덧나는 경우에 받치어 적는다. 또한 두 음절로 된 한자어 '곳간, 셋방, 숫자, 찻간, 툇간, 횟수'에만 사이시옷을 적는다.
+  - ㉠ 아랫집   ㉡ 위층   ㉢ 수돗물(水道-)   ㉣ 개수(個數)   ㉤ 툇마루(退-)
+  options:
+  - ㉠은 순우리말끼리의 합성어로 뒷말의 첫소리가 된소리로 나므로 사이시옷을 적었다.
+  - ㉡은 뒷말의 첫소리가 거센소리이므로 사이시옷을 적지 않았다.
+  - ㉢은 한자어와 순우리말의 합성어로 'ㄴ' 소리가 덧나므로 사이시옷을 적었다.
+  - ㉣은 한자어로만 된 말이고 예외 여섯 단어에도 없으므로 사이시옷을 적지 않는다.
+  - ㉤은 한자어로만 된 말이지만 예외 여섯 단어에 속하므로 사이시옷을 적었다.
+  answer: 5
+  second_best: 3
+  difficulty: D5
+  family: VIEW_APPLICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 4
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: s3_12_a
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_12_b
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: s3_12_c
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 옳은 설명이다. '수도+물'은 [수돈물]로 'ㄴ' 소리가 덧난다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: s3_12_d
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: s3_12_key
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''마루''는 순우리말이므로 ㉤은 한자어와 순우리말의 합성어로서 ''ㄴ'' 소리가 덧나 사이시옷을 적는다. 예외 여섯 단어의 ''툇간''과 혼동한 것이다.'
