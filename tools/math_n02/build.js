@@ -257,7 +257,9 @@ ${pages.join('\n')}
       const avail = c.clientHeight - parseFloat(getComputedStyle(c).paddingTop);
       return Math.round(avail - c.querySelector('.q').getBoundingClientRect().height);
     });
-    return { bad, minFree: Math.min(...free) };
+    const cells=[...document.querySelectorAll('.cell')].filter(c => c.querySelector('.q'));
+    const mi=free.indexOf(Math.min(...free));
+    return { bad, minFree: Math.min(...free) + ' (#' + cells[mi].querySelector('.qn').textContent + ')' };
   });
   console.log(`overflow: ${over.bad.length}, min free space in a cell: ${over.minFree}px`); over.bad.forEach(o => console.log('  OVF', o));
   await page.pdf({ path: outPdf, width: '210mm', height: '297mm', printBackground: true, preferCSSPageSize: true });
