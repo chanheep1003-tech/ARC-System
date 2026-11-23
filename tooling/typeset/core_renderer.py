@@ -56,6 +56,26 @@ def wrap_paragraphs(L: CoreLayout, text: str, width: float, font_key: str, size:
     return lines
 
 
+
+BULLETS = ("· ", "- ", "• ", "① ", "② ", "③ ", "④ ", "⑤ ", "⑥ ", "⑦ ", "1단계", "2단계", "3단계", "[")
+
+
+def _bullet_lines(L: "CoreLayout", text: str, width: float, font_key: str, size: float) -> list[tuple[float, str]]:
+    """Wrap text; lines that start with a bullet/step marker get a hanging indent."""
+    out: list[tuple[float, str]] = []
+    for para in str(text or "").split("\n"):
+        clean = " ".join(para.split())
+        if not clean:
+            continue
+        hang = 0.0
+        for b in BULLETS:
+            if clean.startswith(b) and b != "[":
+                hang = L.width(b.split(" ")[0] + " ", font_key, size) if " " in b else L.width(b + " ", font_key, size)
+                break
+        out.extend(L.wrap(clean, width, font_key, size, first=0.0, rest=hang))
+    return out
+
+
 def _render_cover(doc: fitz.Document, meta: dict[str, Any], logo: dict[str, Any] | None = None) -> str:
     page = kor.new_page(doc)
     brand = "BRAND_ASSET_MISSING"
@@ -161,162 +181,181 @@ def render_core(bundle: dict[str, Any], out_pdf: Path, logo: dict[str, Any] | No
             pno += 1
             return pg, ny
 
-        for s_idx, sec in enumerate(unit.get("sections", []), start=1):
-            sec_no = str(sec.get("no") or f"{s_idx:02d}")
-            thesis = str(sec.get("heading") or sec.get("thesis") or "").strip()
-            prose = str(sec.get("prose") or sec.get("explanation") or "").strip()
-
-            # Keep section heading + first few prose lines together (orphan prevention)
-            head_lines = wrap_paragraphs(L, thesis, BODY_W - 26, "GB", 11.0) if thesis else []
-            prose_lines = wrap_paragraphs(L, prose, BODY_W - 26, "R", 9.9) if prose else []
-            first_chunk_h = len(head_lines) * 16.5 + min(len(prose_lines), 3) * 16.0 + 18.0
-            if y + first_chunk_h > CONTENT_BOTTOM and y > CONTENT_TOP + 20:
-                page, y = next_pg()
-
-            if thesis:
-                kor.put(page, (ML, y + 11.0), sec_no, fontname="GB", fontsize=11.0, color=BLACK)
-                for indent, line in head_lines:
-                    kor.put(page, (ML + 26 + indent, y + 11.0), line, fontname="GB", fontsize=11.0, color=BLACK)
-                    y += 16.0
-                y += 3.0
-
-            if prose_lines:
-                for indent, line in prose_lines:
+        def _draw_block(blk: dict[str, Any], page: fitz.Page, y: float, next_pg) -> tuple[fitz.Page, float]:
+            kind = blk.get("type")
+            x0 = ML + 26
+            if kind == "prose":
+                for indent, line in _bullet_lines(L, str(blk.get("text") or ""), BODY_W - 26, "R", 9.9):
                     if y + 15.2 > CONTENT_BOTTOM:
                         page, y = next_pg()
-                    if line:
-                        kor.put(page, (ML + 26 + indent, y + 9.9), line, fontname="R", fontsize=9.9, color=BODY_INK)
+                    kor.put(page, (x0 + indent, y + 9.9), line, fontname="R", fontsize=9.9, color=BODY_INK)
                     y += 15.2
-                y += 6.0
-
-            # Optional Left-Bar Callout (.callout-bar)
-            for callout in sec.get("callouts", []):
-                c_title = str(callout.get("label") or "").strip()
-                c_body = str(callout.get("text") or "").strip()
+                return page, y + 6.0
+            if kind in ("callout", "key"):
+                style = "key" if kind == "key" else str(blk.get("style") or "tint")
+                c_title = str(blk.get("label") or "").strip()
                 inner_w = BODY_W - 26 - 24
-                c_lines: list[tuple[str, float, str]] = []
-                if c_title:
-                    for _, l in wrap_paragraphs(L, c_title, inner_w, "GB", 9.6):
-                        c_lines.append(("GB", 9.6, l))
-                if c_body:
-                    for _, l in wrap_paragraphs(L, c_body, inner_w, "R", 9.5):
-                        c_lines.append(("R", 9.5, l))
-                ch = len(c_lines) * 14.6 + 14.0
-                if y + ch > CONTENT_BOTTOM and y > CONTENT_TOP + 20:
+                body = _bullet_lines(L, str(blk.get("text") or ""), inner_w, "R", 9.5)
+                tab_h = 20.0 if (style == "key" and c_title) else 0.0
+                t_lines = [] if tab_h else [l for _, l in wrap_paragraphs(L, c_title, inner_w, "GB", 9.6)] if c_title else []
+                rows = [("GB", 9.6, 0.0, l) for l in t_lines] + [("R", 9.5, ind, l) for ind, l in body]
+                min_h = tab_h + min(len(rows), 4) * 14.6 + 14.0
+                if y + min_h > CONTENT_BOTTOM and y > CONTENT_TOP + 20:
                     page, y = next_pg()
-                page.draw_rect(fitz.Rect(ML + 26, y, A4_W - MR, y + ch), color=None, fill=TINT, width=0)
-                page.draw_line((ML + 26, y), (ML + 26, y + ch), color=BLACK, width=2.5)
-                cy = y + 8.0
-                for fk, fsz, l in c_lines:
-                    kor.put(page, (ML + 38, cy + fsz), l, fontname=fk, fontsize=fsz, color=BLACK if fk == "GB" else BODY_INK)
-                    cy += 14.6
-                y += ch + 11.0
-
-            # Optional Booktabs Open Table (zero vertical lines)
-            for tbl in sec.get("tables", []):
-                cols = tbl.get("headers") or []
-                rows = tbl.get("rows") or []
-                if not cols:
-                    continue
-                tx = ML + 26
+                idx = 0
+                first = True
+                while True:
+                    avail = CONTENT_BOTTOM - y - (tab_h if first else 0.0) - 14.0
+                    n = max(1, int(avail // 14.6))
+                    chunk = rows[idx: idx + n]
+                    ch = len(chunk) * 14.6 + 14.0
+                    top = y
+                    if first and tab_h:
+                        tw = L.width(c_title, "GB", 9.4) + 20
+                        page.draw_rect(fitz.Rect(x0, y, x0 + tw, y + tab_h), color=None, fill=BLACK, width=0)
+                        kor.put(page, (x0 + 10, y + 14.0), c_title, fontname="GB", fontsize=9.4, color=(1, 1, 1))
+                        page.draw_line((x0, y + tab_h), (A4_W - MR, y + tab_h), color=BLACK, width=1.2)
+                        top = y + tab_h
+                    page.draw_rect(fitz.Rect(x0, top, A4_W - MR, top + ch), color=None, fill=TINT, width=0)
+                    page.draw_line((x0, top), (x0, top + ch), color=BLACK, width=2.5)
+                    cy = top + 8.0
+                    for fk, fsz, ind, l in chunk:
+                        kor.put(page, (x0 + 12 + ind, cy + fsz), l, fontname=fk, fontsize=fsz, color=BLACK if fk == "GB" else BODY_INK)
+                        cy += 14.6
+                    y = top + ch
+                    idx += len(chunk)
+                    first = False
+                    if idx >= len(rows):
+                        break
+                    page, y = next_pg()
+                return page, y + 11.0
+            if kind == "steps":
+                label = str(blk.get("label") or "")
+                steps = blk.get("items") or []
+                total = (18.0 if label else 0.0) + sum(
+                    24.0 + len(wrap_paragraphs(L, str(st.get("body") or ""), BODY_W - 26 - 34, "R", 9.4)) * 14.2 for st in steps) + 4.0
+                if y + total + 46.0 > CONTENT_BOTTOM and total <= CONTENT_BOTTOM - CONTENT_TOP - 46.0 and y > CONTENT_TOP + 20:
+                    page, y = next_pg()
+                if label:
+                    if y + 50 > CONTENT_BOTTOM:
+                        page, y = next_pg()
+                    kor.put(page, (x0, y + 10.0), label, fontname="GB", fontsize=9.8, color=BLACK)
+                    y += 18.0
+                for i, st in enumerate(steps, 1):
+                    head = str(st.get("title") or "")
+                    lines = wrap_paragraphs(L, str(st.get("body") or ""), BODY_W - 26 - 34, "R", 9.4)
+                    h = 16.0 + len(lines) * 14.2 + 8.0
+                    if y + h > CONTENT_BOTTOM and y > CONTENT_TOP + 20:
+                        page, y = next_pg()
+                    page.draw_circle((x0 + 10, y + 8), 9.0, color=BLACK, fill=BLACK, width=0)
+                    num = str(st.get("mark") or i)
+                    kor.put(page, (x0 + 10 - L.width(num, "GB", 9.0) / 2, y + 11.2), num, fontname="GB", fontsize=9.0, color=(1, 1, 1))
+                    kor.put(page, (x0 + 26, y + 11.5), head, fontname="GB", fontsize=9.9, color=BLACK)
+                    yy = y + 16.0
+                    for _, l in lines:
+                        kor.put(page, (x0 + 26, yy + 9.4), l, fontname="R", fontsize=9.4, color=BODY_INK)
+                        yy += 14.2
+                    if i < len(steps):
+                        page.draw_line((x0 + 10, y + 18), (x0 + 10, yy + 4), color=HAIR, width=0.8)
+                    y = yy + 8.0
+                return page, y + 4.0
+            if kind == "table":
+                cols = blk.get("headers") or []
+                rows = blk.get("rows") or []
+                cap = str(blk.get("caption") or "")
                 tw = BODY_W - 26
                 ncols = len(cols)
-                weights = tbl.get("weights") or [1.0] * ncols
-                wsum = sum(weights)
-                cws = [tw * w / wsum for w in weights]
-                # Precompute heights
-                row_heights: list[float] = []
-                wrapped_rows: list[list[list[str]]] = []
+                weights = blk.get("weights") or [1.0] * ncols
+                cws = [tw * w / sum(weights) for w in weights]
+                wrapped, heights = [], []
                 for row in rows:
-                    cell_lines: list[list[str]] = []
-                    max_l = 1
+                    cl = []
                     for ci, cell in enumerate(row):
                         fk = "GB" if ci == 0 else "R"
-                        ls = [l for _, l in wrap_paragraphs(L, str(cell), cws[ci] - 12, fk, 9.3)] or [""]
-                        cell_lines.append(ls)
-                        max_l = max(max_l, len(ls))
-                    wrapped_rows.append(cell_lines)
-                    row_heights.append(max_l * 13.8 + 8.0)
-                total_th = 22.0 + sum(row_heights) + 6.0
-                if y + total_th > CONTENT_BOTTOM and y > CONTENT_TOP + 20:
+                        cl.append([l for _, l in wrap_paragraphs(L, str(cell), cws[ci] - 12, fk, 9.3)] or [""])
+                    wrapped.append(cl)
+                    heights.append(max(len(c) for c in cl) * 13.8 + 8.0)
+                need = (18.0 if cap else 0.0) + 22.0 + sum(heights[:3]) + 6.0
+                if y + need > CONTENT_BOTTOM and y > CONTENT_TOP + 20:
                     page, y = next_pg()
-                page.draw_line((tx, y), (tx + tw, y), color=BLACK, width=1.1)
-                cx = tx
-                for ci, h in enumerate(cols):
-                    kor.put(page, (cx + 4, y + 14.5), str(h), fontname="GB", fontsize=9.2, color=BLACK)
-                    cx += cws[ci]
-                y += 20.0
-                page.draw_line((tx, y), (tx + tw, y), color=BLACK, width=0.65)
-                for r_idx, (cell_lines, rh) in enumerate(zip(wrapped_rows, row_heights)):
-                    cx = tx
-                    for ci, ls in enumerate(cell_lines):
+                if cap:
+                    kor.put(page, (x0, y + 10.0), cap, fontname="GB", fontsize=9.6, color=BLACK)
+                    y += 16.0
+
+                def header(pg, yy):
+                    pg.draw_rect(fitz.Rect(x0, yy, x0 + tw, yy + 20), color=None, fill=TINT, width=0)
+                    pg.draw_line((x0, yy), (x0 + tw, yy), color=BLACK, width=1.1)
+                    cx = x0
+                    for ci, h in enumerate(cols):
+                        kor.put(pg, (cx + 4, yy + 14.5), str(h), fontname="GB", fontsize=9.2, color=BLACK)
+                        cx += cws[ci]
+                    pg.draw_line((x0, yy + 20), (x0 + tw, yy + 20), color=BLACK, width=0.65)
+                    return yy + 20.0
+                y = header(page, y)
+                for r_idx, (cl, rh) in enumerate(zip(wrapped, heights)):
+                    if y + rh > CONTENT_BOTTOM:
+                        page.draw_line((x0, y), (x0 + tw, y), color=BLACK, width=0.95)
+                        page, y = next_pg()
+                        y = header(page, y)
+                    cx = x0
+                    for ci, ls in enumerate(cl):
                         fk = "GB" if ci == 0 else "R"
                         for li, line in enumerate(ls):
                             kor.put(page, (cx + 4, y + 13.5 + li * 13.8), line, fontname=fk, fontsize=9.3, color=BLACK if ci == 0 else BODY_INK)
                         cx += cws[ci]
                     y += rh
-                    if r_idx < len(wrapped_rows) - 1:
-                        page.draw_line((tx, y), (tx + tw, y), color=HAIR, width=0.4)
-                page.draw_line((tx, y), (tx + tw, y), color=BLACK, width=0.95)
-                y += 12.0
-
-            # Optional Compact Contrast Micro-Grid (A vs B, <= 6 lines per side to keep CORE_TWO_COLUMN_FLOW=0)
-            for contrast in sec.get("contrasts", []):
-                left_t = str(contrast.get("left_title") or "")
-                left_b = str(contrast.get("left_body") or "")
-                right_t = str(contrast.get("right_title") or "")
-                right_b = str(contrast.get("right_body") or "")
+                    if r_idx < len(wrapped) - 1:
+                        page.draw_line((x0, y), (x0 + tw, y), color=HAIR, width=0.4)
+                page.draw_line((x0, y), (x0 + tw, y), color=BLACK, width=0.95)
+                return page, y + 12.0
+            if kind == "contrast":
                 col_w = (BODY_W - 26 - 24) / 2
-                ll = wrap_paragraphs(L, left_b, col_w, "R", 9.3)[:6]
-                rl = wrap_paragraphs(L, right_b, col_w, "R", 9.3)[:6]
-                ch = max(len(ll), len(rl), 1) * 14.0 + 28.0
+                ll = wrap_paragraphs(L, str(blk.get("left_body") or ""), col_w, "R", 9.3)[:8]
+                rl = wrap_paragraphs(L, str(blk.get("right_body") or ""), col_w, "R", 9.3)[:8]
+                ch = max(len(ll), len(rl), 1) * 14.0 + 30.0
                 if y + ch > CONTENT_BOTTOM and y > CONTENT_TOP + 20:
                     page, y = next_pg()
-                x0 = ML + 26
                 mid_x = x0 + col_w + 12
+                page.draw_rect(fitz.Rect(x0, y, A4_W - MR, y + 22), color=None, fill=TINT, width=0)
                 page.draw_line((x0, y), (A4_W - MR, y), color=BLACK, width=1.0)
-                page.draw_line((mid_x, y + 5), (mid_x, y + ch - 5), color=HAIR, width=0.5)
-                kor.put(page, (x0 + 4, y + 16), left_t, fontname="GB", fontsize=9.8, color=BLACK)
-                kor.put(page, (mid_x + 10, y + 16), right_t, fontname="GB", fontsize=9.8, color=BLACK)
+                page.draw_line((mid_x, y + 3), (mid_x, y + ch - 3), color=HAIR, width=0.5)
+                kor.put(page, (x0 + 6, y + 15.5), str(blk.get("left_title") or ""), fontname="GB", fontsize=9.8, color=BLACK)
+                kor.put(page, (mid_x + 10, y + 15.5), str(blk.get("right_title") or ""), fontname="GB", fontsize=9.8, color=BLACK)
                 for li, (_, line) in enumerate(ll):
-                    kor.put(page, (x0 + 4, y + 32 + li * 14.0), line, fontname="R", fontsize=9.3, color=BODY_INK)
+                    kor.put(page, (x0 + 6, y + 36 + li * 14.0), line, fontname="R", fontsize=9.3, color=BODY_INK)
                 for li, (_, line) in enumerate(rl):
-                    kor.put(page, (mid_x + 10, y + 32 + li * 14.0), line, fontname="R", fontsize=9.3, color=BODY_INK)
+                    kor.put(page, (mid_x + 10, y + 36 + li * 14.0), line, fontname="R", fontsize=9.3, color=BODY_INK)
                 y += ch
                 page.draw_line((x0, y), (A4_W - MR, y), color=BLACK, width=0.8)
-                y += 12.0
-
-            # Optional Discrimination Callout Points (.core-disc)
-            for disc in sec.get("discriminations", []):
-                d_title = str(disc.get("title") or "")
-                d_body = str(disc.get("body") or "")
-                d_t_lines = wrap_paragraphs(L, d_title, BODY_W - 38, "GB", 9.6)
-                d_b_lines = wrap_paragraphs(L, d_body, BODY_W - 38, "R", 9.5)
-                dh = len(d_t_lines) * 14.4 + len(d_b_lines) * 14.6 + 6.0
-                if y + dh > CONTENT_BOTTOM and y > CONTENT_TOP + 20:
+                return page, y + 12.0
+            if kind == "disc":
+                d_t = wrap_paragraphs(L, str(blk.get("title") or ""), BODY_W - 38, "GB", 9.6)
+                d_b = _bullet_lines(L, str(blk.get("body") or ""), BODY_W - 38, "R", 9.5)
+                dh = len(d_t) * 14.4 + len(d_b) * 14.6 + 6.0
+                if y + min(dh, 120) > CONTENT_BOTTOM and y > CONTENT_TOP + 20:
                     page, y = next_pg()
                 start_y = y
-                for _, line in d_t_lines:
+                for _, line in d_t:
                     kor.put(page, (ML + 38, y + 10.5), line, fontname="GB", fontsize=9.6, color=BLACK)
                     y += 14.4
-                for _, line in d_b_lines:
-                    kor.put(page, (ML + 38, y + 9.5), line, fontname="R", fontsize=9.5, color=BODY_INK)
+                for ind, line in d_b:
+                    if y + 14.6 > CONTENT_BOTTOM:
+                        page.draw_line((ML + 26, start_y + 1), (ML + 26, y - 2), color=BLACK, width=2.0)
+                        page, y = next_pg()
+                        start_y = y
+                    kor.put(page, (ML + 38 + ind, y + 9.5), line, fontname="R", fontsize=9.5, color=BODY_INK)
                     y += 14.6
                 page.draw_line((ML + 26, start_y + 1), (ML + 26, y - 2), color=BLACK, width=2.0)
-                y += 8.0
-
-            # Optional Proposition Verification Rows (.core-check)
-            checks = sec.get("option_checks") or []
-            if checks:
+                return page, y + 8.0
+            if kind == "checks":
+                checks = blk.get("items") or []
                 if y + 32.0 > CONTENT_BOTTOM and y > CONTENT_TOP + 20:
                     page, y = next_pg()
-                page.draw_line((ML + 26, y), (A4_W - MR, y), color=BLACK, width=0.85)
+                page.draw_line((x0, y), (A4_W - MR, y), color=BLACK, width=0.85)
                 y += 6.0
                 for ci, chk in enumerate(checks):
-                    stmt = str(chk.get("statement") or "")
-                    why = str(chk.get("why") or "")
-                    s_lines = wrap_paragraphs(L, stmt, BODY_W - 32, "GB", 9.5)
-                    w_lines = wrap_paragraphs(L, why, BODY_W - 32, "R", 9.3)
+                    s_lines = wrap_paragraphs(L, str(chk.get("statement") or ""), BODY_W - 32, "GB", 9.5)
+                    w_lines = wrap_paragraphs(L, str(chk.get("why") or ""), BODY_W - 32, "R", 9.3)
                     ch = len(s_lines) * 14.2 + len(w_lines) * 14.2 + 8.0
                     if y + ch > CONTENT_BOTTOM and y > CONTENT_TOP + 20:
                         page, y = next_pg()
@@ -328,8 +367,39 @@ def render_core(bundle: dict[str, Any], out_pdf: Path, logo: dict[str, Any] | No
                         y += 14.2
                     y += 3.0
                     if ci < len(checks) - 1:
-                        page.draw_line((ML + 26, y), (A4_W - MR, y), color=HAIR, width=0.4)
+                        page.draw_line((x0, y), (A4_W - MR, y), color=HAIR, width=0.4)
                     y += 6.0
+                return page, y
+            raise CoreRenderError(f"UNKNOWN_CORE_BLOCK:{kind}")
+
+        for s_idx, sec in enumerate(unit.get("sections", []), start=1):
+            sec_no = str(sec.get("no") or f"{s_idx:02d}")
+            thesis = str(sec.get("heading") or sec.get("thesis") or "").strip()
+            blocks = sec.get("blocks")
+            if blocks is None:
+                blocks = []
+                if sec.get("prose") or sec.get("explanation"):
+                    blocks.append({"type": "prose", "text": sec.get("prose") or sec.get("explanation")})
+                blocks += [dict(c, type="callout") for c in sec.get("callouts", [])]
+                blocks += [dict(t, type="table") for t in sec.get("tables", [])]
+                blocks += [dict(c, type="contrast") for c in sec.get("contrasts", [])]
+                blocks += [dict(d, type="disc") for d in sec.get("discriminations", [])]
+                if sec.get("option_checks"):
+                    blocks.append({"type": "checks", "items": sec["option_checks"]})
+
+            head_lines = wrap_paragraphs(L, thesis, BODY_W - 26, "GB", 11.0) if thesis else []
+            first = blocks[0] if blocks else {}
+            first_h = 60.0 if first.get("type") != "prose" else min(len(wrap_paragraphs(L, str(first.get("text") or ""), BODY_W - 26, "R", 9.9)), 3) * 16.0 + (50.0 if len(blocks) > 1 else 0.0)
+            if y + len(head_lines) * 16.5 + first_h + 18.0 > CONTENT_BOTTOM and y > CONTENT_TOP + 20:
+                page, y = next_pg()
+            if thesis:
+                kor.put(page, (ML, y + 11.0), sec_no, fontname="GB", fontsize=11.0, color=BLACK)
+                for indent, line in head_lines:
+                    kor.put(page, (ML + 26 + indent, y + 11.0), line, fontname="GB", fontsize=11.0, color=BLACK)
+                    y += 16.0
+                y += 3.0
+            for blk in blocks:
+                page, y = _draw_block(blk, page, y, next_pg)
 
     doc.subset_fonts()
     out_pdf.parent.mkdir(parents=True, exist_ok=True)
