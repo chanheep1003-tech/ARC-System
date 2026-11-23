@@ -389,7 +389,12 @@ def render_core(bundle: dict[str, Any], out_pdf: Path, logo: dict[str, Any] | No
 
             head_lines = wrap_paragraphs(L, thesis, BODY_W - 26, "GB", 11.0) if thesis else []
             first = blocks[0] if blocks else {}
-            first_h = 60.0 if first.get("type") != "prose" else min(len(wrap_paragraphs(L, str(first.get("text") or ""), BODY_W - 26, "R", 9.9)), 3) * 16.0 + (50.0 if len(blocks) > 1 else 0.0)
+            if first.get("type") == "steps":
+                first_h = 46.0 + (18.0 if first.get("label") else 0.0) + sum(
+                    24.0 + len(wrap_paragraphs(L, str(st.get("body") or ""), BODY_W - 26 - 34, "R", 9.4)) * 14.2
+                    for st in (first.get("items") or []))
+            else:
+                first_h = 60.0 if first.get("type") != "prose" else min(len(wrap_paragraphs(L, str(first.get("text") or ""), BODY_W - 26, "R", 9.9)), 3) * 16.0 + (50.0 if len(blocks) > 1 else 0.0)
             if y + len(head_lines) * 16.5 + first_h + 18.0 > CONTENT_BOTTOM and y > CONTENT_TOP + 20:
                 page, y = next_pg()
             if thesis:
