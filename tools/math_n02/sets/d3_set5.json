@@ -1,0 +1,935 @@
+[
+ {
+  "id": "MATH2-01505",
+  "D": "D3",
+  "unit": "명제",
+  "src": "모고모음 명제",
+  "stem": "실수 $x$에 대한 두 조건 $p : (x-a)(x+2a)>0$, $q : |x-1|\\le 5$가 있다. $q$가 $\\sim p$이기 위한 필요조건이 되도록 하는 실수 $a$의 최댓값을 $M$, 최솟값을 $m$이라 할 때, $M+m$의 값은?",
+  "ans": "③",
+  "choices": [
+   "$-5$",
+   "$-3$",
+   "$-1$",
+   "$1$",
+   "$3$"
+  ],
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-01832",
+  "D": "D3",
+  "unit": "명제",
+  "src": "기쌤수학 80제",
+  "stem": "네 조건 $p,\\ q,\\ r,\\ s$에 대하여 세 명제 $p\\longrightarrow q$, $s\\longrightarrow r$, $q\\longrightarrow \\sim r$가 모두 참일 때, <보기>에서 항상 참인 명제만을 있는 대로 고른 것은?",
+  "ans": "④",
+  "choices": [
+   "ㄱ",
+   "ㄴ",
+   "ㄷ",
+   "ㄱ, ㄴ",
+   "ㄴ, ㄷ"
+  ],
+  "box": [
+   "ㄱ. $\\sim r\\longrightarrow \\sim s$",
+   "ㄴ. $p\\longrightarrow \\sim r$",
+   "ㄷ. $\\sim s\\longrightarrow q$"
+  ],
+  "boxtitle": "보기",
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-02033",
+  "D": "D3",
+  "unit": "명제",
+  "src": "실전모의 5회",
+  "stem": "전체집합 $U$의 공집합이 아닌 세 부분집합 $P,\\ Q,\\ R$가 각각 세 조건 $p,\\ q,\\ r$의 진리집합이다. 세 명제 $$\\sim p \\to r,\\quad r \\to \\sim q,\\quad \\sim r \\to q$$ 가 모두 참일 때, 다음 중 옳지 않은 것은?",
+  "ans": "③",
+  "choices": [
+   "$P^C\\cup R=R$",
+   "$P\\cup Q=P$",
+   "$Q\\cap R^C=P$",
+   "$P\\cap R^C=Q$",
+   "$P\\cap Q=R^C$"
+  ],
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-02562",
+  "D": "D3",
+  "unit": "명제",
+  "src": "일산동고",
+  "ans": "④",
+  "fig": null,
+  "boxtitle": null,
+  "stem": "모든 실수 $2 \\le x \\le 4$에 대해 부등식 $ax-1 \\le \\frac{x+2}{x-1} \\le bx-1$이 항상 성립할 때, 실수 $a$의 최댓값과 실수 $b$의 최솟값의 합은?",
+  "box": null,
+  "stem2": null,
+  "box2": null,
+  "choices": [
+   "$\\frac{5}{2}$",
+   "$\\frac{11}{4}$",
+   "$3$",
+   "$\\frac{13}{4}$",
+   "$\\frac{7}{2}$"
+  ]
+ },
+ {
+  "id": "MATH2-02829",
+  "D": "D3",
+  "unit": "명제",
+  "src": "진선여고",
+  "ans": "④",
+  "fig": null,
+  "boxtitle": null,
+  "stem": "실수 $x$에 대하여 두 조건 $p , q$가 $p : x^2 - 6x - 4k^2 +9 < 0$ $q : |{x- \\frac{k}{3}}| < 7$ 이다. 명제 ‘어떤 실수 $x$에 대하여 $p$이고 $\\sim q$이다.’가 거짓이 되도록 하는 정수 $k$의 개수는?",
+  "box": null,
+  "stem2": null,
+  "box2": null,
+  "choices": [
+   "$1$",
+   "$2$",
+   "$3$",
+   "$4$",
+   "$5$"
+  ]
+ },
+ {
+  "id": "MATH2-02848",
+  "D": "D3",
+  "unit": "명제",
+  "src": "현대고",
+  "ans": "⑤",
+  "fig": null,
+  "boxtitle": null,
+  "stem": "양의 실수 $x$에 대한 두 조건 $p : |x-k| \\le 3$ $q : x^2 - 16 \\le 0$ 가 있다. 명제 $p \\to \\sim q$가 거짓이 되도록 하는 모든 정수 $k$의 값의 합은?",
+  "box": null,
+  "stem2": null,
+  "box2": null,
+  "choices": [
+   "$17$",
+   "$19$",
+   "$21$",
+   "$23$",
+   "$25$"
+  ]
+ },
+ {
+  "id": "MATH2-02917",
+  "D": "D3",
+  "unit": "명제",
+  "src": "5개년모의 명제15제",
+  "ans": "$8$",
+  "fig": null,
+  "boxtitle": null,
+  "stem": "실수 $x$에 대한 두 조건 $p$, $q$가 다음과 같다. $p: 2x-a \\le 0$, $q: x ^{2} -5x+4>0$ $p$가 ${\\sim}q$이기 위한 필요조건이 되도록 하는 실수 $a$의 최솟값을 구하시오.",
+  "box": null,
+  "stem2": null,
+  "box2": null,
+  "choices": null
+ },
+ {
+  "id": "MATH2-02919",
+  "D": "D3",
+  "unit": "명제",
+  "src": "5개년모의 명제15제",
+  "ans": "$9$",
+  "fig": null,
+  "boxtitle": null,
+  "stem": "명제 ‘어떤 실수 $x$에 대하여 $x ^{2} +8x+2k-1 \\le 0$이다.’ 가 거짓이 되도록 하는 정수 $k$의 최솟값을 구하시오.",
+  "box": null,
+  "stem2": null,
+  "box2": null,
+  "choices": null
+ },
+ {
+  "id": "MATH2-02923",
+  "D": "D3",
+  "unit": "명제",
+  "src": "5개년모의 명제15제",
+  "ans": "①",
+  "fig": null,
+  "boxtitle": null,
+  "stem": "자연수 $n$에 대한 조건 ‘$2 \\le x \\le 5$인 어떤 실수 $x$에 대하여 $x ^{2} -8x+n \\ge 0$이다.’ 가 참인 명제가 되도록 하는 $n$의 최솟값은?",
+  "box": null,
+  "stem2": null,
+  "box2": null,
+  "choices": [
+   "$12$",
+   "$13$",
+   "$14$",
+   "$15$",
+   "$16$"
+  ]
+ },
+ {
+  "id": "MATH2-02929",
+  "D": "D3",
+  "unit": "명제",
+  "src": "5개년모의 명제15제",
+  "ans": "$12$",
+  "fig": null,
+  "boxtitle": null,
+  "stem": "실수 $x$에 대한 두 조건 $p : 2x-a=0$, $q : x ^{2} -bx+9>0$ 이 있다. 명제 $p \\to \\sim q$와 명제 $\\sim p \\to q$가 모두 참이 되도록 하는 두 양수 $a$, $b$의 값의 합을 구하시오.",
+  "box": null,
+  "stem2": null,
+  "box2": null,
+  "choices": null
+ },
+ {
+  "id": "MATH2-03022",
+  "D": "D3",
+  "unit": "명제",
+  "src": "명제 특목고고난도",
+  "ans": "①",
+  "fig": null,
+  "boxtitle": null,
+  "stem": "전체집합 $U$에 대하여 두 조건 $p$, $q$의 진리집합을 각각 $P$, $Q$라 하자. 명제 $p\\to\\sim q$가 거짓일 때, 그 반례가 속하는 집합은?",
+  "box": null,
+  "stem2": null,
+  "box2": null,
+  "choices": [
+   "$P\\cap Q$",
+   "$P^{C}\\cup Q$",
+   "$P\\cup Q^{C}$",
+   "$P^{C}\\cap Q$",
+   "$P\\cap Q^{C}$"
+  ]
+ },
+ {
+  "id": "MATH2-03026",
+  "D": "D3",
+  "unit": "명제",
+  "src": "명제 특목고고난도",
+  "ans": "$5$",
+  "fig": null,
+  "boxtitle": null,
+  "stem": "두 실수 $a, b$에 대하여 명제 “$a+b<4$이면 $a<k$또는 $b< -1$이다.”가 참인 명제일 때, 상수 $k$의 최솟값은?",
+  "box": null,
+  "stem2": null,
+  "box2": null,
+  "choices": null
+ },
+ {
+  "id": "MATH2-03054",
+  "D": "D3",
+  "unit": "명제",
+  "src": "모의유형 18 명제",
+  "ans": "③",
+  "fig": null,
+  "boxtitle": null,
+  "stem": "명제 ‘$k \\le x <k+4$인 어떤 실수 $x$에 대하여 $1 \\le x \\le 5$이다.’ 가 참이 되도록 하는 정수 $k$의 개수는?",
+  "box": null,
+  "stem2": null,
+  "box2": null,
+  "choices": [
+   "$6$",
+   "$7$",
+   "$8$",
+   "$9$",
+   "$10$"
+  ]
+ },
+ {
+  "id": "MATH2-03154",
+  "D": "D3",
+  "unit": "명제",
+  "src": "모의유형 18 명제",
+  "ans": "②",
+  "fig": null,
+  "boxtitle": null,
+  "stem": "두 양수 $a,b$에 대하여 직선 $\\frac{x}{a} + \\frac{y}{b} =4$가 점 $(2,5)$를 지날 때, $ab$의 최솟값은?",
+  "box": null,
+  "stem2": null,
+  "box2": null,
+  "choices": [
+   "$5$",
+   "$\\frac{5}{2}$",
+   "$2$",
+   "$\\frac{2}{5}$",
+   "$\\frac{1}{5}$"
+  ]
+ },
+ {
+  "id": "MATH2-03168",
+  "D": "D3",
+  "unit": "명제",
+  "src": "모의유형 18 명제",
+  "ans": "②",
+  "fig": null,
+  "boxtitle": null,
+  "stem": "$(-3, -2)$를 지나는 직선이 $x$축, $y$축과 둘러싸인 도형이 넓이의 최솟값은? (단, 직선은 $x$축, $y$축을 모두 지나며 제 $1$사분면은 지나지 않는다.)",
+  "box": null,
+  "stem2": null,
+  "box2": null,
+  "choices": [
+   "$6$",
+   "$12$",
+   "$\\frac{25}{2}$",
+   "$24$",
+   "$25$"
+  ]
+ },
+ {
+  "id": "MATH2-00013",
+  "D": "D3",
+  "unit": "함수",
+  "src": "2025 기말 NPR고 늘푸른고1 공통수학2",
+  "ans": "④",
+  "fig": null,
+  "boxtitle": null,
+  "stem": "두 집합 $A=\\{1,2,3,4\\}$, $B=\\{1,2,3,4,5,6,7,8\\}$에 대하여 $A$에서 $B$로의 함수 $f$ 중 다음 조건을 만족시키는 함수의 개수는?",
+  "box": [
+   "(가) $f$는 일대일함수이다.",
+   "(나) $f(1)+f(2)+f(3)+f(4)$는 짝수이다."
+  ],
+  "stem2": null,
+  "box2": null,
+  "choices": [
+   "144",
+   "324",
+   "888",
+   "912",
+   "920"
+  ]
+ },
+ {
+  "id": "MATH2-01055",
+  "D": "D3",
+  "unit": "함수",
+  "src": "종촌고(2020)",
+  "stem": "함수 $f(x)=|x^2-2x|+k$에 대하여 함수 $y=f(x)$의 그래프와 직선 $y=t$가 만나지 않도록 하는 자연수 $t$의 개수가 $2$일 때, $(f\\circ f)(1)$의 최댓값은? (단, $k$는 상수이다.)",
+  "ans": "①",
+  "choices": [
+   "$11$",
+   "$12$",
+   "$13$",
+   "$14$",
+   "$15$"
+  ],
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-01275",
+  "D": "D3",
+  "unit": "함수",
+  "src": "숭덕고(2021)",
+  "stem": "두 집합 $X=\\{0,\\,1,\\,2,\\,3,\\,4,\\,5\\}$, $Y=\\{-2,\\,-1,\\,0,\\,1,\\,2\\}$에 대하여 $X$에서 $Y$로의 함수 중 치역과 공역이 일치하는 함수의 개수는?",
+  "ans": "①",
+  "choices": [
+   "$1800$",
+   "$1200$",
+   "$840$",
+   "$240$",
+   "$150$"
+  ],
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-01294",
+  "D": "D3",
+  "unit": "함수",
+  "src": "수완고(2022)",
+  "stem": "함수 $f(x)=-x^2+4x-7$에 대하여 함수 $g(x)$가 모든 실수 $x$에 대하여 $$g(2x-1)=2f(x+2)-3$$ 을 만족시킨다. 함수 $g(x)$가 $x=a$에서 최댓값 $b$를 가질 때, $ab$의 값은?",
+  "ans": "①",
+  "choices": [
+   "$9$",
+   "$4$",
+   "$0$",
+   "$-2$",
+   "$-7$"
+  ],
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-01309",
+  "D": "D3",
+  "unit": "함수",
+  "src": "빛고을고(2022)",
+  "stem": "두 집합 $X=\\{1,\\,2,\\,3\\}$, $Y=\\{5,\\,6,\\,7,\\,8\\}$에 대하여 $X$에서 $Y$로의 함수에 대한 설명으로 옳은 것의 개수는?",
+  "ans": "②",
+  "choices": [
+   "$1$",
+   "$2$",
+   "$3$",
+   "$4$",
+   "$5$"
+  ],
+  "box": [
+   "ㄱ. 상수함수의 개수는 $3$이다.",
+   "ㄴ. 함수의 개수는 $81$이다.",
+   "ㄷ. 일대일함수의 개수는 $24$이다.",
+   "ㄹ. $x_1<x_2$이면 $f(x_1)>f(x_2)$인 함수 $f$의 개수는 $4$이다.",
+   "ㅁ. $f(3)=5$인 함수 $f$의 개수는 $6$이다."
+  ],
+  "boxtitle": "보기"
+ },
+ {
+  "id": "MATH2-01847",
+  "D": "D3",
+  "unit": "함수",
+  "src": "기쌤수학 80제",
+  "stem": "양의 실수 전체의 집합 $X$에서 $X$로의 두 함수 $f(x)=x^2+2x$, $h(x)=\\dfrac{3x+1}{f(x)}$에 대하여 $(h\\circ f^{-1})(3)$의 값은?",
+  "ans": "⑤",
+  "choices": [
+   "$0$",
+   "$\\frac{1}{3}$",
+   "$\\frac{2}{3}$",
+   "$1$",
+   "$\\frac{4}{3}$"
+  ],
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-02131",
+  "D": "D3",
+  "unit": "함수",
+  "src": "모의4점유사변형 함수164제",
+  "ans": "④",
+  "fig": null,
+  "boxtitle": null,
+  "stem": "집합 $X = \\{ 1 , 2 , 3 , 4 , 5 \\}$에 대하여 $X$에서 $X$로의 함수 $f$의 역함수가 존재하고 $2 f ( 2 ) + f ( 3 ) = 4 , f ^{- 1} ( 3 ) - f ^{- 1} ( 4 ) = 3$일 때, $f ( 4 ) + f ^{- 1} ( 5 )$의 값은?",
+  "box": null,
+  "stem2": null,
+  "box2": null,
+  "choices": [
+   "$5$",
+   "$6$",
+   "$7$",
+   "$8$",
+   "$9$"
+  ]
+ },
+ {
+  "id": "MATH2-02148",
+  "D": "D3",
+  "unit": "함수",
+  "src": "모의4점유사변형 함수164제",
+  "stem": "집합 $X=\\{1,\\,2,\\,3,\\,4,\\,5\\}$에 대하여 일대일대응인 함수 $f : X\\to X$가 다음 조건을 만족시킬 때, $f(2)+f(5)$의 값은?",
+  "ans": "④",
+  "choices": [
+   "$4$",
+   "$5$",
+   "$6$",
+   "$7$",
+   "$8$"
+  ],
+  "box": [
+   "(가) $f(2)-f(3)=f(4)-f(1)=f(5)$",
+   "(나) $f(1)<f(2)<f(4)$"
+  ],
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-02181",
+  "D": "D3",
+  "unit": "함수",
+  "src": "모의4점유사변형 함수164제",
+  "ans": "②",
+  "fig": null,
+  "boxtitle": null,
+  "stem": "집합 $X = \\{ - 1 , 2 \\}$을 정의역으로 하는 함수 $f ( x ) = ax - 2 a$와 함수 $f ( x )$의 치역을 정의역으로 하고, 집합 $X$를 공역으로 하는 함수 $g ( x ) = x ^{2} + 4 x + b$가 있다. 함수 $g \\circ f : X \\to X$가 항등함수일 때, $a - b$의 값을 구하면? (단, $a$, $b$는 자연수이다.)",
+  "box": null,
+  "stem2": null,
+  "box2": null,
+  "choices": [
+   "$- 2$",
+   "$- 1$",
+   "$0$",
+   "$1$",
+   "$2$"
+  ]
+ },
+ {
+  "id": "MATH2-02546",
+  "D": "D3",
+  "unit": "함수",
+  "src": "운호고",
+  "ans": "①",
+  "fig": null,
+  "boxtitle": null,
+  "stem": "$f (x )= \\sqrt{2x+1}+ \\sqrt{2x-1}$에 대하여 $\\frac{1}{f (1 )}+\\frac{1}{f (2 )}+\\frac{1}{f (3 )}+ \\cdots +\\frac{1}{f (144 )}$의 값은?",
+  "box": null,
+  "stem2": null,
+  "box2": null,
+  "choices": [
+   "$8$",
+   "$9$",
+   "$10$",
+   "$11$",
+   "$12$"
+  ]
+ },
+ {
+  "id": "MATH2-02597",
+  "D": "D3",
+  "unit": "함수",
+  "src": "안산동산고",
+  "stem": "집합 $X=\\{x \\mid -1\\le x\\le 3\\}$에 대하여 $X$에서 $X$로의 함수 $$f(x)=\\begin{cases} -x-1 & (-1\\le x\\le 0) \\\\ a(x-3)^2+b & (0<x\\le 3) \\end{cases}$$ 가 일대일대응일 때, $f(2)$의 값은? (단, $a,\\ b$는 상수이다.)",
+  "ans": "③",
+  "choices": [
+   "$1$",
+   "$\\frac{3}{2}$",
+   "$\\frac{8}{3}$",
+   "$3$",
+   "$\\frac{11}{3}$"
+  ],
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-02601",
+  "D": "D3",
+  "unit": "함수",
+  "src": "안산동산고",
+  "ans": "⑤",
+  "fig": null,
+  "boxtitle": null,
+  "stem": "두 이차함수 $f (x )= -x^{2}+4x+3$, $g (x )=x^{2}+x+a$ 가 있다. $x$에 대한 방정식 $f (g (x ) )=f (x )$의 서로 다른 실근의 개수가 $2$가 되도록 하는 상수 $a$값의 범위는 $\\alpha < a < \\beta$이다. $\\alpha + \\beta$의 값은? (단, $\\alpha$, $\\beta$는 상수이다.)",
+  "box": null,
+  "stem2": null,
+  "box2": null,
+  "choices": [
+   "$1$",
+   "$2$",
+   "$3$",
+   "$4$",
+   "$5$"
+  ]
+ },
+ {
+  "id": "MATH2-02608",
+  "D": "D3",
+  "unit": "함수",
+  "src": "안산동산고",
+  "ans": "②",
+  "fig": null,
+  "boxtitle": null,
+  "stem": "실수 전체의 집합에서 정의된 두 함수 $f (x )$, $g (x )$가 모두 일대일대응이고 모든 실수 $x$에 대하여 $(g^{-1} \\circ f ) (x )=ax+b$를 만족시킨다. $f (1 )=g (3 )$, $g (-1 )=f (3 )$일 때, $a+b$의 값은? (단, $a$, $b$는 상수이다.)",
+  "box": null,
+  "stem2": null,
+  "box2": null,
+  "choices": [
+   "$-2$",
+   "$3$",
+   "$4$",
+   "$5$",
+   "$6$"
+  ]
+ },
+ {
+  "id": "MATH2-02628",
+  "D": "D3",
+  "unit": "함수",
+  "src": "유성고",
+  "ans": "④",
+  "fig": null,
+  "boxtitle": null,
+  "stem": "집합 $X=\\{2,3,4,5,6\\}$에 대하여 다음 조건을 만족시키는 함수 $f: X \\to X$의 개수는?",
+  "box": [
+   "(가) $f$의 역함수가 존재한다.",
+   "(나) 집합 $X$의 모든 원소 $x$에 대하여 $x f(x)$의 값은 짝수이다."
+  ],
+  "stem2": null,
+  "box2": null,
+  "choices": [
+   "$18$",
+   "$24$",
+   "$30$",
+   "$36$",
+   "$42$"
+  ]
+ },
+ {
+  "id": "MATH2-02994",
+  "D": "D3",
+  "unit": "함수",
+  "src": "파이널모의12회",
+  "stem": "두 함수 $f(x)=2x-3$, $g(x)=-x+k$에 대하여 $f\\circ g=g\\circ f$를 만족시키는 상수 $k$의 값을 구하시오.",
+  "ans": "$6$",
+  "choices": null,
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-03282",
+  "D": "D3",
+  "unit": "함수",
+  "src": "모의유형 18 합성역함수",
+  "stem": "집합 $S=\\{n \\mid 1\\le n\\le 77,\\ n\\text{은 } 6 \\text{의 배수}\\}$의 부분집합 $X$와 집합 $Y=\\{0,\\,1,\\,2,\\,3,\\,4\\}$에 대하여 함수 $f : X\\to Y$를 ‘$f(n)$은 $n$을 $5$로 나눈 나머지’로 정의하자. 함수 $f$의 역함수가 존재하도록 하는 집합 $X$의 개수는?",
+  "ans": "②",
+  "choices": [
+   "$36$",
+   "$72$",
+   "$81$",
+   "$144$",
+   "$162$"
+  ],
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-03300",
+  "D": "D3",
+  "unit": "함수",
+  "src": "모의유형 18 합성역함수",
+  "stem": "자연수 전체의 집합에서 정의된 함수 $f$가 다음 조건을 만족시킨다.",
+  "ans": "②",
+  "choices": [
+   "$7$",
+   "$8$",
+   "$9$",
+   "$10$",
+   "$12$"
+  ],
+  "box": [
+   "(가) $f(1)=1$",
+   "(나) 두 자연수 $n,\\ k$에 대하여 $1 \\le k \\le 2n+1$이면 $f(n^2+k)=4f(n)+k$이다."
+  ],
+  "boxtitle": null,
+  "stem2": "$10 \\le (f\\circ f)(m) \\le 40$을 만족시키는 자연수 $m$의 최댓값을 $a$, 최솟값을 $b$라 할 때, $a-b$의 값은?"
+ },
+ {
+  "id": "MATH2-03358",
+  "D": "D3",
+  "unit": "함수",
+  "src": "모의유형 18 합성역함수",
+  "stem": "실수 $k$에 대하여 함수 $$f(x)=\\begin{cases} x^2-2x+k & (x\\ge 1) \\\\ 2x+k-3 & (x<1) \\end{cases}$$ 의 역함수를 $g(x)$라 하자. 두 함수 $y=f(x)$, $y=g(x)$의 그래프의 서로 다른 교점이 오직 두 개일 때, 두 교점을 각각 $\\mathrm{A}$, $\\mathrm{B}$라 하자. 선분 $\\mathrm{AB}$의 길이의 최댓값을 $M$, 최솟값을 $m$이라 할 때, $Mm$의 값을 구하시오.",
+  "ans": "$\\frac{3}{2}$",
+  "choices": null,
+  "box": null,
+  "boxtitle": null
+ },
+ {
+  "id": "MATH2-00891",
+  "D": "D3",
+  "unit": "유리함수",
+  "src": "덕수고",
+  "stem": "함수 $f(x)=\\dfrac{a(x-2)}{x+1}\\ (a>0)$의 그래프의 두 점근선의 교점을 지나고 기울기가 $-1$인 직선이 함수 $y=f(x)$의 그래프와 만나는 두 점을 $\\mathrm{P}$, $\\mathrm{Q}$라 하자. $\\overline{\\mathrm{PQ}}=6\\sqrt{2}$일 때, 상수 $a$의 값은?",
+  "ans": "③",
+  "choices": [
+   "$1$",
+   "$2$",
+   "$3$",
+   "$4$",
+   "$5$"
+  ],
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-01325",
+  "D": "D3",
+  "unit": "유리함수",
+  "src": "명진고(2018)",
+  "stem": "$x>3$에서 정의된 두 함수 $f(x)=\\dfrac{2x+1}{x-3}$, $g(x)=\\sqrt{3(x-1)}$에 대하여 $\\left(f\\circ (g\\circ f)^{-1}\\circ f\\right)(4)$의 값을 구하시오.",
+  "ans": "$28$",
+  "choices": null,
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-01582",
+  "D": "D3",
+  "unit": "유리함수",
+  "src": "신성고 고난도",
+  "stem": "어느 지역의 고용률과 실업률은 다음과 같이 정의된다. $$(\\text{고용률})=\\frac{(\\text{취업자 수})}{(15\\text{세 이상 인구})}\\times 100$$ $$(\\text{실업률})=\\frac{(\\text{실업자 수})}{(\\text{경제 활동 인구})}\\times 100$$ 두 지역 $\\mathrm{A}$, $\\mathrm{B}$의 $15$세 이상 인구의 비는 $3:4$, 실업자 수의 비는 $5:6$이고 두 지역의 실업률은 같다. 두 지역 $\\mathrm{A}$, $\\mathrm{B}$의 고용률의 비가 $m:n$일 때, $3m+n$의 값을 구하시오. (단, 경제 활동 인구는 취업자 수와 실업자 수의 합이고, $m,\\ n$은 서로소인 자연수이다.)",
+  "ans": "$39$",
+  "choices": null,
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-01682",
+  "D": "D3",
+  "unit": "유리함수",
+  "src": "비타민 유리 서초B1",
+  "stem": "유리함수 $y=\\dfrac{1}{x-2}+3$의 그래프 위의 점과 두 점근선의 교점 사이의 거리의 최솟값을 $d$라 할 때, $d^2$의 값을 구하시오.",
+  "ans": "$2$",
+  "choices": null,
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-01752",
+  "D": "D3",
+  "unit": "유리함수",
+  "src": "비타민 유리 송파B1",
+  "stem": "유리함수 $y=\\dfrac{a}{x-b}+c$의 그래프가 점 $(0,\\,1)$을 지나고 두 점근선의 방정식이 $x=2$, $y=3$일 때, $a+b+c$의 값은? (단, $a,\\ b,\\ c$는 상수이다.)",
+  "ans": "①",
+  "choices": [
+   "$9$",
+   "$10$",
+   "$11$",
+   "$12$",
+   "$13$"
+  ],
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-01758",
+  "D": "D3",
+  "unit": "유리함수",
+  "src": "비타민 유리 송파B1",
+  "stem": "유리함수 $y=\\dfrac{2x-k}{x-3}$의 그래프가 제$3$사분면을 지나도록 하는 정수 $k$의 최댓값은? (단, $k\\ne 6$)",
+  "ans": "②",
+  "choices": [
+   "$-2$",
+   "$-1$",
+   "$0$",
+   "$1$",
+   "$2$"
+  ],
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-02770",
+  "D": "D3",
+  "unit": "유리함수",
+  "src": "은광여고",
+  "stem": "두 집합 $$A=\\left\\{(x,\\,y) \\,\\middle|\\, y=\\frac{-3x+7}{x-2}\\right\\}$$ $$B=\\{(x,\\,y) \\mid y=kx-3k-3\\}$$ 에 대하여 $A\\cap B=\\varnothing$이 되도록 하는 정수 $k$의 개수는?",
+  "ans": "②",
+  "choices": [
+   "$2$",
+   "$4$",
+   "$6$",
+   "$8$",
+   "$10$"
+  ],
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-02996",
+  "D": "D3",
+  "unit": "유리함수",
+  "src": "파이널모의12회",
+  "stem": "함수 $f(x)=\\dfrac{x}{x-1}$에 대하여 $$f_1=f,\\qquad f_{n+1}=f\\circ f_n\\ \\ (n\\text{은 자연수})$$ 로 정의할 때, $f_{2014}(2001)$의 값을 구하시오.",
+  "ans": "$2001$",
+  "choices": null,
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-03000",
+  "D": "D3",
+  "unit": "유리함수",
+  "src": "파이널모의12회",
+  "stem": "함수 $$\\begin{aligned} f(x)=&\\ \\frac{1}{x(x+2)}+\\frac{1}{(x+2)(x+4)} \\\\ &+\\frac{1}{(x+4)(x+6)}+\\cdots+\\frac{1}{(x+98)(x+100)} \\end{aligned}$$ 에 대하여 $f(1)$의 값은?",
+  "ans": "④",
+  "choices": [
+   "$\\frac{1}{100}$",
+   "$\\frac{1}{101}$",
+   "$\\frac{1}{2}$",
+   "$\\frac{50}{101}$",
+   "$\\frac{100}{101}$"
+  ],
+  "box": null,
+  "boxtitle": null
+ },
+ {
+  "id": "MATH2-03467",
+  "D": "D3",
+  "unit": "유리함수",
+  "src": "모의유형 19 유리함수",
+  "stem": "유리함수 $y=\\dfrac{k}{x}\\ (k>0)$의 그래프가 직선 $y=-x+8$과 두 점 $\\mathrm{P}$, $\\mathrm{Q}$에서 만난다. 삼각형 $\\mathrm{OPQ}$의 넓이가 $12$일 때, $4k$의 값은? (단, $\\mathrm{O}$는 원점이고, $k$는 상수이다.)",
+  "ans": "③",
+  "choices": [
+   "$39$",
+   "$48$",
+   "$55$",
+   "$60$",
+   "$63$"
+  ],
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-00948",
+  "D": "D3",
+  "unit": "무리함수",
+  "src": "고운고(2021)",
+  "stem": "무리함수 $y=\\sqrt{ax+b}+c$의 정의역이 $\\{x \\mid x\\ge 3\\}$, 치역이 $\\{y \\mid y\\ge 16\\}$일 때, $\\dfrac{a^2+b+c}{a}$의 최솟값은? (단, $a,\\ b,\\ c$는 상수이다.)",
+  "ans": "③",
+  "choices": [
+   "$3$",
+   "$4$",
+   "$5$",
+   "$6$",
+   "$7$"
+  ],
+  "box": null,
+  "boxtitle": null
+ },
+ {
+  "id": "MATH2-01068",
+  "D": "D3",
+  "unit": "무리함수",
+  "src": "신한고(2020)",
+  "stem": "$x>2$에서 정의된 두 함수 $f(x)=\\dfrac{2x}{x-2}$, $g(x)=\\sqrt{2x-4}+2$에 대하여 $\\left(f\\circ (f\\circ g)^{-1}\\circ f\\right)(4)$의 값은?",
+  "ans": "⑤",
+  "choices": [
+   "$\\frac{8}{3}$",
+   "$3$",
+   "$\\frac{10}{3}$",
+   "$\\frac{11}{3}$",
+   "$4$"
+  ],
+  "box": null,
+  "boxtitle": null
+ },
+ {
+  "id": "MATH2-01480",
+  "D": "D3",
+  "unit": "무리함수",
+  "src": "모고 함수4점",
+  "stem": "함수 $y=\\sqrt{x+3}$의 그래프와 함수 $y=\\sqrt{1-x}+k$의 그래프가 만나도록 하는 실수 $k$의 최댓값을 구하시오.",
+  "ans": "$2$",
+  "choices": null,
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-02007",
+  "D": "D3",
+  "unit": "무리함수",
+  "src": "실전모의 3회",
+  "stem": "자연수 $n$에 대하여 함수 $f(x)=\\sqrt{x+n^2}-n$의 그래프와 그 역함수 $y=f^{-1}(x)$의 그래프가 직선 $y=-x+4n+6$과 만나는 점을 각각 $\\mathrm{P}_n$, $\\mathrm{Q}_n$이라 하고, 함수 $g(x)=-\\sqrt{x+n^2}-n$의 그래프가 직선 $y=-x+4n+6$과 만나는 점을 $\\mathrm{R}_n$이라 하자. $\\overline{\\mathrm{P}_m\\mathrm{Q}_m}=30\\sqrt{2}$일 때, 선분 $\\mathrm{P}_m\\mathrm{R}_m$의 길이는?",
+  "ans": "⑤",
+  "choices": [
+   "$11\\sqrt{2}$",
+   "$13\\sqrt{2}$",
+   "$15\\sqrt{2}$",
+   "$17\\sqrt{2}$",
+   "$19\\sqrt{2}$"
+  ],
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-02060",
+  "D": "D3",
+  "unit": "무리함수",
+  "src": "기말대비 유리무리",
+  "stem": "그림과 같이 함수 $f(x)=2\\sqrt{x}$의 그래프와 함수 $g(x)=\\dfrac{1}{4}x^2\\ (x\\ge 0)$의 그래프가 만나는 두 점 중 원점 $\\mathrm{O}$가 아닌 점을 $\\mathrm{A}$라 하고, 선분 $\\mathrm{OA}$를 $1:3$으로 내분하는 점을 $\\mathrm{P}$라 하자. 점 $\\mathrm{P}$를 지나고 $x$축에 평행한 직선이 두 곡선 $y=f(x)$, $y=g(x)$와 만나는 점을 각각 $\\mathrm{B}$, $\\mathrm{C}$라 할 때, 삼각형 $\\mathrm{ABC}$의 넓이는?",
+  "ans": "②",
+  "choices": [
+   "$\\frac{19}{8}$",
+   "$\\frac{21}{8}$",
+   "$\\frac{23}{8}$",
+   "$\\frac{25}{8}$",
+   "$\\frac{27}{8}$"
+  ],
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": "MATH2-02060"
+ },
+ {
+  "id": "MATH2-02434",
+  "D": "D3",
+  "unit": "무리함수",
+  "src": "모의4점유사변형 무리함수109제",
+  "stem": "두 함수 $y=4-3\\sqrt{1-x}$와 $y=-x+k$의 그래프가 제$1$사분면에서 만나도록 하는 모든 정수 $k$의 값의 합은?",
+  "ans": "②",
+  "choices": [
+   "$13$",
+   "$14$",
+   "$15$",
+   "$16$",
+   "$17$"
+  ],
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ },
+ {
+  "id": "MATH2-02671",
+  "D": "D3",
+  "unit": "무리함수",
+  "src": "단대부고",
+  "stem": "양수 $a$에 대하여 직선 $x=a$와 두 곡선 $y=\\sqrt{2x}$, $y=\\sqrt{5x}$가 만나는 점을 각각 $\\mathrm{A}$, $\\mathrm{B}$라 하자. 점 $\\mathrm{B}$를 지나고 $x$축과 평행한 직선이 곡선 $y=\\sqrt{2x}$와 만나는 점을 $\\mathrm{C}$라 하고, 점 $\\mathrm{C}$를 지나고 $y$축과 평행한 직선이 곡선 $y=\\sqrt{5x}$와 만나는 점을 $\\mathrm{D}$라 하자. 두 점 $\\mathrm{A}$, $\\mathrm{D}$를 지나는 직선의 기울기가 $\\dfrac{2\\sqrt{3}}{3}$일 때, $a$의 값을 구하시오.",
+  "ans": "$\\frac{3}{2}$",
+  "choices": null,
+  "box": null,
+  "boxtitle": null,
+  "stem2": null,
+  "box2": null,
+  "fig": null
+ }
+]
