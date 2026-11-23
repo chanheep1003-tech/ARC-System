@@ -1,0 +1,3507 @@
+batch_id: KOR-V6-N-ORTHO-50-20261123
+product_mode: ARC_N
+subject: KOR
+generator: CLAUDE
+set_label: ARC N° V6
+course: 공통국어2
+cover_subtitle: 한글 맞춤법 50문항 (전 문항 객관식)
+cover_lines:
+- 1~12 조사·보조사 / 의존 명사 / 어미
+- 13~24 접미사·어미 vs 의존 명사, 단위·수·열거·호칭
+- 25~36 형태 밝혀 적기·된소리·사이시옷·준말·구별 표기
+- 37~50 생활 문장 종합
+school_line: 동북고등학교 1학년 · 2026
+created_at: '2026-11-23T16:00:00+09:00'
+scope: 미래엔 공통국어2 3단원 한글 맞춤법 (2026 2학기 기말 범위, 학교 공지 2026-11-13)
+scope_refs:
+- TEXTBOOK:미래엔 공통국어2 3-(2) 한글 맞춤법과 오늘날의 국어생활, 한글 맞춤법 제1·2·5·15·19·30·35·39~46·48·57항
+archetype_library: quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml
+v6:
+  policy: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md
+  set: '단일 50문항 (사용자 지시 2026-11-23: 한 세트로 묶음)'
+  user_override: 전 50문항 객관식(서답형 0), 단원 세트 분할 대신 한 세트
+  blind_review: NOT_RUN
+sets: []
+items:
+- item_id: KOR-V6N-001
+  archetype: A1_GENERAL_RULE_MAPPING
+  stem: <보기>의 ㉠, ㉡을 바탕으로 탐구한 내용으로 가장 적절한 것은?
+  view:
+  - 제41항 조사는 ㉠그 앞말에 붙여 쓴다.
+  - 제42항 의존 명사는 ㉡띄어 쓴다.
+  - '- 한글 맞춤법'
+  options:
+  - '''집에서처럼''은 조사 ''에서''와 ''처럼''이 겹쳐 쓰인 것이므로 ㉠에 따라 모두 앞말에 붙여 쓴다.'
+  - '''아는 것이 힘이다''의 ''것''은 혼자 쓰이지 못하고 앞말에 기대므로 ㉠에 따라 붙여 쓴다.'
+  - '''너마저 떠났다''의 ''마저''는 앞말의 뜻을 한정하는 의존 명사이므로 ㉡에 따라 띄어 쓴다.'
+  - '''그가 떠난 지 오래다''의 ''지''는 어미의 일부이므로 ㉠에 따라 앞말에 붙여 쓴다.'
+  - '''먹을 만큼 덜어라''의 ''만큼''은 앞말에 기대어 쓰이므로 ㉠에 따라 붙여 쓴다.'
+  answer: 1
+  second_best: 5
+  difficulty: D2
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 2
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: A
+  judgments:
+  - axis: orthography
+    c: CORRECT
+    claim: a1_jibeseo
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 조사가 둘 이상 겹치거나 조사가 어미 뒤에 붙는 경우에도 모두 붙여 쓴다(제41항 용례 '집에서처럼').
+  - axis: orthography
+    c: MEDIUM
+    claim: a1_geot
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''것''은 의존 명사이므로 제42항에 따라 띄어 쓴다. 자립성이 없다는 것만으로 붙여 쓰지 않는다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: MEDIUM
+    claim: a1_majeo
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''마저''는 체언 뒤에 붙는 보조사이므로 ㉠에 따라 붙여 쓴다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: STRONG
+    claim: a1_ji
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''떠난 지''의 ''지''는 시간의 경과를 나타내는 의존 명사이므로 ㉡에 따라 띄어 쓴다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: STRONG
+    claim: a1_mankeum
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: 관형사형 '먹을' 뒤의 '만큼'은 의존 명사이므로 ㉡에 따라 띄어 쓴다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  source_item_id: KOR-V6N1-001
+- item_id: KOR-V6N-002
+  archetype: A2_STUDENT_TEXT_ERRORS
+  stem: <보기>의 [A]에 들어갈 내용으로 알맞은 것은?
+  view:
+  - '학생: 선생님, 동아리 발표 소감문을 썼는데 띄어쓰기가 맞는지 봐 주세요.'
+  - <학생이 쓴 글> 발표 준비를 ㉠시작한지 벌써 두 주가 지났다. 처음에는 자료를 ㉡정리하는 데만 며칠이 걸렸다. 그래도 ㉢준비한 만큼 자신감이 생겼고, ㉣연습할수록 말이 매끄러워졌다. 막상 발표 날이 되자 남은 시간이 ㉤십 분 밖에 없어서 당황했지만, 늘 침착하던 ㉥친구 마저 떨고 있는 것을 보고 오히려 웃음이 났다.
+  - '선생님: 네가 쓴 글에서 띄어쓰기가 틀린 곳은 [A]란다.'
+  options:
+  - ㉠, ㉡, ㉤
+  - ㉡, ㉣, ㉥
+  - ㉠, ㉤, ㉥
+  - ㉢, ㉤, ㉥
+  - ㉠, ㉢, ㉣
+  answer: 3
+  second_best: 4
+  difficulty: D3
+  family: ERROR_CORRECTION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: A
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: a2_abe
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉡ '정리하는 데만'은 의존 명사 '데'에 조사 '만'이 붙은 것으로 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: a2_bdf
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉡, ㉣은 바르게 썼다. '-ㄹ수록'은 어미이므로 붙여 쓴다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: a2_aef
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: ㉠ '시작한 지', ㉤ '십 분밖에', ㉥ '친구마저'로 고쳐야 한다.
+  - axis: orthography
+    c: STRONG
+    claim: a2_cef
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉢ '준비한 만큼'은 관형사형 뒤의 의존 명사로 바르게 띄어 썼다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: a2_acd
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉢, ㉣은 바르다.
+    trap: T6_PARTIAL_SET
+  source_item_id: KOR-V6N1-002
+- item_id: KOR-V6N-003
+  archetype: A3_CONDITION_CLASSIFICATION
+  stem: <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> 같은 형태라도 문장 속 기능에 따라 띄어쓰기가 달라진다. Ⓐ조사는 앞말에 붙여 쓰고, Ⓑ의존 명사는 앞말과 띄어 쓰며, Ⓒ어미이거나 어미의 일부인 경우에는 어간에 붙여 쓴다.
+  - <보기 2> ㉠형이 말한[대로] 했다.  ㉡비가 오는[데] 우산이 없다.  ㉢그 일은 너[대로] 처리해라.  ㉣집에 가는[데] 한 시간이 걸렸다.  ㉤얼마나 놀랐던[지] 말이 안 나왔다.
+  options:
+  - Ⓐ ㉢   Ⓑ ㉠   Ⓒ ㉡, ㉣, ㉤
+  - Ⓐ ㉠, ㉢   Ⓑ ㉣   Ⓒ ㉡, ㉤
+  - Ⓐ ㉢   Ⓑ ㉠, ㉣, ㉤   Ⓒ ㉡
+  - Ⓐ ㉢   Ⓑ ㉠, ㉣   Ⓒ ㉡, ㉤
+  - Ⓐ ㉢, ㉤   Ⓑ ㉠, ㉣   Ⓒ ㉡
+  answer: 4
+  second_best: 3
+  difficulty: D3
+  family: COMPARISON_MATRIX
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: A
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: a3_d_as_ending
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉣ '가는 데'의 '데'는 '일·경우'의 뜻을 지닌 의존 명사이므로 Ⓑ이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: a3_a_as_particle
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉠ '말한 대로'는 관형사형 뒤의 의존 명사이므로 Ⓑ이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: a3_e_as_noun
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉤ '놀랐던지'의 '-던지'는 막연한 이유·판단을 나타내는 어미이므로 Ⓒ이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: a3_key
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: ㉢ 체언 뒤 조사 '대로' Ⓐ, ㉠·㉣ 관형사형 뒤 의존 명사 Ⓑ, ㉡ '-는데'·㉤ '-던지' 어미 Ⓒ.
+  - axis: orthography
+    c: WEAK
+    claim: a3_e_as_particle
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉤의 '-던지'는 체언 뒤가 아니라 어간 뒤에 결합한 어미이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  source_item_id: KOR-V6N1-003
+- item_id: KOR-V6N-004
+  archetype: A4_INQUIRY_DIALOGUE_CHECK
+  stem: <보기>의 ㉠~㉤ 중 학생의 설명이 바르지 않은 것은?
+  view:
+  - '선생님: 같은 형태가 문장에 따라 조사가 되기도 하고 의존 명사가 되기도 해요. 예문을 보고 설명해 볼까요?'
+  - '학생 1: ㉠''노력한 만큼 결과가 나온다''의 ''만큼''은 관형사형 ''노력한'' 뒤에 쓰인 의존 명사라서 띄어 써요.'
+  - '학생 2: ㉡''형만큼 키가 크다''의 ''만큼''은 앞의 ''형''을 꾸밈받는 의존 명사라서 ''형 만큼''으로 띄어 써야 해요.'
+  - '학생 3: ㉢''남은 사람은 셋뿐이다''의 ''뿐''은 수사 ''셋'' 뒤에 붙은 조사이므로 붙여 써요.'
+  - '학생 4: ㉣''그는 웃을 뿐 대답이 없었다''의 ''뿐''은 관형사형 뒤의 의존 명사라서 띄어 써요.'
+  - '학생 5: ㉤''두 시간 만에 도착했다''의 ''만''은 시간이 지났음을 나타내는 의존 명사라서 띄어 써요.'
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 2
+  second_best: 3
+  difficulty: D3
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: A
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: a4_mankeum_noun
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 관형사형 '노력한' 뒤의 '만큼'은 의존 명사이므로 띄어 쓴다는 설명은 옳다.
+    trap: T2_EXCEPTION_CONDITION
+  - axis: orthography
+    c: CORRECT
+    claim: a4_mankeum_particle_wrong
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''형만큼''의 ''만큼''은 체언 ''형'' 뒤에서 비교의 뜻을 더하는 조사이므로 붙여 써야 한다.'
+  - axis: orthography
+    c: STRONG
+    claim: a4_ppun_numeral
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: '''셋뿐''의 ''뿐''은 수사 뒤에 붙은 조사이므로 붙여 쓴다는 설명은 옳다.'
+    trap: T2_EXCEPTION_CONDITION
+  - axis: orthography
+    c: MEDIUM
+    claim: a4_ppun_noun
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 관형사형 '웃을' 뒤 '뿐'은 의존 명사이므로 띄어 쓴다는 설명은 옳다.
+    trap: T2_EXCEPTION_CONDITION
+  - axis: orthography
+    c: WEAK
+    claim: a4_man_time
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: '''두 시간 만에''의 ''만''은 시간 경과를 나타내는 의존 명사이다.'
+    trap: T2_EXCEPTION_CONDITION
+  source_item_id: KOR-V6N1-004
+- item_id: KOR-V6N-005
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  stem: <보기>의 탐구 내용 중 옳은 것만을 있는 대로 고른 것은?
+  view:
+  - ㄱ. '학교에서부터'처럼 조사가 둘 이상 이어지면 모두 앞말에 붙여 쓴다.
+  - ㄴ. '그가 온 지 오래다'와 '그가 올지 모르겠다'의 '지'는 모두 의존 명사이므로 둘 다 띄어 써야 한다.
+  - ㄷ. '너야말로 적임자다'의 '야말로'는 앞말을 강조하는 보조사이므로 붙여 쓴다.
+  - ㄹ. '기다릴 수밖에 없다'에서 '수'는 의존 명사여서 '기다릴'과 띄어 쓰고, '밖에'는 조사여서 '수'에 붙여 쓴다.
+  - ㅁ. '이번만큼은 꼭 이기자'에서 '만큼' 뒤에 조사 '은'이 결합했으므로 '만큼'은 의존 명사이다.
+  options:
+  - ㄱ, ㄴ
+  - ㄴ, ㅁ
+  - ㄱ, ㄷ
+  - ㄷ, ㄹ, ㅁ
+  - ㄱ, ㄷ, ㄹ
+  answer: 5
+  second_best: 3
+  difficulty: D4
+  family: MULTI_JUDGMENT
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: A
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: a5_ab
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㄴ은 틀렸다. '올지'의 '-ㄹ지'는 어미이므로 '지'를 의존 명사로 볼 수 없다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: a5_be
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㄴ, ㅁ은 모두 틀린 판단이다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: a5_ac
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㄹ도 옳은 판단이므로 옳은 것 하나를 뺀 조합이다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: a5_cde
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㅁ은 틀렸다. '이번만큼은'의 '만큼'은 체언 뒤 조사이며 조사 '은'이 뒤에 다시 붙은 것이다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: a5_key
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: ㄱ(조사 연속 붙여 씀), ㄷ('야말로'는 보조사), ㄹ('수'는 의존 명사, '밖에'는 조사)이 옳다.
+  source_item_id: KOR-V6N1-005
+- item_id: KOR-V6N-006
+  archetype: A6_RULE_CASE_EXPLANATION
+  stem: <보기>를 바탕으로 ㉠~㉣에 대해 탐구한 내용으로 적절하지 않은 것은?
+  view:
+  - 제41항 조사는 그 앞말에 붙여 쓴다.  제42항 의존 명사는 띄어 쓴다.
+  - ㉠ 그는 아는 대로 다 말했다.   ㉡ 약속대로 일을 마쳤다.
+  - ㉢ 우리는 사흘 만에 집에 돌아왔다.   ㉣ 그 비밀은 동생만 알고 있다.
+  options:
+  - ㉠의 '대로'는 관형사형 '아는' 뒤에서 '그와 같이'의 뜻을 나타내므로 제42항에 따라 띄어 썼다.
+  - ㉡의 '대로'는 체언 '약속' 뒤에 붙어 근거의 뜻을 더하는 조사이므로 제41항에 따라 붙여 썼다.
+  - ㉢의 '만'은 앞말 '사흘'이 체언이므로 조사로 보아 제41항에 따라 '사흘만에'로 붙여 써야 한다.
+  - ㉣의 '만'은 다른 것을 제외하고 어느 하나를 한정하는 조사이므로 앞말에 붙여 썼다.
+  - ㉠과 ㉡을 비교하면 같은 형태라도 앞말의 성격에 따라 띄어쓰기가 달라짐을 알 수 있다.
+  answer: 3
+  second_best: 4
+  difficulty: D3
+  family: CASE_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: A
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: a6_daero_noun
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: a6_daero_particle
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: a6_man_time
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''사흘 만에''의 ''만''은 시간의 경과를 나타내는 의존 명사이다. 앞말이 체언이라는 것만으로 조사라고 판정할 수 없다.'
+  - axis: orthography
+    c: MEDIUM
+    claim: a6_man_only
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: WEAK
+    claim: a6_compare
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  source_item_id: KOR-V6N1-006
+- item_id: KOR-V6N-007
+  archetype: A1_GENERAL_RULE_MAPPING
+  stem: <보기>의 ㉠, ㉡에 대한 이해로 가장 적절한 것은?
+  view:
+  - 제2항 문장의 각 ㉠단어는 띄어 씀을 원칙으로 한다.
+  - 제41항 ㉡조사는 그 앞말에 붙여 쓴다.
+  - '- 한글 맞춤법'
+  options:
+  - 조사는 단어로 인정되지만 ㉡에 따라 ㉠의 원칙에서 벗어나 앞말에 붙여 쓴다.
+  - 의존 명사는 혼자 쓰일 수 없으므로 단어가 아니며, 그래서 ㉠의 적용을 받지 않고 붙여 쓴다.
+  - '''꽃이나마''의 ''이나마''는 단어가 아니므로 ㉡이 아니라 ㉠을 근거로 앞말에 붙여 쓴다.'
+  - '''먹는 만큼''의 ''만큼''은 단어이지만 ㉡의 예외에 해당하므로 앞말에 붙여 쓴다.'
+  - '''갈지 말지''의 ''-ㄹ지''는 하나의 단어이므로 ㉠에 따라 앞말과 띄어 쓴다.'
+  answer: 1
+  second_best: 3
+  difficulty: D2
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 2
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: A
+  judgments:
+  - axis: orthography
+    c: CORRECT
+    claim: a7_key
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 조사는 단어이지만 자립성이 없어 제41항에 따라 붙여 쓴다. 이는 제2항 원칙의 예외이다.
+  - axis: orthography
+    c: MEDIUM
+    claim: a7_dep_noun
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: 의존 명사도 단어이므로 ㉠에 따라 띄어 쓴다(제42항).
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: STRONG
+    claim: a7_inama
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''이나마''는 조사(단어)이며 붙여 쓰는 근거는 ㉡이다.'
+    trap: T5_RULE_JURISDICTION
+  - axis: orthography
+    c: MEDIUM
+    claim: a7_mankeum
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: 관형사형 뒤의 '만큼'은 의존 명사이므로 띄어 쓴다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: WEAK
+    claim: a7_ending
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''-ㄹ지''는 어미로 단어가 아니므로 어간에 붙여 쓴다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  source_item_id: KOR-V6N1-007
+- item_id: KOR-V6N-008
+  archetype: A2_STUDENT_TEXT_ERRORS
+  stem: <보기>의 [A]에 들어갈 말로 알맞은 것은?
+  view:
+  - '학생: 학급 회의 기록을 정리했어요. 띄어쓰기를 확인해 주세요.'
+  - <학생이 쓴 기록> 학급 회의를 ㉠한 지 한 달이 되었다. ㉡회의할 때마다 의견이 갈렸지만, 이번에는 모두의 ㉢의견 대로 결정하기로 했다. 각자 ㉣할만큼 역할을 나누려 했는데 끝까지 남은 사람은 ㉤셋 뿐이었다. 결국 남은 일은 다음 주에 ㉥끝낼 수밖에 없었다.
+  - '선생님: 기록에서 띄어쓰기를 고쳐야 할 곳은 [A]야.'
+  options:
+  - ㉠, ㉢, ㉣
+  - ㉡, ㉣, ㉥
+  - ㉢, ㉤, ㉥
+  - ㉢, ㉣, ㉤
+  - ㉠, ㉡, ㉤
+  answer: 4
+  second_best: 1
+  difficulty: D3
+  family: ERROR_CORRECTION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: A
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: a8_acd
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉠ '회의를 한 지'는 바르게 띄어 썼다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: a8_bdf
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉡ '회의할 때마다', ㉥ '끝낼 수밖에'는 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: MEDIUM
+    claim: a8_cef
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉥은 바르다. '수'는 의존 명사, '밖에'는 조사이다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: a8_key
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: ㉢ '의견대로', ㉣ '할 만큼', ㉤ '셋뿐이었다'로 고쳐야 한다.
+  - axis: orthography
+    c: WEAK
+    claim: a8_abe
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉠, ㉡은 바르다.
+    trap: T6_PARTIAL_SET
+  source_item_id: KOR-V6N1-008
+- item_id: KOR-V6N-009
+  archetype: A3_CONDITION_CLASSIFICATION
+  stem: <보기 1>의 기준에 따라 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> Ⓐ조사는 앞말에 붙여 쓴다. Ⓑ의존 명사는 앞말과 띄어 쓴다. Ⓒ어미이거나 어미의 일부이면 어간에 붙여 쓴다. 의존 명사 뒤에는 조사가 붙을 수 있지만, 어미 뒤에는 그 자리에 조사를 넣으면 문장이 어색해진다.
+  - <보기 2> ㉠내가 들은[바]와 다르다.  ㉡서류를 검토한[바] 문제가 없었다.  ㉢그를 만난[지] 일 년이 되었다.  ㉣그가 왜 화가 났는[지] 모르겠다.  ㉤학교에서[조차] 그 소식을 몰랐다.
+  options:
+  - Ⓐ ㉤   Ⓑ ㉠, ㉡, ㉢   Ⓒ ㉣
+  - Ⓐ ㉤   Ⓑ ㉠, ㉢   Ⓒ ㉡, ㉣
+  - Ⓐ ㉤   Ⓑ ㉢   Ⓒ ㉠, ㉡, ㉣
+  - Ⓐ ㉤   Ⓑ ㉠, ㉢, ㉣   Ⓒ ㉡
+  - Ⓐ ㉡, ㉤   Ⓑ ㉠, ㉢   Ⓒ ㉣
+  answer: 2
+  second_best: 1
+  difficulty: D4
+  family: COMPARISON_MATRIX
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: A
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: a9_b_as_noun
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉡ '검토한바'의 '-ㄴ바'는 뒤 절의 배경을 제시하는 어미이므로 Ⓒ이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: a9_key
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: ㉤ 조사 '조차' Ⓐ, ㉠ '바'·㉢ '지' 의존 명사 Ⓑ, ㉡ '-ㄴ바'·㉣ '-는지' 어미 Ⓒ.
+  - axis: orthography
+    c: MEDIUM
+    claim: a9_a_as_ending
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉠ '들은 바'의 '바'는 '일·방법'의 뜻을 지닌 의존 명사이므로 Ⓑ이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: a9_d_as_noun
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉣ '났는지'의 '-는지'는 막연한 의문을 나타내는 어미이므로 Ⓒ이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: WEAK
+    claim: a9_b_as_particle
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉡은 어간 뒤에 결합했으므로 조사가 아니다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  source_item_id: KOR-V6N1-009
+- item_id: KOR-V6N-010
+  archetype: A4_INQUIRY_DIALOGUE_CHECK
+  stem: <보기>의 ㉠~㉤ 중 잘못된 판단이 담긴 학생의 설명은?
+  view:
+  - '선생님: 형태가 같아도 조사인지 다른 품사인지 따져야 띄어쓰기를 정할 수 있어요.'
+  - '학생 1: ㉠''믿을 사람은 너밖에 없다''의 ''밖에''는 ''그것 말고는''의 뜻을 나타내는 조사라서 붙여 써요.'
+  - '학생 2: ㉡''울타리 밖에 강아지가 있다''의 ''밖''은 바깥을 뜻하는 명사이고 ''에''는 조사라서 ''울타리 밖에''로 띄어 써요.'
+  - '학생 3: ㉢''얼굴이 눈같이 희다''의 ''같이''는 체언 뒤에서 비교의 뜻을 나타내는 조사라서 붙여 써요.'
+  - '학생 4: ㉣''친구와 같이 도서관에 갔다''의 ''같이''는 ''함께''의 뜻을 지닌 부사라서 띄어 써요.'
+  - '학생 5: ㉤''나보다 크다''의 ''보다''가 조사이니까 ''보다 나은 삶을 꿈꾼다''의 ''보다''도 조사로 보아 ''보다나은''처럼 뒷말과 붙여 써요.'
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 5
+  second_best: 2
+  difficulty: D4
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: A
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: a10_bakke_particle
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: '''그것 말고는''의 뜻으로 부정어와 호응하는 ''밖에''는 조사이다.'
+    trap: T2_EXCEPTION_CONDITION
+  - axis: orthography
+    c: STRONG
+    claim: a10_bakk_noun
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: '''울타리 밖에''는 명사 ''밖''과 조사 ''에''이므로 띄어 쓴다는 설명은 옳다.'
+    trap: T2_EXCEPTION_CONDITION
+  - axis: orthography
+    c: MEDIUM
+    claim: a10_gachi_particle
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: '''눈같이''의 ''같이''는 체언 뒤 비교의 조사이다.'
+    trap: T2_EXCEPTION_CONDITION
+  - axis: orthography
+    c: STRONG
+    claim: a10_gachi_adverb
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: '''친구와 같이''의 ''같이''는 부사이므로 띄어 쓴다.'
+    trap: T2_EXCEPTION_CONDITION
+  - axis: orthography
+    c: CORRECT
+    claim: a10_boda
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''보다 나은 삶''의 ''보다''는 ''어떤 수준에 비하여 한층 더''의 뜻을 지닌 부사이므로 띄어 쓴다.'
+  source_item_id: KOR-V6N1-010
+- item_id: KOR-V6N-011
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  stem: <보기>의 ㄱ~ㅁ 중 띄어쓰기가 바른 문장만을 있는 대로 고른 것은?
+  view:
+  - ㄱ. 그가 집에 온 지 사흘 만에 다시 떠났다.
+  - ㄴ. 시험이 끝난 뒤 우리 끼리 조용히 모였다.
+  - ㄷ. 그 일을 해낼 사람은 너 밖에 없다.
+  - ㄹ. 아는 만큼 보이고 보이는 만큼 느낀다.
+  - ㅁ. 형편없는 결과에도 그는 웃을뿐이었다.
+  options:
+  - ㄱ, ㄴ
+  - ㄴ, ㄷ
+  - ㄱ, ㄹ
+  - ㄱ, ㄹ, ㅁ
+  - ㄷ, ㄹ
+  answer: 3
+  second_best: 4
+  difficulty: D2
+  family: MULTI_JUDGMENT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 2
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: A
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: a11_ab
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㄴ은 '우리끼리'로 붙여 써야 한다. '-끼리'는 접미사이다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: a11_bc
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㄴ, ㄷ 모두 틀렸다. ㄷ은 '너밖에'로 붙여 써야 한다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: a11_key
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: ㄱ('온 지', '사흘 만에'), ㄹ('아는 만큼', '보이는 만큼')만 바르다.
+  - axis: orthography
+    c: STRONG
+    claim: a11_ade
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㅁ은 '웃을 뿐이었다'로 띄어 써야 한다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: a11_cd
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㄷ은 틀렸다.
+    trap: T6_PARTIAL_SET
+  source_item_id: KOR-V6N1-011
+- item_id: KOR-V6N-012
+  archetype: A6_RULE_CASE_EXPLANATION
+  stem: <보기>를 바탕으로 ㉠~㉣을 탐구한 내용으로 적절하지 않은 것은?
+  view:
+  - '''데''가 ''곳, 일, 경우''의 뜻이면 의존 명사이므로 띄어 쓰고, 뒤 절에 대하여 관련된 상황을 미리 말할 때 쓰이면 어미 ''-ㄴ데/-는데''의 일부이므로 붙여 쓴다. 의존 명사 ''데'' 뒤에는 조사가 붙을 수 있다.'
+  - ㉠ 이 일을 끝내는 데 사흘이 걸렸다.   ㉡ 날이 추운데 외투를 입어라.
+  - ㉢ 그가 사는 데는 여기서 멀다.   ㉣ 열심히 했는데 결과가 아쉽다.
+  options:
+  - ㉠의 '데'는 '일'의 뜻을 나타내므로 의존 명사로 보아 띄어 썼다.
+  - ㉡의 '-ㄴ데'는 뒤 절에 대한 상황을 제시하므로 어미로 보아 붙여 썼다.
+  - ㉢은 '데' 뒤에 조사 '는'이 결합했으므로 '데'가 의존 명사임을 확인할 수 있다.
+  - ㉣의 '데'는 앞말 '했는'이 관형사형이므로 의존 명사로 보아 '했는 데'로 띄어 써야 한다.
+  - ㉠과 ㉣을 비교하면 '데' 뒤에 조사 '에'를 넣을 수 있는지가 판별의 단서가 된다.
+  answer: 4
+  second_best: 3
+  difficulty: D3
+  family: CASE_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: A
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: a12_a
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: a12_b
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: a12_c
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 옳은 설명이다. 조사가 붙을 수 있다는 것은 체언(의존 명사)이라는 단서이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: a12_d
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉣의 '-는데'는 대조·상황 제시의 연결 어미이다. '했는'은 독립된 관형사형이 아니므로 붙여 쓴다.
+  - axis: orthography
+    c: STRONG
+    claim: a12_e
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: '''끝내는 데에''는 자연스럽지만 ''했는데에''는 불가능하므로 옳은 설명이다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  source_item_id: KOR-V6N1-012
+- item_id: KOR-V6N-013
+  archetype: A1_GENERAL_RULE_MAPPING
+  stem: <보기>를 바탕으로 단위 명사의 띄어쓰기를 탐구한 내용으로 가장 적절한 것은?
+  view:
+  - 제43항 단위를 나타내는 명사는 ㉠띄어 쓴다. 다만, ㉡순서를 나타내는 경우나 숫자와 어울리어 쓰이는 경우에는 붙여 쓸 수 있다.
+  - '- 한글 맞춤법'
+  options:
+  - '''차 한 대''의 ''대''는 단위를 나타내는 명사이므로 ㉡에 따라 ''한대''로 붙여 쓸 수 있다.'
+  - '''제삼 장''을 ''제삼장''으로 붙여 쓸 수 있는 것은 순서를 나타내는 경우이므로 ㉡에 근거한다.'
+  - '''3미터''로 붙여 쓰는 것은 ''미터''가 단위를 나타내는 명사가 아니기 때문이다.'
+  - '''열 살''은 나이의 차례를 나타내므로 ㉡에 따라 ''열살''로 붙여 쓸 수 있다.'
+  - '''두 시 삼십 분''을 ''두시 삼십분''으로 붙여 쓰는 것은 ㉠에 따른 표기이다.'
+  answer: 2
+  second_best: 1
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: s2_1_handae
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: '''한''은 아라비아 숫자가 아닌 수 관형사이고 순서도 아니므로 ''한 대''로 띄어 써야 한다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: CORRECT
+    claim: s2_1_key
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: '''제-''는 접두사이고 ''장''은 순서를 나타내는 단위이므로 붙여 쓰는 것이 허용된다(제43항 다만).'
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_1_meter
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''미터''는 단위 명사이다. ''3미터''는 숫자와 어울려 붙여 쓰는 것이 허용된 경우이다.'
+    trap: T5_RULE_JURISDICTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_1_age
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''열 살''은 나이의 양을 나타낼 뿐 순서가 아니고 한글 수이므로 띄어 써야 한다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: WEAK
+    claim: s2_1_time
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: 붙여 쓰는 것은 ㉡(허용)에 따른 것이다. ㉠은 띄어 쓰는 원칙이다.
+    trap: T5_RULE_JURISDICTION
+  source_item_id: KOR-V6N2-001
+- item_id: KOR-V6N-014
+  archetype: A2_STUDENT_TEXT_ERRORS
+  stem: <보기>의 [A]에 들어갈 내용으로 알맞은 것은?
+  view:
+  - '학생: 체험 활동 안내문을 썼어요. 띄어쓰기를 확인해 주세요.'
+  - <학생이 쓴 안내문> 이번 체험 활동은 ㉠이틀간 진행됩니다. 인솔은 ㉡김 민준씨가 맡아 주시고, 신청자는 모두 ㉢십여 명입니다. 인솔자는 이 일을 맡은 지 ㉣3년 차인 분입니다. 이동은 ㉤버스 두대로 하며, 점심 도시락은 ㉥한 사람 씩 나누어 드립니다.
+  - '선생님: 고쳐야 할 곳은 [A]란다.'
+  options:
+  - ㉠, ㉣, ㉥
+  - ㉠, ㉡, ㉤
+  - ㉡, ㉢, ㉥
+  - ㉢, ㉣, ㉤
+  - ㉡, ㉤, ㉥
+  answer: 5
+  second_best: 2
+  difficulty: D3
+  family: ERROR_CORRECTION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: s2_2_adf
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉠, ㉣은 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s2_2_abe
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉠ '이틀간'의 '-간'은 '동안'의 뜻을 더하는 접미사이므로 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_2_bcf
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉢ '십여 명'의 '-여'는 접미사이므로 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s2_2_cde
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉣ '3년 차'의 '차'는 주기·경과의 해당 시기를 나타내는 의존 명사이므로 띄어 쓴 것이 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: s2_2_key
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: ㉡ '김민준 씨', ㉤ '버스 두 대', ㉥ '한 사람씩'으로 고쳐야 한다.
+  source_item_id: KOR-V6N2-002
+- item_id: KOR-V6N-015
+  archetype: A3_CONDITION_CLASSIFICATION
+  stem: <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> Ⓐ접미사는 앞말에 붙여 쓴다. Ⓑ의존 명사는 앞말과 띄어 쓴다. Ⓒ어미는 어간에 붙여 쓴다. '간(間)'은 '동안'의 뜻이면 접미사, '관계·사이'의 뜻이면 의존 명사이고, '차(次)'는 '목적'의 뜻이면 접미사, '어떤 일을 하던 기회나 순간'의 뜻이면 의존 명사이다.
+  - <보기 2> ㉠부모와 자식[간]에도 예의가 필요하다.  ㉡한 달[간] 해외에 머물렀다.  ㉢인사[차] 선생님 댁에 들렀다.  ㉣막 나가려던[차]에 전화가 왔다.  ㉤이럴 줄 알았으면 일찍 올[걸] 그랬다.
+  options:
+  - Ⓐ ㉡, ㉢   Ⓑ ㉠, ㉣   Ⓒ ㉤
+  - Ⓐ ㉢   Ⓑ ㉠, ㉡, ㉣   Ⓒ ㉤
+  - Ⓐ ㉡   Ⓑ ㉠, ㉢, ㉣   Ⓒ ㉤
+  - Ⓐ ㉠, ㉡, ㉢   Ⓑ ㉣   Ⓒ ㉤
+  - Ⓐ ㉡, ㉢   Ⓑ ㉠   Ⓒ ㉣, ㉤
+  answer: 1
+  second_best: 2
+  difficulty: D3
+  family: COMPARISON_MATRIX
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: CORRECT
+    claim: s2_3_key
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: ㉡ '-간'(동안)·㉢ '-차'(목적)는 접미사 Ⓐ, ㉠ '간'(관계)·㉣ '차'(순간)는 의존 명사 Ⓑ, ㉤ '-ㄹ걸'(후회)은 어미 Ⓒ.
+  - axis: orthography
+    c: STRONG
+    claim: s2_3_gan
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉡의 '간'은 '동안'의 뜻이므로 접미사이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: s2_3_cha
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉢의 '차'는 '목적'의 뜻이므로 접미사이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_3_gan_rel
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉠의 '간'은 '관계'의 뜻이므로 의존 명사이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: WEAK
+    claim: s2_3_cha_end
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉣ '나가려던 차에'의 '차'는 관형사형 뒤 의존 명사이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  source_item_id: KOR-V6N2-003
+- item_id: KOR-V6N-016
+  archetype: A4_INQUIRY_DIALOGUE_CHECK
+  stem: <보기>의 ㉠~㉤ 중 학생의 설명이 옳지 않은 것은?
+  view:
+  - '선생님: 수를 적는 법과 두 말을 이어 주거나 열거하는 말의 띄어쓰기를 정리해 볼까요?'
+  - '학생 1: ㉠''12억 3456만 7898''처럼 수는 ''만'' 단위로 띄어 써요.'
+  - '학생 2: ㉡''국장 겸 과장''의 ''겸''은 두 말을 이어 주는 말이므로 앞뒤를 띄어 써요.'
+  - '학생 3: ㉢''청군 대 백군''의 ''대''는 앞말에 붙는 접미사이므로 ''청군대 백군''으로 써야 해요.'
+  - '학생 4: ㉣''사과, 배, 귤 등이 있다''의 ''등''은 열거하는 말이므로 앞말과 띄어 써요.'
+  - '학생 5: ㉤''부산, 광주 등지''의 ''등지''도 열거할 때 쓰이는 말이므로 띄어 써요.'
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 3
+  second_best: 4
+  difficulty: D3
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: s2_4_man
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 제44항에 맞는 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_4_gyeom
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 제45항에 맞는 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: CORRECT
+    claim: s2_4_dae
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''대''는 두 말을 이어 주는 말이므로 제45항에 따라 ''청군 대 백군''으로 띄어 쓴다.'
+  - axis: orthography
+    c: STRONG
+    claim: s2_4_deung
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 제45항에 맞는 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_4_deungji
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: 제45항 용례 '부산, 광주 등지'에 맞는 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  source_item_id: KOR-V6N2-004
+- item_id: KOR-V6N-017
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  stem: 제48항을 바탕으로 한 <보기>의 판단 중 옳은 것만을 있는 대로 고른 것은?
+  view:
+  - 제48항 성과 이름, 성과 호 등은 붙여 쓰고, 이에 덧붙는 호칭어, 관직명 등은 띄어 쓴다. 다만, 성과 이름, 성과 호를 분명히 구분할 필요가 있을 경우에는 띄어 쓸 수 있다.
+  - ㄱ. '채영신 씨'의 '씨'는 이름 뒤에 덧붙는 호칭어이므로 띄어 쓴다.
+  - ㄴ. '그는 김씨 가문 출신이다'의 '-씨'는 '그 성씨의 가문'이라는 뜻을 더하는 접미사이므로 붙여 쓴다.
+  - ㄷ. '남궁억'은 성과 이름을 분명히 구분할 필요가 있을 때 '남궁 억'으로 띄어 쓸 수 있다.
+  - ㄹ. '충무공 이순신 장군'의 '충무공'은 호에 해당하므로 '충무공이순신'처럼 이름에 붙여 써야 한다.
+  - ㅁ. '최치원 선생'의 '선생'은 관직명이 아니므로 '최치원선생'으로 붙여 쓴다.
+  options:
+  - ㄱ, ㄷ, ㅁ
+  - ㄱ, ㄴ
+  - ㄴ, ㄹ
+  - ㄱ, ㄴ, ㄷ
+  - ㄱ, ㄷ, ㄹ
+  answer: 4
+  second_best: 2
+  difficulty: D4
+  family: MULTI_JUDGMENT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_5_ace
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㅁ은 틀렸다. 호칭어 '선생'은 띄어 쓴다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s2_5_ab
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㄷ도 옳으므로 옳은 것 하나를 뺀 조합이다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: s2_5_bd
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㄹ은 틀렸다. 제48항 용례대로 '충무공 이순신 장군'으로 띄어 쓴다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: s2_5_key
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: ㄱ(호칭어 띄움), ㄴ(성씨·가문의 뜻을 더하는 접미사 '-씨'), ㄷ(제48항 다만)이 옳다.
+  - axis: orthography
+    c: STRONG
+    claim: s2_5_acd
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㄹ은 틀렸다. 성과 호를 붙여 쓰는 것은 '서화담'처럼 성 뒤에 호가 올 때이다.
+    trap: T6_PARTIAL_SET
+  source_item_id: KOR-V6N2-005
+- item_id: KOR-V6N-018
+  archetype: A6_RULE_CASE_EXPLANATION
+  stem: <보기>를 바탕으로 ㉠~㉣을 탐구한 내용으로 적절하지 않은 것은?
+  view:
+  - '''들''이 셀 수 있는 명사 뒤에서 복수의 뜻을 더하면 접미사이므로 붙여 쓰고, 두 개 이상의 사물을 열거한 뒤 ''그런 따위''의 뜻을 나타내면 의존 명사이므로 띄어 쓴다.'
+  - ㉠ 학생들이 운동장에 모였다.   ㉡ 시장에서 사과, 배, 감 들을 샀다.
+  - ㉢ 아이들이 마당에서 논다.   ㉣ 책상, 걸상 들이 교실에 놓여 있다.
+  options:
+  - ㉠의 '-들'은 셀 수 있는 명사 '학생' 뒤에서 복수의 뜻을 더하므로 붙여 썼다.
+  - ㉡의 '들'은 바로 앞의 '감'에만 복수의 뜻을 더하므로 '감들'로 붙여 써야 한다.
+  - ㉢의 '-들'은 ㉠과 같은 기능을 하므로 앞말에 붙여 썼다.
+  - ㉣의 '들'은 '책상, 걸상'을 열거한 뒤 그런 따위의 뜻을 나타내므로 띄어 썼다.
+  - ㉡과 ㉣은 앞에 열거 구조가 있다는 점이 '들'의 기능을 판단하는 공통 단서가 된다.
+  answer: 2
+  second_best: 5
+  difficulty: D3
+  family: CASE_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: s2_6_a
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: s2_6_key
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉡의 '들'은 '사과, 배, 감'을 열거한 뒤 그런 따위를 뜻하는 의존 명사이므로 띄어 쓴다.
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_6_c
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_6_d
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: s2_6_e
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: 옳은 설명이다. 열거 구조가 의존 명사 '들'을 가려내는 단서이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  source_item_id: KOR-V6N2-006
+- item_id: KOR-V6N-019
+  archetype: A1_GENERAL_RULE_MAPPING
+  stem: <보기>의 ㉠, ㉡에 대한 탐구 내용으로 가장 적절한 것은?
+  view:
+  - 제45항 두 말을 이어 주거나 열거할 적에 쓰이는 말들은 ㉠띄어 쓴다.
+  - 제46항 단음절로 된 단어가 연이어 나타날 적에는 ㉡붙여 쓸 수 있다.
+  - '- 한글 맞춤법'
+  options:
+  - '''한 잎 두 잎''을 ''한잎 두잎''으로 붙여 쓰는 것은 ㉠의 적용을 받은 것이다.'
+  - '''이사장 및 이사들''의 ''및''은 단음절이므로 ㉡에 따라 반드시 ''이사장및''으로 붙여 쓴다.'
+  - '''좀 더 큰 것''은 ㉡에 따라 ''좀더 큰것''으로 쓸 수 있으므로, 띄어 쓴 원래 표기는 틀린 것이다.'
+  - '''사과, 배 등속''의 ''등속''은 열거하는 말이 아니므로 앞말에 붙여 쓴다.'
+  - '''열 내지 스물''에서 ''내지''를 앞뒤 말과 띄어 쓰는 것은 ㉠에 따른 것이다.'
+  answer: 5
+  second_best: 3
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: s2_7_hanip
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: '''한잎 두잎''은 ㉡(제46항)에 따른 허용 표기이다.'
+    trap: T5_RULE_JURISDICTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_7_mit
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''및''은 제45항의 적용을 받는 말로 띄어 쓴다. 제46항은 단음절 ''단어''가 연이을 때의 허용 규정이다.'
+    trap: T5_RULE_JURISDICTION
+  - axis: orthography
+    c: STRONG
+    claim: s2_7_jomdeo
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: 제46항은 허용 규정이므로 원칙대로 띄어 쓴 '좀 더 큰 것'도 바른 표기이다.
+    trap: T2_EXCEPTION_CONDITION
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_7_deungsok
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''등속''은 제45항 용례에 있는 열거의 말이므로 띄어 쓴다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: CORRECT
+    claim: s2_7_key
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: '''내지''는 두 말을 이어 주는 말이므로 제45항에 따라 띄어 쓴다.'
+  source_item_id: KOR-V6N2-007
+- item_id: KOR-V6N-020
+  archetype: A2_STUDENT_TEXT_ERRORS
+  stem: <보기>의 [A]에 들어갈 말로 알맞은 것은?
+  view:
+  - '학생: 친구에게 보낸 문자인데, 어미와 의존 명사를 구별해서 썼는지 봐 주세요.'
+  - <학생이 보낸 문자> 어제 약속을 잊어서 미안해. 미리 ㉠연락할걸 그랬어. 대신 네가 ㉡좋아할 걸 사 왔어. 하늘을 보니 비가 ㉢올듯 말듯 하네. 새로 생긴 카페는 음료가 ㉣맛있을 뿐더러 조용하대. 숙제를 다 ㉤했는지 다시 확인해 줘. 나는 집에 ㉥도착한지 얼마 안 됐어.
+  - '선생님: 고쳐야 할 곳은 [A]야.'
+  options:
+  - ㉡, ㉣, ㉥
+  - ㉠, ㉢, ㉣
+  - ㉢, ㉣, ㉥
+  - ㉡, ㉢, ㉥
+  - ㉠, ㉡, ㉣
+  answer: 3
+  second_best: 2
+  difficulty: D4
+  family: ERROR_CORRECTION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_8_bdf
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉡ '좋아할 걸'은 '좋아할 것을'이 줄어든 말이므로 띄어 쓴 것이 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s2_8_acd
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉠ '연락할걸'은 후회를 나타내는 종결 어미 '-ㄹ걸'이므로 붙여 쓴 것이 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: s2_8_key
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: ㉢ '올 듯 말 듯'(의존 명사), ㉣ '맛있을뿐더러'(어미 '-ㄹ뿐더러'), ㉥ '도착한 지'(의존 명사)로 고쳐야 한다.
+  - axis: orthography
+    c: STRONG
+    claim: s2_8_bcf
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉡은 의존 명사 '것'에 조사 '을'이 결합해 줄어든 '걸'이므로 띄어 쓴다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: s2_8_abd
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉠, ㉡은 모두 바르다.
+    trap: T6_PARTIAL_SET
+  source_item_id: KOR-V6N2-008
+- item_id: KOR-V6N-021
+  archetype: A3_CONDITION_CLASSIFICATION
+  stem: <보기 1>의 기준에 따라 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> Ⓐ띄어 써야만 하는 것  Ⓑ띄어 쓰는 것이 원칙이지만 붙여 쓰는 것도 허용되는 것  Ⓒ붙여 써야만 하는 것 (단위 명사는 순서를 나타내거나 아라비아 숫자와 어울릴 때 붙여 쓸 수 있고, 접미사는 앞말에 붙여 쓴다.)
+  - <보기 2> 띄어쓰기를 따질 자리를 '+'로 표시함.  ㉠사과 한+개  ㉡제일+과  ㉢10+개  ㉣그릇+째  ㉤학생+들
+  options:
+  - Ⓐ ㉠, ㉣   Ⓑ ㉡, ㉢   Ⓒ ㉤
+  - Ⓐ ㉠, ㉡   Ⓑ ㉢   Ⓒ ㉣, ㉤
+  - Ⓐ ㉠   Ⓑ ㉢   Ⓒ ㉡, ㉣, ㉤
+  - Ⓐ ㉠   Ⓑ ㉡, ㉢   Ⓒ ㉣, ㉤
+  - Ⓐ ㉠, ㉢   Ⓑ ㉡   Ⓒ ㉣, ㉤
+  answer: 4
+  second_best: 2
+  difficulty: D3
+  family: COMPARISON_MATRIX
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_9_jjae
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉣ '그릇째'의 '-째'는 '그대로, 전부'의 뜻을 더하는 접미사이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: s2_9_ilgwa
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉡ '제일 과'는 순서를 나타내므로 붙여 쓸 수 있다(Ⓑ).
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_9_ilgwa_c
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉡은 붙여 쓰는 것이 허용일 뿐 의무가 아니다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: s2_9_key
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: ㉠ 한글 수+단위(순서 아님) Ⓐ, ㉡ 순서·㉢ 숫자와 어울림 Ⓑ, ㉣ '-째'·㉤ '-들' 접미사 Ⓒ.
+  - axis: orthography
+    c: WEAK
+    claim: s2_9_10gae
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉢은 아라비아 숫자와 어울려 붙여 쓸 수 있다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  source_item_id: KOR-V6N2-009
+- item_id: KOR-V6N-022
+  archetype: A4_INQUIRY_DIALOGUE_CHECK
+  stem: <보기>의 ㉠~㉤ 중 잘못된 판단이 담긴 학생의 설명은?
+  view:
+  - '선생님: 한 문장 안에서 두 가지를 비교해 설명해 보세요.'
+  - '학생 1: ㉠''잠이 든 듯 조용하다''의 ''듯''은 관형사형 뒤의 의존 명사이고, ''물 쓰듯 돈을 쓴다''의 ''-듯''은 어간 뒤의 어미라서 붙여 써요.'
+  - '학생 2: ㉡''입사 3년 차''의 ''차''는 의존 명사라서 띄어 쓰고, ''연구차 출장을 갔다''의 ''-차''는 목적의 뜻을 더하는 접미사라서 붙여 써요.'
+  - '학생 3: ㉢''십여 명''의 ''-여''는 그 수를 넘음을 뜻하는 접미사라서 붙여 쓰고, ''한 시간여''의 ''-여''도 같은 이유로 붙여 써요.'
+  - '학생 4: ㉣''사흘째''의 ''-째''는 접미사라서 붙여 쓰고, ''두 번째''는 ''번''이 의존 명사라서 ''두''와 띄우되 ''-째''는 ''번''에 붙여 써요.'
+  - '학생 5: ㉤''그가 올 듯도 하다''는 ''듯'' 뒤에 조사 ''도''가 붙었으니 ''듯''이 어미임을 알 수 있고, 그래서 ''올듯도''로 붙여 써요.'
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 5
+  second_best: 1
+  difficulty: D4
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: s2_10_deut
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_10_cha
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: STRONG
+    claim: s2_10_yeo
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: STRONG
+    claim: s2_10_jjae
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: CORRECT
+    claim: s2_10_key
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: 조사가 붙을 수 있다는 것은 '듯'이 체언(의존 명사)이라는 단서이다. '올 듯도 하다'로 띄어 쓴다.
+  source_item_id: KOR-V6N2-010
+- item_id: KOR-V6N-023
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  stem: <보기>의 ㄱ~ㅁ 중 띄어쓰기가 바른 문장만을 있는 대로 고른 것은?
+  view:
+  - ㄱ. 공부를 시작한 지 두 시간쯤 지났다.
+  - ㄴ. 그는 일 년 간 외국에서 지냈다.
+  - ㄷ. 버스 정류장에서 오 분 가량 기다렸다.
+  - ㄹ. 우리 반 학생은 서른 명 남짓이다.
+  - ㅁ. 할머니 댁에서 과일을 상자 째 사 왔다.
+  options:
+  - ㄱ, ㄹ
+  - ㄱ, ㄴ, ㄹ
+  - ㄴ, ㄷ
+  - ㄷ, ㄹ, ㅁ
+  - ㄱ, ㄷ, ㅁ
+  answer: 1
+  second_best: 2
+  difficulty: D3
+  family: MULTI_JUDGMENT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: CORRECT
+    claim: s2_11_key
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: ㄱ('-쯤' 접미사, '시작한 지' 의존 명사)과 ㄹ('남짓'은 명사로 띄어 씀)만 바르다.
+  - axis: orthography
+    c: STRONG
+    claim: s2_11_abd
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㄴ은 '일 년간'으로 써야 한다. '동안'의 뜻인 '-간'은 접미사이다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: s2_11_bc
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㄴ, ㄷ은 모두 틀렸다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_11_cde
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㄷ은 '오 분가량'('-가량' 접미사), ㅁ은 '상자째'('-째' 접미사)로 써야 한다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: s2_11_ace
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㄷ, ㅁ은 틀렸다.
+    trap: T6_PARTIAL_SET
+  source_item_id: KOR-V6N2-011
+- item_id: KOR-V6N-024
+  archetype: A6_RULE_CASE_EXPLANATION
+  stem: <보기>를 바탕으로 ㉠~㉣과 관련하여 탐구한 내용으로 적절하지 않은 것은?
+  view:
+  - 제43항 단위를 나타내는 명사는 띄어 쓴다. 다만, 순서를 나타내는 경우나 숫자와 어울리어 쓰이는 경우에는 붙여 쓸 수 있다.
+  - 제44항 수를 적을 적에는 '만(萬)' 단위로 띄어 쓴다.
+  - ㉠ 성금 삼천오백만 원이 모였다.   ㉡ 1446년 10월 9일에 훈민정음이 반포되었다.
+  - ㉢ 올해 예산은 이십칠억 사천만 원이다.   ㉣ 우리는 2026 년 봄에 입학했다.
+  options:
+  - ㉠은 '만' 단위로 적은 수 뒤에 단위 명사 '원'을 띄어 썼으므로 원칙에 맞는다.
+  - ㉡은 아라비아 숫자와 어울려 쓰인 단위 명사를 붙여 쓴 것으로 허용된 표기이다.
+  - ㉢을 '이십칠억사천만 원'으로 쓰면 제44항에 어긋난다.
+  - ㉣은 숫자와 어울린 단위 명사를 붙여 쓰지 않았으므로 '2026년'으로 고쳐야만 한다.
+  - '''12억 3456만''처럼 아라비아 숫자로 수를 적을 때에도 ''만'' 단위로 띄어 쓴다.'
+  answer: 4
+  second_best: 2
+  difficulty: D5
+  family: CASE_APPLICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 4
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: B
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_12_a
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: s2_12_b
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 옳은 설명이다. 원칙은 띄어 쓰는 것이고 붙여 쓰는 것이 허용된다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: s2_12_c
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 옳은 설명이다. '억'과 '만' 사이를 띄어야 한다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: s2_12_key
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: 제43항의 붙여 쓰기는 허용이므로 원칙대로 띄어 쓴 '2026 년'도 틀린 표기가 아니다.
+  - axis: orthography
+    c: MEDIUM
+    claim: s2_12_e
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: 제44항 용례 '12억 3456만 7898'에 맞는 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  source_item_id: KOR-V6N2-012
+- item_id: KOR-V6N-025
+  archetype: A1_GENERAL_RULE_MAPPING
+  stem: <보기>의 ㉠, ㉡을 바탕으로 탐구한 내용으로 가장 적절한 것은?
+  view:
+  - 제15항 [붙임 1] 두 개의 용언이 어울려 한 개의 용언이 될 적에, ㉠앞말의 본뜻이 유지되고 있는 것은 그 원형을 밝히어 적고, ㉡그 본뜻에서 멀어진 것은 밝히어 적지 아니한다.
+  - '- 한글 맞춤법'
+  options:
+  - '''사라지다''는 ''살다''의 본뜻이 유지되므로 ㉠에 따라 원형을 밝혀 적었다.'
+  - '''늘어나다''는 ''늘다''의 본뜻이 유지되므로 ㉡에 따라 소리대로 적었다.'
+  - '''흩어지다''는 ''흩다''의 뜻이 살아 있으므로 ㉠에 따라 ''흩-''의 형태를 밝혀 적었다.'
+  - '''쓰러지다''는 ''쓸다''의 본뜻이 유지되므로 ''쓸어지다''로 적어야 한다.'
+  - '''드러나다''는 ㉡에 따라 적은 것이므로 ''들어나다''와 함께 둘 다 바른 표기이다.'
+  answer: 3
+  second_best: 2
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_1_sara
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: '''사라지다''는 ''살다''의 본뜻에서 멀어져 ㉡에 따라 소리대로 적은 것이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: STRONG
+    claim: s3_1_neureo
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''늘어나다''는 ㉠에 따라 원형을 밝혀 적은 것이다.'
+    trap: T5_RULE_JURISDICTION
+  - axis: orthography
+    c: CORRECT
+    claim: s3_1_key
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: '''흩어지다''는 ''흩다''의 뜻이 유지되므로 원형을 밝혀 적는다(제15항 붙임 1 용례).'
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_1_sseureo
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''쓰러지다''는 본뜻에서 멀어진 말이므로 소리대로 적는다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: WEAK
+    claim: s3_1_deureo
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''들다''의 본뜻에서 멀어졌으므로 ''드러나다''만 바른 표기이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  source_item_id: KOR-V6N3-001
+- item_id: KOR-V6N-026
+  archetype: A2_STUDENT_TEXT_ERRORS
+  stem: <보기>의 [A]에 들어갈 내용으로 알맞은 것은?
+  view:
+  - '학생: 아침 풍경을 쓴 글인데 사이시옷을 바르게 썼는지 궁금해요.'
+  - <학생이 쓴 글> ㉠나뭇잎 사이로 ㉡햇님이 얼굴을 내밀었다. ㉢등굣길에 친구와 지난 시험 문제의 ㉣갯수를 세어 보다가, 어제 동아리 ㉤뒷풀이에서 있었던 일을 이야기했다. 오후에는 ㉥장맛비가 쏟아졌다.
+  - '선생님: 사이시옷을 잘못 쓴 곳은 [A]란다.'
+  options:
+  - ㉡, ㉣, ㉤
+  - ㉠, ㉡, ㉣
+  - ㉡, ㉢, ㉥
+  - ㉢, ㉣, ㉤
+  - ㉠, ㉤, ㉥
+  answer: 1
+  second_best: 3
+  difficulty: D3
+  family: ERROR_CORRECTION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: CORRECT
+    claim: s3_2_key
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: ㉡ '해님'(접미사 '-님'이 붙은 파생어), ㉣ '개수'(한자어끼리), ㉤ '뒤풀이'(뒷말이 거센소리)로 고쳐야 한다.
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_2_abd
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉠ '나뭇잎'은 순우리말 합성어에서 'ㄴㄴ' 소리가 덧나므로 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s3_2_bcf
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉢ '등굣길'은 한자어 '등교'와 순우리말 '길'의 합성어로 된소리가 나므로 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s3_2_cde
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉢은 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: s3_2_aef
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉠, ㉥은 바르다.
+    trap: T6_PARTIAL_SET
+  source_item_id: KOR-V6N3-002
+- item_id: KOR-V6N-027
+  archetype: A3_CONDITION_CLASSIFICATION
+  stem: <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> 사이시옷이 들어갈 듯 보이지만 적지 않는 이유는 다음과 같다. Ⓐ합성어가 아니다. Ⓑ한자어로만 이루어진 말이다. Ⓒ뒷말의 첫소리가 이미 된소리나 거센소리이다.
+  - <보기 2> ㉠해님  ㉡초점(焦點)  ㉢위쪽  ㉣대가(代價)  ㉤뒤편
+  options:
+  - Ⓐ ㉤   Ⓑ ㉡, ㉣   Ⓒ ㉠, ㉢
+  - Ⓐ ㉠, ㉢   Ⓑ ㉡, ㉣   Ⓒ ㉤
+  - Ⓐ ㉠   Ⓑ ㉡   Ⓒ ㉢, ㉣, ㉤
+  - Ⓐ ㉠, ㉣   Ⓑ ㉡   Ⓒ ㉢, ㉤
+  - Ⓐ ㉠   Ⓑ ㉡, ㉣   Ⓒ ㉢, ㉤
+  answer: 5
+  second_best: 2
+  difficulty: D3
+  family: COMPARISON_MATRIX
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: s3_3_swap
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉠과 ㉤의 이유를 서로 바꾸었다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: s3_3_wijjok
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉢ '위쪽'은 합성어이며 뒷말 첫소리가 된소리여서 적지 않는다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_3_daega
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉣ '대가'는 [대까]로 소리 나도 한자어끼리이므로 Ⓑ이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_3_daega2
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉣은 합성어 여부가 아니라 한자어로만 이루어졌다는 점이 이유이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: s3_3_key
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: ㉠ 파생어 Ⓐ, ㉡·㉣ 한자어끼리 Ⓑ, ㉢ '쪽'(된소리)·㉤ '편'(거센소리) Ⓒ.
+  source_item_id: KOR-V6N3-003
+- item_id: KOR-V6N-028
+  archetype: A4_INQUIRY_DIALOGUE_CHECK
+  stem: <보기>의 ㉠~㉤ 중 학생의 설명이 옳지 않은 것은?
+  view:
+  - '선생님: 말이 줄어들 때의 표기를 설명해 볼까요?'
+  - '학생 1: ㉠''되어''가 줄면 ''돼''가 되므로 ''그러면 안 돼.''처럼 적어요.'
+  - '학생 2: ㉡''되고''는 ''되어''로 바꿀 수 없으니 ''돼고''로 적지 않아요.'
+  - '학생 3: ㉢''뵈어요''가 줄면 ''봬요''가 되므로 ''내일 봬요.''로 적어요.'
+  - '학생 4: ㉣''만만하지 않다''는 ''-지 않-''이 ''-잖-''으로 줄어 ''만만잖다''로 적어요.'
+  - '학생 5: ㉤''그렇지 않은''은 ''-지 않-''이 줄어 ''그렇잖은''으로 적어요.'
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 4
+  second_best: 3
+  difficulty: D3
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: s3_4_dwae
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_4_doego
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: STRONG
+    claim: s3_4_bwae
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 옳은 설명이다(제35항 붙임 2).
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: CORRECT
+    claim: s3_4_key
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''-하지'' 뒤에 ''않-''이 어울리면 ''-찮-''이 되므로 ''만만찮다''로 적는다(제39항).'
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_4_geureot
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: 옳은 설명이다(제39항 용례 '그렇잖은').
+    trap: T3_ONE_OF_TWO_WRONG
+  source_item_id: KOR-V6N3-004
+- item_id: KOR-V6N-029
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  stem: <보기>의 탐구 내용 중 옳은 것만을 있는 대로 고른 것은?
+  view:
+  - 어간의 끝음절 '하'의 'ㅏ'가 줄고 'ㅎ'이 다음 음절의 첫소리와 어울려 거센소리로 될 적에는 거센소리로 적는다. 다만, '하' 앞의 받침 소리가 [ㄱ, ㄷ, ㅂ]이면 '하'가 아주 줄어든 대로 적는다.
+  - ㄱ. '간편하게'는 '간편케'로 줄여 적을 수 있다.
+  - ㄴ. '생각하건대'는 '하'가 아주 줄어 '생각건대'로 적는다.
+  - ㄷ. '넉넉하지'는 'ㅎ'이 남아 '넉넉치'로 적는다.
+  - ㄹ. '흔하다'는 '흔타'로 줄여 적을 수 있다.
+  - ㅁ. '깨끗하지 않다'는 '깨끗치 않다'로 줄여 적는다.
+  options:
+  - ㄱ, ㄹ
+  - ㄱ, ㄴ, ㄹ
+  - ㄱ, ㄷ, ㄹ
+  - ㄴ, ㄷ, ㅁ
+  - ㄴ, ㄹ, ㅁ
+  answer: 2
+  second_best: 1
+  difficulty: D4
+  family: MULTI_JUDGMENT
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: s3_5_ad
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㄴ도 옳으므로 옳은 것 하나를 뺀 조합이다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: s3_5_key
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: ㄱ·ㄹ은 'ㅎ'이 남아 거센소리가 되고, ㄴ은 받침 [ㄱ] 뒤에서 '하'가 아주 준다.
+  - axis: orthography
+    c: STRONG
+    claim: s3_5_acd
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㄷ은 받침 [ㄱ] 뒤이므로 '넉넉지'로 적어야 한다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: s3_5_bce
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㄷ, ㅁ은 틀렸다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_5_bde
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㅁ은 받침 [ㄷ](깨끗) 뒤이므로 '깨끗지 않다'로 적어야 한다.
+    trap: T6_PARTIAL_SET
+  source_item_id: KOR-V6N3-005
+- item_id: KOR-V6N-030
+  archetype: A6_RULE_CASE_EXPLANATION
+  stem: <보기>를 바탕으로 ㉠~㉣을 탐구한 내용으로 적절하지 않은 것은?
+  view:
+  - '''-든지''는 물건이나 일의 내용을 가리지 않는 뜻을, ''-던지''는 지난 일을 나타내는 뜻을 지닌다. ''(으)로서''는 지위·신분·자격을, ''(으)로써''는 재료·수단·도구를 나타낸다.'
+  - ㉠ 사과든지 배든지 마음대로 먹어라.   ㉡ 얼마나 울었던지 눈이 부었다.
+  - ㉢ 그는 교사로서 책임을 다했다.   ㉣ 우리는 대화로써 갈등을 풀었다.
+  options:
+  - ㉡은 과거에 운 일을 회상하며 그 결과를 말하므로 '-던지'가 쓰였다.
+  - ㉠의 '-든지'는 어느 것을 골라도 상관없다는 뜻이므로 바르게 적었다.
+  - ㉢의 '로서'는 '교사'라는 자격을 나타내므로 바르게 적었다.
+  - ㉣의 '로써'는 갈등을 푼 수단을 나타내므로 바르게 적었다.
+  - ㉡의 '-던지'는 선택의 뜻이므로 '-든지'로 고쳐야 한다.
+  answer: 5
+  second_best: 4
+  difficulty: D3
+  family: CASE_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: s3_6_e
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_6_a
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_6_c
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: s3_6_d
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: s3_6_key
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉡은 지난 일을 나타내므로 '-던지'가 바르다. 선택의 뜻이 아니다.
+  source_item_id: KOR-V6N3-006
+- item_id: KOR-V6N-031
+  archetype: A1_GENERAL_RULE_MAPPING
+  stem: <보기>를 바탕으로 된소리 표기를 탐구한 내용으로 가장 적절한 것은?
+  view:
+  - 제5항 한 단어 안에서 뚜렷한 까닭 없이 나는 된소리는 다음 음절의 첫소리를 된소리로 적는다.
+  - ㉠두 모음 사이에서 나는 된소리, 'ㄴ, ㄹ, ㅁ, ㅇ' 받침 뒤에서 나는 된소리
+  - 다만, ㉡'ㄱ, ㅂ' 받침 뒤에서 나는 된소리는, 같은 음절이나 비슷한 음절이 겹쳐 나는 경우가 아니면 된소리로 적지 아니한다.
+  options:
+  - '''잔뜩''은 ''ㄴ'' 받침 뒤에서 뚜렷한 까닭 없이 된소리가 나므로 ㉠에 따라 ''뜩''으로 적었다.'
+  - '''깍두기''는 ''ㄱ'' 받침 뒤에서 된소리가 나므로 ㉠에 따라 ''깍뚜기''로 적어야 한다.'
+  - '''몹시''는 ''ㅂ'' 받침 뒤이지만 된소리가 뚜렷하게 나므로 ''몹씨''로 적어야 한다.'
+  - '''똑딱''은 ''ㄱ'' 받침 뒤에서 된소리가 나므로 ㉡에 따라 ''똑닥''으로 적어야 한다.'
+  - '''어깨''는 ''ㄱ, ㅂ'' 받침 뒤가 아니므로 ㉡에 따라 된소리로 적었다.'
+  answer: 1
+  second_best: 4
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: CORRECT
+    claim: s3_7_key
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: '''잔뜩''은 ''ㄴ'' 받침 뒤 된소리이므로 ㉠에 따라 된소리로 적는다.'
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_7_kkak
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''ㄱ'' 받침 뒤의 된소리는 ㉡에 따라 된소리로 적지 않으므로 ''깍두기''가 바르다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_7_mop
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''ㅂ'' 받침 뒤이므로 ㉡에 따라 ''몹시''로 적는다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: STRONG
+    claim: s3_7_ttok
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''똑딱''은 비슷한 음절이 겹쳐 나는 경우이므로 ㉡의 예외로 된소리로 적는다.'
+    trap: T2_EXCEPTION_CONDITION
+  - axis: orthography
+    c: WEAK
+    claim: s3_7_eokkae
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''어깨''는 두 모음 사이의 된소리로 ㉠에 따른 것이다.'
+    trap: T5_RULE_JURISDICTION
+  source_item_id: KOR-V6N3-007
+- item_id: KOR-V6N-032
+  archetype: A2_STUDENT_TEXT_ERRORS
+  stem: <보기>의 [A]에 들어갈 말로 알맞은 것은?
+  view:
+  - '학생: 소리가 비슷한 말을 구별해서 썼는지 확인해 주세요.'
+  - <학생이 쓴 글> 산 ㉠너머 마을까지 걸어갔다. 가는 길에 우체국에서 할머니께 편지를 ㉡붙였다. 친구가 ㉢이따가 다시 만나자고 했다. 나는 ㉣학생으로써 할 일을 다하겠다고 다짐했다. 그날은 얼마나 ㉤춥든지 손이 꽁꽁 얼었다. 저녁에는 동생이 낸 퀴즈의 정답을 ㉥맞혔다.
+  - '선생님: 고쳐야 할 곳은 [A]야.'
+  options:
+  - ㉡, ㉣, ㉥
+  - ㉠, ㉡, ㉣
+  - ㉡, ㉣, ㉤
+  - ㉢, ㉤, ㉥
+  - ㉠, ㉢, ㉤
+  answer: 3
+  second_best: 1
+  difficulty: D4
+  family: ERROR_CORRECTION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: s3_8_bdf
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉥ '맞혔다'는 정답을 골라낸다는 뜻이므로 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s3_8_abd
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉠ '너머'는 가로막은 공간의 저쪽을 뜻하는 명사로 바르게 쓰였다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: s3_8_key
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: ㉡ '부쳤다'(편지를 보냄), ㉣ '학생으로서'(자격), ㉤ '춥던지'(지난 일)로 고쳐야 한다.
+  - axis: orthography
+    c: WEAK
+    claim: s3_8_cef
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉢ '이따가'(조금 지난 뒤에)와 ㉥은 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_8_ace
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉠, ㉢은 바르다.
+    trap: T6_PARTIAL_SET
+  source_item_id: KOR-V6N3-008
+- item_id: KOR-V6N-033
+  archetype: A3_CONDITION_CLASSIFICATION
+  stem: <보기 1>의 기준에 따라 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> 사이시옷을 적는 합성어를 구성 요소에 따라 나누면 Ⓐ순우리말+순우리말, Ⓑ순우리말+한자어, Ⓒ한자어+순우리말로 나눌 수 있다.
+  - <보기 2> ㉠바닷가  ㉡귓병(-病)  ㉢전셋집(傳貰-)  ㉣나뭇가지  ㉤횟가루(灰-)
+  options:
+  - Ⓐ ㉠, ㉣   Ⓑ ㉡, ㉢   Ⓒ ㉤
+  - Ⓐ ㉠, ㉣   Ⓑ ㉡   Ⓒ ㉢, ㉤
+  - Ⓐ ㉠   Ⓑ ㉡, ㉣   Ⓒ ㉢, ㉤
+  - Ⓐ ㉠, ㉡, ㉣   Ⓑ ㉤   Ⓒ ㉢
+  - Ⓐ ㉣   Ⓑ ㉡, ㉤   Ⓒ ㉠, ㉢
+  answer: 2
+  second_best: 1
+  difficulty: D3
+  family: COMPARISON_MATRIX
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: s3_9_jeonse
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉢은 한자어 '전세'가 앞에 오므로 Ⓒ이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: s3_9_key
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: ㉠·㉣ 순우리말끼리 Ⓐ, ㉡ '귀+病' Ⓑ, ㉢ '傳貰+집'·㉤ '灰+가루' Ⓒ.
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_9_namu
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉣ '나무'와 '가지'는 모두 순우리말이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_9_gwi
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉡의 '병'은 한자어이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: WEAK
+    claim: s3_9_bada
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉠ '바다+가'는 순우리말끼리의 합성어이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  source_item_id: KOR-V6N3-009
+- item_id: KOR-V6N-034
+  archetype: A4_INQUIRY_DIALOGUE_CHECK
+  stem: <보기>의 ㉠~㉤ 중 잘못된 판단이 담긴 학생의 설명은?
+  view:
+  - '선생님: 어간에 ''-이''나 ''-음''이 붙어 명사가 된 말은 원형을 밝혀 적되, 어간의 뜻과 멀어진 것은 밝혀 적지 않아요. 예문으로 설명해 보세요.'
+  - '학생 1: ㉠''믿음''은 ''믿-''에 ''-음''이 붙은 명사이고 뜻도 유지되므로 원형을 밝혀 적어요.'
+  - '학생 2: ㉡비료를 뜻하는 ''거름''은 ''걸다''의 뜻과 멀어졌으므로 원형을 밝히지 않고 적어요.'
+  - '학생 3: ㉢도박을 뜻하는 ''노름''은 ''놀다''에서 왔지만 뜻이 멀어져 ''놀음''으로 적지 않아요.'
+  - '학생 4: ㉣목에 거는 장신구 ''목걸이''와 목병을 뜻하는 ''목거리''는 뜻이 같으므로 어느 쪽으로 적어도 돼요.'
+  - '학생 5: ㉤부사 ''굳이''는 ''굳-''에 ''-이''가 붙은 말이므로 원형을 밝혀 적어요.'
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 4
+  second_best: 2
+  difficulty: D4
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: s3_10_mideum
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: STRONG
+    claim: s3_10_georeum
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 옳은 설명이다(제19항 다만).
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: STRONG
+    claim: s3_10_noreum
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: CORRECT
+    claim: s3_10_key
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''목걸이''는 원형을 밝힌 장신구, ''목거리''는 뜻이 멀어진 ''목병''으로 서로 다른 말이다.'
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_10_guji
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  source_item_id: KOR-V6N3-010
+- item_id: KOR-V6N-035
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  stem: <보기>의 ㄱ~ㅁ 중 표기가 바른 문장만을 있는 대로 고른 것은?
+  view:
+  - ㄱ. 오랫만에 친구를 만났다.
+  - ㄴ. 우리는 저녁을 먹고 문을 잠궜다.
+  - ㄷ. 며칠 동안 비가 계속 내렸다.
+  - ㄹ. 그 일은 생각보다 금새 끝났다.
+  - ㅁ. 할머니께 택배로 김치를 부쳤다.
+  options:
+  - ㄴ, ㄷ
+  - ㄱ, ㄷ, ㅁ
+  - ㄷ, ㅁ
+  - ㄷ, ㄹ, ㅁ
+  - ㄱ, ㄹ
+  answer: 3
+  second_best: 2
+  difficulty: D3
+  family: MULTI_JUDGMENT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_11_bc
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㄴ은 '잠그다'의 'ㅡ'가 탈락해 '잠갔다'로 써야 한다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s3_11_acd
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㄱ은 '오래간만'의 준말이므로 '오랜만에'로 써야 한다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: s3_11_key
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: ㄷ '며칠', ㅁ '부쳤다'만 바르다.
+  - axis: orthography
+    c: STRONG
+    claim: s3_11_cde
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㄹ은 '금시에'가 줄어든 말이므로 '금세'로 써야 한다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: s3_11_ad
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㄱ, ㄹ은 모두 틀렸다.
+    trap: T6_PARTIAL_SET
+  source_item_id: KOR-V6N3-011
+- item_id: KOR-V6N-036
+  archetype: A6_RULE_CASE_EXPLANATION
+  stem: <보기>를 바탕으로 ㉠~㉤을 탐구한 내용으로 적절하지 않은 것은?
+  view:
+  - 제30항 사이시옷은 순우리말로 된 합성어나 순우리말과 한자어로 된 합성어로서 앞말이 모음으로 끝난 경우, 뒷말의 첫소리가 된소리로 나거나, 'ㄴ' 또는 'ㄴㄴ' 소리가 덧나는 경우에 받치어 적는다. 또한 두 음절로 된 한자어 '곳간, 셋방, 숫자, 찻간, 툇간, 횟수'에만 사이시옷을 적는다.
+  - ㉠ 아랫집   ㉡ 위층   ㉢ 수돗물(水道-)   ㉣ 개수(個數)   ㉤ 툇마루(退-)
+  options:
+  - ㉠은 순우리말끼리의 합성어로 뒷말의 첫소리가 된소리로 나므로 사이시옷을 적었다.
+  - ㉡은 뒷말의 첫소리가 거센소리이므로 사이시옷을 적지 않았다.
+  - ㉢은 한자어와 순우리말의 합성어로 'ㄴ' 소리가 덧나므로 사이시옷을 적었다.
+  - ㉣은 한자어로만 된 말이고 예외 여섯 단어에도 없으므로 사이시옷을 적지 않는다.
+  - ㉤은 한자어로만 된 말이지만 예외 여섯 단어에 속하므로 사이시옷을 적었다.
+  answer: 5
+  second_best: 3
+  difficulty: D5
+  family: CASE_APPLICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 4
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: D
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: s3_12_a
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s3_12_b
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: s3_12_c
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 옳은 설명이다. '수도+물'은 [수돈물]로 'ㄴ' 소리가 덧난다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: s3_12_d
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: s3_12_key
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''마루''는 순우리말이므로 ㉤은 한자어와 순우리말의 합성어로서 ''ㄴ'' 소리가 덧나 사이시옷을 적는다. 예외 여섯 단어의 ''툇간''과 혼동한 것이다.'
+  source_item_id: KOR-V6N3-012
+- item_id: KOR-V6N-037
+  archetype: A1_GENERAL_RULE_MAPPING
+  stem: <보기>의 한글 맞춤법 총칙을 바탕으로 탐구한 내용으로 가장 적절한 것은?
+  view:
+  - 제1항 한글 맞춤법은 ㉠표준어를 ㉡소리대로 적되, ㉢어법에 맞도록 함을 원칙으로 한다.
+  options:
+  - '''마감''은 ''막다''에서 온 말이지만 본뜻에서 멀어져 ㉡에 따라 소리대로 적은 것이다.'
+  - '''웃음''을 [우슴]으로 적지 않는 것은 ㉡에 따른 것이다.'
+  - '''먹어''를 ''머거''로 적지 않는 것은 표준어를 적는다는 ㉠에 따른 것이다.'
+  - '''무덤''은 ''묻-''의 형태를 밝혀 적은 것이므로 ㉢에 따른 것이다.'
+  - '''너머''는 ''넘다''의 활용형이므로 ''넘어''와 같이 ㉢에 따라 적은 것이다.'
+  answer: 1
+  second_best: 3
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: E
+  judgments:
+  - axis: orthography
+    c: CORRECT
+    claim: s4_1_key
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: '''마감''은 어간의 본뜻에서 멀어져 원형을 밝히지 않고 소리대로 적는 말이다(제19항 붙임).'
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_1_useum
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''웃-''의 형태를 밝혀 적은 것이므로 ㉢에 따른 것이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: STRONG
+    claim: s4_1_meogeo
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: 어간과 어미를 구별해 적은 것이므로 ㉢에 따른 것이다.
+    trap: T5_RULE_JURISDICTION
+  - axis: orthography
+    c: STRONG
+    claim: s4_1_mudeom
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: '''무덤''은 ''묻-''의 형태를 밝히지 않고 소리대로 적은 말이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: WEAK
+    claim: s4_1_neomeo
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''너머''는 명사이며 ''넘-''의 원형을 밝히지 않고 적은 말이다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  source_item_id: KOR-V6N4-001
+- item_id: KOR-V6N-038
+  archetype: A2_STUDENT_TEXT_ERRORS
+  stem: <보기>의 [A]에 들어갈 내용으로 알맞은 것은?
+  view:
+  - '학생: 학생회 안내문을 썼어요. 띄어쓰기를 봐 주세요.'
+  - <학생회가 쓴 안내문> ㉠2026년 11월 행사를 안내드립니다. ㉡학부모님 들께서는 참석 여부를 알려 주시기 ㉢바랍니다. 행사는 오후 ㉣세 시 부터 강당에서 ㉤열리는데, 궁금한 점은 담임 ㉥선생님 께 여쭤 주세요.
+  - '선생님: 고쳐야 할 곳은 [A]야.'
+  options:
+  - ㉡, ㉢, ㉥
+  - ㉠, ㉡, ㉣
+  - ㉡, ㉣, ㉥
+  - ㉣, ㉤, ㉥
+  - ㉠, ㉢, ㉤
+  answer: 3
+  second_best: 2
+  difficulty: D3
+  family: ERROR_CORRECTION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: E
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_2_bcf
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉢ '바랍니다'는 '바라다'의 활용형으로 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s4_2_abd
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉠ '2026년'은 숫자와 어울린 단위 명사를 붙여 쓴 허용 표기이다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: s4_2_key
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: ㉡ '학부모님들께서는'(접미사 '-들'), ㉣ '세 시부터'(조사 '부터'), ㉥ '선생님께'(조사)로 고쳐야 한다.
+  - axis: orthography
+    c: STRONG
+    claim: s4_2_def
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉤ '열리는데'의 '-는데'는 어미이므로 붙여 쓴 것이 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: s4_2_ace
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉠, ㉢, ㉤은 모두 바르다.
+    trap: T6_PARTIAL_SET
+  source_item_id: KOR-V6N4-002
+- item_id: KOR-V6N-039
+  archetype: A3_CONDITION_CLASSIFICATION
+  stem: <보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 띄어 쓰거나 붙여 쓰는 근거에 따라 분류한 것으로 가장 적절한 것은?
+  view:
+  - '<보기 1> Ⓐ제41항: 조사는 그 앞말에 붙여 쓴다. Ⓑ제42항: 의존 명사는 띄어 쓴다. Ⓒ제43항: 단위를 나타내는 명사는 띄어 쓴다.'
+  - <보기 2> ㉠밥 한 그릇  ㉡할 수 있다  ㉢집에서부터  ㉣신 두 켤레  ㉤아는 척
+  options:
+  - Ⓐ ㉢   Ⓑ ㉠, ㉡, ㉤   Ⓒ ㉣
+  - Ⓐ ㉢   Ⓑ ㉡, ㉤   Ⓒ ㉠, ㉣
+  - Ⓐ ㉢, ㉤   Ⓑ ㉡   Ⓒ ㉠, ㉣
+  - Ⓐ ㉢   Ⓑ ㉡   Ⓒ ㉠, ㉣, ㉤
+  - Ⓐ ㉠, ㉢   Ⓑ ㉡, ㉤   Ⓒ ㉣
+  answer: 2
+  second_best: 1
+  difficulty: D3
+  family: COMPARISON_MATRIX
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: E
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: s4_3_geureut
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉠ '그릇'은 수 관형사 뒤에서 분량의 단위로 쓰였으므로 제43항의 적용을 받는다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: s4_3_key
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: ㉢ 조사 Ⓐ, ㉡ '수'·㉤ '척' 의존 명사 Ⓑ, ㉠ '그릇'·㉣ '켤레' 단위 명사 Ⓒ.
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_3_cheok
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉤ '척'은 관형사형 뒤의 의존 명사이므로 조사가 아니다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_3_cheok2
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉤ '척'은 단위가 아니라 그럴듯하게 꾸미는 태도를 나타내는 의존 명사이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: WEAK
+    claim: s4_3_geureut2
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''그릇''은 조사가 아니다.'
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  source_item_id: KOR-V6N4-003
+- item_id: KOR-V6N-040
+  archetype: A4_INQUIRY_DIALOGUE_CHECK
+  stem: <보기>의 ㉠~㉤ 중 학생의 설명이 바르지 않은 것은?
+  view:
+  - '선생님: 관형사형 뒤에 오는 말의 띄어쓰기를 설명해 보세요.'
+  - '학생 1: ㉠''아는 척 대답했다''의 ''척''은 의존 명사라서 띄어 써요.'
+  - '학생 2: ㉡''그럴 줄 몰랐다''의 ''줄''은 의존 명사라서 띄어 써요.'
+  - '학생 3: ㉢''먹을 것을 챙겼다''의 ''것''은 의존 명사라서 띄어 써요.'
+  - '학생 4: ㉣''갈 데가 없다''의 ''데''는 ''곳''의 뜻이고 조사 ''가''가 붙었으니 의존 명사로 보아 띄어 써요.'
+  - '학생 5: ㉤''공부를 할뿐 아니라 운동도 한다''에서 ''뿐'' 뒤에 ''아니라''가 오므로 ''뿐''은 조사이고 붙여 써요.'
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 5
+  second_best: 4
+  difficulty: D3
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: E
+  judgments:
+  - axis: orthography
+    c: WEAK
+    claim: s4_4_cheok
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_4_jul
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: WEAK
+    claim: s4_4_geot
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: STRONG
+    claim: s4_4_de
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: CORRECT
+    claim: s4_4_key
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: 관형사형 '할' 뒤의 '뿐'은 의존 명사이므로 '할 뿐 아니라'로 띄어 쓴다. 뒤에 오는 말로 품사가 정해지지 않는다.
+  source_item_id: KOR-V6N4-004
+- item_id: KOR-V6N-041
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  stem: <보기>의 탐구 내용 중 옳은 것만을 있는 대로 고른 것은?
+  view:
+  - ㄱ. '공부밖에 모른다'의 '밖에'와 '기다릴 수밖에'의 '밖에'는 모두 조사이다.
+  - ㄴ. '먹을 만큼'의 '만큼'과 '너만큼'의 '만큼'은 모두 앞말과 띄어 쓴다.
+  - ㄷ. '떠난 지'의 '지'와 '떠날지'의 '-ㄹ지'는 형태가 비슷하지만 띄어쓰기가 다르다.
+  - ㄹ. '오는데'와 '오는 데'는 '데' 뒤에 조사 '에'를 넣을 수 있는지로 구별할 수 있다.
+  - ㅁ. '학생들'의 '-들'과 '사과, 배 들'의 '들'은 모두 접미사이다.
+  options:
+  - ㄷ, ㄹ, ㅁ
+  - ㄱ, ㄷ
+  - ㄴ, ㄷ, ㄹ
+  - ㄱ, ㄷ, ㄹ
+  - ㄱ, ㄴ, ㅁ
+  answer: 4
+  second_best: 2
+  difficulty: D4
+  family: MULTI_JUDGMENT
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: E
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_5_cde
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㅁ은 틀렸다. 열거 뒤의 '들'은 의존 명사이다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s4_5_ac
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㄹ도 옳으므로 옳은 것 하나를 뺀 조합이다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s4_5_bcd
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㄴ은 틀렸다. '너만큼'의 '만큼'은 체언 뒤 조사이므로 붙여 쓴다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: s4_5_key
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: ㄱ(두 '밖에' 모두 조사), ㄷ(의존 명사 vs 어미), ㄹ(조사 결합 가능성으로 구별)이 옳다.
+  - axis: orthography
+    c: WEAK
+    claim: s4_5_abe
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㄴ, ㅁ은 틀렸다.
+    trap: T6_PARTIAL_SET
+  source_item_id: KOR-V6N4-005
+- item_id: KOR-V6N-042
+  archetype: A6_RULE_CASE_EXPLANATION
+  stem: <보기>를 바탕으로 ㉠~㉣을 탐구한 내용으로 적절하지 않은 것은?
+  view:
+  - 사이시옷은 순우리말이 들어간 합성어에서 앞말이 모음으로 끝나고, 뒷말의 첫소리가 된소리로 나거나 'ㄴ' 또는 'ㄴㄴ' 소리가 덧날 때 받치어 적는다. 외래어가 들어간 합성어에는 사이시옷을 적지 않는다.
+  - ㉠ 순댓국   ㉡ 피자집   ㉢ 머리말   ㉣ 시냇물
+  options:
+  - ㉡은 '피자'가 외래어이므로 된소리로 소리 나더라도 사이시옷을 적지 않았다.
+  - ㉠은 순우리말 '순대'와 '국'이 결합하고 뒷말이 된소리로 나므로 사이시옷을 적었다.
+  - ㉢과 같은 원리로 '머릿돌'도 사이시옷을 적지 않는다.
+  - ㉢은 [머리말]로 소리 나 된소리나 'ㄴ' 소리가 덧나지 않으므로 사이시옷을 적지 않았다.
+  - ㉣은 'ㄴ' 소리가 덧나므로 사이시옷을 적었다.
+  answer: 3
+  second_best: 1
+  difficulty: D3
+  family: CASE_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: E
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: s4_6_pizza
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_6_sundae
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: s4_6_key
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''머릿돌''은 [머리똘/머릳똘]로 뒷말이 된소리로 나므로 사이시옷을 적는다. ''머리''가 같다고 같은 결과가 되지 않는다.'
+  - axis: orthography
+    c: STRONG
+    claim: s4_6_meorimal
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: WEAK
+    claim: s4_6_sinae
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  source_item_id: KOR-V6N4-006
+- item_id: KOR-V6N-043
+  archetype: A1_GENERAL_RULE_MAPPING
+  stem: <보기>를 바탕으로 준말 표기를 탐구한 내용으로 가장 적절한 것은?
+  view:
+  - 제35항 [붙임 2] 'ㅚ' 뒤에 '-어, -었-'이 어울려 'ㅙ, ㅙㅆ'으로 될 적에도 준 대로 적는다.
+  options:
+  - '''되고''는 ''ㅚ'' 뒤에 어미가 왔으므로 ''돼고''로 줄여 적는다.'
+  - '''되어서''는 ''ㅚ'' 뒤에 ''-어''가 어울린 것이므로 ''돼서''로 줄여 적을 수 있다.'
+  - '''뵈었다''는 ''-었-''이 결합했지만 줄여 적을 수 없으므로 ''뵀다''는 틀린 표기이다.'
+  - '''훌륭한 사람이 되라고 하셨다''의 ''되라고''도 ''-어''가 결합한 것이므로 ''돼라고''로 적어야 한다.'
+  - '''안 되요''는 ''-어요''가 줄어든 표기이므로 바르다.'
+  answer: 2
+  second_best: 4
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: E
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_7_doego
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: '''-고''는 ''-어''가 아니므로 줄어들 수 없다. ''되고''로 적는다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: CORRECT
+    claim: s4_7_key
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: '''되-+-어서''가 줄면 ''돼서''이다.'
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_7_bwaet
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: '''뵈었다''는 ''뵀다''로 줄여 적을 수 있다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: STRONG
+    claim: s4_7_doerago
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: 간접 인용의 '되라고'는 '되-'에 '-라고'가 붙은 것으로 '-어'가 없으므로 '되라고'가 바르다.
+    trap: T2_EXCEPTION_CONDITION
+  - axis: orthography
+    c: STRONG
+    claim: s4_7_doeyo
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''되-+-어요''가 줄면 ''돼요''이므로 ''안 돼요''로 적어야 한다.'
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  source_item_id: KOR-V6N4-007
+- item_id: KOR-V6N-044
+  archetype: A2_STUDENT_TEXT_ERRORS
+  stem: <보기>의 [A]에 들어갈 말로 알맞은 것은?
+  view:
+  - '학생: 운동 기록을 올린 글인데 사이시옷이 맞는지 모르겠어요.'
+  - <학생이 올린 글> 학교 ㉠뒷편 운동장을 돌고 그릇을 ㉡깨끗이 씻어 두었다. 오늘 달린 바퀴 ㉢숫자를 기록하다가 사진의 ㉣촛점이 흐린 것을 발견했다. ㉤윗층에 사는 친구와 이번 주 운동 ㉥횟수를 비교했다.
+  - '선생님: 고쳐야 할 곳은 [A]란다.'
+  options:
+  - ㉠, ㉣, ㉤
+  - ㉠, ㉢, ㉣
+  - ㉣, ㉤, ㉥
+  - ㉡, ㉣, ㉤
+  - ㉠, ㉢, ㉥
+  answer: 1
+  second_best: 2
+  difficulty: D4
+  family: ERROR_CORRECTION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: E
+  judgments:
+  - axis: orthography
+    c: CORRECT
+    claim: s4_8_key
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: ㉠ '뒤편'(거센소리), ㉣ '초점'(한자어끼리), ㉤ '위층'(거센소리)으로 고쳐야 한다.
+  - axis: orthography
+    c: STRONG
+    claim: s4_8_acd
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉢ '숫자'는 한자어이지만 사이시옷을 적는 예외 여섯 단어에 속한다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s4_8_def
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉥ '횟수'도 예외 여섯 단어에 속하므로 바르다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_8_bde
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㉡ '깨끗이'는 바른 표기이다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: s4_8_acf
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉢, ㉥은 바르다.
+    trap: T6_PARTIAL_SET
+  source_item_id: KOR-V6N4-008
+- item_id: KOR-V6N-045
+  archetype: A3_CONDITION_CLASSIFICATION
+  stem: <보기 1>의 기준에 따라 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?
+  view:
+  - <보기 1> Ⓐ띄어 쓰는 것이 원칙이지만 붙여 쓰는 것도 허용되는 것  Ⓑ반드시 띄어 써야 하는 것  Ⓒ반드시 붙여 써야 하는 것
+  - <보기 2> 띄어쓰기를 따질 자리를 '+'로 표시함.  ㉠좀+더 큰 것  ㉡이사장+및+이사들  ㉢삼+학년  ㉣홍길동+씨  ㉤학교에서+처럼
+  options:
+  - Ⓐ ㉠, ㉢, ㉣   Ⓑ ㉡   Ⓒ ㉤
+  - Ⓐ ㉠   Ⓑ ㉡, ㉢, ㉣   Ⓒ ㉤
+  - Ⓐ ㉢   Ⓑ ㉡, ㉣   Ⓒ ㉠, ㉤
+  - Ⓐ ㉠, ㉢   Ⓑ ㉡, ㉣   Ⓒ ㉤
+  - Ⓐ ㉠, ㉡, ㉢   Ⓑ ㉣   Ⓒ ㉤
+  answer: 4
+  second_best: 2
+  difficulty: D3
+  family: COMPARISON_MATRIX
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: E
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_9_ssi
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㉣ 호칭어 '씨'는 띄어 써야 하며 허용 규정이 없다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: s4_9_samhak
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㉢ '삼 학년'은 순서를 나타내므로 '삼학년'으로 붙여 쓸 수 있다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_9_jomdeo
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㉠은 제46항에 따라 붙여 쓸 수 있으므로 Ⓒ가 아니다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: s4_9_key
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: ㉠(제46항)·㉢(제43항 순서) 허용 Ⓐ, ㉡(제45항)·㉣(제48항 호칭어) Ⓑ, ㉤ 조사 Ⓒ.
+  - axis: orthography
+    c: WEAK
+    claim: s4_9_mit
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㉡ '및'은 제45항에 따라 띄어 쓴다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  source_item_id: KOR-V6N4-009
+- item_id: KOR-V6N-046
+  archetype: A4_INQUIRY_DIALOGUE_CHECK
+  stem: <보기>의 ㉠~㉤ 중 잘못된 판단이 담긴 학생의 설명은?
+  view:
+  - '선생님: 두 가지 판단을 한꺼번에 설명해 보세요. 하나라도 틀리면 잘못된 설명이에요.'
+  - '학생 1: ㉠''집에서처럼''과 ''너조차''는 모두 조사가 쓰인 것이므로 앞말에 붙여 쓰는데, 조사가 둘 이상 겹쳐도 마찬가지예요.'
+  - '학생 2: ㉡''공부하는 데에''는 ''데'' 뒤에 조사가 붙었으므로 ''데''가 의존 명사이고, ''공부하는데''의 ''-는데''는 어미예요.'
+  - '학생 3: ㉢''열 개''는 한글 수 뒤의 단위 명사라 띄어 쓰고, ''10개''는 숫자와 어울려 붙여 쓸 수 있어요.'
+  - '학생 4: ㉣''사과, 배 등''의 ''등''은 열거하는 말이라 띄어 쓰고, ''사과, 배 들''의 ''들''도 열거 뒤 의존 명사라 띄어 써요.'
+  - '학생 5: ㉤''바닷물''은 ''ㄴ'' 소리가 덧나서 사이시옷을 적고, ''해님''도 ''ㄴ'' 소리가 덧나는 것처럼 들리므로 ''햇님''으로 적어요.'
+  options:
+  - ㉠
+  - ㉡
+  - ㉢
+  - ㉣
+  - ㉤
+  answer: 5
+  second_best: 2
+  difficulty: D3
+  family: STUDENT_RESPONSE_EVALUATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: E
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_10_a
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: STRONG
+    claim: s4_10_b
+    ev:
+    - VIEW
+    - OPTION2
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_10_c
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: STRONG
+    claim: s4_10_d
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 옳은 설명이다.
+    trap: T3_ONE_OF_TWO_WRONG
+  - axis: orthography
+    c: CORRECT
+    claim: s4_10_key
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: '''해님''은 접미사 ''-님''이 붙은 파생어이므로 합성어에만 적는 사이시옷을 적지 않는다.'
+  source_item_id: KOR-V6N4-010
+- item_id: KOR-V6N-047
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  stem: <보기>의 ㄱ~ㅁ 중 표기와 띄어쓰기가 모두 바른 문장만을 있는 대로 고른 것은?
+  view:
+  - ㄱ. 그는 학생으로서 최선을 다했다.
+  - ㄴ. 우리는 대화로서 문제를 풀었다.
+  - ㄷ. 노력한 만큼 성적이 올랐다.
+  - ㄹ. 몇일 뒤에 다시 만나자.
+  - ㅁ. 그 일을 끝내는 데 한 달이 걸렸다.
+  options:
+  - ㄴ, ㄷ, ㅁ
+  - ㄱ, ㄷ
+  - ㄱ, ㄷ, ㅁ
+  - ㄱ, ㄹ, ㅁ
+  - ㄷ, ㄹ
+  answer: 3
+  second_best: 2
+  difficulty: D3
+  family: MULTI_JUDGMENT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: E
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_11_bce
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㄴ은 수단이므로 '대화로써'로 써야 한다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s4_11_ac
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㅁ도 바르므로 옳은 것 하나를 뺀 조합이다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: s4_11_key
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: ㄱ(자격 '로서'), ㄷ(의존 명사 '만큼'), ㅁ(의존 명사 '데')만 바르다.
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_11_ade
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: ㄹ은 '며칠'로 써야 한다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: WEAK
+    claim: s4_11_cd
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㄹ은 틀렸다.
+    trap: T6_PARTIAL_SET
+  source_item_id: KOR-V6N4-011
+- item_id: KOR-V6N-048
+  archetype: A6_RULE_CASE_EXPLANATION
+  stem: <보기>를 바탕으로 ㉠~㉣을 탐구한 내용으로 적절하지 않은 것은?
+  view:
+  - 제15항 [붙임 2] 종결형에서 사용되는 어미 '-오'는 '요'로 소리 나는 경우가 있더라도 그 원형을 밝혀 '오'로 적는다.
+  - '[붙임 3] 연결형에서 사용되는 ''이요''는 ''이요''로 적는다.'
+  - ㉠ 어서 오십시오.   ㉡ 이것은 연필이요, 저것은 지우개이다.
+  - ㉢ 여기가 우리 집이오.   ㉣ 안녕하세요.
+  options:
+  - ㉠은 명령의 뜻으로 문장을 끝맺는 종결형이므로 '-오'로 적었다.
+  - ㉣의 '요'는 종결 어미 '-오'가 바뀐 것이므로 '안녕하세오'로 적어야 한다.
+  - ㉡은 뒤 절로 이어지는 연결형이므로 '이요'로 적었다.
+  - ㉢은 종결형이므로 [이요]로 소리 나더라도 '이오'로 적었다.
+  - ㉡을 문장이 끝나는 자리로 옮겨 '이것은 연필이오.'로 쓰면 종결형 표기가 된다.
+  answer: 2
+  second_best: 3
+  difficulty: D4
+  family: CASE_APPLICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: NEGATIVE
+  v6_area: E
+  judgments:
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_12_a
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: CORRECT
+    claim: s4_12_key
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: '''-세요''의 ''요''는 높임의 뜻을 더하는 보조사로 종결 어미 ''-오''가 아니다. ''안녕하세요''가 바르다.'
+  - axis: orthography
+    c: STRONG
+    claim: s4_12_b
+    ev:
+    - VIEW
+    - OPTION3
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: STRONG
+    claim: s4_12_c
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_12_e
+    ev:
+    - VIEW
+    - OPTION5
+    v: true
+    why: 옳은 설명이다.
+    trap: T4_SAME_FORM_OTHER_FUNCTION
+  source_item_id: KOR-V6N4-012
+- item_id: KOR-V6N-049
+  archetype: A1_GENERAL_RULE_MAPPING
+  stem: <보기>를 바탕으로 문장 속 표기를 판단한 것으로 가장 적절한 것은?
+  view:
+  - 제57항 다음 말들은 각각 구별하여 적는다.
+  - '맞히다: 여러 문제에 답을 맞힌다. / 맞추다: 답안지를 정답과 맞추어 본다.'
+  - '저리다: 다친 다리가 저린다. / 절이다: 김장 배추를 절인다.'
+  - '부치다: 편지를 부친다. / 붙이다: 우표를 붙인다.'
+  options:
+  - '''시험 후 친구와 답을 맞춰 보았다''는 ''맞추다''를 바르게 썼다.'
+  - '''과녁에 화살을 정확히 맞췄다''는 ''맞추다''를 바르게 썼다.'
+  - '''김장할 배추를 소금에 저렸다''는 ''저리다''를 바르게 썼다.'
+  - '''편지 봉투에 우표를 부쳤다''는 ''부치다''를 바르게 썼다.'
+  - '''어려운 퀴즈의 정답을 맞추었다''는 ''맞추다''를 바르게 썼다.'
+  answer: 1
+  second_best: 5
+  difficulty: D3
+  family: VIEW_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: E
+  judgments:
+  - axis: orthography
+    c: CORRECT
+    claim: s4_13_key
+    ev:
+    - VIEW
+    - OPTION1
+    v: true
+    why: 서로 견주어 보는 뜻이므로 '맞추다'가 바르다.
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_13_hwasal
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: 목표에 닿게 하는 뜻이므로 '맞혔다'로 써야 한다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_13_jeoryeo
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: 소금에 담그는 뜻이므로 '절였다'로 써야 한다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_13_buchyeo
+    ev:
+    - VIEW
+    - OPTION4
+    v: false
+    why: 우표를 맞닿게 하는 뜻이므로 '붙였다'로 써야 한다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  - axis: orthography
+    c: STRONG
+    claim: s4_13_quiz
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: 정답을 골라내는 뜻이므로 '맞히었다'로 써야 한다.
+    trap: T1_RIGHT_CONCEPT_WRONG_CASE
+  source_item_id: KOR-V6N4-013
+- item_id: KOR-V6N-050
+  archetype: A5_EXAMPLE_MULTI_JUDGMENT
+  stem: <보기>의 문장에 대한 판단 중 옳은 것만을 있는 대로 고른 것은?
+  view:
+  - <문장> 공부한 지 석 달 만에 그는 반에서 일 등을 했는데, 그 비결은 하루에 세 시간씩 아는 만큼 정리한 데 있었다.
+  - ㄱ. '지'와 '만'은 모두 시간의 경과와 관련된 의존 명사이므로 앞말과 띄어 썼다.
+  - ㄴ. '했는데'의 '-는데'와 '정리한 데'의 '데'는 형태가 같으므로 띄어쓰기도 같아야 하는데, 이 문장은 이를 어겼다.
+  - ㄷ. '세 시간씩'에서 '-씩'은 접미사이므로 '시간'에 붙여 썼고, '시간'은 '세'와 띄어 썼다.
+  - ㄹ. '석 달'은 순서를 나타내므로 '석달'로 붙여 쓸 수도 있다.
+  - ㅁ. '반에서'의 '에서'와 '아는 만큼'의 '만큼'은 모두 조사이므로 앞말에 붙여 써야 한다.
+  options:
+  - ㄷ, ㅁ
+  - ㄱ, ㄷ, ㄹ
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ
+  - ㄱ, ㄹ, ㅁ
+  answer: 4
+  second_best: 1
+  difficulty: D5
+  family: MULTI_JUDGMENT
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 4
+  immediate_elimination: 1
+  transfer: true
+  stem_polarity: POSITIVE
+  v6_area: E
+  judgments:
+  - axis: orthography
+    c: STRONG
+    claim: s4_14_ce
+    ev:
+    - VIEW
+    - OPTION1
+    v: false
+    why: ㅁ은 틀렸다. '아는 만큼'의 '만큼'은 관형사형 뒤 의존 명사이다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: STRONG
+    claim: s4_14_acd
+    ev:
+    - VIEW
+    - OPTION2
+    v: false
+    why: ㄹ은 틀렸다. '석 달'은 기간의 양이며 한글 수 뒤 단위 명사이므로 띄어 써야 한다.
+    trap: T2_EXCEPTION_CONDITION
+  - axis: orthography
+    c: MEDIUM
+    claim: s4_14_ab
+    ev:
+    - VIEW
+    - OPTION3
+    v: false
+    why: ㄴ은 틀렸다. '-는데'는 어미, '정리한 데'의 '데'는 '일·경우'의 뜻을 지닌 의존 명사이다.
+    trap: T6_PARTIAL_SET
+  - axis: orthography
+    c: CORRECT
+    claim: s4_14_key
+    ev:
+    - VIEW
+    - OPTION4
+    v: true
+    why: ㄱ, ㄷ만 옳다.
+  - axis: orthography
+    c: WEAK
+    claim: s4_14_ade
+    ev:
+    - VIEW
+    - OPTION5
+    v: false
+    why: ㄹ, ㅁ은 틀렸다.
+    trap: T6_PARTIAL_SET
+  source_item_id: KOR-V6N4-014
