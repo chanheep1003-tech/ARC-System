@@ -291,9 +291,19 @@ def render_core(bundle: dict[str, Any], out_pdf: Path, logo: dict[str, Any] | No
                         cx += cws[ci]
                     pg.draw_line((x0, yy + 20), (x0 + tw, yy + 20), color=BLACK, width=0.65)
                     return yy + 20.0
+                # Simulate the first page break; never leave fewer than 3 rows alone on the next page.
+                forced_break = None
+                sy = y + 20.0
+                for r_idx, rh in enumerate(heights):
+                    if sy + rh > CONTENT_BOTTOM:
+                        remaining = len(heights) - r_idx
+                        if remaining < 3 and r_idx >= 4:
+                            forced_break = len(heights) - 3
+                        break
+                    sy += rh
                 y = header(page, y)
                 for r_idx, (cl, rh) in enumerate(zip(wrapped, heights)):
-                    if y + rh > CONTENT_BOTTOM:
+                    if y + rh > CONTENT_BOTTOM or r_idx == forced_break:
                         page.draw_line((x0, y), (x0 + tw, y), color=BLACK, width=0.95)
                         page, y = next_pg()
                         y = header(page, y)
