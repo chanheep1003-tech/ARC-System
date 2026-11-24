@@ -6,7 +6,7 @@ set_label: ARC N° 사회 A파트 심화 1세트
 course: 통합사회2
 cover_subtitle: 정의관·불평등·평화 심화 20제 (선택형)
 school_line: 동북고등학교 1학년 · 2026 2학기 기말
-created_at: '2026-11-24T21:00:00+09:00'
+created_at: '2026-11-24T23:30:00+09:00'
 scope: '통합사회A: 천재 통합사회2 44~61쪽, 108~123쪽 (기말 학습지 미입수)'
 scope_refs:
 - TEXTBOOK:천재 통합사회2 p44-61 (II-2 자유주의와 공동체주의 정의관, II-3 사회 및 공간 불평등)
@@ -15,6 +15,8 @@ source_basis:
   textbook: 천재 통합사회2(박윤경) 2과·4과 (Drive 1UG0fM5OlVgrUyEMfelDMlh6GEwfVsaQ1, 1vaS-hQNyR7ZAeeEZkjjjxVh1JGoDMwRz)
   style_reference: 2026학년도 9월 모의평가 생활과 윤리(갑·을 대비, 공통·차이 영역, 상호 비판, 칼럼 강조점 원형) — 문장·선지 미전재
   worksheet: NOT_AVAILABLE_USER_CONFIRMED_20261124
+  exam_archetypes: quality/production/SOC_N_ADV_SRC/EXAM_ARCHETYPE_NOTES.md (A파트 고2·3 기출 10종)
+revision: 'R2: 사용자 피드백 반영 — 공유지의 비극·연도 순서·의무고용률 수치·DAC 소속 등 지엽 문항 교체, 밑줄 융합형·질문 탐구형·사례 조언형으로 재구성'
 items:
 - item_id: A1-01
   stem: 갑, 을의 입장으로 가장 적절한 것은?
@@ -403,102 +405,109 @@ items:
     - OPTION5
     why: 배율이 높을수록 빈부 격차가 크다.
 - item_id: A1-06
-  stem: 다음 글의 A, B에 대한 설명으로 옳은 것은?
+  stem: 밑줄 친 ㉠~㉣에 대한 설명으로 옳지 않은 것은?
   set: null
   passage:
-  - 우리나라는 빠른 경제 성장을 위해 성장 잠재력이 큰 수도권과 대도시에 투자를 집중하는 A 방식으로 국토를 개발하였다. 이후 이러한 개발로 지역 간 격차가 커지자, 그동안 개발에서 소외되었던 지방을 중심으로 투자하여 국토의 고른 발전을 꾀하는 B 방식의 정책을 추진하고 있다.
+  - ○○국은 빠른 경제 성장을 위해 ㉠ 성장 잠재력이 큰 수도권과 대도시에 투자를 집중하였고, 그 결과 인구와 자본이 수도권으로 몰렸다. 비수도권의 청년들은 일자리와 교육 기회를 찾아 떠났고, 남은 지역에서는 병원과 학교가 줄어들어 ㉡ 소득뿐 아니라 의료·교육 등 생활 전반의 격차가 커졌다. 이에 정부는 ㉢ 수도권의 공공 기관을 지방으로 옮기는 정책을 추진하는
+    한편, 공공 기관이 신규 직원을 뽑을 때 해당 지방 대학 출신을 일정 비율 이상 채용하도록 하는 ㉣ 제도를 도입하였다.
   options:
-  - A는 B보다 지역 간 격차를 줄이는 데 유리하다.
-  - A로 인해 수도권에서는 인구가 빠져나가고 비수도권으로 인구가 유입되었다.
-  - B의 사례로 수도권 기업에 세금을 감면하여 수도권 안에 공장을 늘리도록 하는 정책을 들 수 있다.
-  - B는 지역의 고유한 특성보다 경제적 효율성을 최우선으로 고려한다.
-  - A는 집중 투자한 지역의 성장 효과가 주변 지역으로 퍼져 나가기를 기대하는 방식이다.
+  - ㉠은 집중 투자한 지역의 성장 효과가 주변 지역으로 퍼져 나갈 것을 기대한 방식이다.
+  - ㉡은 공간 불평등이 사회 불평등과 맞물려 나타날 수 있음을 보여 준다.
+  - ㉢은 개발에서 소외되었던 지역에 일자리를 만들어 국토의 균형 발전을 꾀하는 정책이다.
+  - ㉣은 실질적 기회의 평등을 보장하려는 조치이지만 역차별 논란이 생길 수 있다.
+  - ㉠과 달리 ㉢은 형평성보다 효율성을 우선하는 지역 개발 방식에 해당한다.
   answer: 5
-  second_best: 3
-  difficulty: D3
+  second_best: 4
+  difficulty: D4
   family: CAUSE_EFFECT
-  balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
   immediate_elimination: 1
   evidence_count: 2
   transfer: false
   scope_refs:
-  - TEXTBOOK-p52,55
+  - TEXTBOOK-p52,55-56
   judgments:
-  - v: false
-    c: WEAK
+  - v: true
+    c: STRONG
     axis: content
     claim: A1-06-opt1
     ev:
-    - SCOPE:TEXTBOOK-p52,55
+    - SCOPE:TEXTBOOK-p52,55-56
     - PASSAGE
     - OPTION1
-    why: 성장 거점 개발은 지역 격차를 심화시켰다.
-  - v: false
+    why: 성장 거점 개발은 효과가 주변으로 확산하도록 하는 방식이다.
+  - v: true
     c: WEAK
     axis: content
     claim: A1-06-opt2
     ev:
-    - SCOPE:TEXTBOOK-p52,55
+    - SCOPE:TEXTBOOK-p52,55-56
     - PASSAGE
     - OPTION2
-    why: 수도권으로 인구와 자본이 유입되었다.
-  - v: false
-    c: STRONG
+    why: 경제적 격차가 교육·의료 등 생활 전반의 격차로 이어진다.
+  - v: true
+    c: WEAK
     axis: content
     claim: A1-06-opt3
     ev:
-    - SCOPE:TEXTBOOK-p52,55
+    - SCOPE:TEXTBOOK-p52,55-56
     - PASSAGE
     - OPTION3
-    why: 세금 감면은 수도권 기업의 지방 이전을 유도하는 방식이다.
-  - v: false
-    c: MEDIUM
+    why: 공공 기관 지방 이전은 지역 격차 완화 정책이다.
+  - v: true
+    c: STRONG
     axis: content
     claim: A1-06-opt4
     ev:
-    - SCOPE:TEXTBOOK-p52,55
+    - SCOPE:TEXTBOOK-p52,55-56
     - PASSAGE
     - OPTION4
-    why: 균형 개발은 형평성을 중시하며 지역 특성을 살린 전략을 세운다.
-  - v: true
+    why: 지역 출신 채용 비율 할당은 적극적 평등 실현 조치의 성격을 가지며 역차별 문제가 제기될 수 있다.
+  - v: false
     c: CORRECT
     axis: content
     claim: A1-06-opt5
     ev:
-    - SCOPE:TEXTBOOK-p52,55
+    - SCOPE:TEXTBOOK-p52,55-56
     - PASSAGE
     - OPTION5
-    why: 성장 거점 개발은 효과가 주변 지역으로 확산하도록 하는 방식이다.
+    why: 효율성을 우선한 것은 ㉠(성장 거점 개발)이고, ㉢은 균형 발전(형평성)을 추구한다.
 - item_id: A1-07
-  stem: 표는 우리나라 사회 복지 제도 A~C의 특징을 나타낸 것이다. 이에 대한 설명으로 옳은 것은?
+  stem: 표는 우리나라 사회 복지 제도 A~C를 질문에 따라 구분한 것이다. 이에 대한 설명으로 옳은 것은?
   set: null
   table:
     header:
-    - 구분
-    - 특징
+    - 질문
+    - A
+    - B
+    - C
     rows:
-    - - A
-      - 사회적 위험에 보험 방식으로 미리 대비하며 개인·사업주·정부가 비용을 나누어 부담한다.
-    - - B
-      - 국가와 지방 자치 단체의 책임하에 생활이 어려운 국민의 최저 생활을 보장하고 자립을 지원한다.
-    - - C
-      - 도움이 필요한 국민에게 상담·재활·돌봄 등 비금전적 지원을 제공한다.
+    - - 보험료를 미리 내 두었다가 위험이 생기면 지원받는 방식인가?
+      - 예
+      - 아니요
+      - 아니요
+    - - 상담·재활·돌봄 등 비금전적 지원을 제공하는 것이 중심인가?
+      - 아니요
+      - 아니요
+      - 예
     weights:
-    - 0.12
-    - 0.88
+    - 0.58
+    - 0.14
+    - 0.14
+    - 0.14
   options:
-  - A의 대표적인 예로 국민 기초 생활 보장 제도를 들 수 있다.
-  - B의 사례로 기초 연금과 의료 급여를 들 수 있다.
-  - C는 일정 소득이 있는 개인이 낸 보험료를 주된 재원으로 한다.
-  - A는 B와 달리 사회적 위험이 발생한 후에 사후적으로 대처한다.
-  - 노인 돌봄 서비스는 A에, 장애인 활동 지원은 C에 해당한다.
+  - A는 사회적 위험이 생긴 뒤 생활이 어려워진 사람만을 골라 지원한다.
+  - B의 사례로 소득 인정액이 기준 이하인 노인에게 매월 지급하는 연금을 들 수 있다.
+  - C의 사례로 일정 소득이 있는 사람이 가입하여 노후에 받는 국민연금을 들 수 있다.
+  - 국민 건강 보험은 B에, 장애인 활동 지원은 C에 해당한다.
+  - A와 달리 C는 비용을 개인·사업주·정부가 나누어 부담하는 방식이다.
   answer: 2
-  second_best: 1
-  difficulty: D3
+  second_best: 3
+  difficulty: D4
   family: PRINCIPLE_APPLICATION
-  balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
   immediate_elimination: 1
   evidence_count: 2
   transfer: false
@@ -506,14 +515,14 @@ items:
   - TEXTBOOK-p54
   judgments:
   - v: false
-    c: STRONG
+    c: WEAK
     axis: content
     claim: A1-07-opt1
     ev:
     - SCOPE:TEXTBOOK-p54
     - TABLE
     - OPTION1
-    why: 국민 기초 생활 보장 제도는 공공 부조(B)이다.
+    why: A는 사회 보험으로 위험에 사전에 대처하며, 일정 소득이 있는 사람이 보험료를 낸다.
   - v: true
     c: CORRECT
     axis: content
@@ -522,25 +531,25 @@ items:
     - SCOPE:TEXTBOOK-p54
     - TABLE
     - OPTION2
-    why: 기초 연금과 의료 급여는 공공 부조의 대표 사례이다.
+    why: 기초 연금은 이름에 '연금'이 있지만 소득 기준으로 지급하는 공공 부조(B)이다.
   - v: false
-    c: WEAK
+    c: STRONG
     axis: content
     claim: A1-07-opt3
     ev:
     - SCOPE:TEXTBOOK-p54
     - TABLE
     - OPTION3
-    why: 보험료 분담은 사회 보험(A)의 특징이다.
+    why: 국민연금은 보험료를 내는 사회 보험(A)이다.
   - v: false
-    c: MEDIUM
+    c: STRONG
     axis: content
     claim: A1-07-opt4
     ev:
     - SCOPE:TEXTBOOK-p54
     - TABLE
     - OPTION4
-    why: 사회 보험은 사전에 대처하는 제도이다.
+    why: 국민 건강 보험은 사회 보험(A)이다.
   - v: false
     c: WEAK
     axis: content
@@ -549,7 +558,7 @@ items:
     - SCOPE:TEXTBOOK-p54
     - TABLE
     - OPTION5
-    why: 둘 다 사회 서비스(C)이다.
+    why: 보험료 분담은 사회 보험(A)의 특징이다.
 - item_id: A1-08
   stem: 다음 사례에 대한 갑, 을의 주장으로 가장 적절한 것은?
   set: null
@@ -621,113 +630,89 @@ items:
     - OPTION5
     why: 을은 인종 고려에 반대한다.
 - item_id: A1-09
-  stem: 다음 자료에 대한 분석으로 옳은 것은? (단, 갑, 을 기업은 모두 민간 기업이며 2023년 기준이다.)
+  stem: 다음 가상 편지를 쓴 사상가의 입장에서 <문제 상황> 속 의원 A에게 할 조언으로 가장 적절한 것은?
   set: null
   passage:
-  - 위 표는 장애인 의무 고용 제도에 따른 의무 고용률이다. 이 제도는 국가, 지방 자치 단체와 근로자 50명 이상의 공공 기관 및 민간 기업에 적용된다. 근로자 1,000명인 갑 기업은 장애인 30명을, 근로자 100명인 을 기업은 장애인 4명을 고용하고 있다.
-  table:
-    header:
-    - 구분
-    - 2018년
-    - 2020년
-    - 2023년
-    rows:
-    - - 국가·지방 자치 단체 공무원
-      - 3.2%
-      - 3.4%
-      - 3.6%
-    - - 민간 기업
-      - 2.9%
-      - 3.1%
-      - 3.1%
-    weights:
-    - 0.37
-    - 0.21
-    - 0.21
-    - 0.21
+  - 여러분이 앞으로 살아갈 사회의 규칙을 정한다고 생각해 보세요. 단, 자신이 부유한 집에서 태어날지, 장애를 지니고 태어날지, 어떤 재능을 타고날지 전혀 모른다고 가정해야 합니다. 이런 상황에서 합리적인 사람이라면 먼저 모두가 동등한 기본적 자유를 누리는 원칙에 합의할 것입니다. 그리고 불평등을 허용한다면, 그것은 가장 불리한 처지의 사람에게 가장 큰 이익이
+    되고 그 지위가 모두에게 열려 있을 때뿐일 것입니다.
+  - <문제 상황> □□시 의원 A는 늘어난 세수를 (가) 모든 시민에게 똑같은 금액으로 나누어 주는 안과 (나) 저소득층과 장애인 등 가장 어려운 처지의 시민에게 교육·의료 지원을 집중하는 안 가운데 하나를 골라야 한다.
   options:
-  - 갑 기업은 의무 고용률을 충족하고 있다.
-  - 을 기업은 갑 기업보다 고용한 장애인 수가 적으므로 의무 고용률에 미달한다.
-  - 갑 기업은 을 기업보다 더 많은 장애인을 고용하고도 의무 고용률에 미달한다.
-  - 2018년 대비 2023년에 민간 기업의 의무 고용률 상승 폭은 공무원보다 크다.
-  - 근로자가 50명 미만인 민간 기업도 이 제도에 따른 고용 의무를 진다.
+  - 개인의 정당한 소유물을 재분배하는 일은 어떤 경우에도 허용될 수 없음을 고려하세요.
+  - 누구에게 돌아가든 사회 전체의 이익 총량이 가장 커지는 안을 고르세요.
+  - 기본적 자유를 침해하지 않는 범위에서 최소 수혜자에게 가장 큰 이익이 되는 안을 고르세요.
+  - 공동체가 물려받은 전통적 덕목에 비추어 어떤 안이 좋은 삶에 부합하는지 판단하세요.
+  - 불평등은 그 자체로 부정의하므로 모든 시민의 몫을 반드시 똑같이 하세요.
   answer: 3
-  second_best: 2
+  second_best: 5
   difficulty: D4
-  family: DATA_INTERPRETATION
+  family: PRINCIPLE_APPLICATION
   balance: ADVANCED_DISCRIMINATION
   reasoning_steps: 3
   immediate_elimination: 1
   evidence_count: 2
   transfer: false
   scope_refs:
-  - TEXTBOOK-p57
+  - TEXTBOOK-p47
   judgments:
   - v: false
-    c: STRONG
+    c: WEAK
     axis: content
     claim: A1-09-opt1
     ev:
-    - SCOPE:TEXTBOOK-p57
+    - SCOPE:TEXTBOOK-p47
     - PASSAGE
-    - TABLE
     - OPTION1
-    why: 갑 기업의 고용률은 3.0%로 3.1%에 미달한다.
+    why: 노직의 입장이다.
   - v: false
     c: STRONG
     axis: content
     claim: A1-09-opt2
     ev:
-    - SCOPE:TEXTBOOK-p57
+    - SCOPE:TEXTBOOK-p47
     - PASSAGE
-    - TABLE
     - OPTION2
-    why: 을 기업의 고용률은 4%로 기준을 충족한다.
+    why: 공리주의적 판단으로, 편지는 최소 수혜자의 처지를 기준으로 삼는다.
   - v: true
     c: CORRECT
     axis: content
     claim: A1-09-opt3
     ev:
-    - SCOPE:TEXTBOOK-p57
+    - SCOPE:TEXTBOOK-p47
     - PASSAGE
-    - TABLE
     - OPTION3
-    why: 갑 기업은 30명을 고용했지만 3.0%로 미달하고, 을 기업은 4명이지만 4%로 충족한다.
+    why: 편지의 사상가(롤스)는 평등한 자유를 보장한 위에서 최소 수혜자에게 최대 이익이 되는 불평등만 허용한다.
   - v: false
     c: WEAK
     axis: content
     claim: A1-09-opt4
     ev:
-    - SCOPE:TEXTBOOK-p57
+    - SCOPE:TEXTBOOK-p47
     - PASSAGE
-    - TABLE
     - OPTION4
-    why: 민간 기업은 0.2%p, 공무원은 0.4%p 상승하였다.
+    why: 공동체주의적 판단이다.
   - v: false
-    c: WEAK
+    c: STRONG
     axis: content
     claim: A1-09-opt5
     ev:
-    - SCOPE:TEXTBOOK-p57
+    - SCOPE:TEXTBOOK-p47
     - PASSAGE
-    - TABLE
     - OPTION5
-    why: 50명 이상인 사업주에게 적용된다.
+    why: 롤스는 일정한 조건 아래 불평등을 허용하므로 무조건적 균등 분배를 요구하지 않는다.
 - item_id: A1-10
-  stem: 다음은 공유지의 비극을 해결하기 위한 방안 ㉮~㉰이다. 이에 대한 설명으로 옳은 것은?
+  stem: (가)의 갑, 을 입장을 탐구할 때, A에는 갑만 '예', B에는 갑과 을 모두 '예', C에는 을만 '예'라고 답할 질문이 들어간다. A~C에 들어갈 질문으로 적절한 것만을 <보기>에서 고른 것은?
   set: null
   passage:
-  - ㉮ 공동 목초지를 개인들에게 나누어 주고 각자 자신의 목초지를 자율적으로 관리하게 한다.
-  - ㉯ 정부가 방목 가능한 적정 가축 수를 정하고, 이를 넘겨 방목하는 사람에게 벌금을 부과한다.
-  - ㉰ 목초지를 함께 쓰는 사람들끼리 자발적으로 합의하여 방목할 가축 수를 정하고 질서를 잡아 나간다.
-  options:
-  - ㉮는 목초지를 계속 공동으로 이용하되 이용 규칙을 정부가 정하는 방안이다.
-  - ㉯는 이용자들의 자율적 협력에 기대므로 규칙 위반을 감시할 필요가 없다.
-  - ㉰는 외부의 강제력을 통해 개인의 방목을 제한하는 방안이다.
-  - ㉮~㉰는 모두 공유지 이용에 대한 개인의 선택을 전혀 제한하지 않는다.
-  - ㉯는 ㉰와 달리 규칙을 어긴 사람에게 정부가 제재를 가하는 방식이다.
-  answer: 5
-  second_best: 3
+  - '(가) 갑: 사람은 누구나 스스로 선택한 삶의 목적을 추구할 권리를 지닌다. 국가는 어떤 삶이 좋은 삶인지에 대해 편을 들지 말고, 각자가 원하는 삶을 살 수 있도록 자유와 권리를 지켜 주어야 한다.'
+  - '을: 사람은 가족과 지역, 민족의 역사 속에서 자신이 누구인지를 깨닫는다. 공동체는 개인의 권리를 보호하는 수단에 그치지 않고, 구성원이 함께 추구할 좋은 삶의 바탕이 된다.'
+  view:
+  - 'ㄱ. A: 국가는 구성원의 좋은 삶에 대해 중립을 지켜야 하는가?'
+  - 'ㄴ. B: 개인의 행복한 삶과 정의로운 사회의 실현을 지향하는가?'
+  - 'ㄷ. B: 개인의 정체성은 공동체의 역사와 분리되어 형성되는가?'
+  - 'ㄹ. C: 공동선의 실현을 위해서라면 개인의 권리를 제한 없이 희생시킬 수 있는가?'
+  options: *id001
+  answer: 1
+  second_best: 4
   difficulty: D4
   family: PERSPECTIVE_IDENTIFICATION
   balance: ADVANCED_DISCRIMINATION
@@ -736,53 +721,58 @@ items:
   evidence_count: 2
   transfer: false
   scope_refs:
-  - TEXTBOOK-p61
+  - TEXTBOOK-p45-48
   judgments:
-  - v: false
-    c: WEAK
+  - v: true
+    c: CORRECT
     axis: content
     claim: A1-10-opt1
     ev:
-    - SCOPE:TEXTBOOK-p61
+    - SCOPE:TEXTBOOK-p45-48
     - PASSAGE
+    - VIEW
     - OPTION1
-    why: ㉮는 목초지를 개인에게 나누어 주는 사유화 방안이다.
+    why: ㄱ은 자유주의만의 입장, ㄴ은 두 정의관이 함께 지향하는 바이다.
   - v: false
     c: STRONG
     axis: content
     claim: A1-10-opt2
     ev:
-    - SCOPE:TEXTBOOK-p61
+    - SCOPE:TEXTBOOK-p45-48
     - PASSAGE
+    - VIEW
     - OPTION2
-    why: ㉯는 정부 규제이며 위반 여부를 감시해야 한다.
-  - v: false
-    c: STRONG
-    axis: content
-    claim: A1-10-opt3
-    ev:
-    - SCOPE:TEXTBOOK-p61
-    - PASSAGE
-    - OPTION3
-    why: ㉰는 이용자들의 자발적 합의에 의존한다.
+    why: ㄷ은 을이 부정하므로 B에 들어갈 수 없다.
   - v: false
     c: WEAK
     axis: content
+    claim: A1-10-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p45-48
+    - PASSAGE
+    - VIEW
+    - OPTION3
+    why: ㄷ이 틀리다.
+  - v: false
+    c: STRONG
+    axis: content
     claim: A1-10-opt4
     ev:
-    - SCOPE:TEXTBOOK-p61
+    - SCOPE:TEXTBOOK-p45-48
     - PASSAGE
+    - VIEW
     - OPTION4
-    why: ㉯와 ㉰는 방목 가축 수를 제한한다.
-  - v: true
-    c: CORRECT
+    why: ㄹ은 공동체주의도 받아들이지 않는 극단적 진술이다(교과서는 어느 한쪽만 강조하는 것을 경계).
+  - v: false
+    c: WEAK
     axis: content
     claim: A1-10-opt5
     ev:
-    - SCOPE:TEXTBOOK-p61
+    - SCOPE:TEXTBOOK-p45-48
     - PASSAGE
+    - VIEW
     - OPTION5
-    why: ㉯는 정부의 벌금, ㉰는 이용자 간 합의에 기댄다.
+    why: ㄷ, ㄹ 모두 틀리다.
 - item_id: A1-11
   stem: 다음 사례의 ㉠~㉢에 대한 설명으로 가장 적절한 것은?
   set: null
@@ -924,90 +914,86 @@ items:
     - OPTION5
     why: ㄱ은 직접적 폭력이다.
 - item_id: A1-13
-  stem: 다음 글의 ㉠~㉢에 해당하는 국제 사회 행위 주체에 대한 설명으로 옳은 것은?
+  stem: 다음 글의 ㉠~㉢에 대한 설명으로 옳지 않은 것은?
   set: null
   passage:
   - 군부 쿠데타 이후 무력 충돌이 이어진 C국에서 실향민이 급증하자, ㉠ 국제 연합 난민 기구(UNHCR)는 현지 기관과 협력하여 담요와 생활용품을 나누어 주었다. 한편 ㉡ 국제 앰네스티는 일부 기업이 C국 군부에 항공 연료를 공급하고 있다는 보고서를 발표하였고, 해당 기업은 C국에서 사업을 철수하겠다고 밝혔다. 또 ㉢ D국 정부는 군부에 자금을 대는 C국
     국영 기업에 대해 금융 거래를 금지하는 제재를 발표하였다.
   options:
-  - ㉠은 개인이나 민간단체의 주도로 만들어진 행위 주체이다.
-  - ㉡은 각국 정부를 회원으로 하여 국가 간 이해관계를 조정한다.
-  - ㉢은 자국의 이익을 고려하지 않고 오직 인류의 보편적 가치를 위해 활동한다.
-  - ㉡은 ㉢과 달리 국제 사회에서 공식적인 법적 지위를 갖는 가장 기본적인 행위 주체이다.
-  - ㉡은 기업에 영향력을 행사하여 분쟁 당사자에게 흘러가는 자원을 차단하는 데 기여하였다.
+  - ㉠은 각국 정부를 회원으로 하는 행위 주체로서 인도주의적 구호 활동을 하였다.
+  - ㉡은 특정 국가의 이익이 아니라 인권 보장과 같은 인류의 보편적 가치를 위해 활동한다.
+  - ㉢은 국제 사회에서 법적 지위를 갖고 공식적인 활동을 할 수 있는 행위 주체이다.
+  - ㉡과 ㉢은 모두 무력 충돌을 지탱하는 자원의 흐름을 끊으려 했다는 공통점이 있다.
+  - ㉡은 회원국 정부의 위임을 받아 국가 간 이해관계를 조정하는 것을 주된 역할로 한다.
   answer: 5
-  second_best: 4
-  difficulty: D3
+  second_best: 1
+  difficulty: D4
   family: PERSPECTIVE_IDENTIFICATION
-  balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
   immediate_elimination: 1
   evidence_count: 2
   transfer: false
   scope_refs:
-  - TEXTBOOK-p112-113
+  - TEXTBOOK-p109,112-114
   judgments:
-  - v: false
-    c: WEAK
+  - v: true
+    c: STRONG
     axis: content
     claim: A1-13-opt1
     ev:
-    - SCOPE:TEXTBOOK-p112-113
+    - SCOPE:TEXTBOOK-p109,112-114
     - PASSAGE
     - OPTION1
-    why: ㉠은 각국 정부를 회원으로 하는 국제기구이다.
-  - v: false
-    c: MEDIUM
+    why: UNHCR는 국제 연합 산하 국제기구이다.
+  - v: true
+    c: WEAK
     axis: content
     claim: A1-13-opt2
     ev:
-    - SCOPE:TEXTBOOK-p112-113
+    - SCOPE:TEXTBOOK-p109,112-114
     - PASSAGE
     - OPTION2
-    why: ㉡은 비정부 기구이다.
-  - v: false
+    why: 국제 앰네스티는 비정부 기구이다.
+  - v: true
     c: WEAK
     axis: content
     claim: A1-13-opt3
     ev:
-    - SCOPE:TEXTBOOK-p112-113
+    - SCOPE:TEXTBOOK-p109,112-114
     - PASSAGE
     - OPTION3
-    why: 국가는 자국의 이익을 최우선으로 추구한다.
-  - v: false
+    why: 국가는 법적 지위를 갖는 가장 기본적인 행위 주체이다.
+  - v: true
     c: STRONG
     axis: content
     claim: A1-13-opt4
     ev:
-    - SCOPE:TEXTBOOK-p112-113
+    - SCOPE:TEXTBOOK-p109,112-114
     - PASSAGE
     - OPTION4
-    why: 법적 지위를 갖는 기본적 행위 주체는 국가(㉢)이다.
-  - v: true
+    why: 연료 공급 차단과 금융 제재 모두 군부의 자원을 끊으려 한 것이다.
+  - v: false
     c: CORRECT
     axis: content
     claim: A1-13-opt5
     ev:
-    - SCOPE:TEXTBOOK-p112-113
+    - SCOPE:TEXTBOOK-p109,112-114
     - PASSAGE
     - OPTION5
-    why: 보고서 발표로 기업 철수를 이끌어 군부로 가는 연료 공급을 막았다.
+    why: 국가 간 이해관계 조정은 국제기구의 역할이며 ㉡은 민간 주도의 비정부 기구이다.
 - item_id: A1-14
-  stem: (가)~(라)를 일어난 순서대로 옳게 나열한 것은?
+  stem: 밑줄 친 ㉠~㉣에 대한 설명으로 옳은 것은?
   set: null
-  view:
-  - (가) 소련과 북한의 거부로 남북한에 서로 다른 정부가 수립되었다.
-  - (나) 모스크바 3국 외상 회의에서 한반도의 신탁 통치가 결정되었다.
-  - (다) 미국과 소련이 북위 38도선을 경계로 한반도를 분할 점령하였다.
-  - (라) 북한의 남침으로 전쟁이 일어나 분단이 고착되었다.
-  view_label: ' '
+  passage:
+  - 광복과 함께 ㉠ 한반도는 두 강대국에 의해 분할 점령되었고, 이후 ㉡ 남북에 서로 다른 정부가 들어섰으며 전쟁을 거치며 분단이 굳어졌다. 오늘날 남북한은 경제 규모에 비해 ㉢ 많은 군사비를 지출하고 있고, 헤어진 가족을 만나지 못한 이산가족은 빠르게 고령화되고 있다. 한편 동아시아에서는 ㉣ 과거사를 둘러싼 역사 인식 갈등이 이어지고 있다.
   options:
-  - (다) - (나) - (가) - (라)
-  - (나) - (다) - (가) - (라)
-  - (다) - (가) - (나) - (라)
-  - (나) - (가) - (다) - (라)
-  - (다) - (나) - (라) - (가)
-  answer: 1
+  - ㉠은 냉전 체제가 무너진 뒤 미국과 소련이 합의하여 이루어졌다.
+  - ㉡ 이전에 국제 연합은 남북한 정부를 각각 따로 세우는 방안을 결의하였다.
+  - ㉢이 줄어들면 그 자원을 경제 발전에 쓸 수 있다는 점이 평화 통일의 이점으로 제시된다.
+  - ㉣을 해결하려면 정부 간 협상만 필요하며 시민 사회의 교류는 오히려 갈등을 키운다.
+  - 이산가족의 고통은 직접적 폭력의 결과일 뿐이므로 소극적 평화가 실현되면 모두 해소된다.
+  answer: 3
   second_best: 2
   difficulty: D3
   family: CAUSE_EFFECT
@@ -1017,53 +1003,53 @@ items:
   evidence_count: 2
   transfer: false
   scope_refs:
-  - TEXTBOOK-p117
+  - TEXTBOOK-p109,117-120
   judgments:
-  - v: true
-    c: CORRECT
+  - v: false
+    c: WEAK
     axis: content
     claim: A1-14-opt1
     ev:
-    - SCOPE:TEXTBOOK-p117
-    - VIEW
+    - SCOPE:TEXTBOOK-p109,117-120
+    - PASSAGE
     - OPTION1
-    why: 1945년 8월 분할 점령 → 1945년 12월 외상 회의 → 1948년 정부 수립 → 1950년 전쟁 순이다.
+    why: 분할 점령은 제2차 세계 대전 이후 냉전 질서가 형성되는 과정에서 이루어졌다.
   - v: false
     c: STRONG
     axis: content
     claim: A1-14-opt2
     ev:
-    - SCOPE:TEXTBOOK-p117
-    - VIEW
+    - SCOPE:TEXTBOOK-p109,117-120
+    - PASSAGE
     - OPTION2
-    why: 분할 점령이 외상 회의보다 먼저이다.
-  - v: false
-    c: MEDIUM
+    why: 국제 연합은 총선거로 통일 정부를 세우는 방안을 마련하였으나 소련과 북한이 거부하였다.
+  - v: true
+    c: CORRECT
     axis: content
     claim: A1-14-opt3
     ev:
-    - SCOPE:TEXTBOOK-p117
-    - VIEW
+    - SCOPE:TEXTBOOK-p109,117-120
+    - PASSAGE
     - OPTION3
-    why: 외상 회의가 정부 수립보다 먼저이다.
+    why: 군사 대립 비용을 줄여 경제 발전을 이룰 수 있다는 것이 평화 통일의 이점이다.
   - v: false
     c: WEAK
     axis: content
     claim: A1-14-opt4
     ev:
-    - SCOPE:TEXTBOOK-p117
-    - VIEW
+    - SCOPE:TEXTBOOK-p109,117-120
+    - PASSAGE
     - OPTION4
-    why: 분할 점령이 가장 먼저이다.
+    why: 공동 역사 교재, 청소년 역사 캠프 같은 시민 연대와 교류가 해결 방안으로 제시된다.
   - v: false
-    c: WEAK
+    c: MEDIUM
     axis: content
     claim: A1-14-opt5
     ev:
-    - SCOPE:TEXTBOOK-p117
-    - VIEW
+    - SCOPE:TEXTBOOK-p109,117-120
+    - PASSAGE
     - OPTION5
-    why: 정부 수립이 전쟁보다 먼저이다.
+    why: 분단 구조에서 비롯된 고통은 물리적 폭력이 멈춘 것만으로 해소되지 않는다.
 - item_id: A1-15
   stem: 다음 칼럼에서 강조하는 내용으로 가장 적절한 것은?
   set: null
@@ -1134,87 +1120,101 @@ items:
     - OPTION5
     why: 교류와 협력은 신뢰 회복에 기여한다.
 - item_id: A1-16
-  stem: 동아시아의 역사 갈등 (가)~(다)에 대한 설명으로 옳은 것은?
+  stem: 동아시아의 역사 갈등에 대해 옳게 말한 학생만을 있는 대로 고른 것은?
   set: null
   view:
-  - (가) 중국이 고조선, 부여, 고구려, 발해의 역사를 중국사의 일부라고 주장하는 연구 사업
-  - (나) 침략 전쟁과 식민 지배를 미화하는 일본 역사 교과서의 검정 통과
-  - (다) 작은 섬들의 영유권과 주변 해양 자원을 둘러싼 동아시아 국가 간 분쟁
+  - '갑: 고구려와 발해를 중국 소수 민족의 지방 정권으로 보는 주장에는 현재 중국 내 소수 민족의 분리 독립을 막으려는 의도가 깔려 있어.'
+  - '을: 침략과 식민 지배를 미화하는 역사 교과서는 다른 폭력을 정당화한다는 점에서 갈퉁이 말한 문화적 폭력으로 볼 수 있어.'
+  - '병: 동아시아의 해양 영토 분쟁은 해양 자원의 중요성이 커지면서 오히려 잦아들었어.'
+  - '정: 여러 나라의 학자와 교사가 함께 역사 교재를 만드는 것은 서로의 역사 인식을 공유해 왜곡에 대응하려는 노력이야.'
   view_label: ' '
   options:
-  - (가)는 일본이 고구려와 발해의 역사를 자국사로 편입하려는 사업이다.
-  - (나)에서 일본은 '징용'이라는 표현을 '강제 연행'으로 바로잡았다.
-  - (다)는 1970년대 이후 해양 자원의 중요성이 줄어들면서 완화되었다.
-  - (가)에는 현재 중국 내 소수 민족의 분리 독립을 막으려는 의도가 담겨 있다.
-  - (가)~(다)를 해결하려면 각국 시민 간 교류보다 정부 간 무력 대응을 우선해야 한다.
+  - 갑, 을
+  - 갑, 병
+  - 을, 정
+  - 갑, 을, 정
+  - 을, 병, 정
   answer: 4
-  second_best: 2
-  difficulty: D3
-  family: CAUSE_EFFECT
-  balance: CORE_EXAM_POINT
-  reasoning_steps: 2
+  second_best: 1
+  difficulty: D4
+  family: CLAIM_EVIDENCE_MATCH
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
   immediate_elimination: 1
   evidence_count: 2
   transfer: false
   scope_refs:
-  - TEXTBOOK-p119-120
+  - TEXTBOOK-p109,119-120
   judgments:
-  - v: false
-    c: WEAK
-    axis: content
-    claim: A1-16-opt1
-    ev:
-    - SCOPE:TEXTBOOK-p119-120
-    - VIEW
-    - OPTION1
-    why: 동북공정은 중국의 사업이다.
   - v: false
     c: STRONG
     axis: content
+    claim: A1-16-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p109,119-120
+    - VIEW
+    - OPTION1
+    why: 정의 진술도 옳다.
+  - v: false
+    c: WEAK
+    axis: content
     claim: A1-16-opt2
     ev:
-    - SCOPE:TEXTBOOK-p119-120
+    - SCOPE:TEXTBOOK-p109,119-120
     - VIEW
     - OPTION2
-    why: 일본은 '강제 연행'을 '징용'으로 바꾸어 침략을 정당화하였다.
+    why: 병은 틀리다.
   - v: false
-    c: MEDIUM
+    c: STRONG
     axis: content
     claim: A1-16-opt3
     ev:
-    - SCOPE:TEXTBOOK-p119-120
+    - SCOPE:TEXTBOOK-p109,119-120
     - VIEW
     - OPTION3
-    why: 해양 자원이 중요해지면서 분쟁이 심화되었다.
+    why: 갑의 진술도 옳다.
   - v: true
     c: CORRECT
     axis: content
     claim: A1-16-opt4
     ev:
-    - SCOPE:TEXTBOOK-p119-120
+    - SCOPE:TEXTBOOK-p109,119-120
     - VIEW
     - OPTION4
-    why: 고구려·발해를 소수 민족의 지방 정권으로 보아 분리 독립을 막으려는 의도가 있다.
+    why: 동북공정의 의도, 문화적 폭력의 개념 적용, 공동 역사 교재의 의미가 모두 옳다.
   - v: false
     c: WEAK
     axis: content
     claim: A1-16-opt5
     ev:
-    - SCOPE:TEXTBOOK-p119-120
+    - SCOPE:TEXTBOOK-p109,119-120
     - VIEW
     - OPTION5
-    why: 공동 역사 연구, 시민 연대와 교류가 해결 방안으로 제시된다.
+    why: 병은 틀리다. 해양 자원의 중요성이 커지며 분쟁은 심화되었다.
 - item_id: A1-17
-  stem: 우리나라의 국제적 위상과 세계 평화 기여에 대한 설명으로 옳은 것은?
+  stem: 다음은 평화의 유형 A, B를 구분한 것이다. 이에 대한 설명으로 옳은 것은? (단, A, B는 각각 소극적 평화, 적극적 평화 중 하나임.)
   set: null
+  table:
+    header:
+    - 질문
+    - A
+    - B
+    rows:
+    - - 빈곤과 정치적 억압이 남아 있어도 실현된 것으로 볼 수 있는가?
+      - 예
+      - 아니요
+    weights:
+    - 0.7
+    - 0.15
+    - 0.15
   options:
-  - 우리나라는 개발 원조 위원회(DAC) 회원국이 되었지만 개발 도상국에 대한 공적 개발 원조는 아직 시행하지 않고 있다.
-  - 공적 개발 원조(ODA)는 정부를 포함한 공공 기관이 개발 도상국의 경제 개발과 복지 향상을 위해 제공하는 원조이다.
-  - 국제 연합(UN)의 평화 유지 활동에는 각국 군대가 참여할 수 없으며 비정부 기구만 참여할 수 있다.
-  - 한국 국제 협력단(KOICA)은 정부와 무관하게 민간의 후원금만으로 활동하는 비정부 기구이다.
-  - 개발 원조 위원회(DAC)는 국제 연합(UN) 산하 기구로서 선진국의 원조 규범을 정하고 정책을 조정한다.
+  - A는 구조적 폭력과 문화적 폭력까지 제거된 상태이다.
+  - B는 전쟁과 테러가 없더라도 실현되지 않았을 수 있다.
+  - A가 실현되면 B도 함께 실현된다.
+  - 테러의 위협이 사라졌다는 사실만으로 B가 실현되었다고 볼 수 있다.
+  - 갈퉁은 A를 진정한 평화로 보았다.
   answer: 2
-  second_best: 5
+  second_best: 3
   difficulty: D3
   family: PRINCIPLE_APPLICATION
   balance: CORE_EXAM_POINT
@@ -1223,48 +1223,53 @@ items:
   evidence_count: 2
   transfer: false
   scope_refs:
-  - TEXTBOOK-p121
+  - TEXTBOOK-p109
   judgments:
   - v: false
     c: WEAK
     axis: content
     claim: A1-17-opt1
     ev:
-    - SCOPE:TEXTBOOK-p121
+    - SCOPE:TEXTBOOK-p109
+    - TABLE
     - OPTION1
-    why: 농업 기술 지원 등 공적 개발 원조를 시행하고 있다.
+    why: 빈곤·억압이 남아도 실현되는 A는 소극적 평화이다.
   - v: true
     c: CORRECT
     axis: content
     claim: A1-17-opt2
     ev:
-    - SCOPE:TEXTBOOK-p121
+    - SCOPE:TEXTBOOK-p109
+    - TABLE
     - OPTION2
-    why: 교과서에 제시된 공적 개발 원조의 정의이다.
+    why: 적극적 평화(B)는 직접적 폭력이 없어도 구조적·문화적 폭력이 남아 있으면 실현되지 않는다.
   - v: false
-    c: WEAK
+    c: STRONG
     axis: content
     claim: A1-17-opt3
     ev:
-    - SCOPE:TEXTBOOK-p121
+    - SCOPE:TEXTBOOK-p109
+    - TABLE
     - OPTION3
-    why: 우리나라는 군대를 파견하여 평화 유지 활동을 돕는다.
+    why: 소극적 평화만으로는 적극적 평화가 실현되지 않는다.
   - v: false
     c: MEDIUM
     axis: content
     claim: A1-17-opt4
     ev:
-    - SCOPE:TEXTBOOK-p121
+    - SCOPE:TEXTBOOK-p109
+    - TABLE
     - OPTION4
-    why: 외교부 산하 기관이다.
+    why: 직접적 폭력의 부재만으로는 적극적 평화가 될 수 없다.
   - v: false
-    c: STRONG
+    c: WEAK
     axis: content
     claim: A1-17-opt5
     ev:
-    - SCOPE:TEXTBOOK-p121
+    - SCOPE:TEXTBOOK-p109
+    - TABLE
     - OPTION5
-    why: 경제 협력 개발 기구(OECD) 산하 위원회이다.
+    why: 갈퉁은 적극적 평화(B)를 진정한 평화로 보았다.
 - item_id: A1-18
   stem: 갑, 을 사상가의 입장으로 옳은 것만을 <보기>에서 고른 것은?
   set: null
