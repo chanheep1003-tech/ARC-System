@@ -81,6 +81,14 @@ def main(src: str, out: str) -> None:
             "scope_refs": [raw["scope"]],
             "judgments": judg,
         })
+        if raw.get("table"):
+            t = raw["table"]; n = len(t["header"])
+            assert all(len(r) == n for r in t["rows"]), ("TABLE_COLS", raw["id"])
+            assert len(t.get("weights", [0] * n)) == n, ("TABLE_W", raw["id"])
+        lens = sorted(len(x) for x in opts); med = lens[2]
+        kl = len(opts[key - 1])
+        if kl == max(len(x) for x in opts) and sum(len(x) == kl for x in opts) == 1 and kl >= 1.2 * med:
+            print("LEN_WARN", raw["id"], round(kl / med, 2))
         items.append(it)
         keys.append(key)
     # local self-checks
