@@ -1,0 +1,1473 @@
+batch_id: SOC-N-C-ADV-S2-20261124
+product_mode: ARC_N
+subject: SOC
+generator: CLAUDE
+set_label: ARC N° 사회 C파트 심화 2세트
+course: 통합사회2
+cover_subtitle: 인권·시장경제·금융 심화 20제 (선택형)
+school_line: 동북고등학교 1학년 · 2026 2학기 기말
+created_at: '2026-11-25T10:30:00+09:00'
+scope: '통합사회C: 천재 통합사회2 25~26쪽, 64~83쪽 (기말 학습지 미입수)'
+scope_refs:
+- TEXTBOOK:천재 통합사회2 p25-26,p64-83
+- EXAM:동북고 2025-2 기말 통합사회2 원안지
+source_basis:
+  textbook: 천재 통합사회2(박윤경) 1과 3절, 3과 1~3절(83쪽까지)
+  exam_archetypes: quality/production/SOC_N_ADV_SRC/EXAM_ARCHETYPE_NOTES.md
+  worksheet: NOT_AVAILABLE_USER_CONFIRMED_20261124
+items:
+- item_id: C2-01
+  stem: 다음 사례에 대한 옳은 설명만을 <보기>에서 고른 것은?
+  set: null
+  passage:
+  - 62세인 갑은 경력을 살려 ○○ 회사의 사무직에 지원하려 하였다. 그러나 채용 공고에는 직무와 관계없이 “60세 미만만 지원 가능”이라고 적혀 있었다.
+  view:
+  - ㄱ. 연령을 이유로 한 차별이 나타나 있다.
+  - ㄴ. 사회적 소수자 차별은 사회 통합을 저해할 수 있다.
+  - ㄷ. 차별 해소를 위해 인권 교육과 의식 개선 활동이 필요하다.
+  - ㄹ. 나이에 따른 대우는 어떤 경우에도 인권 문제가 아니다.
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ
+  - ㄴ, ㄹ
+  - ㄱ, ㄴ, ㄹ
+  - ㄱ, ㄴ, ㄷ
+  answer: 5
+  second_best: 1
+  difficulty: D3
+  family: RIGHTS_CONFLICT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p24-25
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-01-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p24-25
+    - PASSAGE
+    - VIEW
+    - OPTION1
+    why: ㄷ도 옳다.
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: C2-01-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p24-25
+    - PASSAGE
+    - VIEW
+    - OPTION2
+    why: ㄴ도 옳다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-01-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p24-25
+    - PASSAGE
+    - VIEW
+    - OPTION3
+    why: ㄹ이 틀리다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-01-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p24-25
+    - PASSAGE
+    - VIEW
+    - OPTION4
+    why: ㄹ이 틀리다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: C2-01-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p24-25
+    - PASSAGE
+    - VIEW
+    - OPTION5
+    why: 연령 차별, 사회 통합 저해, 사회적 차원의 해결 노력이다.
+- item_id: C2-02
+  stem: (가)~(다)에 해당하는 법률을 옳게 짝지은 것은?
+  set: null
+  passage:
+  - (가) 국가와 지방 자치 단체의 책무 등을 규정하여 정치·경제·사회·문화 모든 영역에서 성별에 따른 차별 없는 사회를 실현하는 것을 목적으로 한다.
+  - (나) 이주민 가족 구성원의 삶의 질 향상과 사회 통합에 이바지하는 것을 목적으로 한다.
+  - (다) 신체적·정신적 손상을 가진 사람의 완전한 사회 참여와 평등권을 실현하는 것을 목적으로 한다.
+  options:
+  - (가) 양성평등 기본법 (나) 다문화 가족 지원법 (다) 장애인 차별 금지법
+  - (가) 다문화 가족 지원법 (나) 양성평등 기본법 (다) 장애인 차별 금지법
+  - (가) 양성평등 기본법 (나) 장애인 차별 금지법 (다) 다문화 가족 지원법
+  - (가) 장애인 차별 금지법 (나) 다문화 가족 지원법 (다) 양성평등 기본법
+  - (가) 다문화 가족 지원법 (나) 장애인 차별 금지법 (다) 양성평등 기본법
+  answer: 1
+  second_best: 3
+  difficulty: D3
+  family: REMEDY_PROCEDURE
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p25
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: C2-02-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p25
+    - PASSAGE
+    - OPTION1
+    why: 각 법률의 목적이다.
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: C2-02-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p25
+    - PASSAGE
+    - OPTION2
+    why: (가)는 양성평등 기본법이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-02-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p25
+    - PASSAGE
+    - OPTION3
+    why: (나)와 (다)가 바뀌었다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-02-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p25
+    - PASSAGE
+    - OPTION4
+    why: (가)와 (다)가 바뀌었다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-02-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p25
+    - PASSAGE
+    - OPTION5
+    why: 모두 어긋난다.
+- item_id: C2-03
+  stem: 청소년 노동권에 대해 옳게 말한 학생만을 고른 것은?
+  set: null
+  passage:
+  - '갑: 청소년의 노동권은 성인보다 약하게 보장돼.'
+  - '을: 4시간을 일하면 근로 시간 도중에 30분 이상 쉬어야 해.'
+  - '병: 16세 근로자는 당사자끼리 합의하면 1주에 5시간까지 근로 시간을 늘릴 수 있어.'
+  - '정: 근로 계약서에는 임금과 근로 시간 등을 밝혀 적어야 해.'
+  options:
+  - 갑, 을
+  - 갑, 정
+  - 을, 병, 정
+  - 갑, 을, 병
+  - 갑, 병, 정
+  answer: 3
+  second_best: 4
+  difficulty: D4
+  family: PERSPECTIVE_IDENTIFICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p26
+  judgments:
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-03-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p26
+    - PASSAGE
+    - OPTION1
+    why: 갑이 틀리다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-03-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p26
+    - PASSAGE
+    - OPTION2
+    why: 갑이 틀리다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: C2-03-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p26
+    - PASSAGE
+    - OPTION3
+    why: 근로기준법 제54조·제69조와 근로 계약서의 명시 사항이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-03-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p26
+    - PASSAGE
+    - OPTION4
+    why: 갑이 틀리다. 성인과 동일하게 보장되며 더 강하게 보호받는다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-03-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p26
+    - PASSAGE
+    - OPTION5
+    why: 갑이 틀리다.
+- item_id: C2-04
+  stem: 다음 상황에 놓인 갑에게 할 조언으로 가장 적절한 것은?
+  set: null
+  passage:
+  - 17세 갑은 편의점에서 두 달 동안 일했지만 사장은 “청소년은 원래 덜 받는 거야.”라며 최저 임금보다 적은 돈을 주었고, 그마저 한 달째 밀려 있다. 갑은 근로 계약서도 쓰지 않았다.
+  options:
+  - 청소년은 최저 임금을 적용받지 않으니 참아야 해.
+  - 고용노동부 등의 기관에 문의해 적극적으로 대응해.
+  - 근로 계약서가 없으니 임금을 청구할 방법이 없어.
+  - 청소년 노동권은 성인보다 약하게 보장되니 포기해.
+  - 사장과 합의했다면 법보다 그 합의가 우선이야.
+  answer: 2
+  second_best: 3
+  difficulty: D3
+  family: REMEDY_PROCEDURE
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p26
+  judgments:
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-04-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p26
+    - PASSAGE
+    - OPTION1
+    why: 청소년도 최저 임금을 보장받는다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: C2-04-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p26
+    - PASSAGE
+    - OPTION2
+    why: 교과서가 제시한 대응 방법이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-04-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p26
+    - PASSAGE
+    - OPTION3
+    why: 계약서가 없어도 구제를 받을 수 있다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-04-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p26
+    - PASSAGE
+    - OPTION4
+    why: 성인과 동일하게 보장된다.
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: C2-04-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p26
+    - PASSAGE
+    - OPTION5
+    why: 법정 기준에 미달하는 합의는 인정되지 않는다.
+- item_id: C2-05
+  stem: 다음 사상가의 주장으로 가장 적절한 것은?
+  set: null
+  passage:
+  - 부의 축적을 죄악시하던 로마 가톨릭과 달리, 프로테스탄트는 성실하게 일하고 근검절약하여 재산을 모으는 것을 종교적 소명으로 여겼다. 이 윤리는 사람들이 직업 활동을 도덕적인 행위로 인식하게 하였다.
+  options:
+  - 종교는 경제생활에 아무런 영향을 주지 않는다.
+  - 이윤 추구는 어떤 경우에도 비윤리적이다.
+  - 부의 축적을 죄악시해야 자본주의가 발전한다.
+  - 종교 윤리가 이윤 추구를 정당화하였다.
+  - 자본주의는 국가의 계획과 통제에서 시작되었다.
+  answer: 4
+  second_best: 3
+  difficulty: D3
+  family: CAUSE_EFFECT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p65
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: C2-05-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p65
+    - PASSAGE
+    - OPTION1
+    why: 영향을 주었다고 본다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-05-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p65
+    - PASSAGE
+    - OPTION2
+    why: 윤리적으로 정당화되었다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-05-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p65
+    - PASSAGE
+    - OPTION3
+    why: 가톨릭의 태도로 반대이다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: C2-05-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p65
+    - PASSAGE
+    - OPTION4
+    why: 베버의 주장이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-05-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p65
+    - PASSAGE
+    - OPTION5
+    why: 관련 없다.
+- item_id: C2-06
+  stem: 자본주의와 사회주의를 비교할 때, A는 자본주의에만, B는 둘에 공통으로, C는 사회주의에만 해당한다. A~C에 들어갈 진술로 옳은 것만을 <보기>에서 고른 것은?
+  set: null
+  view:
+  - 'ㄱ. A: 생산 수단의 사적 소유를 인정한다.'
+  - 'ㄴ. B: 생산 수단의 공동 소유를 지향한다.'
+  - 'ㄷ. C: 개인의 자유보다 사회 전체의 이익을 중시한다.'
+  - 'ㄹ. C: 시장 가격에 따라 거래가 이루어지도록 한다.'
+  options:
+  - ㄱ, ㄷ
+  - ㄱ, ㄹ
+  - ㄴ, ㄷ
+  - ㄴ, ㄹ
+  - ㄷ, ㄹ
+  answer: 1
+  second_best: 3
+  difficulty: D4
+  family: PRINCIPLE_APPLICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p65-66
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: C2-06-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p65-66
+    - VIEW
+    - OPTION1
+    why: 사유 재산 제도와 사회 전체 이익 중시이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-06-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p65-66
+    - VIEW
+    - OPTION2
+    why: ㄹ이 틀리다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-06-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p65-66
+    - VIEW
+    - OPTION3
+    why: ㄴ이 틀리다. 사회주의만의 특징이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-06-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p65-66
+    - VIEW
+    - OPTION4
+    why: ㄴ, ㄹ이 틀리다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-06-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p65-66
+    - VIEW
+    - OPTION5
+    why: ㄹ이 틀리다. 자본주의의 특징이다.
+- item_id: C2-07
+  stem: (가), (나) 시기의 자본주의에 대한 설명으로 옳은 것은?
+  set: null
+  passage:
+  - (가) 절대 왕정 국가들은 식민지에서 원자재를 싸게 들여와 비싸게 팔아 이윤을 얻었다.
+  - (나) 방적기와 증기 기관이 발명되어 공장에서 면직물을 대량으로 생산하였다.
+  options:
+  - (가)에서는 국가의 시장 개입을 최소화하였다.
+  - (나)는 (가)보다 먼저 나타났다.
+  - (가)에서 축적된 자본은 (나)로 이행하는 데 방해가 되었다.
+  - (나) 시기에 케인스는 큰 정부를 주장하였다.
+  - (가)는 유통에서, (나)는 생산에서 이윤을 얻었다.
+  answer: 5
+  second_best: 1
+  difficulty: D4
+  family: CAUSE_EFFECT
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p66
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-07-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p66
+    - PASSAGE
+    - OPTION1
+    why: 중상주의로 국가가 보호하였다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-07-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p66
+    - PASSAGE
+    - OPTION2
+    why: 상업 자본주의가 먼저이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-07-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p66
+    - PASSAGE
+    - OPTION3
+    why: 밑거름이 되었다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-07-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p66
+    - PASSAGE
+    - OPTION4
+    why: 케인스는 수정 자본주의 시기이다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: C2-07-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p66
+    - PASSAGE
+    - OPTION5
+    why: 상업 자본주의와 산업 자본주의의 이윤 원천이다.
+- item_id: C2-08
+  stem: 수정 자본주의에서 신자유주의로 바뀐 배경으로 가장 적절한 것은?
+  set: null
+  options:
+  - 대공황으로 기업이 도산하고 실업자가 크게 늘었다.
+  - 정부의 적극적 개입이 오히려 비효율을 낳았다.
+  - 대규모 독점 기업이 처음으로 출현하였다.
+  - 산업 혁명으로 상품의 대량 생산이 가능해졌다.
+  - 절대 왕정이 중상주의 정책을 강하게 펼쳤다.
+  answer: 2
+  second_best: 1
+  difficulty: D3
+  family: CAUSE_EFFECT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p67
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-08-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p67
+    - OPTION1
+    why: 수정 자본주의의 등장 배경이다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: C2-08-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p67
+    - OPTION2
+    why: 석유 파동과 정부 실패이다.
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: C2-08-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p67
+    - OPTION3
+    why: 수정 자본주의의 배경이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-08-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p67
+    - OPTION4
+    why: 산업 자본주의의 배경이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-08-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p67
+    - OPTION5
+    why: 상업 자본주의의 모습이다.
+- item_id: C2-09
+  stem: 수해로 농산물 생산량이 급감했을 때 갑~병국의 대응이다. 이에 대한 설명으로 옳은 것은?
+  set: null
+  passage:
+  - '갑국: 농산물 가격이 크게 오르자 소비자들은 스스로 구매량을 줄였다.'
+  - '을국: 정부가 가구별 농산물 배급량을 줄였다.'
+  - '병국: 시장 가격을 기본으로 하되 정부가 보조금을 지급해 가격 안정을 꾀하였다.'
+  options:
+  - 갑국에서는 정부가 생산 수단 대부분을 소유한다.
+  - 을국에서는 수요와 공급으로 가격이 결정된다.
+  - 을국은 갑국보다 개인의 선택 자유가 크다.
+  - 병국은 시장을 바탕으로 정부가 개입하는 체제이다.
+  - 갑국은 을국보다 분배의 평등을 중시한다.
+  answer: 4
+  second_best: 2
+  difficulty: D4
+  family: PRINCIPLE_APPLICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p69-71
+  judgments:
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-09-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p69-71
+    - PASSAGE
+    - OPTION1
+    why: 갑국은 시장경제 체제이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-09-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p69-71
+    - PASSAGE
+    - OPTION2
+    why: 을국은 계획경제 체제이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-09-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p69-71
+    - PASSAGE
+    - OPTION3
+    why: 계획경제는 선택이 제한된다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: C2-09-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p69-71
+    - PASSAGE
+    - OPTION4
+    why: 혼합 경제 체제이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-09-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p69-71
+    - PASSAGE
+    - OPTION5
+    why: 계획경제가 분배의 평등을 중시한다.
+- item_id: C2-10
+  stem: 다음 글의 결론으로 가장 적절한 것은?
+  set: null
+  passage:
+  - 정부는 공정한 경쟁 규칙을 만들고 공공재를 생산하며, 조세와 사회 보장 제도로 소득 분배를 개선할 수 있다. 그러나 정부의 개입과 규제가 지나치면 오히려 자원이 비효율적으로 배분될 수 있다.
+  options:
+  - 경제 문제는 정부의 계획으로만 해결해야 한다.
+  - 정부는 시장에 어떠한 개입도 해서는 안 된다.
+  - 시장과 정부가 서로 보완하며 균형을 이루어야 한다.
+  - 소득 분배는 시장에 전적으로 맡겨야 한다.
+  - 공공재는 기업이 시장에서 충분히 공급한다.
+  answer: 3
+  second_best: 2
+  difficulty: D3
+  family: CLAIM_EVIDENCE_MATCH
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p71
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: C2-10-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p71
+    - PASSAGE
+    - OPTION1
+    why: 지나친 개입은 비효율을 낳는다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-10-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p71
+    - PASSAGE
+    - OPTION2
+    why: 정부의 역할도 필요하다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: C2-10-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p71
+    - PASSAGE
+    - OPTION3
+    why: 혼합 경제 체제의 바람직한 관계이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-10-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p71
+    - PASSAGE
+    - OPTION4
+    why: 정부가 개선할 수 있다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-10-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p71
+    - PASSAGE
+    - OPTION5
+    why: 공공재는 과소 공급된다.
+- item_id: C2-11
+  stem: 다음 문제를 해결하기 위한 정부의 대응으로 가장 적절한 것은?
+  set: null
+  passage:
+  - 산업 혁명 이후 영국의 가정과 공장은 값싼 석탄을 연료로 썼고, 매연은 정화되지 않은 채 대기로 배출되었다. 1952년 런던에서는 스모그로 1만 2천여 명이 목숨을 잃었다.
+  options:
+  - 석탄 사용 기업에 보조금을 지급한다.
+  - 매연 배출을 시장의 자율에만 맡긴다.
+  - 오염 물질 배출에 세금이나 벌금을 부과한다.
+  - 공장의 생산량을 늘리도록 지원한다.
+  - 대기 오염은 개인이 각자 해결하게 한다.
+  answer: 3
+  second_best: 2
+  difficulty: D3
+  family: REMEDY_PROCEDURE
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p69,76
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: C2-11-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p69,76
+    - PASSAGE
+    - OPTION1
+    why: 오염을 늘린다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-11-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p69,76
+    - PASSAGE
+    - OPTION2
+    why: 시장에 맡겨 생긴 문제이다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: C2-11-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p69,76
+    - PASSAGE
+    - OPTION3
+    why: 부정적 외부 효과에 대한 정부의 대응이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-11-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p69,76
+    - PASSAGE
+    - OPTION4
+    why: 오염이 늘어난다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-11-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p69,76
+    - PASSAGE
+    - OPTION5
+    why: 정부의 개입이 필요하다.
+- item_id: C2-12
+  stem: 표는 갑이 방과 후에 할 수 있는 활동의 편익과 명시적 비용이다. 이에 대한 옳은 설명만을 <보기>에서 고른 것은? (단, 갑은 한 가지만 선택할 수 있고, 활동 시간은 같음.)
+  set: null
+  table:
+    header:
+    - 구분(만 원)
+    - 학원 수강
+    - 독서실 이용
+    - 운동
+    rows:
+    - - 편익
+      - '12'
+      - '7'
+      - '8'
+    - - 명시적 비용
+      - '4'
+      - '1'
+      - '3'
+    weights:
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+  view:
+  - ㄱ. 순편익이 가장 큰 활동은 학원 수강이다.
+  - ㄴ. 편익이 가장 큰 활동은 언제나 합리적 선택이다.
+  - ㄷ. 독서실 이용의 순편익은 운동보다 크다.
+  - ㄹ. 명시적 비용이 가장 적은 활동을 고르는 것이 합리적이다.
+  options:
+  - ㄱ, ㄴ
+  - ㄴ, ㄷ
+  - ㄴ, ㄹ
+  - ㄱ, ㄷ
+  - ㄷ, ㄹ
+  answer: 4
+  second_best: 1
+  difficulty: D4
+  family: DATA_INTERPRETATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p73
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-12-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p73
+    - VIEW
+    - TABLE
+    - OPTION1
+    why: ㄴ이 틀리다. 비용도 함께 고려해야 한다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-12-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p73
+    - VIEW
+    - TABLE
+    - OPTION2
+    why: ㄴ이 틀리다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-12-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p73
+    - VIEW
+    - TABLE
+    - OPTION3
+    why: ㄴ, ㄹ이 틀리다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: C2-12-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p73
+    - VIEW
+    - TABLE
+    - OPTION4
+    why: 순편익은 학원 8, 독서실 6, 운동 5이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-12-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p73
+    - VIEW
+    - TABLE
+    - OPTION5
+    why: ㄹ이 틀리다.
+- item_id: C2-13
+  stem: 다음 게임에 대한 설명으로 옳은 것은? (단, 게임은 1회만 하며 제시된 조건 외에는 고려하지 않음.)
+  set: null
+  passage:
+  - 학생 10명이 각자 100만 원을 개인 계좌와 공동 계좌에 나누어 넣는다. 개인 계좌는 넣은 금액의 10%를 그 학생에게 이자로 준다. 공동 계좌는 모인 총액의 20%를 이자로 주며, 이 이자는 예금 여부와 관계없이 10명에게 똑같이 나누어 준다.
+  options:
+  - 나머지가 모두 공동 계좌에 넣을 때, 갑은 개인 계좌에 넣는 편이 이익이다.
+  - 모두 개인 계좌에 넣으면 1인당 이자는 20만 원이다.
+  - 공동 계좌의 이자는 각자 넣은 금액에 비례해 나누어진다.
+  - 모두 개인 계좌에 넣는 것이 모두 공동 계좌에 넣는 것보다 각자에게 유리하다.
+  - 이 게임은 독과점 기업의 가격 인상 문제를 보여 준다.
+  answer: 1
+  second_best: 4
+  difficulty: D5
+  family: DATA_INTERPRETATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 4
+  immediate_elimination: 0
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p74
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: C2-13-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p74
+    - PASSAGE
+    - OPTION1
+    why: 갑은 개인 이자 10만+공동 이자 18만=28만 원으로, 모두 공동일 때의 20만 원보다 많다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-13-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p74
+    - PASSAGE
+    - OPTION2
+    why: 각자 10만 원이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-13-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p74
+    - PASSAGE
+    - OPTION3
+    why: 똑같이 나누어 준다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-13-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p74
+    - PASSAGE
+    - OPTION4
+    why: 모두 공동이면 20만 원, 모두 개인이면 10만 원이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-13-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p74
+    - PASSAGE
+    - OPTION5
+    why: 공공재의 무임승차자 문제를 보여 준다.
+- item_id: C2-14
+  stem: 밑줄 친 ㉠~㉣에 대한 설명으로 옳지 않은 것은?
+  set: null
+  passage:
+  - 정부는 ㉠ 국방과 치안 서비스를 제공하고, ㉡ 소득이 많을수록 높은 세율을 적용하는 세금 제도를 운영한다. 또한 ㉢ 독과점 기업의 불공정 행위를 규제하는 법률을 시행하고, ㉣ 신기술을 개발한 기업에 보조금을 지급한다.
+  options:
+  - ㉠은 시장에서 공급되기 어려운 공공재이다.
+  - ㉡은 소득 불균형을 완화하려는 정책이다.
+  - ㉢은 공정한 경쟁을 보장하려는 노력이다.
+  - ㉣은 사회적으로 바람직한 활동을 장려하려는 정책이다.
+  - ㉣은 부정적 외부 효과를 줄이려는 정책이다.
+  answer: 5
+  second_best: 4
+  difficulty: D3
+  family: REMEDY_PROCEDURE
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p76
+  judgments:
+  - v: true
+    c: MEDIUM
+    axis: content
+    claim: C2-14-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p76
+    - PASSAGE
+    - OPTION1
+    why: 국방·치안은 공공재이다.
+  - v: true
+    c: WEAK
+    axis: content
+    claim: C2-14-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p76
+    - PASSAGE
+    - OPTION2
+    why: 누진세이다.
+  - v: true
+    c: WEAK
+    axis: content
+    claim: C2-14-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p76
+    - PASSAGE
+    - OPTION3
+    why: 독점 규제 및 공정거래에 관한 법률이다.
+  - v: true
+    c: STRONG
+    axis: content
+    claim: C2-14-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p76
+    - PASSAGE
+    - OPTION4
+    why: 긍정적 외부 효과를 장려한다.
+  - v: false
+    c: CORRECT
+    axis: content
+    claim: C2-14-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p76
+    - PASSAGE
+    - OPTION5
+    why: 긍정적 외부 효과를 장려하는 정책이다.
+- item_id: C2-15
+  stem: 다음 딜레마 상황에 대한 설명으로 가장 적절한 것은?
+  set: null
+  passage:
+  - 비료 공장을 운영하는 갑은 낡은 설비를 바꾸려 한다. 친환경 설비를 들이면 오염 물질 배출을 크게 줄일 수 있지만, 큰 비용이 들어 당장의 이윤은 줄어든다.
+  options:
+  - 기업은 이윤과 관계없는 단체이므로 고민할 필요가 없다.
+  - 친환경 설비는 비용이 들지만 사회적 책임을 다할 수 있다.
+  - 오염 물질 배출은 기업의 책임과 관계없는 문제이다.
+  - 이윤을 위해서라면 환경 보호는 고려하지 않아도 된다.
+  - 친환경 설비를 하면 기업가 정신을 포기하는 것이다.
+  answer: 2
+  second_best: 4
+  difficulty: D3
+  family: RIGHTS_CONFLICT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p77
+  judgments:
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-15-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p77
+    - PASSAGE
+    - OPTION1
+    why: 기업은 이윤을 추구한다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: C2-15-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p77
+    - PASSAGE
+    - OPTION2
+    why: 기업의 사회적 책임이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-15-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p77
+    - PASSAGE
+    - OPTION3
+    why: 기업의 책임이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-15-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p77
+    - PASSAGE
+    - OPTION4
+    why: 환경 보호도 고려해야 한다.
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: C2-15-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p77
+    - PASSAGE
+    - OPTION5
+    why: 혁신과 관계된다.
+- item_id: C2-16
+  stem: 노동자의 역할과 책임에 대한 설명으로 옳은 것은?
+  set: null
+  options:
+  - 노동자는 사용자와 대등한 위치에 있어 별도의 보호가 필요 없다.
+  - 노동자는 근로 계약에 따라 성실히 일하고 전문성을 길러야 한다.
+  - 최저 임금제는 사용자의 이익을 보호하기 위한 제도이다.
+  - 노동자가 자기 이익만 추구해도 노사 관계는 악화되지 않는다.
+  - 노동 삼권은 헌법이 아닌 근로기준법에만 규정되어 있다.
+  answer: 2
+  second_best: 4
+  difficulty: D3
+  family: PRINCIPLE_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p78
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: C2-16-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p78
+    - OPTION1
+    why: 노동자는 상대적 약자여서 근로기준법 등으로 보호한다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: C2-16-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p78
+    - OPTION2
+    why: 교과서가 제시한 노동자의 책임이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-16-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p78
+    - OPTION3
+    why: 노동자를 보호하는 제도이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-16-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p78
+    - OPTION4
+    why: 노사 관계가 악화될 수 있다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-16-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p78
+    - OPTION5
+    why: 헌법에 규정되어 있다.
+- item_id: C2-17
+  stem: 다음 사례와 가장 관련 깊은 개념은?
+  set: null
+  passage:
+  - 플라스틱 빨대를 쓰지 않는 소비자가 늘어나자 여러 음료 회사가 종이 빨대를 쓰거나 빨대가 필요 없는 뚜껑을 만들기 시작하였다.
+  options:
+  - 매몰 비용
+  - 무임승차자 문제
+  - 독과점
+  - 담합
+  - 소비자 주권
+  answer: 5
+  second_best: 3
+  difficulty: D3
+  family: CAUSE_EFFECT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p78
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: C2-17-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p78
+    - PASSAGE
+    - OPTION1
+    why: 관련 없다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-17-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p78
+    - PASSAGE
+    - OPTION2
+    why: 관련 없다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-17-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p78
+    - PASSAGE
+    - OPTION3
+    why: 관련 없다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-17-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p78
+    - PASSAGE
+    - OPTION4
+    why: 관련 없다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: C2-17-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p78
+    - PASSAGE
+    - OPTION5
+    why: 소비자의 선택이 생산을 결정하였다.
+- item_id: C2-18
+  stem: (가)~(다)에 해당하는 금융 상품을 옳게 짝지은 것은?
+  set: null
+  passage:
+  - (가) 전문 기관이 투자자들의 돈을 모아 주식, 채권 등에 대신 투자하며, 원금 손실이 생길 수 있다.
+  - (나) 재해나 사고에 대비해 정기적으로 돈을 내고, 사고가 나면 약속한 돈을 받는다.
+  - (다) 노후에 대비해 소득을 적립하고 은퇴 후 일정 금액을 받는다.
+  options:
+  - (가) 보험 (나) 펀드 (다) 연금
+  - (가) 연금 (나) 보험 (다) 펀드
+  - (가) 펀드 (나) 보험 (다) 연금
+  - (가) 펀드 (나) 연금 (다) 보험
+  - (가) 보험 (나) 연금 (다) 펀드
+  answer: 3
+  second_best: 4
+  difficulty: D3
+  family: PRINCIPLE_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p81
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: C2-18-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p81
+    - PASSAGE
+    - OPTION1
+    why: (가)는 펀드이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-18-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p81
+    - PASSAGE
+    - OPTION2
+    why: (가)는 펀드이다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: C2-18-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p81
+    - PASSAGE
+    - OPTION3
+    why: 펀드, 보험, 연금이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-18-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p81
+    - PASSAGE
+    - OPTION4
+    why: (나), (다)가 바뀌었다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-18-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p81
+    - PASSAGE
+    - OPTION5
+    why: 모두 어긋난다.
+- item_id: C2-19
+  stem: 표는 우리나라 가계의 금융 자산 구성을 나타낸 것이다. 이에 대한 설명으로 옳은 것은?
+  set: null
+  table:
+    header:
+    - 구분(%)
+    - 현금·예금
+    - 보험·연금
+    - 주식
+    - 채권
+    - 펀드
+    - 기타
+    rows:
+    - - 비중
+      - '46.3'
+      - '27.9'
+      - '19.8'
+      - '3.2'
+      - '2.1'
+      - '0.7'
+    weights:
+    - 0.16
+    - 0.16
+    - 0.16
+    - 0.13
+    - 0.13
+    - 0.13
+    - 0.13
+  options:
+  - 일반적으로 안전성이 가장 높은 자산의 비중이 가장 크다.
+  - 주식 비중은 채권과 펀드 비중을 합한 값의 5배가 넘는다.
+  - 시세 차익을 노릴 수 있는 주식·채권·펀드 비중의 합은 절반을 넘는다.
+  - 배당금을 받을 수 있는 자산의 비중은 채권보다 작다.
+  - 보험·연금은 수익성이 가장 높은 자산이다.
+  answer: 1
+  second_best: 2
+  difficulty: D4
+  family: DATA_INTERPRETATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p81-82
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: C2-19-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p81-82
+    - TABLE
+    - OPTION1
+    why: 예금이 46.3%로 가장 크다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-19-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p81-82
+    - TABLE
+    - OPTION2
+    why: 19.8은 5.3의 약 3.7배이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-19-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p81-82
+    - TABLE
+    - OPTION3
+    why: 25.1%이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-19-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p81-82
+    - TABLE
+    - OPTION4
+    why: 주식 19.8%가 채권보다 크다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-19-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p81-82
+    - TABLE
+    - OPTION5
+    why: 보험은 수익이 거의 없다.
+- item_id: C2-20
+  stem: 표는 갑이 1,000만 원으로 구성한 포트폴리오를 조정한 결과이다. 이에 대한 옳은 설명만을 <보기>에서 고른 것은?
+  set: null
+  passage:
+  - 갑은 금리가 오를 것으로 예상되는 데다 1년 뒤 해외여행 경비가 필요하여 포트폴리오를 조정하였다.
+  table:
+    header:
+    - 구분(만 원)
+    - 예금
+    - 채권
+    - 주식
+    rows:
+    - - 조정 전
+      - '300'
+      - '300'
+      - '400'
+    - - 조정 후
+      - '600'
+      - '200'
+      - '200'
+    weights:
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+  view:
+  - ㄱ. 조정 후 안전성을 더 중시하는 포트폴리오가 되었다.
+  - ㄴ. 금리 상승이 예상될 때의 선택으로 적절하다.
+  - ㄷ. 조정 후 주식 비중은 조정 전의 절반이다.
+  - ㄹ. 조정 후 수익성을 더 중시하게 되었다.
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄹ
+  - ㄷ, ㄹ
+  - ㄱ, ㄴ, ㄷ
+  - ㄴ, ㄷ, ㄹ
+  answer: 4
+  second_best: 1
+  difficulty: D5
+  family: DATA_INTERPRETATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 4
+  immediate_elimination: 0
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p82-83
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-20-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p82-83
+    - PASSAGE
+    - VIEW
+    - TABLE
+    - OPTION1
+    why: ㄷ도 옳다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-20-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p82-83
+    - PASSAGE
+    - VIEW
+    - TABLE
+    - OPTION2
+    why: ㄹ이 틀리다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: C2-20-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p82-83
+    - PASSAGE
+    - VIEW
+    - TABLE
+    - OPTION3
+    why: ㄹ이 틀리다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: C2-20-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p82-83
+    - PASSAGE
+    - VIEW
+    - TABLE
+    - OPTION4
+    why: 예금 비중 확대, 금리 상승기 예금 선호, 주식 40%→20%이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: C2-20-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p82-83
+    - PASSAGE
+    - VIEW
+    - TABLE
+    - OPTION5
+    why: ㄹ이 틀리다. 예금 비중이 늘어 수익성보다 안전성·유동성을 중시하였다.
