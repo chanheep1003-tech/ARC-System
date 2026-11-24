@@ -1,0 +1,1498 @@
+batch_id: SOC-N-A-ADV-S5-20261124
+product_mode: ARC_N
+subject: SOC
+generator: CLAUDE
+set_label: ARC N° 사회 A파트 심화 5세트
+course: 통합사회2
+cover_subtitle: 정의관·불평등·평화 심화 20제 (선택형)
+school_line: 동북고등학교 1학년 · 2026 2학기 기말
+created_at: '2026-11-25T03:30:00+09:00'
+scope: '통합사회A: 천재 통합사회2 44~61쪽, 108~123쪽 (기말 학습지 미입수)'
+scope_refs:
+- TEXTBOOK:천재 통합사회2 p44-61
+- TEXTBOOK:천재 통합사회2 p108-123
+source_basis:
+  textbook: 천재 통합사회2(박윤경) 2과·4과
+  exam_archetypes: quality/production/SOC_N_ADV_SRC/EXAM_ARCHETYPE_NOTES.md
+  worksheet: NOT_AVAILABLE_USER_CONFIRMED_20261124
+items:
+- item_id: A5-01
+  stem: 갑, 을의 입장에 대한 설명으로 옳은 것은?
+  set: null
+  passage:
+  - '갑: 봉사 활동은 개인이 자유롭게 선택할 문제이다. 국가가 이를 의무로 강제하면 개인의 자유를 침해하게 된다.'
+  - '을: 우리는 공동체 속에서 정체성을 형성하므로 공동체의 발전에 기여할 책임이 있다. 공동선을 위한 봉사는 시민의 마땅한 도리이다.'
+  options:
+  - 갑은 공동선 실현을 개인의 권리보다 우선해야 한다고 본다.
+  - 을은 개인이 공동체와 무관하게 자아를 형성한다고 본다.
+  - 갑은 을과 달리 공동체에 대한 의무를 강조한다.
+  - 을은 갑이 공동체에 대한 연대 의식을 소홀히 한다고 비판할 것이다.
+  - 갑과 을은 모두 개인의 선택보다 공동체의 전통을 중시한다.
+  answer: 4
+  second_best: 1
+  difficulty: D4
+  family: PERSPECTIVE_IDENTIFICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p45-46
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-01-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p45-46
+    - PASSAGE
+    - OPTION1
+    why: 갑은 자유주의자로 개인의 권리를 우선한다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-01-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p45-46
+    - PASSAGE
+    - OPTION2
+    why: 을은 공동체 속에서 정체성이 형성된다고 본다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-01-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p45-46
+    - PASSAGE
+    - OPTION3
+    why: 공동체에 대한 의무를 강조하는 쪽은 을이다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: A5-01-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p45-46
+    - PASSAGE
+    - OPTION4
+    why: 공동체주의는 자유주의가 연대와 공동선을 소홀히 한다고 비판한다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-01-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p45-46
+    - PASSAGE
+    - OPTION5
+    why: 갑은 개인의 선택을 중시한다.
+- item_id: A5-02
+  stem: 다음 사상가의 입장에서 <사례>의 정책을 평가한 내용으로 가장 적절한 것은?
+  set: null
+  passage:
+  - 각 개인은 다른 사람의 자유와 양립하는 가장 광범위한 기본적 자유에 대해 평등한 권리를 가진다. 이 원칙은 사회적·경제적 불평등을 다루는 원칙보다 우선한다.
+  - <사례> 갑국 정부는 최소 수혜자의 소득을 높이는 경제 정책을 추진하기 위해, 그 정책을 비판하는 언론 보도와 집회를 모두 금지하였다.
+  options:
+  - 최소 수혜자에게 이익이 되므로 정당한 정책이다.
+  - 기본적 자유를 제한했으므로 정당화될 수 없다.
+  - 사회 전체의 효용이 늘어난다면 정당한 정책이다.
+  - 정당하게 취득한 소유물을 침해하므로 부당하다.
+  - 공동체의 전통에 부합하는지가 판단 기준이 된다.
+  answer: 2
+  second_best: 1
+  difficulty: D4
+  family: PRINCIPLE_APPLICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p47
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-02-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p47
+    - PASSAGE
+    - OPTION1
+    why: 차등의 원칙보다 평등한 자유의 원칙이 우선한다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: A5-02-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p47
+    - PASSAGE
+    - OPTION2
+    why: 롤스는 기본적 자유를 경제적 이익과 맞바꿀 수 없다고 본다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-02-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p47
+    - PASSAGE
+    - OPTION3
+    why: 공리주의적 평가이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-02-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p47
+    - PASSAGE
+    - OPTION4
+    why: 노직의 논리이며 사례는 소유권과 관련이 없다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-02-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p47
+    - PASSAGE
+    - OPTION5
+    why: 공동체주의적 기준이다.
+- item_id: A5-03
+  stem: 표는 사상가 A, B에 대한 질문과 답을 나타낸 것이다. A, B에 대한 설명으로 옳은 것은? (단, A, B는 각각 롤스, 매킨타이어 중 하나임.)
+  set: null
+  table:
+    header:
+    - 질문
+    - A
+    - B
+    rows:
+    - - 자아는 공동체의 역사와 전통 속에서 형성되는가?
+      - 아니요
+      - 예
+    - - 무지의 베일을 쓴 상태에서 정의의 원칙을 도출하는가?
+      - 예
+      - 아니요
+    weights:
+    - 0.7
+    - 0.15
+    - 0.15
+  options:
+  - A는 공정한 절차로 합의된 원칙을 정의로 본다.
+  - B는 자아가 공동체로부터 독립적이라고 본다.
+  - A는 공동체의 전통과 미덕을 정의의 근거로 삼는다.
+  - B는 원초적 입장에서 정의의 원칙을 도출한다.
+  - A와 B는 모두 개인선보다 공동선을 우선한다.
+  answer: 1
+  second_best: 4
+  difficulty: D3
+  family: PERSPECTIVE_IDENTIFICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p46-47
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: A5-03-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p46-47
+    - TABLE
+    - OPTION1
+    why: A는 롤스로 공정한 절차를 통한 합의를 중시한다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-03-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p46-47
+    - TABLE
+    - OPTION2
+    why: B는 매킨타이어로 공동체 속 자아를 강조한다.
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: A5-03-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p46-47
+    - TABLE
+    - OPTION3
+    why: 매킨타이어(B)의 입장이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-03-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p46-47
+    - TABLE
+    - OPTION4
+    why: 롤스(A)의 입장이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-03-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p46-47
+    - TABLE
+    - OPTION5
+    why: 롤스는 자유주의자이다.
+- item_id: A5-04
+  stem: 다음 글의 관점에서 지지할 정책으로 가장 적절한 것은?
+  set: null
+  passage:
+  - 개인의 이익만 추구하는 사회에서는 이웃에 대한 관심이 줄고 유대가 약해진다. 개인의 삶은 공동체 안에서 의미를 얻으므로, 공동체의 전통과 공동선을 함께 가꾸어 나가야 한다.
+  options:
+  - 개인의 사적 영역에 대한 국가의 간섭을 최소화하는 정책
+  - 정당하게 얻은 소득에 대한 과세를 최소화하는 정책
+  - 개인이 원하는 삶의 방식을 제약 없이 선택하게 하는 정책
+  - 사회 전체의 효용을 극대화하도록 자원을 배분하는 정책
+  - 주민이 함께 마을 공동체를 가꾸는 활동을 지원하는 정책
+  answer: 5
+  second_best: 4
+  difficulty: D3
+  family: CLAIM_EVIDENCE_MATCH
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p46,48
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: A5-04-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p46,48
+    - PASSAGE
+    - OPTION1
+    why: 자유주의적 정책이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-04-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p46,48
+    - PASSAGE
+    - OPTION2
+    why: 노직의 입장에 가깝다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-04-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p46,48
+    - PASSAGE
+    - OPTION3
+    why: 자유주의적 정책이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-04-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p46,48
+    - PASSAGE
+    - OPTION4
+    why: 공리주의적 정책이다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: A5-04-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p46,48
+    - PASSAGE
+    - OPTION5
+    why: 유대와 공동선을 가꾸는 공동체주의적 정책이다.
+- item_id: A5-05
+  stem: 표는 갑국 A 지역과 B 지역의 지표를 나타낸 것이다. 이에 대한 옳은 분석만을 <보기>에서 고른 것은?
+  set: null
+  table:
+    header:
+    - 지표
+    - A 지역
+    - B 지역
+    rows:
+    - - 국토 면적 비중(%)
+      - '12'
+      - '88'
+    - - 인구 비중(%)
+      - '51'
+      - '49'
+    - - 대기업 본사 비중(%)
+      - '74'
+      - '26'
+    - - 인구 1천 명당 의사 수(명)
+      - '2.9'
+      - '1.8'
+    weights:
+    - 0.5
+    - 0.25
+    - 0.25
+  view:
+  - ㄱ. A 지역은 B 지역보다 인구 밀도가 높다.
+  - ㄴ. 두 지역 간 차이는 인구 비중보다 대기업 본사 비중에서 크다.
+  - ㄷ. B 지역 주민은 A 지역 주민보다 의료 서비스에 접근하기 쉽다.
+  - ㄹ. 기업 본사가 한 지역에 집중되면 일자리와 인구가 그 지역으로 더 몰릴 수 있다.
+  options:
+  - ㄱ, ㄷ
+  - ㄴ, ㄹ
+  - ㄱ, ㄴ, ㄹ
+  - ㄱ, ㄷ, ㄹ
+  - ㄴ, ㄷ, ㄹ
+  answer: 3
+  second_best: 2
+  difficulty: D4
+  family: DATA_INTERPRETATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p53-54
+  judgments:
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-05-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p53-54
+    - VIEW
+    - TABLE
+    - OPTION1
+    why: ㄷ이 틀리다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-05-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p53-54
+    - VIEW
+    - TABLE
+    - OPTION2
+    why: ㄱ도 옳다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: A5-05-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p53-54
+    - VIEW
+    - TABLE
+    - OPTION3
+    why: 면적 대비 인구가 A가 훨씬 많고, 본사 비중 차이(48%p)가 인구 비중 차이(2%p)보다 크며, ㄹ은 지역 격차의 심화 과정이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-05-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p53-54
+    - VIEW
+    - TABLE
+    - OPTION4
+    why: ㄷ이 틀리다. B 지역의 의사 수가 더 적다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-05-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p53-54
+    - VIEW
+    - TABLE
+    - OPTION5
+    why: ㄷ이 틀리다.
+- item_id: A5-06
+  stem: 사회 보험과 공공 부조를 비교할 때, A는 사회 보험에만, B는 두 제도에 공통으로, C는 공공 부조에만 해당한다. A~C에 들어갈 진술로 옳은 것만을 <보기>에서 고른 것은?
+  set: null
+  view:
+  - 'ㄱ. A: 수혜자가 비용의 일부를 부담한다.'
+  - 'ㄴ. B: 국가가 운영에 관여하는 사회 보장 제도이다.'
+  - 'ㄷ. C: 능력에 따른 비용 부담을 원칙으로 한다.'
+  - 'ㄹ. C: 생활이 어려운 사람에게 최저 생활을 보장한다.'
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ
+  - ㄴ, ㄹ
+  - ㄱ, ㄷ, ㄹ
+  - ㄱ, ㄴ, ㄹ
+  answer: 5
+  second_best: 3
+  difficulty: D3
+  family: PRINCIPLE_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p55-56
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: A5-06-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p55-56
+    - VIEW
+    - OPTION1
+    why: ㄹ도 옳다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-06-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p55-56
+    - VIEW
+    - OPTION2
+    why: ㄷ이 틀리다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-06-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p55-56
+    - VIEW
+    - OPTION3
+    why: ㄱ도 옳다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-06-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p55-56
+    - VIEW
+    - OPTION4
+    why: ㄷ이 틀리다. 능력별 부담은 사회 보험의 원칙이다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: A5-06-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p55-56
+    - VIEW
+    - OPTION5
+    why: 사회 보험은 보험료 부담, 공공 부조는 최저 생활 보장이며 둘 다 사회 보장 제도이다.
+- item_id: A5-07
+  stem: 다음 제도에 대한 설명으로 적절하지 않은 것은?
+  set: null
+  passage:
+  - 갑국 정부는 지방으로 이전한 공공 기관이 신규 직원의 일정 비율 이상을 해당 지역 대학 졸업자로 채용하도록 하는 제도를 시행하고 있다.
+  options:
+  - 지역 간 격차를 완화하려는 정책의 하나이다.
+  - 상대적으로 불리한 집단에 기회를 주는 적극적 조치이다.
+  - 결과의 평등보다 형식적 기회의 평등만을 중시한다.
+  - 다른 지역 출신 지원자의 역차별 논란을 부를 수 있다.
+  - 지역 인재가 지역에 정착하는 데 도움을 줄 수 있다.
+  answer: 3
+  second_best: 4
+  difficulty: D3
+  family: PRINCIPLE_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p57-58
+  judgments:
+  - v: true
+    c: WEAK
+    axis: content
+    claim: A5-07-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p57-58
+    - PASSAGE
+    - OPTION1
+    why: 지역 격차 완화 정책이다.
+  - v: true
+    c: MEDIUM
+    axis: content
+    claim: A5-07-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p57-58
+    - PASSAGE
+    - OPTION2
+    why: 적극적 평등 실현 조치의 성격을 가진다.
+  - v: false
+    c: CORRECT
+    axis: content
+    claim: A5-07-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p57-58
+    - PASSAGE
+    - OPTION3
+    why: 실질적 기회 보장을 위한 조치로 형식적 평등만 중시하는 것이 아니다.
+  - v: true
+    c: STRONG
+    axis: content
+    claim: A5-07-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p57-58
+    - PASSAGE
+    - OPTION4
+    why: 역차별 논란이 제기될 수 있다.
+  - v: true
+    c: WEAK
+    axis: content
+    claim: A5-07-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p57-58
+    - PASSAGE
+    - OPTION5
+    why: 지역 정착에 기여할 수 있다.
+- item_id: A5-08
+  stem: 갑이 동의할 진술만을 <보기>에서 고른 것은?
+  set: null
+  passage:
+  - '갑: 절대 빈곤으로 고통받는 사람을 돕는 것은 자선이 아니라 의무이다. 도움을 주는 데 드는 희생이 그 도움으로 막을 수 있는 고통보다 작다면, 우리는 반드시 도와야 한다.'
+  view:
+  - ㄱ. 먼 나라에 사는 사람이라는 이유로 원조 의무가 줄어들지 않는다.
+  - ㄴ. 원조는 개인의 선택이므로 하지 않아도 도덕적 문제가 없다.
+  - ㄷ. 원조는 고통을 줄여 인류 전체의 행복을 늘리는 데 기여해야 한다.
+  - ㄹ. 원조의 목적은 고통받는 개인이 아닌 질서 정연한 사회를 만드는 것이다.
+  options:
+  - ㄱ, ㄴ
+  - ㄴ, ㄷ
+  - ㄴ, ㄹ
+  - ㄱ, ㄷ
+  - ㄷ, ㄹ
+  answer: 4
+  second_best: 5
+  difficulty: D3
+  family: PERSPECTIVE_IDENTIFICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p59
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: A5-08-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p59
+    - PASSAGE
+    - VIEW
+    - OPTION1
+    why: ㄴ은 싱어와 반대된다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-08-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p59
+    - PASSAGE
+    - VIEW
+    - OPTION2
+    why: ㄴ이 틀리다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-08-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p59
+    - PASSAGE
+    - VIEW
+    - OPTION3
+    why: ㄴ, ㄹ이 틀리다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: A5-08-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p59
+    - PASSAGE
+    - VIEW
+    - OPTION4
+    why: 싱어는 거리와 국적을 따지지 않고 고통 감소를 위한 원조를 주장한다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-08-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p59
+    - PASSAGE
+    - VIEW
+    - OPTION5
+    why: ㄹ은 롤스의 원조관이다.
+- item_id: A5-09
+  stem: 표는 갑국의 성별 월평균 임금과 여성 관리자 비율을 나타낸 것이다. 이에 대한 분석으로 옳은 것은?
+  set: null
+  table:
+    header:
+    - 구분
+    - 2015년
+    - 2019년
+    - 2023년
+    rows:
+    - - 남성 월평균 임금(만 원)
+      - '300'
+      - '340'
+      - '380'
+    - - 여성 월평균 임금(만 원)
+      - '190'
+      - '220'
+      - '260'
+    - - 여성 관리자 비율(%)
+      - '18'
+      - '20'
+      - '22'
+    weights:
+    - 0.4
+    - 0.2
+    - 0.2
+    - 0.2
+  options:
+  - 여성 임금 대비 남성 임금의 배율은 지속적으로 낮아졌다.
+  - 남녀 간 월평균 임금 차이는 지속적으로 줄어들었다.
+  - 2023년 여성 관리자 비율은 2015년의 두 배 이상이다.
+  - 여성의 임금 증가율은 조사 기간마다 남성보다 낮았다.
+  - 자료를 통해 여성 고용 할당제가 시행되었음을 알 수 있다.
+  answer: 1
+  second_best: 2
+  difficulty: D4
+  family: DATA_INTERPRETATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p52,58
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: A5-09-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p52,58
+    - TABLE
+    - OPTION1
+    why: 약 1.58배→1.55배→1.46배로 낮아졌다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-09-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p52,58
+    - TABLE
+    - OPTION2
+    why: 차이는 110→120→120만 원으로 줄지 않았다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-09-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p52,58
+    - TABLE
+    - OPTION3
+    why: 18%에서 22%로 두 배에 못 미친다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-09-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p52,58
+    - TABLE
+    - OPTION4
+    why: 여성의 증가율(약 16%, 18%)이 남성(약 13%, 12%)보다 높았다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-09-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p52,58
+    - TABLE
+    - OPTION5
+    why: 자료로는 알 수 없다.
+- item_id: A5-10
+  stem: 갈퉁의 관점에서 밑줄 친 ㉠~㉢에 대한 설명으로 옳은 것은?
+  set: null
+  passage:
+  - 한 나라에서는 ㉠ 무장 단체의 공격으로 마을 주민들이 목숨을 잃었다. 휴전 이후에도 ㉡ 특정 지역 주민들은 불공정한 토지 제도 때문에 굶주림에 시달렸고, 일부 언론은 ㉢ 소수 민족에 대한 차별을 당연한 것처럼 표현하였다.
+  options:
+  - ㉠은 사회 구조에 의해 간접적으로 가해지는 폭력이다.
+  - ㉡은 의도가 드러나지 않는 구조적 폭력에 해당한다.
+  - ㉢은 물리적 힘을 사용한 직접적 폭력에 해당한다.
+  - 휴전 이후 이 나라는 적극적 평화를 실현하였다.
+  - ㉡과 ㉢이 사라져야 소극적 평화가 비로소 실현된다.
+  answer: 2
+  second_best: 5
+  difficulty: D3
+  family: PRINCIPLE_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p109
+  judgments:
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-10-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p109
+    - PASSAGE
+    - OPTION1
+    why: ㉠은 직접적 폭력이다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: A5-10-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p109
+    - PASSAGE
+    - OPTION2
+    why: 제도에 의한 빈곤은 구조적 폭력이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-10-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p109
+    - PASSAGE
+    - OPTION3
+    why: ㉢은 문화적 폭력이다.
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: A5-10-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p109
+    - PASSAGE
+    - OPTION4
+    why: 구조적·문화적 폭력이 남아 있다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-10-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p109
+    - PASSAGE
+    - OPTION5
+    why: 이는 적극적 평화의 조건이다.
+- item_id: A5-11
+  stem: 다음 분쟁에 대한 설명으로 가장 적절한 것은?
+  set: null
+  passage:
+  - □□ 지역은 두 나라 사이에 놓인 산악 지대로, 큰 강의 발원지가 있어 물 자원이 풍부하다. 이 지역 주민 다수는 한 나라와 종교가 같지만 영토는 다른 나라에 속해 있어, 수십 년째 무력 충돌이 이어지고 있다.
+  options:
+  - 경제적 이해관계와는 무관한 순수한 종교 분쟁이다.
+  - 영토·자원·종교 문제가 얽혀 해결이 쉽지 않다.
+  - 국가가 아닌 개인 사이의 갈등이므로 국제 문제가 아니다.
+  - 주민의 종교와 영토가 일치하므로 갈등 요인이 없다.
+  - 물 자원 문제는 국제 분쟁의 원인이 될 수 없다.
+  answer: 2
+  second_best: 1
+  difficulty: D3
+  family: CAUSE_EFFECT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p110
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-11-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p110
+    - PASSAGE
+    - OPTION1
+    why: 물 자원이라는 경제적 이해관계가 있다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: A5-11-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p110
+    - PASSAGE
+    - OPTION2
+    why: 국제 분쟁은 여러 원인이 복합적으로 작용한다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-11-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p110
+    - PASSAGE
+    - OPTION3
+    why: 국가 간 무력 충돌이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-11-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p110
+    - PASSAGE
+    - OPTION4
+    why: 종교와 영토 귀속이 엇갈린다.
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: A5-11-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p110
+    - PASSAGE
+    - OPTION5
+    why: 자원은 국제 분쟁의 주요 원인이다.
+- item_id: A5-12
+  stem: 국제 사회의 행위 주체인 (가) 국가와 (나) 비정부 기구를 비교할 때, A는 (가)에만, B는 둘에 공통으로, C는 (나)에만 해당한다. A~C에 들어갈 진술로 옳은 것만을 <보기>에서 고른 것은?
+  set: null
+  view:
+  - 'ㄱ. A: 주권을 가지며 국제법상 법적 지위를 갖는다.'
+  - 'ㄴ. B: 국제 사회의 평화 실현에 기여할 수 있다.'
+  - 'ㄷ. C: 각국 정부를 회원으로 하여 구성된다.'
+  - 'ㄹ. C: 소속 국가의 이익을 최우선으로 추구한다.'
+  options: &id001
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ
+  - ㄴ, ㄷ
+  - ㄴ, ㄹ
+  - ㄷ, ㄹ
+  answer: 1
+  second_best: 2
+  difficulty: D4
+  family: PERSPECTIVE_IDENTIFICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p112
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: A5-12-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p112
+    - VIEW
+    - OPTION1
+    why: 국가만 주권을 갖고, 두 주체 모두 평화에 기여할 수 있다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-12-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p112
+    - VIEW
+    - OPTION2
+    why: ㄷ은 국제기구의 특징이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-12-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p112
+    - VIEW
+    - OPTION3
+    why: ㄷ이 틀리다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-12-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p112
+    - VIEW
+    - OPTION4
+    why: ㄹ이 틀리다. 비정부 기구는 특정 국가의 이익을 추구하지 않는다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-12-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p112
+    - VIEW
+    - OPTION5
+    why: ㄷ, ㄹ 모두 틀리다.
+- item_id: A5-13
+  stem: 다음 글을 읽고 내린 판단으로 가장 적절한 것은?
+  set: null
+  passage:
+  - 오랜 내전이 끝나고 평화 협정이 체결된 △△국에서는 총성이 멈추었다. 그러나 여전히 많은 아이가 학교에 가지 못하고, 특정 종족은 공직 진출에서 배제되며, 그들을 열등하다고 묘사하는 노래가 널리 불린다.
+  options:
+  - △△국은 직접적 폭력이 사라졌으므로 적극적 평화를 이루었다.
+  - 공직 진출 배제는 개인의 능력 문제이므로 폭력과 무관하다.
+  - 특정 종족을 깎아내리는 노래는 평화와 관련 없는 문화 현상이다.
+  - 구조적·문화적 폭력까지 없어야 적극적 평화라 할 수 있다.
+  - 평화 협정 체결로 △△국에는 어떠한 폭력도 남아 있지 않다.
+  answer: 4
+  second_best: 1
+  difficulty: D3
+  family: CAUSE_EFFECT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p109
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-13-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p109
+    - PASSAGE
+    - OPTION1
+    why: 소극적 평화만 이루었다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-13-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p109
+    - PASSAGE
+    - OPTION2
+    why: 제도적 배제는 구조적 폭력이다.
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: A5-13-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p109
+    - PASSAGE
+    - OPTION3
+    why: 차별을 정당화하는 문화적 폭력이다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: A5-13-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p109
+    - PASSAGE
+    - OPTION4
+    why: 적극적 평화의 조건이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-13-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p109
+    - PASSAGE
+    - OPTION5
+    why: 구조적·문화적 폭력이 남아 있다.
+- item_id: A5-14
+  stem: <보기>의 내용을 분단으로 인한 손실(A)과 통일 이후의 기대 효과(B)로 옳게 분류한 것은?
+  set: null
+  view:
+  - ㄱ. 남북한이 군사비로 막대한 비용을 지출한다.
+  - ㄴ. 국토가 나뉘어 대륙으로 가는 육로가 막혀 있다.
+  - ㄷ. 민족 동질성이 약화되어 언어와 생활 문화의 차이가 커졌다.
+  - ㄹ. 한반도의 긴장이 완화되어 동아시아 평화에 기여할 수 있다.
+  options:
+  - 'A: ㄱ / B: ㄴ, ㄷ, ㄹ'
+  - 'A: ㄱ, ㄴ / B: ㄷ, ㄹ'
+  - 'A: ㄱ, ㄴ, ㄷ / B: ㄹ'
+  - 'A: ㄱ, ㄷ / B: ㄴ, ㄹ'
+  - 'A: ㄴ, ㄷ / B: ㄱ, ㄹ'
+  answer: 3
+  second_best: 2
+  difficulty: D3
+  family: CAUSE_EFFECT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p117-118
+  judgments:
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-14-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p117-118
+    - VIEW
+    - OPTION1
+    why: ㄴ, ㄷ도 분단의 손실이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-14-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p117-118
+    - VIEW
+    - OPTION2
+    why: ㄷ은 분단으로 생긴 손실이다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: A5-14-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p117-118
+    - VIEW
+    - OPTION3
+    why: ㄱ~ㄷ은 분단의 손실, ㄹ은 통일의 기대 효과이다.
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: A5-14-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p117-118
+    - VIEW
+    - OPTION4
+    why: ㄴ은 분단의 손실이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-14-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p117-118
+    - VIEW
+    - OPTION5
+    why: ㄱ은 분단의 손실이다.
+- item_id: A5-15
+  stem: 밑줄 친 ㉠~㉣에 대한 설명으로 옳은 것은?
+  set: null
+  passage:
+  - 남북한은 ㉠ 정상 회담을 열어 공동 선언을 발표하였고, ㉡ 경제 협력 공단을 조성해 함께 생산 활동을 하였다. 또한 ㉢ 이산가족 상봉 행사를 열었으며, ㉣ 국제 스포츠 대회에 단일팀으로 출전하기도 하였다.
+  options:
+  - ㉠은 민간단체가 주도하는 사회·문화 교류이다.
+  - ㉡은 인도주의적 차원의 지원에 해당한다.
+  - ㉢은 남북한의 경제적 이익을 주된 목적으로 한다.
+  - ㉣은 군사적 긴장을 직접 낮추는 군사 협력이다.
+  - ㉠~㉣은 모두 평화 통일을 위한 노력에 해당한다.
+  answer: 5
+  second_best: 4
+  difficulty: D3
+  family: PRINCIPLE_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p118
+  judgments:
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-15-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p118
+    - PASSAGE
+    - OPTION1
+    why: 정부 간 정치적 교류이다.
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: A5-15-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p118
+    - PASSAGE
+    - OPTION2
+    why: 경제 협력이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-15-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p118
+    - PASSAGE
+    - OPTION3
+    why: 인도주의적 교류이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-15-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p118
+    - PASSAGE
+    - OPTION4
+    why: 사회·문화(체육) 교류이다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: A5-15-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p118
+    - PASSAGE
+    - OPTION5
+    why: 모두 남북 교류와 협력의 사례이다.
+- item_id: A5-16
+  stem: 밑줄 친 ㉠~㉢에 대한 설명으로 가장 적절한 것은?
+  set: null
+  passage:
+  - 동아시아에서는 섬과 바다를 둘러싼 갈등이 나타나고 있다. 중국과 일본은 동중국해의 ㉠ 센카쿠 열도(댜오위다오)를 두고 대립하고, 중국과 동남아시아 여러 나라는 ㉡ 남중국해의 섬들을 두고 갈등을 빚고 있다. 한편 일본은 우리나라의 고유 영토인 ㉢ 독도에 대해 부당한 영유권 주장을 하고 있다.
+  options:
+  - ㉠의 갈등은 종교 차이에서 비롯된 문화적 갈등이다.
+  - ㉡은 해양 자원과는 무관한 역사 인식 문제이다.
+  - ㉠, ㉡의 갈등에는 해양 자원과 해상 교통로가 얽혀 있다.
+  - ㉢은 두 나라가 공동으로 관리하기로 합의한 지역이다.
+  - ㉢은 국제법상 주인이 정해지지 않은 분쟁 지역이다.
+  answer: 3
+  second_best: 5
+  difficulty: D4
+  family: CAUSE_EFFECT
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p119-120
+  judgments:
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-16-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p119-120
+    - PASSAGE
+    - OPTION1
+    why: 영토와 해양 자원을 둘러싼 갈등이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-16-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p119-120
+    - PASSAGE
+    - OPTION2
+    why: 해양 자원과 해상 교통로가 얽혀 있다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: A5-16-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p119-120
+    - PASSAGE
+    - OPTION3
+    why: 해양 영토 갈등의 배경이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-16-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p119-120
+    - PASSAGE
+    - OPTION4
+    why: 독도는 우리나라 고유 영토이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-16-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p119-120
+    - PASSAGE
+    - OPTION5
+    why: 독도는 역사적·지리적·국제법적으로 우리 영토이다.
+- item_id: A5-17
+  stem: 갑~병의 입장에 대한 옳은 설명만을 <보기>에서 고른 것은?
+  set: null
+  passage:
+  - 우리나라의 공적 개발 원조(ODA) 확대를 두고 토론이 열렸다.
+  - '갑: 고통받는 사람을 도울 수 있는데도 돕지 않는 것은 잘못이다. 국적과 거리에 상관없이 원조를 늘려야 한다.'
+  - '을: 원조의 목표는 고통받는 사회가 스스로 질서 정연한 사회가 되도록 돕는 것이다. 그 목표를 이루면 원조는 멈출 수 있다.'
+  - '병: 국내에도 어려운 이웃이 많다. 해외 원조는 국가가 세금으로 할 일이 아니라 각자의 자발적 선택에 맡겨야 한다.'
+  view:
+  - ㄱ. 갑은 원조를 자선이 아닌 의무로 본다.
+  - ㄴ. 을은 원조 대상 사회의 정치 문화와 제도 개선을 중시한다.
+  - ㄷ. 병은 원조를 국가가 강제하는 것에 반대할 것이다.
+  - ㄹ. 갑과 을은 모두 원조 의무에 끝이 없다고 본다.
+  options:
+  - ㄱ, ㄴ
+  - ㄴ, ㄹ
+  - ㄷ, ㄹ
+  - ㄱ, ㄴ, ㄷ
+  - ㄴ, ㄷ, ㄹ
+  answer: 4
+  second_best: 1
+  difficulty: D5
+  family: PERSPECTIVE_IDENTIFICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 4
+  immediate_elimination: 0
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p45,59,121
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-17-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p45,59,121
+    - PASSAGE
+    - VIEW
+    - OPTION1
+    why: ㄷ도 옳다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-17-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p45,59,121
+    - PASSAGE
+    - VIEW
+    - OPTION2
+    why: ㄹ이 틀리다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-17-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p45,59,121
+    - PASSAGE
+    - VIEW
+    - OPTION3
+    why: ㄹ이 틀리다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: A5-17-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p45,59,121
+    - PASSAGE
+    - VIEW
+    - OPTION4
+    why: 갑은 싱어, 을은 롤스, 병은 자유주의적 입장으로 ㄱ~ㄷ이 옳다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-17-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p45,59,121
+    - PASSAGE
+    - VIEW
+    - OPTION5
+    why: ㄹ이 틀리다. 을은 목표 달성 시 원조가 멈출 수 있다고 본다.
+- item_id: A5-18
+  stem: 다음은 평화에 관한 형성 평가지와 학생 갑의 답이다. 갑의 점수가 2점일 때, (가)에 들어갈 진술로 옳은 것은? (단, 문항당 1점임.)
+  set: null
+  table:
+    header:
+    - 진술
+    - 갑의 답
+    rows:
+    - - 적극적 평화는 직접적 폭력이 없는 상태를 포함한다.
+      - X
+    - - 구조적 폭력은 가해자의 의도가 분명히 드러나는 폭력이다.
+      - X
+    - - 문화적 폭력은 직접적·구조적 폭력을 정당화한다.
+      - O
+    - - (가)
+      - O
+    weights:
+    - 0.82
+    - 0.18
+  options:
+  - 소극적 평화는 전쟁과 같은 직접적 폭력이 없는 상태이다.
+  - 빈곤과 기아는 구조적 폭력의 결과로 볼 수 있다.
+  - 갈퉁은 적극적 평화를 진정한 평화로 보았다.
+  - 차별을 정당화하는 언어는 문화적 폭력에 해당한다.
+  - 소극적 평화가 실현되면 구조적 폭력도 함께 사라진다.
+  answer: 5
+  second_best: 3
+  difficulty: D5
+  family: PRINCIPLE_APPLICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 4
+  immediate_elimination: 0
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p109
+  judgments:
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-18-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p109
+    - TABLE
+    - OPTION1
+    why: 옳은 진술이므로 갑의 점수가 3점이 된다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-18-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p109
+    - TABLE
+    - OPTION2
+    why: 옳은 진술이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-18-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p109
+    - TABLE
+    - OPTION3
+    why: 옳은 진술이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-18-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p109
+    - TABLE
+    - OPTION4
+    why: 옳은 진술이다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: A5-18-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p109
+    - TABLE
+    - OPTION5
+    why: 첫째 답은 틀리고 둘째·셋째는 맞으므로, (가)는 갑이 O로 답해 틀린 거짓 진술이어야 한다.
+- item_id: A5-19
+  stem: 갑, 을이 '복지 재원 마련을 위한 증세'에 대해 할 수 있는 주장으로 가장 적절한 것은?
+  set: null
+  passage:
+  - '갑: 정당하게 번 소득에 높은 세금을 매겨 다른 사람에게 나누어 주는 것은 개인의 소유 권리를 침해하는 것이다.'
+  - '을: 재능과 처지는 우연히 주어진 것이므로, 사회적·경제적 불평등은 최소 수혜자에게 최대 이익이 될 때만 허용된다.'
+  options:
+  - '갑: 증세는 사회 전체의 효용을 높이므로 바람직하다.'
+  - '을: 최소 수혜자의 처지를 개선한다면 증세는 정당하다.'
+  - '갑: 공동체의 전통을 지키는 데 쓰인다면 증세는 정당하다.'
+  - '을: 정당하게 취득한 소득이므로 증세는 어떤 경우에도 부당하다.'
+  - '갑, 을: 개인의 소득은 전적으로 공동체에 귀속된다.'
+  answer: 2
+  second_best: 4
+  difficulty: D4
+  family: RIGHTS_CONFLICT
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p47
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-19-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p47
+    - PASSAGE
+    - OPTION1
+    why: 노직(갑)은 공리주의적 근거를 내세우지 않는다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: A5-19-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p47
+    - PASSAGE
+    - OPTION2
+    why: 롤스(을)의 차등의 원칙에 따른 주장이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-19-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p47
+    - PASSAGE
+    - OPTION3
+    why: 노직은 강제 재분배를 반대한다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-19-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p47
+    - PASSAGE
+    - OPTION4
+    why: 노직의 주장이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-19-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p47
+    - PASSAGE
+    - OPTION5
+    why: 둘 다 그렇게 보지 않는다.
+- item_id: A5-20
+  stem: 다음 사례에 대한 옳은 설명만을 <보기>에서 고른 것은?
+  set: null
+  passage:
+  - 갑국에서 이주민 노동자는 같은 일을 하고도 낮은 임금을 받으며, 일부 사람들은 “이주민은 일자리를 빼앗는 사람들”이라는 말을 퍼뜨린다. 정부는 이주민 자녀의 대학 진학을 돕기 위해 특별 전형을 도입하였다.
+  view:
+  - ㄱ. 이주민 노동자는 사회적 소수자에 해당할 수 있다.
+  - ㄴ. 임금 차별은 갈퉁이 말한 구조적 폭력의 예로 볼 수 있다.
+  - ㄷ. 이주민을 겨냥한 말은 물리적 힘을 쓰지 않으므로 폭력이라 할 수 없다.
+  - ㄹ. 특별 전형은 형식적 기회 균등만을 보장하려는 정책이다.
+  options: *id001
+  answer: 1
+  second_best: 2
+  difficulty: D5
+  family: PRINCIPLE_APPLICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 4
+  immediate_elimination: 0
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p52,58,109
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: A5-20-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p52,58,109
+    - PASSAGE
+    - VIEW
+    - OPTION1
+    why: 소수자 차별은 구조적 폭력이 될 수 있다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-20-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p52,58,109
+    - PASSAGE
+    - VIEW
+    - OPTION2
+    why: ㄷ이 틀리다. 차별을 정당화하는 문화적 폭력이 될 수 있다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-20-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p52,58,109
+    - PASSAGE
+    - VIEW
+    - OPTION3
+    why: ㄷ이 틀리다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: A5-20-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p52,58,109
+    - PASSAGE
+    - VIEW
+    - OPTION4
+    why: ㄹ이 틀리다. 실질적 기회를 보장하는 적극적 조치이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: A5-20-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p52,58,109
+    - PASSAGE
+    - VIEW
+    - OPTION5
+    why: ㄷ, ㄹ 모두 틀리다.
