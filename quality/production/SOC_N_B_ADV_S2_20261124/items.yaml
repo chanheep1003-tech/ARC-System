@@ -1,0 +1,1555 @@
+batch_id: SOC-N-B-ADV-S2-20261124
+product_mode: ARC_N
+subject: SOC
+generator: CLAUDE
+set_label: ARC N° 사회 B파트 심화 2세트
+course: 통합사회2
+cover_subtitle: 에너지·기후·지속가능 심화 20제 (선택형)
+school_line: 동북고등학교 1학년 · 2026 2학기 기말
+created_at: '2026-11-25T05:30:00+09:00'
+scope: '통합사회B: 천재 통합사회2 134~151쪽 (기말 학습지 미입수)'
+scope_refs:
+- TEXTBOOK:천재 통합사회2 p134-151
+- EXAM:동북고 2025-2 기말 통합사회2 원안지
+source_basis:
+  textbook: 천재 통합사회2(박윤경) 5과 2·3절
+  exam_archetypes: quality/production/SOC_N_ADV_SRC/EXAM_ARCHETYPE_NOTES.md
+  worksheet: NOT_AVAILABLE_USER_CONFIRMED_20261124
+items:
+- item_id: B2-01
+  stem: 표는 어느 화석 에너지 X의 생산·수출·수입 상위 국가와 비중을 나타낸 것이다. 이에 대한 설명으로 옳은 것은?
+  set: null
+  table:
+    header:
+    - 구분
+    - 1위
+    - 2위
+    - 3위
+    rows:
+    - - 생산
+      - 중국(51.8%)
+      - 인도(10.3%)
+      - 인도네시아(7.8%)
+    - - 수출
+      - 인도네시아(28.3%)
+      - 오스트레일리아(25.8%)
+      - 러시아(16.5%)
+    - - 수입
+      - 중국(18.0%)
+      - 인도(15.4%)
+      - 일본(14.8%)
+    weights:
+    - 0.16
+    - 0.28
+    - 0.28
+    - 0.28
+  options:
+  - X는 전 세계 매장량의 절반이 서남아시아에 분포한다.
+  - X의 최대 생산국은 수출 상위 3개국에 들지 않는다.
+  - X는 세 화석 에너지 중 국제 이동량이 가장 많다.
+  - X의 수입 상위 3개국은 모두 유럽에 위치한다.
+  - X는 주로 자동차와 비행기의 연료로 이용된다.
+  answer: 2
+  second_best: 3
+  difficulty: D4
+  family: DATA_INTERPRETATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p136
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-01-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p136
+    - TABLE
+    - OPTION1
+    why: X는 석탄이며, 서남아시아 편재는 석유의 특징이다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: B2-01-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p136
+    - TABLE
+    - OPTION2
+    why: 중국은 생산 1위이지만 수출 상위국이 아니다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-01-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p136
+    - TABLE
+    - OPTION3
+    why: 석탄은 고루 매장되어 국제 이동량이 적다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-01-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p136
+    - TABLE
+    - OPTION4
+    why: 모두 아시아 국가이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-01-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p136
+    - TABLE
+    - OPTION5
+    why: 운송용 연료는 석유이다.
+- item_id: B2-02
+  stem: 그림은 화석 에너지 A, B를 질문으로 구분한 것이다. A, B에 대한 설명으로 옳은 것은? (단, A, B는 각각 석유, 천연가스 중 하나임.)
+  set: null
+  passage:
+  - '[질문] 자동차·비행기 등 운송 수단의 연료로 가장 많이 쓰이는가? → 예: A / 아니요: B'
+  options:
+  - A는 B보다 연소 시 오염 물질 배출량이 적다.
+  - B는 A보다 세계 소비량이 많다.
+  - A는 냉동 액화 기술의 발달로 이동량이 급증하였다.
+  - B는 주로 가정용 연료와 발전 원료로 쓰인다.
+  - A는 B와 달리 매장량이 한정되어 있지 않다.
+  answer: 4
+  second_best: 3
+  difficulty: D3
+  family: PERSPECTIVE_IDENTIFICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p135
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: B2-02-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p135
+    - PASSAGE
+    - OPTION1
+    why: 천연가스(B)가 오염 물질을 적게 배출한다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-02-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p135
+    - PASSAGE
+    - OPTION2
+    why: 석유(A)가 소비량이 가장 많다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-02-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p135
+    - PASSAGE
+    - OPTION3
+    why: 냉동 액화 기술은 천연가스(B)의 특징이다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: B2-02-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p135
+    - PASSAGE
+    - OPTION4
+    why: 천연가스의 주된 용도이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-02-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p135
+    - PASSAGE
+    - OPTION5
+    why: 둘 다 유한한 화석 에너지이다.
+- item_id: B2-03
+  stem: 표는 갑국과 을국의 신·재생 에너지 발전량 구성을 나타낸 것이다. 이에 대한 옳은 추론만을 <보기>에서 고른 것은?
+  set: null
+  table:
+    header:
+    - 구분(%)
+    - 수력
+    - 태양광
+    - 풍력
+    - 기타
+    rows:
+    - - 갑국
+      - '80'
+      - '5'
+      - '10'
+      - '5'
+    - - 을국
+      - '5'
+      - '60'
+      - '20'
+      - '15'
+    weights:
+    - 0.2
+    - 0.2
+    - 0.2
+    - 0.2
+    - 0.2
+  view:
+  - ㄱ. 갑국은 을국보다 유량이 풍부한 하천이 많을 것이다.
+  - ㄴ. 을국은 갑국보다 연 강수량이 많고 흐린 날이 많을 것이다.
+  - ㄷ. 두 나라의 차이는 신·재생 에너지가 자연 조건의 제약을 받음을 보여 준다.
+  - ㄹ. 을국의 주된 발전 방식은 밤에도 낮과 같은 양의 전기를 생산한다.
+  options:
+  - ㄱ, ㄴ
+  - ㄴ, ㄷ
+  - ㄴ, ㄹ
+  - ㄷ, ㄹ
+  - ㄱ, ㄷ
+  answer: 5
+  second_best: 2
+  difficulty: D4
+  family: DATA_INTERPRETATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p135
+  judgments:
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-03-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p135
+    - VIEW
+    - TABLE
+    - OPTION1
+    why: ㄴ이 틀리다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-03-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p135
+    - VIEW
+    - TABLE
+    - OPTION2
+    why: ㄴ이 틀리다. 태양광은 비가 적고 일사량이 풍부한 곳에 유리하다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-03-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p135
+    - VIEW
+    - TABLE
+    - OPTION3
+    why: ㄴ, ㄹ이 틀리다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-03-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p135
+    - VIEW
+    - TABLE
+    - OPTION4
+    why: ㄹ이 틀리다. 태양광은 밤에 발전할 수 없다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: B2-03-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p135
+    - VIEW
+    - TABLE
+    - OPTION5
+    why: 수력은 유량이 풍부한 곳에 유리하고, 발전 구성 차이는 자연 조건의 제약을 보여 준다.
+- item_id: B2-04
+  stem: 밑줄 친 ㉠~㉢에 대한 설명으로 옳은 것은?
+  set: null
+  passage:
+  - 화석 에너지 소비가 늘면서 ㉠ 일부 자원의 가채 연수가 짧아지고, ㉡ 원유 수송로인 해협을 둘러싼 국가 간 긴장이 높아졌으며, ㉢ 연소 과정에서 배출된 이산화 탄소로 기후변화가 심해졌다.
+  options:
+  - ㉠은 화석 에너지의 유한성 때문에 나타난다.
+  - ㉡은 자원이 여러 지역에 고르게 분포해 나타난다.
+  - ㉢은 신·재생 에너지 사용이 늘면서 나타난다.
+  - ㉠~㉢은 현세대에게만 영향을 미치는 문제이다.
+  - ㉡을 줄이려면 자원의 해외 의존도를 높여야 한다.
+  answer: 1
+  second_best: 2
+  difficulty: D3
+  family: CAUSE_EFFECT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p137
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: B2-04-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p137
+    - PASSAGE
+    - OPTION1
+    why: 화석 에너지는 재생이 어렵고 매장량에 한계가 있다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-04-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p137
+    - PASSAGE
+    - OPTION2
+    why: 자원의 편재성 때문이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-04-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p137
+    - PASSAGE
+    - OPTION3
+    why: 화석 에너지 연소 때문이다.
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: B2-04-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p137
+    - PASSAGE
+    - OPTION4
+    why: 미래 세대의 안정도 위협한다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-04-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p137
+    - PASSAGE
+    - OPTION5
+    why: 의존도를 낮춰야 한다.
+- item_id: B2-05
+  stem: 표는 A~D국의 인구와 1인당 에너지 소비량을 나타낸 것이다. 이에 대한 설명으로 옳은 것은?
+  set: null
+  table:
+    header:
+    - 구분
+    - 인구(억 명)
+    - 1인당 에너지 소비량(GJ)
+    rows:
+    - - A국
+      - '0.5'
+      - '280'
+    - - B국
+      - '0.3'
+      - '300'
+    - - C국
+      - '14'
+      - '25'
+    - - D국
+      - '2'
+      - '10'
+    weights:
+    - 0.2
+    - 0.4
+    - 0.4
+  options:
+  - 1인당 소비량이 많은 국가일수록 총소비량도 많다.
+  - B국은 자원 매장량이 적은 개발 도상국으로 볼 수 있다.
+  - C국은 A국보다 국가 전체의 에너지 소비량이 많다.
+  - C국과 D국의 1인당 소비량 차이는 A국과 B국의 차이보다 크다.
+  - 1인당 에너지 소비량의 국가 간 격차는 거의 없다.
+  answer: 3
+  second_best: 1
+  difficulty: D4
+  family: DATA_INTERPRETATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p137
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-05-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p137
+    - TABLE
+    - OPTION1
+    why: B국(90억 GJ)은 C국(350억 GJ)보다 총소비량이 적다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-05-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p137
+    - TABLE
+    - OPTION2
+    why: 1인당 소비량이 많은 국가는 주로 선진국이나 자원 매장량이 많은 국가이다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: B2-05-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p137
+    - TABLE
+    - OPTION3
+    why: C국 350억 GJ, A국 140억 GJ이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-05-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p137
+    - TABLE
+    - OPTION4
+    why: 15 GJ로 20 GJ보다 작다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-05-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p137
+    - TABLE
+    - OPTION5
+    why: 최대 30배 차이가 난다.
+- item_id: B2-06
+  stem: 다음 청소년들의 주장을 뒷받침하는 근거로 가장 적절한 것은?
+  set: null
+  passage:
+  - 갑국의 청소년들은 “정부의 온실가스 감축 목표가 너무 낮아 우리 세대가 살아갈 환경이 위협받는다.”라며 정부에 더 강한 기후변화 대응을 요구하는 운동을 벌였다.
+  options:
+  - 기후변화의 피해는 현세대에게만 집중된다.
+  - 감축 목표는 경제 성장을 방해하므로 낮춰야 한다.
+  - 현세대의 배출로 미래 세대가 더 큰 피해를 볼 수 있다.
+  - 기후변화는 자연적 요인만으로 발생한다.
+  - 기후 대응은 개인의 책임이므로 국가는 관여할 필요가 없다.
+  answer: 3
+  second_best: 1
+  difficulty: D3
+  family: CLAIM_EVIDENCE_MATCH
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p138
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-06-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p138
+    - PASSAGE
+    - OPTION1
+    why: 미래 세대의 피해가 크다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-06-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p138
+    - PASSAGE
+    - OPTION2
+    why: 청소년들의 주장과 반대이다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: B2-06-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p138
+    - PASSAGE
+    - OPTION3
+    why: 기후변화와 세대 간 불평등에 관한 교과서 내용이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-06-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p138
+    - PASSAGE
+    - OPTION4
+    why: 인간의 영향이 크다.
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: B2-06-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p138
+    - PASSAGE
+    - OPTION5
+    why: 정부, 기업, 시민 사회, 개인 모두의 노력이 필요하다.
+- item_id: B2-07
+  stem: 밑줄 친 ㉠~㉣에 대한 설명으로 옳은 것은?
+  set: null
+  passage:
+  - 우리 정부는 ㉠ 파리 협정에 따라 ㉡ 2050 탄소중립을 선언하고, ㉢ 2030년까지 2018년 대비 온실가스를 40% 줄이는 목표를 세웠다. 이를 위해 화석 에너지 사용 감축과 함께 ㉣ 산림·습지 등 탄소 흡수원 확충을 추진하고 있다.
+  options:
+  - ㉣은 이산화 탄소 흡수량을 늘리는 방안이다.
+  - ㉠은 선진국에만 감축 의무를 부과한 협약이다.
+  - ㉡은 이산화 탄소 배출량 자체를 0으로 만드는 것이다.
+  - ㉢을 달성하면 곧바로 탄소중립이 실현된다.
+  - ㉡은 정부의 노력만으로 달성할 수 있다.
+  answer: 1
+  second_best: 3
+  difficulty: D4
+  family: PRINCIPLE_APPLICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p138
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: B2-07-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p138
+    - PASSAGE
+    - OPTION1
+    why: 흡수원 확충으로 흡수량을 늘린다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-07-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p138
+    - PASSAGE
+    - OPTION2
+    why: 파리 협정은 모든 국가에 감축 의무를 준다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-07-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p138
+    - PASSAGE
+    - OPTION3
+    why: 탄소중립은 순배출량을 0으로 만드는 것이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-07-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p138
+    - PASSAGE
+    - OPTION4
+    why: 40% 감축은 중간 목표이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-07-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p138
+    - PASSAGE
+    - OPTION5
+    why: 기업, 시민 사회, 개인의 협력이 필요하다.
+- item_id: B2-08
+  stem: 표는 온실가스 배출권 거래제에 참여한 A~C 기업의 한 해 할당량과 실제 배출량이다. 이에 대한 설명으로 옳은 것은?
+  set: null
+  table:
+    header:
+    - 구분(만 톤)
+    - A 기업
+    - B 기업
+    - C 기업
+    rows:
+    - - 할당량
+      - '50'
+      - '50'
+      - '50'
+    - - 실제 배출량
+      - '60'
+      - '40'
+      - '45'
+    weights:
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+  options:
+  - A 기업은 C 기업에게서만 부족한 배출권을 모두 살 수 있다.
+  - 세 기업의 실제 배출량 합은 할당량 합보다 많다.
+  - C 기업은 배출권을 사야 하는 기업이다.
+  - B, C 기업이 팔 수 있는 배출권은 모두 15만 톤이다.
+  - 할당량을 줄이면 배출권 수요가 줄어 가격이 내린다.
+  answer: 4
+  second_best: 1
+  difficulty: D4
+  family: DATA_INTERPRETATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p139
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-08-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p139
+    - TABLE
+    - OPTION1
+    why: C 기업의 잉여분은 5만 톤뿐이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-08-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p139
+    - TABLE
+    - OPTION2
+    why: 145만 톤으로 150만 톤보다 적다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-08-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p139
+    - TABLE
+    - OPTION3
+    why: C 기업은 5만 톤이 남는다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: B2-08-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p139
+    - TABLE
+    - OPTION4
+    why: B 10만 톤과 C 5만 톤이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-08-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p139
+    - TABLE
+    - OPTION5
+    why: 감축 목표를 높이면 가격이 오르기도 한다.
+- item_id: B2-09
+  stem: 다음 합의에 대한 설명으로 가장 적절한 것은?
+  set: null
+  passage:
+  - “지구의 허파”라 불리는 열대 우림을 지키기 위해 남아메리카 8개국 정상이 모였다. 이들은 삼림 벌채를 멈추고 탄소 흡수원을 늘리기로 합의하였으며, 주요 선진국에 기후변화 대응과 생물 다양성 보존을 위한 기금 지원을 촉구하였다.
+  options:
+  - 열대 우림 보전은 한 나라의 노력만으로 충분하다.
+  - 열대 우림 보전은 탄소 흡수원을 늘리는 기후 대응이다.
+  - 삼림 벌채를 늘려야 지역 경제가 지속가능해진다.
+  - 생물 다양성 보존은 기후변화 대응과 관련이 없다.
+  - 선진국은 열대 우림 보전에 아무런 책임이 없다.
+  answer: 2
+  second_best: 4
+  difficulty: D3
+  family: CAUSE_EFFECT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p139
+  judgments:
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-09-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p139
+    - PASSAGE
+    - OPTION1
+    why: 8개국이 협력하고 선진국의 지원도 촉구하였다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: B2-09-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p139
+    - PASSAGE
+    - OPTION2
+    why: 아마존 협력 사례의 의미이다.
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: B2-09-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p139
+    - PASSAGE
+    - OPTION3
+    why: 벌채를 멈추기로 하였다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-09-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p139
+    - PASSAGE
+    - OPTION4
+    why: 함께 지원을 촉구하였다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-09-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p139
+    - PASSAGE
+    - OPTION5
+    why: 기금 지원을 촉구하였다.
+- item_id: B2-10
+  stem: 다음 창업 사례와 관련된 지속가능발전목표를 옳게 연결한 것만을 <보기>에서 고른 것은?
+  set: null
+  passage:
+  - S사 대표는 고기 생산을 위해 열대 우림이 목초지로 바뀌고 가축 사육에서 온실가스가 많이 배출된다는 점에 주목하였다. 그는 식물성 재료로 맛과 영양을 갖춘 대체육을 개발하여 판매하였다.
+  view:
+  - ㄱ. 사육 과정의 온실가스 배출 감소 - 기후변화 대응
+  - ㄴ. 열대 우림의 목초지 전환 감소 - 육상 생태계 보전
+  - ㄷ. 육류 소비 감소 - 깨끗한 물과 위생
+  - ㄹ. 자원을 덜 쓰는 식품 소비 - 책임감 있는 소비와 생산
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ
+  - ㄴ, ㄹ
+  - ㄱ, ㄷ, ㄹ
+  - ㄱ, ㄴ, ㄹ
+  answer: 5
+  second_best: 1
+  difficulty: D3
+  family: CLAIM_EVIDENCE_MATCH
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p139,148
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-10-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p139,148
+    - PASSAGE
+    - VIEW
+    - OPTION1
+    why: ㄹ도 옳다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-10-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p139,148
+    - PASSAGE
+    - VIEW
+    - OPTION2
+    why: ㄷ이 틀리다.
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: B2-10-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p139,148
+    - PASSAGE
+    - VIEW
+    - OPTION3
+    why: ㄱ도 옳다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-10-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p139,148
+    - PASSAGE
+    - VIEW
+    - OPTION4
+    why: ㄷ이 틀리다. 사례와 직접 관련이 없다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: B2-10-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p139,148
+    - PASSAGE
+    - VIEW
+    - OPTION5
+    why: 교과서가 제시한 대체육 사례의 관련 목표이다.
+- item_id: B2-11
+  stem: (가)~(다) 정책이 강조하는 지속가능한 발전의 측면을 옳게 연결한 것은?
+  set: null
+  passage:
+  - (가) 오염된 하천을 정화하고 물고기가 돌아오도록 생태 습지를 복원하였다.
+  - (나) 지역 특산물을 활용한 청년 창업을 지원하여 일자리를 늘렸다.
+  - (다) 장애인과 노인 등 취약 계층의 돌봄을 지원하여 주민 간 통합을 꾀하였다.
+  options:
+  - (가) 경제 (나) 환경 (다) 사회
+  - (가) 경제 (나) 사회 (다) 환경
+  - (가) 사회 (나) 경제 (다) 환경
+  - (가) 환경 (나) 사회 (다) 경제
+  - (가) 환경 (나) 경제 (다) 사회
+  answer: 5
+  second_best: 4
+  difficulty: D3
+  family: PRINCIPLE_APPLICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p139
+  judgments:
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-11-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p139
+    - PASSAGE
+    - OPTION1
+    why: (가)는 환경 보전이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-11-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p139
+    - PASSAGE
+    - OPTION2
+    why: (가)는 환경 보전이다.
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: B2-11-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p139
+    - PASSAGE
+    - OPTION3
+    why: (가)는 환경 보전이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-11-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p139
+    - PASSAGE
+    - OPTION4
+    why: (나)는 경제 성장, (다)는 사회 통합이다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: B2-11-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p139
+    - PASSAGE
+    - OPTION5
+    why: 환경 보전, 경제 성장, 사회 안정과 통합이다.
+- item_id: B2-12
+  stem: 지속가능한 발전을 위한 노력을 비교할 때, A는 국가에만, B는 국가와 개인 모두에, C는 개인에만 해당한다. A~C에 들어갈 진술로 옳은 것만을 <보기>에서 고른 것은?
+  set: null
+  view:
+  - 'ㄱ. A: 법률을 제정해 지속가능한 발전을 추구한다.'
+  - 'ㄴ. B: 법적 구속력이 있는 국제 협약을 체결한다.'
+  - 'ㄷ. C: 신·재생 에너지 공급 의무화 제도를 시행한다.'
+  - 'ㄹ. C: 일상생활에서 윤리적 소비를 실천한다.'
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄹ
+  - ㄴ, ㄷ
+  - ㄴ, ㄹ
+  - ㄷ, ㄹ
+  answer: 2
+  second_best: 4
+  difficulty: D3
+  family: REMEDY_PROCEDURE
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p140
+  judgments:
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: B2-12-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p140
+    - VIEW
+    - OPTION1
+    why: ㄴ이 틀리다. 국제 협약 체결은 국가의 노력이다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: B2-12-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p140
+    - VIEW
+    - OPTION2
+    why: 법률 제정은 국가, 윤리적 소비는 개인의 노력이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-12-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p140
+    - VIEW
+    - OPTION3
+    why: ㄴ, ㄷ이 틀리다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-12-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p140
+    - VIEW
+    - OPTION4
+    why: ㄴ이 틀리다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-12-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p140
+    - VIEW
+    - OPTION5
+    why: ㄷ이 틀리다. 제도 시행은 국가의 노력이다.
+- item_id: B2-13
+  stem: 다음 글을 통해 추론할 수 있는 미래 사회의 모습으로 가장 적절한 것은?
+  set: null
+  passage:
+  - 국제 우주 정거장은 여러 나라가 함께 운영하며 우주 연구의 국제 협력을 상징한다. 그러나 국가 간 외교적 대립이 생길 때마다 협력 관계가 위협받기도 한다. 또한 자유 무역이 확대되면서 국가 간 상호 의존성이 높아지는 한편 경쟁도 치열해지고 있다.
+  options:
+  - 국가 간 협력과 갈등이 함께 나타날 수 있다.
+  - 자유 무역이 확대되면 국가 간 경쟁은 사라진다.
+  - 지구촌 문제는 한 국가의 힘만으로 해결된다.
+  - 영토와 자원을 둘러싼 분쟁은 더 이상 생기지 않는다.
+  - 상호 의존성이 높아지면 이해관계의 대립이 없어진다.
+  answer: 1
+  second_best: 5
+  difficulty: D3
+  family: CAUSE_EFFECT
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p143
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: B2-13-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p143
+    - PASSAGE
+    - OPTION1
+    why: 교과서가 예측한 정치·경제적 변화이다.
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: B2-13-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p143
+    - PASSAGE
+    - OPTION2
+    why: 경쟁이 치열해진다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-13-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p143
+    - PASSAGE
+    - OPTION3
+    why: 정치적 협력이 필요하다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-13-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p143
+    - PASSAGE
+    - OPTION4
+    why: 분쟁이 계속될 수 있다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-13-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p143
+    - PASSAGE
+    - OPTION5
+    why: 대립과 갈등이 생길 수 있다.
+- item_id: B2-14
+  stem: 다음 기사를 읽고 내린 판단으로 가장 적절한 것은?
+  set: null
+  passage:
+  - 국립생물자원관은 산양 등 멸종 위기 야생 동물 19종의 성체 줄기세포를 최장 7년 동안 얼려 보존하는 데 성공하였다. 질병이나 천재지변으로 모든 개체가 사라지면 보존해 둔 세포로 동물을 복원하겠다는 계획이다.
+  options:
+  - 과학기술은 생태환경의 복원에 활용될 수 없다.
+  - 복제 기술은 어떠한 윤리적 문제도 일으키지 않는다.
+  - 복원에 도움이 될 수 있으나 윤리적 문제도 따져야 한다.
+  - 생태환경의 악화는 미래 세대의 삶과 관계가 없다.
+  - 생물종 감소는 국제 협력 없이도 쉽게 막을 수 있다.
+  answer: 3
+  second_best: 2
+  difficulty: D3
+  family: CLAIM_EVIDENCE_MATCH
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p144
+  judgments:
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-14-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p144
+    - PASSAGE
+    - OPTION1
+    why: 기사가 그 사례이다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-14-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p144
+    - PASSAGE
+    - OPTION2
+    why: 복제는 윤리적 문제를 낳을 수 있다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: B2-14-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p144
+    - PASSAGE
+    - OPTION3
+    why: 과학기술의 가능성과 한계를 함께 본 판단이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-14-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p144
+    - PASSAGE
+    - OPTION4
+    why: 미래 세대의 터전을 위협한다.
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: B2-14-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p144
+    - PASSAGE
+    - OPTION5
+    why: 국제 사회의 협력이 필요하다.
+- item_id: B2-15
+  stem: (가), (나) 영화를 통해 탐구할 수 있는 내용으로 옳은 것만을 <보기>에서 고른 것은?
+  set: null
+  passage:
+  - (가) 인구 과잉과 자원 부족이 심각한 미래, 사람의 몸을 12.7cm로 줄이는 기술이 개발되어 한 사람이 쓰는 자원과 버리는 폐기물이 크게 줄어든다.
+  - (나) 인공 지능이 발사한 핵폭탄이 도시에 떨어지자 여러 나라는 인공 지능 기술을 폐기한다. 그러나 훗날 그 사건은 인간의 프로그래밍 실수였음이 드러난다.
+  view:
+  - ㄱ. (가)의 기술은 자원 소비와 폐기물 감소 효과를 기대한다.
+  - ㄴ. (나)는 기술 장치의 오작동이 안전 문제를 낳을 수 있음을 보여 준다.
+  - ㄷ. (나)에서 사건의 원인은 인공 지능 스스로의 판단이었다.
+  - ㄹ. 두 영화는 과학기술이 긍정적 변화만 가져온다고 본다.
+  options:
+  - ㄱ, ㄷ
+  - ㄴ, ㄷ
+  - ㄴ, ㄹ
+  - ㄱ, ㄴ
+  - ㄷ, ㄹ
+  answer: 4
+  second_best: 1
+  difficulty: D4
+  family: CAUSE_EFFECT
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p144
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-15-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p144
+    - PASSAGE
+    - VIEW
+    - OPTION1
+    why: ㄷ이 틀리다. 인간의 실수였다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-15-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p144
+    - PASSAGE
+    - VIEW
+    - OPTION2
+    why: ㄷ이 틀리다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-15-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p144
+    - PASSAGE
+    - VIEW
+    - OPTION3
+    why: ㄹ이 틀리다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: B2-15-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p144
+    - PASSAGE
+    - VIEW
+    - OPTION4
+    why: 기술의 기대 효과와 오작동에 따른 안전 문제이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-15-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p144
+    - PASSAGE
+    - VIEW
+    - OPTION5
+    why: ㄷ, ㄹ 모두 틀리다.
+- item_id: B2-16
+  stem: 다음 인터뷰 속 인물의 태도로 가장 적절한 것은?
+  set: null
+  passage:
+  - “저는 빅데이터를 분석하는 일을 합니다. 아동의 건강 검진, 예방 접종, 장기 결석 정보를 분석해 학대 위험이 있는 가구를 미리 찾아내고, 이를 정부 기관에 알려 문제 해결에 이바지하고 있습니다.”
+  options:
+  - 직업을 통해 사회 문제 해결에 이바지하려 한다.
+  - 개인의 이익을 위해 정보를 독점하려 한다.
+  - 국가 간 경쟁에서 이기는 것을 최우선으로 한다.
+  - 사회 문제의 해결을 정부에만 맡기려 한다.
+  - 기술 발전의 부작용을 외면하려 한다.
+  answer: 1
+  second_best: 4
+  difficulty: D3
+  family: PERSPECTIVE_IDENTIFICATION
+  balance: CORE_EXAM_POINT
+  reasoning_steps: 2
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p147
+  judgments:
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: B2-16-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p147
+    - PASSAGE
+    - OPTION1
+    why: 세계시민으로서 직업과 연결한 역할이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-16-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p147
+    - PASSAGE
+    - OPTION2
+    why: 문제 해결을 위해 활용한다.
+  - v: false
+    c: MEDIUM
+    axis: content
+    claim: B2-16-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p147
+    - PASSAGE
+    - OPTION3
+    why: 경쟁이 아닌 문제 해결을 추구한다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-16-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p147
+    - PASSAGE
+    - OPTION4
+    why: 직접 참여한다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-16-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p147
+    - PASSAGE
+    - OPTION5
+    why: 언급되지 않는다.
+- item_id: B2-17
+  stem: 교토 의정서와 파리 협정을 비교할 때, A는 교토 의정서에만, B는 두 협약에 공통으로, C는 파리 협정에만 해당한다. A~C에 들어갈 진술로 옳은 것만을 <보기>에서 고른 것은?
+  set: null
+  view:
+  - 'ㄱ. A: 선진국에만 온실가스 감축 목표치를 규정하였다.'
+  - 'ㄴ. B: 기후변화에 대응하기 위한 국제 협약이다.'
+  - 'ㄷ. C: 지구 평균 기온 상승을 1.5℃ 이내로 제한하기로 하였다.'
+  - 'ㄹ. C: 개발 도상국은 감축 의무에서 제외하였다.'
+  options:
+  - ㄱ, ㄴ
+  - ㄴ, ㄹ
+  - ㄱ, ㄴ, ㄷ
+  - ㄱ, ㄷ, ㄹ
+  - ㄴ, ㄷ, ㄹ
+  answer: 3
+  second_best: 1
+  difficulty: D4
+  family: PRINCIPLE_APPLICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p138
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-17-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p138
+    - VIEW
+    - OPTION1
+    why: ㄷ도 옳다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-17-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p138
+    - VIEW
+    - OPTION2
+    why: ㄹ이 틀리다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: B2-17-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p138
+    - VIEW
+    - OPTION3
+    why: 교토는 선진국 감축 목표, 파리는 1.5℃ 목표이며 둘 다 기후변화 협약이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-17-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p138
+    - VIEW
+    - OPTION4
+    why: ㄹ이 틀리다. 파리 협정은 모든 국가에 감축 의무를 준다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-17-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p138
+    - VIEW
+    - OPTION5
+    why: ㄹ이 틀리다.
+- item_id: B2-18
+  stem: 에너지 자원에 관한 질문에 모두 옳게 답한 학생은?
+  set: null
+  table:
+    header:
+    - 질문
+    - 갑
+    - 을
+    - 병
+    - 정
+    - 무
+    rows:
+    - - 석탄은 석유보다 국제 이동량이 많은가?
+      - 예
+      - 아니요
+      - 아니요
+      - 아니요
+      - 예
+    - - 천연가스는 석탄보다 연소 시 오염 물질을 적게 배출하는가?
+      - 예
+      - 예
+      - 아니요
+      - 예
+      - 아니요
+    - - 석유는 석유 화학 공업의 원료로도 쓰이는가?
+      - 예
+      - 예
+      - 예
+      - 아니요
+      - 아니요
+    weights:
+    - 0.5
+    - 0.1
+    - 0.1
+    - 0.1
+    - 0.1
+    - 0.1
+  options:
+  - 갑
+  - 을
+  - 병
+  - 정
+  - 무
+  answer: 2
+  second_best: 1
+  difficulty: D4
+  family: PRINCIPLE_APPLICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 3
+  immediate_elimination: 1
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p135-136
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-18-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p135-136
+    - TABLE
+    - OPTION1
+    why: 첫째 질문이 틀렸다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: B2-18-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p135-136
+    - TABLE
+    - OPTION2
+    why: 아니요-예-예로 모두 옳다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-18-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p135-136
+    - TABLE
+    - OPTION3
+    why: 둘째 질문이 틀렸다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-18-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p135-136
+    - TABLE
+    - OPTION4
+    why: 셋째 질문이 틀렸다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-18-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p135-136
+    - TABLE
+    - OPTION5
+    why: 세 질문 모두 틀렸다.
+- item_id: B2-19
+  stem: 다음은 형성 평가지와 학생 갑의 답이다. 갑의 점수가 2점일 때, (가)에 들어갈 진술로 옳은 것은? (단, 문항당 1점임.)
+  set: null
+  table:
+    header:
+    - 진술
+    - 갑의 답
+    rows:
+    - - 탄소중립은 이산화 탄소 순배출량을 0으로 만드는 것이다.
+      - O
+    - - 교토 의정서는 모든 국가에 온실가스 감축 의무를 부과하였다.
+      - O
+    - - 배출권 거래제에서는 정부가 기업에 배출 허용량을 할당한다.
+      - X
+    - - (가)
+      - X
+    weights:
+    - 0.82
+    - 0.18
+  options:
+  - 적정 기술은 현지의 재료와 여건을 고려한 기술이다.
+  - 지속가능발전목표는 환경·경제·사회를 함께 고려한다.
+  - 기후정의는 기후변화가 낳은 불평등을 바로잡는 것이다.
+  - 신·재생 에너지는 화석 에너지보다 에너지 효율이 높다.
+  - 천연가스는 냉동 액화 기술로 국제 이동량이 늘었다.
+  answer: 4
+  second_best: 1
+  difficulty: D5
+  family: PRINCIPLE_APPLICATION
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 4
+  immediate_elimination: 0
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p135-140
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-19-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p135-140
+    - TABLE
+    - OPTION1
+    why: 옳은 진술이므로 X로 답하면 틀려 1점이 된다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-19-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p135-140
+    - TABLE
+    - OPTION2
+    why: 옳은 진술이다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-19-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p135-140
+    - TABLE
+    - OPTION3
+    why: 옳은 진술이다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: B2-19-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p135-140
+    - TABLE
+    - OPTION4
+    why: 첫째만 맞고 둘째·셋째가 틀렸으므로 (가)는 X가 정답인 거짓 진술이어야 한다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-19-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p135-140
+    - TABLE
+    - OPTION5
+    why: 옳은 진술이다.
+- item_id: B2-20
+  stem: 다음 사례에 대한 옳은 설명만을 <보기>에서 고른 것은?
+  set: null
+  passage:
+  - 석유의 대부분을 수입하는 갑국은 산유국들이 함께 수출을 제한하자 큰 경제적 타격을 입었다. 이후 갑국 정부는 태양광과 풍력 발전을 크게 늘리고 에너지 자립 마을을 지원하였다. 그러나 날씨에 따라 발전량이 크게 달라지는 문제가 나타났다.
+  view:
+  - ㄱ. 갑국은 자원 민족주의의 영향을 크게 받을 수 있다.
+  - ㄴ. 신·재생 에너지 확대는 에너지의 해외 의존도를 낮추는 데 도움이 된다.
+  - ㄷ. 날씨에 따른 발전량 변동은 신·재생 에너지의 한계를 보여 준다.
+  - ㄹ. 신·재생 에너지를 늘리면 갑국의 온실가스 배출은 늘어날 것이다.
+  options:
+  - ㄱ, ㄴ
+  - ㄱ, ㄷ
+  - ㄴ, ㄹ
+  - ㄱ, ㄴ, ㄹ
+  - ㄱ, ㄴ, ㄷ
+  answer: 5
+  second_best: 1
+  difficulty: D5
+  family: CAUSE_EFFECT
+  balance: ADVANCED_DISCRIMINATION
+  reasoning_steps: 4
+  immediate_elimination: 0
+  evidence_count: 2
+  transfer: false
+  scope_refs:
+  - TEXTBOOK-p135-138
+  judgments:
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-20-opt1
+    ev:
+    - SCOPE:TEXTBOOK-p135-138
+    - PASSAGE
+    - VIEW
+    - OPTION1
+    why: ㄷ도 옳다.
+  - v: false
+    c: STRONG
+    axis: content
+    claim: B2-20-opt2
+    ev:
+    - SCOPE:TEXTBOOK-p135-138
+    - PASSAGE
+    - VIEW
+    - OPTION2
+    why: ㄴ도 옳다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-20-opt3
+    ev:
+    - SCOPE:TEXTBOOK-p135-138
+    - PASSAGE
+    - VIEW
+    - OPTION3
+    why: ㄹ이 틀리다.
+  - v: false
+    c: WEAK
+    axis: content
+    claim: B2-20-opt4
+    ev:
+    - SCOPE:TEXTBOOK-p135-138
+    - PASSAGE
+    - VIEW
+    - OPTION4
+    why: ㄹ이 틀리다. 신·재생 에너지는 온실가스 배출을 줄인다.
+  - v: true
+    c: CORRECT
+    axis: content
+    claim: B2-20-opt5
+    ev:
+    - SCOPE:TEXTBOOK-p135-138
+    - PASSAGE
+    - VIEW
+    - OPTION5
+    why: 자원 민족주의의 영향, 해외 의존도 감소, 기후 조건의 제약이다.
