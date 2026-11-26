@@ -71,7 +71,7 @@ archetypes:
     judgment_units: [5, 10]
     difficulty: [D4, D5]
     levers: [PASSAGE_CONDITION, SECOND_AXIS, PREANALYSIS]
-    constraints: {set_size: [2, 2], passage_chars: [400, 700]}
+    constraints: {set_size: [2, 2], passage_chars: [300, 450]}
   K5_STATEMENT_AUDIT:
     name: 학생 진술·질문 답변 점검
     evidence: [KOR-F05, KOR-S04]
@@ -258,15 +258,17 @@ set_design:
   constructed_ratio_min: 0.0          # 서답형은 권장(0.10)이며 사용자가 객관식만 요청하면 0
   constructed_ratio_recommended: 0.10
   textbook_example_reuse_max: 0.30
+  view_chars_soft_max: 450           # <보기>·제시문 글자 수. 넘으면 경고 (사용자 지시 2026-11-26: 긴 제시문은 줄인다)
+  long_view_share_max: 0.10          # 450자를 넘는 문항은 번들의 10% 이하
   d1_max: 0
   hints_D3: [KOR-H01, KOR-H02]
 plan_split: {unit_selected: 9, unit_constructed: 1}   # arc.py plan이 V6 요청에 쓰는 단위
 plan_mix:                 # 선택형 50문항 기준 배분 비율 (arc.py plan이 선택형 수에 맞춰 나눈다)
-  K1_RULE_APPLY: 8
+  K1_RULE_APPLY: 11
   K2_SUBCLAUSE_MATCH: 5
-  K3_CLASSIFY_TABLE: 6
-  K4_PASSAGE_SET: 6
-  K5_STATEMENT_AUDIT: 5
+  K3_CLASSIFY_TABLE: 7
+  K4_PASSAGE_SET: 2                  # 긴 제시문 축소(2026-11-26): 6 → 2
+  K5_STATEMENT_AUDIT: 3              # 진술은 짧게, 5 → 3
   K6_TEXT_MARKED_SPOTS: 5
   K7_MINIMAL_PAIR_WHY: 4
   K8_SAME_FORM_TWO_FUNCTIONS: 4

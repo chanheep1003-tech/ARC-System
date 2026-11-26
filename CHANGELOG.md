@@ -3,6 +3,7 @@
 - New rules `quality/korean/ARC_KOR_ORTHO_ITEM_RULES_V2.0.md`, archetype library `quality/korean/ARC_KOR_ORTHO_ARCHETYPES_V2.0.yaml` (K1–K11 + CR1–CR3, six topics with shares, difficulty floors, levers, traps T1–T9, item contract), generation prompt `engine/korean/ARC_KOR_ORTHO_GENERATION_PROMPT_V1.0.md` (generator / blind solver / reviewer). V6 policy V1.1 drops the 65/100 spacing quota.
 - `archetype_gate.py` V1.1 adds V2 checks (fake-difficulty floor, topic shares/coverage, passage sets, marked spots, example reuse, lexicon-only traps); regression `tooling/korean/test_archetype_gate_v2.py`. Gate rules doc `quality/ARC_SCHOOL_ARCHETYPE_GATE_V1.1.md`.
 - `production_pipeline.py`: named balance profile `KOR_N_ORTHO_SCHOOL` (D2 0–10, D3 25–40, D4 35–55, D5 10–25, D4+D5 50–70 %) selected by bundle `balance_profile`.
+- Long views trimmed (user directive after the 10-item pilot): orthography views ≈450 chars max, items over that ≤10% (gate `LONG_VIEW_SHARE_HIGH`, warning `VIEW_LONG`), passage sets 300–450 chars and 1 set per 50 items, plan mix K4 6→2, K5 5→3.
 - `arc.py plan`: V6 uses the orthography library (9+1 blocks, weighted archetype mix with whole passage sets, topic mix) and the new difficulty profile; `--constructed N` sets the constructed-response count (0 for objective-only).
 
 ## 1.9.5 — 2026-11-13

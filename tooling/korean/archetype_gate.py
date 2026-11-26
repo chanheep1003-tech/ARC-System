@@ -185,6 +185,14 @@ def check_v2_bundle(bundle: dict, items: list[dict], library: dict, fail, warn) 
     if total and reuse / total > design.get("textbook_example_reuse_max", 1.0) + 1e-9:
         fail("TEXTBOOK_EXAMPLE_FLOOD", share=round(reuse / total, 3), max=design["textbook_example_reuse_max"])
 
+    soft = design.get("view_chars_soft_max")
+    if soft and total:
+        long_items = [it.get("item_id") for it in items if len("".join(map(str, it.get("view") or []))) > soft]
+        for iid in long_items:
+            warn("VIEW_LONG", iid, max=soft)
+        if len(long_items) / total > design.get("long_view_share_max", 1.0) + 1e-9:
+            fail("LONG_VIEW_SHARE_HIGH", share=round(len(long_items) / total, 3), max=design["long_view_share_max"])
+
     constructed = sum(1 for it in items if it.get("format") == "CR")
     override = str(bundle.get("user_override") or (bundle.get("v6") or {}).get("user_override") or "")
     if total and constructed / total < design.get("constructed_ratio_recommended", 0) and "객관식" not in override:

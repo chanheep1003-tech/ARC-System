@@ -85,6 +85,9 @@ def main() -> int:
     assert "TOPIC_DIVERSITY_LOW" in variant(lambda b: [it.update(topic="FORM") for it in b["items"][:8]])
     assert "TEXTBOOK_EXAMPLE_FLOOD" in variant(lambda b: [it.update(textbook_example_reuse=True) for it in b["items"][:4]])
     assert "LEXICON_ONLY_TRAP" in variant(lambda b: item_at(b, 2).update(needs_lexicon=True))
+    long_view = ["가" * 500]
+    assert "LONG_VIEW_SHARE_HIGH" in variant(lambda b: [it.update(view=long_view) for it in b["items"][:2]])
+    assert "LONG_VIEW_SHARE_HIGH" not in variant(lambda b: item_at(b, 1).update(view=long_view))
     assert "LEXICON_ONLY_TRAP" not in variant(lambda b: item_at(b, 2).update(needs_lexicon=True, lexicon_in_view=True))
     # Full 50-item bundles must cover all six topics.
     def fifty(b: dict) -> None:
@@ -102,7 +105,7 @@ def main() -> int:
     # Without the objective-only override the missing constructed items only warn.
     report = gate.analyze({**sample(), "user_override": None})
     assert report["status"] == "PASS" and "CONSTRUCTED_BELOW_RECOMMENDED" in {f["code"] for f in report["findings"]}
-    print("archetype gate V2 regression PASS (block ok, 15 faults blocked, constructed warning only)")
+    print("archetype gate V2 regression PASS (block ok, 16 faults blocked, constructed warning only)")
     return 0
 
 
