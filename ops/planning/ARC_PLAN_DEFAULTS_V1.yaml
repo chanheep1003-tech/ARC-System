@@ -1,6 +1,6 @@
 # 요청에 빠진 값을 채우는 기본값. 사용자가 말한 값이 항상 우선한다.
 schema: ARC-PLAN-DEFAULTS-V1
-date: 2026-11-11
+date: 2026-11-26
 count_default: {KOR: 50, ENG: 50, SOC: 20, SCI: 20}
 final_count_default: {ENG: 38}
 set_split:                # 한 번에 만드는 묶음. 묶음마다 초안→검토 후 다음 묶음으로 간다.
@@ -13,7 +13,8 @@ kor_versions:             # 국어 ARC N° 네 단계 + 특화. 근거: quality/
   V2: {name: 핵심 집중·복합, goal: 학교자료·기출로 중요도가 확인된 축에 비중, difficulty: {D2: 0.30, D3: 0.45, D4: 0.22, D5: 0.03}, advanced: 0.25, new_material: 학교자료 변형}
   V3: {name: 낯선 자료 전이, goal: 처음 보는 지문·예문에 범위 개념 적용, difficulty: {D2: 0.25, D3: 0.45, D4: 0.25, D5: 0.05}, advanced: 0.30, new_material: 문항마다 새 자료}
   V4: {name: 최상위 변별, goal: 근거 다층 결합·반례·미세 조건, difficulty: {D2: 0.15, D3: 0.50, D4: 0.30, D5: 0.05}, advanced: 0.30, new_material: 필요 시}
-  V6: {name: 맞춤법·띄어쓰기 특화, goal: 낯선 표현의 품사·규정 적용, difficulty: {D2: 0.25, D3: 0.45, D4: 0.25, D5: 0.05}, advanced: 0.30, new_material: 문항마다 새 예문, policy: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md}
+  # V6 난도는 학교 기출 맞춤법 114문항(18개교) 기준. 블록·원형·주제 배분은 KOR_ORTHO 라이브러리의 plan_split·plan_mix·topics를 쓴다.
+  V6: {name: 맞춤법·띄어쓰기 특화, goal: 학교 기출 원형으로 규정·하위 조항을 새 자료에 적용, difficulty: {D2: 0.05, D3: 0.30, D4: 0.45, D5: 0.20}, advanced: 0.25, new_material: 문항마다 새 예문·학생 글·해설문, policy: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.1.md, rules: quality/korean/ARC_KOR_ORTHO_ITEM_RULES_V2.0.md, prompt: engine/korean/ARC_KOR_ORTHO_GENERATION_PROMPT_V1.0.md, balance_profile: KOR_N_ORTHO_SCHOOL}
 kor_version_choice:
   explicit: 사용자가 버전을 말하면 그대로
   orthography_or_spacing_request: V6
@@ -26,9 +27,11 @@ other_subjects:           # 사회·과학은 버전 사다리가 없다
 hard_limits:              # 기존 게이트와 같은 값. 계획이 이 범위를 벗어나면 계획 단계에서 거부한다.
   advanced_share: [0.20, 0.30]
   d45_share_kor: [0.15, 0.35]
+  d45_share_kor_ortho: [0.50, 0.70]   # V6 맞춤법 (production_pipeline NAMED_PROFILES.KOR_N_ORTHO_SCHOOL)
   d1_share_max: 0.10
 archetype_library:
   KOR_GRAMMAR: quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml
+  KOR_ORTHO: quality/korean/ARC_KOR_ORTHO_ARCHETYPES_V2.0.yaml      # V6 맞춤법 요청은 이 라이브러리를 쓴다
   ENG: quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml
 ask_user_only_when:       # 이 경우가 아니면 묻지 않고 계획 카드를 보여 준 뒤 진행한다
   - 과목을 알 수 없다

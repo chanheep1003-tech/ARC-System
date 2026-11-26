@@ -44,7 +44,7 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --version V3 --coun
 | V2 | 핵심 집중·복합 | 학교자료·기출로 중요도가 확인된 축에 비중 | 30 / 45 / 22 / 3 |
 | V3 | 낯선 자료 전이 | 처음 보는 지문·예문에 범위 개념 적용 | 25 / 45 / 25 / 5 |
 | V4 | 최상위 변별 | 근거 다층 결합·반례·미세 조건 | 15 / 50 / 30 / 5 |
-| V6 | 맞춤법·띄어쓰기 특화 | 낯선 표현의 품사·규정 적용 | 25 / 45 / 25 / 5 |
+| V6 | 맞춤법·띄어쓰기 특화 | 학교 기출 원형으로 규정·하위 조항을 새 자료에 적용 | 5 / 30 / 45 / 20 |
 
 - V5는 ARC FINAL(실전 리허설)이다. N° 요청에 쓰지 않는다.
 - 버전을 말하지 않으면: 맞춤법·띄어쓰기 요청은 V6, 그 밖에는 같은 범위 기록이 없으면 V1, 있으면 다음 단계.
@@ -69,8 +69,11 @@ python tooling/arc.py plan --subject KOR --scope "탄궁가" --version V3 --coun
 
 - 근거 장부: `quality/school/ARC_SCHOOL_EVIDENCE_LEDGER_V1.0.yaml` — 규칙마다 D1(원안 직접 확인)/D2(내부 기록)/D3(외부 추정). 차단 게이트는 D1·D2로만 만든다.
 - 국어 문법 원형: `quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml` — 원형 7종, 금지 형식 4종, 오답 함정 6종.
+- **한글 맞춤법(V6) 원형 V2**: `quality/korean/ARC_KOR_ORTHO_ARCHETYPES_V2.0.yaml` — 학교 기출 18개교 114문항에서 뽑은 원형 11종 + 서답형 3종, 주제 6종 배분, 난도 하한, 함정 9종.
+  - 출제 규칙: `quality/korean/ARC_KOR_ORTHO_ITEM_RULES_V2.0.md` / 출제 프롬프트(생성·독립 풀이·검토): `engine/korean/ARC_KOR_ORTHO_GENERATION_PROMPT_V1.0.md`
+  - 번들에 `archetype_library`(V2)와 `balance_profile: KOR_N_ORTHO_SCHOOL`을 넣는다. 객관식만이면 `arc.py plan … --constructed 0`.
 - 게이트: `python tooling/korean/archetype_gate.py <번들>/items.yaml`
-- 규칙 원문: `quality/ARC_SCHOOL_ARCHETYPE_GATE_V1.0.md`
+- 규칙 원문: `quality/ARC_SCHOOL_ARCHETYPE_GATE_V1.1.md`
 - 영어 문항 유형: `quality/english/ARC_ENG_EXAM_TYPES_V1.0.yaml` — 유형 코드 20종과 FINAL 38문항 배치표. 영어는 유형이 거의 고정이라 이 코드에서만 고른다. 게이트: `python tooling/english/exam_type_gate.py <번들>/items.yaml`
 - 교사 개인 성향 예측은 하지 않는다(`teacher_style_prediction: disabled`).
 

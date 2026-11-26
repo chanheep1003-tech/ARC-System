@@ -1,6 +1,6 @@
 # 한글 맞춤법 학교 기출 학습 보고서 + ARC N° 제작 사양 초안 (2026-11-26)
 
-상태: 학습 보고서이며 **초안 사양**이다. SYSTEM_MANIFEST에 아직 등록하지 않았다. 생성 규칙으로 쓰려면 사용자가 승인한 뒤 원형 라이브러리 V2로 만들어 등록한다. 앞선 보고서는 `ARC_KOR_ORTHO_MOCK_STYLE_ANALYSIS_20261124.md`(모의고사·참고서 분석)이다.
+상태: 학습 보고서. 2026-11-26 사용자 지시로 이 내용을 출제 규칙 `quality/korean/ARC_KOR_ORTHO_ITEM_RULES_V2.0.md`, 원형 라이브러리 `quality/korean/ARC_KOR_ORTHO_ARCHETYPES_V2.0.yaml`, 출제 프롬프트 `engine/korean/ARC_KOR_ORTHO_GENERATION_PROMPT_V1.0.md`로 등록했다(manifest `korean_orthography_*`). 생성 규칙의 권위는 그 파일들에 있고 이 문서는 근거 기록이다. 앞선 보고서는 `ARC_KOR_ORTHO_MOCK_STYLE_ANALYSIS_20261124.md`(모의고사·참고서 분석)이다.
 근거 데이터: 사용자가 Drive 인박스에 올린 파일 86개를 Sonnet 판독 에이전트 8개가 읽어 문항 단위로 구조화했다. 원문 데이터는 저작권 자료이므로 세션 작업 폴더에만 두고 저장소에는 넣지 않았다. **난도는 판독자가 추정한 값이고, 정답은 대부분 시험지에 없어 판독자가 추정했다.** 이 문서의 수치는 경향을 보여 줄 뿐 확정 통계가 아니다.
 
 ## 1. 자료 현황

@@ -470,6 +470,7 @@ def main() -> int:
         "draft_preview",
         "korean_archetype_gate",
         "korean_archetype_gate_smoke_test",
+        "korean_archetype_gate_v2_smoke_test",
         "local_ci_runner",
         "smoke_requirements",
         "xmark_detector",

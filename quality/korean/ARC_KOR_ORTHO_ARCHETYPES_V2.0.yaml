@@ -1,0 +1,276 @@
+# 한글 맞춤법 문항 원형 라이브러리 V2 — ARC N°(V6) 맞춤법 문항은 이 원형에서만 만든다.
+# 근거: 학교 기출 18개교 114문항 + 모의고사·참고서 (quality/korean/ARC_KOR_ORTHO_SCHOOL_EXAM_LEARNING_20261126.md,
+#       quality/korean/ARC_KOR_ORTHO_MOCK_STYLE_ANALYSIS_20261124.md), 동북고 2025-2 기말 원안(KOR-F01~F07).
+# 규칙 원문: quality/korean/ARC_KOR_ORTHO_ITEM_RULES_V2.0.md / 출제 프롬프트: engine/korean/ARC_KOR_ORTHO_GENERATION_PROMPT_V1.0.md
+# V1.0(quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml)의 A1~A6·C1은 아래 K/CR 원형에 흡수했다(maps_v1).
+library_id: ARC_KOR_ORTHO_ARCHETYPES_V2.0
+version: 2.0
+date: 2026-11-26
+status: ACTIVE
+applies_to: {subject: KOR, domain: ORTHOGRAPHY, products: [ARC_N, ARC_FINAL], kor_version: V6}
+evidence_ledger: quality/school/ARC_SCHOOL_EVIDENCE_LEDGER_V1.0.yaml
+copy_policy: 원형은 작동 방식만 가져온다. 기출·문제집의 문장, 선지, 단어 묶음, 학생 글을 옮기지 않는다.
+balance_profile: KOR_N_ORTHO_SCHOOL      # tooling/production/production_pipeline.py PROFILES 키
+
+# ─────────────────────────────── 원형 ───────────────────────────────
+# judgment_units: 학생이 참·거짓을 따로 판정해야 하는 단위 수(단어·밑줄·진술·칸) 권장 범위
+# difficulty: 이 원형으로 낼 수 있는 난도 범위
+# levers: 같은 원형 안에서 난도를 올리는 방법 (difficulty_levers 참조)
+archetypes:
+  K1_RULE_APPLY:
+    name: 규정 원문 적용
+    evidence: [KOR-F04, KOR-S02]
+    format: MCQ
+    view: REQUIRED              # 규정 원문(하위 조항·[붙임]·[다만] 포함) + 새 예문
+    stems:
+      - "<보기>의 한글 맞춤법 규정을 바탕으로 ㉠~㉤을 탐구한 내용으로 적절하지 않은 것은?"
+      - "<보기>를 참고할 때, 밑줄 친 말의 표기가 규정에 맞게 쓰인 것은?"
+      - "<보기>의 규정을 적용하여 표기한 예로 적절하지 않은 것은?"
+    options: "'예 + 판단 + 근거 조항' 한 문장 설명 5개, '~겠군/~것이군' 추론형 허용"
+    judgment_units: [5, 10]
+    difficulty: [D3, D5]
+    levers: [RULES, SUBCLAUSE, PREANALYSIS, CLAIM_WITH_REASON]
+    maps_v1: [A1_GENERAL_RULE_MAPPING, A6_RULE_CASE_EXPLANATION]
+  K2_SUBCLAUSE_MATCH:
+    name: 하위 조항 짝짓기
+    evidence: [KOR-S03]
+    format: MCQ
+    view: REQUIRED              # 조항 2~3개의 본문·[붙임]·[다만]·번호를 ㉠~㉤ 기호로 나누어 제시, 기호마다 대표 예 1개
+    stems:
+      - "<보기>의 ㉠~㉤에 해당하는 예를 바르게 짝지은 것은?"
+      - "<보기>를 참고할 때, 새 단어와 같은 규정이 적용된 예를 바르게 짝지은 것은?"
+    options: "'새 단어 — 기호(대표 예)' 짝 2개씩 묶은 선지 5개"
+    judgment_units: [8, 12]
+    difficulty: [D4, D5]
+    levers: [SUBCLAUSE, RULES, PREANALYSIS]
+    constraints: {symbols_min: 4, new_words_per_option: 2}
+  K3_CLASSIFY_TABLE:
+    name: 조건 분류표
+    evidence: [KOR-F03, KOR-S03]
+    format: MCQ
+    view: REQUIRED              # <보기 1> 조건 Ⓐ/Ⓑ/Ⓒ(또는 2축: 어종×발음, 제1항 두 원리×단어), <보기 2> 대상 5~10개
+    stems:
+      - "<보기 1>을 바탕으로 <보기 2>의 ㉠~㉤을 분류한 것으로 가장 적절한 것은?"
+      - "<보기 1>의 기준에 따라 <보기 2>의 단어를 바르게 분류한 것은?"
+    options: "분류표 5개 (칸마다 단어 1~5개)"
+    judgment_units: [5, 25]
+    difficulty: [D3, D5]
+    levers: [UNITS, PREANALYSIS, SECOND_AXIS]
+    masked_allowed: true        # <보기 2>에서 대상 형태를 [ ] 또는 '+'로 표시하는 것만 허용
+    maps_v1: [A3_CONDITION_CLASSIFICATION]
+  K4_PASSAGE_SET:
+    name: 해설문 세트
+    evidence: [KOR-M01]
+    format: MCQ
+    view: REQUIRED              # 해설문(400~700자): 원리 → 조건 → 예외 순, [A] 구간 표시 가능. 세트 2문항이 같은 해설문을 공유
+    stems:
+      - "윗글을 바탕으로 <보기>의 ⓐ~ⓔ를 이해한 내용으로 적절하지 않은 것은?"
+      - "[A]를 참고할 때, 밑줄 친 부분의 표기가 적절하지 않은 것은?"
+      - "윗글을 참고하여 <보기>의 ㉠~㉤ 중 적절한 것만을 있는 대로 고른 것은?"
+    options: "해설문의 조건을 새 단어에 적용한 설명 5개 또는 조합"
+    judgment_units: [5, 10]
+    difficulty: [D4, D5]
+    levers: [PASSAGE_CONDITION, SECOND_AXIS, PREANALYSIS]
+    constraints: {set_size: [2, 2], passage_chars: [400, 700]}
+  K5_STATEMENT_AUDIT:
+    name: 학생 진술·질문 답변 점검
+    evidence: [KOR-F05, KOR-S04]
+    format: MCQ
+    view: REQUIRED              # 수업 대화의 학생 진술 5개 또는 Q&A 게시판 5쌍. 진술마다 규정 1~2개, 오류는 숨긴 1곳
+    stems:
+      - "<보기>의 ㉠~㉤ 중 학생의 설명이 적절하지 않은 것은?"
+      - "<보기>의 답변 중 적절한 것만을 있는 대로 고른 것은?"
+    options: "㉠~㉤ 또는 조합"
+    judgment_units: [5, 10]
+    difficulty: [D4, D5]
+    levers: [RULES, CLAIM_WITH_REASON, SUBCLAUSE]
+    constraints: {statements: [5, 5], rules_per_statement: [1, 2]}
+    maps_v1: [A4_INQUIRY_DIALOGUE_CHECK]
+  K6_TEXT_MARKED_SPOTS:
+    name: 학생 글·생활 글 밑줄 판정
+    evidence: [KOR-F02, KOR-S04]
+    format: MCQ
+    view: REQUIRED              # 학생 일기·안내문·SNS 댓글·문자. 밑줄 6~9곳을 쓴 그대로 보여 준다(띄어쓰기 가리지 않음)
+    stems:
+      - "<보기>의 [A]에 들어갈 말로 적절한 것은?"
+      - "<보기>의 ㉠~㉨ 중 표기가 바른 것만을 있는 대로 고른 것은?"
+    options: "틀린(또는 바른) 곳의 조합 5개"
+    judgment_units: [6, 9]
+    difficulty: [D3, D5]
+    levers: [UNITS, RULES, PREANALYSIS]
+    constraints: {marked_spots: [6, 9]}
+    maps_v1: [A2_STUDENT_TEXT_ERRORS, A5_EXAMPLE_MULTI_JUDGMENT]
+  K7_MINIMAL_PAIR_WHY:
+    name: 최소대립쌍의 이유
+    evidence: [KOR-S05]
+    format: MCQ
+    view: REQUIRED              # 표기가 갈리는 쌍 5개(예: 파생어/합성어, 소리 덧남 유무, 의존 명사/어미, 호칭어/접미사)
+    stems:
+      - "<보기>의 단어 쌍에서 표기가 달라진 이유를 설명한 것으로 적절하지 않은 것은?"
+      - "<보기>의 ㉠과 ㉡에 사이시옷을 적지 않은 까닭이 같은 것끼리 묶은 것은?"
+    options: "쌍마다 '갈리는 조건' 설명 1문장"
+    judgment_units: [5, 10]
+    difficulty: [D4, D5]
+    levers: [PREANALYSIS, SECOND_AXIS, CLAIM_WITH_REASON]
+    constraints: {pairs: [4, 5]}
+  K8_SAME_FORM_TWO_FUNCTIONS:
+    name: 같은 형태 두 기능
+    evidence: [KOR-S05]
+    format: MCQ
+    view: REQUIRED              # 한 단락에 같은 형태(만·뿐·대로·지·데·밖에·만큼·차·간·바, 오뚝이 같은 동형 파생어)를 두 번 이상 배치
+    stems:
+      - "<보기>의 밑줄 친 말에 대해 탐구한 내용으로 적절하지 않은 것은?"
+      - "<보기>를 바르게 고쳐 쓰기 위한 방안으로 적절한 것은?"
+    options: "'형태 — 기능 판정 — 수정형' 설명 5개"
+    judgment_units: [8, 12]
+    difficulty: [D3, D5]
+    levers: [UNITS, CLAIM_WITH_REASON, PREANALYSIS]
+    constraints: {same_form_pairs_min: 3}
+  K9_DICTIONARY_DATA:
+    name: 사전 표제어 자료
+    evidence: [KOR-M01, KOR-S06]
+    format: MCQ
+    view: REQUIRED              # 표제어 2~3개의 품사·뜻풀이(직접 작성, 사전 문구 그대로 옮기지 않음) + 예문 쌍
+    stems:
+      - "<보기>의 [자료]를 바탕으로 할 때, 띄어쓰기가 바르게 된 것만을 [예문]에서 고른 것은?"
+    options: "예문 기호 조합"
+    judgment_units: [6, 8]
+    difficulty: [D3, D4]
+    levers: [UNITS, SECOND_AXIS]
+  K10_DERIVE_FROM_SOUND:
+    name: 결합식·발음·도식에서 표기 도출
+    evidence: [KOR-M01, KOR-S06]
+    format: MCQ
+    view: REQUIRED              # 'A + B → [발음]' 결합식 5~10개 또는 판단 흐름도(조건 3단계)
+    stems:
+      - "<보기>의 탐구 과정에 따라 a~e의 표기를 탐구한 내용으로 적절하지 않은 것은?"
+      - "<보기>의 흐름도를 바탕으로 ㉠~㉢에 들어갈 예로 적절한 것은?"
+    options: "결합식 → 조건 → 표기 설명 5개 또는 칸 채우기 조합"
+    judgment_units: [5, 10]
+    difficulty: [D4, D5]
+    levers: [PREANALYSIS, UNITS, SECOND_AXIS]
+    masked_allowed: true
+  K11_FORM_CHOICE_SET:
+    name: 괄호 표기 고르기 묶음
+    evidence: [KOR-S02]
+    format: MCQ
+    view: REQUIRED              # 문장 4~6개, 문장마다 '(A/B)' 표기 선택, 규정 1~2개 제시
+    stems:
+      - "<보기>의 규정을 참고하여 ( ) 안에서 바른 표기를 고른 것으로 적절한 것은?"
+    options: "선택 결과 묶음 5개"
+    judgment_units: [4, 6]
+    difficulty: [D3, D3]
+    levers: [UNITS, RULES]
+  CR1_FIND_FIX_REASON:
+    name: 서답형 — 찾아 고치고 근거 쓰기
+    evidence: [KOR-S07]
+    format: CR
+    view: REQUIRED              # 학생 글·SNS 글, 틀린 곳 4~6곳 + 바른 곳 2~3곳 섞음
+    conditions_min: 3           # 고친 표기 / 근거 조항·원리 / 바른 곳을 고치면 감점 / 문장 형식
+    points: [6, 12]
+    rubric: 고친 곳당 부분 점수 + 근거 점수, 바른 표기를 고치면 감점
+  CR2_SPACING_MARK:
+    name: 서답형 — 띄어쓰기 표시
+    evidence: [KOR-S07]
+    format: CR
+    view: REQUIRED              # 붙여 쓴 문장 2~3개, ∨(반드시 띄움)와 ^(띄움·붙임 모두 허용) 부호를 쓰게 한다
+    conditions_min: 3
+    points: [5, 9]
+    rubric: 문장당 점수, 허용 표시(^) 누락은 부분 감점
+  CR3_CONDITIONED_EXPLANATION:
+    name: 서답형 — 조건 서술
+    evidence: [KOR-F05]
+    format: CR
+    view: REQUIRED              # 탐구 대화 빈칸 ㉠~㉣, 가상 표기의 발음과 음운 변동 등
+    conditions_min: 3           # 문장 형식 지정 / 선택 어휘 지정 / 오개념 감점
+    points: [5, 6]
+    rubric: 빈칸당 1점 + 문장 형식 1점, 오개념 내용당 1점 감점
+    maps_v1: [C1_CONSTRUCTED_BLANK_SENTENCE]
+
+# ─────────────────────────────── 주제 배분 ───────────────────────────────
+# 학교 기출 114문항 조항 분포 기준. 문항마다 topic 하나를 주 주제로 단다.
+topics:
+  SPACING:  {rules: "제41~47항", target: [0.25, 0.35]}
+  FORM:     {rules: "제1·14~29항 (총칙, 체언·어간 형태, 파생어 원형, 불규칙 활용)", target: [0.20, 0.30]}
+  SOUND:    {rules: "제5~12항 (된소리, 구개음화, 두음 법칙)", target: [0.12, 0.20]}
+  SAISIOT:  {rules: "제30항", target: [0.10, 0.15]}
+  ABBREV:   {rules: "제32~40항 (준말)", target: [0.08, 0.12]}
+  DISTINCT: {rules: "제51~57항 (-이/-히, -든지/-던지, 구별 표기)", target: [0.05, 0.10]}
+topic_coverage_min_items: 30      # 이 문항 수 이상인 번들은 위 6개 주제를 모두 포함해야 한다
+
+# ─────────────────────────────── 난도 ───────────────────────────────
+difficulty_targets: {D1: 0.0, D2: 0.05, D3: 0.30, D4: 0.45, D5: 0.20}   # 학교 기출 추정 D2 8/D3 32/D4 42/D5 18
+difficulty_floor:                 # 문항이 해당 난도를 달려면 최소한 이만큼 필요하다 (가짜 난도 방지)
+  D3: {judgment_units_min: 4, rules_min: 1}
+  D4: {judgment_units_min: 8, rules_min: 2}
+  D5: {judgment_units_min: 12, rules_min: 2, levers_min: 2}
+difficulty_levers:
+  UNITS: 판정 단위를 늘리고, 조합형으로 부분 판정만으로는 지울 수 없게 한다
+  RULES: 서로 다른 조항 2~3개를 한 문항에 묶는다
+  SUBCLAUSE: '[붙임]·[다만]·번호 단위로 근거를 묻는다'
+  PREANALYSIS: '기본형 복원, 형태소 분석, 어종 판정, 발음 복원 중 하나 이상을 거쳐야 규정을 적용할 수 있다'
+  SECOND_AXIS: '두 번째 판단 축(어종×발음, 원리×단어, 품사×띄어쓰기)을 교차시킨다'
+  CLAIM_WITH_REASON: '선지가 판정과 근거를 함께 진술하고 근거만 틀리게 만든다'
+  PASSAGE_CONDITION: '해설문 속 조건 문장을 정확히 읽어야 풀린다'
+
+# ─────────────────────────────── 함정 ───────────────────────────────
+trap_taxonomy:            # 오답 선지는 반드시 아래 중 하나로 설계한다 (T1~T6은 V1과 같은 뜻)
+  T1_RIGHT_CONCEPT_WRONG_CASE: 개념 정의는 맞고 그 사례 적용이 틀림
+  T2_EXCEPTION_CONDITION: 예외·전제 조건을 비틂 (ㄱ·ㅂ 받침 뒤, 비슷한 음절 반복, 한자어 6단어, 원래 된소리·거센소리, 파생어, 외래어, 원칙/허용)
+  T3_ONE_OF_TWO_WRONG: 한 선지·진술의 두 판단 가운데 하나만 틀림
+  T4_SAME_FORM_OTHER_FUNCTION: 같은 형태를 다른 품사·기능으로 판정
+  T5_RULE_JURISDICTION: 맞는 표기에 다른 조항·원리를 근거로 댐
+  T6_PARTIAL_SET: 조합형에서 옳은 것 하나를 빼거나 틀린 것 하나를 더함
+  T7_ABSOLUTE_WORDING: 허용 규정을 '반드시'·'만'으로 단정하거나 원칙 표기를 틀렸다고 함
+  T8_PREANALYSIS_ERROR: 기본형·형태소·어종·발음을 잘못 복원해서 생긴 오판 (묻다 두 종류, 찻집 어종, 위쪽 발음)
+  T9_SUBCLAUSE_SWAP: 같은 조항 안의 본문·[붙임]·[다만]·번호를 바꿔 댐
+
+# ─────────────────────────────── 금지 ───────────────────────────────
+forbidden_forms:
+  - id: BARE_FIVE_SENTENCES
+    description: <보기> 없이 "다음 중 띄어쓰기가 바른 것은?" 뒤에 문장 5개를 나열
+  - id: SINGLE_WORD_OPTIONS
+    description: 단어 하나짜리 선지 5개(분류표·조합·㉠~㉤ 선택은 제외)
+  - id: MASKED_SPACING
+    description: "[ ]로 띄어쓰기를 가리는 표기 (masked_allowed 원형의 <보기 2> 대상 표시는 예외)"
+  - id: D1_RECALL
+    description: 규정 문구나 단어 표기만 확인하는 D1 문항
+  - id: LEXICON_ONLY_TRAP
+    description: 규정으로 풀 수 없고 표준어 사전 지식으로만 갈리는 함정(굽도리, 살코기류). 근거를 <보기>에 넣지 않으면 금지
+  - id: TEXTBOOK_EXAMPLE_FLOOD
+    description: 규정 해설·교과서 예시 단어 재사용이 번들의 30% 초과
+
+# ─────────────────────────────── 문항 계약 (번들 items.yaml 필드) ───────────────────────────────
+item_contract:
+  required: [archetype, topic, rules, judgment_units, levers]
+  optional: [textbook_example_reuse, needs_lexicon, lexicon_in_view, set_id]
+  notes: >-
+    rules = 이 문항이 실제로 판정에 쓰는 조항 목록(예: ["제30항", "제30항 3"]).
+    judgment_units = 학생이 따로 판정해야 하는 단위 수. levers = difficulty_levers 키 목록.
+    textbook_example_reuse = 규정 해설·교과서 예시 단어를 정답 판정 근거로 다시 쓰면 true.
+    needs_lexicon = 정답 판정에 표준어 사전 정보가 필요하면 true, lexicon_in_view = 그 근거를 <보기>에 넣었으면 true.
+
+# ─────────────────────────────── 세트·계획 ───────────────────────────────
+set_design:
+  unit: {selected: [8, 10], constructed: [0, 1]}    # 학교 맞춤법 블록(5~12문항)을 본뜬 단위
+  archetype_repeat_max_in_unit: 2
+  view_anchor_rate_min: 0.95
+  constructed_ratio_min: 0.0          # 서답형은 권장(0.10)이며 사용자가 객관식만 요청하면 0
+  constructed_ratio_recommended: 0.10
+  textbook_example_reuse_max: 0.30
+  d1_max: 0
+  hints_D3: [KOR-H01, KOR-H02]
+plan_split: {unit_selected: 9, unit_constructed: 1}   # arc.py plan이 V6 요청에 쓰는 단위
+plan_mix:                 # 선택형 50문항 기준 배분 비율 (arc.py plan이 선택형 수에 맞춰 나눈다)
+  K1_RULE_APPLY: 8
+  K2_SUBCLAUSE_MATCH: 5
+  K3_CLASSIFY_TABLE: 6
+  K4_PASSAGE_SET: 6
+  K5_STATEMENT_AUDIT: 5
+  K6_TEXT_MARKED_SPOTS: 5
+  K7_MINIMAL_PAIR_WHY: 4
+  K8_SAME_FORM_TWO_FUNCTIONS: 4
+  K9_DICTIONARY_DATA: 2
+  K10_DERIVE_FROM_SOUND: 3
+  K11_FORM_CHOICE_SET: 2
+plan_constructed: CR1_FIND_FIX_REASON     # 서답형 기본 원형 (CR2·CR3로 바꿀 수 있음)

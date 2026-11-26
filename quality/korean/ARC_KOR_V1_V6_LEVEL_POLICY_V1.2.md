@@ -3,8 +3,9 @@ DATE: 2026-11-06
 SCOPE: subject=KOR ONLY. SCI/SOC/기타 과목에는 적용하지 않는다.
 STATUS: ACTIVE DEV POLICY / NOT RELEASE CERTIFICATION
 PREVIOUS_KOR_POLICY: quality/korean/ARC_KOR_V1_V5_LEVEL_POLICY_V1.1.md (ARCHIVED)
-V6_SPECIALIST_POLICY: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md
-V6_SPACING_POLICY: quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.0.md
+V6_SPECIALIST_POLICY: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.1.md
+V6_ITEM_RULES: quality/korean/ARC_KOR_ORTHO_ITEM_RULES_V2.0.md (2026-11-26, 학교 기출 기반 주제·원형·난도)
+V6_SPACING_POLICY: quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.1.md
 PREVIOUS_GENERIC_FILE: quality/ARC_V1_V5_LEARNING_LADDER_V1.0.md (deprecated as global policy)
 EVIDENCE: quality/korean/ARC_KOR_DONGBUK_UNSEEN_ANALYSIS_V1.0.md
 DYNAMIC_SOURCE_POLICY: quality/korean/ARC_KOR_DYNAMIC_SOURCE_SELECTION_V1.0.yaml
@@ -52,8 +53,8 @@ GRADE1_EXAM_INVENTORY: quality/korean/ARC_DONGBUK_G1_KOR_EXAM_INVENTORY_20261106
 - 품사·단어의 사전 근거와 맞춤법 **규정 조항의 문언**을 각각 따로 검증하고, 정답 공개 전 독립풀이로 복수정답을 배제한다. 제1항/제15항/제30항/제41~47항 등이 후보가 될 수 있어도 조항 번호는 실제 근거가 확인될 때만 부여한다.
 - 고정 작품이나 어휘 목록을 선발하지 않는다. **문항 목표→출제 시점 새 예문 선정→사전/규정 확인→정답 숨긴 독립풀이** 순서다.
 - 대표 사례: 속담 ‘산 넘어 산’의 ‘넘어’는 동사 ‘넘다’의 활용형; ‘산 너머 마을’의 ‘너머’는 명사. 국립국어원 상담 사례 mcfaq_seq=8515 및 한글 맞춤법 제15항 확인. 이 사례를 문항 전체의 고정 원고로 사용하지 않는다.
-- **제41·42항 및 의존 명사/보조사 구별에 100문항 중 최소 30문항**, 어미·접미사 구별 및 보조용언 띄어쓰기 등 직접 띄어쓰기 문항 최소 65문항을 배정한다. 2025 2학기 기말 Q9 일기형과 교과서 범위에 근거하며 학교 전체 시험의 비율이라고 주장하지 않는다.
-- 구체적 품사·띄어쓰기 기준은 `quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.0.md`를 따르고, 전체 V6 설계는 `quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md`가 우선한다.
+- (2026-11-26 대체) V6 띄어쓰기는 번들의 25~35%(최대 40%)이며 6개 주제를 모두 다룬다. 배분·원형·난도는 `quality/korean/ARC_KOR_ORTHO_ITEM_RULES_V2.0.md`를 따른다. 이전의 '100문항 중 띄어쓰기 65·조사/의존 명사 30' 목표는 폐기했다.
+- 구체적 품사·띄어쓰기 기준은 `quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.1.md`를 따르고, 전체 V6 설계는 `quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.1.md`가 우선한다.
 
 ## 고난도 V4와 실전 V5 분리
 V4는 3~4개 문법 조건/반례가 얽힌 문항으로, '낯선 자료'를 사용해도 되고 안 해도 된다. 고난도는 출제 오류·무의미하게 드문 규정 암기로 만들지 않는다.

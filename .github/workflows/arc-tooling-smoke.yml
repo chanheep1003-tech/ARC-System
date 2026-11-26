@@ -222,10 +222,14 @@ jobs:
       - name: Run school archetype gate regression
         run: python tooling/korean/test_archetype_gate.py
 
+      - name: Run orthography archetype gate V2 regression
+        run: python tooling/korean/test_archetype_gate_v2.py
+
       - name: Smoke the ARC CLI (status matrix, plan, start dry-run, checksum check)
         run: |
           python tooling/arc.py status
           python tooling/arc.py plan --subject KOR --scope "한글 맞춤법"
+          python tooling/arc.py plan --subject KOR --scope "한글 맞춤법" --count 50 --constructed 0
           python tooling/arc.py plan --subject SCI --scope "CI"
           python tooling/arc.py plan --subject ENG --scope "CI"
           python tooling/arc.py plan --subject ENG --product ARC_FINAL --scope "CI"

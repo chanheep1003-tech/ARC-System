@@ -26,6 +26,18 @@ sources:
     title: 동북고 내신 출제 DNA 리서치 (사용자 제공, 외부 수집)
     grade_cap: D3
     note: 출처가 학원 분석·지역 기사·영상 중심. 문항 수가 원안과 다름(21+3·8쪽 주장 vs 실제 21+4·7쪽).
+  KOR-SCHOOL-ORTHO-CORPUS-20261126:
+    title: 타 학교 고1 공통국어2 기출·문제집 맞춤법 학습 (사용자가 Drive 인박스에 제공, 2021~2025, 18개교)
+    read: {date: 2026-11-26, by: CLAUDE_SONNET_READER_AGENTS, method: PDF_TEXT_AND_DRIVE_OCR}
+    items: {school_exam: 114, workbook: 339, mock: 12}
+    report: quality/korean/ARC_KOR_ORTHO_SCHOOL_EXAM_LEARNING_20261126.md
+    grade_cap: D2
+    note: 판독 에이전트가 원문을 읽어 문항 단위로 구조화했다. 난도는 판독자 추정, 정답은 대부분 시험지에 없어 추정. 원문 데이터는 저작권 자료라 저장소에 넣지 않았다. 동북고가 아닌 학교 자료이므로 형식·분포 근거로만 쓰고 동북고 고유 규칙으로 삼지 않는다.
+  KOR-MOCK-ORTHO-20261124:
+    title: 고1~고3 학력평가·모의평가·수능 맞춤법 문항과 사설 모의고사 (Drive)
+    report: quality/korean/ARC_KOR_ORTHO_MOCK_STYLE_ANALYSIS_20261124.md
+    grade_cap: D2
+    note: 수능·평가원 10문항은 원문 전체를 읽었고, 나머지는 색인·발췌본을 읽었다. 발췌본의 일부 번호 중복 수록 오류가 확인되었다.
   ENG-ANALYSIS-20261113:
     title: 동북고 1학년 공통영어1·2 기출 전수 분석 (사용자 제공)
     covers: [2025-2 중간, 2025-2 기말, 2026-1 중간, 2026-1 기말, 2026-2 중간]
@@ -68,6 +80,43 @@ findings:
     source: KOR-EXAM-2025-2-FINAL
     claim: '있는 대로 고른 것은?' 조합형과 '가장 적절한 것은?' 설명형이 섞이며, 같은 세부 유형이 반복되지 않는다.
     items: [4, 5, 6, 7, 8, 9, 10]
+  - id: KOR-S01
+    grade: D2
+    source: KOR-SCHOOL-ORTHO-CORPUS-20261126
+    claim: 학교 시험은 맞춤법을 5~12문항의 연속 블록으로 문법 구간에 배치하고, 배점은 2.8~4.7점(평균 3.8)이며 최고 배점 문항이 맞춤법인 학교가 있다.
+  - id: KOR-S02
+    grade: D2
+    source: KOR-SCHOOL-ORTHO-CORPUS-20261126
+    claim: 규정 원문(하위 조항 포함)을 <보기>로 주고 새 예에 적용하는 형식이 기본(114문항 중 51)이며, (A/B) 표기 고르기는 중간 난도에 쓰인다.
+  - id: KOR-S03
+    grade: D2
+    source: KOR-SCHOOL-ORTHO-CORPUS-20261126
+    claim: 고난도는 조건 분류표(2축·대형)와 하위 조항([붙임]·[다만]·번호) 짝짓기, 9~25곳 판정 조합형으로 만든다.
+  - id: KOR-S04
+    grade: D2
+    source: KOR-SCHOOL-ORTHO-CORPUS-20261126
+    claim: 학생 진술 5개·Q&A 5쌍 점검과 학생 글·SNS 글 밑줄 6~9곳 판정이 D4~D5 자리에 쓰인다(진술마다 규정 1~2개, 오류는 한 곳).
+  - id: KOR-S05
+    grade: D2
+    source: KOR-SCHOOL-ORTHO-CORPUS-20261126
+    claim: 최소대립쌍의 표기가 갈리는 이유(파생/합성, 소리 덧남 유무, 의존 명사/어미)와 같은 형태 두 기능(오뚝이, 만·뿐·대로 쌍)을 묻는다.
+  - id: KOR-S06
+    grade: D2
+    source: KOR-SCHOOL-ORTHO-CORPUS-20261126
+    claim: 사전 표제어 자료형과 사이시옷 흐름도·결합식 도출형이 2025학년도에 나타났다.
+  - id: KOR-S07
+    grade: D2
+    source: KOR-SCHOOL-ORTHO-CORPUS-20261126
+    claim: 서답형은 오류 4~6곳 찾아 고치고 근거 쓰기, ∨·^ 띄어쓰기 표시, 조건 서술이며 바른 곳을 고치면 감점하는 조건이 붙는다(6~12점).
+  - id: KOR-S08
+    grade: D2
+    source: KOR-SCHOOL-ORTHO-CORPUS-20261126
+    claim: 추정 난도는 학교 기출 D2 8% / D3 32% / D4 42% / D5 18%, 문제집 D1~D2 55%이다. 띄어쓰기 비중은 학교 기출 31%다.
+    note: 난도는 판독자 추정이므로 생성 목표로만 쓰고, 개별 문항 난도는 독립 재풀이로 확정한다.
+  - id: KOR-M01
+    grade: D2
+    source: KOR-MOCK-ORTHO-20261124
+    claim: 고1 학력평가는 해설문 세트([11~12]), 발음·결합식에서 표기 도출, 사전 자료형, 같은 규정 짝짓기를 쓴다.
   - id: ENG-F01
     grade: D2
     source: ENG-ANALYSIS-20261113

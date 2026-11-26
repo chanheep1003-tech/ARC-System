@@ -240,3 +240,21 @@ rules:
       - final_release_without_subject_multi_exam_anchor
       - final_use_generic_cross_subject_difficulty_curve_when_subject_anchor_exists
       - science_redox_final_ignore_direct_2025_2_mid_redox_items
+  - id: KOR-V6-SPACING-65-QUOTA
+    deprecated:
+      - quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md
+      - quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.0.md
+      - quality/ARC_SCHOOL_ARCHETYPE_GATE_V1.0.md
+    replacement:
+      - quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.1.md
+      - quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.1.md
+      - quality/korean/ARC_KOR_ORTHO_ITEM_RULES_V2.0.md
+      - quality/korean/ARC_KOR_ORTHO_ARCHETYPES_V2.0.yaml
+      - quality/ARC_SCHOOL_ARCHETYPE_GATE_V1.1.md
+    reason: "2026-11-26 user directive after the second rejection of V6 50 items: rebuild orthography rules from 114 school-exam items (18 schools), mock exams and workbooks. V1.0's 65/100 spacing quota and the V1 grammar archetypes for V6 are replaced."
+    forbidden_runtime_behavior:
+      - v6_spacing_share_above_40_percent
+      - v6_bundle_without_sound_abbrev_or_form_topics
+      - v6_difficulty_label_without_judgment_unit_floor
+      - v6_items_from_v1_grammar_archetypes_only
+

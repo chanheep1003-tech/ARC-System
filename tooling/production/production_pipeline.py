@@ -89,6 +89,27 @@ PROFILES = {
     ("SCI", "ARC_N"): {"ADVANCED": (0.20, 0.30)},
     ("ENG", "ARC_N"): {"ADVANCED": (0.20, 0.30)},
 }
+# Named balance profiles a bundle may declare with `balance_profile`. KOR_N_ORTHO_SCHOOL follows the
+# school-exam orthography corpus (18 schools, 114 items: D2 8 / D3 32 / D4 42 / D5 18 %);
+# rules: quality/korean/ARC_KOR_ORTHO_ITEM_RULES_V2.0.md §5.
+NAMED_PROFILES = {
+    "KOR_N_ORTHO_SCHOOL": {"subject": "KOR", "product_mode": "ARC_N",
+                           "bands": {"D1": (0.0, 0.0), "D2": (0.0, 0.10), "D3": (0.25, 0.40), "D4": (0.35, 0.55),
+                                     "D5": (0.10, 0.25), "D45": (0.50, 0.70), "ADVANCED": (0.20, 0.30)}},
+}
+
+
+def balance_profile(bundle: dict[str, Any]) -> dict[str, tuple[float, float]] | None:
+    """Pick the difficulty bands: a declared named profile (validated against subject/product) or the default."""
+    name = bundle.get("balance_profile")
+    if name:
+        named = NAMED_PROFILES.get(name)
+        if not named:
+            raise ValueError(f"unknown balance_profile: {name}")
+        if (named["subject"], named["product_mode"]) != (bundle["subject"], bundle["product_mode"]):
+            raise ValueError(f"balance_profile {name} does not apply to {bundle['subject']} {bundle['product_mode']}")
+        return named["bands"]
+    return PROFILES.get((bundle["subject"], bundle["product_mode"]))
 
 
 ITEM_GATE_CODES = {
@@ -517,7 +538,7 @@ def measure(bundle: dict[str, Any], sources: list[dict[str, Any]], blind: dict[s
     if ai_hits:
         add("AI_STYLE_PHRASE", phrases=ai_hits)
 
-    profile = PROFILES.get((bundle["subject"], bundle["product_mode"]))
+    profile = balance_profile(bundle)
     balance = None
     if profile:
         shares = {d: diff.get(d, 0) / n for d in ("D1", "D2", "D3", "D4", "D5")}

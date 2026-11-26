@@ -65,10 +65,14 @@ def test_dynamic_source_policy() -> None:
         assert runtime[v6_gate] == "required", v6_gate
     assert "learning_level_v6" not in runtime and "korean_learning_level_v6" in runtime
 
-    spacing_path = "quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.0.md"
+    spacing_path = "quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.1.md"
     assert runtime["korean_v6_spacing_pos_policy"] == spacing_path
-    assert runtime["korean_v6_spacing_min_questions_target"] == 65
-    assert runtime["korean_v6_particle_vs_dependent_noun_target"] == 30
+    # V1.0's 65/100 spacing target was replaced on 2026-11-26 by school-exam topic shares (ORTHO rules V2.0).
+    assert runtime["korean_v6_spacing_share_target"] == [0.25, 0.35]
+    assert runtime["korean_v6_spacing_share_max"] == 0.40
+    assert set(runtime["korean_v6_topic_coverage"]) == {"SPACING", "FORM", "SOUND", "SAISIOT", "ABBREV", "DISTINCT"}
+    rules = (ROOT / runtime["korean_orthography_item_rules"]).read_text(encoding="utf-8")
+    assert all(x in rules for x in ("KOR_N_ORTHO_SCHOOL", "판정 단위", "독립 재풀이", "제30항"))
     assert runtime["korean_v6_particle_subtype_validation"] == "required"
     assert runtime["korean_v6_orthography_permissible_forms_gate"] == "required"
     supplement = (ROOT / spacing_path).read_text(encoding="utf-8")

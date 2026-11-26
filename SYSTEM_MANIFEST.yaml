@@ -1,7 +1,7 @@
 # ARC System Manifest
 system:
   name: ARC-System
-  version: 1.9.5
+  version: 1.9.6
   status: release
   initialized: 2026-09-18
   repository_visibility: private
@@ -23,6 +23,12 @@ runtime:
   school_evidence_ledger: quality/school/ARC_SCHOOL_EVIDENCE_LEDGER_V1.0.yaml
   korean_grammar_archetype_library: quality/korean/ARC_KOR_GRAMMAR_ARCHETYPES_V1.0.yaml
   korean_grammar_archetype_gate: required
+  korean_orthography_archetype_library: quality/korean/ARC_KOR_ORTHO_ARCHETYPES_V2.0.yaml   # V6 맞춤법은 V1 대신 이 라이브러리
+  korean_orthography_item_rules: quality/korean/ARC_KOR_ORTHO_ITEM_RULES_V2.0.md
+  korean_orthography_generation_prompt: engine/korean/ARC_KOR_ORTHO_GENERATION_PROMPT_V1.0.md
+  korean_orthography_balance_profile: KOR_N_ORTHO_SCHOOL
+  korean_orthography_learning_report: quality/korean/ARC_KOR_ORTHO_SCHOOL_EXAM_LEARNING_20261126.md
+  korean_orthography_mock_style_report: quality/korean/ARC_KOR_ORTHO_MOCK_STYLE_ANALYSIS_20261124.md
   unified_workflow_runner: tooling/workflow/arc_workflow.py
   unified_workflow_state_schema: ARC-RUN-V1
   active_exam_id: DONGBUK_2026_2_FINAL
@@ -47,10 +53,11 @@ runtime:
   korean_learning_level_v4: ARC_N_ADVANCED_DISCRIMINATION
   korean_learning_level_v5: ARC_FINAL_DONGBUK_SIMULATION
   korean_learning_level_v6: ARC_N_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY
-  korean_v6_specialist_policy: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.0.md
-  korean_v6_spacing_pos_policy: quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.0.md
-  korean_v6_spacing_min_questions_target: 65
-  korean_v6_particle_vs_dependent_noun_target: 30
+  korean_v6_specialist_policy: quality/korean/ARC_KOR_V6_UNFAMILIAR_EXPRESSION_ORTHOGRAPHY_V1.1.md
+  korean_v6_spacing_pos_policy: quality/korean/ARC_KOR_V6_SPACING_POS_MINIMAL_PAIRS_V1.1.md
+  korean_v6_spacing_share_target: [0.25, 0.35]   # 학교 기출 31% (V1.0의 65/100은 2026-11-26 폐기)
+  korean_v6_spacing_share_max: 0.40
+  korean_v6_topic_coverage: [SPACING, FORM, SOUND, SAISIOT, ABBREV, DISTINCT]
   korean_v6_particle_subtype_validation: required
   korean_v6_orthography_permissible_forms_gate: required
   korean_v6_no_fixed_lexeme_bank: required
@@ -391,7 +398,7 @@ active:
       drive_id: 1t0l6juVLzJxx9UMN5YwG1eRu4enAXpmX
     item_quality: quality/ARC_ITEM_QUALITY_RUBRIC_V1.5.md
     false_difficulty_gate: quality/ARC_FALSE_DIFFICULTY_GATE_V1.0.md
-    school_archetype_gate: quality/ARC_SCHOOL_ARCHETYPE_GATE_V1.0.md
+    school_archetype_gate: quality/ARC_SCHOOL_ARCHETYPE_GATE_V1.1.md
     final_quality_gate: quality/ARC_FINAL_QUALITY_GATE_V1.1.md
     dongbuk_actual_exam_difficulty_corpus: quality/anchors/DONGBUK_ACTUAL_EXAM_DIFFICULTY_CORPUS_V1.0.yaml
     final_difficulty_anchor_kor: quality/anchors/KOR_DONGBUK_MULTI_EXAM_DIFFICULTY_ANCHOR_V1.0.yaml
@@ -541,6 +548,7 @@ tooling:
   draft_preview: tooling/production/draft_preview.py
   korean_archetype_gate: tooling/korean/archetype_gate.py
   korean_archetype_gate_smoke_test: tooling/korean/test_archetype_gate.py
+  korean_archetype_gate_v2_smoke_test: tooling/korean/test_archetype_gate_v2.py
   local_ci_runner: tooling/run_ci_local.py
   smoke_requirements: tooling/requirements-smoke.txt
   content_qa_gate: tooling/content_qa/content_qa_gate.py

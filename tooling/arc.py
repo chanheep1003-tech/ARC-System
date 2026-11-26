@@ -355,7 +355,8 @@ def previous_kor_version(scope: str) -> str | None:
     return found
 
 
-def build_plan(subject: str, product: str, scope: str, count: int | None, version: str | None) -> dict:
+def build_plan(subject: str, product: str, scope: str, count: int | None, version: str | None,
+               constructed_override: int | None = None) -> dict:
     defaults = yaml.safe_load(PLAN_DEFAULTS.read_text(encoding="utf-8"))
     manifest = load_manifest()
     _, registry, exam_id = exam_registry(manifest)
@@ -391,11 +392,17 @@ def build_plan(subject: str, product: str, scope: str, count: int | None, versio
         profile = defaults["other_subjects"][subject]
     plan = {"subject": subject, "product": product, "scope": scope, "version": version, "version_name": version_name,
             "count": count, "reasons": reasons, "exam_id": exam_id, "scope_status": entry.get("scope_status")}
+    # KOR V6 (orthography) uses its own archetype library, block split and difficulty profile.
+    ortho = subject == "KOR" and version == "V6" and "KOR_ORTHO" in defaults["archetype_library"]
+    ortho_lib = yaml.safe_load((ROOT / defaults["archetype_library"]["KOR_ORTHO"]).read_text(encoding="utf-8")) if ortho else None
     if product == "ARC_N" and profile.get("difficulty"):
-        split = defaults["set_split"][subject]
+        split = ortho_lib["plan_split"] if ortho else defaults["set_split"][subject]
         per_unit = split["unit_selected"] + split["unit_constructed"]
         units = max(1, round(count / per_unit))
         constructed = units * split["unit_constructed"]
+        if constructed_override is not None:
+            constructed = max(0, min(count, constructed_override))
+            reasons.append(f"서답형 지정 {constructed}")
         selected = count - constructed
         diff = apportion(selected, profile["difficulty"])
         lo, hi = defaults["hard_limits"]["advanced_share"]
@@ -405,12 +412,31 @@ def build_plan(subject: str, product: str, scope: str, count: int | None, versio
             raise SystemExit("계획의 심화 비율이 게이트 범위(20~30%)를 벗어납니다.")
         plan.update({"units": units, "selected": selected, "constructed": constructed,
                      "difficulty": {k: v for k, v in diff.items() if v}, "advanced": advanced, "core": selected - advanced})
-        if grammar:
+        if ortho:
+            mix = ortho_lib["plan_mix"]
+            total_w = sum(mix.values())
+            plan["archetype_library"] = defaults["archetype_library"]["KOR_ORTHO"]
+            plan["archetype_mix"] = apportion(selected, {k: v / total_w for k, v in mix.items()})
+            # Passage-set archetypes come in whole sets; spill the remainder into the first (base) archetype.
+            base = next(iter(mix))
+            for name, spec in ortho_lib["archetypes"].items():
+                size = ((spec.get("constraints") or {}).get("set_size") or [1])[0]
+                extra = plan["archetype_mix"].get(name, 0) % size
+                if extra:
+                    plan["archetype_mix"][name] -= extra
+                    plan["archetype_mix"][base] += extra
+            if constructed:
+                plan["archetype_mix"][ortho_lib["plan_constructed"]] = constructed
+            plan["topic_mix"] = apportion(count, {k: sum(v["target"]) / 2 for k, v in ortho_lib["topics"].items()})
+            plan["balance_profile"] = ortho_lib["balance_profile"]
+            plan["rules"] = profile.get("rules")
+        elif grammar:
             library = yaml.safe_load((ROOT / defaults["archetype_library"]["KOR_GRAMMAR"]).read_text(encoding="utf-8"))
             mcq_types = [k for k, v in library["archetypes"].items() if v["format"] == "MCQ"]
             plan["archetype_library"] = defaults["archetype_library"]["KOR_GRAMMAR"]
             plan["archetype_mix"] = apportion(selected, {k: 1 / len(mcq_types) for k in mcq_types})
-            plan["archetype_mix"]["C1_CONSTRUCTED_BLANK_SENTENCE"] = constructed
+            if constructed:
+                plan["archetype_mix"]["C1_CONSTRUCTED_BLANK_SENTENCE"] = constructed
     if subject == "ENG":
         library = yaml.safe_load((ROOT / defaults["archetype_library"]["ENG"]).read_text(encoding="utf-8"))
         plan["archetype_library"] = defaults["archetype_library"]["ENG"]
@@ -446,6 +472,11 @@ def print_plan(plan: dict) -> None:
     if plan.get("archetype_mix"):
         print("  문항 원형 " + ", ".join(f"{k if plan['subject'] == 'ENG' else k.split('_')[0]} {v}" for k, v in plan["archetype_mix"].items()))
         print(f"            ({plan['archetype_library']})")
+    if plan.get("topic_mix"):
+        names = {"SPACING": "띄어쓰기", "FORM": "형태", "SOUND": "소리", "SAISIOT": "사이시옷", "ABBREV": "준말", "DISTINCT": "구별"}
+        print("  주제      " + ", ".join(f"{names.get(k, k)} {v}" for k, v in plan["topic_mix"].items()))
+    if plan.get("rules"):
+        print(f"  출제 규칙 {plan['rules']}  (난도 프로필 {plan.get('balance_profile')})")
     for reason in plan["reasons"]:
         print(f"  기본값    {reason}")
     print(f"  시험      {plan['exam_id']}  범위 상태 {plan['scope_status']}")
@@ -455,7 +486,7 @@ def print_plan(plan: dict) -> None:
 
 
 def cmd_plan(args) -> int:
-    plan = build_plan(args.subject, args.product, args.scope, args.count, args.version)
+    plan = build_plan(args.subject, args.product, args.scope, args.count, args.version, getattr(args, "constructed", None))
     print_plan(plan)
     if args.save:
         path = Path(args.save)
@@ -794,6 +825,7 @@ def main(argv=None) -> int:
     p.add_argument("--scope", required=True)
     p.add_argument("--count", type=int)
     p.add_argument("--version", help="국어 ARC N°: V1~V4, V6")
+    p.add_argument("--constructed", type=int, help="서답형 문항 수 지정 (예: 객관식만이면 0)")
     p.add_argument("--save", help="계획을 YAML로 저장할 경로")
     p.set_defaults(func=cmd_plan)
 
