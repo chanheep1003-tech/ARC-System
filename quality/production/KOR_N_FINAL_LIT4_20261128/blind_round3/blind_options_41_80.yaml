@@ -1,0 +1,316 @@
+# Blind option verdicts, items 41-80. Line numbers: (가)「보석 1」 1-13 (〔5〕=쥐라기 지층, 〔10〕=지상의 별들이여);
+# (나)「얼굴」 1-23 (〔5〕=한꺼번에, 〔10〕=생글거리고, 〔15〕=얼굴 뒤로, 〔20〕=곧 얼굴이 되었다).
+items:
+- item_id: KOR-NF4-041
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "3행 '…새.', 8행 '…눈.' 명사 종결"}
+    2: {verdict: TRUE, evidence: "6행 '반짝거릴까' 의문형으로 바람"}
+    3: {verdict: TRUE, evidence: "10행 '별들이여' 돈호"}
+    4: {verdict: TRUE, evidence: "12~13행 '…죽음이 아니다.' 단정"}
+    5: {verdict: FALSE, evidence: "문답·대화 형식 없음"}
+  notes: "Stock wrong option (5); easy."
+- item_id: KOR-NF4-042
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "1~2행 '새가 난다' - 영원히 잠든 곳 아님"}
+    2: {verdict: TRUE, evidence: "1~2행 화석 속 새가 남 + 11~13행 화석에 묻혀 영원"}
+    3: {verdict: FALSE, evidence: "눈물은 보석이 되기를 바라는 것, 과거를 묻은 곳 아님"}
+    4: {verdict: FALSE, evidence: "11행 '묻혀라 화석에' - 피할 곳 아님"}
+    5: {verdict: FALSE, evidence: "벗어나려는 근거 없음"}
+- item_id: KOR-NF4-043
+  polarity: positive (slot pairing)
+  slots: {ㄱ: "4~6행 correct (7~8행 also extends the wish but is not offered with correct ㄴ)", ㄴ: "9행 '스스로…선택하는' correct; 10행·11행 wrong", ㄷ: "12~13행 correct; 7~8행 wrong"}
+  options:
+    1: {verdict: TRUE, evidence: "ㄱ4~6 / ㄴ9 / ㄷ12~13"}
+    2: {verdict: FALSE, evidence: "1~3행은 이미 영원한 새 제시, 바람 아님"}
+    3: {verdict: FALSE, evidence: "11행은 명령, 주체적 선택 아님"}
+    4: {verdict: FALSE, evidence: "7~8행은 소멸의 재의미화 아님"}
+    5: {verdict: FALSE, evidence: "ㄴ-10행 호칭만, 선택 표현 없음"}
+  notes: "ㄱ-7~8행 is arguably defensible on its own; item still unique because ⑤'s ㄴ slot fails."
+- item_id: KOR-NF4-044
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "1연부터 이미 화석 속; 3연은 '지상'으로, 내려가며 좁아지지 않음"}
+    2: {verdict: FALSE, evidence: "1연에 슬픔 없음"}
+    3: {verdict: FALSE, evidence: "회상/현재/미래 구조 없음"}
+    4: {verdict: FALSE, evidence: "1연·3연 반복 시구 없음"}
+    5: {verdict: TRUE, evidence: "1연 화석 속 새, 2연 '내가…반짝거릴까', 3연 '별들이여…묻혀라'"}
+- item_id: KOR-NF4-045
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "3행 지상에 내려오지 않는 새"}
+    2: {verdict: TRUE, evidence: "5행 지층 속 하늘"}
+    3: {verdict: TRUE, evidence: "7행 쉼표, 8행으로 이어지며 예시('가령')"}
+    4: {verdict: FALSE, evidence: "10행 '지상의' 별 - 하늘 높이 떠 있는 별 아님"}
+    5: {verdict: TRUE, evidence: "11행 도치 '묻혀라 화석에'"}
+- item_id: KOR-NF4-046
+  polarity: positive (combination)
+  statements: {ㄱ: "TRUE - 3행", ㄴ: "TRUE - 10~11행", ㄷ: "FALSE - 화자가 떠나려 한다는 근거 없음", ㄹ: "TRUE - 5행 '지층 어느 하늘 아래'"}
+  answer_set: "ㄱ,ㄴ,ㄹ = ④"
+  notes: "Stem says '3행의 지상' - correct line count."
+- item_id: KOR-NF4-047
+  polarity: positive
+  options:
+    1: {verdict: TRUE, evidence: "4행 '눈물도' - 1연 화석 속 새에 더하여"}
+    2: {verdict: FALSE, evidence: "쥐라기는 눈물 흘린 때 아님"}
+    3: {verdict: FALSE, evidence: "'어느'는 불특정"}
+    4: {verdict: FALSE, evidence: "물음 = 확신 없는 바람, 이루어졌다는 근거 없음"}
+    5: {verdict: FALSE, evidence: "'하나의'는 수량 강조 아님, 과잉 해석"}
+- item_id: KOR-NF4-048
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "답 제시 아님, 이미 보석 됐다는 근거 없음"}
+    2: {verdict: TRUE, evidence: "7~8행 '가령 죽음이라든가, … 눈' - 눈물 외 대상 예시"}
+    3: {verdict: FALSE, evidence: "새의 원관념 제시 아님"}
+    4: {verdict: FALSE, evidence: "죽음 두려움 근거 없음"}
+    5: {verdict: FALSE, evidence: "별들 소개 아님"}
+- item_id: KOR-NF4-049
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "다시 살아난다는 진술 없음"}
+    2: {verdict: FALSE, evidence: "반어 아닌 역설"}
+    3: {verdict: TRUE, evidence: "12~13행 역설"}
+    4: {verdict: FALSE, evidence: "위로 아님"}
+    5: {verdict: FALSE, evidence: "행갈이 효과 오독"}
+  notes: "2 vs 3 differ only in 반어/역설 term knowledge (curriculum-standard, not flag d)."
+- item_id: KOR-NF4-050
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "9행 '스스로'"}
+    2: {verdict: TRUE, evidence: "9행 '불에 타서' 빛/소멸"}
+    3: {verdict: TRUE, evidence: "10행 '별들'"}
+    4: {verdict: TRUE, evidence: "11~13행"}
+    5: {verdict: FALSE, evidence: "고통·포기·안타까움 근거 없음"}
+- item_id: KOR-NF4-051
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "빛을 잃는 모습 아님(9행 불에 타 빛)"}
+    2: {verdict: FALSE, evidence: "과거로 돌아가 날고 싶어 함 근거 없음"}
+    3: {verdict: FALSE, evidence: "공포 아닌 맑은 정신"}
+    4: {verdict: TRUE, evidence: "5행 땅속 하늘 = 공간 재구성, 보석으로 반짝임"}
+    5: {verdict: FALSE, evidence: "죽음을 피하려는 태도 아님"}
+  notes: "<보기> text is identical to item 76's <보기> - redundancy in the set."
+- item_id: KOR-NF4-052
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "1~2행"}
+    2: {verdict: TRUE, evidence: "4행 '내가' 첫 등장"}
+    3: {verdict: FALSE, evidence: "'지상의 별들'은 비유적 존재, 실제 관찰 아님"}
+    4: {verdict: TRUE, evidence: "8행"}
+    5: {verdict: TRUE, evidence: "11행 명령, 12~13행 단정"}
+- item_id: KOR-NF4-053
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "도입 이미지"}
+    2: {verdict: FALSE, evidence: "화자 등장일 뿐"}
+    3: {verdict: FALSE, evidence: "예시"}
+    4: {verdict: FALSE, evidence: "당부; 주제 일부지만 덜 집약"}
+    5: {verdict: TRUE, evidence: "12~13행 역설적 결론"}
+  notes: "④ is a mild competitor but ⑤ is standard."
+- item_id: KOR-NF4-054
+  polarity: positive (combination)
+  statements: {ㄱ: "TRUE - 새(화석 속) / 별들(지상)", ㄴ: "TRUE (wording '뒤바뀐' slightly strong but defensible: 하늘이 땅 아래)", ㄷ: "TRUE - 불/반짝/빛나던 빛 이미지", ㄹ: "FALSE - 같은 대상 근거 없음"}
+  answer_set: "ㄱ,ㄴ,ㄷ = ③"
+  notes: "If a student rejects ㄷ ('불에 타서' as light image) they choose ①; ㄷ is defensible since 별·불 imply light."
+- item_id: KOR-NF4-055
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "1~2행"}
+    2: {verdict: FALSE, evidence: "8행 '초롱초롱 빛나던 눈' - 체념 아님; 대비는 죽음/생생한 빛"}
+    3: {verdict: TRUE, evidence: "12~13행"}
+    4: {verdict: TRUE, evidence: "9행·11행"}
+    5: {verdict: TRUE, evidence: "4~6행"}
+- item_id: KOR-NF4-056
+  polarity: positive
+  options:
+    1: {verdict: TRUE, evidence: "6행 물음 → 11행 명령, 13행 단정"}
+    2: {verdict: FALSE, evidence: "물음 = 확신 없음(<보기>)"}
+    3: {verdict: FALSE, evidence: "명령은 뜻을 분명히 함"}
+    4: {verdict: FALSE, evidence: "단정은 확신"}
+    5: {verdict: FALSE, evidence: "2연에 '반짝거릴까' 물음 있음"}
+- item_id: KOR-NF4-057
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "별들은 영원을 잃지 않음(12~13행)"}
+    2: {verdict: FALSE, evidence: "별들이 거부한다는 근거 없음"}
+    3: {verdict: FALSE, evidence: "새/별 역할 뒤바꿈"}
+    4: {verdict: FALSE, evidence: "별들은 아직 묻히지 않음(묻혀라)"}
+    5: {verdict: TRUE, evidence: "1~3행, 10~11행"}
+- item_id: KOR-NF4-058
+  polarity: positive (combination)
+  statements: {ㄱ: "TRUE - 4행", ㄴ: "FALSE - '눈'은 화자 것이라 단정 못함, 슬픔 강조 아님", ㄷ: "TRUE - 10~11행", ㄹ: "FALSE - 화자의 단정, 별들의 대답 아님"}
+  answer_set: "ㄱ,ㄷ = ①"
+- item_id: KOR-NF4-059
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "2행 '새가 난다'"}
+    2: {verdict: TRUE, evidence: "6행 보석 = 빛나는 가치(<보기>)"}
+    3: {verdict: FALSE, evidence: "빛나는 가치를 잃었다는 근거 없음"}
+    4: {verdict: FALSE, evidence: "쥐라기 = 긴 시간"}
+    5: {verdict: FALSE, evidence: "1연은 바람 아닌 제시; 2연 바람은 빛남"}
+- item_id: KOR-NF4-060
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "7~8행 죽음은 새의 죽음 아님"}
+    2: {verdict: FALSE, evidence: "12~13행은 끝이 아니라고 함"}
+    3: {verdict: FALSE, evidence: "7~8행 죽음은 피하고 싶은 것 아니라 보석이 되기를 바라는 예"}
+    4: {verdict: TRUE, evidence: "7~8행 + 12~13행"}
+    5: {verdict: FALSE, evidence: "눈이 살아난다는 진술 없음"}
+- item_id: KOR-NF4-061
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "의성어 없음(생글거리고·깜박거렸다는 의태어)"}
+    2: {verdict: FALSE, evidence: "계절 없음"}
+    3: {verdict: FALSE, evidence: "'검은' 한 번, 대비 없음"}
+    4: {verdict: TRUE, evidence: "10·11행 '얼굴이여' 반복"}
+    5: {verdict: FALSE, evidence: "문답 없음"}
+- item_id: KOR-NF4-062
+  polarity: positive (combination)
+  statements: {ㄱ: "TRUE - 2행", ㄴ: "TRUE - 8행·11행", ㄷ: "FALSE - '햇빛은 살로 변하여'는 직유 아님(19행)", ㄹ: "FALSE - '조금씩 조금씩'(6행)은 손의 동작"}
+  answer_set: "ㄱ,ㄴ = ①"
+  notes: "ㄷ frames both with '~만한, ~처럼 같은 말' though '~처럼' occurs in neither phrase (flag e). Also ㄱ duplicates item 65 ① almost verbatim."
+- item_id: KOR-NF4-063
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "10행 / 12행"}
+    2: {verdict: TRUE, evidence: "11행 / 8행"}
+    3: {verdict: FALSE, evidence: "13행 '내 해골은 늘 너를 보고 있네' - 주체 뒤바뀜"}
+    4: {verdict: TRUE, evidence: "19~20행 / 2~3행"}
+    5: {verdict: TRUE, evidence: "14행 / 15~17행"}
+- item_id: KOR-NF4-064
+  polarity: positive (slot pairing)
+  options:
+    1: {verdict: FALSE, evidence: "2연 '얼굴을 잃게 된 슬픔' 없음"}
+    2: {verdict: TRUE, evidence: "4~6행 / 14~17행 / 21~23행"}
+    3: {verdict: FALSE, evidence: "3연 기쁨 아닌 어색함(21행)"}
+    4: {verdict: FALSE, evidence: "'차갑고 무관심'은 해골의 속성(7행)"}
+    5: {verdict: FALSE, evidence: "두려움 근거 없음"}
+- item_id: KOR-NF4-065
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "2행"}
+    2: {verdict: TRUE, evidence: "8행 모순 결합"}
+    3: {verdict: TRUE, evidence: "11행 직유"}
+    4: {verdict: TRUE, evidence: "17행"}
+    5: {verdict: FALSE, evidence: "21행 '어색하여' - 안도감 아님"}
+- item_id: KOR-NF4-066
+  polarity: positive
+  options:
+    1: {verdict: TRUE, evidence: "4~6행"}
+    2: {verdict: FALSE, evidence: "5행 한꺼번에 만지면 놓칠 것 같아"}
+    3: {verdict: FALSE, evidence: "거리 두지 않고 더듬음"}
+    4: {verdict: FALSE, evidence: "8행 얼굴이 생기기 전부터 있었음직한"}
+    5: {verdict: FALSE, evidence: "그만두지 않음"}
+  notes: "Distractors weak; ① echoes text wording."
+- item_id: KOR-NF4-067
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "그리움 근거 없음"}
+    2: {verdict: FALSE, evidence: "주체 뒤바뀜(13행)"}
+    3: {verdict: TRUE, evidence: "13~17행"}
+    4: {verdict: FALSE, evidence: "16행 기억 지워진 뒤에도 긴 시간"}
+    5: {verdict: FALSE, evidence: "'너' = 얼굴(10~11행 호칭)"}
+- item_id: KOR-NF4-068
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "순환 아님, '잠시 동안만'"}
+    2: {verdict: TRUE, evidence: "14행 vs 15~16행"}
+    3: {verdict: FALSE, evidence: "앞부분 맞으나 '기억을 간직하려는 의지' 없음(16행 기억 지워짐)"}
+    4: {verdict: FALSE, evidence: "16행 기억이 지워진 뒤의 시간도 포함, '만을' 오류"}
+    5: {verdict: FALSE, evidence: "아름다움/추함 대비 아님"}
+- item_id: KOR-NF4-069
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "18행"}
+    2: {verdict: TRUE, evidence: "19행"}
+    3: {verdict: TRUE, evidence: "21행"}
+    4: {verdict: FALSE, evidence: "22행 일상 감각 회복, 다짐 없음"}
+    5: {verdict: TRUE, evidence: "23행"}
+- item_id: KOR-NF4-070
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "그리움 없음"}
+    2: {verdict: FALSE, evidence: "자연 회귀 없음"}
+    3: {verdict: FALSE, evidence: "새 삶의 의지 없음"}
+    4: {verdict: FALSE, evidence: "풍자 아님"}
+    5: {verdict: TRUE, evidence: "14~17행"}
+  notes: "Flag c: only option naming the poem's own core pair."
+- item_id: KOR-NF4-071
+  polarity: positive
+  options:
+    1: {verdict: TRUE, evidence: "1~2행 시각 → 3~8행 촉각 → 22~23행 시각"}
+    2: {verdict: FALSE, evidence: "살을 손으로 확인 안 함"}
+    3: {verdict: FALSE, evidence: "마지막에 얼굴 만지지 않음"}
+    4: {verdict: FALSE, evidence: "순서 오류"}
+    5: {verdict: FALSE, evidence: "청각 없음"}
+- item_id: KOR-NF4-072
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "'아까워하며' = 더 살피고 싶음"}
+    2: {verdict: TRUE, evidence: "1행 일상의 피로에서 체험 시작"}
+    3: {verdict: FALSE, evidence: "낯선 순간은 18행에서 끝남"}
+    4: {verdict: FALSE, evidence: "19~20행은 체험의 끝"}
+    5: {verdict: FALSE, evidence: "23행 일상 복귀"}
+  notes: "Overlaps item 80/69 content."
+- item_id: KOR-NF4-073
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "'그 물체' = 거리감"}
+    2: {verdict: FALSE, evidence: "실제 경험 아님, 체험 중 감각"}
+    3: {verdict: FALSE, evidence: "비관 근거 없음"}
+    4: {verdict: FALSE, evidence: "'~일 없이' = 무심함, 일한다 아님"}
+    5: {verdict: TRUE, evidence: "9행"}
+- item_id: KOR-NF4-074
+  polarity: positive (combination)
+  statements: {ㄱ: "TRUE - (가)1~2·5행 / (나)19행", ㄴ: "TRUE - 별들이여 / 얼굴이여", ㄷ: "FALSE - (가)에 서사 없음", ㄹ: "FALSE - (나)에 명령 없음"}
+  answer_set: "ㄱ,ㄴ = ①"
+- item_id: KOR-NF4-075
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "(가)1행 / (나)1행"}
+    2: {verdict: TRUE, evidence: "(가)12~13 / (나)14~17"}
+    3: {verdict: TRUE, evidence: "(가)10 / (나)10·11"}
+    4: {verdict: FALSE, evidence: "(가)는 소멸을 받아들여 묻히라 함; (나)에 부러움 없음"}
+    5: {verdict: TRUE, evidence: "(가)4행만; (나)18·22행 '나는'"}
+- item_id: KOR-NF4-076
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "(나)19행은 공간이 아닌 대상의 비현실적 변화"}
+    2: {verdict: FALSE, evidence: "'튼튼한 폐허'는 변화 아닌 모순 결합; '지상의 별들'도 변화 서술 아님"}
+    3: {verdict: TRUE, evidence: "(가)12행 영원/죽음, (나)8행 튼튼/폐허"}
+    4: {verdict: FALSE, evidence: "'서류 속의 숫자'는 현실 복귀"}
+    5: {verdict: FALSE, evidence: "과거 회귀 아님"}
+  notes: "Same <보기> as item 51."
+- item_id: KOR-NF4-077
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "벗어나려는 부정적 대상 아님"}
+    2: {verdict: TRUE, evidence: "(가)11행 / (나)18~20행 해골을 덮음"}
+    3: {verdict: FALSE, evidence: "표정 만드는 것은 얼굴(10행)"}
+    4: {verdict: FALSE, evidence: "눈물이 이미 묻힌 곳 아님(6행 물음)"}
+    5: {verdict: FALSE, evidence: "두려움/슬픔 근거 없음"}
+- item_id: KOR-NF4-078
+  polarity: positive (combination)
+  statements: {ㄱ: "TRUE - (가)11행 '묻혀라 화석에'; (나)6~8행 '더듬어나갔다 / …그 물체를 / …그 튼튼한 폐허를' 목적어 후치", ㄴ: "FALSE - (가)1·3연에 화자 행동 서술 없음", ㄷ: "FALSE - (가)'흘린'(과거), (나)눈물은 얼굴이 흘리던 표정(10행)", ㄹ: "TRUE - (가)눈물/보석, (나)얼굴/해골"}
+  answer_set: "ㄱ,ㄹ = ②"
+  notes: "ㄱ for (나) requires noticing the verb-object inversion across lines 6-8; subtle, so MEDIUM confidence. If ㄱ judged false no option matches, which forces ②."
+- item_id: KOR-NF4-079
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "'스스로' = 주체적, 어쩔 수 없이 아님"}
+    2: {verdict: FALSE, evidence: "23행 '서둘러' = 일상 복귀, 체험 지속 아님"}
+    3: {verdict: FALSE, evidence: "9~10행 주체는 별들, 화자 아님"}
+    4: {verdict: TRUE, evidence: "(가)9행 / (나)23행"}
+    5: {verdict: FALSE, evidence: "'서둘러'는 화자 자신의 행동, 당부 아님"}
+- item_id: KOR-NF4-080
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "21행 얼굴이 어색"}
+    2: {verdict: FALSE, evidence: "23행 일상 복귀, 거부 아님"}
+    3: {verdict: TRUE, evidence: "21행 '갑자기 뒤집어쓴 얼굴이 어색하여'"}
+    4: {verdict: FALSE, evidence: "만지기 전 어색함 없음; 소중함 깨달음 없음"}
+    5: {verdict: FALSE, evidence: "'튼튼한 폐허'는 해골(8행)"}
+set_level_notes:
+  - "Items 51 and 76 share an identical <보기>; 62 ㄱ and 65 ① are near-duplicates; 69/72/80 test the same 3연 return-to-daily-life point; 41 and 61 are parallel 표현상 특징 items."
+  - "No factual errors or two-answer items found; all 40 keys determinable from the passage."

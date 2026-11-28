@@ -1,0 +1,359 @@
+meta:
+  solver: independent blind solver (no key)
+  range: items 1-40
+  line_numbering_note: >
+    「원유가」 verse lines follow the 〔5〕 markers. Lines 1-33 run continuously, and the
+    (중략) line then takes number 34 implicitly, since "공명을 크게 닦고" carries the 〔35〕 marker.
+    Every line reference in items 1-20 matches this numbering, but no verse line 34 exists.
+    That is a minor layout oddity worth checking.
+items:
+- item_id: KOR-NF4-001
+  polarity: positive
+  options:
+    1: {verdict: F, evidence: "L37 '소광의 천일금을 담양군에 흩어두고': the speaker scatters (gives away) the gold. He does not receive it from townspeople."}
+    2: {verdict: F, evidence: "L13-15: the boys ask the speaker why he came late. He does not ask them."}
+    3: {verdict: F, evidence: "L25 '들으시면' is a hypothetical. The 의정부 scene is imagined, not a remembered event."}
+    4: {verdict: T, evidence: "L2 삼간초당, L1-10 풍류, L11 '공명을 기약하고', L12 '서울 거리 찾아가니'."}
+    5: {verdict: F, evidence: "L46 ends with a wish for a healthy life. No regret about leaving office."}
+  answer: 4
+- item_id: KOR-NF4-002
+  polarity: negative
+  options:
+    1: {verdict: F, evidence: "No seasonal progression structures the poem. L9 names summer and autumn only as one parallel image."}
+    2: {verdict: T, evidence: "이윤/여상, 급암/노중련, 범려/소광 (L17-23, L36-37)."}
+    3: {verdict: T, evidence: "L42 '깨지 마오', L43 '아이야 술 부어라'."}
+    4: {verdict: T, evidence: "L7 '앉아보고 서서 보니', L21 '바라나니 성군이요 생각하니 명주로다', L39 '형 오소 아우 오소'."}
+    5: {verdict: T, evidence: "L6 '무릉도원이 여기 아닌가'."}
+  answer: 1
+- item_id: KOR-NF4-003
+  polarity: positive
+  options:
+    1: {verdict: F, evidence: "ⓐ belongs to the opening scene, before 공명 (L2)."}
+    2: {verdict: F, evidence: "In ⓑ the speaker answers '기쁘게' (L16). He does not hide."}
+    3: {verdict: F, evidence: "ⓒ sits inside an imagined scene (L25 hypothetical)."}
+    4: {verdict: T, evidence: "L35-36 '벼슬 그만 아뢴 후에 … 한강수 건너와서'."}
+    5: {verdict: F, evidence: "ⓔ is where he scatters wealth after retiring (L37)."}
+  answer: 4
+- item_id: KOR-NF4-004
+  polarity: positive (combination)
+  statements:
+    ㄱ: {verdict: F, evidence: "L15 '자네' = the speaker, but L42 '그대에게 권한 한 잔' = the friend the speaker offers a drink to."}
+    ㄴ: {verdict: T, evidence: "L13 '반겨 맞아 하는 말이', L16 '기쁘게 대답하되'."}
+    ㄷ: {verdict: T, evidence: "L24 '우리 성상' → L29 '하교하되' → L30-33 are the king's words."}
+    ㄹ: {verdict: T, evidence: "L40-42: friends around the retired speaker, a cup offered to 그대."}
+  answer: 4
+- item_id: KOR-NF4-005
+  polarity: positive
+  options:
+    1: {verdict: F, evidence: "㉠ (L6) is in the nature scene, not in an answer to the boys."}
+    2: {verdict: T, evidence: "㉡ L14 is the boys' remark. The speaker answers with the 이윤/여상 고사 (L16-19)."}
+    3: {verdict: F, evidence: "㉢ L19 is the speaker's self-description, not the king's."}
+    4: {verdict: F, evidence: "㉣ L25 is a hypothetical before office, not a retrospective."}
+    5: {verdict: F, evidence: "㉤ L43 is in the retirement scene, not in Seoul with the boys."}
+  answer: 2
+- item_id: KOR-NF4-006
+  polarity: positive (pairing)
+  slots:
+    A: {correct: "등용되기 이전의 처지", evidence: "신야 농사 and 위빈 낚시 come before meeting 탕/문왕. They parallel the speaker's late 풍운 (L16-19)."}
+    B: {correct: "신하로서 지닐 자세", evidence: "L22-23 '직신', '의사'."}
+    C: {correct: "공명을 이룬 이후의 삶", evidence: "L35-37 after '벼슬 그만 아뢴'."}
+  options: {1: F(A,B wrong), 2: F(B,C wrong), 3: T, 4: F(A,C wrong), 5: F(C wrong)}
+  answer: 3
+  note: "Slot patterning leaks the key (flag c)."
+- item_id: KOR-NF4-007
+  polarity: positive (pairing)
+  slots:
+    ㄱ: {correct: "이루려 했으나 아직 못 이룸", evidence: "'내 벌써 하려 하나' (concessive 하나)."}
+    ㄴ: {correct: "어진 신하를 얻지 못함", evidence: "'고요직설 못 얻어서'."}
+    ㄷ: {correct: "화자와 함께 이룰 태평의 때 기대", evidence: "L32 '초야의 숨은 신하 이날에야 만났으니' then '어느 때인고'."}
+  options: {1: F(ㄴ), 2: F(ㄱ), 3: F(ㄴ), 4: F(ㄷ), 5: T}
+  answer: 5
+  note: "Each distractor differs from 5 in exactly one slot (flag c)."
+- item_id: KOR-NF4-008
+  polarity: positive (combination)
+  statements:
+    ㄱ: {verdict: T, evidence: "L25 '들으시면' (conditional) → L26-33 summoning scene."}
+    ㄴ: {verdict: F, evidence: "L26-27 are the king's view of the speaker as 제갈량/조보. The speaker never met 유비 or 송 태조."}
+    ㄷ: {verdict: T, evidence: "범려 오호주, 소광 천일금."}
+    ㄹ: {verdict: F, evidence: "L44 is a rhetorical expression of rapture. It does not reveal that everything was a dream."}
+  answer: 2
+  wording_note: "L26 reads '도원결의 송 태조가', an odd collocation (도원결의 is a 유비 story), but the text is given as is."
+- item_id: KOR-NF4-009
+  polarity: positive (pairing)
+  slots:
+    ㄱ: {correct: "'기쁘게 대답하되'", evidence: "L16."}
+    ㄴ: {correct: "'충신열사 후예로서'", evidence: "L19-20 self-worth. '바라나니 성군이요' is about the king, and '나도 또한 신선이다' is about nature."}
+    ㄷ: {correct: "'우리 성상 나계시니'", evidence: "L24. '이 노래 들으시면' is hypothetical."}
+  options: {1: F(ㄴ), 2: F(ㄴ), 3: F(ㄱ), 4: F(ㄷ), 5: T}
+  answer: 5
+- item_id: KOR-NF4-010
+  polarity: positive
+  options:
+    1: {verdict: F, evidence: "L25 leads into the imagined summoning, not retirement."}
+    2: {verdict: F, evidence: "L16 begins the speaker's answer, not the king's 하교."}
+    3: {verdict: T, evidence: "L11 '이 놀음 다한 후에 공명을 기약하고'."}
+    4: {verdict: F, evidence: "L35 moves to retirement, not back to the boys."}
+    5: {verdict: F, evidence: "L43 does not return to 공명."}
+  answer: 3
+- item_id: KOR-NF4-011
+  polarity: positive
+  options:
+    1: {verdict: F, evidence: "L21 comes before office."}
+    2: {verdict: F, evidence: "L24 comes before office."}
+    3: {verdict: F, evidence: "Shows only the retirement, nothing about the king."}
+    4: {verdict: T, evidence: "L38 after retirement: '감군은 한 곡조'."}
+    5: {verdict: F, evidence: "About village life."}
+  answer: 4
+- item_id: KOR-NF4-012
+  polarity: negative
+  options:
+    1: {verdict: F, evidence: "L42 '그대' is among the 좋은 벗 (L41) of the retired speaker. Nothing links it to the Seoul boys of L13-15."}
+    2: {verdict: T, evidence: "L38."}
+    3: {verdict: T, evidence: "L37, together with L39 '시골 인심'. That 담양 is the hometown is inferred, not stated."}
+    4: {verdict: T, evidence: "L35."}
+    5: {verdict: T, evidence: "L44 (interpretive)."}
+  answer: 1
+- item_id: KOR-NF4-013
+  polarity: positive (보기 application)
+  options:
+    1: {verdict: F, evidence: "L9 is in the nature scene, not addressed to the boys in Seoul."}
+    2: {verdict: F, evidence: "The speaker identifies with them (L19 '나도 또한 그 아니랴')."}
+    3: {verdict: T, evidence: "L46, matching the 보기's direct-ending convention."}
+    4: {verdict: F, evidence: "The office scenes are hypothetical, and a (중략) cuts the passage. No chronological record of real office."}
+    5: {verdict: F, evidence: "No metrical break at the end."}
+  answer: 3
+- item_id: KOR-NF4-014
+  polarity: negative
+  options:
+    1: {verdict: T, evidence: "L1-10 tone is 흥취."}
+    2: {verdict: T, evidence: "L11."}
+    3: {verdict: T, evidence: "L41 simile."}
+    4: {verdict: T, evidence: "L24 '황하수 한번 맑아 우리 성상 나계시니'. The idiom is mild background knowledge, but context supports it."}
+    5: {verdict: F, evidence: "L21 '바라나니' expresses hope. He is not yet serving."}
+  answer: 5
+- item_id: KOR-NF4-015
+  polarity: positive
+  options:
+    1: {verdict: T, evidence: "Three-stage structure: nature, 공명, retirement."}
+    2: {verdict: F, evidence: "Ends in retirement, not in office."}
+    3: {verdict: F, evidence: "L38 감군은: he does not forget the king."}
+    4: {verdict: F, evidence: "No conflict and no final choice."}
+    5: {verdict: F, evidence: "He is (in imagination) employed."}
+  answer: 1
+- item_id: KOR-NF4-016
+  polarity: positive (보기 application)
+  options:
+    1: {verdict: F, evidence: "'완전히 돌아서는' is contradicted by the later return to 처 (L35-)."}
+    2: {verdict: T, evidence: "L35, L38."}
+    3: {verdict: F, evidence: "L7 is contentment, not resignation over a blocked career."}
+    4: {verdict: F, evidence: "No conflict. He goes 'gladly'."}
+    5: {verdict: F, evidence: "No frustration in office is shown."}
+  answer: 2
+  note: "The 보기 sets 출/처 as opposed, while the poem reconciles them. The item tests that contrast well."
+- item_id: KOR-NF4-017
+  polarity: positive (combination)
+  statements:
+    ㄱ: {verdict: T, evidence: "L11 '이 놀음' refers back to L1-10."}
+    ㄴ: {verdict: F, evidence: "'오현금 남풍시' (L33) is the king's rhetorical question. The speaker does not perform it before the king."}
+    ㄷ: {verdict: T, evidence: "L11 공명을 기약, L46 질병 없이 살아감."}
+    ㄹ: {verdict: F, evidence: "Neither scene takes place in Seoul with the boys."}
+  answer: 2
+  ambiguity_note: "'이런 놀음 저런 놀음' could be read as covering every scene, imagined court included, but the specific act 'singing 남풍시 before the king' is absent, so ㄴ remains false."
+- item_id: KOR-NF4-018
+  polarity: positive
+  options:
+    1: {verdict: F, evidence: "L19 identifies with 이윤/여상 rather than denying them."}
+    2: {verdict: F, evidence: "In L19 he is not yet employed."}
+    3: {verdict: F, evidence: "L7 is not addressed to the boys. L19 answers the boys, not the king."}
+    4: {verdict: F, evidence: "L7 is declarative, not 설의."}
+    5: {verdict: T, evidence: "L7 신선 = nature contentment. L19 = pride in being worthy of employment."}
+  answer: 5
+- item_id: KOR-NF4-019
+  polarity: positive
+  options:
+    1: {verdict: F, evidence: "There is no test."}
+    2: {verdict: F, evidence: "L30 '하려 하나': peace is not yet achieved."}
+    3: {verdict: T, evidence: "L21, L32 '초야의 숨은 신하 이날에야 만났으니'."}
+    4: {verdict: F, evidence: "He serves first (L35 '공명을 크게 닦고')."}
+    5: {verdict: F, evidence: "L24 '성상 나계시니'."}
+  answer: 3
+- item_id: KOR-NF4-020
+  polarity: positive
+  options:
+    1: {verdict: T, evidence: "L11 '기약' vs L35 '크게 닦고'."}
+    2: {verdict: F, evidence: "L35-46 has no 설의 comparison of the hometown to a utopia (L39 is declarative)."}
+    3: {verdict: F, evidence: "'나도 또한' does not appear in L35-46."}
+    4: {verdict: F, evidence: "The comparison of 흥취 strength is unsupported."}
+    5: {verdict: F, evidence: "'꿈결' is not a night setting."}
+  answer: 1
+  wording_note: "The <보기> is printed but the stem does not reference it, and it is unnecessary for solving (flag e)."
+- item_id: KOR-NF4-021
+  polarity: positive
+  options:
+    1: {verdict: F, evidence: "There is no first-person '나' narrator."}
+    2: {verdict: F, evidence: "No crossing of past and present scenes."}
+    3: {verdict: F, evidence: "Both 송 노인's ('괘씸하기 짝이 없다') and 명준's inner thoughts are given."}
+    4: {verdict: T, evidence: "Omniscient third person: '괘씸하기 짝이 없다', '그럼 누가 멀단 말인가', '득의연하게 지껄여댔다'."}
+    5: {verdict: F, evidence: "The scene is driven by dialogue."}
+  answer: 4
+- item_id: KOR-NF4-022
+  polarity: negative
+  options:
+    1: {verdict: T, evidence: "'나는 일자무식이다마는 … 가치 있는 글이 담겨 있다는 것은 … 안단 말이다'."}
+    2: {verdict: F, evidence: "중략 summary: '아들의 협조를 얻지 못한 채 … 고향 사람들의 도움을 받아'."}
+    3: {verdict: T, evidence: "'책을 만드는 데 돈이 얼마나 드는지 아세요?'"}
+    4: {verdict: T, evidence: "'회사 홍보실에서 잡지 만드는 일에 종사'. The narrator's ironic '-답시고' does not negate it."}
+    5: {verdict: T, evidence: "'아, 저 반닫이 속에 들어 있던 그 책 말이군요'."}
+  answer: 2
+- item_id: KOR-NF4-023
+  polarity: negative
+  options:
+    1: {verdict: T, evidence: "No answer, then '난 모르겠어요'."}
+    2: {verdict: T, evidence: "'뭐라고 대꾸하려다가 말고'."}
+    3: {verdict: T, evidence: "'아무렇게나 팔랑팔랑'."}
+    4: {verdict: F, evidence: "Next line: '돈이 좀 들더라도 좌우간 만들어야겠어'. He does not give up."}
+    5: {verdict: T, evidence: "Giggling exit after '가보' explanation."}
+  answer: 4
+- item_id: KOR-NF4-024
+  polarity: positive (pairing)
+  slots:
+    ㄱ: {correct: "'난 모르겠어요.'", evidence: "L259 exact wording '눈언저리가 화끈해지는 느낌이다'."}
+    ㄴ: {correct: "'세상에 펴낼 가치가 없는 거니까 그러죠.'", evidence: "L268."}
+    ㄷ: {correct: "조판비와 옵세트 설명", evidence: "L288."}
+  options: {1: F(ㄴ), 2: F(ㄱ,ㄴ), 3: T, 4: "F strictly (ㄱ), but near-defensible", 5: F(ㄷ)}
+  answer: 3
+  ambiguity_note: "L280 '송 노인은 또 눈언저리에 열이 화끈 오르는 느낌이다' follows the cost question, a near-duplicate of the ㄱ reaction. Option 4 differs from 3 only in ㄱ, so only the exact quotation separates them. Recommend changing the ㄱ cue or the option 4 ㄱ slot."
+- item_id: KOR-NF4-025
+  polarity: positive
+  options:
+    1: {verdict: F, evidence: "'차마 그런 투로 대꾸를 할 수는 없는 듯'."}
+    2: {verdict: F, evidence: "'할아버지라면 본 일이 없다 하더라도 … 멀지 않다고 하겠지만'."}
+    3: {verdict: F, evidence: "'웃음이 나오려는 것을 참는다'."}
+    4: {verdict: F, evidence: "His ground is the descendant's duty ('자손으로서 할 소리냐'), and 명준's ground is never having met him, not the hanja."}
+    5: {verdict: T, evidence: "'자손으로서', '한 번 본 적도 없는 증조부'."}
+  answer: 5
+- item_id: KOR-NF4-026
+  polarity: negative
+  options:
+    1: {verdict: F, evidence: "Never claimed. He says the opposite: '몇 사람만이라도', '많이 찍어낼 것도 아닌데'."}
+    2: {verdict: T, evidence: "'족보나 문집이나 다를 게 없는 거여'."}
+    3: {verdict: T, evidence: "'다만 몇 사람만이라도 읽어서'."}
+    4: {verdict: T, evidence: "'학식이 높은 선비면서 애국자'."}
+    5: {verdict: T, evidence: "'족보도 다 한문으로 된 거 아니냐', '요즘 족보를 책으로 만들어내는 일이 얼마나 많으냐'."}
+  answer: 1
+- item_id: KOR-NF4-027
+  polarity: positive (combination)
+  statements:
+    ㄱ: {verdict: T, evidence: "'노인이 제법 그럴듯한 말을 한다 싶은 것이다'."}
+    ㄴ: {verdict: T, evidence: "'마침내 얘기의 요점으로 들어선 셈이 아닌가'."}
+    ㄷ: {verdict: F, evidence: "No change in print run."}
+    ㄹ: {verdict: T, evidence: "'돈이 좀 들더라도 좌우간 만들어야겠어'."}
+  answer: 4
+- item_id: KOR-NF4-028
+  polarity: positive (combination)
+  statements:
+    ㄱ: {verdict: T, evidence: "Free indirect thought of 명준."}
+    ㄴ: {verdict: T, evidence: "'종사한답시고 득의연하게 지껄여댔다'."}
+    ㄷ: {verdict: F, evidence: "'괘씸하기 짝이 없다', '일리가 없는 것은 아닌 듯하다'."}
+    ㄹ: {verdict: F, evidence: "윤국's attitude comes only through dialogue and action ('킬킬거리며')."}
+  answer: 2
+- item_id: KOR-NF4-029
+  polarity: positive
+  options:
+    1: {verdict: F, evidence: "No 고향 reputation is cited."}
+    2: {verdict: F, evidence: "No one read the texts to him."}
+    3: {verdict: F, evidence: "Not claimed."}
+    4: {verdict: F, evidence: "He insists: '나는 안다'."}
+    5: {verdict: T, evidence: "'우리 조부가 어떤 분인지 … 나는 알아'."}
+  answer: 5
+- item_id: KOR-NF4-030
+  polarity: positive
+  options:
+    1: {verdict: T, evidence: "'내뱉으려다가 그만둔다', with the 중략 summary saying he got no help."}
+    2: {verdict: F, evidence: "He stops and does not confide."}
+    3: {verdict: F, evidence: "The son did not help."}
+    4: {verdict: F, evidence: "Unsupported."}
+    5: {verdict: F, evidence: "No regret."}
+  answer: 1
+- item_id: KOR-NF4-031
+  polarity: positive (보기 concept)
+  statements:
+    ㄱ: {verdict: T, evidence: "Situation (illiterate) vs claim (knows the value best): the first irony type."}
+    ㄴ: {verdict: T, evidence: "Effort vs result: the grandson dismisses the book."}
+    ㄷ: {verdict: F, evidence: "His knowledge is consistent with his job. No irony."}
+    ㄹ: {verdict: F, evidence: "Mere restraint. No mismatch."}
+  answer: 1
+- item_id: KOR-NF4-032
+  polarity: negative
+  options:
+    1: {verdict: T, evidence: "'가보', '학식이 높은 선비면서 애국자'."}
+    2: {verdict: T, evidence: "'읽지도 못하잖아요', the cost argument."}
+    3: {verdict: F, evidence: "Neither reads the content: 명준 '팔랑팔랑 서너 장', 윤국 '순 한문이라 읽을 수가 있어야죠'. Their evaluations also coincide."}
+    4: {verdict: T, evidence: "Weak spot: there is little real conflict with 윤국, but the option is acceptable."}
+    5: {verdict: T, evidence: "'후졌다', '순 한문'."}
+  answer: 3
+- item_id: KOR-NF4-033
+  polarity: positive (sequence)
+  evidence: "L259 괘씸 but '애써 느긋하게' → L268 '눈이 휘둥그레진다' → L271 '일리가 없는 것은 아닌 듯' → L280 '요점으로 들어선 셈', '열이 화끈'."
+  options: {1: F, 2: T, 3: F, 4: F, 5: "F (no acceptance of the cost)"}
+  answer: 2
+- item_id: KOR-NF4-034
+  polarity: positive
+  options:
+    1: {verdict: F, evidence: "He only hides his view. It is unchanged."}
+    2: {verdict: F, evidence: "'아니다, 그렇지 않다' is a rejection."}
+    3: {verdict: F, evidence: "Recognizing the book does not mean he read it."}
+    4: {verdict: F, evidence: "He then raises the cost issue."}
+    5: {verdict: T, evidence: "'녀석의 입에서 그런 말밖에 안 나올 줄 알았지만'."}
+  answer: 5
+- item_id: KOR-NF4-035
+  polarity: positive
+  options:
+    1: {verdict: F, evidence: "명준 also flips pages ('팔랑팔랑 서너 장 넘겨본다')."}
+    2: {verdict: F, evidence: "윤국 never mentions cost."}
+    3: {verdict: T, evidence: "'한문투성인 책을 누가…' / '순 한문이라 읽을 수가 있어야죠'."}
+    4: {verdict: F, evidence: "명준 does not pretend to agree and leave."}
+    5: {verdict: F, evidence: "'히히히' and leaving show he does not accept it."}
+  answer: 3
+- item_id: KOR-NF4-036
+  polarity: negative (보기 application)
+  options:
+    1: {verdict: T, evidence: "Matches the 보기's 실용적 가치관."}
+    2: {verdict: T, evidence: "'몇 사람만이라도'."}
+    3: {verdict: T, evidence: "Both inner minds are narrated, which matches '맞세워'."}
+    4: {verdict: F, evidence: "The 족보 example supports his own case. It is not criticism of efficiency values."}
+    5: {verdict: T, evidence: "'후졌다'."}
+  answer: 4
+- item_id: KOR-NF4-037
+  polarity: positive (fill-in)
+  slots:
+    ㉮: {correct: "문집을 남긴 조부의 사람됨", evidence: "He cannot read: '일자무식', '우리 조부가 어떤 분인지 … 나는 알아'."}
+    ㉯: {correct: "읽을 사람이 있는지와 드는 비용", evidence: "'누가 거들떠보기나', '돈이 얼마나 드는지'."}
+  options: {1: F(㉯), 2: "F (㉮: he cannot read the content)", 3: T, 4: F, 5: F}
+  answer: 3
+- item_id: KOR-NF4-038
+  polarity: positive
+  options:
+    1: {verdict: T, evidence: "'차마 그런 투로 대꾸를 할 수는 없는 듯 … 세상에 펴낼 가치가 없는 거니까 그러죠'."}
+    2: {verdict: F, evidence: "The value argument comes first. Cost comes later."}
+    3: {verdict: F, evidence: "He does not say it."}
+    4: {verdict: F, evidence: "His 그럴듯 thought concerns the father's argument and is not an admission of value."}
+    5: {verdict: F, evidence: "The silence comes before the 증조부 remark. The motive is not stated."}
+  answer: 1
+- item_id: KOR-NF4-039
+  polarity: positive (combination)
+  statements:
+    ㄱ: {verdict: T, evidence: "'요즘 족보를 책으로 만들어내는 일이 얼마나 많으냐?'"}
+    ㄴ: {verdict: T, evidence: "조판, 옵세트, with '알아듣지도 못하는 터이라'."}
+    ㄷ: {verdict: F, evidence: "He never accepts the calculation: '돈이 좀 들더라도'."}
+    ㄹ: {verdict: T, evidence: "'가치가 있는지 없는지 아버지가 어떻게 아세요?' + '읽을 줄도 모르면서'."}
+  answer: 3
+- item_id: KOR-NF4-040
+  polarity: positive
+  options:
+    1: {verdict: F, evidence: "He restates the meaning. He does not apologize."}
+    2: {verdict: T, evidence: "'후지다니, 그게 무슨 소리냐?' is a failure to understand, echoing '조판이 뭔지, 옵세트가 무슨 말인지 알아듣지도 못하는'."}
+    3: {verdict: F, evidence: "'알면서도 모르는 체' is unsupported."}
+    4: {verdict: F, evidence: "He goes on to assert '아주 가치가 있는 책이다'."}
+    5: {verdict: F, evidence: "윤국 shows no will to learn."}
+  answer: 2

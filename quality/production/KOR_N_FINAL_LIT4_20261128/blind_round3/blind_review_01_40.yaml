@@ -1,0 +1,331 @@
+items:
+- item_id: KOR-NF4-001
+  answer: 4
+  first_pass_top3: [4, 3, 5]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-002
+  answer: 1
+  first_pass_top3: [1, 5, 3]
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-003
+  answer: 4
+  first_pass_top3: [4, 1, 3]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-004
+  answer: 4
+  first_pass_top3: [4, 5, 2]
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-005
+  answer: 2
+  first_pass_top3: [2, 1, 4]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-006
+  answer: 3
+  first_pass_top3: [3, 5, 1]
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: [c]
+  flag_reasons:
+    c: "majority-vote across slots reveals the key: every distractor deviates from it in one slot, so it can be found without reading."
+- item_id: KOR-NF4-007
+  answer: 5
+  first_pass_top3: [5, 4, 2]
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: [c]
+  flag_reasons:
+    c: "Options 1-4 each differ from 5 in exactly one slot, so majority-voting gives the key without reading the passage."
+- item_id: KOR-NF4-008
+  answer: 2
+  first_pass_top3: [2, 4, 1]
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-009
+  answer: 5
+  first_pass_top3: [5, 2, 4]
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: [c]
+  flag_reasons:
+    c: "majority-vote across slots reveals the key: every distractor deviates from it in one slot, so it can be found without reading."
+- item_id: KOR-NF4-010
+  answer: 3
+  first_pass_top3: [3, 1, 2]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-011
+  answer: 4
+  first_pass_top3: [4, 3, 2]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: [c]
+  flag_reasons:
+    c: "The option prints the hanja 感君恩 ('feeling the king's grace'), which matches the stem's 'does not forget the king' on its face; the other options are pre-retirement or unrelated to the king."
+- item_id: KOR-NF4-012
+  answer: 1
+  first_pass_top3: [1, 3, 5]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-013
+  answer: 3
+  first_pass_top3: [3, 4, 1]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-014
+  answer: 5
+  first_pass_top3: [5, 4, 1]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-015
+  answer: 1
+  first_pass_top3: [1, 2, 3]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-016
+  answer: 2
+  first_pass_top3: [2, 1, 4]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-017
+  answer: 2
+  first_pass_top3: [2, 1, 4]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-018
+  answer: 5
+  first_pass_top3: [5, 2, 4]
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: [c]
+  flag_reasons:
+    c: "Option 5 is the central version and 2/3/4 deviate from it in one clause, so majority patterning points to 5."
+- item_id: KOR-NF4-019
+  answer: 3
+  first_pass_top3: [3, 2, 1]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-020
+  answer: 1
+  first_pass_top3: [1, 3, 2]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: [e]
+  flag_reasons:
+    e: "A <보기> is printed, but the stem never mentions it ('<보기>를 참고하여' is missing), and the item can be solved without the <보기>."
+- item_id: KOR-NF4-021
+  answer: 4
+  first_pass_top3: [4, 3, 1]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-022
+  answer: 2
+  first_pass_top3: [2, 4, 3]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-023
+  answer: 4
+  first_pass_top3: [4, 1, 5]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-024
+  answer: 3
+  first_pass_top3: [3, 4, 5]
+  second_best: 4
+  difficulty: D3
+  confidence: MEDIUM
+  flags: [a, c]
+  flag_reasons:
+    a: "Option 4 is also partly defensible for ㄱ: a near-identical reaction ('또 눈언저리에 열이 화끈 오르는 느낌이다', line 280) follows the cost question, and only the exact quoted wording picks line 259."
+    c: "majority-vote across slots reveals the key: every distractor deviates from it in one slot, so it can be found without reading."
+- item_id: KOR-NF4-025
+  answer: 5
+  first_pass_top3: [5, 2, 3]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-026
+  answer: 1
+  first_pass_top3: [1, 5, 3]
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-027
+  answer: 4
+  first_pass_top3: [4, 1, 3]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-028
+  answer: 2
+  first_pass_top3: [2, 4, 1]
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-029
+  answer: 5
+  first_pass_top3: [5, 1, 2]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-030
+  answer: 1
+  first_pass_top3: [1, 2, 4]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-031
+  answer: 1
+  first_pass_top3: [1, 4, 2]
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-032
+  answer: 3
+  first_pass_top3: [3, 4, 2]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-033
+  answer: 2
+  first_pass_top3: [2, 1, 5]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: [c]
+  flag_reasons:
+    c: "majority-vote across slots reveals the key: every distractor deviates from it in one slot, so it can be found without reading."
+- item_id: KOR-NF4-034
+  answer: 5
+  first_pass_top3: [5, 3, 4]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-035
+  answer: 3
+  first_pass_top3: [3, 1, 2]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-036
+  answer: 4
+  first_pass_top3: [4, 3, 2]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-037
+  answer: 3
+  first_pass_top3: [3, 2, 1]
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: [c]
+  flag_reasons:
+    c: "Options 1 and 2 each share one slot with 3, so slot patterning points to 3."
+- item_id: KOR-NF4-038
+  answer: 1
+  first_pass_top3: [1, 2, 5]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-039
+  answer: 3
+  first_pass_top3: [3, 5, 1]
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-040
+  answer: 2
+  first_pass_top3: [2, 3, 1]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}

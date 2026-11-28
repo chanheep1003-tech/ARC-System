@@ -1,0 +1,323 @@
+items:
+- item_id: KOR-NF4-041
+  answer: 5
+  first_pass_top3: [5, 1, 4]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-042
+  answer: 2
+  first_pass_top3: [2, 1, 5]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-043
+  answer: 1
+  first_pass_top3: [1, 5, 4]
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-044
+  answer: 5
+  first_pass_top3: [5, 1, 4]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-045
+  answer: 4
+  first_pass_top3: [4, 1, 3]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-046
+  answer: 4
+  first_pass_top3: [4, 1, 5]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-047
+  answer: 1
+  first_pass_top3: [1, 5, 4]
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-048
+  answer: 2
+  first_pass_top3: [2, 4, 3]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-049
+  answer: 3
+  first_pass_top3: [3, 2, 1]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-050
+  answer: 5
+  first_pass_top3: [5, 2, 4]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-051
+  answer: 4
+  first_pass_top3: [4, 1, 3]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-052
+  answer: 3
+  first_pass_top3: [3, 5, 2]
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-053
+  answer: 5
+  first_pass_top3: [5, 4, 1]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-054
+  answer: 3
+  first_pass_top3: [3, 1, 4]
+  second_best: 1
+  difficulty: D3
+  confidence: MEDIUM
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-055
+  answer: 2
+  first_pass_top3: [2, 4, 3]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-056
+  answer: 1
+  first_pass_top3: [1, 5, 4]
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-057
+  answer: 5
+  first_pass_top3: [5, 3, 1]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-058
+  answer: 1
+  first_pass_top3: [1, 4, 3]
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-059
+  answer: 2
+  first_pass_top3: [2, 1, 3]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-060
+  answer: 4
+  first_pass_top3: [4, 3, 2]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-061
+  answer: 4
+  first_pass_top3: [4, 1, 3]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-062
+  answer: 1
+  first_pass_top3: [1, 4, 2]
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: [e]
+  flag_reasons:
+    e: "ㄷ cites '~처럼' although neither quoted phrase contains it, so the statement's frame is awkward/non-exam; '선글라스만한' alone could be read as 직유, making students hesitate on the wrong half."
+- item_id: KOR-NF4-063
+  answer: 3
+  first_pass_top3: [3, 5, 4]
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-064
+  answer: 2
+  first_pass_top3: [2, 5, 3]
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-065
+  answer: 5
+  first_pass_top3: [5, 3, 2]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-066
+  answer: 1
+  first_pass_top3: [1, 4, 3]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-067
+  answer: 3
+  first_pass_top3: [3, 2, 5]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-068
+  answer: 2
+  first_pass_top3: [2, 3, 4]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-069
+  answer: 4
+  first_pass_top3: [4, 2, 1]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-070
+  answer: 5
+  first_pass_top3: [5, 1, 3]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: [c]
+  flag_reasons:
+    c: "Option 5 is the only one naming the poem's own core pair (얼굴/해골) in standard '성찰' theme phrasing; the other four are generic unrelated themes, so it is picked from surface cues."
+- item_id: KOR-NF4-071
+  answer: 1
+  first_pass_top3: [1, 2, 3]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-072
+  answer: 2
+  first_pass_top3: [2, 3, 1]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-073
+  answer: 5
+  first_pass_top3: [5, 1, 3]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-074
+  answer: 1
+  first_pass_top3: [1, 5, 4]
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-075
+  answer: 4
+  first_pass_top3: [4, 5, 2]
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-076
+  answer: 3
+  first_pass_top3: [3, 1, 2]
+  second_best: 1
+  difficulty: D4
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-077
+  answer: 2
+  first_pass_top3: [2, 4, 1]
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-078
+  answer: 2
+  first_pass_top3: [2, 1, 4]
+  second_best: 1
+  difficulty: D4
+  confidence: MEDIUM
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-079
+  answer: 4
+  first_pass_top3: [4, 3, 1]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-080
+  answer: 3
+  first_pass_top3: [3, 2, 5]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
