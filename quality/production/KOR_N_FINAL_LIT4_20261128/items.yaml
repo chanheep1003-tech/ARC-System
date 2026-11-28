@@ -135,30 +135,33 @@ items:
   stem_polarity: POSITIVE
   stem: 윗글의 내용에 대한 이해로 가장 적절한 것은?
   options:
-  - 화자는 벼슬에서 물러난 뒤 고향 사람들에게서 천일금을 받아 벗들과 함께 나누어 쓴다.
   - 화자는 서울에서 만난 소년들에게 출세가 늦은 까닭을 먼저 물으며 그들을 깨우치려 한다.
-  - 화자는 임금의 부름을 받아 의정부에 들어간 뒤, 그곳에서 겪은 일을 회상하며 노래한다.
   - 화자는 깊은 산골의 초당에 머물며 풍류를 즐기다가, 공명을 기약하고 서울로 향한다.
+  - 화자는 임금의 부름을 받아 의정부에 들어간 뒤, 그곳에서 겪은 일을 회상하며 노래한다.
+  - 화자는 벼슬에서 물러난 뒤 고향 사람들에게서 천일금을 받아 벗들과 함께 나누어 쓴다.
   - 화자는 고향에 돌아와 벗들과 술을 나누지만, 벼슬에서 물러난 것을 아쉬워하며 끝맺는다.
-  answer: 4
+  answer: 2
   second_best: 3
   judgments:
   - v: false
-    c: MEDIUM
-    axis: S1-01-structure_or_development
-    claim: opt1
-    ev:
-    - L37
-    why: '''천일금을 담양군에 흩어두고''는 재물을 흩어 나누어 주는 것이지 고향 사람들에게서 받는 것이 아니다.'
-  - v: false
     c: STRONG
     axis: S1-01-structure_or_development
-    claim: opt2
+    claim: opt1
     ev:
     - L13
     - L14
     - L16
     why: 소년들을 만난 것은 맞지만, 출세가 늦은 까닭을 묻는 쪽은 소년들(14행)이고 화자는 대답한다(16행).
+  - v: true
+    c: CORRECT
+    axis: S1-01-structure_or_development
+    claim: opt2
+    ev:
+    - L1
+    - L2
+    - L11
+    - L12
+    why: 초당(2행)에서 풍류를 즐긴 뒤 '이 놀음 다한 후에 공명을 기약하고'(11행) 서울 거리를 찾아간다(12행).
   - v: false
     c: STRONG
     axis: S1-01-structure_or_development
@@ -168,16 +171,13 @@ items:
     - L28
     - L29
     why: 의정부(28행) 장면은 '이 노래 들으시면'(25행)으로 열리는 상상이며 지난 경험의 회상이 아니다.
-  - v: true
-    c: CORRECT
+  - v: false
+    c: MEDIUM
     axis: S1-01-structure_or_development
     claim: opt4
     ev:
-    - L1
-    - L2
-    - L11
-    - L12
-    why: 초당(2행)에서 풍류를 즐긴 뒤 '이 놀음 다한 후에 공명을 기약하고'(11행) 서울 거리를 찾아간다(12행).
+    - L37
+    why: '''천일금을 담양군에 흩어두고''는 재물을 흩어 나누어 주는 것이지 고향 사람들에게서 받는 것이 아니다.'
   - v: false
     c: MEDIUM
     axis: S1-01-structure_or_development
@@ -473,12 +473,12 @@ items:
   - 'A: 이윤, 여상(17~18행)  B: 급암, 노중련(22~23행)  C: 범려, 소광(36~37행)'
   options:
   - A – 신하로서 지닐 자세 / B – 등용되기 이전의 처지 / C – 공명을 이룬 이후의 삶
+  - A – 신하로서 지닐 자세 / B – 공명을 이룬 이후의 삶 / C – 등용되기 이전의 처지
+  - A – 공명을 이룬 이후의 삶 / B – 등용되기 이전의 처지 / C – 신하로서 지닐 자세
   - A – 등용되기 이전의 처지 / B – 공명을 이룬 이후의 삶 / C – 신하로서 지닐 자세
   - A – 등용되기 이전의 처지 / B – 신하로서 지닐 자세 / C – 공명을 이룬 이후의 삶
-  - A – 공명을 이룬 이후의 삶 / B – 신하로서 지닐 자세 / C – 등용되기 이전의 처지
-  - A – 등용되기 이전의 처지 / B – 신하로서 지닐 자세 / C – 벼슬에 나아가려는 포부
-  answer: 3
-  second_best: 1
+  answer: 5
+  second_best: 3
   judgments:
   - v: false
     c: STRONG
@@ -486,53 +486,54 @@ items:
     claim: opt1
     ev:
     - VIEW
-    - L17
-    - L18
     - L22
-    why: 이윤·여상도 충신이지만 윗글은 '신야 농사', '위빈 낚시'로 등용 이전의 처지를 부각한다. B에는 초야의 처지가 없다.
+    - L23
+    - L35
+    why: C는 맞지만 A·B가 뒤바뀌었다. B에는 초야의 처지가 나오지 않는다.
   - v: false
-    c: MEDIUM
+    c: STRONG
     axis: S1-06-key_word_image_object_function
     claim: opt2
     ev:
     - VIEW
-    - L22
-    - L23
+    - L17
+    - L18
     - L35
-    why: B의 급암·노중련은 직신·의사로서의 자세를 말하고, 공명 이후의 삶은 C이다.
-  - v: true
-    c: CORRECT
+    why: 이윤·여상도 충신이지만 윗글은 등용 이전의 처지를 부각하며, B·C도 어긋난다.
+  - v: false
+    c: MEDIUM
     axis: S1-06-key_word_image_object_function
     claim: opt3
     ev:
     - VIEW
     - L17
+    - L22
+    - L35
+    why: 세 짝이 모두 어긋난다.
+  - v: false
+    c: STRONG
+    axis: S1-06-key_word_image_object_function
+    claim: opt4
+    ev:
+    - VIEW
+    - L22
+    - L23
+    - L35
+    why: A는 맞지만 B는 직신·의사, C는 은퇴 뒤의 고사이다.
+  - v: true
+    c: CORRECT
+    axis: S1-06-key_word_image_object_function
+    claim: opt5
+    ev:
+    - VIEW
+    - L17
     - L18
     - L22
     - L23
     - L35
     - L36
     - L37
-    why: A는 신야 농사·위빈 낚시를 하다 성군을 만난 인물, B는 직신·의사, C는 벼슬을 그만둔 뒤 오호주·천일금의 고사로 쓰였다.
-  - v: false
-    c: WEAK
-    axis: S1-06-key_word_image_object_function
-    claim: opt4
-    ev:
-    - VIEW
-    - L17
-    - L36
-    why: A는 등용 이전, C는 물러난 뒤의 고사이므로 둘이 뒤바뀌었다.
-  - v: false
-    c: STRONG
-    axis: S1-06-key_word_image_object_function
-    claim: opt5
-    ev:
-    - VIEW
-    - L35
-    - L36
-    - L37
-    why: A·B는 맞지만 C는 '벼슬 그만 아뢴 후에'(35행) 이어지는 고사로 은퇴 이후의 삶이다.
+    why: A는 신야 농사·위빈 낚시를 하다 성군을 만난 인물, B는 직신·의사, C는 벼슬을 그만둔 뒤의 고사이다.
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
@@ -551,12 +552,12 @@ items:
   - ㄴ. '고요직설 못 얻어서 어진 신하 바랐더니'
   - ㄷ. '오현금 남풍시는 묻노라 어느 때인고'
   options:
-  - ㄱ – 태평성대를 이루려 했으나 아직 이루지 못함 / ㄴ – 어진 신하를 이미 곁에 두었음 / ㄷ – 화자와 함께 이룰 태평의 때를 기대함
-  - ㄱ – 태평성대를 이미 이루었음 / ㄴ – 그 까닭이 어진 신하를 얻지 못한 데 있음 / ㄷ – 화자와 함께 이룰 태평의 때를 기대함
-  - ㄱ – 태평성대를 이루려 했으나 아직 이루지 못함 / ㄴ – 그 까닭이 백성이 임금을 따르지 않은 데 있음 / ㄷ – 화자와 함께 이룰 태평의 때를 기대함
-  - ㄱ – 태평성대를 이루려 했으나 아직 이루지 못함 / ㄴ – 그 까닭이 어진 신하를 얻지 못한 데 있음 / ㄷ – 태평의 때가 다시 오지 않으리라 여김
+  - ㄱ – 태평성대를 이미 이루었음 / ㄴ – 그 까닭이 어진 신하를 얻지 못한 데 있음 / ㄷ – 태평의 때가 다시 오지 않으리라 여김
+  - ㄱ – 태평성대를 이루려 했으나 아직 이루지 못함 / ㄴ – 어진 신하를 이미 곁에 두었음 / ㄷ – 태평의 때가 다시 오지 않으리라 여김
   - ㄱ – 태평성대를 이루려 했으나 아직 이루지 못함 / ㄴ – 그 까닭이 어진 신하를 얻지 못한 데 있음 / ㄷ – 화자와 함께 이룰 태평의 때를 기대함
-  answer: 5
+  - ㄱ – 태평성대를 이미 이루었음 / ㄴ – 어진 신하를 이미 곁에 두었음 / ㄷ – 화자와 함께 이룰 태평의 때를 기대함
+  - ㄱ – 태평성대를 이미 이루었음 / ㄴ – 어진 신하를 이미 곁에 두었음 / ㄷ – 태평의 때가 다시 오지 않으리라 여김
+  answer: 3
   second_best: 2
   judgments:
   - v: false
@@ -565,45 +566,48 @@ items:
     claim: opt1
     ev:
     - VIEW
-    - L31
-    why: '''못 얻어서 ~ 바랐더니''이므로 곁에 두지 못했다.'
+    - L30
+    - L32
+    why: ㄴ은 맞지만 '하려 하나'는 아직 이루지 못한 것이고 ㄷ도 기대이다.
   - v: false
     c: STRONG
     axis: S1-07-speaker_attitude_or_emotion
     claim: opt2
     ev:
     - VIEW
-    - L30
-    - L33
-    why: '''벌써''에 이끌리기 쉽지만 ''하려 하나''는 하려 했으나 이루지 못했다는 뜻이며, 33행에서 태평의 때를 아직 묻는다.'
-  - v: false
-    c: MEDIUM
+    - L31
+    - L32
+    why: ㄱ은 맞지만 '못 얻어서'이며, '이날에야 만났으니'로 기대가 이어진다.
+  - v: true
+    c: CORRECT
     axis: S1-07-speaker_attitude_or_emotion
     claim: opt3
     ev:
     - VIEW
+    - L30
     - L31
-    why: 까닭은 '고요직설 못 얻어서'이다.
+    - L32
+    - L33
+    why: '''하려 하나''는 아직 이루지 못함, ''못 얻어서 ~ 바랐더니''는 그 까닭, ''이날에야 만났으니'' 뒤의 ''어느 때인고''는 기대의 물음이다.'
   - v: false
     c: STRONG
     axis: S1-07-speaker_attitude_or_emotion
     claim: opt4
     ev:
     - VIEW
-    - L32
-    - L33
-    why: 화자를 '이날에야 만났으니' 하고 묻는 것이므로 체념이 아니라 기대이다.
-  - v: true
-    c: CORRECT
+    - L30
+    - L31
+    why: ㄷ은 맞지만 '벌써 하려 하나'를 이미 이룬 것으로 잘못 읽었고 ㄴ도 '못 얻어서'와 어긋난다.
+  - v: false
+    c: MEDIUM
     axis: S1-07-speaker_attitude_or_emotion
     claim: opt5
     ev:
     - VIEW
     - L30
     - L31
-    - L32
     - L33
-    why: '''하려 하나''는 아직 이루지 못함, ''못 얻어서 ~ 바랐더니''는 그 까닭, ''이날에야 만났으니'' 뒤의 ''어느 때인고''는 화자와 이룰 태평을 기대하는 물음이다.'
+    why: 세 풀이가 모두 어긋난다.
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
@@ -701,12 +705,12 @@ items:
   - ㄴ. 화자는 자신을 등용될 만한 사람으로 여긴다.
   - ㄷ. 화자는 성군이 이미 나타났다고 본다.
   options:
-  - ㄱ – '기쁘게 대답하되' / ㄴ – '나도 또한 신선이다' / ㄷ – '우리 성상 나계시니'
-  - ㄱ – '기쁘게 대답하되' / ㄴ – '바라나니 성군이요' / ㄷ – '우리 성상 나계시니'
-  - ㄱ – '늦게 옴은 웬일인고' / ㄴ – '충신열사 후예로서' / ㄷ – '우리 성상 나계시니'
-  - ㄱ – '기쁘게 대답하되' / ㄴ – '충신열사 후예로서' / ㄷ – '이 노래 들으시면'
+  - ㄱ – '늦게 옴은 웬일인고' / ㄴ – '충신열사 후예로서' / ㄷ – '이 노래 들으시면'
+  - ㄱ – '기쁘게 대답하되' / ㄴ – '바라나니 성군이요' / ㄷ – '이 노래 들으시면'
   - ㄱ – '기쁘게 대답하되' / ㄴ – '충신열사 후예로서' / ㄷ – '우리 성상 나계시니'
-  answer: 5
+  - ㄱ – '늦게 옴은 웬일인고' / ㄴ – '바라나니 성군이요' / ㄷ – '우리 성상 나계시니'
+  - ㄱ – '늦게 옴은 웬일인고' / ㄴ – '바라나니 성군이요' / ㄷ – '이 노래 들으시면'
+  answer: 3
   second_best: 2
   judgments:
   - v: false
@@ -715,8 +719,9 @@ items:
     claim: opt1
     ev:
     - VIEW
-    - L7
-    why: '''신선이다''는 자연 속 만족감의 표현이며 등용될 인재라는 인식이 아니다.'
+    - L14
+    - L25
+    why: ㄴ은 맞지만 14행은 소년들의 물음이고 25행은 가정이다.
   - v: false
     c: STRONG
     axis: S1-09-speaker_attitude_or_emotion
@@ -724,33 +729,37 @@ items:
     ev:
     - VIEW
     - L21
-    why: '''바라나니 성군이요''는 임금에 대한 바람이지 자신을 인재로 여기는 근거가 아니다.'
-  - v: false
-    c: STRONG
+    - L25
+    why: ㄱ은 맞지만 '바라나니 성군이요'는 임금에 대한 바람이고, '들으시면'은 가정이다.
+  - v: true
+    c: CORRECT
     axis: S1-09-speaker_attitude_or_emotion
     claim: opt3
     ev:
     - VIEW
-    - L14
-    why: '''늦게 옴은 웬일인고''는 소년들의 물음이라 화자의 태도를 보여 주지 않는다.'
+    - L16
+    - L19
+    - L24
+    why: 16행 '기쁘게', 19행 '충신열사 후예로서', 24행 '우리 성상 나계시니'가 근거이다.
   - v: false
     c: STRONG
     axis: S1-09-speaker_attitude_or_emotion
     claim: opt4
     ev:
     - VIEW
-    - L25
-    why: '''들으시면''은 가정이므로 성군이 이미 나타났다는 근거가 될 수 없다.'
-  - v: true
-    c: CORRECT
+    - L14
+    - L21
+    why: ㄷ은 맞지만 14행은 소년들의 물음, 21행은 바람이다.
+  - v: false
+    c: MEDIUM
     axis: S1-09-speaker_attitude_or_emotion
     claim: opt5
     ev:
     - VIEW
-    - L16
-    - L19
-    - L24
-    why: 16행 '기쁘게', 19행 '충신열사 후예로서', 24행 '우리 성상 나계시니'가 각각의 근거이다.
+    - L14
+    - L21
+    - L25
+    why: 세 근거가 모두 어긋난다.
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
@@ -765,23 +774,23 @@ items:
   stem_polarity: POSITIVE
   stem: 윗글의 흐름이 바뀌는 지점과 그 구실을 바르게 설명한 것은?
   options:
-  - '25행: 화자의 대답에서 물러난 뒤의 삶으로 넘어가는 전환점이 된다.'
-  - '16행: 소년들의 말에서 임금의 하교로 넘어가는 전환점이 된다.'
   - '11행: 자연 속 풍류에서 공명을 향한 길로 넘어가는 전환점이 된다.'
+  - '16행: 소년들의 말에서 임금의 하교로 넘어가는 전환점이 된다.'
+  - '25행: 화자의 대답에서 물러난 뒤의 삶으로 넘어가는 전환점이 된다.'
   - '35행: 임금의 하교에서 소년들에 대한 화자의 대답으로 넘어가는 전환점이 된다.'
   - '43행: 벗들과의 풍류에서 다시 공명을 향한 길로 넘어가는 전환점이 된다.'
-  answer: 3
-  second_best: 1
+  answer: 1
+  second_best: 3
   judgments:
-  - v: false
-    c: STRONG
+  - v: true
+    c: CORRECT
     axis: S1-10-structure_or_development
     claim: opt1
     ev:
-    - L25
-    - L28
-    - L35
-    why: 25행은 상상 속 등용 장면으로 넘어가는 곳이다. 물러난 뒤의 삶은 35행부터이다.
+    - L10
+    - L11
+    - L12
+    why: '''이 놀음 다한 후에 공명을 기약하고'' 서울로 향한다.'
   - v: false
     c: STRONG
     axis: S1-10-structure_or_development
@@ -791,15 +800,15 @@ items:
     - L17
     - L29
     why: 16행은 소년들의 말에서 화자의 대답으로 넘어가는 곳이다. 임금의 하교는 29행 뒤이다.
-  - v: true
-    c: CORRECT
+  - v: false
+    c: STRONG
     axis: S1-10-structure_or_development
     claim: opt3
     ev:
-    - L10
-    - L11
-    - L12
-    why: '''이 놀음 다한 후에 공명을 기약하고'' 서울로 향한다.'
+    - L25
+    - L28
+    - L35
+    why: 25행은 상상 속 등용 장면으로 넘어가는 곳이다. 물러난 뒤의 삶은 35행부터이다.
   - v: false
     c: STRONG
     axis: S1-10-structure_or_development
@@ -828,13 +837,13 @@ items:
   balance: CORE_EXAM_POINT
   core_exam_point: true
   stem_polarity: POSITIVE
-  stem: '''화자는 공명을 이루고 물러난 뒤에도 임금을 잊지 않는다.''라는 판단의 근거로 가장 적절한 것은?'
+  stem: '''화자는 공명을 이루고 물러난 뒤에도 임금을 잊지 않는다.''라는 판단의 근거가 되는 행으로 가장 적절한 것은?'
   options:
-  - 바라나니 성군이요
-  - 우리 성상 나계시니
-  - 벼슬 그만 아뢴 후에
-  - 감군은(感君恩)
-  - 형 오소 아우 오소
+  - 21행
+  - 24행
+  - 35행
+  - 38행
+  - 39행
   answer: 4
   second_best: 1
   judgments:
@@ -890,23 +899,22 @@ items:
   stem_polarity: NEGATIVE
   stem: 35~46행에 대한 이해로 적절하지 않은 것은?
   options:
-  - '''그대에게 권한 한 잔''의 ''그대''는 앞서 화자를 ''자네''라 부르던 서울의 소년들이다.'
+  - '''공명을 크게 닦고 벼슬 그만 아뢴''에서 공을 이룬 뒤 스스로 물러나는 태도가 드러난다.'
   - '''감군은(感君恩) 한 곡조''에서 물러난 뒤에도 임금의 은혜를 마음에 두는 태도가 드러난다.'
   - '''천일금을 담양군에 흩어두고''에서 재물을 고향 사람들과 나누는 모습이 드러난다.'
-  - '''공명을 크게 닦고 벼슬 그만 아뢴''에서 공을 이룬 뒤 스스로 물러나는 태도가 드러난다.'
   - '''꿈결인가 잠결인가''에서 놀음의 흥에 깊이 빠진 화자의 모습이 드러난다.'
-  answer: 1
-  second_best: 5
+  - '''그대에게 권한 한 잔''의 ''그대''는 앞서 화자를 ''자네''라 부르던 서울의 소년들이다.'
+  answer: 5
+  second_best: 4
   judgments:
-  - v: false
-    c: CORRECT
+  - v: true
+    c: MEDIUM
     axis: S1-12-key_word_image_object_function
     claim: opt1
     ev:
-    - L40
-    - L41
-    - L42
-    why: '''그대''는 ''좌우 사람'', ''좋은 벗'' 가운데 술을 권하는 상대로, 서울의 소년들이 아니다.'
+    - L35
+    - L36
+    why: 공명을 이룬 뒤 벼슬을 그만두고 떠난다.
   - v: true
     c: STRONG
     axis: S1-12-key_word_image_object_function
@@ -922,44 +930,49 @@ items:
     - L37
     why: '''흩어두고''는 재물을 흩어 나누어 주는 모습이다.'
   - v: true
-    c: MEDIUM
-    axis: S1-12-key_word_image_object_function
-    claim: opt4
-    ev:
-    - L35
-    - L36
-    why: 공명을 이룬 뒤 벼슬을 그만두고 떠난다.
-  - v: true
     c: STRONG
     axis: S1-12-key_word_image_object_function
-    claim: opt5
+    claim: opt4
     ev:
     - L43
     - L44
     why: 한바탕 웃음 뒤 꿈인지 잠인지 모를 만큼 흥에 겨운 상태이다.
+  - v: false
+    c: CORRECT
+    axis: S1-12-key_word_image_object_function
+    claim: opt5
+    ev:
+    - L40
+    - L41
+    - L42
+    why: '''그대''는 ''좌우 사람'', ''좋은 벗'' 가운데 술을 권하는 상대로, 서울의 소년들이 아니다.'
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
 - item_id: KOR-NF4-013
   set: S1
   format: MCQ
-  family: VIEW_APPLICATION
+  family: MULTI_JUDGMENT
   coverage: GENRE_FEATURE
-  difficulty: D3
-  balance: CORE_EXAM_POINT
-  core_exam_point: true
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  core_exam_point: false
   stem_polarity: POSITIVE
-  stem: <보기>를 바탕으로 윗글을 이해한 내용으로 가장 적절한 것은?
+  stem: <보기>를 바탕으로 윗글을 이해한 내용으로 적절한 것만을 고른 것은?
   view:
   - 가사는 4음보의 율격을 바탕으로 한 연속체의 시가로, 행의 수에 제한이 없어 화자의 생각이나 바람을 길게 펼쳐 낼 수 있다. 조선 시대 사대부가 지은 가사에는 중국의 고사나 한문 투의 구절이 자주 쓰여 작자의 교양을 드러내기도 하며, 끝부분에서 화자가 말하고자 하는 바를 직접 드러내며 마무리하는 경우가 많다.
+  - ㄱ. 9행의 한문 투 구절은 작자의 교양을 드러내는 요소로 볼 수 있다.
+  - ㄴ. 17~23행의 고사는 화자가 본받으려는 인물을 들어 자기 뜻을 밝히는 데 쓰였다.
+  - ㄷ. 행의 수에 제한이 없는 특성을 살려, 화자는 서울에서 실제로 벼슬하며 겪은 일을 차례대로 펼쳐 낸다.
+  - ㄹ. 45~46행은 끝부분에서 바라는 바를 직접 드러내는 마무리에 해당한다.
   options:
-  - '''화전난무 봉삼하요 운외고성 안구추라''는 한문 투 구절로, 화자가 서울에서 익힌 학식을 소년들에게 내보이는 대목이다.'
-  - '''이윤의 신야 농사''와 ''여상의 위빈 낚시''는 중국 고사로, 화자가 본받지 말아야 할 옛사람의 삶을 보여 준다.'
-  - '''질병 없이 살아감을 진실로 바라노라''는 화자가 바라는 바를 직접 드러내며 마무리하는 방식에 해당한다.'
-  - 행의 수에 제한이 없는 갈래이므로, 화자는 서울에서 벼슬하며 겪은 일을 시간 순서대로 길게 펼쳐 낸다.
-  - 4음보의 율격이 이어지다가 결말에서 깨어지면서, 화자의 정서가 급격히 바뀌는 지점이 드러난다.
+  - ㄱ, ㄴ
+  - ㄱ, ㄹ
+  - ㄱ, ㄴ, ㄹ
+  - ㄴ, ㄷ, ㄹ
+  - ㄱ, ㄴ, ㄷ, ㄹ
   answer: 3
-  second_best: 1
+  second_best: 5
   judgments:
   - v: false
     c: STRONG
@@ -967,10 +980,9 @@ items:
     claim: opt1
     ev:
     - VIEW
-    - L9
-    - L11
-    - L12
-    why: 한문 투 구절인 것은 맞지만 9행은 서울로 가기 전 자연 속 풍류 대목이며 소년들은 13행에 등장한다.
+    - L45
+    - L46
+    why: ㄹ도 맞는 진술이다.
   - v: false
     c: STRONG
     axis: S1-13-genre_feature
@@ -978,18 +990,21 @@ items:
     ev:
     - VIEW
     - L17
-    - L18
     - L19
-    why: 중국 고사인 것은 맞지만 화자는 '나도 또한 그 아니랴'라며 이들에게 자신을 견준다.
+    why: ㄴ도 맞는 진술이다.
   - v: true
     c: CORRECT
     axis: S1-13-genre_feature
     claim: opt3
     ev:
     - VIEW
-    - L45
+    - L9
+    - L17
+    - L18
+    - L19
+    - L25
     - L46
-    why: <보기>의 '끝부분에서 말하고자 하는 바를 직접 드러내며 마무리'를 46행에 적용한 것이다.
+    why: ㄱ, ㄴ, ㄹ이 맞다. 벼슬 장면은 '들으시면'으로 열린 상상이므로 ㄷ은 틀리다.
   - v: false
     c: STRONG
     axis: S1-13-genre_feature
@@ -998,19 +1013,19 @@ items:
     - VIEW
     - L25
     - L28
-    why: 길게 펼치는 갈래인 것은 맞지만 벼슬 장면은 '들으시면'으로 열린 상상이다.
+    why: ㄷ이 틀리고 ㄱ이 빠졌다.
   - v: false
-    c: MEDIUM
+    c: STRONG
     axis: S1-13-genre_feature
     claim: opt5
     ev:
     - VIEW
-    - L45
-    - L46
-    why: 끝부분도 4음보가 유지되고 정서도 흥취와 소망으로 이어진다.
-  reasoning_steps: 2
+    - L25
+    - L28
+    why: ㄷ이 틀리다. 갈래 특성은 맞지만 벼슬 장면은 상상이다.
+  reasoning_steps: 3
   immediate_elimination: 1
-  transfer: true
+  transfer: false
 - item_id: KOR-NF4-014
   set: S1
   format: MCQ
@@ -1295,21 +1310,24 @@ items:
   stem_polarity: POSITIVE
   stem: 7행의 '나도 또한 신선이다'와 19행의 '나도 또한 그 아니랴'를 비교한 내용으로 알맞은 것은?
   options:
-  - 7행은 자신을 다른 존재에 견주지만, 19행은 견주던 대상을 부정하여 자신만의 길을 내세운다.
+  - 두 구절 모두 자신을 다른 존재에 견주지만, 7행은 자연 속 만족감을, 19행은 등용될 만한 인재라는 자부심을 드러낸다.
   - 두 구절 모두 자신을 다른 존재에 견주지만, 7행은 자연 속 만족감을, 19행은 이미 등용되어 공을 세웠다는 자부심을 드러낸다.
   - 두 구절 모두 자신을 다른 존재에 견주지만, 7행은 소년들에게, 19행은 임금에게 건네는 말이다.
   - 두 구절 모두 설의적 표현으로 자신을 다른 존재에 견주며, 자연과 벼슬에 대한 자부심을 드러낸다.
-  - 두 구절 모두 자신을 다른 존재에 견주지만, 7행은 자연 속 만족감을, 19행은 등용될 만한 인재라는 자부심을 드러낸다.
-  answer: 5
+  - 7행은 자신을 다른 존재에 견주지만, 19행은 견주던 대상을 부정하여 자신만의 길을 내세운다.
+  answer: 1
   second_best: 3
   judgments:
-  - v: false
-    c: MEDIUM
+  - v: true
+    c: CORRECT
     axis: S1-18-expression_method_and_effect
     claim: opt1
     ev:
+    - L7
+    - L17
+    - L18
     - L19
-    why: '''그 아니랴''는 ''나도 그와 같지 않으랴''는 설의로 견줌을 긍정한다.'
+    why: 7행은 신선과, 19행은 이윤·여상과 자신을 견주며 '충신열사 후예'를 내세운다.
   - v: false
     c: STRONG
     axis: S1-18-expression_method_and_effect
@@ -1336,16 +1354,13 @@ items:
     - L7
     - L19
     why: 19행 '아니랴'는 설의이지만 7행 '신선이다'는 단정이다.
-  - v: true
-    c: CORRECT
+  - v: false
+    c: MEDIUM
     axis: S1-18-expression_method_and_effect
     claim: opt5
     ev:
-    - L7
-    - L17
-    - L18
     - L19
-    why: 7행은 신선과, 19행은 이윤·여상과 자신을 견주며 '충신열사 후예'를 내세운다.
+    why: '''그 아니랴''는 ''나도 그와 같지 않으랴''는 설의로 견줌을 긍정한다.'
   reasoning_steps: 3
   immediate_elimination: 1
   transfer: false
@@ -1355,27 +1370,26 @@ items:
   family: INFERENCE
   coverage: SPEAKER_ATTITUDE_OR_EMOTION
   difficulty: D4
-  balance: ADVANCED_DISCRIMINATION
-  core_exam_point: false
+  balance: CORE_EXAM_POINT
+  core_exam_point: true
   stem_polarity: POSITIVE
   stem: 화자와 임금의 관계에 주목하여 윗글을 이해한 내용으로 적절한 것은?
   options:
-  - 화자는 임금을 성군으로 기대하지만, 상상 속 임금은 화자를 시험해 본 뒤에야 의정부로 부른다.
-  - 화자는 임금을 성군으로 기대하고, 상상 속 임금은 화자를 만나 태평성대가 이미 이루어졌다고 말한다.
-  - 화자는 임금을 성군으로 기대하고, 상상 속 임금도 화자를 '초야의 숨은 신하'로 반긴다.
-  - 상상 속 임금은 화자를 반기지만, 화자는 벼슬을 사양하고 곧바로 고향으로 돌아간다.
   - 화자는 성군이 아직 나지 않아 등용되지 못했다고 여기며, 성군이 나기를 기다린다.
-  answer: 3
+  - 화자는 임금을 성군으로 기대하고, 상상 속 임금은 화자를 만나 태평성대가 이미 이루어졌다고 말한다.
+  - 화자는 임금을 성군으로 기대하지만, 상상 속 임금은 화자를 시험해 본 뒤에야 의정부로 부른다.
+  - 상상 속 임금은 화자를 반기지만, 화자는 벼슬을 사양하고 곧바로 고향으로 돌아간다.
+  - 화자는 임금을 성군으로 기대하고, 상상 속 임금도 화자를 '초야의 숨은 신하'로 반긴다.
+  answer: 5
   second_best: 2
   judgments:
   - v: false
-    c: MEDIUM
+    c: STRONG
     axis: S1-19-speaker_attitude_or_emotion
     claim: opt1
     ev:
-    - L28
-    - L29
-    why: 시험하는 과정 없이 한림원에 특교하고 의정부로 불러 하교한다.
+    - L24
+    why: '''우리 성상 나계시니''이므로 성군은 이미 나 있다.'
   - v: false
     c: STRONG
     axis: S1-19-speaker_attitude_or_emotion
@@ -1384,14 +1398,14 @@ items:
     - L30
     - L33
     why: '''내 벌써 하려 하나''는 하려 했으나 이루지 못했다는 뜻이고, ''어느 때인고''라며 태평의 때를 아직 묻는다.'
-  - v: true
-    c: CORRECT
+  - v: false
+    c: MEDIUM
     axis: S1-19-speaker_attitude_or_emotion
     claim: opt3
     ev:
-    - L21
-    - L32
-    why: '''바라나니 성군이요''(21행), 임금은 ''초야의 숨은 신하 이날에야 만났으니''(32행)라 한다.'
+    - L28
+    - L29
+    why: 시험하는 과정 없이 한림원에 특교하고 의정부로 불러 하교한다.
   - v: false
     c: STRONG
     axis: S1-19-speaker_attitude_or_emotion
@@ -1399,13 +1413,14 @@ items:
     ev:
     - L35
     why: '''공명을 크게 닦고'' 나서 벼슬을 그만두므로 곧바로 사양하지 않는다.'
-  - v: false
-    c: STRONG
+  - v: true
+    c: CORRECT
     axis: S1-19-speaker_attitude_or_emotion
     claim: opt5
     ev:
-    - L24
-    why: '''우리 성상 나계시니''이므로 성군은 이미 나 있다.'
+    - L21
+    - L32
+    why: '''바라나니 성군이요''(21행), 임금은 ''초야의 숨은 신하 이날에야 만났으니''(32행)라 한다.'
   reasoning_steps: 3
   immediate_elimination: 1
   transfer: false
@@ -1419,27 +1434,25 @@ items:
   core_exam_point: false
   stem_polarity: POSITIVE
   stem: 1~10행과 35~46행을 비교한 내용으로 가장 적절한 것은?
-  view:
-  - 제목 '원유가(願遊歌)'의 '원유'는 '노닐기를 바란다'는 뜻이다. 이 작품에서 '노닒'은 자연 속 풍류에 그치지 않고, 뜻을 펴는 삶과 물러나 즐기는 삶까지 아우른다. 또한 '바란다'는 말처럼, 작품 속 장면에는 화자가 이미 이룬 일보다 앞으로 이루고자 하는 일이 많이 담겨 있다.
   options:
-  - 1~10행의 풍류는 공명을 '기약'하기 전의, 35~46행의 풍류는 공명을 '크게 닦'은 뒤의 것이어서 삶의 단계가 다르다.
-  - 1~10행에서 자연을 무릉도원에 빗대듯, 35~46행에서도 고향을 이상향에 빗대며 설의적으로 감탄한다.
   - 1~10행에서 '신선'에 자신을 견주듯, 35~46행에서도 '나도 또한'이라 하며 범려·소광에 자신을 견준다.
+  - 1~10행에서 자연을 무릉도원에 빗대듯, 35~46행에서도 고향을 이상향에 빗대며 설의적으로 감탄한다.
+  - 1~10행의 풍류는 공명을 '기약'하기 전의, 35~46행의 풍류는 공명을 '크게 닦'은 뒤의 것이어서 삶의 단계가 다르다.
   - 1~10행에서는 술이 떨어져 통소를 불지만 35~46행에서는 술이 넉넉하므로, 1~10행의 흥취가 더 약하다.
   - 1~10행은 '석양'이 저무는 저녁을, 35~46행은 '꿈결'의 밤을 배경으로 하여, 하루의 흐름에 따라 시상이 전개된다.
-  answer: 1
-  second_best: 3
+  answer: 3
+  second_best: 1
   judgments:
-  - v: true
-    c: CORRECT
+  - v: false
+    c: STRONG
     axis: S1-20-structure_or_development
     claim: opt1
     ev:
-    - L10
-    - L11
-    - L35
-    - L44
-    why: 11행에서 공명을 '기약'하기 전의 풍류와, 35행에서 '공명을 크게 닦고' 물러난 뒤의 풍류이다.
+    - L7
+    - L19
+    - L36
+    - L37
+    why: 범려·소광의 고사를 끌어오기는 하지만 '나도 또한'이라는 말은 7행과 19행에만 있다.
   - v: false
     c: STRONG
     axis: S1-20-structure_or_development
@@ -1449,16 +1462,16 @@ items:
     - L39
     - L44
     why: 35~46행은 '시골 인심 더욱 좋다'며 칭찬할 뿐 이상향에 빗대지 않으며, 설의는 '꿈결인가 잠결인가'의 흥취 표현이다.
-  - v: false
-    c: STRONG
+  - v: true
+    c: CORRECT
     axis: S1-20-structure_or_development
     claim: opt3
     ev:
-    - L7
-    - L19
-    - L36
-    - L37
-    why: 범려·소광의 고사를 끌어오기는 하지만 '나도 또한'이라는 말은 7행과 19행에만 있다.
+    - L10
+    - L11
+    - L35
+    - L44
+    why: 11행에서 공명을 '기약'하기 전의 풍류와, 35행에서 '공명을 크게 닦고' 물러난 뒤의 풍류이다.
   - v: false
     c: STRONG
     axis: S1-20-structure_or_development
@@ -1552,12 +1565,12 @@ items:
   stem: 윗글의 인물에 대한 설명으로 적절하지 않은 것은?
   options:
   - 송 노인은 한문을 읽지 못하지만 조부의 문집이 가치 있다고 믿는다.
-  - 송 노인은 명준의 도움을 받아 고향에서 문집을 펴내는 데 성공한다.
-  - 명준은 문집을 책으로 펴내는 데 드는 비용을 들어 간행에 반대한다.
   - 명준은 회사에서 잡지 만드는 일을 하여 책을 만드는 과정을 알고 있다.
+  - 명준은 문집을 책으로 펴내는 데 드는 비용을 들어 간행에 반대한다.
   - 윤국은 문집이 반닫이 속에 들어 있던 책이라는 것을 알아본다.
-  answer: 2
-  second_best: 4
+  - 송 노인은 명준의 도움을 받아 고향에서 문집을 펴내는 데 성공한다.
+  answer: 5
+  second_best: 2
   judgments:
   - v: true
     c: MEDIUM
@@ -1566,13 +1579,14 @@ items:
     ev:
     - P39S2
     why: '''나는 일자무식이다마는 이 문집에 가치 있는 글이 담겨 있다는 것은 ~ 안단 말이다.'''
-  - v: false
-    c: CORRECT
+  - v: true
+    c: STRONG
     axis: S2-22-character
     claim: opt2
     ev:
-    - P40S1
-    why: '''아들의 협조를 얻지 못한 채'' 고향 사람들의 도움을 받아 간행하였다.'
+    - P34S1
+    - P33S1
+    why: '''회사 홍보실에서 잡지 만드는 일에 종사''하며 조판·옵세트를 설명한다.'
   - v: true
     c: MEDIUM
     axis: S2-22-character
@@ -1582,20 +1596,19 @@ items:
     - P33S2
     why: 책 만드는 비용과 조판비를 들어 반대한다.
   - v: true
-    c: STRONG
+    c: MEDIUM
     axis: S2-22-character
     claim: opt4
     ev:
-    - P34S1
-    - P33S1
-    why: '''회사 홍보실에서 잡지 만드는 일에 종사''하며 조판·옵세트를 설명한다.'
-  - v: true
-    c: MEDIUM
+    - P44S1
+    why: '''아, 저 반닫이 속에 들어 있던 그 책 말이군요.'''
+  - v: false
+    c: CORRECT
     axis: S2-22-character
     claim: opt5
     ev:
-    - P44S1
-    why: '''아, 저 반닫이 속에 들어 있던 그 책 말이군요.'''
+    - P40S1
+    why: '''아들의 협조를 얻지 못한 채'' 고향 사람들의 도움을 받아 간행하였다.'
   reasoning_steps: 1
   immediate_elimination: 2
   transfer: false
@@ -1672,17 +1685,17 @@ items:
   stem_polarity: POSITIVE
   stem: <보기>의 송 노인의 반응과, 그 반응을 불러온 말을 바르게 짝지은 것은?
   view:
-  - ㄱ. '눈언저리가 화끈해지는 느낌이다'
-  - ㄴ. '눈이 휘둥그레진다'
-  - ㄷ. '이맛살을 약간 찌푸리며 슬그머니 고개를 돌린다'
+  - ㄱ. '눈이 휘둥그레진다'
+  - ㄴ. '이맛살을 약간 찌푸리며 슬그머니 고개를 돌린다'
+  - ㄷ. '잠시 말문이 막힌다'
   options:
-  - ㄱ – '난 모르겠어요.' / ㄴ – '책을 만드는 데 돈이 얼마나 드는지 아세요?' / ㄷ – 조판비와 옵세트에 대한 설명
-  - ㄱ – '세상에 펴낼 가치가 없는 거니까 그러죠.' / ㄴ – '난 모르겠어요.' / ㄷ – 조판비와 옵세트에 대한 설명
-  - ㄱ – '난 모르겠어요.' / ㄴ – '세상에 펴낼 가치가 없는 거니까 그러죠.' / ㄷ – 조판비와 옵세트에 대한 설명
-  - ㄱ – '책을 만드는 데 돈이 얼마나 드는지 아세요?' / ㄴ – '세상에 펴낼 가치가 없는 거니까 그러죠.' / ㄷ – 조판비와 옵세트에 대한 설명
-  - ㄱ – '난 모르겠어요.' / ㄴ – '세상에 펴낼 가치가 없는 거니까 그러죠.' / ㄷ – '가치가 있는지 없는지 아버지가 어떻게 아세요?'
+  - ㄱ – '난 모르겠어요.' / ㄴ – 조판비와 옵세트에 대한 설명 / ㄷ – '족보는 다르죠.'
+  - ㄱ – '세상에 펴낼 가치가 없는 거니까 그러죠.' / ㄴ – '가치가 있는지 없는지 아버지가 어떻게 아세요?' / ㄷ – '족보는 다르죠.'
+  - ㄱ – '세상에 펴낼 가치가 없는 거니까 그러죠.' / ㄴ – 조판비와 옵세트에 대한 설명 / ㄷ – '이렇게 한문투성인 책을 누가 거들떠보기나 할 것 같애요?'
+  - ㄱ – '난 모르겠어요.' / ㄴ – '가치가 있는지 없는지 아버지가 어떻게 아세요?' / ㄷ – '이렇게 한문투성인 책을 누가 거들떠보기나 할 것 같애요?'
+  - ㄱ – '난 모르겠어요.' / ㄴ – '가치가 있는지 없는지 아버지가 어떻게 아세요?' / ㄷ – '족보는 다르죠.'
   answer: 3
-  second_best: 1
+  second_best: 2
   judgments:
   - v: false
     c: STRONG
@@ -1690,31 +1703,34 @@ items:
     claim: opt1
     ev:
     - VIEW
-    - P25S1
-    - P27S1
-    why: 돈 이야기 뒤의 반응은 '눈언저리에 열이 화끈 오르는 느낌'으로, 눈이 휘둥그레지는 것이 아니다.
+    - P5S1
+    - P6S1
+    - P22S1
+    why: ㄴ은 맞지만 '난 모르겠어요' 뒤의 반응은 '눈언저리가 화끈'이고, '족보는 다르죠'에는 말문이 막히지 않는다.
   - v: false
     c: STRONG
     axis: S2-24-character_psychology
     claim: opt2
     ev:
     - VIEW
-    - P6S1
-    - P15S1
-    why: ㄱ과 ㄴ의 계기가 뒤바뀌었다.
+    - P35S1
+    - P37S1
+    - P22S1
+    - P23S1
+    why: ㄱ은 맞지만 이맛살은 '어떻게 아세요?' 전, 조판 설명 뒤의 반응이고, '족보는 다르죠' 뒤에는 곧바로 반박한다.
   - v: true
     c: CORRECT
     axis: S2-24-character_psychology
     claim: opt3
     ev:
     - VIEW
-    - P5S1
-    - P6S1
     - P13S1
     - P15S1
     - P33S1
     - P35S1
-    why: '''난 모르겠어요''→화끈(6문단), ''가치가 없는 거''→휘둥그레짐(15문단), 조판·옵세트 설명→이맛살(35문단).'
+    - P16S4
+    - P18S1
+    why: '''가치가 없는 거''→휘둥그레짐(15문단), 조판·옵세트 설명→이맛살(35문단), 한문투성인 책 이야기→말문이 막힘(18문단).'
   - v: false
     c: STRONG
     axis: S2-24-character_psychology
@@ -1722,17 +1738,18 @@ items:
     ev:
     - VIEW
     - P6S1
-    - P27S1
-    why: 돈 이야기 뒤에도 '눈언저리에 열이 화끈 오르는' 반응이 있지만, ㄱ의 문장(6문단)은 '난 모르겠어요' 직후에 나온다.
+    - P37S1
+    why: ㄷ은 맞지만 ㄱ, ㄴ의 계기가 어긋난다.
   - v: false
     c: MEDIUM
     axis: S2-24-character_psychology
     claim: opt5
     ev:
     - VIEW
-    - P35S1
+    - P6S1
     - P37S1
-    why: 이맛살을 찌푸린 것은 '가치가 있는지 없는지 ~' 이전, 조판·옵세트 설명을 들은 뒤이다.
+    - P23S1
+    why: 세 계기가 모두 어긋난다.
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
@@ -1747,22 +1764,24 @@ items:
   stem_polarity: POSITIVE
   stem: ㉠을 둘러싼 두 인물의 인식을 이해한 내용으로 가장 적절한 것은?
   options:
-  - 명준은 증조부를 멀게 느끼면서도 그 속마음을 아버지에게 그대로 말해, 아버지와 맞선다.
+  - 송 노인은 자손의 도리를 들어 증조부를 가깝게 여기지만, 명준은 본 적 없는 먼 존재로 여긴다.
   - 송 노인은 자손의 도리를 들어 증조부를 가깝게 여기고, 명준은 본 적이 없다면 할아버지도 멀다고 여긴다.
   - 송 노인은 자손의 도리를 들어 증조부를 가깝게 여기지만, 명준은 그 말에 웃음을 터뜨려 아버지를 무안하게 한다.
   - 송 노인은 문집의 가치를 들어 증조부를 가깝게 여기고, 명준은 문집이 한문이라는 점을 들어 증조부를 멀게 여긴다.
-  - 송 노인은 자손의 도리를 들어 증조부를 가깝게 여기지만, 명준은 본 적 없는 먼 존재로 여긴다.
-  answer: 5
+  - 명준은 증조부를 멀게 느끼면서도 그 속마음을 아버지에게 그대로 말해, 아버지와 맞선다.
+  answer: 1
   second_best: 2
   judgments:
-  - v: false
-    c: STRONG
+  - v: true
+    c: CORRECT
     axis: S2-25-speaker_attitude_or_emotion
     claim: opt1
     ev:
-    - P12S1
-    - P13S1
-    why: '''차마 그런 투로 대꾸를 할 수는 없는 듯'' 말문을 다른 쪽으로 연다.'
+    - P10S2
+    - P10S3
+    - P11S2
+    - P11S3
+    why: 송 노인은 '자손으로서' 증조부를 '멀지도 않은' 분이라 하고, 명준은 '한 번 본 적도 없는' 증조부를 멀고 서먹하게 느낀다.
   - v: false
     c: STRONG
     axis: S2-25-speaker_attitude_or_emotion
@@ -1785,16 +1804,14 @@ items:
     - P10S3
     - P11S3
     why: 송 노인은 증조부가 '너한테는' 가까운 조상임을 들고, 명준의 거리감은 '증조부'라는 말과 본 적 없음에서 나온다.
-  - v: true
-    c: CORRECT
+  - v: false
+    c: STRONG
     axis: S2-25-speaker_attitude_or_emotion
     claim: opt5
     ev:
-    - P10S2
-    - P10S3
-    - P11S2
-    - P11S3
-    why: 송 노인은 '자손으로서' 증조부를 '멀지도 않은' 분이라 하고, 명준은 '한 번 본 적도 없는' 증조부를 멀고 서먹하게 느낀다.
+    - P12S1
+    - P13S1
+    why: '''차마 그런 투로 대꾸를 할 수는 없는 듯'' 말문을 다른 쪽으로 연다.'
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
@@ -2004,63 +2021,76 @@ items:
 - item_id: KOR-NF4-029
   set: S2
   format: MCQ
-  family: INFERENCE
-  coverage: CHARACTER
-  difficulty: D3
-  balance: CORE_EXAM_POINT
-  core_exam_point: true
+  family: VIEW_APPLICATION
+  coverage: CENTRAL_CONFLICT
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  core_exam_point: false
   stem_polarity: POSITIVE
-  stem: ㉣과 관련하여 윗글을 이해한 내용으로 적절한 것은?
+  stem: <보기>를 바탕으로 윗글을 이해한 내용으로 가장 적절한 것은?
+  view:
+  - 송 노인과 명준은 각자 상대가 잘 모르는 것을 근거로 내세워 자기 주장에 힘을 싣는다. 그러나 그 근거는 상대에게 받아들여지지 않아, 두 사람의 대화는 끝내 평행선을 그린다.
   options:
-  - 일자무식임을 인정하면서도, 조부가 이름난 선비였다는 고향 사람들의 평판을 근거로 든다.
-  - 일자무식임을 인정하면서도, 문집의 글을 남에게 읽어 받아 그 가치를 확인했다고 내세운다.
-  - 일자무식임을 인정하면서도, 읽지 못하는 사람이 많을수록 문집을 펴낼 까닭이 커진다고 주장한다.
-  - 일자무식임을 인정하면서, 문집의 가치는 아들 같은 배운 사람이 판단할 일이라고 물러선다.
-  - 일자무식임을 인정하면서도, 조부의 사람됨을 안다는 점에서 문집의 가치를 확신한다.
-  answer: 5
+  - 송 노인이 ㉣ 뒤에 내세운 근거는 조부의 사람됨에 관한 앎이고, 명준은 그 말을 듣고 '노인이 제법 그럴듯한 말을 한다' 여긴다.
+  - 송 노인이 내세운 근거는 족보에 관한 지식이고, 명준은 그것을 잘 모르기 때문에 '족보는 다르죠'라며 맞선다.
+  - 명준이 내세운 근거는 조판과 옵세트에 관한 지식이고, 송 노인은 그 말을 알아듣지 못한 채 '좌우간 만들어야겠어'라고 맞선다.
+  - 명준이 내세운 근거는 한문을 읽을 사람이 없다는 것이고, 송 노인은 그 근거를 받아들여 이삼백 권만 찍겠다고 한다.
+  - 송 노인이 ㉣ 뒤에 내세운 근거는 조부의 사람됨에 관한 앎이고, 명준은 그것을 받아들여 더 이상 가치를 따지지 않는다.
+  answer: 3
   second_best: 1
   judgments:
   - v: false
     c: STRONG
-    axis: S2-29-character
+    axis: S2-29-central_conflict
     claim: opt1
     ev:
+    - VIEW
+    - P23S4
+    - P24S1
+    - P24S2
     - P39S3
-    - P40S1
-    why: 근거는 '나는 알아'라는 자신의 앎이며, 고향 사람들은 중략 뒤 간행을 도운 사람들이다.
+    why: 조부에 관한 근거는 맞지만, '그럴듯한 말'이라 여긴 것은 그보다 앞서 '몇 사람만이라도' 읽으면 족하다는 말을 들었을 때이다.
   - v: false
     c: STRONG
-    axis: S2-29-character
+    axis: S2-29-central_conflict
     claim: opt2
     ev:
-    - P39S2
-    why: 남에게 읽어 받았다는 말은 없고, '내가 잘 안단 말이다'라 한다.
-  - v: false
-    c: MEDIUM
-    axis: S2-29-character
-    claim: opt3
-    ev:
-    - P23S4
-    why: 몇 사람만 읽어도 족하다고 할 뿐, 읽지 못하는 사람이 많을수록 좋다고 하지 않는다.
-  - v: false
-    c: STRONG
-    axis: S2-29-character
-    claim: opt4
-    ev:
-    - P39S1
-    why: '''나는 안다''며 물러서지 않는다.'
+    - VIEW
+    - P21S2
+    - P22S1
+    why: 족보는 명준도 아는 일이라 상대가 모르는 근거가 아니며, 명준은 '다르죠'라 할 뿐이다.
   - v: true
     c: CORRECT
-    axis: S2-29-character
+    axis: S2-29-central_conflict
+    claim: opt3
+    ev:
+    - VIEW
+    - P33S1
+    - P34S1
+    - P35S1
+    - P36S1
+    why: 명준은 아버지가 모르는 조판·옵세트를 내세우고, 송 노인은 '알아듣지도 못하는 터이라' 고개를 돌린 뒤 '좌우간 만들어야겠어'라 한다.
+  - v: false
+    c: MEDIUM
+    axis: S2-29-central_conflict
+    claim: opt4
+    ev:
+    - VIEW
+    - P30S1
+    - P32S1
+    why: '''이삼백 권''은 처음부터 송 노인이 말한 부수이며 아들의 근거를 받아들인 결과가 아니다.'
+  - v: false
+    c: STRONG
+    axis: S2-29-central_conflict
     claim: opt5
     ev:
-    - P39S2
-    - P39S3
+    - VIEW
     - P39S4
-    why: '''우리 조부가 어떤 분인지 ~ 나는 알아. 그분은 학식이 높은 선비면서 애국자''라며 가치를 확신한다.'
-  reasoning_steps: 2
+    - P40S1
+    why: 조부에 관한 근거는 맞지만 명준은 받아들이지 않아 아들의 협조를 얻지 못한다.
+  reasoning_steps: 3
   immediate_elimination: 1
-  transfer: false
+  transfer: true
 - item_id: KOR-NF4-030
   set: S2
   format: MCQ
@@ -2072,23 +2102,22 @@ items:
   stem_polarity: POSITIVE
   stem: ㉤에 담긴 송 노인의 심리로 알맞은 것은?
   options:
-  - 아들이 돕지 않은 섭섭함을 말하려다, 손자 앞에서 그 아비를 탓하는 말을 삼가는 마음
+  - 아들이 돕지 않은 섭섭함을 말하려다, 문집을 펴낸 일 자체를 뉘우치게 되는 마음
   - 아들이 돕지 않은 섭섭함을 손자에게 털어놓아, 손자가 아비를 닮지 않게 하려는 마음
   - 아들이 끝내 간행을 도왔다는 사실을 손자에게 알리려다, 쑥스러워 말을 줄이는 마음
   - 아들 이야기를 꺼냈다가, 아들도 문집의 가치를 안다는 것을 떠올리고 말을 바꾸는 마음
-  - 아들이 돕지 않은 섭섭함을 말하려다, 문집을 펴낸 일 자체를 뉘우치게 되는 마음
-  answer: 1
+  - 아들이 돕지 않은 섭섭함을 말하려다, 손자 앞에서 그 아비를 탓하는 말을 삼가는 마음
+  answer: 5
   second_best: 4
   judgments:
-  - v: true
-    c: CORRECT
+  - v: false
+    c: MEDIUM
     axis: S2-30-expression_method_and_effect
     claim: opt1
     ev:
-    - P40S1
-    - P49S1
-    - P50S1
-    why: 아들의 협조 없이 간행했으므로 '너의 애비가……'에는 원망이 담기나 '내뱉으려다가 그만둔다'.
+    - P47S2
+    - P58S2
+    why: '''책으로 만들어가지고 왔지'', ''아주 가치가 있는 책이다''라 하므로 뉘우침이 없다.'
   - v: false
     c: STRONG
     axis: S2-30-expression_method_and_effect
@@ -2111,14 +2140,15 @@ items:
     - P37S1
     - P50S1
     why: 아들은 가치를 인정하지 않았고, 말을 바꾼 것이 아니라 그만둔 것이다.
-  - v: false
-    c: MEDIUM
+  - v: true
+    c: CORRECT
     axis: S2-30-expression_method_and_effect
     claim: opt5
     ev:
-    - P47S2
-    - P58S2
-    why: '''책으로 만들어가지고 왔지'', ''아주 가치가 있는 책이다''라 하므로 뉘우침이 없다.'
+    - P40S1
+    - P49S1
+    - P50S1
+    why: 아들의 협조 없이 간행했으므로 '너의 애비가……'에는 원망이 담기나 '내뱉으려다가 그만둔다'.
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
@@ -2265,61 +2295,71 @@ items:
   balance: CORE_EXAM_POINT
   core_exam_point: true
   stem_polarity: POSITIVE
-  stem: 중략 앞부분에서 송 노인의 마음이 움직여 간 순서로 가장 적절한 것은?
+  stem: <보기>는 중략 앞부분에서 송 노인의 마음을 나타낸 것이다. 일어난 순서대로 바르게 배열한 것은?
+  view:
+  - ㉮ 괘씸함을 누르고 애써 느긋하게 마음먹음
+  - ㉯ 아들의 말에도 일리가 없지 않다고 여김
+  - ㉰ 아들의 말에 놀라 눈이 휘둥그레짐
+  - ㉱ 얘기의 요점에 들어섰다고 느끼며 열이 오름
   options:
-  - 괘씸함을 억누름 → 아들 말의 일리를 일부 인정함 → 놀라 눈이 휘둥그레짐 → 본론이 나왔다고 느끼며 열이 오름
-  - 괘씸함을 억누름 → 놀라 눈이 휘둥그레짐 → 아들 말의 일리를 일부 인정함 → 본론이 나왔다고 느끼며 열이 오름
-  - 놀라 눈이 휘둥그레짐 → 괘씸함을 억누름 → 아들 말의 일리를 일부 인정함 → 본론이 나왔다고 느끼며 열이 오름
-  - 괘씸함을 억누름 → 놀라 눈이 휘둥그레짐 → 본론이 나왔다고 느끼며 열이 오름 → 아들 말의 일리를 일부 인정함
-  - 괘씸함을 억누름 → 놀라 눈이 휘둥그레짐 → 아들 말의 일리를 일부 인정함 → 아들의 비용 계산에 수긍함
-  answer: 2
-  second_best: 1
+  - ㉮ – ㉯ – ㉱ – ㉰
+  - ㉰ – ㉮ – ㉱ – ㉯
+  - ㉯ – ㉮ – ㉰ – ㉱
+  - ㉮ – ㉰ – ㉯ – ㉱
+  - ㉰ – ㉯ – ㉮ – ㉱
+  answer: 4
+  second_best: 2
   judgments:
   - v: false
     c: STRONG
     axis: S2-33-character_psychology
     claim: opt1
     ev:
+    - VIEW
     - P15S1
     - P18S2
-    why: 놀람(15문단)이 일리 인정(18문단)보다 먼저이다.
-  - v: true
-    c: CORRECT
+    - P27S1
+    why: 놀람(15문단)이 일리 인정보다 먼저이고, 요점(27문단)은 마지막이다.
+  - v: false
+    c: STRONG
     axis: S2-33-character_psychology
     claim: opt2
     ev:
+    - VIEW
+    - P6S2
+    - P15S1
+    why: 괘씸함(6문단)이 놀람(15문단)보다 먼저이고, 일리 인정(18문단)이 요점(27문단)보다 먼저이다.
+  - v: false
+    c: STRONG
+    axis: S2-33-character_psychology
+    claim: opt3
+    ev:
+    - VIEW
+    - P6S2
+    - P18S2
+    why: 일리 인정은 18문단으로 괘씸함(6문단)보다 뒤이다.
+  - v: true
+    c: CORRECT
+    axis: S2-33-character_psychology
+    claim: opt4
+    ev:
+    - VIEW
     - P6S2
     - P6S3
     - P15S1
     - P18S2
     - P27S1
     - P27S2
-    why: 괘씸하지만 '애써 느긋하게'(6문단) → '눈이 휘둥그레진다'(15문단) → '일리가 없는 것은 아닌 듯'(18문단) → '열이 화끈 오르는', '얘기의 요점'(27문단).
-  - v: false
-    c: STRONG
-    axis: S2-33-character_psychology
-    claim: opt3
-    ev:
-    - P6S2
-    - P15S1
-    why: 괘씸함(6문단)이 놀람보다 먼저이다.
-  - v: false
-    c: STRONG
-    axis: S2-33-character_psychology
-    claim: opt4
-    ev:
-    - P18S2
-    - P27S1
-    why: 일리 인정(18문단)이 비용 이야기(27문단)보다 먼저이다.
+    why: ㉮(6문단) → ㉰(15문단) → ㉯(18문단) → ㉱(27문단).
   - v: false
     c: STRONG
     axis: S2-33-character_psychology
     claim: opt5
     ev:
-    - P28S1
-    - P32S1
-    - P36S1
-    why: 비용에 대해 '그렇게 많이 들 턱이 없다', '좌우간 만들어야겠어'라 하여 수긍하지 않는다.
+    - VIEW
+    - P6S2
+    - P15S1
+    why: 괘씸함(6문단)이 가장 먼저이다.
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
@@ -2391,65 +2431,76 @@ items:
 - item_id: KOR-NF4-035
   set: S2
   format: MCQ
-  family: COMPARISON_MATRIX
+  family: MULTI_JUDGMENT
   coverage: CHARACTER
-  difficulty: D3
-  balance: CORE_EXAM_POINT
-  core_exam_point: true
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  core_exam_point: false
   stem_polarity: POSITIVE
-  stem: 명준과 윤국을 비교한 내용으로 가장 적절한 것은?
+  stem: <보기>에서 세 인물을 견주어 이해한 내용으로 적절한 것만을 고른 것은?
+  view:
+  - ㄱ. 명준과 윤국은 모두 문집이 한문으로 되어 있다는 점을 문제 삼는다.
+  - ㄴ. 송 노인은 명준에게는 자손 된 도리를, 윤국에게는 나중에 한문을 배워 읽을 것을 내세운다.
+  - ㄷ. 명준과 윤국은 모두 송 노인의 설명을 들은 뒤 겉으로는 수긍하는 말을 한다.
+  - ㄹ. 송 노인은 명준과 윤국이 같은 태도를 보인다고 직접 말한다.
   options:
-  - 두 인물 모두 문집을 낮추어 보지만, 명준은 문집을 펼쳐 보지도 않고 윤국만 책을 뒤적인다.
-  - 두 인물 모두 한문이라 읽기 어렵다는 점을 들고, 비용이 많이 든다는 점도 함께 내세운다.
-  - 두 인물 모두 한문이라 읽기 어렵다는 점을 들어 문집을 낮추어 본다.
-  - 두 인물 모두 문집을 낮추어 보며, 설명을 듣자 수긍하는 척하다가 자리를 뜬다.
-  - 명준은 문집의 가치를 부정하지만, 윤국은 '가보'라는 설명을 듣고 그 가치를 받아들인다.
+  - ㄱ, ㄴ
+  - ㄱ, ㄹ
+  - ㄱ, ㄴ, ㄹ
+  - ㄴ, ㄷ, ㄹ
+  - ㄱ, ㄴ, ㄷ, ㄹ
   answer: 3
-  second_best: 1
+  second_best: 5
   judgments:
   - v: false
     c: STRONG
     axis: S2-35-character
     claim: opt1
     ev:
-    - P17S1
-    - P51S1
-    why: 명준도 문집을 '팔랑팔랑 서너 장 넘겨본다'.
+    - VIEW
+    - P58S1
+    why: ㄹ도 맞는 진술이다.
   - v: false
     c: STRONG
     axis: S2-35-character
     claim: opt2
     ev:
-    - P25S1
-    - P57S1
-    why: 비용을 내세우는 것은 명준뿐이다.
+    - VIEW
+    - P23S3
+    - P58S4
+    why: ㄴ도 맞는 진술이다.
   - v: true
     c: CORRECT
     axis: S2-35-character
     claim: opt3
     ev:
+    - VIEW
     - P16S4
     - P57S1
+    - P23S3
+    - P58S4
     - P58S1
-    why: 명준은 '한문투성인 책', 윤국은 '순 한문이라 읽을 수가 있어야죠'라 하며, 송 노인도 둘이 같다고 한다.
+    - P37S1
+    - P63S1
+    why: ㄱ, ㄴ, ㄹ이 맞다. 겉으로 수긍하는 것('예, 알겠어요')은 윤국뿐이고, 명준은 '아버지가 어떻게 아세요?'라며 맞서므로 ㄷ은 틀리다.
   - v: false
     c: STRONG
     axis: S2-35-character
     claim: opt4
     ev:
+    - VIEW
     - P37S1
     - P63S1
-    - P64S1
-    why: 수긍하는 척하고 나가는 것은 윤국이고, 명준은 '아버지가 어떻게 아세요?'라며 맞선다.
+    why: ㄷ이 틀리고 ㄱ이 빠졌다.
   - v: false
     c: STRONG
     axis: S2-35-character
     claim: opt5
     ev:
-    - P63S1
-    - P64S1
-    why: '''예, 알겠어요''라 하지만 ''히히히'' 웃으며 나가 버린다.'
-  reasoning_steps: 2
+    - VIEW
+    - P37S1
+    why: ㄷ이 틀리다. 명준은 끝까지 맞선다.
+  reasoning_steps: 3
   immediate_elimination: 1
   transfer: false
 - item_id: KOR-NF4-036
@@ -2466,11 +2517,11 @@ items:
   - 이 작품이 발표된 1980년대 무렵, 우리 사회에는 산업화를 거치며 효율과 비용을 따지는 실용적 가치관이 널리 자리 잡았다. 「조상의 문집」은 이러한 변화 속에서 조상을 기리는 일의 의미가 어떻게 달라지는지를 보여 준다. 작가는 어느 한 인물의 편을 일방적으로 들기보다 서로 다른 가치 기준을 지닌 인물들을 맞세워 그 사이의 틈을 드러낸다.
   options:
   - 명준이 조판비와 옵세트를 들어 반대하는 것은, 효율과 비용을 따지는 실용적 가치관을 보여 준다.
-  - 송 노인이 '몇 사람만이라도' 읽으면 족하다고 하는 것은, 문집의 가치를 독자의 수로 따지지 않는 태도이다.
-  - 서술자가 명준과 송 노인의 속마음을 모두 서술하는 것은, 두 인물의 가치 기준을 맞세워 보여 주는 방식이다.
   - 송 노인이 족보를 책으로 많이 만든다고 한 것은, 효율을 따지는 가치관이 전통에 스며든 현실에 대한 비판이다.
+  - 서술자가 명준과 송 노인의 속마음을 모두 서술하는 것은, 두 인물의 가치 기준을 맞세워 보여 주는 방식이다.
+  - 송 노인이 '몇 사람만이라도' 읽으면 족하다고 하는 것은, 문집의 가치를 독자의 수로 따지지 않는 태도이다.
   - 윤국이 문집을 '후졌다'고 하는 것은, 조상을 기리는 일의 의미가 다음 세대로 이어지기 어려움을 보여 준다.
-  answer: 4
+  answer: 2
   second_best: 3
   judgments:
   - v: true
@@ -2482,15 +2533,16 @@ items:
     - P33S2
     - P33S5
     why: 비용과 효율을 따지는 실용적 가치관이다. 적절하다.
-  - v: true
-    c: STRONG
+  - v: false
+    c: CORRECT
     axis: S2-36-theme_or_central_meaning
     claim: opt2
     ev:
     - VIEW
-    - P23S4
-    - P23S5
-    why: '''어디 꼭 많은 사람이 읽어야만 가치 있는 책인가''라 한다. 적절하다.'
+    - P21S1
+    - P21S3
+    - P23S2
+    why: 족보 이야기는 한문 책도 여전히 만들어지고 읽힌다는 근거로 든 것이지 세태를 비판하는 말이 아니다.
   - v: true
     c: STRONG
     axis: S2-36-theme_or_central_meaning
@@ -2500,16 +2552,15 @@ items:
     - P11S3
     - P18S2
     why: 작가가 한쪽 편을 들지 않고 인물들을 맞세운다는 <보기>와 부합한다. 적절하다.
-  - v: false
-    c: CORRECT
+  - v: true
+    c: STRONG
     axis: S2-36-theme_or_central_meaning
     claim: opt4
     ev:
     - VIEW
-    - P21S1
-    - P21S3
-    - P23S2
-    why: 족보 이야기는 한문 책도 여전히 만들어지고 읽힌다는 근거로 든 것이지 세태를 비판하는 말이 아니다.
+    - P23S4
+    - P23S5
+    why: '''어디 꼭 많은 사람이 읽어야만 가치 있는 책인가''라 한다. 적절하다.'
   - v: true
     c: MEDIUM
     axis: S2-36-theme_or_central_meaning
@@ -2536,12 +2587,12 @@ items:
   - 송 노인은 ( ㉮ )을/를 근거로, 명준은 ( ㉯ )을/를 근거로 문집의 가치를 판단한다.
   options:
   - ㉮ 문집을 남긴 조부의 사람됨 / ㉯ 문집에 담긴 글의 내용
-  - ㉮ 문집에 담긴 글의 내용 / ㉯ 읽을 사람이 있는지와 드는 비용
   - ㉮ 문집을 남긴 조부의 사람됨 / ㉯ 읽을 사람이 있는지와 드는 비용
-  - ㉮ 고향 사람들의 평가 / ㉯ 회사에서 쌓은 경험과 지식
-  - ㉮ 족보를 펴내는 요즘의 풍속 / ㉯ 문집에 쓰인 한자의 수
-  answer: 3
-  second_best: 2
+  - ㉮ 문집에 담긴 글의 내용 / ㉯ 읽을 사람이 있는지와 드는 비용
+  - ㉮ 문집에 담긴 글의 내용 / ㉯ 회사에서 쌓은 경험과 지식
+  - ㉮ 고향 사람들의 평가 / ㉯ 문집에 담긴 글의 내용
+  answer: 2
+  second_best: 1
   judgments:
   - v: false
     c: STRONG
@@ -2551,27 +2602,27 @@ items:
     - VIEW
     - P17S1
     - P16S2
-    why: ㉮는 맞지만 명준은 문집을 읽지 않았으므로 내용을 근거로 판단하지 않는다.
-  - v: false
-    c: STRONG
-    axis: S2-37-central_conflict
-    claim: opt2
-    ev:
-    - VIEW
-    - P39S2
-    - P38S1
-    why: '''가치 있는 글이 담겨 있다''고 말하지만 송 노인은 읽지 못하므로 글의 내용은 근거가 될 수 없다. 그 확신은 조부를 안다는 데서 나온다.'
+    why: ㉮는 맞지만 명준은 문집을 팔랑팔랑 넘길 뿐 내용을 읽고 판단하지 않는다.
   - v: true
     c: CORRECT
     axis: S2-37-central_conflict
-    claim: opt3
+    claim: opt2
     ev:
     - VIEW
     - P39S3
     - P39S4
     - P16S2
     - P25S1
-    why: 송 노인은 일자무식이지만 '우리 조부가 어떤 분인지 ~ 나는 알아'를 근거로 삼고, 명준은 읽지 못한다는 점과 비용을 든다.
+    why: 송 노인은 '우리 조부가 어떤 분인지 ~ 나는 알아'를, 명준은 읽지 못한다는 점과 비용을 근거로 든다.
+  - v: false
+    c: STRONG
+    axis: S2-37-central_conflict
+    claim: opt3
+    ev:
+    - VIEW
+    - P39S2
+    - P38S1
+    why: 송 노인은 '가치 있는 글이 담겨 있다'고 하지만 일자무식이라 글의 내용은 근거가 될 수 없다.
   - v: false
     c: STRONG
     axis: S2-37-central_conflict
@@ -2579,17 +2630,17 @@ items:
     ev:
     - VIEW
     - P34S1
-    - P40S1
-    why: 명준이 경험을 내세우는 것은 맞지만, 고향 사람들의 평가는 송 노인의 근거로 제시되지 않는다.
+    - P39S2
+    why: 명준이 경험을 내세우는 것은 비용 설명 때이며, ㉮도 어긋난다.
   - v: false
     c: MEDIUM
     axis: S2-37-central_conflict
     claim: opt5
     ev:
     - VIEW
-    - P21S3
-    - P33S4
-    why: 족보는 한문 책도 만든다는 예이지 가치 판단의 근거가 아니며, 한자의 수도 명준의 근거가 아니다.
+    - P40S1
+    - P17S1
+    why: 고향 사람들은 간행을 도왔을 뿐 송 노인의 근거가 아니며, ㉯도 어긋난다.
   reasoning_steps: 3
   immediate_elimination: 1
   transfer: false
@@ -2599,8 +2650,8 @@ items:
   family: INFERENCE
   coverage: CHARACTER_PSYCHOLOGY
   difficulty: D4
-  balance: ADVANCED_DISCRIMINATION
-  core_exam_point: false
+  balance: CORE_EXAM_POINT
+  core_exam_point: true
   stem_polarity: POSITIVE
   stem: 명준의 속마음과 실제로 한 말의 관계를 바르게 이해한 것은?
   options:
@@ -2743,12 +2794,12 @@ items:
   stem_polarity: POSITIVE
   stem: '''후지다'', ''틀리다''를 둘러싼 윤국과 송 노인의 대화를 이해한 내용으로 가장 적절한 것은?'
   options:
-  - 윤국이 '틀렸다'는 말을 다시 풀이하는 장면은, 자신의 말이 무례했음을 깨닫고 표현을 바로잡는 모습을 보여 준다.
-  - '''후졌다''를 알아듣지 못하는 장면은 ''조판'', ''옵세트''를 몰랐던 장면과 겹쳐 세대 간 말의 어긋남을 드러낸다.'
-  - 송 노인이 '후지다니'라고 되묻는 장면은, 손자의 말뜻을 알면서도 모르는 체하여 꾸짖으려는 의도를 보여 준다.
   - '''틀리다니……''의 말줄임은, 손자의 말에 수긍하여 더 이상 문집의 가치를 내세우지 않으려는 태도를 보여 준다.'
+  - 윤국이 '틀렸다'는 말을 다시 풀이하는 장면은, 자신의 말이 무례했음을 깨닫고 표현을 바로잡는 모습을 보여 준다.
+  - 송 노인이 '후지다니'라고 되묻는 장면은, 손자의 말뜻을 알면서도 모르는 체하여 꾸짖으려는 의도를 보여 준다.
+  - '''후졌다''를 알아듣지 못하는 장면은 ''조판'', ''옵세트''를 몰랐던 장면과 겹쳐 세대 간 말의 어긋남을 드러낸다.'
   - 윤국이 '순 한문'을 문제 삼는 장면은, 아버지와 달리 윤국이 한문을 배우려는 뜻을 지니고 있음을 보여 준다.
-  answer: 2
+  answer: 4
   second_best: 3
   judgments:
   - v: false
@@ -2756,20 +2807,18 @@ items:
     axis: S2-40-theme_or_central_meaning
     claim: opt1
     ev:
+    - P56S1
+    - P58S2
+    why: 말줄임 뒤 곧바로 '아주 가치가 있는 책이다'라고 한다.
+  - v: false
+    c: STRONG
+    axis: S2-40-theme_or_central_meaning
+    claim: opt2
+    ev:
     - P55S1
     - P57S1
     - P57S2
     why: 뜻을 다시 풀이하는 것은 맞지만 '틀렸지 뭐예요'로 같은 평가를 되풀이하며 바로잡지 않는다.
-  - v: true
-    c: CORRECT
-    axis: S2-40-theme_or_central_meaning
-    claim: opt2
-    ev:
-    - P35S1
-    - P54S1
-    - P55S1
-    - P56S1
-    why: '''후지다니, 그게 무슨 소리냐?''는 앞서 ''조판이 뭔지, 옵세트가 무슨 말인지 알아듣지도 못하는'' 장면과 겹쳐 세대 간 말이 통하지 않음을 드러낸다.'
   - v: false
     c: MEDIUM
     axis: S2-40-theme_or_central_meaning
@@ -2778,14 +2827,16 @@ items:
     - P54S1
     - P56S1
     why: 되물음 뒤에도 '틀리다니……'라고 하는 데서 뜻을 몰라 묻는 것으로 보인다.
-  - v: false
-    c: STRONG
+  - v: true
+    c: CORRECT
     axis: S2-40-theme_or_central_meaning
     claim: opt4
     ev:
+    - P35S1
+    - P54S1
+    - P55S1
     - P56S1
-    - P58S2
-    why: 말줄임 뒤 곧바로 '아주 가치가 있는 책이다'라고 한다.
+    why: '''후지다니, 그게 무슨 소리냐?''는 앞서 ''조판이 뭔지, 옵세트가 무슨 말인지 알아듣지도 못하는'' 장면과 겹쳐 세대 간 말이 통하지 않음을 드러낸다.'
   - v: false
     c: WEAK
     axis: S2-40-theme_or_central_meaning
@@ -2869,33 +2920,29 @@ items:
   stem_polarity: POSITIVE
   stem: 윗글의 '화석'이 지닌 의미로 알맞은 것은?
   options:
-  - 생명이 멈춘 흔적으로, 하늘을 날던 새가 날개를 접고 영원히 잠든 곳
-  - 생명이 멈춘 흔적이지만, 그 속에서 새가 날듯 소멸 뒤에도 존재가 이어지는 곳
-  - 생명이 멈춘 흔적으로, 화자가 흘린 눈물과 함께 떠나보낸 과거가 묻힌 곳
   - 소멸을 택한 별들이 빛을 잃지 않으려고 피해 가야 하는 곳
+  - 생명이 멈춘 흔적으로, 하늘을 날던 새가 날개를 접고 영원히 잠든 곳
+  - 생명이 멈춘 흔적으로, 화자가 흘린 눈물과 함께 떠나보낸 과거가 묻힌 곳
+  - 생명이 멈춘 흔적이지만, 그 속에서 새가 날듯 소멸 뒤에도 존재가 이어지는 곳
   - 지상으로 내려오지 않는 새가 끝내 벗어나려고 하는 곳
-  answer: 2
-  second_best: 1
+  answer: 4
+  second_best: 2
   judgments:
   - v: false
-    c: STRONG
+    c: MEDIUM
     axis: S3-42-key_word_image_object_function
     claim: opt1
     ev:
-    - L1
-    - L2
-    why: 화석 속에서 새는 잠들지 않고 '난다'.
-  - v: true
-    c: CORRECT
+    - L11
+    why: 화자는 별들에게 화석에 묻히라고 한다.
+  - v: false
+    c: STRONG
     axis: S3-42-key_word_image_object_function
     claim: opt2
     ev:
     - L1
     - L2
-    - L11
-    - L12
-    - L13
-    why: 화석 속에서 새가 '난다'고 하고, 화자는 별들에게 '묻혀라 화석에'라 하며 영원히 죽는 것은 죽음이 아니라 한다.
+    why: 화석 속에서 새는 잠들지 않고 '난다'.
   - v: false
     c: STRONG
     axis: S3-42-key_word_image_object_function
@@ -2905,13 +2952,17 @@ items:
     - L5
     - L6
     why: 눈물은 보석으로 반짝이기를 바라는 것이며 과거가 묻힌 곳이 아니다.
-  - v: false
-    c: MEDIUM
+  - v: true
+    c: CORRECT
     axis: S3-42-key_word_image_object_function
     claim: opt4
     ev:
+    - L1
+    - L2
     - L11
-    why: 화자는 별들에게 화석에 묻히라고 한다.
+    - L12
+    - L13
+    why: 화석 속에서 새가 '난다'고 하고, 화자는 별들에게 '묻혀라 화석에'라 하며 영원히 죽는 것은 죽음이 아니라 한다.
   - v: false
     c: MEDIUM
     axis: S3-42-key_word_image_object_function
@@ -3205,31 +3256,31 @@ items:
   stem_polarity: POSITIVE
   stem: 4~6행에 대한 이해로 적절한 것은?
   options:
-  - '''눈물도''의 ''도''는 화석 속 새처럼 자신의 눈물 또한 오래 남기를 바라는 마음을 드러낸다.'
   - '''쥐라기 지층''은 화자가 눈물을 흘린 과거의 때를 가리켜, 지난 슬픔을 되새기게 한다.'
+  - '''눈물도''의 ''도''는 화석 속 새처럼 자신의 눈물 또한 오래 남기를 바라는 마음을 드러낸다.'
   - '''어느 하늘 아래''는 눈물이 보석이 될 곳을 화자가 분명히 알고 있음을 드러낸다.'
   - '''반짝거릴까,''의 쉼표는 물음을 끝맺지 않고 예를 이어 가, 화자의 바람이 이미 이루어졌음을 드러낸다.'
   - '''하나의 보석''은 눈물이 여러 보석으로 흩어지지 않고 하나로 모이기를 바라는 마음을 드러낸다.'
-  answer: 1
+  answer: 2
   second_best: 4
   judgments:
+  - v: false
+    c: STRONG
+    axis: S3-47-theme_or_central_meaning
+    claim: opt1
+    ev:
+    - L4
+    - L5
+    why: 쥐라기는 눈물이 보석으로 남을 아득한 시간이며 눈물을 흘린 때가 아니다.
   - v: true
     c: CORRECT
     axis: S3-47-theme_or_central_meaning
-    claim: opt1
+    claim: opt2
     ev:
     - L1
     - L2
     - L4
     why: 앞 연의 화석 속 새에 이어 '내가 흘린 눈물도'라 하여 자신의 것 또한 남기를 바란다.
-  - v: false
-    c: STRONG
-    axis: S3-47-theme_or_central_meaning
-    claim: opt2
-    ev:
-    - L4
-    - L5
-    why: 쥐라기는 눈물이 보석으로 남을 아득한 시간이며 눈물을 흘린 때가 아니다.
   - v: false
     c: STRONG
     axis: S3-47-theme_or_central_meaning
@@ -3267,11 +3318,11 @@ items:
   stem: 7~8행이 앞뒤 시행과 맺는 관계로 가장 적절한 것은?
   options:
   - '''가령''으로 앞의 물음에 대한 답을 제시하여, 눈물이 이미 보석이 되었음을 확인한다.'
-  - '''가령''으로 ''눈물'' 말고도 남기를 바라는 것을 덧붙여, 2연의 바람을 구체화한다.'
   - '''가령''으로 1연의 ''새''가 무엇을 빗댄 것인지 밝혀, 1연과 2연을 하나로 묶는다.'
+  - '''가령''으로 ''눈물'' 말고도 남기를 바라는 것을 덧붙여, 2연의 바람을 구체화한다.'
   - '''가령''으로 앞의 바람을 구체화하면서, 죽음을 두려워하는 화자의 마음을 함께 드러낸다.'
   - '''가령''으로 3연의 ''별들''을 미리 소개하여, 시상이 3연으로 넘어가게 한다.'
-  answer: 2
+  answer: 3
   second_best: 4
   judgments:
   - v: false
@@ -3282,24 +3333,24 @@ items:
     - L6
     - L7
     why: 6행은 '반짝거릴까,'의 물음이고 7행은 쉼표로 이어지는 예시이다.
+  - v: false
+    c: MEDIUM
+    axis: S3-48-structure_or_development
+    claim: opt2
+    ev:
+    - L1
+    - L7
+    why: 7~8행은 1연의 새를 풀이하지 않는다.
   - v: true
     c: CORRECT
     axis: S3-48-structure_or_development
-    claim: opt2
+    claim: opt3
     ev:
     - L4
     - L6
     - L7
     - L8
     why: 눈물에 이어 '죽음', '죽음 앞에서 초롱초롱 빛나던 눈'을 들어 바람을 구체화한다.
-  - v: false
-    c: MEDIUM
-    axis: S3-48-structure_or_development
-    claim: opt3
-    ev:
-    - L1
-    - L7
-    why: 7~8행은 1연의 새를 풀이하지 않는다.
   - v: false
     c: STRONG
     axis: S3-48-structure_or_development
@@ -3329,22 +3380,22 @@ items:
   stem_polarity: POSITIVE
   stem: '''영원히 죽는 것은 이미 / 죽음이 아니다.''에 대한 설명으로 알맞은 것은?'
   options:
-  - 겉으로 모순되는 진술로, 소멸을 택한 존재들이 결국 다시 살아난다는 믿음을 드러낸다.
-  - 말과 속뜻이 반대되는 반어로, 영원히 남는 소멸은 죽음이 아니라는 인식을 드러낸다.
-  - 겉으로 모순되는 진술로, 영원히 남는 소멸은 죽음이 아니라는 인식을 드러낸다.
-  - 겉으로 모순되는 진술로, 죽음을 두려워하는 대상을 달래려는 화자의 위로를 드러낸다.
   - '''이미''를 앞 행 끝에 두어, 죽음이 이미 일어난 일임을 강조한다.'
-  answer: 3
+  - 말과 속뜻이 반대되는 반어로, 영원히 남는 소멸은 죽음이 아니라는 인식을 드러낸다.
+  - 겉으로 모순되는 진술로, 소멸을 택한 존재들이 결국 다시 살아난다는 믿음을 드러낸다.
+  - 겉으로 모순되는 진술로, 죽음을 두려워하는 대상을 달래려는 화자의 위로를 드러낸다.
+  - 겉으로 모순되는 진술로, 영원히 남는 소멸은 죽음이 아니라는 인식을 드러낸다.
+  answer: 5
   second_best: 2
   judgments:
   - v: false
-    c: STRONG
+    c: MEDIUM
     axis: S3-49-expression_method_and_effect
     claim: opt1
     ev:
     - L12
     - L13
-    why: '''영원히 죽는 것''이라 하여 다시 살아난다는 내용은 없다.'
+    why: '''이미''는 ''죽음이 아니다''에 걸려 그 판단을 단정하는 말이다.'
   - v: false
     c: STRONG
     axis: S3-49-expression_method_and_effect
@@ -3353,14 +3404,14 @@ items:
     - L12
     - L13
     why: 인식 내용은 맞지만 속뜻을 반대로 말하는 반어가 아니라 표면이 모순되는 역설이다.
-  - v: true
-    c: CORRECT
+  - v: false
+    c: STRONG
     axis: S3-49-expression_method_and_effect
     claim: opt3
     ev:
     - L12
     - L13
-    why: '''죽는 것은 ~ 죽음이 아니다''는 역설로, 화석에 묻혀 영원히 남는 소멸은 죽음이 아니라는 인식이다.'
+    why: '''영원히 죽는 것''이라 하여 다시 살아난다는 내용은 없다.'
   - v: false
     c: STRONG
     axis: S3-49-expression_method_and_effect
@@ -3369,14 +3420,14 @@ items:
     - L9
     - L11
     why: 별들은 '스스로' 소멸을 택하므로 두려워하는 대상이 아니다.
-  - v: false
-    c: MEDIUM
+  - v: true
+    c: CORRECT
     axis: S3-49-expression_method_and_effect
     claim: opt5
     ev:
     - L12
     - L13
-    why: '''이미''는 ''죽음이 아니다''에 걸려 그 판단을 단정하는 말이다.'
+    why: '''죽는 것은 ~ 죽음이 아니다''는 역설로, 화석에 묻혀 영원히 남는 소멸은 죽음이 아니라는 인식이다.'
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
@@ -3391,21 +3442,24 @@ items:
   stem_polarity: NEGATIVE
   stem: 9~11행에 드러난 화자의 인식으로 적절하지 않은 것은?
   options:
-  - '''스스로''에서 대상이 소멸을 주체적으로 받아들인다고 보고 있다.'
+  - '''소멸을 선택하는''에서 고통을 견디지 못해 삶을 포기하는 대상을 안타까워하고 있다.'
   - '''불에 타서''에서 대상이 빛을 내며 사라져 가는 모습을 떠올리고 있다.'
   - '''별들''이라는 말에서 대상을 빛나고 귀한 존재로 여기고 있다.'
+  - '''스스로''에서 대상이 소멸을 주체적으로 받아들인다고 보고 있다.'
   - '''묻혀라''에서 대상의 소멸이 화석 속에서 영원으로 이어지기를 바라고 있다.'
-  - '''소멸을 선택하는''에서 고통을 견디지 못해 삶을 포기하는 대상을 안타까워하고 있다.'
-  answer: 5
+  answer: 1
   second_best: 2
   judgments:
-  - v: true
-    c: MEDIUM
+  - v: false
+    c: CORRECT
     axis: S3-50-speaker_attitude_or_emotion
     claim: opt1
     ev:
     - L9
-    why: '''스스로''는 주체적 선택을 나타낸다.'
+    - L11
+    - L12
+    - L13
+    why: 소멸을 '선택'하는 주체적 행위로 보고 화석에 묻히라고 당부할 뿐, 삶을 포기하는 것으로 안타까워하지 않는다.
   - v: true
     c: STRONG
     axis: S3-50-speaker_attitude_or_emotion
@@ -3422,24 +3476,21 @@ items:
     - L10
     why: 빛나는 별에 빗대어 귀하게 여긴다.
   - v: true
-    c: STRONG
+    c: MEDIUM
     axis: S3-50-speaker_attitude_or_emotion
     claim: opt4
+    ev:
+    - L9
+    why: '''스스로''는 주체적 선택을 나타낸다.'
+  - v: true
+    c: STRONG
+    axis: S3-50-speaker_attitude_or_emotion
+    claim: opt5
     ev:
     - L11
     - L12
     - L13
     why: 화석에 묻혀 영원히 남기를 바란다.
-  - v: false
-    c: CORRECT
-    axis: S3-50-speaker_attitude_or_emotion
-    claim: opt5
-    ev:
-    - L9
-    - L11
-    - L12
-    - L13
-    why: 소멸을 '선택'하는 주체적 행위로 보고 화석에 묻히라고 당부할 뿐, 삶을 포기하는 것으로 안타까워하지 않는다.
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
@@ -3456,32 +3507,32 @@ items:
   view:
   - 문학적 표현에는 현실에서 불가능한 상황을 의도적으로 재구성하는 방법이 있다. 이러한 방법에는 공간이나 시간이 비현실적으로 재구성되거나 시적 대상이 비현실적 변화를 겪는 상황이 형상화되는 것이 포함된다. 또한 시적 형상화 과정에서 서로 대비되는 시어나 시구가 연결되어 새로운 의미가 부여되기도 한다. 이때 시적 의미를 형성하는 다양한 표현은 화자의 인식과 태도를 드러냄으로써 주제를 구현한다.
   options:
-  - '''지상의 별들''은 시적 대상이 비현실적 변화를 겪는 상황으로, 별이 지상으로 떨어져 빛을 잃는 모습을 나타낸다.'
   - '''화석 속엔 한 마리 / 새가 난다''는 시간을 비현실적으로 재구성하여, 새가 과거로 돌아가 날고 싶어 함을 드러낸다.'
-  - '''죽음 앞에서 초롱초롱 빛나던 눈''은 대비되는 시어를 연결하여, 죽음 앞에서 느끼는 공포를 강조한다.'
   - '''쥐라기 지층 어느 하늘 아래''는 공간을 비현실적으로 재구성하여, 땅속을 영원한 가치가 빛나는 곳으로 만든다.'
+  - '''죽음 앞에서 초롱초롱 빛나던 눈''은 대비되는 시어를 연결하여, 죽음 앞에서 느끼는 공포를 강조한다.'
+  - '''지상의 별들''은 시적 대상이 비현실적 변화를 겪는 상황으로, 별이 지상으로 떨어져 빛을 잃는 모습을 나타낸다.'
   - '''영원히 죽는 것은 이미 / 죽음이 아니다''는 대비되는 시어를 연결하여, 죽음을 피하려는 화자의 태도를 드러낸다.'
-  answer: 4
-  second_best: 1
+  answer: 2
+  second_best: 4
   judgments:
-  - v: false
-    c: MEDIUM
-    axis: S3-51-expression_method_and_effect
-    claim: opt1
-    ev:
-    - VIEW
-    - L9
-    - L10
-    why: 별들은 스스로 불에 타 소멸을 택하는 존재이지 떨어져 빛을 잃는 존재가 아니다.
   - v: false
     c: STRONG
     axis: S3-51-expression_method_and_effect
-    claim: opt2
+    claim: opt1
     ev:
     - VIEW
     - L1
     - L2
     why: 현실에서 불가능한 상황인 것은 맞지만 새가 과거로 돌아가려 한다는 근거가 없다.
+  - v: true
+    c: CORRECT
+    axis: S3-51-expression_method_and_effect
+    claim: opt2
+    ev:
+    - VIEW
+    - L5
+    - L6
+    why: 땅속 지층에 '하늘'이 있다는 공간의 비현실적 재구성으로, 그곳에서 눈물이 보석으로 반짝이기를 바란다.
   - v: false
     c: STRONG
     axis: S3-51-expression_method_and_effect
@@ -3491,15 +3542,15 @@ items:
     - L7
     - L8
     why: 죽음과 빛남이 대비되지만 죽음 앞에서도 빛나던 눈으로, 공포가 아니라 꺾이지 않는 가치이다.
-  - v: true
-    c: CORRECT
+  - v: false
+    c: MEDIUM
     axis: S3-51-expression_method_and_effect
     claim: opt4
     ev:
     - VIEW
-    - L5
-    - L6
-    why: 땅속 지층에 '하늘'이 있다는 공간의 비현실적 재구성으로, 그곳에서 눈물이 보석으로 반짝이기를 바란다.
+    - L9
+    - L10
+    why: 별들은 스스로 불에 타 소멸을 택하는 존재이지 떨어져 빛을 잃는 존재가 아니다.
   - v: false
     c: STRONG
     axis: S3-51-expression_method_and_effect
@@ -3775,60 +3826,67 @@ items:
 - item_id: KOR-NF4-056
   set: S3
   format: MCQ
-  family: VIEW_APPLICATION
+  family: MULTI_JUDGMENT
   coverage: EXPRESSION_METHOD_AND_EFFECT
   difficulty: D4
   balance: ADVANCED_DISCRIMINATION
   core_exam_point: false
   stem_polarity: POSITIVE
-  stem: <보기>를 바탕으로 윗글을 이해한 내용으로 가장 적절한 것은?
+  stem: <보기>를 바탕으로 윗글을 이해한 내용으로 적절한 것만을 고른 것은?
   view:
   - 시에서 문장을 끝맺는 방식은 화자의 태도를 드러낸다. 명사로 끝맺으면 대상에 오래 머무르게 하는 효과가, 물음으로 끝맺으면 확신하지 못한 채 바라는 마음이, 명령이나 단정으로 끝맺으면 화자의 뜻을 분명히 내세우는 효과가 나타난다.
+  - ㄱ. 1연은 명사로 끝맺어 '새'에 머무르게 한다.
+  - ㄴ. 2연은 물음으로 확신하지 못한 채 바라는 마음을 드러낸 뒤, 명사로 끝맺어 '눈'에 머무르게 한다.
+  - ㄷ. 3연의 '묻혀라'와 '아니다'는 화자의 뜻을 분명히 내세운다.
+  - ㄹ. 시 전체에서 물음으로 끝맺는 방식이 가장 많이 쓰여 화자의 망설임이 끝까지 이어진다.
   options:
-  - 2연의 물음에 담긴 망설임이 3연에서 명령과 단정으로 바뀌며 화자의 뜻이 분명해진다.
-  - 1연의 명사 종결은 대상에 머무르게 하고, 2연의 물음은 바람이 이미 이루어졌다는 확신을 드러낸다.
-  - 2연의 물음과 3연의 명령은 모두 확신 없이 바라는 마음을 드러내어, 화자의 태도가 처음부터 끝까지 같다.
-  - 3연의 '묻혀라'는 명령으로 뜻을 분명히 하지만, 마지막 단정은 다시 확신을 거두어들인다.
-  - 1연과 2연의 끝이 모두 명사로 끝나 대상에 머물게 하므로, 2연에는 망설임이 드러나지 않는다.
-  answer: 1
-  second_best: 2
+  - ㄱ, ㄷ
+  - ㄴ, ㄹ
+  - ㄱ, ㄴ, ㄷ
+  - ㄱ, ㄷ, ㄹ
+  - ㄱ, ㄴ, ㄷ, ㄹ
+  answer: 3
+  second_best: 5
   judgments:
-  - v: true
-    c: CORRECT
+  - v: false
+    c: STRONG
     axis: S3-56-expression_method_and_effect
     claim: opt1
     ev:
     - VIEW
     - L6
-    - L11
-    - L13
-    why: 2연 '반짝거릴까'(물음) → 3연 '묻혀라'(명령), '아니다'(단정).
+    - L8
+    why: ㄴ도 맞는 진술이다.
   - v: false
-    c: STRONG
+    c: MEDIUM
     axis: S3-56-expression_method_and_effect
     claim: opt2
     ev:
     - VIEW
-    - L3
     - L6
-    why: 앞부분은 맞지만 <보기>에 따르면 물음은 확신하지 못한 채 바라는 마음이다.
-  - v: false
-    c: STRONG
+    - L13
+    why: ㄹ이 틀리고 ㄱ, ㄷ이 빠졌다.
+  - v: true
+    c: CORRECT
     axis: S3-56-expression_method_and_effect
     claim: opt3
     ev:
     - VIEW
+    - L3
+    - L6
+    - L8
     - L11
     - L13
-    why: <보기>에 따르면 명령·단정은 뜻을 분명히 내세운다.
+    why: ㄱ('~않는 새.'), ㄴ('반짝거릴까,' 뒤 '~빛나던 눈.'), ㄷ이 맞다. 물음은 6행 한 번뿐이고 3연은 명령·단정이므로 ㄹ은 틀리다.
   - v: false
     c: STRONG
     axis: S3-56-expression_method_and_effect
     claim: opt4
     ev:
     - VIEW
+    - L6
     - L13
-    why: 단정은 뜻을 분명히 내세우는 방식이다.
+    why: ㄹ이 틀리고 ㄴ이 빠졌다.
   - v: false
     c: STRONG
     axis: S3-56-expression_method_and_effect
@@ -3836,38 +3894,41 @@ items:
     ev:
     - VIEW
     - L6
-    - L8
-    why: 2연은 명사로 끝나지만 6행의 '반짝거릴까'에 망설임이 담겨 있다.
+    - L11
+    - L13
+    why: ㄹ이 틀리다. 물음은 6행에만 있다.
   reasoning_steps: 3
   immediate_elimination: 1
-  transfer: true
+  transfer: false
 - item_id: KOR-NF4-057
   set: S3
   format: MCQ
   family: INFERENCE
   coverage: KEY_WORD_IMAGE_OBJECT_FUNCTION
   difficulty: D4
-  balance: ADVANCED_DISCRIMINATION
-  core_exam_point: false
+  balance: CORE_EXAM_POINT
+  core_exam_point: true
   stem_polarity: POSITIVE
   stem: 1연의 '새'와 3연의 '별들'의 관계를 이해한 내용으로 적절한 것은?
   options:
-  - '''새''는 지상으로 내려오지 않아 소멸을 피한 존재이고, ''별들''은 소멸을 택해 영원을 잃는 존재이다.'
+  - '''새''는 화석 속에서 이미 영원을 얻은 존재이고, ''별들''은 화자가 그 영원에 이르기를 바라는 대상이다.'
   - '''새''는 화석 속에서 이미 영원을 얻은 존재이고, ''별들''은 그 영원을 거부하고 지상에 남으려는 대상이다.'
   - '''새''는 화자가 영원에 이르기를 바라는 대상이고, ''별들''은 화석 속에서 이미 영원을 얻은 존재이다.'
   - '''새''와 ''별들''은 모두 이미 화석에 묻혀 영원을 얻은 존재로, 화자는 그 모습을 바라만 본다.'
-  - '''새''는 화석 속에서 이미 영원을 얻은 존재이고, ''별들''은 화자가 그 영원에 이르기를 바라는 대상이다.'
-  answer: 5
+  - '''새''는 지상으로 내려오지 않아 소멸을 피한 존재이고, ''별들''은 소멸을 택해 영원을 잃는 존재이다.'
+  answer: 1
   second_best: 3
   judgments:
-  - v: false
-    c: STRONG
+  - v: true
+    c: CORRECT
     axis: S3-57-key_word_image_object_function
     claim: opt1
     ev:
-    - L12
-    - L13
-    why: 화자는 영원히 죽는 것은 '죽음이 아니다'라 하므로 별들이 영원을 잃지 않는다.
+    - L1
+    - L2
+    - L10
+    - L11
+    why: 새는 화석 속에서 날고 있고, 화자는 별들에게 '묻혀라 화석에'라 한다.
   - v: false
     c: STRONG
     axis: S3-57-key_word_image_object_function
@@ -3891,16 +3952,14 @@ items:
     ev:
     - L11
     why: '''묻혀라''는 아직 묻히지 않은 별들에게 하는 명령이다.'
-  - v: true
-    c: CORRECT
+  - v: false
+    c: STRONG
     axis: S3-57-key_word_image_object_function
     claim: opt5
     ev:
-    - L1
-    - L2
-    - L10
-    - L11
-    why: 새는 화석 속에서 날고 있고, 화자는 별들에게 '묻혀라 화석에'라 한다.
+    - L12
+    - L13
+    why: 화자는 영원히 죽는 것은 '죽음이 아니다'라 하므로 별들이 영원을 잃지 않는다.
   reasoning_steps: 3
   immediate_elimination: 1
   transfer: false
@@ -3979,22 +4038,26 @@ items:
 - item_id: KOR-NF4-059
   set: S3
   format: MCQ
-  family: VIEW_APPLICATION
+  family: MULTI_JUDGMENT
   coverage: KEY_WORD_IMAGE_OBJECT_FUNCTION
   difficulty: D4
   balance: ADVANCED_DISCRIMINATION
   core_exam_point: false
   stem_polarity: POSITIVE
-  stem: <보기>를 참고하여 윗글을 이해한 내용으로 가장 적절한 것은?
+  stem: <보기>를 참고하여 윗글을 이해한 내용으로 적절한 것만을 고른 것은?
   view:
   - '''화석''과 ''보석''은 모두 오랜 시간이 흘러 만들어진다는 공통점이 있다. 그러나 화석은 생명이 남긴 흔적이라는 점에서, 보석은 아름답게 빛나는 가치를 지닌다는 점에서 서로 다른 의미를 더한다.'
+  - ㄱ. 1연에서 '화석' 속의 '새'가 '난다'는 것은 흔적에 그치지 않고 살아 움직이는 모습을 드러낸다.
+  - ㄴ. 2연에서 '눈물'이 '보석'으로 반짝이기를 바라는 것은 빛나는 가치로 남기를 바라는 것이다.
+  - ㄷ. 3연에서 '별들'에게 '보석'이 아니라 '화석'에 묻히라고 한 것은 별들이 이미 빛을 잃었기 때문이다.
+  - ㄹ. '화석'과 '보석'이 오랜 시간 뒤에 만들어진다는 점은 2연의 '쥐라기'라는 시어와 이어진다.
   options:
-  - '''새''가 ''화석 속''에 있다는 것은 생명의 흔적이 남는다는 뜻이므로, ''새''는 더 이상 움직이지 못하는 존재로 볼 수 있다.'
-  - '''눈물''이 ''보석''이 되기를 바라는 것은, 흔적으로 남는 데 그치지 않고 빛나는 가치로 남기를 바라는 것으로 볼 수 있다.'
-  - '''지상의 별들''에게 ''보석''이 아니라 ''화석''에 묻히라고 한 것은, 별들이 빛나는 가치를 잃었다고 보기 때문이다.'
-  - '''쥐라기''라는 시어는 화석과 보석이 만들어지는 짧은 시간을 드러내어, 소멸의 덧없음을 강조한다.'
-  - 1연에서 화자가 바라는 것은 빛남이고 2연에서 바라는 것은 흔적이므로, 두 연의 바람은 서로 맞선다.
-  answer: 2
+  - ㄱ, ㄴ
+  - ㄴ, ㄷ
+  - ㄱ, ㄴ, ㄹ
+  - ㄱ, ㄷ, ㄹ
+  - ㄱ, ㄴ, ㄷ, ㄹ
+  answer: 3
   second_best: 5
   judgments:
   - v: false
@@ -4003,48 +4066,52 @@ items:
     claim: opt1
     ev:
     - VIEW
-    - L1
-    - L2
-    why: 화석이 흔적이라는 점은 맞지만 그 속에서 '새가 난다'고 하므로 움직이지 못하는 존재가 아니다.
-  - v: true
-    c: CORRECT
+    - L5
+    why: ㄹ도 맞는 진술이다.
+  - v: false
+    c: MEDIUM
     axis: S3-59-key_word_image_object_function
     claim: opt2
     ev:
     - VIEW
-    - L4
-    - L6
-    why: <보기>의 '보석 = 빛나는 가치'에 비추어, 눈물이 '하나의 보석으로 반짝거릴까'는 빛나는 가치로 남기를 바라는 것이다.
-  - v: false
-    c: STRONG
+    - L9
+    - L10
+    why: ㄷ이 틀리고 ㄱ, ㄹ이 빠졌다.
+  - v: true
+    c: CORRECT
     axis: S3-59-key_word_image_object_function
     claim: opt3
     ev:
     - VIEW
+    - L1
+    - L2
+    - L4
+    - L5
+    - L6
     - L9
-    - L10
     - L11
-    why: 별들은 스스로 불에 타며 빛나는 존재로 그려지며, 화석에 묻히라는 것은 영원히 남으라는 뜻이다.
+    why: ㄱ, ㄴ, ㄹ이 맞다. 별들은 '스스로 불에 타서' 빛나며 소멸을 택하는 존재이므로 ㄷ은 틀리다.
   - v: false
-    c: MEDIUM
+    c: STRONG
     axis: S3-59-key_word_image_object_function
     claim: opt4
     ev:
     - VIEW
-    - L5
-    why: 쥐라기는 아득히 긴 시간이다.
+    - L6
+    - L9
+    why: ㄷ이 틀리고 ㄴ이 빠졌다.
   - v: false
     c: STRONG
     axis: S3-59-key_word_image_object_function
     claim: opt5
     ev:
     - VIEW
-    - L1
-    - L6
-    why: 화석(흔적)은 1연, 보석(빛남)은 2연에 나오므로 거꾸로 짝지었고, 두 연의 바람은 영원이라는 점에서 이어진다.
+    - L9
+    - L10
+    why: ㄷ이 틀리다.
   reasoning_steps: 3
   immediate_elimination: 1
-  transfer: true
+  transfer: false
 - item_id: KOR-NF4-060
   set: S3
   format: MCQ
@@ -4056,30 +4123,32 @@ items:
   stem_polarity: POSITIVE
   stem: 윗글에 나타난 '죽음'의 의미를 이해한 내용으로 가장 적절한 것은?
   options:
-  - 7~8행의 '죽음'은 1연의 새가 맞은 죽음이고, 12~13행의 '죽음'은 3연의 별들이 맞을 죽음이다.
   - 7~8행의 '죽음'은 눈물과 함께 남기를 바라는 것이고, 12~13행에서는 죽음이 결국 끝이라는 사실이 확인된다.
-  - 7~8행의 '죽음'은 화자가 피하고 싶은 것이고, 12~13행에서는 죽는 것이 죽음이 아니라고 하여 통념이 뒤집힌다.
   - 7~8행의 '죽음'은 눈물과 함께 남기를 바라는 것이고, 12~13행에서는 죽는 것이 죽음이 아니라고 하여 통념이 뒤집힌다.
+  - 7~8행의 '죽음'은 화자가 피하고 싶은 것이고, 12~13행에서는 죽는 것이 죽음이 아니라고 하여 통념이 뒤집힌다.
+  - 7~8행의 '죽음'은 1연의 새가 맞은 죽음이고, 12~13행의 '죽음'은 3연의 별들이 맞을 죽음이다.
   - 7~8행의 '죽음'은 눈물과 함께 남기를 바라는 것이고, 12~13행에서는 죽음을 맞은 '눈'이 다시 살아난다.
-  answer: 4
+  answer: 2
   second_best: 3
   judgments:
   - v: false
-    c: MEDIUM
-    axis: S3-60-theme_or_central_meaning
-    claim: opt1
-    ev:
-    - L1
-    - L7
-    why: 7행의 죽음은 새와 관계없다.
-  - v: false
     c: STRONG
     axis: S3-60-theme_or_central_meaning
-    claim: opt2
+    claim: opt1
     ev:
     - L12
     - L13
     why: 13행은 '죽음이 아니다'로 끝이라는 인식을 부정한다.
+  - v: true
+    c: CORRECT
+    axis: S3-60-theme_or_central_meaning
+    claim: opt2
+    ev:
+    - L4
+    - L7
+    - L12
+    - L13
+    why: 눈물과 나란히 '가령 죽음이라든가'가 놓이고, 13행은 영원히 죽는 것은 '죽음이 아니다'라 한다.
   - v: false
     c: STRONG
     axis: S3-60-theme_or_central_meaning
@@ -4088,16 +4157,14 @@ items:
     - L7
     - L8
     why: 13행 풀이는 맞지만 7~8행에서 죽음은 피하려는 것이 아니라 보석처럼 남을 것의 예이다.
-  - v: true
-    c: CORRECT
+  - v: false
+    c: MEDIUM
     axis: S3-60-theme_or_central_meaning
     claim: opt4
     ev:
-    - L4
+    - L1
     - L7
-    - L12
-    - L13
-    why: 눈물과 나란히 '가령 죽음이라든가'가 놓이고, 13행은 영원히 죽는 것은 '죽음이 아니다'라 한다.
+    why: 7행의 죽음은 새와 관계없다.
   - v: false
     c: STRONG
     axis: S3-60-theme_or_central_meaning
@@ -4121,11 +4188,11 @@ items:
   stem: (나)의 표현상 특징으로 적절한 것은?
   options:
   - 소리를 흉내 내는 말을 활용하여 공간의 분위기를 생생하게 드러내고 있다.
-  - 계절의 변화를 통해 시간의 흐름에 따른 정서의 변화를 드러내고 있다.
-  - 색채어를 대비하여 화자가 지향하는 세계를 선명하게 드러내고 있다.
-  - 대상을 부르는 말을 되풀이하여 그 대상에 대한 화자의 생각을 드러내고 있다.
   - 묻고 답하는 방식으로 시상을 전개하여 화자의 깨달음을 드러내고 있다.
-  answer: 4
+  - 색채어를 대비하여 화자가 지향하는 세계를 선명하게 드러내고 있다.
+  - 계절의 변화를 통해 시간의 흐름에 따른 정서의 변화를 드러내고 있다.
+  - 대상을 부르는 말을 되풀이하여 그 대상에 대한 화자의 생각을 드러내고 있다.
+  answer: 5
   second_best: 3
   judgments:
   - v: false
@@ -4136,12 +4203,12 @@ items:
     - W2.L22
     why: '''깜박거렸다''는 모양을 나타내는 말이며 소리를 흉내 내는 말은 쓰이지 않았다.'
   - v: false
-    c: WEAK
+    c: MEDIUM
     axis: S4-61-expression_method_and_effect
     claim: opt2
     ev:
-    - W2.L1
-    why: 계절이 나타나지 않는다.
+    - W2.L13
+    why: '''얼굴''에 말을 건네지만 묻고 답하는 짜임은 없다.'
   - v: false
     c: STRONG
     axis: S4-61-expression_method_and_effect
@@ -4149,21 +4216,21 @@ items:
     ev:
     - W2.L17
     why: '''검은''이라는 색채어가 있으나 대비되는 다른 색채어가 없다.'
+  - v: false
+    c: WEAK
+    axis: S4-61-expression_method_and_effect
+    claim: opt4
+    ev:
+    - W2.L1
+    why: 계절이 나타나지 않는다.
   - v: true
     c: CORRECT
     axis: S4-61-expression_method_and_effect
-    claim: opt4
+    claim: opt5
     ev:
     - W2.L10
     - W2.L11
     why: '''얼굴이여''를 되풀이하여 표정을 만들고 얇디얇은 얼굴에 대한 생각을 드러낸다.'
-  - v: false
-    c: MEDIUM
-    axis: S4-61-expression_method_and_effect
-    claim: opt5
-    ev:
-    - W2.L13
-    why: '''얼굴''에 말을 건네지만 묻고 답하는 짜임은 없다.'
   reasoning_steps: 1
   immediate_elimination: 2
   transfer: false
@@ -4178,9 +4245,9 @@ items:
   stem_polarity: POSITIVE
   stem: <보기>에서 (나)의 표현에 대한 설명으로 적절한 것만을 고른 것은?
   view:
-  - ㄱ. '어둠이 손에 배자'는 눈으로 느끼는 어둠을 손에 스며드는 것처럼 표현한다.
+  - ㄱ. '생글거리고 눈물 흘리고 찡그리며'는 얼굴이 짓는 여러 표정을 늘어놓아 얼굴의 바뀌기 쉬운 속성을 드러낸다.
   - ㄴ. '튼튼한 폐허'는 해골을, '얇디얇은'은 얼굴을 꾸며 두 대상을 맞세운다.
-  - ㄷ. '선글라스만한'과 '햇빛은 살로 변하여'는 모두 '~만한', '~처럼' 같은 말로 두 대상을 직접 견주는 직유이다.
+  - ㄷ. '선글라스만한'과 '햇빛은 살로 변하여'는 모두 한 대상을 다른 대상에 빗대는 직유이다.
   - ㄹ. '조금씩 조금씩'과 '~일 없이'의 반복은 모두 해골의 속성을 강조한다.
   options:
   - ㄱ, ㄴ
@@ -4197,7 +4264,7 @@ items:
     claim: opt1
     ev:
     - VIEW
-    - W2.L2
+    - W2.L10
     - W2.L8
     - W2.L11
     - W2.L6
@@ -4227,7 +4294,7 @@ items:
     - VIEW
     - W2.L17
     - W2.L19
-    why: '''선글라스만한''은 직유이지만 ''햇빛은 살로 변하여''는 직유가 아니므로 ㄷ이 틀리다.'
+    why: '''선글라스만한''은 직유이지만 ''햇빛은 살로 변하여''는 대상이 바뀌는 비현실적 변화이므로 ㄷ이 틀리다.'
   - v: false
     c: STRONG
     axis: S4-62-expression_method_and_effect
@@ -4236,7 +4303,7 @@ items:
     - VIEW
     - W2.L6
     - W2.L12
-    why: '''~일 없이''는 해골의 속성이지만 ''조금씩 조금씩''은 화자가 해골을 더듬는 모습이므로 ㄹ이 틀리다.'
+    why: '''~일 없이''는 해골의 속성이지만 ''조금씩 조금씩''은 화자의 행동이므로 ㄹ이 틀리다.'
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
@@ -4253,11 +4320,11 @@ items:
   options:
   - 얼굴 – 표정을 만들며 감정을 드러냄 / 해골 – 자거나 생각하거나 슬퍼하지 않음
   - 얼굴 – 마음처럼 얇디얇음 / 해골 – 튼튼한 폐허임
+  - 얼굴 – 잠시 동안만 피다 짐 / 해골 – 얼굴의 기억이 지워진 뒤의 시간까지 봄
   - 얼굴 – 해골을 늘 바라봄 / 해골 – 얼굴에 무관심하여 얼굴을 보지 않음
   - 얼굴 – 햇빛이 변한 살로 덮여 생겨남 / 해골 – 어둠 속에서 손바닥에 만져짐
-  - 얼굴 – 잠시 동안만 피다 짐 / 해골 – 얼굴의 기억이 지워진 뒤의 시간까지 봄
-  answer: 3
-  second_best: 5
+  answer: 4
+  second_best: 3
   judgments:
   - v: true
     c: MEDIUM
@@ -4275,10 +4342,18 @@ items:
     - W2.L8
     - W2.L11
     why: 바르게 정리하였다.
+  - v: true
+    c: STRONG
+    axis: S4-63-key_word_image_object_function
+    claim: opt3
+    ev:
+    - W2.L14
+    - W2.L16
+    why: 바르게 정리하였다.
   - v: false
     c: CORRECT
     axis: S4-63-key_word_image_object_function
-    claim: opt3
+    claim: opt4
     ev:
     - W2.L7
     - W2.L13
@@ -4286,20 +4361,12 @@ items:
   - v: true
     c: MEDIUM
     axis: S4-63-key_word_image_object_function
-    claim: opt4
+    claim: opt5
     ev:
     - W2.L2
     - W2.L3
     - W2.L19
     - W2.L20
-    why: 바르게 정리하였다.
-  - v: true
-    c: STRONG
-    axis: S4-63-key_word_image_object_function
-    claim: opt5
-    ev:
-    - W2.L14
-    - W2.L16
     why: 바르게 정리하였다.
   reasoning_steps: 1
   immediate_elimination: 2
@@ -4315,26 +4382,51 @@ items:
   stem_polarity: POSITIVE
   stem: (나)의 각 연과 그 연에서 두드러지는 화자의 상태를 바르게 짝지은 것은?
   options:
-  - 1연 – 낯선 것을 아끼며 살피는 호기심 / 2연 – 얼굴을 잃게 된 슬픔 / 3연 – 어색함 속에서 일상으로 돌아감
+  - 1연 – 차갑고 무엇에도 무관심한 태도 / 2연 – 얼굴을 잃게 된 슬픔 / 3연 – 얼굴을 되찾은 기쁨
+  - 1연 – 낯선 것을 아끼며 살피는 호기심 / 2연 – 얼굴을 잃게 된 슬픔 / 3연 – 얼굴을 되찾은 기쁨
+  - 1연 – 차갑고 무엇에도 무관심한 태도 / 2연 – 얼굴의 덧없음에 대한 성찰 / 3연 – 얼굴을 되찾은 기쁨
+  - 1연 – 차갑고 무엇에도 무관심한 태도 / 2연 – 얼굴을 잃게 된 슬픔 / 3연 – 어색함 속에서 일상으로 돌아감
   - 1연 – 낯선 것을 아끼며 살피는 호기심 / 2연 – 얼굴의 덧없음에 대한 성찰 / 3연 – 어색함 속에서 일상으로 돌아감
-  - 1연 – 낯선 것을 아끼며 살피는 호기심 / 2연 – 얼굴의 덧없음에 대한 성찰 / 3연 – 얼굴을 되찾은 기쁨
-  - 1연 – 차갑고 무엇에도 무관심한 태도 / 2연 – 얼굴의 덧없음에 대한 성찰 / 3연 – 어색함 속에서 일상으로 돌아감
-  - 1연 – 낯선 것을 아끼며 살피는 호기심 / 2연 – 해골이 될 앞날에 대한 두려움 / 3연 – 어색함 속에서 일상으로 돌아감
-  answer: 2
+  answer: 5
   second_best: 4
   judgments:
   - v: false
-    c: STRONG
+    c: MEDIUM
     axis: S4-64-structure_or_development
     claim: opt1
     ev:
+    - W2.L7
     - W2.L12
-    - W2.L14
-    why: 2연은 해골이 '슬퍼하는 일 없이' 얼굴을 보는 장면으로, 얼굴을 잃은 슬픔이 아니다.
+    - W2.L21
+    why: 세 연이 모두 어긋난다.
+  - v: false
+    c: STRONG
+    axis: S4-64-structure_or_development
+    claim: opt2
+    ev:
+    - W2.L12
+    - W2.L21
+    why: 1연은 맞지만 2연의 해골은 '슬퍼하는 일 없이' 보고, 3연의 얼굴은 '어색'하다.
+  - v: false
+    c: STRONG
+    axis: S4-64-structure_or_development
+    claim: opt3
+    ev:
+    - W2.L7
+    - W2.L21
+    why: 2연은 맞지만 '무관심한'은 해골의 속성이며, 3연은 기쁨이 아니라 어색함이다.
+  - v: false
+    c: STRONG
+    axis: S4-64-structure_or_development
+    claim: opt4
+    ev:
+    - W2.L7
+    - W2.L12
+    why: 3연은 맞지만 1연·2연이 어긋난다.
   - v: true
     c: CORRECT
     axis: S4-64-structure_or_development
-    claim: opt2
+    claim: opt5
     ev:
     - W2.L4
     - W2.L6
@@ -4342,30 +4434,6 @@ items:
     - W2.L21
     - W2.L23
     why: '''신기한 것을 감지한 듯'', ''아까워하며''(1연), ''잠시 동안만 피다 지는 얼굴''(2연), ''어색하여'', ''서둘러 ~ 초점을''(3연).'
-  - v: false
-    c: STRONG
-    axis: S4-64-structure_or_development
-    claim: opt3
-    ev:
-    - W2.L21
-    - W2.L22
-    why: 3연에서 되찾은 얼굴은 '어색하여' 눈을 깜박인다.
-  - v: false
-    c: STRONG
-    axis: S4-64-structure_or_development
-    claim: opt4
-    ev:
-    - W2.L4
-    - W2.L7
-    why: '''차갑고 ~ 무관심한''은 화자가 본 해골의 속성이지 화자의 태도가 아니다.'
-  - v: false
-    c: STRONG
-    axis: S4-64-structure_or_development
-    claim: opt5
-    ev:
-    - W2.L12
-    - W2.L16
-    why: 해골은 감정 없이 긴 시간을 볼 뿐 두려움은 드러나지 않는다.
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
@@ -4432,122 +4500,136 @@ items:
 - item_id: KOR-NF4-066
   set: S4
   format: MCQ
-  family: SPEAKER_ATTITUDE
+  family: COMPARISON_MATRIX
   coverage: SPEAKER_ATTITUDE_OR_EMOTION
-  difficulty: D3
-  balance: CORE_EXAM_POINT
-  core_exam_point: true
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  core_exam_point: false
   stem_polarity: POSITIVE
-  stem: (나)의 1연에서 해골을 대하는 화자의 태도로 가장 적절한 것은?
+  stem: (가)의 화자가 '별들'을 대하는 태도와 (나)의 화자가 '해골'을 대하는 태도를 비교한 것으로 가장 적절한 것은?
   options:
-  - 해골을 신기하게 여기며, 놓칠까 아까워 조금씩 살핀다.
-  - 해골을 신기하게 여기며, 한꺼번에 만져 그 모습을 빨리 확인하려 한다.
-  - 해골을 차갑고 무관심한 물체로 여기며, 그 낯섦 때문에 조심스레 거리를 둔다.
-  - 해골을 자신의 얼굴보다 나중에 생긴 것으로 여기며 낯설어한다.
-  - 해골을 신기하게 여기지만, 무엇인가를 놓쳤다는 아쉬움에 더듬기를 그만둔다.
-  answer: 1
+  - (가)는 대상에게 말을 건네 대답을 듣고, (나)는 대상이 자신을 바라보는 시선을 피한다.
+  - (가)는 대상의 소멸을 막으려 하고, (나)는 낯선 대상을 두려워하며 서둘러 손을 뗀다.
+  - (가)는 대상에게 화석에 묻히라고 당부하고, (나)는 대상을 무관심한 물체로 여겨 거리를 둔다.
+  - (가)는 소멸을 택한 대상에게 화석에 묻히라고 당부하고, (나)는 낯선 대상을 아까워하며 천천히 살핀다.
+  - (가)는 대상의 소멸을 안타까워하고, (나)는 대상이 자기 얼굴보다 나중에 생긴 것이라 여긴다.
+  answer: 4
   second_best: 3
   judgments:
-  - v: true
-    c: CORRECT
-    axis: S4-66-speaker_attitude_or_emotion
-    claim: opt1
-    ev:
-    - W2.L4
-    - W2.L5
-    - W2.L6
-    why: '''신기한 것을 감지한 듯'', ''놓쳐버릴 것 같아 / 아까워하며 조금씩 조금씩 더듬어나갔다''.'
   - v: false
     c: STRONG
     axis: S4-66-speaker_attitude_or_emotion
+    claim: opt1
+    ev:
+    - W1.L10
+    - W1.L12
+    - W2.L13
+    why: (가)에서 별들은 대답하지 않으며, (나)에서 해골의 시선을 피하는 모습은 없다.
+  - v: false
+    c: MEDIUM
+    axis: S4-66-speaker_attitude_or_emotion
     claim: opt2
     ev:
-    - W2.L5
-    why: 한꺼번에 만지면 놓칠 것 같아 그렇게 하지 않는다.
+    - W1.L11
+    - W2.L6
+    - W2.L18
+    why: (가)는 소멸을 막지 않고, (나)는 '한참 뒤에' 손을 푼다.
   - v: false
     c: STRONG
     axis: S4-66-speaker_attitude_or_emotion
     claim: opt3
     ev:
-    - W2.L6
     - W2.L7
-    why: 무관심한 물체로 그리지만 '더듬어나갔다'이므로 거리를 두지 않는다.
-  - v: false
-    c: STRONG
+    - W2.L6
+    why: (가)는 맞지만 '무관심한'은 해골의 속성이며 화자는 해골을 더듬어 나간다.
+  - v: true
+    c: CORRECT
     axis: S4-66-speaker_attitude_or_emotion
     claim: opt4
     ev:
-    - W2.L8
-    why: '''내 얼굴이 생기기 전부터 있었음직한''이다.'
+    - W1.L9
+    - W1.L10
+    - W1.L11
+    - W2.L5
+    - W2.L6
+    why: (가) '지상의 별들이여 / 묻혀라 화석에', (나) '아까워하며 조금씩 조금씩 더듬어나갔다'.
   - v: false
     c: STRONG
     axis: S4-66-speaker_attitude_or_emotion
     claim: opt5
     ev:
-    - W2.L5
-    - W2.L18
-    why: '''놓쳐버릴 것 같아''는 염려이며, 손은 ''한참 뒤에'' 푼다.'
-  reasoning_steps: 2
+    - W1.L12
+    - W1.L13
+    - W2.L8
+    why: (가)는 '죽음이 아니다'라 하여 안타까워하지 않고, (나)는 '얼굴이 생기기 전부터 있었음직한'이라 한다.
+  reasoning_steps: 3
   immediate_elimination: 1
   transfer: false
 - item_id: KOR-NF4-067
   set: S4
   format: MCQ
-  family: INFERENCE
-  coverage: KEY_WORD_IMAGE_OBJECT_FUNCTION
-  difficulty: D3
-  balance: CORE_EXAM_POINT
-  core_exam_point: true
+  family: COMPARISON_MATRIX
+  coverage: COMPARE
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  core_exam_point: false
   stem_polarity: POSITIVE
-  stem: (나)의 2연을 이해한 내용으로 가장 적절한 것은?
+  stem: (가)의 1연과 (나)의 2연을 비교한 내용으로 가장 적절한 것은?
   options:
-  - 해골이 얼굴을 바라보는 것으로 설정하여, 얼굴이 지어 온 표정을 해골이 그리워함을 드러낸다.
-  - 얼굴이 해골을 바라보는 것으로 설정하여, 잠시 피다 지는 얼굴과 그 뒤로 뻗은 긴 시간을 함께 보게 한다.
-  - 해골이 얼굴을 바라보는 것으로 설정하여, 잠시 피다 지는 얼굴과 그 뒤로 뻗은 긴 시간을 함께 보게 한다.
-  - 해골이 얼굴을 바라보는 것으로 설정하여, 얼굴이 사라지면 해골도 함께 사라짐을 드러낸다.
-  - 해골이 '너'라고 부르는 손을 바라보는 것으로 설정하여, 손이 해골을 더듬는 장면을 다시 그린다.
-  answer: 3
-  second_best: 2
+  - 둘 다 화자 자신이 겪은 일을 시간의 흐름에 따라 서술하여, 대상의 변화 과정을 차례로 보여 준다.
+  - 둘 다 유한한 것 너머에 남는 존재를 그려, (가)는 화석 속의 새를, (나)는 얼굴이 사라진 뒤에도 긴 시간을 보는 해골을 보여 준다.
+  - (가)는 '새'에게, (나)는 '얼굴'에게 말을 건네어, 두 연 모두 대상을 불러 화자의 생각을 드러낸다.
+  - (가)의 '새'와 (나)의 '해골'은 모두 지상으로 내려오지 않는 존재로, 유한한 세계와 거리를 둔다.
+  - (가)는 명령으로, (나)는 감탄으로 끝맺어, 두 연 모두 대상에 대한 화자의 바람을 직접 드러낸다.
+  answer: 2
+  second_best: 3
   judgments:
   - v: false
-    c: STRONG
-    axis: S4-67-key_word_image_object_function
+    c: MEDIUM
+    axis: S4-67-compare
     claim: opt1
     ev:
-    - W2.L12
-    why: 해골은 '슬퍼하는 일 없이' 본다.
-  - v: false
-    c: STRONG
-    axis: S4-67-key_word_image_object_function
-    claim: opt2
-    ev:
-    - W2.L13
-    why: 보는 쪽은 '내 해골'이다.
+    - W1.L1
+    - W2.L9
+    why: 두 연 모두 겪은 일을 시간 순서로 서술하지 않는다.
   - v: true
     c: CORRECT
-    axis: S4-67-key_word_image_object_function
-    claim: opt3
+    axis: S4-67-compare
+    claim: opt2
     ev:
+    - W1.L1
+    - W1.L2
+    - W1.L3
     - W2.L13
-    - W2.L14
     - W2.L16
-    why: '''내 해골은 늘 너를 보고 있네 / 잠시 동안만 피다 지는 얼굴을''과 ''긴 시간''을 본다.'
+    why: (가) 1연의 새는 화석 속에서 날고, (나) 2연의 해골은 '얼굴의 기억이 지워진 뒤에도' 이어지는 긴 시간을 본다.
   - v: false
     c: STRONG
-    axis: S4-67-key_word_image_object_function
+    axis: S4-67-compare
+    claim: opt3
+    ev:
+    - W1.L1
+    - W1.L10
+    - W2.L10
+    why: (나)는 '얼굴이여'라 부르지만, (가)에서 대상을 부르는 말('별들이여')은 3연에 있다.
+  - v: false
+    c: STRONG
+    axis: S4-67-compare
     claim: opt4
     ev:
-    - W2.L16
-    why: '''얼굴의 기억이 지워진 뒤에도 한참이나 뻗어 있는 긴 시간''을 본다.'
+    - W1.L3
+    - W2.L9
+    why: '''지상으로 내려오지 않는''은 (가)의 새에만 해당하며, 해골은 얼굴 아래에 있다.'
   - v: false
-    c: MEDIUM
-    axis: S4-67-key_word_image_object_function
+    c: STRONG
+    axis: S4-67-compare
     claim: opt5
     ev:
-    - W2.L10
-    - W2.L13
-    why: '''너''는 앞서 부른 ''얼굴''이다.'
-  reasoning_steps: 2
+    - W1.L3
+    - W1.L11
+    - W2.L17
+    why: (가)의 명령은 3연에 있고 1연은 명사로 끝난다.
+  reasoning_steps: 3
   immediate_elimination: 1
   transfer: false
 - item_id: KOR-NF4-068
@@ -4561,12 +4643,12 @@ items:
   stem_polarity: POSITIVE
   stem: (나)의 14~16행에 대한 설명으로 적절한 것은?
   options:
-  - '''피다 지는''으로 얼굴을 꽃에 빗대어, 얼굴이 해마다 다시 피어나는 끝없는 순환을 드러낸다.'
-  - '''피다 지는''으로 얼굴을 꽃에 빗대어, 얼굴의 짧은 시간과 해골이 보는 긴 시간을 맞세운다.'
-  - '''뻗어 있는''을 되풀이하여 시간을 공간처럼 그리고, 얼굴의 기억을 오래 간직하려는 의지를 드러낸다.'
   - '''얼굴 뒤로 뻗어 있는'' 시간은 얼굴이 생기기 전의 시간만을 가리켜, 해골의 오랜 과거를 강조한다.'
+  - '''피다 지는''으로 얼굴을 꽃에 빗대어, 얼굴이 해마다 다시 피어나는 끝없는 순환을 드러낸다.'
+  - '''뻗어 있는''을 되풀이하여 시간을 공간처럼 그리고, 얼굴의 기억을 오래 간직하려는 의지를 드러낸다.'
+  - '''피다 지는''으로 얼굴을 꽃에 빗대어, 얼굴의 짧은 시간과 해골이 보는 긴 시간을 맞세운다.'
   - '''피다 지는''으로 얼굴을 꽃에 빗대어, 얼굴의 아름다움과 해골의 추함을 맞세운다.'
-  answer: 2
+  answer: 4
   second_best: 3
   judgments:
   - v: false
@@ -4574,17 +4656,15 @@ items:
     axis: S4-68-expression_method_and_effect
     claim: opt1
     ev:
-    - W2.L14
-    why: '''잠시 동안만''이므로 짧음을 드러낸다.'
-  - v: true
-    c: CORRECT
+    - W2.L16
+    why: '''얼굴의 기억이 지워진 뒤에도'' 이어지는 시간까지 포함한다.'
+  - v: false
+    c: STRONG
     axis: S4-68-expression_method_and_effect
     claim: opt2
     ev:
     - W2.L14
-    - W2.L15
-    - W2.L16
-    why: 꽃처럼 '잠시 동안만 피다 지는' 얼굴과 '한참이나 뻗어 있는 긴 시간'이 대비된다.
+    why: '''잠시 동안만''이므로 짧음을 드러낸다.'
   - v: false
     c: STRONG
     axis: S4-68-expression_method_and_effect
@@ -4592,13 +4672,15 @@ items:
     ev:
     - W2.L16
     why: 시간을 공간처럼 그린 것은 맞지만, 기억이 '지워진 뒤에도'라 하므로 간직하려는 의지가 아니다.
-  - v: false
-    c: STRONG
+  - v: true
+    c: CORRECT
     axis: S4-68-expression_method_and_effect
     claim: opt4
     ev:
+    - W2.L14
+    - W2.L15
     - W2.L16
-    why: '''얼굴의 기억이 지워진 뒤에도'' 이어지는 시간까지 포함한다.'
+    why: 꽃처럼 '잠시 동안만 피다 지는' 얼굴과 '한참이나 뻗어 있는 긴 시간'이 대비된다.
   - v: false
     c: MEDIUM
     axis: S4-68-expression_method_and_effect
@@ -4622,12 +4704,12 @@ items:
   stem: (나)의 3연에 대한 이해로 적절하지 않은 것은?
   options:
   - 손을 푸는 행위를 계기로 화자는 해골을 더듬던 체험에서 벗어난다.
-  - '''햇빛은 살로 변하여''는 시적 대상이 비현실적으로 변하는 상황을 그린 것이다.'
-  - '''갑자기 뒤집어쓴 얼굴''에서 얼굴은 화자에게 잠시 낯설게 느껴진다.'
   - '''겨우 눈동자를 되찾아''에서 해골이 보던 긴 시간을 잊지 않으려는 다짐이 드러난다.'
+  - '''갑자기 뒤집어쓴 얼굴''에서 얼굴은 화자에게 잠시 낯설게 느껴진다.'
   - '''서둘러 서류 속의 숫자에 초점을 맞추''는 데서 화자가 일상의 일로 돌아가려 함을 알 수 있다.'
-  answer: 4
-  second_best: 5
+  - '''햇빛은 살로 변하여''는 시적 대상이 비현실적으로 변하는 상황을 그린 것이다.'
+  answer: 2
+  second_best: 4
   judgments:
   - v: true
     c: MEDIUM
@@ -4636,13 +4718,14 @@ items:
     ev:
     - W2.L18
     why: 손을 풀자 체험이 끝난다.
-  - v: true
-    c: STRONG
+  - v: false
+    c: CORRECT
     axis: S4-69-structure_or_development
     claim: opt2
     ev:
-    - W2.L19
-    why: 햇빛이 살로 변하는 비현실적 변화이다.
+    - W2.L22
+    - W2.L23
+    why: 눈동자를 되찾은 뒤 곧바로 '서둘러 서류 속의 숫자에 초점을 맞추'므로 긴 시간을 붙들려는 다짐이 아니다.
   - v: true
     c: MEDIUM
     axis: S4-69-structure_or_development
@@ -4650,21 +4733,20 @@ items:
     ev:
     - W2.L21
     why: '''오랫동안 없어졌다가 갑자기 뒤집어쓴 얼굴이 어색하여''.'
-  - v: false
-    c: CORRECT
+  - v: true
+    c: STRONG
     axis: S4-69-structure_or_development
     claim: opt4
     ev:
-    - W2.L22
     - W2.L23
-    why: 눈동자를 되찾은 뒤 곧바로 '서둘러 서류 속의 숫자에 초점을 맞추'므로 긴 시간을 붙들려는 다짐이 아니다.
+    why: 서둘러 숫자에 초점을 맞추며 일상으로 돌아간다.
   - v: true
     c: STRONG
     axis: S4-69-structure_or_development
     claim: opt5
     ev:
-    - W2.L23
-    why: 서둘러 숫자에 초점을 맞추며 일상으로 돌아간다.
+    - W2.L19
+    why: 햇빛이 살로 변하는 비현실적 변화이다.
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
@@ -4679,36 +4761,40 @@ items:
   stem_polarity: POSITIVE
   stem: (나)의 주제로 가장 적절한 것은?
   options:
-  - 잃어버린 과거의 자신을 되찾으려는 간절한 그리움
-  - 피곤한 일상에서 벗어나 자연으로 돌아가고자 하는 소망
-  - 죽음에 대한 두려움을 이겨 내고 얻은 새로운 삶의 의지
-  - 겉모습을 꾸미는 데에만 몰두하는 현대인에 대한 풍자
   - 얼굴과 해골의 대비를 통한 인간 존재의 유한성에 대한 성찰
-  answer: 5
+  - 얼굴 아래 숨은 해골을 통해 깨달은 죽음에 대한 두려움
+  - 해골을 덮는 얼굴을 통해 드러낸 생명력 회복의 의지
+  - 표정을 꾸미는 얼굴을 통해 비판한 현대인의 위선
+  - 해골의 눈으로 바라본 일상의 아름다움에 대한 예찬
+  answer: 1
   second_best: 4
   judgments:
-  - v: false
-    c: MEDIUM
+  - v: true
+    c: CORRECT
     axis: S4-70-theme_or_central_meaning
     claim: opt1
     ev:
-    - W2.L21
-    why: 과거의 자신에 대한 그리움이 없다.
+    - W2.L8
+    - W2.L11
+    - W2.L14
+    - W2.L16
+    why: 잠시 피다 지는 얼굴과 얼굴 이전·이후의 긴 시간을 지닌 해골을 대비해 유한성을 성찰한다.
   - v: false
-    c: WEAK
+    c: STRONG
     axis: S4-70-theme_or_central_meaning
     claim: opt2
     ev:
-    - W2.L1
-    why: 자연이 나오지 않는다.
+    - W2.L4
+    - W2.L6
+    why: 해골을 '신기한 것'으로 여기고 '아까워하며' 더듬으므로 두려움이 아니다.
   - v: false
     c: STRONG
     axis: S4-70-theme_or_central_meaning
     claim: opt3
     ev:
     - W2.L19
-    - W2.L20
-    why: 햇빛이 살로 변하는 장면을 생명력의 회복으로 보기 쉽지만, 얼굴은 '어색'하고 화자는 서둘러 일상으로 돌아간다.
+    - W2.L21
+    why: 햇빛이 살로 변해 얼굴이 되지만 그 얼굴은 '어색'하며 의지의 표현이 아니다.
   - v: false
     c: STRONG
     axis: S4-70-theme_or_central_meaning
@@ -4716,17 +4802,15 @@ items:
     ev:
     - W2.L10
     - W2.L11
-    why: 얼굴의 얇음을 말하지만 꾸밈이나 풍자의 시선은 드러나지 않는다.
-  - v: true
-    c: CORRECT
+    why: 표정을 만드는 얼굴이 나오지만 비판이나 풍자의 시선은 없다.
+  - v: false
+    c: MEDIUM
     axis: S4-70-theme_or_central_meaning
     claim: opt5
     ev:
-    - W2.L8
-    - W2.L11
-    - W2.L14
     - W2.L16
-    why: 잠시 피다 지는 얼굴과 얼굴 이전·이후의 긴 시간을 지닌 해골을 대비해 유한성을 성찰한다.
+    - W2.L23
+    why: 해골은 긴 시간을 볼 뿐이고 일상은 서둘러 돌아가는 곳으로 그려진다.
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
@@ -4741,25 +4825,22 @@ items:
   stem_polarity: POSITIVE
   stem: (나)에서 화자가 대상을 받아들이는 감각의 흐름을 정리한 것으로 가장 적절한 것은?
   options:
-  - '시각 → 촉각 → 시각: 어둠을 본 뒤 손으로 해골을 더듬고, 다시 눈으로 서류의 숫자를 본다.'
+  - '촉각 → 시각 → 촉각: 얼굴을 만진 뒤 햇빛을 보고, 다시 손으로 해골을 더듬는다.'
   - '시각 → 촉각 → 촉각: 어둠 속에서 해골을 만진 뒤, 햇빛이 변한 살을 손으로 다시 확인한다.'
   - '시각 → 시각 → 촉각: 어둠과 햇빛을 차례로 본 뒤, 마지막에 손으로 얼굴을 만져 확인한다.'
-  - '촉각 → 시각 → 촉각: 얼굴을 만진 뒤 햇빛을 보고, 다시 손으로 해골을 더듬는다.'
+  - '시각 → 촉각 → 시각: 어둠을 본 뒤 손으로 해골을 더듬고, 다시 눈으로 서류의 숫자를 본다.'
   - '시각 → 촉각 → 청각: 어둠 속에서 해골을 만진 뒤, 해골이 건네는 말을 듣는다.'
-  answer: 1
+  answer: 4
   second_best: 5
   judgments:
-  - v: true
-    c: CORRECT
+  - v: false
+    c: MEDIUM
     axis: S4-71-expression_method_and_effect
     claim: opt1
     ev:
     - W2.L2
-    - W2.L3
-    - W2.L4
-    - W2.L22
-    - W2.L23
-    why: '''얼굴은 어두웠고''(시각) → ''해골이 만져졌다'', ''더듬었다''(촉각) → ''눈을 깜박거렸다'', ''숫자에 초점을''(시각).'
+    - W2.L18
+    why: 손을 푼 뒤 다시 해골을 더듬지 않는다.
   - v: false
     c: STRONG
     axis: S4-71-expression_method_and_effect
@@ -4776,14 +4857,17 @@ items:
     - W2.L3
     - W2.L18
     why: 촉각은 가운데에 있고 마지막은 시각이다.
-  - v: false
-    c: MEDIUM
+  - v: true
+    c: CORRECT
     axis: S4-71-expression_method_and_effect
     claim: opt4
     ev:
     - W2.L2
-    - W2.L18
-    why: 손을 푼 뒤 다시 해골을 더듬지 않는다.
+    - W2.L3
+    - W2.L4
+    - W2.L22
+    - W2.L23
+    why: '''얼굴은 어두웠고''(시각) → ''해골이 만져졌다'', ''더듬었다''(촉각) → ''눈을 깜박거렸다'', ''숫자에 초점을''(시각).'
   - v: false
     c: STRONG
     axis: S4-71-expression_method_and_effect
@@ -4797,71 +4881,77 @@ items:
 - item_id: KOR-NF4-072
   set: S4
   format: MCQ
-  family: VIEW_APPLICATION
+  family: MULTI_JUDGMENT
   coverage: STRUCTURE_OR_DEVELOPMENT
-  difficulty: D3
-  balance: CORE_EXAM_POINT
-  core_exam_point: true
+  difficulty: D4
+  balance: ADVANCED_DISCRIMINATION
+  core_exam_point: false
   stem_polarity: POSITIVE
-  stem: <보기>를 바탕으로 (나)를 감상한 내용으로 적절한 것은?
+  stem: <보기>를 바탕으로 (나)를 감상한 내용으로 적절한 것만을 고른 것은?
   view:
   - 일상 속 익숙한 몸의 감각이 갑자기 낯설어지는 순간, 사람은 평소 보지 못하던 존재의 모습을 마주하기도 한다. 그러나 이러한 낯선 순간은 오래 이어지지 않고, 사람은 다시 익숙한 일상으로 돌아가곤 한다.
+  - ㄱ. 피곤한 눈을 손으로 가리는 행동은 익숙한 몸의 감각에서 낯선 체험이 시작되는 계기이다.
+  - ㄴ. 해골을 '신기한 것'으로 감지하는 것은 평소 보지 못하던 존재의 모습을 마주하는 순간이다.
+  - ㄷ. 해골이 '늘' 얼굴을 보고 있다는 것은 화자의 낯선 체험이 일상 내내 이어진다는 뜻이다.
+  - ㄹ. 손을 푼 뒤 서류 속 숫자에 초점을 맞추는 것은 익숙한 일상으로 돌아가는 모습이다.
   options:
-  - 해골을 '아까워하며' 더듬는 데서, 낯선 순간이 빨리 끝나기를 바라는 화자의 마음을 알 수 있다.
-  - '''눈이 피곤하고 침침하여'' 얼굴을 가리는 데서, 익숙한 일상의 한 순간에서 낯선 체험이 시작됨을 알 수 있다.'
-  - 해골이 '늘' 얼굴을 보고 있다는 데서, 낯선 순간이 화자의 일상 속에서 오래 이어짐을 알 수 있다.
-  - '''햇빛은 살로 변하여''에서, 낯선 순간이 끝나지 않고 더욱 깊어짐을 알 수 있다.'
-  - '''서둘러 서류 속의 숫자에 초점을 맞추''는 데서, 일상으로 돌아가기를 끝내 거부하는 화자의 모습을 알 수 있다.'
-  answer: 2
-  second_best: 3
+  - ㄱ, ㄴ
+  - ㄱ, ㄹ
+  - ㄱ, ㄴ, ㄹ
+  - ㄴ, ㄷ, ㄹ
+  - ㄱ, ㄴ, ㄷ, ㄹ
+  answer: 3
+  second_best: 5
   judgments:
   - v: false
-    c: MEDIUM
+    c: STRONG
     axis: S4-72-structure_or_development
     claim: opt1
     ev:
     - VIEW
-    - W2.L5
-    - W2.L6
-    why: 놓칠까 아까워하므로 오히려 오래 살피려 한다.
-  - v: true
-    c: CORRECT
+    - W2.L23
+    why: ㄹ도 맞는 진술이다.
+  - v: false
+    c: STRONG
     axis: S4-72-structure_or_development
     claim: opt2
     ev:
     - VIEW
-    - W2.L1
-    - W2.L3
-    why: 피곤한 눈을 가리는 평범한 행동에서 해골이 만져지는 낯선 체험이 시작된다.
-  - v: false
-    c: STRONG
+    - W2.L4
+    why: ㄴ도 맞는 진술이다.
+  - v: true
+    c: CORRECT
     axis: S4-72-structure_or_development
     claim: opt3
     ev:
     - VIEW
+    - W2.L1
+    - W2.L4
     - W2.L13
     - W2.L18
-    why: 해골이 늘 보고 있다는 것은 해골의 속성이고, 화자가 그것을 느끼는 낯선 순간은 손을 풀면서 끝난다.
+    - W2.L23
+    why: ㄱ, ㄴ, ㄹ이 맞다. '늘'은 해골의 속성이며, 화자의 낯선 체험은 손을 풀면서 끝나므로 ㄷ은 틀리다.
   - v: false
     c: STRONG
     axis: S4-72-structure_or_development
     claim: opt4
     ev:
     - VIEW
-    - W2.L19
-    - W2.L20
-    why: 햇빛이 살로 변해 얼굴이 되면서 낯선 순간이 끝나고 일상으로 돌아온다.
+    - W2.L13
+    - W2.L18
+    why: ㄷ이 틀리고 ㄱ이 빠졌다.
   - v: false
-    c: MEDIUM
+    c: STRONG
     axis: S4-72-structure_or_development
     claim: opt5
     ev:
     - VIEW
-    - W2.L23
-    why: 서둘러 초점을 맞추는 것은 일상으로 돌아가는 모습이다.
-  reasoning_steps: 2
+    - W2.L13
+    - W2.L18
+    why: ㄷ이 틀리다.
+  reasoning_steps: 3
   immediate_elimination: 1
-  transfer: true
+  transfer: false
 - item_id: KOR-NF4-073
   set: S4
   format: MCQ
@@ -5011,12 +5101,12 @@ items:
   stem: (가)와 (나)를 비교한 내용으로 적절하지 않은 것은?
   options:
   - (가)는 화석 속의 새에 대한 상상에서, (나)는 얼굴을 손으로 가리는 일상의 행동에서 시상이 출발한다.
-  - (가)는 소멸을 넘어 영원히 남기를 바라고, (나)는 얼굴과 해골을 대비하여 존재의 유한함을 성찰한다.
-  - (가)는 '별들이여'로, (나)는 '얼굴이여'로 대상을 불러 말을 건넨다.
   - (가)는 대상의 소멸을 막으려는 뜻을 드러내고, (나)는 해골의 지속성을 부러워하는 마음을 드러낸다.
+  - (가)는 '별들이여'로, (나)는 '얼굴이여'로 대상을 불러 말을 건넨다.
   - (가)의 '내가'는 2연에서만 드러나지만, (나)의 '나'는 화자의 행동을 서술하는 데 여러 번 쓰인다.
-  answer: 4
-  second_best: 5
+  - (가)는 소멸을 넘어 영원히 남기를 바라고, (나)는 얼굴과 해골을 대비하여 존재의 유한함을 성찰한다.
+  answer: 2
+  second_best: 4
   judgments:
   - v: true
     c: MEDIUM
@@ -5026,15 +5116,16 @@ items:
     - W1.L1
     - W2.L1
     why: 적절하다.
-  - v: true
-    c: STRONG
+  - v: false
+    c: CORRECT
     axis: S4-75-compare
     claim: opt2
     ev:
-    - W1.L12
-    - W1.L13
-    - W2.L14
-    why: 적절하다.
+    - W1.L9
+    - W1.L11
+    - W2.L7
+    - W2.L21
+    why: (가)는 소멸을 택한 별들에게 화석에 묻히라고 하여 소멸을 막지 않으며, (나)의 화자는 해골을 '무관심한 물체', '폐허'로 볼 뿐 부러워하지 않는다.
   - v: true
     c: MEDIUM
     axis: S4-75-compare
@@ -5043,26 +5134,25 @@ items:
     - W1.L10
     - W2.L10
     why: 적절하다.
-  - v: false
-    c: CORRECT
-    axis: S4-75-compare
-    claim: opt4
-    ev:
-    - W1.L9
-    - W1.L11
-    - W2.L7
-    - W2.L21
-    why: (가)는 소멸을 택한 별들에게 화석에 묻히라고 하여 소멸을 막지 않으며, (나)의 화자는 해골을 '무관심한 물체', '폐허'로 볼 뿐 부러워하지 않는다.
   - v: true
     c: STRONG
     axis: S4-75-compare
-    claim: opt5
+    claim: opt4
     ev:
     - W1.L4
     - W2.L4
     - W2.L18
     - W2.L22
     why: '''내 손은'', ''나는'' 등으로 화자의 행동을 여러 번 서술한다. 적절하다.'
+  - v: true
+    c: STRONG
+    axis: S4-75-compare
+    claim: opt5
+    ev:
+    - W1.L12
+    - W1.L13
+    - W2.L14
+    why: 적절하다.
   reasoning_steps: 2
   immediate_elimination: 1
   transfer: false
@@ -5081,10 +5171,10 @@ items:
   options:
   - (가)의 '쥐라기 지층 어느 하늘 아래'와 (나)의 '햇빛은 살로 변하여'는 모두 공간을 비현실적으로 재구성한 것이다.
   - (가)의 '지상의 별들'과 (나)의 '튼튼한 폐허'는 모두 시적 대상이 비현실적 변화를 겪는 상황을 형상화한 것이다.
-  - (가)의 '영원히 죽는 것'과 (나)의 '튼튼한 폐허'는 대비되는 시어가 연결되어 새로운 의미가 부여된 것이다.
-  - (가)의 '묻혀라 화석에.'와 (나)의 '서류 속의 숫자'는 모두 현실에서 불가능한 상황을 바라는 태도를 드러낸다.
   - (가)의 '새가 난다'와 (나)의 '해골이 만져졌다'는 모두 시간을 비현실적으로 재구성하여 과거로 돌아간 상황이다.
-  answer: 3
+  - (가)의 '묻혀라 화석에.'와 (나)의 '서류 속의 숫자'는 모두 현실에서 불가능한 상황을 바라는 태도를 드러낸다.
+  - (가)의 '영원히 죽는 것'과 (나)의 '튼튼한 폐허'는 대비되는 시어가 연결되어 새로운 의미가 부여된 것이다.
+  answer: 5
   second_best: 1
   judgments:
   - v: false
@@ -5105,15 +5195,15 @@ items:
     - W1.L10
     - W2.L8
     why: 둘 다 변화를 겪는 상황이 아니라 이질적인 말을 결합한 표현이다.
-  - v: true
-    c: CORRECT
+  - v: false
+    c: MEDIUM
     axis: S4-76-expression_method_and_effect
     claim: opt3
     ev:
     - VIEW
-    - W1.L12
-    - W2.L8
-    why: '''영원히''와 ''죽는'', ''튼튼한''과 ''폐허''가 연결되어 소멸이 영원이 되고 폐허가 지속성을 얻는 새 의미가 생긴다.'
+    - W1.L2
+    - W2.L3
+    why: 과거로 돌아간 상황이 아니다.
   - v: false
     c: MEDIUM
     axis: S4-76-expression_method_and_effect
@@ -5123,15 +5213,15 @@ items:
     - W1.L11
     - W2.L23
     why: (나)의 서류 속 숫자는 일상으로 돌아온 장면이다.
-  - v: false
-    c: MEDIUM
+  - v: true
+    c: CORRECT
     axis: S4-76-expression_method_and_effect
     claim: opt5
     ev:
     - VIEW
-    - W1.L2
-    - W2.L3
-    why: 과거로 돌아간 상황이 아니다.
+    - W1.L12
+    - W2.L8
+    why: '''영원히''와 ''죽는'', ''튼튼한''과 ''폐허''가 연결되어 소멸이 영원이 되고 폐허가 지속성을 얻는 새 의미가 생긴다.'
   reasoning_steps: 3
   immediate_elimination: 1
   transfer: true
@@ -5343,26 +5433,28 @@ items:
   family: INFERENCE
   coverage: THEME_OR_CENTRAL_MEANING
   difficulty: D4
-  balance: ADVANCED_DISCRIMINATION
-  core_exam_point: false
+  balance: CORE_EXAM_POINT
+  core_exam_point: true
   stem_polarity: POSITIVE
   stem: (나)에서 '얼굴'에 대한 화자의 인식이 달라지는 양상으로 가장 적절한 것은?
   options:
-  - 낯설던 해골이 손을 푼 뒤에는 익숙해지고, 얼굴은 처음부터 끝까지 익숙한 것으로 남는다.
-  - 늘 지니던 얼굴이 해골을 마주한 뒤 '뒤집어쓴' 것처럼 어색해져, 화자는 얼굴을 다시 받아들이지 않으려 한다.
   - 늘 지니던 얼굴이 해골을 마주한 뒤 '뒤집어쓴' 것처럼 어색해져, 익숙한 것이 낯설어진다.
+  - 늘 지니던 얼굴이 해골을 마주한 뒤 '뒤집어쓴' 것처럼 어색해져, 화자는 얼굴을 다시 받아들이지 않으려 한다.
+  - 낯설던 해골이 손을 푼 뒤에는 익숙해지고, 얼굴은 처음부터 끝까지 익숙한 것으로 남는다.
   - 해골을 만지기 전부터 얼굴을 어색하게 여기던 화자가, 해골을 만진 뒤 얼굴의 소중함을 깨닫는다.
   - 얼굴이 해골보다 오래간다는 것을 깨달아, 화자는 얼굴을 '튼튼한 폐허'라 부르게 된다.
-  answer: 3
+  answer: 1
   second_best: 2
   judgments:
-  - v: false
-    c: STRONG
+  - v: true
+    c: CORRECT
     axis: S4-80-theme_or_central_meaning
     claim: opt1
     ev:
+    - W2.L1
     - W2.L21
-    why: 마지막에 얼굴이 어색해진다.
+    - W2.L22
+    why: 피곤한 눈을 가리던 익숙한 얼굴이 손을 푼 뒤 '뒤집어쓴' 것처럼 '어색하여' 눈을 깜박인다.
   - v: false
     c: STRONG
     axis: S4-80-theme_or_central_meaning
@@ -5371,15 +5463,13 @@ items:
     - W2.L22
     - W2.L23
     why: 어색해하지만 '겨우 눈동자를 되찾아' 서둘러 일상에 맞춘다.
-  - v: true
-    c: CORRECT
+  - v: false
+    c: STRONG
     axis: S4-80-theme_or_central_meaning
     claim: opt3
     ev:
-    - W2.L1
     - W2.L21
-    - W2.L22
-    why: 피곤한 눈을 가리던 익숙한 얼굴이 손을 푼 뒤 '뒤집어쓴' 것처럼 '어색하여' 눈을 깜박인다.
+    why: 마지막에 얼굴이 어색해진다.
   - v: false
     c: MEDIUM
     axis: S4-80-theme_or_central_meaning

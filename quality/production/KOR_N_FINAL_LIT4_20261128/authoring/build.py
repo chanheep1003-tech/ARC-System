@@ -35,24 +35,35 @@ for it in items:
         it["o"] = list(it["o"]); it["o"][pos - 1] = tup
     import revisions4  # noqa: E402
     it.update(revisions4.REV4.get(it["n"], {}))
+    import revisions5  # noqa: E402
+    it.update(revisions5.REV5.get(it["n"], {}))
+    if it["n"] in (19, 38, 57, 80):
+        it["bal"] = "CORE"
     if it["n"] == 60:
         it["opts"] = [re.sub(r"(?<!~)13행", "12~13행", o) for o in it["opts"]]
     assert len(it["opts"]) == 5 and len(it["o"]) == 5, it["n"]
 
 # ---- target key sequence
-rng = random.Random(20261128)
-counts, seq = Counter(), []
-isfixed = lambda it: it.get("fixed") or it["n"] in FIXED_EXTRA or it["opts"][0][:1] in ("㉠", "ⓐ")
-for idx, it in enumerate(items):
-    if isfixed(it):
-        k = it["key"]
-    else:
-        nxt = items[idx + 1]["key"] if idx + 1 < len(items) and isfixed(items[idx + 1]) else None
-        cands = [p for p in range(1, 6) if not (len(seq) >= 2 and seq[-1] == seq[-2] == p)
-                 and not (seq and seq[-1] == p == nxt)]
-        low = min(counts[p] for p in cands)
-        k = rng.choice([p for p in cands if counts[p] == low])
-    seq.append(k); counts[k] += 1
+def make_seq(seed):
+    rng = random.Random(seed)
+    counts, seq = Counter(), []
+    isfixed = lambda it: it.get("fixed") or it["n"] in FIXED_EXTRA or it["opts"][0][:1] in ("㉠", "ⓐ")
+    for idx, it in enumerate(items):
+        if isfixed(it):
+            k = it["key"]
+        else:
+            nxt = items[idx + 1]["key"] if idx + 1 < len(items) and isfixed(items[idx + 1]) else None
+            cands = [p for p in range(1, 6) if not (len(seq) >= 2 and seq[-1] == seq[-2] == p)
+                     and not (seq and seq[-1] == p == nxt)]
+            low = min(counts[p] for p in cands)
+            k = rng.choice([p for p in cands if counts[p] == low])
+        seq.append(k); counts[k] += 1
+    return seq, counts
+
+for _seed in range(20261128, 20261328):
+    seq, counts = make_seq(_seed)
+    if max(len(m.group(0)) for m in re.finditer(r"(.)\1*", "".join(map(str, seq)))) <= 2 and max(counts.values()) <= 17:
+        break
 
 def swap(it, target):
     k = it["key"]
