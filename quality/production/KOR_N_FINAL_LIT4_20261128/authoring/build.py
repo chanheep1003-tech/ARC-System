@@ -37,6 +37,8 @@ for it in items:
     it.update(revisions4.REV4.get(it["n"], {}))
     import revisions5  # noqa: E402
     it.update(revisions5.REV5.get(it["n"], {}))
+    import revisions6  # noqa: E402
+    it.update(revisions6.REV6.get(it["n"], {}))
     if it["n"] in (19, 38, 57, 80):
         it["bal"] = "CORE"
     if it["n"] == 60:
@@ -124,7 +126,8 @@ SETS = [
     "* 삼고초려~또 아닌가: 뛰어난 인재를 등용하려 한 촉한의 유비와 송 태조에 대한 이야기.",
     "* 고요직설: 성군 요 임금과 순 임금을 모신 어진 신하들을 일컬음.",
     "* 오현금 남풍시: 순 임금이 오현금을 타면서 백성의 평안함을 노래한 시.",
-    "* 범려의 오호주: 월나라 범려가 은거할 때 탔던 배."]},
+    "* 범려의 오호주: 월나라 범려가 은거할 때 탔던 배.",
+    "* 행 번호는 '(중략)'을 34행으로 세었다."]},
  {"id": "S2", "prompt": "다음 글을 읽고 물음에 답하시오.",
   "works": [{"label": None, "source_text_id": "KOR-SUPP-2026F-LIT-JOSANG-MUNJIP", "marks": [
     {"find": "멀뚱히 내려다본다", "replace": "ⓐ멀뚱히 내려다본다"},
