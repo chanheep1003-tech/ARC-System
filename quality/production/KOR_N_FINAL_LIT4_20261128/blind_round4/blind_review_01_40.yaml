@@ -1,0 +1,330 @@
+solver: independent blind solver (no key consulted)
+range: items 1-40
+source_file: student_manuscript.md
+set_notes:
+  - "원유가 verse numbering skips line 34: 〔30〕 = 당우의 태평성대, lines 31-33 follow, then (중략), then 〔35〕 = 공명을 크게 닦고. The (중략) row silently consumes number 34. All item line references (9, 11, 13, 15, 16, 17-23, 24, 25, 26-27, 30-33, 35-37, 38, 41, 42, 43-44, 44, 45-46) match the printed 〔5〕 markers, but the gap should be stated or the markers renumbered."
+  - "Cross-item leakage within 원유가: Q12-2 / Q16-2 state that 감군은 shows the speaker still minding the king (gives away Q11 = 38행); Q14-4 states 황하수 한번 맑아 = 성군 출현 (supports Q9 ㄷ); Q4 ㄹ and Q12-5 test the same 그대 point; Q8 ㄹ and Q12-4 both test 꿈결인가 잠결인가."
+  - "Cross-item leakage within 조상의 문집: Q29-1/5 and Q26-4 print that the ground after ㉣ is 조부의 사람됨 (gives away Q37 ㉮); Q24 ㄱ/ㄴ/ㄷ triggers and Q33 order use the same four reactions."
+items:
+- item_id: KOR-NF4-001
+  answer: 2
+  first_pass_top3: [2, 3, 5]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-002
+  answer: 1
+  first_pass_top3: [1, 3, 5]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-003
+  answer: 4
+  first_pass_top3: [4, 3, 1]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-004
+  answer: 4
+  first_pass_top3: [4, 5, 2]
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-005
+  answer: 2
+  first_pass_top3: [2, 3, 1]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-006
+  answer: 5
+  first_pass_top3: [5, 1, 4]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-007
+  answer: 3
+  first_pass_top3: [3, 2, 1]
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-008
+  answer: 2
+  first_pass_top3: [2, 4, 1]
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-009
+  answer: 3
+  first_pass_top3: [3, 2, 4]
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-010
+  answer: 1
+  first_pass_top3: [1, 3, 2]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-011
+  answer: 4
+  first_pass_top3: [4, 3, 2]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: [c]
+  flag_reasons:
+    c: "Q12-2 and Q16-2 (both printed as true statements) say 감군은 shows the retired speaker still minding the king's grace, so 38행 is readable off neighbouring items without the passage."
+- item_id: KOR-NF4-012
+  answer: 5
+  first_pass_top3: [5, 4, 3]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-013
+  answer: 3
+  first_pass_top3: [3, 5, 1]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-014
+  answer: 5
+  first_pass_top3: [5, 4, 1]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-015
+  answer: 1
+  first_pass_top3: [1, 2, 3]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-016
+  answer: 2
+  first_pass_top3: [2, 1, 4]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-017
+  answer: 2
+  first_pass_top3: [2, 1, 4]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-018
+  answer: 1
+  first_pass_top3: [1, 4, 2]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-019
+  answer: 5
+  first_pass_top3: [5, 2, 4]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-020
+  answer: 3
+  first_pass_top3: [3, 2, 1]
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-021
+  answer: 4
+  first_pass_top3: [4, 3, 1]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-022
+  answer: 5
+  first_pass_top3: [5, 2, 4]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-023
+  answer: 4
+  first_pass_top3: [4, 2, 5]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-024
+  answer: 3
+  first_pass_top3: [3, 1, 2]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-025
+  answer: 1
+  first_pass_top3: [1, 2, 3]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-026
+  answer: 1
+  first_pass_top3: [1, 5, 2]
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-027
+  answer: 4
+  first_pass_top3: [4, 3, 1]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-028
+  answer: 2
+  first_pass_top3: [2, 4, 1]
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-029
+  answer: 3
+  first_pass_top3: [3, 1, 5]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-030
+  answer: 5
+  first_pass_top3: [5, 2, 1]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-031
+  answer: 1
+  first_pass_top3: [1, 4, 2]
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-032
+  answer: 3
+  first_pass_top3: [3, 4, 2]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-033
+  answer: 4
+  first_pass_top3: [4, 1, 2]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-034
+  answer: 5
+  first_pass_top3: [5, 4, 1]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-035
+  answer: 3
+  first_pass_top3: [3, 5, 1]
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-036
+  answer: 2
+  first_pass_top3: [2, 3, 5]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-037
+  answer: 2
+  first_pass_top3: [2, 3, 4]
+  second_best: 3
+  difficulty: D3
+  confidence: MEDIUM
+  flags: [c]
+  flag_reasons:
+    c: "Q29-1/5 and Q26-4 print that the old man's ground after ㉣ is 조부의 사람됨 (학식 높은 선비·애국자), which hands over slot ㉮ and leaves only options 1/2."
+- item_id: KOR-NF4-038
+  answer: 1
+  first_pass_top3: [1, 2, 5]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-039
+  answer: 3
+  first_pass_top3: [3, 5, 1]
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-040
+  answer: 4
+  first_pass_top3: [4, 3, 2]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}

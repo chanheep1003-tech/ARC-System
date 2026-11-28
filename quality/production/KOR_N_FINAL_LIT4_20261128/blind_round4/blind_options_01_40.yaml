@@ -1,0 +1,320 @@
+solver: independent blind solver (no key consulted)
+line_map_note: "원유가 verse lines read from the 〔5〕 markers: 1 녹수청산 … 7 나도 또한 신선이다, 9 화전난무, 10 통소, 11 이 놀음 다한 후에, 12 서울 거리, 13 소년들, 14 ㉡출세가, 15 자네로세, 16 기쁘게 대답하되, 17 이윤, 18 여상, 19 나도 또한 그 아니랴/㉢, 20 충효, 21 바라나니 성군, 22 급암, 23 노중련, 24 황하수/성상, 25 ㉣이 노래 들으시면, 26 삼고초려, 27 제갈량/조보, 28 의정부, 29 하교하되, 30 당우, 31 고요직설, 32 초야, 33 오현금; (중략) takes number 34; 35 공명을 크게 닦고, 36 범려/한강수, 37 소광/담양군, 38 감군은, 39 형 오소, 40 그도 그러하거니와, 41 좋은 벗, 42 그대, 43 아이야 술 부어라/㉤, 44 꿈결인가, 45 광명한, 46 질병 없이."
+items:
+- item_id: KOR-NF4-001
+  polarity: positive
+  verdicts:
+    1: {tf: F, ev: "The boys ask (13-14 '늦게 옴은 웬일인고'); the speaker answers and does not question them."}
+    2: {tf: T, ev: "1-10 삼간초당 풍류 → 11 '이 놀음 다한 후에 공명을 기약하고' → 12 '서울 거리 찾아가니'."}
+    3: {tf: F, ev: "The 의정부 scene is hypothetical (25 '들으시면'), not something remembered."}
+    4: {tf: F, ev: "37 '소광의 천일금을 담양군에 흩어두고': the speaker gives the money out; he does not receive it from villagers."}
+    5: {tf: F, ev: "Ends with 45-46 '질병 없이 살아감을 진실로 바라노라'; no regret about retiring."}
+- item_id: KOR-NF4-002
+  polarity: negative
+  verdicts:
+    1: {tf: F, ev: "No seasonal progression. 9행 mentions 여름/가을 inside one 한문 line, and 석양 (3) is a time of day. Weak but defensible distractor."}
+    2: {tf: T, ev: "이윤·여상·급암·노중련 (17-23) used to stress the speaker's resolve."}
+    3: {tf: T, ev: "43 '아이야 술 부어라', 42 '깨지 마오'."}
+    4: {tf: T, ev: "21 '바라나니 성군이요 생각하니 명주로다', 39 '형 오소 아우 오소'."}
+    5: {tf: T, ev: "6 '무릉도원이 여기 아닌가'."}
+- item_id: KOR-NF4-003
+  polarity: positive
+  verdicts:
+    1: {tf: F, ev: "ⓐ is the starting place before 공명 (2); the place he returns to is 담양."}
+    2: {tf: F, ev: "ⓑ is where the boys welcome him; he is not hiding."}
+    3: {tf: F, ev: "ⓒ belongs to the imagined summons; '실제로' is false."}
+    4: {tf: T, ev: "35-36 '벼슬 그만 아뢴 후에 범려의 오호주로 한강수 건너와서'."}
+    5: {tf: F, ev: "ⓔ is where he scatters wealth after retiring (37)."}
+- item_id: KOR-NF4-004
+  polarity: positive (ㄱㄴㄷㄹ)
+  verdicts:
+    ㄱ: {tf: F, ev: "15 '부르나니 자네로세' = the speaker; 42 '그대에게 권한 한 잔 오래 취해 깨지 마오' = the speaker offers a cup to a companion, so 그대 ≠ the speaker."}
+    ㄴ: {tf: T, ev: "13-15 the boys speak; 16 '기쁘게 대답하되'."}
+    ㄷ: {tf: T, ev: "24 '우리 성상 나계시니' → 25 '들으시면' → 29 '하교하되' → 30-33 the king speaks."}
+    ㄹ: {tf: T, ev: "40-42: he looks at the people around him, '좋은 벗', and offers '그대' a cup."}
+  options: {1: F, 2: F, 3: F, 4: T, 5: F}
+  note: "ㄱ hinges on who says line 42. The reading 'friends address the speaker as 그대' is possible but weak, because 43 '아이야 술 부어라' keeps the speaker as host. Q12-5 tests the same point."
+- item_id: KOR-NF4-005
+  polarity: positive
+  verdicts:
+    1: {tf: F, ev: "㉠ (6) is in the nature section, before the boys appear."}
+    2: {tf: T, ev: "㉡ is the boys' line to the speaker; 16-19 he answers with the 이윤·여상 고사."}
+    3: {tf: F, ev: "㉢ (19) is the speaker describing himself, not the king."}
+    4: {tf: F, ev: "㉣ (25) is a hypothetical in the pre-appointment section, not a memory after retirement."}
+    5: {tf: F, ev: "㉤ (43) comes after retirement at home, not on arrival in Seoul."}
+- item_id: KOR-NF4-006
+  polarity: positive (pairing)
+  verdicts:
+    A: "이윤 신야 농사 / 여상 위빈 낚시 before meeting 탕·문왕 = 등용되기 이전의 처지 (parallel to his own late rise). '신하로서 지닐 자세' is partly arguable, but no option pairs it with a correct B."
+    B: "급암 직신, 노중련 의사 = 신하로서 지닐 자세."
+    C: "범려 오호주, 소광 천일금 after 벼슬 그만 = 공명을 이룬 이후의 삶."
+  options: {1: "F (B wrong)", 2: "F", 3: "F", 4: "F", 5: "T"}
+- item_id: KOR-NF4-007
+  polarity: positive (pairing)
+  verdicts:
+    ㄱ: "'내 벌써 하려 하나' = meant to achieve it but has not yet (since he lacked worthy ministers)."
+    ㄴ: "'고요직설 못 얻어서' = the cause is not having found worthy ministers."
+    ㄷ: "32 '이날에야 만났으니' → 33 asks when the 남풍시 age will come = hope of achieving it with the speaker."
+  options: {1: F, 2: F, 3: T, 4: F, 5: F}
+  note: "Choosing the majority value in each slot gives option 5, so there is no surface cue."
+- item_id: KOR-NF4-008
+  polarity: positive (ㄱㄴㄷㄹ)
+  verdicts:
+    ㄱ: {tf: T, ev: "25 '이 노래 들으시면' → 26-33 the appointment scene."}
+    ㄴ: {tf: F, ev: "26-27 compare the king to 유비/송 태조 and the speaker to 제갈량/조보; the speaker has not met them."}
+    ㄷ: {tf: T, ev: "35-37 범려·소광."}
+    ㄹ: {tf: F, ev: "'꿈결인가 잠결인가' (44) expresses rapture; it does not reveal that everything was a dream."}
+  options: {1: F, 2: T, 3: F, 4: F, 5: F}
+  note: "ㄹ cites '43~44행' but the phrase is only in 44. The range is harmless but imprecise. Line 26 '도원결의 송 태조' is odd in the source (도원결의 belongs to 유비) and is not tested."
+- item_id: KOR-NF4-009
+  polarity: positive (pairing)
+  verdicts:
+    ㄱ: "'기쁘게 대답하되' (16). '늦게 옴은 웬일인고' is the boys' question."
+    ㄴ: "'충신열사 후예로서' (19). '바라나니 성군이요' concerns the king."
+    ㄷ: "'우리 성상 나계시니' (24). '들으시면' is hypothetical."
+  options: {1: F, 2: F, 3: T, 4: F, 5: F}
+- item_id: KOR-NF4-010
+  polarity: positive
+  verdicts:
+    1: {tf: T, ev: "11 '이 놀음 다한 후에 공명을 기약하고'."}
+    2: {tf: F, ev: "16 moves from the boys' words to the speaker's answer, not to the king's 하교."}
+    3: {tf: F, ev: "25 moves from the answer to the imagined summons."}
+    4: {tf: F, ev: "35 moves from the 하교 to retirement."}
+    5: {tf: F, ev: "43 does not return to 공명."}
+- item_id: KOR-NF4-011
+  polarity: positive
+  verdicts:
+    1: {tf: F, ev: "21 comes before appointment (expectation)."}
+    2: {tf: F, ev: "24 comes before appointment."}
+    3: {tf: F, ev: "35 is the retirement itself; no thought of the king."}
+    4: {tf: T, ev: "38 '감군은(感君恩) 한 곡조'."}
+    5: {tf: F, ev: "39 is about village goodwill."}
+  note: "Leaked by Q12-2 and Q16-2."
+- item_id: KOR-NF4-012
+  polarity: negative
+  verdicts:
+    1: {tf: T, ev: "35."}
+    2: {tf: T, ev: "38."}
+    3: {tf: T, ev: "37."}
+    4: {tf: T, ev: "44, deep 흥."}
+    5: {tf: F, ev: "그대 (42) is a companion at the home banquet (40-41), not the Seoul boys of line 15."}
+- item_id: KOR-NF4-013
+  polarity: positive (ㄱㄴㄷㄹ)
+  verdicts:
+    ㄱ: {tf: T, ev: "9 화전난무 봉삼하요… 한문 투."}
+    ㄴ: {tf: T, ev: "17-23 고사 → 19 '나도 또한 그 아니랴'."}
+    ㄷ: {tf: F, ev: "Office-holding is imagined (25 '들으시면'), not actually experienced."}
+    ㄹ: {tf: T, ev: "46 '진실로 바라노라'."}
+  options: {1: F, 2: F, 3: T, 4: F, 5: F}
+- item_id: KOR-NF4-014
+  polarity: negative
+  verdicts:
+    1: {tf: T, ev: "Overall 흥 (6-10)."}
+    2: {tf: T, ev: "11."}
+    3: {tf: T, ev: "41."}
+    4: {tf: T, ev: "24 황하수 맑음 = sign of a sage king."}
+    5: {tf: F, ev: "21 '바라나니' expresses hope; he is not yet serving the king."}
+- item_id: KOR-NF4-015
+  polarity: positive
+  verdicts:
+    1: {tf: T, ev: "Three phases: 1-10, 11-33, 35-46."}
+    2: {tf: F, ev: "Omits retirement; he leaves office."}
+    3: {tf: F, ev: "He does not forget the king (38)."}
+    4: {tf: F, ev: "No conflict; 풍류 is not chosen over 공명."}
+    5: {tf: F, ev: "He is (imaginatively) appointed."}
+- item_id: KOR-NF4-016
+  polarity: positive
+  verdicts:
+    1: {tf: F, ev: "He later returns to 처 (35-46), so '완전히 돌아서는' is false."}
+    2: {tf: T, ev: "35 벼슬 그만 → 38 감군은."}
+    3: {tf: F, ev: "7 is satisfaction, not resignation; his career is not blocked."}
+    4: {tf: F, ev: "He goes to Seoul eagerly; no conflict."}
+    5: {tf: F, ev: "No frustration in office; he retires after achieving 공명."}
+- item_id: KOR-NF4-017
+  polarity: positive (ㄱㄴㄷㄹ)
+  verdicts:
+    ㄱ: {tf: T, ev: "11 '이 놀음' refers back to 1-10."}
+    ㄴ: {tf: F, ev: "33 '오현금 남풍시는 묻노라 어느 때인고' is the king's question about an age; nobody plays or sings before the king."}
+    ㄷ: {tf: T, ev: "11 공명을 기약 / 46 질병 없이 살아감을 바라노라."}
+    ㄹ: {tf: F, ev: "The first 놀음 is in the mountains and the second at home; neither is with the boys."}
+  options: {1: F, 2: T, 3: F, 4: F, 5: F}
+- item_id: KOR-NF4-018
+  polarity: positive
+  verdicts:
+    1: {tf: T, ev: "7 신선 = contentment; 19 = like 이윤/여상, worthy of appointment."}
+    2: {tf: F, ev: "At 19 he is not yet appointed."}
+    3: {tf: F, ev: "7 is not addressed to the boys (they appear at 13); 19 is addressed to the boys."}
+    4: {tf: F, ev: "7 is declarative, not 설의."}
+    5: {tf: F, ev: "'그 아니랴' affirms the comparison (rhetorical question)."}
+- item_id: KOR-NF4-019
+  polarity: positive
+  verdicts:
+    1: {tf: F, ev: "24 says the sage king has already appeared."}
+    2: {tf: F, ev: "30: 태평성대 is not yet achieved."}
+    3: {tf: F, ev: "No test."}
+    4: {tf: F, ev: "He retires after 공명 ('공명을 크게 닦고'), not at once."}
+    5: {tf: T, ev: "32 '초야의 숨은 신하 이날에야 만났으니'."}
+- item_id: KOR-NF4-020
+  polarity: positive
+  verdicts:
+    1: {tf: F, ev: "35-46 has no '나도 또한'; 범려·소광 are models, not explicit self-comparison."}
+    2: {tf: F, ev: "No ideal-land metaphor for home and no 설의 exclamation about it; '꿈결인가' is about the 놀음."}
+    3: {tf: T, ev: "11 기약 vs 35 공명을 크게 닦고."}
+    4: {tf: F, ev: "Unsupported comparison of intensity; 10 says he sits with the 통소 after the wine is gone."}
+    5: {tf: F, ev: "꿈결 is not night; there is no day-cycle structure."}
+- item_id: KOR-NF4-021
+  polarity: positive
+  verdicts:
+    1: {tf: F, ev: "No '나'."}
+    2: {tf: F, ev: "Chronological; the 중략 is a summary, not a flashback."}
+    3: {tf: F, ev: "Both minds are shown ('괘씸하기 짝이 없다', '명준은… 생각한다')."}
+    4: {tf: T, ev: "Omniscient third person: '송 노인은 눈언저리가 화끈해지는 느낌이다', '명준은 웃음이 나오려는 것을 참는다'."}
+    5: {tf: F, ev: "Dialogue-centred; little background description."}
+- item_id: KOR-NF4-022
+  polarity: negative
+  verdicts:
+    1: {tf: T, ev: "'나는 일자무식이다마는'."}
+    2: {tf: T, ev: "'회사 홍보실에서 잡지 만드는 일에 종사'."}
+    3: {tf: T, ev: "'책을 만드는 데 돈이 얼마나 드는지'."}
+    4: {tf: T, ev: "'저 반닫이 속에 들어 있던 그 책'."}
+    5: {tf: F, ev: "'아들의 협조를 얻지 못한 채… 고향 사람들의 도움'."}
+- item_id: KOR-NF4-023
+  polarity: negative
+  verdicts:
+    1: {tf: T, ev: "Silent, 멀뚱히."}
+    2: {tf: T, ev: "'뭐라고 대꾸하려다가 말고, 주둥이를 삐죽'."}
+    3: {tf: T, ev: "'아무렇게나 팔랑팔랑'."}
+    4: {tf: F, ev: "He goes on: '돈이 좀 들더라도 좌우간 만들어야겠어'."}
+    5: {tf: T, ev: "'히히히… 예, 알겠어요' then leaves; mocking, not agreeing."}
+- item_id: KOR-NF4-024
+  polarity: positive (pairing)
+  verdicts:
+    ㄱ: "'세상에 펴낼 가치가 없는 거니까 그러죠' → '가치가 없다니…' → 눈이 휘둥그레진다."
+    ㄴ: "Explanation of 조판/옵세트 → '알아듣지도 못하는 터이라… 이맛살'."
+    ㄷ: "'한문투성인 책을 누가 거들떠보기나' → '잠시 말문이 막힌다'."
+  options: {1: F, 2: F, 3: T, 4: F, 5: F}
+  note: "The slot-majority choice gives option 5, so there is no surface cue."
+- item_id: KOR-NF4-025
+  polarity: positive
+  verdicts:
+    1: {tf: T, ev: "'그게 자손으로서 할 소리냐' / '한 번 본 적도 없는 증조부가 멀지 않다니'."}
+    2: {tf: F, ev: "명준 thinks a grandfather is not distant even if never seen ('할아버지라면 본 일이 없다 하더라도… 멀지 않다고 하겠지만')."}
+    3: {tf: F, ev: "He holds back the laugh ('참는다')."}
+    4: {tf: F, ev: "The old man's ground here is 자손의 도리; 명준's distance is generational, not about 한문."}
+    5: {tf: F, ev: "'차마 그런 투로 대꾸를 할 수는 없는 듯'."}
+- item_id: KOR-NF4-026
+  polarity: negative
+  verdicts:
+    1: {tf: F, ev: "He says the opposite: '어디 꼭 많은 사람이 읽어야만 가치 있는 책인가'."}
+    2: {tf: T, ev: "'자손 된 도리를… 족보나 문집이나 다를 게 없는 거여'."}
+    3: {tf: T, ev: "'다만 몇 사람만이라도'."}
+    4: {tf: T, ev: "'학식이 높은 선비면서 애국자'."}
+    5: {tf: T, ev: "'족보도 다 한문으로 된 거' + '요즘 족보를 책으로 만들어내는 일이 얼마나 많으냐'."}
+- item_id: KOR-NF4-027
+  polarity: positive (ㄱㄴㄷㄹ)
+  verdicts:
+    ㄱ: {tf: T, ev: "'노인이 제법 그럴듯한 말을 한다 싶은 것이다' just before ㉢."}
+    ㄴ: {tf: T, ev: "'마침내 얘기의 요점으로 들어선 셈이 아닌가'."}
+    ㄷ: {tf: F, ev: "Not stated."}
+    ㄹ: {tf: T, ev: "'돈이 좀 들더라도 좌우간 만들어야겠어'."}
+  options: {1: F, 2: F, 3: F, 4: T, 5: F}
+- item_id: KOR-NF4-028
+  polarity: positive (ㄱㄴㄷㄹ)
+  verdicts:
+    ㄱ: {tf: T, ev: "'그럼 누가 멀단 말인가' is narrated thought."}
+    ㄴ: {tf: T, ev: "'종사한답시고 득의연하게 지껄여댔다'."}
+    ㄷ: {tf: F, ev: "'괘씸하기 짝이 없다', '그 말도 일리가 없는 것은 아닌 듯하다'."}
+    ㄹ: {tf: F, ev: "After the 중략, 윤국 appears only through speech and action."}
+  options: {1: F, 2: T, 3: F, 4: F, 5: F}
+- item_id: KOR-NF4-029
+  polarity: positive
+  verdicts:
+    1: {tf: F, ev: "The first half is right, but '제법 그럴듯한 말' reacts to the 족보/몇 사람 remark, which comes before ㉣."}
+    2: {tf: F, ev: "명준 knows 족보; he is not ignorant of it."}
+    3: {tf: T, ev: "'조판이 뭔지, 옵세트가 무슨 말인지 알아듣지도 못하는' + '좌우간 만들어야겠어'."}
+    4: {tf: F, ev: "The old man does not accept it; '이삼백 권' was his plan before the cost talk."}
+    5: {tf: F, ev: "명준 is not persuaded; the scene ends in disagreement."}
+- item_id: KOR-NF4-030
+  polarity: positive
+  verdicts:
+    1: {tf: F, ev: "No regret about publishing."}
+    2: {tf: F, ev: "He does not say it ('내뱉으려다가 그만둔다')."}
+    3: {tf: F, ev: "The son did not help."}
+    4: {tf: F, ev: "Nothing indicates that."}
+    5: {tf: T, ev: "'너의 애비가……' + 그만둔다, in front of the grandson."}
+- item_id: KOR-NF4-031
+  polarity: positive (ㄱㄴㄷㄹ)
+  verdicts:
+    ㄱ: {tf: T, ev: "Situation (일자무식) vs claim (knows the value best)."}
+    ㄴ: {tf: T, ev: "He made the book as a 가보 for descendants; the grandson calls it '후졌다'."}
+    ㄷ: {tf: F, ev: "Consistent, not ironic."}
+    ㄹ: {tf: F, ev: "Restraint, not irony."}
+  options: {1: T, 2: F, 3: F, 4: F, 5: F}
+- item_id: KOR-NF4-032
+  polarity: negative
+  verdicts:
+    1: {tf: T, ev: "'우리 집안의 가보 같은 책'."}
+    2: {tf: T, ev: "Cost plus no readers."}
+    3: {tf: F, ev: "Neither reads the content ('읽을 수가 있어야죠'), and both judge it the same way."}
+    4: {tf: T, ev: "Central object of the conflict."}
+    5: {tf: T, ev: "'순 한문… 후졌다'."}
+- item_id: KOR-NF4-033
+  polarity: positive (ordering)
+  verdicts:
+    sequence: "㉮ ('괘씸하기 짝이 없다. 그러나… 느긋하게', after '난 모르겠어요') → ㉰ (가치 없다 → 휘둥그레) → ㉯ (한문투성 → 일리) → ㉱ (돈 → 요점, 열)."
+  options: {1: F, 2: F, 3: F, 4: T, 5: F}
+- item_id: KOR-NF4-034
+  polarity: positive
+  verdicts:
+    1: {tf: F, ev: "He only avoids saying it."}
+    2: {tf: F, ev: "Shaking his head is rejection ('아니다, 그렇지 않다')."}
+    3: {tf: F, ev: "He recognizes the book; there is no sign he read it (he cannot read 한문)."}
+    4: {tf: F, ev: "He goes on to the cost objection."}
+    5: {tf: T, ev: "'녀석의 입에서 그런 말밖에 안 나올 줄 알았지만'."}
+- item_id: KOR-NF4-035
+  polarity: positive (ㄱㄴㄷㄹ)
+  verdicts:
+    ㄱ: {tf: T, ev: "'한문투성인 책' / '순 한문'."}
+    ㄴ: {tf: T, ev: "'자손 된 도리' / '나중에 너도 커서 한문도 배워가지고 읽어보도록'."}
+    ㄷ: {tf: F, ev: "Only 윤국 says '예, 알겠어요'; 명준 never voices assent."}
+    ㄹ: {tf: T, ev: "'너도 꼭 너거 애비하고 같구나'."}
+  options: {1: F, 2: F, 3: T, 4: F, 5: F}
+- item_id: KOR-NF4-036
+  polarity: negative
+  verdicts:
+    1: {tf: T, ev: "Fits the 실용적 가치관 in <보기>."}
+    2: {tf: F, ev: "The 족보 remark supports his own case (Hanja books are still made); it is not a critique of efficiency entering tradition."}
+    3: {tf: T, ev: "Both minds are narrated; fits '맞세워'."}
+    4: {tf: T, ev: "'몇 사람만이라도'."}
+    5: {tf: T, ev: "Next-generation rejection."}
+- item_id: KOR-NF4-037
+  polarity: positive (fill-in pair)
+  verdicts:
+    ㉮: "조부의 사람됨: '일자무식이다마는… 우리 조부가 어떤 분인지… 나는 알아'. He cannot read the content, so '문집에 담긴 글의 내용' (options 3/4) fails."
+    ㉯: "읽을 사람이 있는지와 드는 비용: '요즘 세상에 이런 책이 무슨 가치가… 읽지도 못하잖아요' + cost."
+  options: {1: F, 2: T, 3: F, 4: F, 5: F}
+  note: "The wording is slightly loose because the cost argument concerns whether publishing is worthwhile rather than the book's 가치 itself, but option 2 is still clearly best. Option 3 tempts because the old man says '가치 있는 글이 담겨 있다'. ㉮ is leaked by Q29/Q26-4."
+- item_id: KOR-NF4-038
+  polarity: positive
+  verdicts:
+    1: {tf: T, ev: "'차마 그런 투로 대꾸를… 말문을 다른 쪽으로' → '세상에 펴낼 가치가 없는 거니까'."}
+    2: {tf: F, ev: "Cost comes later, not first."}
+    3: {tf: F, ev: "Not said."}
+    4: {tf: F, ev: "Finding one remark '그럴듯' does not mean he recognizes the book's value."}
+    5: {tf: F, ev: "Looking down at the book (ⓐ) comes before the 증조부 remark."}
+- item_id: KOR-NF4-039
+  polarity: positive (ㄱㄴㄷㄹ, 모두)
+  verdicts:
+    ㄱ: {tf: T, ev: "'족보를 보려무나. 요즘 족보를 책으로 만들어내는 일이 얼마나 많으냐'. The literal point is that many people still know 한문, but option ㄱ's paraphrase is acceptable."}
+    ㄴ: {tf: T, ev: "조판/옵세트 terms the old man does not know."}
+    ㄷ: {tf: F, ev: "He never accepts the cost figures ('좌우간 만들어야겠어')."}
+    ㄹ: {tf: T, ev: "'가치가 있는지 없는지 아버지가 어떻게 아세요?' + '읽을 줄도 모르면서'."}
+  options: {1: F, 2: F, 3: T, 4: F, 5: F}
+- item_id: KOR-NF4-040
+  polarity: positive
+  verdicts:
+    1: {tf: F, ev: "He goes on: '아주 가치가 있는 책이다'."}
+    2: {tf: F, ev: "He explains the word; he does not apologize ('틀렸지 뭐예요')."}
+    3: {tf: F, ev: "He genuinely does not know the slang (he asks again with '틀리다니……')."}
+    4: {tf: T, ev: "Parallel with '조판이 뭔지, 옵세트가 무슨 말인지 알아듣지도 못하는'."}
+    5: {tf: F, ev: "He refuses to read it; it is the grandfather who tells him to learn."}

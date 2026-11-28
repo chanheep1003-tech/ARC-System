@@ -1,0 +1,326 @@
+items:
+- item_id: KOR-NF4-041
+  answer: 5
+  first_pass_top3: [5, 1, 4]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-042
+  answer: 4
+  first_pass_top3: [4, 2, 3]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-043
+  answer: 1
+  first_pass_top3: [1, 3, 2]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: [c]
+  flag_reasons:
+    c: "Majority slot value in every slot (ㄱ 4~6행 x3, ㄴ 9행 x3, ㄷ 12~13행 x4) intersects only in option 1, so the key is recoverable without reading."
+- item_id: KOR-NF4-044
+  answer: 5
+  first_pass_top3: [5, 4, 1]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-045
+  answer: 4
+  first_pass_top3: [4, 3, 2]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-046
+  answer: 4
+  first_pass_top3: [4, 5, 1]
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-047
+  answer: 2
+  first_pass_top3: [2, 4, 5]
+  second_best: 4
+  difficulty: D2
+  confidence: MEDIUM
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-048
+  answer: 3
+  first_pass_top3: [3, 4, 1]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-049
+  answer: 5
+  first_pass_top3: [5, 2, 3]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: [c]
+  flag_reasons:
+    c: "'겉으로 모순되는 진술'(x3) and '영원히 남는 소멸은 죽음이 아니라는 인식'(x2) intersect only in option 5."
+- item_id: KOR-NF4-050
+  answer: 1
+  first_pass_top3: [1, 5, 4]
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-051
+  answer: 2
+  first_pass_top3: [2, 4, 1]
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-052
+  answer: 3
+  first_pass_top3: [3, 5, 2]
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-053
+  answer: 5
+  first_pass_top3: [5, 4, 1]
+  second_best: 4
+  difficulty: D2
+  confidence: MEDIUM
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-054
+  answer: 3
+  first_pass_top3: [3, 1, 4]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-055
+  answer: 2
+  first_pass_top3: [2, 4, 1]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-056
+  answer: 3
+  first_pass_top3: [3, 1, 5]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-057
+  answer: 1
+  first_pass_top3: [1, 2, 5]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-058
+  answer: 1
+  first_pass_top3: [1, 4, 3]
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: [e]
+  flag_reasons:
+    e: "Stem reads '적절한 것을 고른 것은' for a multi-select ㄱㄴㄷㄹ item; standard form is '적절한 것만을 고른 것은'."
+- item_id: KOR-NF4-059
+  answer: 3
+  first_pass_top3: [3, 5, 1]
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-060
+  answer: 2
+  first_pass_top3: [2, 3, 5]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: [c]
+  flag_reasons:
+    c: "First half '눈물과 함께 남기를 바라는 것'(x4) and second half '통념이 뒤집힌다'(x2) intersect only in option 2."
+- item_id: KOR-NF4-061
+  answer: 5
+  first_pass_top3: [5, 3, 1]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-062
+  answer: 1
+  first_pass_top3: [1, 5, 4]
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-063
+  answer: 4
+  first_pass_top3: [4, 5, 3]
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-064
+  answer: 5
+  first_pass_top3: [5, 2, 3]
+  second_best: 2
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-065
+  answer: 5
+  first_pass_top3: [5, 1, 2]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-066
+  answer: 4
+  first_pass_top3: [4, 3, 5]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-067
+  answer: 2
+  first_pass_top3: [2, 4, 3]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-068
+  answer: 4
+  first_pass_top3: [4, 3, 1]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-069
+  answer: 2
+  first_pass_top3: [2, 5, 3]
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-070
+  answer: 1
+  first_pass_top3: [1, 2, 3]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-071
+  answer: 4
+  first_pass_top3: [4, 2, 3]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-072
+  answer: 3
+  first_pass_top3: [3, 5, 1]
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-073
+  answer: 5
+  first_pass_top3: [5, 1, 3]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-074
+  answer: 1
+  first_pass_top3: [1, 5, 4]
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-075
+  answer: 2
+  first_pass_top3: [2, 4, 5]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-076
+  answer: 5
+  first_pass_top3: [5, 1, 2]
+  second_best: 1
+  difficulty: D4
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-077
+  answer: 2
+  first_pass_top3: [2, 4, 1]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-078
+  answer: 2
+  first_pass_top3: [2, 1, 4]
+  second_best: 1
+  difficulty: D3
+  confidence: MEDIUM
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-079
+  answer: 4
+  first_pass_top3: [4, 1, 3]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: [c]
+  flag_reasons:
+    c: "'주체적으로 택하는'(x3), '대상을'(x3), '일상에 맞추려는 화자'(x3) majority values intersect only in option 4."
+- item_id: KOR-NF4-080
+  answer: 1
+  first_pass_top3: [1, 2, 4]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}

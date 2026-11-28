@@ -1,0 +1,179 @@
+# Blind solver verdicts, items 41-80. Line refs: (가) 1-13, (나) 1-23 per 〔5〕 markers.
+# (가) lines: 1 화석 속엔 한 마리 / 2 새가 난다 / 3 결코 지상으로… / 4 내가 흘린 눈물도 / 5 쥐라기 지층… / 6 하나의 보석으로 반짝거릴까, / 7 가령 죽음이라든가, / 8 죽음 앞에서…눈. / 9 스스로 불에 타서… / 10 지상의 별들이여 / 11 묻혀라 화석에. / 12 영원히 죽는 것은 이미 / 13 죽음이 아니다.
+items:
+- item_id: KOR-NF4-041
+  polarity: negative
+  options: {1: "T - 3행 '새.', 8행 '눈.' noun endings", 2: "T - 6행 '반짝거릴까'", 3: "T - 10행 '별들이여'", 4: "T - 13행 '죽음이 아니다.'", 5: "F - no question-answer dialogue form; only one question (6행) and no reply"}
+  answer: 5
+  notes: "Clean."
+- item_id: KOR-NF4-042
+  polarity: positive
+  options: {1: "F - 11행 별들 are told to be buried there, not avoid it", 2: "F - 2행 '새가 난다' (still flying, not sleeping)", 3: "F - tears hoped to shine in 지층 (5-6), not buried past", 4: "T - 1-2행 trace of stopped life yet bird flies; 12-13", 5: "F - 3행 the bird doesn't come down; no wish to escape"}
+  answer: 4
+- item_id: KOR-NF4-043
+  polarity: positive (pairing)
+  slots: {ㄱ: "4~6행 correct (tears -> jewel); 1~3행 wrong (bird already eternal, no 바람); 7~8 partial but 바람 sentence is 4~6", ㄴ: "9행 '스스로…선택하는' correct; 10/11행 wrong", ㄷ: "12~13행 correct; 7~8 wrong"}
+  options: {1: T, 2: "F (ㄱ)", 3: "F (ㄴ 11행 is imperative to be buried)", 4: "F (ㄷ)", 5: "F (all slots)"}
+  answer: 1
+  notes: "Slot-frequency cue: correct value is the modal value in every slot."
+- item_id: KOR-NF4-044
+  polarity: positive
+  options: {1: "F - 3연 returns to 지상; no narrowing sky->underground", 2: "F - no 슬픔/원인/극복 sequence", 3: "F - no past recall/future vow structure", 4: "F - no repeated phrase between 1연 and 3연", 5: "T - 1연 bird (eternal), 2연 '내가' wish (6행), 3연 address to stars (10-11)"}
+  answer: 5
+- item_id: KOR-NF4-045
+  polarity: negative
+  options: {1: "T - 3행", 2: "T - 5행 sky inside stratum", 3: "T - 7행 ends with comma, gives 예 of what may shine", 4: "F - 10행 '지상의' stars are on earth, not high in sky", 5: "T - 11행 inversion"}
+  answer: 4
+- item_id: KOR-NF4-046
+  polarity: positive (select)
+  statements: {ㄱ: "T - 3행", ㄴ: "T - 10-11행", ㄷ: "F - no evidence speaker turns away from/leaves 지상", ㄹ: "T - 5행"}
+  answer: 4
+- item_id: KOR-NF4-047
+  polarity: positive
+  options: {1: "F - 쥐라기 is geological time, not when tears were shed", 2: "T - '도' adds tears to what persists like the fossil bird (1-2, 4)", 3: "F - '어느' is indefinite", 4: "F - question mark = uncertainty, not fulfillment", 5: "F - '하나의' not about gathering"}
+  answer: 2
+  notes: "'화석 속 새처럼' is an interpretive reading of '도'; acceptable but slightly loose. Confidence MEDIUM for that reason."
+- item_id: KOR-NF4-048
+  polarity: positive
+  options: {1: "F - no answer given", 2: "F - 가령 does not explain 새", 3: "T - 7-8 add death/eyes as further things hoped to shine", 4: "F - no fear; 8행 eyes shine", 5: "F - stars not previewed"}
+  answer: 3
+- item_id: KOR-NF4-049
+  polarity: positive
+  options: {1: "F - '이미' placement does not mean death already happened", 2: "F - device is paradox (역설), not irony (반어)", 3: "F - no resurrection", 4: "F - no consoling a frightened object", 5: "T - 12-13 paradox"}
+  answer: 5
+  notes: "2 vs 5 hinge only on 반어/역설 term (curricular, not outside knowledge). Intersection cue (see flag c)."
+- item_id: KOR-NF4-050
+  polarity: negative
+  options: {1: "F - '스스로…선택' is volitional; nothing about giving up from pain", 2: T, 3: T, 4: "T - 9행 '스스로'", 5: "T - 11행"}
+  answer: 1
+- item_id: KOR-NF4-051
+  polarity: positive
+  options: {1: "F - not time reconstruction/back to past", 2: "T - 5행 sky inside stratum; jewel shines", 3: "F - 8행 shining eyes, not fear", 4: "F - stars don't lose light; they choose burning", 5: "F - not avoiding death"}
+  answer: 2
+- item_id: KOR-NF4-052
+  polarity: negative
+  options: {1: T, 2: "T - 4행 first '내가'", 3: "F - figurative, not observed meteor", 4: T, 5: "T - 11 imperative, 13 declarative"}
+  answer: 3
+- item_id: KOR-NF4-053
+  polarity: positive
+  options: {1: "F - image setup", 2: "F", 3: "F", 4: "partial - expresses wish, but theme crystallised in 12-13", 5: "T - paradox states theme"}
+  answer: 5
+  notes: "Option 4 somewhat defensible as the speaker's wish; standard reading favors 5. Item 49's correct option text also states this line carries the theme (set-level leak)."
+- item_id: KOR-NF4-054
+  polarity: positive (select)
+  statements: {ㄱ: "T - bird in fossil (1), stars on 지상 (10)", ㄴ: "T - 5행", ㄷ: "T - fire/burning = light imagery with 6,8", ㄹ: "F - no textual identity of bird and stars; bird never descends (3)"}
+  answer: 3
+- item_id: KOR-NF4-055
+  polarity: negative
+  options: {1: T, 2: "F - 죽음 vs 빛나던 눈 is extinction vs shining life, not fear vs resignation", 3: T, 4: T, 5: T}
+  answer: 2
+- item_id: KOR-NF4-056
+  polarity: positive (select)
+  statements: {ㄱ: "T - 3행 '새.'", ㄴ: "T - 6 question, 8 '눈.'", ㄷ: "T - 11, 13", ㄹ: "F - only one question in the poem"}
+  answer: 3
+- item_id: KOR-NF4-057
+  polarity: positive
+  options: {1: "T - 1-2 bird already in fossil; 10-11 stars urged", 2: "F - stars not refusing", 3: "F - reversed", 4: "F - stars not yet buried (imperative)", 5: "F - stars gain, not lose, eternity (12-13)"}
+  answer: 1
+- item_id: KOR-NF4-058
+  polarity: positive (select)
+  statements: {ㄱ: "T - no first person in 1연; '내가' 4행", ㄴ: "F - 8행 '눈' not explicitly speaker's, and the point is shining, not sorrow", ㄷ: "T - 10-11 address", ㄹ: "F - 12-13 are speaker's statement, not stars' reply"}
+  answer: 1
+  notes: "Stem lacks '만을'."
+- item_id: KOR-NF4-059
+  polarity: positive (select)
+  statements: {ㄱ: "T - 2행 '난다'", ㄴ: "T - 6행", ㄷ: "F - no evidence stars have lost light; they burn (9)", ㄹ: "T - 5행 쥐라기 = long time"}
+  answer: 3
+- item_id: KOR-NF4-060
+  polarity: positive
+  options: {1: "F - 13 denies death as end", 2: "T", 3: "F - 7-8 not avoidance", 4: "F - no such mapping", 5: "F - no revival of 눈"}
+  answer: 2
+  notes: "Intersection cue; '눈물과 함께 남기를 바라는 것' is itself an interpretive gloss of 7행 (reasonable)."
+# (나) lines: 1 눈이 피곤하고 / 2 …어둠이 손에 배자 / 3 해골이 만져졌다 / 4 신기한 것을 감지한 듯 / 5 한꺼번에… / 6 아까워하며 조금씩 / 7 차갑고 무뚝뚝하고… / 8 …튼튼한 폐허를 / 9 해골의 껍데기에 붙어서 / 10 생글거리고…얼굴이여 / 11 마음처럼 얇디얇은 얼굴이여 / 12 자는 일 없이… / 13 내 해골은 늘 너를 보고 있네 / 14 잠시 동안만 피다 지는 얼굴을 / 15 얼굴 뒤로 뻗어 있는 / 16 …긴 시간을 / 17 선글라스만한… / 18 손을 풀었다 / 19 햇빛은 살로 변하여 / 20 곧 얼굴이 되었다 / 21 …어색하여 / 22 눈을 깜박거렸다 / 23 서둘러 서류 속의 숫자에
+- item_id: KOR-NF4-061
+  polarity: positive
+  options: {1: "F - no onomatopoeia (생글거리고/깜박거렸다 are mimetic)", 2: "F", 3: "F - no color contrast toward an ideal world", 4: "F - no seasons", 5: "T - 10, 11 '얼굴이여' repeated"}
+  answer: 5
+- item_id: KOR-NF4-062
+  polarity: positive (select)
+  statements: {ㄱ: "T - 10행", ㄴ: "T - 8행 vs 11행", ㄷ: "F - '햇빛은 살로 변하여' is not simile", ㄹ: "F - '조금씩 조금씩'(6) describes the hand's groping, not skull"}
+  answer: 1
+- item_id: KOR-NF4-063
+  polarity: negative
+  options: {1: "T - 10, 12", 2: "T - 11, 8", 3: "T - 14, 16", 4: "F - reversed: skull watches face (13); face does not watch skull", 5: "T - 19-20, 2-3"}
+  answer: 4
+- item_id: KOR-NF4-064
+  polarity: positive (pairing)
+  slots: {"1연": "호기심 correct (4 신기한, 6 아까워하며); '차갑고 무관심' is the skull's attribute (7)", "2연": "성찰 correct (14-16); no sorrow of losing face", "3연": "어색함/일상 correct (21-23); no joy"}
+  options: {1: F, 2: F, 3: F, 4: F, 5: T}
+  answer: 5
+  notes: "Correct values are the minority in each slot (anti-cue) - no surface cue."
+- item_id: KOR-NF4-065
+  polarity: negative
+  options: {1: T, 2: "T - oxymoron", 3: T, 4: T, 5: "F - 21-22 awkwardness, not relief"}
+  answer: 5
+- item_id: KOR-NF4-066
+  polarity: positive
+  options: {1: "F - stars give no reply; (나) doesn't avoid gaze", 2: "F - (가) doesn't prevent; (나) no fear", 3: "F - (나) speaker doesn't keep distance; he gropes curiously (4-6); '무관심' describes the object", 4: "T - (가) 9-11; (나) 6", 5: "F - (나) 8 skull existed before face"}
+  answer: 4
+- item_id: KOR-NF4-067
+  polarity: positive
+  options: {1: "F - (가) 1연 not speaker's experience", 2: "T - (가) 1-3; (나) 13-17", 3: "F - (가) 1연 does not address 새", 4: "F - skull not described re 지상", 5: "F - (가) 1연 not imperative"}
+  answer: 2
+- item_id: KOR-NF4-068
+  polarity: positive
+  options: {1: "F - '만' wrong; 16 includes time after face's memory is erased", 2: "F - no cycle", 3: "F - no will to keep memory", 4: "T - 14 vs 16", 5: "F - no beauty/ugliness contrast"}
+  answer: 4
+- item_id: KOR-NF4-069
+  polarity: negative
+  options: {1: "T - 18", 2: "F - 22-23 he hurries back to documents; no resolve to remember", 3: "T - 21", 4: "T - 23", 5: "T - 19"}
+  answer: 2
+- item_id: KOR-NF4-070
+  polarity: positive
+  options: {1: T, 2: "F - curiosity, not fear", 3: "F", 4: "F", 5: "F"}
+  answer: 1
+- item_id: KOR-NF4-071
+  polarity: positive
+  options: {1: F, 2: "F - no tactile re-check at end", 3: "F", 4: "T - 2 dark (visual) -> 3-6 touch -> 23 visual focus on numbers", 5: "F - skull doesn't speak"}
+  answer: 4
+- item_id: KOR-NF4-072
+  polarity: positive (select)
+  statements: {ㄱ: "T - 1-2", ㄴ: "T - 4", ㄷ: "F - 13 '늘' describes the skull; <보기> says the strange moment doesn't last; experience ends at 18", ㄹ: "T - 23"}
+  answer: 3
+- item_id: KOR-NF4-073
+  polarity: positive
+  options: {1: "F - '그 물체' is distancing", 2: "F - figurative", 3: "F", 4: "F - '일 없이' = absence of activity", 5: "T - 9"}
+  answer: 5
+- item_id: KOR-NF4-074
+  polarity: positive (select)
+  statements: {ㄱ: "T both - (가) 1-2, 5; (나) 19", ㄴ: "T both - (가) 10; (나) 10-11", ㄷ: "F - (가) not a narrated experience", ㄹ: "F - (나) no imperative"}
+  answer: 1
+- item_id: KOR-NF4-075
+  polarity: negative
+  options: {1: T, 2: "F - (가) welcomes chosen extinction; (나) no envy", 3: T, 4: "T - (가) 4 only; (나) 나/내 at 4, 8, 13, 18, 22", 5: T}
+  answer: 2
+- item_id: KOR-NF4-076
+  polarity: positive (<보기> concept, two works)
+  options: {1: "F - (가) half true (space), but (나) 19 is object transformation, not space", 2: "F - '튼튼한 폐허' is contrast pairing, not change; '지상의 별들' also not a transformation", 3: "F - no time-travel", 4: "F - '서류 속의 숫자' is ordinary reality", 5: "T - 영원히+죽다; 튼튼한+폐허 contrasting words joined"}
+  answer: 5
+  notes: "Same <보기> as item 51. Options 1 and 2 are half-true traps; requires category matching for four phrases."
+- item_id: KOR-NF4-077
+  polarity: positive
+  options: {1: "F - not negative/escaped", 2: "T - (가) 11; (나) 18-20", 3: "F - skull doesn't make expressions; face does (10)", 4: "F - tears not already buried (6 is a question)", 5: "F"}
+  answer: 2
+- item_id: KOR-NF4-078
+  polarity: positive (select all)
+  statements: {ㄱ: "T - (가) 11 '묻혀라 화석에'; (나) 6-8 '더듬어나갔다 / …그 물체를 / …튼튼한 폐허를' (object after verb)", ㄴ: "F - (가) 1연 and 3연 contain no speaker action", ㄷ: "F - (가) 4 '흘린' past; (나) 10 tears belong to face's expressions", ㄹ: "T - (가) 눈물/보석, 소멸/화석; (나) 얼굴/해골"}
+  answer: 2
+  notes: "ㄱ for (나) requires recognising inversion in 6-8 (less obvious); confidence MEDIUM on that statement, but eliminating ㄴ and ㄷ leaves only 1 vs 2, and 1 contains ㄴ."
+- item_id: KOR-NF4-079
+  polarity: positive
+  options: {1: "F - '어쩔 수 없이' contradicts '스스로'", 2: "F - he hurries back to work, not prolonging", 3: "F - stars, not speaker, choose", 4: "T - (가) 9; (나) 23", 5: "F - '서둘러' describes speaker's own action"}
+  answer: 4
+- item_id: KOR-NF4-080
+  polarity: positive
+  options: {1: "T - 21 '갑자기 뒤집어쓴 얼굴이 어색하여'", 2: "F - he resumes work (22-23)", 3: "F - face becomes awkward", 4: "F - no prior awkwardness", 5: "F - '튼튼한 폐허' is the skull (8)"}
+  answer: 1
+set_level_notes:
+  - "Within the set, correct option texts of some items state the answers of others (e.g. 49-5 / 53-5 / 43 ㄷ; 45-5 / 41-3; 51 and 76 reuse the same <보기>). Acceptable for a workbook, but not exam-independent."
+  - "No factual errors found in any key-candidate option; no item with two fully defensible answers. Weakest: 53 (option 4 partially defensible), 47 (interpretive '도' gloss)."
