@@ -205,3 +205,114 @@ texts:
     punctuation_lock: true
     line_break_lock: true
     boundary_lock: true
+- source_text_id: KOR-SUPP-2026F-LIT-WONYUGA
+  title: 남석하, 「원유가」
+  author: 남석하
+  role: RAW_SCHOOL_SOURCE
+  source_origin: CONNECTED_DRIVE_RAW_SCHOOL_SOURCE
+  school_source_file_id: 11lLizX3YOF1by_Dc8mSlWL13vsNMfPHn
+  school_source_location: IMG_9180 p1 (I. 문학 보충 1)
+  locked_text_drive_id: null
+  repo_path: quality/source/text/KOR_SUPP_2026F_LIT_WONYUGA_V1.0.txt
+  sha256: 4269cdefbf52d32e8d293502f13df7136ba93984415a6a7dd0402ee3640914ad
+  form: VERSE
+  lines: 46
+  text_fidelity: EXACT
+  verification:
+    method: VISUAL_LINE_BY_LINE_AGAINST_SCHOOL_SCAN
+    performed_on: '2026-11-28'
+    performed_by: CLAUDE (scan crops read line by line; IMG_9180 / IMG_9179)
+    crosscheck: Drive master DB 1NYhGiK6biebcRKj9gnofZA7kJhy5zyLGgVJR8zXgye0 (matches except where noted); Drive transcript 1AuUYfAvqh0lnZdXwBjloBaox1r7DNTzaKg5x4ShjWeA rejected (corrupted text)
+    notes:
+    - 5행 '증암절벽' is printed as-is in the school handout (likely print error for 층암절벽); kept exact
+    - 16행 footnote marker '*' after 풍운 removed from text; footnote carried in set notes
+    - 34행 '(중략)' kept as a counted line exactly as printed
+    rights_note: school handout reproduced for private exam study only; modern works remain copyrighted, no public redistribution
+    visual_line_by_line: PERFORMED
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
+- source_text_id: KOR-SUPP-2026F-LIT-JOSANG-MUNJIP
+  title: 하근찬, 「조상의 문집」
+  author: 하근찬
+  role: RAW_SCHOOL_SOURCE
+  source_origin: CONNECTED_DRIVE_RAW_SCHOOL_SOURCE
+  school_source_file_id: 11lLizX3YOF1by_Dc8mSlWL13vsNMfPHn
+  school_source_location: IMG_9180 p2 ~ IMG_9179 p3 (I. 문학 보충 2)
+  locked_text_drive_id: null
+  repo_path: quality/source/text/KOR_SUPP_2026F_LIT_JOSANG_MUNJIP_V1.0.txt
+  sha256: 4ad709c9beee3f7caf3c538d0947b32bd080f7398904f87322343e424733db2a
+  form: PROSE
+  paragraphs: 64
+  text_fidelity: EXACT
+  verification:
+    method: VISUAL_LINE_BY_LINE_AGAINST_SCHOOL_SCAN
+    performed_on: '2026-11-28'
+    performed_by: CLAUDE (scan crops read line by line; IMG_9180 / IMG_9179)
+    crosscheck: Drive master DB 1NYhGiK6biebcRKj9gnofZA7kJhy5zyLGgVJR8zXgye0 (matches except where noted); Drive transcript 1AuUYfAvqh0lnZdXwBjloBaox1r7DNTzaKg5x4ShjWeA rejected (corrupted text)
+    notes:
+    - paragraph breaks follow the printed indentation; one dialogue line = one paragraph
+    - scan readings '뒤적거려보면서', '틀렸다 그 말이에요', '예, 알겠어요. 할아버지.' differ from the Drive master DB and are taken from the scan
+    rights_note: school handout reproduced for private exam study only; modern works remain copyrighted, no public redistribution
+    visual_line_by_line: PERFORMED
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
+- source_text_id: KOR-SUPP-2026F-LIT-BOSEOK1
+  title: 오세영, 「보석 1」
+  author: 오세영
+  role: RAW_SCHOOL_SOURCE
+  source_origin: CONNECTED_DRIVE_RAW_SCHOOL_SOURCE
+  school_source_file_id: 1zPTwhKzJ_y0Dh0AAX0iM1e8BcPksYxnY
+  school_source_location: IMG_9179 p3 (I. 문학 보충 3)
+  locked_text_drive_id: null
+  repo_path: quality/source/text/KOR_SUPP_2026F_LIT_BOSEOK1_V1.0.txt
+  sha256: 5636da6306d4fcadc37941dc5f7a3491840d7058af5654f698c6c8078440d4af
+  form: VERSE
+  lines: 13
+  text_fidelity: EXACT
+  verification:
+    method: VISUAL_LINE_BY_LINE_AGAINST_SCHOOL_SCAN
+    performed_on: '2026-11-28'
+    performed_by: CLAUDE (scan crops read line by line; IMG_9180 / IMG_9179)
+    crosscheck: Drive master DB 1NYhGiK6biebcRKj9gnofZA7kJhy5zyLGgVJR8zXgye0 (matches except where noted); Drive transcript 1AuUYfAvqh0lnZdXwBjloBaox1r7DNTzaKg5x4ShjWeA rejected (corrupted text)
+    notes:
+    - title printed as 「보석1」 in the handout
+    rights_note: school handout reproduced for private exam study only; modern works remain copyrighted, no public redistribution
+    visual_line_by_line: PERFORMED
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
+- source_text_id: KOR-SUPP-2026F-LIT-EOLGUL
+  title: 김기택, 「얼굴」
+  author: 김기택
+  role: RAW_SCHOOL_SOURCE
+  source_origin: CONNECTED_DRIVE_RAW_SCHOOL_SOURCE
+  school_source_file_id: 1zPTwhKzJ_y0Dh0AAX0iM1e8BcPksYxnY
+  school_source_location: IMG_9179 p4 (I. 문학 보충 4)
+  locked_text_drive_id: null
+  repo_path: quality/source/text/KOR_SUPP_2026F_LIT_EOLGUL_V1.0.txt
+  sha256: 3fd4ac041a3a991858d01def1c8c0abecd34d39df952f3718d7677e5e40327eb
+  form: VERSE
+  lines: 23
+  text_fidelity: EXACT
+  verification:
+    method: VISUAL_LINE_BY_LINE_AGAINST_SCHOOL_SCAN
+    performed_on: '2026-11-28'
+    performed_by: CLAUDE (scan crops read line by line; IMG_9180 / IMG_9179)
+    crosscheck: Drive master DB 1NYhGiK6biebcRKj9gnofZA7kJhy5zyLGgVJR8zXgye0 (matches except where noted); Drive transcript 1AuUYfAvqh0lnZdXwBjloBaox1r7DNTzaKg5x4ShjWeA rejected (corrupted text)
+    notes:
+    - stanza 2 begins with '해골의 껍데기에 붙어서' as printed; the 2021 magazine version differs in 2연 마지막 행 and is not used
+    rights_note: school handout reproduced for private exam study only; modern works remain copyrighted, no public redistribution
+    visual_line_by_line: PERFORMED
+  locks:
+    wording_lock: true
+    punctuation_lock: true
+    line_break_lock: true
+    boundary_lock: true
