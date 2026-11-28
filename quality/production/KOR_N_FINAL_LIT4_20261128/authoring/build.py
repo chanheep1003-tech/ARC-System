@@ -18,16 +18,26 @@ def polarity(it):
 
 items = [dict(it, set=m.S) for m in (part1, part2, part3, part4) for it in m.ITEMS]
 assert [it["n"] for it in items] == list(range(1, 81))
+import revisions  # noqa: E402  round-2 edits after blind round 1
+for it in items:
+    it.update(revisions.REV.get(it["n"], {}))
+    for old, new in revisions.REV_TEXT.get(it["n"], []):
+        hits = [i for i, o in enumerate(it["opts"]) if old in o]
+        assert len(hits) == 1, (it["n"], old)
+        it["opts"][hits[0]] = it["opts"][hits[0]].replace(old, new)
+    assert len(it["opts"]) == 5 and len(it["o"]) == 5, it["n"]
 
 # ---- target key sequence
 rng = random.Random(20261128)
 counts, seq = Counter(), []
-for it in items:
-    fixed = it.get("fixed") or it["n"] in FIXED_EXTRA or it["opts"][0][:1] in ("㉠", "ⓐ")
-    if fixed:
+isfixed = lambda it: it.get("fixed") or it["n"] in FIXED_EXTRA or it["opts"][0][:1] in ("㉠", "ⓐ")
+for idx, it in enumerate(items):
+    if isfixed(it):
         k = it["key"]
     else:
-        cands = [p for p in range(1, 6) if not (len(seq) >= 2 and seq[-1] == seq[-2] == p)]
+        nxt = items[idx + 1]["key"] if idx + 1 < len(items) and isfixed(items[idx + 1]) else None
+        cands = [p for p in range(1, 6) if not (len(seq) >= 2 and seq[-1] == seq[-2] == p)
+                 and not (seq and seq[-1] == p == nxt)]
         low = min(counts[p] for p in cands)
         k = rng.choice([p for p in cands if counts[p] == low])
     seq.append(k); counts[k] += 1
@@ -123,6 +133,15 @@ SETS = [
   "notes": []},
 ]
 
+ROOT = HERE.parents[3]
+sys.path.insert(0, str(ROOT / "tooling" / "exams"))
+import exam_scope_gate  # noqa: E402
+_profile = yaml.safe_load((ROOT / "ops/exams/EXAM_CONTEXTS_V1.yaml").read_text(encoding="utf-8"))["exams"]["DONGBUK_2026_2_FINAL"]
+EXAM_CONTEXT = {"exam_id": "DONGBUK_2026_2_FINAL", "profile_sha256": exam_scope_gate.digest(_profile),
+                "unit_ids": ["KOR-SUPP-PRINT"],
+                "source_ids": ["KOR-SUPP-2026F-LIT-WONYUGA", "KOR-SUPP-2026F-LIT-JOSANG-MUNJIP",
+                               "KOR-SUPP-2026F-LIT-BOSEOK1", "KOR-SUPP-2026F-LIT-EOLGUL"]}
+
 bundle = {
  "batch_id": "KOR-N-FINAL-LIT4-20261128", "product_mode": "ARC_N", "subject": "KOR", "generator": "CLAUDE",
  "level": "V2", "set_label": "ARC N°", "course": "공통국어2",
@@ -131,6 +150,7 @@ bundle = {
  "created_at": "2026-11-28T12:00:00+09:00",
  "scope": "2026 동북고 1학년 2학기 기말 보충 프린트 Ⅰ. 문학 보충 — 남석하 「원유가」, 하근찬 「조상의 문집」, 오세영 「보석 1」, 김기택 「얼굴」",
  "scope_refs": ["ops/exams/DONGBUK_2026_2_FINAL_SCOPE_NOTICE.yaml#KOR(보충 프린트 전범위)"],
+ "exam_context": EXAM_CONTEXT,
  "sets": SETS, "items": out}
 
 (HERE.parent / "items.yaml").write_text(yaml.safe_dump(bundle, allow_unicode=True, sort_keys=False, width=1000), encoding="utf-8")

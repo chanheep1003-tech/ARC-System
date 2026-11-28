@@ -57,6 +57,7 @@ exams:
         scope_status: CONFIRMED
         scope_evidence_refs:
         - ops/exams/DONGBUK_2026_2_FINAL_SCOPE_NOTICE.yaml
+        - Drive 11lLizX3YOF1by_Dc8mSlWL13vsNMfPHn + 1zPTwhKzJ_y0Dh0AAX0iM1e8BcPksYxnY (기말 보충자료 I. 문학 보충 1~4쪽 스캔)
         unit_ids:
         - KOR-U3
         - KOR-U4-1
@@ -64,9 +65,13 @@ exams:
         source_ids:
         - KOR-TEXTBOOK-MIRAEN-P104-149
         - KOR-SUPP-PRINT-ALL
+        - KOR-SUPP-2026F-LIT-WONYUGA
+        - KOR-SUPP-2026F-LIT-JOSANG-MUNJIP
+        - KOR-SUPP-2026F-LIT-BOSEOK1
+        - KOR-SUPP-2026F-LIT-EOLGUL
         excluded_unit_ids: []
         excluded_source_ids: []
-        products: &id001
+        products:
         - ARC_CORE
         - ARC_N
         - ARC_FINAL
@@ -90,7 +95,10 @@ exams:
         - ENG-2026-SUNEUNG-GICHUL-HARD-READING-L1-P78-91
         excluded_unit_ids: []
         excluded_source_ids: []
-        products: *id001
+        products: &id001
+        - ARC_CORE
+        - ARC_N
+        - ARC_FINAL
         exam_structure:
           selected: 34
           selected_points: 80
