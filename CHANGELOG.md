@@ -5,6 +5,7 @@
 - `production_pipeline.py`: named balance profile `KOR_N_ORTHO_SCHOOL` (D2 0–10, D3 25–40, D4 35–55, D5 10–25, D4+D5 50–70 %) selected by bundle `balance_profile`.
 - Long views trimmed (user directive after the 10-item pilot): orthography views ≈450 chars max, items over that ≤10% (gate `LONG_VIEW_SHARE_HIGH`, warning `VIEW_LONG`), passage sets 300–450 chars and 1 set per 50 items, plan mix K4 6→2, K5 5→3.
 - `arc.py plan`: V6 uses the orthography library (9+1 blocks, weighted archetype mix with whole passage sets, topic mix) and the new difficulty profile; `--constructed N` sets the constructed-response count (0 for objective-only).
+- Typesetting (user directive: minimal whitespace): the KOR renderer reads optional bundle `layout.max_questions_per_column` (default 2 for ARC_N, unchanged) and `layout.question_gap_pt` (default 22, unchanged). Existing bundles render identically; bundles that set them pack columns tightly (practice sets 23 → 15–17 pages).
 
 ## 1.9.5 — 2026-11-13
 - Typesetting rule (user directive): English passage workbooks print the passage in full and tune page use with body size/line height. The renderer now reads a per-bundle `layout: {body_pt, line_height_ratio}` (default for ENG passage workbooks 9.4pt / 1.38) and no longer depends on environment variables; KOR/SOC/SCI keep 9.8pt / 1.62.

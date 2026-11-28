@@ -106,6 +106,8 @@ FALLBACK_FILES = [
 ]
 SIZE = 9.8   # default body size; a bundle `layout` key overrides it per render (see render())
 LH = SIZE * 1.62
+QPC = 2      # ARC_N: standalone questions per column before a column break; bundle `layout.max_questions_per_column` overrides
+QGAP = 22.0  # space after each question block (pt); bundle `layout.question_gap_pt` overrides
 NAVY = (0.08, 0.16, 0.30)
 BLACK = (0.0, 0.0, 0.0)
 CIRC = "①②③④⑤"
@@ -401,7 +403,7 @@ def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "AR
         for k in (1.1, 2.1, 3.1):
             ry = top + LH * k
             b.ops.append(("line", 0, ry, COL_W, ry, 0.45))
-        b.h += 20
+        b.h += QGAP - 2
         return b
     labels_ = [o if o == CIRC[i] else f"{CIRC[i]} {o}" for i, o in enumerate(it["options"])]  # bare ①~⑤ for underline items
     widest = max(L.width(t) for t in labels_)
@@ -420,7 +422,7 @@ def question_block(L: Layout, it: dict[str, Any], label: str, product: str = "AR
         for t in labels_:
             b.text(L.wrap(t, COL_W, rest=hang))
             b.h += 1.5
-    b.h += 22
+    b.h += QGAP
     return b
 
 
@@ -813,8 +815,8 @@ def _render_solutions_inner(bundle: dict[str, Any], labels: dict[str, str], out_
 def render(bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[str, str], set_header,
            out_pdf: Path, key_pdf: Path | None = None, logo: dict[str, Any] | None = None,
            solutions_pdf: Path | None = None) -> dict[str, Any]:
-    global SIZE, LH, _ACTIVE_SUBJECT, _FONTS
-    saved = (SIZE, LH)
+    global SIZE, LH, QPC, QGAP, _ACTIVE_SUBJECT, _FONTS
+    saved = (SIZE, LH, QPC, QGAP)
     saved_subj = _ACTIVE_SUBJECT
     subj = (bundle.get("subject") or "").upper() or None
     if subj != _ACTIVE_SUBJECT:
@@ -824,10 +826,14 @@ def render(bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[s
     if lay.get("body_pt"):  # per-bundle body size / line height (English passage workbooks)
         SIZE = float(lay["body_pt"])
         LH = SIZE * float(lay.get("line_height_ratio", 1.62))
+    if lay.get("max_questions_per_column"):  # dense layout: let columns fill instead of breaking after 2 questions
+        QPC = int(lay["max_questions_per_column"])
+    if lay.get("question_gap_pt") is not None:
+        QGAP = float(lay["question_gap_pt"])
     try:
         return _render(bundle, sources, labels, set_header, out_pdf, key_pdf, logo, solutions_pdf)
     finally:
-        SIZE, LH = saved
+        SIZE, LH, QPC, QGAP = saved
         if _ACTIVE_SUBJECT != saved_subj:
             _ACTIVE_SUBJECT = saved_subj
             _FONTS = None
@@ -865,7 +871,7 @@ def _render(bundle: dict[str, Any], sources: list[dict[str, Any]], labels: dict[
             for op in b.ops[:1]
         )
         # Target 2 standalone questions per column (4 per page) on ARC_N when no shared passage precedes
-        if product == "ARC_N" and is_question and col_q_count >= 2 and not bundle.get("sets"):
+        if product == "ARC_N" and is_question and col_q_count >= QPC and not bundle.get("sets"):
             advance()
         if b.splittable and y + b.h > bottom:
             rows: dict[float, list[tuple]] = {}
