@@ -1,0 +1,322 @@
+items:
+- item_id: KOR-NF4-001
+  answer: 4
+  first_pass_top3: [4, 3, 1]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-002
+  answer: 1
+  first_pass_top3: [1, 4, 3]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-003
+  answer: 4
+  first_pass_top3: [4, 3, 1]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-004
+  answer: 5
+  first_pass_top3: [5, 4, 2]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-005
+  answer: 5
+  first_pass_top3: [5, 3, 2]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-006
+  answer: 2
+  first_pass_top3: [2, 5, 3]
+  second_best: 5
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-007
+  answer: 3
+  first_pass_top3: [3, 2, 1]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-008
+  answer: 2
+  first_pass_top3: [2, 4, 1]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-009
+  answer: 3
+  first_pass_top3: [3, 1, 2]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-010
+  answer: 1
+  first_pass_top3: [1, 4, 5]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-011
+  answer: 4
+  first_pass_top3: [4, 3, 1]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-012
+  answer: 3
+  first_pass_top3: [3, 4, 5]
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-013
+  answer: 5
+  first_pass_top3: [5, 4, 3]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-014
+  answer: 1
+  first_pass_top3: [1, 4, 2]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-015
+  answer: 2
+  first_pass_top3: [2, 3, 1]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-016
+  answer: 3
+  first_pass_top3: [3, 1, 4]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-017
+  answer: 1
+  first_pass_top3: [1, 3, 5]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-018
+  answer: 5
+  first_pass_top3: [5, 4, 2]
+  second_best: 4
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-019
+  answer: 4
+  first_pass_top3: [4, 2, 5]
+  second_best: 2
+  difficulty: D3
+  confidence: MEDIUM
+  flags: [a]
+  flag_reasons:
+    a: "Option 2 ('임금도 화자를 고요직설에 견주어 반긴다') is arguably defensible because 31~32행 say the king lacked 고요직설 and now has found the hidden 어진 신하, which implicitly casts the speaker in that role; only the explicit-quote match makes 4 safer."
+- item_id: KOR-NF4-020
+  answer: 2
+  first_pass_top3: [2, 5, 3]
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-021
+  answer: 4
+  first_pass_top3: [4, 3, 1]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-022
+  answer: 3
+  first_pass_top3: [3, 2, 5]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-023
+  answer: 4
+  first_pass_top3: [4, 2, 5]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-024
+  answer: 2
+  first_pass_top3: [2, 1, 4]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-025
+  answer: 1
+  first_pass_top3: [1, 4, 2]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-026
+  answer: 5
+  first_pass_top3: [5, 1, 2]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-027
+  answer: 2
+  first_pass_top3: [2, 4, 1]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-028
+  answer: 5
+  first_pass_top3: [5, 2, 4]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-029
+  answer: 3
+  first_pass_top3: [3, 5, 2]
+  second_best: 5
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-030
+  answer: 1
+  first_pass_top3: [1, 2, 3]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-031
+  answer: 4
+  first_pass_top3: [4, 2, 3]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-032
+  answer: 3
+  first_pass_top3: [3, 4, 1]
+  second_best: 4
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-033
+  answer: 1
+  first_pass_top3: [1, 2, 4]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-034
+  answer: 2
+  first_pass_top3: [2, 1, 4]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-035
+  answer: 5
+  first_pass_top3: [5, 3, 2]
+  second_best: 3
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-036
+  answer: 5
+  first_pass_top3: [5, 3, 4]
+  second_best: 3
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-037
+  answer: 2
+  first_pass_top3: [2, 1, 5]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-038
+  answer: 1
+  first_pass_top3: [1, 2, 5]
+  second_best: 2
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-039
+  answer: 4
+  first_pass_top3: [4, 1, 3]
+  second_best: 1
+  difficulty: D2
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}
+- item_id: KOR-NF4-040
+  answer: 3
+  first_pass_top3: [3, 1, 4]
+  second_best: 1
+  difficulty: D3
+  confidence: HIGH
+  flags: []
+  flag_reasons: {}

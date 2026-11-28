@@ -1,0 +1,402 @@
+# Blind option verdicts, items 41-80. Line numbers: (가) 1-13 (〔5〕=쥐라기, 〔10〕=지상의 별들이여); (나) 1-23 (〔5〕=한꺼번에, 〔10〕=생글거리고, 〔15〕=얼굴 뒤로, 〔20〕=곧 얼굴이 되었다)
+items:
+- item_id: KOR-NF4-041
+  polarity: negative
+  options:
+    1: {verdict: FALSE, evidence: "No question-answer dialogue anywhere; only one interrogative (l.6) with no reply."}
+    2: {verdict: TRUE, evidence: "'반짝거릴까,' (l.6) voices a wish."}
+    3: {verdict: TRUE, evidence: "'지상의 별들이여' (l.10)."}
+    4: {verdict: TRUE, evidence: "'새.' (l.3), '눈.' (l.8)."}
+    5: {verdict: TRUE, evidence: "'죽음이 아니다.' (l.13)."}
+  answer: 1
+  notes: "Clean."
+- item_id: KOR-NF4-042
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "Tears are hoped to shine as a jewel (l.4-6), not buried as a discarded past."}
+    2: {verdict: FALSE, evidence: "'새가 난다' (l.2): the bird flies, it is not asleep."}
+    3: {verdict: TRUE, evidence: "Fossil + flying bird (l.1-2); '묻혀라 화석에' / '영원히 죽는 것은 ... 죽음이 아니다' (l.11-13)."}
+    4: {verdict: FALSE, evidence: "Stars are told to be buried in the fossil (l.11), not to avoid it."}
+    5: {verdict: FALSE, evidence: "No sign the bird wants to escape the fossil."}
+  answer: 3
+  notes: "Options 1-3 share the stem '생명이 멈춘 흔적'; 3 is the only one with a concessive turn, which is a mild length/structure cue."
+- item_id: KOR-NF4-043
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "The ending asserts that death is not death (l.12-13); no sense of futility."}
+    2: {verdict: TRUE, evidence: "l.4-6 wish; l.11-13."}
+    3: {verdict: FALSE, evidence: "Death is listed among the things hoped to remain (l.7); there is no fear."}
+    4: {verdict: FALSE, evidence: "No longing to leave for the sky."}
+    5: {verdict: FALSE, evidence: "No nostalgia."}
+  answer: 2
+  notes: "Distractors are weak; a theme-level item."
+- item_id: KOR-NF4-044
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "Stanza 1 is already set inside the fossil (underground); there is no steady downward gaze."}
+    2: {verdict: FALSE, evidence: "Stanza 1 shows no sadness of the speaker; no cause-and-overcoming sequence."}
+    3: {verdict: FALSE, evidence: "No past/present/future structure."}
+    4: {verdict: FALSE, evidence: "No line is repeated between stanzas 1 and 3."}
+    5: {verdict: TRUE, evidence: "St.1 bird (l.1-3); st.2 '내가 ... 반짝거릴까' (l.4-6); st.3 address and imperative to the stars (l.9-11)."}
+  answer: 5
+  notes: ""
+- item_id: KOR-NF4-045
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "'결코 지상으로 내려오지 않는' (l.3). 'Finite earth' is interpretive but acceptable."}
+    2: {verdict: TRUE, evidence: "'쥐라기 지층 어느 하늘 아래' (l.5)."}
+    3: {verdict: TRUE, evidence: "'가령' lists death and the eyes as further things hoped to shine (l.7-8)."}
+    4: {verdict: FALSE, evidence: "The stars are on earth ('지상의', l.10) and burn themselves away; there is no looking down from the sky."}
+    5: {verdict: TRUE, evidence: "'묻혀라 화석에' is inverted (l.11)."}
+  answer: 4
+  notes: "Overlaps with 48 (가령) and 51 (㉡)."
+- item_id: KOR-NF4-046
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "The bird never comes down to earth (l.3), so earth is not where it must return."}
+    2: {verdict: FALSE, evidence: "The speaker does not reject the 10행 earth; there is no rejection of reality."}
+    3: {verdict: FALSE, evidence: "No longing or fear is attached to either."}
+    4: {verdict: TRUE, evidence: "l.3; '스스로 불에 타서 소멸을 선택하는 / 지상의 별들' (l.9-10)."}
+    5: {verdict: FALSE, evidence: "In 10행 'earth' is contrasted with the fossil, not equated with it."}
+  answer: 4
+  notes: "'유한한 세계' is the interpreter's gloss; acceptable."
+- item_id: KOR-NF4-047
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "'어느' is indefinite, and the line ends in '-ㄹ까'."}
+    2: {verdict: FALSE, evidence: "The Jurassic is not the time the speaker wept."}
+    3: {verdict: TRUE, evidence: "'눈물도' (l.4), with '도' linking back to the bird in the fossil."}
+    4: {verdict: FALSE, evidence: "The wish is unconfirmed (question)."}
+    5: {verdict: FALSE, evidence: "'하나의' is not about gathering; a weak distractor."}
+  answer: 3
+  notes: ""
+- item_id: KOR-NF4-048
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "'가령' gives examples, not an answer."}
+    2: {verdict: TRUE, evidence: "l.7-8 add death and the eyes to the tears."}
+    3: {verdict: FALSE, evidence: "Not about the bird."}
+    4: {verdict: FALSE, evidence: "No fear of death."}
+    5: {verdict: FALSE, evidence: "Does not introduce the stars."}
+  answer: 2
+  notes: ""
+- item_id: KOR-NF4-049
+  polarity: positive
+  options:
+    1: {verdict: TRUE, evidence: "Paradox (역설), l.12-13."}
+    2: {verdict: FALSE, evidence: "This is paradox, not irony (반어); the rest of the option is fine. The term discrimination is the only differentiator."}
+    3: {verdict: FALSE, evidence: "No revival; the claim is that eternal persistence negates death."}
+    4: {verdict: FALSE, evidence: "No comforting of a frightened object."}
+    5: {verdict: FALSE, evidence: "'이미' here means 'already no longer', not that death has occurred."}
+  answer: 1
+  notes: "Tests 역설 vs 반어 terminology, which is in the standard curriculum."
+- item_id: KOR-NF4-050
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "'스스로' (l.9)."}
+    2: {verdict: TRUE, evidence: "Burning star imagery (l.9-10)."}
+    3: {verdict: TRUE, evidence: "'별들' as a precious, shining metaphor."}
+    4: {verdict: TRUE, evidence: "l.11-13."}
+    5: {verdict: FALSE, evidence: "The extinction is chosen and affirmed, not pitied as giving up."}
+  answer: 5
+  notes: ""
+- item_id: KOR-NF4-051
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "The first half (contrasting words) is fine, but the speaker does not avoid death."}
+    2: {verdict: FALSE, evidence: "The bird does not want to return to the past."}
+    3: {verdict: FALSE, evidence: "Shining eyes in front of death are not fear."}
+    4: {verdict: FALSE, evidence: "The stars do not lose their light, and the option misreads '지상의 별들'."}
+    5: {verdict: TRUE, evidence: "l.5; the space is reconstructed as a place where the jewel shines."}
+  answer: 5
+  notes: "The identical <보기> is reused in 76."
+- item_id: KOR-NF4-052
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "l.1-2."}
+    2: {verdict: TRUE, evidence: "'내가' first appears at l.4."}
+    3: {verdict: FALSE, evidence: "Metaphor, not an observed real meteor."}
+    4: {verdict: TRUE, evidence: "l.8."}
+    5: {verdict: TRUE, evidence: "l.11 (imperative), l.13 (assertion)."}
+  answer: 3
+  notes: ""
+- item_id: KOR-NF4-053
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "This is the opening image."}
+    2: {verdict: FALSE, evidence: "This is a fragment."}
+    3: {verdict: FALSE, evidence: "This is an example list."}
+    4: {verdict: PARTIAL, evidence: "The central wish, but not the conclusion."}
+    5: {verdict: TRUE, evidence: "Paradoxical conclusion, l.12-13."}
+  answer: 5
+  notes: "Option 4 is weakly defensible as the 'core wish' but the convention (concluding paradox) makes 5 the clear key."
+- item_id: KOR-NF4-054
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "Wrong order."}
+    2: {verdict: TRUE, evidence: "St.1 bird → st.2 tears → st.3 stars."}
+    3: {verdict: FALSE, evidence: "Wrong order."}
+    4: {verdict: FALSE, evidence: "Wrong order."}
+    5: {verdict: FALSE, evidence: "The jewel is the hoped-for state of the tears (st.2), not a third object."}
+  answer: 2
+  notes: ""
+- item_id: KOR-NF4-055
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "l.1-2."}
+    2: {verdict: TRUE, evidence: "l.4-6."}
+    3: {verdict: TRUE, evidence: "l.12-13."}
+    4: {verdict: FALSE, evidence: "Death vs shining eyes (l.8) is extinction vs a bright, living spirit; neither 'fear' nor 'resignation' is in the text."}
+    5: {verdict: TRUE, evidence: "l.9, 11."}
+  answer: 4
+  notes: ""
+- item_id: KOR-NF4-056
+  polarity: positive
+  options:
+    1: {verdict: TRUE, evidence: "l.6 question → l.11 imperative + l.13 assertion."}
+    2: {verdict: FALSE, evidence: "A question is not certainty."}
+    3: {verdict: FALSE, evidence: "The imperative is not uncertainty; the attitude changes."}
+    4: {verdict: FALSE, evidence: "The final assertion strengthens certainty."}
+    5: {verdict: FALSE, evidence: "The first clause is literally true (st.2's last line ends in '눈.'), but the conclusion is false because the question at l.6 shows hesitation."}
+  answer: 1
+  notes: "Stanza 2 literally ends with a noun, and its question ends with a comma rather than a sentence end. Option 5 exploits this; it is fine as a distractor but slightly tricky against <보기>'s '물음으로 끝맺으면'."
+- item_id: KOR-NF4-057
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "The stars are urged into the fossil."}
+    2: {verdict: TRUE, evidence: "l.1-2; l.10-11."}
+    3: {verdict: FALSE, evidence: "Reversed."}
+    4: {verdict: FALSE, evidence: "The stars are not yet buried (imperative)."}
+    5: {verdict: FALSE, evidence: "The stars gain, not lose, eternity (l.12-13)."}
+  answer: 2
+  notes: ""
+- item_id: KOR-NF4-058
+  polarity: positive (ㄱㄴㄷㄹ)
+  statements:
+    ㄱ: {verdict: TRUE, evidence: "No first person in st.1; '내가' at l.4."}
+    ㄴ: {verdict: FALSE, evidence: "The eyes at l.8 are not marked as the speaker's, and the stanza is about lasting value, not the size of sadness."}
+    ㄷ: {verdict: TRUE, evidence: "'별들이여' (l.10)."}
+    ㄹ: {verdict: FALSE, evidence: "l.12-13 are the speaker's own assertion, not the stars' reply."}
+  options: {1: TRUE, 2: FALSE, 3: FALSE, 4: FALSE, 5: FALSE}
+  answer: 1
+  notes: "ㄴ requires noticing that the 'eyes' owner is unspecified."
+- item_id: KOR-NF4-059
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "'새가 난다' — the bird moves."}
+    2: {verdict: FALSE, evidence: "The stars are not seen as losing value."}
+    3: {verdict: TRUE, evidence: "l.4-6 + <보기> (jewel = shining value)."}
+    4: {verdict: FALSE, evidence: "The Jurassic signals a long time."}
+    5: {verdict: FALSE, evidence: "No wish is voiced in st.1; there is no opposition."}
+  answer: 3
+  notes: ""
+- item_id: KOR-NF4-060
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "The death at l.7 is not the bird's."}
+    2: {verdict: FALSE, evidence: "l.12-13 deny that death is an end."}
+    3: {verdict: FALSE, evidence: "The death at l.7 is among things hoped to shine, not avoided."}
+    4: {verdict: TRUE, evidence: "l.7; l.12-13 reverse the common notion."}
+    5: {verdict: FALSE, evidence: "No revival of the eyes."}
+  answer: 4
+  notes: "FLAG e: the options cite '13행' for '죽는 것은 ... 죽음이 아니다', but the subject phrase is on l.12; use '12~13행'. Options 2, 4 and 5 share an identical first half (pair-shell construction)."
+- item_id: KOR-NF4-061
+  polarity: positive
+  options:
+    1: {verdict: TRUE, evidence: "'얼굴이여' ×2 (l.10-11)."}
+    2: {verdict: FALSE, evidence: "'생글거리고' is a mimetic word (의태어), not an onomatopoeia (의성어); there is no sound word."}
+    3: {verdict: FALSE, evidence: "Only '검은' (l.17); no colour contrast."}
+    4: {verdict: FALSE, evidence: "No seasons."}
+    5: {verdict: FALSE, evidence: "No question-answer."}
+  answer: 1
+  notes: ""
+- item_id: KOR-NF4-062
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "l.1."}
+    2: {verdict: FALSE, evidence: "He refocuses on the numbers in the documents (l.23); he does not leave."}
+    3: {verdict: TRUE, evidence: "l.8."}
+    4: {verdict: TRUE, evidence: "l.21-22."}
+    5: {verdict: TRUE, evidence: "l.5-6."}
+  answer: 2
+  notes: "Easy content-check item."
+- item_id: KOR-NF4-063
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "l.10, 12."}
+    2: {verdict: TRUE, evidence: "l.11, 8."}
+    3: {verdict: FALSE, evidence: "Reversed: the skull always looks at the face (l.13)."}
+    4: {verdict: TRUE, evidence: "l.19-20; l.2-3."}
+    5: {verdict: TRUE, evidence: "l.14-17."}
+  answer: 3
+  notes: ""
+- item_id: KOR-NF4-064
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "Single place."}
+    2: {verdict: FALSE, evidence: "Never said to be a dream."}
+    3: {verdict: FALSE, evidence: "No past memory or future resolve."}
+    4: {verdict: TRUE, evidence: "l.1 → st.1-2 → l.23."}
+    5: {verdict: FALSE, evidence: "No dialogue."}
+  answer: 4
+  notes: ""
+- item_id: KOR-NF4-065
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "'어둠이 손에 배자' (l.2), synaesthetic/sensory."}
+    2: {verdict: TRUE, evidence: "'튼튼한 폐허' oxymoron (l.8)."}
+    3: {verdict: TRUE, evidence: "l.11 simile."}
+    4: {verdict: TRUE, evidence: "l.17."}
+    5: {verdict: FALSE, evidence: "The first half is true (unreal change), but the result is awkwardness (l.21-22), not relief."}
+  answer: 5
+  notes: ""
+- item_id: KOR-NF4-066
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "He continues slowly; no stopping out of regret."}
+    2: {verdict: FALSE, evidence: "He avoids touching all at once (l.5)."}
+    3: {verdict: FALSE, evidence: "'신기한 것' (l.4); he does not keep a distance."}
+    4: {verdict: FALSE, evidence: "Earlier than the face (l.8)."}
+    5: {verdict: TRUE, evidence: "l.4-6."}
+  answer: 5
+  notes: ""
+- item_id: KOR-NF4-067
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "No longing."}
+    2: {verdict: FALSE, evidence: "Reversed subject (it is the skull that sees, l.13)."}
+    3: {verdict: TRUE, evidence: "l.13-17."}
+    4: {verdict: FALSE, evidence: "The skull outlasts the face (l.16)."}
+    5: {verdict: FALSE, evidence: "'너' = the face (l.10-13)."}
+  answer: 3
+  notes: ""
+- item_id: KOR-NF4-068
+  polarity: positive
+  options:
+    1: {verdict: TRUE, evidence: "l.14 '피다 지는' (implicit flower) vs l.15-16."}
+    2: {verdict: FALSE, evidence: "No cycle."}
+    3: {verdict: FALSE, evidence: "The first half (time drawn as space) is defensible; 'will to keep the memory' is false — the memory is erased (l.16)."}
+    4: {verdict: FALSE, evidence: "l.16 includes the time after the memory is erased."}
+    5: {verdict: FALSE, evidence: "No beauty/ugliness opposition."}
+  answer: 1
+  notes: "Option 3 is the strongest distractor (half-true)."
+- item_id: KOR-NF4-069
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "l.18."}
+    2: {verdict: FALSE, evidence: "Regaining the pupils leads to hurrying back to the numbers (l.22-23); no resolve to remember."}
+    3: {verdict: TRUE, evidence: "l.21."}
+    4: {verdict: TRUE, evidence: "l.23."}
+    5: {verdict: TRUE, evidence: "l.19."}
+  answer: 2
+  notes: ""
+- item_id: KOR-NF4-070
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "No satire."}
+    2: {verdict: FALSE, evidence: "No nature."}
+    3: {verdict: FALSE, evidence: "No overcoming of fear."}
+    4: {verdict: TRUE, evidence: "Whole poem."}
+    5: {verdict: FALSE, evidence: "No nostalgia."}
+  answer: 4
+  notes: "Distractors are generic and weak."
+- item_id: KOR-NF4-071
+  polarity: positive
+  options:
+    1: {verdict: TRUE, evidence: "l.1-2 sight/darkness → l.3-8 touch → l.22-23 eyes focus."}
+    2: {verdict: FALSE, evidence: "He never touches the flesh again."}
+    3: {verdict: FALSE, evidence: "No final touch."}
+    4: {verdict: FALSE, evidence: "Wrong order."}
+    5: {verdict: FALSE, evidence: "No hearing."}
+  answer: 1
+  notes: "'어둠을 본 뒤' is slightly loose (darkness is perceived because the eyes are covered), and the skull's 'seeing' in st.2 is imagined vision. Still, 1 is the only defensible option; confidence is MEDIUM only on wording."
+- item_id: KOR-NF4-072
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "This is the moment the strangeness ends."}
+    2: {verdict: FALSE, evidence: "'아까워하며' means he wants it to continue."}
+    3: {verdict: FALSE, evidence: "The skull always looks, but the speaker's strange moment is brief (<보기>, l.18-23)."}
+    4: {verdict: TRUE, evidence: "l.1."}
+    5: {verdict: FALSE, evidence: "He returns to daily life."}
+  answer: 4
+  notes: ""
+- item_id: KOR-NF4-073
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "'그 물체' (l.7) is distancing and objectifying."}
+    2: {verdict: FALSE, evidence: "Figurative, not a real experience."}
+    3: {verdict: FALSE, evidence: "No pessimism."}
+    4: {verdict: FALSE, evidence: "The skull is not working in his place."}
+    5: {verdict: TRUE, evidence: "l.9, 11."}
+  answer: 5
+  notes: "FLAG e: in option 4, \"'자는 일 없이'를 되풀이\" is inaccurate wording; the repeated element is '~일 없이' (l.12)."
+- item_id: KOR-NF4-074
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "(나) has no imperative."}
+    2: {verdict: FALSE, evidence: "(가) is not a narrative of events."}
+    3: {verdict: TRUE, evidence: "(가) l.1-2, 5; (나) l.13, 19."}
+    4: {verdict: FALSE, evidence: "No seasonal material."}
+    5: {verdict: FALSE, evidence: "No empathetic object for sadness."}
+  answer: 3
+  notes: ""
+- item_id: KOR-NF4-075
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "(가) l.1; (나) l.1."}
+    2: {verdict: FALSE, evidence: "(가) affirms chosen extinction (l.9-13) rather than preventing it; (나) shows no envy of the skull."}
+    3: {verdict: TRUE, evidence: "(가) l.10; (나) l.10-11."}
+    4: {verdict: TRUE, evidence: "(가) l.4 only; (나) 나/내 at l.4, 8, 13, 18, 22."}
+    5: {verdict: TRUE, evidence: "Themes of both poems."}
+  answer: 2
+  notes: "'대상의 소멸을 막으려는' could look half-plausible to weak readers (wish for eternity), but 'chosen extinction' refutes it."
+- item_id: KOR-NF4-076
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "(가) is a spatial reconstruction, but (나) l.19 is an unreal change of an object, not of space."}
+    2: {verdict: FALSE, evidence: "'지상의 별들' is a metaphor, not a change; '튼튼한 폐허' is an oxymoron, not a change."}
+    3: {verdict: TRUE, evidence: "영원히↔죽는 (l.12); 튼튼한↔폐허 (l.8)."}
+    4: {verdict: FALSE, evidence: "'서류 속의 숫자' is everyday reality."}
+    5: {verdict: FALSE, evidence: "Not a return to the past by time reconstruction."}
+  answer: 3
+  notes: "Option 1 is the strongest distractor (half-true). Same <보기> as 51."
+- item_id: KOR-NF4-077
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "Not negative objects to escape."}
+    2: {verdict: TRUE, evidence: "(가) l.11; (나) l.19-20."}
+    3: {verdict: FALSE, evidence: "The face, not the skull, makes expressions; the fossil has a flying bird."}
+    4: {verdict: FALSE, evidence: "The tears are not yet buried (question)."}
+    5: {verdict: FALSE, evidence: "Neither emotion is attested."}
+  answer: 2
+  notes: ""
+- item_id: KOR-NF4-078
+  polarity: positive (ㄱㄴㄷㄹ)
+  statements:
+    ㄱ: {verdict: TRUE, evidence: "(가) '묻혀라 화석에' (l.11); (나) object phrases after the verb (l.7-8: '...그 물체를 / ...그 튼튼한 폐허를'; l.13-17 '너를 보고 있네 / ...얼굴을 ...시간을')."}
+    ㄴ: {verdict: FALSE, evidence: "(가) st.1 is about the bird and st.3 addresses the stars; there are no actions of the speaker."}
+    ㄷ: {verdict: FALSE, evidence: "(가) '흘린' is past; (나) l.10 tears are the face's habitual expressions."}
+    ㄹ: {verdict: TRUE, evidence: "(가) tears/jewel, extinction/fossil; (나) face/skull."}
+  options: {1: FALSE, 2: TRUE, 3: FALSE, 4: FALSE, 5: FALSE}
+  answer: 2
+  notes: "ㄱ for (나) requires recognising inversion; but ㄹ true + ㄷ false already isolate option 2, so ㄱ need not be judged."
+- item_id: KOR-NF4-079
+  polarity: positive
+  options:
+    1: {verdict: TRUE, evidence: "(가) l.9; (나) l.23."}
+    2: {verdict: FALSE, evidence: "He hurries back to work, not to prolong the experience."}
+    3: {verdict: FALSE, evidence: "'스스로' modifies the stars, not the speaker."}
+    4: {verdict: FALSE, evidence: "'스스로' means a chosen, not forced, acceptance."}
+    5: {verdict: FALSE, evidence: "'서둘러' describes the speaker's own action, not a request."}
+  answer: 1
+  notes: "Pair-shell construction (options 1-4 vary one half)."
+- item_id: KOR-NF4-080
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "No awkwardness before touching."}
+    2: {verdict: FALSE, evidence: "He resumes normal activity (l.22-23); no refusal."}
+    3: {verdict: FALSE, evidence: "The face becomes awkward (l.21)."}
+    4: {verdict: TRUE, evidence: "l.21-22."}
+    5: {verdict: FALSE, evidence: "'튼튼한 폐허' refers to the skull, and the skull outlasts the face."}
+  answer: 4
+  notes: ""
