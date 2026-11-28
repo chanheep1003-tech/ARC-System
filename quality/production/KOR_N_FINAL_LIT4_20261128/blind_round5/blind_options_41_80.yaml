@@ -1,0 +1,432 @@
+# Blind solve, items 41-80. Line numbers follow the 〔5〕 markers.
+# (가) 보석 1: 1 화석 속엔 한 마리 / 2 새가 난다. / 3 결코 지상으로…새. / 4 내가 흘린 눈물도 / 5 쥐라기 지층 어느 하늘 아래 /
+#   6 하나의 보석으로 반짝거릴까, / 7 가령 죽음이라든가, / 8 죽음 앞에서 초롱초롱 빛나던 눈. / 9 스스로 불에 타서 소멸을 선택하는 /
+#   10 지상의 별들이여 / 11 묻혀라 화석에. / 12 영원히 죽는 것은 이미 / 13 죽음이 아니다.
+# (나) 얼굴: 1 눈이 피곤… 얼굴을 가렸다 / 2 …어둠이 손에 배자 / 3 해골이 만져졌다 / 4 신기한 것을 감지한 듯 / 5-6 아까워하며 조금씩 조금씩 /
+#   7 차갑고 무뚝뚝하고 무관심한 그 물체를 / 8 튼튼한 폐허를 / 9 해골의 껍데기에 붙어서 / 10 생글거리고…얼굴이여 / 11 마음처럼 얇디얇은 얼굴이여 /
+#   12 ~일 없이 x3 / 13 내 해골은 늘 너를 보고 있네 / 14 잠시 동안만 피다 지는 얼굴을 / 15-16 뻗어 있는 긴 시간을 / 17 선글라스만한…보고 있네 /
+#   18 손을 풀었다 / 19 햇빛은 살로 변하여 / 20 얼굴이 되었다 / 21 뒤집어쓴 얼굴이 어색하여 / 22 눈동자를 되찾아 / 23 서둘러 서류 속의 숫자에 초점
+
+items:
+- item: 41
+  polarity: negative
+  verdicts:
+    1: {v: F, ev: "There is no question-and-answer dialogue. The only question (line 6) is never answered by anyone."}
+    2: {v: T, ev: "Line 6 '반짝거릴까' expresses a wish."}
+    3: {v: T, ev: "Line 10 '별들이여'."}
+    4: {v: T, ev: "Lines 3 '새.' and 8 '눈.' end on nouns."}
+    5: {v: T, ev: "Lines 12-13 '죽음이 아니다.' is assertive."}
+  answer: 1
+  notes: "Clean. Overlaps items 52 and 56 (same ending-type facts)."
+
+- item: 42
+  polarity: positive
+  verdicts:
+    1: {v: T, ev: "Lines 1-2: a bird flies inside the fossil, and line 11 makes the fossil the place where 소멸 is preserved."}
+    2: {v: F, ev: "'영원히 잠든' contradicts '난다' (line 2)."}
+    3: {v: F, ev: "The tears are not buried in the fossil, and there is no '떠나보낸 과거'."}
+    4: {v: F, ev: "Line 11 tells the stars to be buried there, not to avoid it."}
+    5: {v: F, ev: "Nothing says the bird wants to escape."}
+  answer: 1
+  notes: "Weak distractors. Option 1 is the only one that pairs the shared stem '생명이 멈춘 흔적' with a '~지만' positive turn, which is a mild surface cue."
+
+- item: 43
+  polarity: positive (pairing)
+  slots:
+    ㄱ: "Correct line is 4~6 (the wish that tears shine as a jewel). 1~3 describe the bird and contain no wish."
+    ㄴ: "Correct line is 9 ('스스로…선택하는'). Line 11 is the speaker's command, not the object's choice."
+    ㄷ: "Correct lines are 12~13 (paradox redefining death). Lines 7~8 give examples of the wish."
+  verdicts:
+    1: {v: F, ev: "ㄱ, ㄴ and ㄷ are all wrong."}
+    2: {v: F, ev: "ㄴ and ㄷ are wrong."}
+    3: {v: F, ev: "ㄱ and ㄷ are wrong."}
+    4: {v: F, ev: "ㄱ and ㄴ are wrong."}
+    5: {v: T, ev: "All three slots are correct."}
+  answer: 5
+  notes: "The most frequent slot values (1~3, 11, 7~8) all point away from the key, so there is no frequency cue."
+
+- item: 44
+  polarity: positive
+  verdicts:
+    1: {v: F, ev: "No line is repeated between stanzas 1 and 3."}
+    2: {v: F, ev: "Stanza 1 expresses no sorrow, and stanza 2 gives no cause."}
+    3: {v: F, ev: "Stanza 1 is not a recollection, and stanza 3 is not a resolution for the future."}
+    4: {v: T, ev: "Stanza 1 presents the eternal bird, stanza 2 the speaker's own wish ('내가'), and stanza 3 a request to the stars ('묻혀라')."}
+    5: {v: F, ev: "There is no sky-to-underground movement, and stanza 1 is already inside the fossil."}
+  answer: 4
+
+- item: 45
+  polarity: positive (ㄱㄴㄷㄹ)
+  statements:
+    ㄱ: {v: T, ev: "Line 3 re-designates the bird of line 2 and adds that it never descends to the ground."}
+    ㄴ: {v: T, ev: "Line 5 places a sky inside an underground stratum, an unreal space."}
+    ㄷ: {v: F, ev: "'가령' adds examples. It neither answers the question nor says the wish is fulfilled."}
+    ㄹ: {v: T, ev: "Line 11 is inverted (화석에 묻혀라 → 묻혀라 화석에), which puts the focus on 화석."}
+  answer: 3
+  notes: "ㄱ '지상에 얽매이지 않음' is a slight paraphrase of '내려오지 않는', but acceptable."
+
+- item: 46
+  polarity: positive (ㄱㄴㄷㄹ)
+  statements:
+    ㄱ: {v: T, ev: "Line 3."}
+    ㄴ: {v: T, ev: "Lines 10-11."}
+    ㄷ: {v: F, ev: "Nothing shows the speaker wanting to leave the ground."}
+    ㄹ: {v: T, ev: "Line 5."}
+  answer: 4
+  notes: "ㄹ duplicates item 45 ㄴ and item 54 ㄴ. Only ㄷ needs any judgment."
+
+- item: 47
+  polarity: positive (2x2 grid + 1)
+  parts:
+    "도 = 새처럼 자신의 것도 남기를": T
+    "도 = 새와 달리 체념": F
+    "어느 하늘 아래 = 아득하고 막연함": "T (indefinite '어느')"
+    "어느 하늘 아래 = 분명히 알고 있음": F
+  verdicts:
+    1: {v: F, ev: "The second part is false."}
+    2: {v: T, ev: "Both parts are true."}
+    3: {v: F, ev: "The first part is false."}
+    4: {v: F, ev: "Both parts are false."}
+    5: {v: F, ev: "'쥐라기 지층' is deep geological time, not the speaker's past."}
+  answer: 2
+
+- item: 48
+  polarity: positive
+  verdicts:
+    1: {v: T, ev: "'가령 죽음이라든가 / …빛나던 눈' lists further things that might shine as jewels, which makes the stanza-2 wish concrete."}
+    2: {v: F, ev: "Line 6 is still a question. Nothing confirms that the wish has come true."}
+    3: {v: F, ev: "Lines 7-8 do not explain the bird."}
+    4: {v: F, ev: "The first half is plausible, but '두려워하는' clashes with '초롱초롱 빛나던'."}
+    5: {v: F, ev: "The stars appear only in line 10. Nothing previews them here."}
+  answer: 1
+  notes: "Reading 'death' as something the speaker wishes to remain is the conventional reading but semantically delicate. Confidence MEDIUM on the wording, though no other option is defensible."
+
+- item: 49
+  polarity: positive (2x2 grid + 1)
+  parts:
+    "역설": "T (영원히 죽는 것 ≠ 죽음 is a surface contradiction)"
+    "반어": "F (no inverted intended meaning)"
+    "소멸이 영원으로 이어질 수 있다는 인식": T
+    "죽음을 두려워하는 마음을 달래려는 태도": "F (no consoling tone)"
+  verdicts:
+    1: {v: F, ev: "'이미' does not mean the death has already happened. It intensifies the redefinition."}
+    2: {v: F, ev: "The second part is false."}
+    3: {v: F, ev: "The device is wrong (반어)."}
+    4: {v: F, ev: "Both parts are false."}
+    5: {v: T, ev: "Both parts are true."}
+  answer: 5
+  notes: "The key's content is also signposted by item 42 option 1 and item 55 option 3 (cross-item overlap)."
+
+- item: 50
+  polarity: negative
+  verdicts:
+    1: {v: T, ev: "Line 9 '스스로'."}
+    2: {v: F, ev: "Nothing about failing to bear pain or giving up life, and no pity. The speaker honours the choice."}
+    3: {v: T, ev: "Line 10 '별들'."}
+    4: {v: T, ev: "'불에 타서' suggests burning brightly while vanishing."}
+    5: {v: T, ev: "Line 11 '묻혀라 화석에' together with lines 12-13."}
+  answer: 2
+
+- item: 51
+  polarity: positive (<보기> application)
+  verdicts:
+    1: {v: F, ev: "The bird is not said to want to return to the past. The reading is invented."}
+    2: {v: T, ev: "A sky inside an underground stratum is an unreal space, and the jewel shines there."}
+    3: {v: F, ev: "'초롱초롱 빛나던' shows no fear."}
+    4: {v: F, ev: "'빛을 잃는' is wrong. The stars burn brightly."}
+    5: {v: F, ev: "The speaker does not avoid death but redefines it."}
+  answer: 2
+
+- item: 52
+  polarity: negative
+  verdicts:
+    1: {v: T, ev: "Lines 1-2."}
+    2: {v: T, ev: "Line 4 is the first '내가'."}
+    3: {v: F, ev: "'지상의 별들' is metaphorical, not an observed meteor."}
+    4: {v: T, ev: "Line 8."}
+    5: {v: T, ev: "Line 11 is imperative and lines 12-13 are assertive."}
+  answer: 3
+
+- item: 53
+  polarity: positive
+  verdicts:
+    1: {v: F, ev: "This is the image, not the theme."}
+    2: {v: F, ev: "This is a fragment."}
+    3: {v: F, ev: "These are examples."}
+    4: {v: "F (second best)", ev: "It is the speaker's request, but the redefinition of death is stated in lines 12-13."}
+    5: {v: T, ev: "The concluding paradox condenses the theme (소멸 → 영원)."}
+  answer: 5
+
+- item: 54
+  polarity: positive (ㄱㄴㄷㄹ)
+  statements:
+    ㄱ: {v: T, ev: "Bird and stars both evoke the sky. The bird sits in the fossil and the stars on the ground (line 10)."}
+    ㄴ: {v: T, ev: "Line 5."}
+    ㄷ: {v: T, ev: "'불에 타서', '반짝거릴까' and '빛나던' form a chain of light imagery."}
+    ㄹ: {v: F, ev: "Nothing makes them the same entity."}
+  answer: 3
+
+- item: 55
+  polarity: negative
+  verdicts:
+    1: {v: T, ev: "Stillness vs motion."}
+    2: {v: T, ev: "Momentary vs lasting."}
+    3: {v: T, ev: "Paradox."}
+    4: {v: F, ev: "'초롱초롱 빛나던 눈' is clarity or brightness, not 체념, and 죽음 is not framed as fear."}
+    5: {v: T, ev: "Vanishing vs preserved."}
+  answer: 4
+
+- item: 56
+  polarity: positive (<보기> + ㄱㄴㄷㄹ)
+  statements:
+    ㄱ: {v: T, ev: "Line 3 ends on '새.'."}
+    ㄴ: {v: T, ev: "Line 6 is a question and line 8 ends on '눈.'."}
+    ㄷ: {v: T, ev: "Line 11 is a command and line 13 an assertion."}
+    ㄹ: {v: F, ev: "Only one question occurs in the poem."}
+  answer: 3
+  notes: "Largely duplicates item 41."
+
+- item: 57
+  polarity: positive
+  verdicts:
+    1: {v: T, ev: "The bird already lives on in the fossil (lines 1-3). The stars are told to be buried there (line 11)."}
+    2: {v: F, ev: "'거부' is wrong."}
+    3: {v: F, ev: "The roles are reversed."}
+    4: {v: F, ev: "The stars are not yet buried."}
+    5: {v: F, ev: "'영원을 잃는' contradicts lines 12-13."}
+  answer: 1
+
+- item: 58
+  polarity: positive (ㄱㄴㄷㄹ)
+  statements:
+    ㄱ: {v: T, ev: "Line 4 '내가'."}
+    ㄴ: {v: F, ev: "The eyes in line 8 are not necessarily the speaker's, and the stanza is about lasting brightness, not the size of grief."}
+    ㄷ: {v: T, ev: "Line 10 address. The wish extends from 'my tears' to other beings."}
+    ㄹ: {v: F, ev: "Lines 12-13 are the speaker's own assertion, not the stars' reply."}
+  answer: 1
+
+- item: 59
+  polarity: positive (<보기> + ㄱㄴㄷㄹ)
+  statements:
+    ㄱ: {v: T, ev: "'난다' means more than a trace: it moves."}
+    ㄴ: {v: T, ev: "Jewel = lasting, shining value."}
+    ㄷ: {v: F, ev: "The stars are burning (line 9). They have not lost their light."}
+    ㄹ: {v: T, ev: "'쥐라기' evokes deep time."}
+  answer: 3
+
+- item: 60
+  polarity: positive (2x2 grid + 1)
+  parts:
+    "7~8 죽음 = 피하고 싶은 것": F
+    "7~8 죽음 = 눈물과 나란히 남기를 바라는 것의 예": "T (the '가령 ~라든가' listing)"
+    "12~13 = 죽음이 결국 끝": F
+    "12~13 = 통념이 뒤집힘": T
+  verdicts:
+    1: {v: F, ev: "Both parts are false."}
+    2: {v: F, ev: "The second part is false."}
+    3: {v: F, ev: "The first part is false."}
+    4: {v: T, ev: "Both parts are true."}
+    5: {v: F, ev: "The bird has not 'met death' and the stars do not avoid death."}
+  answer: 4
+  notes: "Flag c: the key's first half paraphrases item 48's key and the second half restates items 49 and 53. 'Death' as a thing wished to remain is the same delicate reading as in item 48."
+
+- item: 61
+  polarity: positive
+  verdicts:
+    1: {v: F, ev: "No sound-imitating word. '생글거리고' and '깜박거렸다' imitate appearance or motion, not sound."}
+    2: {v: F, ev: "No question-and-answer exchange."}
+    3: {v: F, ev: "'검은 눈' and '햇빛' are not a colour contrast pointing to an ideal world."}
+    4: {v: F, ev: "No seasons."}
+    5: {v: T, ev: "Lines 10-11 repeat '얼굴이여'."}
+  answer: 5
+
+- item: 62
+  polarity: positive (ㄱㄴㄷㄹ)
+  statements:
+    ㄱ: {v: T, ev: "Line 10 lists the face's changing expressions."}
+    ㄴ: {v: T, ev: "Line 8 (skull) is set against line 11 (face)."}
+    ㄷ: {v: F, ev: "'햇빛은 살로 변하여' is a transformation, not a simile. ('선글라스만한' is at best a size comparison.)"}
+    ㄹ: {v: F, ev: "'조금씩 조금씩' describes the hand's careful exploring, not a property of the skull."}
+  answer: 1
+  notes: "Whether '선글라스만한' counts as a simile is debatable, but ㄷ is false anyway because of its second half."
+
+- item: 63
+  polarity: negative
+  verdicts:
+    1: {v: T, ev: "Lines 10 and 12."}
+    2: {v: F, ev: "Reversed: the skull always looks at the face (lines 13 and 17)."}
+    3: {v: T, ev: "Lines 14-17."}
+    4: {v: T, ev: "Lines 19-20 for the face, lines 2-3 for the skull."}
+    5: {v: T, ev: "Lines 11 and 8."}
+  answer: 2
+
+- item: 64
+  polarity: positive (3-slot pairing)
+  slots:
+    1연: "호기심 (lines 4-6 '신기한 것', '아까워하며'). '차갑고 무관심' describes the skull (line 7), not the speaker."
+    2연: "Reflection on the face's transience (line 14). No sorrow over losing the face."
+    3연: "Returning to routine amid awkwardness (lines 21-23). No joy."
+  answer: 5
+  notes: "The most frequent slot values point to option 1, which is wrong, so there is no frequency cue."
+
+- item: 65
+  polarity: positive (ㄱㄴㄷㄹ)
+  statements:
+    ㄱ: {v: T, ev: "㉠: darkness (visual) soaks into the hand (tactile). ㉤: sunlight turns into flesh."}
+    ㄴ: {v: T, ev: "Oxymoron."}
+    ㄷ: {v: F, ev: "Both are imaginative, not literal descriptions."}
+    ㄹ: {v: T, ev: "'마음처럼'."}
+  answer: 3
+  notes: "Flag e: ㄱ is a catch-all ('감각이나 대상이 … 옮겨 가거나 바뀌는') that fits two different devices. It reads as engineered."
+
+- item: 66
+  polarity: positive (2x2 + 1)
+  parts:
+    "(가) 화석에 묻히라고 당부": "T (line 11)"
+    "(가) 소멸을 막으려": F
+    "(나) 아까워하며 천천히 살핀다": "T (lines 4-6)"
+    "(나) 무관심한 물체로 여겨 거리를 둔다": "F (the skull is the one that is '무관심'; the speaker is curious)"
+  answer: 2
+  notes: "Option 5 is false: there is no reply in (가) and no avoiding the gaze in (나)."
+
+- item: 67
+  polarity: positive (2x2 + 1)
+  parts:
+    "(가)1연 대상을 불러 말을 건넴": "F (no address in stanza 1)"
+    "(가)1연 화석 속 영원을 얻은 존재": T
+    "(나)2연 지상으로 내려오지 않는 존재": "F (that is the bird of (가))"
+    "(나)2연 긴 시간을 보는 해골": "T (lines 13-17)"
+  answer: 4
+
+- item: 68
+  polarity: positive (2x2 + 1)
+  parts:
+    "피다 지는 = 꽃에 빗대 짧음": "T (implied flower metaphor plus '잠시 동안만')"
+    "피다 지는 = 해마다 순환": F
+    "긴 시간 = 생기기 전의 시간만": "F ('만' is wrong; line 16 says after the memory is erased)"
+    "긴 시간 = 기억이 지워진 뒤까지": T
+  answer: 5
+  notes: "Option 1 is false. The repetition of '뻗어 있는' describes time, not the speaker's will."
+
+- item: 69
+  polarity: negative
+  verdicts:
+    1: {v: T, ev: "Line 18."}
+    2: {v: F, ev: "'겨우 눈동자를 되찾아' is a return to ordinary sight, not a resolve to remember."}
+    3: {v: T, ev: "Line 21 '어색하여'."}
+    4: {v: T, ev: "Line 23."}
+    5: {v: T, ev: "Line 19."}
+  answer: 2
+
+- item: 70
+  polarity: positive
+  verdicts:
+    1: {v: T, ev: "Contrast of transient face and lasting skull."}
+    2: {v: F, ev: "The skull is met with curiosity, not fear."}
+    3: {v: F, ev: "No will to recover vitality."}
+    4: {v: F, ev: "No criticism of hypocrisy."}
+    5: {v: F, ev: "No praise of everyday life."}
+  answer: 1
+
+- item: 71
+  polarity: positive
+  verdicts:
+    1: {v: F, ev: "The poem does not start with touching the face and then seeing sunlight."}
+    2: {v: F, ev: "The flesh is never checked by hand."}
+    3: {v: F, ev: "Wrong order."}
+    4: {v: T, ev: "Visual: tired eyes and darkness (lines 1-2). Tactile: the skull (lines 3-8). Visual again: focusing on the numbers (line 23)."}
+    5: {v: F, ev: "The skull does not speak."}
+  answer: 4
+
+- item: 72
+  polarity: positive (<보기> + ㄱㄴㄷㄹ)
+  statements:
+    ㄱ: {v: T, ev: "Line 1 is the trigger."}
+    ㄴ: {v: T, ev: "Line 4 '신기한 것'."}
+    ㄷ: {v: F, ev: "'늘' describes the skull's constant gaze. The speaker's strange experience ends at line 18, as the <보기> says ('오래 이어지지 않고')."}
+    ㄹ: {v: T, ev: "Line 23."}
+  answer: 3
+
+- item: 73
+  polarity: positive
+  verdicts:
+    1: {v: F, ev: "'그 물체' is distancing, not familiar."}
+    2: {v: T, ev: "Lines 9 and 11 '얇디얇은'."}
+    3: {v: F, ev: "Pessimism is not supported."}
+    4: {v: F, ev: "'일 없이' says the skull does not even sleep or think. It is not working on the speaker's behalf."}
+    5: {v: F, ev: "The line is figurative, not a literal life history."}
+  answer: 2
+
+- item: 74
+  polarity: positive (both works)
+  statements:
+    ㄱ: {v: T, ev: "(가) a bird flies in a fossil. (나) sunlight turns into flesh."}
+    ㄴ: {v: T, ev: "'별들이여' / '얼굴이여'."}
+    ㄷ: {v: F, ev: "(가) has no chronological narration."}
+    ㄹ: {v: F, ev: "(나) has no imperative."}
+  answer: 1
+
+- item: 75
+  polarity: negative
+  verdicts:
+    1: {v: T, ev: "(가) begins with an imagined fossil bird; (나) with the everyday act of covering the face."}
+    2: {v: T, ev: "Matches the themes of both poems."}
+    3: {v: T, ev: "Both address an object directly."}
+    4: {v: F, ev: "(가) does not try to prevent 소멸; it accepts it and wants it buried. (나) shows no envy of the skull."}
+    5: {v: T, ev: "(나) uses '내 손', '내 해골' and '나는' x2."}
+  answer: 4
+
+- item: 76
+  polarity: positive (<보기> + two works)
+  verdicts:
+    1: {v: F, ev: "'햇빛은 살로 변하여' is a change in an object, not a reconstruction of space."}
+    2: {v: F, ev: "'튼튼한 폐허' is a contradictory pairing, not a change."}
+    3: {v: F, ev: "Neither line returns to the past."}
+    4: {v: F, ev: "'서류 속의 숫자' is ordinary reality."}
+    5: {v: T, ev: "영원히 + 죽는 and 튼튼한 + 폐허 are contrasting words joined to create new meaning."}
+  answer: 5
+
+- item: 77
+  polarity: positive
+  verdicts:
+    1: {v: T, ev: "The fossil is where the speaker wants the stars buried (line 11). The skull is met briefly and then covered again (lines 18-20)."}
+    2: {v: F, ev: "Neither is something the speaker wants to escape."}
+    3: {v: F, ev: "It is the face, not the skull, that makes expressions."}
+    4: {v: F, ev: "The tears are not yet buried; line 6 is a question."}
+    5: {v: F, ev: "There is neither fear nor sorrow."}
+  answer: 1
+
+- item: 78
+  polarity: positive (ㄱㄴㄷㄹ, '있는 대로')
+  statements:
+    ㄱ: {v: T, ev: "(가) line 11 '묻혀라 화석에'. (나) lines 6-8, where object phrases follow the verb '더듬어나갔다', and lines 13-17."}
+    ㄴ: {v: F, ev: "Stanzas 1 and 3 of (가) do not narrate the speaker's actions."}
+    ㄷ: {v: F, ev: "(가) '흘린' is past. (나) the tears belong to the face's past expressions ('흘리고…만들던')."}
+    ㄹ: {v: T, ev: "눈물/보석 and 소멸/화석 in (가); 얼굴/해골 in (나)."}
+  answer: 2
+  notes: "MEDIUM: students may miss the inversion in (나), but the answer still holds because no option without ㄱ includes ㄹ alone."
+
+- item: 79
+  polarity: positive (2x2 + 1)
+  parts:
+    "스스로 = 화자 자신이 소멸을 택함": "F (the subject is the stars)"
+    "스스로 = 대상이 주체적으로 택함": T
+    "서둘러 = 낯선 체험을 더 이어 가려는 조바심": "F (the hand is already released)"
+    "서둘러 = 일상에 다시 맞추려는 모습": T
+  answer: 4
+  notes: "Flag c: both halves repeat sibling items verbatim (50 option 1, 43 ㄴ; 72 ㄹ, 64 option 5)."
+
+- item: 80
+  polarity: positive
+  verdicts:
+    1: {v: F, ev: "'튼튼한 폐허' names the skull."}
+    2: {v: F, ev: "The speaker does take the face back and returns to work."}
+    3: {v: F, ev: "The face becomes awkward (line 21)."}
+    4: {v: F, ev: "There is no awkwardness before touching the skull."}
+    5: {v: T, ev: "Line 21: the familiar face becomes strange."}
+  answer: 5
+
+set_level_notes:
+  - "Heavy content redundancy across the 20-item 보석 1 set (13-line poem). The facts tested in 41/52/56 (ending types), 45ㄴ/46ㄹ/51②/54ㄴ (sky in stratum), 43ㄴ/50①/79 (스스로) and 48①/60 (죽음 as an example of what should remain) recur, so later items can be answered from earlier ones."
+  - "Most distractors in 41-60 are refuted by a single word. There are no D4 or D5 items in this range."
+  - "Answer distribution 41-80: 1x9, 2x8, 3x8, 4x8, 5x7. Balanced."
