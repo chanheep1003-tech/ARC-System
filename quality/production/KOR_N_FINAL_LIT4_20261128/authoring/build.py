@@ -25,6 +25,18 @@ for it in items:
         hits = [i for i, o in enumerate(it["opts"]) if old in o]
         assert len(hits) == 1, (it["n"], old)
         it["opts"][hits[0]] = it["opts"][hits[0]].replace(old, new)
+    import revisions3  # noqa: E402  round-3 redesign
+    it.update(revisions3.REV3.get(it["n"], {}))
+    for old, new in revisions3.REV3_TEXT.get(it["n"], []):
+        hits = [i for i, o in enumerate(it["opts"]) if old in o]
+        assert len(hits) == 1, (it["n"], old)
+        it["opts"][hits[0]] = it["opts"][hits[0]].replace(old, new)
+    for pos, tup in revisions3.REV3_O.get(it["n"], {}).items():
+        it["o"] = list(it["o"]); it["o"][pos - 1] = tup
+    import revisions4  # noqa: E402
+    it.update(revisions4.REV4.get(it["n"], {}))
+    if it["n"] == 60:
+        it["opts"] = [re.sub(r"(?<!~)13행", "12~13행", o) for o in it["opts"]]
     assert len(it["opts"]) == 5 and len(it["o"]) == 5, it["n"]
 
 # ---- target key sequence
