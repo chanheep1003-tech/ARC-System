@@ -23,7 +23,7 @@ assert [it["n"] for it in items] == list(range(1, 81))
 rng = random.Random(20261128)
 counts, seq = Counter(), []
 for it in items:
-    fixed = it.get("fixed") or it["n"] in FIXED_EXTRA
+    fixed = it.get("fixed") or it["n"] in FIXED_EXTRA or it["opts"][0][:1] in ("㉠", "ⓐ")
     if fixed:
         k = it["key"]
     else:
@@ -47,6 +47,9 @@ def swap(it, target):
 out = []
 for it, k in zip(items, seq):
     it = swap(dict(it), k)
+    labs = ["A", "B", "C", "D", "E"] if any(o.startswith("학생 A") for o in it["opts"]) else (["1", "2", "3", "4", "5"] if any(o.startswith("학생 1") for o in it["opts"]) else None)
+    if labs:
+        it["opts"] = [re.sub(r"^학생 [A-E1-5]:", f"학생 {labs[i]}:", o) for i, o in enumerate(it["opts"])]
     pol = polarity(it)
     judg = []
     for i, (c, ev, why) in enumerate(it["o"], 1):

@@ -1,0 +1,331 @@
+line_numbering_note: "Verse lines counted from 〔n〕 markers: line 1 = 녹수청산, line 33 = 오현금 남풍시, (중략), line 35 = 공명을 크게 닦고 ... line 46 = 질병 없이. All line references in items 6, 7, 8, 9, 11, 17, 18, 20 match this numbering."
+general_notes:
+  - "Footnotes do not gloss 소광의 천일금, 사조, 장진주, 급암의 와회양; the items that use them (1, 6, 12) are still solvable from 흩어두고 / context, so no d-flag given."
+  - "Most items in both sets need only one piece of evidence each; distractors often fail on one clearly wrong word (실제로, 회상, 완전히, 체념, 한탄, 수긍)."
+items:
+- item_id: KOR-NF4-001
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "37행 '소광의 천일금을 담양군에 흩어두고' — 화자가 금을 흩어 둔 것이지 고향 사람들에게서 받은 것이 아님"}
+    2: {verdict: FALSE, evidence: "14행 '㉡출세가 저러한데 늦게 옴은 웬일인고'는 소년들의 물음"}
+    3: {verdict: FALSE, evidence: "25행 '들으시면' 가정 — 의정부 장면은 상상, '회상'이 아님"}
+    4: {verdict: TRUE, evidence: "2행 삼간초당, 6~10행 풍류, 11~12행 '공명을 기약하고 ... 서울 거리 찾아가니'"}
+    5: {verdict: FALSE, evidence: "43행 '천하 만사 한바탕 웃음', 46행 바람으로 끝남 — 아쉬움 없음"}
+- item_id: KOR-NF4-002
+  polarity: negative
+  options:
+    1: {verdict: FALSE, evidence: "계절 순서에 따른 전개 없음; 9행 봉삼하/안구추는 한 행 안의 대구일 뿐 (가장 유혹적 함정)"}
+    2: {verdict: TRUE, evidence: "17~18행 이윤·여상, 22~23행 급암·노중련"}
+    3: {verdict: TRUE, evidence: "43행 '아이야 술 부어라', 42행 '깨지 마오'"}
+    4: {verdict: TRUE, evidence: "7행 '앉아보고 서서 보니', 21행 '바라나니 성군이요 생각하니 명주로다', 39행 '형 오소 아우 오소'"}
+    5: {verdict: TRUE, evidence: "6행 '무릉도원이 여기 아닌가'"}
+- item_id: KOR-NF4-003
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "ⓐ는 1~2행, 공명 이전의 자연 공간"}
+    2: {verdict: FALSE, evidence: "ⓑ 서울에서 소년들이 반겨 맞고 화자는 '기쁘게 대답'(16행)"}
+    3: {verdict: FALSE, evidence: "ⓒ는 상상 속 등용 장면(25행 '들으시면')"}
+    4: {verdict: FALSE, evidence: "ⓔ 담양군은 물러난 뒤 천일금을 흩어 둔 곳(37행)"}
+    5: {verdict: TRUE, evidence: "35~36행 '벼슬 그만 아뢴 후에 ... 한강수 건너와서'"}
+- item_id: KOR-NF4-004
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "소년들은 묻는 쪽; '자네'는 소년들이 화자를 부르는 말"}
+    2: {verdict: TRUE, evidence: "13~15행 '반겨 맞아 하는 말이 ... 늦게 옴은 웬일인고 ... 부르나니 자네로세'"}
+    3: {verdict: FALSE, evidence: "소년들은 서울 거리에서 만난 인물"}
+    4: {verdict: FALSE, evidence: "전반부는 맞으나 '자네'는 임금이 아님"}
+    5: {verdict: FALSE, evidence: "'서울 다리'는 장소, '자네'는 화자"}
+- item_id: KOR-NF4-005
+  polarity: negative
+  note: "Option order ㉠,㉡,㉣,㉢,㉤ — non-standard (flag e)."
+  options:
+    1: {verdict: TRUE, evidence: "6행 무릉도원 + 7행 '나도 또한 신선이다'"}
+    2: {verdict: TRUE, evidence: "14행 물음 → 16~21행 화자의 대답"}
+    3: {verdict: FALSE, evidence: "25행 '들으시면'은 가정; 이미 들었다는 전제 아님"}
+    4: {verdict: TRUE, evidence: "19행 '충신열사 후예로서', 22~23행 직신·의사"}
+    5: {verdict: TRUE, evidence: "35행 이후 물러난 뒤의 술자리, 43행"}
+- item_id: KOR-NF4-006
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "A는 신야 농사·위빈 낚시 — 등용 이전"}
+    2: {verdict: FALSE, evidence: "B는 직신·의사 — 자세; C는 물러남"}
+    3: {verdict: FALSE, evidence: "A·B 뒤바뀜"}
+    4: {verdict: TRUE, evidence: "17~18행 등용 전 처지, 22~23행 직신·의사, 36~37행 오호주·천일금(물러난 뒤)"}
+    5: {verdict: FALSE, evidence: "C는 35행 '벼슬 그만 아뢴 후' — 포부가 아님"}
+- item_id: KOR-NF4-007
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "29행 '하교하되' — 말하는 이는 임금"}
+    2: {verdict: FALSE, evidence: "소년들 말 아님"}
+    3: {verdict: FALSE, evidence: "당상관이 아니라 임금의 하교"}
+    4: {verdict: FALSE, evidence: "25행 '들으시면' 가정 — 실제가 아님"}
+    5: {verdict: TRUE, evidence: "31행 '어진 신하 바랐더니', 32행 '이날에야 만났으니'"}
+- item_id: KOR-NF4-008
+  polarity: positive
+  statements:
+    ㄱ: {verdict: TRUE, evidence: "25행 '들으시면' 가정 → 26~33행 등용 장면"}
+    ㄴ: {verdict: FALSE, evidence: "상상 장면이며 '지난날 경험'이 아님"}
+    ㄷ: {verdict: TRUE, evidence: "35~37행 범려 오호주, 소광 천일금"}
+    ㄹ: {verdict: FALSE, evidence: "44행 '꿈결인가 잠결인가'는 흥취; 한탄도, 꿈이었다는 고백도 아님"}
+  options: {1: FALSE, 2: TRUE, 3: FALSE, 4: FALSE, 5: FALSE}
+- item_id: KOR-NF4-009
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "16행 '풍운이 늦은 것을 기쁘게 대답하되' — 부끄러움 없음"}
+    2: {verdict: FALSE, evidence: "꾸짖음 없음"}
+    3: {verdict: TRUE, evidence: "16행 '기쁘게', 17~19행 이윤·여상 → '나도 또한 그 아니랴'"}
+    4: {verdict: FALSE, evidence: "자연에서의 시간을 후회하지 않음"}
+    5: {verdict: FALSE, evidence: "21행 '바라나니 성군이요' — 원망 없음"}
+- item_id: KOR-NF4-010
+  polarity: positive
+  options:
+    1: {verdict: TRUE, evidence: "산골(1~10) → 서울·궁궐(12~33) → 한강·담양(35~46)"}
+    2: {verdict: FALSE, evidence: "벼슬 시절 그리움 없음"}
+    3: {verdict: FALSE, evidence: "처음은 산골, 끝은 담양"}
+    4: {verdict: FALSE, evidence: "36행 한강수 건너 귀향"}
+    5: {verdict: FALSE, evidence: "끝까지 흥겨움, 46행 바람"}
+- item_id: KOR-NF4-011
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "공간 진입일 뿐"}
+    2: {verdict: FALSE, evidence: "은거의 모습, 자기 인식 아님"}
+    3: {verdict: FALSE, evidence: "공간에 대한 인식(이상향) — 자신을 규정하지 않음; 두 번째 후보"}
+    4: {verdict: TRUE, evidence: "7행 화자 자신을 신선으로 규정"}
+    5: {verdict: FALSE, evidence: "풍류 행위"}
+- item_id: KOR-NF4-012
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "35행 공을 이룬 뒤 스스로 벼슬을 그만둠"}
+    2: {verdict: FALSE, evidence: "37행 '흩어두고' — 재물을 나누어 흩는 것이지 쌓아 두는 것이 아님"}
+    3: {verdict: TRUE, evidence: "39행 '시골 인심 더욱 좋다'"}
+    4: {verdict: TRUE, evidence: "38행 감군은"}
+    5: {verdict: TRUE, evidence: "44행 이런 놀음 저런 놀음 — 흥취"}
+- item_id: KOR-NF4-013
+  polarity: positive
+  note: "Key is a near-verbatim lift of the <보기> sentence (flag c)."
+  options:
+    1: {verdict: FALSE, evidence: "<보기>에 그런 기능 없음; 정서 급변 없음"}
+    2: {verdict: FALSE, evidence: "벼슬 장면은 상상이며 '겪은 일' 아님"}
+    3: {verdict: FALSE, evidence: "이윤·여상은 본받을 인물"}
+    4: {verdict: FALSE, evidence: "46행 '진실로 바라노라' — 직접 드러냄"}
+    5: {verdict: TRUE, evidence: "9행 한문 투 구절, <보기> '작자의 교양을 드러내기도'"}
+- item_id: KOR-NF4-014
+  polarity: negative
+  note: "Labels ③ 학생 4 / ④ 학생 3 swapped (flag e)."
+  options:
+    1: {verdict: TRUE, evidence: "4행 '슬피 울고'에도 6~10행 흥취"}
+    2: {verdict: TRUE, evidence: "11행 연결 기능"}
+    3: {verdict: FALSE, evidence: "24행 '황하수 한번 맑아 우리 성상 나계시니' — 성군 출현의 상서로움, 걱정 아님"}
+    4: {verdict: TRUE, evidence: "21행"}
+    5: {verdict: TRUE, evidence: "41행 직유"}
+- item_id: KOR-NF4-015
+  polarity: positive
+  options:
+    1: {verdict: TRUE, evidence: "1~10 풍류, 16~33 충효·등용, 35~46 물러난 뒤 삶 + 46행 바라노라"}
+    2: {verdict: FALSE, evidence: "한탄 없음"}
+    3: {verdict: FALSE, evidence: "갈등 없음"}
+    4: {verdict: FALSE, evidence: "35행 벼슬 그만"}
+    5: {verdict: FALSE, evidence: "체념 아님"}
+- item_id: KOR-NF4-016
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "'완전히 돌아서는' — 35행 이후 다시 처로 돌아옴"}
+    2: {verdict: FALSE, evidence: "갈등 아님; 즐거운 출사"}
+    3: {verdict: FALSE, evidence: "체념 아님, 만족"}
+    4: {verdict: TRUE, evidence: "35행 벼슬 그만 아뢴 후, 38행 감군은 한 곡조"}
+    5: {verdict: FALSE, evidence: "좌절 없음"}
+- item_id: KOR-NF4-017
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "11행 '다한 후에' — 서둘러 끝내려는 것 아님"}
+    2: {verdict: TRUE, evidence: "11행 공명 이전, 44행 공명 이후의 풍류"}
+    3: {verdict: FALSE, evidence: "44행 놀음은 벗들과 함께"}
+    4: {verdict: FALSE, evidence: "11행은 산골"}
+    5: {verdict: FALSE, evidence: "44행은 흥취, 덧없음 아님"}
+- item_id: KOR-NF4-018
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "7행은 단정(이미 신선), 19행은 등용 이전"}
+    2: {verdict: FALSE, evidence: "7행은 설의 아님; 자기 낮춤 아님"}
+    3: {verdict: TRUE, evidence: "7행 신선 견줌·만족, 19행 이윤·여상 견줌·자부심"}
+    4: {verdict: FALSE, evidence: "자연 부정 없음"}
+    5: {verdict: FALSE, evidence: "7행은 청자 없음"}
+- item_id: KOR-NF4-019
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "31행 '고요직설 못 얻어서'"}
+    2: {verdict: FALSE, evidence: "원망·사과 없음"}
+    3: {verdict: FALSE, evidence: "28행 임금이 '불러 모아'"}
+    4: {verdict: FALSE, evidence: "38행 감군은"}
+    5: {verdict: TRUE, evidence: "21행 성군·명주, 32행 '초야의 숨은 신하 이날에야 만났으니'"}
+- item_id: KOR-NF4-020
+  polarity: negative
+  options:
+    1: {verdict: FALSE, evidence: "고사는 화자를 옛 인재에 견주는 것이지 이룬 공명 자랑 아님; <보기> '이루고자 하는 일'과도 어긋남"}
+    2: {verdict: TRUE, evidence: "25행 가정"}
+    3: {verdict: TRUE, evidence: "<보기> 물러나 즐기는 삶"}
+    4: {verdict: TRUE, evidence: "46행"}
+    5: {verdict: TRUE, evidence: "<보기> 자연 속 풍류도 노닒"}
+- item_id: KOR-NF4-021
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "'나' 없음, 3인칭"}
+    2: {verdict: FALSE, evidence: "대화 중심"}
+    3: {verdict: FALSE, evidence: "송 노인('괘씸하기 짝이 없다')과 명준('웃음이 나오려는 것을 참는다') 둘의 속마음 모두 서술"}
+    4: {verdict: FALSE, evidence: "역순행 없음"}
+    5: {verdict: TRUE, evidence: "'득의연하게 지껄여댔다' 등 판단 + 속마음 전달"}
+- item_id: KOR-NF4-022
+  polarity: negative
+  options:
+    1: {verdict: FALSE, evidence: "[중략 줄거리] '아들의 협조를 얻지 못한 채'"}
+    2: {verdict: TRUE, evidence: "'회사 홍보실에서 잡지 만드는 일', 조판·옵세트 설명"}
+    3: {verdict: TRUE, evidence: "'책을 만드는 데 돈이 얼마나 드는지 아세요?'"}
+    4: {verdict: TRUE, evidence: "'나는 일자무식이다마는 ... 가치 있는 글'"}
+    5: {verdict: TRUE, evidence: "'저 반닫이 속에 들어 있던 그 책 말이군요'"}
+- item_id: KOR-NF4-023
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "아무 대답 없이 멀뚱히"}
+    2: {verdict: TRUE, evidence: "'뭐라고 대꾸하려다가 말고'"}
+    3: {verdict: TRUE, evidence: "'아무렇게나 팔랑팔랑'"}
+    4: {verdict: FALSE, evidence: "직후 '돈이 좀 들더라도 좌우간 만들어야겠어'"}
+    5: {verdict: TRUE, evidence: "'히히히…' 후 방문을 탁 닫음"}
+- item_id: KOR-NF4-024
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "명준은 반대를 거두지 않음"}
+    2: {verdict: TRUE, evidence: "앞: 부자 대화, 뒤: 윤국의 '후졌다'"}
+    3: {verdict: FALSE, evidence: "중략 앞에 윤국 없음"}
+    4: {verdict: FALSE, evidence: "고향 장면은 줄거리로만"}
+    5: {verdict: FALSE, evidence: "'한문도 배워가지고 읽어보도록 해라'"}
+- item_id: KOR-NF4-025
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "'할아버지라면 본 일이 없다 하더라도 ... 멀지 않다고 하겠지만'"}
+    2: {verdict: FALSE, evidence: "송 노인이 멀게 느낀다는 근거 없음"}
+    3: {verdict: TRUE, evidence: "'자손으로서 할 소리냐' / '한 번 본 적도 없는 증조부가 멀지 않다니'"}
+    4: {verdict: FALSE, evidence: "'웃음이 나오려는 것을 참는다'"}
+    5: {verdict: FALSE, evidence: "'나는 알아' — 조부를 앎"}
+- item_id: KOR-NF4-026
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "'요즘 족보를 책으로 만들어내는 일이 얼마나 많으냐'"}
+    2: {verdict: TRUE, evidence: "'자손 된 도리 ... 족보나 문집이나 다를 게 없는 거여'"}
+    3: {verdict: TRUE, evidence: "'다만 몇 사람만이라도 읽어서'"}
+    4: {verdict: FALSE, evidence: "언급 없음; 오히려 '많이 찍어낼 것도 아닌데'"}
+    5: {verdict: TRUE, evidence: "'학식이 높은 선비면서 애국자여'"}
+- item_id: KOR-NF4-027
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "엉뚱한 질문 아님; 송 노인은 요점임을 앎"}
+    2: {verdict: FALSE, evidence: "설득되지 않음"}
+    3: {verdict: FALSE, evidence: "'마침내 얘기의 요점으로 들어선 셈' — 짐작함"}
+    4: {verdict: FALSE, evidence: "명준이 비용을 앎; 송 노인은 모름"}
+    5: {verdict: TRUE, evidence: "'제법 그럴듯한 말을 한다 싶은 것이다. 그러나…' / '마침내 얘기의 요점으로'"}
+- item_id: KOR-NF4-028
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "보증 아님, 오히려 비꼼"}
+    2: {verdict: TRUE, evidence: "'종사한답시고 득의연하게 지껄여댔다'"}
+    3: {verdict: FALSE, evidence: "반성 없음"}
+    4: {verdict: FALSE, evidence: "송 노인은 이맛살을 찌푸림, 부러움 없음"}
+    5: {verdict: FALSE, evidence: "직접 인용 후 서술; 망설임 아님"}
+- item_id: KOR-NF4-029
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "명준이 한문을 읽는다는 근거 없음"}
+    2: {verdict: FALSE, evidence: "'나는 안다' — 물러서지 않음"}
+    3: {verdict: TRUE, evidence: "'우리 조부가 어떤 분인지 ... 나는 알아'"}
+    4: {verdict: FALSE, evidence: "비판 수용 없음"}
+    5: {verdict: FALSE, evidence: "동의 없음"}
+- item_id: KOR-NF4-030
+  polarity: positive
+  options:
+    1: {verdict: TRUE, evidence: "'너의 애비가……' 내뱉으려다가 그만둔다 + 줄거리 '협조를 얻지 못한 채'"}
+    2: {verdict: FALSE, evidence: "아들은 돕지 않음"}
+    3: {verdict: FALSE, evidence: "질문은 명확함"}
+    4: {verdict: FALSE, evidence: "말을 그만둠 — 알리려는 의도와 반대"}
+    5: {verdict: FALSE, evidence: "후회 없음, '가보'"}
+- item_id: KOR-NF4-031
+  polarity: positive
+  options:
+    1: {verdict: TRUE, evidence: "'너도 꼭 너거 애비하고 같구나'"}
+    2: {verdict: FALSE, evidence: "윤국은 '후졌다', 킬킬거림"}
+    3: {verdict: FALSE, evidence: "직접 가르치지 않음, '나중에 ... 배워가지고'"}
+    4: {verdict: FALSE, evidence: "명준의 전언 없음"}
+    5: {verdict: FALSE, evidence: "고향 사람들의 외면 언급 없음"}
+- item_id: KOR-NF4-032
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "'가보 같은 책', 조부 학식·애국"}
+    2: {verdict: TRUE, evidence: "읽지도 못함 + 조판비"}
+    3: {verdict: TRUE, evidence: "'순 한문 ... 후졌다'"}
+    4: {verdict: FALSE, evidence: "둘 다 읽지 못하며 평가도 같이 부정적"}
+    5: {verdict: TRUE, evidence: "세 인물 갈등의 중심"}
+- item_id: KOR-NF4-033
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "간행을 미루지 않음 ('좌우간 만들어야겠어')"}
+    2: {verdict: FALSE, evidence: "순서 뒤바뀜: 괘씸함이 먼저"}
+    3: {verdict: FALSE, evidence: "마음을 바꾸지 않음"}
+    4: {verdict: FALSE, evidence: "순서 오류(괘씸함이 놀라움보다 앞) + 수긍 없음"}
+    5: {verdict: TRUE, evidence: "'괘씸 ... 애써 느긋하게' → '그 말도 일리가 없는 것은 아닌 듯' → '눈언저리에 열이 화끈 ... 요점으로'"}
+  note: "Key omits the 놀람(눈이 휘둥그레짐) step, but as a selection of main stages it is acceptable."
+- item_id: KOR-NF4-034
+  polarity: positive
+  note: "Labels B, A, C, D, E out of order (flag e)."
+  options:
+    1: {verdict: FALSE, evidence: "'괘씸 ... 애써 느긋하게' — 감정 억누름, 관심 적음 아님"}
+    2: {verdict: TRUE, evidence: "'차마 그런 투로 대꾸를 할 수는 없는 듯 말문을 다른 쪽으로 연다'"}
+    3: {verdict: FALSE, evidence: "알아봄 ≠ 소중히 여김; '후졌다'"}
+    4: {verdict: FALSE, evidence: "직후 '그러나 ... 엷은 웃음' + 비용 문제"}
+    5: {verdict: FALSE, evidence: "'아니다, 그렇지 않다' — 반대"}
+- item_id: KOR-NF4-035
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "명준 직접 반대함; 윤국 공손히 따르지 않음"}
+    2: {verdict: FALSE, evidence: "윤국은 비용 언급 없음"}
+    3: {verdict: TRUE, evidence: "명준 '한문투성인 책을 누가', 윤국 '순 한문이라 읽을 수가'"}
+    4: {verdict: FALSE, evidence: "명준도 읽지 못함; 윤국은 책을 뒤적거림"}
+    5: {verdict: FALSE, evidence: "윤국 '히히히' — 받아들이지 않음"}
+- item_id: KOR-NF4-036
+  polarity: negative
+  options:
+    1: {verdict: TRUE, evidence: "조판비·옵세트 비용"}
+    2: {verdict: TRUE, evidence: "'어디 꼭 많은 사람이 읽어야만'"}
+    3: {verdict: TRUE, evidence: "양쪽 속마음 서술, <보기> '맞세워'"}
+    4: {verdict: FALSE, evidence: "족보 예시는 한문 아는 사람이 많다는 반박 근거이지 비판 아님"}
+    5: {verdict: TRUE, evidence: "'후졌다' — 세대 계승 곤란"}
+- item_id: KOR-NF4-037
+  polarity: positive
+  note: "Slight imprecision: 명준 judges 가치 chiefly by readability; 비용 is an argument against 간행 rather than a measure of 가치. Still ① is clearly the best; no other option is defensible."
+  options:
+    1: {verdict: TRUE, evidence: "송 노인 '우리 조부가 어떤 분인지 ... 나는 알아'; 명준 '읽지도 못하잖아요', 조판비"}
+    2: {verdict: FALSE, evidence: "송 노인은 일자무식 — 내용으로 판단 불가"}
+    3: {verdict: FALSE, evidence: "명준은 내용을 읽지 않음"}
+    4: {verdict: FALSE, evidence: "고향 사람 평가 언급 없음"}
+    5: {verdict: FALSE, evidence: "족보는 보조 근거; 한자 수 기준 아님"}
+- item_id: KOR-NF4-038
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "'차마 그런 투로 대꾸를 할 수는 없는 듯'"}
+    2: {verdict: TRUE, evidence: "같은 문장 + '세상에 펴낼 가치가 없는 거니까 그러죠'"}
+    3: {verdict: FALSE, evidence: "가치 인정 근거 없음"}
+    4: {verdict: FALSE, evidence: "가까운 척하지 않음"}
+    5: {verdict: FALSE, evidence: "찬성 근거 없음"}
+- item_id: KOR-NF4-039
+  polarity: positive
+  statements:
+    ㄱ: {verdict: TRUE, evidence: "'족보를 보려무나. 요즘 족보를 책으로 만들어내는 일이 얼마나 많으냐'"}
+    ㄴ: {verdict: TRUE, evidence: "'조판이 뭔지, 옵세트가 무슨 말인지 알아듣지도 못하는 터이라'"}
+    ㄷ: {verdict: FALSE, evidence: "송 노인은 액수를 묻기만 함; 동의 없음"}
+    ㄹ: {verdict: TRUE, evidence: "'가치가 있는지 없는지 아버지가 어떻게 아세요?' + '읽을 줄도 모르면서'"}
+  options: {1: FALSE, 2: FALSE, 3: FALSE, 4: TRUE, 5: FALSE}
+- item_id: KOR-NF4-040
+  polarity: positive
+  options:
+    1: {verdict: FALSE, evidence: "'후지다니, 그게 무슨 소리냐?' — 실제로 모름, 윤국이 풀이함"}
+    2: {verdict: FALSE, evidence: "'틀렸지 뭐예요' — 반성 없음"}
+    3: {verdict: TRUE, evidence: "'조판이 뭔지, 옵세트가 무슨 말인지 알아듣지도 못하는' 장면과 병행"}
+    4: {verdict: FALSE, evidence: "곧 '아주 가치가 있는 책이다'"}
+    5: {verdict: FALSE, evidence: "한문을 배우라는 건 송 노인의 권유"}
